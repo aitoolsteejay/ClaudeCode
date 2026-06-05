@@ -115,7 +115,7 @@ export default function Footer() {
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
             <p className="text-xs mb-6" style={{ color: "#8C8279" }}>
-              1101, Prithvi Emperor, New Prabhadevi Road,<br />Mumbai 400025
+              WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar <br />Mumbai 400025
             </p>
             <div className="flex items-center gap-3">
               {[

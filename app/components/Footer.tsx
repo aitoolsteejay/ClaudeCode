@@ -115,7 +115,7 @@ export default function Footer() {
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
             <p className="text-xs mb-6" style={{ color: "#8C8279" }}>
-              WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar <br />Mumbai 400025
+              WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar, Worli, Mumbai 400025
             </p>
             <div className="flex items-center gap-3">
               {[
@@ -176,7 +176,37 @@ export default function Footer() {
             <div className="mb-4 p-4 rounded-xl border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
               <p className="text-xs font-semibold mb-1" style={{ color: "#0a0a0a" }}>The Outbound Operator</p>
               <p className="text-xs mb-3" style={{ color: "#6B6B6B" }}>Weekly AI outbound insights. No fluff.</p>
-              <a href="mailto:growth@myntmore.com?subject=Subscribe to Outbound Operator" className="text-xs font-bold" style={{ color: "#F5B731" }}>Join the Lab →</a>
+              <form
+                method="POST"
+                action="https://tsop-zgfl.maillist-manage.com/weboptin.zc"
+                target="_blank"
+                className="flex gap-2"
+              >
+                <input type="text" name="CONTACT_EMAIL" placeholder="Your email" required
+                  className="flex-1 min-w-0 px-3 py-1.5 rounded-lg text-xs outline-none border"
+                  style={{ backgroundColor: "#ffffff", borderColor: "rgba(245,183,49,0.4)", color: "#0a0a0a" }} />
+                <button type="submit"
+                  className="px-3 py-1.5 rounded-lg text-xs font-bold flex-shrink-0"
+                  style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
+                  Join
+                </button>
+                <input type="hidden" name="submitType" value="optinCustomView" />
+                <input type="hidden" name="formType" value="QuickForm" />
+                <input type="hidden" name="zx" value="1285b4a68" />
+                <input type="hidden" name="zcvers" value="3.0" />
+                <input type="hidden" name="oldListIds" value="" />
+                <input type="hidden" name="mode" value="OptinCreateView" />
+                <input type="hidden" name="zcld" value="" />
+                <input type="hidden" name="zctd" value="" />
+                <input type="hidden" name="document_domain" value="" />
+                <input type="hidden" name="zc_Url" value="flin-zgpm.maillist-manage.com" />
+                <input type="hidden" name="new_optin_response_in" value="0" />
+                <input type="hidden" name="duplicate_optin_response_in" value="0" />
+                <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW" />
+                <input type="hidden" name="zc_formIx" value="3z9fc5e049897874918c8ec61408434d90ec1e3c29e2f0e6cf2784215521d683ff" />
+                <input type="hidden" name="viewFrom" value="URL_ACTION" />
+                <input type="hidden" name="emailReportId" value="" />
+              </form>
             </div>
             <a href="https://calendly.com/founder-myntmore/1-hour-meeting" target="_blank" rel="noopener noreferrer" className="btn-dark px-5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5">
               Book a Call

@@ -192,7 +192,7 @@ export default function Footer() {
                 </button>
                 <input type="hidden" name="submitType" value="optinCustomView" />
                 <input type="hidden" name="formType" value="QuickForm" />
-                <input type="hidden" name="zx" value="1285b4a68" />
+                <input type="hidden" name="zx" value="136d6a7e5" />
                 <input type="hidden" name="zcvers" value="3.0" />
                 <input type="hidden" name="oldListIds" value="" />
                 <input type="hidden" name="mode" value="OptinCreateView" />

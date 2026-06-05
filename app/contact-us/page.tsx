@@ -106,7 +106,7 @@ export default function ContactUs() {
               </div>
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Our office</h3>
-                <p className="text-sm" style={{ color: "#52525B" }}>1101, Prithvi Emperor,<br />New Prabhadevi Road,<br />Mumbai 400025</p>
+                <p className="text-sm" style={{ color: "#52525B" }}>WeWork, 1st floor, 264-265,<br />Dr Annie Besant Rd, Worli Shivaji Nagar,<br />Worli, Mumbai 400025</p>
               </div>
             </div>
           </div></FadeIn>

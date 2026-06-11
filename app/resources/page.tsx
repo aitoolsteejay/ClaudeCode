@@ -5,7 +5,7 @@ import FadeIn from "../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs, Tools & Case Studies | Myntmore",
-  description: "Free B2B growth resources from Myntmore — in-depth blogs on outbound and lead gen, free AI tools, and real client case studies with results.",
+  description: "Free B2B lead generation resources from Myntmore — in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools and real client case studies.",
   alternates: { canonical: "https://myntmore.com/resources" },
   openGraph: {
     title: "B2B Growth Resources: Blogs, Tools & Case Studies | Myntmore",
@@ -19,25 +19,41 @@ const BLOG_POSTS = [
     href: "/blog/predictable-b2b-lead-gen-engine",
     tag: "Lead Generation",
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
-    excerpt: "Most B2B outbound fails because it has no system. Here is the exact framework we use to build a lead generation engine that compounds over time.",
+    excerpt: "The exact framework we use to build a lead generation engine that compounds over time. No guessing, no spraying.",
     readTime: "5 min read",
     accent: "#3b82f6",
   },
   {
-    href: "/blog/ecommerce-conversion-playbook",
-    tag: "Conversion",
-    title: "The eCommerce Conversion Playbook: Turning Browsers into Buyers",
-    excerpt: "Traffic without conversion is just expensive noise. Here is a practical playbook for eCommerce brands that want more buyers, not just more visitors.",
+    href: "/blog/cold-email-deliverability-guide",
+    tag: "Cold Email",
+    title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
+    excerpt: "Deliverability is the silent killer of outbound. Most campaigns fail before a single human ever reads them. Here is how to fix it.",
+    readTime: "6 min read",
+    accent: "#ef4444",
+  },
+  {
+    href: "/blog/icp-mapping-b2b",
+    tag: "ICP & Targeting",
+    title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
+    excerpt: "Stop targeting everyone. The exact ICP mapping process we use to find the buyers most likely to close — and build outreach around them.",
     readTime: "5 min read",
     accent: "#10b981",
   },
   {
-    href: "/blog/founder-personal-brand-linkedin",
-    tag: "Personal Branding",
-    title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset",
-    excerpt: "Founders who build a LinkedIn presence close deals faster, attract better talent, and generate inbound without ad spend. Here is how to start.",
-    readTime: "5 min read",
+    href: "/blog/linkedin-outreach-sequences",
+    tag: "LinkedIn Outreach",
+    title: "LinkedIn Outreach Sequences That Actually Get Replies",
+    excerpt: "The multi-touch LinkedIn sequence structure that warms up prospects and converts connections into conversations — without being spammy.",
+    readTime: "6 min read",
     accent: "#a855f7",
+  },
+  {
+    href: "/blog/b2b-lead-gen-metrics",
+    tag: "Analytics",
+    title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",
+    excerpt: "Most outbound teams track the wrong numbers. These 7 metrics tell you exactly where your pipeline is leaking — and how to fix it.",
+    readTime: "7 min read",
+    accent: "#f97316",
   },
 ];
 
@@ -107,9 +123,7 @@ export default function Resources() {
               { label: "Case Studies", href: "#case-studies" },
               { label: "Newsletter", href: "#newsletter" },
             ].map((l) => (
-              <a key={l.href} href={l.href} className="text-sm font-bold px-5 py-2 rounded-full border transition-all duration-200" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#F5B731"; (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D"; }}>
+              <a key={l.href} href={l.href} className="text-sm font-bold px-5 py-2 rounded-full border transition-all duration-200 hover:border-yellow-400 hover:text-black" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}>
                 {l.label}
               </a>
             ))}
@@ -127,11 +141,9 @@ export default function Resources() {
             </div>
           </div>
           <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {BLOG_POSTS.map((p) => (
-                <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = p.accent; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 8px 28px ${p.accent}18`; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}>
+                <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="h-1" style={{ background: `linear-gradient(90deg,${p.accent},${p.accent}66)` }} />
                   <div className="p-6">
                     <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${p.accent}12`, color: p.accent }}>{p.tag}</span>
@@ -159,9 +171,7 @@ export default function Resources() {
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {FREE_TOOLS.map((t) => (
-                <a key={t.title} href={t.href} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#F5B731"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(245,183,49,0.12)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}>
+                <a key={t.title} href={t.href} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300 hover:border-yellow-400 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                   <div className="text-2xl mb-3">{t.icon}</div>
                   <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{t.title}</h3>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>{t.desc}</p>
@@ -188,9 +198,7 @@ export default function Resources() {
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {CASE_STUDIES.map((cs) => (
-                <Link key={cs.href} href={cs.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = cs.accent; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 8px 28px ${cs.accent}18`; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}>
+                <Link key={cs.href} href={cs.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="h-1" style={{ background: `linear-gradient(90deg,${cs.accent},${cs.accent}66)` }} />
                   <div className="p-6">
                     <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${cs.accent}12`, color: cs.accent }}>{cs.tag}</span>

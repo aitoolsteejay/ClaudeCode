@@ -54,34 +54,39 @@ export default function ContactUs() {
               <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h2 className="text-2xl font-black mb-2" style={{ color: "#0a0a0a" }}>Ready to build your AI engine?</h2>
                 <p className="text-sm mb-6" style={{ color: "#52525B" }}>Fill out the form and we&apos;ll get back to you within 24 hours with a custom GTM strategy.</p>
-                <form className="space-y-4" action="mailto:growth@myntmore.com" method="get">
+                <form className="space-y-4"
+                  action="https://forms.zohopublic.com/flintstop/form/MyntmoreWebsiteform/formperma/3F8IpEgLtb2RnoXcr_yUsp56_-WdQdO2-sM6eaCOKi0/htmlRecords/submit"
+                  name="form" id="form" method="POST" acceptCharset="UTF-8" encType="multipart/form-data">
+                  <input type="hidden" name="zf_referrer_name" value="" />
+                  <input type="hidden" name="zf_redirect_url" value="" />
+                  <input type="hidden" name="zc_gad" value="" />
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="firstName" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>First Name *</label>
-                      <input id="firstName" name="firstName" type="text" required placeholder="Tejas" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                      <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>First Name *</label>
+                      <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder="Tejas" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Last Name *</label>
-                      <input id="lastName" name="lastName" type="text" required placeholder="Jhaveri" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                      <label htmlFor="SingleLine1" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Last Name *</label>
+                      <input id="SingleLine1" name="SingleLine1" type="text" required maxLength={255} placeholder="Jhaveri" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="designation" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation *</label>
-                    <input id="designation" name="designation" type="text" required placeholder="Founder / Head of Sales" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                    <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation *</label>
+                    <input id="SingleLine2" name="SingleLine2" type="text" required maxLength={255} placeholder="Founder / Head of Sales" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="company" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company</label>
-                      <input id="company" name="company" type="text" placeholder="Acme Corp" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                      <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company</label>
+                      <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder="Acme Corp" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
-                      <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                      <label htmlFor="PhoneNumber_countrycode" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
+                      <input id="PhoneNumber_countrycode" name="PhoneNumber_countrycode" type="tel" maxLength={20} placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email *</label>
-                    <input id="email" name="email" type="email" required placeholder="tejas@myntmore.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                    <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email</label>
+                    <input id="Email" name="Email" type="text" maxLength={255} placeholder="tejas@myntmore.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <button type="submit" className="btn-dark w-full py-4 text-sm font-bold">Get Your Custom Strategy</button>
                   <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just clarity.</p>

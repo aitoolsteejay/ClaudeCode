@@ -93,6 +93,10 @@ export const metadata: Metadata = {
     google: "G-PEY6FXLPMH",
   },
   category: "business",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 const GA_ID = "G-PEY6FXLPMH";

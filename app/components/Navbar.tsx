@@ -112,7 +112,7 @@ export default function Navbar() {
             >
               Contact
             </Link>
-            <a href="https://calendly.com/founder-myntmore/1-hour-meeting" target="_blank" rel="noopener noreferrer" className="btn-dark px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-1.5">
+            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-1.5">
               Book a Call
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
@@ -170,7 +170,7 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-3 pb-1">
-            <a href="https://calendly.com/founder-myntmore/1-hour-meeting" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="btn-dark w-full py-3 text-sm font-semibold text-center block">
+            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="btn-dark w-full py-3 text-sm font-semibold text-center block">
               Book a Call
             </a>
           </div>

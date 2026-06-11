@@ -81,9 +81,37 @@ export default function Resources() {
             <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.1)", color: "#D97706" }}>Weekly Newsletter</span>
             <h2 className="text-xl font-black mb-3" style={{ color: "#0a0a0a" }}>The Outbound Operator</h2>
             <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>Weekly breakdowns of outbound systems, AI tools, and GTM plays that are working right now. No fluff.</p>
-            <a href="mailto:growth@myntmore.com?subject=Subscribe to Outbound Operator" className="btn-dark px-5 py-2.5 text-sm font-bold inline-flex items-center gap-1.5">
-              Subscribe free <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            <form
+              method="POST"
+              action="https://tsop-zgfl.maillist-manage.com/weboptin.zc"
+              target="_blank"
+              className="flex gap-2"
+            >
+              <input type="text" name="CONTACT_EMAIL" placeholder="Your email" required
+                className="flex-1 min-w-0 px-3 py-2 rounded-lg text-sm outline-none border"
+                style={{ backgroundColor: "#ffffff", borderColor: "rgba(245,183,49,0.4)", color: "#0a0a0a" }} />
+              <button type="submit"
+                className="px-4 py-2 rounded-lg text-sm font-bold flex-shrink-0"
+                style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
+                Join
+              </button>
+              <input type="hidden" name="submitType" value="optinCustomView" />
+              <input type="hidden" name="formType" value="QuickForm" />
+              <input type="hidden" name="zx" value="136d6a7e5" />
+              <input type="hidden" name="zcvers" value="3.0" />
+              <input type="hidden" name="oldListIds" value="" />
+              <input type="hidden" name="mode" value="OptinCreateView" />
+              <input type="hidden" name="zcld" value="" />
+              <input type="hidden" name="zctd" value="" />
+              <input type="hidden" name="document_domain" value="" />
+              <input type="hidden" name="zc_Url" value="flin-zgpm.maillist-manage.com" />
+              <input type="hidden" name="new_optin_response_in" value="0" />
+              <input type="hidden" name="duplicate_optin_response_in" value="0" />
+              <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW" />
+              <input type="hidden" name="zc_formIx" value="3z9fc5e049897874918c8ec61408434d90ec1e3c29e2f0e6cf2784215521d683ff" />
+              <input type="hidden" name="viewFrom" value="URL_ACTION" />
+              <input type="hidden" name="emailReportId" value="" />
+            </form>
           </div>
           <div className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
             <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: "#3b82f6" }}>On-Demand Video</span>

@@ -5,7 +5,7 @@ import FadeIn from "../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs, Tools & Case Studies | Myntmore",
-  description: "Free B2B growth resources from Myntmore — in-depth blogs on outbound and lead gen, free AI tools, and real client case studies with results.",
+  description: "Free B2B lead generation resources from Myntmore — in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools and real client case studies.",
   alternates: { canonical: "https://myntmore.com/resources" },
   openGraph: {
     title: "B2B Growth Resources: Blogs, Tools & Case Studies | Myntmore",
@@ -19,25 +19,41 @@ const BLOG_POSTS = [
     href: "/blog/predictable-b2b-lead-gen-engine",
     tag: "Lead Generation",
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
-    excerpt: "Most B2B outbound fails because it has no system. Here is the exact framework we use to build a lead generation engine that compounds over time.",
+    excerpt: "The exact framework we use to build a lead generation engine that compounds over time. No guessing, no spraying.",
     readTime: "5 min read",
     accent: "#3b82f6",
   },
   {
-    href: "/blog/ecommerce-conversion-playbook",
-    tag: "Conversion",
-    title: "The eCommerce Conversion Playbook: Turning Browsers into Buyers",
-    excerpt: "Traffic without conversion is just expensive noise. Here is a practical playbook for eCommerce brands that want more buyers, not just more visitors.",
+    href: "/blog/cold-email-deliverability-guide",
+    tag: "Cold Email",
+    title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
+    excerpt: "Deliverability is the silent killer of outbound. Most campaigns fail before a single human ever reads them. Here is how to fix it.",
+    readTime: "6 min read",
+    accent: "#ef4444",
+  },
+  {
+    href: "/blog/icp-mapping-b2b",
+    tag: "ICP & Targeting",
+    title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
+    excerpt: "Stop targeting everyone. The exact ICP mapping process we use to find the buyers most likely to close — and build outreach around them.",
     readTime: "5 min read",
     accent: "#10b981",
   },
   {
-    href: "/blog/founder-personal-brand-linkedin",
-    tag: "Personal Branding",
-    title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset",
-    excerpt: "Founders who build a LinkedIn presence close deals faster, attract better talent, and generate inbound without ad spend. Here is how to start.",
-    readTime: "5 min read",
+    href: "/blog/linkedin-outreach-sequences",
+    tag: "LinkedIn Outreach",
+    title: "LinkedIn Outreach Sequences That Actually Get Replies",
+    excerpt: "The multi-touch LinkedIn sequence structure that warms up prospects and converts connections into conversations — without being spammy.",
+    readTime: "6 min read",
     accent: "#a855f7",
+  },
+  {
+    href: "/blog/b2b-lead-gen-metrics",
+    tag: "Analytics",
+    title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",
+    excerpt: "Most outbound teams track the wrong numbers. These 7 metrics tell you exactly where your pipeline is leaking — and how to fix it.",
+    readTime: "7 min read",
+    accent: "#f97316",
   },
 ];
 
@@ -127,7 +143,7 @@ export default function Resources() {
             </div>
           </div>
           <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {BLOG_POSTS.map((p) => (
                 <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = p.accent; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 8px 28px ${p.accent}18`; }}

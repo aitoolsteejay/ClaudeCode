@@ -175,6 +175,27 @@ const CASE_STUDIES: CaseStudy[] = [
     excerpt: "A successful consulting founder was entirely dependent on word-of-mouth referrals. Growth was highly volatile month-to-month. We took over their LinkedIn presence and turned it into a predictable inbound engine.",
     services: ["Personal Branding", "LinkedIn Outreach"],
   },
+  {
+    slug: "ecommerce-conversion-playbook", tag: "eCommerce Tech · Seed", accent: "#10b981",
+    title: "Cold email added $400K pipeline for an eCommerce SaaS in 6 weeks",
+    stats: [{ v: "28", l: "Meetings booked" }, { v: "41%", l: "Open rate" }, { v: "$400K", l: "Pipeline generated" }],
+    excerpt: "An eCommerce SaaS tool had a strong product but no repeatable way to reach DTC brand owners. Manual outreach was inconsistent and burning the team. We built a targeted cold email engine that filled their calendar in 6 weeks.",
+    services: ["Cold Email Infrastructure", "AI Lead Generation", "ICP Mapping"],
+  },
+  {
+    slug: "founder-personal-brand-linkedin", tag: "B2B Founder · Bootstrapped", accent: "#f97316",
+    title: "Bootstrapped founder went from 0 to 22K followers and 8 inbound deals",
+    stats: [{ v: "22K", l: "LinkedIn followers" }, { v: "8", l: "Inbound deals" }, { v: "6.2%", l: "Engagement rate" }],
+    excerpt: "A bootstrapped B2B founder had expert-level knowledge but zero online presence. Word of mouth was maxed out. We built their personal brand from scratch on LinkedIn and turned their content into a consistent deal-flow engine.",
+    services: ["Personal Branding", "LinkedIn Outreach", "GTM Strategy"],
+  },
+  {
+    slug: "predictable-b2b-lead-gen-engine", tag: "Professional Services · Growth Stage", accent: "#ef4444",
+    title: "Built a full outbound engine that books 15+ meetings/month on autopilot",
+    stats: [{ v: "15+", l: "Meetings/month" }, { v: "29%", l: "Reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }],
+    excerpt: "A mid-size B2B services firm had tried outbound before and failed — bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
+    services: ["AI Lead Generation", "Cold Email Infrastructure", "Sales Intelligence"],
+  },
 ];
 
 // ── Page ───────────────────────────────────────────────────────────────────────
@@ -231,21 +252,6 @@ export default function CaseStudies() {
             </FadeIn>
           ))}
 
-          {/* Coming soon */}
-          <FadeIn delay={160}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { title: "eCommerce tech, conversion uplift", desc: "Cold email + AI lead gen for eCommerce SaaS client. Publishing soon." },
-                { title: "Bootstrapped founder GTM build", desc: "Full outbound engine built from zero for a bootstrapped founder. Publishing soon." },
-              ].map((c) => (
-                <div key={c.title} className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", opacity: 0.7 }}>
-                  <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "#EDE9E4", color: "#8C8279" }}>Coming Soon</span>
-                  <h2 className="text-xl font-black mb-2" style={{ color: "#3D3D3D" }}>{c.title}</h2>
-                  <p className="text-sm" style={{ color: "#8C8279" }}>{c.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
         </div>
       </section>
 

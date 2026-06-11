@@ -265,7 +265,7 @@ export default function CaseStudies() {
             <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Book a free 30-min audit.</h2>
             <p className="text-base mb-8" style={{ color: "#9ca3af" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://calendly.com/founder-myntmore/30-min" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
+              <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
               <Link href="/case-studies/saas-series-a" className="btn-ghost px-8 py-4 text-sm font-bold">Read SaaS case study</Link>
             </div>
           </div>

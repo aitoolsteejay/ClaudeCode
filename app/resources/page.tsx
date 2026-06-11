@@ -123,9 +123,7 @@ export default function Resources() {
               { label: "Case Studies", href: "#case-studies" },
               { label: "Newsletter", href: "#newsletter" },
             ].map((l) => (
-              <a key={l.href} href={l.href} className="text-sm font-bold px-5 py-2 rounded-full border transition-all duration-200" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#F5B731"; (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D"; }}>
+              <a key={l.href} href={l.href} className="text-sm font-bold px-5 py-2 rounded-full border transition-all duration-200 hover:border-yellow-400 hover:text-black" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}>
                 {l.label}
               </a>
             ))}
@@ -145,9 +143,7 @@ export default function Resources() {
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {BLOG_POSTS.map((p) => (
-                <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = p.accent; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 8px 28px ${p.accent}18`; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}>
+                <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="h-1" style={{ background: `linear-gradient(90deg,${p.accent},${p.accent}66)` }} />
                   <div className="p-6">
                     <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${p.accent}12`, color: p.accent }}>{p.tag}</span>
@@ -175,9 +171,7 @@ export default function Resources() {
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {FREE_TOOLS.map((t) => (
-                <a key={t.title} href={t.href} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#F5B731"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(245,183,49,0.12)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}>
+                <a key={t.title} href={t.href} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300 hover:border-yellow-400 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                   <div className="text-2xl mb-3">{t.icon}</div>
                   <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{t.title}</h3>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>{t.desc}</p>
@@ -204,9 +198,7 @@ export default function Resources() {
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {CASE_STUDIES.map((cs) => (
-                <Link key={cs.href} href={cs.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = cs.accent; (e.currentTarget as HTMLAnchorElement).style.boxShadow = `0 8px 28px ${cs.accent}18`; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}>
+                <Link key={cs.href} href={cs.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="h-1" style={{ background: `linear-gradient(90deg,${cs.accent},${cs.accent}66)` }} />
                   <div className="p-6">
                     <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${cs.accent}12`, color: cs.accent }}>{cs.tag}</span>

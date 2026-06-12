@@ -18,6 +18,7 @@ const NAV_LINKS = [
   { label: "Resources", href: "/resources", hasDropdown: false },
   { label: "About", href: "/about-us", hasDropdown: false },
   { label: "Careers", href: "/careers", hasDropdown: false },
+  { label: "Contact", href: "/contact-us", hasDropdown: false },
 ];
 
 export default function Navbar() {
@@ -106,12 +107,6 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/contact-us" className="text-sm font-medium transition-colors duration-200" style={{ color: "#3D3D3D" }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D"; }}
-            >
-              Contact
-            </Link>
             <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-1.5">
               Book a Call
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

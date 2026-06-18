@@ -91,23 +91,23 @@ export default function Resources() {
   return (
     <InnerLayout>
       {/* ── Hero ── */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#0f1629 50%,#0a0a0a 100%)" }}>
-        {/* Decorative blobs via CSS */}
-        <div aria-hidden style={{ position: "absolute", top: "30%", left: "10%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.18) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
-        <div aria-hidden style={{ position: "absolute", top: "60%", left: "80%", width: 400, height: 400, marginTop: -200, marginLeft: -200, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%)", filter: "blur(70px)", pointerEvents: "none" }} />
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+        {/* Decorative blobs */}
+        <div aria-hidden style={{ position: "absolute", top: "20%", left: "-5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.14) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
+        <div aria-hidden style={{ position: "absolute", top: "50%", left: "75%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%)", filter: "blur(70px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.08)" }}>
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#F5B731", boxShadow: "0 0 6px #F5B731" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F5B731" }}>Free Resources</span>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} />
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>Free Resources</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 text-white hero-fade-d1">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Learn the system.<br />
             <span style={{ color: "#F5B731" }}>Then let us run it.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#9ca3af" }}>
+          <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
             Free playbooks, AI tools, and real case studies for B2B founders who want predictable pipeline — built by the team that has booked 12K+ meetings.
           </p>
 
@@ -116,21 +116,21 @@ export default function Resources() {
               Read the Blog
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
-            <Link href="/resources/tools" className="px-7 py-3.5 text-sm font-bold inline-flex items-center gap-2 rounded-full border transition-all duration-200 hover:border-yellow-400 hover:text-white" style={{ borderColor: "rgba(255,255,255,0.2)", color: "#d1d5db" }}>
+            <Link href="/resources/tools" className="px-7 py-3.5 text-sm font-bold inline-flex items-center gap-2 rounded-full border transition-all duration-200 hover:border-yellow-400 hover:text-black" style={{ borderColor: "#E8E2D9", color: "#3D3D3D" }}>
               Try Free Tools
             </Link>
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-6 mt-16 pt-10 border-t hero-fade-d4" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+          <div className="grid grid-cols-3 gap-6 mt-16 pt-10 border-t hero-fade-d4" style={{ borderColor: "#E8E2D9" }}>
             {[
               { n: "12K+", label: "B2B meetings booked" },
               { n: "$120M+", label: "Pipeline generated" },
               { n: "5", label: "Free guides & tools" },
             ].map((s) => (
               <div key={s.n}>
-                <div className="text-3xl sm:text-4xl font-black text-white mb-1">{s.n}</div>
-                <div className="text-xs sm:text-sm" style={{ color: "#6b7280" }}>{s.label}</div>
+                <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.n}</div>
+                <div className="text-xs sm:text-sm" style={{ color: "#8C8279" }}>{s.label}</div>
               </div>
             ))}
           </div>

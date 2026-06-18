@@ -4,11 +4,11 @@ import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "B2B Growth Resources: Blogs, Tools & Case Studies | Myntmore",
-  description: "Free B2B lead generation resources from Myntmore — in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools and real client case studies.",
+  title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
+  description: "Free B2B lead generation resources from Myntmore — in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools for outreach.",
   alternates: { canonical: "https://myntmore.com/resources" },
   openGraph: {
-    title: "B2B Growth Resources: Blogs, Tools & Case Studies | Myntmore",
+    title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
     description: "Free playbooks, tools, and real client results for B2B founders who want predictable pipeline.",
     url: "https://myntmore.com/resources",
   },
@@ -52,30 +52,6 @@ const TOOLS_PREVIEW = [
     href: "https://mynt-more-angles.lovable.app",
     icon: "⚡",
     cta: "Generate angles",
-  },
-];
-
-const CASE_STUDIES_PREVIEW = [
-  {
-    href: "/case-studies/saas-series-a",
-    tag: "SaaS · Series A",
-    title: "40 qualified meetings in 8 weeks from a cold start",
-    stats: ["40 meetings", "34% reply rate", "$1.2M pipeline"],
-    accent: "#3b82f6",
-  },
-  {
-    href: "/case-studies/professional-services-linkedin",
-    tag: "Professional Services",
-    title: "LinkedIn brand drove 3x inbound in 90 days",
-    stats: ["3x inbound", "18K new followers", "4.8% engagement"],
-    accent: "#a855f7",
-  },
-  {
-    href: "/case-studies/ecommerce-conversion-playbook",
-    tag: "eCommerce Tech",
-    title: "Cold email added $400K pipeline in 6 weeks",
-    stats: ["28 meetings", "41% open rate", "$400K pipeline"],
-    accent: "#10b981",
   },
 ];
 
@@ -233,49 +209,6 @@ export default function Resources() {
 
             <div className="mt-6 sm:hidden text-center">
               <Link href="/resources/tools" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all tools →</Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── Case Studies ── */}
-      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: "#10b981", border: "1px solid rgba(16,185,129,0.2)" }}>Case Studies</span>
-                <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Real results. Real numbers.</h2>
-                <p className="text-sm mt-2" style={{ color: "#52525B" }}>Not projections. Actual outcomes from clients we've worked with.</p>
-              </div>
-              <Link href="/case-studies" className="text-sm font-bold hidden sm:inline-flex items-center gap-1 flex-shrink-0 ml-6" style={{ color: "#F5B731" }}>
-                View all 5 →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {CASE_STUDIES_PREVIEW.map((cs) => (
-                <Link key={cs.href} href={cs.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <div className="h-1.5" style={{ background: `linear-gradient(90deg,${cs.accent},${cs.accent}66)` }} />
-                  <div className="p-6">
-                    <span className="inline-flex text-xs font-bold px-2.5 py-1 rounded-full mb-3" style={{ backgroundColor: `${cs.accent}12`, color: cs.accent }}>{cs.tag}</span>
-                    <h3 className="text-sm font-black mb-4 leading-snug" style={{ color: "#0a0a0a" }}>{cs.title}</h3>
-                    <div className="space-y-1.5 mb-4">
-                      {cs.stats.map((s) => (
-                        <div key={s} className="flex items-center gap-2">
-                          <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke={cs.accent} strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                          <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>{s}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <span className="text-xs font-bold" style={{ color: cs.accent }}>Read case study →</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-6 sm:hidden text-center">
-              <Link href="/case-studies" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all case studies →</Link>
             </div>
           </FadeIn>
         </div>

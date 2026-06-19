@@ -18,7 +18,7 @@ const FREE_TOOLS = [
   {
     title: "LinkedIn Profile Optimizer",
     desc: "Audit and rewrite your LinkedIn profile to convert visitors into high-intent inbound replies. Paste your current profile and get a rewrite optimised for your ICP.",
-    href: "https://myntmore-linkedin-profile-optimizer.lovable.app",
+    href: "/tools/linkedin-optimizer",
     icon: "🔗",
     cta: "Optimize my profile",
   },

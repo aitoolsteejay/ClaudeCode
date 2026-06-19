@@ -6,11 +6,11 @@ const nextConfig = {
     return [
       {
         source: "/tools/linkedin-optimizer",
-        destination: "https://myntmore-linkedin-profile-optimizer.lovable.app",
+        destination: "https://profile-optimizer-steel.vercel.app",
       },
       {
         source: "/tools/linkedin-optimizer/:path*",
-        destination: "https://myntmore-linkedin-profile-optimizer.lovable.app/:path*",
+        destination: "https://profile-optimizer-steel.vercel.app/:path*",
       },
       {
         source: "/tools/dm-angle-generator",

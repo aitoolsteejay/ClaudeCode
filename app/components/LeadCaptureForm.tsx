@@ -38,17 +38,10 @@ export default function LeadCaptureForm({
             <input type="hidden" name="zf_redirect_url" value="" />
             <input type="hidden" name="zc_gad" value="" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>First Name <span style={{ color: "#F5B731" }}>*</span></label>
-                <input id="SingleLine" name="SingleLine" type="text" required maxLength={255}
-                  className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Tejas" />
-              </div>
-              <div>
-                <label htmlFor="SingleLine1" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Last Name <span style={{ color: "#F5B731" }}>*</span></label>
-                <input id="SingleLine1" name="SingleLine1" type="text" required maxLength={255}
-                  className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Jhaveri" />
-              </div>
+            <div>
+              <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name <span style={{ color: "#F5B731" }}>*</span></label>
+              <input id="SingleLine" name="SingleLine" type="text" required maxLength={255}
+                className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Tejas Jhaveri" />
             </div>
 
             <div>

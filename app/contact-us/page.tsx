@@ -60,15 +60,9 @@ export default function ContactUs() {
                   <input type="hidden" name="zf_referrer_name" value="" />
                   <input type="hidden" name="zf_redirect_url" value="" />
                   <input type="hidden" name="zc_gad" value="" />
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>First Name *</label>
-                      <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder="Tejas" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
-                    </div>
-                    <div>
-                      <label htmlFor="SingleLine1" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Last Name *</label>
-                      <input id="SingleLine1" name="SingleLine1" type="text" required maxLength={255} placeholder="Jhaveri" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
-                    </div>
+                  <div>
+                    <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name *</label>
+                    <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder="Tejas Jhaveri" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <div>
                     <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation *</label>

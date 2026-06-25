@@ -79,7 +79,7 @@ function Ticker({ value }: { value: string }) {
   return <span ref={ref}>{display}</span>;
 }
 
-function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [vis, setVis] = useState(false);
   useEffect(() => {
@@ -90,7 +90,7 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
     return () => io.disconnect();
   }, []);
   return (
-    <div ref={ref} style={{ opacity: vis ? 1 : 0, transform: vis ? "translateY(0)" : "translateY(28px)", transition: `opacity 0.7s ${delay}ms ease, transform 0.7s ${delay}ms ease` }}>
+    <div ref={ref} className={className} style={{ opacity: vis ? 1 : 0, transform: vis ? "translateY(0)" : "translateY(28px)", transition: `opacity 0.7s ${delay}ms ease, transform 0.7s ${delay}ms ease` }}>
       {children}
     </div>
   );
@@ -221,8 +221,8 @@ export default function Careers() {
       {/* Process + location */}
       <section className="py-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
-          <FadeIn>
-            <div className="lg:col-span-3 rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+          <FadeIn className="lg:col-span-3">
+            <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <h3 className="text-xl font-black mb-6" style={{ color: "#0a0a0a" }}>How we hire</h3>
               {[
                 { step: "01", title: "Apply", desc: "Send us your CV and a short note on why this role." },
@@ -240,8 +240,8 @@ export default function Careers() {
               ))}
             </div>
           </FadeIn>
-          <FadeIn delay={80}>
-            <div className="lg:col-span-2 space-y-6">
+          <FadeIn delay={80} className="lg:col-span-2">
+            <div className="space-y-6">
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Our office</h3>
                 <p className="text-sm" style={{ color: "#52525B" }}>
@@ -272,7 +272,7 @@ export default function Careers() {
             <p className="text-base mb-8" style={{ color: "#9ca3af" }}>Apply for an open role or send a cold email. We respect both.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:growth@myntmore.com" className="btn-dark px-8 py-4 text-sm font-bold">Email us directly</a>
-              <Link href="/contact-us" className="btn-ghost px-8 py-4 text-sm font-bold">Book a call instead</Link>
+              <Link href="/contact-us" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-white/10" style={{ borderColor: "rgba(255,255,255,0.3)", color: "#ffffff" }}>Book a call instead</Link>
             </div>
           </div>
         </section>

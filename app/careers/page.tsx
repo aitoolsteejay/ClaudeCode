@@ -272,7 +272,7 @@ export default function Careers() {
             <p className="text-base mb-8" style={{ color: "#9ca3af" }}>Apply for an open role or send a cold email. We respect both.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:growth@myntmore.com" className="btn-dark px-8 py-4 text-sm font-bold">Email us directly</a>
-              <Link href="/contact-us" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-white/10" style={{ borderColor: "rgba(255,255,255,0.3)", color: "#ffffff" }}>Book a call instead</Link>
+              <Link href="/contact-us" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200" style={{ borderColor: "rgba(255,255,255,0.35)", color: "#ffffff", backgroundColor: "transparent" }}>Book a call instead</Link>
             </div>
           </div>
         </section>

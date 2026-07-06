@@ -71,7 +71,7 @@ export default function BlogsPage() {
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.2)" }}>Blog</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            In-depth guides.<br />No fluff.
+            In-depth guides —<br />No fluff
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
             Practical B2B lead generation playbooks from the team that has booked 12K+ meetings and generated $120M+ in pipeline.

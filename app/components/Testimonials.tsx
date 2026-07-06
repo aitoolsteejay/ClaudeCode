@@ -271,7 +271,7 @@ export default function Testimonials() {
           >
             This is why clients
             <br />
-            <span style={{ color: "#F5B731" }}>love working with us.</span>
+            <span style={{ color: "#F5B731" }}>love working with us</span>
           </h2>
 
           {/* "yup, these are real" annotation */}

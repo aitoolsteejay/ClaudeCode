@@ -292,7 +292,7 @@ export default function SystemFlow() {
         <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border mb-3" style={{ color:"#F5B731", borderColor:"rgba(245,183,49,0.4)", background:"rgba(245,183,49,0.08)" }}>
           The Result
         </span>
-        <h3 className="text-xl sm:text-2xl font-black text-[#0a0a0a] mb-2">Mynt More Money.</h3>
+        <h3 className="text-xl sm:text-2xl font-black text-[#0a0a0a] mb-2">Mynt More Money</h3>
         <p className="text-[#52525B] text-sm max-w-lg mx-auto">
           Your team closes. Revenue compounds. Repeat the system, scale the results this is what a full-stack outbound engine looks like when it&rsquo;s firing on all cylinders.
         </p>
@@ -319,9 +319,9 @@ export default function SystemFlow() {
             The Myntmore System
           </span>
           <h2 id="system-heading" className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0a0a0a]">
-            From Zero to Pipeline.
+            From Zero to Pipeline
             <br />
-            <span style={{ color:"#F5B731" }}>Every Single Time.</span>
+            <span style={{ color:"#F5B731" }}>Every Single Time</span>
           </h2>
           <p className="mt-4 text-[#52525B] text-base sm:text-lg max-w-xl mx-auto">
             A repeatable 6-step system that turns cold lists into qualified meetings and closed revenue.

@@ -80,7 +80,7 @@ export default function Resources() {
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Learn the system.<br />
-            <span style={{ color: "#F5B731" }}>Then let us run it.</span>
+            <span style={{ color: "#F5B731" }}>Then let us run it</span>
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>

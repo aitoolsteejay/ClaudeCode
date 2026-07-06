@@ -43,7 +43,7 @@ export default function AboutUs() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            Built by a founder who figured outbound out the hard way.
+            Built by a founder who figured outbound out the hard way
           </h1>
           <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
             Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of lead generation experience and a track record of 300+ clients.

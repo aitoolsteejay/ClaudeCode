@@ -201,7 +201,7 @@ export default function Careers() {
           <FadeIn>
             <div className="mb-10">
               <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>How we work</span>
-              <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Built for builders.</h2>
+              <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Built for builders</h2>
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -268,7 +268,7 @@ export default function Careers() {
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Ready to build?
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Let&apos;s work together.</h2>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Let&apos;s work together</h2>
             <p className="text-base mb-8" style={{ color: "#9ca3af" }}>Apply for an open role or send a cold email. We respect both.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:growth@myntmore.com" className="btn-dark px-8 py-4 text-sm font-bold">Email us directly</a>

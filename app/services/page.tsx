@@ -41,7 +41,7 @@ export default function Services() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            Five systems.<br />One growth engine.
+            Five systems —<br />One growth engine
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl" style={{ color: "#52525B" }}>
             Every service is productized, scoped, and runs on proven infrastructure, not promises. We build the architecture, you close the deals.

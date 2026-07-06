@@ -307,7 +307,7 @@ export default function LinkedInOutreach() {
                 The Problem
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Manual LinkedIn is a full-time job.
+                Manual LinkedIn is a full-time job
               </h2>
               <div className="space-y-4">
                 {[
@@ -334,7 +334,7 @@ export default function LinkedInOutreach() {
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Automated sequences that feel human — and fill your calendar.
+                Automated sequences that feel human — and fill your calendar
               </h2>
               <div className="space-y-4">
                 {[

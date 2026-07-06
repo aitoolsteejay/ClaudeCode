@@ -259,7 +259,7 @@ export default function Services() {
           >
             Three Channels. One Goal.
             <br />
-            <span style={{ color: "#F5B731" }}>Meetings on Your Calendar.</span>
+            <span style={{ color: "#F5B731" }}>Meetings on Your Calendar</span>
           </h2>
           {/* Wavy gold underline */}
           <div className="flex justify-center -mt-1 mb-1" aria-hidden="true">

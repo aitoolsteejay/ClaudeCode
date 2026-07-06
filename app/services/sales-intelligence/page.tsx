@@ -314,7 +314,7 @@ export default function SalesIntelligence() {
                 The Problem
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Bought lists are cold names with no context.
+                Bought lists are cold names with no context
               </h2>
               <div className="space-y-4">
                 {[
@@ -341,7 +341,7 @@ export default function SalesIntelligence() {
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Signal-led lists — accounts ready to buy now.
+                Signal-led lists — accounts ready to buy now
               </h2>
               <div className="space-y-4">
                 {[

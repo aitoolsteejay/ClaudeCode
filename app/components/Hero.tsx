@@ -416,12 +416,12 @@ export default function Hero() {
 
         {/* H1 */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[0.95] mb-6 text-[#0a0a0a]">
-          <span className="block font-black">We Fill Your Pipeline.</span>
+          <span className="block font-black">We Fill Your Pipeline</span>
           <span
             ref={cycleRef}
             className="block mt-2 italic font-semibold"
             style={{ color: "#3a3a3a", willChange: "transform, opacity" }}
-          >You Close the Deals.</span>
+          >You Close the Deals</span>
         </h1>
 
         {/* Yellow wavy underline */}

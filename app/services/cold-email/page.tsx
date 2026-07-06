@@ -314,7 +314,7 @@ export default function ColdEmail() {
                 The Problem
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Most cold email goes straight to spam.
+                Most cold email goes straight to spam
               </h2>
               <div className="space-y-4">
                 {[
@@ -341,7 +341,7 @@ export default function ColdEmail() {
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                We build the infrastructure layer that keeps you in the primary inbox.
+                We build the infrastructure layer that keeps you in the primary inbox
               </h2>
               <div className="space-y-4">
                 {[

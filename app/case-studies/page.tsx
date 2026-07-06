@@ -214,7 +214,7 @@ export default function CaseStudies() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Results in the CRM,<br />
             <span className="relative inline-block">
-              not the deck.
+              not the deck
               <Underline />
             </span>
           </h1>
@@ -262,7 +262,7 @@ export default function CaseStudies() {
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Want results like these?
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Book a free 30-min audit.</h2>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Book a free 30-min audit</h2>
             <p className="text-base mb-8" style={{ color: "#9ca3af" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>

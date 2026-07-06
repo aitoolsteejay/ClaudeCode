@@ -45,7 +45,7 @@ export default function ToolsPage() {
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.1)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>Free Tools</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            AI tools —<br />Free to use
+            AI tools<br />Free to use
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
             Tools we have built to help B2B founders run smarter outreach. No sign-up, no credit card, no catch.

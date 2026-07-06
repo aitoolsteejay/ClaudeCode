@@ -28,7 +28,7 @@ export default function ContactUs() {
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Get in Touch</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            Stop guessing —<br />Start closing
+            Stop guessing<br />Start closing
           </h1>
           <p className="text-lg sm:text-xl max-w-xl mx-auto hero-fade-d2" style={{ color: "#52525B" }}>
             Book a 30-minute strategy call. We&apos;ll audit your outreach, map your ICP, and tell you exactly what&apos;s holding your pipeline back. No pitch, no pressure.

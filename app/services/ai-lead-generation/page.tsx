@@ -281,7 +281,7 @@ export default function AILeadGeneration() {
             </div>
             <div>
               <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.2)" }}>The Myntmore Way</span>
-              <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>AI agents handle the intelligence layer — your team handles the deals</h2>
+              <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>AI agents handle the intelligence layer, your team handles the deals</h2>
               <div className="space-y-4">
                 {["Custom agents research and enrich 1,000+ accounts per month","Real-time signals: funding news, hiring patterns, job posts","Every lead arrives with a full research summary attached","Scale output without scaling headcount"].map((p) => (
                   <div key={p} className="flex items-start gap-3">

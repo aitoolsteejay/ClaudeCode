@@ -81,6 +81,12 @@ const COMPANY_LINKS = [
   { label: "Contact", href: "/contact-us" },
 ];
 
+const ICP_LINKS = [
+  { label: "For Agencies & IT", href: "/lp/agencies-it" },
+  { label: "For Manufacturers & Exporters", href: "/lp/manufacturers-exporters" },
+  { label: "For B2B SaaS Founders", href: "/lp/saas-founders" },
+];
+
 export default function Footer() {
   const breathRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -105,7 +111,7 @@ export default function Footer() {
       <ParticleCanvas />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-14 border-b" style={{ borderColor: "#E8E2D9" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 py-14 border-b" style={{ borderColor: "#E8E2D9" }}>
 
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center mb-5" aria-label="Myntmore home">
@@ -154,6 +160,22 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>Company</h3>
             <ul className="space-y-3" role="list">
               {COMPANY_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>We Work With</h3>
+            <ul className="space-y-3" role="list">
+              {ICP_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}

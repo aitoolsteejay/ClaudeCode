@@ -23,6 +23,7 @@ export default function Hero() {
   const textLRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let animId: number;
     const start = performance.now();
 

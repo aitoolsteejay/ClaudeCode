@@ -158,6 +158,7 @@ export default function SystemFlow() {
 
   // ── Blob parallax animation ───────────────────────────────────────────────
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let animId: number;
     const start = performance.now();
     function animate() {

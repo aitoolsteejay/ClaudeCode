@@ -135,6 +135,7 @@ export default function ColdEmail() {
 
   /* Blob parallax — hero */
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
     const t0 = performance.now();
     function loop() {
@@ -156,6 +157,7 @@ export default function ColdEmail() {
 
   /* Blob parallax — CTA */
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
     const t0 = performance.now();
     function loop() {

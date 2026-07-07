@@ -8,6 +8,7 @@ export default function CTABanner() {
   const orangeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let animId: number;
     const startTime = performance.now();
 

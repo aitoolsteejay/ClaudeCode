@@ -9,6 +9,7 @@ function Blobs() {
   const b2 = useRef<HTMLDivElement>(null);
   const b3 = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let frame: number;
     const tick = (t: number) => {
       const s = t / 1000;

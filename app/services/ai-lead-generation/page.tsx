@@ -126,6 +126,7 @@ export default function AILeadGeneration() {
   const [statsTriggered, setStatsTriggered] = useState(false);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
     const t0 = performance.now();
     function loop() {
@@ -140,6 +141,7 @@ export default function AILeadGeneration() {
   }, []);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
     const t0 = performance.now();
     function loop() {

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
+import FlowDiagram from "../FlowDiagram";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -361,6 +362,28 @@ export default function ManufacturersExportersLP() {
       <HeroSection />
       <StatsSection />
       <PainSection />
+      <FlowDiagram
+        badge="Our system"
+        title={"From Indian factory to global buyer\nEvery single time"}
+        topSteps={[
+          { n: "01", icon: "🗺️", title: "Buyer Profile Mapping", body: "Define your target market: product category, buyer type (importer, distributor, OEM), country, and procurement structure.", color: "rgba(139,92,246,0.12)" },
+          { n: "02", icon: "🌍", title: "Global Prospect Database", body: "Hand-verified contacts of procurement heads, sourcing managers, and importers in your exact export markets. No outdated directories.", color: "rgba(59,130,246,0.12)" },
+          { n: "03", icon: "📄", title: "Localised Outreach Assets", body: "Capability decks, product brochures, and cold email copy tailored to each target market's tone and buying behaviour.", color: "rgba(245,183,49,0.15)" },
+        ]}
+        parallel={{
+          label: "Export Credibility Building",
+          items: [
+            { icon: "🏅", title: "Certifications Showcase", body: "ISO, quality, and compliance credentials positioned front and centre to build immediate buyer trust." },
+            { icon: "🤝", title: "Buyer Testimonials", body: "Social proof from existing international clients formatted for LinkedIn and outreach sequences." },
+            { icon: "📢", title: "LinkedIn Presence", body: "Consistent content targeting procurement and sourcing communities in your export markets." },
+          ],
+        }}
+        bottomSteps={[
+          { n: "04", icon: "✉️", title: "Launch International Outreach", body: "Cold email + LinkedIn sequences targeting procurement heads and importers globally with personalised messaging.", color: "rgba(239,68,68,0.12)" },
+          { n: "05", icon: "🔄", title: "Qualify & Follow Up", body: "Persistent follow-ups with product samples, spec sheets, and buyer testimonials until serious buyers respond.", color: "rgba(16,185,129,0.12)" },
+          { n: "06", icon: "🤝", title: "Book Buyer Meetings", body: "Qualified importers and distributors land in your calendar. Your team focuses on relationship-building and closing.", color: "rgba(245,183,49,0.15)" },
+        ]}
+      />
       <ProcessSection />
       <CaseStudiesSection />
       <DarkCTASection />

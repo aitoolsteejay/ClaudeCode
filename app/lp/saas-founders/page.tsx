@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
+import FlowDiagram from "../FlowDiagram";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -360,6 +361,28 @@ export default function SaasFoundersLP() {
       <HeroSection />
       <StatsSection />
       <PainSection />
+      <FlowDiagram
+        badge="Our system"
+        title={"From cold list to full demo calendar\nEvery single time"}
+        topSteps={[
+          { n: "01", icon: "🎯", title: "ICP & Signal Mapping", body: "Define your exact buyer: title, company stage, tech stack, and the trigger signals that mean they are ready to buy right now.", color: "rgba(139,92,246,0.12)" },
+          { n: "02", icon: "⚡", title: "Signal-Based Prospect Lists", body: "Prospects filtered by funding rounds, hiring sprees, leadership changes, and tool adoption — not just job titles.", color: "rgba(59,130,246,0.12)" },
+          { n: "03", icon: "📝", title: "Demo Assets & Sequences", body: "Cold email copy, LinkedIn scripts, ROI frameworks, and objection handling prep built around your product's core value.", color: "rgba(245,183,49,0.15)" },
+        ]}
+        parallel={{
+          label: "Founder LinkedIn Brand Building",
+          items: [
+            { icon: "💡", title: "Thought Leadership", body: "Product insights, industry takes, and ICP-facing content that warms prospects before your cold email lands." },
+            { icon: "📊", title: "Social Proof Posts", body: "Customer wins, product milestones, and use-case content that builds credibility with your exact buyer." },
+            { icon: "🔗", title: "Profile Optimisation", body: "Headline and about section written to convert profile visitors from your ICP into inbound conversations." },
+          ],
+        }}
+        bottomSteps={[
+          { n: "04", icon: "🚀", title: "Launch Outbound Sequences", body: "Multi-touch cold email + LinkedIn sequences go live with personalised copy based on each prospect's buying signals.", color: "rgba(239,68,68,0.12)" },
+          { n: "05", icon: "🔄", title: "Nurture & Follow Up", body: "Persistent follow-ups sharing product demos, case studies, and ROI data until qualified prospects respond.", color: "rgba(16,185,129,0.12)" },
+          { n: "06", icon: "📅", title: "Book Qualified Demos", body: "Only ICP-fit prospects with real pain and buying authority hit your AE calendar. You demo and close.", color: "rgba(245,183,49,0.15)" },
+        ]}
+      />
       <ProcessSection />
       <CaseStudiesSection />
       <DarkCTASection />

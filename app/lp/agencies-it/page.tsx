@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LpLayout from "../LpLayout";
+import FlowDiagram from "../FlowDiagram";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -384,6 +385,28 @@ export default function AgenciesItLP() {
       <HeroSection />
       <StatsSection />
       <PainSection />
+      <FlowDiagram
+        badge="Our system"
+        title={"From cold list to retainer client\nEvery single time"}
+        topSteps={[
+          { n: "01", icon: "🎯", title: "ICP & Agency Strategy", body: "Define your ideal client: industry vertical, team size, retainer budget, and the exact pain point your agency solves best.", color: "rgba(139,92,246,0.12)" },
+          { n: "02", icon: "👥", title: "Build & Enrich Lists", body: "Scrape verified decision-makers — Founders, CMOs, Heads of Marketing — from LinkedIn and Apollo, enriched with intent signals.", color: "rgba(59,130,246,0.12)" },
+          { n: "03", icon: "📦", title: "Prepare Outreach Assets", body: "Case studies, cold email sequences, and LinkedIn content tailored to your ICP's pain points and buying triggers.", color: "rgba(245,183,49,0.15)" },
+        ]}
+        parallel={{
+          label: "Agency LinkedIn Brand Building",
+          items: [
+            { icon: "🔗", title: "Profile Optimisation", body: "Headline, banner, about section, and featured posts crafted to build instant credibility with your ICP." },
+            { icon: "✍️", title: "Content Creation", body: "Regular posts, carousels, and insights that warm up your target audience before outreach even starts." },
+            { icon: "🏆", title: "Thought Leadership", body: "Position you as the go-to expert so prospects already trust you when your cold email lands." },
+          ],
+        }}
+        bottomSteps={[
+          { n: "04", icon: "🚀", title: "Launch Cold Outreach", body: "Cold email and LinkedIn sequences go live targeting agency buyers with full deliverability infrastructure.", color: "rgba(239,68,68,0.12)" },
+          { n: "05", icon: "🔄", title: "Follow Up & Nurture", body: "Persistent multi-touch follow-ups sharing case studies, social proof, and insights until they reply.", color: "rgba(16,185,129,0.12)" },
+          { n: "06", icon: "📅", title: "Book Retainer Calls", body: "Warm replies convert into qualified calls. Every meeting comes with full context so you can close faster.", color: "rgba(245,183,49,0.15)" },
+        ]}
+      />
       <ProcessSection />
       <CaseStudiesSection />
       <DarkCTASection />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
@@ -181,7 +181,7 @@ const CATEGORIES = [
 
 /* ─── HOOKS ─────────────────────────────────────────────────────────── */
 function useInView(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -255,7 +255,7 @@ function CategoryOverviewCard({ cat, index, active, onClick }: {
   const [hovered, setHovered] = useState(false);
   return (
     <button
-      ref={ref}
+      ref={ref as unknown as React.RefObject<HTMLButtonElement>}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -284,7 +284,7 @@ function ToolRow({ tool, index, globalNum, accent, color }: {
   const [hovered, setHovered] = useState(false);
   return (
     <tr
-      ref={ref as unknown as React.LegacyRef<HTMLTableRowElement>}
+      ref={ref as unknown as React.RefObject<HTMLTableRowElement>}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{

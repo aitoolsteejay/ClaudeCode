@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 const CATEGORIES = [
@@ -417,7 +418,7 @@ export default function GIATechStackPage() {
         {/* ── Nav ── */}
         <nav className="no-print sticky top-0 z-50 border-b px-6 py-4 flex items-center justify-between"
           style={{ backgroundColor: "rgba(248,246,242,0.96)", backdropFilter: "blur(16px)", borderColor: "#E8E2D9" }}>
-          <a href="/" className="font-black text-lg tracking-tight" style={{ color: "#0a0a0a" }}>myntmore</a>
+          <a href="/"><Image src="/logo.png" alt="Myntmore" width={130} height={36} className="h-9 w-auto object-contain" /></a>
           <div className="flex items-center gap-3">
             <span className="hidden sm:block text-xs font-semibold" style={{ color: "#B8B0A7" }}>GIA India Workshop</span>
             <button

@@ -1,15 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
+/* ─── DATA ─────────────────────────────────────────────────────────── */
 const CATEGORIES = [
   {
-    id: "linkedin",
-    icon: "💼",
-    color: "#DBEAFE",
-    accent: "#2563EB",
+    id: "linkedin", icon: "💼", color: "#DBEAFE", accent: "#2563EB", textAccent: "#1E40AF",
     title: "LinkedIn & Personal Branding",
-    count: 12,
     tools: [
       { name: "LinkedIn", what: "Core profile and content platform", free: "Free" },
       { name: "Taplio", what: "AI LinkedIn post scheduler and analytics", free: "Paid" },
@@ -26,15 +23,11 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "website",
-    icon: "🌐",
-    color: "#D1FAE5",
-    accent: "#059669",
+    id: "website", icon: "🌐", color: "#D1FAE5", accent: "#059669", textAccent: "#065F46",
     title: "AI Website Building",
-    count: 10,
     tools: [
       { name: "Framer", what: "AI website builder, best for personal brands", free: "Free/Paid" },
-      { name: "Wegic", what: "Chat-based AI website builder, very beginner-friendly", free: "Free/Paid" },
+      { name: "Wegic", what: "Chat-based AI website builder, beginner-friendly", free: "Free/Paid" },
       { name: "Durable", what: "Instant AI website for small businesses", free: "Free/Paid" },
       { name: "Wix ADI", what: "AI-assisted website creation", free: "Free/Paid" },
       { name: "Squarespace", what: "Clean portfolio and brand websites", free: "Paid" },
@@ -46,12 +39,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "image",
-    icon: "🎨",
-    color: "#FCE7F3",
-    accent: "#DB2777",
+    id: "image", icon: "🎨", color: "#FCE7F3", accent: "#DB2777", textAccent: "#9D174D",
     title: "AI Image & Visual Creation",
-    count: 14,
     tools: [
       { name: "Gemini", what: "AI image generation (covered in workshop)", free: "Free" },
       { name: "Midjourney", what: "Best quality AI jewellery and product images", free: "Paid" },
@@ -70,12 +59,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "content",
-    icon: "✍️",
-    color: "#FEF3C7",
-    accent: "#D97706",
+    id: "content", icon: "✍️", color: "#FEF3C7", accent: "#D97706", textAccent: "#92400E",
     title: "Content Creation & Copywriting",
-    count: 12,
     tools: [
       { name: "Claude", what: "Long-form writing, emails, strategy", free: "Free/Paid" },
       { name: "ChatGPT", what: "Versatile content generation", free: "Free/Paid" },
@@ -92,12 +77,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "video",
-    icon: "🎬",
-    color: "#EDE9FE",
-    accent: "#7C3AED",
+    id: "video", icon: "🎬", color: "#EDE9FE", accent: "#7C3AED", textAccent: "#4C1D95",
     title: "Video Content & Reels",
-    count: 10,
     tools: [
       { name: "CapCut", what: "Easy reels and short video editing", free: "Free" },
       { name: "InShot", what: "Mobile video editor for social content", free: "Free/Paid" },
@@ -112,12 +93,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "email",
-    icon: "📧",
-    color: "#CCFBF1",
-    accent: "#0D9488",
+    id: "email", icon: "📧", color: "#CCFBF1", accent: "#0D9488", textAccent: "#134E4A",
     title: "Email Marketing & Outreach",
-    count: 10,
     tools: [
       { name: "Mailchimp", what: "Email newsletters and campaigns", free: "Free/Paid" },
       { name: "Brevo (Sendinblue)", what: "Email + SMS marketing", free: "Free/Paid" },
@@ -132,12 +109,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "crm",
-    icon: "🗂️",
-    color: "#FEE2E2",
-    accent: "#DC2626",
+    id: "crm", icon: "🗂️", color: "#FEE2E2", accent: "#DC2626", textAccent: "#7F1D1D",
     title: "CRM & Lead Management",
-    count: 8,
     tools: [
       { name: "Zoho CRM", what: "Full CRM for managing leads and clients", free: "Free/Paid" },
       { name: "HubSpot CRM", what: "Beginner-friendly free CRM", free: "Free/Paid" },
@@ -150,12 +123,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "social",
-    icon: "📱",
-    color: "#FFF7ED",
-    accent: "#EA580C",
+    id: "social", icon: "📱", color: "#FFF7ED", accent: "#EA580C", textAccent: "#7C2D12",
     title: "Social Media Management",
-    count: 8,
     tools: [
       { name: "Buffer", what: "Schedule posts across platforms", free: "Free/Paid" },
       { name: "Later", what: "Visual content calendar for Instagram", free: "Free/Paid" },
@@ -168,12 +137,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "seo",
-    icon: "🔍",
-    color: "#F0FDF4",
-    accent: "#16A34A",
+    id: "seo", icon: "🔍", color: "#ECFDF5", accent: "#16A34A", textAccent: "#14532D",
     title: "SEO & Digital Presence",
-    count: 8,
     tools: [
       { name: "Google Business Profile", what: "Local SEO for jewellery stores", free: "Free" },
       { name: "Ubersuggest", what: "Keyword research and SEO audit", free: "Free/Paid" },
@@ -186,12 +151,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "research",
-    icon: "🧠",
-    color: "#F5F3FF",
-    accent: "#6D28D9",
+    id: "research", icon: "🧠", color: "#F5F3FF", accent: "#6D28D9", textAccent: "#3B0764",
     title: "AI Research & Strategy",
-    count: 6,
     tools: [
       { name: "Perplexity", what: "AI search for market research", free: "Free/Paid" },
       { name: "Claude", what: "ICP building, strategy, proposals", free: "Free/Paid" },
@@ -202,12 +163,8 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "productivity",
-    icon: "⚡",
-    color: "#FFFBEB",
-    accent: "#B45309",
+    id: "productivity", icon: "⚡", color: "#FFFBEB", accent: "#B45309", textAccent: "#78350F",
     title: "Productivity & Organisation",
-    count: 8,
     tools: [
       { name: "Notion", what: "All-in-one workspace for notes, CRM, content", free: "Free/Paid" },
       { name: "ClickUp", what: "Project management and task tracking", free: "Free/Paid" },
@@ -221,116 +178,224 @@ const CATEGORIES = [
   },
 ];
 
-function useFadeUp(delay = 0) {
+/* ─── HOOKS ─────────────────────────────────────────────────────────── */
+function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    el.style.opacity = "0";
-    el.style.transform = "translateY(28px)";
     const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        setTimeout(() => {
-          el.style.transition = "opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1)";
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-        }, delay);
-        obs.disconnect();
-      }
-    }, { threshold: 0.08 });
+      if (e.isIntersecting) { setInView(true); obs.disconnect(); }
+    }, { threshold });
     obs.observe(el);
     return () => obs.disconnect();
-  }, [delay]);
-  return ref;
+  }, [threshold]);
+  return { ref, inView };
 }
 
+function useCountUp(target: number, inView: boolean, duration = 1200) {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    let start: number | null = null;
+    const step = (ts: number) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setVal(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [inView, target, duration]);
+  return val;
+}
+
+/* ─── COMPONENTS ────────────────────────────────────────────────────── */
 function FreeBadge({ type }: { type: string }) {
-  if (type === "Free") return (
-    <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ backgroundColor: "#D1FAE5", color: "#065F46" }}>Free</span>
-  );
-  if (type === "Paid") return (
-    <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ backgroundColor: "#FEE2E2", color: "#991B1B" }}>Paid</span>
-  );
+  const styles: Record<string, { bg: string; color: string; label: string }> = {
+    Free: { bg: "#D1FAE5", color: "#065F46", label: "Free" },
+    Paid: { bg: "#FEE2E2", color: "#991B1B", label: "Paid" },
+    "Free/Paid": { bg: "#FEF3C7", color: "#92400E", label: "Free/Paid" },
+  };
+  const s = styles[type] || styles["Free/Paid"];
   return (
-    <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ backgroundColor: "#FEF3C7", color: "#92400E" }}>Free/Paid</span>
+    <span className="px-2.5 py-1 rounded-full text-xs font-bold whitespace-nowrap" style={{ backgroundColor: s.bg, color: s.color }}>
+      {s.label}
+    </span>
   );
 }
 
-function CategorySection({ cat, index, search }: { cat: typeof CATEGORIES[0]; index: number; search: string }) {
-  const ref = useFadeUp(index * 40);
-  const filtered = cat.tools.filter(t =>
-    !search || t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase())
+function StatCard({ n, label, color, bg, delay }: { n: number; label: string; color: string; bg: string; delay: number }) {
+  const { ref, inView } = useInView(0.2);
+  const val = useCountUp(n, inView);
+  return (
+    <div
+      ref={ref}
+      className="rounded-2xl p-6 border flex flex-col gap-1"
+      style={{
+        backgroundColor: bg,
+        borderColor: "#E8E2D9",
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0) scale(1)" : "translateY(20px) scale(0.95)",
+        transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${delay}ms, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${delay}ms`,
+      }}
+    >
+      <div className="text-4xl font-black tabular-nums" style={{ color }}>{val}+</div>
+      <div className="text-xs font-semibold" style={{ color: "#8C8279" }}>{label}</div>
+    </div>
   );
+}
+
+function CategoryOverviewCard({ cat, index, active, onClick }: {
+  cat: typeof CATEGORIES[0]; index: number; active: boolean; onClick: () => void;
+}) {
+  const { ref, inView } = useInView(0.1);
+  const [hovered, setHovered] = useState(false);
+  return (
+    <button
+      ref={ref}
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="text-left rounded-2xl p-4 border transition-all"
+      style={{
+        backgroundColor: active ? cat.accent : hovered ? cat.color : "#ffffff",
+        borderColor: active ? cat.accent : hovered ? cat.accent + "66" : "#E8E2D9",
+        boxShadow: active ? `0 8px 24px ${cat.accent}33` : hovered ? `0 4px 12px ${cat.accent}22` : "none",
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0) scale(1)" : "translateY(16px) scale(0.96)",
+        transition: `opacity 0.5s cubic-bezier(0.22,1,0.36,1) ${index * 35}ms, transform 0.5s cubic-bezier(0.22,1,0.36,1) ${index * 35}ms, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease`,
+      }}
+    >
+      <div className="text-2xl mb-2" style={{ display: "inline-block", transform: hovered || active ? "scale(1.15)" : "scale(1)", transition: "transform 0.2s cubic-bezier(0.34,1.56,0.64,1)" }}>{cat.icon}</div>
+      <div className="text-xs font-black leading-tight mb-1" style={{ color: active ? "#ffffff" : "#0a0a0a" }}>{cat.title}</div>
+      <div className="text-xs font-bold" style={{ color: active ? "rgba(255,255,255,0.7)" : "#B8B0A7" }}>{cat.tools.length} tools</div>
+    </button>
+  );
+}
+
+function ToolRow({ tool, index, globalNum, accent, color }: {
+  tool: { name: string; what: string; free: string };
+  index: number; globalNum: number; accent: string; color: string;
+}) {
+  const { ref, inView } = useInView(0.05);
+  const [hovered, setHovered] = useState(false);
+  return (
+    <tr
+      ref={ref as unknown as React.LegacyRef<HTMLTableRowElement>}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        borderBottom: "1px solid #F8F6F2",
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateX(0)" : "translateX(-16px)",
+        transition: `opacity 0.45s ease ${index * 30}ms, transform 0.45s cubic-bezier(0.22,1,0.36,1) ${index * 30}ms`,
+        backgroundColor: hovered ? color + "55" : "transparent",
+      }}
+    >
+      <td className="px-6 py-3.5 text-xs font-black w-10" style={{ color: "#D0C9BF" }}>{globalNum}</td>
+      <td className="px-4 py-3.5 font-black text-sm" style={{ color: hovered ? accent : "#0a0a0a", whiteSpace: "nowrap", transition: "color 0.15s ease" }}>{tool.name}</td>
+      <td className="px-4 py-3.5 text-sm leading-relaxed" style={{ color: "#52525B" }}>{tool.what}</td>
+      <td className="px-4 py-3.5"><FreeBadge type={tool.free} /></td>
+    </tr>
+  );
+}
+
+function CategorySection({ cat, globalStart, search }: {
+  cat: typeof CATEGORIES[0]; globalStart: number; search: string;
+}) {
+  const { ref, inView } = useInView(0.05);
+  const [open, setOpen] = useState(true);
+  const filtered = search
+    ? cat.tools.filter(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase()))
+    : cat.tools;
+
   if (search && filtered.length === 0) return null;
 
-  let counter = 1;
-  CATEGORIES.slice(0, index).forEach(c => { counter += c.tools.length; });
-
   return (
-    <div ref={ref} className="rounded-2xl overflow-hidden border" style={{ borderColor: "#E8E2D9" }}>
-      {/* Category header */}
-      <div className="px-6 py-5 flex items-center gap-4" style={{ backgroundColor: cat.color }}>
-        <span className="text-2xl">{cat.icon}</span>
-        <div className="flex-1">
-          <h2 className="font-black text-lg" style={{ color: "#0a0a0a" }}>{cat.title}</h2>
+    <div
+      ref={ref}
+      className="rounded-2xl overflow-hidden border"
+      style={{
+        borderColor: "#E8E2D9",
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(24px)",
+        transition: "opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      {/* Header */}
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full px-6 py-5 flex items-center gap-4 text-left transition-opacity hover:opacity-90"
+        style={{ backgroundColor: cat.color }}
+      >
+        <span className="text-2xl flex-shrink-0">{cat.icon}</span>
+        <div className="flex-1 min-w-0">
+          <h2 className="font-black text-base sm:text-lg" style={{ color: "#0a0a0a" }}>{cat.title}</h2>
+          {search && <p className="text-xs mt-0.5" style={{ color: cat.textAccent }}>{filtered.length} of {cat.tools.length} match</p>}
         </div>
-        <span className="text-xs font-black px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(0,0,0,0.08)", color: "#0a0a0a" }}>
+        <span className="text-xs font-black px-3 py-1 rounded-full flex-shrink-0" style={{ backgroundColor: "rgba(0,0,0,0.1)", color: "#0a0a0a" }}>
           {cat.tools.length} tools
         </span>
-      </div>
+        <svg
+          width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={cat.textAccent} strokeWidth="2.5" strokeLinecap="round"
+          style={{ flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
+        >
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
 
       {/* Table */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
-          <thead>
-            <tr style={{ borderBottom: "1px solid #F0EBE3" }}>
-              <th className="text-left px-6 py-3 text-xs font-black uppercase tracking-widest w-8" style={{ color: "#B8B0A7" }}>#</th>
-              <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Tool</th>
-              <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>What it does</th>
-              <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Pricing</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((tool, i) => {
-              const globalNum = counter + cat.tools.indexOf(tool);
-              return (
-                <tr
+      <div style={{ maxHeight: open ? "9999px" : "0", overflow: "hidden", transition: "max-height 0.4s cubic-bezier(0.22,1,0.36,1)" }}>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
+            <thead>
+              <tr style={{ borderBottom: "1px solid #F0EBE3" }}>
+                <th className="text-left px-6 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>#</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Tool</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>What it does</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Pricing</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map((tool, i) => (
+                <ToolRow
                   key={tool.name}
-                  style={{
-                    borderBottom: i < filtered.length - 1 ? "1px solid #F8F6F2" : "none",
-                    transition: "background-color 0.15s ease",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = cat.color + "55")}
-                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = "")}
-                >
-                  <td className="px-6 py-3.5 text-xs font-black" style={{ color: "#D0C9BF" }}>{globalNum}</td>
-                  <td className="px-4 py-3.5 font-black" style={{ color: "#0a0a0a", whiteSpace: "nowrap" }}>{tool.name}</td>
-                  <td className="px-4 py-3.5 leading-relaxed" style={{ color: "#52525B" }}>{tool.what}</td>
-                  <td className="px-4 py-3.5"><FreeBadge type={tool.free} /></td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  tool={tool}
+                  index={i}
+                  globalNum={globalStart + cat.tools.indexOf(tool)}
+                  accent={cat.accent}
+                  color={cat.color}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
 }
 
+/* ─── PAGE ───────────────────────────────────────────────────────────── */
 export default function GIATechStackPage() {
   const [search, setSearch] = useState<string>("");
   const [activeFilter, setActiveFilter] = useState("all");
-  const heroRef = useFadeUp(0);
-  const statsRef = useFadeUp(100);
+  const { ref: heroRef, inView: heroIn } = useInView(0.1);
+  const { ref: overviewRef, inView: overviewIn } = useInView(0.05);
 
   const totalFree = CATEGORIES.flatMap(c => c.tools).filter(t => t.free === "Free").length;
   const totalFreePaid = CATEGORIES.flatMap(c => c.tools).filter(t => t.free === "Free/Paid").length;
 
-  const handlePrint = () => window.print();
-
   const visibleCats: typeof CATEGORIES = activeFilter === "all"
     ? CATEGORIES
     : CATEGORIES.filter(c => c.id === activeFilter);
+
+  const getGlobalStart = useCallback((catIndex: number) => {
+    let n = 1;
+    CATEGORIES.slice(0, catIndex).forEach(c => { n += c.tools.length; });
+    return n;
+  }, []);
 
   return (
     <>
@@ -338,129 +403,182 @@ export default function GIATechStackPage() {
         @media print {
           .no-print { display: none !important; }
           body { background: white !important; }
-          .print-page { padding: 0 !important; }
           * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
-        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+        @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes pulseGlow { 0%,100%{box-shadow:0 0 0 0 rgba(245,183,49,0)} 50%{box-shadow:0 0 0 8px rgba(245,183,49,0.12)} }
+        .search-input:focus { border-color: #D97706 !important; box-shadow: 0 0 0 3px rgba(245,183,49,0.15) !important; outline: none; }
       `}</style>
 
-      <div className="min-h-screen print-page" style={{ backgroundColor: "#F8F6F2", fontFamily: "inherit" }}>
+      <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
 
-        {/* Nav */}
-        <nav className="no-print sticky top-0 z-50 border-b px-6 py-4 flex items-center justify-between" style={{ backgroundColor: "rgba(248,246,242,0.95)", backdropFilter: "blur(12px)", borderColor: "#E8E2D9" }}>
-          <a href="/" className="font-black text-lg" style={{ color: "#0a0a0a" }}>myntmore</a>
-          <button
-            onClick={handlePrint}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm transition-all hover:scale-105"
-            style={{ backgroundColor: "#0a0a0a", color: "#ffffff" }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download PDF
-          </button>
+        {/* ── Nav ── */}
+        <nav className="no-print sticky top-0 z-50 border-b px-6 py-4 flex items-center justify-between"
+          style={{ backgroundColor: "rgba(248,246,242,0.96)", backdropFilter: "blur(16px)", borderColor: "#E8E2D9" }}>
+          <a href="/" className="font-black text-lg tracking-tight" style={{ color: "#0a0a0a" }}>myntmore</a>
+          <div className="flex items-center gap-3">
+            <span className="hidden sm:block text-xs font-semibold" style={{ color: "#B8B0A7" }}>GIA India Workshop</span>
+            <button
+              onClick={() => window.print()}
+              className="no-print flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm"
+              style={{ backgroundColor: "#0a0a0a", color: "#ffffff", transition: "transform 0.15s ease, box-shadow 0.15s ease", animation: "pulseGlow 3s ease-in-out infinite" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.04)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download PDF
+            </button>
+          </div>
         </nav>
 
-        {/* Hero */}
-        <div className="px-6 pt-16 pb-10 max-w-5xl mx-auto">
-          <div ref={heroRef}>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
-              <span style={{ animation: "float 2s ease-in-out infinite", display: "inline-block" }}>💎</span>
-              GIA India Workshop
-            </div>
-            <h1 className="text-5xl sm:text-6xl font-black leading-tight mb-4" style={{ color: "#0a0a0a" }}>
-              AI Marketing<br />
-              <span style={{
-                background: "linear-gradient(90deg, #D97706, #F5B731, #D97706)",
-                backgroundSize: "200% auto",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                animation: "shimmer 3s linear infinite",
-              }}>Tech Stack</span>
-            </h1>
-            <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#52525B" }}>
-              106 tools organised by use case — for jewellery brand owners and retailers ready to grow with AI.
-            </p>
+        {/* ── Hero ── */}
+        <div
+          ref={heroRef}
+          className="px-6 pt-20 pb-12 max-w-5xl mx-auto"
+          style={{ opacity: heroIn ? 1 : 0, transform: heroIn ? "translateY(0)" : "translateY(28px)", transition: "opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)" }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8"
+            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span style={{ animation: "float 2.2s ease-in-out infinite", display: "inline-block" }}>💎</span>
+            GIA India Workshop · Jewellery Brand Owners
           </div>
 
-          {/* Stats */}
-          <div ref={statsRef} className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
-            {[
-              { n: "106", label: "Total Tools", color: "#0a0a0a", bg: "#ffffff" },
-              { n: "11", label: "Categories", color: "#D97706", bg: "#FEF9EC" },
-              { n: `${totalFree + totalFreePaid}`, label: "Free or Freemium", color: "#059669", bg: "#D1FAE5" },
-              { n: "1", label: "Workshop", color: "#7C3AED", bg: "#EDE9FE" },
-            ].map(s => (
-              <div key={s.label} className="rounded-2xl p-5 border" style={{ backgroundColor: s.bg, borderColor: "#E8E2D9" }}>
-                <div className="text-3xl font-black mb-1" style={{ color: s.color }}>{s.n}</div>
-                <div className="text-xs font-semibold" style={{ color: "#8C8279" }}>{s.label}</div>
-              </div>
+          <h1 className="text-5xl sm:text-7xl font-black leading-none mb-6 tracking-tight" style={{ color: "#0a0a0a" }}>
+            AI Marketing<br />
+            <span style={{
+              background: "linear-gradient(90deg, #B45309, #F5B731, #D97706, #F5B731, #B45309)",
+              backgroundSize: "300% auto",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              animation: "shimmer 4s linear infinite",
+            }}>Tech Stack</span>
+          </h1>
+
+          <p className="text-xl leading-relaxed max-w-2xl mb-12" style={{ color: "#52525B" }}>
+            106 tools, 11 categories — curated for jewellery brand owners and retailers ready to grow with AI. From beginner to advanced.
+          </p>
+
+          {/* Stats row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <StatCard n={106} label="Total Tools" color="#0a0a0a" bg="#ffffff" delay={0} />
+            <StatCard n={11} label="Categories" color="#D97706" bg="#FEF9EC" delay={80} />
+            <StatCard n={totalFree + totalFreePaid} label="Free or Freemium" color="#059669" bg="#D1FAE5" delay={160} />
+            <StatCard n={1} label="Power-packed Workshop" color="#7C3AED" bg="#EDE9FE" delay={240} />
+          </div>
+        </div>
+
+        {/* ── Category overview grid ── */}
+        <div ref={overviewRef} className="no-print px-6 pb-8 max-w-5xl mx-auto">
+          <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: "#B8B0A7", opacity: overviewIn ? 1 : 0, transition: "opacity 0.5s ease 0.1s" }}>Browse by category</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            <button
+              onClick={() => setActiveFilter("all")}
+              className="text-left rounded-2xl p-4 border transition-all"
+              style={{
+                backgroundColor: activeFilter === "all" ? "#0a0a0a" : "#ffffff",
+                borderColor: activeFilter === "all" ? "#0a0a0a" : "#E8E2D9",
+                color: activeFilter === "all" ? "#ffffff" : "#0a0a0a",
+                opacity: overviewIn ? 1 : 0,
+                transform: overviewIn ? "translateY(0)" : "translateY(16px)",
+                transition: "opacity 0.5s ease 0s, transform 0.5s ease 0s, background-color 0.2s, border-color 0.2s",
+              }}
+            >
+              <div className="text-2xl mb-2">🗂</div>
+              <div className="text-xs font-black">All Categories</div>
+              <div className="text-xs font-bold mt-0.5" style={{ color: activeFilter === "all" ? "rgba(255,255,255,0.6)" : "#B8B0A7" }}>106 tools</div>
+            </button>
+            {CATEGORIES.map((cat, i) => (
+              <CategoryOverviewCard
+                key={cat.id}
+                cat={cat}
+                index={i + 1}
+                active={activeFilter === cat.id}
+                onClick={() => setActiveFilter(activeFilter === cat.id ? "all" : cat.id)}
+              />
             ))}
           </div>
         </div>
 
-        {/* Controls */}
+        {/* ── Search ── */}
         <div className="no-print px-6 pb-8 max-w-5xl mx-auto">
-          <div className="flex flex-col sm:flex-row gap-4">
-            {/* Search */}
-            <div className="relative flex-1">
-              <svg className="absolute left-4 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8B0A7" strokeWidth="2.5" strokeLinecap="round">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-              <input
-                type="text"
-                placeholder="Search tools..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-xl border text-sm font-medium outline-none"
-                style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }}
-              />
-            </div>
-            {/* Filter */}
-            <div className="flex gap-2 flex-wrap">
+          <div className="relative">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8B0A7" strokeWidth="2.5" strokeLinecap="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="text"
+              placeholder="Search 106 tools by name or what they do…"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              className="search-input w-full pl-12 pr-12 py-4 rounded-2xl border text-sm font-medium"
+              style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a", transition: "border-color 0.2s, box-shadow 0.2s" }}
+            />
+            {search && (
               <button
-                onClick={() => setActiveFilter("all")}
-                className="px-4 py-2.5 rounded-xl text-xs font-bold transition-all"
-                style={{ backgroundColor: activeFilter === "all" ? "#0a0a0a" : "#ffffff", color: activeFilter === "all" ? "#ffffff" : "#52525B", border: "1px solid #E8E2D9" }}
+                onClick={() => setSearch("")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: "#E8E2D9" }}
               >
-                All
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#52525B" strokeWidth="3" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               </button>
-              {CATEGORIES.map(c => (
-                <button
-                  key={c.id}
-                  onClick={() => setActiveFilter(activeFilter === c.id ? "all" : c.id)}
-                  className="px-3 py-2.5 rounded-xl text-xs font-bold transition-all"
-                  style={{ backgroundColor: activeFilter === c.id ? c.accent : "#ffffff", color: activeFilter === c.id ? "#ffffff" : "#52525B", border: "1px solid #E8E2D9" }}
-                >
-                  {c.icon}
-                </button>
-              ))}
-            </div>
+            )}
           </div>
+          {search && (
+            <p className="mt-3 text-sm" style={{ color: "#8C8279" }}>
+              Showing results for <strong style={{ color: "#0a0a0a" }}>"{search}"</strong> — {CATEGORIES.flatMap(c => c.tools).filter(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase())).length} tools found
+            </p>
+          )}
         </div>
 
-        {/* Tool sections */}
-        <div className="px-6 pb-20 max-w-5xl mx-auto flex flex-col gap-6">
-          {visibleCats.map((cat, i) => (
-            <CategorySection key={cat.id} cat={cat} index={i} search={search} />
-          ))}
+        {/* ── Tool sections ── */}
+        <div className="px-6 pb-24 max-w-5xl mx-auto flex flex-col gap-5">
+          {visibleCats.map((cat) => {
+            const globalIdx = CATEGORIES.findIndex(c => c.id === cat.id);
+            return (
+              <CategorySection
+                key={cat.id}
+                cat={cat}
+                globalStart={getGlobalStart(globalIdx)}
+                search={search}
+              />
+            );
+          })}
+          {search && visibleCats.every(c => !c.tools.some(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase()))) && (
+            <div className="text-center py-20">
+              <div className="text-5xl mb-4">🔍</div>
+              <p className="font-black text-lg" style={{ color: "#0a0a0a" }}>No tools found for "{search}"</p>
+              <p className="text-sm mt-2" style={{ color: "#8C8279" }}>Try a different keyword</p>
+            </div>
+          )}
         </div>
 
-        {/* Footer CTA */}
-        <div className="no-print border-t px-6 py-16 text-center" style={{ borderColor: "#E8E2D9", backgroundColor: "#0a0a0a" }}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#F5B731" }}>Curated by Myntmore</p>
-          <h2 className="text-3xl font-black mb-4" style={{ color: "#ffffff" }}>Want help implementing any of these?</h2>
-          <p className="mb-8 text-sm" style={{ color: "#A8A29E" }}>We help jewellery brands and B2B businesses turn AI tools into real pipeline.</p>
+        {/* ── Footer CTA ── */}
+        <div className="no-print border-t px-6 py-20 text-center" style={{ borderColor: "#E8E2D9", backgroundColor: "#0a0a0a" }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.2)" }}>
+            Curated by Myntmore
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#ffffff" }}>
+            Want help implementing<br />any of these?
+          </h2>
+          <p className="mb-10 text-base max-w-md mx-auto" style={{ color: "#A8A29E" }}>
+            We help jewellery brands and B2B businesses turn AI tools into real pipeline.
+          </p>
           <a
             href="https://calendly.com/founder-myntmore/web"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-black text-sm transition-all hover:scale-105"
-            style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-black text-base"
+            style={{ backgroundColor: "#F5B731", color: "#0a0a0a", transition: "transform 0.15s ease, box-shadow 0.15s ease" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(245,183,49,0.4)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "none"; }}
           >
             Book a Free Call
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
 

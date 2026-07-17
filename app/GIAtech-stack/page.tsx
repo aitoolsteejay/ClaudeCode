@@ -318,7 +318,7 @@ function CategorySection({ cat, globalStart, search }: {
   return (
     <div
       ref={ref}
-      className="rounded-2xl overflow-hidden border"
+      className="print-section rounded-2xl overflow-hidden border"
       style={{
         borderColor: "#E8E2D9",
         opacity: inView ? 1 : 0,
@@ -403,9 +403,57 @@ export default function GIATechStackPage() {
     <>
       <style>{`
         @media print {
+          /* ── Reset ── */
+          *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+          body { background: #ffffff !important; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+          /* ── Hide UI chrome ── */
           .no-print { display: none !important; }
-          body { background: white !important; }
-          * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+          /* ── Page setup ── */
+          @page { size: A4; margin: 18mm 14mm; }
+          @page :first { margin-top: 12mm; }
+
+          /* ── Print cover header ── */
+          .print-header { display: block !important; }
+
+          /* ── Layout ── */
+          .min-h-screen { min-height: unset !important; background: white !important; }
+          .px-6 { padding-left: 0 !important; padding-right: 0 !important; }
+          .pt-20, .pt-16 { padding-top: 0 !important; }
+          .pb-12, .pb-24 { padding-bottom: 8px !important; }
+          .max-w-5xl { max-width: 100% !important; }
+
+          /* ── Stats grid ── */
+          .grid { display: grid !important; }
+          .grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
+          .sm\\:grid-cols-4 { grid-template-columns: repeat(4, 1fr) !important; }
+          .gap-4 { gap: 6px !important; }
+
+          /* ── Category sections ── */
+          .rounded-2xl { border-radius: 8px !important; }
+          .flex-col { gap: 8px !important; }
+
+          /* ── Tables ── */
+          table { width: 100% !important; border-collapse: collapse !important; font-size: 9.5pt !important; }
+          thead tr { background-color: #F8F6F2 !important; }
+          th { padding: 6px 10px !important; font-size: 8pt !important; font-weight: 800 !important; text-transform: uppercase; letter-spacing: 0.08em; color: #B8B0A7 !important; border-bottom: 1px solid #E8E2D9 !important; }
+          td { padding: 6px 10px !important; vertical-align: top; border-bottom: 1px solid #F5F2EE !important; }
+
+          /* ── Page breaks ── */
+          .print-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 14px !important; }
+          thead { display: table-header-group; }
+
+          /* ── Opacity overrides (animations set opacity:0 on scroll) ── */
+          * { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
+
+          /* ── Collapsed sections: force open ── */
+          [style*="max-height: 0"] { max-height: none !important; overflow: visible !important; }
+          [style*="max-height:0"] { max-height: none !important; overflow: visible !important; }
+
+          /* ── Hero section ── */
+          h1 { font-size: 28pt !important; margin-bottom: 6px !important; line-height: 1.15 !important; -webkit-text-fill-color: #0a0a0a !important; background: none !important; }
+          p { font-size: 10pt !important; }
         }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
         @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
@@ -436,6 +484,17 @@ export default function GIATechStackPage() {
             </button>
           </div>
         </nav>
+
+        {/* ── Print-only cover ── */}
+        <div className="print-header" style={{ display: "none", borderBottom: "3px solid #F5B731", paddingBottom: 16, marginBottom: 24 }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div>
+              <div style={{ fontSize: 22, fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>AI Marketing Tech Stack</div>
+              <div style={{ fontSize: 11, color: "#8C8279", marginTop: 2 }}>GIA India Workshop · Curated by Myntmore · myntmore.com</div>
+            </div>
+            <div style={{ fontSize: 10, color: "#B8B0A7", textAlign: "right" }}>106 tools · 11 categories</div>
+          </div>
+        </div>
 
         {/* ── Hero ── */}
         <div

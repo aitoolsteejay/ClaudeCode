@@ -6,175 +6,207 @@ import Image from "next/image";
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 const CATEGORIES = [
   {
-    id: "linkedin", icon: "💼", color: "#DBEAFE", accent: "#2563EB", textAccent: "#1E40AF",
-    title: "LinkedIn & Personal Branding",
+    id: "photo", icon: "📸", color: "#FCE7F3", accent: "#DB2777", textAccent: "#9D174D",
+    title: "Product Photography & Visual Creation",
+    subtitle: "The most important category for jewellery. Your visuals sell before your words do.",
     tools: [
-      { name: "LinkedIn", what: "Core profile and content platform", free: "Free" },
-      { name: "Taplio", what: "AI LinkedIn post scheduler and analytics", free: "Paid" },
-      { name: "AuthoredUp", what: "LinkedIn post editor with formatting and preview", free: "Free/Paid" },
-      { name: "Kleo", what: "LinkedIn content inspiration from top creators", free: "Free" },
-      { name: "Shield Analytics", what: "Deep LinkedIn analytics beyond native", free: "Paid" },
-      { name: "Supergrow", what: "AI post writer trained on your style", free: "Paid" },
-      { name: "Engage AI", what: "AI-generated comments on prospects' posts", free: "Free/Paid" },
-      { name: "Claude", what: "Ghostwriting posts, bios, hooks", free: "Free/Paid" },
-      { name: "ChatGPT", what: "Content drafting and ideation", free: "Free/Paid" },
-      { name: "Gemini", what: "Google's AI for content and image generation", free: "Free" },
-      { name: "Canva", what: "Carousel and graphic design for LinkedIn", free: "Free/Paid" },
-      { name: "Notion AI", what: "Drafting and organising content in one place", free: "Paid" },
-    ],
-  },
-  {
-    id: "website", icon: "🌐", color: "#D1FAE5", accent: "#059669", textAccent: "#065F46",
-    title: "AI Website Building",
-    tools: [
-      { name: "Framer", what: "AI website builder, best for personal brands", free: "Free/Paid" },
-      { name: "Wegic", what: "Chat-based AI website builder, beginner-friendly", free: "Free/Paid" },
-      { name: "Durable", what: "Instant AI website for small businesses", free: "Free/Paid" },
-      { name: "Wix ADI", what: "AI-assisted website creation", free: "Free/Paid" },
-      { name: "Squarespace", what: "Clean portfolio and brand websites", free: "Paid" },
-      { name: "Shopify", what: "For retailers who want to sell online", free: "Paid" },
-      { name: "Hostinger Website Builder", what: "Affordable AI site builder", free: "Paid" },
-      { name: "10Web", what: "AI WordPress builder", free: "Paid" },
-      { name: "Dorik", what: "Simple AI website for brands", free: "Free/Paid" },
-      { name: "Carrd", what: "One-page simple brand site", free: "Free/Paid" },
-    ],
-  },
-  {
-    id: "image", icon: "🎨", color: "#FCE7F3", accent: "#DB2777", textAccent: "#9D174D",
-    title: "AI Image & Visual Creation",
-    tools: [
-      { name: "Gemini", what: "AI image generation (covered in workshop)", free: "Free" },
-      { name: "Midjourney", what: "Best quality AI jewellery and product images", free: "Paid" },
-      { name: "Adobe Firefly", what: "AI image generation inside Adobe suite", free: "Free/Paid" },
-      { name: "Canva AI (Dream Lab)", what: "AI image generation inside Canva", free: "Free/Paid" },
-      { name: "DALL·E (via ChatGPT)", what: "Quick AI image generation", free: "Free/Paid" },
-      { name: "Ideogram", what: "Text-heavy AI visuals and logos", free: "Free/Paid" },
-      { name: "Recraft", what: "AI image generation for brand consistency", free: "Free/Paid" },
-      { name: "Remove.bg", what: "Remove backgrounds from product photos instantly", free: "Free/Paid" },
-      { name: "Cleanup.pictures", what: "Remove objects/distractions from photos", free: "Free" },
-      { name: "Photoroom", what: "AI product photo editor for jewellery shots", free: "Free/Paid" },
-      { name: "Picsart AI", what: "Quick social media visuals", free: "Free/Paid" },
-      { name: "Luminar Neo", what: "AI photo enhancement for product photography", free: "Paid" },
-      { name: "Mokker", what: "AI background replacement for product photos", free: "Free/Paid" },
-      { name: "Clipping Magic", what: "Background removal for jewellery images", free: "Paid" },
-    ],
-  },
-  {
-    id: "content", icon: "✍️", color: "#FEF3C7", accent: "#D97706", textAccent: "#92400E",
-    title: "Content Creation & Copywriting",
-    tools: [
-      { name: "Claude", what: "Long-form writing, emails, strategy", free: "Free/Paid" },
-      { name: "ChatGPT", what: "Versatile content generation", free: "Free/Paid" },
-      { name: "Gemini", what: "Google AI for content and research", free: "Free" },
-      { name: "Copy.ai", what: "Marketing copy, taglines, ads", free: "Free/Paid" },
-      { name: "Jasper", what: "Brand-voice trained content writing", free: "Paid" },
-      { name: "Writesonic", what: "Blog posts, product descriptions, ads", free: "Free/Paid" },
-      { name: "Rytr", what: "Budget-friendly AI writing tool", free: "Free/Paid" },
-      { name: "Perplexity", what: "AI-powered research and fact-finding", free: "Free/Paid" },
-      { name: "Hemingway App", what: "Simplify and tighten your writing", free: "Free" },
-      { name: "Grammarly", what: "Grammar, tone, and clarity checker", free: "Free/Paid" },
-      { name: "Quillbot", what: "Paraphrasing and rewriting tool", free: "Free/Paid" },
-      { name: "Notion AI", what: "Write and organise content in one workspace", free: "Paid" },
+      { name: "Photoroom", what: "Remove backgrounds from jewellery shots, swap to white/lifestyle backgrounds instantly", free: "Free/Paid" },
+      { name: "Remove.bg", what: "Clean background removal for product photos", free: "Free/Paid" },
+      { name: "Mokker", what: "AI-generated lifestyle backgrounds for jewellery on flat lay or model shots", free: "Free/Paid" },
+      { name: "Clipping Magic", what: "Precise cutouts for rings, chains, earrings with fine detail", free: "Paid" },
+      { name: "Luminar Neo", what: "Enhance sparkle, shine, and metal texture in product photos", free: "Paid" },
+      { name: "Adobe Firefly", what: "Generate lifestyle contexts around your jewellery images", free: "Free/Paid" },
+      { name: "Midjourney", what: "Generate mood boards, campaign visuals, jewellery concept renders", free: "Paid" },
+      { name: "Gemini", what: "AI image generation for social content and campaign ideas", free: "Free" },
+      { name: "Picsart AI", what: "Quick edits and filters for Instagram-ready jewellery photos", free: "Free/Paid" },
+      { name: "Canva", what: "Design product launch graphics, price cards, festival offers", free: "Free/Paid" },
+      { name: "Adobe Express", what: "Branded templates for reels covers, stories, promotions", free: "Free/Paid" },
+      { name: "Designify", what: "Auto-enhance product photos with professional backgrounds", free: "Free/Paid" },
     ],
   },
   {
     id: "video", icon: "🎬", color: "#EDE9FE", accent: "#7C3AED", textAccent: "#4C1D95",
-    title: "Video Content & Reels",
+    title: "Video & Reels for Jewellery",
+    subtitle: "Short video is the #1 discovery channel for jewellery buyers today.",
     tools: [
-      { name: "CapCut", what: "Easy reels and short video editing", free: "Free" },
-      { name: "InShot", what: "Mobile video editor for social content", free: "Free/Paid" },
-      { name: "Runway ML", what: "AI video generation and editing", free: "Free/Paid" },
-      { name: "Pika Labs", what: "AI video from text or image", free: "Free/Paid" },
-      { name: "HeyGen", what: "AI avatar videos for brand communication", free: "Paid" },
-      { name: "Synthesia", what: "AI presenter videos without a camera", free: "Paid" },
-      { name: "Descript", what: "Podcast and video editing with transcripts", free: "Free/Paid" },
-      { name: "Opus Clip", what: "Turn long videos into short clips automatically", free: "Free/Paid" },
-      { name: "Veed.io", what: "Online video editor with AI subtitles", free: "Free/Paid" },
-      { name: "Loom", what: "Quick screen and face recording for outreach", free: "Free/Paid" },
+      { name: "CapCut", what: "Edit jewellery unboxing, try-on, and styling reels", free: "Free" },
+      { name: "InShot", what: "Mobile-first video editor for Instagram and WhatsApp content", free: "Free/Paid" },
+      { name: "Veed.io", what: "Add subtitles and captions to jewellery videos automatically", free: "Free/Paid" },
+      { name: "Opus Clip", what: "Repurpose long jewellery showcase videos into short clips", free: "Free/Paid" },
+      { name: "Runway ML", what: "AI video effects and transitions for premium campaign feel", free: "Free/Paid" },
+      { name: "Pika Labs", what: "Turn a still jewellery photo into a short animated video", free: "Free/Paid" },
+      { name: "HeyGen", what: "Create an AI avatar spokesperson for your brand without filming", free: "Paid" },
+      { name: "Loom", what: "Send personalised video messages to HNI clients or B2B buyers", free: "Free/Paid" },
+      { name: "Descript", what: "Edit talking-head videos by editing the transcript", free: "Free/Paid" },
     ],
   },
   {
-    id: "email", icon: "📧", color: "#CCFBF1", accent: "#0D9488", textAccent: "#134E4A",
-    title: "Email Marketing & Outreach",
+    id: "content", icon: "✍️", color: "#FEF3C7", accent: "#D97706", textAccent: "#92400E",
+    title: "AI Writing & Content for Jewellery",
+    subtitle: "Copy that speaks to emotion, occasion, and meaning — not just specs.",
     tools: [
-      { name: "Mailchimp", what: "Email newsletters and campaigns", free: "Free/Paid" },
-      { name: "Brevo (Sendinblue)", what: "Email + SMS marketing", free: "Free/Paid" },
-      { name: "Instantly", what: "Cold email outreach at scale", free: "Paid" },
-      { name: "Smartlead", what: "Cold email with warm-up", free: "Paid" },
-      { name: "Apollo.io", what: "Lead database + email outreach", free: "Free/Paid" },
-      { name: "Lemlist", what: "Personalised cold email with images", free: "Paid" },
-      { name: "Hunter.io", what: "Find email addresses of prospects", free: "Free/Paid" },
-      { name: "Snov.io", what: "Email finder and drip campaigns", free: "Free/Paid" },
-      { name: "Mailmeteor", what: "Gmail-based bulk email sending", free: "Free/Paid" },
-      { name: "Streak", what: "CRM and email tracking inside Gmail", free: "Free/Paid" },
+      { name: "Claude", what: "Write product descriptions, campaign copy, LinkedIn posts, email sequences", free: "Free/Paid" },
+      { name: "ChatGPT", what: "Brainstorm collection names, taglines, occasion-based content", free: "Free/Paid" },
+      { name: "Gemini", what: "Research buying trends, write product stories", free: "Free" },
+      { name: "Copy.ai", what: "Product description templates for ecommerce listings", free: "Free/Paid" },
+      { name: "Writesonic", what: "Blog posts on jewellery care, gifting guides, trend reports", free: "Free/Paid" },
+      { name: "Perplexity", what: "Research what jewellery buyers are asking online, competitor positioning", free: "Free/Paid" },
+      { name: "Grammarly", what: "Polished, error-free copy for website and social", free: "Free/Paid" },
+      { name: "Hemingway App", what: "Keep product descriptions clear and punchy", free: "Free" },
+      { name: "Notion AI", what: "Write and store all brand content in one place", free: "Paid" },
     ],
   },
   {
-    id: "crm", icon: "🗂️", color: "#FEE2E2", accent: "#DC2626", textAccent: "#7F1D1D",
-    title: "CRM & Lead Management",
+    id: "linkedin", icon: "💼", color: "#DBEAFE", accent: "#2563EB", textAccent: "#1E40AF",
+    title: "LinkedIn & Personal Brand for Jewellery Founders",
+    subtitle: "Buyers buy from people they trust. Your personal brand is your biggest asset.",
     tools: [
-      { name: "Zoho CRM", what: "Full CRM for managing leads and clients", free: "Free/Paid" },
-      { name: "HubSpot CRM", what: "Beginner-friendly free CRM", free: "Free/Paid" },
-      { name: "Notion", what: "Lightweight CRM and workspace", free: "Free/Paid" },
-      { name: "Airtable", what: "Visual database for managing contacts", free: "Free/Paid" },
-      { name: "Pipedrive", what: "Sales pipeline CRM", free: "Paid" },
-      { name: "Folk CRM", what: "Simple relationship-focused CRM", free: "Paid" },
-      { name: "Clay", what: "AI-enriched lead research and outreach", free: "Paid" },
-      { name: "Monday.com", what: "Project and client management", free: "Free/Paid" },
+      { name: "LinkedIn", what: "Core platform for B2B buyers, retailers, and wholesalers", free: "Free" },
+      { name: "Taplio", what: "Schedule LinkedIn posts, track engagement, find content ideas", free: "Paid" },
+      { name: "AuthoredUp", what: "Format LinkedIn posts properly before publishing", free: "Free/Paid" },
+      { name: "Kleo", what: "See what content is working for other jewellery and luxury creators", free: "Free" },
+      { name: "Shield Analytics", what: "Understand which posts are driving profile visits and DMs", free: "Paid" },
+      { name: "Engage AI", what: "Comment meaningfully on posts from potential B2B buyers", free: "Free/Paid" },
+      { name: "Supergrow", what: "AI post writer that learns your voice and tone", free: "Paid" },
+      { name: "Claude", what: "Ghost-write your founder story, thought leadership, origin posts", free: "Free/Paid" },
+    ],
+  },
+  {
+    id: "website", icon: "🌐", color: "#D1FAE5", accent: "#059669", textAccent: "#065F46",
+    title: "Website & Online Presence",
+    subtitle: "Your website is your 24/7 showroom.",
+    tools: [
+      { name: "Framer", what: "Build a stunning brand site with AI, no code needed", free: "Free/Paid" },
+      { name: "Shopify", what: "Best ecommerce platform for jewellery retail and D2C", free: "Paid" },
+      { name: "Wegic", what: "Chat-to-build AI website, extremely beginner-friendly", free: "Free/Paid" },
+      { name: "Squarespace", what: "Beautiful portfolio-style websites for jewellery brands", free: "Paid" },
+      { name: "Durable", what: "Instant AI website for small jewellery businesses", free: "Free/Paid" },
+      { name: "Tidio", what: "Add AI chatbot to your website to answer buyer queries 24/7", free: "Free/Paid" },
+      { name: "Drift", what: "Conversational AI for capturing leads on your website", free: "Paid" },
+      { name: "Google Business Profile", what: "Essential for local jewellery store discovery on Maps and Search", free: "Free" },
     ],
   },
   {
     id: "social", icon: "📱", color: "#FFF7ED", accent: "#EA580C", textAccent: "#7C2D12",
     title: "Social Media Management",
+    subtitle: "Consistency is what separates brands that grow from brands that plateau.",
     tools: [
-      { name: "Buffer", what: "Schedule posts across platforms", free: "Free/Paid" },
-      { name: "Later", what: "Visual content calendar for Instagram", free: "Free/Paid" },
-      { name: "Hootsuite", what: "Multi-platform social scheduling", free: "Paid" },
-      { name: "Metricool", what: "Scheduling + analytics in one", free: "Free/Paid" },
-      { name: "Publer", what: "Affordable multi-platform scheduler", free: "Free/Paid" },
-      { name: "Planoly", what: "Instagram and Pinterest planner", free: "Free/Paid" },
-      { name: "Lately AI", what: "AI that repurposes content for social", free: "Paid" },
-      { name: "Feedhive", what: "AI social media scheduler", free: "Paid" },
+      { name: "Later", what: "Visual content calendar, perfect for planning jewellery drops", free: "Free/Paid" },
+      { name: "Buffer", what: "Schedule posts across Instagram, LinkedIn, Facebook", free: "Free/Paid" },
+      { name: "Planoly", what: "Drag-and-drop Instagram grid planner for aesthetic feed", free: "Free/Paid" },
+      { name: "Metricool", what: "Analytics and scheduling in one dashboard", free: "Free/Paid" },
+      { name: "Publer", what: "Affordable scheduling with AI caption suggestions", free: "Free/Paid" },
+      { name: "Canva Content Planner", what: "Plan and post directly from Canva", free: "Free/Paid" },
     ],
   },
   {
-    id: "seo", icon: "🔍", color: "#ECFDF5", accent: "#16A34A", textAccent: "#14532D",
-    title: "SEO & Digital Presence",
+    id: "whatsapp", icon: "💬", color: "#DCFCE7", accent: "#16A34A", textAccent: "#14532D",
+    title: "WhatsApp & Direct Sales",
+    subtitle: "In India, WhatsApp is where jewellery sales actually close.",
     tools: [
-      { name: "Google Business Profile", what: "Local SEO for jewellery stores", free: "Free" },
-      { name: "Ubersuggest", what: "Keyword research and SEO audit", free: "Free/Paid" },
-      { name: "Semrush", what: "Full SEO and competitor analysis", free: "Paid" },
-      { name: "Ahrefs", what: "Backlink and keyword research", free: "Paid" },
-      { name: "Surfer SEO", what: "AI-optimised content writing for blogs", free: "Paid" },
-      { name: "Google Search Console", what: "Track website search performance", free: "Free" },
-      { name: "Google Analytics", what: "Website traffic and behaviour insights", free: "Free" },
-      { name: "AnswerThePublic", what: "Find what your customers are searching", free: "Free/Paid" },
+      { name: "WhatsApp Business", what: "Catalogue, quick replies, broadcast lists for offers", free: "Free" },
+      { name: "Interakt", what: "WhatsApp CRM and broadcast campaigns for jewellery brands", free: "Paid" },
+      { name: "Wati", what: "WhatsApp automation and customer support", free: "Paid" },
+      { name: "AiSensy", what: "WhatsApp marketing with AI chatbot and campaign tools", free: "Free/Paid" },
+      { name: "Zoko", what: "WhatsApp sales and support tool for D2C brands", free: "Paid" },
+      { name: "DoubleTick", what: "WhatsApp CRM built for Indian SMBs", free: "Paid" },
+    ],
+  },
+  {
+    id: "email", icon: "📧", color: "#CCFBF1", accent: "#0D9488", textAccent: "#134E4A",
+    title: "Email Marketing & Outreach",
+    subtitle: "Owned audience is the most valuable asset for any jewellery brand.",
+    tools: [
+      { name: "Mailchimp", what: "Send festival campaigns, new collection launches, care tips", free: "Free/Paid" },
+      { name: "Brevo", what: "Email + SMS marketing at affordable cost", free: "Free/Paid" },
+      { name: "Klaviyo", what: "Best email marketing for jewellery ecommerce, deep Shopify integration", free: "Free/Paid" },
+      { name: "Mailmeteor", what: "Personalised bulk email from Gmail for B2B outreach", free: "Free/Paid" },
+      { name: "Apollo.io", what: "Find and reach jewellery retailers, buyers, and wholesalers", free: "Free/Paid" },
+      { name: "Hunter.io", what: "Find business email addresses of potential stockists", free: "Free/Paid" },
+      { name: "Instantly", what: "Cold email outreach for B2B leads at scale", free: "Paid" },
+    ],
+  },
+  {
+    id: "seo", icon: "🔍", color: "#ECFDF5", accent: "#15803D", textAccent: "#14532D",
+    title: "SEO & Discovery",
+    subtitle: "When someone searches \"diamond rings Mumbai\" — you need to show up.",
+    tools: [
+      { name: "Google Business Profile", what: "Show up on local maps for walk-in customers", free: "Free" },
+      { name: "Google Search Console", what: "Track which jewellery keywords are bringing traffic", free: "Free" },
+      { name: "Google Analytics", what: "Understand which pages and products attract buyers", free: "Free" },
+      { name: "Ubersuggest", what: "Find keywords like \"bridal jewellery set\" or \"anniversary gift gold\"", free: "Free/Paid" },
+      { name: "AnswerThePublic", what: "Discover what jewellery buyers are searching and asking", free: "Free/Paid" },
+      { name: "Surfer SEO", what: "Write blog content that ranks for jewellery search terms", free: "Paid" },
+      { name: "Google Trends", what: "See seasonal spikes in jewellery searches (Diwali, wedding season)", free: "Free" },
+      { name: "Semrush", what: "Full competitive SEO analysis against other jewellery brands", free: "Paid" },
+    ],
+  },
+  {
+    id: "crm", icon: "🗂️", color: "#FEE2E2", accent: "#DC2626", textAccent: "#7F1D1D",
+    title: "CRM & Lead Management",
+    subtitle: "Managing your B2B buyers, stockists, and HNI clients properly.",
+    tools: [
+      { name: "Zoho CRM", what: "Track leads, clients, and follow-ups across your sales pipeline", free: "Free/Paid" },
+      { name: "HubSpot CRM", what: "Free CRM with email tracking and deal pipeline", free: "Free/Paid" },
+      { name: "Notion", what: "Lightweight CRM and client tracker if you are just starting", free: "Free/Paid" },
+      { name: "Folk CRM", what: "Simple relationship-first CRM, great for HNI client management", free: "Paid" },
+      { name: "Airtable", what: "Custom database to track collections, clients, and orders", free: "Free/Paid" },
+      { name: "Streak", what: "CRM built inside Gmail, zero learning curve", free: "Free/Paid" },
+    ],
+  },
+  {
+    id: "ecommerce", icon: "🛍️", color: "#FFF7ED", accent: "#C2410C", textAccent: "#7C2D12",
+    title: "Ecommerce & Selling Online",
+    subtitle: "For brands that want to sell direct to consumer or manage inventory.",
+    tools: [
+      { name: "Shopify", what: "Best platform for jewellery D2C with payment and inventory", free: "Paid" },
+      { name: "WooCommerce", what: "WordPress-based store, flexible and affordable", free: "Free/Paid" },
+      { name: "Instamojo", what: "Easy Indian payment link and simple storefront", free: "Free/Paid" },
+      { name: "Razorpay", what: "Indian payment gateway for website and WhatsApp sales", free: "Free/Paid" },
+      { name: "Meesho", what: "For retailers exploring reseller and marketplace models", free: "Free" },
+      { name: "Etsy", what: "Global marketplace for handcrafted and artisan jewellery", free: "Free/Paid" },
+      { name: "Amazon India", what: "Reach mass market buyers through jewellery marketplace listings", free: "Paid" },
+      { name: "Myntra / Nykaa Fashion", what: "Fashion-forward platforms where jewellery buyers browse", free: "Varies" },
     ],
   },
   {
     id: "research", icon: "🧠", color: "#F5F3FF", accent: "#6D28D9", textAccent: "#3B0764",
-    title: "AI Research & Strategy",
+    title: "AI Research & Trend Spotting",
+    subtitle: "Knowing what your customer wants before they tell you.",
     tools: [
-      { name: "Perplexity", what: "AI search for market research", free: "Free/Paid" },
-      { name: "Claude", what: "ICP building, strategy, proposals", free: "Free/Paid" },
-      { name: "ChatGPT", what: "Brainstorming and research", free: "Free/Paid" },
-      { name: "Google Trends", what: "See what jewellery terms are trending", free: "Free" },
-      { name: "Exploding Topics", what: "Spot emerging trends early", free: "Free/Paid" },
-      { name: "SparkToro", what: "Audience research tool", free: "Free/Paid" },
+      { name: "Perplexity", what: "Research competitor brands, buyer questions, market trends", free: "Free/Paid" },
+      { name: "Google Trends", what: "Track seasonal demand spikes for jewellery categories", free: "Free" },
+      { name: "Exploding Topics", what: "Spot emerging jewellery styles and buyer behaviours early", free: "Free/Paid" },
+      { name: "Pinterest Trends", what: "See what jewellery styles are getting saved and shared", free: "Free" },
+      { name: "SparkToro", what: "Understand where your jewellery buyers spend time online", free: "Free/Paid" },
+      { name: "BuzzSumo", what: "Find top-performing jewellery content across the web", free: "Paid" },
     ],
   },
   {
     id: "productivity", icon: "⚡", color: "#FFFBEB", accent: "#B45309", textAccent: "#78350F",
-    title: "Productivity & Organisation",
+    title: "Productivity & Automation",
+    subtitle: "So you can run marketing without it taking over your day.",
     tools: [
-      { name: "Notion", what: "All-in-one workspace for notes, CRM, content", free: "Free/Paid" },
-      { name: "ClickUp", what: "Project management and task tracking", free: "Free/Paid" },
-      { name: "Google Workspace", what: "Docs, Sheets, Drive, Gmail", free: "Free/Paid" },
-      { name: "Zapier", what: "Automate repetitive tasks between tools", free: "Free/Paid" },
-      { name: "Make (Integromat)", what: "More powerful automation builder", free: "Free/Paid" },
-      { name: "Calendly", what: "Booking and scheduling meetings", free: "Free/Paid" },
-      { name: "Loom", what: "Video messages instead of long emails", free: "Free/Paid" },
-      { name: "Slack", what: "Team communication", free: "Free/Paid" },
+      { name: "Notion", what: "Your brand OS — content calendar, client notes, all in one", free: "Free/Paid" },
+      { name: "Google Workspace", what: "Docs, Sheets, Drive for day-to-day operations", free: "Free/Paid" },
+      { name: "Zapier", what: "Automate repetitive tasks, e.g. new lead in CRM triggers a WhatsApp", free: "Free/Paid" },
+      { name: "Make (Integromat)", what: "More powerful automation for multi-step workflows", free: "Free/Paid" },
+      { name: "Calendly", what: "Let B2B buyers book a call directly without back-and-forth", free: "Free/Paid" },
+      { name: "Loom", what: "Send personalised video messages instead of long emails", free: "Free/Paid" },
+      { name: "ClickUp", what: "Task and project management for your team", free: "Free/Paid" },
+      { name: "Slack", what: "Team communication if you have staff", free: "Free/Paid" },
+    ],
+  },
+  {
+    id: "ads", icon: "🎯", color: "#FEF2F2", accent: "#E11D48", textAccent: "#881337",
+    title: "Paid Ads & Performance Marketing",
+    subtitle: "When you are ready to scale beyond organic.",
+    tools: [
+      { name: "Meta Ads Manager", what: "Run Instagram and Facebook ads for jewellery collections", free: "Free to use" },
+      { name: "Google Ads", what: "Capture buyers actively searching for jewellery", free: "Paid" },
+      { name: "Smartly.io", what: "Automate and optimise social ad creatives at scale", free: "Paid" },
+      { name: "AdCreative.ai", what: "AI-generated ad creatives and copy for jewellery campaigns", free: "Paid" },
+      { name: "Foreplay", what: "Save and study competitor jewellery ads for inspiration", free: "Free/Paid" },
     ],
   },
 ];
@@ -305,7 +337,7 @@ function ToolRow({ tool, index, globalNum, accent, color }: {
 }
 
 function CategorySection({ cat, globalStart, search }: {
-  cat: typeof CATEGORIES[0]; globalStart: number; search: string;
+  cat: typeof CATEGORIES[0] & { subtitle?: string }; globalStart: number; search: string;
 }) {
   const { ref, inView } = useInView(0.05);
   const [open, setOpen] = useState(true);
@@ -335,6 +367,7 @@ function CategorySection({ cat, globalStart, search }: {
         <span className="text-2xl flex-shrink-0">{cat.icon}</span>
         <div className="flex-1 min-w-0">
           <h2 className="font-black text-base sm:text-lg" style={{ color: "#0a0a0a" }}>{cat.title}</h2>
+          {cat.subtitle && !search && <p className="text-xs mt-0.5 font-medium" style={{ color: cat.textAccent }}>{cat.subtitle}</p>}
           {search && <p className="text-xs mt-0.5" style={{ color: cat.textAccent }}>{filtered.length} of {cat.tools.length} match</p>}
         </div>
         <span className="text-xs font-black px-3 py-1 rounded-full flex-shrink-0" style={{ backgroundColor: "rgba(0,0,0,0.1)", color: "#0a0a0a" }}>
@@ -356,7 +389,7 @@ function CategorySection({ cat, globalStart, search }: {
               <tr style={{ borderBottom: "1px solid #F0EBE3" }}>
                 <th className="text-left px-6 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>#</th>
                 <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Tool</th>
-                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>What it does</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Why it's relevant for jewellery</th>
                 <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Pricing</th>
               </tr>
             </thead>
@@ -489,10 +522,10 @@ export default function GIATechStackPage() {
         <div className="print-header" style={{ display: "none", borderBottom: "3px solid #F5B731", paddingBottom: 16, marginBottom: 24 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div>
-              <div style={{ fontSize: 22, fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>AI Marketing Tech Stack</div>
-              <div style={{ fontSize: 11, color: "#8C8279", marginTop: 2 }}>GIA India Workshop · Curated by Myntmore · myntmore.com</div>
+              <div style={{ fontSize: 22, fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>AI Tech Stack for Jewellery Brands</div>
+              <div style={{ fontSize: 11, color: "#8C8279", marginTop: 2 }}>GIA India AI Marketing Workshop · Curated by Myntmore · myntmore.com</div>
             </div>
-            <div style={{ fontSize: 10, color: "#B8B0A7", textAlign: "right" }}>106 tools · 11 categories</div>
+            <div style={{ fontSize: 10, color: "#B8B0A7", textAlign: "right" }}>106 tools · 14 categories</div>
           </div>
         </div>
 
@@ -505,30 +538,30 @@ export default function GIATechStackPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8"
             style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
             <span style={{ animation: "float 2.2s ease-in-out infinite", display: "inline-block" }}>💎</span>
-            GIA India Workshop · Jewellery Brand Owners
+            GIA India AI Marketing Workshop
           </div>
 
           <h1 className="text-5xl sm:text-7xl font-black leading-none mb-6 tracking-tight" style={{ color: "#0a0a0a" }}>
-            AI Marketing<br />
+            AI Tech Stack for<br />
             <span style={{
               background: "linear-gradient(90deg, #B45309, #F5B731, #D97706, #F5B731, #B45309)",
               backgroundSize: "300% auto",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               animation: "shimmer 4s linear infinite",
-            }}>Tech Stack</span>
+            }}>Jewellery Brands</span>
           </h1>
 
           <p className="text-xl leading-relaxed max-w-2xl mb-12" style={{ color: "#52525B" }}>
-            106 tools, 11 categories — curated for jewellery brand owners and retailers ready to grow with AI. From beginner to advanced.
+            106 tools across 14 categories — curated specifically for jewellery brand owners and retailers. From product photography to paid ads, beginner to advanced.
           </p>
 
           {/* Stats row */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <StatCard n={106} label="Total Tools" color="#0a0a0a" bg="#ffffff" delay={0} />
-            <StatCard n={11} label="Categories" color="#D97706" bg="#FEF9EC" delay={80} />
+            <StatCard n={14} label="Categories" color="#D97706" bg="#FEF9EC" delay={80} />
             <StatCard n={totalFree + totalFreePaid} label="Free or Freemium" color="#059669" bg="#D1FAE5" delay={160} />
-            <StatCard n={1} label="Power-packed Workshop" color="#7C3AED" bg="#EDE9FE" delay={240} />
+            <StatCard n={8} label="Day 1 Starter Tools" color="#7C3AED" bg="#EDE9FE" delay={240} />
           </div>
         </div>
 
@@ -615,6 +648,37 @@ export default function GIATechStackPage() {
               <p className="text-sm mt-2" style={{ color: "#8C8279" }}>Try a different keyword</p>
             </div>
           )}
+        </div>
+
+        {/* ── Starter Pack ── */}
+        <div className="px-6 pb-16 max-w-5xl mx-auto">
+          <div className="rounded-2xl p-8 border-2" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.4)" }}>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-2xl">⭐</span>
+              <div>
+                <h2 className="font-black text-xl" style={{ color: "#0a0a0a" }}>Day 1 Starter Pack</h2>
+                <p className="text-sm" style={{ color: "#8C8279" }}>Feeling overwhelmed? Start with just these 8 tools.</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { icon: "📸", name: "Photoroom", why: "Product photos" },
+                { icon: "🎨", name: "Canva", why: "Graphics & design" },
+                { icon: "🎬", name: "CapCut", why: "Reels editing" },
+                { icon: "🤖", name: "Claude", why: "AI writing" },
+                { icon: "💬", name: "WhatsApp Business", why: "Direct sales" },
+                { icon: "📍", name: "Google Business Profile", why: "Local discovery" },
+                { icon: "📧", name: "Mailchimp", why: "Email campaigns" },
+                { icon: "📅", name: "Later", why: "Social scheduling" },
+              ].map((t) => (
+                <div key={t.name} className="rounded-xl p-4" style={{ backgroundColor: "#ffffff", border: "1px solid rgba(245,183,49,0.25)" }}>
+                  <div className="text-xl mb-2">{t.icon}</div>
+                  <div className="font-black text-sm" style={{ color: "#0a0a0a" }}>{t.name}</div>
+                  <div className="text-xs mt-0.5" style={{ color: "#8C8279" }}>{t.why}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* ── Footer CTA ── */}

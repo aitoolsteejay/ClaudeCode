@@ -180,8 +180,9 @@ const CATEGORIES = [
 ];
 
 /* ─── HOOKS ─────────────────────────────────────────────────────────── */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function useInView(threshold = 0.1) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<any>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -255,7 +256,7 @@ function CategoryOverviewCard({ cat, index, active, onClick }: {
   const [hovered, setHovered] = useState(false);
   return (
     <button
-      ref={ref as unknown as React.RefObject<HTMLButtonElement>}
+      ref={ref}
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -284,7 +285,7 @@ function ToolRow({ tool, index, globalNum, accent, color }: {
   const [hovered, setHovered] = useState(false);
   return (
     <tr
-      ref={ref as unknown as React.RefObject<HTMLTableRowElement>}
+      ref={ref}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{

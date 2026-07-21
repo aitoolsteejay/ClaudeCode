@@ -694,9 +694,7 @@ export default function GIATechStackPage() {
             We help jewellery brands and B2B businesses turn AI tools into real pipeline.
           </p>
           <a
-            href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/founder-meeting"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-black text-base"
             style={{ backgroundColor: "#F5B731", color: "#0a0a0a", transition: "transform 0.15s ease, box-shadow 0.15s ease" }}
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(245,183,49,0.4)"; }}

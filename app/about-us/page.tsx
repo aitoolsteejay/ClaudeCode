@@ -135,7 +135,7 @@ export default function AboutUs() {
             Book a 30-minute strategy call. We&apos;ll audit your outreach, map your ICP, and tell you exactly what&apos;s holding your pipeline back.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Book a Free Strategy Call
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>

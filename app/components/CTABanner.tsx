@@ -135,9 +135,7 @@ export default function CTABanner() {
         </p>
 
         <a
-          href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/founder-meeting"
           className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg group btn-dark"
         >
           Book Your Free Strategy Call

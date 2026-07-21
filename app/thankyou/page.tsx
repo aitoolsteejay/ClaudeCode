@@ -32,7 +32,7 @@ export default function ThankYouPage() {
           </h1>
 
           <p className="text-lg mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
-            Thanks for booking time with our founder. You&apos;ll get a calendar invite and a confirmation email shortly — keep an eye on your inbox.
+            Thanks for booking time with our founder. You&apos;ll get a calendar invite and a confirmation email shortly. Keep an eye on your inbox.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">

@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 };
 
 const CONTACT_CARDS = [
-  { icon: "📅", title: "Free GTM Audit", value: "30-minute strategy call", href: "https://calendly.com/founder-myntmore/web", cta: "Book free call" },
-  { icon: "⏱", title: "Extended Session", value: "1-hour strategy meeting", href: "https://calendly.com/founder-myntmore/web", cta: "Book 1-hour session" },
+  { icon: "📅", title: "Free GTM Audit", value: "30-minute strategy call", href: "https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou", cta: "Book free call" },
+  { icon: "⏱", title: "Extended Session", value: "1-hour strategy meeting", href: "https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou", cta: "Book 1-hour session" },
   { icon: "✉️", title: "Email Directly", value: "growth@myntmore.com", href: "mailto:growth@myntmore.com", cta: "Send email" },
 ];
 

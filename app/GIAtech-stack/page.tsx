@@ -694,7 +694,7 @@ export default function GIATechStackPage() {
             We help jewellery brands and B2B businesses turn AI tools into real pipeline.
           </p>
           <a
-            href="https://calendly.com/founder-myntmore/web"
+            href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-black text-base"

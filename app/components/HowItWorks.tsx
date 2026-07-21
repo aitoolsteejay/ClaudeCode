@@ -122,7 +122,7 @@ export default function HowItWorks() {
             Ready to start the process?
           </p>
           <a
-            href="https://calendly.com/founder-myntmore/web"
+            href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-dark px-7 py-3.5 text-sm font-bold inline-flex items-center gap-2"

@@ -126,6 +126,23 @@ function HeroSection() {
       <div ref={blob2} aria-hidden="true" style={{ position: "absolute", bottom: "-60px", right: "-100px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,200,50,0.08) 45%, transparent 68%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
       <div ref={blob3} aria-hidden="true" style={{ position: "absolute", top: "30%", right: "20%", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 65%)", filter: "blur(45px)", pointerEvents: "none", willChange: "transform" }} />
 
+      {/* Floating export signals */}
+      <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "18%", left: "8%", animationDelay: "0.2s", ["--lp-rot" as any]: "-6deg" }}>🌍</span>
+      <span className="lp-float-icon hidden sm:block text-3xl lp-pop-in" aria-hidden="true" style={{ top: "64%", left: "10%", animationDelay: "1.4s", ["--lp-rot" as any]: "8deg" }}>📦</span>
+      <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "22%", right: "9%", animationDelay: "0.7s", ["--lp-rot" as any]: "-10deg" }}>🚢</span>
+
+      {/* Trade route: a shipment travelling from origin to destination */}
+      <svg aria-hidden="true" className="hidden sm:block" style={{ position: "absolute", top: "58%", right: "6%", width: "220px", height: "90px", pointerEvents: "none" }} viewBox="0 0 220 90">
+        <path id="trade-route-path" d="M6 78 Q70 8 214 20" stroke="rgba(245,183,49,0.35)" strokeWidth="2" strokeDasharray="5 6" fill="none" strokeLinecap="round" />
+        <circle cx="6" cy="78" r="4" fill="#D97706" opacity="0.5" />
+        <circle cx="214" cy="20" r="4" fill="#D97706" opacity="0.5" />
+        <text x="0" y="20" fontSize="16">✈️
+          <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#trade-route-path" />
+          </animateMotion>
+        </text>
+      </svg>
+
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="mb-6 hero-fade-d1">
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
@@ -175,13 +192,15 @@ function StatsSection() {
   const refs = [r0, r1, r2, r3];
   const labels = ["Intl buyer meetings / quarter (avg)", "Countries our clients have closed deals in", "More meetings vs trade show ROI", "Export pipeline generated"];
   const initials = ["0+", "0", "0×", "$0M+"];
+  const icons = ["🤝", "🌐", "📈", "💰"];
   const fade = useScrollFade();
 
   return (
     <section className="py-14 px-4 border-y" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div ref={fade} className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
         {refs.map((ref, i) => (
-          <div key={i} className="text-center">
+          <div key={i} className="lp-stat text-center">
+            <div className="text-xl mb-1 lp-icon-bob" style={{ animationDelay: `${i * 0.25}s` }} aria-hidden="true">{icons[i]}</div>
             <div className="text-4xl sm:text-5xl font-black mb-2" style={{ color: "#0a0a0a" }}>
               <span ref={ref}>{initials[i]}</span>
             </div>
@@ -211,8 +230,8 @@ function PainSection() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {pain.map((p, i) => (
-            <div key={p.heading} ref={cards[i]} className="rounded-2xl border p-8 transition-shadow hover:shadow-md" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-4xl mb-4">{p.icon}</div>
+            <div key={p.heading} ref={cards[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-4xl mb-4 lp-icon-bob" style={{ animationDelay: `${i * 0.3}s` }}>{p.icon}</div>
               <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.heading}</h3>
               <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
             </div>
@@ -225,7 +244,8 @@ function PainSection() {
 
 function ProcessSection() {
   const titleFade = useScrollFade(0);
-  const gridFade = useScrollFade(100);
+  const p0 = useScrollFade(0); const p1 = useScrollFade(100); const p2 = useScrollFade(200); const p3 = useScrollFade(300);
+  const delays = [p0, p1, p2, p3];
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
@@ -233,10 +253,10 @@ function ProcessSection() {
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>How it works</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Your global buyer pipeline, built and managed</h2>
         </div>
-        <div ref={gridFade} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {PROCESS.map((p) => (
-            <div key={p.n} className="flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {PROCESS.map((p, i) => (
+            <div key={p.n} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
               <div>
                 <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
@@ -262,13 +282,13 @@ function CaseStudiesSection() {
         </div>
         <div className="space-y-6">
           {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="rounded-2xl border p-8 transition-shadow hover:shadow-md" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
               <div className="flex flex-wrap gap-3">
                 {cs.results.map((r) => (
-                  <span key={r} className="text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
+                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
                 ))}
               </div>
             </div>

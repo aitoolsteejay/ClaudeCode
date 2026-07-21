@@ -57,7 +57,7 @@ export default function LpLayout({ children }: { children: React.ReactNode }) {
           <Link href="/" aria-label="Myntmore home" className="transition-transform duration-300 hover:scale-105">
             <Image src="/logo.png" alt="Myntmore" width={140} height={40} className="h-10 w-auto object-contain" />
           </Link>
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+          <a href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou" target="_blank" rel="noopener noreferrer"
             className="btn-dark px-5 py-2.5 text-sm font-bold inline-flex items-center gap-2 group">
             Book Free GTM Audit
             <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

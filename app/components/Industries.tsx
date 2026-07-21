@@ -117,7 +117,7 @@ export default function Industries() {
         <p className="text-center text-sm text-[#B8B0A7] mt-10">
           Don&rsquo;t see your sector?{" "}
           <a
-            href="https://calendly.com/founder-myntmore/web"
+            href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline underline-offset-2"

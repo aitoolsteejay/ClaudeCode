@@ -75,7 +75,7 @@ export default function ToolsPage() {
             <div className="mt-16 rounded-2xl border p-8 text-center" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
               <h2 className="text-xl font-black mb-3" style={{ color: "#0a0a0a" }}>Want a custom tool built for your outreach?</h2>
               <p className="text-sm mb-6" style={{ color: "#52525B" }}>We build bespoke AI outbound tools for our clients — scrapers, personalisation engines, intent trackers. Book a call to find out what we can build for you.</p>
-              <a href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
+              <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
                 Book a Free GTM Audit
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>

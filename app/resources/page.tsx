@@ -225,7 +225,7 @@ export default function Resources() {
                 <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.25)" }}>Ready to build the system?</span>
                 <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Want us to build the pipeline<br />engine for you?</h2>
                 <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#9ca3af" }}>Book a free 30-minute GTM audit. We&apos;ll map out exactly how to build a predictable outbound system for your business.</p>
-                <a href="https://calendly.com/founder-myntmore/web?redirect_url=https://myntmore.com/thankyou" target="_blank" rel="noopener noreferrer" className="btn-dark px-10 py-4 text-base font-bold inline-flex items-center gap-2">
+                <a href="/founder-meeting" className="btn-dark px-10 py-4 text-base font-bold inline-flex items-center gap-2">
                   Book a Free GTM Audit
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </a>

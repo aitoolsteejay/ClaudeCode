@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
 import FlowDiagram from "../FlowDiagram";
+import Faq from "../Faq";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -77,6 +78,15 @@ const PROCESS = [
   { n: "02", title: "Global Prospect Database", body: "Hand-verified contacts of importers, distributors, procurement heads, and sourcing managers in your target markets. No outdated trade directories." },
   { n: "03", title: "Personalised Outreach", body: "Multi-touch email and LinkedIn sequences tailored to each market's tone and buying behaviour. Not a generic template blast." },
   { n: "04", title: "Qualified Meetings", body: "Interested buyers land in your calendar. Your team focuses on relationship-building and closing — we handle the cold outreach." },
+];
+
+const FAQ_ITEMS = [
+  { q: "Do you work with our specific product category?", a: "We have run campaigns across auto components, textiles, industrial equipment, and other manufacturing categories. During onboarding we map your product to the right buyer profile in your target markets." },
+  { q: "How do you make sure buyers are serious and not just price shopping?", a: "We target named procurement heads, sourcing managers, and importers directly, based on company size and buying signals, instead of broadcasting to anyone who fills a form on a B2B portal." },
+  { q: "Which countries and regions can you target?", a: "We have run outreach across Europe, the Middle East, Africa, and Southeast Asia. Tell us your target markets and we build the prospect list and messaging around them." },
+  { q: "Do you handle the language and cultural side of outreach in different markets?", a: "Yes. Messaging tone and structure are adjusted per region, and we can localise outreach where needed so it reads naturally to buyers in that market." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly engagement with no long term lock in, so you can measure results and decide whether to continue every month." },
+  { q: "What happens once we get an interested buyer? Do you help close the deal?", a: "We hand over every qualified meeting with full context on the buyer and their requirements, so your team can focus entirely on the relationship and the close." },
 ];
 
 function HeroSection() {
@@ -406,6 +416,7 @@ export default function ManufacturersExportersLP() {
       />
       <ProcessSection />
       <CaseStudiesSection />
+      <Faq title="Common questions from manufacturers and exporters" items={FAQ_ITEMS} />
       <DarkCTASection />
       <FormSection />
     </LpLayout>

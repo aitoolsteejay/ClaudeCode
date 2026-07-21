@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LpLayout from "../LpLayout";
 import FlowDiagram from "../FlowDiagram";
+import Faq from "../Faq";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -86,6 +87,15 @@ const PROCESS = [
   { n: "02", title: "List Building", body: "Hand-verified prospect lists of decision-makers at companies actively looking for agency partners. No recycled databases." },
   { n: "03", title: "Outreach Engine", body: "Multi-channel sequences — cold email + LinkedIn — with hyper-personalised copy based on each prospect's recent activity." },
   { n: "04", title: "Meeting Handoff", body: "Qualified meetings land directly in your calendar. You close; we fill the top of funnel, consistently." },
+];
+
+const FAQ_ITEMS = [
+  { q: "How is this different from hiring an in-house SDR?", a: "An in-house SDR costs you a full-time salary, months of ramp-up, and ongoing management. We give you a fully built outbound system, list building, sequences, and deliverability infrastructure, running from week one, at a fraction of the cost and with none of the hiring risk." },
+  { q: "We already have a team doing some outbound. Will this overlap?", a: "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new accounts. Your team keeps doing what it does well, we add the top of funnel volume it does not have time for." },
+  { q: "How fast will we start seeing meetings?", a: "Most agency clients see their first qualified conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete." },
+  { q: "Do you work with the tools we already use, like our CRM?", a: "Yes. We integrate with whatever CRM or pipeline tool you already run, so every meeting and reply lands exactly where your team expects it." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in. You can review results every 30 days and decide whether to continue." },
+  { q: "What if the leads we get are not the right fit?", a: "We refine your ICP together in the first two weeks and keep adjusting targeting based on who books calls and who converts, so fit improves fast." },
 ];
 
 function HeroSection() {
@@ -418,6 +428,7 @@ export default function AgenciesItLP() {
       />
       <ProcessSection />
       <CaseStudiesSection />
+      <Faq title="Common questions from agency owners" items={FAQ_ITEMS} />
       <DarkCTASection />
       <FormSection />
     </LpLayout>

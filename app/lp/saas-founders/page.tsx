@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
 import FlowDiagram from "../FlowDiagram";
+import Faq from "../Faq";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -77,6 +78,15 @@ const PROCESS = [
   { n: "02", title: "Signal-Based Targeting", body: "We build prospect lists using buying signals — funding rounds, hiring sprees, new leadership hires, tech adoption — not just job titles." },
   { n: "03", title: "Multi-Channel Sequences", body: "Cold email and LinkedIn combined, with copy personalised to each prospect's context. Not a generic template everyone ignores." },
   { n: "04", title: "Demo-Ready Handoffs", body: "Only qualified prospects — right ICP, right pain, right authority — hit your calendar. You demo and close. We keep the pipeline flowing." },
+];
+
+const FAQ_ITEMS = [
+  { q: "How is this different from tools like Apollo or Clay that we already use?", a: "Those tools give you data. We give you a fully managed system, ICP mapping, signal based targeting, copywriting, sequencing, and deliverability, run by a team that adjusts it every week based on what is working." },
+  { q: "Will this work if we are still pre-product-market fit?", a: "Outbound works best once you have a handful of paying customers and a clear picture of who gets value fastest. If you are very early, we will tell you honestly and suggest starting with a smaller pilot." },
+  { q: "How do you avoid spam filters and protect our sender reputation?", a: "We set up dedicated sending infrastructure, warm it up properly, and follow strict sending limits and personalisation practices, so your core domain reputation stays protected." },
+  { q: "Do you integrate with our CRM, like HubSpot or Salesforce?", a: "Yes. Every qualified reply and booked demo is logged in the CRM your team already uses, with full context from the conversation." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in, so you can review pipeline results every 30 days." },
+  { q: "We already tried outbound once and it did not work. Why would this be different?", a: "Most failed outbound comes down to generic targeting and copy that reads like everyone else's. We rebuild it around specific buying signals and messaging tailored to your product, and iterate weekly instead of setting it and walking away." },
 ];
 
 function HeroSection() {
@@ -395,6 +405,7 @@ export default function SaasFoundersLP() {
       />
       <ProcessSection />
       <CaseStudiesSection />
+      <Faq title="Common questions from SaaS founders" items={FAQ_ITEMS} />
       <DarkCTASection />
       <FormSection />
     </LpLayout>

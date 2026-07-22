@@ -12,6 +12,7 @@ function LpFooter() {
         <div className="flex items-center gap-6">
           <Link href="/about-us" className="text-xs" style={{ color: "#8C8279" }}>About</Link>
           <Link href="/case-studies" className="text-xs" style={{ color: "#8C8279" }}>Case Studies</Link>
+          <Link href="/privacy-policy" className="text-xs" style={{ color: "#8C8279" }}>Privacy Policy</Link>
           <a href="mailto:growth@myntmore.com" className="text-xs" style={{ color: "#8C8279" }}>growth@myntmore.com</a>
         </div>
       </div>

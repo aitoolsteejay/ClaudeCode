@@ -33,7 +33,7 @@ export default function FounderMeetingClient() {
             Pick a time that works for you
           </h1>
           <p className="text-lg max-w-xl mx-auto" style={{ color: "#52525B" }}>
-            30 minutes with our founder. No pitch, no pressure, just a clear look at your pipeline.
+            25 minutes with our founder. No pitch, no pressure, just a clear look at your pipeline.
           </p>
         </div>
 

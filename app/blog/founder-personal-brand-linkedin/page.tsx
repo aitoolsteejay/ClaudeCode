@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import AskYourAI from "../../components/AskYourAI";
+
+const BLOG_AI_RESOURCES = [
+  "https://myntmore.com/blog/founder-personal-brand-linkedin",
+  "https://myntmore.com",
+  "https://myntmore.com/case-studies",
+];
 
 export const metadata: Metadata = {
   title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset | Myntmore Blog",
@@ -146,6 +153,10 @@ export default function FounderPersonalBrandLinkedIn() {
                 Learn about the service
               </Link>
             </div>
+          </div>
+
+          <div className="mt-8">
+            <AskYourAI resources={BLOG_AI_RESOURCES} />
           </div>
         </div>
       </article>

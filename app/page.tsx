@@ -34,8 +34,16 @@ import BenefitsMarquee from "./components/BenefitsMarquee";
 import Testimonials from "./components/Testimonials";
 import Promise from "./components/Promise";
 import FAQ from "./components/FAQ";
+import AskYourAI from "./components/AskYourAI";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
+
+const HOME_AI_RESOURCES = [
+  "https://myntmore.com",
+  "https://myntmore.com/case-studies",
+  "https://myntmore.com/about-us",
+  "https://myntmore.com/resources",
+];
 
 export default function Home() {
   return (
@@ -51,6 +59,11 @@ export default function Home() {
       <Testimonials />
       <Promise />
       <FAQ />
+      <section className="py-16 px-4" style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-3xl mx-auto">
+          <AskYourAI resources={HOME_AI_RESOURCES} />
+        </div>
+      </section>
       <CTABanner />
       <Footer />
     </main>

@@ -271,7 +271,7 @@ export default function SalesIntelligence() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+            <a href="/founder-meeting"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               See Who&apos;s In-Market Now
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -537,7 +537,7 @@ export default function SalesIntelligence() {
             Book a free session and we&apos;ll show you the signals firing in your target market today — accounts your competitors don&apos;t know are in the buying window yet.
           </p>
 
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+          <a href="/founder-meeting"
             className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
             See Your In-Market Accounts
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

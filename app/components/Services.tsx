@@ -283,9 +283,7 @@ export default function Services() {
         {/* Shared CTA */}
         <div className="flex flex-col items-center justify-center gap-3 mt-10 text-center">
           <a
-            href="https://calendly.com/founder-myntmore/web"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/founder-meeting"
             className="btn-dark inline-flex items-center gap-2 px-8 py-4 text-base font-bold justify-center"
             style={{ borderRadius: "9999px" }}
           >

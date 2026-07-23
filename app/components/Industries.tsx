@@ -117,9 +117,7 @@ export default function Industries() {
         <p className="text-center text-sm text-[#B8B0A7] mt-10">
           Don&rsquo;t see your sector?{" "}
           <a
-            href="https://calendly.com/founder-myntmore/web"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/founder-meeting"
             className="font-semibold underline underline-offset-2"
             style={{ color: "#F5B731" }}
           >

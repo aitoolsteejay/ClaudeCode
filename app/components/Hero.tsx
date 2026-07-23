@@ -442,9 +442,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a
-            href="https://calendly.com/founder-myntmore/web"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/founder-meeting"
             className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2 w-full sm:w-auto justify-center"
           >
             Book Your Free Strategy Call

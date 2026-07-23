@@ -3,6 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
+import AskYourAI from "../components/AskYourAI";
+
+const CASE_STUDIES_AI_RESOURCES = [
+  "https://myntmore.com/case-studies",
+  "https://myntmore.com",
+  "https://myntmore.com/about-us",
+];
 
 // ── Blob parallax ──────────────────────────────────────────────────────────────
 function Blobs() {
@@ -253,6 +260,12 @@ export default function CaseStudies() {
             </FadeIn>
           ))}
 
+        </div>
+      </section>
+
+      <section className="py-16 px-4" style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-3xl mx-auto">
+          <AskYourAI topic="Myntmore" resources={CASE_STUDIES_AI_RESOURCES} />
         </div>
       </section>
 

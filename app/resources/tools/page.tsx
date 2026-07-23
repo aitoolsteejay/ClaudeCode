@@ -29,6 +29,13 @@ const FREE_TOOLS = [
     icon: "⚡",
     cta: "Generate angles",
   },
+  {
+    title: "ROI Calculator",
+    desc: "Estimate the pipeline and revenue you could generate from cold email and LinkedIn outreach. Plug in your numbers and see the projected return.",
+    href: "/tools/roi-calculator",
+    icon: "📊",
+    cta: "Calculate my ROI",
+  },
 ];
 
 export default function ToolsPage() {

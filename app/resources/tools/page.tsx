@@ -36,6 +36,13 @@ const FREE_TOOLS = [
     icon: "📊",
     cta: "Calculate my ROI",
   },
+  {
+    title: "Posting Rhythm Builder",
+    desc: "Plan a consistent LinkedIn posting rhythm that keeps your personal brand visible to your ICP, without guessing what to post or when.",
+    href: "/tools/posting-rhythm-builder",
+    icon: "📅",
+    cta: "Build my rhythm",
+  },
 ];
 
 export default function ToolsPage() {

@@ -12,15 +12,33 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white relative overflow-hidden">
-        {/* Soft background blobs, matching the site's homepage treatment */}
-        <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", bottom: "-80px", right: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+        {/* Vivid background blobs, matching the homepage hero's color treatment */}
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.30) 0%, rgba(255,160,0,0.12) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.25) 0%, rgba(124,58,237,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", bottom: "-140px", left: "10%", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.20) 0%, rgba(37,99,235,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="max-w-4xl mx-auto animate-fade-in relative z-10">
+          {/* Eyebrow badge, matching the homepage's "Trusted by" badge */}
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+            style={{ background: "rgba(255,255,255,0.7)", borderColor: "rgba(245,183,49,0.4)", backdropFilter: "blur(8px)" }}
+          >
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} aria-hidden="true" />
+            <span className="text-sm font-semibold text-foreground">Free AI-Powered Profile Audit</span>
+          </div>
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
             Turn Your LinkedIn Profile <br />
             <span className="text-primary italic">Into a Pipeline</span>
           </h1>
+
+          {/* Gold wavy underline, matching the homepage hero */}
+          <div className="flex justify-center -mt-3 mb-6" aria-hidden="true">
+            <svg viewBox="0 0 300 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[220px] sm:w-[280px]">
+              <path d="M3 8 C30 3, 58 12, 86 8 S142 3, 170 8 S226 12, 254 8 S284 3, 297 8" stroke="#F5B731" strokeWidth="3" strokeLinecap="round" fill="none" />
+            </svg>
+          </div>
+
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Most professionals waste their LinkedIn real estate. Get a free clarity audit that shows you exactly how to position yourself for replies, authority, and inbound opportunities.
           </p>

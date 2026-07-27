@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/profile-optimizer/LeadGate";
 import LandingPage from "@/components/tools/profile-optimizer/LandingPage";
 import ProfileWizard from "@/components/tools/profile-optimizer/ProfileWizard";
@@ -217,6 +218,15 @@ export default function ProfileOptimizerClient() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden pt-20">
+      {/* Breadcrumb, matching the site's sub-page convention */}
+      <div className="max-w-4xl mx-auto px-6 pt-4">
+        <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+          <Link href="/resources/tools" className="link-subtle">Tools</Link>
+          <span style={{ color: "#E8E2D9" }}>/</span>
+          <span style={{ color: "#3D3D3D" }}>LinkedIn Profile Optimizer</span>
+        </div>
+      </div>
+
       {!leadData && (
         <div className="flex flex-col">
           <LandingPage onStart={scrollToTool} />

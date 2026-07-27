@@ -195,7 +195,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         {/* 1. Profile Clarity Score */}
         <div className="card-elevated p-8 text-center animate-scale-in" style={{ animationDelay: "0.1s" }}>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Profile Clarity Score</h3>
-          <div className={`text-7xl md:text-8xl font-extrabold mb-4 ${getScoreColor(results.score)}`}>
+          <div className={`text-7xl md:text-8xl font-black mb-4 ${getScoreColor(results.score)}`}>
             {results.score}
             <span className="text-3xl text-muted-foreground font-normal"> / 100</span>
           </div>
@@ -210,7 +210,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
               <div className="h-10 w-10 rounded-lg bg-destructive/10 flex items-center justify-center">
                 <AlertTriangle className="h-5 w-5 text-destructive" />
               </div>
-              <h3 className="text-2xl font-bold">What&apos;s Holding Your Profile Back</h3>
+              <h3 className="text-2xl font-black">What&apos;s Holding Your Profile Back</h3>
             </div>
             <div className="card-elevated p-6">
               <ul className="space-y-4">
@@ -243,7 +243,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
             <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(59,130,246,0.1)" }}>
               <Zap className="h-5 w-5" style={{ color: "#3B82F6" }} />
             </div>
-            <h3 className="text-2xl font-bold">Optimized Headlines</h3>
+            <h3 className="text-2xl font-black">Optimized Headlines</h3>
           </div>
           <div className="space-y-4">
             {results.headlines.map((headline, index) => {
@@ -277,7 +277,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
             <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(245,183,49,0.15)" }}>
               <Target className="h-5 w-5" style={{ color: "#F5B731" }} />
             </div>
-            <h3 className="text-2xl font-bold">Optimized About Section</h3>
+            <h3 className="text-2xl font-black">Optimized About Section</h3>
           </div>
           <div className="card-elevated p-6 md:p-8 group hover:border-primary/50 transition-colors">
             <div className="flex justify-end mb-4">
@@ -316,7 +316,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
             <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(124,58,237,0.1)" }}>
               <Award className="h-5 w-5" style={{ color: "#7C3AED" }} />
             </div>
-            <h3 className="text-2xl font-bold">Positioning Angles</h3>
+            <h3 className="text-2xl font-black">Positioning Angles</h3>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {results.positioningAngles.map((angle, index) => {
@@ -337,7 +337,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
             <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(20,184,166,0.1)" }}>
               <TrendingUp className="h-5 w-5" style={{ color: "#14B8A6" }} />
             </div>
-            <h3 className="text-2xl font-bold">Keyword and ICP Relevance</h3>
+            <h3 className="text-2xl font-black">Keyword and ICP Relevance</h3>
           </div>
 
           <p className="text-muted-foreground text-sm mb-6 max-w-3xl">

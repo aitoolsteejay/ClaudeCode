@@ -64,7 +64,7 @@ const StepOne = ({ data, onNext }: StepOneProps) => {
         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
           <Sparkles className="h-5 w-5 text-primary" />
         </div>
-        <h2 className="text-2xl font-bold">Analyze Your Profile</h2>
+        <h2 className="text-2xl font-black">Analyze Your Profile</h2>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">

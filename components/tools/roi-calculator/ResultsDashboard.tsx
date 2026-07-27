@@ -65,7 +65,7 @@ export const ResultsDashboard = ({
       </div>
       <p className="text-sm text-muted-foreground mb-2 font-medium">{label}</p>
       <div className="flex items-baseline gap-2">
-        <p className="text-3xl font-bold text-foreground">{value}</p>
+        <p className="text-3xl font-black text-foreground">{value}</p>
       </div>
     </Card>
   );
@@ -80,7 +80,7 @@ export const ResultsDashboard = ({
           style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: "#F5B731", background: "linear-gradient(135deg, rgba(245,183,49,0.08) 0%, transparent 60%)" }}
         >
           <p className="text-xs text-muted-foreground mb-2 font-medium uppercase tracking-wider">Total Revenue Generated</p>
-          <p className="text-3xl font-bold" style={{ color: "#B8860B" }}>{formatCurrency(revenue)}</p>
+          <p className="text-3xl font-black" style={{ color: "#B8860B" }}>{formatCurrency(revenue)}</p>
         </Card>
 
         <Card
@@ -98,7 +98,7 @@ export const ResultsDashboard = ({
               </TooltipContent>
             </Tooltip>
           </div>
-          <p className="text-3xl font-bold" style={{ color: "#3B82F6" }}>{Math.round(roi)}%</p>
+          <p className="text-3xl font-black" style={{ color: "#3B82F6" }}>{Math.round(roi)}%</p>
         </Card>
       </div>
 

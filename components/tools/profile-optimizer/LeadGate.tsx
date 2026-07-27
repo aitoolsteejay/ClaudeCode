@@ -120,8 +120,8 @@ const LeadGate = ({ onComplete }: LeadGateProps) => {
   return (
     <div className="w-full max-w-4xl mx-auto animate-fade-in px-4 py-12">
       <div className="text-center mb-8 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-5xl font-extrabold tracking-tight mb-4 uppercase leading-tight">
-          MYNTMORE <span className="text-primary">LINKEDIN</span> PROFILE OPTIMIZER
+        <h2 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">
+          Myntmore <span className="text-primary">LinkedIn</span> Profile Optimizer
         </h2>
         <p className="text-muted-foreground text-sm md:text-lg max-w-lg mx-auto">
           Audit your LinkedIn profile and get specific improvements to make it work harder for you.

@@ -9,7 +9,7 @@ const CTASection = () => {
     <section className="py-24 px-6">
       <div className="max-w-3xl mx-auto text-center">
         {/* Headline */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight">
           Imagine this applied across your <span className="text-primary">entire LinkedIn presence.</span>
         </h2>
 

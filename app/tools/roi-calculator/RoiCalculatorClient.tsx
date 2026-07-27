@@ -124,7 +124,7 @@ export default function RoiCalculatorClient() {
       <main className="container mx-auto px-4 pt-28 pb-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">
+            <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">
               ROI Calculator
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -144,7 +144,7 @@ export default function RoiCalculatorClient() {
           {/* Left Panel - Inputs */}
           <div className="lg:col-span-4">
             <div className="bg-card border border-border rounded-2xl p-6 lg:sticky lg:top-24">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Your Inputs</h2>
+              <h2 className="text-2xl font-black text-foreground mb-6">Your Inputs</h2>
               <CalculatorInputs
                 currency={currency}
                 setCurrency={setCurrency}

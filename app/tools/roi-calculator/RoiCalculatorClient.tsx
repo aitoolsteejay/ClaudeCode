@@ -115,9 +115,13 @@ export default function RoiCalculatorClient() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Soft background blobs, matching the site's homepage treatment */}
+      <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "200px", right: "-80px", width: "460px", height: "460px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-28 pb-8">
+      <main className="container mx-auto px-4 pt-28 pb-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">

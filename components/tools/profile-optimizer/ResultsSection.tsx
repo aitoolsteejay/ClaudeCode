@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import jsPDF from "jspdf";
 
+const ANGLE_COLORS = ["#7C3AED", "#3B82F6", "#14B8A6"];
+
 interface QuotedIssue {
   issue_type: string;
   quoted_text: string;
@@ -238,39 +240,42 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         {/* 3. Optimized Headlines */}
         <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Zap className="h-5 w-5 text-primary" />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(59,130,246,0.1)" }}>
+              <Zap className="h-5 w-5" style={{ color: "#3B82F6" }} />
             </div>
             <h3 className="text-2xl font-bold">Optimized Headlines</h3>
           </div>
           <div className="space-y-4">
-            {results.headlines.map((headline, index) => (
-              <div key={index} className="card-elevated p-6 group hover:border-primary/50 transition-colors">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">{headline.angle}</span>
-                    <p className="text-lg md:text-xl font-semibold text-foreground leading-relaxed">{headline.text}</p>
+            {results.headlines.map((headline, index) => {
+              const color = ANGLE_COLORS[index % ANGLE_COLORS.length];
+              return (
+                <div key={index} className="card-elevated p-6 group transition-colors" style={{ borderLeft: `3px solid ${color}` }}>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <span className="text-xs font-semibold uppercase tracking-wider mb-2 block" style={{ color }}>{headline.angle}</span>
+                      <p className="text-lg md:text-xl font-semibold text-foreground leading-relaxed">{headline.text}</p>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => copyToClipboard(headline.text, index)}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-label="Copy headline"
+                    >
+                      {copiedIndex === index ? <Check className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4" />}
+                    </Button>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => copyToClipboard(headline.text, index)}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    aria-label="Copy headline"
-                  >
-                    {copiedIndex === index ? <Check className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4" />}
-                  </Button>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         {/* 4. Optimized About Section */}
         <div className="animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Target className="h-5 w-5 text-primary" />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(245,183,49,0.15)" }}>
+              <Target className="h-5 w-5" style={{ color: "#F5B731" }} />
             </div>
             <h3 className="text-2xl font-bold">Optimized About Section</h3>
           </div>
@@ -308,26 +313,29 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         {/* 5. Positioning Angles */}
         <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Award className="h-5 w-5 text-primary" />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(124,58,237,0.1)" }}>
+              <Award className="h-5 w-5" style={{ color: "#7C3AED" }} />
             </div>
             <h3 className="text-2xl font-bold">Positioning Angles</h3>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
-            {results.positioningAngles.map((angle, index) => (
-              <div key={index} className="card-elevated p-6 hover:border-primary/50 transition-colors">
-                <h4 className="text-primary font-semibold mb-3">{angle.title}</h4>
-                <p className="text-foreground/80 leading-relaxed">{angle.description}</p>
-              </div>
-            ))}
+            {results.positioningAngles.map((angle, index) => {
+              const color = ANGLE_COLORS[index % ANGLE_COLORS.length];
+              return (
+                <div key={index} className="card-elevated p-6 transition-colors" style={{ borderTop: `3px solid ${color}` }}>
+                  <h4 className="font-semibold mb-3" style={{ color }}>{angle.title}</h4>
+                  <p className="text-foreground/80 leading-relaxed">{angle.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* 6. Keyword & ICP Score */}
         <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-              <TrendingUp className="h-5 w-5 text-primary" />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(20,184,166,0.1)" }}>
+              <TrendingUp className="h-5 w-5" style={{ color: "#14B8A6" }} />
             </div>
             <h3 className="text-2xl font-bold">Keyword and ICP Relevance</h3>
           </div>

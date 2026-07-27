@@ -11,8 +11,12 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white relative overflow-hidden">
+        {/* Soft background blobs, matching the site's homepage treatment */}
+        <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", bottom: "-80px", right: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+
+        <div className="max-w-4xl mx-auto animate-fade-in relative z-10">
           <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
             Turn Your LinkedIn Profile <br />
             <span className="text-primary italic">Into a Pipeline</span>
@@ -35,19 +39,28 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
             {[
               {
                 title: "Vague headlines that say nothing about the value you deliver",
-                icon: <Target className="h-8 w-8 text-primary" />,
+                icon: Target,
+                color: "#3B82F6",
               },
               {
                 title: "Generic summaries that blend in with everyone else",
-                icon: <Zap className="h-8 w-8 text-primary" />,
+                icon: Zap,
+                color: "#F97316",
               },
               {
                 title: "Missing the exact words your ideal clients are searching for",
-                icon: <TrendingUp className="h-8 w-8 text-primary" />,
+                icon: TrendingUp,
+                color: "#7C3AED",
               },
             ].map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4">{item.icon}</div>
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+                style={{ border: "1px solid #E8E2D9", borderTop: `3px solid ${item.color}` }}
+              >
+                <div className="mb-4 inline-flex p-3 rounded-xl" style={{ backgroundColor: `${item.color}15` }}>
+                  <item.icon className="h-8 w-8" style={{ color: item.color }} />
+                </div>
                 <p className="text-lg font-medium leading-snug">{item.title}</p>
               </div>
             ))}
@@ -75,20 +88,23 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                 step: "01",
                 title: "Paste your LinkedIn profile URL",
                 desc: "Quick and easy input of your current profile details.",
+                color: "#F5B731",
               },
               {
                 step: "02",
                 title: "Get your free clarity audit in seconds",
                 desc: "Our AI engine processes your positioning against high-performing benchmarks.",
+                color: "#3B82F6",
               },
               {
                 step: "03",
                 title: "Implement changes and watch your pipeline grow",
                 desc: "Apply the specific suggestions and start seeing better engagement.",
+                color: "#10B981",
               },
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center">
-                <div className="text-5xl font-black text-primary/20 mb-4">{item.step}</div>
+                <div className="text-5xl font-black mb-4" style={{ color: `${item.color}35` }}>{item.step}</div>
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>

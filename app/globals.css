@@ -482,3 +482,54 @@ body {
   65%  { transform: rotate(6deg)  translate(3px, -7px); }
   100% { transform: rotate(8deg)  translate(0px, 0px); }
 }
+
+/* ─── shadcn/ui design tokens ──────────────────────────────
+   Scoped to power the ported lead-magnet tools (ROI Calculator,
+   Profile Optimizer). Values match the light, gold-accent theme
+   both tools were originally built with, so the port keeps their
+   exact look. These variables are only referenced by the shadcn
+   component classes those tools use, so they don't affect the
+   rest of the site. Posting Rhythm Builder doesn't use shadcn at
+   all, see .lp-tool-accent-* below instead. ──────────────────── */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 41 100% 64%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 95.5%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 37.5%;
+    --accent: 41 100% 64%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 87.5%;
+    --input: 0 0% 95.5%;
+    --ring: 41 100% 64%;
+    --radius: 1rem;
+  }
+}
+
+/* ─── Posting Rhythm Builder accent classes ───────────────
+   Ported as-is from the tool's original plain-Tailwind styling
+   (it doesn't use shadcn or the tokens above). ───────────────── */
+.lp-tool-accent-text { color: #FFC947; }
+.lp-tool-accent-bg { background-color: #FFC947; }
+.lp-tool-accent-border { border-color: #FFC947; }
+
+/* ─── Profile Optimizer component classes ─────────────────
+   Ported from the tool's original design system. ─────────────── */
+.card-elevated {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+}
+.glow-accent {
+  box-shadow: 0 0 40px hsl(var(--primary) / 0.15);
+}

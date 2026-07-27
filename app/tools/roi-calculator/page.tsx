@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import InnerLayout from "../../components/InnerLayout";
+import RoiCalculatorClient from "./RoiCalculatorClient";
 
 export const metadata: Metadata = {
   title: "ROI Calculator",
@@ -8,13 +10,8 @@ export const metadata: Metadata = {
 
 export default function RoiCalculator() {
   return (
-    <div style={{ position: "fixed", inset: 0, width: "100%", height: "100%" }}>
-      <iframe
-        src="https://roi-calculator-zeta-lime.vercel.app/"
-        style={{ width: "100%", height: "100%", border: "none" }}
-        allow="clipboard-read; clipboard-write"
-        title="ROI Calculator"
-      />
-    </div>
+    <InnerLayout>
+      <RoiCalculatorClient />
+    </InnerLayout>
   );
 }

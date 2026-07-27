@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Link from "next/link";
 import { CalculatorInputs } from "@/components/tools/roi-calculator/CalculatorInputs";
 import { ResultsDashboard } from "@/components/tools/roi-calculator/ResultsDashboard";
 import { FunnelChart } from "@/components/tools/roi-calculator/FunnelChart";
@@ -116,12 +117,20 @@ export default function RoiCalculatorClient() {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Soft background blobs, matching the site's homepage treatment */}
-      <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
-      <div aria-hidden="true" style={{ position: "absolute", top: "200px", right: "-80px", width: "460px", height: "460px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+      {/* Vivid background blobs, matching the homepage hero's color treatment */}
+      <div aria-hidden="true" style={{ position: "absolute", top: "-120px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,160,0,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "160px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.22) 0%, rgba(37,99,235,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", bottom: "-160px", left: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-28 pb-8 relative z-10">
+      <main className="container mx-auto px-4 pt-24 pb-8 relative z-10">
+        {/* Breadcrumb, matching the site's sub-page convention */}
+        <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
+          <Link href="/resources/tools" className="link-subtle">Tools</Link>
+          <span style={{ color: "#E8E2D9" }}>/</span>
+          <span style={{ color: "#3D3D3D" }}>ROI Calculator</span>
+        </div>
+
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">

@@ -115,12 +115,16 @@ export default function RoiCalculatorClient() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Soft background blobs, matching the site's homepage treatment */}
+      <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "200px", right: "-80px", width: "460px", height: "460px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-28 pb-8">
+      <main className="container mx-auto px-4 pt-28 pb-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">
+            <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">
               ROI Calculator
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -140,7 +144,7 @@ export default function RoiCalculatorClient() {
           {/* Left Panel - Inputs */}
           <div className="lg:col-span-4">
             <div className="bg-card border border-border rounded-2xl p-6 lg:sticky lg:top-24">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Your Inputs</h2>
+              <h2 className="text-2xl font-black text-foreground mb-6">Your Inputs</h2>
               <CalculatorInputs
                 currency={currency}
                 setCurrency={setCurrency}

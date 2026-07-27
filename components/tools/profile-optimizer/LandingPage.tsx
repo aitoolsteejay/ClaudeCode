@@ -11,9 +11,13 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white relative overflow-hidden">
+        {/* Soft background blobs, matching the site's homepage treatment */}
+        <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", bottom: "-80px", right: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+
+        <div className="max-w-4xl mx-auto animate-fade-in relative z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
             Turn Your LinkedIn Profile <br />
             <span className="text-primary italic">Into a Pipeline</span>
           </h1>
@@ -30,24 +34,33 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
       {/* Problem Section */}
       <section className="py-24 px-6 bg-secondary/30">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-16">Your Profile Is Costing You Opportunities</h2>
+          <h2 className="text-3xl sm:text-5xl font-black mb-16">Your Profile Is Costing You Opportunities</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {[
               {
                 title: "Vague headlines that say nothing about the value you deliver",
-                icon: <Target className="h-8 w-8 text-primary" />,
+                icon: Target,
+                color: "#3B82F6",
               },
               {
                 title: "Generic summaries that blend in with everyone else",
-                icon: <Zap className="h-8 w-8 text-primary" />,
+                icon: Zap,
+                color: "#F97316",
               },
               {
                 title: "Missing the exact words your ideal clients are searching for",
-                icon: <TrendingUp className="h-8 w-8 text-primary" />,
+                icon: TrendingUp,
+                color: "#7C3AED",
               },
             ].map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4">{item.icon}</div>
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+                style={{ border: "1px solid #E8E2D9", borderTop: `3px solid ${item.color}` }}
+              >
+                <div className="mb-4 inline-flex p-3 rounded-xl" style={{ backgroundColor: `${item.color}15` }}>
+                  <item.icon className="h-8 w-8" style={{ color: item.color }} />
+                </div>
                 <p className="text-lg font-medium leading-snug">{item.title}</p>
               </div>
             ))}
@@ -58,7 +71,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
       {/* Solution Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">Get Instant Clarity on What to Fix</h2>
+          <h2 className="text-3xl sm:text-5xl font-black mb-8">Get Instant Clarity on What to Fix</h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             Paste your LinkedIn profile URL. Our AI analyzes your positioning, identifies gaps in clarity, and gives you specific improvements that make decision-makers stop scrolling and start reaching out.
           </p>
@@ -68,27 +81,30 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
       {/* How It Works Section */}
       <section className="py-24 px-6 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">How It Works</h2>
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-16">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
                 step: "01",
                 title: "Paste your LinkedIn profile URL",
                 desc: "Quick and easy input of your current profile details.",
+                color: "#F5B731",
               },
               {
                 step: "02",
                 title: "Get your free clarity audit in seconds",
                 desc: "Our AI engine processes your positioning against high-performing benchmarks.",
+                color: "#3B82F6",
               },
               {
                 step: "03",
                 title: "Implement changes and watch your pipeline grow",
                 desc: "Apply the specific suggestions and start seeing better engagement.",
+                color: "#10B981",
               },
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center text-center">
-                <div className="text-5xl font-black text-primary/20 mb-4">{item.step}</div>
+                <div className="text-5xl font-black mb-4" style={{ color: `${item.color}35` }}>{item.step}</div>
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>
@@ -121,7 +137,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
       {/* Second CTA */}
       <section className="py-24 px-6 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-10 text-black">Stop Guessing, Start Positioning</h2>
+          <h2 className="text-3xl sm:text-5xl font-black mb-10 text-black">Stop Guessing, Start Positioning</h2>
           <Button onClick={onStart} variant="secondary" size="xl" className="rounded-full bg-white text-black hover:bg-white/90 shadow-2xl">
             Start My Free Audit
             <ArrowRight className="ml-2 h-5 w-5" />

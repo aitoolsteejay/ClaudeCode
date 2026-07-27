@@ -53,18 +53,19 @@ export const ResultsDashboard = ({
     return `${currencySymbol}${formatNumber(value)}`;
   };
 
-  const MetricCard = ({ icon: Icon, label, value, highlight = false }: { icon: LucideIcon; label: string; value: string; percentage?: number; highlight?: boolean }) => (
-    <Card className={`bg-card border-border p-6 transition-all duration-300 hover:shadow-[0_0_30px_hsl(45_100%_64%/0.15)] ${
-      highlight ? 'bg-gradient-to-br from-card to-secondary' : ''
-    }`}>
+  const MetricCard = ({ icon: Icon, label, value, color }: { icon: LucideIcon; label: string; value: string; percentage?: number; color: string }) => (
+    <Card
+      className="bg-card p-6 transition-all duration-300 hover:-translate-y-0.5"
+      style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: color, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}
+    >
       <div className="flex items-start justify-between mb-3">
-        <div className={`p-3 rounded-xl ${highlight ? 'bg-accent/20' : 'bg-secondary'}`}>
-          <Icon className={`w-6 h-6 ${highlight ? 'text-accent' : 'text-foreground'}`} />
+        <div className="p-3 rounded-xl" style={{ backgroundColor: `${color}15` }}>
+          <Icon className="w-6 h-6" style={{ color }} />
         </div>
       </div>
       <p className="text-sm text-muted-foreground mb-2 font-medium">{label}</p>
       <div className="flex items-baseline gap-2">
-        <p className={`text-3xl font-bold ${highlight ? 'text-accent' : 'text-foreground'}`}>{value}</p>
+        <p className="text-3xl font-black text-foreground">{value}</p>
       </div>
     </Card>
   );
@@ -74,12 +75,18 @@ export const ResultsDashboard = ({
       <div className="space-y-6">
         {/* Top Highlight Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="bg-gradient-to-br from-card to-secondary border-border p-6 transition-all duration-300 hover:shadow-[0_0_40px_hsl(45_100%_64%/0.25)]">
+        <Card
+          className="p-6 transition-all duration-300 hover:-translate-y-0.5"
+          style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: "#F5B731", background: "linear-gradient(135deg, rgba(245,183,49,0.08) 0%, transparent 60%)" }}
+        >
           <p className="text-xs text-muted-foreground mb-2 font-medium uppercase tracking-wider">Total Revenue Generated</p>
-          <p className="text-3xl font-bold text-accent">{formatCurrency(revenue)}</p>
+          <p className="text-3xl font-black" style={{ color: "#B8860B" }}>{formatCurrency(revenue)}</p>
         </Card>
 
-        <Card className="bg-gradient-to-br from-card to-secondary border-border p-6 transition-all duration-300 hover:shadow-[0_0_40px_hsl(45_100%_64%/0.25)]">
+        <Card
+          className="p-6 transition-all duration-300 hover:-translate-y-0.5"
+          style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: "#3B82F6", background: "linear-gradient(135deg, rgba(59,130,246,0.08) 0%, transparent 60%)" }}
+        >
           <div className="flex items-center justify-between mb-2">
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Return on Investment</p>
             <Tooltip>
@@ -91,7 +98,7 @@ export const ResultsDashboard = ({
               </TooltipContent>
             </Tooltip>
           </div>
-          <p className="text-3xl font-bold text-accent">{Math.round(roi)}%</p>
+          <p className="text-3xl font-black" style={{ color: "#3B82F6" }}>{Math.round(roi)}%</p>
         </Card>
       </div>
 
@@ -113,7 +120,7 @@ export const ResultsDashboard = ({
             <p className="text-xl font-bold text-foreground">{formatCurrency(Math.round(fullLifetimeLTV))}</p>
           </div>
         </Card>
-        <Card className="bg-accent/10 border-accent/20 p-4">
+        <Card className="p-4" style={{ backgroundColor: "rgba(20,184,166,0.08)", borderColor: "rgba(20,184,166,0.25)" }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5">
               <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Effective LTV (for duration)</p>
@@ -126,7 +133,7 @@ export const ResultsDashboard = ({
                 </TooltipContent>
               </Tooltip>
             </div>
-            <p className="text-xl font-bold text-accent">{formatCurrency(Math.round(effectiveLTV))}</p>
+            <p className="text-xl font-bold" style={{ color: "#14B8A6" }}>{formatCurrency(Math.round(effectiveLTV))}</p>
           </div>
         </Card>
       </div>
@@ -167,30 +174,35 @@ export const ResultsDashboard = ({
           icon={TrendingUp}
           label="Total Requests"
           value={formatNumber(totalRequests)}
+          color="#F5B731"
         />
         <MetricCard
           icon={Users}
           label="Accepted"
           value={formatNumber(acceptedConnections)}
           percentage={acceptanceRate}
+          color="#3B82F6"
         />
         <MetricCard
           icon={MessageSquare}
           label="Total Replies"
           value={formatNumber(replies)}
           percentage={acceptedConnections > 0 ? (replies / acceptedConnections) * 100 : 0}
+          color="#14B8A6"
         />
         <MetricCard
           icon={Calendar}
           label="Meetings"
           value={formatNumber(meetings)}
           percentage={positiveReplies > 0 ? (meetings / positiveReplies) * 100 : 0}
+          color="#7C3AED"
         />
         <MetricCard
           icon={Handshake}
           label="Deals"
           value={formatNumber(deals)}
           percentage={meetings > 0 ? (deals / meetings) * 100 : 0}
+          color="#10B981"
         />
       </div>
     </div>

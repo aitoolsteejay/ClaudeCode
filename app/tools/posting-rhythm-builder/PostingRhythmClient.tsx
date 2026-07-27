@@ -65,6 +65,15 @@ const LIFESTYLE_OPTIONS: FounderLifestyle[] = [
 
 const TONE_OPTIONS: Tone[] = ["Authoritative", "Professional & Warm", "Sharp & Direct", "Friendly", "Visionary"];
 
+const STRENGTH_COLORS: Record<ContentStrength, string> = {
+  Educational: "#3B82F6",
+  Storytelling: "#7C3AED",
+  Analytical: "#14B8A6",
+  Contrarian: "#F97316",
+  Inspirational: "#F5B731",
+  Humorous: "#EC4899",
+};
+
 const STRENGTH_OPTIONS: ContentStrength[] = [
   "Educational",
   "Storytelling",
@@ -174,38 +183,40 @@ export default function PostingRhythmClient() {
   };
 
   return (
-    <div className="min-h-screen pb-20 pt-28 px-6 text-foreground selection:bg-[#FFC947] selection:text-black">
+    <div className="min-h-screen pb-20 pt-28 px-6 text-foreground relative overflow-hidden selection:bg-[#FFC947] selection:text-black">
+      {/* Soft background blobs, matching the site's homepage treatment */}
+      <div aria-hidden="true" style={{ position: "absolute", top: "-80px", left: "-60px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "260px", right: "-80px", width: "460px", height: "460px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.08) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+
       {/* Header */}
-      <header className="relative pb-12 text-center">
+      <header className="relative z-10 pb-12 text-center">
         {step !== "lead" && (
           <div className="flex justify-end mb-6">
             <Link
               href="/founder-meeting"
-              className="bg-black text-white hover:bg-[#FFC947] hover:text-black transition-colors px-6 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg"
+              className="bg-black text-white hover:bg-[#FFC947] hover:text-black transition-colors px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg"
             >
               Book a Strategy Call
             </Link>
           </div>
         )}
 
-        <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 uppercase leading-none">
-          Myntmore <span className="lp-tool-accent-text">Rhythm</span>
-          <br />
-          Builder
+        <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
+          Myntmore <span className="lp-tool-accent-text">Rhythm</span> Builder
         </h1>
         <p className="text-gray-700 text-sm md:text-base mb-6 max-w-xl mx-auto font-medium">
           Helps you figure the right posting frequency and schedule for LinkedIn based on your goals.
         </p>
       </header>
 
-      <main className="max-w-4xl mx-auto">
+      <main className="max-w-4xl mx-auto relative z-10">
         {/* Step 2: Input Panel */}
         {step === "input" && (
           <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden animate-in fade-in duration-500">
             <div className="absolute top-0 left-0 w-full h-1 lp-tool-accent-bg opacity-50"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               <div className="space-y-3">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Founder Lifestyle</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Founder Lifestyle</label>
                 <select
                   className="w-full bg-white border border-black/20 rounded-lg px-4 py-3 text-black focus:border-[#FFC947] outline-none transition-colors appearance-none cursor-pointer"
                   value={formData.lifestyle || ""}
@@ -223,7 +234,7 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="space-y-3">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Preferred Tone</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Preferred Tone</label>
                 <select
                   className="w-full bg-white border border-black/20 rounded-lg px-4 py-3 text-black focus:border-[#FFC947] outline-none transition-colors appearance-none cursor-pointer"
                   value={formData.tone || ""}
@@ -241,7 +252,7 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="md:col-span-2 space-y-3">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Ideal Customer Profile (ICP)</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Ideal Customer Profile (ICP)</label>
                 <input
                   type="text"
                   className="w-full bg-white border border-black/20 rounded-lg px-4 py-4 text-black focus:border-[#FFC947] outline-none transition-colors placeholder:text-gray-400"
@@ -252,21 +263,26 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="md:col-span-2 space-y-4">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">Content Strengths</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Content Strengths</label>
                 <div className="flex flex-wrap gap-2">
-                  {STRENGTH_OPTIONS.map((strength) => (
-                    <button
-                      key={strength}
-                      onClick={() => toggleStrength(strength)}
-                      className={`px-5 py-2.5 rounded-full border text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                        formData.strengths.includes(strength)
-                          ? "lp-tool-accent-bg text-black border-[#FFC947] shadow-[0_0_15px_rgba(255,201,71,0.2)]"
-                          : "bg-white text-black border-black/10 hover:border-black/30"
-                      }`}
-                    >
-                      {strength}
-                    </button>
-                  ))}
+                  {STRENGTH_OPTIONS.map((strength) => {
+                    const active = formData.strengths.includes(strength);
+                    const color = STRENGTH_COLORS[strength];
+                    return (
+                      <button
+                        key={strength}
+                        onClick={() => toggleStrength(strength)}
+                        className="px-5 py-2.5 rounded-full border text-xs font-bold uppercase tracking-wider transition-all duration-300"
+                        style={
+                          active
+                            ? { backgroundColor: color, color: "#000", borderColor: color, boxShadow: `0 0 15px ${color}40` }
+                            : { backgroundColor: "#ffffff", color: "#000", borderColor: "rgba(0,0,0,0.1)" }
+                        }
+                      >
+                        {strength}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -296,12 +312,12 @@ export default function PostingRhythmClient() {
         {/* Step 1: Lead Form */}
         {step === "lead" && (
           <div className="max-w-lg mx-auto bg-[#F5F5F5] border border-[#FFC947] rounded-2xl p-8 md:p-12 shadow-[0_0_50px_rgba(255,201,71,0.1)] animate-in zoom-in-95 duration-500">
-            <h2 className="text-2xl font-black text-center mb-2 uppercase tracking-tight">Tell Us About You</h2>
+            <h2 className="text-2xl font-black text-center mb-2">Tell Us About You</h2>
             <p className="text-gray-600 text-center mb-8 text-sm leading-relaxed">Enter your details to get started.</p>
 
             <form onSubmit={handleLeadSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest">Name</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest">Name</label>
                 <input
                   required
                   type="text"
@@ -312,7 +328,7 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest">Company Name</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest">Company Name</label>
                 <input
                   required
                   type="text"
@@ -323,7 +339,7 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest">Company Email</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest">Company Email</label>
                 <input
                   required
                   type="email"
@@ -334,7 +350,7 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest">Company Website</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest">Company Website</label>
                 <input
                   required
                   type="url"
@@ -345,7 +361,7 @@ export default function PostingRhythmClient() {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest">Personal LinkedIn URL</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest">Personal LinkedIn URL</label>
                 <input
                   required
                   type="url"
@@ -373,25 +389,25 @@ export default function PostingRhythmClient() {
         {step === "results" && strategy && (
           <div id="results-section" className="space-y-12 animate-in fade-in slide-in-from-bottom-10 duration-700">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-              <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-10 flex flex-col">
-                <h3 className="text-[#FFC947] text-[10px] font-bold uppercase tracking-[0.25em] mb-6">Best Posting Days</h3>
+              <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-10 flex flex-col" style={{ borderTop: "3px solid #F5B731", borderLeft: "1px solid rgba(0,0,0,0.1)", borderRight: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: "#F5B731" }}>Best Posting Days</h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">{strategy.bestPostingDays.explanation}</p>
                 <div className="space-y-4 mb-10">
                   {strategy.bestPostingDays.days.map((day) => (
                     <div key={day} className="flex items-center gap-4 text-2xl font-bold">
-                      <div className="w-2.5 h-2.5 lp-tool-accent-bg rounded-full shadow-[0_0_8px_rgba(255,201,71,0.5)]"></div>
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#F5B731", boxShadow: "0 0 8px rgba(245,183,49,0.5)" }}></div>
                       {day}
                     </div>
                   ))}
                 </div>
                 <div className="pt-8 border-t border-black/10 mt-auto">
-                  <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-2">Best Time Window</p>
+                  <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Best Time Window</p>
                   <p className="text-2xl font-black tracking-tight">{strategy.bestPostingDays.timeWindow}</p>
                 </div>
               </div>
 
-              <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-10 flex flex-col">
-                <h3 className="text-[#FFC947] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Topic Cadence</h3>
+              <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-10 flex flex-col" style={{ borderTop: "3px solid #3B82F6", borderLeft: "1px solid rgba(0,0,0,0.1)", borderRight: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8" style={{ color: "#3B82F6" }}>Topic Cadence</h3>
                 <div className="space-y-8 mb-10 flex-grow">
                   {strategy.topicCadence.schedule.map((item) => (
                     <div key={item.day} className="grid grid-cols-[120px_1fr] gap-4 items-start border-b border-black/5 pb-4 last:border-0">
@@ -406,12 +422,12 @@ export default function PostingRhythmClient() {
               </div>
             </div>
 
-            <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-12">
-              <h3 className="text-[#FFC947] text-[10px] font-bold uppercase tracking-[0.25em] mb-10">Weekly Posting System</h3>
+            <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-12" style={{ borderTop: "3px solid #14B8A6", borderLeft: "1px solid rgba(0,0,0,0.1)", borderRight: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-10" style={{ color: "#14B8A6" }}>Weekly Posting System</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {strategy.weeklySystem.routine.map((item) => (
-                  <div key={item.day} className="bg-white border border-black/5 p-6 rounded-xl group hover:border-[#FFC947]/30 transition-colors">
-                    <p className="text-[#FFC947] text-xs font-bold uppercase tracking-widest mb-3 group-hover:translate-x-1 transition-transform">
+                  <div key={item.day} className="bg-white border border-black/5 p-6 rounded-xl group transition-colors" style={{ borderColor: "rgba(0,0,0,0.05)" }}>
+                    <p className="text-xs font-bold uppercase tracking-widest mb-3 group-hover:translate-x-1 transition-transform" style={{ color: "#14B8A6" }}>
                       {item.day}
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed font-medium">{item.action}</p>
@@ -420,12 +436,12 @@ export default function PostingRhythmClient() {
               </div>
             </div>
 
-            <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-12">
-              <h3 className="text-[#FFC947] text-[10px] font-bold uppercase tracking-[0.25em] mb-10">High Probability Post Ideas</h3>
+            <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-12" style={{ borderTop: "3px solid #7C3AED", borderLeft: "1px solid rgba(0,0,0,0.1)", borderRight: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-10" style={{ color: "#7C3AED" }}>High Probability Post Ideas</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                 {strategy.postIdeas.map((idea, idx) => (
-                  <div key={idx} className="group border-l-2 border-black/10 pl-8 py-1 hover:border-[#FFC947] transition-all duration-300">
-                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 group-hover:text-[#FFC947] transition-colors">
+                  <div key={idx} className="group border-l-2 pl-8 py-1 transition-all duration-300" style={{ borderColor: "rgba(124,58,237,0.25)" }}>
+                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 transition-colors group-hover:text-[#7C3AED]">
                       {idea.category}
                     </p>
                     <p className="text-lg leading-snug font-semibold text-black/90 group-hover:text-black transition-colors">{idea.idea}</p>
@@ -435,12 +451,12 @@ export default function PostingRhythmClient() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-10">
-                <h3 className="text-[#FFC947] text-[10px] font-bold uppercase tracking-[0.25em] mb-8 text-center">Scroll-Stopping Hooks</h3>
+              <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-10" style={{ borderTop: "3px solid #F97316", borderLeft: "1px solid rgba(0,0,0,0.1)", borderRight: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-center" style={{ color: "#F97316" }}>Scroll-Stopping Hooks</h3>
                 <div className="space-y-8">
                   {strategy.hooks.map((hook, idx) => (
                     <div key={idx} className="flex gap-6 group">
-                      <span className="text-gray-300 font-black text-xl group-hover:text-gray-500 transition-colors">
+                      <span className="font-black text-xl transition-colors" style={{ color: "rgba(249,115,22,0.35)" }}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                       <p className="text-gray-700 text-[15px] leading-relaxed pt-1">&quot;{hook}&quot;</p>
@@ -448,12 +464,12 @@ export default function PostingRhythmClient() {
                   ))}
                 </div>
               </div>
-              <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-8 md:p-10">
-                <h3 className="text-[#FFC947] text-[10px] font-bold uppercase tracking-[0.25em] mb-8 text-center">Low-Friction CTAs</h3>
+              <div className="bg-[#F5F5F5] rounded-2xl p-8 md:p-10" style={{ borderTop: "3px solid #10B981", borderLeft: "1px solid rgba(0,0,0,0.1)", borderRight: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-center" style={{ color: "#10B981" }}>Low-Friction CTAs</h3>
                 <div className="space-y-8">
                   {strategy.ctas.map((cta, idx) => (
                     <div key={idx} className="flex gap-6 group">
-                      <span className="text-gray-300 font-black text-xl group-hover:text-gray-500 transition-colors">
+                      <span className="font-black text-xl transition-colors" style={{ color: "rgba(16,185,129,0.35)" }}>
                         {String(idx + 1).padStart(2, "0")}
                       </span>
                       <p className="text-gray-700 text-[15px] leading-relaxed pt-1 font-medium">{cta}</p>
@@ -464,7 +480,7 @@ export default function PostingRhythmClient() {
             </div>
 
             <div className="bg-[#F5F5F5] border border-black/10 rounded-2xl p-12 text-center shadow-xl">
-              <h3 className="text-2xl font-bold mb-8 uppercase tracking-tight">Ready to execute your new rhythm?</h3>
+              <h3 className="text-2xl font-black mb-8">Ready to execute your new rhythm?</h3>
               <button
                 onClick={handleDownload}
                 className="inline-flex items-center gap-4 px-10 py-5 border-2 border-black/20 text-black font-bold rounded-full hover:bg-black hover:text-white hover:border-black transition-all active:scale-[0.98] uppercase text-sm tracking-widest"
@@ -482,7 +498,7 @@ export default function PostingRhythmClient() {
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
                 </svg>
               </div>
-              <h2 className="text-3xl md:text-5xl font-black mb-6 relative z-10 leading-tight uppercase tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl font-black mb-6 relative z-10 leading-tight">
                 Want us to execute your content engine?
               </h2>
               <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-light leading-relaxed">

@@ -137,18 +137,10 @@ export default function PostingRhythmClient() {
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Breadcrumb, matching the site's sub-page convention */}
-        <div className="flex items-center justify-between gap-4 mb-6">
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>Posting Rhythm Builder</span>
-          </div>
-          <Link
-            href="/founder-meeting"
-            className="bg-black text-white hover:bg-[#FFC947] hover:text-black transition-colors px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg"
-          >
-            Book a Strategy Call
-          </Link>
+        <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
+          <Link href="/resources/tools" className="link-subtle">Tools</Link>
+          <span style={{ color: "#E8E2D9" }}>/</span>
+          <span style={{ color: "#3D3D3D" }}>Posting Rhythm Builder</span>
         </div>
 
         {/* Header */}

@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import LeadGate, { LeadData } from "@/components/tools/profile-optimizer/LeadGate";
+import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import LandingPage from "@/components/tools/profile-optimizer/LandingPage";
 import ProfileWizard from "@/components/tools/profile-optimizer/ProfileWizard";
 import { StepOneData } from "@/components/tools/profile-optimizer/StepOne";
@@ -232,7 +232,7 @@ export default function ProfileOptimizerClient() {
           <LandingPage onStart={scrollToTool} />
           <div ref={toolRef} className="min-h-screen flex items-center justify-center py-20 bg-white">
             <div className="w-full">
-              <LeadGate onComplete={handleLeadComplete} />
+              <LeadGate source="profile_optimizer" onComplete={handleLeadComplete} />
             </div>
           </div>
         </div>

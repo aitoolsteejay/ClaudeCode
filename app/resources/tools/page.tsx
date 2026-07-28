@@ -43,6 +43,13 @@ const FREE_TOOLS = [
     icon: "📅",
     cta: "Build my rhythm",
   },
+  {
+    title: "Lead Magnet Idea Generator",
+    desc: "Tell us what your business does, who you sell to, and your industry, and get concrete lead magnet ideas you can actually use in outreach.",
+    href: "/tools/lead-magnet-ideas",
+    icon: "💡",
+    cta: "Generate ideas",
+  },
 ];
 
 export default function ToolsPage() {

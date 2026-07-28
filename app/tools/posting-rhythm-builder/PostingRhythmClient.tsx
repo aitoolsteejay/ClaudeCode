@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 
 type FounderLifestyle =
   | "I can post daily"
@@ -81,14 +82,20 @@ const DEFAULT_APP_STATE: AppState = {
   tone: "",
 };
 
-type FlowStep = "input" | "results";
+type FlowStep = "lead" | "input" | "results";
 
 export default function PostingRhythmClient() {
   const [formData, setFormData] = useState<AppState>(DEFAULT_APP_STATE);
+  const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [strategy, setStrategy] = useState<PostingStrategy | null>(null);
-  const [step, setStep] = useState<FlowStep>("input");
+  const [step, setStep] = useState<FlowStep>("lead");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const handleLeadComplete = (data: LeadData) => {
+    setLeadData(data);
+    setStep("input");
+  };
 
   const toggleStrength = (strength: ContentStrength) => {
     setFormData((prev) => ({
@@ -109,7 +116,10 @@ export default function PostingRhythmClient() {
       const res = await fetch("/api/tools/posting-rhythm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ state: formData }),
+        body: JSON.stringify({
+          state: formData,
+          lead: leadData ? { name: leadData.name, companyName: leadData.companyName } : undefined,
+        }),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || "Failed to build strategy");
@@ -154,6 +164,16 @@ export default function PostingRhythmClient() {
         </header>
 
         <main>
+          {/* Lead Gate */}
+          {step === "lead" && (
+            <LeadGate
+              source="posting_rhythm_builder"
+              heading="Tell Us About You"
+              description="Enter your details to unlock your custom posting rhythm."
+              onComplete={handleLeadComplete}
+            />
+          )}
+
           {/* Input Panel */}
           {step === "input" && (
             <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm relative overflow-hidden animate-in fade-in duration-500" style={{ border: "1px solid #E8E2D9" }}>

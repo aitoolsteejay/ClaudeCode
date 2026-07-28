@@ -36,15 +36,27 @@ const leadSchema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
 });
 
+export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas";
+
 interface LeadGateProps {
   onComplete: (data: LeadData) => void;
+  source: LeadSource;
+  heading?: React.ReactNode;
+  description?: string;
 }
 
 const ZOHO_FORM_ACTION =
   "https://forms.zohopublic.com/flintstop/form/Myntmoreleadmagnetform/formperma/z-AuIY9K-mm72IUDW3h9bnsB3ye_AQgaIjI4xrdii1o/htmlRecords/submit";
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 
-const LeadGate = ({ onComplete }: LeadGateProps) => {
+const DEFAULT_HEADING = (
+  <>
+    Myntmore <span className="text-primary">LinkedIn</span> Profile Optimizer
+  </>
+);
+const DEFAULT_DESCRIPTION = "Audit your LinkedIn profile and get specific improvements to make it work harder for you.";
+
+const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description = DEFAULT_DESCRIPTION }: LeadGateProps) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormState>({
     firstName: "",
@@ -86,7 +98,7 @@ const LeadGate = ({ onComplete }: LeadGateProps) => {
       .from("leads")
       .insert([
         {
-          source: "profile_optimizer",
+          source,
           name: `${d.firstName} ${d.lastName}`.trim(),
           email: d.email || null,
           phone: d.phone || null,
@@ -120,12 +132,8 @@ const LeadGate = ({ onComplete }: LeadGateProps) => {
   return (
     <div className="w-full max-w-4xl mx-auto animate-fade-in px-4 py-12">
       <div className="text-center mb-8 max-w-3xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">
-          Myntmore <span className="text-primary">LinkedIn</span> Profile Optimizer
-        </h2>
-        <p className="text-muted-foreground text-sm md:text-lg max-w-lg mx-auto">
-          Audit your LinkedIn profile and get specific improvements to make it work harder for you.
-        </p>
+        <h2 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">{heading}</h2>
+        <p className="text-muted-foreground text-sm md:text-lg max-w-lg mx-auto">{description}</p>
       </div>
 
       <div className="card-elevated p-8 glow-accent max-w-md mx-auto">

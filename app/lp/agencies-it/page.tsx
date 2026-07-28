@@ -65,7 +65,7 @@ const CASE_STUDIES = [
   {
     tag: "Digital Marketing Agency · Mumbai",
     headline: "0 to 23 qualified retainer conversations in 60 days",
-    body: "A 14-person performance marketing agency was relying entirely on referrals. We mapped their ICP to funded D2C and e-commerce brands, built a 3-touch cold email sequence, and layered LinkedIn DMs targeting CMOs and Growth Leads. Within 60 days they had 23 qualified conversations booked — 6 converted to retainers in the first quarter.",
+    body: "A 14-person performance marketing agency was relying entirely on referrals. We mapped their ICP to funded D2C and e-commerce brands, built a 3-touch cold email sequence, and layered LinkedIn DMs targeting CMOs and Growth Leads. Within 60 days they had 23 qualified conversations booked, with 6 converting to retainers in the first quarter.",
     results: ["23 meetings booked", "6 retainer clients won", "₹78L new ARR"],
   },
   {
@@ -77,15 +77,15 @@ const CASE_STUDIES = [
   {
     tag: "Web & App Development Agency · Bengaluru",
     headline: "Consistent 15 demos/month for a dev shop with no sales team",
-    body: "A 30-person product development agency had great delivery but no repeatable lead generation. We identified their sweet spot — funded fintech and healthtech startups needing a tech partner — and built a full outbound engine with automated personalisation at scale. They now run 15 qualified demos every month with one part-time SDR.",
+    body: "A 30-person product development agency had great delivery but no repeatable lead generation. We identified their sweet spot, funded fintech and healthtech startups needing a tech partner, and built a full outbound engine with automated personalisation at scale. They now run 15 qualified demos every month with one part-time SDR.",
     results: ["15 demos/month (ongoing)", "₹60L avg deal size", "1 SDR, fully handled"],
   },
 ];
 
 const PROCESS = [
-  { n: "01", title: "ICP Mapping", body: "We identify your best-fit client profile by vertical, company size, funding stage, and buying signals — not generic firmographics." },
+  { n: "01", title: "ICP Mapping", body: "We identify your best-fit client profile by vertical, company size, funding stage, and buying signals, not generic firmographics." },
   { n: "02", title: "List Building", body: "Hand-verified prospect lists of decision-makers at companies actively looking for agency partners. No recycled databases." },
-  { n: "03", title: "Outreach Engine", body: "Multi-channel sequences — cold email + LinkedIn — with hyper-personalised copy based on each prospect's recent activity." },
+  { n: "03", title: "Outreach Engine", body: "Multi-channel sequences, cold email plus LinkedIn, with hyper-personalised copy based on each prospect's recent activity." },
   { n: "04", title: "Meeting Handoff", body: "Qualified meetings land directly in your calendar. You close; we fill the top of funnel, consistently." },
 ];
 
@@ -177,7 +177,7 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
-          We build and run the outbound engine that fills your agency's pipeline — AI-powered cold email, LinkedIn outreach, and ABM targeting the exact clients you want.
+          We build and run the outbound engine that fills your agency's pipeline: AI-powered cold email, LinkedIn outreach, and ABM targeting the exact clients you want.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">
@@ -331,7 +331,7 @@ function DarkCTASection() {
           Ready to fill your pipeline?
         </h2>
         <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Book a free 30-minute GTM audit. We will review your outreach, map your ICP, and hand you a custom action plan — no pitch, no pressure.
+          Book a free 30-minute GTM audit. We will review your outreach, map your ICP, and hand you a custom action plan, no pitch, no pressure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/founder-meeting"
@@ -409,7 +409,7 @@ export default function AgenciesItLP() {
         title={"From cold list to retainer client\nEvery single time"}
         topSteps={[
           { n: "01", icon: "🎯", title: "ICP & Agency Strategy", body: "Define your ideal client: industry vertical, team size, retainer budget, and the exact pain point your agency solves best.", color: "rgba(139,92,246,0.12)" },
-          { n: "02", icon: "👥", title: "Build & Enrich Lists", body: "Scrape verified decision-makers — Founders, CMOs, Heads of Marketing — from LinkedIn and Apollo, enriched with intent signals.", color: "rgba(59,130,246,0.12)" },
+          { n: "02", icon: "👥", title: "Build & Enrich Lists", body: "Scrape verified decision-makers (Founders, CMOs, Heads of Marketing) from LinkedIn and Apollo, enriched with intent signals.", color: "rgba(59,130,246,0.12)" },
           { n: "03", icon: "📦", title: "Prepare Outreach Assets", body: "Case studies, cold email sequences, and LinkedIn content tailored to your ICP's pain points and buying triggers.", color: "rgba(245,183,49,0.15)" },
         ]}
         parallel={{

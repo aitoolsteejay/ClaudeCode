@@ -56,28 +56,28 @@ const CASE_STUDIES = [
   {
     tag: "B2B SaaS · HR Tech · Series A",
     headline: "0 to 28 qualified demos per month in 60 days",
-    body: "An HR-tech startup had great product-market fit within their network but couldn't scale beyond warm intros. We mapped their ICP to CHROs and HR Heads at companies with 200-1000 employees scaling through a hiring spike, and built a cold email + LinkedIn sequence referencing hiring triggers. In 60 days, their AE calendar was fully booked with 28 demos/month — 7 converted to paid.",
+    body: "An HR-tech startup had great product-market fit within their network but couldn't scale beyond warm intros. We mapped their ICP to CHROs and HR Heads at companies with 200-1000 employees scaling through a hiring spike, and built a cold email + LinkedIn sequence referencing hiring triggers. In 60 days, their AE calendar was fully booked with 28 demos/month, 7 converted to paid.",
     results: ["28 demos/month", "7 paid conversions", "60-day ramp"],
   },
   {
     tag: "PropTech SaaS · Seed Stage · Mumbai",
     headline: "Sales calendar filled in 45 days, ₹48L in new ARR",
-    body: "A PropTech SaaS founder was spending 20 hours a week on manual LinkedIn outreach with no system. We rebuilt their outbound from scratch — ICP mapping to real estate developers and property management companies, automated personalisation based on their portfolio size and recent projects, and a 4-touch sequence. 45 days later: 19 demos, ₹48L ARR in new contracts.",
+    body: "A PropTech SaaS founder was spending 20 hours a week on manual LinkedIn outreach with no system. We rebuilt their outbound from scratch: ICP mapping to real estate developers and property management companies, automated personalisation based on their portfolio size and recent projects, and a 4-touch sequence. 45 days later: 19 demos, ₹48L ARR in new contracts.",
     results: ["19 qualified demos", "₹48L new ARR", "45-day turnaround"],
   },
   {
     tag: "Fintech SaaS · Pre-Series A · Bengaluru",
     headline: "3 enterprise pilots closed from cold outreach in one quarter",
-    body: "A B2B fintech startup targeting CFOs at mid-market companies was struggling to get past gatekeepers. We built a hyper-targeted ABM campaign — personalised research notes for each account, multi-touch sequences mixing email and LinkedIn — and coached them on objection handling. In one quarter: 22 meetings, 3 enterprise pilots closed, 2 expanding.",
+    body: "A B2B fintech startup targeting CFOs at mid-market companies was struggling to get past gatekeepers. We built a hyper-targeted ABM campaign (personalised research notes for each account, multi-touch sequences mixing email and LinkedIn) and coached them on objection handling. In one quarter: 22 meetings, 3 enterprise pilots closed, 2 expanding.",
     results: ["22 meetings booked", "3 enterprise pilots", "2 expansion deals"],
   },
 ];
 
 const PROCESS = [
-  { n: "01", title: "ICP & Buyer Map", body: "We define exactly who your buyer is — title, company stage, industry, tech stack, and the trigger signals that make them ready to buy. No guessing." },
-  { n: "02", title: "Signal-Based Targeting", body: "We build prospect lists using buying signals — funding rounds, hiring sprees, new leadership hires, tech adoption — not just job titles." },
+  { n: "01", title: "ICP & Buyer Map", body: "We define exactly who your buyer is: title, company stage, industry, tech stack, and the trigger signals that make them ready to buy. No guessing." },
+  { n: "02", title: "Signal-Based Targeting", body: "We build prospect lists using buying signals (funding rounds, hiring sprees, new leadership hires, tech adoption), not just job titles." },
   { n: "03", title: "Multi-Channel Sequences", body: "Cold email and LinkedIn combined, with copy personalised to each prospect's context. Not a generic template everyone ignores." },
-  { n: "04", title: "Demo-Ready Handoffs", body: "Only qualified prospects — right ICP, right pain, right authority — hit your calendar. You demo and close. We keep the pipeline flowing." },
+  { n: "04", title: "Demo-Ready Handoffs", body: "Only qualified prospects (right ICP, right pain, right authority) hit your calendar. You demo and close. We keep the pipeline flowing." },
 ];
 
 const FAQ_ITEMS = [
@@ -143,7 +143,7 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="mb-6 hero-fade-d1 relative inline-block">
-          {/* Radar ping — "ready to buy" signal detection */}
+          {/* Radar ping: "ready to buy" signal detection */}
           <span className="lp-radar-ring" aria-hidden="true" />
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full relative" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
             For B2B SaaS Founders
@@ -161,7 +161,7 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
-          We build and run a predictable outbound engine for B2B SaaS — ICP mapping, signal-based targeting, cold email and LinkedIn sequences that put qualified prospects in your calendar every week.
+          We build and run a predictable outbound engine for B2B SaaS: ICP mapping, signal-based targeting, cold email and LinkedIn sequences that put qualified prospects in your calendar every week.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">
@@ -308,7 +308,7 @@ function DarkCTASection() {
           Ready to fill your demo calendar?
         </h2>
         <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Book a free 30-minute outbound audit. We will review your ICP, outreach copy, and pipeline — and hand you a custom action plan. Free, no strings attached.
+          Book a free 30-minute outbound audit. We will review your ICP, outreach copy, and pipeline, and hand you a custom action plan. Free, no strings attached.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/founder-meeting"
@@ -333,7 +333,7 @@ function FormSection() {
       <div className="max-w-2xl mx-auto">
         <div ref={fade} className="text-center mb-10">
           <h2 className="text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Get your free outbound audit</h2>
-          <p className="text-base" style={{ color: "#52525B" }}>We will audit your ICP, outreach copy, and pipeline — and hand you a custom action plan. Free, no strings attached.</p>
+          <p className="text-base" style={{ color: "#52525B" }}>We will audit your ICP, outreach copy, and pipeline, and hand you a custom action plan. Free, no strings attached.</p>
         </div>
         <div className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           <form className="space-y-4"
@@ -386,7 +386,7 @@ export default function SaasFoundersLP() {
         title={"From cold list to full demo calendar\nEvery single time"}
         topSteps={[
           { n: "01", icon: "🎯", title: "ICP & Signal Mapping", body: "Define your exact buyer: title, company stage, tech stack, and the trigger signals that mean they are ready to buy right now.", color: "rgba(139,92,246,0.12)" },
-          { n: "02", icon: "⚡", title: "Signal-Based Prospect Lists", body: "Prospects filtered by funding rounds, hiring sprees, leadership changes, and tool adoption — not just job titles.", color: "rgba(59,130,246,0.12)" },
+          { n: "02", icon: "⚡", title: "Signal-Based Prospect Lists", body: "Prospects filtered by funding rounds, hiring sprees, leadership changes, and tool adoption, not just job titles.", color: "rgba(59,130,246,0.12)" },
           { n: "03", icon: "📝", title: "Demo Assets & Sequences", body: "Cold email copy, LinkedIn scripts, ROI frameworks, and objection handling prep built around your product's core value.", color: "rgba(245,183,49,0.15)" },
         ]}
         parallel={{

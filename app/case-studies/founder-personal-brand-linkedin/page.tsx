@@ -48,7 +48,7 @@ export default function FounderPersonalBrandLinkedIn() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The problem</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              The founder ran a profitable B2B consulting firm but had grown almost entirely through referrals. Growth had plateaued — referrals can only scale so far. They had deep expertise in operations and supply chain but no way to communicate that to a wider audience. Their LinkedIn profile had 400 connections and hadn&apos;t been posted on in two years.
+              The founder ran a profitable B2B consulting firm but had grown almost entirely through referrals. Growth had plateaued. Referrals can only scale so far. They had deep expertise in operations and supply chain but no way to communicate that to a wider audience. Their LinkedIn profile had 400 connections and hadn&apos;t been posted on in two years.
             </p>
           </div>
 
@@ -77,15 +77,15 @@ export default function FounderPersonalBrandLinkedIn() {
               ))}
             </div>
             <p className="text-base leading-relaxed mt-6" style={{ color: "#52525B" }}>
-              In 6 months the founder grew from under 500 to 22K followers, with a 6.2% average engagement rate — well above the 1–2% LinkedIn average. More importantly, 8 inbound deals came directly through LinkedIn DMs from people who had been following the content.
+              In 6 months the founder grew from under 500 to 22K followers, with a 6.2% average engagement rate, well above the 1–2% LinkedIn average. More importantly, 8 inbound deals came directly through LinkedIn DMs from people who had been following the content.
             </p>
           </div>
 
           <div className="rounded-2xl p-8 border-l-4" style={{ backgroundColor: "#FFF7ED", borderColor: "#f97316" }}>
             <p className="text-lg font-semibold italic mb-3" style={{ color: "#0a0a0a" }}>
-              &ldquo;I was sceptical that LinkedIn could actually drive revenue. Six months later it&apos;s our number one source of new business. The content doesn&apos;t just get likes — it brings in clients.&rdquo;
+              &ldquo;I was sceptical that LinkedIn could actually drive revenue. Six months later it&apos;s our number one source of new business. The content doesn&apos;t just get likes. It brings in clients.&rdquo;
             </p>
-            <p className="text-sm font-bold" style={{ color: "#f97316" }}>— Founder, B2B Operations Consulting</p>
+            <p className="text-sm font-bold" style={{ color: "#f97316" }}>Founder, B2B Operations Consulting</p>
           </div>
 
           <div>

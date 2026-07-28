@@ -11,7 +11,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close | Myntmore Blog",
-  description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close — and build outreach around them.",
+  description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
   alternates: { canonical: "https://myntmore.com/blog/icp-mapping-b2b" },
   keywords: ["ICP mapping", "ideal customer profile", "b2b targeting", "lead qualification", "b2b outbound", "sales targeting"],
   openGraph: {
@@ -77,7 +77,7 @@ export default function ICPMappingB2B() {
               },
               {
                 heading: "How to build your ICP from existing data",
-                body: "Pull your last 20 closed deals. For each one, write down: company size, industry, the trigger that made them reach out or respond, the job title of the decision-maker, and how long the deal took to close. Now look for the pattern. The companies that closed fastest and with the least friction — that is your ICP. Replicate those characteristics in your prospecting.",
+                body: "Pull your last 20 closed deals. For each one, write down: company size, industry, the trigger that made them reach out or respond, the job title of the decision-maker, and how long the deal took to close. Now look for the pattern. The companies that closed fastest and with the least friction: that is your ICP. Replicate those characteristics in your prospecting.",
               },
               {
                 heading: "Intent signals that tell you someone is in market",

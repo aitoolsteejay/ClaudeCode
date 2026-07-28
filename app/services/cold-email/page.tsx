@@ -23,20 +23,20 @@ const DELIVERABLES = [
 ];
 
 const WHO_FOR = [
-  { icon: "🎯", title: "B2B Sales Teams", desc: "Teams that need a reliable, compliant cold email engine running in the background — generating meetings without touching their primary domain reputation." },
+  { icon: "🎯", title: "B2B Sales Teams", desc: "Teams that need a reliable, compliant cold email engine running in the background, generating meetings without touching their primary domain reputation." },
   { icon: "🚀", title: "Founders Doing Outbound", desc: "Founders who want to test new markets or verticals quickly with a properly built cold email system, not a list and a prayer." },
   { icon: "📈", title: "Agencies & GTM Consultants", desc: "Operators who need white-glove deliverability infrastructure for themselves or their clients, with ongoing monitoring built in." },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "Our previous agency's cold email campaigns had a 12% inbox rate. Within three weeks of Myntmore taking over the infrastructure, we were at 97% inbox placement. The difference in reply volume was night and day — we went from 2 meetings a month to 14.",
+    quote: "Our previous agency's cold email campaigns had a 12% inbox rate. Within three weeks of Myntmore taking over the infrastructure, we were at 97% inbox placement. The difference in reply volume was night and day: we went from 2 meetings a month to 14.",
     name: "VP of Sales",
     co: "Series B SaaS · MarTech",
     color: "#16a34a",
   },
   {
-    quote: "I was sceptical that deliverability could make that much difference. Myntmore showed me the data — same copy, same list, but going from spam folder to primary inbox literally tripled our reply rate. The infrastructure layer is everything.",
+    quote: "I was sceptical that deliverability could make that much difference. Myntmore showed me the data: same copy, same list, but going from spam folder to primary inbox literally tripled our reply rate. The infrastructure layer is everything.",
     name: "Founder & CEO",
     co: "B2B Fintech · Seed Stage",
     color: "#7C3AED",
@@ -46,7 +46,7 @@ const TESTIMONIALS = [
 const FAQ_ITEMS = [
   {
     q: "Why do we need separate sending domains?",
-    a: "Sending cold email from your primary business domain puts your entire email reputation at risk. A spam complaint or blocklist hit could take down your team's entire email operation. We set up dedicated sending domains that are fully authenticated and warmed up — they handle the outbound volume while your main domain stays protected.",
+    a: "Sending cold email from your primary business domain puts your entire email reputation at risk. A spam complaint or blocklist hit could take down your team's entire email operation. We set up dedicated sending domains that are fully authenticated and warmed up. They handle the outbound volume while your main domain stays protected.",
   },
   {
     q: "How do you achieve a 98.5% inbox rate?",
@@ -54,15 +54,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the typical timeline from start to first meetings?",
-    a: "Domain setup and warmup takes 3–4 weeks. In that window we build your sequences, source and verify your prospect list, and finalise copy. You typically see the first replies in week 4–5 and the first booked meetings by week 5–6. Everything is done properly — there are no shortcuts that don't cost you later.",
+    a: "Domain setup and warmup takes 3–4 weeks. In that window we build your sequences, source and verify your prospect list, and finalise copy. You typically see the first replies in week 4–5 and the first booked meetings by week 5–6. Everything is done properly. There are no shortcuts that don't cost you later.",
   },
   {
     q: "Do you write the emails or do we?",
-    a: "We write everything. Our team researches your ICP, studies your offer, and writes multi-step sequences that sound like a real person — not a template. You review and approve before anything goes live. If you have copy you love, we can adapt it too.",
+    a: "We write everything. Our team researches your ICP, studies your offer, and writes multi-step sequences that sound like a real person, not a template. You review and approve before anything goes live. If you have copy you love, we can adapt it too.",
   },
   {
     q: "What sending platforms do you use?",
-    a: "We primarily use Instantly and Smartlead, which are the leading cold email platforms built specifically for deliverability-first outreach. Both support multi-domain rotation, warmup pools, and reply detection. We configure and manage everything — you don't need accounts or logins unless you want them.",
+    a: "We primarily use Instantly and Smartlead, which are the leading cold email platforms built specifically for deliverability-first outreach. Both support multi-domain rotation, warmup pools, and reply detection. We configure and manage everything. You don't need accounts or logins unless you want them.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function ColdEmail() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [statsTriggered, setStatsTriggered] = useState(false);
 
-  /* Blob parallax — hero */
+  /* Blob parallax: hero */
   useEffect(() => {
     if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
@@ -155,7 +155,7 @@ export default function ColdEmail() {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  /* Blob parallax — CTA */
+  /* Blob parallax: CTA */
   useEffect(() => {
     if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
@@ -267,7 +267,7 @@ export default function ColdEmail() {
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
-            We build the deliverability infrastructure, write the sequences, and manage replies — so your emails reach the primary inbox and your pipeline fills consistently.
+            We build the deliverability infrastructure, write the sequences, and manage replies, so your emails reach the primary inbox and your pipeline fills consistently.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
@@ -289,7 +289,7 @@ export default function ColdEmail() {
           {[
             { ref: stat1Ref, init: "98.5%", label: "Average inbox placement rate" },
             { ref: stat2Ref, init: "38%", label: "Average reply rate across campaigns" },
-            { ref: stat3Ref, init: "0.2%", label: "Spam rate — well below industry threshold" },
+            { ref: stat3Ref, init: "0.2%", label: "Spam rate, well below industry threshold" },
           ].map((s, i) => (
             <div key={i} className={`${i < 2 ? "sm:border-r" : ""} px-4`} style={{ borderColor: "#E8E2D9" }}>
               <span ref={s.ref} className="block text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.init}</span>
@@ -534,7 +534,7 @@ export default function ColdEmail() {
           </h2>
 
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>
-            We&apos;ll audit your current deliverability setup and show you exactly what&apos;s stopping your emails from reaching the inbox — for free.
+            We&apos;ll audit your current deliverability setup and show you exactly what&apos;s stopping your emails from reaching the inbox, for free.
           </p>
 
           <a href="/founder-meeting"

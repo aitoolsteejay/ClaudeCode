@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
 
     const senderContext =
       senderName && senderCompany
-        ? `\n\nThe sender's name is ${senderName} from ${senderCompany}. Subtly weave the sender's identity into messages where natural — for example, referencing what their company does or signing off with their first name.`
+        ? `\n\nThe sender's name is ${senderName} from ${senderCompany}. Subtly weave the sender's identity into messages where natural (for example, referencing what their company does or signing off with their first name).`
         : "";
 
     const prompt = `You are an expert at writing hyper-personalized, psychology-driven cold DMs that get replies. You understand the mental triggers that make people respond.

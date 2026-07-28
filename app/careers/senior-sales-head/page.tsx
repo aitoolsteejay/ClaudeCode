@@ -3,20 +3,19 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Strategist Job | Myntmore Mumbai | Rs 4–7 LPA",
-  description: "Join Myntmore as a B2B Lead Generation Strategist in Worli, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
-  alternates: { canonical: "https://myntmore.com/careers/lead-gen-strategist" },
+  title: "Senior Sales Head Job | Myntmore Mumbai | Rs 5–16 LPA",
+  description: "Join Myntmore as Senior Sales Head in Worli, Mumbai. Own outbound sales, client relationships, and CRM for a fast-growing B2B growth agency. Rs 5–16 LPA + incentives.",
+  alternates: { canonical: "https://myntmore.com/careers/senior-sales-head" },
   openGraph: {
-    title: "B2B Lead Generation Strategist | Myntmore Careers",
-    description: "Build predictable B2B pipelines across multiple industries. Full-time, Worli Mumbai.",
-    url: "https://myntmore.com/careers/lead-gen-strategist",
+    title: "Senior Sales Head | Myntmore Careers",
+    description: "Own Myntmore's outbound sales engine: prospecting, closing, and CRM. Full-time, Worli Mumbai.",
+    url: "https://myntmore.com/careers/senior-sales-head",
   },
 };
 
-const APPLY_SUBJECT = "Application for B2B Lead Generation Strategist";
-const ACCENT = "#3b82f6";
+const APPLY_SUBJECT = "Application for Senior Sales Head";
 
-export default function LeadGenStrategist() {
+export default function SeniorSalesHead() {
   return (
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
@@ -24,15 +23,15 @@ export default function LeadGenStrategist() {
           <div className="flex items-center gap-3 mb-6">
             <Link href="/careers" className="link-subtle text-xs font-semibold">Careers</Link>
             <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>B2B Lead Gen Strategist</span>
+            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Senior Sales Head</span>
           </div>
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: ACCENT, border: "1px solid rgba(59,130,246,0.2)" }}>Full-Time · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            B2B Lead Generation Strategist
+            Senior Sales Head
           </h1>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            {[["Location", "Worli, Mumbai"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA + incentives"], ["Office", "WeWork, Worli"]].map(([label, value]) => (
+            {[["Location", "Worli, Mumbai"], ["Type", "Full-Time"], ["Experience", "2–5 years B2B sales"], ["CTC", "Rs 5–16 LPA + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
                 <p className="text-sm font-bold" style={{ color: "#0a0a0a" }}>{value}</p>
@@ -52,21 +51,8 @@ export default function LeadGenStrategist() {
         <div className="max-w-3xl mx-auto space-y-12">
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>About the role</h2>
-            <p className="text-base leading-relaxed mb-4" style={{ color: "#52525B" }}>
-              We&apos;re looking for a sharp, strategic, and execution-obsessed B2B Lead Generation Strategist who understands how to build pipelines across LinkedIn, cold email, newsletters, SEO content, communities, and outbound workflows. This is not a &apos;spray and pray&apos; lead gen role. It&apos;s a precision marketing and growth strategy role.
-            </p>
-            <div className="rounded-xl p-6" style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.3)" }}>
-              <p className="text-sm font-bold mb-2" style={{ color: "#0a0a0a" }}>What makes this role different</p>
-              <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
-                At Myntmore, you won&apos;t work on just one company. You&apos;ll work across multiple founders, industries, and business models at the same time: one day solving for a SaaS founder, the next for a B2B company, then a consultant or agency. You&apos;ll get a crash course in how companies actually grow, faster than most people do in years.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-black mb-2" style={{ color: "#0a0a0a" }}>Primary goal</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Generate predictable, high-quality B2B pipeline every single week, for Myntmore and for our clients. Everything else supports this outcome: working across 5&ndash;10+ businesses at a time, understanding how different industries buy and scale, and building a skillset valuable across any business, not just one niche.
+              We&apos;re looking for a hungry, driven, and results-oriented sales lead to join our growing team. You&apos;ll play a hands-on role in building Myntmore&apos;s client base, managing outbound sales, and contributing directly to our revenue growth, connecting with founders, executives, and senior stakeholders to help them understand the power of personal branding and AI-led growth systems. This is a high-impact role for someone who thrives in a fast-paced environment and loves hunting for opportunities, closing deals, and building relationships.
             </p>
           </div>
 
@@ -74,14 +60,14 @@ export default function LeadGenStrategist() {
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>What you&apos;ll do</h2>
             <div className="space-y-4">
               {[
-                { title: "Lead Generation (Core)", desc: "Build and execute multi-channel lead gen systems (LinkedIn + cold email + content-led inbound + communities). Generate qualified leads, nurture them, and move them to booked calls." },
-                { title: "ICP + Messaging", desc: "Create target lists, ICPs, buyer triggers, and value propositions. Write personalised outbound messages that actually convert." },
-                { title: "LinkedIn + Cold Email", desc: "Run outreach via AI agents and enrichment tools. Manage domain health, deliverability, sequencing, and outreach volume using Apollo, Clay, Instantly, Waalaxy, Snov, SalesQL, and similar tools." },
-                { title: "Content-Led Demand Gen", desc: "Support in creating inbound content angles that drive lead enquiries. Sync with the content team so outbound and content push the same audience." },
-                { title: "Analytics & Optimisation", desc: "Track leads generated, reply rates, booking rates, and channel performance. Optimise messaging, targeting, and campaign strategy to keep increasing lead volume." },
+                { title: "Lead Generation & Outreach", desc: "Own LinkedIn prospecting, identify decision-makers, and convert connections into warm leads. Run cold email campaigns and multi-channel outreach across email, LinkedIn, and calls, using Apollo, Slack communities, and other platforms." },
+                { title: "Sales & Client Engagement", desc: "Lead sales calls and meetings with founders, CXOs, doctors, lawyers, and other high-value prospects. Build strong client relationships, understand their business goals, handle objections, negotiate, and close deals." },
+                { title: "Business Development & Partnerships", desc: "Explore corporate tie-ups, channel partners, and strategic partnerships to expand Myntmore's reach. Drive cold calling campaigns and outreach sequences to create new business opportunities." },
+                { title: "CRM & Sales Operations", desc: "Take full ownership of the CRM (Zoho or similar), keeping it organised and up to date. Track leads, follow-ups, and conversions meticulously, and analyse CRM data to optimise sales strategies." },
+                { title: "Collaboration & Strategy", desc: "Collaborate with the founding team and GTM team on sales strategy, messaging, and outreach campaigns. Suggest improvements to sales processes, funnels, and client engagement methods." },
               ].map((item) => (
                 <div key={item.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{item.title}</h3>
+                  <h3 className="text-sm font-black mb-2" style={{ color: "#F5B731" }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -92,15 +78,15 @@ export default function LeadGenStrategist() {
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Who you are</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { label: "Mindset", desc: "Excited by variety, working on multiple businesses instead of just one energises you" },
-                { label: "Funnel Knowledge", desc: "Clear understanding of outbound funnels and buyer psychology" },
-                { label: "Technical", desc: "Skilled with LinkedIn, cold email, data enrichment, and automation tools" },
-                { label: "Ownership", desc: "Comfortable owning a weekly lead target" },
-                { label: "Analytical", desc: "Organised, structured, and fast-moving" },
-                { label: "Quality-Focused", desc: "Obsessed with lead quality, not just activity" },
+                { label: "Outbound Skills", desc: "Skilled in cold calling, cold emailing, and outbound lead generation" },
+                { label: "Client-Facing", desc: "Comfortable leading sales calls and client-facing conversations" },
+                { label: "CRM Savvy", desc: "Experience with Zoho or willingness to learn and manage a CRM efficiently" },
+                { label: "Communicator", desc: "Confident, persuasive communicator and negotiator" },
+                { label: "Self-Driven", desc: "Highly organised, able to multitask in a fast-paced environment" },
+                { label: "Team Player", desc: "Values collaboration but can also operate independently" },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <p className="text-xs font-black mb-1" style={{ color: ACCENT }}>{item.label}</p>
+                  <p className="text-xs font-black mb-1" style={{ color: "#F5B731" }}>{item.label}</p>
                   <p className="text-sm" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -109,19 +95,9 @@ export default function LeadGenStrategist() {
 
           <div>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Skills &amp; mindset we value</h2>
-            {["Outcome-Obsessed: leads over everything", "Channel Fluent: LinkedIn + Email + Communities", "Research-Driven: ICP clarity means better leads", "AI-Friendly: we run AI-led systems", "Fast Learner + High Ownership"].map((item) => (
+            {["Sales Hunter Mentality: relentless in pursuing and converting leads", "Data-Driven Thinking: track metrics, iterate on strategies, optimise outreach", "Tech-Savvy & Automation-Friendly: sales tools and AI-led workflows a plus", "Relationship Builder: able to foster long-term client partnerships", "Adaptable & Fast-Learner: thrives in a growing, evolving agency environment"].map((item) => (
               <div key={item} className="flex items-center gap-3 mb-3">
-                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <p className="text-base" style={{ color: "#3D3D3D" }}>{item}</p>
-              </div>
-            ))}
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>What you&apos;ll learn</h2>
-            {["How to build predictable B2B pipelines from scratch", "How founders think about sales, positioning, and growth", "How different industries approach selling and scaling", "How to combine content + outbound for maximum conversion", "How to use AI + automation to scale outreach systems"].map((item) => (
-              <div key={item} className="flex items-center gap-3 mb-3">
-                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="#F5B731" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                 <p className="text-base" style={{ color: "#3D3D3D" }}>{item}</p>
               </div>
             ))}
@@ -130,7 +106,7 @@ export default function LeadGenStrategist() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Work directly on real founder pipelines, get exposure to multiple industries and global markets, and learn AI-led growth systems that very few agencies in India truly understand. Work from WeWork Worli with a young, hungry team, with high growth potential and incentives tied to lead performance.
+              Hands-on experience with cutting-edge growth marketing and AI tools, exposure to high-net-worth clients, startup founders, and senior executives, and mentorship from founders and GTM experts. You&apos;ll help build sales processes and strategy from scratch, earn a competitive salary plus performance-based incentives, and work in a hybrid setup from WeWork Worli or remotely, with real room to grow within Myntmore.
             </p>
           </div>
 

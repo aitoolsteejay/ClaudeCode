@@ -56,7 +56,7 @@ const CASE_STUDIES = [
   {
     tag: "Auto Parts Exporter · Gujarat",
     headline: "14 qualified international buyer meetings in one quarter",
-    body: "An auto components manufacturer with ISO certification was relying solely on trade fairs and B2B portals. We built a prospect list of procurement managers and sourcing heads at Tier-1 auto manufacturers in Europe and Southeast Asia, and ran a targeted cold email + LinkedIn campaign. In one quarter, they booked 14 meetings — 3 led to formal RFQs.",
+    body: "An auto components manufacturer with ISO certification was relying solely on trade fairs and B2B portals. We built a prospect list of procurement managers and sourcing heads at Tier-1 auto manufacturers in Europe and Southeast Asia, and ran a targeted cold email + LinkedIn campaign. In one quarter, they booked 14 meetings, with 3 leading to formal RFQs.",
     results: ["14 international buyer meetings", "3 RFQs initiated", "2 new export markets"],
   },
   {
@@ -68,16 +68,16 @@ const CASE_STUDIES = [
   {
     tag: "Industrial Equipment · Pune",
     headline: "₹3.2Cr B2B export pipeline for a capital goods manufacturer",
-    body: "A Pune-based capital goods company was selling domestically but struggling to break into international markets. We identified their target buyer — factory operators and procurement VPs at mid-sized industrial companies in ASEAN — and built an ABM campaign with personalised decks and email sequences. Result: 9 meetings with qualified buyers, ₹3.2Cr in active pipeline.",
+    body: "A Pune-based capital goods company was selling domestically but struggling to break into international markets. We identified their target buyer, factory operators and procurement VPs at mid-sized industrial companies in ASEAN, and built an ABM campaign with personalised decks and email sequences. Result: 9 meetings with qualified buyers, ₹3.2Cr in active pipeline.",
     results: ["9 qualified buyer meetings", "₹3.2Cr pipeline", "ASEAN market entry"],
   },
 ];
 
 const PROCESS = [
-  { n: "01", title: "Buyer ICP Mapping", body: "We identify the exact buyer profile for your product — industry, country, company size, procurement structure — and build a target account list." },
+  { n: "01", title: "Buyer ICP Mapping", body: "We identify the exact buyer profile for your product, industry, country, company size, procurement structure, and build a target account list." },
   { n: "02", title: "Global Prospect Database", body: "Hand-verified contacts of importers, distributors, procurement heads, and sourcing managers in your target markets. No outdated trade directories." },
   { n: "03", title: "Personalised Outreach", body: "Multi-touch email and LinkedIn sequences tailored to each market's tone and buying behaviour. Not a generic template blast." },
-  { n: "04", title: "Qualified Meetings", body: "Interested buyers land in your calendar. Your team focuses on relationship-building and closing — we handle the cold outreach." },
+  { n: "04", title: "Qualified Meetings", body: "Interested buyers land in your calendar. Your team focuses on relationship-building and closing. We handle the cold outreach." },
 ];
 
 const FAQ_ITEMS = [
@@ -171,7 +171,7 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
-          We connect Indian manufacturers and exporters with qualified global buyers through AI-powered outreach — targeting procurement heads, importers, and distributors in your exact export markets.
+          We connect Indian manufacturers and exporters with qualified global buyers through AI-powered outreach, targeting procurement heads, importers, and distributors in your exact export markets.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">
@@ -229,7 +229,7 @@ function PainSection() {
   const pain = [
     { icon: "✈️", heading: "Trade fairs are expensive and slow", body: "₹8-15L spent per fair. Two leads who ghost you. Six months of follow-up for one deal. The ROI doesn't add up." },
     { icon: "📋", heading: "B2B portals bring wrong enquiries", body: "IndiaMART and Alibaba attract price shoppers. Finding serious buyers among hundreds of low-quality enquiries wastes your sales team's time." },
-    { icon: "🌍", heading: "You don't know who to target globally", body: "Finding the right importer or distributor in a new country — with the right product fit and buying capacity — is nearly impossible without local intelligence." },
+    { icon: "🌍", heading: "You don't know who to target globally", body: "Finding the right importer or distributor in a new country, with the right product fit and buying capacity, is nearly impossible without local intelligence." },
   ];
   return (
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>

@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { supabase } from "@/lib/supabase";
 import LandingPage from "@/components/tools/profile-optimizer/LandingPage";
 import ProfileWizard from "@/components/tools/profile-optimizer/ProfileWizard";
 import { StepOneData } from "@/components/tools/profile-optimizer/StepOne";
@@ -204,6 +205,16 @@ export default function ProfileOptimizerClient() {
 
       setResults(finalResults);
       setShowResults(true);
+
+      if (leadData?.id) {
+        supabase
+          .from("leads")
+          .update({ inputs: profileData, outputs: finalResults })
+          .eq("id", leadData.id)
+          .then(({ error }) => {
+            if (error) console.error("Supabase inputs/outputs update failed:", error);
+          });
+      }
 
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });

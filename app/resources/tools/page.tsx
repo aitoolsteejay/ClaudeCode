@@ -24,8 +24,8 @@ const FREE_TOOLS = [
   },
   {
     title: "DM Angle Generator",
-    desc: "Generate hyper-personalised outreach opening angles based on prospect triggers and recent activity. Stop sending the same opener to every lead.",
-    href: "https://mynt-more-angles.lovable.app",
+    desc: "Generate 5 psychology-aligned outreach opening angles tailored to your industry, ICP role, and offer. Stop sending the same opener to every lead.",
+    href: "/tools/dm-angle-generator",
     icon: "⚡",
     cta: "Generate angles",
   },
@@ -49,6 +49,13 @@ const FREE_TOOLS = [
     href: "/tools/lead-magnet-ideas",
     icon: "💡",
     cta: "Generate ideas",
+  },
+  {
+    title: "Founder Presence Analyzer",
+    desc: "Benchmark your LinkedIn posting frequency and engagement against up to 5 competitors and get AI-powered positioning and headline recommendations.",
+    href: "/tools/founder-presence-analyzer",
+    icon: "📈",
+    cta: "Analyze my presence",
   },
 ];
 

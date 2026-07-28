@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { supabase } from "@/lib/supabase";
 
 type FounderLifestyle =
   | "I can post daily"
@@ -125,6 +126,17 @@ export default function PostingRhythmClient() {
       if (!res.ok) throw new Error(result.error || "Failed to build strategy");
       setStrategy(result);
       setStep("results");
+
+      if (leadData?.id) {
+        supabase
+          .from("leads")
+          .update({ inputs: formData, outputs: result })
+          .eq("id", leadData.id)
+          .then(({ error }) => {
+            if (error) console.error("Supabase inputs/outputs update failed:", error);
+          });
+      }
+
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       console.error(err);

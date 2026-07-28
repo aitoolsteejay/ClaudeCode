@@ -3,10 +3,10 @@
 -- Run this once in your new Supabase project's SQL Editor
 -- (Dashboard -> SQL Editor -> New query -> paste -> Run).
 --
--- Only Profile Optimizer currently writes to this table, as a secondary
--- record alongside its primary lead capture (the existing Zoho form,
--- unchanged). Posting Rhythm Builder has no lead gate and ROI Calculator
--- has no backend, so neither uses this table today.
+-- Profile Optimizer and Posting Rhythm Builder both gate access behind the
+-- same shared Zoho lead form (components/tools/shared/LeadGate.tsx) and
+-- log here as a secondary record; Zoho stays the primary record in both
+-- cases. ROI Calculator has no backend and does not use this table.
 
 create table if not exists public.leads (
   id uuid primary key default gen_random_uuid(),

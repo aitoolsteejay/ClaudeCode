@@ -24,8 +24,8 @@ const FREE_TOOLS = [
   },
   {
     title: "DM Angle Generator",
-    desc: "Generate hyper-personalised outreach opening angles based on prospect triggers and recent activity. Stop sending the same opener to every lead.",
-    href: "https://mynt-more-angles.lovable.app",
+    desc: "Generate 5 psychology-aligned outreach opening angles tailored to your industry, ICP role, and offer. Stop sending the same opener to every lead.",
+    href: "/tools/dm-angle-generator",
     icon: "⚡",
     cta: "Generate angles",
   },

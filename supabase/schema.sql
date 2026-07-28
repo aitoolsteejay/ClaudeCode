@@ -3,16 +3,16 @@
 -- Run this once in your new Supabase project's SQL Editor
 -- (Dashboard -> SQL Editor -> New query -> paste -> Run).
 --
--- Profile Optimizer, Posting Rhythm Builder, and Lead Magnet Idea
--- Generator all gate access behind the same shared Zoho lead form
--- (components/tools/shared/LeadGate.tsx) and log here as a secondary
+-- Profile Optimizer, Posting Rhythm Builder, Lead Magnet Idea Generator,
+-- and DM Angle Generator all gate access behind the same shared Zoho lead
+-- form (components/tools/shared/LeadGate.tsx) and log here as a secondary
 -- record; Zoho stays the primary record in every case. ROI Calculator has
 -- no backend and does not use this table.
 
 create table if not exists public.leads (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
-  source text not null check (source in ('profile_optimizer', 'posting_rhythm_builder', 'lead_magnet_ideas', 'roi_calculator')),
+  source text not null check (source in ('profile_optimizer', 'posting_rhythm_builder', 'lead_magnet_ideas', 'dm_angle_generator', 'roi_calculator')),
   name text not null,
   email text,
   phone text,

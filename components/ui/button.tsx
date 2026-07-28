@@ -19,6 +19,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-primary text-primary-foreground font-bold text-base px-8 py-4 hover:bg-primary/90 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-[0.98]",
         tone: "border border-input bg-background text-foreground hover:bg-accent data-[active=true]:bg-primary data-[active=true]:text-primary-foreground data-[active=true]:border-primary",
+        action: "bg-secondary text-foreground border border-border hover:border-primary/50 hover:bg-secondary/80",
       },
       size: {
         default: "h-10 px-4 py-2",

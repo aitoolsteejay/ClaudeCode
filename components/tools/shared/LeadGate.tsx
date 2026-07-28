@@ -36,7 +36,7 @@ const leadSchema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
 });
 
-export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas";
+export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator";
 
 interface LeadGateProps {
   onComplete: (data: LeadData) => void;

@@ -29,6 +29,7 @@ interface FormState {
   businessDescription: string;
   icp: string;
   industry: string;
+  customIndustry: string;
   tone: string;
 }
 
@@ -36,6 +37,7 @@ const DEFAULT_FORM_STATE: FormState = {
   businessDescription: "",
   icp: "",
   industry: "",
+  customIndustry: "",
   tone: "",
 };
 
@@ -57,17 +59,27 @@ export default function LeadMagnetIdeasClient() {
   };
 
   const isFormValid =
-    formData.businessDescription.trim() && formData.icp.trim() && formData.industry && formData.tone;
+    formData.businessDescription.trim() &&
+    formData.icp.trim() &&
+    formData.industry &&
+    (formData.industry !== "Other" || formData.customIndustry.trim()) &&
+    formData.tone;
 
   const handleGenerate = async () => {
     if (!isFormValid) return;
     setLoading(true);
     setError(null);
     try {
+      const effectiveIndustry = formData.industry === "Other" ? formData.customIndustry : formData.industry;
       const res = await fetch("/api/tools/lead-magnet-ideas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          businessDescription: formData.businessDescription,
+          icp: formData.icp,
+          industry: effectiveIndustry,
+          tone: formData.tone,
+        }),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || "Failed to generate ideas");
@@ -155,7 +167,7 @@ export default function LeadMagnetIdeasClient() {
                       className="w-full bg-white rounded-lg px-4 py-3 text-black focus:border-[#F5B731] outline-none transition-colors appearance-none cursor-pointer"
                       style={{ border: "1px solid #E8E2D9" }}
                       value={formData.industry}
-                      onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                      onChange={(e) => setFormData({ ...formData, industry: e.target.value, customIndustry: "" })}
                     >
                       <option value="" disabled>
                         Select industry...
@@ -166,6 +178,16 @@ export default function LeadMagnetIdeasClient() {
                         </option>
                       ))}
                     </select>
+                    {formData.industry === "Other" && (
+                      <input
+                        type="text"
+                        className="w-full bg-white rounded-lg px-4 py-3 text-black focus:border-[#F5B731] outline-none transition-colors placeholder:text-gray-400 mt-3"
+                        style={{ border: "1px solid #E8E2D9" }}
+                        placeholder="Enter your industry"
+                        value={formData.customIndustry}
+                        onChange={(e) => setFormData({ ...formData, customIndustry: e.target.value })}
+                      />
+                    )}
                   </div>
                 </div>
 

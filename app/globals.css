@@ -359,6 +359,8 @@ body {
 .card-hover-green:hover { border-color: rgba(34,197,94,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
 .card-hover-linkedin { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
 .card-hover-linkedin:hover { border-color: rgba(0,119,181,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
+.card-hover-teal { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.card-hover-teal:hover { border-color: rgba(20,184,166,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
 .chip-hover { transition: border-color 0.15s ease, color 0.15s ease; }
 .chip-hover:hover { border-color: rgba(245,183,49,0.6) !important; color: #D97706 !important; }
 

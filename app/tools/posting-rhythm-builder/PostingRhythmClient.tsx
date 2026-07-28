@@ -167,8 +167,21 @@ export default function PostingRhythmClient() {
 
         {/* Header */}
         <header className="pb-12 text-center">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+            style={{ background: "rgba(245,183,49,0.07)", borderColor: "rgba(245,183,49,0.35)" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D97706" }} aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>Posting Rhythm Builder</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
-            Myntmore <span className="lp-tool-accent-text">Rhythm</span> Builder
+            Myntmore{" "}
+            <span className="relative inline-block">
+              <span className="lp-tool-accent-text">Rhythm</span> Builder
+              <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 300 10" preserveAspectRatio="none" aria-hidden>
+                <path d="M2 7 Q75 2 150 6 Q225 10 298 5" stroke="#D97706" strokeWidth="3" fill="none" strokeLinecap="round" />
+              </svg>
+            </span>
           </h1>
           <p className="text-gray-700 text-sm md:text-base mb-6 max-w-xl mx-auto font-medium">
             Helps you figure the right posting frequency and schedule for LinkedIn based on your goals.

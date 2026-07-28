@@ -124,8 +124,21 @@ export default function LeadMagnetIdeasClient() {
 
         {/* Header */}
         <header className="pb-12 text-center">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+            style={{ background: "rgba(59,130,246,0.07)", borderColor: "rgba(59,130,246,0.35)" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#3b82f6" }} aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#3b82f6" }}>Lead Magnet Idea Generator</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
-            Lead Magnet <span className="text-primary">Idea</span> Generator
+            Lead Magnet{" "}
+            <span className="relative inline-block">
+              <span className="text-primary">Idea</span> Generator
+              <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 300 10" preserveAspectRatio="none" aria-hidden>
+                <path d="M2 7 Q75 2 150 6 Q225 10 298 5" stroke="#3b82f6" strokeWidth="3" fill="none" strokeLinecap="round" />
+              </svg>
+            </span>
           </h1>
           <p className="text-gray-700 text-sm md:text-base mb-6 max-w-xl mx-auto font-medium">
             Tell us what your business does and we&apos;ll suggest lead magnets tailored to your ICP that you can actually use in outreach.

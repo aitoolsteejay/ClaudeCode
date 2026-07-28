@@ -50,6 +50,13 @@ const FREE_TOOLS = [
     icon: "💡",
     cta: "Generate ideas",
   },
+  {
+    title: "Founder Presence Analyzer",
+    desc: "Benchmark your LinkedIn posting frequency and engagement against up to 5 competitors and get AI-powered positioning and headline recommendations.",
+    href: "/tools/founder-presence-analyzer",
+    icon: "📈",
+    cta: "Analyze my presence",
+  },
 ];
 
 export default function ToolsPage() {

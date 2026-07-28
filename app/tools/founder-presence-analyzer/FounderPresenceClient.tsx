@@ -161,8 +161,12 @@ export default function FounderPresenceClient() {
   const wizardIndex = WIZARD_STEPS.indexOf(step);
 
   return (
-    <div className="min-h-screen bg-white text-foreground selection:bg-[#FFC947]/30">
-      <div className="max-w-5xl mx-auto px-6 pt-24 pb-16">
+    <div className="min-h-screen bg-white text-foreground relative overflow-hidden selection:bg-[#FFC947]/30">
+      {/* Vivid background blobs, matching the homepage hero's color treatment */}
+      <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.22) 0%, rgba(13,148,136,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+
+      <div className="max-w-5xl mx-auto px-6 pt-24 pb-16 relative z-10">
         {/* Breadcrumb, matching the site's sub-page convention */}
         <div className="flex items-center gap-2 text-xs font-semibold mb-8" style={{ color: "#8C8279" }}>
           <Link href="/resources/tools" className="link-subtle">Tools</Link>
@@ -171,10 +175,33 @@ export default function FounderPresenceClient() {
         </div>
 
         {step === "lead" && (
+          <header className="pb-12 text-center">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+              style={{ background: "rgba(20,184,166,0.07)", borderColor: "rgba(20,184,166,0.35)" }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#14B8A6" }} aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#14B8A6" }}>Founder Presence Analyzer</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
+              <span className="relative inline-block">
+                Benchmark Your Founder Presence
+                <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 460 10" preserveAspectRatio="none" aria-hidden>
+                  <path d="M2 7 Q115 2 230 6 Q345 10 458 5" stroke="#14B8A6" strokeWidth="3" fill="none" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h1>
+            <p className="text-gray-700 text-sm md:text-base max-w-xl mx-auto font-medium">
+              See how your LinkedIn posting frequency and engagement stack up against up to 5 competitors.
+            </p>
+          </header>
+        )}
+
+        {step === "lead" && (
           <LeadGate
             source="founder_presence_analyzer"
-            heading="Founder Presence Analyzer"
-            description="Benchmark your LinkedIn presence against competitors. Enter your details to get started."
+            heading="Tell Us About You"
+            description="Enter your details to get started."
             onComplete={handleLeadComplete}
           />
         )}

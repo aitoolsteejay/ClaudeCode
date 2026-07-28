@@ -133,8 +133,20 @@ export default function RoiCalculatorClient() {
 
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-4"
+              style={{ background: "rgba(34,197,94,0.07)", borderColor: "rgba(34,197,94,0.35)" }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#16a34a" }} aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#16a34a" }}>ROI Calculator</span>
+            </div>
             <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">
-              ROI Calculator
+              <span className="relative inline-block">
+                ROI Calculator
+                <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 300 10" preserveAspectRatio="none" aria-hidden>
+                  <path d="M2 7 Q75 2 150 6 Q225 10 298 5" stroke="#16a34a" strokeWidth="3" fill="none" strokeLinecap="round" />
+                </svg>
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Calculate your outreach ROI in real-time

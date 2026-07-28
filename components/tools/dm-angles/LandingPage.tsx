@@ -17,8 +17,22 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.22) 0%, rgba(37,99,235,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+            style={{ background: "rgba(168,85,247,0.07)", borderColor: "rgba(168,85,247,0.35)" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#a855f7" }} aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#a855f7" }}>DM Angle Generator</span>
+          </div>
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            Stop Sending DMs That Get Ignored
+            Stop Sending{" "}
+            <span className="relative inline-block">
+              DMs That Get Ignored
+              <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 420 10" preserveAspectRatio="none" aria-hidden>
+                <path d="M2 7 Q105 2 210 6 Q315 10 418 5" stroke="#a855f7" strokeWidth="3" fill="none" strokeLinecap="round" />
+              </svg>
+            </span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-3xl">
             Get 5 psychology-backed DM angles that actually match how your prospects think. No more guessing. No more crickets.

@@ -30,7 +30,7 @@ export default function PredictableB2BLeadGenEngine() {
             Built a full outbound engine that books 15+ meetings/month on autopilot
           </h1>
           <p className="text-lg leading-relaxed mb-8" style={{ color: "#52525B" }}>
-            A mid-size B2B services firm had tried outbound before and failed — bad lists, generic copy, zero personalisation. We rebuilt everything from scratch and made outbound their #1 channel.
+            A mid-size B2B services firm had tried outbound before and failed: bad lists, generic copy, zero personalisation. We rebuilt everything from scratch and made outbound their #1 channel.
           </p>
           <div className="grid grid-cols-3 gap-6 p-6 rounded-2xl border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             {[{ v: "15+", l: "Meetings/month" }, { v: "29%", l: "Reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }].map((s) => (
@@ -48,14 +48,14 @@ export default function PredictableB2BLeadGenEngine() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The problem</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              The client was a 30-person B2B services firm that had run cold email campaigns in-house twice and gotten almost no results. They&apos;d bought a list, blasted generic emails, and seen reply rates under 1%. They had given up on outbound entirely and were relying on inbound and referrals — neither of which was scaling. The core issue wasn&apos;t the channel; it was the execution. Wrong lists, wrong messaging, and no follow-up logic.
+              The client was a 30-person B2B services firm that had run cold email campaigns in-house twice and gotten almost no results. They&apos;d bought a list, blasted generic emails, and seen reply rates under 1%. They had given up on outbound entirely and were relying on inbound and referrals, neither of which was scaling. The core issue wasn&apos;t the channel; it was the execution. Wrong lists, wrong messaging, and no follow-up logic.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The solution</h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>
-              We started from zero — redefined the ICP across three distinct buyer personas, built fresh prospect lists using intent data and technographic filters, and rewrote every sequence from scratch. We also rebuilt their sending infrastructure across multiple domains with proper warm-up, SPF, DKIM, and DMARC in place. The result was a fully automated outbound engine that ran without manual prospecting.
+              We started from zero: redefined the ICP across three distinct buyer personas, built fresh prospect lists using intent data and technographic filters, and rewrote every sequence from scratch. We also rebuilt their sending infrastructure across multiple domains with proper warm-up, SPF, DKIM, and DMARC in place. The result was a fully automated outbound engine that ran without manual prospecting.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {["ICP rebuilt across 3 personas", "Domain infra + deliverability fix", "5-touch multi-channel sequences"].map((item) => (
@@ -83,9 +83,9 @@ export default function PredictableB2BLeadGenEngine() {
 
           <div className="rounded-2xl p-8 border-l-4" style={{ backgroundColor: "#FEF2F2", borderColor: "#ef4444" }}>
             <p className="text-lg font-semibold italic mb-3" style={{ color: "#0a0a0a" }}>
-              &ldquo;We&apos;d tried outbound twice before and failed both times. Myntmore rebuilt everything — the list, the copy, the infrastructure. Now it just runs. We haven&apos;t touched a spreadsheet to find leads in months.&rdquo;
+              &ldquo;We&apos;d tried outbound twice before and failed both times. Myntmore rebuilt everything: the list, the copy, the infrastructure. Now it just runs. We haven&apos;t touched a spreadsheet to find leads in months.&rdquo;
             </p>
-            <p className="text-sm font-bold" style={{ color: "#ef4444" }}>— Head of Sales, B2B Professional Services (Growth Stage)</p>
+            <p className="text-sm font-bold" style={{ color: "#ef4444" }}>Head of Sales, B2B Professional Services (Growth Stage)</p>
           </div>
 
           <div>

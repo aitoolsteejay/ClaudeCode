@@ -7,7 +7,7 @@ import InnerLayout from "../../components/InnerLayout";
 const STEPS = [
   { n: "01", title: "ICP & Agent Setup", desc: "We map your Ideal Customer Profile in detail, then configure custom AI agents with your specific qualification criteria, triggers, and scoring weights." },
   { n: "02", title: "Data Sourcing & Enrichment", desc: "Agents pull from LinkedIn, company websites, news signals, and financial reports to build a full intelligence picture on every account." },
-  { n: "03", title: "Lead Scoring & Prioritisation", desc: "Leads are ranked by fit and intent. Your team only ever sees the top tier — accounts worth their time, not raw lists." },
+  { n: "03", title: "Lead Scoring & Prioritisation", desc: "Leads are ranked by fit and intent. Your team only ever sees the top tier: accounts worth their time, not raw lists." },
   { n: "04", title: "CRM Export & Handoff", desc: "Scored leads push automatically to your CRM with full research summaries attached. No manual reformatting. No lost context." },
 ];
 
@@ -34,7 +34,7 @@ const TESTIMONIALS = [
     color: "#3b82f6",
   },
   {
-    quote: "Myntmore's AI agents found buying signals we never would have caught manually. A news article about a funding round, a job posting for a VP of Sales — these became conversation starters that got us replies from accounts we'd been cold-calling for months.",
+    quote: "Myntmore's AI agents found buying signals we never would have caught manually. A news article about a funding round, a job posting for a VP of Sales. These became conversation starters that got us replies from accounts we'd been cold-calling for months.",
     name: "Founder & CEO",
     co: "B2B HR Tech",
     color: "#7C3AED",
@@ -44,11 +44,11 @@ const TESTIMONIALS = [
 const FAQ_ITEMS = [
   {
     q: "What does the AI actually do versus your human team?",
-    a: "The AI handles research, enrichment, and scoring at scale — pulling data from multiple sources, cross-referencing signals, and ranking leads by fit and intent. Our human team configures the agents, audits output for quality, writes the strategic layer, and makes sure nothing reaches your sales team without being genuinely useful.",
+    a: "The AI handles research, enrichment, and scoring at scale: pulling data from multiple sources, cross-referencing signals, and ranking leads by fit and intent. Our human team configures the agents, audits output for quality, writes the strategic layer, and makes sure nothing reaches your sales team without being genuinely useful.",
   },
   {
     q: "How accurate is the lead scoring?",
-    a: "With a well-defined ICP, our scoring model runs at roughly 85–90% relevance on the top tier. We build in a feedback loop — your team flags false positives and the model adjusts over time. Accuracy compounds month over month.",
+    a: "With a well-defined ICP, our scoring model runs at roughly 85–90% relevance on the top tier. We build in a feedback loop: your team flags false positives and the model adjusts over time. Accuracy compounds month over month.",
   },
   {
     q: "Which CRMs do you export to?",
@@ -56,7 +56,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How many leads can you generate per month?",
-    a: "For most B2B clients with a defined ICP we deliver 300 to 1,500 scored, research-enriched leads per month. Volume is never the goal — relevance is. 200 right-fit leads beat 2,000 cold ones every time.",
+    a: "For most B2B clients with a defined ICP we deliver 300 to 1,500 scored, research-enriched leads per month. Volume is never the goal. Relevance is. 200 right-fit leads beat 2,000 cold ones every time.",
   },
   {
     q: "Will this work for a niche industry with a small TAM?",
@@ -232,7 +232,7 @@ export default function AILeadGeneration() {
             </span>{" "}
             your team has.
           </h1>
-          <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>Custom AI agents research, qualify, and prioritise leads at scale — so your sales team only talks to people worth their time.</p>
+          <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>Custom AI agents research, qualify, and prioritise leads at scale, so your sales team only talks to people worth their time.</p>
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
             <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Get a Free GTM Audit

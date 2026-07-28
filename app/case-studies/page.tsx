@@ -201,7 +201,7 @@ const CASE_STUDIES: CaseStudy[] = [
     slug: "predictable-b2b-lead-gen-engine", tag: "Professional Services · Growth Stage", accent: "#ef4444",
     title: "Built a full outbound engine that books 15+ meetings/month on autopilot",
     stats: [{ v: "15+", l: "Meetings/month" }, { v: "29%", l: "Reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }],
-    excerpt: "A mid-size B2B services firm had tried outbound before and failed — bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
+    excerpt: "A mid-size B2B services firm had tried outbound before and failed: bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
     services: ["AI Lead Generation", "Cold Email Infrastructure", "Sales Intelligence"],
   },
 ];

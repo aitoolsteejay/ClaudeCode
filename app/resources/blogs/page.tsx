@@ -5,7 +5,7 @@ import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Blog | Myntmore",
-  description: "In-depth guides on cold email, ICP mapping, LinkedIn outreach, deliverability, and outbound metrics — written by the team that has booked 12K+ B2B meetings.",
+  description: "In-depth guides on cold email, ICP mapping, LinkedIn outreach, deliverability, and outbound metrics, written by the team that has booked 12K+ B2B meetings.",
   alternates: { canonical: "https://myntmore.com/resources/blogs" },
   openGraph: {
     title: "B2B Lead Generation Blog | Myntmore",
@@ -35,7 +35,7 @@ const BLOG_POSTS = [
     href: "/blog/icp-mapping-b2b",
     tag: "ICP & Targeting",
     title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
-    excerpt: "Stop targeting everyone. The exact ICP mapping process we use to find the buyers most likely to close — and build outreach around them.",
+    excerpt: "Stop targeting everyone. The exact ICP mapping process we use to find the buyers most likely to close, and build outreach around them.",
     readTime: "5 min read",
     accent: "#10b981",
   },
@@ -43,7 +43,7 @@ const BLOG_POSTS = [
     href: "/blog/linkedin-outreach-sequences",
     tag: "LinkedIn Outreach",
     title: "LinkedIn Outreach Sequences That Actually Get Replies",
-    excerpt: "The multi-touch LinkedIn sequence structure that warms up prospects and converts connections into conversations — without being spammy.",
+    excerpt: "The multi-touch LinkedIn sequence structure that warms up prospects and converts connections into conversations, without being spammy.",
     readTime: "6 min read",
     accent: "#a855f7",
   },
@@ -51,7 +51,7 @@ const BLOG_POSTS = [
     href: "/blog/b2b-lead-gen-metrics",
     tag: "Analytics",
     title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",
-    excerpt: "Most outbound teams track the wrong numbers. These 7 metrics tell you exactly where your pipeline is leaking — and how to fix it.",
+    excerpt: "Most outbound teams track the wrong numbers. These 7 metrics tell you exactly where your pipeline is leaking, and how to fix it.",
     readTime: "7 min read",
     accent: "#f97316",
   },

@@ -65,11 +65,11 @@ export async function POST(req: NextRequest) {
     INDUSTRY: ${industry.trim()}
     PREFERRED TONE: ${tone.trim()}
 
-    Generate exactly 3 distinct lead magnet ideas this business could offer their ICP as part of outreach (things like calculators, benchmark reports, audits, templates, checklists, swipe files, or short assessments — not generic ebooks).
+    Generate exactly 3 distinct lead magnet ideas this business could offer their ICP as part of outreach (things like calculators, benchmark reports, audits, templates, checklists, swipe files, or short assessments, not generic ebooks).
 
     STRICT GUIDELINES:
     - Each idea must be concrete and buildable, not a vague concept.
-    - Tailor every idea specifically to the stated business, ICP, and industry — do not give generic advice that could apply to any company.
+    - Tailor every idea specifically to the stated business, ICP, and industry. Do not give generic advice that could apply to any company.
     - Apply the requested tone in the pitch and copy.
     - Avoid generic buzzwords (synergy, game changer, cutting-edge).
     - The distribution field must name a specific outreach channel and moment (e.g. "Attach as a follow-up on LinkedIn after a connection accepts" or "Offer as the CTA in the third email of a cold sequence").

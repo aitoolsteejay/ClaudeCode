@@ -5,11 +5,11 @@ import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Free B2B Lead Generation Tools | Myntmore",
-  description: "Free AI-powered tools for B2B founders — optimise your LinkedIn profile, generate outreach angles, and build a stronger pipeline. No sign-up required.",
+  description: "Free AI-powered tools for B2B founders: optimise your LinkedIn profile, generate outreach angles, and build a stronger pipeline. No sign-up required.",
   alternates: { canonical: "https://myntmore.com/resources/tools" },
   openGraph: {
     title: "Free B2B Lead Generation Tools | Myntmore",
-    description: "AI-powered tools for B2B outreach — free to use, no sign-up required.",
+    description: "AI-powered tools for B2B outreach, free to use, no sign-up required.",
     url: "https://myntmore.com/resources/tools",
   },
 };
@@ -95,7 +95,7 @@ export default function ToolsPage() {
           <FadeIn delay={80}>
             <div className="mt-16 rounded-2xl border p-8 text-center" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
               <h2 className="text-xl font-black mb-3" style={{ color: "#0a0a0a" }}>Want a custom tool built for your outreach?</h2>
-              <p className="text-sm mb-6" style={{ color: "#52525B" }}>We build bespoke AI outbound tools for our clients — scrapers, personalisation engines, intent trackers. Book a call to find out what we can build for you.</p>
+              <p className="text-sm mb-6" style={{ color: "#52525B" }}>We build bespoke AI outbound tools for our clients: scrapers, personalisation engines, intent trackers. Book a call to find out what we can build for you.</p>
               <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
                 Book a Free GTM Audit
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

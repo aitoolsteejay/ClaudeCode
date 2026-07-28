@@ -5,7 +5,7 @@ import FadeIn from "../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
-  description: "Free B2B lead generation resources from Myntmore — in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools for outreach.",
+  description: "Free B2B lead generation resources from Myntmore: in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools for outreach.",
   alternates: { canonical: "https://myntmore.com/resources" },
   openGraph: {
     title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
@@ -84,7 +84,7 @@ export default function Resources() {
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
-            Free playbooks, AI tools, and real case studies for B2B founders who want predictable pipeline — built by the team that has booked 12K+ meetings.
+            Free playbooks, AI tools, and real case studies for B2B founders who want predictable pipeline, built by the team that has booked 12K+ meetings.
           </p>
 
           <div className="flex flex-wrap gap-4 hero-fade-d3">

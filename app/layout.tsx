@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Myntmore — B2B Lead Generation & AI-Powered Outbound Agency, Mumbai",
+        alt: "Myntmore: B2B Lead Generation & AI-Powered Outbound Agency, Mumbai",
       },
     ],
   },

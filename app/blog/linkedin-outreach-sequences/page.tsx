@@ -36,7 +36,7 @@ export default function LinkedInOutreachSequences() {
             LinkedIn Outreach Sequences That Actually Get Replies
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
-            LinkedIn is the highest-intent B2B channel available right now. It is also the most abused. Here is how to stand out — not by being louder, but by being smarter.
+            LinkedIn is the highest-intent B2B channel available right now. It is also the most abused. Here is how to stand out, not by being louder, but by being smarter.
           </p>
         </div>
       </section>
@@ -73,16 +73,16 @@ export default function LinkedInOutreachSequences() {
                 heading: "The 5-touch sequence structure",
                 body: null,
                 numbered: [
-                  "Day 1 — Connection request (no note): Counter-intuitively, blank connection requests have a higher acceptance rate than those with a note. When you add a note, you signal that you are selling. Send the request cold.",
-                  "Day 3 (after acceptance) — Warm opener: Reference something specific about their recent activity. 'Saw your post about outbound challenges last week — really resonated with what we see at most Series A companies.' No ask. Just acknowledgment.",
-                  "Day 6 — Soft value drop: Share a resource directly relevant to their role. A data point, a short insight, a framework. Not a pitch deck. One sentence max. 'Thought this might be relevant given what you mentioned about pipeline forecasting.'",
-                  "Day 10 — Permission ask: 'I work with [type of company] on [specific problem]. Would it be useful if I shared how we approached that?' You are asking for permission to pitch, not pitching.",
-                  "Day 16 — Direct ask: If they engaged at any point, now you can be direct. 'Would a 20-minute call make sense? Happy to share what's been working for similar teams.' Short, specific, low-friction.",
+                  "Day 1: Connection request (no note). Counter-intuitively, blank connection requests have a higher acceptance rate than those with a note. When you add a note, you signal that you are selling. Send the request cold.",
+                  "Day 3 (after acceptance): Warm opener. Reference something specific about their recent activity. 'Saw your post about outbound challenges last week, really resonated with what we see at most Series A companies.' No ask. Just acknowledgment.",
+                  "Day 6: Soft value drop. Share a resource directly relevant to their role. A data point, a short insight, a framework. Not a pitch deck. One sentence max. 'Thought this might be relevant given what you mentioned about pipeline forecasting.'",
+                  "Day 10: Permission ask. 'I work with [type of company] on [specific problem]. Would it be useful if I shared how we approached that?' You are asking for permission to pitch, not pitching.",
+                  "Day 16: Direct ask. If they engaged at any point, now you can be direct. 'Would a 20-minute call make sense? Happy to share what's been working for similar teams.' Short, specific, low-friction.",
                 ],
               },
               {
                 heading: "What to say in the opening DM",
-                body: "The opening message is everything. It must pass the 'did they actually read my profile' test. Mention their company, their role, or a specific post. Reference the problem — not your solution. The goal of the first message is not to pitch. It is to get a reply. One reply leads to a conversation. A conversation leads to a meeting.",
+                body: "The opening message is everything. It must pass the 'did they actually read my profile' test. Mention their company, their role, or a specific post. Reference the problem, not your solution. The goal of the first message is not to pitch. It is to get a reply. One reply leads to a conversation. A conversation leads to a meeting.",
               },
               {
                 heading: "Triggers that make LinkedIn outreach 10x more relevant",
@@ -96,7 +96,7 @@ export default function LinkedInOutreachSequences() {
               },
               {
                 heading: "Volume, limits, and staying in LinkedIn's good graces",
-                body: "LinkedIn limits connection requests to around 100 per week for standard accounts and 150–200 for Sales Navigator. Stay under the limit and keep your acceptance rate above 30% to avoid restrictions. If your acceptance rate is low, your targeting is off — fix the ICP, not the volume.",
+                body: "LinkedIn limits connection requests to around 100 per week for standard accounts and 150–200 for Sales Navigator. Stay under the limit and keep your acceptance rate above 30% to avoid restrictions. If your acceptance rate is low, your targeting is off. Fix the ICP, not the volume.",
               },
               {
                 heading: "Pairing LinkedIn with cold email",

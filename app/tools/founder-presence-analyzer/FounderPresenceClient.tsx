@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { supabase } from "@/lib/supabase";
 import { ScoreRing } from "@/components/tools/founder-presence/ScoreRing";
 import { GapChart } from "@/components/tools/founder-presence/GapChart";
 
@@ -119,6 +120,16 @@ export default function FounderPresenceClient() {
       if (!res.ok) throw new Error(result.error || "Failed to analyze presence");
       setAnalysis(result);
       setStep("results");
+
+      if (leadData?.id) {
+        supabase
+          .from("leads")
+          .update({ inputs: { ...formData, calculated }, outputs: result })
+          .eq("id", leadData.id)
+          .then(({ error }) => {
+            if (error) console.error("Supabase inputs/outputs update failed:", error);
+          });
+      }
     } catch (error) {
       console.error("Analysis failed", error);
       alert("Something went wrong. Please check your internet connection and try again.");

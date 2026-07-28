@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { supabase } from "@/lib/supabase";
 
 const INDUSTRY_OPTIONS = [
   "B2B SaaS",
@@ -71,20 +72,32 @@ export default function LeadMagnetIdeasClient() {
     setError(null);
     try {
       const effectiveIndustry = formData.industry === "Other" ? formData.customIndustry : formData.industry;
+      const requestInputs = {
+        businessDescription: formData.businessDescription,
+        icp: formData.icp,
+        industry: effectiveIndustry,
+        tone: formData.tone,
+      };
       const res = await fetch("/api/tools/lead-magnet-ideas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          businessDescription: formData.businessDescription,
-          icp: formData.icp,
-          industry: effectiveIndustry,
-          tone: formData.tone,
-        }),
+        body: JSON.stringify(requestInputs),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || "Failed to generate ideas");
       setIdeas(result.ideas);
       setStep("results");
+
+      if (leadData?.id) {
+        supabase
+          .from("leads")
+          .update({ inputs: requestInputs, outputs: result })
+          .eq("id", leadData.id)
+          .then(({ error }) => {
+            if (error) console.error("Supabase inputs/outputs update failed:", error);
+          });
+      }
+
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
       console.error(err);

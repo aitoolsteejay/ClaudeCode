@@ -8,6 +8,7 @@ import { z } from "zod";
 import { supabase } from "@/lib/supabase";
 
 export interface LeadData {
+  id?: string;
   name: string;
   companyName: string;
   designation: string;
@@ -70,7 +71,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
   const [errors, setErrors] = useState<Record<string, string | undefined>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = leadSchema.safeParse(formData);
 
@@ -93,35 +94,40 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
 
     const d = result.data;
 
-    // Also log to our own Supabase leads table as a secondary record.
-    supabase
-      .from("leads")
-      .insert([
-        {
-          source,
-          name: `${d.firstName} ${d.lastName}`.trim(),
-          email: d.email || null,
-          phone: d.phone || null,
-          company_name: d.companyName || null,
-          linkedin_url: d.linkedinUrl || null,
-          metadata: { designation: d.designation },
-        },
-      ])
-      .then(({ error }) => {
-        if (error) console.error("Supabase lead insert failed:", error);
-      });
+    // Also log to our own Supabase leads table as a secondary record. The
+    // returned row id lets the tool attach its inputs/outputs to this same
+    // row once it has something to show.
+    const [{ data: insertedLead, error }] = await Promise.all([
+      supabase
+        .from("leads")
+        .insert([
+          {
+            source,
+            name: `${d.firstName} ${d.lastName}`.trim(),
+            email: d.email || null,
+            phone: d.phone || null,
+            company_name: d.companyName || null,
+            linkedin_url: d.linkedinUrl || null,
+            metadata: { designation: d.designation },
+          },
+        ])
+        .select()
+        .single(),
+      new Promise((resolve) => setTimeout(resolve, 600)),
+    ]);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      onComplete({
-        name: `${d.firstName} ${d.lastName}`.trim(),
-        companyName: d.companyName || "",
-        designation: d.designation,
-        email: d.email || "",
-        phone: d.phone || "",
-        linkedinUrl: d.linkedinUrl || "",
-      });
-    }, 600);
+    if (error) console.error("Supabase lead insert failed:", error);
+
+    setIsSubmitting(false);
+    onComplete({
+      id: insertedLead?.id,
+      name: `${d.firstName} ${d.lastName}`.trim(),
+      companyName: d.companyName || "",
+      designation: d.designation,
+      email: d.email || "",
+      phone: d.phone || "",
+      linkedinUrl: d.linkedinUrl || "",
+    });
   };
 
   const updateField = (field: keyof FormState, value: string) => {

@@ -7,15 +7,28 @@ import { InputPanel } from "@/components/tools/dm-angles/InputPanel";
 import { OutputSection } from "@/components/tools/dm-angles/OutputSection";
 import type { DMAngle } from "@/components/tools/dm-angles/DMCard";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 
 export default function DmAngleGeneratorClient() {
   const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [angles, setAngles] = useState<DMAngle[]>([]);
+  const [lastInputs, setLastInputs] = useState<{ industry: string; icpRole: string; offer: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [regeneratingId, setRegeneratingId] = useState<string | null>(null);
   const [isRegeneratingAll, setIsRegeneratingAll] = useState(false);
   const toolSectionRef = useRef<HTMLDivElement>(null);
+
+  const saveOutputs = (inputs: { industry: string; icpRole: string; offer: string }, outputAngles: DMAngle[]) => {
+    if (!leadData?.id) return;
+    supabase
+      .from("leads")
+      .update({ inputs, outputs: { angles: outputAngles } })
+      .eq("id", leadData.id)
+      .then(({ error }) => {
+        if (error) console.error("Supabase inputs/outputs update failed:", error);
+      });
+  };
 
   const scrollToTool = () => {
     toolSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -46,6 +59,8 @@ export default function DmAngleGeneratorClient() {
       if (!response.ok) throw new Error(result.error || "Failed to generate DM angles");
 
       setAngles(result.angles);
+      setLastInputs(data);
+      saveOutputs(data, result.angles);
       toast.success("5 psychology-aligned messages ready for you");
     } catch (error) {
       console.error("Generation error:", error);
@@ -73,7 +88,9 @@ export default function DmAngleGeneratorClient() {
     setRegeneratingId(id);
     try {
       const updated = await regenerateOne(angle, style);
-      setAngles((prev) => prev.map((a) => (a.id === id ? updated : a)));
+      const nextAngles = angles.map((a) => (a.id === id ? updated : a));
+      setAngles(nextAngles);
+      if (lastInputs) saveOutputs(lastInputs, nextAngles);
       toast.success(style ? `Made it ${style}` : "New variation created");
     } catch {
       toast.error("Please try again");
@@ -87,6 +104,7 @@ export default function DmAngleGeneratorClient() {
     try {
       const updated = await Promise.all(angles.map((angle) => regenerateOne(angle, style)));
       setAngles(updated);
+      if (lastInputs) saveOutputs(lastInputs, updated);
       toast.success(`All angles made ${style}`);
     } catch {
       toast.error("Please try again");

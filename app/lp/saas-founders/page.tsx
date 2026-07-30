@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
 import FlowDiagram from "../FlowDiagram";
+import Faq from "../Faq";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -55,28 +56,37 @@ const CASE_STUDIES = [
   {
     tag: "B2B SaaS · HR Tech · Series A",
     headline: "0 to 28 qualified demos per month in 60 days",
-    body: "An HR-tech startup had great product-market fit within their network but couldn't scale beyond warm intros. We mapped their ICP to CHROs and HR Heads at companies with 200-1000 employees scaling through a hiring spike, and built a cold email + LinkedIn sequence referencing hiring triggers. In 60 days, their AE calendar was fully booked with 28 demos/month — 7 converted to paid.",
+    body: "An HR-tech startup had great product-market fit within their network but couldn't scale beyond warm intros. We mapped their ICP to CHROs and HR Heads at companies with 200-1000 employees scaling through a hiring spike, and built a cold email + LinkedIn sequence referencing hiring triggers. In 60 days, their AE calendar was fully booked with 28 demos/month, 7 converted to paid.",
     results: ["28 demos/month", "7 paid conversions", "60-day ramp"],
   },
   {
     tag: "PropTech SaaS · Seed Stage · Mumbai",
     headline: "Sales calendar filled in 45 days, ₹48L in new ARR",
-    body: "A PropTech SaaS founder was spending 20 hours a week on manual LinkedIn outreach with no system. We rebuilt their outbound from scratch — ICP mapping to real estate developers and property management companies, automated personalisation based on their portfolio size and recent projects, and a 4-touch sequence. 45 days later: 19 demos, ₹48L ARR in new contracts.",
+    body: "A PropTech SaaS founder was spending 20 hours a week on manual LinkedIn outreach with no system. We rebuilt their outbound from scratch: ICP mapping to real estate developers and property management companies, automated personalisation based on their portfolio size and recent projects, and a 4-touch sequence. 45 days later: 19 demos, ₹48L ARR in new contracts.",
     results: ["19 qualified demos", "₹48L new ARR", "45-day turnaround"],
   },
   {
     tag: "Fintech SaaS · Pre-Series A · Bengaluru",
     headline: "3 enterprise pilots closed from cold outreach in one quarter",
-    body: "A B2B fintech startup targeting CFOs at mid-market companies was struggling to get past gatekeepers. We built a hyper-targeted ABM campaign — personalised research notes for each account, multi-touch sequences mixing email and LinkedIn — and coached them on objection handling. In one quarter: 22 meetings, 3 enterprise pilots closed, 2 expanding.",
+    body: "A B2B fintech startup targeting CFOs at mid-market companies was struggling to get past gatekeepers. We built a hyper-targeted ABM campaign (personalised research notes for each account, multi-touch sequences mixing email and LinkedIn) and coached them on objection handling. In one quarter: 22 meetings, 3 enterprise pilots closed, 2 expanding.",
     results: ["22 meetings booked", "3 enterprise pilots", "2 expansion deals"],
   },
 ];
 
 const PROCESS = [
-  { n: "01", title: "ICP & Buyer Map", body: "We define exactly who your buyer is — title, company stage, industry, tech stack, and the trigger signals that make them ready to buy. No guessing." },
-  { n: "02", title: "Signal-Based Targeting", body: "We build prospect lists using buying signals — funding rounds, hiring sprees, new leadership hires, tech adoption — not just job titles." },
+  { n: "01", title: "ICP & Buyer Map", body: "We define exactly who your buyer is: title, company stage, industry, tech stack, and the trigger signals that make them ready to buy. No guessing." },
+  { n: "02", title: "Signal-Based Targeting", body: "We build prospect lists using buying signals (funding rounds, hiring sprees, new leadership hires, tech adoption), not just job titles." },
   { n: "03", title: "Multi-Channel Sequences", body: "Cold email and LinkedIn combined, with copy personalised to each prospect's context. Not a generic template everyone ignores." },
-  { n: "04", title: "Demo-Ready Handoffs", body: "Only qualified prospects — right ICP, right pain, right authority — hit your calendar. You demo and close. We keep the pipeline flowing." },
+  { n: "04", title: "Demo-Ready Handoffs", body: "Only qualified prospects (right ICP, right pain, right authority) hit your calendar. You demo and close. We keep the pipeline flowing." },
+];
+
+const FAQ_ITEMS = [
+  { q: "How is this different from tools like Apollo or Clay that we already use?", a: "Those tools give you data. We give you a fully managed system, ICP mapping, signal based targeting, copywriting, sequencing, and deliverability, run by a team that adjusts it every week based on what is working." },
+  { q: "Will this work if we are still pre-product-market fit?", a: "Outbound works best once you have a handful of paying customers and a clear picture of who gets value fastest. If you are very early, we will tell you honestly and suggest starting with a smaller pilot." },
+  { q: "How do you avoid spam filters and protect our sender reputation?", a: "We set up dedicated sending infrastructure, warm it up properly, and follow strict sending limits and personalisation practices, so your core domain reputation stays protected." },
+  { q: "Do you integrate with our CRM, like HubSpot or Salesforce?", a: "Yes. Every qualified reply and booked demo is logged in the CRM your team already uses, with full context from the conversation." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in, so you can review pipeline results every 30 days." },
+  { q: "We already tried outbound once and it did not work. Why would this be different?", a: "Most failed outbound comes down to generic targeting and copy that reads like everyone else's. We rebuild it around specific buying signals and messaging tailored to your product, and iterate weekly instead of setting it and walking away." },
 ];
 
 function HeroSection() {
@@ -126,9 +136,16 @@ function HeroSection() {
       <div ref={blob2} aria-hidden="true" style={{ position: "absolute", bottom: "-60px", right: "-100px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,200,50,0.08) 45%, transparent 68%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
       <div ref={blob3} aria-hidden="true" style={{ position: "absolute", top: "30%", right: "20%", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 65%)", filter: "blur(45px)", pointerEvents: "none", willChange: "transform" }} />
 
+      {/* Floating signal icons */}
+      <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "16%", left: "9%", animationDelay: "0.2s", ["--lp-rot" as any]: "-8deg" }}>📊</span>
+      <span className="lp-float-icon hidden sm:block text-3xl lp-pop-in" aria-hidden="true" style={{ top: "62%", left: "7%", animationDelay: "1.5s", ["--lp-rot" as any]: "8deg" }}>⚡</span>
+      <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "20%", right: "8%", animationDelay: "0.9s", ["--lp-rot" as any]: "-10deg" }}>🎯</span>
+
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="mb-6 hero-fade-d1">
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+        <div className="mb-6 hero-fade-d1 relative inline-block">
+          {/* Radar ping: "ready to buy" signal detection */}
+          <span className="lp-radar-ring" aria-hidden="true" />
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full relative" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
             For B2B SaaS Founders
           </span>
         </div>
@@ -144,11 +161,11 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
-          We build and run a predictable outbound engine for B2B SaaS — ICP mapping, signal-based targeting, cold email and LinkedIn sequences that put qualified prospects in your calendar every week.
+          We build and run a predictable outbound engine for B2B SaaS: ICP mapping, signal-based targeting, cold email and LinkedIn sequences that put qualified prospects in your calendar every week.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+          <a href="/founder-meeting"
             className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2">
             Book Free GTM Audit
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -175,12 +192,14 @@ function StatsSection() {
   const refs = [r0, r1, r2, r3];
   const labels = ["Qualified demos booked / month (avg)", "Reply rate on best-performing sequences", "To first qualified pipeline", "Pipeline generated across SaaS clients"];
   const initials = ["0+", "0%", "0 days", "$0M+"];
+  const icons = ["📅", "📬", "⏱️", "💰"];
   const fade = useScrollFade();
   return (
     <section className="py-14 px-4 border-y" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div ref={fade} className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
         {refs.map((ref, i) => (
-          <div key={i} className="text-center">
+          <div key={i} className="lp-stat text-center">
+            <div className="text-xl mb-1 lp-icon-bob" style={{ animationDelay: `${i * 0.25}s` }} aria-hidden="true">{icons[i]}</div>
             <div className="text-4xl sm:text-5xl font-black mb-2" style={{ color: "#0a0a0a" }}>
               <span ref={ref}>{initials[i]}</span>
             </div>
@@ -210,8 +229,8 @@ function PainSection() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {pain.map((p, i) => (
-            <div key={p.heading} ref={cards[i]} className="rounded-2xl border p-8 transition-shadow hover:shadow-md" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-4xl mb-4">{p.icon}</div>
+            <div key={p.heading} ref={cards[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-4xl mb-4 lp-icon-bob" style={{ animationDelay: `${i * 0.3}s` }}>{p.icon}</div>
               <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.heading}</h3>
               <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
             </div>
@@ -224,7 +243,8 @@ function PainSection() {
 
 function ProcessSection() {
   const titleFade = useScrollFade(0);
-  const gridFade = useScrollFade(100);
+  const p0 = useScrollFade(0); const p1 = useScrollFade(100); const p2 = useScrollFade(200); const p3 = useScrollFade(300);
+  const delays = [p0, p1, p2, p3];
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
@@ -232,10 +252,10 @@ function ProcessSection() {
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>How it works</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>A full outbound engine built for SaaS</h2>
         </div>
-        <div ref={gridFade} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {PROCESS.map((p) => (
-            <div key={p.n} className="flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {PROCESS.map((p, i) => (
+            <div key={p.n} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
               <div>
                 <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
@@ -261,13 +281,13 @@ function CaseStudiesSection() {
         </div>
         <div className="space-y-6">
           {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="rounded-2xl border p-8 transition-shadow hover:shadow-md" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
               <div className="flex flex-wrap gap-3">
                 {cs.results.map((r) => (
-                  <span key={r} className="text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
+                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
                 ))}
               </div>
             </div>
@@ -288,10 +308,10 @@ function DarkCTASection() {
           Ready to fill your demo calendar?
         </h2>
         <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Book a free 30-minute outbound audit. We will review your ICP, outreach copy, and pipeline — and hand you a custom action plan. Free, no strings attached.
+          Book a free 30-minute outbound audit. We will review your ICP, outreach copy, and pipeline, and hand you a custom action plan. Free, no strings attached.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+          <a href="/founder-meeting"
             className="px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2"
             style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
             Book Free GTM Audit
@@ -313,7 +333,7 @@ function FormSection() {
       <div className="max-w-2xl mx-auto">
         <div ref={fade} className="text-center mb-10">
           <h2 className="text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Get your free outbound audit</h2>
-          <p className="text-base" style={{ color: "#52525B" }}>We will audit your ICP, outreach copy, and pipeline — and hand you a custom action plan. Free, no strings attached.</p>
+          <p className="text-base" style={{ color: "#52525B" }}>We will audit your ICP, outreach copy, and pipeline, and hand you a custom action plan. Free, no strings attached.</p>
         </div>
         <div className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           <form className="space-y-4"
@@ -366,7 +386,7 @@ export default function SaasFoundersLP() {
         title={"From cold list to full demo calendar\nEvery single time"}
         topSteps={[
           { n: "01", icon: "🎯", title: "ICP & Signal Mapping", body: "Define your exact buyer: title, company stage, tech stack, and the trigger signals that mean they are ready to buy right now.", color: "rgba(139,92,246,0.12)" },
-          { n: "02", icon: "⚡", title: "Signal-Based Prospect Lists", body: "Prospects filtered by funding rounds, hiring sprees, leadership changes, and tool adoption — not just job titles.", color: "rgba(59,130,246,0.12)" },
+          { n: "02", icon: "⚡", title: "Signal-Based Prospect Lists", body: "Prospects filtered by funding rounds, hiring sprees, leadership changes, and tool adoption, not just job titles.", color: "rgba(59,130,246,0.12)" },
           { n: "03", icon: "📝", title: "Demo Assets & Sequences", body: "Cold email copy, LinkedIn scripts, ROI frameworks, and objection handling prep built around your product's core value.", color: "rgba(245,183,49,0.15)" },
         ]}
         parallel={{
@@ -385,6 +405,7 @@ export default function SaasFoundersLP() {
       />
       <ProcessSection />
       <CaseStudiesSection />
+      <Faq title="Common questions from SaaS founders" items={FAQ_ITEMS} />
       <DarkCTASection />
       <FormSection />
     </LpLayout>

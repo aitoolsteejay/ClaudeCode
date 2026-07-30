@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import AskYourAI from "../../components/AskYourAI";
+
+const BLOG_AI_RESOURCES = [
+  "https://myntmore.com/blog/icp-mapping-b2b",
+  "https://myntmore.com",
+  "https://myntmore.com/case-studies",
+];
 
 export const metadata: Metadata = {
   title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close | Myntmore Blog",
-  description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close — and build outreach around them.",
+  description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
   alternates: { canonical: "https://myntmore.com/blog/icp-mapping-b2b" },
   keywords: ["ICP mapping", "ideal customer profile", "b2b targeting", "lead qualification", "b2b outbound", "sales targeting"],
   openGraph: {
@@ -70,7 +77,7 @@ export default function ICPMappingB2B() {
               },
               {
                 heading: "How to build your ICP from existing data",
-                body: "Pull your last 20 closed deals. For each one, write down: company size, industry, the trigger that made them reach out or respond, the job title of the decision-maker, and how long the deal took to close. Now look for the pattern. The companies that closed fastest and with the least friction — that is your ICP. Replicate those characteristics in your prospecting.",
+                body: "Pull your last 20 closed deals. For each one, write down: company size, industry, the trigger that made them reach out or respond, the job title of the decision-maker, and how long the deal took to close. Now look for the pattern. The companies that closed fastest and with the least friction: that is your ICP. Replicate those characteristics in your prospecting.",
               },
               {
                 heading: "Intent signals that tell you someone is in market",
@@ -122,10 +129,14 @@ export default function ICPMappingB2B() {
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               In our free 30-minute audit, we analyse your existing deals and build a first-pass ICP that you can take to your next outbound campaign immediately.
             </p>
-            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+            <a href="/founder-meeting" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Book a Free GTM Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
+          </div>
+
+          <div className="mt-8">
+            <AskYourAI resources={BLOG_AI_RESOURCES} />
           </div>
         </div>
       </article>

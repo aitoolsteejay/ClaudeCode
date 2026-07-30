@@ -5,7 +5,7 @@ import FadeIn from "../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
-  description: "Free B2B lead generation resources from Myntmore — in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools for outreach.",
+  description: "Free B2B lead generation resources from Myntmore: in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools for outreach.",
   alternates: { canonical: "https://myntmore.com/resources" },
   openGraph: {
     title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
@@ -84,7 +84,7 @@ export default function Resources() {
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
-            Free playbooks, AI tools, and real case studies for B2B founders who want predictable pipeline — built by the team that has booked 12K+ meetings.
+            Free playbooks, AI tools, and real case studies for B2B founders who want predictable pipeline, built by the team that has booked 12K+ meetings.
           </p>
 
           <div className="flex flex-wrap gap-4 hero-fade-d3">
@@ -225,7 +225,7 @@ export default function Resources() {
                 <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.25)" }}>Ready to build the system?</span>
                 <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Want us to build the pipeline<br />engine for you?</h2>
                 <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#9ca3af" }}>Book a free 30-minute GTM audit. We&apos;ll map out exactly how to build a predictable outbound system for your business.</p>
-                <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-10 py-4 text-base font-bold inline-flex items-center gap-2">
+                <a href="/founder-meeting" className="btn-dark px-10 py-4 text-base font-bold inline-flex items-center gap-2">
                   Book a Free GTM Audit
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </a>

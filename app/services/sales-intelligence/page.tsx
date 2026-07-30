@@ -7,9 +7,9 @@ import InnerLayout from "../../components/InnerLayout";
 /* ─── Data ──────────────────────────────────────────────────── */
 
 const STEPS = [
-  { n: "01", title: "ICP & Signal Mapping", desc: "We map your Ideal Customer Profile in precise detail, then identify the 40+ intent signals that indicate an account is actively in-market — funding rounds, hiring patterns, tech stack changes, leadership moves, and more." },
+  { n: "01", title: "ICP & Signal Mapping", desc: "We map your Ideal Customer Profile in precise detail, then identify the 40+ intent signals that indicate an account is actively in-market: funding rounds, hiring patterns, tech stack changes, leadership moves, and more." },
   { n: "02", title: "Daily List Building & Enrichment", desc: "Our system monitors signal sources daily and surfaces accounts matching your ICP the moment they enter buying mode. Every account is enriched with company data, tech stack, headcount, and decision-maker contacts." },
-  { n: "03", title: "Account Scoring & Prioritisation", desc: "Accounts are scored by signal strength, ICP fit, and engagement indicators. Your team sees a prioritised view — the 10% of accounts worth focusing on this week, not a raw list of thousands to triage manually." },
+  { n: "03", title: "Account Scoring & Prioritisation", desc: "Accounts are scored by signal strength, ICP fit, and engagement indicators. Your team sees a prioritised view: the 10% of accounts worth focusing on this week, not a raw list of thousands to triage manually." },
   { n: "04", title: "CRM Export & Signal Dashboard", desc: "Scored accounts push to your CRM daily with full signal context attached. The signal dashboard shows you what triggered each account, so your outreach opens with the exact insight that makes it relevant." },
 ];
 
@@ -30,7 +30,7 @@ const WHO_FOR = [
 
 const TESTIMONIALS = [
   {
-    quote: "We used to buy lists and pray. Myntmore's signal intelligence showed us accounts that had just hired a VP of Sales, raised a round, and switched off a competitor's tool — all in the same week. We called them first. Our pipeline conversion went up 4x.",
+    quote: "We used to buy lists and pray. Myntmore's signal intelligence showed us accounts that had just hired a VP of Sales, raised a round, and switched off a competitor's tool, all in the same week. We called them first. Our pipeline conversion went up 4x.",
     name: "Head of Revenue",
     co: "Series B SaaS · HR Tech",
     color: "#a855f7",
@@ -50,11 +50,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "How is this different from a bought list?",
-    a: "A bought list gives you names and job titles — no context, no timing, no indication of intent. Signal-led intelligence gives you accounts that are actively showing buying behaviour right now. You know why they're on the list, what triggered them, and exactly what to say in your first message to make it land.",
+    a: "A bought list gives you names and job titles: no context, no timing, no indication of intent. Signal-led intelligence gives you accounts that are actively showing buying behaviour right now. You know why they're on the list, what triggered them, and exactly what to say in your first message to make it land.",
   },
   {
     q: "How often is the data refreshed?",
-    a: "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your CRM or dashboard by the next morning. This is the core advantage over static lists — you're always working with the freshest possible view of who is in-market.",
+    a: "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your CRM or dashboard by the next morning. This is the core advantage over static lists: you're always working with the freshest possible view of who is in-market.",
   },
   {
     q: "Which CRMs do you export to?",
@@ -133,7 +133,7 @@ export default function SalesIntelligence() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [statsTriggered, setStatsTriggered] = useState(false);
 
-  /* Blob parallax — hero */
+  /* Blob parallax: hero */
   useEffect(() => {
     if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
@@ -155,7 +155,7 @@ export default function SalesIntelligence() {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  /* Blob parallax — CTA */
+  /* Blob parallax: CTA */
   useEffect(() => {
     if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
@@ -267,11 +267,11 @@ export default function SalesIntelligence() {
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
-            We monitor 40+ buying signals daily — funding rounds, hiring surges, tech stack changes — so you reach in-market accounts the moment they enter the buying window.
+            We monitor 40+ buying signals daily (funding rounds, hiring surges, tech stack changes) so you reach in-market accounts the moment they enter the buying window.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+            <a href="/founder-meeting"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               See Who&apos;s In-Market Now
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -320,7 +320,7 @@ export default function SalesIntelligence() {
               </h2>
               <div className="space-y-4">
                 {[
-                  "Static lists go stale — accounts that were in-market 6 months ago aren't today",
+                  "Static lists go stale: accounts that were in-market 6 months ago aren't today",
                   "No signal context means every outreach starts from zero trust",
                   "You're competing with 10 other vendors all working the same outdated list",
                   "Your team wastes hours triaging thousands of accounts with no way to prioritise",
@@ -343,7 +343,7 @@ export default function SalesIntelligence() {
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Signal-led lists — accounts ready to buy now
+                Signal-led lists: accounts ready to buy now
               </h2>
               <div className="space-y-4">
                 {[
@@ -534,10 +534,10 @@ export default function SalesIntelligence() {
           </h2>
 
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>
-            Book a free session and we&apos;ll show you the signals firing in your target market today — accounts your competitors don&apos;t know are in the buying window yet.
+            Book a free session and we&apos;ll show you the signals firing in your target market today: accounts your competitors don&apos;t know are in the buying window yet.
           </p>
 
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+          <a href="/founder-meeting"
             className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
             See Your In-Market Accounts
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

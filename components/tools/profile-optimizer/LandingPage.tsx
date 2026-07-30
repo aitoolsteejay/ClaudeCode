@@ -1,0 +1,169 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { ArrowRight, TrendingUp, Target, Zap } from "lucide-react";
+
+interface LandingPageProps {
+  onStart: () => void;
+}
+
+const LandingPage = ({ onStart }: LandingPageProps) => {
+  return (
+    <div className="flex flex-col w-full">
+      {/* Hero Section */}
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white relative overflow-hidden">
+        {/* Vivid background blobs, matching the homepage hero's color treatment */}
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.30) 0%, rgba(255,160,0,0.12) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.25) 0%, rgba(124,58,237,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", bottom: "-140px", left: "10%", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.20) 0%, rgba(37,99,235,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+
+        <div className="max-w-4xl mx-auto animate-fade-in relative z-10">
+          {/* Eyebrow badge, matching the homepage's "Trusted by" badge */}
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+            style={{ background: "rgba(255,255,255,0.7)", borderColor: "rgba(245,183,49,0.4)", backdropFilter: "blur(8px)" }}
+          >
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} aria-hidden="true" />
+            <span className="text-sm font-semibold text-foreground">Free AI-Powered Profile Audit</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+            Turn Your LinkedIn Profile <br />
+            <span className="text-primary italic">Into a Pipeline</span>
+          </h1>
+
+          {/* Gold wavy underline, matching the homepage hero */}
+          <div className="flex justify-center -mt-3 mb-6" aria-hidden="true">
+            <svg viewBox="0 0 300 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[220px] sm:w-[280px]">
+              <path d="M3 8 C30 3, 58 12, 86 8 S142 3, 170 8 S226 12, 254 8 S284 3, 297 8" stroke="#F5B731" strokeWidth="3" strokeLinecap="round" fill="none" />
+            </svg>
+          </div>
+
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            Most professionals waste their LinkedIn real estate. Get a free clarity audit that shows you exactly how to position yourself for replies, authority, and inbound opportunities.
+          </p>
+          <Button onClick={onStart} variant="hero" size="xl" className="rounded-full shadow-2xl">
+            Audit My Profile Now
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-24 px-6 bg-secondary/30">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-5xl font-black mb-16">Your Profile Is Costing You Opportunities</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            {[
+              {
+                title: "Vague headlines that say nothing about the value you deliver",
+                icon: Target,
+                color: "#3B82F6",
+              },
+              {
+                title: "Generic summaries that blend in with everyone else",
+                icon: Zap,
+                color: "#F97316",
+              },
+              {
+                title: "Missing the exact words your ideal clients are searching for",
+                icon: TrendingUp,
+                color: "#7C3AED",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+                style={{ border: "1px solid #E8E2D9", borderTop: `3px solid ${item.color}` }}
+              >
+                <div className="mb-4 inline-flex p-3 rounded-xl" style={{ backgroundColor: `${item.color}15` }}>
+                  <item.icon className="h-8 w-8" style={{ color: item.color }} />
+                </div>
+                <p className="text-lg font-medium leading-snug">{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-5xl font-black mb-8">Get Instant Clarity on What to Fix</h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Paste your LinkedIn profile URL. Our AI analyzes your positioning, identifies gaps in clarity, and gives you specific improvements that make decision-makers stop scrolling and start reaching out.
+          </p>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 px-6 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-5xl font-black text-center mb-16">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                step: "01",
+                title: "Paste your LinkedIn profile URL",
+                desc: "Quick and easy input of your current profile details.",
+                color: "#F5B731",
+              },
+              {
+                step: "02",
+                title: "Get your free clarity audit in seconds",
+                desc: "Our AI engine processes your positioning against high-performing benchmarks.",
+                color: "#3B82F6",
+              },
+              {
+                step: "03",
+                title: "Implement changes and watch your pipeline grow",
+                desc: "Apply the specific suggestions and start seeing better engagement.",
+                color: "#10B981",
+              },
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                <div className="text-5xl font-black mb-4" style={{ color: `${item.color}35` }}>{item.step}</div>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-secondary/20 p-8 md:p-12 rounded-3xl border border-primary/10 relative">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-black px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
+              Client Result
+            </div>
+            <p className="text-xl md:text-2xl font-medium italic mb-6 text-center">
+              &quot;The clarity audit showed me exactly why I wasn&apos;t getting inbound. After applying the changes, I got 3 high-quality leads in the first week.&quot;
+            </p>
+            <div className="flex items-center justify-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">S</div>
+              <div className="text-left">
+                <div className="font-bold">Founder @ SaaS Growth</div>
+                <div className="text-sm text-muted-foreground">Increased LinkedIn Inbound by 300%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Second CTA */}
+      <section className="py-24 px-6 bg-primary">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-5xl font-black mb-10 text-black">Stop Guessing, Start Positioning</h2>
+          <Button onClick={onStart} variant="secondary" size="xl" className="rounded-full bg-white text-black hover:bg-white/90 shadow-2xl">
+            Start My Free Audit
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default LandingPage;

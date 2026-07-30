@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import AskYourAI from "../../components/AskYourAI";
+
+const BLOG_AI_RESOURCES = [
+  "https://myntmore.com/blog/predictable-b2b-lead-gen-engine",
+  "https://myntmore.com",
+  "https://myntmore.com/case-studies",
+];
 
 export const metadata: Metadata = {
   title: "Building a Predictable B2B Lead Generation Engine | Myntmore Blog",
@@ -127,10 +134,14 @@ export default function PredictableB2BLeadGen() {
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               We build and run this exact system for B2B companies. Book a free 30-minute audit and we&apos;ll tell you exactly where your pipeline is leaking.
             </p>
-            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+            <a href="/founder-meeting" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Book a Free GTM Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
+          </div>
+
+          <div className="mt-8">
+            <AskYourAI resources={BLOG_AI_RESOURCES} />
           </div>
         </div>
       </article>

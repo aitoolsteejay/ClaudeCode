@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Caveat } from "next/font/google";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Myntmore — B2B Lead Generation & AI-Powered Outbound Agency, Mumbai",
+        alt: "Myntmore: B2B Lead Generation & AI-Powered Outbound Agency, Mumbai",
       },
     ],
   },
@@ -113,6 +114,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-white antialiased">
         {children}
+        <Toaster />
 
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">

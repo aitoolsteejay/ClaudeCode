@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import AskYourAI from "../../components/AskYourAI";
+
+const BLOG_AI_RESOURCES = [
+  "https://myntmore.com/blog/b2b-lead-gen-metrics",
+  "https://myntmore.com",
+  "https://myntmore.com/case-studies",
+];
 
 export const metadata: Metadata = {
   title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop) | Myntmore Blog",
-  description: "Most outbound teams track the wrong numbers. Here are the 7 metrics that actually tell you whether your lead generation engine is healthy — and the exact actions to take when each one dips.",
+  description: "Most outbound teams track the wrong numbers. Here are the 7 metrics that actually tell you whether your lead generation engine is healthy, and the exact actions to take when each one dips.",
   alternates: { canonical: "https://myntmore.com/blog/b2b-lead-gen-metrics" },
   keywords: ["b2b lead generation metrics", "outbound kpis", "cold email metrics", "reply rate", "meeting booked rate", "pipeline metrics", "lead gen dashboard"],
   openGraph: {
@@ -63,7 +70,7 @@ export default function B2BLeadGenMetrics() {
                 body: null,
                 numbered: [
                   "Inbox placement rate (target: 85%+): What percentage of your emails are landing in the primary inbox vs spam or promotions. Measure this with GlockApps or Mail-Tester before every new campaign. If this drops below 80%, stop sending and fix your infrastructure.",
-                  "Reply rate (target: 3–8%): The single most important cold email metric. A reply — even a no — means your message was read. Below 2% means your copy or targeting is broken. Above 8% means you have found a message-market fit and should scale immediately.",
+                  "Reply rate (target: 3–8%): The single most important cold email metric. A reply, even a no, means your message was read. Below 2% means your copy or targeting is broken. Above 8% means you have found a message-market fit and should scale immediately.",
                   "Positive reply rate (target: 20–35% of all replies): What percentage of replies are interested vs out-of-office or unsubscribes? If you have a 5% reply rate but 90% of replies are negative, you have a messaging problem, not a volume problem.",
                   "Meeting booked rate (target: 4–8% of contacts): How many of the people you contacted converted to a booked meeting? This is the true north metric for any outbound campaign. If reply rate is healthy but meeting rate is low, the problem is your call-to-action or your qualification process.",
                   "Show rate (target: 75%+): Of meetings booked, how many actually show up? A low show rate means your prospect was not qualified, your confirmation sequence is weak, or the value proposition of the call was not clear enough. Fix show rate before scaling volume.",
@@ -121,10 +128,14 @@ export default function B2BLeadGenMetrics() {
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Share your current numbers and we will tell you exactly where your pipeline is leaking and what to fix first. No pitch. Just a diagnosis.
             </p>
-            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+            <a href="/founder-meeting" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Book a Free GTM Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
+          </div>
+
+          <div className="mt-8">
+            <AskYourAI resources={BLOG_AI_RESOURCES} />
           </div>
         </div>
       </article>

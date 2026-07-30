@@ -3,6 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
+import AskYourAI from "../components/AskYourAI";
+
+const CASE_STUDIES_AI_RESOURCES = [
+  "https://myntmore.com/case-studies",
+  "https://myntmore.com",
+  "https://myntmore.com/about-us",
+];
 
 // ── Blob parallax ──────────────────────────────────────────────────────────────
 function Blobs() {
@@ -194,7 +201,7 @@ const CASE_STUDIES: CaseStudy[] = [
     slug: "predictable-b2b-lead-gen-engine", tag: "Professional Services · Growth Stage", accent: "#ef4444",
     title: "Built a full outbound engine that books 15+ meetings/month on autopilot",
     stats: [{ v: "15+", l: "Meetings/month" }, { v: "29%", l: "Reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }],
-    excerpt: "A mid-size B2B services firm had tried outbound before and failed — bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
+    excerpt: "A mid-size B2B services firm had tried outbound before and failed: bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
     services: ["AI Lead Generation", "Cold Email Infrastructure", "Sales Intelligence"],
   },
 ];
@@ -256,6 +263,12 @@ export default function CaseStudies() {
         </div>
       </section>
 
+      <section className="py-16 px-4" style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-3xl mx-auto">
+          <AskYourAI topic="Myntmore" resources={CASE_STUDIES_AI_RESOURCES} />
+        </div>
+      </section>
+
       {/* CTA */}
       <FadeIn>
         <section className="py-20 px-4">
@@ -266,7 +279,7 @@ export default function CaseStudies() {
             <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Book a free 30-min audit</h2>
             <p className="text-base mb-8" style={{ color: "#9ca3af" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
+              <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
               <Link href="/case-studies/saas-series-a" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-white/10" style={{ borderColor: "rgba(255,255,255,0.3)", color: "#ffffff" }}>Read SaaS case study</Link>
             </div>
           </div>

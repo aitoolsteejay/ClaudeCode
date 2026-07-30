@@ -48,7 +48,7 @@ export default function EcommerceConversionPlaybook() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The problem</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              The client had built a solid Shopify-integrated analytics tool but had zero outbound motion. Their growth team was relying on paid ads and the occasional warm intro. There was no ICP definition beyond "eCommerce brands," no outreach infrastructure, and no consistent pipeline. The founder was manually DMing prospects on LinkedIn — 5–10 a day — with near-zero conversion.
+              The client had built a solid Shopify-integrated analytics tool but had zero outbound motion. Their growth team was relying on paid ads and the occasional warm intro. There was no ICP definition beyond "eCommerce brands," no outreach infrastructure, and no consistent pipeline. The founder was manually DMing prospects on LinkedIn, 5–10 a day, with near-zero conversion.
             </p>
           </div>
 
@@ -83,9 +83,9 @@ export default function EcommerceConversionPlaybook() {
 
           <div className="rounded-2xl p-8 border-l-4" style={{ backgroundColor: "#F0FDF4", borderColor: "#10b981" }}>
             <p className="text-lg font-semibold italic mb-3" style={{ color: "#0a0a0a" }}>
-              &ldquo;We&apos;d tried cold email before and it never worked. Myntmore showed us the problem wasn&apos;t the channel — it was the targeting. The list quality and personalisation changed everything.&rdquo;
+              &ldquo;We&apos;d tried cold email before and it never worked. Myntmore showed us the problem wasn&apos;t the channel. It was the targeting. The list quality and personalisation changed everything.&rdquo;
             </p>
-            <p className="text-sm font-bold" style={{ color: "#10b981" }}>— Co-founder, eCommerce SaaS (Seed stage)</p>
+            <p className="text-sm font-bold" style={{ color: "#10b981" }}>Co-founder, eCommerce SaaS (Seed stage)</p>
           </div>
 
           <div>

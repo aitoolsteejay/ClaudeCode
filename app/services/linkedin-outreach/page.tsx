@@ -8,8 +8,8 @@ import InnerLayout from "../../components/InnerLayout";
 
 const STEPS = [
   { n: "01", title: "Profile Optimisation & ICP Setup", desc: "We rewrite your LinkedIn profile headline, about section, and featured posts to attract your ideal buyer. Then we map your Ideal Customer Profile and build a segmented targeting list of decision-makers worth reaching." },
-  { n: "02", title: "Connection & Message Sequence Build", desc: "We write a multi-touch connection request and follow-up DM sequence that sounds human — no templates, no spray-and-pray. Every message is crafted to open a conversation, not pitch immediately." },
-  { n: "03", title: "Safe Automation & Residential IP Routing", desc: "We run sequences through LinkedIn-safe automation tools with residential IP proxies, daily limits, and human-mimicking behaviour patterns — so your account stays active and protected throughout." },
+  { n: "02", title: "Connection & Message Sequence Build", desc: "We write a multi-touch connection request and follow-up DM sequence that sounds human: no templates, no spray-and-pray. Every message is crafted to open a conversation, not pitch immediately." },
+  { n: "03", title: "Safe Automation & Residential IP Routing", desc: "We run sequences through LinkedIn-safe automation tools with residential IP proxies, daily limits, and human-mimicking behaviour patterns, so your account stays active and protected throughout." },
   { n: "04", title: "Reply Management & Meeting Booking", desc: "Every positive response is handled by our team. We continue the conversation, qualify the prospect, and either hand off a warm lead or book the meeting directly into your calendar." },
 ];
 
@@ -23,7 +23,7 @@ const DELIVERABLES = [
 ];
 
 const WHO_FOR = [
-  { icon: "💼", title: "B2B Founders & Executives", desc: "Leaders who want consistent conversations with decision-makers happening in their LinkedIn inbox every week — without spending hours manually networking." },
+  { icon: "💼", title: "B2B Founders & Executives", desc: "Leaders who want consistent conversations with decision-makers happening in their LinkedIn inbox every week, without spending hours manually networking." },
   { icon: "🎯", title: "Sales Teams Targeting Enterprise", desc: "Teams that need to reach VP-level and C-suite buyers at specific companies with a personal, human-feeling outreach approach that cold email alone can't achieve." },
   { icon: "🤝", title: "Consultants & Advisors", desc: "Professionals building a steady pipeline of qualified conversations with their ideal client profile, without risking their account or their reputation." },
 ];
@@ -36,7 +36,7 @@ const TESTIMONIALS = [
     color: "#0077b5",
   },
   {
-    quote: "I thought LinkedIn outreach was just spam. What Myntmore built felt like genuine networking at scale — the messages didn't sound automated and the replies were real conversations. Three enterprise deals in the first quarter came directly from LinkedIn.",
+    quote: "I thought LinkedIn outreach was just spam. What Myntmore built felt like genuine networking at scale: the messages didn't sound automated and the replies were real conversations. Three enterprise deals in the first quarter came directly from LinkedIn.",
     name: "Founder & CEO",
     co: "Management Consulting",
     color: "#D97706",
@@ -46,11 +46,11 @@ const TESTIMONIALS = [
 const FAQ_ITEMS = [
   {
     q: "Is LinkedIn automation safe for my account?",
-    a: "When done correctly, yes. We use LinkedIn-safe tools with residential IP proxies, human-mimicking activity patterns, and conservative daily limits that keep you well within LinkedIn's acceptable use thresholds. We've run hundreds of accounts without a single ban. The risks come from aggressive volume and obvious bot behaviour — we avoid both.",
+    a: "When done correctly, yes. We use LinkedIn-safe tools with residential IP proxies, human-mimicking activity patterns, and conservative daily limits that keep you well within LinkedIn's acceptable use thresholds. We've run hundreds of accounts without a single ban. The risks come from aggressive volume and obvious bot behaviour. We avoid both.",
   },
   {
     q: "What acceptance and reply rates can I expect?",
-    a: "With a well-targeted list and a properly written sequence, we consistently see 40–55% connection acceptance rates and 18–25% reply rates on accepted connections. These numbers depend on your ICP and offer — during onboarding we'll give you realistic benchmarks specific to your market.",
+    a: "With a well-targeted list and a properly written sequence, we consistently see 40–55% connection acceptance rates and 18–25% reply rates on accepted connections. These numbers depend on your ICP and offer. During onboarding we'll give you realistic benchmarks specific to your market.",
   },
   {
     q: "Do you manage the replies or do I?",
@@ -133,7 +133,7 @@ export default function LinkedInOutreach() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [statsTriggered, setStatsTriggered] = useState(false);
 
-  /* Blob parallax — hero */
+  /* Blob parallax: hero */
   useEffect(() => {
     if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
@@ -155,7 +155,7 @@ export default function LinkedInOutreach() {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  /* Blob parallax — CTA */
+  /* Blob parallax: CTA */
   useEffect(() => {
     if (window.innerWidth < 768) return; // skip blob animation on mobile
     let id: number;
@@ -264,7 +264,7 @@ export default function LinkedInOutreach() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+            <a href="/founder-meeting"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Get a Free LinkedIn Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -336,7 +336,7 @@ export default function LinkedInOutreach() {
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Automated sequences that feel human — and fill your calendar
+                Automated sequences that feel human, and fill your calendar
               </h2>
               <div className="space-y-4">
                 {[
@@ -530,7 +530,7 @@ export default function LinkedInOutreach() {
             Book a free audit and we&apos;ll show you exactly how to optimise your LinkedIn profile and sequences to start conversations with the right people.
           </p>
 
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer"
+          <a href="/founder-meeting"
             className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
             Book a Free LinkedIn Audit
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

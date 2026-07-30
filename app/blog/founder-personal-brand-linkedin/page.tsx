@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import AskYourAI from "../../components/AskYourAI";
+
+const BLOG_AI_RESOURCES = [
+  "https://myntmore.com/blog/founder-personal-brand-linkedin",
+  "https://myntmore.com",
+  "https://myntmore.com/case-studies",
+];
 
 export const metadata: Metadata = {
   title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset | Myntmore Blog",
@@ -138,7 +145,7 @@ export default function FounderPersonalBrandLinkedIn() {
               We ghostwrite LinkedIn content for founders that sounds exactly like you. 4–8 posts/month from monthly voice interviews. Book a free call to see if it&apos;s a fit.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+              <a href="/founder-meeting" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
                 Book a Free Call
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
@@ -146,6 +153,10 @@ export default function FounderPersonalBrandLinkedIn() {
                 Learn about the service
               </Link>
             </div>
+          </div>
+
+          <div className="mt-8">
+            <AskYourAI resources={BLOG_AI_RESOURCES} />
           </div>
         </div>
       </article>

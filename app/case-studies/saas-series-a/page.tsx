@@ -104,7 +104,7 @@ export default function SaasSeriesA() {
           <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#52525B" }}>
             Book a free 30-minute strategy call and we&apos;ll map out exactly how to build this system for your business.
           </p>
-          <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+          <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
             Book a Free Strategy Call
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>

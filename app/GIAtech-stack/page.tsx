@@ -43,7 +43,7 @@ const CATEGORIES = [
   {
     id: "content", icon: "✍️", color: "#FEF3C7", accent: "#D97706", textAccent: "#92400E",
     title: "AI Writing & Content for Jewellery",
-    subtitle: "Copy that speaks to emotion, occasion, and meaning — not just specs.",
+    subtitle: "Copy that speaks to emotion, occasion, and meaning, not just specs.",
     tools: [
       { name: "Claude", what: "Write product descriptions, campaign copy, LinkedIn posts, email sequences", free: "Free/Paid" },
       { name: "ChatGPT", what: "Brainstorm collection names, taglines, occasion-based content", free: "Free/Paid" },
@@ -129,7 +129,7 @@ const CATEGORIES = [
   {
     id: "seo", icon: "🔍", color: "#ECFDF5", accent: "#15803D", textAccent: "#14532D",
     title: "SEO & Discovery",
-    subtitle: "When someone searches \"diamond rings Mumbai\" — you need to show up.",
+    subtitle: "When someone searches \"diamond rings Mumbai\", you need to show up.",
     tools: [
       { name: "Google Business Profile", what: "Show up on local maps for walk-in customers", free: "Free" },
       { name: "Google Search Console", what: "Track which jewellery keywords are bringing traffic", free: "Free" },
@@ -187,7 +187,7 @@ const CATEGORIES = [
     title: "Productivity & Automation",
     subtitle: "So you can run marketing without it taking over your day.",
     tools: [
-      { name: "Notion", what: "Your brand OS — content calendar, client notes, all in one", free: "Free/Paid" },
+      { name: "Notion", what: "Your brand OS: content calendar, client notes, all in one", free: "Free/Paid" },
       { name: "Google Workspace", what: "Docs, Sheets, Drive for day-to-day operations", free: "Free/Paid" },
       { name: "Zapier", what: "Automate repetitive tasks, e.g. new lead in CRM triggers a WhatsApp", free: "Free/Paid" },
       { name: "Make (Integromat)", what: "More powerful automation for multi-step workflows", free: "Free/Paid" },
@@ -553,7 +553,7 @@ export default function GIATechStackPage() {
           </h1>
 
           <p className="text-xl leading-relaxed max-w-2xl mb-12" style={{ color: "#52525B" }}>
-            106 tools across 14 categories — curated specifically for jewellery brand owners and retailers. From product photography to paid ads, beginner to advanced.
+            106 tools across 14 categories, curated specifically for jewellery brand owners and retailers. From product photography to paid ads, beginner to advanced.
           </p>
 
           {/* Stats row */}
@@ -623,7 +623,7 @@ export default function GIATechStackPage() {
           </div>
           {search && (
             <p className="mt-3 text-sm" style={{ color: "#8C8279" }}>
-              Showing results for <strong style={{ color: "#0a0a0a" }}>"{search}"</strong> — {CATEGORIES.flatMap(c => c.tools).filter(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase())).length} tools found
+              Showing results for <strong style={{ color: "#0a0a0a" }}>"{search}"</strong>: {CATEGORIES.flatMap(c => c.tools).filter(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase())).length} tools found
             </p>
           )}
         </div>
@@ -694,9 +694,7 @@ export default function GIATechStackPage() {
             We help jewellery brands and B2B businesses turn AI tools into real pipeline.
           </p>
           <a
-            href="https://calendly.com/founder-myntmore/web"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/founder-meeting"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-black text-base"
             style={{ backgroundColor: "#F5B731", color: "#0a0a0a", transition: "transform 0.15s ease, box-shadow 0.15s ease" }}
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(245,183,49,0.4)"; }}

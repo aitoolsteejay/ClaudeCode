@@ -114,25 +114,39 @@ function Marquee() {
 
 const ROLES = [
   {
-    slug: "content-strategist", accent: "#F5B731", tag: "Content & LinkedIn",
-    title: "Content Strategist & LinkedIn Ghostwriter",
-    type: "Full-time · Remote", location: "India",
-    desc: "You'll own the content engine for multiple B2B founders — writing posts, threads, and newsletters that drive real pipeline.",
-    bullets: ["3+ years B2B LinkedIn content", "Strong ghostwriting portfolio", "Understands ICP-led messaging"],
+    slug: "senior-sales-head", accent: "#F5B731", tag: "Sales",
+    title: "Senior Sales Head",
+    type: "Full-time · Worli, Mumbai", location: "India",
+    desc: "You'll own outbound sales end to end: prospecting, sales calls, closing, and CRM, building Myntmore's client base directly.",
+    bullets: ["2–5 years B2B sales experience", "Cold calling & cold emailing skills", "CRM-savvy (Zoho or similar)"],
   },
   {
-    slug: "lead-gen-strategist", accent: "#a855f7", tag: "Outbound & GTM",
+    slug: "lead-gen-strategist", accent: "#3b82f6", tag: "Outbound & GTM",
     title: "Lead Generation Strategist",
-    type: "Full-time · Remote", location: "India",
-    desc: "You'll build and run outbound systems: Clay workflows, cold email sequences, LinkedIn outreach — end to end.",
-    bullets: ["2+ years outbound experience", "Hands-on with Clay or Apollo", "Data-driven and systems-minded"],
+    type: "Full-time · Worli, Mumbai", location: "India",
+    desc: "You'll build and run outbound systems across LinkedIn, cold email, and AI-led automation, end to end.",
+    bullets: ["Clear grasp of outbound funnels", "Hands-on with Clay, Apollo, or similar", "Data-driven and systems-minded"],
+  },
+  {
+    slug: "gtm-strategist", accent: "#10b981", tag: "Growth Marketing",
+    title: "GTM Strategist",
+    type: "Full-time · Worli, Mumbai", location: "India",
+    desc: "You'll own growth across multiple B2B brands: LinkedIn, cold email, AI automation, and content-led demand generation.",
+    bullets: ["3+ years B2B lead generation", "Strong copywriting & ICP research", "Comfortable with AI + automation tools"],
+  },
+  {
+    slug: "hr-operations-intern", accent: "#a855f7", tag: "People & Ops",
+    title: "HR and Operations Intern",
+    type: "Internship · Worli, Mumbai", location: "India",
+    desc: "You'll build real hiring pipelines, KPI/KRA frameworks, and HR systems directly with the founder, not admin busywork.",
+    bullets: ["6-month minimum commitment", "Organised, systems-first thinker", "Comfortable with Notion & sheets"],
   },
 ];
 
 const VALUES = [
   { icon: "⚡", title: "Ship fast", desc: "We move in days, not quarters. If it can be tested, it gets tested this week." },
   { icon: "🎯", title: "Outcome over hours", desc: "We don't track time. We track results. Own your output, own your schedule." },
-  { icon: "🧠", title: "AI-native by default", desc: "Every workflow starts with: how do we use AI here? Not as a buzzword — as leverage." },
+  { icon: "🧠", title: "AI-native by default", desc: "Every workflow starts with: how do we use AI here? Not as a buzzword, as leverage." },
   { icon: "📈", title: "Learn out loud", desc: "Share what's working. Share what failed. The whole team gets smarter together." },
 ];
 
@@ -156,7 +170,7 @@ export default function Careers() {
             </span>
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
-            We&apos;re a small, high-output team obsessed with B2B growth. If you want to own real outcomes — not slide decks — you&apos;re our kind of person.
+            We&apos;re a small, high-output team obsessed with B2B growth. If you want to own real outcomes, not slide decks, you&apos;re our kind of person.
           </p>
         </div>
       </section>
@@ -170,7 +184,7 @@ export default function Careers() {
       <FadeIn>
         <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
           <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6">
-            {[{ v: "2", l: "Open roles" }, { v: "10+", l: "Clients served" }, { v: "3", l: "Countries reached" }].map((s) => (
+            {[{ v: "4", l: "Open roles" }, { v: "10+", l: "Clients served" }, { v: "3", l: "Countries reached" }].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#F5B731" }}><Ticker value={s.v} /></div>
                 <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
@@ -228,7 +242,7 @@ export default function Careers() {
               {[
                 { step: "01", title: "Apply", desc: "Send us your CV and a short note on why this role." },
                 { step: "02", title: "Async task", desc: "Small take-home task (under 2 hours) so we see your thinking." },
-                { step: "03", title: "30-min call", desc: "Meet the founder. No gotcha questions — just a real conversation." },
+                { step: "03", title: "30-min call", desc: "Meet the founder. No gotcha questions, just a real conversation." },
                 { step: "04", title: "Offer", desc: "Fast decisions. We don&apos;t ghost candidates." },
               ].map((item) => (
                 <div key={item.step} className="flex gap-4 mb-5 last:mb-0">

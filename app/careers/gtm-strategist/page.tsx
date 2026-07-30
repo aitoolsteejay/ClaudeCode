@@ -1,0 +1,160 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import InnerLayout from "../../components/InnerLayout";
+
+export const metadata: Metadata = {
+  title: "GTM Strategist Job | Myntmore Mumbai | Rs 6–15 LPA",
+  description: "Join Myntmore as a Senior Growth Marketing Strategist in Worli, Mumbai. Own growth across multiple B2B brands using LinkedIn, cold email, AI automation, and content-led demand gen. Rs 6–15 LPA + incentives.",
+  alternates: { canonical: "https://myntmore.com/careers/gtm-strategist" },
+  openGraph: {
+    title: "GTM Strategist | Myntmore Careers",
+    description: "Own growth for multiple B2B brands: build predictable pipelines, not just campaigns. Full-time, Worli Mumbai.",
+    url: "https://myntmore.com/careers/gtm-strategist",
+  },
+};
+
+const APPLY_SUBJECT = "Application for GTM Strategist";
+const ACCENT = "#10b981";
+
+export default function GtmStrategist() {
+  return (
+    <InnerLayout>
+      <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <Link href="/careers" className="link-subtle text-xs font-semibold">Careers</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>GTM Strategist</span>
+          </div>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: ACCENT, border: "1px solid rgba(16,185,129,0.2)" }}>Full-Time · Worli, Mumbai</span>
+          <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
+            GTM Strategist
+          </h1>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            {[["Location", "Worli, Mumbai"], ["Type", "Full-Time"], ["Timings", "10 AM–7 PM"], ["CTC", "Rs 6–15 LPA + incentives"]].map(([label, value]) => (
+              <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-sm font-bold" style={{ color: "#0a0a0a" }}>{value}</p>
+              </div>
+            ))}
+          </div>
+
+          <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            Apply Now
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
+        <div className="max-w-3xl mx-auto space-y-12">
+          <div>
+            <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>About the role</h2>
+            <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
+              We&apos;re looking for a Senior Growth Marketing Strategist with 3+ years of experience in B2B lead generation, someone who understands how to build predictable pipelines, not just run campaigns. You&apos;ll own growth across multiple B2B brands using LinkedIn, cold email, AI automation, newsletters, outbound systems, and content-led demand generation. We&apos;re looking for someone who can think strategically, identify the right audiences, craft compelling messaging, optimise outreach, and continuously improve pipeline performance, working directly with founders to solve one problem: how do we consistently generate more qualified sales conversations?
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-black mb-2" style={{ color: "#0a0a0a" }}>Primary goal</h2>
+            <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
+              Generate predictable, high-quality B2B pipeline every single week, for Myntmore and for our clients. That means working across 5&ndash;10+ businesses at a time, understanding how different industries buy, sell, and scale, spotting patterns across markets, and building a skillset that makes you valuable across any business, not just one niche.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>What you&apos;ll do</h2>
+            <div className="space-y-4">
+              {[
+                { title: "B2B Growth Strategy", desc: "Build and own lead generation strategies for multiple B2B businesses. Design scalable outbound systems across LinkedIn, cold email, newsletters, communities, and referrals. Identify new opportunities to increase pipeline and conversion." },
+                { title: "Pipeline Generation", desc: "Generate qualified decision-maker meetings through multi-channel outbound. Own weekly and monthly pipeline targets, and continuously improve reply rates, booking rates, and conversion metrics." },
+                { title: "ICP & Messaging", desc: "Research industries, buying committees, and decision-makers. Define ICPs and buyer personas, and create messaging frameworks that resonate across industries and buyer stages." },
+                { title: "LinkedIn & Cold Email", desc: "Build, launch, and optimise outreach campaigns. Manage sequencing, deliverability, inbox health, and domain reputation using tools like Clay, Apollo, Smartlead, Instantly, Waalaxy, Sales Navigator, Snov, ListKit, MillionVerifier, and BounceBan." },
+                { title: "AI & Automation", desc: "Use AI to improve research, personalisation, campaign creation, and workflow automation. Identify repetitive processes to automate and stay current with emerging AI tools." },
+                { title: "Performance & Optimisation", desc: "Own metrics including qualified pipeline, meetings booked, reply and conversion rates, and channel performance. Translate insights into improvements that increase pipeline quality and efficiency." },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Who you are</h2>
+            <p className="text-base leading-relaxed mb-4" style={{ color: "#52525B" }}>
+              We&apos;re looking for someone with 3+ years of experience in B2B lead generation or growth marketing who enjoys solving growth challenges rather than simply executing tasks.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { label: "Experience", desc: "3+ years generating B2B leads" },
+                { label: "Outbound", desc: "Strong understanding of LinkedIn outreach and cold email" },
+                { label: "Technical", desc: "Experience with outbound automation and AI tools" },
+                { label: "Research", desc: "Excellent research and ICP development skills" },
+                { label: "Copywriting", desc: "Strong copywriting and messaging abilities" },
+                { label: "Analytical", desc: "Comfortable interpreting campaign metrics with high ownership" },
+              ].map((item) => (
+                <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <p className="text-xs font-black mb-1" style={{ color: ACCENT }}>{item.label}</p>
+                  <p className="text-sm" style={{ color: "#52525B" }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Skills &amp; mindset we value</h2>
+            {["Outcome-Obsessed: leads over everything", "Channel Fluent: LinkedIn + Email + Communities", "Research-Driven: ICP clarity means better leads", "AI-Friendly: we run AI-led systems", "Fast Learner + High Ownership"].map((item) => (
+              <div key={item} className="flex items-center gap-3 mb-3">
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <p className="text-base" style={{ color: "#3D3D3D" }}>{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
+            <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
+              Work directly on real founder pipelines, get exposure to multiple industries and global markets, and learn AI-led growth systems that very few agencies in India truly understand. Work from WeWork Worli with a young, hungry team, with high growth potential and incentives tied to lead performance.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Our values</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: "💡", title: "Innovate with purpose", desc: "We push boundaries with meaningful, innovative solutions that help businesses scale and grow." },
+                { icon: "🎯", title: "Focus on impact", desc: "We value results over busyness. Every action is aimed at measurable impact." },
+                { icon: "💪", title: "Hustle with heart", desc: "Working hard, working smart, and making things happen with real passion." },
+                { icon: "🔑", title: "Embrace collaboration", desc: "Great ideas come from working together and valuing diversity of thought." },
+                { icon: "🙏", title: "Take ownership", desc: "Accountability and responsibility, for your role and the company's success." },
+                { icon: "🏆", title: "Excellence is the standard", desc: "We don't settle for anything less than our best, in everything we do." },
+              ].map((v) => (
+                <div key={v.title} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <div className="text-xl mb-2">{v.icon}</div>
+                  <p className="text-sm font-black mb-1" style={{ color: "#0a0a0a" }}>{v.title}</p>
+                  <p className="text-sm" style={{ color: "#52525B" }}>{v.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl p-8 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
+            <h3 className="text-lg font-black mb-4" style={{ color: "#0a0a0a" }}>Ready to apply?</h3>
+            <div className="space-y-2 mb-6">
+              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>growth@myntmore.com</a>
+              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
+            </div>
+            <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+              Apply Now
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </InnerLayout>
+  );
+}

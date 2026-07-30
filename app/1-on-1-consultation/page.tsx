@@ -54,7 +54,7 @@ export default function OneOnOneConsultation() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-dark w-full py-3 text-sm font-bold text-center block">
+                <a href="/founder-meeting" className="btn-dark w-full py-3 text-sm font-bold text-center block">
                   Book Free 30-Min Audit
                 </a>
               </div>
@@ -71,7 +71,7 @@ export default function OneOnOneConsultation() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://calendly.com/founder-myntmore/web" target="_blank" rel="noopener noreferrer" className="btn-ghost w-full py-3 text-sm font-bold text-center block">
+                <a href="/founder-meeting" className="btn-ghost w-full py-3 text-sm font-bold text-center block">
                   Book 1-Hour Session
                 </a>
               </div>

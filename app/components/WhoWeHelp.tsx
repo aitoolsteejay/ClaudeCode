@@ -317,7 +317,7 @@ export default function WhoWeHelp() {
               </p>
               <div>
                 <a
-                  href="https://calendly.com"
+                  href="https://calendly.com/founder-myntmore/web"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-dark inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold"

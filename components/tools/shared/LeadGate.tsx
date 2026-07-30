@@ -46,8 +46,21 @@ interface LeadGateProps {
   description?: string;
 }
 
-const ZOHO_FORM_ACTION =
+const SHARED_ZOHO_FORM_ACTION =
   "https://forms.zohopublic.com/flintstop/form/Myntmoreleadmagnetform/formperma/z-AuIY9K-mm72IUDW3h9bnsB3ye_AQgaIjI4xrdii1o/htmlRecords/submit";
+
+// Each tool posts to its own Zoho form when one exists; otherwise it falls
+// back to the shared lead-magnet form. Field names (SingleLine, SingleLine1,
+// etc.) are consistent across these forms, so no other changes are needed
+// when adding a dedicated form for a tool.
+const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
+  profile_optimizer: SHARED_ZOHO_FORM_ACTION,
+  posting_rhythm_builder:
+    "https://forms.zohopublic.com/flintstop/form/PostingRhythm/formperma/btpD3CWLnvNwmuKABmv1eiFifirOxmMSKkD2gzzoxns/htmlRecords/submit",
+  lead_magnet_ideas: SHARED_ZOHO_FORM_ACTION,
+  dm_angle_generator: SHARED_ZOHO_FORM_ACTION,
+  founder_presence_analyzer: SHARED_ZOHO_FORM_ACTION,
+};
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 
 const DEFAULT_HEADING = (
@@ -147,7 +160,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          action={ZOHO_FORM_ACTION}
+          action={ZOHO_FORM_ACTIONS[source]}
           method="POST"
           acceptCharset="UTF-8"
           encType="multipart/form-data"

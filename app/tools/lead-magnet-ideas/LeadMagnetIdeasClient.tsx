@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { supabase } from "@/lib/supabase";
+import { Lightbulb, TrendingUp, Send, Copy, Check } from "lucide-react";
+import { toast } from "sonner";
 
 const INDUSTRY_OPTIONS = [
   "B2B SaaS",
@@ -53,6 +55,19 @@ export default function LeadMagnetIdeasClient() {
   const [step, setStep] = useState<FlowStep>("lead");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+  const copyIdea = async (idea: LeadMagnetIdea, index: number) => {
+    const text = `${idea.title}\n\n${idea.pitch}\n\nWhy It Works: ${idea.whyItWorks}\n\nHow to Use It: ${idea.distribution}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedIndex(index);
+      toast.success("Idea copied to clipboard");
+      setTimeout(() => setCopiedIndex(null), 2000);
+    } catch {
+      toast.error("Failed to copy");
+    }
+  };
 
   const handleLeadComplete = (data: LeadData) => {
     setLeadData(data);
@@ -275,18 +290,51 @@ export default function LeadMagnetIdeasClient() {
                     className="bg-white rounded-2xl p-8 md:p-10 shadow-sm"
                     style={{ borderTop: `3px solid ${color}`, borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}
                   >
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color }}>
-                      Idea {idx + 1}
-                    </p>
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: `${color}18`, border: `1px solid ${color}40` }}
+                        >
+                          <Lightbulb className="w-4 h-4" style={{ color }} />
+                        </div>
+                        <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color }}>
+                          Idea {idx + 1}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => copyIdea(idea, idx)}
+                        className="flex items-center gap-1.5 text-xs font-bold text-gray-400 hover:text-gray-700 transition-colors flex-shrink-0"
+                        aria-label="Copy idea"
+                      >
+                        {copiedIndex === idx ? (
+                          <>
+                            <Check className="w-3.5 h-3.5" style={{ color }} />
+                            Copied
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3.5 h-3.5" />
+                            Copy
+                          </>
+                        )}
+                      </button>
+                    </div>
                     <h3 className="text-2xl font-black mb-4">{idea.title}</h3>
                     <p className="text-gray-700 text-base leading-relaxed mb-6">{idea.pitch}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6" style={{ borderTop: "1px solid #F0EDE7" }}>
                       <div>
-                        <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">Why It Works</p>
+                        <p className="flex items-center gap-1.5 text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">
+                          <TrendingUp className="w-3.5 h-3.5" />
+                          Why It Works
+                        </p>
                         <p className="text-gray-600 text-sm leading-relaxed">{idea.whyItWorks}</p>
                       </div>
                       <div>
-                        <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">How to Use It</p>
+                        <p className="flex items-center gap-1.5 text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">
+                          <Send className="w-3.5 h-3.5" />
+                          How to Use It
+                        </p>
                         <p className="text-gray-600 text-sm leading-relaxed">{idea.distribution}</p>
                       </div>
                     </div>

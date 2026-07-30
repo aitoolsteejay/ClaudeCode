@@ -57,7 +57,8 @@ const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
   profile_optimizer: SHARED_ZOHO_FORM_ACTION,
   posting_rhythm_builder:
     "https://forms.zohopublic.com/flintstop/form/PostingRhythm/formperma/btpD3CWLnvNwmuKABmv1eiFifirOxmMSKkD2gzzoxns/htmlRecords/submit",
-  lead_magnet_ideas: SHARED_ZOHO_FORM_ACTION,
+  lead_magnet_ideas:
+    "https://forms.zohopublic.com/flintstop/form/LeadMagnetIdeas/formperma/rGceryxx4yNK3wd1J8TlvghlR5WKKFAc8qkBec_-CZo/htmlRecords/submit",
   dm_angle_generator: SHARED_ZOHO_FORM_ACTION,
   founder_presence_analyzer: SHARED_ZOHO_FORM_ACTION,
 };

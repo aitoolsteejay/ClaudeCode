@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 };
 
 const CREDENTIALS = [
-  { stat: "300+", label: "B2B clients helped" },
-  { stat: "6yrs", label: "Iteration & testing" },
-  { stat: "IIT/IIM", label: "Teaching" },
-  { stat: "Tech First", label: "AI labs daily" },
+  { stat: "300+", label: "B2B clients helped", accent: "#F5B731" },
+  { stat: "6yrs", label: "Iteration & testing", accent: "#3b82f6" },
+  { stat: "IIT/IIM", label: "Teaching", accent: "#10b981" },
+  { stat: "Tech First", label: "AI labs daily", accent: "#a855f7" },
 ];
 
 const EXPERTISE = [
@@ -55,7 +55,7 @@ export default function AboutUs() {
         <FadeIn><div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6">
           {CREDENTIALS.map((c) => (
             <div key={c.stat} className="text-center">
-              <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}><StatTicker value={c.stat} /></div>
+              <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: c.accent }}><StatTicker value={c.stat} /></div>
               <div className="text-xs" style={{ color: "#6B6B6B" }}>{c.label}</div>
             </div>
           ))}

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import AskYourAI from "../components/AskYourAI";
+import StatTicker from "../components/StatTicker";
 
 const CASE_STUDIES_AI_RESOURCES = [
   "https://myntmore.com/case-studies",
@@ -60,36 +61,6 @@ function Underline() {
   );
 }
 
-// ── Number ticker ──────────────────────────────────────────────────────────────
-function Ticker({ value }: { value: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState("0");
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const numeric = parseFloat(value.replace(/[^0-9.]/g, ""));
-    const suffix = value.replace(/[0-9.]/g, "");
-    if (isNaN(numeric)) { setDisplay(value); return; }
-    const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      io.disconnect();
-      const start = performance.now();
-      const dur = 1400;
-      const step = (now: number) => {
-        const t = Math.min((now - start) / dur, 1);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const cur = numeric * eased;
-        setDisplay((Number.isInteger(numeric) ? Math.round(cur) : cur.toFixed(1)) + suffix);
-        if (t < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }, { threshold: 0.4 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [value]);
-  return <span ref={ref}>{display}</span>;
-}
-
 // ── Chip marquee ───────────────────────────────────────────────────────────────
 const CHIPS = ["AI Lead Generation","Cold Email Infrastructure","LinkedIn Outreach","Personal Branding","Sales Intelligence","GTM Strategy","ICP Mapping","Pipeline Building","Outbound Automation","Multi-Channel Sequences"];
 function Marquee() {
@@ -128,7 +99,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
         <div className="grid grid-cols-3 gap-6 mb-6 py-6 border-y" style={{ borderColor: "#E8E2D9" }}>
           {cs.stats.map((s) => (
             <div key={s.l}>
-              <div className="text-3xl font-black" style={{ color: cs.accent }}><Ticker value={s.v} /></div>
+              <div className="text-3xl font-black" style={{ color: cs.accent }}><StatTicker value={s.v} /></div>
               <div className="text-xs mt-0.5" style={{ color: "#8C8279" }}>{s.l}</div>
             </div>
           ))}
@@ -243,7 +214,7 @@ export default function CaseStudies() {
           <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-5 gap-6">
             {STATS.map((s) => (
               <div key={s.l} className="text-center">
-                <div className="text-3xl font-black" style={{ color: "#F5B731" }}><Ticker value={s.v} /></div>
+                <div className="text-3xl font-black" style={{ color: "#F5B731" }}><StatTicker value={s.v} /></div>
                 <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
               </div>
             ))}

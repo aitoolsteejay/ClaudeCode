@@ -61,7 +61,8 @@ const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
     "https://forms.zohopublic.com/flintstop/form/LeadMagnetIdeas/formperma/rGceryxx4yNK3wd1J8TlvghlR5WKKFAc8qkBec_-CZo/htmlRecords/submit",
   dm_angle_generator:
     "https://forms.zohopublic.com/flintstop/form/DMAngleGenerator/formperma/62jROMu8G-5OfsQqYL4Bfn4tL1ArsSVjbBXAJwbI4N8/htmlRecords/submit",
-  founder_presence_analyzer: SHARED_ZOHO_FORM_ACTION,
+  founder_presence_analyzer:
+    "https://forms.zohopublic.com/flintstop/form/FounderPresence/formperma/JnJcgXg8AbGtNsscKQtYvGFJs8d1HB94fIKK8xsnvAc/htmlRecords/submit",
 };
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 

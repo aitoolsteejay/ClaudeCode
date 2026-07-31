@@ -174,9 +174,7 @@ export default function FAQ() {
             Still have questions? We&rsquo;re happy to chat.
           </p>
           <a
-            href="https://calendly.com/founder-myntmore/web"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/founder-meeting"
             className="btn-ghost px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
           >
             Talk to our team

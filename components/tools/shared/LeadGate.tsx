@@ -183,7 +183,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="SingleLine"
               type="text"
               maxLength={255}
-              placeholder="Rahul"
+              placeholder="Sarah"
               value={formData.firstName}
               onChange={(e) => updateField("firstName", e.target.value)}
               className={errors.firstName ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}
@@ -201,7 +201,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="SingleLine1"
               type="text"
               maxLength={255}
-              placeholder="Mehta"
+              placeholder="Chen"
               value={formData.lastName}
               onChange={(e) => updateField("lastName", e.target.value)}
               className={errors.lastName ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}
@@ -237,7 +237,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="SingleLine3"
               type="text"
               maxLength={255}
-              placeholder="HireFlow"
+              placeholder="Brightloop"
               value={formData.companyName}
               onChange={(e) => updateField("companyName", e.target.value)}
               disabled={isSubmitting}
@@ -253,7 +253,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="PhoneNumber_countrycode"
               type="text"
               maxLength={20}
-              placeholder="+91 98765 43210"
+              placeholder="+1 415 555 0182"
               value={formData.phone}
               onChange={(e) => updateField("phone", e.target.value)}
               disabled={isSubmitting}
@@ -269,7 +269,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="Website"
               type="text"
               maxLength={2083}
-              placeholder="https://linkedin.com/in/rahulmehta"
+              placeholder="https://linkedin.com/in/sarahchen"
               value={formData.linkedinUrl}
               onChange={(e) => updateField("linkedinUrl", e.target.value)}
               disabled={isSubmitting}
@@ -285,7 +285,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="Email"
               type="text"
               maxLength={255}
-              placeholder="rahul@hireflow.com"
+              placeholder="sarah@brightloop.com"
               value={formData.email}
               onChange={(e) => updateField("email", e.target.value)}
               className={errors.email ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}

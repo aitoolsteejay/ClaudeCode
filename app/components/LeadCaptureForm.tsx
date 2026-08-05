@@ -41,7 +41,7 @@ export default function LeadCaptureForm({
             <div>
               <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name <span style={{ color: "#F5B731" }}>*</span></label>
               <input id="SingleLine" name="SingleLine" type="text" required maxLength={255}
-                className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Tejas Jhaveri" />
+                className={inputClass} style={inputStyle} {...focusHandlers} placeholder="David Kim" />
             </div>
 
             <div>
@@ -54,19 +54,19 @@ export default function LeadCaptureForm({
               <div>
                 <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company</label>
                 <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255}
-                  className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Acme Corp" />
+                  className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Kim Ventures" />
               </div>
               <div>
                 <label htmlFor="PhoneNumber_countrycode" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
                 <input id="PhoneNumber_countrycode" name="PhoneNumber_countrycode" type="tel" maxLength={20}
-                  className={inputClass} style={inputStyle} {...focusHandlers} placeholder="+91 98765 43210" />
+                  className={inputClass} style={inputStyle} {...focusHandlers} placeholder="+1 212 555 0147" />
               </div>
             </div>
 
             <div>
               <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email</label>
               <input id="Email" name="Email" type="text" maxLength={255}
-                className={inputClass} style={inputStyle} {...focusHandlers} placeholder="tejas@myntmore.com" />
+                className={inputClass} style={inputStyle} {...focusHandlers} placeholder="david@kimventures.com" />
             </div>
 
             <button type="submit" className="btn-dark w-full py-4 text-sm font-bold">

@@ -62,7 +62,7 @@ export default function ContactUs() {
                   <input type="hidden" name="zc_gad" value="" />
                   <div>
                     <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name *</label>
-                    <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder="Tejas Jhaveri" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                    <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder="Amara Okafor" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <div>
                     <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation *</label>
@@ -71,16 +71,16 @@ export default function ContactUs() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company</label>
-                      <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder="Acme Corp" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                      <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder="Northbridge Consulting" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                     </div>
                     <div>
                       <label htmlFor="PhoneNumber_countrycode" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
-                      <input id="PhoneNumber_countrycode" name="PhoneNumber_countrycode" type="tel" maxLength={20} placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                      <input id="PhoneNumber_countrycode" name="PhoneNumber_countrycode" type="tel" maxLength={20} placeholder="+1 617 555 0134" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                     </div>
                   </div>
                   <div>
                     <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email</label>
-                    <input id="Email" name="Email" type="text" maxLength={255} placeholder="tejas@myntmore.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                    <input id="Email" name="Email" type="text" maxLength={255} placeholder="amara@northbridge.co" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <button type="submit" className="btn-dark w-full py-4 text-sm font-bold">Get Your Custom Strategy</button>
                   <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just clarity.</p>

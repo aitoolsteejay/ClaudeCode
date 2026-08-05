@@ -22,6 +22,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/case-studies/professional-services-linkedin`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Resources & blog
     { url: `${base}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/resources/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    // Free tools
+    { url: `${base}/tools/linkedin-optimizer`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/dm-angle-generator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/roi-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/posting-rhythm-builder`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/lead-magnet-ideas`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/founder-presence-analyzer`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/icp-builder`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/predictable-b2b-lead-gen-engine`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/ecommerce-conversion-playbook`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/founder-personal-brand-linkedin`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

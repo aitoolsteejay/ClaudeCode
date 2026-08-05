@@ -76,7 +76,7 @@ const COMPANY_LINKS = [
   { label: "About Myntmore", href: "/about-us" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources & Playbooks", href: "/resources" },
-  { label: "Blog", href: "/resources" },
+  { label: "Blog", href: "/resources/blogs" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact-us" },
 ];

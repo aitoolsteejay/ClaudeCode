@@ -37,7 +37,7 @@ const leadSchema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
 });
 
-export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer";
+export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "icp_builder";
 
 interface LeadGateProps {
   onComplete: (data: LeadData) => void;
@@ -46,8 +46,25 @@ interface LeadGateProps {
   description?: string;
 }
 
-const ZOHO_FORM_ACTION =
+const SHARED_ZOHO_FORM_ACTION =
   "https://forms.zohopublic.com/flintstop/form/Myntmoreleadmagnetform/formperma/z-AuIY9K-mm72IUDW3h9bnsB3ye_AQgaIjI4xrdii1o/htmlRecords/submit";
+
+// Each tool posts to its own Zoho form when one exists; otherwise it falls
+// back to the shared lead-magnet form. Field names (SingleLine, SingleLine1,
+// etc.) are consistent across these forms, so no other changes are needed
+// when adding a dedicated form for a tool.
+const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
+  profile_optimizer: SHARED_ZOHO_FORM_ACTION,
+  posting_rhythm_builder:
+    "https://forms.zohopublic.com/flintstop/form/PostingRhythm/formperma/btpD3CWLnvNwmuKABmv1eiFifirOxmMSKkD2gzzoxns/htmlRecords/submit",
+  lead_magnet_ideas:
+    "https://forms.zohopublic.com/flintstop/form/LeadMagnetIdeas/formperma/rGceryxx4yNK3wd1J8TlvghlR5WKKFAc8qkBec_-CZo/htmlRecords/submit",
+  dm_angle_generator:
+    "https://forms.zohopublic.com/flintstop/form/DMAngleGenerator/formperma/62jROMu8G-5OfsQqYL4Bfn4tL1ArsSVjbBXAJwbI4N8/htmlRecords/submit",
+  founder_presence_analyzer:
+    "https://forms.zohopublic.com/flintstop/form/FounderPresence/formperma/JnJcgXg8AbGtNsscKQtYvGFJs8d1HB94fIKK8xsnvAc/htmlRecords/submit",
+  icp_builder: SHARED_ZOHO_FORM_ACTION,
+};
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 
 const DEFAULT_HEADING = (
@@ -147,7 +164,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          action={ZOHO_FORM_ACTION}
+          action={ZOHO_FORM_ACTIONS[source]}
           method="POST"
           acceptCharset="UTF-8"
           encType="multipart/form-data"
@@ -167,7 +184,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="SingleLine"
               type="text"
               maxLength={255}
-              placeholder="Rahul"
+              placeholder="Sarah"
               value={formData.firstName}
               onChange={(e) => updateField("firstName", e.target.value)}
               className={errors.firstName ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}
@@ -185,7 +202,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="SingleLine1"
               type="text"
               maxLength={255}
-              placeholder="Mehta"
+              placeholder="Chen"
               value={formData.lastName}
               onChange={(e) => updateField("lastName", e.target.value)}
               className={errors.lastName ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}
@@ -221,7 +238,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="SingleLine3"
               type="text"
               maxLength={255}
-              placeholder="HireFlow"
+              placeholder="Brightloop"
               value={formData.companyName}
               onChange={(e) => updateField("companyName", e.target.value)}
               disabled={isSubmitting}
@@ -237,7 +254,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="PhoneNumber_countrycode"
               type="text"
               maxLength={20}
-              placeholder="+91 98765 43210"
+              placeholder="+1 415 555 0182"
               value={formData.phone}
               onChange={(e) => updateField("phone", e.target.value)}
               disabled={isSubmitting}
@@ -253,7 +270,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="Website"
               type="text"
               maxLength={2083}
-              placeholder="https://linkedin.com/in/rahulmehta"
+              placeholder="https://linkedin.com/in/sarahchen"
               value={formData.linkedinUrl}
               onChange={(e) => updateField("linkedinUrl", e.target.value)}
               disabled={isSubmitting}
@@ -269,7 +286,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               name="Email"
               type="text"
               maxLength={255}
-              placeholder="rahul@hireflow.com"
+              placeholder="sarah@brightloop.com"
               value={formData.email}
               onChange={(e) => updateField("email", e.target.value)}
               className={errors.email ? "border-destructive focus:border-destructive focus:ring-destructive/20" : ""}

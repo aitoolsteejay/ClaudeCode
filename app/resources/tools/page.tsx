@@ -75,6 +75,16 @@ const FREE_TOOLS = [
     accentBg: "rgba(20,184,166,0.1)",
     hoverClass: "card-hover-teal",
   },
+  {
+    title: "ICP Builder",
+    desc: "Turn your best and worst customers into a written ICP: firmographics, buyer personas, buying triggers, and a scoring rubric you can use to grade every inbound lead.",
+    href: "/tools/icp-builder",
+    icon: "🎯",
+    cta: "Build my ICP",
+    accentColor: "#F97316",
+    accentBg: "rgba(249,115,22,0.1)",
+    hoverClass: "card-hover-orange",
+  },
 ];
 
 export default function ToolsPage() {

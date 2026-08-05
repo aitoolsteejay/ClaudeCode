@@ -4,10 +4,12 @@
 -- (Dashboard -> SQL Editor -> New query -> paste -> Run).
 --
 -- Profile Optimizer, Posting Rhythm Builder, Lead Magnet Idea Generator,
--- DM Angle Generator, and Founder Presence Analyzer all gate access behind
--- the same shared Zoho lead form (components/tools/shared/LeadGate.tsx)
--- and log here as a secondary record; Zoho stays the primary record in
--- every case. ROI Calculator has no backend and does not use this table.
+-- DM Angle Generator, Founder Presence Analyzer, and ICP Builder all gate
+-- access behind the shared LeadGate component
+-- (components/tools/shared/LeadGate.tsx), each posting to its own Zoho
+-- form (or the shared one, if it doesn't have a dedicated form yet) as the
+-- primary record, and logging here as a secondary record. ROI Calculator
+-- has no backend and does not use this table.
 --
 -- Each row starts life at LeadGate submission (name/email/phone/etc, plus
 -- `inputs`/`outputs` empty). Once the tool actually runs, the same page
@@ -25,7 +27,7 @@
 create table if not exists public.leads (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
-  source text not null check (source in ('profile_optimizer', 'posting_rhythm_builder', 'lead_magnet_ideas', 'dm_angle_generator', 'founder_presence_analyzer', 'roi_calculator')),
+  source text not null check (source in ('profile_optimizer', 'posting_rhythm_builder', 'lead_magnet_ideas', 'dm_angle_generator', 'founder_presence_analyzer', 'roi_calculator', 'icp_builder')),
   name text not null,
   email text,
   phone text,
@@ -39,6 +41,12 @@ create table if not exists public.leads (
 
 alter table public.leads add column if not exists inputs jsonb not null default '{}'::jsonb;
 alter table public.leads add column if not exists outputs jsonb not null default '{}'::jsonb;
+
+-- Backfill: widen the source check constraint to include icp_builder for
+-- tables created by an earlier version of this file.
+alter table public.leads drop constraint if exists leads_source_check;
+alter table public.leads add constraint leads_source_check
+  check (source in ('profile_optimizer', 'posting_rhythm_builder', 'lead_magnet_ideas', 'dm_angle_generator', 'founder_presence_analyzer', 'roi_calculator', 'icp_builder'));
 
 alter table public.leads enable row level security;
 

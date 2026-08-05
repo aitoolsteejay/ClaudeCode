@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import CopyBlock from "../../components/CopyBlock";
+import FadeIn from "../../components/FadeIn";
+import Underline from "./Underline";
 
 export const metadata: Metadata = {
   title: "The 6 Claude Skills Guide | Myntmore",
@@ -242,65 +244,69 @@ function SkillSection({ skill }: { skill: Skill }) {
   return (
     <section className="py-14 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
       <div className="max-w-3xl mx-auto">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl font-black" style={{ color: skill.accent }}>{skill.number}</span>
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: skill.accentBg, color: skill.accent, border: `1px solid ${skill.accent}30` }}>
-            Skill {skill.number}
-          </span>
-        </div>
-        <h2 className="text-2xl sm:text-3xl font-black mb-3 leading-tight" style={{ color: "#0a0a0a" }}>{skill.title}</h2>
-        <p className="text-lg mb-8 font-medium" style={{ color: skill.accent }}>{skill.tagline}</p>
-
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>What it does</h3>
-            <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whatItDoes}</p>
+        <FadeIn>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-3xl font-black transition-transform duration-300 hover:scale-110 inline-block" style={{ color: skill.accent }}>{skill.number}</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: skill.accentBg, color: skill.accent, border: `1px solid ${skill.accent}30` }}>
+              Skill {skill.number}
+            </span>
           </div>
+          <h2 className="text-2xl sm:text-3xl font-black mb-3 leading-tight" style={{ color: "#0a0a0a" }}>{skill.title}</h2>
+          <p className="text-lg mb-8 font-medium" style={{ color: skill.accent }}>{skill.tagline}</p>
+        </FadeIn>
 
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>When to use it</h3>
-            <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whenToUse}</p>
-          </div>
+        <FadeIn delay={100}>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>What it does</h3>
+              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whatItDoes}</p>
+            </div>
 
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Tools you need</h3>
-            <ul className="space-y-2">
-              {skill.tools.map((t, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-base" style={{ color: "#3D3D3D" }}>
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: skill.accent }} />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>When to use it</h3>
+              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whenToUse}</p>
+            </div>
 
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>How to set it up</h3>
-            <ol className="space-y-3">
-              {skill.setupSteps.map((s, i) => (
-                <li key={i} className="flex items-start gap-3 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                  <span
-                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5"
-                    style={{ backgroundColor: skill.accentBg, color: skill.accent }}
-                  >
-                    {i + 1}
-                  </span>
-                  {s}
-                </li>
-              ))}
-            </ol>
-          </div>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Tools you need</h3>
+              <ul className="space-y-2">
+                {skill.tools.map((t, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-base" style={{ color: "#3D3D3D" }}>
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: skill.accent }} />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Ready-to-use prompt</h3>
-            <CopyBlock text={skill.prompt} accent={skill.accent} />
-          </div>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>How to set it up</h3>
+              <ol className="space-y-3">
+                {skill.setupSteps.map((s, i) => (
+                  <li key={i} className="flex items-start gap-3 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
+                    <span
+                      className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5"
+                      style={{ backgroundColor: skill.accentBg, color: skill.accent }}
+                    >
+                      {i + 1}
+                    </span>
+                    {s}
+                  </li>
+                ))}
+              </ol>
+            </div>
 
-          <div className="rounded-xl p-6" style={{ backgroundColor: skill.accentBg, border: `1px solid ${skill.accent}30` }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: skill.accent }}>Pro tip</p>
-            <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.proTip}</p>
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Ready-to-use prompt</h3>
+              <CopyBlock text={skill.prompt} accent={skill.accent} />
+            </div>
+
+            <div className="rounded-xl p-6" style={{ backgroundColor: skill.accentBg, border: `1px solid ${skill.accent}30` }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: skill.accent }}>Pro tip</p>
+              <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.proTip}</p>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
@@ -317,13 +323,17 @@ export default function ClaudeSkillsGuide() {
             <span style={{ color: "#E8E2D9" }}>/</span>
             <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Claude Skills Guide</span>
           </div>
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
             Free Instagram Guide
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            The 6 Claude Skills Guide
+          <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
+            The 6{" "}
+            <span className="relative inline-block">
+              Claude Skills Guide
+              <Underline color="#F5B731" />
+            </span>
           </h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
+          <p className="text-lg leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
             Tejas isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
           </p>
         </div>
@@ -332,20 +342,24 @@ export default function ClaudeSkillsGuide() {
       {/* How to use this guide */}
       <section className="py-14 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-black mb-5" style={{ color: "#0a0a0a" }}>How to Use This Guide</h2>
-          <p className="text-base leading-relaxed mb-4" style={{ color: "#3D3D3D" }}>
-            This guide covers all 6 Claude skills from the carousel, one skill per section. Each section includes what the skill does, when to use it, what tools you need, a step-by-step setup, a ready-to-use prompt you can copy directly into Claude, and a pro tip to get more out of it.
-          </p>
-          <p className="text-base leading-relaxed mb-8" style={{ color: "#3D3D3D" }}>
-            You do not need to use all 6 skills at once. Pick the one that solves your biggest bottleneck right now and start there. Most founders who implement even one of these see a meaningful reduction in the time they spend on repetitive work within the first week.
-          </p>
-
-          <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>Before you begin</p>
-            <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-              All prompts in this guide work best inside a Claude Project. Create a project for each skill and save your brand voice, ICP, and past results in the Project system prompt. Claude will inherit this context across every conversation, so you never repeat yourself.
+          <FadeIn>
+            <h2 className="text-2xl sm:text-3xl font-black mb-5" style={{ color: "#0a0a0a" }}>How to Use This Guide</h2>
+            <p className="text-base leading-relaxed mb-4" style={{ color: "#3D3D3D" }}>
+              This guide covers all 6 Claude skills from the carousel, one skill per section. Each section includes what the skill does, when to use it, what tools you need, a step-by-step setup, a ready-to-use prompt you can copy directly into Claude, and a pro tip to get more out of it.
             </p>
-          </div>
+            <p className="text-base leading-relaxed mb-8" style={{ color: "#3D3D3D" }}>
+              You do not need to use all 6 skills at once. Pick the one that solves your biggest bottleneck right now and start there. Most founders who implement even one of these see a meaningful reduction in the time they spend on repetitive work within the first week.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={120}>
+            <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.3)" }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>Before you begin</p>
+              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
+                All prompts in this guide work best inside a Claude Project. Create a project for each skill and save your brand voice, ICP, and past results in the Project system prompt. Claude will inherit this context across every conversation, so you never repeat yourself.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -357,60 +371,64 @@ export default function ClaudeSkillsGuide() {
       {/* What to do next */}
       <section className="py-14 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>What to Do Next</h2>
-          <p className="text-base leading-relaxed mb-6" style={{ color: "#3D3D3D" }}>
-            You now have everything you need. Here is a simple action plan:
-          </p>
-          <ol className="space-y-4">
-            {NEXT_STEPS.map((step, i) => (
-              <li key={i} className="flex items-start gap-4 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
-                  {i + 1}
-                </span>
-                {step}
-              </li>
-            ))}
-          </ol>
+          <FadeIn>
+            <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>What to Do Next</h2>
+            <p className="text-base leading-relaxed mb-6" style={{ color: "#3D3D3D" }}>
+              You now have everything you need. Here is a simple action plan:
+            </p>
+            <ol className="space-y-4">
+              {NEXT_STEPS.map((step, i) => (
+                <li key={i} className="flex items-start gap-4 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
+                    {i + 1}
+                  </span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </FadeIn>
         </div>
       </section>
 
       {/* Final CTA */}
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-            <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">💬 Want More Like This?</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-              <a
-                href="https://instagram.com/tejas_jhaveri"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl p-5 text-center transition-colors hover:bg-white/5"
-                style={{ border: "1px solid rgba(255,255,255,0.15)" }}
-              >
-                <span className="block text-2xl mb-2">📸</span>
-                <span className="block text-sm font-bold text-white mb-1">Follow along</span>
-                <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejas_jhaveri</span>
-              </a>
-              <a
-                href="/founder-meeting"
-                className="rounded-xl p-5 text-center transition-colors hover:bg-white/5"
-                style={{ border: "1px solid rgba(255,255,255,0.15)" }}
-              >
-                <span className="block text-2xl mb-2">📅</span>
-                <span className="block text-sm font-bold text-white mb-1">Book a call</span>
-                <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
-              </a>
-              <a
-                href="mailto:founder@myntmore.com"
-                className="rounded-xl p-5 text-center transition-colors hover:bg-white/5"
-                style={{ border: "1px solid rgba(255,255,255,0.15)" }}
-              >
-                <span className="block text-2xl mb-2">📬</span>
-                <span className="block text-sm font-bold text-white mb-1">Email us</span>
-                <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
-              </a>
+          <FadeIn>
+            <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
+              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">💬 Want More Like This?</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <a
+                  href="https://instagram.com/tejas_jhaveri"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
+                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                >
+                  <span className="block text-2xl mb-2">📸</span>
+                  <span className="block text-sm font-bold text-white mb-1">Follow along</span>
+                  <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejas_jhaveri</span>
+                </a>
+                <a
+                  href="/founder-meeting"
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
+                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                >
+                  <span className="block text-2xl mb-2">📅</span>
+                  <span className="block text-sm font-bold text-white mb-1">Book a call</span>
+                  <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
+                </a>
+                <a
+                  href="mailto:founder@myntmore.com"
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
+                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                >
+                  <span className="block text-2xl mb-2">📬</span>
+                  <span className="block text-sm font-bold text-white mb-1">Email us</span>
+                  <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
+                </a>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </InnerLayout>

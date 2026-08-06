@@ -76,8 +76,8 @@ const FREE_TOOLS = [
     hoverClass: "card-hover-teal",
   },
   {
-    title: "ICP Builder",
-    desc: "Turn your best and worst customers into a written ICP: firmographics, buyer personas, buying triggers, and a scoring rubric you can use to grade every inbound lead.",
+    title: "ICP Builder & Value Prop Generator",
+    desc: "Build deep B2B and D2C customer profiles from your business description, then get a structured value proposition for each one, including your channel partners.",
     href: "/tools/icp-builder",
     icon: "🎯",
     cta: "Build my ICP",

@@ -8,7 +8,7 @@ import { callGemini, describeGeminiError, withTimeout, parseJsonArray } from "./
 import { buildIcpPrompt } from "./lib/prompts";
 import { sanitize } from "./lib/sanitize";
 import { DEFAULT_ICP_COUNT, MAX_ICP_COUNT } from "./constants";
-import type { IcpInput, GeneratedIcp, IntakeData } from "./types";
+import { resolveOffer, type IcpInput, type GeneratedIcp, type IntakeData } from "./types";
 
 const GENERATION_TIMEOUT_MS = 60000;
 
@@ -61,7 +61,7 @@ export function IcpBuilderScreen({ intake, icps, onIcpsChange, results, onResult
   };
 
   const validate = (): string | null => {
-    if (!intake.offer.trim()) return "A core offer is required.";
+    if (!resolveOffer(intake).trim()) return "A core offer is required.";
     for (let i = 0; i < icps.length; i++) {
       const icp = icps[i];
       if (intake.sellingTo === "Both" && !icp.icpType) {
@@ -88,7 +88,7 @@ export function IcpBuilderScreen({ intake, icps, onIcpsChange, results, onResult
     setError(null);
     setLoading(true);
     try {
-      const prompt = buildIcpPrompt(intake.offer, intake.sellingTo, intake.businessType, icps);
+      const prompt = buildIcpPrompt(resolveOffer(intake), intake.sellingTo, intake.businessType, icps);
       const raw = await withTimeout(callGemini(prompt), GENERATION_TIMEOUT_MS);
       let parsed: GeneratedIcp[];
       try {
@@ -132,7 +132,7 @@ export function IcpBuilderScreen({ intake, icps, onIcpsChange, results, onResult
               onRemove={() => removeIcp(icp.id)}
               canRemove={icps.length > DEFAULT_ICP_COUNT}
               sellingTo={intake.sellingTo || "B2B"}
-              offer={intake.offer}
+              offer={resolveOffer(intake)}
               businessType={intake.businessType}
             />
           ))}

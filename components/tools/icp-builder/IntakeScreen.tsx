@@ -1,7 +1,15 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import { Info, Loader2 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
-import type { IntakeData, SellingTo, BusinessType } from "./types";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { callGemini, parseJsonArray } from "./lib/gemini";
+import { buildOfferPolishPrompt } from "./lib/prompts";
+import { sanitize } from "./lib/sanitize";
+import { resolveOffer, type IntakeData, type SellingTo, type BusinessType } from "./types";
+
+const OFFER_POLISH_DEBOUNCE_MS = 900;
 
 const SELLING_TO_OPTIONS: { value: SellingTo; label: string; hint: string }[] = [
   { value: "D2C", label: "D2C", hint: "Individual consumers" },
@@ -22,7 +30,56 @@ interface IntakeScreenProps {
 }
 
 export function IntakeScreen({ data, onChange, onContinue }: IntakeScreenProps) {
-  const isValid = data.offer.trim().length > 0 && data.sellingTo !== null && data.businessType !== null;
+  const [generatingOffer, setGeneratingOffer] = useState(false);
+  const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Always holds the latest `data`, so the debounced callback below (which
+  // can resolve several seconds after it was scheduled, via the retry
+  // ladder) merges its result into whatever the user has typed/selected
+  // since, instead of clobbering it with a stale closure snapshot.
+  const dataRef = useRef(data);
+  useEffect(() => {
+    dataRef.current = data;
+  }, [data]);
+
+  // Core Offer AI-polish: debounce 900ms after the offer text stops
+  // changing, only fire if the text actually changed since the last run.
+  useEffect(() => {
+    if (!data.offer.trim()) return;
+    if (data.offer === data.offerOptionsKey) return;
+
+    if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    debounceTimer.current = setTimeout(async () => {
+      setGeneratingOffer(true);
+      const rawText = data.offer;
+      try {
+        const raw = await callGemini(buildOfferPolishPrompt(rawText));
+        const parsed = parseJsonArray<string>(raw);
+        const options = sanitize(parsed).slice(0, 3);
+        onChange({ ...dataRef.current, offer: rawText, offerOptions: options, offerOptionsKey: rawText, selectedOfferIdx: null });
+      } catch (err) {
+        console.error("Offer polish failed:", err);
+        const fallback = sanitize(rawText);
+        onChange({
+          ...dataRef.current,
+          offer: rawText,
+          offerOptions: [fallback, fallback, fallback],
+          offerOptionsKey: rawText,
+          selectedOfferIdx: null,
+        });
+      } finally {
+        setGeneratingOffer(false);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, OFFER_POLISH_DEBOUNCE_MS);
+
+    return () => {
+      if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.offer]);
+
+  const isValid = resolveOffer(data).trim().length > 0 && data.sellingTo !== null && data.businessType !== null;
 
   return (
     <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm relative overflow-hidden" style={{ border: "1px solid #E8E2D9" }}>
@@ -43,6 +100,80 @@ export function IntakeScreen({ data, onChange, onContinue }: IntakeScreenProps) 
             onChange={(e) => onChange({ ...data, offer: e.target.value })}
             className="focus-visible:ring-[#F97316]"
           />
+          <p className="text-xs text-gray-500">
+            Just describe it like you would to a person. We&apos;ll turn it into 3 versions you can edit and choose from below.
+          </p>
+
+          {generatingOffer && (
+            <p className="flex items-center gap-2 text-xs text-gray-500">
+              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              Writing 3 versions of your offer&hellip;
+            </p>
+          )}
+
+          {!generatingOffer && data.offerOptions.length === 0 && !data.offer.trim() && (
+            <p className="text-xs text-gray-400">
+              Your 3 offer options will appear here once you describe your business above.
+            </p>
+          )}
+
+          {data.offerOptions.length > 0 && (
+            <TooltipProvider>
+              <div className="space-y-3 pt-2">
+                <div className="flex items-center gap-1.5">
+                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.15em]">
+                    Choose Your Business Offering *
+                  </label>
+                  <Tooltip>
+                    <TooltipTrigger type="button">
+                      <Info className="w-3.5 h-3.5 text-gray-400" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="max-w-xs">
+                        This exact wording is used for your ICPs and value proposition. Edit any version below, then select the one that best represents your business.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+
+                {data.offerOptions.map((option, i) => (
+                  <label
+                    key={i}
+                    className="flex items-start gap-3 rounded-xl p-4 cursor-pointer transition-colors"
+                    style={
+                      data.selectedOfferIdx === i
+                        ? { backgroundColor: "#FEF3EC", border: "1.5px solid #F97316" }
+                        : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9" }
+                    }
+                  >
+                    <input
+                      type="radio"
+                      name="offer-option"
+                      checked={data.selectedOfferIdx === i}
+                      onChange={() => onChange({ ...data, selectedOfferIdx: i })}
+                      className="mt-1.5 flex-shrink-0"
+                    />
+                    <textarea
+                      value={option}
+                      onChange={(e) => {
+                        const updated = [...data.offerOptions];
+                        updated[i] = e.target.value;
+                        onChange({ ...data, offerOptions: updated });
+                      }}
+                      rows={2}
+                      className="flex-1 bg-transparent text-sm outline-none resize-none text-gray-800"
+                    />
+                  </label>
+                ))}
+
+                {data.selectedOfferIdx === null && (
+                  <p className="text-xs" style={{ color: "#ef4444" }}>
+                    Select one of the 3 versions above to use as your business offering.
+                  </p>
+                )}
+              </div>
+            </TooltipProvider>
+          )}
         </div>
 
         <div className="space-y-3">

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { LandingPage } from "@/components/tools/founder-presence/LandingPage";
 import { supabase } from "@/lib/supabase";
 import { ScoreRing } from "@/components/tools/founder-presence/ScoreRing";
 import { GapChart } from "@/components/tools/founder-presence/GapChart";
@@ -60,13 +61,13 @@ const ENGAGEMENT_MAP: Record<EngagementOption, number> = {
   "250+ likes": 300,
 };
 
-type FlowStep = "lead" | "activity" | "competitors" | "themes" | "ready" | "results";
+type FlowStep = "landing" | "lead" | "activity" | "competitors" | "themes" | "ready" | "results";
 
 const WIZARD_STEPS: FlowStep[] = ["activity", "competitors", "themes"];
 
 export default function FounderPresenceClient() {
   const [leadData, setLeadData] = useState<LeadData | null>(null);
-  const [step, setStep] = useState<FlowStep>("lead");
+  const [step, setStep] = useState<FlowStep>("landing");
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<UserInput>({
     frequency: "3–5",
@@ -159,6 +160,21 @@ export default function FounderPresenceClient() {
   };
 
   const wizardIndex = WIZARD_STEPS.indexOf(step);
+
+  if (step === "landing") {
+    return (
+      <>
+        <div className="max-w-5xl mx-auto px-6 pt-24">
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>Founder Presence Analyzer</span>
+          </div>
+        </div>
+        <LandingPage onStart={() => setStep("lead")} />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white text-foreground relative overflow-hidden selection:bg-[#FFC947]/30">

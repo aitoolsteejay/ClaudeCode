@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { LandingPage } from "@/components/tools/posting-rhythm/LandingPage";
 import { supabase } from "@/lib/supabase";
 
 type FounderLifestyle =
@@ -83,13 +84,13 @@ const DEFAULT_APP_STATE: AppState = {
   tone: "",
 };
 
-type FlowStep = "lead" | "input" | "results";
+type FlowStep = "landing" | "lead" | "input" | "results";
 
 export default function PostingRhythmClient() {
   const [formData, setFormData] = useState<AppState>(DEFAULT_APP_STATE);
   const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [strategy, setStrategy] = useState<PostingStrategy | null>(null);
-  const [step, setStep] = useState<FlowStep>("lead");
+  const [step, setStep] = useState<FlowStep>("landing");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -150,6 +151,21 @@ export default function PostingRhythmClient() {
   const handleDownload = () => {
     window.print();
   };
+
+  if (step === "landing") {
+    return (
+      <>
+        <div className="max-w-4xl mx-auto px-6 pt-24">
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>Posting Rhythm Builder</span>
+          </div>
+        </div>
+        <LandingPage onStart={() => setStep("lead")} />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden selection:bg-[#FFC947] selection:text-black" style={{ backgroundColor: "#F8F6F2" }}>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { LandingPage } from "@/components/tools/lead-magnet-ideas/LandingPage";
 import { supabase } from "@/lib/supabase";
 import { Lightbulb, TrendingUp, Send, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
@@ -46,13 +47,13 @@ const DEFAULT_FORM_STATE: FormState = {
 
 const IDEA_COLORS = ["#F5B731", "#3B82F6", "#14B8A6"];
 
-type FlowStep = "lead" | "input" | "results";
+type FlowStep = "landing" | "lead" | "input" | "results";
 
 export default function LeadMagnetIdeasClient() {
   const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [formData, setFormData] = useState<FormState>(DEFAULT_FORM_STATE);
   const [ideas, setIdeas] = useState<LeadMagnetIdea[] | null>(null);
-  const [step, setStep] = useState<FlowStep>("lead");
+  const [step, setStep] = useState<FlowStep>("landing");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -122,6 +123,21 @@ export default function LeadMagnetIdeasClient() {
       setLoading(false);
     }
   };
+
+  if (step === "landing") {
+    return (
+      <>
+        <div className="max-w-4xl mx-auto px-6 pt-24">
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>Lead Magnet Idea Generator</span>
+          </div>
+        </div>
+        <LandingPage onStart={() => setStep("lead")} />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>

@@ -1,9 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { FileText, Clock, AlertCircle, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import { Calculator, HelpCircle, TrendingUp, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#16a34a";
 
 interface LandingPageProps {
   onStart: () => void;
@@ -14,32 +14,32 @@ export function LandingPage({ onStart }: LandingPageProps) {
     <div className="w-full bg-white text-foreground">
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center max-w-5xl mx-auto animate-fade-in relative overflow-hidden">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.26) 0%, rgba(79,70,229,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(34,197,94,0.26) 0%, rgba(22,163,74,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-            style={{ background: "rgba(99,102,241,0.07)", borderColor: "rgba(99,102,241,0.35)" }}
+            style={{ background: "rgba(34,197,94,0.07)", borderColor: "rgba(34,197,94,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Case Study & Proposal Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>ROI Calculator</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            Never Face{" "}
+            See What Your{" "}
             <span className="relative inline-block">
-              The Blank Page Again
+              Outreach Is Worth
               <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 420 10" preserveAspectRatio="none" aria-hidden>
                 <path d="M2 7 Q105 2 210 6 Q315 10 418 5" stroke={ACCENT} strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-3xl">
-            Turn a finished project into a case study, or a prospect conversation into a proposal draft. No invented numbers, no generic filler, ready in minutes.
+            Plug in your real funnel numbers and watch your pipeline, revenue, and ROI calculate live. See the full picture before you approve another dollar of outreach spend.
           </p>
           <Button onClick={onStart} variant="hero" size="xl" className="rounded-full shadow-2xl">
-            Start Drafting
+            Calculate My ROI
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
@@ -48,26 +48,26 @@ export function LandingPage({ onStart }: LandingPageProps) {
       {/* Problem Section */}
       <section className="py-24 px-6 bg-secondary/30">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-5xl font-black mb-16">The Blank Page Is Costing You Deals</h2>
+          <h2 className="text-3xl sm:text-5xl font-black mb-16">You&apos;re Spending On Outreach Without The Math</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {[
               {
-                title: "A blank doc every time a deal needs a proposal",
-                description: "You know the project, you know the pitch, but staring at an empty document still eats an hour you don't have.",
-                icon: FileText,
-                color: "#6366f1",
+                title: "No idea what a single meeting is actually worth",
+                description: "Without knowing your funnel math, every outreach decision is a guess dressed up as strategy.",
+                icon: HelpCircle,
+                color: "#16a34a",
               },
               {
-                title: "Case studies that never get written",
-                description: "You finish a great project, get a great result, and then never turn it into proof because there's always something more urgent.",
-                icon: Clock,
-                color: "#14B8A6",
+                title: "Budgets approved on gut feeling, not numbers",
+                description: "\"It feels like it's working\" doesn't hold up in a budget review. You need the actual projected return.",
+                icon: Calculator,
+                color: "#3B82F6",
               },
               {
-                title: "Proposals that sound generic because you're rushing",
-                description: "When you're racing a deadline, proposals default to the same template, and prospects can tell it wasn't written for them.",
-                icon: AlertCircle,
-                color: "#F97316",
+                title: "Can't set expectations before you spend",
+                description: "Leadership wants a number before they approve spend, and \"we'll see\" isn't an answer they'll accept.",
+                icon: TrendingUp,
+                color: "#7C3AED",
               },
             ].map((item, i) => (
               <div
@@ -89,9 +89,9 @@ export function LandingPage({ onStart }: LandingPageProps) {
       {/* Solution Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-5xl font-black mb-8">Structured In Minutes, Not Hours</h2>
+          <h2 className="text-3xl sm:text-5xl font-black mb-8">See The Full Funnel, Not Just A Guess</h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Paste in your rough notes, the problem, what you did, and the result. We structure it into a proper case study or proposal draft, using only the numbers and quotes you actually gave us, nothing invented.
+            Enter your connection volume, acceptance rate, reply rate, and closing rate. Watch every stage of your funnel calculate live, from connection requests all the way through to revenue and ROI, then export it as a PDF to share.
           </p>
         </div>
       </section>
@@ -103,20 +103,20 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
-                title: "Pick case study or proposal",
-                description: "Turning a finished project into proof, or drafting a pitch for a new prospect.",
+                title: "Enter your funnel numbers",
+                description: "Connection volume, acceptance rate, reply rate, deal size, and cost.",
                 icon: MousePointer2,
-                color: "#6366f1",
+                color: "#16a34a",
               },
               {
-                title: "Paste in your rough notes",
-                description: "The problem, what you did, and the result. Real numbers only, we won't invent any.",
+                title: "Watch it calculate live",
+                description: "Every stage of the funnel updates instantly as you adjust the numbers.",
                 icon: Zap,
-                color: "#14B8A6",
+                color: "#3B82F6",
               },
               {
-                title: "Get a ready-to-send draft",
-                description: "Structured, formatted, and yours to edit before it goes out.",
+                title: "Export it to share",
+                description: "A clean PDF you can bring to a budget conversation or a client call.",
                 icon: CheckCircle,
                 color: "#10B981",
               },
@@ -143,22 +143,22 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "No invented numbers",
-                benefit: "Stats and quotes only appear if you actually gave us one",
-                description: "If you didn't mention a result or a testimonial, we leave it out instead of making one up.",
+                title: "Live calculation",
+                benefit: "No submit button, the results update as you type",
+                description: "Test different scenarios instantly instead of waiting on a report.",
                 color: ACCENT,
               },
               {
-                title: "Mirrors their language",
-                benefit: "Proposal mode reflects the prospect's own words back to them",
-                description: "Not generic filler, the challenge section is written the way they described it to you.",
-                color: "#14B8A6",
+                title: "The full funnel, not one number",
+                benefit: "From connection requests all the way to revenue and ROI",
+                description: "See exactly where deals are being won or lost, not just the final close rate.",
+                color: "#3B82F6",
               },
               {
-                title: "Two drafts, one tool",
-                benefit: "Case studies for proof, proposals for the next deal",
-                description: "Whichever stage you're at with a client, this tool has the draft for it.",
-                color: "#F97316",
+                title: "Built to share",
+                benefit: "Export a clean PDF for stakeholders or clients",
+                description: "Bring real numbers into your next budget or pitch conversation.",
+                color: "#14B8A6",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>
@@ -173,9 +173,9 @@ export function LandingPage({ onStart }: LandingPageProps) {
 
       {/* Second CTA Section */}
       <section className="py-24 px-6 text-center bg-white" style={{ borderTop: "1px solid #E8E2D9" }}>
-        <h2 className="text-3xl sm:text-5xl font-black mb-10">Ready to stop rewriting the same proposal from scratch?</h2>
+        <h2 className="text-3xl sm:text-5xl font-black mb-10">Ready to see the real math behind your outreach?</h2>
         <Button onClick={onStart} variant="hero" size="xl" className="rounded-full shadow-2xl">
-          Start Drafting Now
+          Calculate My ROI Now
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>

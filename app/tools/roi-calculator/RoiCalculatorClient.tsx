@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { LandingPage } from "@/components/tools/roi-calculator/LandingPage";
 import { CalculatorInputs } from "@/components/tools/roi-calculator/CalculatorInputs";
 import { ResultsDashboard } from "@/components/tools/roi-calculator/ResultsDashboard";
 import { FunnelChart } from "@/components/tools/roi-calculator/FunnelChart";
@@ -25,6 +26,7 @@ const currencies = {
 };
 
 export default function RoiCalculatorClient() {
+  const [started, setStarted] = useState(false);
   const resultsRef = useRef<HTMLDivElement>(null);
   const [currency, setCurrency] = useState("USD");
   const [connectionRequests, setConnectionRequests] = useState(0);
@@ -114,6 +116,21 @@ export default function RoiCalculatorClient() {
       toast.error("Failed to export PDF");
     }
   };
+
+  if (!started) {
+    return (
+      <>
+        <div className="max-w-4xl mx-auto px-6 pt-24">
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>ROI Calculator</span>
+          </div>
+        </div>
+        <LandingPage onStart={() => setStarted(true)} />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">

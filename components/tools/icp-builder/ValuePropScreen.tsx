@@ -7,7 +7,7 @@ import { ScreenTransition } from "./ScreenTransition";
 import { callGemini, describeGeminiError, withTimeout, parseJsonArray } from "./lib/gemini";
 import { buildValuePropPrompt } from "./lib/prompts";
 import { sanitize } from "./lib/sanitize";
-import type { GeneratedIcp, ValuePropResult, IntakeData } from "./types";
+import { resolveOffer, type GeneratedIcp, type ValuePropResult, type IntakeData } from "./types";
 
 const GENERATION_TIMEOUT_MS = 60000;
 
@@ -215,7 +215,7 @@ export function ValuePropScreen({ intake, icps, results, onResultsChange, onFini
     setError(null);
     setLoading(true);
     try {
-      const prompt = buildValuePropPrompt(intake.offer, intake.sellingTo, intake.businessType, icps);
+      const prompt = buildValuePropPrompt(resolveOffer(intake), intake.sellingTo, intake.businessType, icps);
       const raw = await withTimeout(callGemini(prompt), GENERATION_TIMEOUT_MS);
       let parsed: ValuePropResult[];
       try {

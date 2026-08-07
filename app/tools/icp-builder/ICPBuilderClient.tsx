@@ -33,7 +33,14 @@ const STEP_LABELS: { key: Screen; label: string }[] = [
 
 export default function ICPBuilderClient() {
   const [screen, setScreen] = useState<Screen>("intake");
-  const [intake, setIntake] = useState<IntakeData>({ offer: "", sellingTo: null, businessType: null });
+  const [intake, setIntake] = useState<IntakeData>({
+    offer: "",
+    offerOptions: [],
+    offerOptionsKey: "",
+    selectedOfferIdx: null,
+    sellingTo: null,
+    businessType: null,
+  });
   const [icps, setIcps] = useState<IcpInput[]>([]);
   const [icpResults, setIcpResults] = useState<GeneratedIcp[] | null>(null);
   const [valuePropResults, setValuePropResults] = useState<ValuePropResult[] | null>(null);

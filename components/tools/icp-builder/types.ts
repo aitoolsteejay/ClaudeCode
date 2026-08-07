@@ -3,8 +3,20 @@ export type BusinessType = "Product-based" | "Service-based" | "Hybrid";
 
 export interface IntakeData {
   offer: string;
+  offerOptions: string[];
+  offerOptionsKey: string;
+  selectedOfferIdx: number | null;
   sellingTo: SellingTo | null;
   businessType: BusinessType | null;
+}
+
+/**
+ * The core offer value used everywhere downstream (ICP and Value Prop
+ * prompts): the AI-polished, user-selected version, never the raw textarea
+ * draft the user typed on the Intake screen.
+ */
+export function resolveOffer(intake: IntakeData): string {
+  return intake.selectedOfferIdx !== null ? intake.offerOptions[intake.selectedOfferIdx] : "";
 }
 
 export interface IcpInput {

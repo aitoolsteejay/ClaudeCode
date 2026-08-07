@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
+import { LandingPage } from "@/components/tools/case-study-generator/LandingPage";
 import { ModeSelect } from "@/components/tools/case-study-generator/ModeSelect";
 import { CaseStudyForm } from "@/components/tools/case-study-generator/CaseStudyForm";
 import { ProposalForm } from "@/components/tools/case-study-generator/ProposalForm";
@@ -14,11 +15,11 @@ import type { GeneratorMode, CaseStudyInput, ProposalInput, CaseStudyOutput, Pro
 
 const ACCENT = "#6366f1";
 
-type Step = "lead" | "mode" | "form" | "results";
+type Step = "landing" | "lead" | "mode" | "form" | "results";
 
 export default function CaseStudyGeneratorClient() {
   const [leadData, setLeadData] = useState<LeadData | null>(null);
-  const [step, setStep] = useState<Step>("lead");
+  const [step, setStep] = useState<Step>("landing");
   const [mode, setMode] = useState<GeneratorMode | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [caseStudyResult, setCaseStudyResult] = useState<CaseStudyOutput | null>(null);
@@ -93,6 +94,21 @@ export default function CaseStudyGeneratorClient() {
     setProposalResult(null);
     setStep("mode");
   };
+
+  if (step === "landing") {
+    return (
+      <>
+        <div className="max-w-4xl mx-auto px-6 pt-24">
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>Case Study & Proposal Generator</span>
+          </div>
+        </div>
+        <LandingPage onStart={() => setStep("lead")} />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>

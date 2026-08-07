@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { LandingPage } from "@/components/tools/icp-builder/LandingPage";
 import { IntakeScreen } from "@/components/tools/icp-builder/IntakeScreen";
 import { IcpBuilderScreen } from "@/components/tools/icp-builder/IcpBuilderScreen";
 import { ValuePropScreen } from "@/components/tools/icp-builder/ValuePropScreen";
@@ -32,6 +33,7 @@ const STEP_LABELS: { key: Screen; label: string }[] = [
 ];
 
 export default function ICPBuilderClient() {
+  const [started, setStarted] = useState(false);
   const [screen, setScreen] = useState<Screen>("intake");
   const [intake, setIntake] = useState<IntakeData>({
     offer: "",
@@ -52,6 +54,21 @@ export default function ICPBuilderClient() {
   };
 
   const currentStepIndex = STEP_LABELS.findIndex((s) => s.key === screen);
+
+  if (!started) {
+    return (
+      <>
+        <div className="max-w-4xl mx-auto px-6 pt-24">
+          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>ICP Builder</span>
+          </div>
+        </div>
+        <LandingPage onStart={() => setStarted(true)} />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>

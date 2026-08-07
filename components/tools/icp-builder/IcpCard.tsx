@@ -29,6 +29,11 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
   const [polishing, setPolishing] = useState(false);
   const [polishError, setPolishError] = useState<string | null>(null);
   const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const icpRef = useRef(icp);
+
+  useEffect(() => {
+    icpRef.current = icp;
+  }, [icp]);
 
   // D2C AI-polish: debounce 900ms after the description stops changing, only
   // fire if the text actually changed since the last run.
@@ -46,13 +51,13 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
         const raw = await callGemini(buildD2cPolishPrompt(description, offer, sellingTo, businessType));
         const parsed = parseJsonArray<string>(raw);
         const options = sanitize(parsed).slice(0, 3);
-        onChange({ ...icp, d2cDescription: description, d2cOptions: options, d2cOptionsKey: description, d2cSelectedIdx: null });
+        onChange({ ...icpRef.current, d2cDescription: description, d2cOptions: options, d2cOptionsKey: description, d2cSelectedIdx: null });
       } catch (err) {
         console.error("D2C polish failed:", err);
         setPolishError(describeGeminiError(err));
         const fallback = sanitize(description);
         onChange({
-          ...icp,
+          ...icpRef.current,
           d2cDescription: description,
           d2cOptions: [fallback, fallback, fallback],
           d2cOptionsKey: description,

@@ -85,6 +85,16 @@ const FREE_TOOLS = [
     accentBg: "rgba(249,115,22,0.1)",
     hoverClass: "card-hover-orange",
   },
+  {
+    title: "Case Study & Proposal Generator",
+    desc: "Turn a finished project into a case study, or a prospect conversation into a proposal draft. No invented numbers, no generic filler.",
+    href: "/tools/case-study-generator",
+    icon: "📝",
+    cta: "Draft mine",
+    accentColor: "#6366f1",
+    accentBg: "rgba(99,102,241,0.1)",
+    hoverClass: "card-hover-indigo",
+  },
 ];
 
 export default function ToolsPage() {

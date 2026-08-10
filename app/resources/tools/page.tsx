@@ -95,6 +95,16 @@ const FREE_TOOLS = [
     accentBg: "rgba(99,102,241,0.1)",
     hoverClass: "card-hover-indigo",
   },
+  {
+    title: "Competitor Battle Card Generator",
+    desc: "Researches a competitor live and builds a sales battle card: what they do, their pricing if public, their real strengths and gaps, and how to position against them.",
+    href: "/tools/battle-card-generator",
+    icon: "🛡️",
+    cta: "Build my battle card",
+    accentColor: "#ef4444",
+    accentBg: "rgba(239,68,68,0.1)",
+    hoverClass: "card-hover-red",
+  },
 ];
 
 export default function ToolsPage() {

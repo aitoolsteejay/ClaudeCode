@@ -365,6 +365,8 @@ body {
 .card-hover-orange:hover { border-color: rgba(249,115,22,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
 .card-hover-indigo { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
 .card-hover-indigo:hover { border-color: rgba(99,102,241,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
+.card-hover-red { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.card-hover-red:hover { border-color: rgba(239,68,68,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
 .chip-hover { transition: border-color 0.15s ease, color 0.15s ease; }
 .chip-hover:hover { border-color: rgba(245,183,49,0.6) !important; color: #D97706 !important; }
 

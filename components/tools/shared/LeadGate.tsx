@@ -37,7 +37,7 @@ const leadSchema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
 });
 
-export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "case_study_generator";
+export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "case_study_generator" | "battle_card_generator" | "icp_builder" | "roi_calculator";
 
 interface LeadGateProps {
   onComplete: (data: LeadData) => void;
@@ -63,8 +63,14 @@ const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
     "https://forms.zohopublic.com/flintstop/form/DMAngleGenerator/formperma/62jROMu8G-5OfsQqYL4Bfn4tL1ArsSVjbBXAJwbI4N8/htmlRecords/submit",
   founder_presence_analyzer:
     "https://forms.zohopublic.com/flintstop/form/FounderPresence/formperma/JnJcgXg8AbGtNsscKQtYvGFJs8d1HB94fIKK8xsnvAc/htmlRecords/submit",
+  case_study_generator:
+    "https://forms.zohopublic.com/flintstop/form/CaseStudyGenerator/formperma/kGi_6je9VtNTQT585wuklYngFEcYQnDWrOLxD4Ja1VQ/htmlRecords/submit",
+  battle_card_generator:
+    "https://forms.zohopublic.com/flintstop/form/Battlecardgenerator/formperma/L6FLsnJj7kt0kDqoENc2F2Drbuo22v376RxReGr9t58/htmlRecords/submit",
+  icp_builder:
+    "https://forms.zohopublic.com/flintstop/form/ICPbuilder/formperma/an5nBPpkO1WIJo1cdInDWDmGb__ufD3Qdhqh1OrjlZg/htmlRecords/submit",
   // No dedicated Zoho form yet, falls back to the shared lead-magnet form.
-  case_study_generator: SHARED_ZOHO_FORM_ACTION,
+  roi_calculator: SHARED_ZOHO_FORM_ACTION,
 };
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 

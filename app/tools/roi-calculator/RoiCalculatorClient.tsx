@@ -7,11 +7,14 @@ import { CalculatorInputs } from "@/components/tools/roi-calculator/CalculatorIn
 import { ResultsDashboard } from "@/components/tools/roi-calculator/ResultsDashboard";
 import { FunnelChart } from "@/components/tools/roi-calculator/FunnelChart";
 import { RevenueChart } from "@/components/tools/roi-calculator/RevenueChart";
+import { LeadGateModal } from "@/components/tools/roi-calculator/LeadGateModal";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { LeadData } from "@/components/tools/shared/LeadGate";
+import { supabase } from "@/lib/supabase";
 
 const currencies = {
   USD: "$",
@@ -27,6 +30,8 @@ const currencies = {
 
 export default function RoiCalculatorClient() {
   const [started, setStarted] = useState(false);
+  const [leadData, setLeadData] = useState<LeadData | null>(null);
+  const [showGate, setShowGate] = useState(false);
   const resultsRef = useRef<HTMLDivElement>(null);
   const [currency, setCurrency] = useState("USD");
   const [connectionRequests, setConnectionRequests] = useState(0);
@@ -117,6 +122,34 @@ export default function RoiCalculatorClient() {
     }
   };
 
+  const handleExportClick = () => {
+    if (leadData) {
+      handleExport();
+    } else {
+      setShowGate(true);
+    }
+  };
+
+  const handleLeadComplete = (data: LeadData) => {
+    setLeadData(data);
+    setShowGate(false);
+
+    if (data.id) {
+      supabase
+        .from("leads")
+        .update({
+          inputs: { currency, connectionRequests, acceptanceRate, replyRate, positiveResponseRate, meetingRateFromPositive, closingRate, averageTicketPrice, transactionsPerYear, monthsCustomerStays, duration, monthlyCost },
+          outputs: { totalRequests, acceptedConnections, replies, positiveReplies, negativeReplies, meetings, deals, revenue, roi },
+        })
+        .eq("id", data.id)
+        .then(({ error }) => {
+          if (error) console.error("Supabase inputs/outputs update failed:", error);
+        });
+    }
+
+    handleExport();
+  };
+
   if (!started) {
     return (
       <>
@@ -170,7 +203,7 @@ export default function RoiCalculatorClient() {
             </p>
           </div>
           <Button
-            onClick={handleExport}
+            onClick={handleExportClick}
             className="bg-accent hover:bg-accent/90 text-primary-foreground font-semibold"
           >
             <Download className="w-4 h-4 mr-2" />
@@ -257,6 +290,8 @@ export default function RoiCalculatorClient() {
           </div>
         </div>
       </main>
+
+      {showGate && <LeadGateModal onComplete={handleLeadComplete} onClose={() => setShowGate(false)} />}
     </div>
   );
 }

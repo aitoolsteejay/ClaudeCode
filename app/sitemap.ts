@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/founder-presence-analyzer`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/icp-builder`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/case-study-generator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/tools/battle-card-generator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/predictable-b2b-lead-gen-engine`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/ecommerce-conversion-playbook`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/founder-personal-brand-linkedin`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

@@ -37,7 +37,7 @@ const leadSchema = z.object({
   email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
 });
 
-export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "case_study_generator";
+export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "case_study_generator" | "battle_card_generator";
 
 interface LeadGateProps {
   onComplete: (data: LeadData) => void;
@@ -65,6 +65,7 @@ const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
     "https://forms.zohopublic.com/flintstop/form/FounderPresence/formperma/JnJcgXg8AbGtNsscKQtYvGFJs8d1HB94fIKK8xsnvAc/htmlRecords/submit",
   // No dedicated Zoho form yet, falls back to the shared lead-magnet form.
   case_study_generator: SHARED_ZOHO_FORM_ACTION,
+  battle_card_generator: SHARED_ZOHO_FORM_ACTION,
 };
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 

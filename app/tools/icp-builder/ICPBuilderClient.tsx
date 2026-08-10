@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/icp-builder/LandingPage";
 import { IntakeScreen } from "@/components/tools/icp-builder/IntakeScreen";
 import { IcpBuilderScreen } from "@/components/tools/icp-builder/IcpBuilderScreen";
 import { ValuePropScreen } from "@/components/tools/icp-builder/ValuePropScreen";
 import { ScreenTransition } from "@/components/tools/icp-builder/ScreenTransition";
 import { DEFAULT_ICP_COUNT } from "@/components/tools/icp-builder/constants";
+import { supabase } from "@/lib/supabase";
 import type { IntakeData, IcpInput, GeneratedIcp, ValuePropResult, Screen } from "@/components/tools/icp-builder/types";
 
 function newIcp(icpType: "B2B" | "D2C" | null): IcpInput {
@@ -34,6 +36,7 @@ const STEP_LABELS: { key: Screen; label: string }[] = [
 
 export default function ICPBuilderClient() {
   const [started, setStarted] = useState(false);
+  const [leadData, setLeadData] = useState<LeadData | null>(null);
   const [screen, setScreen] = useState<Screen>("intake");
   const [intake, setIntake] = useState<IntakeData>({
     offer: "",
@@ -53,6 +56,32 @@ export default function ICPBuilderClient() {
     setScreen("icp");
   };
 
+  // Fires after either generation stage completes, so a lead who drops off
+  // after ICPs (before Value Prop) is still captured with useful data.
+  const saveProgress = (nextIcpResults: GeneratedIcp[] | null, nextValuePropResults: ValuePropResult[] | null) => {
+    if (!leadData?.id) return;
+    supabase
+      .from("leads")
+      .update({
+        inputs: { intake, icps },
+        outputs: { icpResults: nextIcpResults, valuePropResults: nextValuePropResults },
+      })
+      .eq("id", leadData.id)
+      .then(({ error }) => {
+        if (error) console.error("Supabase inputs/outputs update failed:", error);
+      });
+  };
+
+  const handleIcpResultsChange = (results: GeneratedIcp[] | null) => {
+    setIcpResults(results);
+    if (results) saveProgress(results, valuePropResults);
+  };
+
+  const handleValuePropResultsChange = (results: ValuePropResult[] | null) => {
+    setValuePropResults(results);
+    if (results) saveProgress(icpResults, results);
+  };
+
   const currentStepIndex = STEP_LABELS.findIndex((s) => s.key === screen);
 
   if (!started) {
@@ -67,6 +96,51 @@ export default function ICPBuilderClient() {
         </div>
         <LandingPage onStart={() => setStarted(true)} />
       </>
+    );
+  }
+
+  if (!leadData) {
+    return (
+      <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
+            <Link href="/resources/tools" className="link-subtle">Tools</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span style={{ color: "#3D3D3D" }}>ICP Builder</span>
+          </div>
+
+          <header className="pb-12 text-center">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
+              style={{ background: "rgba(249,115,22,0.07)", borderColor: "rgba(249,115,22,0.35)" }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F97316" }} aria-hidden="true" />
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F97316" }}>ICP Builder</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
+              <span className="relative inline-block">
+                Build Your ICP & Value Prop
+                <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 460 10" preserveAspectRatio="none" aria-hidden>
+                  <path d="M2 7 Q115 2 230 6 Q345 10 458 5" stroke="#F97316" strokeWidth="3" fill="none" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h1>
+            <p className="text-gray-700 text-sm md:text-base max-w-xl mx-auto font-medium">
+              Describe your business, build deep customer profiles, and get a value proposition for each one.
+            </p>
+          </header>
+
+          <LeadGate
+            source="icp_builder"
+            heading="Tell Us About You"
+            description="Enter your details to start building your ICP."
+            onComplete={setLeadData}
+          />
+        </div>
+      </div>
     );
   }
 
@@ -140,7 +214,7 @@ export default function ICPBuilderClient() {
                 icps={icps}
                 onIcpsChange={setIcps}
                 results={icpResults}
-                onResultsChange={setIcpResults}
+                onResultsChange={handleIcpResultsChange}
                 onNextStep={() => setScreen("valueprop")}
               />
             )}
@@ -150,7 +224,7 @@ export default function ICPBuilderClient() {
                 intake={intake}
                 icps={icpResults}
                 results={valuePropResults}
-                onResultsChange={setValuePropResults}
+                onResultsChange={handleValuePropResultsChange}
                 onFinish={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               />
             )}

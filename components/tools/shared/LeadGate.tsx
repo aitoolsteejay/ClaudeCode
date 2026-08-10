@@ -63,8 +63,9 @@ const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
     "https://forms.zohopublic.com/flintstop/form/DMAngleGenerator/formperma/62jROMu8G-5OfsQqYL4Bfn4tL1ArsSVjbBXAJwbI4N8/htmlRecords/submit",
   founder_presence_analyzer:
     "https://forms.zohopublic.com/flintstop/form/FounderPresence/formperma/JnJcgXg8AbGtNsscKQtYvGFJs8d1HB94fIKK8xsnvAc/htmlRecords/submit",
+  case_study_generator:
+    "https://forms.zohopublic.com/flintstop/form/CaseStudyGenerator/formperma/kGi_6je9VtNTQT585wuklYngFEcYQnDWrOLxD4Ja1VQ/htmlRecords/submit",
   // No dedicated Zoho form yet, falls back to the shared lead-magnet form.
-  case_study_generator: SHARED_ZOHO_FORM_ACTION,
   battle_card_generator: SHARED_ZOHO_FORM_ACTION,
   icp_builder:
     "https://forms.zohopublic.com/flintstop/form/ICPbuilder/formperma/an5nBPpkO1WIJo1cdInDWDmGb__ufD3Qdhqh1OrjlZg/htmlRecords/submit",

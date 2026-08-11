@@ -6,7 +6,7 @@ import FadeIn from "../../components/FadeIn";
 import Underline from "./Underline";
 
 export const metadata: Metadata = {
-  title: "The 6 Claude Skills Guide | Myntmore",
+  title: "The 6 Claude Skills Guide",
   description: "Six ready-to-use Claude skills for founders and marketers: content distribution, LinkedIn growth, lead generation, competitor research, proposals, and personal brand, complete with copy-paste prompts.",
   alternates: { canonical: "https://myntmore.com/instagram-resources/claude-skills-guide" },
   openGraph: {

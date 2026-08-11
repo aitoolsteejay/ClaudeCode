@@ -5,7 +5,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "Bootstrapped Founder: 0 to 22K Followers and 8 Inbound Deals | Myntmore",
+  title: "Bootstrapped Founder: 0 to 22K Followers and 8 Inbound Deals",
   description: "How Myntmore built a B2B founder's LinkedIn personal brand from scratch, reaching 22K followers, 6.2% engagement rate, and 8 inbound deals in under 6 months.",
   alternates: { canonical: "https://myntmore.com/case-studies/founder-personal-brand-linkedin" },
   openGraph: {

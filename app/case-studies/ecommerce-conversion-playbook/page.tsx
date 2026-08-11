@@ -5,7 +5,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "Cold Email Added $400K Pipeline for eCommerce SaaS in 6 Weeks | Myntmore",
+  title: "Cold Email Added $400K Pipeline for eCommerce SaaS in 6 Weeks",
   description: "How Myntmore built a targeted cold email engine for an eCommerce SaaS, generating 28 meetings, 41% open rate, and $400K in pipeline in 6 weeks.",
   alternates: { canonical: "https://myntmore.com/case-studies/ecommerce-conversion-playbook" },
   openGraph: {

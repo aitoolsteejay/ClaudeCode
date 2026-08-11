@@ -4,7 +4,7 @@ import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 
 export const metadata: Metadata = {
-  title: "SEO Services Mumbai | B2B Content SEO | Myntmore",
+  title: "SEO Services Mumbai | B2B Content SEO",
   description: "SEO services for B2B companies in Mumbai and across India. Content-led SEO that drives qualified pipeline, not just traffic. Search engine optimisation agency Mumbai.",
   alternates: { canonical: "https://myntmore.com/seo" },
   keywords: ["seo services", "search engine optimization", "seo agency mumbai", "b2b seo", "content seo"],

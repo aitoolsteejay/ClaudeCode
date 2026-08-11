@@ -5,7 +5,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "LinkedIn Brand Drove 3x Inbound in 90 Days | Professional Services Case Study | Myntmore",
+  title: "LinkedIn Brand Drove 3x Inbound in 90 Days | Professional Services Case Study",
   description: "How Myntmore's personal branding service transformed a referral-dependent consulting founder into a predictable inbound engine, 3x inbound, 18K new followers, 4.8% engagement rate.",
   alternates: { canonical: "https://myntmore.com/case-studies/professional-services-linkedin" },
   openGraph: {

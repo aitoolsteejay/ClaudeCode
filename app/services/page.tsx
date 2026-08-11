@@ -5,7 +5,7 @@ import LeadCaptureForm from "../components/LeadCaptureForm";
 import StatTicker from "../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Services | AI-Powered Outbound | Myntmore",
+  title: "B2B Lead Generation Services | AI-Powered Outbound",
   description: "Five productized B2B growth services built for companies that want a real system, not more promises. Sales Intelligence, AI Lead Gen, LinkedIn Outreach, Personal Branding, Cold Email.",
   alternates: { canonical: "https://myntmore.com/services" },
   keywords: ["b2b lead generation agency", "b2b lead generation", "ai agency in mumbai", "outbound marketing agency"],

@@ -5,7 +5,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "40 Qualified Meetings in 8 Weeks | SaaS Series A Case Study | Myntmore",
+  title: "40 Qualified Meetings in 8 Weeks | SaaS Series A Case Study",
   description: "How Myntmore built a multi-channel outbound engine for a B2B SaaS Series A company, generating 40 qualified meetings, 34% reply rate, and $1.2M in pipeline from a cold start in 8 weeks.",
   alternates: { canonical: "https://myntmore.com/case-studies/saas-series-a" },
   openGraph: {

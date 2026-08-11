@@ -4,7 +4,7 @@ import InnerLayout from "../../components/InnerLayout";
 import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Blog | Myntmore",
+  title: "B2B Lead Generation Blog",
   description: "In-depth guides on cold email, ICP mapping, LinkedIn outreach, deliverability, and outbound metrics, written by the team that has booked 12K+ B2B meetings.",
   alternates: { canonical: "https://myntmore.com/resources/blogs" },
   openGraph: {

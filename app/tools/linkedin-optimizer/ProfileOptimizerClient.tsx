@@ -145,6 +145,11 @@ export default function ProfileOptimizerClient() {
   const [isLoading, setIsLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState<OptimizationResults | null>(null);
+  // Kept here (not just inside ProfileWizard's own state) because
+  // ProfileWizard unmounts while isLoading is true (see the render condition
+  // below), so its internal state would otherwise reset to empty on every
+  // failed generation attempt, forcing the user to retype everything.
+  const [wizardData, setWizardData] = useState<StepOneData | null>(null);
   const toolRef = useRef<HTMLDivElement>(null);
 
   const scrollToTool = () => {
@@ -157,6 +162,7 @@ export default function ProfileOptimizerClient() {
   };
 
   const handleWizardComplete = async (profileData: StepOneData) => {
+    setWizardData(profileData);
     setIsLoading(true);
     setShowResults(false);
 
@@ -251,7 +257,7 @@ export default function ProfileOptimizerClient() {
 
       {leadData && (
         <div className="min-h-screen">
-          {!showResults && !isLoading && <ProfileWizard onComplete={handleWizardComplete} isGenerating={isLoading} />}
+          {!showResults && !isLoading && <ProfileWizard initialData={wizardData} onComplete={handleWizardComplete} isGenerating={isLoading} />}
 
           {isLoading && <LoadingState />}
 

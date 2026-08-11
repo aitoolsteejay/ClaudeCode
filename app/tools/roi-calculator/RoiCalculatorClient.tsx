@@ -79,46 +79,128 @@ export default function RoiCalculatorClient() {
     { label: "Deals Closed", value: deals, percentage: meetings > 0 ? (deals / meetings) * 100 : 0, previousValue: meetings },
   ];
 
+  // Loads an image via the normal async <img> path (not jsPDF's own
+  // synchronous-XHR string fallback) so we get its natural dimensions for
+  // aspect-ratio-correct sizing, and can add it to the PDF as an
+  // HTMLImageElement directly.
+  const loadImage = (src: string): Promise<HTMLImageElement> => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = src;
+    });
+  };
+
   const handleExport = async () => {
     if (!resultsRef.current) return;
 
     toast.loading("Generating PDF...");
 
+    // html2canvas clones the target node into an off-screen document to
+    // render it. resultsRef's width comes from its parent's CSS Grid
+    // (`lg:col-span-8`), which the clone doesn't inherit — without an
+    // explicit width, the clone can collapse to 0px wide, producing a
+    // canvas with `width: 0` and blank/broken pages. Locking the element's
+    // own inline width right before capture (and telling html2canvas that
+    // exact width) gives the clone something concrete to render at,
+    // regardless of grid context.
+    const target = resultsRef.current;
+    const measuredWidth = target.getBoundingClientRect().width;
+    const previousInlineWidth = target.style.width;
+
     try {
-      const canvas = await html2canvas(resultsRef.current, {
-        scale: 2,
+      if (measuredWidth > 0) {
+        target.style.width = `${measuredWidth}px`;
+      }
+
+      const canvas = await html2canvas(target, {
+        scale: 1.5,
         backgroundColor: "#ffffff",
         logging: false,
+        width: measuredWidth > 0 ? measuredWidth : undefined,
+        windowWidth: measuredWidth > 0 ? measuredWidth : undefined,
       });
 
-      const imgData = canvas.toDataURL("image/png");
+      if (!canvas.width || !canvas.height || !Number.isFinite(canvas.width) || !Number.isFinite(canvas.height)) {
+        throw new Error(`Captured canvas has invalid dimensions (${canvas.width}x${canvas.height}); aborting export instead of generating blank pages.`);
+      }
+
+      // JPEG instead of PNG: this is a screenshot of mostly flat-colour
+      // cards and charts, not a photo, so lossless PNG buys nothing here
+      // but multiplies file size. Combined with the 1.5x (down from 2x)
+      // capture scale, this keeps the export legible while cutting a
+      // multi-page export down from tens of MB to a few MB.
+      const imgData = canvas.toDataURL("image/jpeg", 0.8);
       const pdf = new jsPDF({
         orientation: "portrait",
         unit: "mm",
         format: "a4",
       });
 
-      const imgWidth = 210; // A4 width in mm
+      const pageWidth = 210;
+      const pageHeight = 297;
+      const headerHeight = 45;
+
+      const imgWidth = pageWidth;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-      // Add logo
-      pdf.addImage("/logo.png", "PNG", 10, 10, 40, 10);
+      if (!Number.isFinite(imgHeight) || imgHeight <= 0) {
+        throw new Error(`Computed image height is invalid (${imgHeight}); aborting export instead of generating blank pages.`);
+      }
 
-      // Add title
+      // Header banner: black band first, everything else drawn on top of
+      // it, so nothing added afterwards gets painted over.
+      pdf.setFillColor(0, 0, 0);
+      pdf.rect(0, 0, pageWidth, headerHeight, "F");
+
+      try {
+        const logo = await loadImage("/logo.png");
+        const logoHeight = 15;
+        const logoWidth = (logo.naturalWidth / logo.naturalHeight) * logoHeight;
+        pdf.addImage(logo, "PNG", 10, (headerHeight - logoHeight) / 2, logoWidth, logoHeight);
+      } catch (logoError) {
+        console.error("Logo failed to load for PDF export, continuing without it:", logoError);
+      }
+
       pdf.setFontSize(20);
       pdf.setTextColor(255, 255, 255);
-      pdf.setFillColor(0, 0, 0);
-      pdf.rect(0, 0, 210, 297, "F");
-      pdf.text("ROI Calculator Results", 105, 35, { align: "center" });
+      pdf.text("ROI Calculator Results", pageWidth / 2, 35, { align: "center" });
 
-      // Add results image
-      pdf.addImage(imgData, "PNG", 0, 45, imgWidth, imgHeight);
+      // Paginate the results image across as many pages as it needs
+      // instead of letting it silently overflow past the first page. The
+      // same full image is re-added on each page at an increasing negative
+      // offset; each page's own boundary clips it to just that slice.
+      const firstPageContentHeight = pageHeight - headerHeight;
+      const maxPages = 20;
+      let shown = 0;
+      let pageIndex = 0;
+
+      while (shown < imgHeight && pageIndex < maxPages) {
+        if (pageIndex > 0) pdf.addPage();
+        const y = pageIndex === 0 ? headerHeight : -shown;
+        pdf.addImage(imgData, "JPEG", 0, y, imgWidth, imgHeight);
+        shown += pageIndex === 0 ? firstPageContentHeight : pageHeight;
+        pageIndex++;
+      }
+
+      const totalPages = pdf.getNumberOfPages();
+      if (totalPages > 1) {
+        for (let i = 1; i <= totalPages; i++) {
+          pdf.setPage(i);
+          pdf.setFontSize(9);
+          pdf.setTextColor(140, 130, 121);
+          pdf.text(`Page ${i} of ${totalPages}`, pageWidth / 2, pageHeight - 8, { align: "center" });
+        }
+      }
 
       pdf.save("roi-calculator-results.pdf");
       toast.success("PDF exported successfully!");
     } catch (error) {
       console.error("Export failed:", error);
       toast.error("Failed to export PDF");
+    } finally {
+      target.style.width = previousInlineWidth;
     }
   };
 

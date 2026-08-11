@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { toast } from "sonner";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/founder-presence/LandingPage";
 import { supabase } from "@/lib/supabase";
@@ -133,7 +134,7 @@ export default function FounderPresenceClient() {
       }
     } catch (error) {
       console.error("Analysis failed", error);
-      alert("Something went wrong. Please check your internet connection and try again.");
+      toast.error("Something went wrong. Please check your internet connection and try again.");
     } finally {
       setLoading(false);
     }

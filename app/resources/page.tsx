@@ -38,6 +38,27 @@ const BLOG_PREVIEW = [
   },
 ];
 
+const GUIDES_PREVIEW = [
+  {
+    href: "/instagram-resources/80-us-meetings-ai-agents",
+    tag: "AI Agents",
+    title: "80+ US Meetings Booked in 1 Month with AI Agents",
+    accent: "#F97316",
+  },
+  {
+    href: "/instagram-resources/how-to-set-up-vibe-prospecting",
+    tag: "Prospecting",
+    title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
+    accent: "#8b5cf6",
+  },
+  {
+    href: "/instagram-resources/claude-skills-guide",
+    tag: "AI & Claude",
+    title: "The 6 Claude Skills Guide",
+    accent: "#F5B731",
+  },
+];
+
 const TOOLS_PREVIEW = [
   {
     title: "LinkedIn Profile Optimizer",
@@ -166,7 +187,44 @@ export default function Resources() {
               <Link href="/resources/blogs" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all 5 blogs →</Link>
             </div>
             <div className="mt-4 hidden sm:block text-right">
-              <span className="text-xs" style={{ color: "#8C8279" }}>+ 2 more guides available in the blog</span>
+              <span className="text-xs" style={{ color: "#8C8279" }}>+ 2 more posts in the blog</span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Guides ── */}
+      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="flex items-end justify-between mb-10">
+              <div>
+                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#F97316", border: "1px solid rgba(249,115,22,0.2)" }}>Guides</span>
+                <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Step-by-step, copy-paste ready</h2>
+                <p className="text-sm mt-2" style={{ color: "#52525B" }}>AI and outbound setup guides built from the systems we run for our own clients.</p>
+              </div>
+              <Link href="/resources/guides" className="text-sm font-bold hidden sm:inline-flex items-center gap-1 flex-shrink-0 ml-6" style={{ color: "#F5B731" }}>
+                View all guides →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {GUIDES_PREVIEW.map((g) => (
+                <Link key={g.href} href={g.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                  <div className="h-1.5" style={{ background: `linear-gradient(90deg,${g.accent},${g.accent}66)` }} />
+                  <div className="p-6">
+                    <span className="inline-flex text-xs font-bold px-2.5 py-1 rounded-full mb-4" style={{ backgroundColor: `${g.accent}12`, color: g.accent }}>{g.tag}</span>
+                    <h3 className="text-base font-black mb-4 leading-snug" style={{ color: "#0a0a0a" }}>{g.title}</h3>
+                    <div className="flex items-center justify-end">
+                      <span className="text-xs font-bold transition-all duration-200 group-hover:gap-2" style={{ color: g.accent }}>Read →</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center sm:hidden">
+              <Link href="/resources/guides" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all guides →</Link>
             </div>
           </FadeIn>
         </div>

@@ -17,6 +17,7 @@ const RESOURCE_LINKS = [
   { label: "Guides", href: "/resources/guides" },
   { label: "Free Tools", href: "/resources/tools" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Events", href: "/events" },
 ];
 
 const NAV_LINKS = [

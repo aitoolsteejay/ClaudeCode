@@ -1,0 +1,115 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import InnerLayout from "../components/InnerLayout";
+import FadeIn from "../components/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Events & Webinars",
+  description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the team that has booked 12K+ meetings and generated $120M+ in pipeline.",
+  alternates: { canonical: "https://myntmore.com/events" },
+  openGraph: {
+    title: "Events & Webinars | Myntmore",
+    description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the Myntmore team.",
+    url: "https://myntmore.com/events",
+  },
+};
+
+interface EventItem {
+  slug: string;
+  tag: string;
+  title: string;
+  description: string;
+  isoDate: string;
+  displayDate: string;
+  time: string;
+  format: string;
+  accent: string;
+}
+
+// Empty for now. To add an event once one is scheduled:
+// 1. Add an entry here (slug becomes the URL: /events/{slug}).
+// 2. Create app/events/{slug}/page.tsx for its detail page, following the
+//    same pattern as app/blog/{slug}/page.tsx or app/case-studies/{slug}/page.tsx.
+// 3. Add the new route to app/sitemap.ts.
+const EVENTS: EventItem[] = [];
+
+export default function EventsPage() {
+  return (
+    <InnerLayout>
+      <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(139,92,246,0.22) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,160,0,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", bottom: "-140px", left: "10%", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.16) 0%, rgba(13,148,136,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="flex items-center gap-2 mb-6">
+            <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
+            <span style={{ color: "#E8E2D9" }}>/</span>
+            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Events</span>
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
+            style={{ borderColor: "rgba(139,92,246,0.35)", background: "rgba(139,92,246,0.07)" }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#8b5cf6" }} />
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#8b5cf6" }}>Events & Webinars</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
+            Learn what&apos;s{" "}
+            <span className="relative inline-block">
+              actually working
+              <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 320 10" preserveAspectRatio="none" aria-hidden>
+                <path d="M2 7 Q80 2 160 6 Q240 10 318 5" stroke="#8b5cf6" strokeWidth="3" fill="none" strokeLinecap="round" />
+              </svg>
+            </span>{" "}
+            in B2B outbound
+          </h1>
+          <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
+            Live sessions on cold email, LinkedIn outreach, and pipeline building, from the team that has booked 12K+ B2B meetings and generated $120M+ in pipeline.
+          </p>
+        </div>
+      </section>
+
+      <section id="events-grid" className="py-16 px-4 border-t scroll-mt-24" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-4xl mx-auto">
+          {EVENTS.length > 0 ? (
+            <FadeIn>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {EVENTS.map((e) => (
+                  <Link key={e.slug} href={`/events/${e.slug}`} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                    <div className="h-1" style={{ background: `linear-gradient(90deg,${e.accent},${e.accent}66)` }} />
+                    <div className="p-6">
+                      <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${e.accent}12`, color: e.accent }}>{e.tag}</span>
+                      <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{e.title}</h2>
+                      <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{e.description}</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs" style={{ color: "#8C8279" }}>{e.displayDate} &middot; {e.time}</span>
+                        <span className="text-xs font-bold" style={{ color: e.accent }}>Details &rarr;</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </FadeIn>
+          ) : (
+            <FadeIn>
+              <div className="max-w-2xl mx-auto text-center rounded-2xl border p-12" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: "rgba(139,92,246,0.1)" }}>
+                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#8b5cf6" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-black mb-3" style={{ color: "#0a0a0a" }}>No events scheduled right now</h2>
+                <p className="text-sm mb-8 max-w-md mx-auto" style={{ color: "#52525B" }}>
+                  We run these live sessions periodically, sharing what&apos;s actually moving the needle in outbound. Check back soon, or skip the wait and talk to us directly.
+                </p>
+                <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
+                  Book a Call
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+              </div>
+            </FadeIn>
+          )}
+        </div>
+      </section>
+    </InnerLayout>
+  );
+}

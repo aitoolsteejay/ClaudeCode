@@ -14,6 +14,7 @@ const SERVICE_LINKS = [
 
 const RESOURCE_LINKS = [
   { label: "Blog", href: "/resources/blogs" },
+  { label: "Guides", href: "/resources/guides" },
   { label: "Free Tools", href: "/resources/tools" },
   { label: "Case Studies", href: "/case-studies" },
 ];

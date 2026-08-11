@@ -121,12 +121,12 @@ export default function VibeProspectingGuide() {
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <Link href="/" className="link-subtle text-xs font-semibold">Myntmore</Link>
+            <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
             <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Vibe Prospecting Setup</span>
+            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Guides</span>
           </div>
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "rgba(139,92,246,0.08)", color: ACCENT, border: "1px solid rgba(139,92,246,0.3)" }}>
-            Free Instagram Guide
+            Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             How to Set Up{" "}

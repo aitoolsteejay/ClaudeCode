@@ -31,30 +31,38 @@ function Field({
   rows?: number;
 }) {
   return (
-    <div className="space-y-2">
-      <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.15em]">
+    // flex-col + mt-auto on the input (not space-y-2 on a plain block div):
+    // when this sits next to a sibling Field in a grid row and only one of
+    // the two has a hint line, a plain block layout leaves the shorter
+    // field's input sitting higher than its sibling's. Grid's default
+    // stretch still equalises the two wrapper heights, so mt-auto pushes
+    // every field's input down to the same baseline regardless of hint.
+    <div className="flex flex-col h-full">
+      <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.15em] mb-2">
         {label} {required && <span style={{ color: ACCENT }}>*</span>}
       </label>
-      {hint && <p className="text-xs" style={{ color: "#8C8279" }}>{hint}</p>}
-      {rows ? (
-        <textarea
-          rows={rows}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={placeholder}
-          className="w-full bg-white rounded-lg px-4 py-3 text-sm outline-none resize-none"
-          style={{ border: "1px solid #E8E2D9" }}
-        />
-      ) : (
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={placeholder}
-          className="w-full bg-white rounded-lg px-4 py-3 text-sm outline-none"
-          style={{ border: "1px solid #E8E2D9" }}
-        />
-      )}
+      {hint && <p className="text-xs mb-2" style={{ color: "#8C8279" }}>{hint}</p>}
+      <div className="mt-auto">
+        {rows ? (
+          <textarea
+            rows={rows}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={placeholder}
+            className="w-full bg-white rounded-lg px-4 py-3 text-sm outline-none resize-none"
+            style={{ border: "1px solid #E8E2D9" }}
+          />
+        ) : (
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={placeholder}
+            className="w-full bg-white rounded-lg px-4 py-3 text-sm outline-none"
+            style={{ border: "1px solid #E8E2D9" }}
+          />
+        )}
+      </div>
     </div>
   );
 }

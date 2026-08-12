@@ -10,7 +10,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close | Myntmore Blog",
+  title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
   description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
   alternates: { canonical: "https://www.myntmore.com/blog/icp-mapping-b2b" },
   keywords: ["ICP mapping", "ideal customer profile", "b2b targeting", "lead qualification", "b2b outbound", "sales targeting"],

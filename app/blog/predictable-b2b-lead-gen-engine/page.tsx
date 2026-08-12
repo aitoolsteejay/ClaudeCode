@@ -10,7 +10,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Building a Predictable B2B Lead Generation Engine | Myntmore Blog",
+  title: "Building a Predictable B2B Lead Generation Engine",
   description: "Most B2B outbound fails because it has no system behind it. Here is the exact framework we use to build a lead generation engine that compounds over time.",
   alternates: { canonical: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine" },
   keywords: ["b2b lead generation", "predictable pipeline", "outbound system", "lead gen framework", "icp definition"],

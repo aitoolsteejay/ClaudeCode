@@ -56,6 +56,14 @@ const BLOG_POSTS = [
     accent: "#a855f7",
   },
   {
+    href: "/blog/linkedin-profile-inbound-lead-machine",
+    tag: "Personal Branding",
+    title: "The Silent Salesperson: How to Turn Your LinkedIn Profile into an Inbound Lead Machine",
+    excerpt: "No one reads a word you post without checking your profile first. The exact framework, and the $1M deal that proved it.",
+    readTime: "4 min read",
+    accent: "#0077b5",
+  },
+  {
     href: "/blog/b2b-lead-gen-metrics",
     tag: "Analytics",
     title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",

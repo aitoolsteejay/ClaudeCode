@@ -10,7 +10,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset | Myntmore Blog",
+  title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset",
   description: "Founders who build a LinkedIn presence close deals faster, attract better talent, and generate inbound without ad spend. Learn the exact content strategy that works.",
   alternates: { canonical: "https://www.myntmore.com/blog/founder-personal-brand-linkedin" },
   keywords: ["founder personal brand", "linkedin personal branding", "personal brand building mumbai", "founder linkedin strategy", "b2b personal branding"],

@@ -10,7 +10,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "LinkedIn Outreach Sequences That Actually Get Replies | Myntmore Blog",
+  title: "LinkedIn Outreach Sequences That Actually Get Replies",
   description: "Most LinkedIn outreach fails because it is too salesy too fast. Here is the exact multi-touch sequence structure we use to warm up prospects and convert connections into conversations.",
   alternates: { canonical: "https://www.myntmore.com/blog/linkedin-outreach-sequences" },
   keywords: ["linkedin outreach", "linkedin sequence", "b2b linkedin", "linkedin lead generation", "linkedin dms", "connection request templates"],

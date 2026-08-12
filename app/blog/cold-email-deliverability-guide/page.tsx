@@ -10,7 +10,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It) | Myntmore Blog",
+  title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
   description: "A technical guide to cold email deliverability: domain setup, warming, sending limits, and why most cold email campaigns fail before a single human ever reads them.",
   alternates: { canonical: "https://www.myntmore.com/blog/cold-email-deliverability-guide" },
   keywords: ["cold email deliverability", "email warmup", "SPF DKIM DMARC", "cold email spam", "b2b cold email", "sending domains"],

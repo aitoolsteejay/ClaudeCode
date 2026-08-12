@@ -10,7 +10,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The eCommerce Conversion Playbook: Turning Browsers into Buyers | Myntmore Blog",
+  title: "The eCommerce Conversion Playbook: Turning Browsers into Buyers",
   description: "Traffic without conversion is just expensive noise. A practical playbook for eCommerce brands that want more buyers, not just more visitors. Fix the trust gap, friction, and messaging.",
   alternates: { canonical: "https://www.myntmore.com/blog/ecommerce-conversion-playbook" },
   openGraph: {

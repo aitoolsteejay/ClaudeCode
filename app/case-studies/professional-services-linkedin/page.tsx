@@ -101,7 +101,7 @@ export default function ProfessionalServicesLinkedIn() {
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Want predictable inbound from LinkedIn?</h2>
+          <h2 className="text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Get predictable inbound from LinkedIn</h2>
           <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#52525B" }}>
             Book a free call and we&apos;ll show you exactly how to build the same system for your business.
           </p>

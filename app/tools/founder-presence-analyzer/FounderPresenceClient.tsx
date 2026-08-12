@@ -566,7 +566,7 @@ export default function FounderPresenceClient() {
 
             <section className="mt-20">
               <div className="p-12 rounded-2xl bg-white text-center relative overflow-hidden" style={{ border: "2px solid #FFC947", boxShadow: "0 0 40px rgba(255,201,71,0.1)" }}>
-                <h2 className="text-3xl md:text-4xl font-black mb-6">Want MyntMore to build your entire founder presence + pipeline engine?</h2>
+                <h2 className="text-3xl md:text-4xl font-black mb-6">Let Myntmore build your entire founder presence + pipeline engine</h2>
                 <Link href="/founder-meeting" className="inline-block px-10 py-5 lp-tool-accent-bg text-black font-black text-lg rounded-2xl hover:scale-105 transition-all">
                   Book a Strategy Call
                 </Link>

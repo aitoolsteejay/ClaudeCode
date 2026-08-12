@@ -72,7 +72,7 @@ export default function SEOPage() {
         </div>
       </section>
 
-      <LeadCaptureForm title="Want SEO that generates qualified meetings?" subtitle="Book a free audit call and we'll show you the content opportunities in your space." />
+      <LeadCaptureForm title="Get SEO that generates qualified meetings" subtitle="Book a free audit call and we'll show you the content opportunities in your space." />
     </InnerLayout>
   );
 }

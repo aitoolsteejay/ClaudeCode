@@ -149,7 +149,7 @@ export default function AboutUs() {
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Want to work with Tejas?</h2>
+          <h2 className="text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Let&apos;s talk about your pipeline</h2>
           <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#52525B" }}>
             Book a 30-minute strategy call. We&apos;ll audit your outreach, map your ICP, and tell you exactly what&apos;s holding your pipeline back.
           </p>

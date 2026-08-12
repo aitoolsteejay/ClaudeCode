@@ -130,11 +130,11 @@ export default function Hero() {
     if (!el) return;
 
     const PHRASES = [
-      "You Close the Deals.",
-      "You Hit Your Number.",
-      "You Scale the Team.",
-      "You Win Every Quarter.",
-      "You Own the Market.",
+      "You Close the Deals",
+      "You Hit Your Number",
+      "You Scale the Team",
+      "You Win Every Quarter",
+      "You Own the Market",
     ];
 
     let idx = 0;

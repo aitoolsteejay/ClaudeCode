@@ -100,7 +100,7 @@ export default function SaasSeriesA() {
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Want results like this?</h2>
+          <h2 className="text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Get results like this for your pipeline</h2>
           <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#52525B" }}>
             Book a free 30-minute strategy call and we&apos;ll map out exactly how to build this system for your business.
           </p>

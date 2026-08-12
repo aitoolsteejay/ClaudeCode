@@ -288,8 +288,8 @@ export default function Resources() {
               <div aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 300, height: 300, marginTop: -150, marginLeft: -150, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.15) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
               <div aria-hidden style={{ position: "absolute", top: "50%", left: "80%", width: 300, height: 300, marginTop: -150, marginLeft: -150, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
               <div className="relative z-10">
-                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.25)" }}>Ready to build the system?</span>
-                <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Want us to build the pipeline<br />engine for you?</h2>
+                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.25)" }}>Your next step</span>
+                <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Let us build the pipeline<br />engine for you</h2>
                 <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#9ca3af" }}>Book a free 30-minute GTM audit. We&apos;ll map out exactly how to build a predictable outbound system for your business.</p>
                 <a href="/founder-meeting" className="btn-dark px-10 py-4 text-base font-bold inline-flex items-center gap-2">
                   Book a Free GTM Audit

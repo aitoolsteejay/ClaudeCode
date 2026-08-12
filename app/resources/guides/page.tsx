@@ -109,7 +109,7 @@ export default function GuidesPage() {
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto rounded-2xl p-10 text-center border" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", borderColor: "#2a2a3e" }}>
-          <h2 className="text-2xl sm:text-3xl font-black mb-3 text-white">Want us to build the system for you?</h2>
+          <h2 className="text-2xl sm:text-3xl font-black mb-3 text-white">We&apos;ll build this for your pipeline too</h2>
           <p className="text-sm mb-6" style={{ color: "#9ca3af" }}>Book a free 30-minute audit. We&apos;ll map out exactly how to replicate these results for your business.</p>
           <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
             Book a Free GTM Audit

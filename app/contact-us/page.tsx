@@ -52,7 +52,7 @@ export default function ContactUs() {
           <FadeIn delay={80}><div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             <div className="lg:col-span-3">
               <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <h2 className="text-2xl font-black mb-2" style={{ color: "#0a0a0a" }}>Ready to build your AI engine?</h2>
+                <h2 className="text-2xl font-black mb-2" style={{ color: "#0a0a0a" }}>Let&apos;s build your AI engine</h2>
                 <p className="text-sm mb-6" style={{ color: "#52525B" }}>Fill out the form and we&apos;ll get back to you within 24 hours with a custom GTM strategy.</p>
                 <form className="space-y-4"
                   action="https://forms.zohopublic.com/flintstop/form/MyntmoreWebsiteform/formperma/3F8IpEgLtb2RnoXcr_yUsp56_-WdQdO2-sM6eaCOKi0/htmlRecords/submit"

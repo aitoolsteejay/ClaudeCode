@@ -74,7 +74,7 @@ export default function MarketingAutomation() {
         </div>
       </section>
 
-      <LeadCaptureForm title="Ready to automate your B2B pipeline?" subtitle="Book a free audit and we'll show you exactly which automation levers will move your pipeline." />
+      <LeadCaptureForm title="Let's automate your B2B pipeline" subtitle="Book a free audit and we'll show you exactly which automation levers will move your pipeline." />
     </InnerLayout>
   );
 }

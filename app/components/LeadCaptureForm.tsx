@@ -13,7 +13,7 @@ const focusHandlers = {
 };
 
 export default function LeadCaptureForm({
-  title = "Ready to build your AI engine?",
+  title = "Let's build your AI engine",
   subtitle = "Fill out the form below and our team will get back to you within 24 hours with a custom GTM strategy.",
 }: LeadCaptureFormProps) {
   return (

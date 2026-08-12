@@ -395,7 +395,7 @@ export default function ClaudeSkillsGuide() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">💬 Want More Like This?</h2>
+              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">💬 Stay in the loop</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
                 <a
                   href="https://instagram.com/tejas_jhaveri"

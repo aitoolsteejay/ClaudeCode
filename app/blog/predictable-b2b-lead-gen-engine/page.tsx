@@ -4,20 +4,20 @@ import InnerLayout from "../../components/InnerLayout";
 import AskYourAI from "../../components/AskYourAI";
 
 const BLOG_AI_RESOURCES = [
-  "https://myntmore.com/blog/predictable-b2b-lead-gen-engine",
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
+  "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
 ];
 
 export const metadata: Metadata = {
   title: "Building a Predictable B2B Lead Generation Engine | Myntmore Blog",
   description: "Most B2B outbound fails because it has no system behind it. Here is the exact framework we use to build a lead generation engine that compounds over time.",
-  alternates: { canonical: "https://myntmore.com/blog/predictable-b2b-lead-gen-engine" },
+  alternates: { canonical: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine" },
   keywords: ["b2b lead generation", "predictable pipeline", "outbound system", "lead gen framework", "icp definition"],
   openGraph: {
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
     description: "The exact framework for building a B2B lead generation engine that compounds over time.",
-    url: "https://myntmore.com/blog/predictable-b2b-lead-gen-engine",
+    url: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
   },
 };
 

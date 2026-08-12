@@ -5,11 +5,11 @@ import InnerLayout from "../../components/InnerLayout";
 export const metadata: Metadata = {
   title: "B2B Lead Generation Strategist Job | Myntmore Mumbai | Rs 4–7 LPA",
   description: "Join Myntmore as a B2B Lead Generation Strategist in Worli, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
-  alternates: { canonical: "https://myntmore.com/careers/lead-gen-strategist" },
+  alternates: { canonical: "https://www.myntmore.com/careers/lead-gen-strategist" },
   openGraph: {
     title: "B2B Lead Generation Strategist | Myntmore Careers",
     description: "Build predictable B2B pipelines across multiple industries. Full-time, Worli Mumbai.",
-    url: "https://myntmore.com/careers/lead-gen-strategist",
+    url: "https://www.myntmore.com/careers/lead-gen-strategist",
   },
 };
 

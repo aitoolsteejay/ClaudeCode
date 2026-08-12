@@ -4,20 +4,20 @@ import InnerLayout from "../../components/InnerLayout";
 import AskYourAI from "../../components/AskYourAI";
 
 const BLOG_AI_RESOURCES = [
-  "https://myntmore.com/blog/b2b-lead-gen-metrics",
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
+  "https://www.myntmore.com/blog/b2b-lead-gen-metrics",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
 ];
 
 export const metadata: Metadata = {
   title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop) | Myntmore Blog",
   description: "Most outbound teams track the wrong numbers. Here are the 7 metrics that actually tell you whether your lead generation engine is healthy, and the exact actions to take when each one dips.",
-  alternates: { canonical: "https://myntmore.com/blog/b2b-lead-gen-metrics" },
+  alternates: { canonical: "https://www.myntmore.com/blog/b2b-lead-gen-metrics" },
   keywords: ["b2b lead generation metrics", "outbound kpis", "cold email metrics", "reply rate", "meeting booked rate", "pipeline metrics", "lead gen dashboard"],
   openGraph: {
     title: "The 7 B2B Lead Gen Metrics That Actually Matter",
     description: "Track these 7 numbers and you will always know exactly where your pipeline is leaking.",
-    url: "https://myntmore.com/blog/b2b-lead-gen-metrics",
+    url: "https://www.myntmore.com/blog/b2b-lead-gen-metrics",
   },
 };
 

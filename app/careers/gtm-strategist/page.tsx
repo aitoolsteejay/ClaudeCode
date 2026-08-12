@@ -5,11 +5,11 @@ import InnerLayout from "../../components/InnerLayout";
 export const metadata: Metadata = {
   title: "GTM Strategist Job | Myntmore Mumbai | Rs 6–15 LPA",
   description: "Join Myntmore as a Senior Growth Marketing Strategist in Worli, Mumbai. Own growth across multiple B2B brands using LinkedIn, cold email, AI automation, and content-led demand gen. Rs 6–15 LPA + incentives.",
-  alternates: { canonical: "https://myntmore.com/careers/gtm-strategist" },
+  alternates: { canonical: "https://www.myntmore.com/careers/gtm-strategist" },
   openGraph: {
     title: "GTM Strategist | Myntmore Careers",
     description: "Own growth for multiple B2B brands: build predictable pipelines, not just campaigns. Full-time, Worli Mumbai.",
-    url: "https://myntmore.com/careers/gtm-strategist",
+    url: "https://www.myntmore.com/careers/gtm-strategist",
   },
 };
 

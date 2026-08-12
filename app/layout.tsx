@@ -53,12 +53,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Tejas Jhaveri", url: "https://linkedin.com/in/tejasjhaveri" }],
   creator: "Myntmore",
   publisher: "Myntmore",
-  metadataBase: new URL("https://myntmore.com"),
-  alternates: { canonical: "https://myntmore.com" },
+  metadataBase: new URL("https://www.myntmore.com"),
+  alternates: { canonical: "https://www.myntmore.com" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://myntmore.com",
+    url: "https://www.myntmore.com",
     siteName: "Myntmore",
     title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
     description:

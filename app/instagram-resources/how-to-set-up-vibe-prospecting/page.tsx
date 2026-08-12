@@ -8,11 +8,11 @@ import Underline from "./Underline";
 export const metadata: Metadata = {
   title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
   description: "A step-by-step setup guide for the Vibe Prospecting Claude connector, plus 10 ready-to-copy prompts for pulling verified B2B leads by funding, headcount, tech stack, and hiring signals.",
-  alternates: { canonical: "https://myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting" },
+  alternates: { canonical: "https://www.myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting" },
   openGraph: {
     title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
     description: "Connect Vibe Prospecting to Claude in 7 steps, then run 10 ready-to-copy prompts for verified B2B leads.",
-    url: "https://myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting",
+    url: "https://www.myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting",
   },
 };
 
@@ -142,7 +142,7 @@ export default function VibeProspectingGuide() {
           <p className="text-base leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
             <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Tejas</a>{" "}
             isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At{" "}
-            <a href="https://myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
+            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
           </p>
         </div>
       </section>

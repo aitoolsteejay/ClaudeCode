@@ -4,19 +4,19 @@ import InnerLayout from "../../components/InnerLayout";
 import AskYourAI from "../../components/AskYourAI";
 
 const BLOG_AI_RESOURCES = [
-  "https://myntmore.com/blog/ecommerce-conversion-playbook",
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
+  "https://www.myntmore.com/blog/ecommerce-conversion-playbook",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
 ];
 
 export const metadata: Metadata = {
   title: "The eCommerce Conversion Playbook: Turning Browsers into Buyers | Myntmore Blog",
   description: "Traffic without conversion is just expensive noise. A practical playbook for eCommerce brands that want more buyers, not just more visitors. Fix the trust gap, friction, and messaging.",
-  alternates: { canonical: "https://myntmore.com/blog/ecommerce-conversion-playbook" },
+  alternates: { canonical: "https://www.myntmore.com/blog/ecommerce-conversion-playbook" },
   openGraph: {
     title: "The eCommerce Conversion Playbook | Myntmore",
     description: "Traffic without conversion is just expensive noise. Here is how to fix it.",
-    url: "https://myntmore.com/blog/ecommerce-conversion-playbook",
+    url: "https://www.myntmore.com/blog/ecommerce-conversion-playbook",
   },
 };
 

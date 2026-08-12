@@ -1,12 +1,9 @@
 // Structured data (schema.org / JSON-LD) builders.
 //
-// NOTE on domain: the Organization schema below uses "https://www.myntmore.com"
-// per explicit request, but every other canonical URL on this site (root
-// layout metadataBase, individual page `alternates.canonical`) uses the
-// non-www "https://myntmore.com". Mixing the two in structured data vs.
-// canonical tags can send a mixed signal to Google about which host is
-// canonical. Confirm whichever is correct (and that the other one 301s to
-// it) before this goes live — see SITE_URL below to change it in one place.
+// Domain: myntmore.com (no www) 307-redirects to www.myntmore.com, which is
+// where the site actually resolves (confirmed via curl). This schema and
+// every canonical/metadataBase/openGraph URL across the site now consistently
+// point at the www host to match.
 export const SITE_URL = "https://www.myntmore.com";
 
 export interface OrganizationSchema {

@@ -7,11 +7,11 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "Cold Email Added $400K Pipeline for eCommerce SaaS in 6 Weeks",
   description: "How Myntmore built a targeted cold email engine for an eCommerce SaaS, generating 28 meetings, 41% open rate, and $400K in pipeline in 6 weeks.",
-  alternates: { canonical: "https://myntmore.com/case-studies/ecommerce-conversion-playbook" },
+  alternates: { canonical: "https://www.myntmore.com/case-studies/ecommerce-conversion-playbook" },
   openGraph: {
     title: "$400K Pipeline in 6 Weeks | eCommerce SaaS Case Study | Myntmore",
     description: "28 meetings · 41% open rate · $400K pipeline",
-    url: "https://myntmore.com/case-studies/ecommerce-conversion-playbook",
+    url: "https://www.myntmore.com/case-studies/ecommerce-conversion-playbook",
   },
 };
 

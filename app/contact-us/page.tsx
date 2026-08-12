@@ -5,11 +5,11 @@ import FadeIn from "../components/FadeIn";
 export const metadata: Metadata = {
   title: "Contact Myntmore | Book a Free B2B GTM Audit",
   description: "Book a free 30-minute B2B GTM audit with Myntmore. We'll audit your outreach, map your ICP, and tell you exactly what's holding your pipeline back. No pitch, no pressure.",
-  alternates: { canonical: "https://myntmore.com/contact-us" },
+  alternates: { canonical: "https://www.myntmore.com/contact-us" },
   openGraph: {
     title: "Contact Myntmore | Book a Free B2B GTM Audit",
     description: "Book a free 30-minute strategy call. No pitch, no pressure. Just clarity on your pipeline.",
-    url: "https://myntmore.com/contact-us",
+    url: "https://www.myntmore.com/contact-us",
   },
 };
 

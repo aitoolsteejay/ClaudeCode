@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
   description:
     "Myntmore is Mumbai's leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.",
-  alternates: { canonical: "https://myntmore.com" },
+  alternates: { canonical: "https://www.myntmore.com" },
   keywords: [
     "b2b lead generation",
     "b2b lead generation agency",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
     description:
       "We build and run your outbound engine using AI agents and human intelligence. Cold email, LinkedIn outreach, and ABM that books qualified meetings at scale.",
-    url: "https://myntmore.com",
+    url: "https://www.myntmore.com",
   },
 };
 import Hero from "./components/Hero";
@@ -42,10 +42,10 @@ import { buildFaqSchema } from "@/lib/schema";
 import { FAQ_ITEMS } from "@/lib/faq-data";
 
 const HOME_AI_RESOURCES = [
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
-  "https://myntmore.com/about-us",
-  "https://myntmore.com/resources",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
+  "https://www.myntmore.com/about-us",
+  "https://www.myntmore.com/resources",
 ];
 
 export default function Home() {

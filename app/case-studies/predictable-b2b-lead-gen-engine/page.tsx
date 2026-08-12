@@ -7,11 +7,11 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "Full Outbound Engine That Books 15+ Meetings/Month on Autopilot",
   description: "How Myntmore rebuilt a B2B services firm's entire outbound motion from ICP to sequences, achieving 15+ meetings per month, 29% reply rate, and 4x pipeline growth.",
-  alternates: { canonical: "https://myntmore.com/case-studies/predictable-b2b-lead-gen-engine" },
+  alternates: { canonical: "https://www.myntmore.com/case-studies/predictable-b2b-lead-gen-engine" },
   openGraph: {
     title: "15+ Meetings/Month on Autopilot | B2B Outbound Case Study | Myntmore",
     description: "15+ meetings/month · 29% reply rate · 4x pipeline vs prior quarter",
-    url: "https://myntmore.com/case-studies/predictable-b2b-lead-gen-engine",
+    url: "https://www.myntmore.com/case-studies/predictable-b2b-lead-gen-engine",
   },
 };
 

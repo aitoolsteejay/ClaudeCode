@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "You're Booked!",
   description: "Your call with Myntmore is confirmed. We'll see you soon.",
   robots: { index: false, follow: true },
-  alternates: { canonical: "https://myntmore.com/thankyou" },
+  alternates: { canonical: "https://www.myntmore.com/thankyou" },
 };
 
 export default function ThankYouPage() {

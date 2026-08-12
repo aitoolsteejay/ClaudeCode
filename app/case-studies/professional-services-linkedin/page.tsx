@@ -7,11 +7,11 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "LinkedIn Brand Drove 3x Inbound in 90 Days | Professional Services Case Study",
   description: "How Myntmore's personal branding service transformed a referral-dependent consulting founder into a predictable inbound engine, 3x inbound, 18K new followers, 4.8% engagement rate.",
-  alternates: { canonical: "https://myntmore.com/case-studies/professional-services-linkedin" },
+  alternates: { canonical: "https://www.myntmore.com/case-studies/professional-services-linkedin" },
   openGraph: {
     title: "LinkedIn Brand → 3x Inbound in 90 Days | Myntmore",
     description: "3x inbound · 18K new followers · 4.8% engagement rate",
-    url: "https://myntmore.com/case-studies/professional-services-linkedin",
+    url: "https://www.myntmore.com/case-studies/professional-services-linkedin",
   },
 };
 

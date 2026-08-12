@@ -14,11 +14,11 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 export const metadata: Metadata = {
   title: "Events & Webinars",
   description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the team that has booked 12K+ meetings and generated $120M+ in pipeline.",
-  alternates: { canonical: "https://myntmore.com/events" },
+  alternates: { canonical: "https://www.myntmore.com/events" },
   openGraph: {
     title: "Events & Webinars | Myntmore",
     description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the Myntmore team.",
-    url: "https://myntmore.com/events",
+    url: "https://www.myntmore.com/events",
   },
 };
 

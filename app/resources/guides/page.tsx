@@ -6,11 +6,11 @@ import FadeIn from "../../components/FadeIn";
 export const metadata: Metadata = {
   title: "Free B2B Growth Guides",
   description: "Free step-by-step guides on AI agents, Claude skills, and Vibe Prospecting for B2B founders who want to book more meetings without hiring a bigger team.",
-  alternates: { canonical: "https://myntmore.com/resources/guides" },
+  alternates: { canonical: "https://www.myntmore.com/resources/guides" },
   openGraph: {
     title: "Free B2B Growth Guides | Myntmore",
     description: "Step-by-step AI and outbound guides, built by the team behind 12K+ B2B meetings booked.",
-    url: "https://myntmore.com/resources/guides",
+    url: "https://www.myntmore.com/resources/guides",
   },
 };
 

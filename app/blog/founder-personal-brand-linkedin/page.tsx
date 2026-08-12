@@ -4,20 +4,20 @@ import InnerLayout from "../../components/InnerLayout";
 import AskYourAI from "../../components/AskYourAI";
 
 const BLOG_AI_RESOURCES = [
-  "https://myntmore.com/blog/founder-personal-brand-linkedin",
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
+  "https://www.myntmore.com/blog/founder-personal-brand-linkedin",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
 ];
 
 export const metadata: Metadata = {
   title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset | Myntmore Blog",
   description: "Founders who build a LinkedIn presence close deals faster, attract better talent, and generate inbound without ad spend. Learn the exact content strategy that works.",
-  alternates: { canonical: "https://myntmore.com/blog/founder-personal-brand-linkedin" },
+  alternates: { canonical: "https://www.myntmore.com/blog/founder-personal-brand-linkedin" },
   keywords: ["founder personal brand", "linkedin personal branding", "personal brand building mumbai", "founder linkedin strategy", "b2b personal branding"],
   openGraph: {
     title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset",
     description: "Founders with strong LinkedIn presence close deals faster and generate inbound without ad spend.",
-    url: "https://myntmore.com/blog/founder-personal-brand-linkedin",
+    url: "https://www.myntmore.com/blog/founder-personal-brand-linkedin",
   },
 };
 

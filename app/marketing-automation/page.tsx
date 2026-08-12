@@ -6,12 +6,12 @@ import LeadCaptureForm from "../components/LeadCaptureForm";
 export const metadata: Metadata = {
   title: "Marketing Automation Services | B2B Outbound Automation",
   description: "AI-powered marketing automation for B2B companies. Automated outbound sequences, email automation, workflow automation, and lead nurturing systems that run 24/7.",
-  alternates: { canonical: "https://myntmore.com/marketing-automation" },
+  alternates: { canonical: "https://www.myntmore.com/marketing-automation" },
   keywords: ["marketing automation", "email automation", "workflow automation", "b2b marketing automation", "outbound automation"],
   openGraph: {
     title: "Marketing Automation Services | Myntmore",
     description: "AI-powered marketing automation that builds your pipeline while you sleep.",
-    url: "https://myntmore.com/marketing-automation",
+    url: "https://www.myntmore.com/marketing-automation",
   },
 };
 

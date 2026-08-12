@@ -4,20 +4,20 @@ import InnerLayout from "../../components/InnerLayout";
 import AskYourAI from "../../components/AskYourAI";
 
 const BLOG_AI_RESOURCES = [
-  "https://myntmore.com/blog/icp-mapping-b2b",
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
+  "https://www.myntmore.com/blog/icp-mapping-b2b",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
 ];
 
 export const metadata: Metadata = {
   title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close | Myntmore Blog",
   description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
-  alternates: { canonical: "https://myntmore.com/blog/icp-mapping-b2b" },
+  alternates: { canonical: "https://www.myntmore.com/blog/icp-mapping-b2b" },
   keywords: ["ICP mapping", "ideal customer profile", "b2b targeting", "lead qualification", "b2b outbound", "sales targeting"],
   openGraph: {
     title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
     description: "Stop targeting everyone. This is how you find and reach the buyers most likely to say yes.",
-    url: "https://myntmore.com/blog/icp-mapping-b2b",
+    url: "https://www.myntmore.com/blog/icp-mapping-b2b",
   },
 };
 

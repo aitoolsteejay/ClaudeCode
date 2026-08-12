@@ -14,11 +14,11 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 export const metadata: Metadata = {
   title: "B2B Lead Generation Blog",
   description: "In-depth guides on cold email, ICP mapping, LinkedIn outreach, deliverability, and outbound metrics, written by the team that has booked 12K+ B2B meetings.",
-  alternates: { canonical: "https://myntmore.com/resources/blogs" },
+  alternates: { canonical: "https://www.myntmore.com/resources/blogs" },
   openGraph: {
     title: "B2B Lead Generation Blog | Myntmore",
     description: "Practical lead gen guides from the team behind 12K+ B2B meetings booked.",
-    url: "https://myntmore.com/resources/blogs",
+    url: "https://www.myntmore.com/resources/blogs",
   },
 };
 

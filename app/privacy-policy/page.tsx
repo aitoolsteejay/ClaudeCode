@@ -4,7 +4,7 @@ import InnerLayout from "../components/InnerLayout";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Myntmore collects, uses, and protects your information.",
-  alternates: { canonical: "https://myntmore.com/privacy-policy" },
+  alternates: { canonical: "https://www.myntmore.com/privacy-policy" },
 };
 
 const SECTIONS = [

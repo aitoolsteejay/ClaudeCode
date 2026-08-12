@@ -7,11 +7,11 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "Bootstrapped Founder: 0 to 22K Followers and 8 Inbound Deals",
   description: "How Myntmore built a B2B founder's LinkedIn personal brand from scratch, reaching 22K followers, 6.2% engagement rate, and 8 inbound deals in under 6 months.",
-  alternates: { canonical: "https://myntmore.com/case-studies/founder-personal-brand-linkedin" },
+  alternates: { canonical: "https://www.myntmore.com/case-studies/founder-personal-brand-linkedin" },
   openGraph: {
     title: "0 → 22K Followers & 8 Inbound Deals | Founder Brand Case Study | Myntmore",
     description: "22K followers · 8 inbound deals · 6.2% engagement rate",
-    url: "https://myntmore.com/case-studies/founder-personal-brand-linkedin",
+    url: "https://www.myntmore.com/case-studies/founder-personal-brand-linkedin",
   },
 };
 

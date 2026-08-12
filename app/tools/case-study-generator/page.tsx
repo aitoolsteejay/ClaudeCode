@@ -5,7 +5,7 @@ import CaseStudyGeneratorClient from "./CaseStudyGeneratorClient";
 export const metadata: Metadata = {
   title: "Case Study & Proposal Generator",
   description: "Free AI tool that turns a finished project into a case study, or a prospect conversation into a proposal draft. No invented numbers, no generic filler.",
-  alternates: { canonical: "https://myntmore.com/tools/case-study-generator" },
+  alternates: { canonical: "https://www.myntmore.com/tools/case-study-generator" },
 };
 
 export default function CaseStudyGeneratorPage() {

@@ -5,7 +5,7 @@ import FounderPresenceClient from "./FounderPresenceClient";
 export const metadata: Metadata = {
   title: "Founder Presence Analyzer",
   description: "Free AI tool that benchmarks your LinkedIn presence against competitors and gives you positioning recommendations and headline suggestions.",
-  alternates: { canonical: "https://myntmore.com/tools/founder-presence-analyzer" },
+  alternates: { canonical: "https://www.myntmore.com/tools/founder-presence-analyzer" },
 };
 
 export default function FounderPresenceAnalyzer() {

@@ -10,11 +10,11 @@ import Underline from "./Underline";
 export const metadata: Metadata = {
   title: "80+ US Meetings Booked in 1 Month with AI Agents",
   description: "The exact AI-agent blueprint behind 800 LinkedIn connections, 80+ US B2B meetings, and 4 new clients a month, fully automated with n8n, Apollo/Clay, and AI enrichment.",
-  alternates: { canonical: "https://myntmore.com/instagram-resources/80-us-meetings-ai-agents" },
+  alternates: { canonical: "https://www.myntmore.com/instagram-resources/80-us-meetings-ai-agents" },
   openGraph: {
     title: "80+ US Meetings Booked in 1 Month with AI Agents",
     description: "800 connections/month → 80+ US meetings/month → 4 new clients/month. The full AI-agent blueprint.",
-    url: "https://myntmore.com/instagram-resources/80-us-meetings-ai-agents",
+    url: "https://www.myntmore.com/instagram-resources/80-us-meetings-ai-agents",
   },
 };
 
@@ -172,7 +172,7 @@ export default function AiAgentsMeetingsBlueprint() {
           <p className="text-base leading-relaxed hero-fade-d2 mb-8" style={{ color: "#52525B" }}>
             <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Tejas</a>{" "}
             isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At{" "}
-            <a href="https://myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
+            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
           </p>
 
           <FadeIn delay={150}>

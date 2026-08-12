@@ -9,11 +9,11 @@ import { buildFaqSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Agency vs. In-House SDR: How to Build B2B Outbound",
   description: "A direct, non-salesy comparison of hiring a B2B outbound agency vs. building an in-house SDR team, covering cost, ramp-up time, tooling, and risk, with real figures from running both.",
-  alternates: { canonical: "https://myntmore.com/agency-vs-in-house" },
+  alternates: { canonical: "https://www.myntmore.com/agency-vs-in-house" },
   openGraph: {
     title: "Agency vs. In-House SDR: How to Build B2B Outbound | Myntmore",
     description: "Cost, speed, risk, and when each approach actually makes sense, no one-sided pitch.",
-    url: "https://myntmore.com/agency-vs-in-house",
+    url: "https://www.myntmore.com/agency-vs-in-house",
   },
 };
 

@@ -4,20 +4,20 @@ import InnerLayout from "../../components/InnerLayout";
 import AskYourAI from "../../components/AskYourAI";
 
 const BLOG_AI_RESOURCES = [
-  "https://myntmore.com/blog/linkedin-outreach-sequences",
-  "https://myntmore.com",
-  "https://myntmore.com/case-studies",
+  "https://www.myntmore.com/blog/linkedin-outreach-sequences",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/case-studies",
 ];
 
 export const metadata: Metadata = {
   title: "LinkedIn Outreach Sequences That Actually Get Replies | Myntmore Blog",
   description: "Most LinkedIn outreach fails because it is too salesy too fast. Here is the exact multi-touch sequence structure we use to warm up prospects and convert connections into conversations.",
-  alternates: { canonical: "https://myntmore.com/blog/linkedin-outreach-sequences" },
+  alternates: { canonical: "https://www.myntmore.com/blog/linkedin-outreach-sequences" },
   keywords: ["linkedin outreach", "linkedin sequence", "b2b linkedin", "linkedin lead generation", "linkedin dms", "connection request templates"],
   openGraph: {
     title: "LinkedIn Outreach Sequences That Actually Get Replies",
     description: "The multi-touch LinkedIn sequence structure that warms up prospects and books meetings.",
-    url: "https://myntmore.com/blog/linkedin-outreach-sequences",
+    url: "https://www.myntmore.com/blog/linkedin-outreach-sequences",
   },
 };
 

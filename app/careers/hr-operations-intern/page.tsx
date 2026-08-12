@@ -5,11 +5,11 @@ import InnerLayout from "../../components/InnerLayout";
 export const metadata: Metadata = {
   title: "HR and Operations Intern | Myntmore Mumbai | Rs 7,000–15,000/mo",
   description: "Join Myntmore as an HR and Operations Intern in Worli, Mumbai. Build real hiring pipelines, KPI/KRA frameworks, and HR systems directly with the founder. 6-month minimum, PPO based on performance.",
-  alternates: { canonical: "https://myntmore.com/careers/hr-operations-intern" },
+  alternates: { canonical: "https://www.myntmore.com/careers/hr-operations-intern" },
   openGraph: {
     title: "HR and Operations Intern | Myntmore Careers",
     description: "Build real hiring pipelines and HR systems for a fast-growing agency. Internship, Worli Mumbai.",
-    url: "https://myntmore.com/careers/hr-operations-intern",
+    url: "https://www.myntmore.com/careers/hr-operations-intern",
   },
 };
 

@@ -14,9 +14,9 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 ]);
 
 const CASE_STUDIES_AI_RESOURCES = [
-  "https://myntmore.com/case-studies",
-  "https://myntmore.com",
-  "https://myntmore.com/about-us",
+  "https://www.myntmore.com/case-studies",
+  "https://www.myntmore.com",
+  "https://www.myntmore.com/about-us",
 ];
 
 // ── Blob parallax ──────────────────────────────────────────────────────────────

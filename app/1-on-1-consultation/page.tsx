@@ -5,12 +5,12 @@ import FadeIn from "../components/FadeIn";
 export const metadata: Metadata = {
   title: "1-on-1 B2B Growth Consultation | Free GTM Audit",
   description: "Book a 1-on-1 consultation with Tejas Jhaveri, B2B growth expert. Free 30-minute GTM audit: outreach review, ICP mapping, pipeline bottleneck diagnosis. No pitch, no pressure.",
-  alternates: { canonical: "https://myntmore.com/1-on-1-consultation" },
+  alternates: { canonical: "https://www.myntmore.com/1-on-1-consultation" },
   keywords: ["1 to 1 consultation", "b2b growth consultation", "gtm audit", "outreach consultation", "tejas jhaveri"],
   openGraph: {
     title: "1-on-1 B2B Growth Consultation | Myntmore",
     description: "Free 30-minute GTM audit with Tejas Jhaveri. No pitch, no pressure.",
-    url: "https://myntmore.com/1-on-1-consultation",
+    url: "https://www.myntmore.com/1-on-1-consultation",
   },
 };
 

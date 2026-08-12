@@ -8,11 +8,11 @@ import Underline from "./Underline";
 export const metadata: Metadata = {
   title: "The 6 Claude Skills Guide",
   description: "Six ready-to-use Claude skills for founders and marketers: content distribution, LinkedIn growth, lead generation, competitor research, proposals, and personal brand, complete with copy-paste prompts.",
-  alternates: { canonical: "https://myntmore.com/instagram-resources/claude-skills-guide" },
+  alternates: { canonical: "https://www.myntmore.com/instagram-resources/claude-skills-guide" },
   openGraph: {
     title: "The 6 Claude Skills Guide",
     description: "Six ready-to-use Claude skills for founders and marketers, complete with copy-paste prompts.",
-    url: "https://myntmore.com/instagram-resources/claude-skills-guide",
+    url: "https://www.myntmore.com/instagram-resources/claude-skills-guide",
   },
 };
 

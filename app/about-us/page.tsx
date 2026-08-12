@@ -11,11 +11,11 @@ import { SITE_URL } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
   description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore, Mumbai's leading AI-powered outbound agency. 10+ years of lead generation expertise.",
-  alternates: { canonical: "https://myntmore.com/about-us" },
+  alternates: { canonical: "https://www.myntmore.com/about-us" },
   openGraph: {
     title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
     description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore. 12K+ meetings booked, $120M+ pipeline generated. Taught at IIT & IIM.",
-    url: "https://myntmore.com/about-us",
+    url: "https://www.myntmore.com/about-us",
   },
 };
 

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://myntmore.com/sitemap.xml",
+    sitemap: "https://www.myntmore.com/sitemap.xml",
   };
 }

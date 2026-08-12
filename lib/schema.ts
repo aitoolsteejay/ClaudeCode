@@ -17,7 +17,7 @@ export interface OrganizationSchema {
   logo: string;
   description: string;
   email: string;
-  founder: { "@type": "Person"; name: string };
+  founder: { "@type": "Person"; name: string; sameAs: string[] };
   address: {
     "@type": "PostalAddress";
     streetAddress: string;
@@ -38,7 +38,7 @@ export const organizationSchema: OrganizationSchema = {
   description:
     "Myntmore is Mumbai's leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.",
   email: "growth@myntmore.com",
-  founder: { "@type": "Person", name: "Tejas Jhaveri" },
+  founder: { "@type": "Person", name: "Tejas Jhaveri", sameAs: ["https://linkedin.com/in/tejasjhaveri"] },
   address: {
     "@type": "PostalAddress",
     streetAddress: "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli",

@@ -98,7 +98,7 @@ export default function Hero() {
     const stats = [
       { ref: stat1Ref, target: 120,   duration: 1800, format: (n: number) => `$${Math.round(n)}M+` },
       { ref: stat2Ref, target: 18,    duration: 1400, format: (n: number) => `${Math.round(n)} Days` },
-      { ref: stat3Ref, target: 30000, duration: 2200, format: (n: number) => `${Math.round(n).toLocaleString()}+` },
+      { ref: stat3Ref, target: 12000, duration: 2200, format: (n: number) => `${Math.round(n).toLocaleString()}+` },
     ];
 
     const animIds: number[] = [];
@@ -384,7 +384,7 @@ export default function Hero() {
             clipPath: "inset(0 100% 0 0)",
           }}
         >
-          <span>30,000+ meetings</span>
+          <span>12,000+ meetings</span>
           <span>booked & counting ✓</span>
         </div>
         {/* Arrow draws in after */}

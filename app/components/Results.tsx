@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 
 const METRICS = [
   {
-    target: 30000,
+    target: 12000,
     duration: 2000,
     format: (n: number) => `${Math.round(n).toLocaleString()}+`,
     label: "Meetings Booked",

@@ -5,6 +5,8 @@ import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import StatTicker from "../components/StatTicker";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import JsonLd from "../components/JsonLd";
+import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
@@ -12,16 +14,32 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://myntmore.com/about-us" },
   openGraph: {
     title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
-    description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore. 300+ B2B clients. Taught at IIT & IIM.",
+    description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore. 12K+ meetings booked, $120M+ pipeline generated. Taught at IIT & IIM.",
     url: "https://myntmore.com/about-us",
   },
 };
 
+// Same Person the Organization schema (lib/schema.ts) references as
+// founder, fleshed out here with the fields that belong on a bio page.
+const PERSON_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Tejas Jhaveri",
+  jobTitle: "Founder",
+  worksFor: {
+    "@type": "Organization",
+    name: "Myntmore",
+    url: SITE_URL,
+  },
+  description: "Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of B2B lead generation experience. He founded Myntmore in 2019 and has taught B2B growth methodologies at IIT and IIM.",
+  sameAs: ["https://linkedin.com/in/tejasjhaveri"],
+};
+
 const CREDENTIALS = [
-  { stat: "300+", label: "B2B clients helped", accent: "#F5B731" },
-  { stat: "6yrs", label: "Iteration & testing", accent: "#3b82f6" },
-  { stat: "IIT/IIM", label: "Teaching", accent: "#10b981" },
-  { stat: "Tech First", label: "AI labs daily", accent: "#a855f7" },
+  { stat: "12K+", label: "Meetings booked", accent: "#F5B731" },
+  { stat: "$120M+", label: "Pipeline generated", accent: "#3b82f6" },
+  { stat: "120+", label: "B2B companies served", accent: "#10b981" },
+  { stat: "10+", label: "Years in lead generation", accent: "#a855f7" },
 ];
 
 const EXPERTISE = [
@@ -35,6 +53,7 @@ const EXPERTISE = [
 export default function AboutUs() {
   return (
     <InnerLayout>
+      <JsonLd data={PERSON_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <div className="mb-4">
@@ -46,7 +65,7 @@ export default function AboutUs() {
             Built by a founder who figured outbound out the hard way
           </h1>
           <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
-            Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of lead generation experience and a track record of 300+ clients.
+            Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of lead generation experience. He founded Myntmore in 2019, and the team has since booked 12,000+ meetings and generated $120M+ in pipeline for 120+ B2B companies.
           </p>
         </div>
       </section>
@@ -90,13 +109,13 @@ export default function AboutUs() {
           <div className="space-y-6">
             <div>
               <p className="text-base leading-relaxed mb-4" style={{ color: "#52525B" }}>
-                Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai. With over 10 years of B2B lead generation experience, Tejas founded Myntmore after watching too many founders burn thousands on agencies with no systemic approach.
+                Tejas Jhaveri founded Myntmore in Mumbai in 2019, originally as an e-commerce and growth agency helping D2C brands build and run their online storefronts. Between 2023 and 2024, the team repositioned entirely around B2B outbound: cold email, LinkedIn outreach, and account-based marketing for founders and sales teams who need a predictable pipeline without hiring an in-house SDR team.
               </p>
               <p className="text-base leading-relaxed mb-4" style={{ color: "#52525B" }}>
-                As a growth educator, Tejas has taught B2B methodologies at IIT and IIM, helping shape the next generation of growth professionals in India.
+                Tejas himself is a TEDx speaker, angel investor, and B2B growth expert with over 10 years of lead generation experience. As a growth educator, he has taught B2B methodologies at IIT and IIM, helping shape the next generation of growth professionals in India.
               </p>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-                He has spent 6 years iterating, split-testing, and refining outbound systems across 300+ B2B clients, from bootstrapped founders to Series B companies.
+                Myntmore is Mumbai&apos;s leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.
               </p>
             </div>
             <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>

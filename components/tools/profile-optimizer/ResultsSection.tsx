@@ -185,8 +185,9 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
 
   return (
     <section className="py-16 px-6">
-      <div className="max-w-4xl mx-auto mb-6 flex justify-end">
-        <Button onClick={downloadPDF} variant="outline" className="gap-2">
+      <div className="max-w-4xl mx-auto mb-6 flex items-center justify-between gap-4">
+        <h1 className="text-2xl sm:text-3xl font-black">Your LinkedIn Optimization Results</h1>
+        <Button onClick={downloadPDF} variant="outline" className="gap-2 flex-shrink-0">
           <Download className="h-4 w-4" />
           Download as PDF
         </Button>

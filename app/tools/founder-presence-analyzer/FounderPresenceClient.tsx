@@ -236,7 +236,7 @@ export default function FounderPresenceClient() {
             {/* Step: Your Activity */}
             {step === "activity" && (
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <h1 className="text-3xl sm:text-4xl font-black mb-2">Your Activity</h1>
+                <h2 className="text-3xl sm:text-4xl font-black mb-2">Your Activity</h2>
                 <p className="text-muted-foreground mb-10">Start with your own LinkedIn footprint in the last 30 days.</p>
                 <div className="space-y-8">
                   <div>
@@ -283,7 +283,7 @@ export default function FounderPresenceClient() {
             {/* Step: Competitors */}
             {step === "competitors" && (
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <h1 className="text-3xl sm:text-4xl font-black mb-2">Competitors</h1>
+                <h2 className="text-3xl sm:text-4xl font-black mb-2">Competitors</h2>
                 <p className="text-muted-foreground mb-10">Add up to 5 key competitors you&apos;re benchmarking against.</p>
                 <div className="space-y-6">
                   {formData.competitors.map((comp, idx) => (
@@ -383,7 +383,7 @@ export default function FounderPresenceClient() {
             {/* Step: Content Themes */}
             {step === "themes" && (
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <h1 className="text-3xl sm:text-4xl font-black mb-2">Content Themes</h1>
+                <h2 className="text-3xl sm:text-4xl font-black mb-2">Content Themes</h2>
                 <p className="text-muted-foreground mb-10">Map out the narrative overlap and gaps.</p>
                 <div className="space-y-12">
                   <div>
@@ -440,7 +440,7 @@ export default function FounderPresenceClient() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-black mb-4">Ready for Analysis</h1>
+                <h2 className="text-3xl sm:text-4xl font-black mb-4">Ready for Analysis</h2>
                 <p className="text-muted-foreground max-w-md mx-auto mb-12">
                   Thanks, {leadData?.name.split(" ")[0]}. We&apos;re ready to calculate your competitive gap.
                 </p>

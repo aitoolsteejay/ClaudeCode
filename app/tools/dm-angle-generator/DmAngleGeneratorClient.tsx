@@ -143,7 +143,7 @@ export default function DmAngleGeneratorClient() {
       {leadData && (
         <div className="min-h-screen py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-black text-center mb-10">Generate Your Angles</h2>
+            <h1 className="text-2xl sm:text-3xl font-black text-center mb-10">Generate Your Angles</h1>
             <InputPanel onGenerate={generateAngles} isLoading={isLoading} />
           </div>
 

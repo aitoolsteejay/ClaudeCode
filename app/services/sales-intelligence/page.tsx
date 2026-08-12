@@ -3,6 +3,21 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import JsonLd from "../../components/JsonLd";
+import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const SERVICE_SCHEMA = buildServiceSchema({
+  name: "Sales Intelligence & ICP Mapping",
+  description: "We monitor 40+ buying signals daily (funding rounds, hiring surges, tech stack changes) so you reach in-market accounts the moment they enter the buying window.",
+  serviceType: "Sales Intelligence and ICP Mapping",
+  url: `${SITE_URL}/services/sales-intelligence`,
+});
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Services", url: `${SITE_URL}/services` },
+  { name: "Sales Intelligence", url: `${SITE_URL}/services/sales-intelligence` },
+]);
 
 /* ─── Data ──────────────────────────────────────────────────── */
 
@@ -236,6 +251,8 @@ export default function SalesIntelligence() {
 
   return (
     <InnerLayout>
+      <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.18) 0%, rgba(124,58,237,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

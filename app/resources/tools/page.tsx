@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import FadeIn from "../../components/FadeIn";
+import JsonLd from "../../components/JsonLd";
+import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Resources", url: `${SITE_URL}/resources` },
+  { name: "Free Tools", url: `${SITE_URL}/resources/tools` },
+]);
 
 export const metadata: Metadata = {
   title: "Free B2B Lead Generation Tools | Myntmore",
@@ -110,6 +118,7 @@ const FREE_TOOLS = [
 export default function ToolsPage() {
   return (
     <InnerLayout>
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,160,0,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.20) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

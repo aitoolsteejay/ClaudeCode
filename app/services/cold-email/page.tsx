@@ -3,6 +3,21 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import JsonLd from "../../components/JsonLd";
+import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const SERVICE_SCHEMA = buildServiceSchema({
+  name: "Cold Email Infrastructure",
+  description: "We build the deliverability infrastructure, write the sequences, and manage replies, so your emails reach the primary inbox and your pipeline fills consistently.",
+  serviceType: "Cold Email Infrastructure and Deliverability",
+  url: `${SITE_URL}/services/cold-email`,
+});
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Services", url: `${SITE_URL}/services` },
+  { name: "Cold Email", url: `${SITE_URL}/services/cold-email` },
+]);
 
 /* ─── Data ──────────────────────────────────────────────────── */
 
@@ -237,6 +252,8 @@ export default function ColdEmail() {
 
   return (
     <InnerLayout>
+      <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(34,197,94,0.18) 0%, rgba(22,163,74,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

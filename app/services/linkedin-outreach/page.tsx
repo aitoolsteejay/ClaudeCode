@@ -3,6 +3,21 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import JsonLd from "../../components/JsonLd";
+import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const SERVICE_SCHEMA = buildServiceSchema({
+  name: "LinkedIn Outreach & Automation",
+  description: "We build and manage LinkedIn outreach sequences that feel human, stay account-safe, and consistently put you in front of the decision-makers you actually want to reach.",
+  serviceType: "LinkedIn Outreach and Automation",
+  url: `${SITE_URL}/services/linkedin-outreach`,
+});
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Services", url: `${SITE_URL}/services` },
+  { name: "LinkedIn Outreach", url: `${SITE_URL}/services/linkedin-outreach` },
+]);
 
 /* ─── Data ──────────────────────────────────────────────────── */
 
@@ -230,6 +245,8 @@ export default function LinkedInOutreach() {
 
   return (
     <InnerLayout>
+      <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,119,181,0.18) 0%, rgba(0,119,181,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

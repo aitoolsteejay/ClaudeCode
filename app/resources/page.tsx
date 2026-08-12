@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Resources", url: `${SITE_URL}/resources` },
+]);
 
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
@@ -66,6 +73,7 @@ export default function Resources() {
 
   return (
     <InnerLayout>
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       {/* ── Hero ── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         {/* Decorative blobs */}

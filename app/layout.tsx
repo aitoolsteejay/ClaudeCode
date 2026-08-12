@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Caveat } from "next/font/google";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
+import JsonLd from "./components/JsonLd";
+import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({
@@ -111,6 +113,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${caveat.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <JsonLd data={organizationSchema} />
       </head>
       <body className="bg-background text-white antialiased">
         {children}

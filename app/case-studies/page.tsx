@@ -5,6 +5,13 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import AskYourAI from "../components/AskYourAI";
 import StatTicker from "../components/StatTicker";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Case Studies", url: `${SITE_URL}/case-studies` },
+]);
 
 const CASE_STUDIES_AI_RESOURCES = [
   "https://myntmore.com/case-studies",
@@ -181,6 +188,7 @@ const CASE_STUDIES: CaseStudy[] = [
 export default function CaseStudies() {
   return (
     <InnerLayout>
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       {/* Hero */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <Blobs />

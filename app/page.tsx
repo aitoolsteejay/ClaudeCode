@@ -37,6 +37,9 @@ import FAQ from "./components/FAQ";
 import AskYourAI from "./components/AskYourAI";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
+import JsonLd from "./components/JsonLd";
+import { buildFaqSchema } from "@/lib/schema";
+import { FAQ_ITEMS } from "@/lib/faq-data";
 
 const HOME_AI_RESOURCES = [
   "https://myntmore.com",
@@ -48,6 +51,7 @@ const HOME_AI_RESOURCES = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
+      <JsonLd data={buildFaqSchema(FAQ_ITEMS)} />
       <Navbar />
       <Hero />
       <LogoStrip />

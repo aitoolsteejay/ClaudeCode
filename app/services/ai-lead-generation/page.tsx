@@ -3,6 +3,21 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import JsonLd from "../../components/JsonLd";
+import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const SERVICE_SCHEMA = buildServiceSchema({
+  name: "AI Lead Generation",
+  description: "Custom AI agents research, qualify, and prioritise leads at scale, so your sales team only talks to people worth their time.",
+  serviceType: "AI-Powered B2B Lead Generation",
+  url: `${SITE_URL}/services/ai-lead-generation`,
+});
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Services", url: `${SITE_URL}/services` },
+  { name: "AI Lead Generation", url: `${SITE_URL}/services/ai-lead-generation` },
+]);
 
 const STEPS = [
   { n: "01", title: "ICP & Agent Setup", desc: "We map your Ideal Customer Profile in detail, then configure custom AI agents with your specific qualification criteria, triggers, and scoring weights." },
@@ -208,6 +223,8 @@ export default function AILeadGeneration() {
 
   return (
     <InnerLayout>
+      <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={BREADCRUMB_SCHEMA} />
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(99,102,241,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob2} aria-hidden style={{ position: "absolute", top: "40%", left: "75%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(255,130,0,0.08) 40%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", willChange: "transform" }} />

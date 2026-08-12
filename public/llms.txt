@@ -19,6 +19,7 @@
 - [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.
 - [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
 - [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
+- [Agency vs. In-House SDR](https://www.myntmore.com/agency-vs-in-house): Direct comparison of hiring a B2B outbound agency vs. building an in-house SDR team, covering cost, ramp-up time, tooling, and risk.
 
 ## About
 - [About Myntmore & Tejas Jhaveri](https://www.myntmore.com/about-us)

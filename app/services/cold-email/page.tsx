@@ -547,7 +547,7 @@ export default function ColdEmail() {
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
-            Ready for cold email that<br /><span style={{ color: "#16a34a" }}>actually works?</span>
+            Get cold email that<br /><span style={{ color: "#16a34a" }}>actually works</span>
           </h2>
 
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>

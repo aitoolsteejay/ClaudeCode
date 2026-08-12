@@ -688,7 +688,7 @@ export default function GIATechStackPage() {
             Curated by Myntmore
           </div>
           <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#ffffff" }}>
-            Want help implementing<br />any of these?
+            We can help you implement<br />any of these
           </h2>
           <p className="mb-10 text-base max-w-md mx-auto" style={{ color: "#A8A29E" }}>
             We help jewellery brands and B2B businesses turn AI tools into real pipeline.

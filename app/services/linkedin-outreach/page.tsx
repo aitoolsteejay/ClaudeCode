@@ -540,7 +540,7 @@ export default function LinkedInOutreach() {
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
-            Ready to fill your<br /><span style={{ color: "#0077b5" }}>LinkedIn inbox?</span>
+            Let&apos;s fill your<br /><span style={{ color: "#0077b5" }}>LinkedIn inbox</span>
           </h2>
 
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>

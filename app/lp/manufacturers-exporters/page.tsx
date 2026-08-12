@@ -316,7 +316,7 @@ function DarkCTASection() {
       <div aria-hidden="true" style={{ position: "absolute", top: "50%", left: "30%", width: "600px", height: "400px", marginTop: "-200px", marginLeft: "-300px", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(245,183,49,0.15) 0%, transparent 65%)", filter: "blur(60px)", pointerEvents: "none" }} />
       <div ref={fade} className="relative z-10 max-w-3xl mx-auto text-center">
         <h2 className="text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "#ffffff" }}>
-          Ready to reach global buyers?
+          Let&apos;s get you in front of global buyers
         </h2>
         <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
           Book a free 30-minute export GTM audit. We will map your target markets, identify the right buyer profiles, and tell you exactly how to generate international meetings.

@@ -360,7 +360,7 @@ export default function LeadMagnetIdeasClient() {
 
               <div className="relative group overflow-hidden bg-white rounded-2xl p-12 md:p-20 text-center shadow-sm" style={{ border: "2px solid #F5B731" }}>
                 <h2 className="text-3xl sm:text-4xl font-black mb-6 relative z-10 leading-tight">
-                  Want us to build and run these for you?
+                  We can build and run these for you
                 </h2>
                 <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-light leading-relaxed">
                   Myntmore designs, builds, and distributes lead magnets as part of a full outbound system for elite B2B founders.

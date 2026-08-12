@@ -123,9 +123,9 @@ export default function CTABanner() {
           id="cta-heading"
           className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#0a0a0a] mb-6 leading-[0.95]"
         >
-          Ready to Fill
+          Let&apos;s Fill
           <br />
-          <span style={{ color: "#F5B731" }}>Your Pipeline?</span>
+          <span style={{ color: "#F5B731" }}>Your Pipeline</span>
         </h2>
 
         <p className="text-lg sm:text-xl text-[#52525B] max-w-2xl mx-auto mb-10 leading-relaxed">

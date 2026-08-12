@@ -436,7 +436,7 @@ export default function AILeadGeneration() {
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F5B731" }}>Limited spots available</span>
           </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
-            Ready to let AI<br /><span style={{ color: "#3b82f6" }}>fill your pipeline?</span>
+            Let AI<br /><span style={{ color: "#3b82f6" }}>fill your pipeline</span>
           </h2>
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>We&apos;ll configure a custom AI lead generation setup for your ICP in <span className="font-semibold" style={{ color: "#0a0a0a" }}>7 days</span>. No generic lists. No wasted budget.</p>
           <a href="/founder-meeting" className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">

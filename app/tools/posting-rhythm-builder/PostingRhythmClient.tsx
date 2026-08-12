@@ -432,7 +432,7 @@ export default function PostingRhythmClient() {
                   </svg>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-black mb-6 relative z-10 leading-tight">
-                  Want us to execute your content engine?
+                  We can execute your content engine for you
                 </h2>
                 <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-light leading-relaxed">
                   Myntmore handles the complete content cycle: Strategy, Copywriting, and Daily Distribution for elite B2B founders.

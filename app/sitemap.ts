@@ -54,5 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/seo`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/1-on-1-consultation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/personal-branding`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/sitemap`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 }

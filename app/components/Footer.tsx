@@ -246,6 +246,7 @@ export default function Footer() {
             <Link href="/contact-us" className="text-xs transition-colors" style={{ color: "#B8B0A7" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#B8B0A7"; }}>Contact</Link>
             <Link href="/careers" className="text-xs transition-colors" style={{ color: "#B8B0A7" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#B8B0A7"; }}>Careers</Link>
             <Link href="/privacy-policy" className="text-xs transition-colors" style={{ color: "#B8B0A7" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#B8B0A7"; }}>Privacy Policy</Link>
+            <Link href="/sitemap" className="text-xs transition-colors" style={{ color: "#B8B0A7" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#B8B0A7"; }}>Site Map</Link>
           </div>
         </div>
       </div>

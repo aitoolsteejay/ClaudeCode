@@ -24,5 +24,6 @@
 ## About
 - [About Myntmore & Tejas Jhaveri](https://www.myntmore.com/about-us)
 - [Contact](https://www.myntmore.com/contact-us)
+- [Site Map](https://www.myntmore.com/sitemap): Full, human-readable list of every page on the site.
 
 Note: this file should be kept manually in sync with the site — if a service or page name changes, update this file in the same PR/commit.

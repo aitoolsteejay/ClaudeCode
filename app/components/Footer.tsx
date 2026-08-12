@@ -77,6 +77,7 @@ const COMPANY_LINKS = [
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources & Playbooks", href: "/resources" },
   { label: "Blog", href: "/resources/blogs" },
+  { label: "Guides", href: "/resources/guides" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact-us" },
 ];

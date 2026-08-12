@@ -1,0 +1,27 @@
+# Myntmore
+
+> Myntmore is a Mumbai-based AI-powered B2B outbound agency that builds and runs cold email, LinkedIn outreach, and account-based marketing (ABM) systems for B2B companies, helping founders and sales teams book qualified meetings without hiring in-house SDRs.
+
+## Company
+- Founded: 2019, by Tejas Jhaveri
+- Headquarters: Mumbai, India
+- Website: https://www.myntmore.com
+
+## Services
+- [Cold Email Infrastructure](https://www.myntmore.com/services/cold-email): Domain warm-up, deliverability infrastructure, and personalised cold email sequences for B2B outbound.
+- [LinkedIn Outreach & Automation](https://www.myntmore.com/services/linkedin-outreach): Connection request and messaging sequences that turn LinkedIn into a meeting-booking channel.
+- [AI Lead Generation](https://www.myntmore.com/services/ai-lead-generation): AI-driven prospecting, list building, and enrichment for B2B ICP targeting.
+- [Account-Based Marketing](https://www.myntmore.com/services/ai-lead-generation): Coordinated multi-channel campaigns targeting high-value accounts.
+- [Personal Branding](https://www.myntmore.com/services/personal-branding): LinkedIn thought leadership and profile positioning for founders and execs.
+- [Sales Intelligence & ICP Mapping](https://www.myntmore.com/services/sales-intelligence): Ideal customer profile research and buyer signal tracking.
+
+## Resources
+- [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.
+- [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
+- [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
+
+## About
+- [About Myntmore & Tejas Jhaveri](https://www.myntmore.com/about-us)
+- [Contact](https://www.myntmore.com/contact-us)
+
+Note: this file should be kept manually in sync with the site — if a service or page name changes, update this file in the same PR/commit.

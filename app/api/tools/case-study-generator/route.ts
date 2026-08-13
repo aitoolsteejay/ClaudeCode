@@ -63,7 +63,7 @@ Rules:
 - Do not invent numbers. Only put a number in "stats" if a real number appears in the result text above. If fewer than 3 real numbers exist, return fewer stats (even zero is fine).
 - Do not invent a client quote. Only fill "pullQuote" if a testimonial was provided above, otherwise return null.
 - Structure the rough "what you did" notes into 2 to 3 clear phases, do not invent activities that were not implied.
-- "servicesUsed" should be 2 to 4 short service-category tags inferred from the approach (e.g. "Cold Email", "LinkedIn Outreach", "Sales Intelligence"), not generic words.
+- "servicesUsed" should be 2 to 4 short service-category tags inferred from the approach (e.g. "Cold Email", "LinkedIn Outreach", "ICP Mapping & Lead Scoring"), not generic words.
 - The headline must be outcome-focused and specific to this project, not generic.
 
 Return valid JSON matching the schema.`;

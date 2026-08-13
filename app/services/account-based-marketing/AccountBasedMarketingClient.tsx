@@ -7,84 +7,83 @@ import JsonLd from "../../components/JsonLd";
 import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
-  name: "ICP Mapping & Lead Scoring",
-  description: "We monitor 40+ buying signals daily (funding rounds, hiring surges, tech stack changes) so you reach in-market accounts the moment they enter the buying window.",
-  serviceType: "ICP Mapping and Lead Scoring",
-  url: `${SITE_URL}/services/sales-intelligence`,
+  name: "Account-Based Marketing",
+  description: "Coordinated multi-channel campaigns across email and LinkedIn that engage the entire buying committee at your highest-value target accounts, so your AE isn't the first name they've seen.",
+  serviceType: "Account-Based Marketing",
+  url: `${SITE_URL}/services/account-based-marketing`,
 });
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
   { name: "Services", url: `${SITE_URL}/services` },
-  { name: "ICP Mapping & Lead Scoring", url: `${SITE_URL}/services/sales-intelligence` },
+  { name: "Account-Based Marketing", url: `${SITE_URL}/services/account-based-marketing` },
 ]);
 
 /* ─── Data ──────────────────────────────────────────────────── */
 
 const STEPS = [
-  { n: "01", title: "ICP & Signal Mapping", desc: "We map your Ideal Customer Profile in precise detail, then identify the 40+ intent signals that indicate an account is actively in-market: funding rounds, hiring patterns, tech stack changes, leadership moves, and more." },
-  { n: "02", title: "Daily List Building & Enrichment", desc: "Our system monitors signal sources daily and surfaces accounts matching your ICP the moment they enter buying mode. Every account is enriched with company data, tech stack, headcount, and decision-maker contacts." },
-  { n: "03", title: "Account Scoring & Prioritisation", desc: "Accounts are scored by signal strength, ICP fit, and engagement indicators. Your team sees a prioritised view: the 10% of accounts worth focusing on this week, not a raw list of thousands to triage manually." },
-  { n: "04", title: "CRM Export & Signal Dashboard", desc: "Scored accounts push to your CRM daily with full signal context attached. The signal dashboard shows you what triggered each account, so your outreach opens with the exact insight that makes it relevant." },
+  { n: "01", title: "Target Account Selection", desc: "We build a tiered list of your highest-value target accounts, scored against your ICP, deal size, and buying-intent signals. Tier 1 gets the most coordinated attention; Tier 3 stays on a lighter-touch cadence." },
+  { n: "02", title: "Multi-Channel Campaign Design", desc: "LinkedIn outreach, email sequences, and (where relevant) retargeting are planned around the same account list, timed to reinforce each other instead of running as separate, uncoordinated efforts." },
+  { n: "03", title: "Buying Committee Engagement", desc: "We identify and message multiple stakeholders per account, not just one contact, so by the time your AE reaches out, several people at the account already recognise your name." },
+  { n: "04", title: "Sales Handoff & Reporting", desc: "Engagement data (who opened, replied, clicked, or accepted) rolls up into account-level reporting and pushes to your CRM, so your sales team walks into every conversation with full context." },
 ];
 
 const DELIVERABLES = [
-  "40+ intent signal monitoring across your target market",
-  "Daily list refresh with trigger-based account surfacing",
-  "Account scoring by fit, intent, and signal strength",
-  "CRM-ready exports with full signal context attached",
-  "ICP mapping and scoring model calibration",
-  "Signal dashboard showing real-time in-market accounts",
+  "Tiered target account list built from your ICP and deal-size criteria",
+  "Coordinated LinkedIn + email campaigns run against the same account list",
+  "Multi-threaded messaging to reach multiple stakeholders per account",
+  "Account-level engagement reporting and attribution",
+  "Structured sales handoff so your AEs open with full context",
+  "Monthly account tiering review and list refresh",
 ];
 
 const WHO_FOR = [
-  { icon: "🎯", title: "ABM & Outbound Teams", desc: "Teams running account-based campaigns who need to know which accounts to prioritise this week, not which ones fit the ICP in theory." },
-  { icon: "⚡", title: "High-Velocity Sales Teams", desc: "Sales organisations processing large account universes who need a system that surfaces the right 200 accounts from a TAM of 10,000." },
-  { icon: "🔬", title: "Revenue Operations Leaders", desc: "RevOps professionals building a signal-led pipeline infrastructure that replaces bought lists with continuously refreshed, context-rich account intelligence." },
+  { icon: "🏢", title: "Enterprise & Complex-Sale Teams", desc: "Long sales cycles with multiple stakeholders per deal, where reaching one contact isn't enough to move an account forward." },
+  { icon: "🎯", title: "Finite Target-Account Teams", desc: "A defined universe of accounts worth going deep on, not a broad-market volume play. Quality of engagement per account matters more than raw contact count." },
+  { icon: "🤝", title: "RevOps & Marketing Leaders", desc: "Teams that want sales and marketing coordinated around the same named accounts, instead of running two disconnected motions that never reinforce each other." },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "We used to buy lists and pray. Myntmore's signal intelligence showed us accounts that had just hired a VP of Sales, raised a round, and switched off a competitor's tool, all in the same week. We called them first. Our pipeline conversion went up 4x.",
-    name: "Head of Revenue",
-    co: "Series B SaaS · HR Tech",
-    color: "#a855f7",
+    quote: "We had a list of 80 target accounts and no real plan for reaching more than one person at each. Myntmore built the tiering and the multi-channel sequencing, and within a quarter we had multiple stakeholders engaged at our top accounts before a single AE call happened.",
+    name: "VP Marketing",
+    co: "B2B SaaS · Series B",
+    color: "#6366f1",
   },
   {
-    quote: "The signal dashboard changed how we think about outbound entirely. Instead of asking 'who should we target?' we now ask 'who is signalling right now?' That shift alone has been worth more than anything else we've invested in for GTM.",
-    name: "Founder & CEO",
-    co: "B2B FinTech · Series A",
+    quote: "The account-level reporting alone changed how our sales and marketing teams talk to each other. Everyone can see exactly who's been touched, on which channel, and what they engaged with, before the first sales call is even booked.",
+    name: "Head of RevOps",
+    co: "Enterprise Software",
     color: "#D97706",
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    q: "What kinds of signals do you track?",
-    a: "We track 40+ signal types across five categories: funding events, hiring activity, technology changes, competitive displacement, and behavioural triggers like content engagement and job posting language. The signals we prioritise for each client depend on what has historically correlated with a buying decision in your specific market.",
+    q: "How is this different from your other lead generation services?",
+    a: "Our other services (cold email, LinkedIn outreach, AI lead gen) are built to generate volume across a broad ICP. ABM flips that: you give us a defined, finite list of named accounts you specifically want to win, and we run coordinated campaigns to engage multiple people inside each one, not just cast a wide net.",
   },
   {
-    q: "How is this different from a bought list?",
-    a: "A bought list gives you names and job titles: no context, no timing, no indication of intent. Signal-led intelligence gives you accounts that are actively showing buying behaviour right now. You know why they're on the list, what triggered them, and exactly what to say in your first message to make it land.",
+    q: "How many accounts can this realistically cover?",
+    a: "Most engagements run 50 to 250 named accounts, tiered by priority. Tier 1 accounts (your highest-value targets) get the most coordinated, multi-stakeholder attention; lower tiers run on a lighter cadence. The right number depends on your team's capacity to follow up once accounts start engaging.",
   },
   {
-    q: "How often is the data refreshed?",
-    a: "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your CRM or dashboard by the next morning. This is the core advantage over static lists: you're always working with the freshest possible view of who is in-market.",
+    q: "Which channels are included?",
+    a: "LinkedIn outreach and email are the core channels, run in a coordinated sequence against the same account list rather than as separate campaigns. Where it fits your budget and audience, we can layer in LinkedIn ad retargeting for additional account-level visibility.",
   },
   {
-    q: "Which CRMs do you export to?",
-    a: "HubSpot, Salesforce, Pipedrive, Zoho, and Notion databases are all supported natively. If you use something else, we export a clean CSV mapped to your existing fields with signal context columns included. No manual reformatting required.",
+    q: "How does the handoff to our sales team actually work?",
+    a: "Every account gets an engagement record: who was contacted, on which channel, what they opened or replied to, and how engaged the account is overall. That rolls into your CRM so your AE walks into the first conversation already knowing which stakeholders are warm and why.",
   },
   {
-    q: "What's the typical pipeline impact?",
-    a: "Clients who switch from bought lists to signal-led outreach typically see 3–5x improvement in pipeline conversion within 90 days. The exact number depends on how well-defined your ICP is and how quickly your team adopts signal-triggered outreach. We build in a calibration period of 30 days to tune the scoring model to your market.",
+    q: "What size company or deal size is this built for?",
+    a: "ABM makes the most sense once your average deal size and sales cycle justify a multi-touch, multi-stakeholder approach, typically mid-market and enterprise B2B deals with several decision-makers involved. For simpler, single-stakeholder sales motions, our LinkedIn outreach or cold email services are usually a better fit.",
   },
 ];
 
 const BENEFITS = [
-  "40+ intent signals", "Daily list refresh", "Trigger-based leads", "Funding signals",
-  "Hiring patterns", "Tech stack changes", "CRM-ready exports", "Account scoring",
-  "ICP mapping", "Signal dashboard", "Competitive intel", "Real-time data",
+  "Tiered account lists", "Multi-channel campaigns", "Buying committee reach", "Account-level reporting",
+  "Sales handoff", "LinkedIn + email", "Intent-based targeting", "Named account focus",
 ];
 
 /* ─── Sub-components ─────────────────────────────────────────── */
@@ -94,15 +93,15 @@ function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: b
     <div
       className="border rounded-xl overflow-hidden transition-all duration-300"
       style={open
-        ? { borderColor: "rgba(168,85,247,0.4)", borderLeftColor: "#a855f7", borderLeftWidth: "3px", backgroundColor: "rgba(168,85,247,0.04)" }
+        ? { borderColor: "rgba(99,102,241,0.4)", borderLeftColor: "#6366f1", borderLeftWidth: "3px", backgroundColor: "rgba(99,102,241,0.04)" }
         : { borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}
     >
       <button onClick={onToggle} className="w-full flex items-center justify-between px-6 py-5 text-left gap-4">
         <span className="text-base font-bold" style={{ color: "#0a0a0a" }}>{q}</span>
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
-          style={{ backgroundColor: open ? "rgba(168,85,247,0.12)" : "#F8F6F2" }}>
+          style={{ backgroundColor: open ? "rgba(99,102,241,0.12)" : "#F8F6F2" }}>
           <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
-            fill="none" viewBox="0 0 24 24" stroke={open ? "#a855f7" : "#6B6B6B"} strokeWidth={2.5}>
+            fill="none" viewBox="0 0 24 24" stroke={open ? "#6366f1" : "#6B6B6B"} strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
           </svg>
         </span>
@@ -115,16 +114,16 @@ function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: b
 }
 
 function BenefitChip({ label, i }: { label: string; i: number }) {
-  const isPurple = i % 2 === 0;
+  const isIndigo = i % 2 === 0;
   return (
     <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap border flex-shrink-0"
       style={{
-        background: isPurple ? "linear-gradient(135deg,#fff 0%,#FAF5FF 100%)" : "linear-gradient(135deg,#fff 0%,#FEF9EC 100%)",
-        borderColor: isPurple ? "rgba(168,85,247,0.3)" : "rgba(245,183,49,0.35)",
+        background: isIndigo ? "linear-gradient(135deg,#fff 0%,#EEF2FF 100%)" : "linear-gradient(135deg,#fff 0%,#FEF9EC 100%)",
+        borderColor: isIndigo ? "rgba(99,102,241,0.3)" : "rgba(245,183,49,0.35)",
         color: "#1a1a1a",
         boxShadow: "0 1px 6px rgba(0,0,0,0.05)",
       }}>
-      <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ backgroundColor: isPurple ? "#a855f7" : "#D97706" }} />
+      <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ backgroundColor: isIndigo ? "#6366f1" : "#D97706" }} />
       {label}
     </span>
   );
@@ -132,7 +131,7 @@ function BenefitChip({ label, i }: { label: string; i: number }) {
 
 /* ─── Page ──────────────────────────────────────────────────── */
 
-export default function SalesIntelligenceClient() {
+export default function AccountBasedMarketingClient() {
   const blob1 = useRef<HTMLDivElement>(null);
   const blob2 = useRef<HTMLDivElement>(null);
   const blob3 = useRef<HTMLDivElement>(null);
@@ -220,8 +219,8 @@ export default function SalesIntelligenceClient() {
       if (entry.isIntersecting && !statsTriggered) {
         setStatsTriggered(true);
         [
-          { ref: stat1Ref, end: 40, suffix: "+" },
-          { ref: stat2Ref, end: 42, suffix: "x", decimals: 1 },
+          { ref: stat1Ref, end: 64, suffix: "x", decimals: 1 },
+          { ref: stat2Ref, end: 3, suffix: "+" },
           { ref: stat3Ref, end: 12, suffix: "K+" },
         ].forEach(({ ref, end, suffix, decimals }) => {
           let s: number | null = null;
@@ -255,42 +254,42 @@ export default function SalesIntelligenceClient() {
       <JsonLd data={BREADCRUMB_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.18) 0%, rgba(124,58,237,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
+        <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, rgba(79,70,229,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob2} aria-hidden style={{ position: "absolute", top: "40%", left: "75%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(255,130,0,0.08) 40%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", willChange: "transform" }} />
-        <div ref={blob3} aria-hidden style={{ position: "absolute", top: "70%", left: "50%", width: 400, height: 400, marginTop: -200, marginLeft: -200, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
+        <div ref={blob3} aria-hidden style={{ position: "absolute", top: "70%", left: "50%", width: 400, height: 400, marginTop: -200, marginLeft: -200, borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-5">
             <Link href="/services" className="text-xs font-semibold" style={{ color: "#8C8279" }}>Services</Link>
             <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>ICP Mapping & Lead Scoring</span>
+            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Account-Based Marketing</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
-            style={{ borderColor: "rgba(168,85,247,0.35)", background: "rgba(168,85,247,0.07)" }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#a855f7" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#a855f7" }}>ICP Mapping & Lead Scoring</span>
+            style={{ borderColor: "rgba(99,102,241,0.35)", background: "rgba(99,102,241,0.07)" }}>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#6366f1" }} />
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#6366f1" }}>Account-Based Marketing</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            Know exactly who is{" "}
+            Stop marketing to{" "}
             <span className="relative inline-block">
-              ready to buy.
+              everyone.
               <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 330 10" preserveAspectRatio="none" aria-hidden>
-                <path ref={underlineRef} d="M2 7 Q82 2 165 6 Q248 10 328 5" stroke="#a855f7" strokeWidth="3" fill="none" strokeLinecap="round" />
+                <path ref={underlineRef} d="M2 7 Q82 2 165 6 Q248 10 328 5" stroke="#6366f1" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
             </span>{" "}
-            <br />Before your competitors do.
+            <br />Go all-in on the accounts that matter.
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
-            We monitor 40+ buying signals daily (funding rounds, hiring surges, tech stack changes) so you reach in-market accounts the moment they enter the buying window.
+            Coordinated multi-channel campaigns across email and LinkedIn engage the entire buying committee at your highest-value target accounts, so your AE isn&apos;t the first name they&apos;ve seen.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
             <a href="/founder-meeting"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
-              See Who&apos;s In-Market Now
+              Build Your Target Account List
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
             <Link href="/case-studies" className="btn-ghost px-8 py-4 text-base font-bold inline-flex items-center gap-2">
@@ -304,9 +303,9 @@ export default function SalesIntelligenceClient() {
       <div ref={statsContainerRef} className="border-y py-10 px-4" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           {[
-            { ref: stat1Ref, init: "40+", label: "Intent signals tracked across your market" },
-            { ref: stat2Ref, init: "4.2x", label: "Average pipeline lift vs bought lists" },
-            { ref: stat3Ref, init: "12K+", label: "Meetings booked for clients via signal intelligence" },
+            { ref: stat1Ref, init: "6.4x", label: "Higher average deal size on engaged accounts" },
+            { ref: stat2Ref, init: "3+", label: "Channels orchestrated per account" },
+            { ref: stat3Ref, init: "12K+", label: "Meetings booked for clients across all services" },
           ].map((s, i) => (
             <div key={i} className={`${i < 2 ? "sm:border-r" : ""} px-4`} style={{ borderColor: "#E8E2D9" }}>
               <span ref={s.ref} className="block text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.init}</span>
@@ -333,14 +332,14 @@ export default function SalesIntelligenceClient() {
                 The Problem
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Bought lists are cold names with no context
+                One contact at an account isn&apos;t a strategy
               </h2>
               <div className="space-y-4">
                 {[
-                  "Static lists go stale: accounts that were in-market 6 months ago aren't today",
-                  "No signal context means every outreach starts from zero trust",
-                  "You're competing with 10 other vendors all working the same outdated list",
-                  "Your team wastes hours triaging thousands of accounts with no way to prioritise",
+                  "Your best-fit accounts have 5-8 stakeholders in the buying decision, not one",
+                  "Broad-market outreach treats a $500K enterprise deal the same as a $2K self-serve signup",
+                  "Sales and marketing run separate motions on the same accounts with no shared context",
+                  "By the time an AE calls, the account has never heard of you, or worse, only heard from a bot",
                 ].map((p) => (
                   <div key={p} className="flex items-start gap-3">
                     <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
@@ -356,23 +355,23 @@ export default function SalesIntelligenceClient() {
             </div>
             <div>
               <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5"
-                style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+                style={{ backgroundColor: "rgba(99,102,241,0.08)", color: "#6366f1", border: "1px solid rgba(99,102,241,0.2)" }}>
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-                Signal-led lists: accounts ready to buy now
+                Coordinated campaigns, built around named accounts
               </h2>
               <div className="space-y-4">
                 {[
-                  "Daily signal refresh means you always see who just entered the buying window",
-                  "40+ triggers give your reps a reason to reach out that lands every time",
-                  "You reach accounts before competitors because you see the signals first",
-                  "Prioritised scoring means your team focuses on the 10% worth acting on now",
+                  "Every target account gets a tier, and a plan matched to how much it's worth winning",
+                  "LinkedIn and email work together against the same account, not as separate campaigns",
+                  "Multiple stakeholders per account see consistent messaging before your AE ever calls",
+                  "Sales sees exactly who's engaged and why, before the first conversation happens",
                 ].map((p) => (
                   <div key={p} className="flex items-start gap-3">
                     <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: "rgba(168,85,247,0.1)" }}>
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#a855f7" strokeWidth={3}>
+                      style={{ backgroundColor: "rgba(99,102,241,0.1)" }}>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#6366f1" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
@@ -390,22 +389,22 @@ export default function SalesIntelligenceClient() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+              style={{ backgroundColor: "rgba(99,102,241,0.08)", color: "#6366f1", border: "1px solid rgba(99,102,241,0.2)" }}>
               The Process
             </span>
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>How it works</h2>
-            <p className="text-base mt-3 max-w-xl" style={{ color: "#52525B" }}>Signal mapping first. Daily intelligence feed second. Your reps armed with context from day one.</p>
+            <p className="text-base mt-3 max-w-xl" style={{ color: "#52525B" }}>Account tiering first. Coordinated multi-channel campaigns second. Your sales team armed with full context by the first call.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {STEPS.map((s, i) => (
               <div key={s.n} className="relative rounded-2xl border p-7 transition-all duration-300"
                 style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(168,85,247,0.4)"; (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(168,85,247,0.03)"; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.4)"; (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(99,102,241,0.03)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.backgroundColor = "#F8F6F2"; }}>
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black"
-                    style={{ backgroundColor: "rgba(168,85,247,0.1)", color: "#a855f7" }}>
+                    style={{ backgroundColor: "rgba(99,102,241,0.1)", color: "#6366f1" }}>
                     {s.n}
                   </div>
                   <div>
@@ -416,7 +415,7 @@ export default function SalesIntelligenceClient() {
                 {i % 2 === 0 && i < STEPS.length - 1 && (
                   <div className="hidden sm:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
                     <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: "#ffffff", border: "1px solid #E8E2D9" }}>
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#a855f7" strokeWidth={2.5}>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#6366f1" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -433,7 +432,7 @@ export default function SalesIntelligenceClient() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+              style={{ backgroundColor: "rgba(99,102,241,0.08)", color: "#6366f1", border: "1px solid rgba(99,102,241,0.2)" }}>
               What You Get
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Every engagement includes</h2>
@@ -441,8 +440,8 @@ export default function SalesIntelligenceClient() {
               {DELIVERABLES.map((d) => (
                 <li key={d} className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ backgroundColor: "rgba(168,85,247,0.1)" }}>
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#a855f7" strokeWidth={3}>
+                    style={{ backgroundColor: "rgba(99,102,241,0.1)" }}>
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#6366f1" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
@@ -457,12 +456,12 @@ export default function SalesIntelligenceClient() {
               style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Who It&apos;s For
             </span>
-            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for teams tired of guessing who to call</h2>
+            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for teams going deep on a defined list</h2>
             <div className="space-y-4">
               {WHO_FOR.map((w) => (
                 <div key={w.title} className="rounded-2xl border p-6 transition-all duration-200"
                   style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(168,85,247,0.35)"; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.35)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; }}>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-xl">{w.icon}</span>
@@ -506,7 +505,7 @@ export default function SalesIntelligenceClient() {
           </div>
           <div className="mt-8 text-center">
             <Link href="/case-studies" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-              style={{ color: "#a855f7" }}>
+              style={{ color: "#6366f1" }}>
               Read the full case studies
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -521,7 +520,7 @@ export default function SalesIntelligenceClient() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-10">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+              style={{ backgroundColor: "rgba(99,102,241,0.08)", color: "#6366f1", border: "1px solid rgba(99,102,241,0.2)" }}>
               FAQ
             </span>
             <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Frequently asked questions</h2>
@@ -536,7 +535,7 @@ export default function SalesIntelligenceClient() {
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="relative py-28 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        <div ref={ctaBlob1} aria-hidden style={{ position: "absolute", top: "50%", left: "25%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.25) 0%, rgba(124,58,237,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
+        <div ref={ctaBlob1} aria-hidden style={{ position: "absolute", top: "50%", left: "25%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(79,70,229,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={ctaBlob2} aria-hidden style={{ position: "absolute", top: "50%", left: "75%", width: 550, height: 550, marginTop: -275, marginLeft: -275, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,130,0,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -547,26 +546,25 @@ export default function SalesIntelligenceClient() {
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
-            See who&apos;s<br /><span style={{ color: "#a855f7" }}>in-market right now</span>
+            Go deep on the<br /><span style={{ color: "#6366f1" }}>accounts that matter</span>
           </h2>
 
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>
-            Book a free session and we&apos;ll show you the signals firing in your target market today: accounts your competitors don&apos;t know are in the buying window yet.
+            Book a free session and we&apos;ll map out how a target-account campaign would run against your actual highest-value accounts.
           </p>
 
           <a href="/founder-meeting"
             className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
-            See Your In-Market Accounts
+            Map Your Target Accounts
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
 
-          <p className="mt-5
-          text-sm" style={{ color: "#6B6B6B" }}>No commitment. Just a live look at the signal data for your market.</p>
+          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>No commitment. Just a live look at what a coordinated campaign looks like for your accounts.</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
-            {["Daily signal refresh", "40+ intent triggers", "Results or we make it right"].map((item) => (
+            {["Tiered account targeting", "Multi-channel coordination", "Results or we make it right"].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#F5B731" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

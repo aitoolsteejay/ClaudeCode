@@ -8,12 +8,12 @@
 - Website: https://www.myntmore.com
 
 ## Services
-- [Cold Email Infrastructure](https://www.myntmore.com/services/cold-email): Domain warm-up, deliverability infrastructure, and personalised cold email sequences for B2B outbound.
 - [LinkedIn Outreach & Automation](https://www.myntmore.com/services/linkedin-outreach): Connection request and messaging sequences that turn LinkedIn into a meeting-booking channel.
+- [Cold Email Infrastructure](https://www.myntmore.com/services/cold-email): Domain warm-up, deliverability infrastructure, and personalised cold email sequences for B2B outbound.
+- [ICP Mapping & Lead Scoring](https://www.myntmore.com/services/sales-intelligence): Ideal customer profile research and buyer signal tracking.
 - [AI Lead Generation](https://www.myntmore.com/services/ai-lead-generation): AI-driven prospecting, list building, and enrichment for B2B ICP targeting.
-- [Account-Based Marketing](https://www.myntmore.com/services/ai-lead-generation): Coordinated multi-channel campaigns targeting high-value accounts.
+- [Account-Based Marketing](https://www.myntmore.com/services/account-based-marketing): Coordinated multi-channel campaigns targeting high-value accounts.
 - [Personal Branding](https://www.myntmore.com/services/personal-branding): LinkedIn thought leadership and profile positioning for founders and execs.
-- [Sales Intelligence & ICP Mapping](https://www.myntmore.com/services/sales-intelligence): Ideal customer profile research and buyer signal tracking.
 
 ## Resources
 - [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.

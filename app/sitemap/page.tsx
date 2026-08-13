@@ -34,11 +34,12 @@ const GROUPS: SitemapGroup[] = [
     accent: "#D97706",
     links: [
       { label: "All Services", href: "/services" },
-      { label: "Sales Intelligence & ICP Mapping", href: "/services/sales-intelligence" },
-      { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
       { label: "LinkedIn Outreach & Automation", href: "/services/linkedin-outreach" },
-      { label: "Personal Branding", href: "/services/personal-branding" },
       { label: "Cold Email Infrastructure", href: "/services/cold-email" },
+      { label: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+      { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
+      { label: "Account-Based Marketing", href: "/services/account-based-marketing" },
+      { label: "Personal Branding", href: "/services/personal-branding" },
     ],
   },
   {

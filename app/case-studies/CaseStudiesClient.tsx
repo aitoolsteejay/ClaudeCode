@@ -69,7 +69,7 @@ function Underline() {
 }
 
 // ── Chip marquee ───────────────────────────────────────────────────────────────
-const CHIPS = ["AI Lead Generation","Cold Email Infrastructure","LinkedIn Outreach","Personal Branding","Sales Intelligence","GTM Strategy","ICP Mapping","Pipeline Building","Outbound Automation","Multi-Channel Sequences"];
+const CHIPS = ["AI Lead Generation","Cold Email Infrastructure","LinkedIn Outreach","Personal Branding","ICP Mapping & Lead Scoring","GTM Strategy","ICP Mapping","Pipeline Building","Outbound Automation","Multi-Channel Sequences"];
 function Marquee() {
   const items = [...CHIPS, ...CHIPS];
   return (
@@ -180,7 +180,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: "Built a full outbound engine that books 15+ meetings/month on autopilot",
     stats: [{ v: "15+", l: "Meetings/month" }, { v: "29%", l: "Reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }],
     excerpt: "A mid-size B2B services firm had tried outbound before and failed: bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
-    services: ["AI Lead Generation", "Cold Email Infrastructure", "Sales Intelligence"],
+    services: ["AI Lead Generation", "Cold Email Infrastructure", "ICP Mapping & Lead Scoring"],
   },
 ];
 

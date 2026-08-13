@@ -59,7 +59,7 @@ export default function SaasSeriesA() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { title: "Sales Intelligence", desc: "ICP built around hiring signals and funding triggers specific to the target vertical" },
+                { title: "ICP Mapping & Lead Scoring", desc: "ICP built around hiring signals and funding triggers specific to the target vertical" },
                 { title: "Cold Email", desc: "3-step personalised sequences with intent-based first lines. A/B tested subject lines and CTAs" },
                 { title: "LinkedIn Outreach", desc: "Parallel LinkedIn sequences reinforcing the cold email touch on the same prospects" },
               ].map((item) => (
@@ -90,7 +90,7 @@ export default function SaasSeriesA() {
           <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Services used in this engagement</h3>
             <div className="flex flex-wrap gap-2">
-              {["Sales Intelligence & ICP Mapping", "AI Lead Generation", "Cold Email Infrastructure", "LinkedIn Outreach & Automation"].map((s) => (
+              {["ICP Mapping & Lead Scoring", "AI Lead Generation", "Cold Email Infrastructure", "LinkedIn Outreach & Automation"].map((s) => (
                 <span key={s} className="text-xs px-3 py-1.5 rounded-full font-medium" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s}</span>
               ))}
             </div>

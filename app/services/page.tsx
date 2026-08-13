@@ -6,26 +6,27 @@ import StatTicker from "../components/StatTicker";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Services | AI-Powered Outbound",
-  description: "Five productized B2B growth services built for companies that want a real system, not more promises. Sales Intelligence, AI Lead Gen, LinkedIn Outreach, Personal Branding, Cold Email.",
+  description: "Six productized B2B growth services built for companies that want a real system, not more promises. LinkedIn Outreach, Cold Email, ICP Mapping, AI Lead Gen, Account-Based Marketing, Personal Branding.",
   alternates: { canonical: "https://www.myntmore.com/services" },
   keywords: ["b2b lead generation agency", "b2b lead generation", "ai agency in mumbai", "outbound marketing agency"],
   openGraph: {
     title: "B2B Lead Generation Services | AI-Powered Outbound | Myntmore",
-    description: "Five productized B2B growth services. We build the architecture, you close the deals.",
+    description: "Six productized B2B growth services. We build the architecture, you close the deals.",
     url: "https://www.myntmore.com/services",
   },
 };
 
 const SERVICES = [
-  { number: "01", title: "Sales Intelligence & ICP Mapping", tagline: "Know exactly who is ready to buy. Before your competitors do.", desc: "We map your ideal customer profile against 40+ real-world intent signals. Trigger-based lists updated daily. You stop wasting reps on bad-fit prospects.", href: "/services/sales-intelligence", hoverClass: "card-hover-purple", accentColor: "#a855f7", stats: [{ v: "40+", l: "Intent signals" }, { v: "Daily", l: "List refresh" }] },
-  { number: "02", title: "AI Lead Generation", tagline: "Your pipeline shouldn't depend on how much time your team has.", desc: "Custom AI agents research, qualify, and prioritise leads at scale. 80% reduction in manual research time. 300–1500 scored, research-enriched leads per month.", href: "/services/ai-lead-generation", hoverClass: "card-hover-blue", accentColor: "#3b82f6", stats: [{ v: "80%", l: "Less manual research" }, { v: "38%", l: "Avg reply rate" }] },
-  { number: "03", title: "LinkedIn Outreach & Automation", tagline: "Conversations happening in your LinkedIn inbox. Every week.", desc: "Multi-touch sequences that mimic human behaviour and generate replies from the right people. We manage everything from profile audit to reply handoff.", href: "/services/linkedin-outreach", hoverClass: "card-hover-linkedin", accentColor: "#0077b5", stats: [{ v: "48%", l: "Avg acceptance rate" }, { v: "21%", l: "Avg reply rate" }] },
-  { number: "04", title: "Personal Branding", tagline: "Your buyers are on LinkedIn every day. Are they seeing you?", desc: "We ghostwrite content that positions you as the authority in your space. 4–8 posts/month from monthly voice interviews. Inbound finds you instead of you chasing it.", href: "/services/personal-branding", hoverClass: "card-hover-warm", accentColor: "#D97706", stats: [{ v: "10x", l: "Profile visit increase" }, { v: "2x", l: "Reply rate boost" }] },
-  { number: "05", title: "Cold Email Infrastructure", tagline: "Cold email that actually lands in the inbox.", desc: "The full technical stack built and managed for you. Domain setup, warmup, deliverability, AI-personalised sequences. 98.5% inbox rate target.", href: "/services/cold-email", hoverClass: "card-hover-green", accentColor: "#16a34a", stats: [{ v: "98.5%", l: "Inbox rate" }, { v: "<0.2%", l: "Spam rate" }] },
+  { number: "01", title: "LinkedIn Outreach & Automation", tagline: "Conversations happening in your LinkedIn inbox. Every week.", desc: "Multi-touch sequences that mimic human behaviour and generate replies from the right people. We manage everything from profile audit to reply handoff.", href: "/services/linkedin-outreach", hoverClass: "card-hover-linkedin", accentColor: "#0077b5", stats: [{ v: "48%", l: "Avg acceptance rate" }, { v: "21%", l: "Avg reply rate" }] },
+  { number: "02", title: "Cold Email Infrastructure", tagline: "Cold email that actually lands in the inbox.", desc: "The full technical stack built and managed for you. Domain setup, warmup, deliverability, AI-personalised sequences. 98.5% inbox rate target.", href: "/services/cold-email", hoverClass: "card-hover-green", accentColor: "#16a34a", stats: [{ v: "98.5%", l: "Inbox rate" }, { v: "<0.2%", l: "Spam rate" }] },
+  { number: "03", title: "ICP Mapping & Lead Scoring", tagline: "Know exactly who is ready to buy. Before your competitors do.", desc: "We map your ideal customer profile against 40+ real-world intent signals. Trigger-based lists updated daily. You stop wasting reps on bad-fit prospects.", href: "/services/sales-intelligence", hoverClass: "card-hover-purple", accentColor: "#a855f7", stats: [{ v: "40+", l: "Intent signals" }, { v: "Daily", l: "List refresh" }] },
+  { number: "04", title: "AI Lead Generation", tagline: "Your pipeline shouldn't depend on how much time your team has.", desc: "Custom AI agents research, qualify, and prioritise leads at scale. 80% reduction in manual research time. 300–1500 scored, research-enriched leads per month.", href: "/services/ai-lead-generation", hoverClass: "card-hover-blue", accentColor: "#3b82f6", stats: [{ v: "80%", l: "Less manual research" }, { v: "38%", l: "Avg reply rate" }] },
+  { number: "05", title: "Account-Based Marketing", tagline: "Stop marketing to everyone. Go all-in on the accounts that matter.", desc: "Coordinated multi-channel campaigns across email and LinkedIn engage the entire buying committee at your highest-value target accounts, so your AE isn't the first name they've seen.", href: "/services/account-based-marketing", hoverClass: "card-hover-indigo", accentColor: "#6366f1", stats: [{ v: "6.4x", l: "Higher deal size" }, { v: "3+", l: "Channels orchestrated" }] },
+  { number: "06", title: "Personal Branding", tagline: "Your buyers are on LinkedIn every day. Are they seeing you?", desc: "We ghostwrite content that positions you as the authority in your space. 4–8 posts/month from monthly voice interviews. Inbound finds you instead of you chasing it.", href: "/services/personal-branding", hoverClass: "card-hover-warm", accentColor: "#D97706", stats: [{ v: "10x", l: "Profile visit increase" }, { v: "2x", l: "Reply rate boost" }] },
 ];
 
 const FAQ = [
-  { q: "What B2B lead generation services do you offer?", a: "We offer five core services: Sales Intelligence and ICP Mapping, AI-Led Lead Generation, LinkedIn Outreach and Automation, Personal Branding, and Cold Email Infrastructure. Each service is productized and runs on proven systems." },
+  { q: "What B2B lead generation services do you offer?", a: "We offer six core services: LinkedIn Outreach and Automation, Cold Email Infrastructure, ICP Mapping and Lead Scoring, AI-Led Lead Generation, Account-Based Marketing, and Personal Branding. Each service is productized and runs on proven systems." },
   { q: "How is AI used in your lead generation services?", a: "Our AI agents research, qualify, and prioritize leads at scale, cutting manual research time by 80%. We also use AI for personalization in cold email and LinkedIn sequences, ensuring every outreach feels human and relevant." },
   { q: "Do you work with B2B companies outside Mumbai?", a: "Yes. While we are based in Mumbai, we serve B2B companies across India and Southeast Asia. Our systems work remotely and integrate with your existing tools." },
 ];
@@ -41,7 +42,7 @@ export default function Services() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            Five systems<br />One growth engine
+            Six systems<br />One growth engine
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl" style={{ color: "#52525B" }}>
             Every service is productized, scoped, and runs on proven infrastructure, not promises. We build the architecture, you close the deals.

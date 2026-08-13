@@ -19,7 +19,7 @@ const SERVICES = [
   { title: "Cold Email Automation", href: "/services/cold-email", desc: "Automated multi-step email sequences with AI personalisation, domain warmup, and deliverability management." },
   { title: "LinkedIn Automation", href: "/services/linkedin-outreach", desc: "Automated connection requests, follow-ups, and DM sequences that mimic human behaviour." },
   { title: "AI Lead Generation", href: "/services/ai-lead-generation", desc: "Custom AI agents that research, qualify, and score leads automatically 24/7." },
-  { title: "Sales Intelligence", href: "/services/sales-intelligence", desc: "Trigger-based prospect lists automatically updated daily based on 40+ intent signals." },
+  { title: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence", desc: "Trigger-based prospect lists automatically updated daily based on 40+ intent signals." },
 ];
 
 export default function MarketingAutomation() {

@@ -91,7 +91,7 @@ export default function PredictableB2BLeadGenEngine() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Services used</h2>
             <div className="flex flex-wrap gap-3">
-              {["AI Lead Generation", "Cold Email Infrastructure", "Sales Intelligence"].map((s) => (
+              {["AI Lead Generation", "Cold Email Infrastructure", "ICP Mapping & Lead Scoring"].map((s) => (
                 <span key={s} className="text-sm px-4 py-2 rounded-full font-semibold" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s}</span>
               ))}
             </div>

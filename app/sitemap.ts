@@ -11,11 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact-us`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/services`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     // Service subpages
+    { url: `${base}/services/linkedin-outreach`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/cold-email`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/sales-intelligence`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/ai-lead-generation`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/linkedin-outreach`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/account-based-marketing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/personal-branding`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/cold-email`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // Case studies
     { url: `${base}/case-studies`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/case-studies/saas-series-a`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

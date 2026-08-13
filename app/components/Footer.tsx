@@ -66,11 +66,12 @@ function YouTubeIcon() {
 }
 
 const SERVICES_LINKS = [
-  { label: "Sales Intelligence & ICP Mapping", href: "/services/sales-intelligence" },
-  { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
   { label: "LinkedIn Outreach & Automation", href: "/services/linkedin-outreach" },
-  { label: "Personal Branding", href: "/services/personal-branding" },
   { label: "Cold Email Infrastructure", href: "/services/cold-email" },
+  { label: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+  { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
+  { label: "Account-Based Marketing", href: "/services/account-based-marketing" },
+  { label: "Personal Branding", href: "/services/personal-branding" },
 ];
 const COMPANY_LINKS = [
   { label: "About Myntmore", href: "/about-us" },
@@ -116,7 +117,7 @@ export default function Footer() {
 
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center mb-5" aria-label="Myntmore home">
-              <Image src="/logo.png" alt="Myntmore" width={200} height={56} className="h-14 w-auto object-contain" />
+              <Image src="/logo.png" alt="Myntmore" width={200} height={56} className="h-10 sm:h-14 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: "#6B6B6B" }}>
               B2B growth systems for companies that want predictable pipeline, not more promises.

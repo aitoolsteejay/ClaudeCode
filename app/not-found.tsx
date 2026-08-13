@@ -1,113 +1,107 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import InnerLayout from "./components/InnerLayout";
 
 export const metadata: Metadata = {
-  title: "404 — No Signal Detected",
-  description: "This page isn't showing any buying signals. Here's how to get back to one that is.",
+  title: "404 — Wrong Number",
+  description: "This link missed the mark. Here's how to get back to a page that's actually live.",
 };
 
-const QUICK_LINKS = [
-  { label: "Free Tools", href: "/resources/tools" },
-  { label: "Case Studies", href: "/case-studies" },
+const NAV_LINKS = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Blog", href: "/resources/blogs" },
-  { label: "Site Map", href: "/sitemap" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
-const SIGNAL_REPORT = [
-  { label: "Domain reachable", value: "Yes", ok: true },
-  { label: "This exact page", value: "Not found", ok: false },
-  { label: "Buying intent detected", value: "None", ok: false },
-  { label: "Signals we track daily", value: "40+", ok: null },
-];
+function TargetGraphic() {
+  return (
+    <span className="relative inline-flex items-center justify-center flex-shrink-0" style={{ width: "1.05em", height: "1.05em" }} aria-hidden="true">
+      <span className="lp-radar-ring" style={{ borderColor: "rgba(10,10,10,0.35)" }} />
+      <svg viewBox="0 0 200 200" className="w-full h-full">
+        <circle cx="100" cy="100" r="96" fill="#0a0a0a" />
+        <circle cx="100" cy="100" r="77" fill="#F8F6F2" />
+        <circle cx="100" cy="100" r="58" fill="#0a0a0a" />
+        <circle cx="100" cy="100" r="39" fill="#F8F6F2" />
+        <circle cx="100" cy="100" r="20" fill="#dc2626" />
+      </svg>
+      {/* dart that missed the bullseye */}
+      <svg viewBox="0 0 60 60" className="absolute" style={{ width: "48%", height: "48%", top: "-8%", right: "-10%", transform: "rotate(38deg)" }}>
+        <line x1="6" y1="54" x2="42" y2="16" stroke="#0a0a0a" strokeWidth="4" strokeLinecap="round" />
+        <polygon points="42,16 30,16 42,4" fill="#0a0a0a" />
+        <polygon points="6,54 15,46 12,57" fill="#F5B731" />
+        <polygon points="6,54 15,46 4,49" fill="#F5B731" />
+      </svg>
+    </span>
+  );
+}
 
 export default function NotFound() {
   return (
     <InnerLayout>
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden min-h-[70vh] flex items-center" style={{ backgroundColor: "#F8F6F2" }}>
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.16) 0%, rgba(124,58,237,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.18) 0%, rgba(255,160,0,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <section className="relative pt-32 pb-24 px-4 min-h-[80vh] flex items-center" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="relative max-w-3xl w-full mx-auto">
+          {/* ── Bold frame card ───────────────────────────────── */}
+          <div className="relative rounded-[2rem] bg-white px-6 sm:px-14 py-14 sm:py-16 text-center hero-fade" style={{ border: "9px solid #0a0a0a" }}>
 
-        <div className="relative z-10 max-w-2xl mx-auto text-center">
-          <div className="mb-6 hero-fade">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.25)" }}>
-              404 · No Signal Detected
-            </span>
-          </div>
+            {/* back arrow */}
+            <Link href="/" aria-label="Back to homepage"
+              className="absolute -top-6 -left-6 w-14 h-14 rounded-full bg-white flex items-center justify-center transition-transform hover:-translate-x-0.5"
+              style={{ border: "2.5px solid #0a0a0a" }}>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0a0a0a" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5 5-5M6 12h12" /></svg>
+            </Link>
 
-          {/* ── Radar scanner ─────────────────────────────────── */}
-          <div className="relative w-40 h-40 mx-auto mb-10 hero-fade-d1" aria-hidden="true">
-            <div className="absolute inset-0 rounded-full border" style={{ borderColor: "rgba(168,85,247,0.14)" }} />
-            <div className="absolute inset-4 rounded-full border" style={{ borderColor: "rgba(168,85,247,0.16)" }} />
-            <div className="absolute inset-8 rounded-full border" style={{ borderColor: "rgba(168,85,247,0.2)" }} />
+            <Image src="/logo.png" alt="Myntmore" width={160} height={45} className="h-10 w-auto object-contain mx-auto mb-1.5" />
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: "#8C8279" }}>Since 2019</p>
 
-            {/* sweeping beam */}
-            <div className="absolute inset-0 rounded-full overflow-hidden animate-spin" style={{ animationDuration: "3s" }}>
-              <div className="absolute inset-0" style={{ background: "conic-gradient(from 0deg, rgba(168,85,247,0.4), transparent 70deg)" }} />
+            <p className="text-lg sm:text-xl mb-2" style={{ color: "#52525B" }}>
+              oh no&hellip; <span style={{ color: "#0a0a0a", fontWeight: 700 }}>wrong number</span>
+            </p>
+
+            <div className="flex items-center justify-center gap-1 sm:gap-3 mb-6" style={{ color: "#0a0a0a" }}>
+              <span className="font-black leading-none" style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}>4</span>
+              <span style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}><TargetGraphic /></span>
+              <span className="font-black leading-none" style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}>4</span>
             </div>
 
-            {/* two real signals blipping elsewhere on the radar */}
-            <span className="absolute" style={{ top: "26%", left: "68%", width: 8, height: 8 }}>
-              <span className="lp-radar-ring" style={{ borderColor: "rgba(168,85,247,0.55)" }} />
-              <span className="absolute inset-0 rounded-full" style={{ backgroundColor: "#a855f7" }} />
-            </span>
-            <span className="absolute" style={{ top: "64%", left: "24%", width: 6, height: 6 }}>
-              <span className="lp-radar-ring" style={{ borderColor: "rgba(168,85,247,0.45)", animationDelay: "0.8s" }} />
-              <span className="absolute inset-0 rounded-full" style={{ backgroundColor: "#a855f7", opacity: 0.8 }} />
-            </span>
+            <p className="text-base sm:text-lg max-w-md mx-auto mb-10" style={{ color: "#52525B" }}>
+              We build systems that land in the right inbox, every time. This link wasn&apos;t one of them.
+            </p>
 
-            {/* center: this page never pinged */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white" style={{ border: "2px dashed rgba(220,38,38,0.4)" }}>
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#dc2626" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-              </div>
-            </div>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight hero-fade-d2" style={{ color: "#0a0a0a" }}>
-            We monitor 40+ buying signals a day.<br />This page never sent one.
-          </h1>
-          <p className="text-base sm:text-lg mb-8 max-w-lg mx-auto hero-fade-d2" style={{ color: "#52525B" }}>
-            No funding round, no hiring spree, no reason to exist. Whatever you were looking for isn&apos;t showing any activity right now. Let&apos;s get you back to a page that is.
-          </p>
-
-          {/* ── Signal report card ───────────────────────────── */}
-          <div className="max-w-sm mx-auto rounded-2xl border p-5 mb-10 text-left hero-fade-d3" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-            <div className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Signal Report</div>
-            <ul className="space-y-2.5">
-              {SIGNAL_REPORT.map((s) => (
-                <li key={s.label} className="flex items-center justify-between text-sm">
-                  <span style={{ color: "#3D3D3D" }}>{s.label}</span>
-                  <span className="font-bold" style={{ color: s.ok === true ? "#16a34a" : s.ok === false ? "#dc2626" : "#a855f7" }}>
-                    {s.ok === true ? "✓ " : s.ok === false ? "✗ " : ""}{s.value}
-                  </span>
-                </li>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-9">
+              {NAV_LINKS.map((l) => (
+                <Link key={l.href} href={l.href} className="text-sm font-semibold transition-colors" style={{ color: "#3D3D3D" }}>
+                  {l.label}
+                </Link>
               ))}
-            </ul>
-          </div>
+            </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 hero-fade-d3">
-            <Link href="/" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
-              Back to Homepage
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
-            <Link href="/services/sales-intelligence" className="btn-ghost px-8 py-4 text-base font-bold">
-              See How We Track Signals
-            </Link>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
-            {QUICK_LINKS.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-xs font-semibold px-4 py-2 rounded-full border transition-colors"
-                style={{ borderColor: "#E8E2D9", color: "#3D3D3D", backgroundColor: "#ffffff" }}
-              >
-                {l.label}
+            <div className="flex items-center justify-center max-w-md mx-auto gap-3">
+              <Link href="/" className="flex-1 rounded-full px-6 py-3.5 text-sm font-bold text-left" style={{ border: "1.5px solid #E8E2D9", color: "#8C8279" }}>
+                Back to Homepage
               </Link>
-            ))}
+              <a href="/founder-meeting" aria-label="Book a call"
+                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 btn-dark">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+            </div>
+          </div>
+
+          {/* ── Floating channel badges ──────────────────────── */}
+          <div className="hidden sm:block absolute -bottom-8 -right-8" aria-hidden="true">
+            <div className="relative w-32 h-32">
+              <div className="absolute w-20 h-20 rounded-full flex items-center justify-center rotate-[-8deg]"
+                style={{ backgroundColor: "#FEF9EC", border: "3px solid #ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", top: 0, left: 8 }}>
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#D97706" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+              <div className="absolute w-20 h-20 rounded-full flex items-center justify-center rotate-[6deg]"
+                style={{ backgroundColor: "#EAF6FF", border: "3px solid #ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", top: 26, left: 42 }}>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" style={{ color: "#0077b5" }}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              </div>
+              <span className="absolute w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#a855f7", top: -6, right: 18 }} />
+              <span className="absolute w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#F5B731", bottom: 4, left: -4 }} />
+            </div>
           </div>
         </div>
       </section>

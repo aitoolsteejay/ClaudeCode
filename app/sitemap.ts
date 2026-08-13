@@ -66,7 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/marketing-automation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/seo`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/1-on-1-consultation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/personal-branding`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/GIAtech-stack`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/sitemap`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },

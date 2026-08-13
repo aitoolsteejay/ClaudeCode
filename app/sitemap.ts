@@ -29,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/resources/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/events`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${base}/agency-vs-in-house`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Free tools
     { url: `${base}/tools/linkedin-optimizer`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/dm-angle-generator`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
@@ -48,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/linkedin-outreach-sequences`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/b2b-lead-gen-metrics`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/linkedin-profile-inbound-lead-machine`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/agency-vs-in-house`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Guides (surfaced under /resources/guides, originally Instagram bio-link pages)
     { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

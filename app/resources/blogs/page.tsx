@@ -64,6 +64,14 @@ const BLOG_POSTS = [
     accent: "#0077b5",
   },
   {
+    href: "/blog/agency-vs-in-house",
+    tag: "Comparison",
+    title: "Agency vs. In-House SDR: How to Build B2B Outbound",
+    excerpt: "A direct, non-salesy comparison of cost, ramp-up time, tooling, and risk, with real figures from running both.",
+    readTime: "6 min read",
+    accent: "#3b82f6",
+  },
+  {
     href: "/blog/b2b-lead-gen-metrics",
     tag: "Analytics",
     title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",

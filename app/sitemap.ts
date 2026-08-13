@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/lp/agencies-it`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/lp/manufacturers-exporters`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/lp/saas-founders`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/lp/recruitment-firms`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/lp/pharma`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/lp/insurance`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/lp/financial-services`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    // Partner program
+    { url: `${base}/lp/agency-partners`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     // SEO recovery pages
     { url: `${base}/marketing-automation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/seo`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

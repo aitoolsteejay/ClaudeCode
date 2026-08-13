@@ -120,6 +120,10 @@ const GROUPS: SitemapGroup[] = [
       { label: "For Agencies & IT", href: "/lp/agencies-it" },
       { label: "For Manufacturers & Exporters", href: "/lp/manufacturers-exporters" },
       { label: "For B2B SaaS Founders", href: "/lp/saas-founders" },
+      { label: "For Recruitment & Staffing Firms", href: "/lp/recruitment-firms" },
+      { label: "For Pharma Companies", href: "/lp/pharma" },
+      { label: "For Insurance Brokers", href: "/lp/insurance" },
+      { label: "For Financial Services Firms", href: "/lp/financial-services" },
     ],
   },
   {
@@ -129,6 +133,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "About Myntmore & Tejas Jhaveri", href: "/about-us" },
       { label: "Contact", href: "/contact-us" },
       { label: "Book a Call", href: "/founder-meeting" },
+      { label: "Partner with Us", href: "/lp/agency-partners" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },

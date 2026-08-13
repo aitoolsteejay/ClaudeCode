@@ -80,6 +80,7 @@ const COMPANY_LINKS = [
   { label: "Blog", href: "/resources/blogs" },
   { label: "Guides", href: "/resources/guides" },
   { label: "Careers", href: "/careers" },
+  { label: "Partner with Us", href: "/lp/agency-partners" },
   { label: "Contact", href: "/contact-us" },
 ];
 
@@ -87,6 +88,10 @@ const ICP_LINKS = [
   { label: "For Agencies & IT", href: "/lp/agencies-it" },
   { label: "For Manufacturers & Exporters", href: "/lp/manufacturers-exporters" },
   { label: "For B2B SaaS Founders", href: "/lp/saas-founders" },
+  { label: "For Recruitment & Staffing Firms", href: "/lp/recruitment-firms" },
+  { label: "For Pharma Companies", href: "/lp/pharma" },
+  { label: "For Insurance Brokers", href: "/lp/insurance" },
+  { label: "For Financial Services Firms", href: "/lp/financial-services" },
 ];
 
 export default function Footer() {

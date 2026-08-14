@@ -35,7 +35,7 @@ export default function LeadCaptureForm({
             className="space-y-4"
           >
             <input type="hidden" name="zf_referrer_name" value="" />
-            <input type="hidden" name="zf_redirect_url" value="https://www.myntmore.com/thank-you" />
+            <input type="hidden" name="zf_redirect_url" value="" />
             <input type="hidden" name="zc_gad" value="" />
 
             <div>

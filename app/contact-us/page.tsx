@@ -72,7 +72,7 @@ export default function ContactUs() {
                   action="https://forms.zohopublic.com/flintstop/form/MyntmoreWebsiteform/formperma/3F8IpEgLtb2RnoXcr_yUsp56_-WdQdO2-sM6eaCOKi0/htmlRecords/submit"
                   name="form" id="form" method="POST" acceptCharset="UTF-8" encType="multipart/form-data">
                   <input type="hidden" name="zf_referrer_name" value="" />
-                  <input type="hidden" name="zf_redirect_url" value="" />
+                  <input type="hidden" name="zf_redirect_url" value="https://www.myntmore.com/thank-you" />
                   <input type="hidden" name="zc_gad" value="" />
                   <div>
                     <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name *</label>

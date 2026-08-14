@@ -95,6 +95,17 @@ const ICP_LINKS = [
   { label: "For Financial Services Firms", href: "/lp/financial-services" },
 ];
 
+const CITY_LINKS = [
+  { label: "Mumbai", href: "/b2b-lead-generation-mumbai" },
+  { label: "Delhi", href: "/b2b-lead-generation-delhi" },
+  { label: "Bengaluru", href: "/b2b-lead-generation-bengaluru" },
+  { label: "Pune", href: "/b2b-lead-generation-pune" },
+  { label: "Hyderabad", href: "/b2b-lead-generation-hyderabad" },
+  { label: "Chennai", href: "/b2b-lead-generation-chennai" },
+  { label: "Kolkata", href: "/b2b-lead-generation-kolkata" },
+  { label: "Ahmedabad", href: "/b2b-lead-generation-ahmedabad" },
+];
+
 export default function Footer() {
   const breathRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -243,6 +254,21 @@ export default function Footer() {
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
           </div>
+        </div>
+
+        <div className="py-6 flex flex-wrap items-center gap-x-2 gap-y-2 border-b" style={{ borderColor: "#E8E2D9" }}>
+          <span className="text-xs font-semibold uppercase tracking-wider mr-1" style={{ color: "#8C8279" }}>B2B Lead Generation In:</span>
+          {CITY_LINKS.map((link, i) => (
+            <span key={link.href} className="flex items-center gap-x-2">
+              <Link href={link.href} className="text-xs transition-colors" style={{ color: "#B8B0A7" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#B8B0A7"; }}
+              >
+                {link.label}
+              </Link>
+              {i < CITY_LINKS.length - 1 && <span aria-hidden="true" style={{ color: "#E8E2D9" }}>&middot;</span>}
+            </span>
+          ))}
         </div>
 
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">

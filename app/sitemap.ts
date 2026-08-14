@@ -70,6 +70,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/lp/financial-services`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     // Partner program
     { url: `${base}/lp/agency-partners`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    // City landing pages
+    { url: `${base}/b2b-lead-generation-mumbai`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-delhi`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-bengaluru`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-pune`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-hyderabad`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-chennai`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-kolkata`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/b2b-lead-generation-ahmedabad`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     // SEO recovery pages
     { url: `${base}/marketing-automation`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/seo`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

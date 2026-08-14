@@ -134,6 +134,20 @@ const GROUPS: SitemapGroup[] = [
     ],
   },
   {
+    title: "City Pages",
+    accent: "#0EA5E9",
+    links: [
+      { label: "B2B Lead Generation in Mumbai", href: "/b2b-lead-generation-mumbai" },
+      { label: "B2B Lead Generation in Delhi", href: "/b2b-lead-generation-delhi" },
+      { label: "B2B Lead Generation in Bengaluru", href: "/b2b-lead-generation-bengaluru" },
+      { label: "B2B Lead Generation in Pune", href: "/b2b-lead-generation-pune" },
+      { label: "B2B Lead Generation in Hyderabad", href: "/b2b-lead-generation-hyderabad" },
+      { label: "B2B Lead Generation in Chennai", href: "/b2b-lead-generation-chennai" },
+      { label: "B2B Lead Generation in Kolkata", href: "/b2b-lead-generation-kolkata" },
+      { label: "B2B Lead Generation in Ahmedabad", href: "/b2b-lead-generation-ahmedabad" },
+    ],
+  },
+  {
     title: "Company",
     accent: "#52525B",
     links: [

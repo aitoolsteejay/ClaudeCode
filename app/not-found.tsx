@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import InnerLayout from "./components/InnerLayout";
 
 export const metadata: Metadata = {
@@ -33,6 +32,8 @@ const CHANNEL_CARDS = [
     key: "linkedin",
     delay: "-2s",
     bg: "#EAF6FF",
+    href: "https://linkedin.com/company/myntmore",
+    label: "Myntmore on LinkedIn",
     icon: (
       <svg className="w-[46%] h-[46%]" fill="currentColor" viewBox="0 0 24 24" style={{ color: "#0077b5" }}>
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -63,16 +64,23 @@ const CHANNEL_CARDS = [
 
 function ChannelStack() {
   return (
-    <span className="relative inline-flex items-center justify-center flex-shrink-0" style={{ width: "1.05em", height: "1.05em" }} aria-hidden="true">
-      {CHANNEL_CARDS.map((c) => (
-        <span
-          key={c.key}
-          className="stack-card absolute inset-[6%] rounded-[22%] flex items-center justify-center"
-          style={{ backgroundColor: c.bg, border: "2px solid #ffffff", boxShadow: "0 6px 16px rgba(0,0,0,0.14)", animationDelay: c.delay }}
-        >
-          {c.icon}
-        </span>
-      ))}
+    <span className="relative inline-flex items-center justify-center flex-shrink-0" style={{ width: "1.05em", height: "1.05em" }}>
+      {CHANNEL_CARDS.map((c) => {
+        const className = "stack-card absolute inset-[6%] rounded-[22%] flex items-center justify-center";
+        const style = { backgroundColor: c.bg, border: "2px solid #ffffff", boxShadow: "0 6px 16px rgba(0,0,0,0.14)", animationDelay: c.delay };
+        if (c.href) {
+          return (
+            <a key={c.key} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.label} className={className} style={style}>
+              {c.icon}
+            </a>
+          );
+        }
+        return (
+          <span key={c.key} aria-hidden="true" className={className} style={style}>
+            {c.icon}
+          </span>
+        );
+      })}
     </span>
   );
 }
@@ -96,10 +104,7 @@ export default function NotFound() {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0a0a0a" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5 5-5M6 12h12" /></svg>
             </Link>
 
-            <Image src="/logo.png" alt="Myntmore" width={160} height={45} className="h-10 w-auto object-contain mx-auto mb-1.5" />
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: "#8C8279" }}>Since 2019</p>
-
-            <p className="text-lg sm:text-xl mb-2" style={{ color: "#52525B" }}>
+            <p className="text-lg sm:text-xl mb-2 mt-2" style={{ color: "#52525B" }}>
               oh no&hellip; <span style={{ color: "#0a0a0a", fontWeight: 700 }}>ghosted</span>
             </p>
 
@@ -140,11 +145,11 @@ export default function NotFound() {
                 style={{ backgroundColor: "#FEF9EC", border: "3px solid #ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", top: 0, left: 8, zIndex: 1 }}>
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#D97706" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               </Link>
-              <Link href="/services/linkedin-outreach" aria-label="LinkedIn Outreach & Automation"
+              <a href="https://linkedin.com/company/myntmore" target="_blank" rel="noopener noreferrer" aria-label="Myntmore on LinkedIn"
                 className="absolute w-20 h-20 rounded-full flex items-center justify-center rotate-[6deg] transition-transform hover:scale-110 hover:rotate-0"
                 style={{ backgroundColor: "#EAF6FF", border: "3px solid #ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", top: 26, left: 42, zIndex: 2 }}>
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" style={{ color: "#0077b5" }}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-              </Link>
+              </a>
               <Link href="/services/sales-intelligence" aria-label="ICP Mapping & Lead Scoring"
                 className="absolute w-11 h-11 rounded-full flex items-center justify-center transition-transform hover:scale-110"
                 style={{ backgroundColor: "#F5F0FF", border: "3px solid #ffffff", boxShadow: "0 8px 22px rgba(0,0,0,0.12)", top: -8, right: 4, zIndex: 3 }}>

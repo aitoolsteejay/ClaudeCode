@@ -38,6 +38,30 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS = [
   {
+    href: "/blog/tam-trap-vague-targeting",
+    tag: "Positioning & ICP",
+    title: "The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline",
+    excerpt: "Targeting \"founders and CXOs\" isn't a strategy, it's praying in the dark. Here's how to find your Total Conversional Market instead.",
+    readTime: "5 min read",
+    accent: "#0891b2",
+  },
+  {
+    href: "/blog/3-second-rule-cold-outreach",
+    tag: "Cold Outreach",
+    title: "The 3-Second Rule: How to Stop Writing Outbound Messages That Get Ignored",
+    excerpt: "Your outbound isn't ignored because of the algorithm. It's ignored because it's boring. Here's the fix.",
+    readTime: "4 min read",
+    accent: "#dc2626",
+  },
+  {
+    href: "/blog/value-premium-lead-magnets",
+    tag: "Lead Magnets",
+    title: "The Value Premium: Stop Chasing Attention and Start Creating Magnetic Leads",
+    excerpt: "Real value is rare. Here's the Signal-Heavy Structuring framework we use to build content that generates direct sales requests.",
+    readTime: "5 min read",
+    accent: "#ec4899",
+  },
+  {
     href: "/blog/predictable-b2b-lead-gen-engine",
     tag: "Lead Generation",
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",

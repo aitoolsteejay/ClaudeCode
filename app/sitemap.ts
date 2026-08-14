@@ -50,6 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/b2b-lead-gen-metrics`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/linkedin-profile-inbound-lead-machine`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/agency-vs-in-house`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/tam-trap-vague-targeting`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/3-second-rule-cold-outreach`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/value-premium-lead-magnets`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Guides (surfaced under /resources/guides, originally Instagram bio-link pages)
     { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

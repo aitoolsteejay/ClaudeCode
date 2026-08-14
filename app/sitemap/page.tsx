@@ -67,6 +67,9 @@ const GROUPS: SitemapGroup[] = [
     accent: "#3B82F6",
     links: [
       { label: "All Blog Posts", href: "/resources/blogs" },
+      { label: "The TAM Trap", href: "/blog/tam-trap-vague-targeting" },
+      { label: "The 3-Second Rule", href: "/blog/3-second-rule-cold-outreach" },
+      { label: "The Value Premium", href: "/blog/value-premium-lead-magnets" },
       { label: "Predictable B2B Lead Gen Engine", href: "/blog/predictable-b2b-lead-gen-engine" },
       { label: "Cold Email Deliverability Guide", href: "/blog/cold-email-deliverability-guide" },
       { label: "ICP Mapping for B2B", href: "/blog/icp-mapping-b2b" },

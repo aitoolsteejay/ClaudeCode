@@ -4,8 +4,8 @@ import Image from "next/image";
 import InnerLayout from "./components/InnerLayout";
 
 export const metadata: Metadata = {
-  title: "404 — Wrong Number",
-  description: "This link missed the mark. Here's how to get back to a page that's actually live.",
+  title: "404 — Ghosted",
+  description: "We followed up on every channel. This page still never replied. Here's how to get back to one that's actually live.",
 };
 
 const NAV_LINKS = [
@@ -15,24 +15,64 @@ const NAV_LINKS = [
   { label: "Contact", href: "/contact-us" },
 ];
 
-function TargetGraphic() {
+// The 4 real channels Myntmore follows up on, cycling through a shuffling
+// "deck" in place of the middle 0 in "404" — a card always sits on top for
+// a beat, then rotates to the back as the next one comes forward, on loop.
+const CHANNEL_CARDS = [
+  {
+    key: "email",
+    delay: "0s",
+    bg: "#FEF9EC",
+    icon: (
+      <svg className="w-[52%] h-[52%]" fill="none" viewBox="0 0 24 24" stroke="#D97706" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    key: "linkedin",
+    delay: "-2s",
+    bg: "#EAF6FF",
+    icon: (
+      <svg className="w-[46%] h-[46%]" fill="currentColor" viewBox="0 0 24 24" style={{ color: "#0077b5" }}>
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    key: "signal",
+    delay: "-4s",
+    bg: "#F5F0FF",
+    icon: (
+      <svg className="w-[46%] h-[46%]" fill="none" viewBox="0 0 24 24" stroke="#a855f7" strokeWidth={2}>
+        <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.5" fill="#a855f7" />
+      </svg>
+    ),
+  },
+  {
+    key: "abm",
+    delay: "-6s",
+    bg: "#EEF2FF",
+    icon: (
+      <svg className="w-[46%] h-[46%]" fill="none" viewBox="0 0 24 24" stroke="#6366f1" strokeWidth={1.8}>
+        <rect x="4" y="4" width="9" height="9" rx="2" /><rect x="11" y="11" width="9" height="9" rx="2" />
+      </svg>
+    ),
+  },
+];
+
+function ChannelStack() {
   return (
     <span className="relative inline-flex items-center justify-center flex-shrink-0" style={{ width: "1.05em", height: "1.05em" }} aria-hidden="true">
-      <span className="lp-radar-ring" style={{ borderColor: "rgba(10,10,10,0.35)" }} />
-      <svg viewBox="0 0 200 200" className="w-full h-full">
-        <circle cx="100" cy="100" r="96" fill="#0a0a0a" />
-        <circle cx="100" cy="100" r="77" fill="#F8F6F2" />
-        <circle cx="100" cy="100" r="58" fill="#0a0a0a" />
-        <circle cx="100" cy="100" r="39" fill="#F8F6F2" />
-        <circle cx="100" cy="100" r="20" fill="#dc2626" />
-      </svg>
-      {/* dart that missed the bullseye */}
-      <svg viewBox="0 0 60 60" className="absolute" style={{ width: "48%", height: "48%", top: "-8%", right: "-10%", transform: "rotate(38deg)" }}>
-        <line x1="6" y1="54" x2="42" y2="16" stroke="#0a0a0a" strokeWidth="4" strokeLinecap="round" />
-        <polygon points="42,16 30,16 42,4" fill="#0a0a0a" />
-        <polygon points="6,54 15,46 12,57" fill="#F5B731" />
-        <polygon points="6,54 15,46 4,49" fill="#F5B731" />
-      </svg>
+      {CHANNEL_CARDS.map((c) => (
+        <span
+          key={c.key}
+          className="stack-card absolute inset-[6%] rounded-[22%] flex items-center justify-center"
+          style={{ backgroundColor: c.bg, border: "2px solid #ffffff", boxShadow: "0 6px 16px rgba(0,0,0,0.14)", animationDelay: c.delay }}
+        >
+          {c.icon}
+        </span>
+      ))}
     </span>
   );
 }
@@ -60,17 +100,17 @@ export default function NotFound() {
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] mb-8" style={{ color: "#8C8279" }}>Since 2019</p>
 
             <p className="text-lg sm:text-xl mb-2" style={{ color: "#52525B" }}>
-              oh no&hellip; <span style={{ color: "#0a0a0a", fontWeight: 700 }}>wrong number</span>
+              oh no&hellip; <span style={{ color: "#0a0a0a", fontWeight: 700 }}>ghosted</span>
             </p>
 
             <div className="flex items-center justify-center gap-1 sm:gap-3 mb-6" style={{ color: "#0a0a0a" }}>
               <span className="font-black leading-none" style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}>4</span>
-              <span style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}><TargetGraphic /></span>
+              <span style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}><ChannelStack /></span>
               <span className="font-black leading-none" style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}>4</span>
             </div>
 
             <p className="text-base sm:text-lg max-w-md mx-auto mb-10" style={{ color: "#52525B" }}>
-              We build systems that land in the right inbox, every time. This link wasn&apos;t one of them.
+              We followed up on email. We followed up on LinkedIn. This page still never replied.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-9">

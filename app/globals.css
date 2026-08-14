@@ -477,6 +477,21 @@ body {
   animation: lp-pop-in 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
 }
 
+/* Shuffling deck of channel cards — used on the 404 page's "404" numeral.
+   Each card shares this animation with a negative animation-delay offset
+   by a quarter-cycle, so at any moment the 4 cards occupy 4 distinct
+   depths in the stack and continuously rotate through which one is "front". */
+@keyframes stack-cycle {
+  0%   { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; z-index: 4; }
+  25%  { transform: translate(-8%, 5%) rotate(-9deg) scale(0.93); opacity: 0.85; z-index: 3; }
+  50%  { transform: translate(0, 9%) rotate(0deg) scale(0.87); opacity: 0.65; z-index: 2; }
+  75%  { transform: translate(8%, 5%) rotate(9deg) scale(0.81); opacity: 0.45; z-index: 1; }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; z-index: 4; }
+}
+.stack-card {
+  animation: stack-cycle 8s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+}
+
 /* ─── Hero handwritten annotation floats ─────────────────── */
 @keyframes handwrite-float-r {
   0%   { transform: rotate(-10deg) translate(0px, 0px); }

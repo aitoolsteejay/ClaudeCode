@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Kolkata | Myntmore",
   description: "AI-powered B2B lead generation for Kolkata's trading, steel, and IT companies: cold email, LinkedIn outreach, and account-based marketing that build predictable pipeline.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-kolkata" },
-  keywords: ["b2b lead generation kolkata", "outbound agency kolkata", "linkedin outreach kolkata", "cold email agency west bengal", "account based marketing kolkata"],
+  keywords: ["b2b lead generation kolkata", "outbound agency kolkata", "linkedin outreach kolkata", "cold email agency west bengal", "account based marketing kolkata", "ai lead generation kolkata", "abm agency kolkata", "sales intelligence kolkata", "b2b lead generation for steel companies kolkata", "lead generation for trading houses kolkata", "lead generation for engineering companies west bengal", "b2b leads for it companies kolkata", "demand generation agency kolkata", "lead generation for financial services companies kolkata", "best b2b outbound agency in kolkata", "how to get b2b leads in kolkata", "cold email agency for jute and steel exporters"],
   openGraph: {
     title: "B2B Lead Generation Agency in Kolkata | Myntmore",
     description: "AI-powered outbound systems built for Kolkata's trading, steel, and IT landscape.",

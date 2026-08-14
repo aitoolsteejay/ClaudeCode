@@ -14,6 +14,20 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 export const metadata: Metadata = {
   title: "B2B Lead Generation Blog",
   description: "In-depth guides on cold email, ICP mapping, LinkedIn outreach, deliverability, and outbound metrics, written by the team that has booked 12K+ B2B meetings.",
+  keywords: [
+    "b2b lead generation blog",
+    "cold email deliverability guide",
+    "linkedin outreach sequences",
+    "icp mapping for b2b",
+    "b2b sales pipeline metrics",
+    "outbound sales playbooks",
+    "agency vs in-house sdr",
+    "linkedin profile optimization tips",
+    "b2b lead gen metrics",
+    "cold email best practices",
+    "b2b outbound strategy blog",
+    "sales development blog",
+  ],
   alternates: { canonical: "https://www.myntmore.com/resources/blogs" },
   openGraph: {
     title: "B2B Lead Generation Blog | Myntmore",

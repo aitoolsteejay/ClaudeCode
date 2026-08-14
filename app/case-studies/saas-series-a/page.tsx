@@ -7,6 +7,7 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "40 Qualified Meetings in 8 Weeks | SaaS Series A Case Study",
   description: "How Myntmore built a multi-channel outbound engine for a B2B SaaS Series A company, generating 40 qualified meetings, 34% reply rate, and $1.2M in pipeline from a cold start in 8 weeks.",
+  keywords: ["saas series a lead generation results", "b2b saas outbound case study", "cold email and linkedin case study", "multi-channel outbound case study", "saas pipeline generation case study", "b2b saas case study", "cold start outbound case study", "ai lead generation case study", "icp mapping and lead scoring case study", "series a growth marketing case study", "saas qualified meetings case study", "myntmore case study", "b2b saas pipeline results", "cold email reply rate case study"],
   alternates: { canonical: "https://www.myntmore.com/case-studies/saas-series-a" },
   openGraph: {
     title: "40 Qualified Meetings in 8 Weeks | SaaS Series A | Myntmore",

@@ -13,6 +13,22 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs & Free Tools",
   description: "Free B2B lead generation resources from Myntmore: in-depth blogs on cold email, ICP mapping, LinkedIn outreach, and outbound metrics, plus free AI tools for outreach.",
+  keywords: [
+    "b2b lead generation resources",
+    "free b2b sales tools",
+    "cold email playbooks",
+    "linkedin outreach guides",
+    "icp mapping resources",
+    "ai lead generation tools",
+    "b2b growth resources",
+    "sales pipeline tools",
+    "outbound sales playbooks",
+    "linkedin profile optimizer",
+    "dm angle generator",
+    "b2b marketing case studies",
+    "free ai sales tools",
+    "gtm resources for founders",
+  ],
   alternates: { canonical: "https://www.myntmore.com/resources" },
   openGraph: {
     title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",

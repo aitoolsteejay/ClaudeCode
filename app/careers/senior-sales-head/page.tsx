@@ -5,6 +5,7 @@ import InnerLayout from "../../components/InnerLayout";
 export const metadata: Metadata = {
   title: "Senior Sales Head Job | Myntmore Mumbai | Rs 5–16 LPA",
   description: "Join Myntmore as Senior Sales Head in Worli, Mumbai. Own outbound sales, client relationships, and CRM for a fast-growing B2B growth agency. Rs 5–16 LPA + incentives.",
+  keywords: ["sales head jobs mumbai", "b2b sales jobs mumbai", "senior sales head job", "outbound sales jobs mumbai", "sales manager jobs b2b agency", "b2b sales jobs worli", "sales jobs 2-5 years experience", "business development jobs mumbai", "crm sales jobs mumbai", "sales lead jobs b2b agency", "cold calling jobs mumbai", "client acquisition jobs mumbai", "myntmore careers", "sales head jobs b2b growth agency"],
   alternates: { canonical: "https://www.myntmore.com/careers/senior-sales-head" },
   openGraph: {
     title: "Senior Sales Head | Myntmore Careers",

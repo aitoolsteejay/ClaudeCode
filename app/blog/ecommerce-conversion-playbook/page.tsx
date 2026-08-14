@@ -12,6 +12,7 @@ const BLOG_AI_RESOURCES = [
 export const metadata: Metadata = {
   title: "The eCommerce Conversion Playbook: Turning Browsers into Buyers",
   description: "Traffic without conversion is just expensive noise. A practical playbook for eCommerce brands that want more buyers, not just more visitors. Fix the trust gap, friction, and messaging.",
+  keywords: ["ecommerce conversion rate optimization", "how to increase ecommerce conversion rate", "reduce checkout friction ecommerce", "abandoned cart email sequence", "product page copy that converts", "social proof placement ecommerce", "ecommerce trust signals", "turning website visitors into buyers", "guest checkout conversion impact", "ecommerce cro playbook", "b2b ecommerce outbound", "reduce cart abandonment", "ecommerce checkout optimization", "why visitors don't buy", "benefits vs features copywriting", "high ticket ecommerce sales"],
   alternates: { canonical: "https://www.myntmore.com/blog/ecommerce-conversion-playbook" },
   openGraph: {
     title: "The eCommerce Conversion Playbook | Myntmore",

@@ -4,6 +4,23 @@ import InsuranceClient from "./InsuranceClient";
 export const metadata: Metadata = {
   title: "B2B Outbound for Insurance Brokers & Agencies",
   description: "Stop waiting on referrals. We build the outbound engine that gets your brokerage in front of HR Heads, CFOs, and Admin Heads evaluating group health and commercial insurance, timed to their renewal window.",
+  keywords: [
+    "lead generation agency for insurance brokers",
+    "b2b outbound for insurance agencies",
+    "cold email for group health insurance brokers",
+    "linkedin outreach for corporate insurance brokers",
+    "how to get corporate clients for insurance broker",
+    "lead generation for commercial insurance agencies",
+    "renewal based outbound for insurance brokers",
+    "hr head outreach for group health insurance",
+    "b2b lead gen for insurance agencies india",
+    "cfo outreach for corporate insurance",
+    "outbound agency for insurance brokerage",
+    "insurance broker client acquisition agency",
+    "abm for insurance brokers",
+    "cold email agency for insurance sales",
+    "lead generation for employee benefits brokers",
+  ],
   alternates: { canonical: "https://www.myntmore.com/lp/insurance" },
   openGraph: {
     title: "B2B Outbound for Insurance Brokers & Agencies | Myntmore",

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
   description: "A technical guide to cold email deliverability: domain setup, warming, sending limits, and why most cold email campaigns fail before a single human ever reads them.",
   alternates: { canonical: "https://www.myntmore.com/blog/cold-email-deliverability-guide" },
-  keywords: ["cold email deliverability", "email warmup", "SPF DKIM DMARC", "cold email spam", "b2b cold email", "sending domains"],
+  keywords: ["cold email deliverability", "how to improve cold email deliverability", "why cold emails go to spam", "email warm up process", "spf dkim dmarc setup", "cold email sending domains", "domain warm up for cold email", "cold email sending limits", "inbox placement test", "cold email spam checker", "how many cold emails per day per inbox", "bounce rate for cold email", "separate sending domain for cold outreach", "email authentication for outbound", "cold email deliverability checklist", "fixing low inbox placement rate"],
   openGraph: {
     title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
     description: "The technical guide to getting cold emails into the inbox, not the spam folder.",

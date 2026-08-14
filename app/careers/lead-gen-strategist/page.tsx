@@ -5,6 +5,7 @@ import InnerLayout from "../../components/InnerLayout";
 export const metadata: Metadata = {
   title: "B2B Lead Generation Strategist Job | Myntmore Mumbai | Rs 4–7 LPA",
   description: "Join Myntmore as a B2B Lead Generation Strategist in Worli, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
+  keywords: ["lead generation strategist jobs mumbai", "b2b lead generation jobs", "lead gen jobs worli mumbai", "linkedin outreach jobs mumbai", "cold email jobs mumbai", "b2b marketing jobs mumbai", "sales development jobs mumbai", "lead generation executive jobs", "b2b growth jobs india", "outbound marketing jobs mumbai", "entry level lead generation jobs", "growth marketing jobs worli", "myntmore careers", "b2b lead gen strategist job openings"],
   alternates: { canonical: "https://www.myntmore.com/careers/lead-gen-strategist" },
   openGraph: {
     title: "B2B Lead Generation Strategist | Myntmore Careers",

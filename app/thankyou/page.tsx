@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   description: "Your call with Myntmore is confirmed. We'll see you soon.",
   robots: { index: false, follow: true },
   alternates: { canonical: "https://www.myntmore.com/thankyou" },
+  keywords: [
+    "myntmore booking confirmed",
+    "call confirmation",
+    "thank you for booking",
+    "myntmore call scheduled",
+    "booking confirmation page",
+  ],
 };
 
 export default function ThankYouPage() {

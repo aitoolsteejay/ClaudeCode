@@ -16,6 +16,7 @@ const BLOG_AI_RESOURCES = [
 export const metadata: Metadata = {
   title: "Agency vs. In-House SDR: How to Build B2B Outbound",
   description: "A direct, non-salesy comparison of hiring a B2B outbound agency vs. building an in-house SDR team, covering cost, ramp-up time, tooling, and risk, with real figures from running both.",
+  keywords: ["agency vs in-house sdr", "b2b outbound agency vs in-house sales team", "should i hire an sdr or use an agency", "cost of hiring an sdr", "sdr salary vs agency retainer", "outbound lead generation agency", "time to hire and ramp an sdr", "in-house sdr ramp up time", "outsourcing b2b sales development", "when to hire an in-house sdr", "b2b outbound agency pricing", "pros and cons of sales development agencies", "building an in-house sdr team", "risk of a bad sdr hire", "sdr team scalability", "transitioning from agency to in-house sales"],
   alternates: { canonical: "https://www.myntmore.com/blog/agency-vs-in-house" },
   openGraph: {
     title: "Agency vs. In-House SDR: How to Build B2B Outbound | Myntmore",

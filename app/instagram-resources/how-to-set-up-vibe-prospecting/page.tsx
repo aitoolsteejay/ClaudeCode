@@ -8,6 +8,20 @@ import Underline from "./Underline";
 export const metadata: Metadata = {
   title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
   description: "A step-by-step setup guide for the Vibe Prospecting Claude connector, plus 10 ready-to-copy prompts for pulling verified B2B leads by funding, headcount, tech stack, and hiring signals.",
+  keywords: [
+    "vibe prospecting setup guide",
+    "claude connectors for lead generation",
+    "ai lead sourcing tool",
+    "b2b prospecting by funding stage",
+    "find saas leads by tech stack",
+    "claude ai b2b lead generation",
+    "verified email finder ai",
+    "ai prospecting prompts",
+    "startup funding lead lists",
+    "hiring signal prospecting",
+    "claude ai connector guide",
+    "b2b lead list builder ai",
+  ],
   alternates: { canonical: "https://www.myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting" },
   openGraph: {
     title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",

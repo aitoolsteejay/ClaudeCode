@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Site Map",
   description: "Every page on Myntmore, organised by section: services, case studies, blog, guides, free tools, careers, and more.",
   alternates: { canonical: "https://www.myntmore.com/sitemap" },
+  keywords: [
+    "myntmore sitemap",
+    "myntmore site navigation",
+    "all myntmore pages",
+    "myntmore services list",
+    "myntmore resources index",
+    "site map",
+  ],
 };
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([

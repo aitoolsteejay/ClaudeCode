@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Myntmore collects, uses, and protects your information.",
   alternates: { canonical: "https://www.myntmore.com/privacy-policy" },
+  keywords: [
+    "myntmore privacy policy",
+    "data privacy policy",
+    "myntmore data protection",
+    "privacy policy b2b agency",
+    "how myntmore uses your data",
+    "myntmore terms and privacy",
+  ],
 };
 
 const SECTIONS = [

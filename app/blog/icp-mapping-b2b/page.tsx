@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
   description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
   alternates: { canonical: "https://www.myntmore.com/blog/icp-mapping-b2b" },
-  keywords: ["ICP mapping", "ideal customer profile", "b2b targeting", "lead qualification", "b2b outbound", "sales targeting"],
+  keywords: ["icp mapping", "ideal customer profile", "how to define your icp", "b2b targeting strategy", "firmographic vs intent data", "lead qualification criteria", "negative icp", "intent signals for b2b sales", "how to build icp from closed deals", "hiring signals for sales prospecting", "funding signals for outbound sales", "sub-segmenting your icp", "b2b buyer persona", "account based marketing targeting", "sales targeting framework", "why targeting everyone reduces conversion"],
   openGraph: {
     title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
     description: "Stop targeting everyone. This is how you find and reach the buyers most likely to say yes.",

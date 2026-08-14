@@ -14,6 +14,22 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 export const metadata: Metadata = {
   title: "Free B2B Lead Generation Tools",
   description: "Free AI-powered tools for B2B founders: optimise your LinkedIn profile, generate outreach angles, and build a stronger pipeline. No sign-up required.",
+  keywords: [
+    "free linkedin profile optimizer",
+    "dm angle generator",
+    "cold email roi calculator",
+    "linkedin posting rhythm planner",
+    "lead magnet idea generator",
+    "icp builder tool",
+    "competitor battle card generator",
+    "case study generator ai",
+    "founder linkedin presence analyzer",
+    "free b2b sales tools",
+    "ai tools for outbound sales",
+    "b2b lead generation tools",
+    "linkedin growth tools",
+    "sales prospecting tools",
+  ],
   alternates: { canonical: "https://www.myntmore.com/resources/tools" },
   openGraph: {
     title: "Free B2B Lead Generation Tools | Myntmore",

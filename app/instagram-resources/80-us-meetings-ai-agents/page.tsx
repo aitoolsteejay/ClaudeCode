@@ -10,6 +10,22 @@ import Underline from "./Underline";
 export const metadata: Metadata = {
   title: "80+ US Meetings Booked in 1 Month with AI Agents",
   description: "The exact AI-agent blueprint behind 800 LinkedIn connections, 80+ US B2B meetings, and 4 new clients a month, fully automated with n8n, Apollo/Clay, and AI enrichment.",
+  keywords: [
+    "ai agents for lead generation",
+    "n8n lead generation workflow",
+    "linkedin automation with ai",
+    "apollo clay lead enrichment",
+    "ai sales agent blueprint",
+    "automated linkedin outreach",
+    "b2b meeting booking automation",
+    "ai prospect research automation",
+    "cold outreach automation n8n",
+    "ai sdr agent",
+    "automated lead qualification",
+    "linkedin connection request automation",
+    "ai enriched lead lists",
+    "outbound automation blueprint",
+  ],
   alternates: { canonical: "https://www.myntmore.com/instagram-resources/80-us-meetings-ai-agents" },
   openGraph: {
     title: "80+ US Meetings Booked in 1 Month with AI Agents",

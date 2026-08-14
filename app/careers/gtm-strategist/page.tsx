@@ -5,6 +5,7 @@ import InnerLayout from "../../components/InnerLayout";
 export const metadata: Metadata = {
   title: "GTM Strategist Job | Myntmore Mumbai | Rs 6–15 LPA",
   description: "Join Myntmore as a Senior Growth Marketing Strategist in Worli, Mumbai. Own growth across multiple B2B brands using LinkedIn, cold email, AI automation, and content-led demand gen. Rs 6–15 LPA + incentives.",
+  keywords: ["gtm strategist jobs mumbai", "growth marketing jobs mumbai", "b2b growth strategist job", "growth marketing strategist jobs india", "gtm jobs mumbai", "b2b marketing jobs worli", "growth marketing career mumbai", "lead generation strategist jobs", "linkedin marketing jobs mumbai", "growth strategist job b2b agency", "demand generation jobs mumbai", "marketing jobs worli mumbai", "b2b growth marketing career", "myntmore careers", "gtm strategist job openings"],
   alternates: { canonical: "https://www.myntmore.com/careers/gtm-strategist" },
   openGraph: {
     title: "GTM Strategist | Myntmore Careers",

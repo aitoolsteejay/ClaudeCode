@@ -4,6 +4,23 @@ import AgencyPartnersClient from "./AgencyPartnersClient";
 export const metadata: Metadata = {
   title: "Partner Program for Agencies | White-Label B2B Outbound",
   description: "Sell B2B outbound, we run it under your brand. Join Myntmore's white-label partner program: cold email, LinkedIn outreach, and ABM delivered as your own service, with no delivery team to hire.",
+  keywords: [
+    "white label lead generation agency",
+    "white label cold email service",
+    "reseller program for b2b lead generation",
+    "white label linkedin outreach service",
+    "outsource outbound for agency clients",
+    "white label abm service provider",
+    "b2b outbound fulfillment partner",
+    "agency partner program india",
+    "white label sales development service",
+    "outsourced sdr service for agencies",
+    "private label lead generation",
+    "become a lead generation reseller",
+    "white label outbound agency india",
+    "subcontract cold email services",
+    "b2b lead gen white label partner mumbai",
+  ],
   alternates: { canonical: "https://www.myntmore.com/lp/agency-partners" },
   openGraph: {
     title: "Partner Program for Agencies | White-Label B2B Outbound | Myntmore",

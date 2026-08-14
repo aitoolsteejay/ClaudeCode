@@ -4,6 +4,20 @@ import FeedClient from "./FeedClient";
 export const metadata: Metadata = {
   title: "The Feed",
   description: "Short, practical Instagram Reels on B2B outbound, LinkedIn, and AI-powered lead generation from Myntmore.",
+  keywords: [
+    "b2b instagram reels",
+    "short-form video marketing b2b",
+    "linkedin outreach video tips",
+    "ai lead generation content",
+    "b2b content marketing videos",
+    "outbound sales video tips",
+    "linkedin growth reels",
+    "video marketing for founders",
+    "b2b social media content",
+    "instagram reels for founders",
+    "ai powered lead generation videos",
+    "cold email tips video",
+  ],
   alternates: { canonical: "https://www.myntmore.com/resources/feed" },
   openGraph: {
     title: "The Feed | Myntmore",

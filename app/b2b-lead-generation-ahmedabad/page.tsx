@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Ahmedabad | Myntmore",
   description: "AI-powered B2B lead generation for Ahmedabad and Gujarat manufacturers: cold email, LinkedIn outreach, and account-based marketing built for textile, pharma, and chemical exporters.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-ahmedabad" },
-  keywords: ["b2b lead generation ahmedabad", "outbound agency ahmedabad", "linkedin outreach ahmedabad", "cold email agency gujarat", "account based marketing ahmedabad"],
+  keywords: ["b2b lead generation ahmedabad", "outbound agency ahmedabad", "linkedin outreach ahmedabad", "cold email agency gujarat", "account based marketing ahmedabad", "ai lead generation ahmedabad", "abm agency ahmedabad", "sales intelligence ahmedabad", "lead generation for textile exporters ahmedabad", "lead generation for pharma companies gujarat", "lead generation for chemical manufacturers gujarat", "b2b lead generation gujarat", "export lead generation ahmedabad", "find international buyers for gujarat exporters", "linkedin ghostwriting for founders ahmedabad", "best b2b outbound agency in ahmedabad", "how to get b2b leads in ahmedabad", "cold email for gujarat manufacturers"],
   openGraph: {
     title: "B2B Lead Generation Agency in Ahmedabad | Myntmore",
     description: "AI-powered outbound systems built for Ahmedabad's textile, pharma, and chemical manufacturing base.",

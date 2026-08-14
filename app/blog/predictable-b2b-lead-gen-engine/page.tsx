@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Building a Predictable B2B Lead Generation Engine",
   description: "Most B2B outbound fails because it has no system behind it. Here is the exact framework we use to build a lead generation engine that compounds over time.",
   alternates: { canonical: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine" },
-  keywords: ["b2b lead generation", "predictable pipeline", "outbound system", "lead gen framework", "icp definition"],
+  keywords: ["b2b lead generation engine", "how to build a predictable pipeline", "outbound sales system", "lead generation framework", "icp definition for outbound", "intent signals for b2b sales", "cold outreach mistakes", "building a repeatable sales pipeline", "b2b outbound strategy", "personalized cold email sequences", "how to scale cold outreach", "sales pipeline predictability", "pray and spray outbound", "b2b sales development framework", "outbound lead gen system for startups"],
   openGraph: {
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
     description: "The exact framework for building a B2B lead generation engine that compounds over time.",

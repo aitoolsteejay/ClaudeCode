@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "LinkedIn Outreach Sequences That Actually Get Replies",
   description: "Most LinkedIn outreach fails because it is too salesy too fast. Here is the exact multi-touch sequence structure we use to warm up prospects and convert connections into conversations.",
   alternates: { canonical: "https://www.myntmore.com/blog/linkedin-outreach-sequences" },
-  keywords: ["linkedin outreach", "linkedin sequence", "b2b linkedin", "linkedin lead generation", "linkedin dms", "connection request templates"],
+  keywords: ["linkedin outreach sequence", "linkedin cold outreach that gets replies", "how to write a linkedin connection message", "multi-touch linkedin sequence", "linkedin dm templates", "linkedin connection request acceptance rate", "warming up prospects before a dm", "linkedin outreach triggers", "linkedin sales navigator outreach limits", "combining linkedin and cold email", "b2b linkedin lead generation", "linkedin outreach cadence", "how many touches before a prospect replies", "linkedin messaging best practices", "cold linkedin message examples"],
   openGraph: {
     title: "LinkedIn Outreach Sequences That Actually Get Replies",
     description: "The multi-touch LinkedIn sequence structure that warms up prospects and books meetings.",

@@ -8,6 +8,20 @@ import Underline from "./Underline";
 export const metadata: Metadata = {
   title: "The 6 Claude Skills Guide",
   description: "Six ready-to-use Claude skills for founders and marketers: content distribution, LinkedIn growth, lead generation, competitor research, proposals, and personal brand, complete with copy-paste prompts.",
+  keywords: [
+    "claude skills for founders",
+    "claude ai prompts for marketing",
+    "claude for content repurposing",
+    "claude linkedin growth prompts",
+    "claude lead generation prompts",
+    "ai competitor research with claude",
+    "claude proposal writing prompts",
+    "claude personal branding prompts",
+    "claude project setup guide",
+    "ai content distribution tool",
+    "claude prompts for sales",
+    "claude skills for marketers",
+  ],
   alternates: { canonical: "https://www.myntmore.com/instagram-resources/claude-skills-guide" },
   openGraph: {
     title: "The 6 Claude Skills Guide",

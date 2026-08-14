@@ -4,6 +4,7 @@ import AiLeadGenerationClient from "./AiLeadGenerationClient";
 export const metadata: Metadata = {
   title: "AI Lead Generation Services for B2B",
   description: "Custom AI agents research, qualify, and prioritise leads at scale, so your sales team only talks to people worth their time. 80% less manual research.",
+  keywords: ["ai lead generation agency", "ai lead generation services for b2b", "ai agents for lead research", "ai powered lead qualification", "automated lead research and enrichment", "ai lead scoring for sales teams", "ai lead generation vs manual prospecting", "how to use ai for b2b lead generation", "ai sales lead generation company", "reduce manual prospecting with ai", "ai enriched lead lists", "b2b lead generation with ai agents", "ai lead gen agency mumbai", "custom ai agents for sales prospecting", "ai lead generation for saas companies"],
   alternates: { canonical: "https://www.myntmore.com/services/ai-lead-generation" },
   openGraph: {
     title: "AI Lead Generation Services for B2B | Myntmore",

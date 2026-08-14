@@ -79,6 +79,7 @@ const COMPANY_LINKS = [
   { label: "Resources & Playbooks", href: "/resources" },
   { label: "Blog", href: "/resources/blogs" },
   { label: "Guides", href: "/resources/guides" },
+  { label: "The Feed", href: "/resources/feed" },
   { label: "Careers", href: "/careers" },
   { label: "Partner with Us", href: "/lp/agency-partners" },
   { label: "Contact", href: "/contact-us" },

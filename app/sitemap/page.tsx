@@ -79,6 +79,13 @@ const GROUPS: SitemapGroup[] = [
     ],
   },
   {
+    title: "The Feed",
+    accent: "#E1306C",
+    links: [
+      { label: "The Feed", href: "/resources/feed" },
+    ],
+  },
+  {
     title: "Free Tools",
     accent: "#F97316",
     links: [

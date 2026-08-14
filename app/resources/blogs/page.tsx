@@ -3,6 +3,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import FadeIn from "../../components/FadeIn";
 import JsonLd from "../../components/JsonLd";
+import BlogGrid, { type BlogPost } from "./BlogGrid";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
@@ -36,86 +37,76 @@ export const metadata: Metadata = {
   },
 };
 
-const BLOG_POSTS = [
+const BLOG_POSTS: BlogPost[] = [
   {
     href: "/blog/tam-trap-vague-targeting",
-    tag: "Positioning & ICP",
+    tags: ["ICP & Targeting", "Lead Generation"],
     title: "The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline",
     excerpt: "Targeting \"founders and CXOs\" isn't a strategy, it's praying in the dark. Here's how to find your Total Conversional Market instead.",
     readTime: "5 min read",
-    accent: "#0891b2",
   },
   {
     href: "/blog/3-second-rule-cold-outreach",
-    tag: "Cold Outreach",
+    tags: ["Cold Outreach", "Copywriting"],
     title: "The 3-Second Rule: How to Stop Writing Outbound Messages That Get Ignored",
     excerpt: "Your outbound isn't ignored because of the algorithm. It's ignored because it's boring. Here's the fix.",
     readTime: "4 min read",
-    accent: "#dc2626",
   },
   {
     href: "/blog/value-premium-lead-magnets",
-    tag: "Lead Magnets",
+    tags: ["Lead Magnets", "Content Strategy"],
     title: "The Value Premium: Stop Chasing Attention and Start Creating Magnetic Leads",
     excerpt: "Real value is rare. Here's the Signal-Heavy Structuring framework we use to build content that generates direct sales requests.",
     readTime: "5 min read",
-    accent: "#ec4899",
   },
   {
     href: "/blog/predictable-b2b-lead-gen-engine",
-    tag: "Lead Generation",
+    tags: ["Lead Generation"],
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
     excerpt: "The exact framework we use to build a lead generation engine that compounds over time. No guessing, no spraying.",
     readTime: "5 min read",
-    accent: "#3b82f6",
   },
   {
     href: "/blog/cold-email-deliverability-guide",
-    tag: "Cold Email",
+    tags: ["Cold Email"],
     title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
     excerpt: "Deliverability is the silent killer of outbound. Most campaigns fail before a single human ever reads them. Here is how to fix it.",
     readTime: "6 min read",
-    accent: "#ef4444",
   },
   {
     href: "/blog/icp-mapping-b2b",
-    tag: "ICP & Targeting",
+    tags: ["ICP & Targeting"],
     title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
     excerpt: "Stop targeting everyone. The exact ICP mapping process we use to find the buyers most likely to close, and build outreach around them.",
     readTime: "5 min read",
-    accent: "#10b981",
   },
   {
     href: "/blog/linkedin-outreach-sequences",
-    tag: "LinkedIn Outreach",
+    tags: ["LinkedIn Outreach"],
     title: "LinkedIn Outreach Sequences That Actually Get Replies",
     excerpt: "The multi-touch LinkedIn sequence structure that warms up prospects and converts connections into conversations, without being spammy.",
     readTime: "6 min read",
-    accent: "#a855f7",
   },
   {
     href: "/blog/linkedin-profile-inbound-lead-machine",
-    tag: "Personal Branding",
+    tags: ["Personal Branding", "LinkedIn Outreach"],
     title: "The Silent Salesperson: How to Turn Your LinkedIn Profile into an Inbound Lead Machine",
     excerpt: "No one reads a word you post without checking your profile first. The exact framework, and the $1M deal that proved it.",
     readTime: "4 min read",
-    accent: "#0077b5",
   },
   {
     href: "/blog/agency-vs-in-house",
-    tag: "Comparison",
+    tags: ["Comparison"],
     title: "Agency vs. In-House SDR: How to Build B2B Outbound",
     excerpt: "A direct, non-salesy comparison of cost, ramp-up time, tooling, and risk, with real figures from running both.",
     readTime: "6 min read",
-    accent: "#3b82f6",
   },
   {
     href: "/blog/b2b-lead-gen-metrics",
-    tag: "Analytics",
+    tags: ["Analytics"],
     title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",
     excerpt: "Most outbound teams track the wrong numbers. These 7 metrics tell you exactly where your pipeline is leaking, and how to fix it.",
     readTime: "7 min read",
-    accent: "#f97316",
   },
 ];
 
@@ -200,22 +191,7 @@ export default async function BlogsPage() {
       <section id="blog-grid" className="py-16 px-4 border-t scroll-mt-24" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {BLOG_POSTS.map((p) => (
-                <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <div className="h-1" style={{ background: `linear-gradient(90deg,${p.accent},${p.accent}66)` }} />
-                  <div className="p-6">
-                    <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${p.accent}12`, color: p.accent }}>{p.tag}</span>
-                    <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</h2>
-                    <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{p.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs" style={{ color: "#8C8279" }}>{p.readTime}</span>
-                      <span className="text-xs font-bold" style={{ color: p.accent }}>Read →</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <BlogGrid posts={BLOG_POSTS} />
           </FadeIn>
         </div>
       </section>

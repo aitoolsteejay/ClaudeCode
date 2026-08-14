@@ -69,8 +69,8 @@ const ZOHO_FORM_ACTIONS: Record<LeadSource, string> = {
     "https://forms.zohopublic.com/flintstop/form/Battlecardgenerator/formperma/L6FLsnJj7kt0kDqoENc2F2Drbuo22v376RxReGr9t58/htmlRecords/submit",
   icp_builder:
     "https://forms.zohopublic.com/flintstop/form/ICPbuilder/formperma/an5nBPpkO1WIJo1cdInDWDmGb__ufD3Qdhqh1OrjlZg/htmlRecords/submit",
-  // No dedicated Zoho form yet, falls back to the shared lead-magnet form.
-  roi_calculator: SHARED_ZOHO_FORM_ACTION,
+  roi_calculator:
+    "https://forms.zohopublic.com/flintstop/form/ROICalculator/formperma/qjOewrgpxVp_WRKEGfJpQLvGELpRzoPr9ILtpbTvWiQ/htmlRecords/submit",
 };
 const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 
 export const metadata: Metadata = {
-  title: "Thanks — We've Got Your Details",
+  title: "Thanks, We've Got Your Details",
   description: "Thanks for reaching out to Myntmore. We've received your details and will follow up within 24 hours.",
   robots: { index: false, follow: true },
   alternates: { canonical: "https://www.myntmore.com/thank-you" },
@@ -35,7 +35,7 @@ export default function ThankYouLeadFormPage() {
           </span>
 
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d2" style={{ color: "#0a0a0a" }}>
-            Thanks — we&apos;ve got your details.
+            Thanks, we&apos;ve got your details.
           </h1>
 
           <p className="text-lg mb-10 hero-fade-d3" style={{ color: "#52525B" }}>

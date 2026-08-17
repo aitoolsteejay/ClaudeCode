@@ -1,13 +1,20 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { toast } from "sonner";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/founder-presence/LandingPage";
 import { supabase } from "@/lib/supabase";
 import { ScoreRing } from "@/components/tools/founder-presence/ScoreRing";
-import { GapChart } from "@/components/tools/founder-presence/GapChart";
+
+// GapChart pulls in recharts (~5MB of source), so it's kept out of this
+// route's initial bundle and only fetched once results are actually shown.
+const GapChart = dynamic(
+  () => import("@/components/tools/founder-presence/GapChart").then((m) => m.GapChart),
+  { ssr: false }
+);
 
 type FrequencyOption = "0" | "1–2" | "3–5" | "6–10" | "10+";
 type EngagementOption = "<20 likes" | "20–50 likes" | "50–100 likes" | "100–250 likes" | "250+ likes";

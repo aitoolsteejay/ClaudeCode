@@ -3,7 +3,6 @@
 import { Check, Copy, TrendingUp, Target, Award, Zap, AlertTriangle, Download } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import jsPDF from "jspdf";
 
 const ANGLE_COLORS = ["#7C3AED", "#3B82F6", "#14B8A6"];
 
@@ -44,7 +43,10 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
     return "text-destructive";
   };
 
-  const downloadPDF = () => {
+  const downloadPDF = async () => {
+    // jsPDF is only needed for this click-triggered download, so it's
+    // fetched on demand instead of bloating this route's initial bundle.
+    const { default: jsPDF } = await import("jspdf");
     const doc = new jsPDF();
     let y = 20;
     const margin = 20;

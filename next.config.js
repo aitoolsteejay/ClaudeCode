@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    // AVIF first (smaller than WebP in most cases), WebP as fallback for
+    // browsers that don't support AVIF yet. next/image serves whichever the
+    // requesting browser's Accept header supports.
+    formats: ["image/avif", "image/webp"],
+  },
   async rewrites() {
     return [
       {

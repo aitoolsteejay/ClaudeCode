@@ -1,16 +1,34 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/icp-builder/LandingPage";
 import { IntakeScreen } from "@/components/tools/icp-builder/IntakeScreen";
-import { IcpBuilderScreen } from "@/components/tools/icp-builder/IcpBuilderScreen";
-import { ValuePropScreen } from "@/components/tools/icp-builder/ValuePropScreen";
-import { ScreenTransition } from "@/components/tools/icp-builder/ScreenTransition";
 import { DEFAULT_ICP_COUNT } from "@/components/tools/icp-builder/constants";
 import { supabase } from "@/lib/supabase";
 import type { IntakeData, IcpInput, GeneratedIcp, ValuePropResult, Screen } from "@/components/tools/icp-builder/types";
+
+// ScreenTransition wraps framer-motion, which only ever renders once the
+// wizard itself is showing (after the landing page and lead-gate) — loading
+// it dynamically keeps it out of this route's initial bundle.
+const ScreenTransition = dynamic(
+  () => import("@/components/tools/icp-builder/ScreenTransition").then((m) => m.ScreenTransition),
+  { ssr: false }
+);
+
+// IcpBuilderScreen and ValuePropScreen (and their framer-motion-using
+// children) are only needed once the user actually reaches those wizard
+// steps, so they're fetched on demand instead of bundled up front.
+const IcpBuilderScreen = dynamic(
+  () => import("@/components/tools/icp-builder/IcpBuilderScreen").then((m) => m.IcpBuilderScreen),
+  { ssr: false }
+);
+const ValuePropScreen = dynamic(
+  () => import("@/components/tools/icp-builder/ValuePropScreen").then((m) => m.ValuePropScreen),
+  { ssr: false }
+);
 
 function newIcp(icpType: "B2B" | "D2C" | null): IcpInput {
   return {

@@ -1,20 +1,26 @@
 "use client";
 
 import { useState, useRef } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { LandingPage } from "@/components/tools/roi-calculator/LandingPage";
 import { CalculatorInputs } from "@/components/tools/roi-calculator/CalculatorInputs";
 import { ResultsDashboard } from "@/components/tools/roi-calculator/ResultsDashboard";
 import { FunnelChart } from "@/components/tools/roi-calculator/FunnelChart";
-import { RevenueChart } from "@/components/tools/roi-calculator/RevenueChart";
 import { LeadGateModal } from "@/components/tools/roi-calculator/LeadGateModal";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import { LeadData } from "@/components/tools/shared/LeadGate";
 import { supabase } from "@/lib/supabase";
+
+// RevenueChart pulls in recharts (~5MB of source), so it's kept out of this
+// route's initial bundle and only fetched once the calculator is actually
+// showing results, not on the (always-visible) landing screen.
+const RevenueChart = dynamic(
+  () => import("@/components/tools/roi-calculator/RevenueChart").then((m) => m.RevenueChart),
+  { ssr: false }
+);
 
 const currencies = {
   USD: "$",
@@ -96,6 +102,14 @@ export default function RoiCalculatorClient() {
     if (!resultsRef.current) return;
 
     toast.loading("Generating PDF...");
+
+    // html2canvas and jsPDF together are several hundred KB and are only
+    // ever needed here, on the "Export Results" click — loading them
+    // dynamically keeps them out of the page's initial JS bundle entirely.
+    const [{ default: html2canvas }, { default: jsPDF }] = await Promise.all([
+      import("html2canvas"),
+      import("jspdf"),
+    ]);
 
     // html2canvas clones the target node into an off-screen document to
     // render it. resultsRef's width comes from its parent's CSS Grid

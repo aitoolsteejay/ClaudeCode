@@ -57,9 +57,9 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
 
 const STATS = [
   { value: 21, suffix: "+", label: "Qualified meetings / month (avg)" },
-  { value: 64, suffix: "%", label: "Open rate on cold email campaigns" },
-  { value: 3.8, suffix: "×", label: "ROI in first 90 days", decimal: true },
-  { value: 1.8, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for staffing clients", decimal: true },
+  { value: 61, suffix: "%", label: "Open rate on cold email campaigns" },
+  { value: 3.6, suffix: "×", label: "ROI in first 90 days", decimal: true },
+  { value: 1.6, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for staffing clients", decimal: true },
 ];
 
 const CASE_STUDIES = [
@@ -95,7 +95,7 @@ const FAQ_ITEMS = [
   { q: "We already have a business development person. Will this overlap?", a: "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new client companies. Your BD person keeps managing relationships and closing, we add the top of funnel volume they do not have time to generate." },
   { q: "Does this integrate with our ATS or CRM?", a: "Yes. We integrate with whatever ATS or CRM you already run, Bullhorn, Zoho Recruit, or anything else, so every meeting and reply lands exactly where your team expects it." },
   { q: "How fast will we start seeing meetings?", a: "Most staffing clients see their first qualified client conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in. You can review results every 30 days and decide whether to continue." },
+  { q: "What does pricing and commitment look like?", a: "Monthly retainer, no annual lock-in. You check the pipeline every 30 days and decide whether to renew." },
   { q: "What if the leads are not a good fit for our specialisation?", a: "We refine your ICP together in the first two weeks, narrowing by industry, role type, and company size, and keep adjusting targeting based on who books calls and who converts, so fit improves fast." },
 ];
 
@@ -192,7 +192,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No commitment. No pitch deck. 30-minute strategy call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No pitch deck. No obligation. A focused 30-minute strategy call.</p>
       </div>
 
       {/* Scroll cue */}
@@ -333,7 +333,7 @@ function DarkCTASection() {
           Let&apos;s fill your client pipeline
         </h2>
         <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Book a free 30-minute GTM audit. We will review your outreach, map your ICP, and hand you a custom action plan, no pitch, no pressure.
+          Book a free 30-minute GTM audit. We'll map your ICP to companies with live hiring signals, review what's working in your outreach today, and hand you a concrete plan, no pitch, no pressure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/founder-meeting"
@@ -358,7 +358,7 @@ function FormSection() {
       <div className="max-w-2xl mx-auto">
         <div ref={fade} className="text-center mb-10">
           <h2 className="text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Get your free GTM audit</h2>
-          <p className="text-base" style={{ color: "#52525B" }}>We will audit your current outreach, map your ICP, and tell you exactly what is holding your client pipeline back. No pitch. No pressure.</p>
+          <p className="text-base" style={{ color: "#52525B" }}>We'll map your ICP to companies with active hiring signals, audit your current outreach, and tell you exactly what's holding your client pipeline back. No pitch. No pressure.</p>
         </div>
         <div className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           <form className="space-y-4"

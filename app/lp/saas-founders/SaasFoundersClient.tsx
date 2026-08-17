@@ -176,7 +176,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No commitment. No pitch deck. 30-minute strategy call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No deck, no pressure. Just a 30-minute strategy call.</p>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hero-fade-d3" aria-hidden="true">

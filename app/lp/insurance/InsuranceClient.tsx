@@ -56,10 +56,10 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
 }
 
 const STATS = [
-  { value: 19, suffix: "+", label: "Qualified meetings / month (avg)" },
-  { value: 64, suffix: "%", label: "Open rate on cold email campaigns" },
-  { value: 3.8, suffix: "×", label: "ROI in first 90 days", decimal: true },
-  { value: 1.8, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for broker clients", decimal: true },
+  { value: 16, suffix: "+", label: "Qualified meetings / month (avg)" },
+  { value: 58, suffix: "%", label: "Open rate on cold email campaigns" },
+  { value: 3.4, suffix: "×", label: "ROI in first 90 days", decimal: true },
+  { value: 1.4, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for broker clients", decimal: true },
 ];
 
 const CASE_STUDIES = [
@@ -192,7 +192,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No commitment. No pitch deck. 30-minute strategy call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No pitch deck, no pressure — just a 30-minute strategy call.</p>
       </div>
 
       {/* Scroll cue */}

@@ -95,7 +95,7 @@ const FAQ_ITEMS = [
   { q: "We already have a team doing some outbound. Will this overlap?", a: "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new accounts. Your team keeps doing what it does well, we add the top of funnel volume it does not have time for." },
   { q: "How fast will we start seeing meetings?", a: "Most agency clients see their first qualified conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete." },
   { q: "Do you work with the tools we already use, like our CRM?", a: "Yes. We integrate with whatever CRM or pipeline tool you already run, so every meeting and reply lands exactly where your team expects it." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in. You can review results every 30 days and decide whether to continue." },
+  { q: "What does pricing and commitment look like?", a: "It's a monthly retainer with no annual contract. Every 30 days you look at the numbers and decide whether to keep going." },
   { q: "What if the leads we get are not the right fit?", a: "We refine your ICP together in the first two weeks and keep adjusting targeting based on who books calls and who converts, so fit improves fast." },
 ];
 
@@ -192,7 +192,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No commitment. No pitch deck. 30-minute strategy call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No pitch deck. No long-term contract. Just a 30-minute strategy call.</p>
       </div>
 
       {/* Scroll cue */}
@@ -333,7 +333,7 @@ function DarkCTASection() {
           Let&apos;s fill your pipeline
         </h2>
         <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Book a free 30-minute GTM audit. We will review your outreach, map your ICP, and hand you a custom action plan, no pitch, no pressure.
+          Book a free 30-minute GTM audit. We'll dig into your current outreach, map your ICP against live buying signals, and hand you a concrete action plan, no pitch, no pressure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/founder-meeting"
@@ -358,7 +358,7 @@ function FormSection() {
       <div className="max-w-2xl mx-auto">
         <div ref={fade} className="text-center mb-10">
           <h2 className="text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Get your free GTM audit</h2>
-          <p className="text-base" style={{ color: "#52525B" }}>We will audit your current outreach, map your ICP, and tell you exactly what is holding your pipeline back. No pitch. No pressure.</p>
+          <p className="text-base" style={{ color: "#52525B" }}>We'll audit your current outreach, map your ICP against companies actually showing buying signals, and tell you exactly what's holding your pipeline back. No pitch. No pressure.</p>
         </div>
         <div className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           <form className="space-y-4"

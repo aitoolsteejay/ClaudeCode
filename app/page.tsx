@@ -30,6 +30,11 @@ export const metadata: Metadata = {
       "We build and run your outbound engine using AI agents and human intelligence. Cold email, LinkedIn outreach, and ABM that books qualified meetings at scale.",
     url: "https://www.myntmore.com",
   },
+  verification: {
+    other: {
+      "msvalidate.01": "8CD18A1DDCF953EACEF706A12D7B62F4",
+    },
+  },
 };
 import Hero from "./components/Hero";
 import LogoStrip from "./components/LogoStrip";

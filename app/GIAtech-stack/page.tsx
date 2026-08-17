@@ -2,6 +2,13 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+
+const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "GIA Tech Stack", url: `${SITE_URL}/GIAtech-stack` },
+]);
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 const CATEGORIES = [
@@ -496,6 +503,7 @@ export default function GIATechStackPage() {
       `}</style>
 
       <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
+        <JsonLd data={BREADCRUMB_SCHEMA} />
 
         {/* ── Nav ── */}
         <nav className="no-print sticky top-0 z-50 border-b px-6 py-4 flex items-center justify-between"

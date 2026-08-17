@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Delhi | Myntmore",
+  title: "B2B Lead Generation Agency in Delhi",
   description: "AI-powered B2B lead generation for Delhi NCR: cold email, LinkedIn outreach, and account-based marketing built for the region's enterprise, trading, and D2C landscape.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-delhi" },
   keywords: ["b2b lead generation delhi", "outbound agency delhi ncr", "linkedin outreach delhi", "cold email agency delhi", "account based marketing delhi", "ai lead generation delhi ncr", "abm agency delhi ncr", "sales intelligence delhi", "b2b lead generation for trading companies delhi", "lead generation for export houses delhi", "b2b leads for d2c brands delhi ncr", "enterprise lead generation delhi ncr", "demand generation agency gurgaon", "linkedin ghostwriting for founders delhi", "best b2b outbound agency in delhi ncr", "how to get b2b leads in delhi", "cold email agency gurgaon noida"],
@@ -53,6 +54,7 @@ export default function B2BLeadGenerationDelhiPage() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Delhi", href: "/b2b-lead-generation-delhi" }]} />
           <div className="mb-4">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Delhi NCR

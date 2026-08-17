@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Mumbai | Myntmore",
+  title: "B2B Lead Generation Agency in Mumbai",
   description: "AI-powered B2B lead generation for Mumbai businesses: cold email, LinkedIn outreach, and account-based marketing built for the city's BFSI, media, and corporate landscape.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-mumbai" },
   keywords: ["b2b lead generation mumbai", "outbound agency mumbai", "linkedin outreach mumbai", "cold email agency mumbai", "account based marketing mumbai", "ai lead generation mumbai", "abm agency mumbai", "sales intelligence mumbai", "b2b lead generation for bfsi companies mumbai", "lead generation for media and entertainment companies mumbai", "b2b leads for professional services firms mumbai", "demand generation agency mumbai", "linkedin ghostwriting for founders mumbai", "cold email agency worli mumbai", "best b2b outbound agency in mumbai", "how to get b2b leads in mumbai", "outbound agency for saas founders mumbai"],
@@ -53,6 +54,7 @@ export default function B2BLeadGenerationMumbaiPage() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Mumbai", href: "/b2b-lead-generation-mumbai" }]} />
           <div className="mb-4">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Mumbai

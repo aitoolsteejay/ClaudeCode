@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Pune | Myntmore",
+  title: "B2B Lead Generation Agency in Pune",
   description: "AI-powered B2B lead generation for Pune's IT, SaaS, and auto-component companies: cold email, LinkedIn outreach, and account-based marketing that build predictable pipeline.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-pune" },
   keywords: ["b2b lead generation pune", "outbound agency pune", "linkedin outreach pune", "cold email agency pune", "account based marketing pune", "ai lead generation pune", "abm agency pune", "sales intelligence pune", "b2b lead generation for saas companies pune", "lead generation for auto component manufacturers pune", "b2b leads for it services companies pune", "lead generation for oem suppliers pune", "demand generation agency pune", "linkedin ghostwriting for founders pune", "best b2b outbound agency in pune", "how to get b2b leads in pune", "cold email agency for engineering companies pune"],
@@ -53,6 +54,7 @@ export default function B2BLeadGenerationPunePage() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Pune", href: "/b2b-lead-generation-pune" }]} />
           <div className="mb-4">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Pune

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PlayCircle } from "lucide-react";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import CopyBlock from "../../components/CopyBlock";
 import FadeIn from "../../components/FadeIn";
 import StatTicker from "../../components/StatTicker";
@@ -167,11 +168,7 @@ export default function AiAgentsMeetingsBlueprint() {
       {/* Hero */}
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Guides</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "80+ US Meetings with AI Agents", href: "/instagram-resources/80-us-meetings-ai-agents" }]} />
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF3EC", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>
             Free Guide
           </span>

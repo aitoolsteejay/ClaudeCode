@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Senior Sales Head Job | Myntmore Mumbai | Rs 5–16 LPA",
@@ -21,11 +22,7 @@ export default function SeniorSalesHead() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <Link href="/careers" className="link-subtle text-xs font-semibold">Careers</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Senior Sales Head</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Senior Sales Head", href: "/careers/senior-sales-head" }]} />
           <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Senior Sales Head

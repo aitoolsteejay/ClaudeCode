@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
@@ -21,11 +22,7 @@ export default function PredictableB2BLeadGenEngine() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <Link href="/case-studies" className="link-subtle text-xs font-semibold">Case Studies</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Professional Services</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "Professional Services", href: "/case-studies/predictable-b2b-lead-gen-engine" }]} />
           <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(239,68,68,0.08)", color: "#ef4444", border: "1px solid rgba(239,68,68,0.2)" }}>Professional Services · Growth Stage</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Built a full outbound engine that books 15+ meetings/month on autopilot

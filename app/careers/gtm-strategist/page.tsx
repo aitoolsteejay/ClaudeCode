@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "GTM Strategist Job | Myntmore Mumbai | Rs 6–15 LPA",
@@ -22,11 +23,7 @@ export default function GtmStrategist() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <Link href="/careers" className="link-subtle text-xs font-semibold">Careers</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>GTM Strategist</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "GTM Strategist", href: "/careers/gtm-strategist" }]} />
           <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: ACCENT, border: "1px solid rgba(16,185,129,0.2)" }}>Full-Time · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             GTM Strategist

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Bengaluru | Myntmore",
+  title: "B2B Lead Generation Agency in Bengaluru",
   description: "AI-powered B2B lead generation for Bengaluru's SaaS and tech startups: cold email, LinkedIn outreach, and account-based marketing built for India's most competitive tech market.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-bengaluru" },
   keywords: ["b2b lead generation bengaluru", "outbound agency bangalore", "linkedin outreach bengaluru", "cold email agency bangalore saas", "account based marketing bengaluru", "ai lead generation bangalore", "abm agency bengaluru", "sales intelligence bangalore", "b2b lead generation for saas companies bangalore", "demand generation agency bangalore", "lead generation for tech startups bengaluru", "outbound agency for deep tech startups bangalore", "b2b leads for saas companies expanding to us market", "linkedin ghostwriting for founders bangalore", "best b2b outbound agency in bangalore", "how to get b2b leads in bengaluru", "cold email agency for b2b saas india"],
@@ -53,6 +54,7 @@ export default function B2BLeadGenerationBengaluruPage() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Bengaluru", href: "/b2b-lead-generation-bengaluru" }]} />
           <div className="mb-4">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Bengaluru

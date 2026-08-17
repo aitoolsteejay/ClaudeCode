@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
 
@@ -154,6 +155,7 @@ function HeroSection() {
       </svg>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <Breadcrumbs items={[{ label: "For Manufacturers & Exporters", href: "/lp/manufacturers-exporters" }]} className="justify-center" />
         <div className="mb-6 hero-fade-d1">
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
             For Manufacturers & Exporters

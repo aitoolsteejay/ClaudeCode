@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Hyderabad | Myntmore",
+  title: "B2B Lead Generation Agency in Hyderabad",
   description: "AI-powered B2B lead generation for Hyderabad's IT, pharma, and biotech companies: cold email, LinkedIn outreach, and account-based marketing that build predictable pipeline.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-hyderabad" },
   keywords: ["b2b lead generation hyderabad", "outbound agency hyderabad", "linkedin outreach hyderabad", "cold email agency hyderabad pharma", "account based marketing hyderabad", "ai lead generation hyderabad", "abm agency hyderabad", "sales intelligence hyderabad", "b2b lead generation for pharma companies hyderabad", "lead generation for biotech companies genome valley", "lead generation for it services companies hyderabad", "b2b leads for hyderabad startups", "demand generation agency hyderabad", "linkedin ghostwriting for founders hyderabad", "best b2b outbound agency in hyderabad", "how to get b2b leads in hyderabad", "cold email agency for pharma companies telangana"],
@@ -53,6 +54,7 @@ export default function B2BLeadGenerationHyderabadPage() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Hyderabad", href: "/b2b-lead-generation-hyderabad" }]} />
           <div className="mb-4">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Hyderabad

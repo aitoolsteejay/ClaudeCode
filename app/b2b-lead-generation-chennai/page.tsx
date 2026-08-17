@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Chennai | Myntmore",
+  title: "B2B Lead Generation Agency in Chennai",
   description:
     "Myntmore is a B2B lead generation agency for Chennai's automotive, healthcare, IT/ITES, and export-manufacturing companies, running AI-powered cold email, LinkedIn outreach, and ABM to book qualified sales meetings.",
   alternates: {
@@ -149,6 +150,7 @@ export default function Page() {
       {/* Hero */}
       <section className="pt-32 pb-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto text-center">
+          <Breadcrumbs items={[{ label: "Chennai", href: "/b2b-lead-generation-chennai" }]} className="justify-center" />
           <span
             className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
             style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
 
@@ -142,6 +143,7 @@ function HeroSection() {
       <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "20%", right: "8%", animationDelay: "0.9s", ["--lp-rot" as any]: "-10deg" }}>🎯</span>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <Breadcrumbs items={[{ label: "For B2B SaaS Founders", href: "/lp/saas-founders" }]} className="justify-center" />
         <div className="mb-6 hero-fade-d1 relative inline-block">
           {/* Radar ping: "ready to buy" signal detection */}
           <span className="lp-radar-ring" aria-hidden="true" />

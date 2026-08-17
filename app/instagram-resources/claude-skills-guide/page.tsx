@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import CopyBlock from "../../components/CopyBlock";
 import FadeIn from "../../components/FadeIn";
 import Underline from "./Underline";
@@ -332,11 +333,7 @@ export default function ClaudeSkillsGuide() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Guides</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "The 6 Claude Skills Guide", href: "/instagram-resources/claude-skills-guide" }]} />
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
             Free Guide
           </span>

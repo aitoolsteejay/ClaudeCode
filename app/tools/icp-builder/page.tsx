@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import ICPBuilderClient from "./ICPBuilderClient";
 
 export const metadata: Metadata = {
@@ -28,6 +29,11 @@ export const metadata: Metadata = {
 export default function ICPBuilder() {
   return (
     <InnerLayout>
+      <div className="pt-32 px-4" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-5xl mx-auto">
+          <Breadcrumbs items={[{ label: "Free Tools", href: "/resources/tools" }, { label: "ICP Builder & Value Proposition Generator", href: "/tools/icp-builder" }]} />
+        </div>
+      </div>
       <ICPBuilderClient />
     </InnerLayout>
   );

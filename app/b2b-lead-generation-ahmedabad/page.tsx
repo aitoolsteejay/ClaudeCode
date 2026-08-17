@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Ahmedabad | Myntmore",
+  title: "B2B Lead Generation Agency in Ahmedabad",
   description: "AI-powered B2B lead generation for Ahmedabad and Gujarat manufacturers: cold email, LinkedIn outreach, and account-based marketing built for textile, pharma, and chemical exporters.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-ahmedabad" },
   keywords: ["b2b lead generation ahmedabad", "outbound agency ahmedabad", "linkedin outreach ahmedabad", "cold email agency gujarat", "account based marketing ahmedabad", "ai lead generation ahmedabad", "abm agency ahmedabad", "sales intelligence ahmedabad", "lead generation for textile exporters ahmedabad", "lead generation for pharma companies gujarat", "lead generation for chemical manufacturers gujarat", "b2b lead generation gujarat", "export lead generation ahmedabad", "find international buyers for gujarat exporters", "linkedin ghostwriting for founders ahmedabad", "best b2b outbound agency in ahmedabad", "how to get b2b leads in ahmedabad", "cold email for gujarat manufacturers"],
@@ -53,6 +54,7 @@ export default function B2BLeadGenerationAhmedabadPage() {
     <InnerLayout>
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Ahmedabad", href: "/b2b-lead-generation-ahmedabad" }]} />
           <div className="mb-4">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               Ahmedabad

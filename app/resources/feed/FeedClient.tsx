@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import FadeIn from "../../components/FadeIn";
 import InstagramEmbed from "../../components/InstagramEmbed";
 
@@ -35,11 +36,7 @@ export default function FeedClient() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="flex items-center gap-2 mb-6">
-            <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>The Feed</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "The Feed", href: "/resources/feed" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
             style={{ borderColor: "rgba(225,48,108,0.35)", background: "rgba(225,48,108,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} />

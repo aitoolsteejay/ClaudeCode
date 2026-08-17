@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import InnerLayout from "../../components/InnerLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import PostingRhythmClient from "./PostingRhythmClient";
 
 export const metadata: Metadata = {
@@ -27,6 +28,11 @@ export const metadata: Metadata = {
 export default function PostingRhythmBuilder() {
   return (
     <InnerLayout>
+      <div className="pt-32 px-4" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-5xl mx-auto">
+          <Breadcrumbs items={[{ label: "Free Tools", href: "/resources/tools" }, { label: "Posting Rhythm Builder", href: "/tools/posting-rhythm-builder" }]} />
+        </div>
+      </div>
       <PostingRhythmClient />
     </InnerLayout>
   );

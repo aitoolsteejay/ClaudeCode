@@ -131,10 +131,16 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
-        <noscript>
-          <img height="1" width="1" style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1326581259102473&ev=PageView&noscript=1" />
-        </noscript>
+        {/* No <noscript> fallback pixel here on purpose: Next.js's SSR asset
+            hoisting sees any <img> in the render tree, including one nested
+            in <noscript>, and emits a real <link rel="preload"> for it into
+            <head> -- so every visitor's browser (JS-enabled or not) was
+            kicking off a cross-origin request to facebook.com early in page
+            load, competing with real critical resources (fonts, CSS, logo)
+            for the finite early-connection budget, purely to serve a
+            fallback that only matters for the near-zero share of visitors
+            with JS disabled (who, if JS is off, get no benefit from this
+            since the Script tag above is what actually needs JS anyway). */}
 
         {/* Google Analytics 4 */}
         <Script

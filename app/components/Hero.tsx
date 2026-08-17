@@ -1,6 +1,19 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import { Caveat } from "next/font/google";
+
+// Scoped here rather than in the root layout: this font is only ever used by
+// the two handwritten annotations below (and only on desktop — they're
+// hidden on mobile), so loading it site-wide would preload font files on
+// every other page for a decoration those pages never render. Only 600/700
+// are used, not Caveat's default weights.
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+  weight: ["600", "700"],
+});
 
 export default function Hero() {
   const blob1Ref = useRef<HTMLDivElement>(null);
@@ -257,7 +270,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 sm:pt-24"
+      className={`relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16 sm:pt-24 ${caveat.variable}`}
       style={{ backgroundColor: "#F8F6F2" }}
       aria-label="Hero"
     >

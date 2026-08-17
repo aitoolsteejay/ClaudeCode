@@ -1,23 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Caveat } from "next/font/google";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 import JsonLd from "./components/JsonLd";
 import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
 
+// Only the weights actually used sitewide (font-normal/medium/semibold/bold/black
+// map to 400/500/600/700/900 respectively) — every declared weight here is a
+// separate font file that next/font preloads on every single page, so 300 and
+// 800 (unused anywhere in the codebase) were pure dead weight on every load.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  display: "swap",
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700", "900"],
 });
 
 export const viewport: Viewport = {
@@ -110,7 +107,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${caveat.variable}`}>
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <JsonLd data={organizationSchema} />

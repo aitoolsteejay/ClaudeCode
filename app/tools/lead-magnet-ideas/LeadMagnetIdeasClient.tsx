@@ -362,7 +362,7 @@ export default function LeadMagnetIdeasClient() {
                 <h2 className="text-3xl sm:text-4xl font-black mb-6 relative z-10 leading-tight">
                   We can build and run these for you
                 </h2>
-                <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-light leading-relaxed">
+                <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-normal leading-relaxed">
                   Myntmore designs, builds, and distributes lead magnets as part of a full outbound system for elite B2B founders.
                 </p>
                 <Link

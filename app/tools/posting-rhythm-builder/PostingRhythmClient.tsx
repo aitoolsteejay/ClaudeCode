@@ -349,7 +349,7 @@ export default function PostingRhythmClient() {
                     ))}
                   </div>
                   <div className="pt-6" style={{ borderTop: "1px solid #F0EDE7" }}>
-                    <p className="text-sm text-gray-500 leading-relaxed font-light">{strategy.topicCadence.psychology}</p>
+                    <p className="text-sm text-gray-500 leading-relaxed font-normal">{strategy.topicCadence.psychology}</p>
                   </div>
                 </div>
               </div>
@@ -434,7 +434,7 @@ export default function PostingRhythmClient() {
                 <h2 className="text-3xl sm:text-4xl font-black mb-6 relative z-10 leading-tight">
                   We can execute your content engine for you
                 </h2>
-                <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-light leading-relaxed">
+                <p className="text-gray-600 mb-12 max-w-2xl mx-auto relative z-10 text-lg font-normal leading-relaxed">
                   Myntmore handles the complete content cycle: Strategy, Copywriting, and Daily Distribution for elite B2B founders.
                 </p>
                 <Link

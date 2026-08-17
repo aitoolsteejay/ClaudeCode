@@ -175,7 +175,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
-            className="lg:hidden p-2 rounded-lg transition-colors"
+            className="lg:hidden p-3.5 rounded-lg transition-colors"
             style={{ color: "#52525B" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#EDE9E4"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent"; }}
@@ -197,7 +197,7 @@ export default function Navbar() {
           <div>
             <button
               onClick={() => setMobileServicesOpen((v) => !v)}
-              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium"
+              className="flex items-center justify-between w-full px-3 py-3 rounded-lg text-sm font-medium"
               style={{ color: "#3D3D3D" }}
             >
               Services
@@ -221,7 +221,7 @@ export default function Navbar() {
           <div>
             <button
               onClick={() => setMobileResourcesOpen((v) => !v)}
-              className="flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-sm font-medium"
+              className="flex items-center justify-between w-full px-3 py-3 rounded-lg text-sm font-medium"
               style={{ color: "#3D3D3D" }}
             >
               Resources
@@ -243,14 +243,14 @@ export default function Navbar() {
 
           {/* Remaining flat links (excluding Services, Resources, and duplicate Contact) */}
           {NAV_LINKS.filter(l => !l.hasDropdown && l.href !== "/contact-us").map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
+            <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
             >
               {link.label}
             </Link>
           ))}
-          <Link href="/contact-us" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
+          <Link href="/contact-us" onClick={() => setMobileOpen(false)} className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
           >

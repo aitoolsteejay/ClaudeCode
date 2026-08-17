@@ -148,7 +148,7 @@ export default function Footer() {
                 { href: "https://instagram.com/myntmore", icon: <InstagramIcon />, label: "Myntmore on Instagram" },
                 { href: "https://youtube.com/@TJtheLeadGenExpert", icon: <YouTubeIcon />, label: "Myntmore on YouTube" },
               ].map((s) => (
-                <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-200" style={{ border: "1px solid #E8E2D9", color: "#6B6B6B" }}
+                <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-200" style={{ border: "1px solid #E8E2D9", color: "#6B6B6B" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#F5B731"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(245,183,49,0.4)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; }}
                   aria-label={s.label}

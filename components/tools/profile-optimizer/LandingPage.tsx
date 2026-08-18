@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Target, Zap } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Profile Optimizer Works", [
+  { name: "Paste your LinkedIn profile URL", text: "Quick and easy input of your current profile details." },
+  { name: "Get your free clarity audit in seconds", text: "Our AI engine processes your positioning against high-performing benchmarks." },
+  { name: "Implement changes and watch your pipeline grow", text: "Apply the specific suggestions and start seeing better engagement." },
+]);
 
 interface LandingPageProps {
   onStart: () => void;
@@ -10,6 +18,7 @@ interface LandingPageProps {
 const LandingPage = ({ onStart }: LandingPageProps) => {
   return (
     <div className="flex flex-col w-full">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 pt-20 pb-12 bg-white relative overflow-hidden">
         {/* Vivid background blobs, matching the homepage hero's color treatment */}

@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Copy, Clock, Frown, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the Lead Magnet Ideas Tool Works", [
+  { name: "Describe your business and ICP", text: "What you do, who you sell to, and your industry." },
+  { name: "Pick your tone", text: "So the pitch for each idea sounds like you, not a template." },
+  { name: "Get 3 ready-to-build ideas", text: "Each with the pitch, why it works, and how to distribute it." },
+]);
 
 const ACCENT = "#3b82f6";
 
@@ -12,6 +20,7 @@ interface LandingPageProps {
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.26) 0%, rgba(37,99,235,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

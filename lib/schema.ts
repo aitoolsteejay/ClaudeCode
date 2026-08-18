@@ -114,3 +114,136 @@ export function buildBreadcrumbSchema(items: BreadcrumbEntry[]) {
     })),
   };
 }
+
+// Single sitewide declaration -- render this on the homepage only, not on
+// every page. Deliberately has no SearchAction: the site has no working
+// search-results endpoint (only a static /sitemap page), and Google's
+// Sitelinks Search Box requires that action to actually be functional --
+// declaring one that doesn't work would be worse than omitting it.
+export function buildWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Myntmore",
+    url: SITE_URL,
+  };
+}
+
+export interface HowToStepInput {
+  name: string;
+  text: string;
+}
+
+export function buildHowToSchema(name: string, steps: HowToStepInput[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: steps.map((s) => ({
+      "@type": "HowToStep",
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
+export interface ArticleSchemaInput {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+}
+
+// author is deliberately the Organization, not a named Person: none of the
+// blog posts display a visible author byline on the page, and structured
+// data should reflect what a reader actually sees, not attribute content
+// to an individual the page itself doesn't credit.
+export function buildArticleSchema({ headline, description, url, datePublished, dateModified, image }: ArticleSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url,
+    datePublished,
+    dateModified,
+    image: image ?? `${SITE_URL}/logo.png`,
+    author: { "@type": "Organization", name: "Myntmore", url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: "Myntmore",
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  };
+}
+
+export interface JobPostingInput {
+  title: string;
+  description: string;
+  url: string;
+  datePosted: string;
+  validThrough: string;
+  employmentType: "FULL_TIME" | "PART_TIME" | "INTERN" | "CONTRACTOR" | "TEMPORARY";
+  baseSalary?: { minValue: number; maxValue: number; unitText: "YEAR" | "MONTH"; currency?: string };
+  addressLocality?: string;
+  addressRegion?: string;
+}
+
+// jobLocationType/applicantLocationRequirements aren't set here: every open
+// role's own page lists a physical Worli, Mumbai location (not fully
+// remote), so this models an on-site/hybrid posting rather than claiming a
+// remote arrangement the page doesn't actually describe.
+export function buildJobPostingSchema({
+  title,
+  description,
+  url,
+  datePosted,
+  validThrough,
+  employmentType,
+  baseSalary,
+  addressLocality = "Mumbai",
+  addressRegion = "Maharashtra",
+}: JobPostingInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title,
+    description,
+    url,
+    datePosted,
+    validThrough,
+    employmentType,
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "Myntmore",
+      sameAs: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality,
+        addressRegion,
+        addressCountry: "IN",
+      },
+    },
+    ...(baseSalary
+      ? {
+          baseSalary: {
+            "@type": "MonetaryAmount",
+            currency: baseSalary.currency ?? "INR",
+            value: {
+              "@type": "QuantitativeValue",
+              minValue: baseSalary.minValue,
+              maxValue: baseSalary.maxValue,
+              unitText: baseSalary.unitText,
+            },
+          },
+        }
+      : {}),
+  };
+}

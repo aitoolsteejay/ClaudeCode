@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { HelpCircle, Frown, TrendingDown, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the Battle Card Generator Works", [
+  { name: "Name the competitor", text: "And tell us what you sell, and to whom." },
+  { name: "We research them live", text: "What they do, their pricing if public, and what reviewers actually say." },
+  { name: "Get your battle card", text: "Strengths, gaps, positioning, and objection responses, ready for your next call." },
+]);
 
 const ACCENT = "#ef4444";
 
@@ -12,6 +20,7 @@ interface LandingPageProps {
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(239,68,68,0.24) 0%, rgba(220,38,38,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

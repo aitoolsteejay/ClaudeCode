@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "LinkedIn Outreach & Automation",
@@ -27,6 +27,11 @@ const STEPS = [
   { n: "03", title: "Safe Automation & Residential IP Routing", desc: "We run sequences through LinkedIn-safe automation tools with residential IP proxies, daily limits, and human-mimicking behaviour patterns, so your account stays active and protected throughout." },
   { n: "04", title: "Reply Management & Meeting Booking", desc: "Every positive response is handled by our team. We continue the conversation, qualify the prospect, and either hand off a warm lead or book the meeting directly into your calendar." },
 ];
+
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How LinkedIn Outreach & Automation Works",
+  STEPS.map((s) => ({ name: s.title, text: s.desc }))
+);
 
 const DELIVERABLES = [
   "Fully optimised LinkedIn profile for buyer conversion",
@@ -247,6 +252,7 @@ export default function LinkedinOutreachClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,119,181,0.18) 0%, rgba(0,119,181,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

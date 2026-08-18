@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { Calculator, HelpCircle, TrendingUp, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the ROI Calculator Works", [
+  { name: "Enter your funnel numbers", text: "Connection volume, acceptance rate, reply rate, deal size, and cost." },
+  { name: "Watch it calculate live", text: "Every stage of the funnel updates instantly as you adjust the numbers." },
+  { name: "Export it to share", text: "A clean PDF you can bring to a budget conversation or a client call." },
+]);
 
 const ACCENT = "#16a34a";
 
@@ -12,6 +20,7 @@ interface LandingPageProps {
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(34,197,94,0.26) 0%, rgba(22,163,74,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

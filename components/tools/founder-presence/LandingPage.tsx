@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { EyeOff, Users2, PenLine, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the Founder Presence Analyzer Works", [
+  { name: "Add your activity", text: "Your posting frequency and average engagement over the last 30 days." },
+  { name: "Add up to 5 competitors", text: "Their posting frequency and engagement, for a real comparison." },
+  { name: "Get your score and recommendations", text: "A presence score, opportunity areas, and headline suggestions." },
+]);
 
 const ACCENT = "#14B8A6";
 
@@ -12,6 +20,7 @@ interface LandingPageProps {
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.26) 0%, rgba(13,148,136,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

@@ -3,6 +3,8 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-deliverability-guide",
@@ -22,9 +24,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Cold Email Deliverability: Why Emails Land in Spam",
+  description: "A technical guide to cold email deliverability: domain setup, warming, sending limits, and why most cold email campaigns fail before a single human ever reads them.",
+  url: "https://www.myntmore.com/blog/cold-email-deliverability-guide",
+  datePublished: "2026-06-11T14:46:16Z",
+  dateModified: "2026-08-18T10:23:29+05:30",
+});
+
 export default function ColdEmailDeliverability() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "GTM Strategist Job | Myntmore Mumbai | Rs 6–15 LPA",
@@ -18,9 +20,23 @@ export const metadata: Metadata = {
 const APPLY_SUBJECT = "Application for GTM Strategist";
 const ACCENT = "#10b981";
 
+// datePosted is this page's real git creation date, not fabricated.
+// validThrough is a 6-month rolling window from that date, since this is an
+// ongoing/rolling posting with no fixed application deadline.
+const JOB_SCHEMA = buildJobPostingSchema({
+  title: "GTM Strategist",
+  description: "Join Myntmore as a Senior Growth Marketing Strategist in Worli, Mumbai. Own growth across multiple B2B brands using LinkedIn, cold email, AI automation, and content-led demand gen. Rs 6–15 LPA + incentives.",
+  url: "https://www.myntmore.com/careers/gtm-strategist",
+  datePosted: "2026-07-28T17:15:52+05:30",
+  validThrough: "2027-01-28T17:15:52+05:30",
+  employmentType: "FULL_TIME",
+  baseSalary: { minValue: 600000, maxValue: 1500000, unitText: "YEAR" },
+});
+
 export default function GtmStrategist() {
   return (
     <InnerLayout>
+      <JsonLd data={JOB_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "GTM Strategist", href: "/careers/gtm-strategist" }]} />

@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Personal Branding",
@@ -27,6 +27,11 @@ const STEPS = [
   { n: "03", title: "Review & Publish", desc: "You review and approve every post before it goes out. Once approved, we handle scheduling and publishing so nothing slips or gets forgotten in a busy week." },
   { n: "04", title: "Engagement & Inbound Tracking", desc: "We track who's viewing your profile, engaging with your posts, and reaching out, and flag warm inbound signals so you know exactly who's paying attention." },
 ];
+
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How Personal Branding Works",
+  STEPS.map((s) => ({ name: s.title, text: s.desc }))
+);
 
 const DELIVERABLES = [
   "One monthly voice interview to capture your authentic perspective",
@@ -247,6 +252,7 @@ export default function PersonalBrandingClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(217,119,6,0.18) 0%, rgba(217,119,6,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

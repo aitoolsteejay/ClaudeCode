@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Gen Strategist, Mumbai | Rs 4-7 LPA",
@@ -18,9 +20,23 @@ export const metadata: Metadata = {
 const APPLY_SUBJECT = "Application for B2B Lead Generation Strategist";
 const ACCENT = "#3b82f6";
 
+// datePosted is this page's real git creation date, not fabricated.
+// validThrough is a 6-month rolling window from that date, since this is an
+// ongoing/rolling posting with no fixed application deadline.
+const JOB_SCHEMA = buildJobPostingSchema({
+  title: "B2B Lead Generation Strategist",
+  description: "Join Myntmore as a B2B Lead Generation Strategist in Worli, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
+  url: "https://www.myntmore.com/careers/lead-gen-strategist",
+  datePosted: "2026-05-29T18:55:36+05:30",
+  validThrough: "2026-11-29T18:55:36+05:30",
+  employmentType: "FULL_TIME",
+  baseSalary: { minValue: 400000, maxValue: 700000, unitText: "YEAR" },
+});
+
 export default function LeadGenStrategist() {
   return (
     <InnerLayout>
+      <JsonLd data={JOB_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "B2B Lead Gen Strategist", href: "/careers/lead-gen-strategist" }]} />

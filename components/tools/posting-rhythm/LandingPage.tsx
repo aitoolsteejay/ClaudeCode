@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { CalendarX2, FileQuestion, TrendingDown, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the Posting Rhythm Builder Works", [
+  { name: "Tell us your lifestyle and tone", text: "How often you can realistically post, and how you want to sound." },
+  { name: "Get your best days and times", text: "A schedule built around your actual availability, not a generic calendar." },
+  { name: "Get a routine and post ideas", text: "A weekly system plus hooks and CTAs, ready to use." },
+]);
 
 const ACCENT = "#D97706";
 
@@ -12,6 +20,7 @@ interface LandingPageProps {
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.30) 0%, rgba(255,160,0,0.12) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

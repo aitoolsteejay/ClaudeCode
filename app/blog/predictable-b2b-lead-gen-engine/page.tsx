@@ -3,6 +3,8 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
@@ -22,9 +24,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Building a Predictable B2B Lead Generation Engine",
+  description: "Most B2B outbound fails because it has no system behind it. Here is the exact framework we use to build a lead generation engine that compounds over time.",
+  url: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
+  datePublished: "2026-05-29T18:55:36+05:30",
+  dateModified: "2026-08-17T13:05:02+05:30",
+});
+
 export default function PredictableB2BLeadGen() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />

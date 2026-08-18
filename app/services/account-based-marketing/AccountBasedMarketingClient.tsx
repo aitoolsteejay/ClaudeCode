@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Account-Based Marketing",
@@ -27,6 +27,11 @@ const STEPS = [
   { n: "03", title: "Buying Committee Engagement", desc: "We identify and message multiple stakeholders per account, not just one contact, so by the time your AE reaches out, several people at the account already recognise your name." },
   { n: "04", title: "Sales Handoff & Reporting", desc: "Engagement data (who opened, replied, clicked, or accepted) rolls up into account-level reporting and pushes to your CRM, so your sales team walks into every conversation with full context." },
 ];
+
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How Account-Based Marketing Works",
+  STEPS.map((s) => ({ name: s.title, text: s.desc }))
+);
 
 const DELIVERABLES = [
   "Tiered target account list built from your ICP and deal-size criteria",
@@ -252,6 +257,7 @@ export default function AccountBasedMarketingClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, rgba(79,70,229,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "HR & Operations Intern, Mumbai | Rs 7,000-15,000/mo",
@@ -18,9 +20,23 @@ export const metadata: Metadata = {
 const APPLY_SUBJECT = "Application for HR and Operations Intern";
 const ACCENT = "#a855f7";
 
+// datePosted is this page's real git creation date, not fabricated.
+// validThrough is a 6-month rolling window from that date, since this is an
+// ongoing/rolling internship posting with no fixed application deadline.
+const JOB_SCHEMA = buildJobPostingSchema({
+  title: "HR and Operations Intern",
+  description: "Join Myntmore as an HR and Operations Intern in Worli, Mumbai. Build real hiring pipelines, KPI/KRA frameworks, and HR systems directly with the founder. 6-month minimum, PPO based on performance.",
+  url: "https://www.myntmore.com/careers/hr-operations-intern",
+  datePosted: "2026-07-28T17:15:52+05:30",
+  validThrough: "2027-01-28T17:15:52+05:30",
+  employmentType: "INTERN",
+  baseSalary: { minValue: 7000, maxValue: 15000, unitText: "MONTH" },
+});
+
 export default function HrOperationsIntern() {
   return (
     <InnerLayout>
+      <JsonLd data={JOB_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "HR and Operations Intern", href: "/careers/hr-operations-intern" }]} />

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Senior Sales Head Job | Myntmore Mumbai | Rs 5–16 LPA",
@@ -17,9 +19,23 @@ export const metadata: Metadata = {
 
 const APPLY_SUBJECT = "Application for Senior Sales Head";
 
+// datePosted is this page's real git creation date, not fabricated.
+// validThrough is a 6-month rolling window from that date, since this is an
+// ongoing/rolling posting with no fixed application deadline.
+const JOB_SCHEMA = buildJobPostingSchema({
+  title: "Senior Sales Head",
+  description: "Join Myntmore as Senior Sales Head in Worli, Mumbai. Own outbound sales, client relationships, and CRM for a fast-growing B2B growth agency. Rs 5–16 LPA + incentives.",
+  url: "https://www.myntmore.com/careers/senior-sales-head",
+  datePosted: "2026-07-28T17:15:52+05:30",
+  validThrough: "2027-01-28T17:15:52+05:30",
+  employmentType: "FULL_TIME",
+  baseSalary: { minValue: 500000, maxValue: 1600000, unitText: "YEAR" },
+});
+
 export default function SeniorSalesHead() {
   return (
     <InnerLayout>
+      <JsonLd data={JOB_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Senior Sales Head", href: "/careers/senior-sales-head" }]} />

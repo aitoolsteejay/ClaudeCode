@@ -3,6 +3,8 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/3-second-rule-cold-outreach",
@@ -38,9 +40,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "The 3-Second Rule: Outbound Messages That Get Read",
+  description: "If your cold emails and LinkedIn DMs get met with silence, it isn't the platform or the algorithm. You have 3 seconds to earn curiosity, here's how to use them.",
+  url: "https://www.myntmore.com/blog/3-second-rule-cold-outreach",
+  datePublished: "2026-08-14T18:34:06+05:30",
+  dateModified: "2026-08-18T10:23:29+05:30",
+});
+
 export default function ThreeSecondRuleColdOutreach() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />

@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "AI Lead Generation",
@@ -25,6 +25,11 @@ const STEPS = [
   { n: "03", title: "Lead Scoring & Prioritisation", desc: "Leads are ranked by fit and intent. Your team only ever sees the top tier: accounts worth their time, not raw lists." },
   { n: "04", title: "CRM Export & Handoff", desc: "Scored leads push automatically to your CRM with full research summaries attached. No manual reformatting. No lost context." },
 ];
+
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How AI Lead Generation Works",
+  STEPS.map((s) => ({ name: s.title, text: s.desc }))
+);
 
 const DELIVERABLES = [
   "AI-scored lead lists with deep qualification",
@@ -225,6 +230,7 @@ export default function AiLeadGenerationClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(99,102,241,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob2} aria-hidden style={{ position: "absolute", top: "40%", left: "75%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(255,130,0,0.08) 40%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", willChange: "transform" }} />

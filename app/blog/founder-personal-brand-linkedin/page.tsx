@@ -3,6 +3,8 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/founder-personal-brand-linkedin",
@@ -34,9 +36,18 @@ const MISTAKES = [
   { title: "Too product-focused", desc: "Your LinkedIn feed should not be a series of feature updates and press releases. Talk about their problems 90% of the time, and only talk about your product when it is genuinely relevant to the solution." },
 ];
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "The Founder's Edge: Your Best Marketing Asset",
+  description: "Founders who build a LinkedIn presence close deals faster, attract better talent, and generate inbound without ad spend. Learn the exact content strategy that works.",
+  url: "https://www.myntmore.com/blog/founder-personal-brand-linkedin",
+  datePublished: "2026-05-29T18:55:36+05:30",
+  dateModified: "2026-08-18T10:23:29+05:30",
+});
+
 export default function FounderPersonalBrandLinkedIn() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />

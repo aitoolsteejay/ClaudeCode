@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Cold Email Infrastructure",
@@ -27,6 +27,11 @@ const STEPS = [
   { n: "03", title: "Deliverability Monitoring & Optimisation", desc: "We track inbox placement, spam rates, and bounce rates daily. Domain health is continuously monitored and sequences are adjusted in real time to protect your sender score and maintain the 98.5% inbox rate we're known for." },
   { n: "04", title: "Reply Management & Handoff", desc: "Every positive reply is flagged, categorised, and handed off to your sales team with full context. Objection replies get tailored follow-ups. You never lose a warm lead in your inbox again." },
 ];
+
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How Cold Email Infrastructure Works",
+  STEPS.map((s) => ({ name: s.title, text: s.desc }))
+);
 
 const DELIVERABLES = [
   "5 dedicated sending domains fully configured",
@@ -254,6 +259,7 @@ export default function ColdEmailClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(34,197,94,0.18) 0%, rgba(22,163,74,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

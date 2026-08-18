@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "ICP Mapping & Lead Scoring",
@@ -27,6 +27,11 @@ const STEPS = [
   { n: "03", title: "Account Scoring & Prioritisation", desc: "Accounts are scored by signal strength, ICP fit, and engagement indicators. Your team sees a prioritised view: the 10% of accounts worth focusing on this week, not a raw list of thousands to triage manually." },
   { n: "04", title: "CRM Export & Signal Dashboard", desc: "Scored accounts push to your CRM daily with full signal context attached. The signal dashboard shows you what triggered each account, so your outreach opens with the exact insight that makes it relevant." },
 ];
+
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How ICP Mapping & Lead Scoring Works",
+  STEPS.map((s) => ({ name: s.title, text: s.desc }))
+);
 
 const DELIVERABLES = [
   "40+ intent signal monitoring across your target market",
@@ -253,6 +258,7 @@ export default function SalesIntelligenceClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.18) 0%, rgba(124,58,237,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

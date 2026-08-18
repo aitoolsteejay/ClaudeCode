@@ -3,6 +3,8 @@
 import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
 
@@ -391,6 +393,7 @@ function FormSection() {
 export default function ManufacturersExportersClient() {
   return (
     <LpLayout>
+      <JsonLd data={buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })))} />
       <HeroSection />
       <StatsSection />
       <PainSection />

@@ -3,6 +3,8 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/linkedin-outreach-sequences",
@@ -22,9 +24,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "LinkedIn Outreach Sequences That Actually Get Replies",
+  description: "Most LinkedIn outreach fails because it is too salesy too fast. Here is the exact multi-touch sequence structure we use to warm up prospects and convert connections into conversations.",
+  url: "https://www.myntmore.com/blog/linkedin-outreach-sequences",
+  datePublished: "2026-06-11T14:46:16Z",
+  dateModified: "2026-08-17T13:05:02+05:30",
+});
+
 export default function LinkedInOutreachSequences() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />

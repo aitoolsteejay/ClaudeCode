@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { FileText, Clock, AlertCircle, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the Case Study Generator Works", [
+  { name: "Pick case study or proposal", text: "Turning a finished project into proof, or drafting a pitch for a new prospect." },
+  { name: "Paste in your rough notes", text: "The problem, what you did, and the result. Real numbers only, we won't invent any." },
+  { name: "Get a ready-to-send draft", text: "Structured, formatted, and yours to edit before it goes out." },
+]);
 
 const ACCENT = "#6366f1";
 
@@ -12,6 +20,7 @@ interface LandingPageProps {
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.26) 0%, rgba(79,70,229,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

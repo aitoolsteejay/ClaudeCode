@@ -6,7 +6,7 @@ import FadeIn from "../../components/FadeIn";
 import JsonLd from "../../components/JsonLd";
 import AskYourAI from "../../components/AskYourAI";
 import Faq from "../../lp/Faq";
-import { buildFaqSchema } from "@/lib/schema";
+import { buildFaqSchema, buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/agency-vs-in-house",
@@ -89,10 +89,19 @@ const FAQ_ITEMS: FaqEntry[] = [
   },
 ];
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Agency vs. In-House SDR: How to Build B2B Outbound",
+  description: "A direct, non-salesy comparison of hiring a B2B outbound agency vs. building an in-house SDR team, covering cost, ramp-up time, tooling, and risk, with real figures from running both.",
+  url: "https://www.myntmore.com/blog/agency-vs-in-house",
+  datePublished: "2026-08-12T12:20:37+05:30",
+  dateModified: "2026-08-17T13:05:02+05:30",
+});
+
 export default function AgencyVsInHouseBlogPost() {
   return (
     <InnerLayout>
       <JsonLd data={buildFaqSchema(FAQ_ITEMS)} />
+      <JsonLd data={ARTICLE_SCHEMA} />
 
       {/* Hero */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>

@@ -3,6 +3,8 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/linkedin-profile-inbound-lead-machine",
@@ -28,9 +30,18 @@ const OPTIMIZE_STEPS = [
   { n: "03", title: "Build credibility through proof", desc: "Showcase your real-world wins, your campaigns, and the actual products or services you build. Let your profile reflect your genuine experience so prospects instantly feel secure reaching out to you." },
 ];
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "The Silent Salesperson: Your LinkedIn Lead Machine",
+  description: "No one reads a word you post without checking your profile first. Here's how to fix the part of LinkedIn most founders ignore, and the exact lesson from a $1M deal that proved it.",
+  url: "https://www.myntmore.com/blog/linkedin-profile-inbound-lead-machine",
+  datePublished: "2026-08-12T16:43:19+05:30",
+  dateModified: "2026-08-18T10:23:29+05:30",
+});
+
 export default function LinkedInProfileInboundLeadMachine() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />

@@ -3,6 +3,9 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 import StatTicker from "../components/StatTicker";
+import Breadcrumbs from "../components/Breadcrumbs";
+import JsonLd from "../components/JsonLd";
+import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Services | AI-Powered Outbound",
@@ -34,8 +37,10 @@ const FAQ = [
 export default function Services() {
   return (
     <InnerLayout>
+      <JsonLd data={buildFaqSchema(FAQ.map((f) => ({ question: f.q, answer: f.a })))} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
           <div className="mb-4">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
               B2B Lead Generation Services

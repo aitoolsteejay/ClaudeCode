@@ -2,6 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Users, Target, Zap, CheckCircle, ArrowRight, MousePointer2 } from "lucide-react";
+import JsonLd from "@/app/components/JsonLd";
+import { buildHowToSchema } from "@/lib/schema";
+
+const HOWTO_SCHEMA = buildHowToSchema("How the DM Angle Generator Works", [
+  { name: "Describe your offer and ideal client", text: "Input basic details about what you sell and who you sell to." },
+  { name: "Get 5 psychology-aligned angles instantly", text: "Our engine crafts angles based on proven persuasion frameworks." },
+  { name: "Pick the angle that fits and start conversations that convert", text: "Use the messages to break through the noise and get replies." },
+]);
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -10,6 +18,7 @@ interface LandingPageProps {
 export function LandingPage({ onGetStarted }: LandingPageProps) {
   return (
     <div className="w-full bg-white text-foreground">
+      <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         {/* Vivid background blobs, matching the homepage hero's color treatment */}

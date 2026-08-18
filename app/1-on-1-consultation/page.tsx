@@ -5,7 +5,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "1-on-1 B2B Growth Consultation | Free GTM Audit",
-  description: "Book a 1-on-1 consultation with Tejas Jhaveri, B2B growth expert. Free 30-minute GTM audit: outreach review, ICP mapping, pipeline bottleneck diagnosis. No pitch, no pressure.",
+  description: "Book a 1-on-1 consultation with Tejas Jhaveri, B2B growth expert. Free GTM audit: outreach review, ICP mapping. No pitch, no pressure.",
   alternates: { canonical: "https://www.myntmore.com/1-on-1-consultation" },
   keywords: [
     "b2b growth consultation",

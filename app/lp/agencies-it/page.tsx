@@ -3,7 +3,7 @@ import AgenciesItClient from "./AgenciesItClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for Agencies & IT Companies",
-  description: "Stop waiting for referrals. We build and run the outbound engine that fills your agency's pipeline: AI-powered cold email, LinkedIn outreach, and ABM targeting the exact clients you want.",
+  description: "Stop waiting for referrals. We build the outbound engine that fills your agency's pipeline: cold email, LinkedIn & ABM. Book a free audit.",
   keywords: [
     "b2b lead generation for agencies",
     "outbound agency for it companies",

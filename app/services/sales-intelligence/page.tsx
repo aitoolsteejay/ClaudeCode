@@ -3,7 +3,7 @@ import SalesIntelligenceClient from "./SalesIntelligenceClient";
 
 export const metadata: Metadata = {
   title: "ICP Mapping & Lead Scoring Services",
-  description: "We monitor 40+ buying signals daily (funding rounds, hiring surges, tech stack changes) so you reach in-market accounts the moment they enter the buying window.",
+  description: "We monitor 40+ buying signals daily so you reach in-market accounts the moment they enter the buying window. Book a free signals audit.",
   keywords: ["icp mapping services", "lead scoring agency for b2b", "b2b buying signal monitoring", "sales intelligence agency", "intent data for b2b sales", "ideal customer profile mapping agency", "trigger based lead lists", "funding and hiring signal tracking for sales", "account intent monitoring service", "how to identify in-market accounts", "b2b lead scoring vs manual prospecting", "sales intelligence agency mumbai", "real-time buying signals for sales teams", "icp mapping for b2b saas companies", "predictive lead scoring for b2b sales"],
   alternates: { canonical: "https://www.myntmore.com/services/sales-intelligence" },
   openGraph: {

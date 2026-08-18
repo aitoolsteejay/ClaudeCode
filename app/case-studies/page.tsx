@@ -3,7 +3,7 @@ import CaseStudiesClient from "./CaseStudiesClient";
 
 export const metadata: Metadata = {
   title: "B2B Case Studies & Client Results",
-  description: "Real results in the CRM, not the deck. See how Myntmore's cold email, LinkedIn outreach, and ABM systems booked meetings and generated pipeline for real B2B clients.",
+  description: "Real results in the CRM, not the deck. See how Myntmore's cold email, LinkedIn, and ABM systems booked meetings for real B2B clients.",
   keywords: ["b2b lead generation case studies", "myntmore client results", "cold email case studies", "linkedin outreach case studies", "b2b outbound agency results", "abm case studies", "b2b sales pipeline case studies", "lead generation agency proof", "b2b growth agency case studies", "myntmore case studies", "saas lead generation case studies", "linkedin personal branding case studies", "b2b demand generation results", "outbound agency client success stories"],
   alternates: { canonical: "https://www.myntmore.com/case-studies" },
   openGraph: {

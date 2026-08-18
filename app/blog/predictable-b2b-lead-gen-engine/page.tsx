@@ -14,7 +14,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "Building a Predictable B2B Lead Generation Engine",
-  description: "Most B2B outbound fails because it has no system behind it. Here is the exact framework we use to build a lead generation engine that compounds over time.",
+  description: "Most B2B outbound fails because it has no system behind it. Here's the framework we use to build a compounding engine. Read the guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine" },
   keywords: ["b2b lead generation engine", "how to build a predictable pipeline", "outbound sales system", "lead generation framework", "icp definition for outbound", "intent signals for b2b sales", "cold outreach mistakes", "building a repeatable sales pipeline", "b2b outbound strategy", "personalized cold email sequences", "how to scale cold outreach", "sales pipeline predictability", "pray and spray outbound", "b2b sales development framework", "outbound lead gen system for startups"],
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Building a Predictable B2B Lead Generation Engine",
-  description: "Most B2B outbound fails because it has no system behind it. Here is the exact framework we use to build a lead generation engine that compounds over time.",
+  description: "Most B2B outbound fails because it has no system behind it. Here's the framework we use to build a compounding engine. Read the guide.",
   url: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
   datePublished: "2026-05-29T18:55:36+05:30",
   dateModified: "2026-08-17T13:05:02+05:30",

@@ -15,8 +15,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Agency vs. In-House SDR: How to Build B2B Outbound",
-  description: "A direct, non-salesy comparison of hiring a B2B outbound agency vs. building an in-house SDR team, covering cost, ramp-up time, tooling, and risk, with real figures from running both.",
+  title: "Agency vs. In-House SDR for B2B Outbound",
+  description: "A direct comparison of hiring a B2B outbound agency vs. building an in-house SDR team: cost, ramp-up time, and risk. Read the comparison.",
   keywords: ["agency vs in-house sdr", "b2b outbound agency vs in-house sales team", "should i hire an sdr or use an agency", "cost of hiring an sdr", "sdr salary vs agency retainer", "outbound lead generation agency", "time to hire and ramp an sdr", "in-house sdr ramp up time", "outsourcing b2b sales development", "when to hire an in-house sdr", "b2b outbound agency pricing", "pros and cons of sales development agencies", "building an in-house sdr team", "risk of a bad sdr hire", "sdr team scalability", "transitioning from agency to in-house sales"],
   alternates: { canonical: "https://www.myntmore.com/blog/agency-vs-in-house" },
   openGraph: {
@@ -91,7 +91,7 @@ const FAQ_ITEMS: FaqEntry[] = [
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Agency vs. In-House SDR: How to Build B2B Outbound",
-  description: "A direct, non-salesy comparison of hiring a B2B outbound agency vs. building an in-house SDR team, covering cost, ramp-up time, tooling, and risk, with real figures from running both.",
+  description: "A direct comparison of hiring a B2B outbound agency vs. building an in-house SDR team: cost, ramp-up time, and risk. Read the comparison.",
   url: "https://www.myntmore.com/blog/agency-vs-in-house",
   datePublished: "2026-08-12T12:20:37+05:30",
   dateModified: "2026-08-17T13:05:02+05:30",

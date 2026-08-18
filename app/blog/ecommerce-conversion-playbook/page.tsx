@@ -14,7 +14,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "The eCommerce Conversion Playbook",
-  description: "Traffic without conversion is just expensive noise. A practical playbook for eCommerce brands that want more buyers, not just more visitors. Fix the trust gap, friction, and messaging.",
+  description: "Traffic without conversion is expensive noise. A practical playbook to fix the trust gap, friction, and messaging. Read the playbook.",
   keywords: ["ecommerce conversion rate optimization", "how to increase ecommerce conversion rate", "reduce checkout friction ecommerce", "abandoned cart email sequence", "product page copy that converts", "social proof placement ecommerce", "ecommerce trust signals", "turning website visitors into buyers", "guest checkout conversion impact", "ecommerce cro playbook", "b2b ecommerce outbound", "reduce cart abandonment", "ecommerce checkout optimization", "why visitors don't buy", "benefits vs features copywriting", "high ticket ecommerce sales"],
   alternates: { canonical: "https://www.myntmore.com/blog/ecommerce-conversion-playbook" },
   openGraph: {
@@ -33,7 +33,7 @@ const FIXES = [
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The eCommerce Conversion Playbook",
-  description: "Traffic without conversion is just expensive noise. A practical playbook for eCommerce brands that want more buyers, not just more visitors. Fix the trust gap, friction, and messaging.",
+  description: "Traffic without conversion is expensive noise. A practical playbook to fix the trust gap, friction, and messaging. Read the playbook.",
   url: "https://www.myntmore.com/blog/ecommerce-conversion-playbook",
   datePublished: "2026-05-29T18:55:36+05:30",
   dateModified: "2026-08-18T10:23:29+05:30",

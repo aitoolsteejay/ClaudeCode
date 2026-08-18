@@ -5,7 +5,7 @@ import PostingRhythmClient from "./PostingRhythmClient";
 
 export const metadata: Metadata = {
   title: "Posting Rhythm Builder",
-  description: "Free tool to plan a consistent LinkedIn posting rhythm. Build a content cadence that keeps your personal brand visible to your ICP.",
+  description: "Free tool to plan a consistent LinkedIn posting rhythm and content cadence for your ICP. Try it free.",
   keywords: [
     "linkedin posting rhythm builder",
     "content calendar generator linkedin",

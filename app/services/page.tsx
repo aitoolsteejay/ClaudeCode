@@ -8,8 +8,8 @@ import JsonLd from "../components/JsonLd";
 import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Services | AI-Powered Outbound",
-  description: "Six productized B2B growth services built for companies that want a real system, not more promises. LinkedIn Outreach, Cold Email, ICP Mapping, AI Lead Gen, Account-Based Marketing, Personal Branding.",
+  title: "AI-Powered B2B Lead Generation Services",
+  description: "Six productized B2B growth services: LinkedIn Outreach, Cold Email, ICP Mapping, AI Lead Gen, ABM, and Personal Branding. Book a free audit.",
   alternates: { canonical: "https://www.myntmore.com/services" },
   keywords: ["b2b lead generation agency", "b2b lead generation services", "outbound marketing agency", "b2b lead generation agency mumbai", "ai lead generation company", "linkedin outreach and cold email agency", "account based marketing agency", "icp mapping and lead scoring services", "b2b growth agency", "b2b demand generation agency", "outbound sales agency for saas", "lead generation agency vs in-house sdr team", "how to generate b2b leads without cold calling", "b2b sales pipeline agency", "personal branding and linkedin ghostwriting agency", "productized b2b lead generation services"],
   openGraph: {

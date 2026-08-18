@@ -5,8 +5,8 @@ import LeadCaptureForm from "../components/LeadCaptureForm";
 import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Marketing Automation Services | B2B Outbound Automation",
-  description: "AI-powered marketing automation for B2B companies. Automated outbound sequences, email automation, workflow automation, and lead nurturing systems that run 24/7.",
+  title: "B2B Marketing Automation Services",
+  description: "AI-powered marketing automation for B2B: outbound sequences, email automation, and lead nurturing that runs 24/7. Book a free automation audit.",
   alternates: { canonical: "https://www.myntmore.com/marketing-automation" },
   keywords: [
     "b2b marketing automation",

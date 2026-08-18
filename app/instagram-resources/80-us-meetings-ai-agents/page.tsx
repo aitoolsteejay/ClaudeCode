@@ -10,7 +10,7 @@ import Underline from "./Underline";
 
 export const metadata: Metadata = {
   title: "80+ US Meetings Booked in 1 Month with AI Agents",
-  description: "The exact AI-agent blueprint behind 800 LinkedIn connections, 80+ US B2B meetings, and 4 new clients a month, fully automated with n8n, Apollo/Clay, and AI enrichment.",
+  description: "The exact AI-agent blueprint behind 800 LinkedIn connections and 80+ US B2B meetings a month, automated with n8n and AI. Read the guide.",
   keywords: [
     "ai agents for lead generation",
     "n8n lead generation workflow",

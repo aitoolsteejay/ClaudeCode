@@ -13,8 +13,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "LinkedIn Outreach Sequences That Actually Get Replies",
-  description: "Most LinkedIn outreach fails because it is too salesy too fast. Here is the exact multi-touch sequence structure we use to warm up prospects and convert connections into conversations.",
+  title: "LinkedIn Outreach Sequences That Get Replies",
+  description: "Most LinkedIn outreach fails because it's too salesy too fast. Here's the multi-touch sequence structure we use. Read the full guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/linkedin-outreach-sequences" },
   keywords: ["linkedin outreach sequence", "linkedin cold outreach that gets replies", "how to write a linkedin connection message", "multi-touch linkedin sequence", "linkedin dm templates", "linkedin connection request acceptance rate", "warming up prospects before a dm", "linkedin outreach triggers", "linkedin sales navigator outreach limits", "combining linkedin and cold email", "b2b linkedin lead generation", "linkedin outreach cadence", "how many touches before a prospect replies", "linkedin messaging best practices", "cold linkedin message examples"],
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "LinkedIn Outreach Sequences That Actually Get Replies",
-  description: "Most LinkedIn outreach fails because it is too salesy too fast. Here is the exact multi-touch sequence structure we use to warm up prospects and convert connections into conversations.",
+  description: "Most LinkedIn outreach fails because it's too salesy too fast. Here's the multi-touch sequence structure we use. Read the full guide.",
   url: "https://www.myntmore.com/blog/linkedin-outreach-sequences",
   datePublished: "2026-06-11T14:46:16Z",
   dateModified: "2026-08-17T13:05:02+05:30",

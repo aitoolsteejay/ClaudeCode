@@ -11,7 +11,7 @@ import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Tejas Jhaveri, B2B Growth Expert",
-  description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore, Mumbai's leading AI-powered outbound agency. 10+ years of lead generation expertise.",
+  description: "Tejas Jhaveri, TEDx speaker and founder of Myntmore, Mumbai's AI-powered outbound agency. 10+ years in B2B lead gen. Book a call to learn more.",
   alternates: { canonical: "https://www.myntmore.com/about-us" },
   keywords: [
     "tejas jhaveri",

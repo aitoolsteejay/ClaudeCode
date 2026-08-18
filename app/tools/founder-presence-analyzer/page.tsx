@@ -5,7 +5,7 @@ import FounderPresenceClient from "./FounderPresenceClient";
 
 export const metadata: Metadata = {
   title: "Founder Presence Analyzer",
-  description: "Free AI tool that benchmarks your LinkedIn presence against competitors and gives you positioning recommendations and headline suggestions.",
+  description: "Free AI tool that benchmarks your LinkedIn presence against competitors and gives you positioning recommendations. Try it free.",
   keywords: [
     "founder presence analyzer",
     "linkedin presence audit tool",

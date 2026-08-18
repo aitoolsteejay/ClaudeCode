@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 export const metadata: Metadata = {
   title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
   description:
-    "AI-powered B2B outbound agency in Mumbai. Cold email, LinkedIn outreach & ABM that books qualified meetings. 12K+ meetings booked, $120M+ pipeline generated.",
+    "AI-powered B2B outbound agency in Mumbai. Cold email, LinkedIn & ABM that books meetings. 12K+ booked, $120M+ pipeline. Book a free audit.",
   alternates: { canonical: "https://www.myntmore.com" },
   keywords: [
     "b2b lead generation",

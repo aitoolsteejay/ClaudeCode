@@ -3,7 +3,7 @@ import PharmaClient from "./PharmaClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for Pharmaceutical Companies",
-  description: "Get in front of pharma buyers before your next exhibition. We build and run the outbound engine that connects formulation manufacturers, API manufacturers, and CDMOs with qualified domestic and global buyers through AI-powered cold email, LinkedIn outreach, and ABM.",
+  description: "Get in front of pharma buyers before your next exhibition. AI-powered outbound for CDMOs and manufacturers. Book a free audit.",
   keywords: [
     "b2b lead generation for pharma companies",
     "lead generation agency for pharmaceutical companies india",

@@ -9,7 +9,7 @@ import { buildFaqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Chennai",
   description:
-    "Myntmore is a B2B lead generation agency for Chennai's automotive, healthcare, IT/ITES, and export-manufacturing companies, running AI-powered cold email, LinkedIn outreach, and ABM to book qualified sales meetings.",
+    "B2B lead generation for Chennai's automotive, healthcare, IT, and export-manufacturing firms: AI-powered cold email, LinkedIn & ABM. Book a free audit.",
   alternates: {
     canonical: "https://www.myntmore.com/b2b-lead-generation-chennai",
   },

@@ -5,7 +5,7 @@ import BattleCardGeneratorClient from "./BattleCardGeneratorClient";
 
 export const metadata: Metadata = {
   title: "Competitor Battle Card Generator",
-  description: "Free AI tool that researches a competitor live and builds a sales battle card: what they do, their pricing if public, their real strengths and gaps, and how to position against them.",
+  description: "Free AI tool that researches a competitor live and builds a sales battle card: strengths, gaps, and how to position against them. Try it free.",
   keywords: [
     "competitor battle card generator",
     "free battle card generator",

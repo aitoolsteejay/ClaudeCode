@@ -13,8 +13,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The 3-Second Rule: Outbound Messages That Get Read",
-  description: "If your cold emails and LinkedIn DMs get met with silence, it isn't the platform or the algorithm. You have 3 seconds to earn curiosity, here's how to use them.",
+  title: "The 3-Second Rule for Cold Outreach",
+  description: "If your cold emails and LinkedIn DMs get met with silence, you have 3 seconds to earn curiosity. Here's how to use them. Read the guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/3-second-rule-cold-outreach" },
   keywords: [
     "why cold emails get ignored",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The 3-Second Rule: Outbound Messages That Get Read",
-  description: "If your cold emails and LinkedIn DMs get met with silence, it isn't the platform or the algorithm. You have 3 seconds to earn curiosity, here's how to use them.",
+  description: "If your cold emails and LinkedIn DMs get met with silence, you have 3 seconds to earn curiosity. Here's how to use them. Read the guide.",
   url: "https://www.myntmore.com/blog/3-second-rule-cold-outreach",
   datePublished: "2026-08-14T18:34:06+05:30",
   dateModified: "2026-08-18T10:23:29+05:30",

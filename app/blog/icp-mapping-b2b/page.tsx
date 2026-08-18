@@ -14,7 +14,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "ICP Mapping for B2B: Define Your Exact Buyer",
-  description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
+  description: "Most B2B companies target everyone and convert no one. Here's the exact ICP mapping process we use to find buyers who close. Read the guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/icp-mapping-b2b" },
   keywords: ["icp mapping", "ideal customer profile", "how to define your icp", "b2b targeting strategy", "firmographic vs intent data", "lead qualification criteria", "negative icp", "intent signals for b2b sales", "how to build icp from closed deals", "hiring signals for sales prospecting", "funding signals for outbound sales", "sub-segmenting your icp", "b2b buyer persona", "account based marketing targeting", "sales targeting framework", "why targeting everyone reduces conversion"],
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "ICP Mapping for B2B: Define Your Exact Buyer",
-  description: "Most B2B companies target everyone and convert no one. This is the exact ICP mapping process we use to identify the buyers most likely to close, and build outreach around them.",
+  description: "Most B2B companies target everyone and convert no one. Here's the exact ICP mapping process we use to find buyers who close. Read the guide.",
   url: "https://www.myntmore.com/blog/icp-mapping-b2b",
   datePublished: "2026-06-11T14:46:16Z",
   dateModified: "2026-08-18T10:23:29+05:30",

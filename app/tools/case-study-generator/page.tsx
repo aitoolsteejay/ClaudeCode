@@ -5,7 +5,7 @@ import CaseStudyGeneratorClient from "./CaseStudyGeneratorClient";
 
 export const metadata: Metadata = {
   title: "Case Study & Proposal Generator",
-  description: "Free AI tool that turns a finished project into a case study, or a prospect conversation into a proposal draft. No invented numbers, no generic filler.",
+  description: "Free AI tool that turns a finished project into a case study, or a conversation into a proposal draft. No invented numbers. Try it free.",
   keywords: [
     "free case study generator",
     "ai case study generator",

@@ -13,8 +13,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The TAM Trap: How Vague Targeting Kills Your Pipeline",
-  description: "Targeting 'founders, CXOs, and mid-sized B2B companies' isn't a strategy, it's praying in the dark. Here's how to find your Total Conversional Market instead of your TAM.",
+  title: "The TAM Trap: Vague Targeting Kills Your Pipeline",
+  description: "Targeting 'founders, CXOs, and mid-sized companies' isn't a strategy. Here's how to find your Total Conversional Market. Read the guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/tam-trap-vague-targeting" },
   keywords: [
     "total addressable market vs total conversional market",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The TAM Trap: How Vague Targeting Kills Your Pipeline",
-  description: "Targeting 'founders, CXOs, and mid-sized B2B companies' isn't a strategy, it's praying in the dark. Here's how to find your Total Conversional Market instead of your TAM.",
+  description: "Targeting 'founders, CXOs, and mid-sized companies' isn't a strategy. Here's how to find your Total Conversional Market. Read the guide.",
   url: "https://www.myntmore.com/blog/tam-trap-vague-targeting",
   datePublished: "2026-08-14T18:34:06+05:30",
   dateModified: "2026-08-18T10:23:29+05:30",

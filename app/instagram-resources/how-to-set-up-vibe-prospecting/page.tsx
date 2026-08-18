@@ -7,8 +7,8 @@ import FadeIn from "../../components/FadeIn";
 import Underline from "./Underline";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
-  description: "A step-by-step setup guide for the Vibe Prospecting Claude connector, plus 10 ready-to-copy prompts for pulling verified B2B leads by funding, headcount, tech stack, and hiring signals.",
+  title: "How to Set Up Vibe Prospecting on Claude",
+  description: "A step-by-step setup guide for the Vibe Prospecting Claude connector, plus 10 prompts for pulling verified B2B leads. Read the guide.",
   keywords: [
     "vibe prospecting setup guide",
     "claude connectors for lead generation",

@@ -8,7 +8,7 @@ import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Hyderabad",
-  description: "AI-powered B2B lead generation for Hyderabad's IT, pharma, and biotech companies: cold email, LinkedIn outreach, and account-based marketing that build predictable pipeline.",
+  description: "AI-powered B2B lead generation for Hyderabad's IT, pharma, and biotech firms: cold email, LinkedIn & ABM. Book a free GTM audit.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-hyderabad" },
   keywords: ["b2b lead generation hyderabad", "outbound agency hyderabad", "linkedin outreach hyderabad", "cold email agency hyderabad pharma", "account based marketing hyderabad", "ai lead generation hyderabad", "abm agency hyderabad", "sales intelligence hyderabad", "b2b lead generation for pharma companies hyderabad", "lead generation for biotech companies genome valley", "lead generation for it services companies hyderabad", "b2b leads for hyderabad startups", "demand generation agency hyderabad", "linkedin ghostwriting for founders hyderabad", "best b2b outbound agency in hyderabad", "how to get b2b leads in hyderabad", "cold email agency for pharma companies telangana"],
   openGraph: {

@@ -3,7 +3,7 @@ import ManufacturersExportersClient from "./ManufacturersExportersClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for Manufacturers & Exporters",
-  description: "Find international buyers without trade fairs. We connect Indian manufacturers and exporters with qualified global buyers through AI-powered outreach, targeting procurement heads, importers, and distributors.",
+  description: "Find international buyers without trade fairs. We connect Indian manufacturers and exporters with qualified global buyers. Book a free audit.",
   keywords: [
     "lead generation for exporters india",
     "b2b outbound for manufacturers",

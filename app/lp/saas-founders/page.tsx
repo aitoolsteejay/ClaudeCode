@@ -3,7 +3,7 @@ import SaasFoundersClient from "./SaasFoundersClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for SaaS Founders",
-  description: "Outbound that books demos, not just opens. We build and run a predictable outbound engine for B2B SaaS: ICP mapping, signal-based targeting, cold email and LinkedIn sequences.",
+  description: "Outbound that books demos, not just opens. A predictable outbound engine for B2B SaaS: ICP mapping, cold email & LinkedIn. Book a demo.",
   keywords: [
     "b2b lead generation for saas companies",
     "outbound agency for saas founders",

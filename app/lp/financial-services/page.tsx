@@ -3,7 +3,7 @@ import FinancialServicesClient from "./FinancialServicesClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for Financial Services Firms",
-  description: "Stop relying on referrals alone. We build and run the compliance-safe outbound engine that earns CFO trust and books qualified meetings for NBFCs, business lenders, equipment financing, and corporate treasury firms.",
+  description: "Stop relying on referrals. We build the compliance-safe outbound engine that earns CFO trust for NBFCs and lenders. Book a free audit.",
   keywords: [
     "b2b lead generation for nbfcs",
     "lead generation agency for financial services india",

@@ -13,8 +13,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Cold Email Deliverability: Why Emails Land in Spam",
-  description: "A technical guide to cold email deliverability: domain setup, warming, sending limits, and why most cold email campaigns fail before a single human ever reads them.",
+  title: "Cold Email Deliverability Guide",
+  description: "A technical guide to cold email deliverability: domain setup, warming, and sending limits. Read the full guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/cold-email-deliverability-guide" },
   keywords: ["cold email deliverability", "how to improve cold email deliverability", "why cold emails go to spam", "email warm up process", "spf dkim dmarc setup", "cold email sending domains", "domain warm up for cold email", "cold email sending limits", "inbox placement test", "cold email spam checker", "how many cold emails per day per inbox", "bounce rate for cold email", "separate sending domain for cold outreach", "email authentication for outbound", "cold email deliverability checklist", "fixing low inbox placement rate"],
   openGraph: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Cold Email Deliverability: Why Emails Land in Spam",
-  description: "A technical guide to cold email deliverability: domain setup, warming, sending limits, and why most cold email campaigns fail before a single human ever reads them.",
+  description: "A technical guide to cold email deliverability: domain setup, warming, and sending limits. Read the full guide.",
   url: "https://www.myntmore.com/blog/cold-email-deliverability-guide",
   datePublished: "2026-06-11T14:46:16Z",
   dateModified: "2026-08-18T10:23:29+05:30",

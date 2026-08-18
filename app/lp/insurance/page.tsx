@@ -3,7 +3,7 @@ import InsuranceClient from "./InsuranceClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for Insurance Brokers & Agencies",
-  description: "Stop waiting on referrals. We build the outbound engine that gets your brokerage in front of HR Heads, CFOs, and Admin Heads evaluating group health and commercial insurance, timed to their renewal window.",
+  description: "Stop waiting on referrals. We get your brokerage in front of HR Heads and CFOs, timed to their renewal window. Book a free audit.",
   keywords: [
     "lead generation agency for insurance brokers",
     "b2b outbound for insurance agencies",

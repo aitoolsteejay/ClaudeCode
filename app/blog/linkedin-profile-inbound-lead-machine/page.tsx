@@ -13,8 +13,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The Silent Salesperson: Your LinkedIn Lead Machine",
-  description: "No one reads a word you post without checking your profile first. Here's how to fix the part of LinkedIn most founders ignore, and the exact lesson from a $1M deal that proved it.",
+  title: "The Silent Salesperson: LinkedIn Lead Machine",
+  description: "No one reads your posts without checking your profile first. Here's how to fix the part of LinkedIn most founders ignore. Read the guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/linkedin-profile-inbound-lead-machine" },
   keywords: ["why your linkedin profile matters more than posts", "linkedin silent salesperson", "how to optimize linkedin profile for leads", "linkedin headline examples", "linkedin about section that converts", "turning linkedin profile into inbound leads", "founder linkedin profile tips", "b2b personal branding", "linkedin profile credibility", "linkedin profile audit", "linkedin profile optimization", "optimizing linkedin headline and about section", "inbound lead generation linkedin", "linkedin personal branding for founders", "linkedin profile checklist"],
   openGraph: {

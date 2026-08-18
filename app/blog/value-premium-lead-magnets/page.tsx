@@ -14,7 +14,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "The Value Premium: Creating Magnetic Lead Magnets",
-  description: "Most B2B lead magnets are generic checklists nobody wants. Here's the Signal-Heavy Structuring framework we use to build content that generates direct sales requests.",
+  description: "Most B2B lead magnets are generic checklists nobody wants. Here's the Signal-Heavy framework we use instead. Read the full guide.",
   alternates: { canonical: "https://www.myntmore.com/blog/value-premium-lead-magnets" },
   keywords: [
     "how to create a lead magnet that converts",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The Value Premium: Creating Magnetic Lead Magnets",
-  description: "Most B2B lead magnets are generic checklists nobody wants. Here's the Signal-Heavy Structuring framework we use to build content that generates direct sales requests.",
+  description: "Most B2B lead magnets are generic checklists nobody wants. Here's the Signal-Heavy framework we use instead. Read the full guide.",
   url: "https://www.myntmore.com/blog/value-premium-lead-magnets",
   datePublished: "2026-08-14T18:34:06+05:30",
   dateModified: "2026-08-18T10:23:29+05:30",

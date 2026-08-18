@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import AgencyPartnersClient from "./AgencyPartnersClient";
 
 export const metadata: Metadata = {
-  title: "Partner Program for Agencies | White-Label B2B Outbound",
-  description: "Sell B2B outbound, we run it under your brand. Join Myntmore's white-label partner program: cold email, LinkedIn outreach, and ABM delivered as your own service, with no delivery team to hire.",
+  title: "White-Label B2B Outbound Partner Program",
+  description: "Sell B2B outbound, we run it under your brand. Cold email, LinkedIn & ABM delivered as your own service, no delivery team to hire. Book a call.",
   keywords: [
     "white label lead generation agency",
     "white label cold email service",

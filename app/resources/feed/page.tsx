@@ -3,7 +3,7 @@ import FeedClient from "./FeedClient";
 
 export const metadata: Metadata = {
   title: "The Feed",
-  description: "Short, practical Instagram Reels on B2B outbound, LinkedIn, and AI-powered lead generation from Myntmore.",
+  description: "Short, practical Instagram Reels on B2B outbound, LinkedIn, and AI lead generation from Myntmore. Watch the reels.",
   keywords: [
     "b2b instagram reels",
     "short-form video marketing b2b",

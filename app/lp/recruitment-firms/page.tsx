@@ -3,7 +3,7 @@ import RecruitmentFirmsClient from "./RecruitmentFirmsClient";
 
 export const metadata: Metadata = {
   title: "B2B Outbound for Recruitment & Staffing Firms",
-  description: "Stop competing on job boards. We build and run the outbound engine that fills your staffing firm's pipeline with new client companies: AI-powered cold email, LinkedIn outreach, and ABM targeting the HR and TA leaders who are actively hiring.",
+  description: "Stop competing on job boards. We fill your staffing firm's pipeline with new clients via cold email, LinkedIn & ABM. Book a free audit.",
   keywords: [
     "lead generation for staffing agencies",
     "b2b outbound for recruitment firms",

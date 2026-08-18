@@ -8,7 +8,7 @@ import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Pune",
-  description: "AI-powered B2B lead generation for Pune's IT, SaaS, and auto-component companies: cold email, LinkedIn outreach, and account-based marketing that build predictable pipeline.",
+  description: "AI-powered B2B lead generation for Pune's IT, SaaS, and auto-component firms: cold email, LinkedIn & ABM. Book a free GTM audit.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-pune" },
   keywords: ["b2b lead generation pune", "outbound agency pune", "linkedin outreach pune", "cold email agency pune", "account based marketing pune", "ai lead generation pune", "abm agency pune", "sales intelligence pune", "b2b lead generation for saas companies pune", "lead generation for auto component manufacturers pune", "b2b leads for it services companies pune", "lead generation for oem suppliers pune", "demand generation agency pune", "linkedin ghostwriting for founders pune", "best b2b outbound agency in pune", "how to get b2b leads in pune", "cold email agency for engineering companies pune"],
   openGraph: {

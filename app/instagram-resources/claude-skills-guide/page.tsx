@@ -8,7 +8,7 @@ import Underline from "./Underline";
 
 export const metadata: Metadata = {
   title: "The 6 Claude Skills Guide",
-  description: "Six ready-to-use Claude skills for founders and marketers: content distribution, LinkedIn growth, lead generation, competitor research, proposals, and personal brand, complete with copy-paste prompts.",
+  description: "Six ready-to-use Claude skills for founders: content distribution, LinkedIn growth, lead gen, and more, with copy-paste prompts. Try them free.",
   keywords: [
     "claude skills for founders",
     "claude ai prompts for marketing",

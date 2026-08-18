@@ -6,7 +6,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "SEO Services Mumbai | B2B Content SEO",
-  description: "SEO services for B2B companies in Mumbai and across India. Content-led SEO that drives qualified pipeline, not just traffic. Search engine optimisation agency Mumbai.",
+  description: "SEO services for B2B companies in India. Content-led SEO that drives qualified pipeline, not just traffic. Book a free SEO audit today.",
   alternates: { canonical: "https://www.myntmore.com/seo" },
   keywords: [
     "seo services mumbai",

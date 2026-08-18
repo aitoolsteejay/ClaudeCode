@@ -8,7 +8,7 @@ import { buildFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Bengaluru",
-  description: "AI-powered B2B lead generation for Bengaluru's SaaS and tech startups: cold email, LinkedIn outreach, and account-based marketing built for India's most competitive tech market.",
+  description: "AI-powered B2B lead generation for Bengaluru's SaaS and tech startups: cold email, LinkedIn & ABM. Book a free GTM audit.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-bengaluru" },
   keywords: ["b2b lead generation bengaluru", "outbound agency bangalore", "linkedin outreach bengaluru", "cold email agency bangalore saas", "account based marketing bengaluru", "ai lead generation bangalore", "abm agency bengaluru", "sales intelligence bangalore", "b2b lead generation for saas companies bangalore", "demand generation agency bangalore", "lead generation for tech startups bengaluru", "outbound agency for deep tech startups bangalore", "b2b leads for saas companies expanding to us market", "linkedin ghostwriting for founders bangalore", "best b2b outbound agency in bangalore", "how to get b2b leads in bengaluru", "cold email agency for b2b saas india"],
   openGraph: {

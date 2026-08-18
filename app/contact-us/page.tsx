@@ -5,7 +5,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contact Myntmore | Book a Free B2B GTM Audit",
-  description: "Book a free 30-minute B2B GTM audit with Myntmore. We'll audit your outreach, map your ICP, and tell you exactly what's holding your pipeline back. No pitch, no pressure.",
+  description: "Book a free 30-minute B2B GTM audit with Myntmore. We'll map your ICP and find what's holding your pipeline back. No pitch, no pressure.",
   alternates: { canonical: "https://www.myntmore.com/contact-us" },
   keywords: [
     "contact myntmore",

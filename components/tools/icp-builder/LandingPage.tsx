@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Target, MessageSquare, Users, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the ICP Builder Works", [
   { name: "Describe your business", text: "Your core offer, who you sell to, and how you sell it." },
@@ -191,6 +192,8 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="icp-builder" />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { EyeOff, Users2, PenLine, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Founder Presence Analyzer Works", [
   { name: "Add your activity", text: "Your posting frequency and average engagement over the last 30 days." },
@@ -188,6 +189,8 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="founder-presence-analyzer" />
     </div>
   );
 }

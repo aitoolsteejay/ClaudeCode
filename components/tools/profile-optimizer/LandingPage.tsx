@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Target, Zap } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Profile Optimizer Works", [
   { name: "Paste your LinkedIn profile URL", text: "Quick and easy input of your current profile details." },
@@ -171,6 +172,8 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
           </Button>
         </div>
       </section>
+
+      <RelatedTools currentSlug="linkedin-optimizer" />
     </div>
   );
 };

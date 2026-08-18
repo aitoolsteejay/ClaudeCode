@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { HelpCircle, Frown, TrendingDown, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Battle Card Generator Works", [
   { name: "Name the competitor", text: "And tell us what you sell, and to whom." },
@@ -188,6 +189,8 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="battle-card-generator" />
     </div>
   );
 }

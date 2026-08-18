@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Copy, Clock, Frown, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Lead Magnet Ideas Tool Works", [
   { name: "Describe your business and ICP", text: "What you do, who you sell to, and your industry." },
@@ -188,6 +189,8 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="lead-magnet-ideas" />
     </div>
   );
 }

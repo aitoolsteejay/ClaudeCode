@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FileText, Clock, AlertCircle, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Case Study Generator Works", [
   { name: "Pick case study or proposal", text: "Turning a finished project into proof, or drafting a pitch for a new prospect." },
@@ -188,6 +189,8 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="case-study-generator" />
     </div>
   );
 }

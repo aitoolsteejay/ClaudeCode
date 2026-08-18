@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Calculator, HelpCircle, TrendingUp, ArrowRight, MousePointer2, Zap, CheckCircle } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the ROI Calculator Works", [
   { name: "Enter your funnel numbers", text: "Connection volume, acceptance rate, reply rate, deal size, and cost." },
@@ -188,6 +189,8 @@ export function LandingPage({ onStart }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="roi-calculator" />
     </div>
   );
 }

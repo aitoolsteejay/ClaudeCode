@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MessageSquare, Users, Target, Zap, CheckCircle, ArrowRight, MousePointer2 } from "lucide-react";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the DM Angle Generator Works", [
   { name: "Describe your offer and ideal client", text: "Input basic details about what you sell and who you sell to." },
@@ -190,6 +191,8 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </section>
+
+      <RelatedTools currentSlug="dm-angle-generator" />
     </div>
   );
 }

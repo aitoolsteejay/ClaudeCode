@@ -20,6 +20,18 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Legacy paths kept only for old backlinks/bookmarks. `permanent: true`
+      // makes Next.js emit a real 308 here -- these used to be handled by
+      // next/navigation's redirect() in each page.tsx, which always issues a
+      // 307 (temporary) regardless of intent, telling search engines and
+      // caches these moves aren't permanent when they are.
+      { source: "/about", destination: "/about-us", permanent: true },
+      { source: "/contact", destination: "/contact-us", permanent: true },
+      { source: "/personal-branding", destination: "/services/personal-branding", permanent: true },
+    ];
+  },
 };
 
 module.exports = nextConfig;

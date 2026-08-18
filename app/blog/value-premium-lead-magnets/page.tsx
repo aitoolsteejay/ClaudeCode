@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   keywords: [
     "how to create a lead magnet that converts",
     "b2b lead magnet ideas",
-    "lead magnet idea generator",
     "why generic lead magnets fail",
     "b2b content marketing strategy",
     "signal heavy content structuring",

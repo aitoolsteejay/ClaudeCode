@@ -24,8 +24,6 @@ export const metadata: Metadata = {
     "tam vs tcm",
     "b2b lead generation targeting mistakes",
     "how to build a bulletproof icp",
-    "icp builder tool",
-    "value proposition generator",
     "b2b positioning framework",
     "why cold outreach gets ignored",
     "how to find your ideal customer",

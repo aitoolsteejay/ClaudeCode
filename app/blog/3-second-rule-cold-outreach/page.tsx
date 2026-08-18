@@ -24,7 +24,6 @@ export const metadata: Metadata = {
     "pattern breaking cold outreach",
     "how to increase cold email reply rate",
     "b2b cold email best practices",
-    "dm angle generator",
     "cold outreach psychology",
     "how to write a cold email that converts",
     "b2b outbound messaging framework",

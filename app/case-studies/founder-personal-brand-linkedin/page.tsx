@@ -6,7 +6,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "Bootstrapped Founder: 0 to 22K Followers and 8 Inbound Deals",
+  title: "Bootstrapped Founder: 0 to 22K Followers, 8 Deals",
   description: "How Myntmore built a B2B founder's LinkedIn personal brand from scratch, reaching 22K followers, 6.2% engagement rate, and 8 inbound deals in under 6 months.",
   keywords: ["linkedin personal branding case study", "founder personal brand results", "linkedin ghostwriting case study", "b2b founder linkedin growth", "personal branding inbound leads", "linkedin content strategy case study", "bootstrapped founder linkedin growth", "linkedin engagement rate case study", "linkedin ghostwriting agency results", "b2b consulting linkedin case study", "linkedin follower growth case study", "inbound deals from linkedin", "myntmore case study", "personal branding roi case study"],
   alternates: { canonical: "https://www.myntmore.com/case-studies/founder-personal-brand-linkedin" },

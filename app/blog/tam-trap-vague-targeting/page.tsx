@@ -11,7 +11,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline",
+  title: "The TAM Trap: How Vague Targeting Kills Your Pipeline",
   description: "Targeting 'founders, CXOs, and mid-sized B2B companies' isn't a strategy, it's praying in the dark. Here's how to find your Total Conversional Market instead of your TAM.",
   alternates: { canonical: "https://www.myntmore.com/blog/tam-trap-vague-targeting" },
   keywords: [

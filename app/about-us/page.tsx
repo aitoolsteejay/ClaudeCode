@@ -9,7 +9,7 @@ import JsonLd from "../components/JsonLd";
 import { SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
+  title: "About Tejas Jhaveri, B2B Growth Expert",
   description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore, Mumbai's leading AI-powered outbound agency. 10+ years of lead generation expertise.",
   alternates: { canonical: "https://www.myntmore.com/about-us" },
   keywords: [

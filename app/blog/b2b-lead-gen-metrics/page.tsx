@@ -11,7 +11,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)",
+  title: "The 7 B2B Lead Gen Metrics That Actually Matter",
   description: "Most outbound teams track the wrong numbers. Here are the 7 metrics that actually tell you whether your lead generation engine is healthy, and the exact actions to take when each one dips.",
   alternates: { canonical: "https://www.myntmore.com/blog/b2b-lead-gen-metrics" },
   keywords: ["b2b lead generation metrics", "what metrics matter for b2b lead gen", "outbound kpis to track", "cold email metrics that matter", "reply rate benchmark", "meeting booked rate", "positive reply rate vs total replies", "inbox placement rate", "show rate for sales meetings", "opportunity rate from meetings", "pipeline to outreach ratio", "why open rate is a vanity metric", "how to build a weekly outbound metrics review", "cold email kpi dashboard", "sales pipeline health metrics", "diagnosing a drop in reply rate", "b2b sales funnel metrics"],

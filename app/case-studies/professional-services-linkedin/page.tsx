@@ -6,7 +6,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "LinkedIn Brand Drove 3x Inbound in 90 Days | Professional Services Case Study",
+  title: "LinkedIn Brand Drove 3x Inbound in 90 Days",
   description: "How Myntmore's personal branding service transformed a referral-dependent consulting founder into a predictable inbound engine, 3x inbound, 18K new followers, 4.8% engagement rate.",
   keywords: ["linkedin personal branding case study", "consulting founder linkedin growth", "professional services inbound leads", "linkedin ghostwriting case study", "linkedin content case study", "b2b consulting lead generation", "inbound leads linkedin case study", "personal branding case study", "linkedin engagement rate results", "referral to inbound case study", "linkedin outreach automation case study", "myntmore case study", "professional services growth case study", "linkedin profile optimisation case study"],
   alternates: { canonical: "https://www.myntmore.com/case-studies/professional-services-linkedin" },

@@ -6,7 +6,7 @@ import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 
 export const metadata: Metadata = {
-  title: "Full Outbound Engine That Books 15+ Meetings/Month on Autopilot",
+  title: "Outbound Engine That Books 15+ Meetings a Month",
   description: "How Myntmore rebuilt a B2B services firm's entire outbound motion from ICP to sequences, achieving 15+ meetings per month, 29% reply rate, and 4x pipeline growth.",
   keywords: ["b2b lead generation case study", "outbound engine case study", "professional services lead generation", "cold email deliverability case study", "b2b services firm outbound results", "predictable pipeline case study", "meetings booked per month case study", "b2b outbound agency results", "icp mapping case study", "cold email infrastructure case study", "ai lead generation case study", "b2b sales pipeline growth case study", "myntmore case study", "growth stage b2b lead generation"],
   alternates: { canonical: "https://www.myntmore.com/case-studies/predictable-b2b-lead-gen-engine" },

@@ -11,7 +11,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The Value Premium: Stop Chasing Attention and Start Creating Magnetic Leads",
+  title: "The Value Premium: Creating Magnetic Lead Magnets",
   description: "Most B2B lead magnets are generic checklists nobody wants. Here's the Signal-Heavy Structuring framework we use to build content that generates direct sales requests.",
   alternates: { canonical: "https://www.myntmore.com/blog/value-premium-lead-magnets" },
   keywords: [

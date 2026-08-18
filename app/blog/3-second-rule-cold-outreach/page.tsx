@@ -11,7 +11,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The 3-Second Rule: How to Stop Writing Outbound Messages That Get Ignored",
+  title: "The 3-Second Rule: Outbound Messages That Get Read",
   description: "If your cold emails and LinkedIn DMs get met with silence, it isn't the platform or the algorithm. You have 3 seconds to earn curiosity, here's how to use them.",
   alternates: { canonical: "https://www.myntmore.com/blog/3-second-rule-cold-outreach" },
   keywords: [

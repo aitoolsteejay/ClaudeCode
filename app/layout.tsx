@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import JsonLd from "./components/JsonLd";
 import { organizationSchema } from "@/lib/schema";
@@ -115,6 +116,7 @@ export default function RootLayout({
       <body className="bg-background text-white antialiased">
         {children}
         <Toaster />
+        <Analytics />
 
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">

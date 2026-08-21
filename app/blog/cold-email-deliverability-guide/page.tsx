@@ -133,6 +133,15 @@ export default function ColdEmailDeliverability() {
                 )}
               </div>
             ))}
+
+            <div>
+              <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Deliverability and compliance are the same conversation</h2>
+              <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
+                A real unsubscribe link, honest sender identity, and prompt suppression aren&apos;t just legal requirements under laws like CAN-SPAM and GDPR, they&apos;re exactly the signals email providers use to decide whether your domain is legitimate. Get the legal basics right and inbox placement tends to improve alongside it. See our{" "}
+                <Link href="/blog/cold-email-compliance-guide" className="font-bold underline" style={{ color: "#3b82f6" }}>cold email compliance guide</Link>{" "}
+                for the specifics by region.
+              </p>
+            </div>
           </div>
 
           <div className="mt-12 rounded-2xl p-8 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>

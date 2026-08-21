@@ -2,7 +2,7 @@
 
 Reference audit of every service, tool, and blog page's primary target keyword and search intent. Regenerate/re-audit this whenever pages are added or their `keywords` metadata changes — the check is mechanical (see method below) and should be re-run rather than hand-maintained from memory.
 
-**Rule enforced:** no two pages across these 28 share the same primary keyword (the first entry in each page's `keywords` array). Confirmed clean as of this audit — see "Method" for how to re-verify. (Updated 2026-08-19: added `/blog/b2b-outbound-benchmark-report-2026`, primary keyword checked against all others, no collision.)
+**Rule enforced:** no two pages across these 30 share the same primary keyword (the first entry in each page's `keywords` array). Confirmed clean as of this audit — see "Method" for how to re-verify. (Updated 2026-08-21: added `/blog/cold-email-compliance-guide` and `/blog/cold-email-vs-linkedin-outreach` from the content-gap analysis, primaries checked against all others, no collision. Updated 2026-08-19: added `/blog/b2b-outbound-benchmark-report-2026`, primary keyword checked against all others, no collision.)
 
 ## Search intent convention
 
@@ -37,10 +37,12 @@ Reference audit of every service, tool, and blog page's primary target keyword a
 | `/tools/posting-rhythm-builder` | linkedin posting rhythm builder |
 | `/tools/roi-calculator` | roi calculator for cold outreach |
 
-## Blog (Informational) — 13 pages
+## Blog (Informational) — 15 pages
 
 | Page | Primary keyword |
 |---|---|
+| `/blog/cold-email-compliance-guide` | cold email compliance |
+| `/blog/cold-email-vs-linkedin-outreach` | cold email vs linkedin outreach |
 | `/blog/b2b-outbound-benchmark-report-2026` | b2b outbound benchmark report |
 | `/blog/3-second-rule-cold-outreach` | why cold emails get ignored |
 | `/blog/agency-vs-in-house` | agency vs in-house sdr |

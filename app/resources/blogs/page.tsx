@@ -39,6 +39,20 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/cold-email-vs-linkedin-outreach",
+    tags: ["Comparison", "Cold Email", "LinkedIn Outreach"],
+    title: "Cold Email vs. LinkedIn Outreach for B2B Pipeline",
+    excerpt: "Neither channel universally wins. Reply rates, cost to scale, and which buyers respond to which channel, with real benchmark data.",
+    readTime: "6 min read",
+  },
+  {
+    href: "/blog/cold-email-compliance-guide",
+    tags: ["Cold Email", "Compliance"],
+    title: "Is Cold Email Legal? A Compliance Guide for B2B Outbound",
+    excerpt: "CAN-SPAM, GDPR, India's DPDP Act, and CASL explained in plain English, plus a practical compliance checklist.",
+    readTime: "7 min read",
+  },
+  {
     href: "/blog/b2b-outbound-benchmark-report-2026",
     tags: ["Lead Generation", "Metrics & Reporting"],
     title: "The 2026 B2B Outbound Benchmark Report",

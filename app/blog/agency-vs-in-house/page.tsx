@@ -77,7 +77,7 @@ const FAQ_ITEMS: FaqEntry[] = [
   },
   {
     question: "Is an agency more expensive than an SDR long-term?",
-    answer: "It depends on the horizon. Month-to-month, a retainer is usually cheaper than a fully-loaded SDR salary. Over 2+ years, a great in-house hire who owns the relationship and product knowledge can out-earn their cost. The honest answer is: agencies win on speed and flexibility, a strong long-term hire can win on depth, if you can find and keep one.",
+    answer: "Short-term, no: a retainer is usually cheaper than a fully-loaded SDR salary. Long-term, it can flip. Over 2+ years, a great in-house hire who owns the relationship and product knowledge can out-earn their cost. Agencies win on speed and flexibility; a strong long-term hire can win on depth, if you can find and keep one.",
   },
   {
     question: "What happens to our systems and lists if we bring outbound in-house later?",

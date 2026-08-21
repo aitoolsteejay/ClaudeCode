@@ -80,11 +80,11 @@ const FAQ_ITEMS: FaqEntry[] = [
   },
   {
     question: "Which channel has a higher reply rate?",
-    answer: "By our own published benchmarks, cold email's blended reply rate (27–35%) actually runs higher than LinkedIn's (18–24%), even though LinkedIn messages go to an already-warmer, connection-accepted audience. Combined with a far higher volume ceiling, that's why cold email is usually the bigger lever for total meetings booked, with LinkedIn adding warmth and reach into the buyers who are genuinely active there.",
+    answer: "Cold email. By our own published benchmarks, its blended reply rate (27–35%) runs higher than LinkedIn's (18–24%), even though LinkedIn messages go to an already-warmer, connection-accepted audience. Combined with a far higher volume ceiling, that's why email is usually the bigger lever for total meetings booked, with LinkedIn adding reach into buyers who are genuinely active there.",
   },
   {
     question: "Is LinkedIn outreach more expensive than cold email?",
-    answer: "Per message, LinkedIn outreach usually costs more to run at the same volume, since it's bounded by seats and manual-feeling interaction rather than pure infrastructure. Per qualified meeting, the gap narrows somewhat, but cold email generally remains the more cost-efficient channel at scale, which is why most engagements lean on it as the primary volume driver and use LinkedIn to reach the buyers email alone won't reach.",
+    answer: "Usually, yes, per message. LinkedIn is bounded by seats and manual-feeling interaction rather than pure infrastructure, so it costs more to run at the same volume. Per qualified meeting the gap narrows, but cold email generally stays the more cost-efficient channel at scale, which is why it's typically the primary volume driver, with LinkedIn reaching buyers email alone won't.",
   },
 ];
 

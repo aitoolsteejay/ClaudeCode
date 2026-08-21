@@ -40,7 +40,7 @@ const FAQ_ITEMS: FaqEntry[] = [
   },
   {
     question: "Does India's DPDP Act affect B2B cold email?",
-    answer: "The Digital Personal Data Protection Act, 2023 is still rolling out via rules and enforcement guidance, so specifics continue to evolve. It generally centers on notice and consent for processing personal data. Business email addresses used for professional outreach carry lower risk than consumer data, but given how recent the law is, it's worth a specific legal check before running large-scale campaigns targeting India.",
+    answer: "Yes, though the rules are still rolling out. India's DPDP Act, 2023 centers on notice and consent for processing personal data. Professional email addresses used for business outreach carry lower risk than consumer data, but given how recent the law is, get a specific legal check before running large-scale campaigns into India.",
   },
   {
     question: "What happens if my cold email isn't compliant?",

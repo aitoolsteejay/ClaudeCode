@@ -53,13 +53,15 @@ export default function B2BLeadGenMetrics() {
         <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4">
           {[
             { stat: "Only 23%", source: "of B2B companies track outbound metrics beyond open rate", cite: "HubSpot State of Sales" },
-            { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark" },
+            { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
             { stat: "2x", source: "pipeline improvement from weekly metric review vs monthly", cite: "Forrester Research" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>Source: {s.cite}</p>
+              <p className="text-xs" style={{ color: "#8C8279" }}>
+                Source: {s.href ? <Link href={s.href} className="link-subtle font-semibold">{s.cite}</Link> : s.cite}
+              </p>
             </div>
           ))}
         </div>

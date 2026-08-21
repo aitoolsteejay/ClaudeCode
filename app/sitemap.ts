@@ -49,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/linkedin-outreach-sequences`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/b2b-lead-gen-metrics`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/linkedin-profile-inbound-lead-machine`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/b2b-outbound-benchmark-report-2026`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog/agency-vs-in-house`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/tam-trap-vague-targeting`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/3-second-rule-cold-outreach`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

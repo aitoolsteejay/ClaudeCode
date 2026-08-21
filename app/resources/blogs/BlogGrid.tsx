@@ -23,6 +23,7 @@ export const TAG_COLORS: Record<string, string> = {
   "Content Strategy": "#14b8a6",
   Comparison: "#6366f1",
   Analytics: "#06b6d4",
+  "Metrics & Reporting": "#10b981",
 };
 
 const DEFAULT_ACCENT = "#8C8279";

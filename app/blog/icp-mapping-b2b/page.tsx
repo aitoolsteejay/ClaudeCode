@@ -54,12 +54,14 @@ export default function ICPMappingB2B() {
           {[
             { stat: "68%", source: "higher win rates for companies with a tightly defined ICP", cite: "TOPO Research" },
             { stat: "5x", source: "more pipeline from intent-triggered outreach vs static lists", cite: "Gartner" },
-            { stat: "3 weeks", source: "average time to first meeting when ICP and copy align", cite: "Myntmore Internal Data" },
+            { stat: "3 weeks", source: "average time to first meeting when ICP and copy align", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>Source: {s.cite}</p>
+              <p className="text-xs" style={{ color: "#8C8279" }}>
+                Source: {s.href ? <Link href={s.href} className="link-subtle font-semibold">{s.cite}</Link> : s.cite}
+              </p>
             </div>
           ))}
         </div>

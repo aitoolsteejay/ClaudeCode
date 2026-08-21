@@ -219,6 +219,9 @@ export default function CaseStudiesClient() {
       {/* Stat strip */}
       <FadeIn>
         <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
+          <p className="text-center text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>
+            Highlights from the case studies below, not a sitewide average
+          </p>
           <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-5 gap-6">
             {STATS.map((s) => (
               <div key={s.l} className="text-center">

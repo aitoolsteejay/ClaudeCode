@@ -153,7 +153,7 @@ export default function VibeProspectingGuide() {
           <p className="text-base leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
             <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Tejas</a>{" "}
             isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At{" "}
-            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
+            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his B2B outbound agency, he&apos;s helped 120+ B2B companies book 12,000+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
           </p>
         </div>
       </section>

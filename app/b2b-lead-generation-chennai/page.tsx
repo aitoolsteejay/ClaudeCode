@@ -4,7 +4,7 @@ import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
-import { buildFaqSchema } from "@/lib/schema";
+import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Chennai",
@@ -150,6 +150,7 @@ export default function Page() {
   return (
     <InnerLayout>
       <JsonLd data={buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })))} />
+      <JsonLd data={buildLocalBusinessSchema()} />
       {/* Hero */}
       <section className="pt-32 pb-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto text-center">

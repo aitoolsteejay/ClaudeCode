@@ -7,7 +7,7 @@ import StatTicker from "../components/StatTicker";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 import JsonLd from "../components/JsonLd";
 import Breadcrumbs from "../components/Breadcrumbs";
-import { SITE_URL } from "@/lib/schema";
+import { SITE_URL, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Tejas Jhaveri, B2B Growth Expert",
@@ -72,6 +72,7 @@ export default function AboutUs() {
   return (
     <InnerLayout>
       <JsonLd data={PERSON_SCHEMA} />
+      <JsonLd data={buildLocalBusinessSchema()} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "About", href: "/about-us" }]} />

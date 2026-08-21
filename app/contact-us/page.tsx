@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import Breadcrumbs from "../components/Breadcrumbs";
+import JsonLd from "../components/JsonLd";
+import { buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Myntmore | Book a Free B2B GTM Audit",
@@ -37,6 +39,7 @@ const CONTACT_CARDS = [
 export default function ContactUs() {
   return (
     <InnerLayout>
+      <JsonLd data={buildLocalBusinessSchema()} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto text-center">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact-us" }]} className="justify-center" />

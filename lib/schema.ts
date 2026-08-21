@@ -52,6 +52,37 @@ export const organizationSchema: OrganizationSchema = {
   ],
 };
 
+// ProfessionalService (a LocalBusiness subtype, more specific and accurate
+// for an agency than generic LocalBusiness) for local-pack / "near me" and
+// city-qualified search relevance. Deliberately omits telephone and geo
+// coordinates: there's no phone number displayed anywhere on the site, and
+// no verified lat/long for the office -- inventing either would be
+// structured data that doesn't match a real, checkable fact. openingHours
+// reflects the office hours actually stated on the careers pages (10:00-
+// 19:00 is the range common to multiple role listings), not a guess.
+export function buildLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Myntmore",
+    url: SITE_URL,
+    image: `${SITE_URL}/logo.png`,
+    description: organizationSchema.description,
+    address: organizationSchema.address,
+    areaServed: [
+      "Mumbai", "Delhi", "Ahmedabad", "Pune", "Chennai", "Bengaluru", "Kolkata", "Hyderabad",
+      "India", "Southeast Asia",
+    ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "10:00",
+      closes: "19:00",
+    },
+    sameAs: organizationSchema.sameAs,
+  };
+}
+
 export interface FaqItem {
   question: string;
   answer: string;

@@ -89,8 +89,16 @@ export default function FounderPersonalBrandLinkedIn() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Services used</h2>
             <div className="flex flex-wrap gap-3">
-              {["Personal Branding", "LinkedIn Outreach", "GTM Strategy"].map((s) => (
-                <span key={s} className="text-sm px-4 py-2 rounded-full font-semibold" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s}</span>
+              {[
+                { name: "Personal Branding", href: "/services/personal-branding" },
+                { name: "LinkedIn Outreach", href: "/services/linkedin-outreach" },
+                { name: "GTM Strategy", href: null },
+              ].map((s) => (
+                s.href ? (
+                  <Link key={s.name} href={s.href} className="text-sm px-4 py-2 rounded-full font-semibold transition-colors hover:opacity-80" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s.name}</Link>
+                ) : (
+                  <span key={s.name} className="text-sm px-4 py-2 rounded-full font-semibold" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s.name}</span>
+                )
               ))}
             </div>
           </div>

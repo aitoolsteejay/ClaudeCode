@@ -511,9 +511,9 @@ export default function SalesIntelligenceClient() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link href="/case-studies" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+            <Link href="/case-studies/predictable-b2b-lead-gen-engine" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
               style={{ color: "#a855f7" }}>
-              Read the full case studies
+              Read how one client built a 15+ meetings/month engine
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>

@@ -511,9 +511,9 @@ export default function ColdEmailClient() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link href="/case-studies" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+            <Link href="/case-studies/ecommerce-conversion-playbook" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
               style={{ color: "#16a34a" }}>
-              Read the full case studies
+              Read how cold email added $400K in pipeline in 6 weeks
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>

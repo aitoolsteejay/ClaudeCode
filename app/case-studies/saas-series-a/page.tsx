@@ -88,8 +88,13 @@ export default function SaasSeriesA() {
           <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Services used in this engagement</h3>
             <div className="flex flex-wrap gap-2">
-              {["ICP Mapping & Lead Scoring", "AI Lead Generation", "Cold Email Infrastructure", "LinkedIn Outreach & Automation"].map((s) => (
-                <span key={s} className="text-xs px-3 py-1.5 rounded-full font-medium" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s}</span>
+              {[
+                { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+                { name: "AI Lead Generation", href: "/services/ai-lead-generation" },
+                { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+                { name: "LinkedIn Outreach & Automation", href: "/services/linkedin-outreach" },
+              ].map((s) => (
+                <Link key={s.name} href={s.href} className="text-xs px-3 py-1.5 rounded-full font-medium transition-colors hover:opacity-80" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s.name}</Link>
               ))}
             </div>
           </div>

@@ -89,8 +89,12 @@ export default function EcommerceConversionPlaybook() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Services used</h2>
             <div className="flex flex-wrap gap-3">
-              {["Cold Email Infrastructure", "AI Lead Generation", "ICP Mapping"].map((s) => (
-                <span key={s} className="text-sm px-4 py-2 rounded-full font-semibold" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s}</span>
+              {[
+                { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+                { name: "AI Lead Generation", href: "/services/ai-lead-generation" },
+                { name: "ICP Mapping", href: "/services/sales-intelligence" },
+              ].map((s) => (
+                <Link key={s.name} href={s.href} className="text-sm px-4 py-2 rounded-full font-semibold transition-colors hover:opacity-80" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s.name}</Link>
               ))}
             </div>
           </div>

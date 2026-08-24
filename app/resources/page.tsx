@@ -63,6 +63,12 @@ const BLOG_PREVIEW = [
 
 const GUIDES_PREVIEW = [
   {
+    href: "/instagram-resources/golden-icp-framework",
+    tag: "ICP & Targeting",
+    title: "The Golden ICP Framework",
+    accent: "#D97706",
+  },
+  {
     href: "/instagram-resources/80-us-meetings-ai-agents",
     tag: "AI Agents",
     title: "80+ US Meetings Booked in 1 Month with AI Agents",
@@ -73,12 +79,6 @@ const GUIDES_PREVIEW = [
     tag: "Prospecting",
     title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
     accent: "#8b5cf6",
-  },
-  {
-    href: "/instagram-resources/claude-skills-guide",
-    tag: "AI & Claude",
-    title: "The 6 Claude Skills Guide",
-    accent: "#F5B731",
   },
 ];
 

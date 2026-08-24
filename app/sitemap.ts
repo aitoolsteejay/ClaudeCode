@@ -63,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/how-to-set-up-vibe-prospecting`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/instagram-resources/golden-icp-framework`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Careers
     { url: `${base}/careers`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/careers/senior-sales-head`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },

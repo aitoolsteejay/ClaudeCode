@@ -32,6 +32,14 @@ export const metadata: Metadata = {
 
 const GUIDES = [
   {
+    href: "/instagram-resources/golden-icp-framework",
+    tag: "ICP & Targeting",
+    title: "The Golden ICP Framework",
+    excerpt: "Build prospect lists around pressure, buying triggers, and real-time context so your cold outreach reaches the right buyers at the right moment.",
+    readTime: "7 min read",
+    accent: "#D97706",
+  },
+  {
     href: "/instagram-resources/80-us-meetings-ai-agents",
     tag: "AI Agents",
     title: "80+ US Meetings Booked in 1 Month with AI Agents",

@@ -56,6 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/value-premium-lead-magnets`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/cold-email-compliance-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/cold-email-vs-linkedin-outreach`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/case-study-procrastination`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/pitching-trap-competitor-positioning`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Guides (surfaced under /resources/guides, originally Instagram bio-link pages)
     { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

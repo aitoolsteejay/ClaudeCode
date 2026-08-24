@@ -39,6 +39,20 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/case-study-procrastination",
+    tags: ["Content Strategy", "Lead Generation"],
+    title: "Case Study Procrastination: Why Your Best Proof Is Still Undocumented",
+    excerpt: "Your strongest customer proof may still be buried in Slack. Here is how to turn fresh wins into credible sales assets before the details disappear.",
+    readTime: "4 min read",
+  },
+  {
+    href: "/blog/pitching-trap-competitor-positioning",
+    tags: ["Sales Strategy", "Copywriting"],
+    title: "The Pitching Trap: How to Articulate Pain Better Than Your Competitors",
+    excerpt: "Generic feature pitches get ignored. Better competitor research helps your team lead with real buyer pain and sharper positioning.",
+    readTime: "4 min read",
+  },
+  {
     href: "/blog/cold-email-vs-linkedin-outreach",
     tags: ["Comparison", "Cold Email", "LinkedIn Outreach"],
     title: "Cold Email vs. LinkedIn Outreach for B2B Pipeline",

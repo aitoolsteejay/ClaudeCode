@@ -39,18 +39,18 @@ export const metadata: Metadata = {
 
 const BLOG_PREVIEW = [
   {
-    href: "/blog/predictable-b2b-lead-gen-engine",
-    tag: "Lead Generation",
-    title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
-    readTime: "5 min read",
-    accent: "#3b82f6",
+    href: "/blog/case-study-procrastination",
+    tag: "Content Strategy",
+    title: "Case Study Procrastination: Why Your Best Proof Is Still Undocumented",
+    readTime: "4 min read",
+    accent: "#14b8a6",
   },
   {
-    href: "/blog/cold-email-deliverability-guide",
-    tag: "Cold Email",
-    title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
-    readTime: "6 min read",
-    accent: "#ef4444",
+    href: "/blog/pitching-trap-competitor-positioning",
+    tag: "Sales Strategy",
+    title: "The Pitching Trap: How to Articulate Pain Better Than Your Competitors",
+    readTime: "4 min read",
+    accent: "#f97316",
   },
   {
     href: "/blog/icp-mapping-b2b",

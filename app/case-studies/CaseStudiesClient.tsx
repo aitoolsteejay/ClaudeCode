@@ -148,6 +148,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "uk-pharma-qualified-meetings", tag: "Pharma · United Kingdom", accent: "#14b8a6",
+    title: "20+ qualified meetings per month for a UK pharma company",
+    stats: [{ v: "20+", l: "Meetings/month" }, { v: "35%", l: "Positive response rate" }, { v: "£200K+", l: "Potential pipeline" }],
+    excerpt: "A UK pharmaceutical company needed predictable access to a small, specialised market. We narrowed the ICP, mapped high-fit accounts and turned precision outreach into a repeatable opportunity engine.",
+    services: ["ICP Mapping & Lead Scoring", "B2B Lead Generation", "LinkedIn Outreach"],
+  },
+  {
     slug: "saas-series-a", tag: "SaaS · Series A", accent: "#3b82f6",
     title: "40 qualified meetings in 8 weeks from a cold start",
     stats: [{ v: "40", l: "Meetings in 8 weeks" }, { v: "34%", l: "Reply rate" }, { v: "$1.2M", l: "Pipeline generated" }],

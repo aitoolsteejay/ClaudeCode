@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/case-studies/ecommerce-conversion-playbook`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/founder-personal-brand-linkedin`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/predictable-b2b-lead-gen-engine`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/case-studies/uk-pharma-qualified-meetings`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Resources & blog
     { url: `${base}/resources`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/blogs`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },

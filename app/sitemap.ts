@@ -81,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/careers/lead-gen-strategist`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/gtm-strategist`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/hr-operations-intern`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/careers/content-marketing-strategist-intern`, lastModified: "2026-08-25T00:00:00+05:30", changeFrequency: "monthly", priority: 0.5 },
     // Industry landing pages
     { url: `${base}/lp/agencies-it`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/lp/manufacturers-exporters`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.6 },

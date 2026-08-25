@@ -114,6 +114,13 @@ const ROLES = [
     desc: "You'll build real hiring pipelines, KPI/KRA frameworks, and HR systems directly with the founder, not admin busywork.",
     bullets: ["6-month minimum commitment", "Organised, systems-first thinker", "Comfortable with Notion & sheets"],
   },
+  {
+    slug: "content-marketing-strategist-intern", accent: "#ec4899", tag: "Content & Branding",
+    title: "Content Marketing Strategist Intern",
+    type: "Internship · Worli, Mumbai", location: "India",
+    desc: "You'll research, write, and strategise high-impact LinkedIn content for founders and CXOs, building distinct voices across multiple clients.",
+    bullets: ["6-month minimum commitment", "Strong LinkedIn & storytelling instinct", "1-2 years research/writing, bonus"],
+  },
 ];
 
 const VALUES = [

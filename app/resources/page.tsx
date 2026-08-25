@@ -3,6 +3,7 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
+import BlogCardCarousel from "./BlogCardCarousel";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
@@ -191,21 +192,7 @@ export default function Resources() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {BLOG_PREVIEW.map((p) => (
-                <Link key={p.href} href={p.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <div className="h-1.5" style={{ background: `linear-gradient(90deg,${p.accent},${p.accent}66)` }} />
-                  <div className="p-6">
-                    <span className="inline-flex text-xs font-bold px-2.5 py-1 rounded-full mb-4" style={{ backgroundColor: `${p.accent}12`, color: p.accent }}>{p.tag}</span>
-                    <h3 className="text-base font-black mb-4 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</h3>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs" style={{ color: "#8C8279" }}>{p.readTime}</span>
-                      <span className="text-xs font-bold transition-all duration-200 group-hover:gap-2" style={{ color: p.accent }}>Read →</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <BlogCardCarousel posts={BLOG_PREVIEW} />
 
             <div className="mt-8 text-center sm:hidden">
               <Link href="/resources/blogs" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all guides →</Link>

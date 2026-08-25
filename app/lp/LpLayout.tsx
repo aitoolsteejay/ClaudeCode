@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import Navbar from "../components/Navbar";
 
 function LpFooter() {
   return (
@@ -42,30 +42,9 @@ export function useFadeInOnScroll(threshold = 0.15) {
 }
 
 export default function LpLayout({ children }: { children: React.ReactNode }) {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-      {/* Minimal nav */}
-      <header className={`lp-header sticky top-0 z-50 border-b ${scrolled ? "lp-header-scrolled" : ""}`} style={{ backgroundColor: "rgba(248,246,242,0.95)", borderColor: "#E8E2D9", backdropFilter: "blur(8px)" }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-          <Link href="/" aria-label="Myntmore home" className="transition-transform duration-300 hover:scale-105">
-            <Image src="/logo.png" alt="Myntmore" width={140} height={40} className="h-10 w-auto object-contain" />
-          </Link>
-          <a href="/founder-meeting"
-            className="btn-dark px-5 py-2.5 text-sm font-bold inline-flex items-center gap-2 group">
-            Book Free GTM Audit
-            <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
-      </header>
-
+      <Navbar />
       <main>{children}</main>
       <LpFooter />
     </div>

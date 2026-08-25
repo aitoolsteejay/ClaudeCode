@@ -24,7 +24,13 @@ interface MultiSelectProps {
 export function MultiSelect({ label, options, selected, onChange, max, searchable = false }: MultiSelectProps) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [otherActive, setOtherActive] = useState(false);
+  // Seed from `selected` (not a bare `false`) so this survives a remount:
+  // the parent ICP card unmounts this component entirely when collapsed
+  // (rendered via `isOpen && (...)`), and without this, reopening the card
+  // after custom "Other" values were entered would show the pill tags
+  // (they come from the still-persisted `selected` prop) but make the free
+  // -text editor look like it had reset/lost them.
+  const [otherActive, setOtherActive] = useState(() => selected.some((s) => !options.includes(s)));
   const containerRef = useRef<HTMLDivElement>(null);
   const otherInputRef = useRef<HTMLInputElement>(null);
   const wasOtherActive = useRef(false);

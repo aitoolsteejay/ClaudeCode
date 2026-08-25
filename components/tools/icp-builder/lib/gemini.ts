@@ -113,9 +113,44 @@ export function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
 /**
  * Extracts the first `[...]` JSON array substring from a model response and
  * parses it. Throws if no array-like substring is found or it doesn't parse.
+ *
+ * Walks bracket depth from the first `[` instead of a single greedy regex
+ * match to the *last* `]` in the whole response -- a greedy match would
+ * over-capture into any trailing prose that happens to contain a bracket
+ * (e.g. a closing note like "consider [pricing] carefully"), and a plain
+ * lazy match would under-capture the first time the parsed type has a
+ * nested array (several call sites here parse objects with nested
+ * string-array fields). String literals are tracked so a `[` or `]`
+ * inside a quoted value never affects depth.
  */
 export function parseJsonArray<T>(text: string): T[] {
-  const match = text.match(/\[[\s\S]*\]/);
-  if (!match) throw new Error("no array found");
-  return JSON.parse(match[0]) as T[];
+  const start = text.indexOf("[");
+  if (start === -1) throw new Error("no array found");
+
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  let end = -1;
+
+  for (let i = start; i < text.length; i++) {
+    const ch = text[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === "\\") escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === "[") depth++;
+    else if (ch === "]") {
+      depth--;
+      if (depth === 0) {
+        end = i;
+        break;
+      }
+    }
+  }
+
+  if (end === -1) throw new Error("no array found");
+  return JSON.parse(text.slice(start, end + 1)) as T[];
 }

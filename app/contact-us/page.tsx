@@ -3,6 +3,7 @@ import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
+import SubmitButton from "../components/SubmitButton";
 import { buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -77,7 +78,7 @@ export default function ContactUs() {
                   action="https://forms.zohopublic.com/flintstop/form/MyntmoreWebsiteform/formperma/3F8IpEgLtb2RnoXcr_yUsp56_-WdQdO2-sM6eaCOKi0/htmlRecords/submit"
                   name="form" id="form" method="POST" acceptCharset="UTF-8" encType="multipart/form-data">
                   <input type="hidden" name="zf_referrer_name" value="" />
-                  <input type="hidden" name="zf_redirect_url" value="" />
+                  <input type="hidden" name="zf_redirect_url" value="https://www.myntmore.com/thank-you" />
                   <input type="hidden" name="zc_gad" value="" />
                   <div>
                     <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name *</label>
@@ -98,10 +99,10 @@ export default function ContactUs() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email</label>
-                    <input id="Email" name="Email" type="text" maxLength={255} placeholder="amara@northbridge.co" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                    <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email *</label>
+                    <input id="Email" name="Email" type="email" required maxLength={255} placeholder="amara@northbridge.co" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
-                  <button type="submit" className="btn-dark w-full py-4 text-sm font-bold">Get Your Custom Strategy</button>
+                  <SubmitButton>Get Your Custom Strategy</SubmitButton>
                   <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just clarity.</p>
                 </form>
               </div>

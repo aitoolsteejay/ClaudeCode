@@ -121,13 +121,18 @@ const calculateKeywordScore = (detectedKeywords: string[], targetIcp: string): {
     marketers: ["marketing", "brand", "demand", "leads", "campaigns", "growth", "content"],
   };
 
-  const icpLower = targetIcp.toLowerCase();
+  const icpLower = targetIcp.trim().toLowerCase();
   let relevantKeywords: string[] = [];
-  Object.entries(icpKeywords).forEach(([key, keywords]) => {
-    if (icpLower.includes(key) || key.includes(icpLower)) {
-      relevantKeywords = [...relevantKeywords, ...keywords];
-    }
-  });
+  // Every string .includes("") is true, so an empty/unset ICP would
+  // otherwise match every category below and blend all ~40 keywords
+  // together instead of falling through to the generic list.
+  if (icpLower.length > 0) {
+    Object.entries(icpKeywords).forEach(([key, keywords]) => {
+      if (icpLower.includes(key) || key.includes(icpLower)) {
+        relevantKeywords = [...relevantKeywords, ...keywords];
+      }
+    });
+  }
   if (relevantKeywords.length === 0) {
     relevantKeywords = ["results", "growth", "impact", "value", "solution", "expert"];
   }

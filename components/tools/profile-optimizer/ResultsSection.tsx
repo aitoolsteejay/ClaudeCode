@@ -2,6 +2,7 @@
 
 import { Check, Copy, TrendingUp, Target, Award, Zap, AlertTriangle, Download } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
 const ANGLE_COLORS = ["#7C3AED", "#3B82F6", "#14B8A6"];
@@ -32,9 +33,15 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
   const copyToClipboard = (text: string, index: number) => {
-    navigator.clipboard.writeText(text);
-    setCopiedIndex(index);
-    setTimeout(() => setCopiedIndex(null), 2000);
+    navigator.clipboard.writeText(text).then(
+      () => {
+        setCopiedIndex(index);
+        setTimeout(() => setCopiedIndex(null), 2000);
+      },
+      () => {
+        toast.error("Couldn't copy to clipboard. Try selecting and copying the text manually.");
+      }
+    );
   };
 
   const getScoreColor = (score: number) => {

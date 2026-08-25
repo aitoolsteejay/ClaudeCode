@@ -102,6 +102,20 @@ const BLOG_POSTS: BlogPost[] = [
     readTime: "5 min read",
   },
   {
+    href: "/blog/ecommerce-conversion-playbook",
+    tags: ["Conversion", "eCommerce"],
+    title: "The eCommerce Conversion Playbook",
+    excerpt: "Traffic without conversion is expensive noise. A practical playbook to fix the trust gap, friction, and messaging killing your conversion rate.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/founder-personal-brand-linkedin",
+    tags: ["Personal Branding", "LinkedIn Outreach"],
+    title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset",
+    excerpt: "Founders who build a real LinkedIn presence close deals faster and generate inbound without ad spend. Here's the content strategy.",
+    readTime: "5 min read",
+  },
+  {
     href: "/blog/cold-email-deliverability-guide",
     tags: ["Cold Email"],
     title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",

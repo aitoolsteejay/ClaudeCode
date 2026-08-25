@@ -20,10 +20,17 @@ function AudienceBadge({ type }: { type: "B2B" | "D2C" }) {
   );
 }
 
-function BulletList({ items, colorDot = "#F97316" }: { items: string[]; colorDot?: string }) {
+function BulletList({ items, colorDot = "#F97316" }: { items: string[] | undefined; colorDot?: string }) {
+  // The model's JSON response is parsed with no schema validation, so any
+  // one of these array fields can come back missing on a given ICP. Default
+  // to an empty list here rather than crash the whole results view on
+  // `.map` of undefined -- the parent already shows a "missing pain points"
+  // banner for that specific field, but every other field needs the same
+  // protection to not take the page down with it.
+  const safeItems = items ?? [];
   return (
     <ul className="space-y-2.5">
-      {items.map((item, i) => (
+      {safeItems.map((item, i) => (
         <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-700">
           <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: colorDot }} />
           {item}
@@ -93,7 +100,7 @@ function IcpTabContent({ icp }: { icp: GeneratedIcp }) {
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3 text-gray-400">Where They Hang Out</p>
             <div className="flex flex-wrap gap-2">
-              {icp.whereTheyHangOut.map((platform, i) => (
+              {(icp.whereTheyHangOut ?? []).map((platform, i) => (
                 <span key={i} className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>
                   {platform}
                 </span>

@@ -13,7 +13,7 @@ interface ResultsDashboardProps {
   meetings: number;
   deals: number;
   revenue: number;
-  roi: number;
+  roi: number | null;
   currency: string;
   currencySymbol: string;
   fullLifetimeLTV: number;
@@ -53,7 +53,7 @@ export const ResultsDashboard = ({
     return `${currencySymbol}${formatNumber(value)}`;
   };
 
-  const MetricCard = ({ icon: Icon, label, value, color }: { icon: LucideIcon; label: string; value: string; percentage?: number; color: string }) => (
+  const MetricCard = ({ icon: Icon, label, value, percentage, color }: { icon: LucideIcon; label: string; value: string; percentage?: number; color: string }) => (
     <Card
       className="bg-card p-6 transition-all duration-300 hover:-translate-y-0.5"
       style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: color, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}
@@ -66,6 +66,9 @@ export const ResultsDashboard = ({
       <p className="text-sm text-muted-foreground mb-2 font-medium">{label}</p>
       <div className="flex items-baseline gap-2">
         <p className="text-3xl font-black text-foreground">{value}</p>
+        {percentage !== undefined && (
+          <p className="text-sm font-bold" style={{ color }}>{Math.round(percentage)}%</p>
+        )}
       </div>
     </Card>
   );
@@ -94,11 +97,11 @@ export const ResultsDashboard = ({
                 <Info className="w-3.5 h-3.5 text-muted-foreground" />
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p>ROI = ((Revenue − Service Cost) ÷ Service Cost) × 100</p>
+                <p>ROI = ((Revenue − Service Cost) ÷ Service Cost) × 100{roi === null && ". Add a monthly cost to calculate ROI — it's undefined while cost is $0."}</p>
               </TooltipContent>
             </Tooltip>
           </div>
-          <p className="text-3xl font-black" style={{ color: "#3B82F6" }}>{Math.round(roi)}%</p>
+          <p className="text-3xl font-black" style={{ color: "#3B82F6" }}>{roi === null ? "N/A" : `${Math.round(roi)}%`}</p>
         </Card>
       </div>
 

@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 interface LeadCaptureFormProps {
   title?: string;
   subtitle?: string;
@@ -16,6 +18,8 @@ export default function LeadCaptureForm({
   title = "Let's build your AI engine",
   subtitle = "Fill out the form below and our team will get back to you within 24 hours with a custom GTM strategy.",
 }: LeadCaptureFormProps) {
+  const [submitting, setSubmitting] = useState(false);
+
   return (
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-2xl mx-auto">
@@ -33,9 +37,10 @@ export default function LeadCaptureForm({
             acceptCharset="UTF-8"
             encType="multipart/form-data"
             className="space-y-4"
+            onSubmit={() => setSubmitting(true)}
           >
             <input type="hidden" name="zf_referrer_name" value="" />
-            <input type="hidden" name="zf_redirect_url" value="" />
+            <input type="hidden" name="zf_redirect_url" value="https://www.myntmore.com/thank-you" />
             <input type="hidden" name="zc_gad" value="" />
 
             <div>
@@ -64,13 +69,13 @@ export default function LeadCaptureForm({
             </div>
 
             <div>
-              <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email</label>
-              <input id="Email" name="Email" type="text" maxLength={255}
+              <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email <span style={{ color: "#F5B731" }}>*</span></label>
+              <input id="Email" name="Email" type="email" required maxLength={255}
                 className={inputClass} style={inputStyle} {...focusHandlers} placeholder="david@kimventures.com" />
             </div>
 
-            <button type="submit" className="btn-dark w-full py-4 text-sm font-bold">
-              Get Your Custom Strategy
+            <button type="submit" disabled={submitting} className="btn-dark w-full py-4 text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed">
+              {submitting ? "Submitting…" : "Get Your Custom Strategy"}
             </button>
             <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
           </form>

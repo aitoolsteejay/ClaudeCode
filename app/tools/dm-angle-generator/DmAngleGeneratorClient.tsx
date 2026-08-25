@@ -102,12 +102,24 @@ export default function DmAngleGeneratorClient() {
   const handleRegenerateAll = async (style: string) => {
     setIsRegeneratingAll(true);
     try {
-      const updated = await Promise.all(angles.map((angle) => regenerateOne(angle, style)));
+      // allSettled, not all: with 5 concurrent regenerate calls, one
+      // transient failure shouldn't discard the 4 that succeeded and force
+      // the user to burn another full batch of API calls re-requesting
+      // angles that already came back fine.
+      const results = await Promise.allSettled(angles.map((angle) => regenerateOne(angle, style)));
+      const updated = results.map((r, i) => (r.status === "fulfilled" ? r.value : angles[i]));
+      const failedCount = results.filter((r) => r.status === "rejected").length;
+
       setAngles(updated);
       if (lastInputs) saveOutputs(lastInputs, updated);
-      toast.success(`All angles made ${style}`);
-    } catch {
-      toast.error("Please try again");
+
+      if (failedCount === 0) {
+        toast.success(`All angles made ${style}`);
+      } else if (failedCount < results.length) {
+        toast.warning(`${results.length - failedCount} of ${results.length} angles made ${style}. ${failedCount} failed — try regenerating those individually.`);
+      } else {
+        toast.error("Please try again");
+      }
     } finally {
       setIsRegeneratingAll(false);
     }

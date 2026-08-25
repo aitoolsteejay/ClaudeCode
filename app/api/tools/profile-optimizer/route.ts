@@ -73,7 +73,14 @@ export async function POST(req: NextRequest) {
       throw new Error("GEMINI_API_KEY is not configured");
     }
 
-    const selectedTones = Array.isArray(tones) ? tones : [tones || "bold"];
+    // An explicitly empty array (`tones: []`) is an array, so the old
+    // `Array.isArray(tones) ? tones : [tones || "bold"]` returned `[]`
+    // itself instead of ever reaching the "bold" fallback -- that fallback
+    // only fired for non-array falsy values. Normalize through a plain
+    // array first so "no tones selected" always means the same thing
+    // regardless of whether the caller sent undefined, "", or [].
+    const normalizedTones = Array.isArray(tones) ? tones : tones ? [tones] : [];
+    const selectedTones = normalizedTones.length > 0 ? normalizedTones : ["bold"];
     const toneInstructions = selectedTones
       .map((t: string) => TONE_GUIDANCE[t] || "")
       .filter(Boolean)

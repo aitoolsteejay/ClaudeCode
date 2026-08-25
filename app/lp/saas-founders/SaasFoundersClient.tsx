@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import LpLayout from "../LpLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
+import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
@@ -344,7 +345,7 @@ function FormSection() {
             action="https://forms.zohopublic.com/flintstop/form/MyntmoreWebsiteform/formperma/3F8IpEgLtb2RnoXcr_yUsp56_-WdQdO2-sM6eaCOKi0/htmlRecords/submit"
             name="form" id="form" method="POST" acceptCharset="UTF-8" encType="multipart/form-data">
             <input type="hidden" name="zf_referrer_name" value="" />
-            <input type="hidden" name="zf_redirect_url" value="" />
+            <input type="hidden" name="zf_redirect_url" value="https://www.myntmore.com/thank-you" />
             <input type="hidden" name="zc_gad" value="" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -367,10 +368,10 @@ function FormSection() {
               </div>
             </div>
             <div>
-              <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Work Email</label>
-              <input id="Email" name="Email" type="text" maxLength={255} placeholder="arjun@acmesaas.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+              <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Work Email *</label>
+              <input id="Email" name="Email" type="email" required maxLength={255} placeholder="arjun@acmesaas.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
-            <button type="submit" className="btn-dark w-full py-4 text-sm font-bold">Get My Free Outbound Audit</button>
+            <SubmitButton>Get My Free Outbound Audit</SubmitButton>
             <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. No spam, ever.</p>
           </form>
         </div>

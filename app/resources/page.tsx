@@ -187,7 +187,7 @@ export default function Resources() {
                 <p className="text-sm mt-2" style={{ color: "#52525B" }}>No fluff. Just the frameworks we use with real clients.</p>
               </div>
               <Link href="/resources/blogs" className="text-sm font-bold hidden sm:inline-flex items-center gap-1 flex-shrink-0 ml-6" style={{ color: "#F5B731" }}>
-                View all 5 →
+                View all guides →
               </Link>
             </div>
 
@@ -208,10 +208,10 @@ export default function Resources() {
             </div>
 
             <div className="mt-8 text-center sm:hidden">
-              <Link href="/resources/blogs" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all 5 blogs →</Link>
+              <Link href="/resources/blogs" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all guides →</Link>
             </div>
             <div className="mt-4 hidden sm:block text-right">
-              <span className="text-xs" style={{ color: "#8C8279" }}>+ 2 more posts in the blog</span>
+              <Link href="/resources/blogs" className="text-xs font-semibold" style={{ color: "#8C8279" }}>More guides in the blog →</Link>
             </div>
           </FadeIn>
         </div>

@@ -378,7 +378,7 @@ export default function FounderPresenceClient() {
                   </button>
                   <button
                     onClick={() => setStep("themes")}
-                    disabled={formData.competitors.some((c) => !c.name)}
+                    disabled={formData.competitors.some((c) => !c.name.trim())}
                     className="flex-[2] py-4 lp-tool-accent-bg text-black font-bold rounded-xl hover:brightness-110 disabled:opacity-50 disabled:hover:brightness-100 transition-all"
                   >
                     Continue to Narrative
@@ -504,7 +504,7 @@ export default function FounderPresenceClient() {
                           <td className="py-4 px-3 font-medium rounded-r-xl">{formData.engagement}</td>
                         </tr>
                         {formData.competitors
-                          .filter((c) => c.name)
+                          .filter((c) => c.name.trim() !== "")
                           .map((comp) => (
                             <tr key={comp.id} className="text-muted-foreground">
                               <td className="py-4 px-3">{comp.name}</td>

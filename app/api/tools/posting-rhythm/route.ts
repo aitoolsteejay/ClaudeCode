@@ -1,9 +1,43 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI, Type } from "@google/genai";
 
+const LIMITS = {
+  icp: 300,
+};
+
+function validateState(state: unknown): { valid: boolean; error?: string } {
+  if (!state || typeof state !== "object") {
+    return { valid: false, error: "Missing form data" };
+  }
+  const s = state as Record<string, unknown>;
+
+  if (!s.lifestyle || typeof s.lifestyle !== "string") {
+    return { valid: false, error: "Founder lifestyle is required" };
+  }
+  if (!s.icp || typeof s.icp !== "string" || s.icp.trim().length === 0) {
+    return { valid: false, error: "Target ICP is required" };
+  }
+  if (s.icp.length > LIMITS.icp) {
+    return { valid: false, error: `Target ICP must be ${LIMITS.icp} characters or less` };
+  }
+  if (!Array.isArray(s.strengths) || s.strengths.length === 0 || !s.strengths.every((x) => typeof x === "string")) {
+    return { valid: false, error: "At least one content strength is required" };
+  }
+  if (!s.tone || typeof s.tone !== "string") {
+    return { valid: false, error: "Preferred tone is required" };
+  }
+
+  return { valid: true };
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { state, lead } = await req.json();
+
+    const validation = validateState(state);
+    if (!validation.valid) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
+    }
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {

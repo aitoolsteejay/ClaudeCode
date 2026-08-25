@@ -201,7 +201,15 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
                   rows={3}
                   placeholder="e.g. Young professionals who just moved to the city and want their first apartment to feel like home without spending a fortune."
                   value={icp.d2cDescription}
-                  onChange={(e) => onChange({ ...icp, d2cDescription: e.target.value })}
+                  onChange={(e) =>
+                    // Invalidate the previous AI-polished selection the
+                    // instant the text changes, not only once the debounced
+                    // re-polish finishes ~900ms+ later. Otherwise retyping
+                    // and hitting "Generate" inside that window builds the
+                    // ICP off the stale, already-superseded option text
+                    // while validation still sees a non-null selection.
+                    onChange({ ...icp, d2cDescription: e.target.value, d2cSelectedIdx: null })
+                  }
                   className="focus-visible:ring-[#10b981]"
                 />
                 {polishing && (

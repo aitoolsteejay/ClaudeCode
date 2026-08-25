@@ -133,10 +133,20 @@ export default function WhoWeHelp() {
   const activeRef   = useRef(0);          // always current, readable in interval
   const pausedRef   = useRef(false);      // paused when user hovers
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [progressKey, setProgressKey] = useState(0); // forces CSS restart
 
   const switchTab = useCallback((idx: number, manual = false) => {
-    if (manual) pausedRef.current = true;   // hovering / clicking pauses auto
+    if (manual) {
+      pausedRef.current = true;
+      // Resume auto-cycling a few seconds after a manual switch instead of
+      // pausing forever. pausedRef used to only be cleared by onMouseLeave
+      // on the tab row, which never fires on touch (a tap has no hover to
+      // leave) or for keyboard-only activation, so a single tap permanently
+      // stopped the carousel for the rest of the page's life.
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+      resumeTimeoutRef.current = setTimeout(() => { pausedRef.current = false; }, 6000);
+    }
     if (idx === activeRef.current) return;
     const el = contentRef.current;
     if (el) { el.style.opacity = "0"; el.style.transform = "translateY(10px)"; }
@@ -160,7 +170,10 @@ export default function WhoWeHelp() {
       const next = (activeRef.current + 1) % PERSONAS.length;
       switchTab(next);
     }, CYCLE_MS);
-    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    };
   }, [switchTab]);
 
   // Ensure content starts visible

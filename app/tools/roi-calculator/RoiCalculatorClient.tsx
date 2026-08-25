@@ -57,7 +57,11 @@ export default function RoiCalculatorClient() {
   const acceptedConnections = Math.round(totalRequests * (acceptanceRate / 100));
   const replies = Math.round(acceptedConnections * (replyRate / 100));
   const positiveReplies = Math.round(replies * (positiveResponseRate / 100));
-  const negativeReplies = Math.round(replies * ((100 - positiveResponseRate) / 100));
+  // Derived from positiveReplies, not rounded independently, so the two
+  // always sum back to `replies` exactly (rounding both separately could
+  // over/undercount by a reply -- e.g. replies=3 at a 50/50 split would
+  // round 1.5 up to 2 on both sides, summing to 4).
+  const negativeReplies = replies - positiveReplies;
   const meetings = Math.round(positiveReplies * (meetingRateFromPositive / 100));
 
   // Sales Conversion Rate Adjustment: +1 percentage point
@@ -71,7 +75,10 @@ export default function RoiCalculatorClient() {
 
   const revenue = Math.round(deals * effectiveLTV);
   const totalServiceCost = Math.round(monthlyCost * duration);
-  const roi = totalServiceCost > 0 ? Math.round(((revenue - totalServiceCost) / totalServiceCost) * 100) : 0;
+  // null (not 0) when there's no cost to divide by -- ROI is mathematically
+  // undefined here, not "no return". Forcing it to 0% would misrepresent a
+  // scenario with real positive revenue as a break-even one.
+  const roi = totalServiceCost > 0 ? Math.round(((revenue - totalServiceCost) / totalServiceCost) * 100) : null;
 
   const currencySymbol = currencies[currency as keyof typeof currencies];
 

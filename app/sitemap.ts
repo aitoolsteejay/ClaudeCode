@@ -89,6 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/lp/pharma`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/lp/insurance`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/lp/financial-services`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/lp/fundraising`, lastModified: "2026-08-25T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
     // Partner program
     { url: `${base}/lp/agency-partners`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.6 },
     // City landing pages

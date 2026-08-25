@@ -1,0 +1,34 @@
+import type { Metadata } from "next";
+import FundraisingClient from "./FundraisingClient";
+
+export const metadata: Metadata = {
+  title: "Investor Outreach for Founders Raising Capital",
+  description: "Stop cold-emailing VCs yourself. We build targeted investor lists and run outreach that books calls with the right funds. Book a free call.",
+  keywords: [
+    "investor outreach for startups",
+    "investor outreach agency",
+    "startup fundraising outreach agency",
+    "vc outreach service for founders",
+    "cold email investors",
+    "how to reach vcs cold email",
+    "investor cold email service",
+    "series a investor outreach",
+    "seed round investor outreach",
+    "vc cold email agency",
+    "raise capital outreach service",
+    "fundraising pipeline for startups",
+    "investor targeting for founders",
+    "founder investor outreach agency",
+    "pre-seed investor outreach",
+  ],
+  alternates: { canonical: "https://www.myntmore.com/lp/fundraising" },
+  openGraph: {
+    title: "Investor Outreach for Founders Raising Capital | Myntmore",
+    description: "Stop cold-emailing VCs yourself. Targeted investor lists and outreach that books calls with the right funds.",
+    url: "https://www.myntmore.com/lp/fundraising",
+  },
+};
+
+export default function FundraisingPage() {
+  return <FundraisingClient />;
+}

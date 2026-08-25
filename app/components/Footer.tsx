@@ -93,6 +93,7 @@ const ICP_LINKS = [
   { label: "For Pharma Companies", href: "/lp/pharma" },
   { label: "For Insurance Brokers", href: "/lp/insurance" },
   { label: "For Financial Services Firms", href: "/lp/financial-services" },
+  { label: "For Founders Raising Capital", href: "/lp/fundraising" },
 ];
 
 const CITY_LINKS = [

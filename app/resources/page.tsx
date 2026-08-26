@@ -60,6 +60,13 @@ const BLOG_PREVIEW = [
     readTime: "5 min read",
     accent: "#10b981",
   },
+  {
+    href: "/blog/b2b-outbound-benchmark-report-2026",
+    tag: "Lead Generation",
+    title: "The 2026 B2B Outbound Benchmark Report",
+    readTime: "8 min read",
+    accent: "#3b82f6",
+  },
 ];
 
 const GUIDES_PREVIEW = [
@@ -192,7 +199,9 @@ export default function Resources() {
               </Link>
             </div>
 
-            <BlogCardCarousel posts={BLOG_PREVIEW} />
+            <div className="rounded-3xl p-4 sm:p-8" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 50%,#0f0f0f 100%)" }}>
+              <BlogCardCarousel posts={BLOG_PREVIEW} />
+            </div>
 
             <div className="mt-8 text-center sm:hidden">
               <Link href="/resources/blogs" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all guides →</Link>

@@ -1,7 +1,7 @@
 "use client";
 
 import { toast } from "sonner";
-import { FileText, Target, Users } from "lucide-react";
+import { FileText, Target, Users, BarChart3 } from "lucide-react";
 import { MinimalCarousel, type CarouselCard } from "@/components/ui/minimal-carousel";
 import { TAG_COLORS } from "./blogs/BlogGrid";
 
@@ -21,6 +21,7 @@ const TAG_ICONS: Record<string, React.ElementType> = {
   "Content Strategy": FileText,
   "Sales Strategy": Target,
   "ICP & Targeting": Users,
+  "Lead Generation": BarChart3,
 };
 const DEFAULT_COLOR = "#8C8279";
 

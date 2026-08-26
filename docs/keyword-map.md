@@ -2,7 +2,7 @@
 
 Reference audit of every service, tool, and blog page's primary target keyword and search intent. Regenerate/re-audit this whenever pages are added or their `keywords` metadata changes — the check is mechanical (see method below) and should be re-run rather than hand-maintained from memory.
 
-**Rule enforced:** no two pages across these 30 share the same primary keyword (the first entry in each page's `keywords` array). (Updated 2026-08-25: re-ran the check while adding the new `/lp/fundraising` page below — found a real, pre-existing collision introduced between this doc's last audit and now: `/tools/battle-card-generator` and `/blog/pitching-trap-competitor-positioning` both use "competitor battle card generator" as their primary keyword. Not touched in this pass — flagged as a separate task. Updated 2026-08-21: added `/blog/cold-email-compliance-guide` and `/blog/cold-email-vs-linkedin-outreach` from the content-gap analysis, primaries checked against all others, no collision. Updated 2026-08-19: added `/blog/b2b-outbound-benchmark-report-2026`, primary keyword checked against all others, no collision.)
+**Rule enforced:** no two pages across these 31 share the same primary keyword (the first entry in each page's `keywords` array). (Updated 2026-08-25: added `/services/gtm-strategy` (primary "gtm strategy agency"), a new 7th service page — re-ran the full collision check, no new overlap introduced; the pre-existing `/tools/battle-card-generator` vs `/blog/pitching-trap-competitor-positioning` collision noted below is still open, unrelated to this change. Re-ran the check while adding the new `/lp/fundraising` page below — found a real, pre-existing collision introduced between this doc's last audit and now: `/tools/battle-card-generator` and `/blog/pitching-trap-competitor-positioning` both use "competitor battle card generator" as their primary keyword. Not touched in this pass — flagged as a separate task. Updated 2026-08-21: added `/blog/cold-email-compliance-guide` and `/blog/cold-email-vs-linkedin-outreach` from the content-gap analysis, primaries checked against all others, no collision. Updated 2026-08-19: added `/blog/b2b-outbound-benchmark-report-2026`, primary keyword checked against all others, no collision.)
 
 ## Search intent convention
 
@@ -12,13 +12,14 @@ Reference audit of every service, tool, and blog page's primary target keyword a
 | `/tools/*` | Transactional | Visitor wants to use a free tool right now; keywords are the tool's own name/action |
 | `/blog/*` | Informational | Visitor wants to learn something; keywords are "how to" / concept-explainer phrasing |
 
-## Services (Commercial) — 6 pages
+## Services (Commercial) — 7 pages
 
 | Page | Primary keyword |
 |---|---|
 | `/services/account-based-marketing` | account-based marketing agency |
 | `/services/ai-lead-generation` | ai lead generation agency |
 | `/services/cold-email` | cold email agency |
+| `/services/gtm-strategy` | gtm strategy agency |
 | `/services/linkedin-outreach` | linkedin outreach agency |
 | `/services/personal-branding` | linkedin ghostwriting services |
 | `/services/sales-intelligence` | icp mapping services |
@@ -59,11 +60,11 @@ Reference audit of every service, tool, and blog page's primary target keyword a
 
 ## `/lp/*` vs `/services/*` cannibalization check
 
-Programmatically diffed the full keyword arrays (every keyword, not just primary) of all 9 `/lp/*` pages against all 6 `/services/*` pages: **zero exact overlaps**. This holds structurally — most `/lp/*` pages target industry verticals (`b2b lead generation for nbfcs`, `lead generation for exporters india`, `lead generation for staffing agencies`, …) while `/services/*` pages target channels/methods (`cold email agency`, `linkedin outreach agency`, `icp mapping services`, …). Different axis of differentiation, no query overlap.
+Programmatically diffed the full keyword arrays (every keyword, not just primary) of all 9 `/lp/*` pages against all 7 `/services/*` pages: **zero exact overlaps**. This holds structurally — most `/lp/*` pages target industry verticals (`b2b lead generation for nbfcs`, `lead generation for exporters india`, `lead generation for staffing agencies`, …) while `/services/*` pages target channels/methods or, for the newest one, the strategic layer above them (`cold email agency`, `linkedin outreach agency`, `icp mapping services`, `gtm strategy agency`, …). Different axis of differentiation, no query overlap.
 
 `/lp/fundraising` (added 2026-08-25) breaks the "industry vertical" pattern on purpose — it targets an ICP defined by fundraising stage (pre-seed/seed/Series A founders), not an industry, and pitches a new service angle (investor outreach) rather than the usual B2B customer-outreach services. Its keywords (`investor outreach for startups`, `vc outreach service for founders`, `cold email investors`, …) are structurally distinct from every `/services/*` keyword since none of the services pages target "investor" or "vc" queries — checked and confirmed no overlap.
 
-(Note: as of this audit there are 9 `/lp/*` pages and 6 `/services/*` pages, not the "3 and 5" some older checklists reference — the site grew since that count was written. Re-run the check below against the current file list if that changes again.)
+(Note: as of this audit there are 9 `/lp/*` pages and 7 `/services/*` pages, not the "3 and 5" some older checklists reference — the site grew since that count was written. Re-run the check below against the current file list if that changes again.)
 
 ## Issues found and fixed in this pass
 

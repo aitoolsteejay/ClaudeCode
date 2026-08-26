@@ -11,6 +11,7 @@ const SERVICE_LINKS = [
   { label: "AI Lead Generation", href: "/services/ai-lead-generation" },
   { label: "Account-Based Marketing", href: "/services/account-based-marketing" },
   { label: "Personal Branding", href: "/services/personal-branding" },
+  { label: "GTM Strategy", href: "/services/gtm-strategy" },
 ];
 
 const RESOURCE_LINKS = [

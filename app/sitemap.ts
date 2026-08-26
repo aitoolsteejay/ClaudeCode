@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/ai-lead-generation`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/account-based-marketing`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/personal-branding`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/gtm-strategy`, lastModified: "2026-08-25T00:00:00+05:30", changeFrequency: "monthly", priority: 0.8 },
     // Case studies
     { url: `${base}/case-studies`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/case-studies/saas-series-a`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.7 },

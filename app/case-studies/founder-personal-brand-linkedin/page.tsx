@@ -92,7 +92,7 @@ export default function FounderPersonalBrandLinkedIn() {
               {[
                 { name: "Personal Branding", href: "/services/personal-branding" },
                 { name: "LinkedIn Outreach", href: "/services/linkedin-outreach" },
-                { name: "GTM Strategy", href: null },
+                { name: "GTM Strategy", href: "/services/gtm-strategy" },
               ].map((s) => (
                 s.href ? (
                   <Link key={s.name} href={s.href} className="text-sm px-4 py-2 rounded-full font-semibold transition-colors hover:opacity-80" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s.name}</Link>

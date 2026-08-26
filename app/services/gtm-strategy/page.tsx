@@ -1,0 +1,18 @@
+import type { Metadata } from "next";
+import GtmStrategyClient from "./GtmStrategyClient";
+
+export const metadata: Metadata = {
+  title: "B2B GTM Strategy & Execution",
+  description: "We build your GTM strategy, ICP, channel mix, positioning, then run it across channels. Not a slide deck. Book a free GTM audit.",
+  keywords: ["gtm strategy agency", "go-to-market strategy agency", "b2b gtm strategy consulting", "go to market strategy for b2b saas", "gtm audit service", "channel mix strategy b2b", "b2b positioning and messaging agency", "outbound gtm strategy", "gtm strategy and execution agency", "b2b growth strategy agency mumbai", "gtm consulting for startups", "market entry strategy b2b", "gtm strategy for saas founders", "b2b go to market planning agency"],
+  alternates: { canonical: "https://www.myntmore.com/services/gtm-strategy" },
+  openGraph: {
+    title: "B2B GTM Strategy & Execution | Myntmore",
+    description: "ICP, positioning, channel mix, and sequencing, built and run by the same team. Not a plan that sits in a drive folder.",
+    url: "https://www.myntmore.com/services/gtm-strategy",
+  },
+};
+
+export default function GtmStrategyPage() {
+  return <GtmStrategyClient />;
+}

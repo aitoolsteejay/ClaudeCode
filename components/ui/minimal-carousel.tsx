@@ -93,8 +93,8 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
         className="w-full flex flex-col items-center justify-center px-3 sm:px-4 select-none font-sans"
         onClick={handleBackgroundClick}
       >
-        <div className="w-full max-w-[26.25rem]">
-          <motion.div layout className="flex flex-col gap-3">
+        <div className="w-full">
+          <motion.div layout className="flex flex-col gap-4">
             {/* Expanded Card */}
             <AnimatePresence mode="popLayout">
               {activeCard && (
@@ -103,13 +103,13 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
                   layoutId={activeCard.id}
                   style={{ backgroundColor: activeCard.color }}
                   className="relative flex w-full flex-col justify-between
-                             rounded-[28px] sm:rounded-[32px] p-4 sm:p-5 text-white shadow-2xl
-                             min-h-[10.625rem] sm:h-48"
+                             rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 text-white shadow-2xl
+                             min-h-[10.625rem] sm:h-64"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full shrink-0">
-                      <activeCard.icon size={38} className="sm:w-11 sm:h-11" />
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full shrink-0">
+                      <activeCard.icon size={38} className="sm:w-12 sm:h-12" />
                     </div>
 
                     <motion.button
@@ -121,7 +121,7 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
                         onCopyClick?.(activeCard);
                       }}
                       className="flex items-center gap-1.5 rounded-full bg-white/10
-                                 px-3 py-1.5 sm:px-4 sm:py-2 font-bold backdrop-blur-md
+                                 px-3 py-1.5 sm:px-5 sm:py-2.5 font-bold backdrop-blur-md
                                  text-xs sm:text-base whitespace-nowrap
                                  hover:bg-white/20 transition-colors"
                     >
@@ -129,9 +129,9 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
                     </motion.button>
                   </div>
 
-                  <div className="flex items-end justify-between mt-4">
+                  <div className="flex items-end justify-between mt-4 gap-4">
                     <div className="overflow-hidden mr-2">
-                      <h3 className="text-xl sm:text-2xl font-semibold opacity-90 leading-tight truncate">
+                      <h3 className="text-xl sm:text-3xl font-semibold opacity-90 leading-tight">
                         {activeCard.title}
                       </h3>
                       <p className="text-lg sm:text-xl font-semibold tracking-tight opacity-60 truncate">
@@ -174,7 +174,7 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
             {/* Grid Layout */}
             <motion.div
               layout
-              className={`grid gap-2 sm:gap-3 transition-all duration-500 ${gridColsFor(activeId ? secondaryCards.length : cards.length)}`}
+              className={`grid gap-3 sm:gap-4 transition-all duration-500 ${gridColsFor(activeId ? secondaryCards.length : cards.length)}`}
             >
               {(activeId ? secondaryCards : cards).map((card) => (
                 <motion.div
@@ -191,24 +191,24 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
                   style={{ backgroundColor: card.color }}
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   className={`relative flex flex-col justify-between cursor-pointer
-                             rounded-[22px] sm:rounded-[28px] p-3 sm:p-4 text-white shadow-lg
+                             rounded-[22px] sm:rounded-[28px] p-4 sm:p-6 text-white shadow-lg
                              focus:outline-none focus-visible:ring-2 focus-visible:ring-white
-                             ${activeId ? "h-24 sm:h-28" : "h-28 sm:h-32"}`}
+                             ${activeId ? "h-32 sm:h-36" : "h-40 sm:h-48"}`}
                 >
                   <div className="flex justify-between items-start">
-                    <card.icon size={activeId ? 20 : 28} className="shrink-0" />
+                    <card.icon size={activeId ? 22 : 30} className="shrink-0" />
                     <div className="rounded-full bg-white/10 p-1 sm:p-1.5 transition-colors">
                       <MoreHorizontal size={16} />
                     </div>
                   </div>
 
                   <div className="mt-1 overflow-hidden">
-                    <h4 className={`${activeId ? "text-[10px] sm:text-xs" : "text-sm sm:text-base"}
-                                   font-medium opacity-90 truncate leading-tight`}>
+                    <h4 className={`${activeId ? "text-xs sm:text-sm" : "text-sm sm:text-lg"}
+                                   font-medium opacity-90 leading-tight line-clamp-2`}>
                       {card.title}
                     </h4>
-                    <p className={`${activeId ? "text-[10px] sm:text-xs" : "text-sm sm:text-base"}
-                                   font-semibold text-white/60 truncate`}>
+                    <p className={`${activeId ? "text-xs sm:text-sm" : "text-sm sm:text-base"}
+                                   font-semibold text-white/60 truncate mt-1`}>
                       {card.value}
                     </p>
                   </div>

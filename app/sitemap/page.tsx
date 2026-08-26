@@ -131,6 +131,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "GTM Strategist", href: "/careers/gtm-strategist" },
       { label: "HR Operations Intern", href: "/careers/hr-operations-intern" },
       { label: "Content Marketing Strategist Intern", href: "/careers/content-marketing-strategist-intern" },
+      { label: "Sales Executive", href: "/careers/sales-executive" },
     ],
   },
   {

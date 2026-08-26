@@ -121,6 +121,13 @@ const ROLES = [
     desc: "You'll research, write, and strategise high-impact LinkedIn content for founders and CXOs, building distinct voices across multiple clients.",
     bullets: ["6-month minimum commitment", "Strong LinkedIn & storytelling instinct", "1-2 years research/writing, bonus"],
   },
+  {
+    slug: "sales-executive", accent: "#F5B731", tag: "Sales",
+    title: "Sales Executive",
+    type: "Full-time · Hybrid, Worli, Mumbai", location: "India",
+    desc: "You'll prospect and close deals with founders, executives, and professionals, helping them unlock personal branding with Myntmore.",
+    bullets: ["Background in sales or B2B services", "CRM-savvy (Zoho or similar)", "Confident, client-facing communicator"],
+  },
 ];
 
 const VALUES = [

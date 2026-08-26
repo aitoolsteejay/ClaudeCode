@@ -7,6 +7,7 @@ import React, { useState } from "react";
 // this uses the existing dependency instead of installing a duplicate
 // animation library for the same thing.
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { MoreHorizontal, Copy } from "lucide-react";
 
 /* --- Types --- */
@@ -14,8 +15,22 @@ export interface CarouselCard {
   id: string;
   title: string;
   value: string;
+  /** Raw CSS color (hex, rgb, etc.), applied via inline style -- NOT a
+   * Tailwind class. Tailwind's JIT scanner only generates CSS for
+   * arbitrary-value classes (`bg-[#hex]`) that appear as complete literal
+   * strings in a scanned file, so building one from a runtime value here
+   * would silently produce no background at all. Inline style has no such
+   * constraint and lets callers source the color from wherever their own
+   * color mapping already lives instead of hand-duplicating it. */
   color: string;
   icon: React.ElementType;
+  /** Optional destination for this card's content. When set, the expanded
+   * view's secondary action renders as a real anchor (via next/link) instead
+   * of a plain button, and the card is included in the always-rendered,
+   * visually-hidden link list below -- so every card has a real, crawlable,
+   * keyboard-reachable `<a href>` regardless of carousel/JS state, not just
+   * a mouse-only onClick path. */
+  href?: string;
 }
 
 interface MinimalCarouselProps {
@@ -24,6 +39,18 @@ interface MinimalCarouselProps {
   onCustomizeClick?: (card: CarouselCard) => void;
   copyLabel?: string;
   customizeLabel?: string;
+}
+
+// Tailwind needs each grid-cols-N class to appear as a literal string
+// somewhere scanned; can't build "grid-cols-" + n at runtime.
+const GRID_COLS_CLASS: Record<number, string> = {
+  1: "grid-cols-1",
+  2: "grid-cols-2",
+  3: "grid-cols-3",
+  4: "grid-cols-4",
+};
+function gridColsFor(count: number): string {
+  return GRID_COLS_CLASS[Math.max(1, Math.min(count, 4))] ?? "grid-cols-3";
 }
 
 export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
@@ -42,13 +69,31 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
     if (e.target === e.currentTarget) setActiveId(null);
   };
 
+  const handleCardKeyDown = (e: React.KeyboardEvent, id: string) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setActiveId(id);
+    }
+  };
+
   return (
     <div className="min-h-full w-full flex items-center justify-center bg-transparent">
+      {/* Always-present, real links for every card -- keeps every
+          destination crawlable and keyboard/screen-reader reachable
+          independent of the expand-to-reveal interaction below, which only
+          mounts its action into the DOM after a click. */}
+      {cards.some((c) => c.href) && (
+        <ul className="sr-only">
+          {cards.filter((c) => c.href).map((c) => (
+            <li key={c.id}><Link href={c.href as string}>{c.title}</Link></li>
+          ))}
+        </ul>
+      )}
       <div
         className="w-full flex flex-col items-center justify-center px-3 sm:px-4 select-none font-sans"
         onClick={handleBackgroundClick}
       >
-        <div className="w-full max-w-105">
+        <div className="w-full max-w-[26.25rem]">
           <motion.div layout className="flex flex-col gap-3">
             {/* Expanded Card */}
             <AnimatePresence mode="popLayout">
@@ -56,10 +101,10 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
                 <motion.div
                   key={activeCard.id}
                   layoutId={activeCard.id}
-                  className={`relative flex w-full flex-col justify-between
+                  style={{ backgroundColor: activeCard.color }}
+                  className="relative flex w-full flex-col justify-between
                              rounded-[28px] sm:rounded-[32px] p-4 sm:p-5 text-white shadow-2xl
-                             ${activeCard.color}
-                             min-h-[10.625rem] sm:h-48`}
+                             min-h-[10.625rem] sm:h-48"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -94,18 +139,33 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
                       </p>
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onCustomizeClick?.(activeCard);
-                      }}
-                      className="rounded-full bg-white/30 px-3 py-1 sm:px-4 sm:py-1.5
-                                 text-sm sm:text-base font-bold backdrop-blur-md
-                                 hover:bg-white/40 transition-colors shrink-0"
-                    >
-                      {customizeLabel}
-                    </button>
+                    {activeCard.href ? (
+                      <Link
+                        href={activeCard.href}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onCustomizeClick?.(activeCard);
+                        }}
+                        className="rounded-full bg-white/30 px-3 py-1 sm:px-4 sm:py-1.5
+                                   text-sm sm:text-base font-bold backdrop-blur-md
+                                   hover:bg-white/40 transition-colors shrink-0"
+                      >
+                        {customizeLabel}
+                      </Link>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onCustomizeClick?.(activeCard);
+                        }}
+                        className="rounded-full bg-white/30 px-3 py-1 sm:px-4 sm:py-1.5
+                                   text-sm sm:text-base font-bold backdrop-blur-md
+                                   hover:bg-white/40 transition-colors shrink-0"
+                      >
+                        {customizeLabel}
+                      </button>
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -114,21 +174,25 @@ export const MinimalCarousel: React.FC<MinimalCarouselProps> = ({
             {/* Grid Layout */}
             <motion.div
               layout
-              className={`grid gap-2 sm:gap-3 transition-all duration-500 ${activeId ? "grid-cols-3" : "grid-cols-2"
-                }`}
+              className={`grid gap-2 sm:gap-3 transition-all duration-500 ${gridColsFor(activeId ? secondaryCards.length : cards.length)}`}
             >
               {(activeId ? secondaryCards : cards).map((card) => (
                 <motion.div
                   key={card.id}
                   layoutId={card.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Expand ${card.title}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setActiveId(card.id);
                   }}
+                  onKeyDown={(e) => handleCardKeyDown(e, card.id)}
+                  style={{ backgroundColor: card.color }}
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   className={`relative flex flex-col justify-between cursor-pointer
                              rounded-[22px] sm:rounded-[28px] p-3 sm:p-4 text-white shadow-lg
-                             ${card.color}
+                             focus:outline-none focus-visible:ring-2 focus-visible:ring-white
                              ${activeId ? "h-24 sm:h-28" : "h-28 sm:h-32"}`}
                 >
                   <div className="flex justify-between items-start">

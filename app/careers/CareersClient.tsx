@@ -130,6 +130,55 @@ const ROLES = [
   },
 ];
 
+// Department pills, derived from each role's tag rather than hand-listed a
+// second time, so a new ROLES entry can't silently go unfiltered.
+const DEPARTMENTS = Array.from(new Set(ROLES.map((r) => r.tag)));
+
+function RoleList() {
+  const [filter, setFilter] = useState<string>("All");
+  const filtered = filter === "All" ? ROLES : ROLES.filter((r) => r.tag === filter);
+
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2 mb-8">
+        {["All", ...DEPARTMENTS].map((dept) => {
+          const active = filter === dept;
+          return (
+            <button
+              key={dept}
+              type="button"
+              onClick={() => setFilter(dept)}
+              className="text-xs font-bold px-4 py-2 rounded-full border transition-colors duration-150"
+              style={
+                active
+                  ? { backgroundColor: "#0a0a0a", borderColor: "#0a0a0a", color: "#ffffff" }
+                  : { backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#52525B" }
+              }
+              aria-pressed={active}
+            >
+              {dept}
+              {dept !== "All" && (
+                <span className="ml-1.5 opacity-60">{ROLES.filter((r) => r.tag === dept).length}</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+      {filtered.length === 0 ? (
+        <p className="text-sm" style={{ color: "#8C8279" }}>No open roles in this department right now. Check back soon, or send us a note anyway.</p>
+      ) : (
+        <div className="space-y-6">
+          {filtered.map((r, i) => (
+            <FadeIn key={r.slug} delay={i * 80}>
+              <RoleCard role={r} />
+            </FadeIn>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const VALUES = [
   { icon: "⚡", title: "Ship fast", desc: "We move in days, not quarters. If it can be tested, it gets tested this week." },
   { icon: "🎯", title: "Outcome over hours", desc: "We don't track time. We track results. Own your output, own your schedule." },
@@ -188,13 +237,9 @@ export default function CareersClient() {
           <FadeIn>
             <h2 className="text-2xl font-black mb-8" style={{ color: "#0a0a0a" }}>Open roles</h2>
           </FadeIn>
-          <div className="space-y-6">
-            {ROLES.map((r, i) => (
-              <FadeIn key={r.slug} delay={i * 80}>
-                <RoleCard role={r} />
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn>
+            <RoleList />
+          </FadeIn>
         </div>
       </section>
 

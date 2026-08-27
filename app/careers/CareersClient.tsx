@@ -172,7 +172,7 @@ export default function CareersClient() {
       <FadeIn>
         <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
           <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6">
-            {[{ v: "4", l: "Open roles" }, { v: "10+", l: "Clients served" }, { v: "3", l: "Countries reached" }].map((s) => (
+            {[{ v: String(ROLES.length), l: "Open roles" }, { v: "300+", l: "Clients served" }, { v: "23+", l: "Countries reached" }].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#F5B731" }}><StatTicker value={s.v} /></div>
                 <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>

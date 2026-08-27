@@ -92,7 +92,7 @@ const PERSONAS: Persona[] = [
     cta: "Explore Sales Leader solutions",
     benefits: [
       { title: "Predictable meeting volume", description: "Know exactly how many qualified meetings hit your team's calendar each week no more feast or famine." },
-      { title: "Reps close 40% more", description: "When reps stop prospecting and start closing, conversion rates climb. We've seen it across 120+ clients." },
+      { title: "Reps close 40% more", description: "When reps stop prospecting and start closing, conversion rates climb. We've seen it across 300+ clients." },
       { title: "Full CRM visibility", description: "Every meeting, touchpoint, and reply synced to HubSpot or Salesforce automatically. Zero manual logging." },
     ],
   },

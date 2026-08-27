@@ -424,7 +424,7 @@ export default function Hero() {
             aria-hidden="true"
           />
           <span className="text-sm font-semibold text-[#0a0a0a]">
-            Trusted by <span style={{ color: "#b87a00" }}>120+</span> Companies Worldwide
+            Trusted by <span style={{ color: "#b87a00" }}>300+</span> Companies Worldwide
           </span>
         </div>
 

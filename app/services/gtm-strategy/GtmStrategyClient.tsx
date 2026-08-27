@@ -257,7 +257,7 @@ export default function GtmStrategyClient() {
       <div className="border-y py-10 px-4" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           {[
-            { init: "120+", label: "B2B companies trust Myntmore" },
+            { init: "300+", label: "B2B companies trust Myntmore" },
             { init: "18 days", label: "Average time to a first real result" },
             { init: "3.2x", label: "Higher reply rate than industry average" },
           ].map((s, i) => (

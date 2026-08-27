@@ -304,7 +304,7 @@ export default function Services() {
           {[
             { ref: stat1Ref, stat: "3.2x",   label: "Higher reply rate than industry average" },
             { ref: stat2Ref, stat: "18 days", label: "Average time to first booked meeting" },
-            { ref: stat3Ref, stat: "120+",    label: "B2B companies trust Myntmore" },
+            { ref: stat3Ref, stat: "300+",    label: "B2B companies trust Myntmore" },
           ].map((item, i) => (
             <div
               key={item.stat}

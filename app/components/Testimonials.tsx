@@ -275,7 +275,7 @@ export default function Testimonials() {
         </h2>
 
         <p className="mt-5 text-lg text-[#52525B] max-w-2xl mx-auto">
-          120+ B2B companies trust Myntmore to fill their pipeline. Here&rsquo;s
+          300+ B2B companies trust Myntmore to fill their pipeline. Here&rsquo;s
           what they say after working with us.
         </p>
 

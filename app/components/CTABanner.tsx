@@ -129,7 +129,7 @@ export default function CTABanner() {
         </h2>
 
         <p className="text-lg sm:text-xl text-[#52525B] max-w-2xl mx-auto mb-10 leading-relaxed">
-          Join <span className="text-[#0a0a0a] font-semibold">120+ B2B companies</span> growing
+          Join <span className="text-[#0a0a0a] font-semibold">300+ B2B companies</span> growing
           with Myntmore. Book your free 30-minute strategy call today we&rsquo;ll map out
           exactly how to generate pipeline for your business.
         </p>

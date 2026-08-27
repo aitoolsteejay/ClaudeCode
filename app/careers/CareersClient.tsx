@@ -134,12 +134,61 @@ const ROLES = [
 // second time, so a new ROLES entry can't silently go unfiltered.
 const DEPARTMENTS = Array.from(new Set(ROLES.map((r) => r.tag)));
 
+function SearchIcon() {
+  return (
+    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden>
+      <circle cx="11" cy="11" r="7" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M21 21l-4.3-4.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function RoleList() {
   const [filter, setFilter] = useState<string>("All");
-  const filtered = filter === "All" ? ROLES : ROLES.filter((r) => r.tag === filter);
+  const [query, setQuery] = useState("");
+  const [focused, setFocused] = useState(false);
+
+  const q = query.trim().toLowerCase();
+  const byDept = filter === "All" ? ROLES : ROLES.filter((r) => r.tag === filter);
+  const filtered = q
+    ? byDept.filter((r) => [r.title, r.tag, r.desc, ...r.bullets].some((s) => s.toLowerCase().includes(q)))
+    : byDept;
 
   return (
     <div>
+      <div className="relative mb-5 max-w-md">
+        <span className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: focused ? "#F5B731" : "#8C8279", transition: "color 0.15s" }}>
+          <SearchIcon />
+        </span>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          placeholder="Search roles by title, skill, or team…"
+          aria-label="Search open roles"
+          className="w-full text-sm rounded-full pl-12 pr-11 py-3.5 outline-none border-2 transition-all duration-200"
+          style={{
+            backgroundColor: "#ffffff",
+            borderColor: focused ? "#F5B731" : "#E8E2D9",
+            color: "#0a0a0a",
+            boxShadow: focused ? "0 0 0 4px rgba(245,183,49,0.15), 0 8px 24px rgba(0,0,0,0.06)" : "0 2px 8px rgba(0,0,0,0.03)",
+          }}
+        />
+        {query && (
+          <button
+            type="button"
+            onClick={() => setQuery("")}
+            aria-label="Clear search"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full flex items-center justify-center transition-colors"
+            style={{ backgroundColor: "#F0EDE8", color: "#52525B" }}
+          >
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        )}
+      </div>
+
       <div className="flex flex-wrap gap-2 mb-8">
         {["All", ...DEPARTMENTS].map((dept) => {
           const active = filter === dept;
@@ -164,8 +213,11 @@ function RoleList() {
           );
         })}
       </div>
+
       {filtered.length === 0 ? (
-        <p className="text-sm" style={{ color: "#8C8279" }}>No open roles in this department right now. Check back soon, or send us a note anyway.</p>
+        <p className="text-sm" style={{ color: "#8C8279" }}>
+          {q ? `No roles match "${query.trim()}".` : "No open roles in this department right now."} Check back soon, or send us a note anyway.
+        </p>
       ) : (
         <div className="space-y-6">
           {filtered.map((r, i) => (

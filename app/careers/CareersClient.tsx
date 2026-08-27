@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Briefcase, Building2, Globe2, Target, Rocket, TrendingUp, Users, PenTool, Zap, Sparkles, BookOpen } from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import StatTicker from "../components/StatTicker";
@@ -134,6 +135,14 @@ const ROLES = [
 // second time, so a new ROLES entry can't silently go unfiltered.
 const DEPARTMENTS = Array.from(new Set(ROLES.map((r) => r.tag)));
 
+const TAG_ICONS: Record<string, React.ElementType> = {
+  "Sales": Target,
+  "Outbound & GTM": Rocket,
+  "Growth Marketing": TrendingUp,
+  "People & Ops": Users,
+  "Content & Branding": PenTool,
+};
+
 function SearchIcon() {
   return (
     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden>
@@ -232,10 +241,10 @@ function RoleList() {
 }
 
 const VALUES = [
-  { icon: "⚡", title: "Ship fast", desc: "We move in days, not quarters. If it can be tested, it gets tested this week." },
-  { icon: "🎯", title: "Outcome over hours", desc: "We don't track time. We track results. Own your output, own your schedule." },
-  { icon: "🧠", title: "AI-native by default", desc: "Every workflow starts with: how do we use AI here? Not as a buzzword, as leverage." },
-  { icon: "📈", title: "Learn out loud", desc: "Share what's working. Share what failed. The whole team gets smarter together." },
+  { icon: Zap, accent: "#F5B731", title: "Ship fast", desc: "We move in days, not quarters. If it can be tested, it gets tested this week." },
+  { icon: Target, accent: "#3b82f6", title: "Outcome over hours", desc: "We don't track time. We track results. Own your output, own your schedule." },
+  { icon: Sparkles, accent: "#a855f7", title: "AI-native by default", desc: "Every workflow starts with: how do we use AI here? Not as a buzzword, as leverage." },
+  { icon: BookOpen, accent: "#10b981", title: "Learn out loud", desc: "Share what's working. Share what failed. The whole team gets smarter together." },
 ];
 
 export default function CareersClient() {
@@ -258,9 +267,18 @@ export default function CareersClient() {
               <Underline />
             </span>
           </h1>
-          <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
+          <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2 mb-8" style={{ color: "#52525B" }}>
             We&apos;re a small, high-output team obsessed with B2B growth. If you want to own real outcomes, not slide decks, you&apos;re our kind of person.
           </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5 hero-fade-d3">
+            <a href="#open-roles" className="btn-dark px-7 py-3.5 text-sm font-bold inline-flex items-center gap-2 w-full sm:w-auto justify-center">
+              View Open Roles
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+            </a>
+            <a href="mailto:growth@myntmore.com" className="text-sm font-semibold hover:underline underline-offset-4 transition-all duration-200" style={{ color: "#0a0a0a" }}>
+              Or email us directly →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -270,24 +288,36 @@ export default function CareersClient() {
       </div>
 
       {/* Stats */}
-      <FadeIn>
-        <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
-          <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6">
-            {[{ v: String(ROLES.length), l: "Open roles" }, { v: "300+", l: "Clients served" }, { v: "23+", l: "Countries reached" }].map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="text-3xl font-black" style={{ color: "#F5B731" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+      <section className="py-12 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {[
+            { v: String(ROLES.length), l: "Open roles", icon: Briefcase, accent: "#F5B731" },
+            { v: "300+", l: "Clients served", icon: Building2, accent: "#3b82f6" },
+            { v: "23+", l: "Countries reached", icon: Globe2, accent: "#10b981" },
+          ].map((s, i) => (
+            <FadeIn key={s.l} delay={i * 70}>
+              <div className="flex items-center gap-4 rounded-2xl border p-5 h-full" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${s.accent}14` }}>
+                  <s.icon className="w-6 h-6" style={{ color: s.accent }} />
+                </div>
+                <div>
+                  <div className="text-2xl font-black leading-none" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
+                  <div className="text-xs mt-1.5 font-semibold" style={{ color: "#8C8279" }}>{s.l}</div>
+                </div>
               </div>
-            ))}
-          </div>
-        </section>
-      </FadeIn>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
 
       {/* Open roles */}
-      <section className="py-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
+      <section id="open-roles" className="py-16 px-4 scroll-mt-20" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-2xl font-black mb-8" style={{ color: "#0a0a0a" }}>Open roles</h2>
+            <div className="mb-8">
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Careers</span>
+              <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Open roles</h2>
+            </div>
           </FadeIn>
           <FadeIn>
             <RoleList />
@@ -307,8 +337,10 @@ export default function CareersClient() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {VALUES.map((v, i) => (
               <FadeIn key={v.title} delay={i * 60}>
-                <div className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <div className="text-2xl mb-3">{v.icon}</div>
+                <div className="group rounded-2xl border p-6 h-full transition-all duration-300 hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110" style={{ backgroundColor: `${v.accent}14` }}>
+                    <v.icon className="w-5 h-5" style={{ color: v.accent }} />
+                  </div>
                   <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{v.title}</h3>
                   <p className="text-sm" style={{ color: "#52525B" }}>{v.desc}</p>
                 </div>
@@ -383,34 +415,47 @@ export default function CareersClient() {
 
 function RoleCard({ role }: { role: typeof ROLES[0] }) {
   const [hov, setHov] = useState(false);
+  const Icon = TAG_ICONS[role.tag] ?? Briefcase;
   return (
     <Link href={`/careers/${role.slug}`}
       onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
-      className="group block rounded-2xl border overflow-hidden transition-all duration-300"
-      style={{ backgroundColor: "#ffffff", borderColor: hov ? role.accent : "#E8E2D9", boxShadow: hov ? `0 12px 40px ${role.accent}22` : "0 2px 8px rgba(0,0,0,0.04)", transform: hov ? "translateY(-4px)" : "translateY(0)" }}>
-      <div style={{ height: 4, background: `linear-gradient(90deg,${role.accent},${role.accent}88)`, opacity: hov ? 1 : 0, transition: "opacity 0.3s" }} />
-      <div className="p-8">
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${role.accent}12`, color: role.accent, border: `1px solid ${role.accent}30` }}>{role.tag}</span>
-          <div className="text-right">
-            <p className="text-xs font-semibold" style={{ color: "#8C8279" }}>{role.type}</p>
-            <p className="text-xs" style={{ color: "#8C8279" }}>{role.location}</p>
+      className="group relative block rounded-2xl border overflow-hidden transition-all duration-300"
+      style={{ backgroundColor: "#ffffff", borderColor: hov ? role.accent : "#E8E2D9", boxShadow: hov ? `0 16px 40px ${role.accent}22` : "0 2px 10px rgba(0,0,0,0.04)", transform: hov ? "translateY(-4px)" : "translateY(0)" }}>
+      {/* Always-on department accent bar, so cards read as color-coded at rest, not just on hover */}
+      <div className="absolute left-0 top-0 bottom-0" style={{ width: 4, background: role.accent }} aria-hidden />
+      <div className="p-6 sm:p-8 pl-7 sm:pl-9">
+        <div className="flex items-start gap-5">
+          <div
+            className="hidden sm:flex w-12 h-12 rounded-2xl items-center justify-center flex-shrink-0 transition-transform duration-300"
+            style={{ backgroundColor: `${role.accent}14`, transform: hov ? "scale(1.08) rotate(-4deg)" : "scale(1) rotate(0deg)" }}
+            aria-hidden
+          >
+            <Icon className="w-6 h-6" style={{ color: role.accent }} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-3">
+              <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${role.accent}12`, color: role.accent, border: `1px solid ${role.accent}30` }}>{role.tag}</span>
+              <div className="text-right">
+                <p className="text-xs font-semibold" style={{ color: "#8C8279" }}>{role.type}</p>
+                <p className="text-xs" style={{ color: "#8C8279" }}>{role.location}</p>
+              </div>
+            </div>
+            <h3 className="text-xl font-black mb-2 transition-colors duration-200" style={{ color: hov ? role.accent : "#0a0a0a" }}>{role.title}</h3>
+            <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>{role.desc}</p>
+            <ul className="space-y-1.5 mb-5">
+              {role.bullets.map((b) => (
+                <li key={b} className="flex items-center gap-2 text-sm" style={{ color: "#52525B" }}>
+                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: role.accent }} />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: role.accent }}>
+              View role
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </span>
           </div>
         </div>
-        <h3 className="text-xl font-black mb-2" style={{ color: "#0a0a0a" }}>{role.title}</h3>
-        <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>{role.desc}</p>
-        <ul className="space-y-1.5 mb-4">
-          {role.bullets.map((b) => (
-            <li key={b} className="flex items-center gap-2 text-sm" style={{ color: "#52525B" }}>
-              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: role.accent }} />
-              {b}
-            </li>
-          ))}
-        </ul>
-        <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: role.accent }}>
-          View role
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-        </span>
       </div>
     </Link>
   );

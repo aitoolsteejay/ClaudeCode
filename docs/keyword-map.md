@@ -2,7 +2,7 @@
 
 Reference audit of every service, tool, and blog page's primary target keyword and search intent. Regenerate/re-audit this whenever pages are added or their `keywords` metadata changes — the check is mechanical (see method below) and should be re-run rather than hand-maintained from memory.
 
-**Rule enforced:** no two pages across these 31 share the same primary keyword (the first entry in each page's `keywords` array). (Updated 2026-08-25: added `/services/gtm-strategy` (primary "gtm strategy agency"), a new 7th service page — re-ran the full collision check, no new overlap introduced; the pre-existing `/tools/battle-card-generator` vs `/blog/pitching-trap-competitor-positioning` collision noted below is still open, unrelated to this change. Re-ran the check while adding the new `/lp/fundraising` page below — found a real, pre-existing collision introduced between this doc's last audit and now: `/tools/battle-card-generator` and `/blog/pitching-trap-competitor-positioning` both use "competitor battle card generator" as their primary keyword. Not touched in this pass — flagged as a separate task. Updated 2026-08-21: added `/blog/cold-email-compliance-guide` and `/blog/cold-email-vs-linkedin-outreach` from the content-gap analysis, primaries checked against all others, no collision. Updated 2026-08-19: added `/blog/b2b-outbound-benchmark-report-2026`, primary keyword checked against all others, no collision.)
+**Rule enforced:** no two pages across these 37 share the same primary keyword (the first entry in each page's `keywords` array). (Updated 2026-08-31: added 4 new blog posts (`/blog/vanity-metrics-personal-brand-pipeline`, `/blog/outbound-funnel-math-not-guesswork`, `/blog/relevance-beats-reach-b2b-outbound`, `/blog/conversations-not-impressions-outbound`) — re-ran the full collision check, no new overlap. Two blog posts each shared an exact keyword with the tool page they link to (`"founder presence analyzer"` and `"cold email roi calculator"`, both branded/primary terms of their tool pages) — removed from the blog posts' own `keywords` arrays, matching the existing convention below of leaving a tool's own branded phrase solely on the tool page. Also backfilled two pre-existing blog posts missing from this table, `/blog/case-study-procrastination` and `/blog/pitching-trap-competitor-positioning`, which is why the tracked count jumps from 31 to 37 rather than by 4. Updated 2026-08-25: added `/services/gtm-strategy` (primary "gtm strategy agency"), a new 7th service page — re-ran the full collision check, no new overlap introduced; the pre-existing `/tools/battle-card-generator` vs `/blog/pitching-trap-competitor-positioning` collision noted below is still open, unrelated to this change. Re-ran the check while adding the new `/lp/fundraising` page below — found a real, pre-existing collision introduced between this doc's last audit and now: `/tools/battle-card-generator` and `/blog/pitching-trap-competitor-positioning` both use "competitor battle card generator" as their primary keyword. Not touched in this pass — flagged as a separate task. Updated 2026-08-21: added `/blog/cold-email-compliance-guide` and `/blog/cold-email-vs-linkedin-outreach` from the content-gap analysis, primaries checked against all others, no collision. Updated 2026-08-19: added `/blog/b2b-outbound-benchmark-report-2026`, primary keyword checked against all others, no collision.)
 
 ## Search intent convention
 
@@ -38,10 +38,16 @@ Reference audit of every service, tool, and blog page's primary target keyword a
 | `/tools/posting-rhythm-builder` | linkedin posting rhythm builder |
 | `/tools/roi-calculator` | roi calculator for cold outreach |
 
-## Blog (Informational) — 15 pages
+## Blog (Informational) — 21 pages
 
 | Page | Primary keyword |
 |---|---|
+| `/blog/vanity-metrics-personal-brand-pipeline` | linkedin vanity metrics vs revenue |
+| `/blog/outbound-funnel-math-not-guesswork` | b2b outbound funnel math |
+| `/blog/relevance-beats-reach-b2b-outbound` | relevance vs reach b2b outbound |
+| `/blog/conversations-not-impressions-outbound` | outbound conversations vs impressions |
+| `/blog/case-study-procrastination` | b2b case study generator |
+| `/blog/pitching-trap-competitor-positioning` | competitor battle card generator |
 | `/blog/cold-email-compliance-guide` | cold email compliance |
 | `/blog/cold-email-vs-linkedin-outreach` | cold email vs linkedin outreach |
 | `/blog/b2b-outbound-benchmark-report-2026` | b2b outbound benchmark report |

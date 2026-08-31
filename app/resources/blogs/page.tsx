@@ -39,6 +39,34 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/vanity-metrics-personal-brand-pipeline",
+    tags: ["Personal Branding", "Lead Generation"],
+    title: "Visibility vs. Value: Optimising the Founder's Personal Brand for Pipeline, Not Likes",
+    excerpt: "A ₹3.5 crore order came from one cold LinkedIn message. Here's why vanity metrics won't repeat it, and how to fix your profile's positioning gap.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/outbound-funnel-math-not-guesswork",
+    tags: ["Lead Generation", "Metrics & Reporting"],
+    title: "Gut Feel vs. Funnel Math: Why Outbound Is a Technical System, Not a Guessing Game",
+    excerpt: "Outbound isn't a guessing game. It's rhythm, math, and infrastructure. Here's how to map the real value of a single booked meeting.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/relevance-beats-reach-b2b-outbound",
+    tags: ["Cold Outreach", "Copywriting"],
+    title: "Relevance Beats Reach: Why Your Outbound Strategy Is Failing to Trigger Responses",
+    excerpt: "More sends and bigger lists won't fix silent outbound. Three psychology shifts that turn cold outreach into a real conversation starter.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/conversations-not-impressions-outbound",
+    tags: ["Lead Generation", "Cold Outreach"],
+    title: "The Impression Illusion: Why Outbound Success Is Mapped in Conversations, Not Sends",
+    excerpt: "Sending more messages isn't a strategy. Here's why predictable pipelines are built on conversation momentum, not impression volume.",
+    readTime: "5 min read",
+  },
+  {
     href: "/blog/case-study-procrastination",
     tags: ["Content Strategy", "Lead Generation"],
     title: "Case Study Procrastination: Why Your Best Proof Is Still Undocumented",

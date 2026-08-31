@@ -68,6 +68,10 @@ const GROUPS: SitemapGroup[] = [
     accent: "#3B82F6",
     links: [
       { label: "All Blog Posts", href: "/resources/blogs" },
+      { label: "Visibility vs. Value: Founder Personal Brand", href: "/blog/vanity-metrics-personal-brand-pipeline" },
+      { label: "Gut Feel vs. Funnel Math", href: "/blog/outbound-funnel-math-not-guesswork" },
+      { label: "Relevance Beats Reach", href: "/blog/relevance-beats-reach-b2b-outbound" },
+      { label: "The Impression Illusion", href: "/blog/conversations-not-impressions-outbound" },
       { label: "The TAM Trap", href: "/blog/tam-trap-vague-targeting" },
       { label: "The 3-Second Rule", href: "/blog/3-second-rule-cold-outreach" },
       { label: "The Value Premium", href: "/blog/value-premium-lead-magnets" },

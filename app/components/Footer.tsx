@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterForm from "./NewsletterForm";
 
 function ParticleCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -81,6 +82,7 @@ const COMPANY_LINKS = [
   { label: "Blog", href: "/resources/blogs" },
   { label: "Guides", href: "/resources/guides" },
   { label: "The Feed", href: "/resources/feed" },
+  { label: "Newsletter", href: "/newsletter-subscribe" },
   { label: "Careers", href: "/careers" },
   { label: "Partner with Us", href: "/lp/agency-partners" },
   { label: "Contact", href: "/contact-us" },
@@ -217,39 +219,9 @@ export default function Footer() {
               <li><Link href="/contact-us" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>Contact Page</Link></li>
             </ul>
             <div className="mb-4 p-4 rounded-xl border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-              <p className="text-xs font-semibold mb-1" style={{ color: "#0a0a0a" }}>The Outbound Operator</p>
+              <Link href="/newsletter-subscribe" className="inline-block text-xs font-semibold mb-1 hover:underline" style={{ color: "#0a0a0a" }}>The Outbound Operator</Link>
               <p className="text-xs mb-3" style={{ color: "#6B6B6B" }}>Weekly AI outbound insights. No fluff.</p>
-              <form
-                method="POST"
-                action="https://tsop-zgfl.maillist-manage.com/weboptin.zc"
-                target="_blank"
-                className="flex gap-2"
-              >
-                <input type="text" name="CONTACT_EMAIL" placeholder="Your email" required
-                  className="flex-1 min-w-0 px-3 py-1.5 rounded-lg text-xs outline-none border"
-                  style={{ backgroundColor: "#ffffff", borderColor: "rgba(245,183,49,0.4)", color: "#0a0a0a" }} />
-                <button type="submit"
-                  className="px-3 py-1.5 rounded-lg text-xs font-bold flex-shrink-0"
-                  style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
-                  Join
-                </button>
-                <input type="hidden" name="submitType" value="optinCustomView" />
-                <input type="hidden" name="formType" value="QuickForm" />
-                <input type="hidden" name="zx" value="136d6a7e5" />
-                <input type="hidden" name="zcvers" value="3.0" />
-                <input type="hidden" name="oldListIds" value="" />
-                <input type="hidden" name="mode" value="OptinCreateView" />
-                <input type="hidden" name="zcld" value="" />
-                <input type="hidden" name="zctd" value="" />
-                <input type="hidden" name="document_domain" value="" />
-                <input type="hidden" name="zc_Url" value="flin-zgpm.maillist-manage.com" />
-                <input type="hidden" name="new_optin_response_in" value="0" />
-                <input type="hidden" name="duplicate_optin_response_in" value="0" />
-                <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW" />
-                <input type="hidden" name="zc_formIx" value="3z9fc5e049897874918c8ec61408434d90ec1e3c29e2f0e6cf2784215521d683ff" />
-                <input type="hidden" name="viewFrom" value="URL_ACTION" />
-                <input type="hidden" name="emailReportId" value="" />
-              </form>
+              <NewsletterForm inputId="footer-newsletter-email" compact />
             </div>
             <a href="/founder-meeting" className="btn-dark px-5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5">
               Book a Call

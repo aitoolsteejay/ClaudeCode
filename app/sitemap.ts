@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/resources/guides`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/feed`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/events`, lastModified: "2026-08-14T16:24:57+05:30", changeFrequency: "weekly", priority: 0.7 },
+    { url: `${base}/newsletter-subscribe`, lastModified: "2026-09-02T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Free tools
     { url: `${base}/tools/linkedin-optimizer`, lastModified: "2026-08-17T13:05:02+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/dm-angle-generator`, lastModified: "2026-08-17T13:05:02+05:30", changeFrequency: "monthly", priority: 0.7 },

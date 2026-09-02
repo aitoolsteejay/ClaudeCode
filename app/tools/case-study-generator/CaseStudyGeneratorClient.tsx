@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { toast } from "sonner";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/case-study-generator/LandingPage";
@@ -96,32 +95,15 @@ export default function CaseStudyGeneratorClient() {
   };
 
   if (step === "landing") {
-    return (
-      <>
-        <div className="max-w-4xl mx-auto px-6 pt-24">
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>Case Study & Proposal Generator</span>
-          </div>
-        </div>
-        <LandingPage onStart={() => setStep("lead")} />
-      </>
-    );
+    return <LandingPage onStart={() => setStep("lead")} />;
   }
 
   return (
-    <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+    <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
       <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.22) 0%, rgba(79,70,229,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
       <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.16) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="flex items-center gap-2 text-xs font-semibold mb-8" style={{ color: "#8C8279" }}>
-          <Link href="/resources/tools" className="link-subtle">Tools</Link>
-          <span style={{ color: "#E8E2D9" }}>/</span>
-          <span style={{ color: "#3D3D3D" }}>Case Study & Proposal Generator</span>
-        </div>
-
         {step === "lead" && (
           <>
             <header className="pb-12 text-center">

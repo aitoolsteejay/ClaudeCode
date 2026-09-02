@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { LandingPage } from "@/components/tools/roi-calculator/LandingPage";
 import { CalculatorInputs } from "@/components/tools/roi-calculator/CalculatorInputs";
 import { ResultsDashboard } from "@/components/tools/roi-calculator/ResultsDashboard";
@@ -254,18 +253,7 @@ export default function RoiCalculatorClient() {
   };
 
   if (!started) {
-    return (
-      <>
-        <div className="max-w-4xl mx-auto px-6 pt-24">
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>ROI Calculator</span>
-          </div>
-        </div>
-        <LandingPage onStart={() => setStarted(true)} />
-      </>
-    );
+    return <LandingPage onStart={() => setStarted(true)} />;
   }
 
   return (
@@ -276,14 +264,7 @@ export default function RoiCalculatorClient() {
       <div aria-hidden="true" style={{ position: "absolute", bottom: "-160px", left: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-24 pb-8 relative z-10">
-        {/* Breadcrumb, matching the site's sub-page convention */}
-        <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
-          <Link href="/resources/tools" className="link-subtle">Tools</Link>
-          <span style={{ color: "#E8E2D9" }}>/</span>
-          <span style={{ color: "#3D3D3D" }}>ROI Calculator</span>
-        </div>
-
+      <main className="container mx-auto px-4 pt-12 pb-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <div

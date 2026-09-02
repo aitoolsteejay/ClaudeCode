@@ -153,34 +153,16 @@ export default function PostingRhythmClient() {
   };
 
   if (step === "landing") {
-    return (
-      <>
-        <div className="max-w-4xl mx-auto px-6 pt-24">
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>Posting Rhythm Builder</span>
-          </div>
-        </div>
-        <LandingPage onStart={() => setStep("lead")} />
-      </>
-    );
+    return <LandingPage onStart={() => setStep("lead")} />;
   }
 
   return (
-    <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden selection:bg-[#FFC947] selection:text-black" style={{ backgroundColor: "#F8F6F2" }}>
+    <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden selection:bg-[#FFC947] selection:text-black" style={{ backgroundColor: "#F8F6F2" }}>
       {/* Vivid background blobs, matching the homepage hero's color treatment */}
       <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,160,0,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
       <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.20) 0%, rgba(13,148,136,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        {/* Breadcrumb, matching the site's sub-page convention */}
-        <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
-          <Link href="/resources/tools" className="link-subtle">Tools</Link>
-          <span style={{ color: "#E8E2D9" }}>/</span>
-          <span style={{ color: "#3D3D3D" }}>Posting Rhythm Builder</span>
-        </div>
-
         {/* Header */}
         <header className="pb-12 text-center">
           <div

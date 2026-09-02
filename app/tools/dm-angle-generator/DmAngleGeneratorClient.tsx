@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import { LandingPage } from "@/components/tools/dm-angles/LandingPage";
 import { InputPanel } from "@/components/tools/dm-angles/InputPanel";
 import { OutputSection } from "@/components/tools/dm-angles/OutputSection";
@@ -127,15 +126,6 @@ export default function DmAngleGeneratorClient() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Breadcrumb, matching the site's sub-page convention */}
-      <div className="max-w-4xl mx-auto px-6 pt-24">
-        <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-          <Link href="/resources/tools" className="link-subtle">Tools</Link>
-          <span style={{ color: "#E8E2D9" }}>/</span>
-          <span style={{ color: "#3D3D3D" }}>DM Angle Generator</span>
-        </div>
-      </div>
-
       {!leadData && (
         <div className="flex flex-col">
           <LandingPage onGetStarted={scrollToTool} />

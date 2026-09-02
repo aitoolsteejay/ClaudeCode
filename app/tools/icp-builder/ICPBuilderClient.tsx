@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/icp-builder/LandingPage";
 import { IntakeScreen } from "@/components/tools/icp-builder/IntakeScreen";
@@ -103,33 +102,16 @@ export default function ICPBuilderClient() {
   const currentStepIndex = STEP_LABELS.findIndex((s) => s.key === screen);
 
   if (!started) {
-    return (
-      <>
-        <div className="max-w-4xl mx-auto px-6 pt-24">
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>ICP Builder</span>
-          </div>
-        </div>
-        <LandingPage onStart={() => setStarted(true)} />
-      </>
-    );
+    return <LandingPage onStart={() => setStarted(true)} />;
   }
 
   if (!leadData) {
     return (
-      <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+      <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>ICP Builder</span>
-          </div>
-
           <header className="pb-12 text-center">
             <div
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
@@ -163,19 +145,12 @@ export default function ICPBuilderClient() {
   }
 
   return (
-    <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+    <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
       {/* Vivid background blobs, matching the homepage hero's color treatment */}
       <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
       <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-semibold mb-6" style={{ color: "#8C8279" }}>
-          <Link href="/resources/tools" className="link-subtle">Tools</Link>
-          <span style={{ color: "#E8E2D9" }}>/</span>
-          <span style={{ color: "#3D3D3D" }}>ICP Builder</span>
-        </div>
-
         {/* Header */}
         <header className="pb-8 text-center">
           <div

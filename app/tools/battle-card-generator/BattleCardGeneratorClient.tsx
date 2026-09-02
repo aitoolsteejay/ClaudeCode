@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { toast } from "sonner";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/battle-card-generator/LandingPage";
@@ -63,32 +62,15 @@ export default function BattleCardGeneratorClient() {
   };
 
   if (step === "landing") {
-    return (
-      <>
-        <div className="max-w-4xl mx-auto px-6 pt-24">
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <Link href="/resources/tools" className="link-subtle">Tools</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span style={{ color: "#3D3D3D" }}>Competitor Battle Card Generator</span>
-          </div>
-        </div>
-        <LandingPage onStart={() => setStep("lead")} />
-      </>
-    );
+    return <LandingPage onStart={() => setStep("lead")} />;
   }
 
   return (
-    <div className="min-h-screen pb-20 pt-24 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+    <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
       <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(239,68,68,0.20) 0%, rgba(220,38,38,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
       <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="flex items-center gap-2 text-xs font-semibold mb-8" style={{ color: "#8C8279" }}>
-          <Link href="/resources/tools" className="link-subtle">Tools</Link>
-          <span style={{ color: "#E8E2D9" }}>/</span>
-          <span style={{ color: "#3D3D3D" }}>Competitor Battle Card Generator</span>
-        </div>
-
         {step === "lead" && (
           <>
             <header className="pb-12 text-center">

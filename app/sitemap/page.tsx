@@ -61,6 +61,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "Ecommerce Conversion Playbook", href: "/case-studies/ecommerce-conversion-playbook" },
       { label: "Founder Personal Brand on LinkedIn", href: "/case-studies/founder-personal-brand-linkedin" },
       { label: "Predictable B2B Lead Gen Engine", href: "/case-studies/predictable-b2b-lead-gen-engine" },
+      { label: "UK Pharma, Qualified Meetings", href: "/case-studies/uk-pharma-qualified-meetings" },
     ],
   },
   {
@@ -82,6 +83,12 @@ const GROUPS: SitemapGroup[] = [
       { label: "7 B2B Lead Gen Metrics That Matter", href: "/blog/b2b-lead-gen-metrics" },
       { label: "Ecommerce Conversion Playbook", href: "/blog/ecommerce-conversion-playbook" },
       { label: "Founder Personal Brand on LinkedIn", href: "/blog/founder-personal-brand-linkedin" },
+      { label: "The 2026 B2B Outbound Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
+      { label: "Case Study Procrastination", href: "/blog/case-study-procrastination" },
+      { label: "Cold Email Compliance Guide", href: "/blog/cold-email-compliance-guide" },
+      { label: "Cold Email vs. LinkedIn Outreach", href: "/blog/cold-email-vs-linkedin-outreach" },
+      { label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine" },
+      { label: "The Pitching Trap", href: "/blog/pitching-trap-competitor-positioning" },
     ],
   },
   {

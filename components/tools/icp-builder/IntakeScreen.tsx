@@ -56,9 +56,15 @@ export function IntakeScreen({ data, onChange, onContinue }: IntakeScreenProps) 
         const raw = await callGemini(buildOfferPolishPrompt(rawText));
         const parsed = parseJsonArray<string>(raw);
         const options = sanitize(parsed).slice(0, 3);
+        // Drop stale responses: if the user has typed more since this
+        // request was fired, a newer debounce call is already handling (or
+        // will handle) it -- applying this result now would clobber
+        // whatever they've typed since with this older text.
+        if (dataRef.current.offer !== rawText) return;
         onChange({ ...dataRef.current, offer: rawText, offerOptions: options, offerOptionsKey: rawText, selectedOfferIdx: null });
       } catch (err) {
         console.error("Offer polish failed:", err);
+        if (dataRef.current.offer !== rawText) return;
         const fallback = sanitize(rawText);
         onChange({
           ...dataRef.current,

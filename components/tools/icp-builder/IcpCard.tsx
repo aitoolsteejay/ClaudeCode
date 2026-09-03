@@ -51,10 +51,16 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
         const raw = await callGemini(buildD2cPolishPrompt(description, offer, sellingTo, businessType));
         const parsed = parseJsonArray<string>(raw);
         const options = sanitize(parsed).slice(0, 3);
+        // Drop stale responses: if the user has typed more since this
+        // request was fired, a newer debounce call is already handling (or
+        // will handle) it -- applying this result now would clobber
+        // whatever they've typed since with this older text.
+        if (icpRef.current.d2cDescription !== description) return;
         onChange({ ...icpRef.current, d2cDescription: description, d2cOptions: options, d2cOptionsKey: description, d2cSelectedIdx: null });
       } catch (err) {
         console.error("D2C polish failed:", err);
         setPolishError(describeGeminiError(err));
+        if (icpRef.current.d2cDescription !== description) return;
         const fallback = sanitize(description);
         onChange({
           ...icpRef.current,

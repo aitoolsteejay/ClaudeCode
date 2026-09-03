@@ -78,3 +78,56 @@ create policy "Allow anonymous updates"
 
 create index if not exists idx_leads_source on public.leads(source);
 create index if not exists idx_leads_created_at on public.leads(created_at desc);
+
+-- ─────────────────────────────────────────────────────────────────────
+-- Live "gist of the room" feature (/menti, /menti/room)
+--
+-- A single fixed question is shown to a live audience at /menti; each
+-- visitor submits one free-text answer, fully anonymous (no name/email,
+-- unrelated to the `leads` table above). /menti/room is an unlisted,
+-- password-free results view for whoever is running the event: it shows
+-- a live-updating count and list of answers (via Supabase Realtime) and
+-- a button to have Gemini summarize the room into an overall gist.
+--
+-- Because /menti/room has no login, it relies on Realtime + a direct
+-- anon `select` to read responses, so unlike `leads` this table allows
+-- anonymous reads too. That's an accepted tradeoff for this feature:
+-- answers are anonymous and low-sensitivity, and the room view's only
+-- protection is not publicizing its URL.
+
+create table if not exists public.menti_responses (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  answer text not null
+);
+
+alter table public.menti_responses enable row level security;
+
+drop policy if exists "Allow anonymous inserts" on public.menti_responses;
+create policy "Allow anonymous inserts"
+  on public.menti_responses
+  for insert
+  to anon, authenticated
+  with check (char_length(answer) > 0 and char_length(answer) <= 500);
+
+drop policy if exists "Allow anonymous reads" on public.menti_responses;
+create policy "Allow anonymous reads"
+  on public.menti_responses
+  for select
+  to anon, authenticated
+  using (true);
+
+-- No update/delete policy for anon/authenticated: answers are write-once
+-- from the audience and only ever read in aggregate from the room view.
+
+create index if not exists idx_menti_responses_created_at on public.menti_responses(created_at desc);
+
+-- Enable Realtime on this table so /menti/room gets new answers pushed
+-- live instead of having to poll. Safe to re-run: the exception handler
+-- swallows "already added to publication" on subsequent runs.
+do $$
+begin
+  alter publication supabase_realtime add table public.menti_responses;
+exception
+  when duplicate_object then null;
+end $$;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
+import InnerLayout from "../../components/InnerLayout";
 import RoomClient from "./RoomClient";
 import RoomLogin from "./RoomLogin";
 import { ADMIN_COOKIE_NAME, isValidAdminCookie } from "@/lib/mentiAuth";
@@ -15,5 +16,5 @@ export default function RoomPage() {
   const token = cookies().get(ADMIN_COOKIE_NAME)?.value;
   const authed = isValidAdminCookie(token);
 
-  return authed ? <RoomClient /> : <RoomLogin />;
+  return <InnerLayout>{authed ? <RoomClient /> : <RoomLogin />}</InnerLayout>;
 }

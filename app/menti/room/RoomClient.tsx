@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { toast } from "sonner";
 import { supabase } from "@/lib/supabase";
 
@@ -91,19 +90,16 @@ export default function RoomClient() {
   }
 
   return (
-    <div className="min-h-screen px-4 py-10" style={{ backgroundColor: "#F8F6F2" }}>
+    <div className="min-h-[70vh] px-4 pt-32 pb-16" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-8">
-          <Image src="/logo.png" alt="Myntmore" width={140} height={39} className="h-8 w-auto object-contain" />
-          <div className="flex items-center gap-4">
-            <div className="text-right">
-              <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
-              <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
-            </div>
-            <button onClick={handleLogout} className="text-xs font-semibold underline" style={{ color: "#8C8279" }}>
-              Log out
-            </button>
+          <div>
+            <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
           </div>
+          <button onClick={handleLogout} className="text-xs font-semibold underline" style={{ color: "#8C8279" }}>
+            Log out
+          </button>
         </div>
 
         <div className="rounded-3xl border p-6 sm:p-8 mb-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>

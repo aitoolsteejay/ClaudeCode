@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 export default function RoomLogin() {
   const [password, setPassword] = useState("");
@@ -33,10 +32,7 @@ export default function RoomLogin() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4" style={{ backgroundColor: "#F8F6F2" }}>
-      <div className="mb-8">
-        <Image src="/logo.png" alt="Myntmore" width={160} height={45} className="h-9 w-auto object-contain" priority />
-      </div>
+    <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 pt-32 pb-16" style={{ backgroundColor: "#F8F6F2" }}>
       <form onSubmit={handleSubmit} className="w-full max-w-sm rounded-3xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
         <h1 className="text-xl font-black mb-1" style={{ color: "#0a0a0a" }}>Room access</h1>
         <p className="text-sm mb-6" style={{ color: "#52525B" }}>Enter the admin password to view live responses.</p>

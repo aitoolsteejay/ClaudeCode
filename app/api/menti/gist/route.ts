@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI, Type } from "@google/genai";
+import { ADMIN_COOKIE_NAME, isValidAdminCookie } from "@/lib/mentiAuth";
 
 const QUESTION = "What's one lesson you want the next generation to carry forward, even in an AI-powered world?";
 
@@ -49,6 +50,10 @@ const GIST_SCHEMA = {
 
 export async function POST(req: NextRequest) {
   try {
+    if (!isValidAdminCookie(req.cookies.get(ADMIN_COOKIE_NAME)?.value)) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const body = await req.json();
     const answers = sanitizeAnswers(body?.answers);
 

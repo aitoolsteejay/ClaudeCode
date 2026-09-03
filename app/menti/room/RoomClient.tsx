@@ -85,14 +85,24 @@ export default function RoomClient() {
 
   const newSinceGist = gist ? responses.length - gist.responseCount : 0;
 
+  async function handleLogout() {
+    await fetch("/api/menti/auth", { method: "DELETE" });
+    window.location.reload();
+  }
+
   return (
     <div className="min-h-screen px-4 py-10" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <Image src="/logo.png" alt="Myntmore" width={140} height={39} className="h-8 w-auto object-contain" />
-          <div className="text-right">
-            <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
-            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
+          <div className="flex items-center gap-4">
+            <div className="text-right">
+              <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
+              <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
+            </div>
+            <button onClick={handleLogout} className="text-xs font-semibold underline" style={{ color: "#8C8279" }}>
+              Log out
+            </button>
           </div>
         </div>
 

@@ -8,7 +8,7 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "Cold Email Added $400K Pipeline in 6 Weeks",
   description: "How Myntmore built a cold email engine for an eCommerce SaaS: 28 meetings, 41% open rate, $400K pipeline in 6 weeks. See the full case study.",
-  keywords: ["b2b lead generation case study", "cold email case study", "ecommerce saas lead generation", "cold email results b2b saas", "b2b pipeline generation case study", "shopify saas outbound case study", "dtc brand outreach case study", "cold email open rate results", "seed stage saas lead generation", "b2b cold email agency results", "ai lead generation case study", "icp mapping case study", "myntmore case study", "cold email pipeline growth"],
+  keywords: ["ecommerce saas lead generation", "b2b lead generation case study", "cold email case study", "cold email results b2b saas", "b2b pipeline generation case study", "shopify saas outbound case study", "dtc brand outreach case study", "cold email open rate results", "seed stage saas lead generation", "b2b cold email agency results", "ai lead generation case study", "icp mapping case study", "myntmore case study", "cold email pipeline growth"],
   alternates: { canonical: "https://www.myntmore.com/case-studies/ecommerce-conversion-playbook" },
   openGraph: {
     title: "$400K Pipeline in 6 Weeks | eCommerce SaaS Case Study | Myntmore",

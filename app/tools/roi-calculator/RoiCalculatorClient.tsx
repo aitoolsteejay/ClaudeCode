@@ -206,8 +206,15 @@ export default function RoiCalculatorClient() {
 
       const totalPages = pdf.getNumberOfPages();
       if (totalPages > 1) {
+        const footerBandHeight = 14;
         for (let i = 1; i <= totalPages; i++) {
           pdf.setPage(i);
+          // White band first, footer text on top -- same pattern as the
+          // header banner above -- so the page number stays legible
+          // instead of overlapping whatever the captured content painted
+          // at this exact position.
+          pdf.setFillColor(255, 255, 255);
+          pdf.rect(0, pageHeight - footerBandHeight, pageWidth, footerBandHeight, "F");
           pdf.setFontSize(9);
           pdf.setTextColor(140, 130, 121);
           pdf.text(`Page ${i} of ${totalPages}`, pageWidth / 2, pageHeight - 8, { align: "center" });

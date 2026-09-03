@@ -39,7 +39,17 @@ export default function RoomClient() {
         if (error) {
           toast.error("Couldn't load responses. Refresh to try again.");
         } else if (data) {
-          setResponses(data);
+          // Merge rather than overwrite: the realtime subscription below
+          // can already have appended a brand-new row by the time this
+          // initial fetch resolves (this fetch is a fast REST call; the
+          // realtime channel's subscribe handshake can occasionally win
+          // the race). Overwriting outright would drop that row until the
+          // next insert.
+          setResponses((prev) => {
+            const byId = new Map(data.map((r) => [r.id, r]));
+            for (const r of prev) if (!byId.has(r.id)) byId.set(r.id, r);
+            return Array.from(byId.values()).sort((a, b) => b.created_at.localeCompare(a.created_at));
+          });
         }
         setLoadingInitial(false);
       });

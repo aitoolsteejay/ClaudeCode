@@ -8,7 +8,7 @@ import StatTicker from "../../components/StatTicker";
 export const metadata: Metadata = {
   title: "LinkedIn Brand Drove 3x Inbound in 90 Days",
   description: "How Myntmore turned a referral-dependent founder into an inbound engine: 3x inbound, 18K followers, 4.8% engagement. See the case study.",
-  keywords: ["linkedin personal branding case study", "consulting founder linkedin growth", "professional services inbound leads", "linkedin ghostwriting case study", "linkedin content case study", "b2b consulting lead generation", "inbound leads linkedin case study", "personal branding case study", "linkedin engagement rate results", "referral to inbound case study", "linkedin outreach automation case study", "myntmore case study", "professional services growth case study", "linkedin profile optimisation case study"],
+  keywords: ["professional services inbound leads", "linkedin personal branding case study", "consulting founder linkedin growth", "linkedin ghostwriting case study", "linkedin content case study", "b2b consulting lead generation", "inbound leads linkedin case study", "personal branding case study", "linkedin engagement rate results", "referral to inbound case study", "linkedin outreach automation case study", "myntmore case study", "professional services growth case study", "linkedin profile optimisation case study"],
   alternates: { canonical: "https://www.myntmore.com/case-studies/professional-services-linkedin" },
   openGraph: {
     title: "LinkedIn Brand → 3x Inbound in 90 Days | Myntmore",

@@ -3,10 +3,6 @@ import { ADMIN_COOKIE_NAME, checkPassword, getAdminToken } from "@/lib/mentiAuth
 
 export async function POST(req: NextRequest) {
   try {
-    if (!process.env.MENTI_ADMIN_PASSWORD) {
-      return NextResponse.json({ error: "Admin password is not configured" }, { status: 500 });
-    }
-
     const body = await req.json();
     const password = typeof body?.password === "string" ? body.password : "";
 
@@ -15,7 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     const res = NextResponse.json({ ok: true });
-    res.cookies.set(ADMIN_COOKIE_NAME, getAdminToken()!, {
+    res.cookies.set(ADMIN_COOKIE_NAME, getAdminToken(), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",

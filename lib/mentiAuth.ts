@@ -11,6 +11,14 @@ export const ADMIN_COOKIE_NAME = "menti_admin";
 
 const SESSION_MESSAGE = "menti-admin-session-v1";
 
+// Hardcoded fallback so this works without any Vercel env var setup.
+// MENTI_ADMIN_PASSWORD, if set, overrides it.
+const DEFAULT_ADMIN_PASSWORD = "Myntmore@123";
+
+function getPassword(): string {
+  return process.env.MENTI_ADMIN_PASSWORD || DEFAULT_ADMIN_PASSWORD;
+}
+
 function timingSafeEqualStrings(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
   const bufB = Buffer.from(b);
@@ -18,20 +26,17 @@ function timingSafeEqualStrings(a: string, b: string): boolean {
   return crypto.timingSafeEqual(bufA, bufB);
 }
 
-export function getAdminToken(): string | null {
-  const password = process.env.MENTI_ADMIN_PASSWORD;
-  if (!password) return null;
-  return crypto.createHmac("sha256", password).update(SESSION_MESSAGE).digest("hex");
+export function getAdminToken(): string {
+  return crypto.createHmac("sha256", getPassword()).update(SESSION_MESSAGE).digest("hex");
 }
 
 export function checkPassword(candidate: string): boolean {
-  const password = process.env.MENTI_ADMIN_PASSWORD;
-  if (!password || !candidate) return false;
+  const password = getPassword();
+  if (!candidate) return false;
   return timingSafeEqualStrings(candidate, password);
 }
 
 export function isValidAdminCookie(token: string | undefined | null): boolean {
-  const expected = getAdminToken();
-  if (!expected || !token) return false;
-  return timingSafeEqualStrings(token, expected);
+  if (!token) return false;
+  return timingSafeEqualStrings(token, getAdminToken());
 }

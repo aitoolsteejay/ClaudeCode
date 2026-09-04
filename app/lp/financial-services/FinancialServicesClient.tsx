@@ -39,6 +39,7 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    let rafId: number | null = null;
     const obs = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       obs.disconnect();
@@ -48,12 +49,15 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
         const p = Math.min((ts - start) / duration, 1);
         const e = 1 - Math.pow(1 - p, 3);
         if (el) el.textContent = format(e * target);
-        if (p < 1) requestAnimationFrame(tick);
+        if (p < 1) rafId = requestAnimationFrame(tick);
       }
-      requestAnimationFrame(tick);
+      rafId = requestAnimationFrame(tick);
     }, { threshold: 0.5 });
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [target, duration, format]);
   return ref;
 }

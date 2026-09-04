@@ -19,11 +19,10 @@ export const metadata: Metadata = {
   title: "The Pitching Trap: Win with Better Competitor Positioning",
   description: "Generic feature pitches get ignored. Learn how to articulate buyer pain, understand competitor gaps, and position your offer with clarity.",
   keywords: [
-    "competitor battle card generator",
+    "how to articulate customer pain",
     "sales battle card",
     "competitor positioning",
     "b2b sales messaging",
-    "how to articulate customer pain",
     "sales objection handling",
     "competitive sales strategy",
   ],

@@ -24,6 +24,8 @@ export default function RoomClient() {
   const [loadingInitial, setLoadingInitial] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [gist, setGist] = useState<Gist | null>(null);
+  const [confirmingReset, setConfirmingReset] = useState(false);
+  const [resetting, setResetting] = useState(false);
   const responsesRef = useRef<ResponseRow[]>([]);
   responsesRef.current = responses;
 
@@ -99,6 +101,23 @@ export default function RoomClient() {
     window.location.reload();
   }
 
+  async function handleReset() {
+    setResetting(true);
+    try {
+      const res = await fetch("/api/menti/reset", { method: "POST" });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to reset");
+      setResponses([]);
+      setGist(null);
+      setConfirmingReset(false);
+      toast.success("Room reset. Ready for a new session.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Something went wrong, please try again");
+    } finally {
+      setResetting(false);
+    }
+  }
+
   return (
     <div className="min-h-[70vh] px-4 pt-32 pb-16" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-2xl mx-auto">
@@ -107,10 +126,46 @@ export default function RoomClient() {
             <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
           </div>
-          <button onClick={handleLogout} className="text-xs font-semibold underline" style={{ color: "#8C8279" }}>
-            Log out
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setConfirmingReset(true)}
+              disabled={loadingInitial || responses.length === 0}
+              className="text-xs font-semibold underline disabled:opacity-40 disabled:cursor-not-allowed"
+              style={{ color: "#DC2626" }}
+            >
+              Reset room
+            </button>
+            <button onClick={handleLogout} className="text-xs font-semibold underline" style={{ color: "#8C8279" }}>
+              Log out
+            </button>
+          </div>
         </div>
+
+        {confirmingReset && (
+          <div className="rounded-2xl border p-5 mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.3)" }}>
+            <p className="text-sm font-semibold" style={{ color: "#0a0a0a" }}>
+              Delete all {responses.length} response{responses.length === 1 ? "" : "s"} and the current gist? This can&apos;t be undone.
+            </p>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <button
+                onClick={() => setConfirmingReset(false)}
+                disabled={resetting}
+                className="text-sm font-semibold px-4 py-2 rounded-full disabled:opacity-60"
+                style={{ color: "#3D3D3D", border: "1px solid #E8E2D9" }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleReset}
+                disabled={resetting}
+                className="text-sm font-bold px-4 py-2 rounded-full text-white disabled:opacity-60"
+                style={{ backgroundColor: "#DC2626" }}
+              >
+                {resetting ? "Deleting..." : "Yes, delete everything"}
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="rounded-3xl border p-6 sm:p-8 mb-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
           <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The question</p>

@@ -85,9 +85,10 @@ create index if not exists idx_leads_created_at on public.leads(created_at desc)
 -- A single fixed question is shown to a live audience at /menti; each
 -- visitor submits one free-text answer, fully anonymous (no name/email,
 -- unrelated to the `leads` table above). /menti/room is an unlisted,
--- password-free results view for whoever is running the event: it shows
--- a live-updating count and list of answers (via Supabase Realtime) and
--- a button to have Gemini summarize the room into an overall gist.
+-- password-protected results view for whoever is running the event: it
+-- shows a live-updating count and list of answers (via Supabase Realtime),
+-- a button to have Gemini summarize the room into an overall gist, and a
+-- reset button to clear all responses between sessions/events.
 --
 -- Because /menti/room has no login, it relies on Realtime + a direct
 -- anon `select` to read responses, so unlike `leads` this table allows
@@ -117,8 +118,22 @@ create policy "Allow anonymous reads"
   to anon, authenticated
   using (true);
 
--- No update/delete policy for anon/authenticated: answers are write-once
--- from the audience and only ever read in aggregate from the room view.
+-- No update policy for anon/authenticated: answers are write-once from
+-- the audience.
+--
+-- Delete IS allowed via anon key, so the room's "Reset room" button can
+-- clear all responses between events. This is the same trust tradeoff as
+-- the anonymous-read policy above: the app layer only exposes delete
+-- through the password-gated /api/menti/reset route, but the anon key
+-- itself (already public in the site's JS bundle) could delete rows
+-- directly, bypassing the app. Accepted for the same reason as reads --
+-- this table only ever holds anonymous, low-sensitivity event answers.
+drop policy if exists "Allow anonymous deletes" on public.menti_responses;
+create policy "Allow anonymous deletes"
+  on public.menti_responses
+  for delete
+  to anon, authenticated
+  using (true);
 
 create index if not exists idx_menti_responses_created_at on public.menti_responses(created_at desc);
 

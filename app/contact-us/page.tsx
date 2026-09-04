@@ -40,7 +40,7 @@ const CONTACT_CARDS = [
 export default function ContactUs() {
   return (
     <InnerLayout>
-      <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildLocalBusinessSchema("https://www.myntmore.com/contact-us")} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto text-center">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact-us" }]} className="justify-center" />

@@ -4,6 +4,8 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Bootstrapped Founder: 0 to 22K Followers, 8 Deals",
@@ -17,9 +19,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "0 → 22K Followers & 8 Inbound Deals | Founder Brand Case Study | Myntmore",
+  description: "22K followers · 8 inbound deals · 6.2% engagement rate",
+  url: "https://www.myntmore.com/case-studies/founder-personal-brand-linkedin",
+  datePublished: "2026-06-11T11:39:57+05:30",
+  dateModified: "2026-09-03T23:48:49+05:30",
+});
+
 export default function FounderPersonalBrandLinkedIn() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "B2B Founder", href: "/case-studies/founder-personal-brand-linkedin" }]} />

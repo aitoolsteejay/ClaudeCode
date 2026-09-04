@@ -4,6 +4,8 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Cold Email Added $400K Pipeline in 6 Weeks",
@@ -17,9 +19,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "$400K Pipeline in 6 Weeks | eCommerce SaaS Case Study | Myntmore",
+  description: "28 meetings · 41% open rate · $400K pipeline",
+  url: "https://www.myntmore.com/case-studies/ecommerce-conversion-playbook",
+  datePublished: "2026-06-11T11:39:57+05:30",
+  dateModified: "2026-09-03T23:48:49+05:30",
+});
+
 export default function EcommerceConversionPlaybook() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "eCommerce Tech", href: "/case-studies/ecommerce-conversion-playbook" }]} />

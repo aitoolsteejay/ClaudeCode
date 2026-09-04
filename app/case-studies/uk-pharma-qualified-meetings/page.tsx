@@ -4,6 +4,8 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/uk-pharma-qualified-meetings";
 
@@ -27,6 +29,14 @@ export const metadata: Metadata = {
     url: URL,
   },
 };
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "20+ Qualified Meetings per Month | UK Pharma Case Study | Myntmore",
+  description: "20+ qualified meetings per month · 35% positive response rate · £200K+ potential pipeline",
+  url: URL,
+  datePublished: "2026-08-24T10:55:56+05:30",
+  dateModified: "2026-08-24T10:55:56+05:30",
+});
 
 const HERO_STATS = [
   { value: "20+", label: "Qualified meetings / month" },
@@ -59,6 +69,7 @@ const BEFORE_AFTER = [
 export default function UKPharmaQualifiedMeetingsCaseStudy() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-160px", left: "-180px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.20) 0%, rgba(13,148,136,0.07) 42%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-120px", right: "-180px", width: "620px", height: "620px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(245,183,49,0.07) 42%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none" }} />

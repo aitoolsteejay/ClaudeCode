@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildWebApplicationSchema } from "@/lib/schema";
 import FounderPresenceClient from "./FounderPresenceClient";
 
 export const metadata: Metadata = {
@@ -26,9 +28,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.myntmore.com/tools/founder-presence-analyzer" },
 };
 
+const APP_SCHEMA = buildWebApplicationSchema({
+  name: "Founder Presence Analyzer",
+  description: "Free AI tool that benchmarks your LinkedIn presence against competitors and gives you positioning recommendations. Try it free.",
+  url: "https://www.myntmore.com/tools/founder-presence-analyzer",
+});
+
 export default function FounderPresenceAnalyzer() {
   return (
     <InnerLayout>
+      <JsonLd data={APP_SCHEMA} />
       <div className="pt-32 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
           <Breadcrumbs items={[{ label: "Free Tools", href: "/resources/tools" }, { label: "Founder Presence Analyzer", href: "/tools/founder-presence-analyzer" }]} />

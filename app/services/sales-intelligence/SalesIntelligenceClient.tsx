@@ -4,7 +4,8 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { buildServiceSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "ICP Mapping & Lead Scoring",
@@ -13,11 +14,6 @@ const SERVICE_SCHEMA = buildServiceSchema({
   url: `${SITE_URL}/services/sales-intelligence`,
 });
 
-const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
-  { name: "Home", url: SITE_URL },
-  { name: "Services", url: `${SITE_URL}/services` },
-  { name: "ICP Mapping & Lead Scoring", url: `${SITE_URL}/services/sales-intelligence` },
-]);
 
 /* ─── Data ──────────────────────────────────────────────────── */
 
@@ -257,7 +253,6 @@ export default function SalesIntelligenceClient() {
   return (
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
-      <JsonLd data={BREADCRUMB_SCHEMA} />
       <JsonLd data={HOWTO_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
@@ -266,11 +261,7 @@ export default function SalesIntelligenceClient() {
         <div ref={blob3} aria-hidden style={{ position: "absolute", top: "70%", left: "50%", width: 400, height: 400, marginTop: -200, marginLeft: -200, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
 
         <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
-            <Link href="/services" className="text-xs font-semibold" style={{ color: "#8C8279" }}>Services</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>ICP Mapping & Lead Scoring</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" }]} />
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
             style={{ borderColor: "rgba(168,85,247,0.35)", background: "rgba(168,85,247,0.07)" }}>

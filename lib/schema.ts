@@ -60,12 +60,12 @@ export const organizationSchema: OrganizationSchema = {
 // structured data that doesn't match a real, checkable fact. openingHours
 // reflects the office hours actually stated on the careers pages (10:00-
 // 19:00 is the range common to multiple role listings), not a guess.
-export function buildLocalBusinessSchema() {
+export function buildLocalBusinessSchema(url: string = SITE_URL) {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Myntmore",
-    url: SITE_URL,
+    url,
     image: `${SITE_URL}/logo.png`,
     description: organizationSchema.description,
     address: organizationSchema.address,
@@ -120,6 +120,37 @@ export function buildServiceSchema({ name, description, serviceType, url, areaSe
     serviceType,
     url,
     areaServed,
+    provider: {
+      "@type": "Organization",
+      name: "Myntmore",
+      url: SITE_URL,
+    },
+  };
+}
+
+export interface WebApplicationSchemaInput {
+  name: string;
+  description: string;
+  url: string;
+}
+
+// For the 9 free /tools/* pages. All are genuinely free (no paywall, no
+// account, no trial-then-paywall) and web-based, so `offers.price: "0"` and
+// `operatingSystem` are both statements of fact, not marketing claims.
+export function buildWebApplicationSchema({ name, description, url }: WebApplicationSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any (web-based)",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
     provider: {
       "@type": "Organization",
       name: "Myntmore",

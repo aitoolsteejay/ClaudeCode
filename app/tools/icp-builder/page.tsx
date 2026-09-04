@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildWebApplicationSchema } from "@/lib/schema";
 import ICPBuilderClient from "./ICPBuilderClient";
 
 export const metadata: Metadata = {
@@ -26,9 +28,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.myntmore.com/tools/icp-builder" },
 };
 
+const APP_SCHEMA = buildWebApplicationSchema({
+  name: "ICP Builder & Value Proposition Generator",
+  description: "Free AI tool that builds deep B2B and D2C ICPs from your business description, plus a value proposition for each. Try it free.",
+  url: "https://www.myntmore.com/tools/icp-builder",
+});
+
 export default function ICPBuilder() {
   return (
     <InnerLayout>
+      <JsonLd data={APP_SCHEMA} />
       <div className="pt-32 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
           <Breadcrumbs items={[{ label: "Free Tools", href: "/resources/tools" }, { label: "ICP Builder & Value Proposition Generator", href: "/tools/icp-builder" }]} />

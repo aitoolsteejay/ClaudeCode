@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import JsonLd from "../../components/JsonLd";
+import { buildWebApplicationSchema } from "@/lib/schema";
 import RoiCalculatorClient from "./RoiCalculatorClient";
 
 export const metadata: Metadata = {
@@ -26,9 +28,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.myntmore.com/tools/roi-calculator" },
 };
 
+const APP_SCHEMA = buildWebApplicationSchema({
+  name: "ROI Calculator",
+  description: "Free ROI calculator for B2B outbound. Estimate the pipeline and revenue you could generate from cold email and LinkedIn outreach.",
+  url: "https://www.myntmore.com/tools/roi-calculator",
+});
+
 export default function RoiCalculator() {
   return (
     <InnerLayout>
+      <JsonLd data={APP_SCHEMA} />
       <div className="pt-32 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
           <Breadcrumbs items={[{ label: "Free Tools", href: "/resources/tools" }, { label: "ROI Calculator", href: "/tools/roi-calculator" }]} />

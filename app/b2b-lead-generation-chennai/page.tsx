@@ -150,7 +150,7 @@ export default function Page() {
   return (
     <InnerLayout>
       <JsonLd data={buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })))} />
-      <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildLocalBusinessSchema("https://www.myntmore.com/b2b-lead-generation-chennai")} />
       {/* Hero */}
       <section className="pt-32 pb-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto text-center">

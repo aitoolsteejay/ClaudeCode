@@ -4,7 +4,8 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
-import { buildServiceSchema, buildBreadcrumbSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { buildServiceSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "AI Lead Generation",
@@ -13,11 +14,6 @@ const SERVICE_SCHEMA = buildServiceSchema({
   url: `${SITE_URL}/services/ai-lead-generation`,
 });
 
-const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
-  { name: "Home", url: SITE_URL },
-  { name: "Services", url: `${SITE_URL}/services` },
-  { name: "AI Lead Generation", url: `${SITE_URL}/services/ai-lead-generation` },
-]);
 
 const STEPS = [
   { n: "01", title: "ICP & Agent Setup", desc: "We map your Ideal Customer Profile in detail, then configure custom AI agents with your specific qualification criteria, triggers, and scoring weights." },
@@ -229,18 +225,13 @@ export default function AiLeadGenerationClient() {
   return (
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
-      <JsonLd data={BREADCRUMB_SCHEMA} />
       <JsonLd data={HOWTO_SCHEMA} />
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(99,102,241,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob2} aria-hidden style={{ position: "absolute", top: "40%", left: "75%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(255,130,0,0.08) 40%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob3} aria-hidden style={{ position: "absolute", top: "70%", left: "50%", width: 400, height: 400, marginTop: -200, marginLeft: -200, borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
         <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
-            <Link href="/services" className="text-xs font-semibold" style={{ color: "#8C8279" }}>Services</Link>
-            <span style={{ color: "#E8E2D9" }}>/</span>
-            <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>AI Lead Generation</span>
-          </div>
+          <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "AI Lead Generation", href: "/services/ai-lead-generation" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(59,130,246,0.35)", background: "rgba(59,130,246,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#3b82f6" }} />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#3b82f6" }}>AI Lead Generation</span>

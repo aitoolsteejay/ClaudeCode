@@ -4,6 +4,8 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
+import JsonLd from "../../components/JsonLd";
+import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "40 Qualified Meetings in 8 Weeks | SaaS Series A",
@@ -17,9 +19,18 @@ export const metadata: Metadata = {
   },
 };
 
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "40 Qualified Meetings in 8 Weeks | SaaS Series A | Myntmore",
+  description: "Cold start → 40 meetings · 34% reply rate · $1.2M pipeline",
+  url: "https://www.myntmore.com/case-studies/saas-series-a",
+  datePublished: "2026-05-29T18:55:36+05:30",
+  dateModified: "2026-08-21T15:18:01+05:30",
+});
+
 export default function SaasSeriesA() {
   return (
     <InnerLayout>
+      <JsonLd data={ARTICLE_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "SaaS Series A", href: "/case-studies/saas-series-a" }]} />

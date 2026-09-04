@@ -72,7 +72,7 @@ export default function AboutUs() {
   return (
     <InnerLayout>
       <JsonLd data={PERSON_SCHEMA} />
-      <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildLocalBusinessSchema("https://www.myntmore.com/about-us")} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "About", href: "/about-us" }]} />

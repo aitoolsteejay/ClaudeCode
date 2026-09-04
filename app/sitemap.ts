@@ -18,9 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified: "2026-08-21T14:54:15+05:30", changeFrequency: "weekly", priority: 1.0 },
     // Critical SEO recovery pages
-    { url: `${base}/about-us`, lastModified: "2026-08-21T14:54:15+05:30", changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/contact-us`, lastModified: "2026-08-21T14:54:15+05:30", changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/services`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/about-us`, lastModified: "2026-08-27T12:26:20+05:30", changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/contact-us`, lastModified: "2026-08-25T13:13:39+05:30", changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/services`, lastModified: "2026-08-27T12:26:20+05:30", changeFrequency: "weekly", priority: 0.9 },
     // Service subpages
     { url: `${base}/services/linkedin-outreach`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/cold-email`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
@@ -28,18 +28,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/ai-lead-generation`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/account-based-marketing`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/personal-branding`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/gtm-strategy`, lastModified: "2026-08-25T00:00:00+05:30", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/gtm-strategy`, lastModified: "2026-08-26T15:03:46+05:30", changeFrequency: "monthly", priority: 0.8 },
     // Case studies
     { url: `${base}/case-studies`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/case-studies/saas-series-a`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/case-studies/professional-services-linkedin`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/case-studies/ecommerce-conversion-playbook`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/case-studies/founder-personal-brand-linkedin`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/case-studies/predictable-b2b-lead-gen-engine`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/case-studies/professional-services-linkedin`, lastModified: "2026-09-03T23:48:49+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/case-studies/ecommerce-conversion-playbook`, lastModified: "2026-09-03T23:48:49+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/case-studies/founder-personal-brand-linkedin`, lastModified: "2026-09-03T23:48:49+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/case-studies/predictable-b2b-lead-gen-engine`, lastModified: "2026-09-03T23:48:49+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/uk-pharma-qualified-meetings`, lastModified: "2026-08-24T10:55:56+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Resources & blog
-    { url: `${base}/resources`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "weekly", priority: 0.8 },
-    { url: `${base}/resources/blogs`, lastModified: "2026-08-24T10:44:59+05:30", changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/resources`, lastModified: "2026-08-26T18:53:19+05:30", changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/resources/blogs`, lastModified: "2026-08-31T11:18:11+05:30", changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/tools`, lastModified: "2026-08-14T16:24:57+05:30", changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/guides`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/feed`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "weekly", priority: 0.7 },
@@ -67,7 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/linkedin-outreach-sequences`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/b2b-lead-gen-metrics`, lastModified: "2026-08-21T10:38:54+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/linkedin-profile-inbound-lead-machine`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/b2b-outbound-benchmark-report-2026`, lastModified: "2026-08-21T10:38:54+05:30", changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/b2b-outbound-benchmark-report-2026`, lastModified: "2026-08-27T12:26:20+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog/agency-vs-in-house`, lastModified: "2026-08-21T15:41:17+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/tam-trap-vague-targeting`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/3-second-rule-cold-outreach`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
@@ -75,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/cold-email-compliance-guide`, lastModified: "2026-08-21T15:41:17+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/cold-email-vs-linkedin-outreach`, lastModified: "2026-08-21T15:41:17+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/case-study-procrastination`, lastModified: "2026-08-24T10:44:59+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/pitching-trap-competitor-positioning`, lastModified: "2026-08-24T10:44:59+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/pitching-trap-competitor-positioning`, lastModified: "2026-09-04T11:44:11+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Guides (surfaced under /resources/guides, originally Instagram bio-link pages)
     { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: "2026-08-21T10:38:54+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: "2026-08-21T10:38:54+05:30", changeFrequency: "monthly", priority: 0.7 },
@@ -115,6 +115,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/1-on-1-consultation`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/GIAtech-stack`, lastModified: "2026-08-17T13:05:02+05:30", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/privacy-policy`, lastModified: "2026-08-17T13:05:02+05:30", changeFrequency: "yearly", priority: 0.3 },
-    { url: `${base}/sitemap`, lastModified: "2026-08-14T18:34:06+05:30", changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/sitemap`, lastModified: "2026-09-03T22:56:20+05:30", changeFrequency: "monthly", priority: 0.5 },
   ];
 }

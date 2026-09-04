@@ -55,7 +55,7 @@ export default function B2BLeadGenerationKolkataPage() {
   return (
     <InnerLayout>
       <JsonLd data={buildFaqSchema(FAQ.map((f) => ({ question: f.q, answer: f.a })))} />
-      <JsonLd data={buildLocalBusinessSchema()} />
+      <JsonLd data={buildLocalBusinessSchema("https://www.myntmore.com/b2b-lead-generation-kolkata")} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Kolkata", href: "/b2b-lead-generation-kolkata" }]} />

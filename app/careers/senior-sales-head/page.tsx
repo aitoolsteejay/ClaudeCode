@@ -6,7 +6,7 @@ import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Senior Sales Head Job | Myntmore Mumbai | Rs 5–16 LPA",
+  title: "Senior Sales Head, Mumbai | Rs 5–16 LPA",
   description: "Join Myntmore as Senior Sales Head in Worli, Mumbai. Own outbound sales, client relationships & CRM. Rs 5-16 LPA + incentives. Apply now.",
   keywords: ["sales head jobs mumbai", "b2b sales jobs mumbai", "senior sales head job", "outbound sales jobs mumbai", "sales manager jobs b2b agency", "b2b sales jobs worli", "sales jobs 2-5 years experience", "business development jobs mumbai", "crm sales jobs mumbai", "sales lead jobs b2b agency", "cold calling jobs mumbai", "client acquisition jobs mumbai", "myntmore careers", "sales head jobs b2b growth agency"],
   alternates: { canonical: "https://www.myntmore.com/careers/senior-sales-head" },

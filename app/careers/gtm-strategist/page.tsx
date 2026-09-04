@@ -6,7 +6,7 @@ import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "GTM Strategist Job | Myntmore Mumbai | Rs 6–15 LPA",
+  title: "GTM Strategist, Mumbai | Rs 6–15 LPA",
   description: "Join Myntmore as GTM Strategist in Worli, Mumbai. Own growth across B2B brands via LinkedIn, cold email & AI automation. Rs 6-15 LPA. Apply now.",
   keywords: ["gtm strategist jobs mumbai", "growth marketing jobs mumbai", "b2b growth strategist job", "growth marketing strategist jobs india", "gtm jobs mumbai", "b2b marketing jobs worli", "growth marketing career mumbai", "lead generation strategist jobs", "linkedin marketing jobs mumbai", "growth strategist job b2b agency", "demand generation jobs mumbai", "marketing jobs worli mumbai", "b2b growth marketing career", "myntmore careers", "gtm strategist job openings"],
   alternates: { canonical: "https://www.myntmore.com/careers/gtm-strategist" },

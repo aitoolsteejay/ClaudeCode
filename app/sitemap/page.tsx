@@ -49,6 +49,8 @@ const GROUPS: SitemapGroup[] = [
       { label: "Account-Based Marketing", href: "/services/account-based-marketing" },
       { label: "Personal Branding", href: "/services/personal-branding" },
       { label: "GTM Strategy", href: "/services/gtm-strategy" },
+      { label: "Marketing Automation", href: "/marketing-automation" },
+      { label: "SEO Services", href: "/seo" },
     ],
   },
   {
@@ -180,6 +182,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "About Myntmore & Tejas Jhaveri", href: "/about-us" },
       { label: "Contact", href: "/contact-us" },
       { label: "Book a Call", href: "/founder-meeting" },
+      { label: "1-on-1 Consultation", href: "/1-on-1-consultation" },
       { label: "Partner with Us", href: "/lp/agency-partners" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],

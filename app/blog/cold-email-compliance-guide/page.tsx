@@ -13,7 +13,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Cold Email Compliance: CAN-SPAM, GDPR & DPDP Act Guide",
+  title: "Cold Email Compliance: CAN-SPAM, GDPR & DPDP",
   description: "Is cold email legal? A plain-English guide to CAN-SPAM, GDPR, India's DPDP Act, and CASL for B2B outbound. Read the full guide.",
   keywords: ["cold email compliance", "is cold email legal", "can-spam act cold email", "gdpr cold email b2b", "cold email legal requirements", "dpdp act cold email india", "casl cold email canada", "b2b cold email consent rules", "cold email opt out requirements", "legitimate interest gdpr cold email", "cold email regulations by country", "is cold outreach spam", "cold email unsubscribe law", "b2b email marketing compliance"],
   alternates: { canonical: "https://www.myntmore.com/blog/cold-email-compliance-guide" },

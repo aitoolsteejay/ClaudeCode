@@ -74,6 +74,8 @@ const SERVICES_LINKS = [
   { label: "Account-Based Marketing", href: "/services/account-based-marketing" },
   { label: "Personal Branding", href: "/services/personal-branding" },
   { label: "GTM Strategy", href: "/services/gtm-strategy" },
+  { label: "Marketing Automation", href: "/marketing-automation" },
+  { label: "SEO Services", href: "/seo" },
 ];
 const COMPANY_LINKS = [
   { label: "About Myntmore", href: "/about-us" },
@@ -85,6 +87,7 @@ const COMPANY_LINKS = [
   { label: "Newsletter", href: "/newsletter-subscribe" },
   { label: "Careers", href: "/careers" },
   { label: "Partner with Us", href: "/lp/agency-partners" },
+  { label: "1-on-1 Consultation", href: "/1-on-1-consultation" },
   { label: "Contact", href: "/contact-us" },
 ];
 

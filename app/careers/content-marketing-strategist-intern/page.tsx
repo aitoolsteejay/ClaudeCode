@@ -5,7 +5,7 @@ import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Content Marketing Strategist Intern, Mumbai | Rs 30-50K/mo",
+  title: "Content Marketing Intern, Mumbai | Rs 30-50K/mo",
   description: "Join Myntmore as Content Marketing Strategist Intern in Worli, Mumbai. Write viral LinkedIn content for founders & CXOs. 6-month min, PPO. Apply now.",
   keywords: ["content strategist internship mumbai", "linkedin ghostwriting internship", "content writing internship mumbai", "personal branding internship", "linkedin content internship india", "content marketing internship mumbai", "founder ghostwriter internship", "content strategist jobs mumbai", "linkedin content writer internship", "storytelling internship mumbai", "b2b content internship", "content writing internship with ppo", "myntmore careers", "content strategist internship jobs"],
   alternates: { canonical: "https://www.myntmore.com/careers/content-marketing-strategist-intern" },

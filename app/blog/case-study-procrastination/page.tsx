@@ -16,7 +16,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Case Study Procrastination: Document Your Best Proof",
+  title: "Case Study Procrastination: Document Your Proof",
   description: "Your strongest B2B proof may still be buried in Slack. Learn why case studies get delayed and how to turn fresh wins into credible sales assets.",
   keywords: [
     "b2b case study generator",

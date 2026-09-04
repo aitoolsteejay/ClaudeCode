@@ -16,7 +16,7 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The Pitching Trap: Win with Better Competitor Positioning",
+  title: "The Pitching Trap: Better Competitor Positioning",
   description: "Generic feature pitches get ignored. Learn how to articulate buyer pain, understand competitor gaps, and position your offer with clarity.",
   keywords: [
     "how to articulate customer pain",

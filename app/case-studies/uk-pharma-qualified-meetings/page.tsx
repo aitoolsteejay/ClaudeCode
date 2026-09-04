@@ -10,7 +10,7 @@ import { buildArticleSchema } from "@/lib/schema";
 const URL = "https://www.myntmore.com/case-studies/uk-pharma-qualified-meetings";
 
 export const metadata: Metadata = {
-  title: "20+ Qualified Meetings per Month for a UK Pharma Company",
+  title: "20+ Qualified Meetings/Month for UK Pharma",
   description: "How Myntmore helped a UK pharma company grow from 3 to 20+ qualified meetings per month and generate £200K+ in potential pipeline.",
   keywords: [
     "pharma lead generation case study",

@@ -6,7 +6,7 @@ import { buildWebApplicationSchema } from "@/lib/schema";
 import RoiCalculatorClient from "./RoiCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "ROI Calculator",
+  title: "B2B Outreach ROI Calculator",
   description: "Free ROI calculator for B2B outbound. Estimate the pipeline and revenue you could generate from cold email and LinkedIn outreach.",
   keywords: [
     "roi calculator for cold outreach",

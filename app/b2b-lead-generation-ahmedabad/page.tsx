@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Agency in Ahmedabad | Myntmore",
     description: "AI-powered outbound systems built for Ahmedabad's textile, pharma, and chemical manufacturing base.",
     url: "https://www.myntmore.com/b2b-lead-generation-ahmedabad",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

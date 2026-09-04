@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "B2B GTM Strategy & Execution | Myntmore",
     description: "ICP, positioning, channel mix, and sequencing, built and run by the same team. Not a plan that sits in a drive folder.",
     url: "https://www.myntmore.com/services/gtm-strategy",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

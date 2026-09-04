@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Services | AI-Powered Outbound | Myntmore",
     description: "Seven productized B2B growth services. We build the architecture, you close the deals.",
     url: "https://www.myntmore.com/services",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

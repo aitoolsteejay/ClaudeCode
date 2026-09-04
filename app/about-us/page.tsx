@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
     description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore. 12K+ meetings booked, $120M+ pipeline generated. Taught at IIT & IIM.",
     url: "https://www.myntmore.com/about-us",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

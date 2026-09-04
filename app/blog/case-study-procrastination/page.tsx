@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     title: "Case Study Procrastination: Why Your Best Proof Is Still Undocumented | Myntmore",
     description: "Stop letting your strongest customer wins disappear into Slack threads and scratchpads.",
     url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

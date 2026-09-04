@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "Senior Sales Head | Myntmore Careers",
     description: "Own Myntmore's outbound sales engine: prospecting, closing, and CRM. Full-time, Worli Mumbai.",
     url: "https://www.myntmore.com/careers/senior-sales-head",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

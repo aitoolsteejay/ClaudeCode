@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: "Gut Feel vs. Funnel Math: Why Outbound Is a Technical System, Not a Guessing Game",
     description: "Outbound doesn't fail because of timing or budget. It fails because nobody mapped the math behind a single booked meeting.",
     url: "https://www.myntmore.com/blog/outbound-funnel-math-not-guesswork",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

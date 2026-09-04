@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description:
       "We build and run your outbound engine using AI agents and human intelligence. Cold email, LinkedIn outreach, and ABM that books qualified meetings at scale.",
     url: "https://www.myntmore.com",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
   verification: {
     other: {

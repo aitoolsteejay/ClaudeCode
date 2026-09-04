@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Agency in Kolkata | Myntmore",
     description: "AI-powered outbound systems built for Kolkata's trading, steel, and IT landscape.",
     url: "https://www.myntmore.com/b2b-lead-generation-kolkata",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

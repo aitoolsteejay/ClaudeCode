@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: "Cold Email vs. LinkedIn Outreach: Which Wins for B2B? | Myntmore",
     description: "Reply rates, scale, cost, and which buyers respond to which channel, no one-sided pitch.",
     url: "https://www.myntmore.com/blog/cold-email-vs-linkedin-outreach",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

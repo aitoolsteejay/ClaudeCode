@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Strategist | Myntmore Careers",
     description: "Build predictable B2B pipelines across multiple industries. Full-time, Worli Mumbai.",
     url: "https://www.myntmore.com/careers/lead-gen-strategist",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

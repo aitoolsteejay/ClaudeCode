@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: "1-on-1 B2B Growth Consultation | Myntmore",
     description: "Free 30-minute GTM audit with Tejas Jhaveri. No pitch, no pressure.",
     url: "https://www.myntmore.com/1-on-1-consultation",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "Is Cold Email Legal? CAN-SPAM, GDPR & DPDP Act Explained | Myntmore",
     description: "A plain-English compliance guide for B2B cold email across the US, EU/UK, India, and Canada.",
     url: "https://www.myntmore.com/blog/cold-email-compliance-guide",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

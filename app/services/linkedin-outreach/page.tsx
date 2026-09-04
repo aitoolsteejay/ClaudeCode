@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "LinkedIn Outreach & Automation Services | Myntmore",
     description: "Conversations happening in your LinkedIn inbox, every week. Account-safe outreach sequences that feel human.",
     url: "https://www.myntmore.com/services/linkedin-outreach",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

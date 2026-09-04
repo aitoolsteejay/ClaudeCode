@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     title: "Marketing Automation Services | Myntmore",
     description: "AI-powered marketing automation that builds your pipeline while you sleep.",
     url: "https://www.myntmore.com/marketing-automation",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for Financial Services Firms | Myntmore",
     description: "Stop relying on referrals alone. Build a credible pipeline of business borrowers and clients with AI-powered, compliance-safe outbound.",
     url: "https://www.myntmore.com/lp/financial-services",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

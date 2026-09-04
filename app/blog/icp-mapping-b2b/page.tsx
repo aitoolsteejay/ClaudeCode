@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
     description: "Stop targeting everyone. This is how you find and reach the buyers most likely to say yes.",
     url: "https://www.myntmore.com/blog/icp-mapping-b2b",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

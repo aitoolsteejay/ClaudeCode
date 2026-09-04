@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Careers at Myntmore",
     description: "Open roles in sales, lead generation, and GTM strategy at Myntmore.",
     url: "https://www.myntmore.com/careers",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

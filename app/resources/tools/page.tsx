@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     title: "Free B2B Lead Generation Tools | Myntmore",
     description: "AI-powered tools for B2B outreach, free to use, no sign-up required.",
     url: "https://www.myntmore.com/resources/tools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

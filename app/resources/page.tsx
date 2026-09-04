@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     title: "B2B Growth Resources: Blogs & Free Tools | Myntmore",
     description: "Free playbooks, tools, and real client results for B2B founders who want predictable pipeline.",
     url: "https://www.myntmore.com/resources",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

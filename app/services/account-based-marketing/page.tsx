@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Account-Based Marketing Services for B2B | Myntmore",
     description: "Stop marketing to everyone. Go all-in on the accounts that actually move revenue.",
     url: "https://www.myntmore.com/services/account-based-marketing",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

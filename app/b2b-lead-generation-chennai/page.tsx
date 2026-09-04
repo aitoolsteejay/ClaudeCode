@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     description:
       "AI-powered outbound for Chennai's manufacturing, healthcare, and IT/ITES companies: cold email, LinkedIn outreach, ABM, and ICP-led lead generation, fully managed by Myntmore.",
     url: "https://www.myntmore.com/b2b-lead-generation-chennai",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

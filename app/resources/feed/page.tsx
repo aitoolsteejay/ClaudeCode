@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     title: "The Feed | Myntmore",
     description: "Short, practical Reels on B2B outbound, LinkedIn, and AI-powered lead generation.",
     url: "https://www.myntmore.com/resources/feed",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

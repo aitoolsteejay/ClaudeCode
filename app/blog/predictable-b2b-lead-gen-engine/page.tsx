@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "Beyond the 'Pray and Spray': Building a Predictable B2B Lead Generation Engine",
     description: "The exact framework for building a B2B lead generation engine that compounds over time.",
     url: "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for SaaS Founders | Myntmore",
     description: "Outbound that books demos, not just opens. A predictable outbound engine for B2B SaaS.",
     url: "https://www.myntmore.com/lp/saas-founders",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

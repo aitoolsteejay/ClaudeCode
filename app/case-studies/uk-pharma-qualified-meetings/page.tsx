@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: "20+ Qualified Meetings per Month | UK Pharma Case Study | Myntmore",
     description: "20+ qualified meetings per month · 35% positive response rate · £200K+ potential pipeline",
     url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

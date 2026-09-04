@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "B2B Case Studies & Client Results | Myntmore",
     description: "Real client results from Myntmore's cold email, LinkedIn outreach, and ABM systems.",
     url: "https://www.myntmore.com/case-studies",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

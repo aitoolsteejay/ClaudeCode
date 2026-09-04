@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "15+ Meetings/Month on Autopilot | B2B Outbound Case Study | Myntmore",
     description: "15+ meetings/month · 29% reply rate · 4x pipeline vs prior quarter",
     url: "https://www.myntmore.com/case-studies/predictable-b2b-lead-gen-engine",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

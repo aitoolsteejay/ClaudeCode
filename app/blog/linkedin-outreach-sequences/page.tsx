@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "LinkedIn Outreach Sequences That Actually Get Replies",
     description: "The multi-touch LinkedIn sequence structure that warms up prospects and books meetings.",
     url: "https://www.myntmore.com/blog/linkedin-outreach-sequences",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

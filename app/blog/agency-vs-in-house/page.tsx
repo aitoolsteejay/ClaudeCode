@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     title: "Agency vs. In-House SDR: How to Build B2B Outbound | Myntmore",
     description: "Cost, speed, risk, and when each approach actually makes sense, no one-sided pitch.",
     url: "https://www.myntmore.com/blog/agency-vs-in-house",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

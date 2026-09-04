@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Content Marketing Strategist Intern | Myntmore Careers",
     description: "Write high-impact LinkedIn content for founders and CXOs. Internship, Worli Mumbai.",
     url: "https://www.myntmore.com/careers/content-marketing-strategist-intern",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

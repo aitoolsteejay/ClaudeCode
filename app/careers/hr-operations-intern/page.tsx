@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "HR and Operations Intern | Myntmore Careers",
     description: "Build real hiring pipelines and HR systems for a fast-growing agency. Internship, Worli Mumbai.",
     url: "https://www.myntmore.com/careers/hr-operations-intern",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

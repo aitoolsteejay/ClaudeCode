@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "The 7 B2B Lead Gen Metrics That Actually Matter",
     description: "Track these 7 numbers and you will always know exactly where your pipeline is leaking.",
     url: "https://www.myntmore.com/blog/b2b-lead-gen-metrics",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

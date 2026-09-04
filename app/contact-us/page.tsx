@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: "Contact Myntmore | Book a Free B2B GTM Audit",
     description: "Book a free 30-minute strategy call. No pitch, no pressure. Just clarity on your pipeline.",
     url: "https://www.myntmore.com/contact-us",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

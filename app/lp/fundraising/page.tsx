@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "Investor Outreach for Founders Raising Capital | Myntmore",
     description: "Stop cold-emailing VCs yourself. Targeted investor lists and outreach that books calls with the right funds.",
     url: "https://www.myntmore.com/lp/fundraising",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: "Relevance Beats Reach: Why Your Outbound Strategy Is Failing to Trigger Responses",
     description: "Optimised outbound engines see 50-70% open rates and 12-20% reply rates. If yours doesn't, the problem is relevance, not list size.",
     url: "https://www.myntmore.com/blog/relevance-beats-reach-b2b-outbound",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

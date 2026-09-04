@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: "Visibility vs. Value: Optimising the Founder's Personal Brand for Pipeline, Not Likes",
     description: "A single LinkedIn message once turned into a ₹3.5 crore order. Here's why vanity metrics won't repeat it.",
     url: "https://www.myntmore.com/blog/vanity-metrics-personal-brand-pipeline",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

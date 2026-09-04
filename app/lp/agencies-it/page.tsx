@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for Agencies & IT Companies | Myntmore",
     description: "Stop waiting for referrals. Start booking retainer clients with AI-powered outbound.",
     url: "https://www.myntmore.com/lp/agencies-it",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

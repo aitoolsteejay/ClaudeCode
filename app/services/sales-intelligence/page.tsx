@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "ICP Mapping & Lead Scoring Services | Myntmore",
     description: "Know exactly who is ready to buy, before your competitors do. 40+ buying signals monitored daily.",
     url: "https://www.myntmore.com/services/sales-intelligence",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

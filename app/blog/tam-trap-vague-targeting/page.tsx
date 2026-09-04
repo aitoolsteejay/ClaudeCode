@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     title: "The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline",
     description: "Stop chasing a massive, theoretical market. Here's how to find the buyers who are ready to act today.",
     url: "https://www.myntmore.com/blog/tam-trap-vague-targeting",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

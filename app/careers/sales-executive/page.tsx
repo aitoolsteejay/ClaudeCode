@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "Sales Executive | Myntmore Careers",
     description: "Prospect, build relationships, and close deals for a personal-branding and outbound growth agency. Full-time, hybrid, Worli Mumbai.",
     url: "https://www.myntmore.com/careers/sales-executive",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

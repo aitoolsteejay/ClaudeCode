@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Blog | Myntmore",
     description: "Practical lead gen guides from the team behind 12K+ B2B meetings booked.",
     url: "https://www.myntmore.com/resources/blogs",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

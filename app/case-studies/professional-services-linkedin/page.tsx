@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "LinkedIn Brand → 3x Inbound in 90 Days | Myntmore",
     description: "3x inbound · 18K new followers · 4.8% engagement rate",
     url: "https://www.myntmore.com/case-studies/professional-services-linkedin",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

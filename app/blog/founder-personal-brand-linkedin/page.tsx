@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "The Founder's Edge: Why You Are Your Company's Best Marketing Asset",
     description: "Founders with strong LinkedIn presence close deals faster and generate inbound without ad spend.",
     url: "https://www.myntmore.com/blog/founder-personal-brand-linkedin",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

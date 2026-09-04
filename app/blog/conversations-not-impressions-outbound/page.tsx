@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: "The Impression Illusion: Why Outbound Success Is Mapped in Conversations, Not Sends",
     description: "Sending more messages isn't a strategy. Predictable B2B pipelines are built on conversation momentum, not impression volume.",
     url: "https://www.myntmore.com/blog/conversations-not-impressions-outbound",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

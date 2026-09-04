@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "40 Qualified Meetings in 8 Weeks | SaaS Series A | Myntmore",
     description: "Cold start → 40 meetings · 34% reply rate · $1.2M pipeline",
     url: "https://www.myntmore.com/case-studies/saas-series-a",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

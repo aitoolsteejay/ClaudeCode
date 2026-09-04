@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "Partner Program for Agencies | White-Label B2B Outbound | Myntmore",
     description: "Sell outbound. We run it. Under your brand.",
     url: "https://www.myntmore.com/lp/agency-partners",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

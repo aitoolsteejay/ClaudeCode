@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Cold Email Infrastructure & Deliverability Services | Myntmore",
     description: "Cold email that actually lands in the inbox. Domain setup, warmup, deliverability, and AI-personalised sequences.",
     url: "https://www.myntmore.com/services/cold-email",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     title: "The 3-Second Rule: How to Stop Writing Outbound Messages That Get Ignored",
     description: "Your outbound isn't ignored because of the algorithm. It's ignored because it's boring. Here's the fix.",
     url: "https://www.myntmore.com/blog/3-second-rule-cold-outreach",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

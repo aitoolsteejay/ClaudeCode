@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Personal Branding & LinkedIn Ghostwriting Services | Myntmore",
     description: "Your buyers are on LinkedIn every day. Most founders are invisible to them. Ghostwritten content that builds authority.",
     url: "https://www.myntmore.com/services/personal-branding",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

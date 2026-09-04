@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     title: "The Pitching Trap: Articulate Pain Better Than Your Competitors | Myntmore",
     description: "Stop listing features. Show buyers that you understand their problem and the alternatives they are comparing.",
     url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

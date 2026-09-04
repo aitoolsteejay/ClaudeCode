@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: "SEO Services | Myntmore",
     description: "B2B SEO that drives qualified pipeline, not just traffic.",
     url: "https://www.myntmore.com/seo",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

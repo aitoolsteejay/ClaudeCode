@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "The eCommerce Conversion Playbook | Myntmore",
     description: "Traffic without conversion is just expensive noise. Here is how to fix it.",
     url: "https://www.myntmore.com/blog/ecommerce-conversion-playbook",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

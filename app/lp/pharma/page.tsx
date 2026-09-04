@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for Pharmaceutical Companies | Myntmore",
     description: "Get in front of pharma buyers before your next exhibition, domestic and global, with AI-powered outbound.",
     url: "https://www.myntmore.com/lp/pharma",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

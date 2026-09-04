@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "$400K Pipeline in 6 Weeks | eCommerce SaaS Case Study | Myntmore",
     description: "28 meetings · 41% open rate · $400K pipeline",
     url: "https://www.myntmore.com/case-studies/ecommerce-conversion-playbook",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

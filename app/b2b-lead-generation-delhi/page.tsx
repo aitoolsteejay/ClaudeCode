@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Agency in Delhi | Myntmore",
     description: "AI-powered outbound systems built for Delhi NCR's enterprise, trading, and D2C landscape.",
     url: "https://www.myntmore.com/b2b-lead-generation-delhi",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

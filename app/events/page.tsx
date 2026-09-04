@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: "Events & Webinars | Myntmore",
     description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the Myntmore team.",
     url: "https://www.myntmore.com/events",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

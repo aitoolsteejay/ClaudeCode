@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     title: "Free B2B Growth Guides | Myntmore",
     description: "Step-by-step AI and outbound guides, built by the team behind 12K+ B2B meetings booked.",
     url: "https://www.myntmore.com/resources/guides",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

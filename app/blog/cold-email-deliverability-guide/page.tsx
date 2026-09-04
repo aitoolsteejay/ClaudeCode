@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
     description: "The technical guide to getting cold emails into the inbox, not the spam folder.",
     url: "https://www.myntmore.com/blog/cold-email-deliverability-guide",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

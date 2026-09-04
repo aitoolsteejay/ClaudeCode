@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     title: "The Value Premium: Stop Chasing Attention and Start Creating Magnetic Leads",
     description: "Real value is rare. Here's how to build B2B content and lead magnets that generate direct sales requests instead of silence.",
     url: "https://www.myntmore.com/blog/value-premium-lead-magnets",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

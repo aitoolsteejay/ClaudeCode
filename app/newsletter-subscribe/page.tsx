@@ -12,7 +12,12 @@ export const metadata: Metadata = {
   description: "Get one practical B2B growth playbook every week, covering outbound systems, AI prospecting, cold email, LinkedIn, and pipeline conversion.",
   keywords: ["b2b outbound newsletter", "cold email newsletter", "ai outbound insights", "lead generation newsletter", "the outbound operator"],
   alternates: { canonical: URL },
-  openGraph: { title: "The Outbound Operator Newsletter | Myntmore", description: "One practical B2B growth playbook every week. Built from real campaigns, not recycled theory.", url: URL },
+  openGraph: {
+    title: "The Outbound Operator Newsletter | Myntmore",
+    description: "One practical B2B growth playbook every week. Built from real campaigns, not recycled theory.",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
 };
 const BREADCRUMBS = buildBreadcrumbSchema([{ name: "Home", url: SITE_URL }, { name: "Newsletter", url: URL }]);
 const TOPICS = [

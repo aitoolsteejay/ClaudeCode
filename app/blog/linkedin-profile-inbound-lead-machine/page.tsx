@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     title: "The Silent Salesperson: Turn Your LinkedIn Profile into an Inbound Lead Machine",
     description: "No one reads a word you post without checking your profile first. Here's how to fix it.",
     url: "https://www.myntmore.com/blog/linkedin-profile-inbound-lead-machine",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     title: "The 2026 B2B Outbound Benchmark Report | Myntmore",
     description: "Aggregated, anonymized data from 300+ B2B accounts: what a healthy reply rate, inbox rate, and time-to-meeting actually looks like.",
     url: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

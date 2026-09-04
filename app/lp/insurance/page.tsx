@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for Insurance Brokers & Agencies | Myntmore",
     description: "Stop waiting on referrals. Start winning corporate accounts with renewal-timed outbound.",
     url: "https://www.myntmore.com/lp/insurance",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

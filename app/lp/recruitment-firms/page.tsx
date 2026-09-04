@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for Recruitment & Staffing Firms | Myntmore",
     description: "Stop competing on job boards. Start booking client meetings with AI-powered outbound.",
     url: "https://www.myntmore.com/lp/recruitment-firms",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: "0 → 22K Followers & 8 Inbound Deals | Founder Brand Case Study | Myntmore",
     description: "22K followers · 8 inbound deals · 6.2% engagement rate",
     url: "https://www.myntmore.com/case-studies/founder-personal-brand-linkedin",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

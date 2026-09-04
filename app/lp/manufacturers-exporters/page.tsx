@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "B2B Outbound for Manufacturers & Exporters | Myntmore",
     description: "Find international buyers without trade fairs, through AI-powered outreach.",
     url: "https://www.myntmore.com/lp/manufacturers-exporters",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

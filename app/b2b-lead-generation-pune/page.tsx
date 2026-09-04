@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: "B2B Lead Generation Agency in Pune | Myntmore",
     description: "AI-powered outbound systems built for Pune's IT, SaaS, and manufacturing base.",
     url: "https://www.myntmore.com/b2b-lead-generation-pune",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "AI Lead Generation Services for B2B | Myntmore",
     description: "Your pipeline shouldn't depend on how much time your team has. Custom AI agents that research, qualify, and prioritise leads at scale.",
     url: "https://www.myntmore.com/services/ai-lead-generation",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

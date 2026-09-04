@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: "GTM Strategist | Myntmore Careers",
     description: "Own growth for multiple B2B brands: build predictable pipelines, not just campaigns. Full-time, Worli Mumbai.",
     url: "https://www.myntmore.com/careers/gtm-strategist",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

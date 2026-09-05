@@ -55,6 +55,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools/icp-builder`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/case-study-generator`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/battle-card-generator`, lastModified: "2026-08-18T15:33:06+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/5-second-hero-section-test`, lastModified: "2026-09-04T12:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/founder-led-sales-before-scaling`, lastModified: "2026-09-04T12:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/vanity-metrics-personal-brand-pipeline`, lastModified: "2026-08-31T11:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/outbound-funnel-math-not-guesswork`, lastModified: "2026-08-31T11:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/relevance-beats-reach-b2b-outbound`, lastModified: "2026-08-31T11:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },

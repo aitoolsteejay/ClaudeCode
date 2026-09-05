@@ -71,6 +71,8 @@ const GROUPS: SitemapGroup[] = [
     accent: "#3B82F6",
     links: [
       { label: "All Blog Posts", href: "/resources/blogs" },
+      { label: "The 5-Second Homepage Test", href: "/blog/5-second-hero-section-test" },
+      { label: "The Founder's Pipeline", href: "/blog/founder-led-sales-before-scaling" },
       { label: "Visibility vs. Value: Founder Personal Brand", href: "/blog/vanity-metrics-personal-brand-pipeline" },
       { label: "Gut Feel vs. Funnel Math", href: "/blog/outbound-funnel-math-not-guesswork" },
       { label: "Relevance Beats Reach", href: "/blog/relevance-beats-reach-b2b-outbound" },

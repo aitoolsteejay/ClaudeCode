@@ -40,6 +40,20 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/5-second-hero-section-test",
+    tags: ["Copywriting", "Lead Generation"],
+    title: "The 5-Second Test: Why Your Website's Hero Section Is Halting Your B2B Leads",
+    excerpt: "Most B2B websites don't have a traffic problem, they have a clarity problem. Two brutal tests to fix your homepage hero section before it costs you another lead.",
+    readTime: "4 min read",
+  },
+  {
+    href: "/blog/founder-led-sales-before-scaling",
+    tags: ["Sales Strategy", "Lead Generation"],
+    title: "The Founder's Pipeline: Why You Must Sell the Product Before You Scale the System",
+    excerpt: "You can't delegate a sales process you haven't personally proven. Why founder-led sales has to come first, not a hired team or an outsourced agency.",
+    readTime: "4 min read",
+  },
+  {
     href: "/blog/vanity-metrics-personal-brand-pipeline",
     tags: ["Personal Branding", "Lead Generation"],
     title: "Visibility vs. Value: Optimising the Founder's Personal Brand for Pipeline, Not Likes",

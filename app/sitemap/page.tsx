@@ -71,6 +71,7 @@ const GROUPS: SitemapGroup[] = [
     accent: "#3B82F6",
     links: [
       { label: "All Blog Posts", href: "/resources/blogs" },
+      { label: "Stop Selling Features", href: "/blog/stop-selling-features-cold-outreach" },
       { label: "The 5-Second Homepage Test", href: "/blog/5-second-hero-section-test" },
       { label: "The Founder's Pipeline", href: "/blog/founder-led-sales-before-scaling" },
       { label: "Visibility vs. Value: Founder Personal Brand", href: "/blog/vanity-metrics-personal-brand-pipeline" },

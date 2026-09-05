@@ -40,6 +40,13 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/stop-selling-features-cold-outreach",
+    tags: ["Cold Outreach", "Lead Generation"],
+    title: "Stop Selling Features: The 3-Second Rule of Outbound Outreach",
+    excerpt: "Outbound isn't dead, boring outbound is. Why you have exactly 3 seconds to earn curiosity, and why pitching features in that window kills your reply rate.",
+    readTime: "4 min read",
+  },
+  {
     href: "/blog/5-second-hero-section-test",
     tags: ["Copywriting", "Lead Generation"],
     title: "The 5-Second Test: Why Your Website's Hero Section Is Halting Your B2B Leads",

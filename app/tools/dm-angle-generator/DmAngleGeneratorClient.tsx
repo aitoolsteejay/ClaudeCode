@@ -115,7 +115,7 @@ export default function DmAngleGeneratorClient() {
       if (failedCount === 0) {
         toast.success(`All angles made ${style}`);
       } else if (failedCount < results.length) {
-        toast.warning(`${results.length - failedCount} of ${results.length} angles made ${style}. ${failedCount} failed — try regenerating those individually.`);
+        toast.warning(`${results.length - failedCount} of ${results.length} angles made ${style}. ${failedCount} failed, try regenerating those individually.`);
       } else {
         toast.error("Please try again");
       }

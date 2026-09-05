@@ -3,7 +3,7 @@ import Link from "next/link";
 import InnerLayout from "./components/InnerLayout";
 
 export const metadata: Metadata = {
-  title: "404 — Ghosted",
+  title: "404: Ghosted",
   description: "We followed up on every channel. This page still never replied. Here's how to get back to one that's actually live.",
 };
 

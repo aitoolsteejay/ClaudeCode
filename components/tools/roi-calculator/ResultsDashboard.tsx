@@ -97,7 +97,7 @@ export const ResultsDashboard = ({
                 <Info className="w-3.5 h-3.5 text-muted-foreground" />
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p>ROI = ((Revenue − Service Cost) ÷ Service Cost) × 100{roi === null && ". Add a monthly cost to calculate ROI — it's undefined while cost is $0."}</p>
+                <p>ROI = ((Revenue − Service Cost) ÷ Service Cost) × 100{roi === null && ". Add a monthly cost to calculate ROI, it's undefined while cost is $0."}</p>
               </TooltipContent>
             </Tooltip>
           </div>

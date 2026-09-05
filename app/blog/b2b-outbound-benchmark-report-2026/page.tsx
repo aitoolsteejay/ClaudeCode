@@ -133,7 +133,7 @@ export default function B2BOutboundBenchmarkReport2026() {
                   <div key={row.milestone} className="flex gap-4 rounded-2xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <span className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
                     <div>
-                      <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{row.milestone} <span style={{ color: "#10b981" }}>— {row.days}</span></p>
+                      <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{row.milestone} <span style={{ color: "#10b981" }}>· {row.days}</span></p>
                       <p className="text-sm" style={{ color: "#52525B" }}>{row.note}</p>
                     </div>
                   </div>

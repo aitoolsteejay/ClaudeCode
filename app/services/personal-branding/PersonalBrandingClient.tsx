@@ -90,7 +90,7 @@ const BENEFITS = [
 
 /* ─── Sub-components ─────────────────────────────────────────── */
 
-function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
+function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; open: boolean; onToggle: () => void; index: number }) {
   return (
     <div
       className="border rounded-xl overflow-hidden transition-all duration-300"
@@ -98,7 +98,13 @@ function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: b
         ? { borderColor: "rgba(217,119,6,0.4)", borderLeftColor: "#D97706", borderLeftWidth: "3px", backgroundColor: "rgba(217,119,6,0.04)" }
         : { borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}
     >
-      <button onClick={onToggle} className="w-full flex items-center justify-between px-6 py-5 text-left gap-4">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
+        aria-expanded={open}
+        aria-controls={`faq-answer-${index}`}
+        id={`faq-question-${index}`}
+      >
         <span className="text-base font-bold" style={{ color: "#0a0a0a" }}>{q}</span>
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
           style={{ backgroundColor: open ? "rgba(217,119,6,0.12)" : "#F8F6F2" }}>
@@ -108,7 +114,13 @@ function AccordionItem({ q, a, open, onToggle }: { q: string; a: string; open: b
           </svg>
         </span>
       </button>
-      <div className="overflow-hidden transition-all duration-300" style={{ maxHeight: open ? "300px" : "0px" }}>
+      <div
+        id={`faq-answer-${index}`}
+        role="region"
+        aria-labelledby={`faq-question-${index}`}
+        className="overflow-hidden transition-all duration-300"
+        style={{ maxHeight: open ? "300px" : "0px" }}
+      >
         <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: "#52525B" }}>{a}</p>
       </div>
     </div>
@@ -518,7 +530,7 @@ export default function PersonalBrandingClient() {
           </div>
           <div className="space-y-3">
             {FAQ_ITEMS.map((item, i) => (
-              <AccordionItem key={i} q={item.q} a={item.a} open={openFaq === i} onToggle={() => setOpenFaq(openFaq === i ? null : i)} />
+              <AccordionItem key={i} q={item.q} a={item.a} open={openFaq === i} onToggle={() => setOpenFaq(openFaq === i ? null : i)} index={i} />
             ))}
           </div>
         </div>

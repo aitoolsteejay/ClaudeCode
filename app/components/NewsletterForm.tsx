@@ -5,9 +5,9 @@ export default function NewsletterForm({ inputId, compact = false, buttonLabel =
     <form method="POST" action="https://tsop-zgfl.maillist-manage.com/weboptin.zc" target="_blank" className={compact ? "flex gap-2" : "space-y-3"}>
       <label htmlFor={inputId} className="sr-only">Work email address</label>
       <input id={inputId} type="email" name="CONTACT_EMAIL" placeholder="you@company.com" required autoComplete="email"
-        className={compact ? "flex-1 min-w-0 px-3 py-1.5 rounded-lg text-xs outline-none border" : "w-full px-5 py-4 rounded-xl text-sm outline-none border transition-shadow focus:ring-4"}
+        className={compact ? "flex-1 min-w-0 px-3 py-2.5 rounded-lg text-xs outline-none border" : "w-full px-5 py-4 rounded-xl text-sm outline-none border transition-shadow focus:ring-4"}
         style={{ backgroundColor: "#fff", borderColor: "rgba(245,183,49,0.45)", color: "#0a0a0a" }} />
-      <button type="submit" className={compact ? "px-3 py-1.5 rounded-lg text-xs font-bold shrink-0" : "btn-dark w-full px-6 py-4 text-sm font-black"}
+      <button type="submit" className={compact ? "px-4 py-2.5 rounded-lg text-xs font-bold shrink-0" : "btn-dark w-full px-6 py-4 text-sm font-black"}
         style={compact ? { backgroundColor: "#F5B731", color: "#0a0a0a" } : undefined}>{compact ? "Join" : buttonLabel}</button>
       <input type="hidden" name="submitType" value="optinCustomView" />
       <input type="hidden" name="formType" value="QuickForm" />

@@ -289,7 +289,7 @@ function TabGroup<T extends string>({
     else if (e.key === "End") { e.preventDefault(); focusIndex(tabs.length - 1); }
   };
 
-  const pad = size === "sm" ? "px-4 py-2 text-xs" : "px-5 py-2.5 text-sm";
+  const pad = size === "sm" ? "px-4 py-3 text-xs" : "px-5 py-2.5 text-sm";
 
   return (
     <div role="tablist" aria-label={ariaLabel} className="flex flex-wrap gap-2">

@@ -126,16 +126,16 @@ export default function RoomClient() {
             <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
             <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => setConfirmingReset(true)}
               disabled={loadingInitial || responses.length === 0}
-              className="text-xs font-semibold underline disabled:opacity-40 disabled:cursor-not-allowed"
+              className="p-2.5 text-xs font-semibold underline disabled:opacity-40 disabled:cursor-not-allowed"
               style={{ color: "#DC2626" }}
             >
               Reset room
             </button>
-            <button onClick={handleLogout} className="text-xs font-semibold underline" style={{ color: "#8C8279" }}>
+            <button onClick={handleLogout} className="p-2.5 text-xs font-semibold underline" style={{ color: "#8C8279" }}>
               Log out
             </button>
           </div>

@@ -556,3 +556,20 @@ body {
 .glow-accent {
   box-shadow: 0 0 40px hsl(var(--primary) / 0.15);
 }
+
+/* ─── Mobile form input sizing ─────────────────────────────
+   iOS Safari auto-zooms the whole page when a form field with a
+   computed font-size under 16px receives focus -- a well-known mobile
+   usability bug. Sitewide (LeadCaptureForm, LeadGate, NewsletterForm,
+   the careers search bar, tool inputs, menti, etc.) inputs/textareas are
+   styled at 14px (some as small as 12px) to match the surrounding
+   compact desktop design, which is exactly what triggers this on phones.
+   Scoped to mobile widths only (below Tailwind's `md` breakpoint) so
+   desktop's existing, deliberately compact sizing is untouched; !important
+   is needed to beat the specificity of the text-sm/text-xs utility
+   classes already applied directly on these elements. ────────────── */
+@media (max-width: 767px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}

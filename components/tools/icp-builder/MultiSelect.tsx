@@ -174,7 +174,7 @@ export function MultiSelect({ label, options, selected, onChange, max, searchabl
               style={{ backgroundColor: "#FEF9EC", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}
             >
               {item}
-              <button type="button" onClick={() => removeOption(item)} aria-label={`Remove ${item}`}>
+              <button type="button" onClick={() => removeOption(item)} aria-label={`Remove ${item}`} className="-m-1.5 p-1.5">
                 <X className="w-3 h-3" />
               </button>
             </span>

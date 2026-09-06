@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Faq from "../lp/Faq";
+import FadeIn from "../components/FadeIn";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {
@@ -199,6 +200,41 @@ const HIGHLIGHT_TIP: Record<AudienceKey, { role: string; note: string }> = {
   leadership: { role: "The one rule that matters most", note: "Draw a clear line early: AI is for admin and efficiency. It is never a substitute for serious pastoral care or wellbeing decisions." },
 };
 
+const AUDIENCE_INTRO: Record<AudienceKey, string> = {
+  parents: "AI at home works best as something you do with your child, not for them. These tips are grouped by school stage, since what's useful at 4 looks very different from what's useful at 16.",
+  educators: "The fastest wins for teachers are almost always admin: lesson plans, worksheets, rubrics, and reports. That's time you get back for the part of teaching no tool can do. Pick your stage below.",
+  creators: "Whether you're posting for the school or for yourself, AI should get you to a good first draft faster, not do the thinking for you. Pick the format you work in most.",
+  leadership: "For school leaders, the job isn't picking the fanciest tool. It's setting clear, sensible ground rules so staff, students, and parents all know where AI helps and where it shouldn't be used.",
+};
+
+const PROMPT_PRINCIPLES = [
+  {
+    title: "Be specific, not vague",
+    bad: "Help me with a lesson plan.",
+    good: "Give me a 40-minute lesson plan for teaching photosynthesis to 12-year-olds, with one hands-on activity.",
+  },
+  {
+    title: "Give it a role or an audience",
+    bad: "Explain black holes.",
+    good: "Explain black holes like you're talking to a curious 8-year-old, using an everyday analogy.",
+  },
+  {
+    title: "Show it what \"good\" looks like",
+    bad: "Write a caption for this event photo.",
+    good: "Write a caption in this style: short, warm, one line, and ends with a question.",
+  },
+  {
+    title: "Ask for a process, not just an answer",
+    bad: "What's the answer to this problem?",
+    good: "Walk me through solving this step by step, and check my understanding before giving the final answer.",
+  },
+  {
+    title: "Treat the first answer as a draft",
+    bad: "Accepting the first response as final.",
+    good: "That's a good start. Make it shorter, and cut the jargon.",
+  },
+];
+
 const ABOUT_FAQ = [
   { q: "Who is this guide for?", a: "Anyone in the JBCN community, parents, teachers, students who create content, and school leadership, who wants a practical, no-fluff starting point for using AI well." },
   { q: "Do I need to already know these tools?", a: "No. Every tip is written to be usable the same day, whether you've never opened an AI tool before or already use one daily." },
@@ -285,15 +321,44 @@ function TabGroup<T extends string>({
   );
 }
 
-function TipCard({ index, tip, accent }: { index: number; tip: Tip; accent: string }) {
+// Tips that name a specific tool/app get a bolder, accent-tinted "tool
+// card" treatment (icon = a little app/grid glyph); tips that are more
+// of a habit or mindset shift get a quieter, checkmark-style treatment.
+// Same data, just grouped and styled so a flat list of 10 near-identical
+// lines doesn't read as one undifferentiated dump.
+
+function ToolIcon({ color }: { color: string }) {
   return (
-    <div className="rounded-2xl border bg-white p-5 shadow-sm transition-shadow hover:shadow-md" style={{ borderColor: "#E8E2D9" }}>
-      <div className="flex items-start gap-4">
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke={color} strokeWidth={2.2} aria-hidden="true">
+      <rect x="4" y="4" width="7" height="7" rx="1.5" />
+      <rect x="13" y="4" width="7" height="7" rx="1.5" />
+      <rect x="4" y="13" width="7" height="7" rx="1.5" />
+      <rect x="13" y="13" width="7" height="7" rx="1.5" />
+    </svg>
+  );
+}
+
+function CheckIcon({ color }: { color: string }) {
+  return (
+    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke={color} strokeWidth={2.5} aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  );
+}
+
+function TipCard({ tip, accent, variant }: { tip: Tip; accent: string; variant: "tool" | "practice" }) {
+  const isTool = variant === "tool";
+  return (
+    <div
+      className="rounded-2xl border p-5 shadow-sm transition-shadow hover:shadow-md"
+      style={isTool ? { backgroundColor: `${accent}0A`, borderColor: `${accent}40` } : { backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
+    >
+      <div className="flex items-start gap-3.5">
         <span
-          className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-black tabular-nums"
-          style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}4D` }}
+          className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+          style={isTool ? { backgroundColor: `${accent}22`, border: `1px solid ${accent}55` } : { backgroundColor: "#F0FDF4", border: "1px solid rgba(16,185,129,0.3)" }}
         >
-          {index}
+          {isTool ? <ToolIcon color={accent} /> : <CheckIcon color="#16A34A" />}
         </span>
         <div className="min-w-0 flex-1">
           {tip.label && <p className="mb-1 text-sm font-black leading-snug" style={{ color: "#0a0a0a" }}>{tip.label}</p>}
@@ -304,12 +369,27 @@ function TipCard({ index, tip, accent }: { index: number; tip: Tip; accent: stri
   );
 }
 
-function TipGrid({ tips, accent }: { tips: Tip[]; accent: string }) {
+function TipGroup({ heading, tips, accent, variant }: { heading: string; tips: Tip[]; accent: string; variant: "tool" | "practice" }) {
+  if (tips.length === 0) return null;
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      {tips.map((tip, i) => (
-        <TipCard key={i} index={i + 1} tip={tip} accent={accent} />
-      ))}
+    <div className="mb-8">
+      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? accent : "#16A34A" }}>{heading}</p>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {tips.map((tip, i) => (
+          <TipCard key={i} tip={tip} accent={accent} variant={variant} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TipGrid({ tips, accent }: { tips: Tip[]; accent: string }) {
+  const toolTips = tips.filter((t) => t.label);
+  const practiceTips = tips.filter((t) => !t.label);
+  return (
+    <div>
+      <TipGroup heading="Tools & apps to try" tips={toolTips} accent={accent} variant="tool" />
+      <TipGroup heading="Habits worth building" tips={practiceTips} accent={accent} variant="practice" />
     </div>
   );
 }
@@ -330,6 +410,27 @@ function HighlightCallout({ role, note, accent }: { role: string; note: string; 
         <div>
           <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>{role}</p>
           <p className="text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>{note}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: string; bad: string; good: string }) {
+  return (
+    <div className="rounded-2xl border bg-white p-6 shadow-sm">
+      <div className="mb-4 flex items-center gap-3">
+        <span className="text-sm font-black tabular-nums" style={{ color: "#8C8279" }}>{num}</span>
+        <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{title}</h3>
+      </div>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <div className="rounded-xl p-4" style={{ backgroundColor: "rgba(220,38,38,0.05)", border: "1px solid rgba(220,38,38,0.18)" }}>
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#DC2626" }}>Instead of</p>
+          <p className="text-sm italic leading-relaxed" style={{ color: "#52525B" }}>&ldquo;{bad}&rdquo;</p>
+        </div>
+        <div className="rounded-xl p-4" style={{ backgroundColor: "rgba(16,163,74,0.06)", border: "1px solid rgba(16,163,74,0.22)" }}>
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#16A34A" }}>Try this</p>
+          <p className="text-sm leading-relaxed" style={{ color: "#0a0a0a" }}>&ldquo;{good}&rdquo;</p>
         </div>
       </div>
     </div>
@@ -395,8 +496,10 @@ export default function JBCNClient() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
       {/* ─── Hero ─────────────────────────────────────────────── */}
-      <header className="px-4 pb-12 pt-14 sm:pt-20">
-        <div className="mx-auto max-w-4xl text-center">
+      <header className="relative overflow-hidden px-4 pb-12 pt-14 sm:pt-20">
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731" }} aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Built for JBCN International School</span>
@@ -411,7 +514,7 @@ export default function JBCNClient() {
           <div className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-4">
             {[
               { v: String(totalTips) + "+", l: "Practical tips" },
-              { v: "4", l: "Audience tracks" },
+              { v: "5", l: "Content pillars" },
               { v: "16", l: "Stages & formats" },
             ].map((s) => (
               <div key={s.l}>
@@ -435,14 +538,15 @@ export default function JBCNClient() {
 
       {/* ─── Content ──────────────────────────────────────────── */}
       <section className="px-4 py-14">
-        <div className="mx-auto max-w-4xl">
+        <FadeIn key={audience} className="mx-auto max-w-4xl block">
           <SectionEyebrow num={activeAudience.num} label={activeAudience.label} accent={activeAudience.accent} />
-          <h2 className="mb-6 text-2xl font-black sm:text-3xl" style={{ color: "#0a0a0a" }}>
+          <h2 className="mb-3 text-2xl font-black sm:text-3xl" style={{ color: "#0a0a0a" }}>
             {audience === "parents" && "AI tips for parents, by school stage"}
             {audience === "educators" && "AI tips for educators, by school stage"}
             {audience === "creators" && "AI tips for content creators, by format"}
             {audience === "leadership" && "AI tips for schools and leadership teams"}
           </h2>
+          <p className="mb-8 max-w-2xl text-sm leading-relaxed" style={{ color: "#52525B" }}>{AUDIENCE_INTRO[audience]}</p>
 
           {(audience === "parents" || audience === "educators") && (
             <div
@@ -464,7 +568,35 @@ export default function JBCNClient() {
           <TipGrid tips={activeTips} accent={activeAudience.accent} />
 
           <HighlightCallout {...HIGHLIGHT_TIP[audience]} accent={activeAudience.accent} />
-        </div>
+        </FadeIn>
+      </section>
+
+      {/* ─── Effective prompting ──────────────────────────────── */}
+      <section className="border-t px-4 py-14" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <FadeIn className="mx-auto block max-w-4xl">
+          <SectionEyebrow num="05" label="Prompting Well" accent="#0a0a0a" />
+          <h2 className="mb-3 text-2xl font-black sm:text-3xl" style={{ color: "#0a0a0a" }}>
+            The skill behind every tip on this page
+          </h2>
+          <p className="mb-8 max-w-2xl text-sm leading-relaxed" style={{ color: "#52525B" }}>
+            Every tip above assumes you're talking to AI the right way. A vague prompt gets a vague answer. Here are five habits that make almost any AI tool noticeably better, starting today.
+          </p>
+          <div className="grid grid-cols-1 gap-4">
+            {PROMPT_PRINCIPLES.map((p, i) => (
+              <PromptPrincipleCard key={p.title} num={`0${i + 1}`} title={p.title} bad={p.bad} good={p.good} />
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A formula worth memorising</p>
+            <p className="text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>
+              Role or audience + specific task + format or constraints = a prompt that actually works.
+            </p>
+            <p className="mt-3 text-sm italic leading-relaxed" style={{ color: "#52525B" }}>
+              &ldquo;You're a Grade 6 science teacher. Write 5 quiz questions on the water cycle. Keep each question under 15 words.&rdquo;
+            </p>
+          </div>
+        </FadeIn>
       </section>
 
       {/* ─── About this guide (accordion) ─────────────────────── */}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NmimsToolkitClient from "./NmimsToolkitClient";
+import CareersAndJobGuideClient from "./CareersAndJobGuideClient";
 
 export const metadata: Metadata = {
   title: "Career Jumpstart Toolkit",
@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function NmimsToolkitPage() {
-  return <NmimsToolkitClient />;
+export default function CareersAndJobGuidePage() {
+  return <CareersAndJobGuideClient />;
 }

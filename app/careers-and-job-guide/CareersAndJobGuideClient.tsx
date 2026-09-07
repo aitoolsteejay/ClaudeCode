@@ -368,7 +368,7 @@ function SequenceRow({ item, delay = 0 }: { item: { step: string; title: string;
 
 /* ─── Main page ───────────────────────────────────────────────────── */
 
-export default function NmimsToolkitClient() {
+export default function CareersAndJobGuideClient() {
   const [category, setCategory] = useState<ToolCategory>("jobs");
   const hydrated = useRef(false);
 

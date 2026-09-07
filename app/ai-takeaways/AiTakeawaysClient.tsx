@@ -129,15 +129,15 @@ const EDUCATORS_TIPS: Record<ParentEducatorStage, Tip[]> = {
 
 const CREATORS_TIPS: Record<CreatorFormat, Tip[]> = {
   writing: [
-    { text: "Turn a rough voice note into a polished caption using ChatGPT/Claude." },
+    { label: "ChatGPT/Claude", text: "Turn a rough voice note into a polished caption." },
     { text: "Generate 3-4 caption variations and pick the one with the best tone." },
     { text: "Fact-check any claims-heavy post using AI plus a web search before posting." },
     { label: "Grammarly", text: "Polish tone and grammar without a full rewrite." },
-    { text: "Translate captions into other languages to widen your reach." },
+    { label: "DeepL", text: "Translate captions accurately into other languages to widen your reach." },
     { text: "Ask AI to turn a long event into a punchy 3-line recap for a story or post." },
     { label: "Notion AI", text: "Plan and organize your content calendar." },
     { text: "Draft consistent, on-brand replies to common DMs and comments." },
-    { text: "Brainstorm 10 hook lines for a post, then pick the strongest one." },
+    { label: "Jasper", text: "Brainstorm 10 hook lines for a post, then pick the strongest one." },
     { label: "Ask AI directly", isHabit: true, text: "\"Does this sound engaging, or generic?\"" },
   ],
   video: [
@@ -154,22 +154,24 @@ const CREATORS_TIPS: Record<CreatorFormat, Tip[]> = {
   ],
   images: [
     { label: "Adobe Firefly / Midjourney / Canva Magic Media", text: "Custom graphics instead of stock photos." },
-    { text: "Use AI to clean up backgrounds or fix a photo in seconds." },
+    { label: "remove.bg", text: "Clean up backgrounds or fix a photo in seconds." },
     { text: "Build a consistent, branded template for recurring post types." },
     { label: "Canva Magic Design", text: "Quick posters or announcement graphics." },
-    { text: "Use AI upscaling tools to sharpen low-res images before posting." },
+    { label: "Topaz Photo AI", text: "Sharpen low-res images with AI upscaling before posting." },
     { text: "Generate a few style variations of one photo to A/B test which performs better." },
-    { text: "Turn raw data or stats into a simple infographic using AI." },
+    { label: "Piktochart", text: "Turn raw data or stats into a simple infographic using AI." },
     { text: "Preview how a design looks on different platforms using AI mockups." },
     { text: "Batch-generate a consistent icon set for a content series." },
+    { label: "Fotor", text: "Generate a scroll-stopping thumbnail from a template in seconds, no design skills needed." },
     { text: "Ask AI for quick composition or color feedback before you post." },
   ],
 };
 
 const LEADERSHIP_TIPS: Tip[] = [
-  { text: "Publish a clear AI-use policy for students, shared openly with parents." },
+  { label: "Common Sense AI", text: "Ready-made frameworks and templates for publishing a clear, age-appropriate AI-use policy, shared openly with parents." },
   { text: "Train teachers on 3-4 recommended tools, rather than leaving it to \"figure it out yourself.\"" },
-  { label: "Google Workspace (Gemini)", text: "Draft and translate meeting notes, newsletters, and circulars in multiple languages." },
+  { label: "Otter.ai / Fireflies", text: "Transcribe and summarise leadership and staff meetings automatically." },
+  { label: "DeepL / Google Translate", text: "Translate newsletters and circulars accurately into every language your parent community speaks." },
   { label: "CapCut", text: "Edit event highlight reels (Annual Day, Sports Day) for social media, right from a phone." },
   { text: "Run parent workshops that demystify AI, instead of just restricting it." },
   { text: "Use AI-powered accessibility tools (text-to-speech, translation) to support differently-abled students." },

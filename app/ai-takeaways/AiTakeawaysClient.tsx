@@ -245,6 +245,68 @@ const ABOUT_FAQ = [
 
 /* ─── Small building blocks ───────────────────────────────────────── */
 
+// Thin fixed bar that fills left-to-right with scroll depth, giving a
+// constant, low-key sense of motion/progress down an otherwise long page.
+function ScrollProgress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  return (
+    <div aria-hidden="true" className="fixed left-0 top-0 z-50 h-1 w-full" style={{ backgroundColor: "rgba(10,10,10,0.06)" }}>
+      <div
+        className="h-full origin-left"
+        style={{ transform: `scaleX(${progress})`, background: "linear-gradient(90deg, #F5B731, #D97706)", transition: "transform 100ms linear" }}
+      />
+    </div>
+  );
+}
+
+// Small floating button that fades and scales in once the reader has
+// scrolled past the hero, and smooth-scrolls back to top on click.
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 700);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      className="lp-card fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-lg"
+      style={{
+        backgroundColor: "#0a0a0a",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0) scale(1)" : "translateY(12px) scale(0.85)",
+        pointerEvents: visible ? "auto" : "none",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#ffffff" strokeWidth={2.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  );
+}
+
 function SectionEyebrow({ num, label, accent }: { num: string; label: string; accent: string }) {
   return (
     <div className="flex items-center gap-3 mb-4">
@@ -504,6 +566,8 @@ export default function AiTakeawaysClient() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
+      <ScrollProgress />
+      <BackToTop />
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <header className="relative overflow-hidden px-4 pb-12 pt-14 sm:pt-20">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 10s ease-in-out infinite" }} />

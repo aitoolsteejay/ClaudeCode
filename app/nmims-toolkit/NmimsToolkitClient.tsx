@@ -135,6 +135,68 @@ const ABOUT_FAQ = [
 
 /* ─── Small building blocks ───────────────────────────────────────── */
 
+// Thin fixed bar that fills left-to-right with scroll depth, giving a
+// constant, low-key sense of motion/progress down an otherwise long page.
+function ScrollProgress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  return (
+    <div aria-hidden="true" className="fixed left-0 top-0 z-50 h-1 w-full" style={{ backgroundColor: "rgba(10,10,10,0.06)" }}>
+      <div
+        className="h-full origin-left"
+        style={{ transform: `scaleX(${progress})`, background: "linear-gradient(90deg, #F5B731, #D97706)", transition: "transform 100ms linear" }}
+      />
+    </div>
+  );
+}
+
+// Small floating button that fades and scales in once the reader has
+// scrolled past the hero, and smooth-scrolls back to top on click.
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 700);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      className="lp-card fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-lg"
+      style={{
+        backgroundColor: "#0a0a0a",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0) scale(1)" : "translateY(12px) scale(0.85)",
+        pointerEvents: visible ? "auto" : "none",
+        transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1)",
+      }}
+    >
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#ffffff" strokeWidth={2.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+  );
+}
+
 function SectionEyebrow({ num, label, accent = "#0a0a0a" }: { num: string; label: string; accent?: string }) {
   return (
     <div className="flex items-center gap-3 mb-4">
@@ -184,12 +246,12 @@ function ChecklistGrid({ tips }: { tips: Tip[] }) {
 
 function ProfileSubsection({ num, title, intro, tips, accent }: { num: string; title: string; intro?: string; tips: Tip[]; accent: string }) {
   return (
-    <div className="mb-10">
+    <FadeIn className="mb-10 block">
       <SectionEyebrow num={num} label="Profile fix" accent={accent} />
       <h3 className="mb-2 text-xl font-black" style={{ color: "#0a0a0a" }}>{title}</h3>
       {intro && <p className="mb-5 max-w-2xl text-sm leading-relaxed" style={{ color: "#52525B" }}>{intro}</p>}
       <ChecklistGrid tips={tips} />
-    </div>
+    </FadeIn>
   );
 }
 
@@ -331,6 +393,8 @@ export default function NmimsToolkitClient() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
+      <ScrollProgress />
+      <BackToTop />
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <header className="relative overflow-hidden px-4 pb-12 pt-14 sm:pt-20">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 10s ease-in-out infinite" }} />
@@ -408,50 +472,56 @@ export default function NmimsToolkitClient() {
             A polished profile gets you noticed. These are the tactics that get you a reply once you've reached out.
           </p>
 
-          <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {[
-              { icon: "🎙️", title: "Voice notes", text: "A 20-second personalised voice note can push reply rates from 30% up to 75%." },
-              { icon: "🎥", title: "Loom video edge", text: "A problem statement plus a 45-second Loom video on how you can help gets 3x the click-through of text alone, and roughly 1 in 3 viewers book a call." },
-              { icon: "😄", title: "Pattern disruption", text: "A well-placed, personalised meme or bit of humour after a couple of unanswered follow-ups can be exactly the pattern-interrupt that finally gets a reply." },
-              { icon: "⏰", title: "The timing advantage", text: "It's not just what you send, it's when. Hitting someone's \"morning scroll window,\" coffee, commute, or meeting prep, instead of just whenever you're free, can roughly double reply rates." },
-            ].map((card, i) => (
-              <div
-                key={card.title}
-                className="card-fade-up tip-card-hover group rounded-2xl border p-5"
-                style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)", animationDelay: `${i * 45}ms` }}
-              >
-                <div className="mb-2 flex items-center gap-2.5">
-                  <span className="text-lg transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" aria-hidden="true">{card.icon}</span>
-                  <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>{card.title}</p>
+          <FadeIn className="mb-8 block">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+                { icon: "🎙️", title: "Voice notes", text: "A 20-second personalised voice note can push reply rates from 30% up to 75%." },
+                { icon: "🎥", title: "Loom video edge", text: "A problem statement plus a 45-second Loom video on how you can help gets 3x the click-through of text alone, and roughly 1 in 3 viewers book a call." },
+                { icon: "😄", title: "Pattern disruption", text: "A well-placed, personalised meme or bit of humour after a couple of unanswered follow-ups can be exactly the pattern-interrupt that finally gets a reply." },
+                { icon: "⏰", title: "The timing advantage", text: "It's not just what you send, it's when. Hitting someone's \"morning scroll window,\" coffee, commute, or meeting prep, instead of just whenever you're free, can roughly double reply rates." },
+              ].map((card, i) => (
+                <div
+                  key={card.title}
+                  className="card-fade-up tip-card-hover group rounded-2xl border p-5"
+                  style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)", animationDelay: `${i * 45}ms` }}
+                >
+                  <div className="mb-2 flex items-center gap-2.5">
+                    <span className="text-lg transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" aria-hidden="true">{card.icon}</span>
+                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>{card.title}</p>
+                  </div>
+                  <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{card.text}</p>
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{card.text}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </FadeIn>
 
-          <h3 className="mb-4 text-lg font-black" style={{ color: "#0a0a0a" }}>A full outreach sequence, timed out</h3>
-          <div className="mb-8 grid grid-cols-1 gap-3">
-            {OUTREACH_SEQUENCE.map((item, i) => (
-              <SequenceRow key={item.title} item={item} delay={i * 45} />
-            ))}
-          </div>
-          <p className="mb-8 max-w-2xl text-xs leading-relaxed" style={{ color: "#8C8279" }}>
-            If a withdrawn request still gets no response, wait roughly three weeks, then retarget from the top.
-          </p>
+          <FadeIn className="mb-8 block">
+            <h3 className="mb-4 text-lg font-black" style={{ color: "#0a0a0a" }}>A full outreach sequence, timed out</h3>
+            <div className="grid grid-cols-1 gap-3">
+              {OUTREACH_SEQUENCE.map((item, i) => (
+                <SequenceRow key={item.title} item={item} delay={i * 45} />
+              ))}
+            </div>
+            <p className="mt-5 max-w-2xl text-xs leading-relaxed" style={{ color: "#8C8279" }}>
+              If a withdrawn request still gets no response, wait roughly three weeks, then retarget from the top.
+            </p>
+          </FadeIn>
 
-          <h3 className="mb-4 text-lg font-black" style={{ color: "#0a0a0a" }}>Daily limits worth respecting</h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {OUTREACH_LIMITS.map((tip, i) => (
-              <div
-                key={tip.label}
-                className="card-fade-up tip-card-hover rounded-2xl border p-5"
-                style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)", animationDelay: `${i * 45}ms` }}
-              >
-                <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#DC2626" }}>{tip.label}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{tip.text}</p>
-              </div>
-            ))}
-          </div>
+          <FadeIn className="block">
+            <h3 className="mb-4 text-lg font-black" style={{ color: "#0a0a0a" }}>Daily limits worth respecting</h3>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {OUTREACH_LIMITS.map((tip, i) => (
+                <div
+                  key={tip.label}
+                  className="card-fade-up tip-card-hover rounded-2xl border p-5"
+                  style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)", animationDelay: `${i * 45}ms` }}
+                >
+                  <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#DC2626" }}>{tip.label}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{tip.text}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </FadeIn>
       </section>
 
@@ -470,17 +540,18 @@ export default function NmimsToolkitClient() {
             <TabGroup tabs={CATEGORIES} active={category} onChange={setCategory} ariaLabel="Choose a tool category" />
           </div>
 
-          <div
-            key={category}
-            id={`panel-${category}`}
-            role="tabpanel"
-            aria-labelledby={`tab-${category}`}
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-          >
-            {activeTools.map((tool, i) => (
-              <ToolCard key={tool.name} tool={tool} accent="#10b981" delay={i * 45} />
-            ))}
-          </div>
+          <FadeIn key={category} className="block">
+            <div
+              id={`panel-${category}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${category}`}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+            >
+              {activeTools.map((tool, i) => (
+                <ToolCard key={tool.name} tool={tool} accent="#10b981" delay={i * 45} />
+              ))}
+            </div>
+          </FadeIn>
         </FadeIn>
       </section>
 

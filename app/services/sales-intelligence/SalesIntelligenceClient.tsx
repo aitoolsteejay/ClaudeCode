@@ -21,7 +21,7 @@ const STEPS = [
   { n: "01", title: "ICP & Signal Mapping", desc: "We map your Ideal Customer Profile in precise detail, then identify the 40+ intent signals that indicate an account is actively in-market: funding rounds, hiring patterns, tech stack changes, leadership moves, and more." },
   { n: "02", title: "Daily List Building & Enrichment", desc: "Our system monitors signal sources daily and surfaces accounts matching your ICP the moment they enter buying mode. Every account is enriched with company data, tech stack, headcount, and decision-maker contacts." },
   { n: "03", title: "Account Scoring & Prioritisation", desc: "Accounts are scored by signal strength, ICP fit, and engagement indicators. Your team sees a prioritised view: the 10% of accounts worth focusing on this week, not a raw list of thousands to triage manually." },
-  { n: "04", title: "CRM Export & Signal Dashboard", desc: "Scored accounts push to your CRM daily with full signal context attached. The signal dashboard shows you what triggered each account, so your outreach opens with the exact insight that makes it relevant." },
+  { n: "04", title: "Signal Dashboard & Handoff", desc: "Scored accounts appear in your signal dashboard daily with full context attached, showing you what triggered each account, so your outreach opens with the exact insight that makes it relevant." },
 ];
 
 const HOWTO_SCHEMA = buildHowToSchema(
@@ -33,7 +33,7 @@ const DELIVERABLES = [
   "40+ intent signal monitoring across your target market",
   "Daily list refresh with trigger-based account surfacing",
   "Account scoring by fit, intent, and signal strength",
-  "CRM-ready exports with full signal context attached",
+  "Exportable account lists with full signal context attached",
   "ICP mapping and scoring model calibration",
   "Signal dashboard showing real-time in-market accounts",
 ];
@@ -70,11 +70,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "How often is the data refreshed?",
-    a: "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your CRM or dashboard by the next morning. This is the core advantage over static lists: you're always working with the freshest possible view of who is in-market.",
+    a: "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your signal dashboard by the next morning. This is the core advantage over static lists: you're always working with the freshest possible view of who is in-market.",
   },
   {
-    q: "Which CRMs do you export to?",
-    a: "HubSpot, Salesforce, Pipedrive, Zoho, and Notion databases are all supported natively. If you use something else, we export a clean CSV mapped to your existing fields with signal context columns included. No manual reformatting required.",
+    q: "How do we receive the accounts?",
+    a: "You get exportable account lists with full signal context attached, mapped to your fields and ready to import into whatever system your team already uses. We don't build or manage CRM integrations, that stays part of your own process.",
   },
   {
     q: "What's the typical pipeline impact?",
@@ -84,7 +84,7 @@ const FAQ_ITEMS = [
 
 const BENEFITS = [
   "40+ intent signals", "Daily list refresh", "Trigger-based leads", "Funding signals",
-  "Hiring patterns", "Tech stack changes", "CRM-ready exports", "Account scoring",
+  "Hiring patterns", "Tech stack changes", "Exportable account lists", "Account scoring",
   "ICP mapping", "Signal dashboard", "Competitive intel", "Real-time data",
 ];
 

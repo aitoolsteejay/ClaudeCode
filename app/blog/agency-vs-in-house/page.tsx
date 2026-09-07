@@ -52,7 +52,7 @@ const COMPARISON: ComparisonRow[] = [
   },
   {
     factor: "Tooling & infrastructure",
-    agency: "Included and managed: domain warm-up, deliverability monitoring, enrichment tools, CRM integration",
+    agency: "Included and managed: domain warm-up, deliverability monitoring, enrichment tools, reporting dashboards",
     inHouse: "You buy, configure, and maintain all of it yourself, or it becomes one more thing on someone's plate",
   },
   {

@@ -19,7 +19,7 @@ const STEPS = [
   { n: "01", title: "ICP & Agent Setup", desc: "We map your Ideal Customer Profile in detail, then configure custom AI agents with your specific qualification criteria, triggers, and scoring weights." },
   { n: "02", title: "Data Sourcing & Enrichment", desc: "Agents pull from LinkedIn, company websites, news signals, and financial reports to build a full intelligence picture on every account." },
   { n: "03", title: "Lead Scoring & Prioritisation", desc: "Leads are ranked by fit and intent. Your team only ever sees the top tier: accounts worth their time, not raw lists." },
-  { n: "04", title: "CRM Export & Handoff", desc: "Scored leads push automatically to your CRM with full research summaries attached. No manual reformatting. No lost context." },
+  { n: "04", title: "Delivery & Handoff", desc: "Scored leads and full research summaries are delivered straight to your team, clean and organised. No manual reformatting. No lost context." },
 ];
 
 const HOWTO_SCHEMA = buildHowToSchema(
@@ -30,7 +30,7 @@ const HOWTO_SCHEMA = buildHowToSchema(
 const DELIVERABLES = [
   "AI-scored lead lists with deep qualification",
   "Research summaries on every prospect",
-  "CRM-ready exports mapped to your fields",
+  "Clean, structured lead exports mapped to your fields",
   "Weekly pipeline health and volume reports",
   "Automated lead routing and prioritisation",
   "Custom AI agent infrastructure for your team",
@@ -67,8 +67,8 @@ const FAQ_ITEMS = [
     a: "With a well-defined ICP, our scoring model runs at roughly 85–90% relevance on the top tier. We build in a feedback loop: your team flags false positives and the model adjusts over time. Accuracy compounds month over month.",
   },
   {
-    q: "Which CRMs do you export to?",
-    a: "HubSpot, Salesforce, Pipedrive, Zoho, and Notion databases are all supported natively. If you use something else, we export a clean CSV mapped to your existing fields. No manual reformatting on your end.",
+    q: "How do we receive the leads?",
+    a: "You get clean, structured lead exports with full research summaries attached, mapped to your fields and ready to import into whatever system your team already uses. We don't build or manage CRM integrations, that stays part of your own process.",
   },
   {
     q: "How many leads can you generate per month?",
@@ -81,7 +81,7 @@ const FAQ_ITEMS = [
 ];
 
 const BENEFITS = [
-  "AI-scored leads", "24/7 agent operation", "Research summaries", "CRM-ready exports",
+  "AI-scored leads", "24/7 agent operation", "Research summaries", "Clean lead exports",
   "Intent signal tracking", "Account enrichment", "ICP refinement", "Pipeline velocity",
   "No manual research", "Qualify at scale", "Reduce cost per lead", "Boost reply rates",
 ];

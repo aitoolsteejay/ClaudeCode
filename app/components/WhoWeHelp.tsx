@@ -93,7 +93,7 @@ const PERSONAS: Persona[] = [
     benefits: [
       { title: "Predictable meeting volume", description: "Know exactly how many qualified meetings hit your team's calendar each week no more feast or famine." },
       { title: "Reps close 40% more", description: "When reps stop prospecting and start closing, conversion rates climb. We've seen it across 300+ clients." },
-      { title: "Full CRM visibility", description: "Every meeting, touchpoint, and reply synced to HubSpot or Salesforce automatically. Zero manual logging." },
+      { title: "Full pipeline visibility", description: "Every meeting, touchpoint, and reply reported to your team automatically. Zero manual tracking." },
     ],
   },
   {
@@ -114,12 +114,12 @@ const PERSONAS: Persona[] = [
     blobColor: "rgba(34,197,94,0.3)",
     illustration: <NetworkIllustration />,
     heading: "Clean data. Tight sequences.\nReliable revenue.",
-    tagline: "We integrate with your CRM and tech stack every touchpoint tracked, every forecast accurate.",
+    tagline: "Every contact verified, every touchpoint tracked, every forecast built on data you can actually trust.",
     cta: "Explore RevOps solutions",
     benefits: [
-      { title: "99% data accuracy", description: "Every contact enriched and verified before it touches your CRM. No more bounces, dead leads, or dirty data." },
-      { title: "CRM integrated in 48 hours", description: "HubSpot and Salesforce integrations completed in under 2 days. Your team spends zero time on manual entry." },
-      { title: "Forecasts you can trust", description: "With every meeting, reply, and touchpoint logged automatically, your pipeline numbers become genuinely reliable." },
+      { title: "99% data accuracy", description: "Every contact enriched and verified before outreach goes out. No more bounces, dead leads, or dirty data." },
+      { title: "Reporting live in 48 hours", description: "Full outbound reporting and pipeline dashboards set up within 2 days, so you're tracking results from day one." },
+      { title: "Forecasts you can trust", description: "With every meeting, reply, and touchpoint tracked and reported consistently, your pipeline numbers become genuinely reliable." },
     ],
   },
 ];

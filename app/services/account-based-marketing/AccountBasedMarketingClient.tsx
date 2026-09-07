@@ -21,7 +21,7 @@ const STEPS = [
   { n: "01", title: "Target Account Selection", desc: "We build a tiered list of your highest-value target accounts, scored against your ICP, deal size, and buying-intent signals. Tier 1 gets the most coordinated attention; Tier 3 stays on a lighter-touch cadence." },
   { n: "02", title: "Multi-Channel Campaign Design", desc: "LinkedIn outreach, email sequences, and (where relevant) retargeting are planned around the same account list, timed to reinforce each other instead of running as separate, uncoordinated efforts." },
   { n: "03", title: "Buying Committee Engagement", desc: "We identify and message multiple stakeholders per account, not just one contact, so by the time your AE reaches out, several people at the account already recognise your name." },
-  { n: "04", title: "Sales Handoff & Reporting", desc: "Engagement data (who opened, replied, clicked, or accepted) rolls up into account-level reporting and pushes to your CRM, so your sales team walks into every conversation with full context." },
+  { n: "04", title: "Sales Handoff & Reporting", desc: "Engagement data (who opened, replied, clicked, or accepted) rolls up into account-level reporting delivered to your team, so your sales team walks into every conversation with full context." },
 ];
 
 const HOWTO_SCHEMA = buildHowToSchema(
@@ -74,7 +74,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How does the handoff to our sales team actually work?",
-    a: "Every account gets an engagement record: who was contacted, on which channel, what they opened or replied to, and how engaged the account is overall. That rolls into your CRM so your AE walks into the first conversation already knowing which stakeholders are warm and why.",
+    a: "Every account gets an engagement record: who was contacted, on which channel, what they opened or replied to, and how engaged the account is overall. That's delivered to your team as an account-level report, so your AE walks into the first conversation already knowing which stakeholders are warm and why.",
   },
   {
     q: "What size company or deal size is this built for?",

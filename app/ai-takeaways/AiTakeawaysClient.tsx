@@ -114,11 +114,11 @@ const EDUCATORS_TIPS: Record<ParentEducatorStage, Tip[]> = {
     { text: "Use AI to brainstorm real-world examples that connect the curriculum to students' lives." },
   ],
   senior: [
-    { text: "Generate board-exam-style practice questions instantly for any topic." },
+    { label: "Quizizz AI", text: "Generate board-exam-style practice questions instantly for any topic." },
     { label: "NotebookLM", text: "Build a full revision guide directly from the syllabus." },
     { text: "Use AI to design real-world case studies or application-based questions." },
     { text: "Set and clearly communicate an academic integrity policy around AI use." },
-    { text: "Draft detailed, specific essay feedback, then review and personalize before sending." },
+    { label: "Turnitin", text: "Draft detailed, specific essay feedback, then review and personalize before sending." },
     { text: "Draft a first version of a recommendation letter, then personalize it fully before sending." },
     { text: "Use AI to explore how your subject connects to real careers, for career-guidance chats." },
     { label: "Otter.ai / Grammarly", text: "Speed up admin: meeting notes, reports, emails." },

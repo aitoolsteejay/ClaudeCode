@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Faq from "../lp/Faq";
 import FadeIn from "../components/FadeIn";
 import StatTicker from "../components/StatTicker";
+import InnerLayout from "../components/InnerLayout";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tool {
@@ -155,7 +156,7 @@ function ScrollProgress() {
   }, []);
 
   return (
-    <div aria-hidden="true" className="fixed left-0 top-0 z-50 h-1 w-full" style={{ backgroundColor: "rgba(10,10,10,0.06)" }}>
+    <div aria-hidden="true" className="fixed left-0 top-0 z-[60] h-1 w-full" style={{ backgroundColor: "rgba(10,10,10,0.06)" }}>
       <div
         className="h-full origin-left"
         style={{ transform: `scaleX(${progress})`, background: "linear-gradient(90deg, #F5B731, #D97706)", transition: "transform 100ms linear" }}
@@ -392,11 +393,12 @@ export default function NmimsToolkitClient() {
   const totalTools = useMemo(() => Object.values(TOOLS).reduce((sum, arr) => sum + arr.length, 0), []);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
+    <InnerLayout>
+    <div style={{ backgroundColor: "#F8F6F2" }}>
       <ScrollProgress />
       <BackToTop />
       {/* ─── Hero ─────────────────────────────────────────────── */}
-      <header className="relative overflow-hidden px-4 pb-12 pt-14 sm:pt-20">
+      <section className="relative overflow-hidden px-4 pb-12 pt-32">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 10s ease-in-out infinite" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 12s ease-in-out infinite reverse" }} />
         <span className="lp-float-icon lp-pop-in hidden sm:block text-3xl" aria-hidden="true" style={{ top: "14%", left: "8%", animationDelay: "0.2s", ["--lp-rot" as any]: "-10deg" }}>🚀</span>
@@ -428,7 +430,7 @@ export default function NmimsToolkitClient() {
             ))}
           </div>
         </div>
-      </header>
+      </section>
 
       {/* ─── LinkedIn profile fixes ───────────────────────────── */}
       <section className="px-4 py-14">
@@ -557,20 +559,7 @@ export default function NmimsToolkitClient() {
 
       {/* ─── About this toolkit (accordion) ───────────────────── */}
       <Faq badge="Good to know" title="About this toolkit" items={ABOUT_FAQ} />
-
-      {/* ─── Footer ───────────────────────────────────────────── */}
-      <footer className="border-t px-4 py-12" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
-          <div>
-            <p className="text-base font-black" style={{ color: "#0a0a0a" }}>Career Jumpstart Toolkit</p>
-            <p className="mt-1 text-xs" style={{ color: "#8C8279" }}>&copy; {new Date().getFullYear()}</p>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <span>Made by</span>
-            <a href="https://www.myntmore.com" className="font-black" style={{ color: "#0a0a0a" }}>Myntmore</a>
-          </div>
-        </div>
-      </footer>
     </div>
+    </InnerLayout>
   );
 }

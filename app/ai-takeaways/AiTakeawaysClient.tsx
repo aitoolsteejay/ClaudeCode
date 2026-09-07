@@ -5,6 +5,7 @@ import Faq from "../lp/Faq";
 import FadeIn from "../components/FadeIn";
 import StatTicker from "../components/StatTicker";
 import InnerLayout from "../components/InnerLayout";
+import CopyBlock from "../components/CopyBlock";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {
@@ -15,6 +16,12 @@ interface Tip {
   // has a bolded label.
   isHabit?: boolean;
   text: string;
+  // A ready-to-copy example prompt for this specific tool, tailored to the
+  // audience/age-group/format it appears under. Left unset for tools that
+  // aren't actually prompt-driven (a camera-scan app, a one-click batch
+  // processor, an automated checker) rather than forcing a fake prompt
+  // onto them.
+  prompt?: string;
 }
 
 type ParentEducatorStage = "pre-primary" | "primary" | "middle" | "senior";
@@ -27,20 +34,20 @@ type AudienceKey = "parents" | "educators" | "creators" | "leadership";
 const PARENTS_TIPS: Record<ParentEducatorStage, Tip[]> = {
   "pre-primary": [
     { label: "Google Read Along", text: "AI-powered app that helps your child practice reading aloud, one on one." },
-    { label: "Claude/ChatGPT voice mode", text: "Speak a story idea out loud together, get a full bedtime story back instantly." },
-    { label: "Canva Magic Media", text: "Turn your child's favourite character or idea into a simple coloring page." },
+    { label: "Claude/ChatGPT voice mode", text: "Speak a story idea out loud together, get a full bedtime story back instantly.", prompt: "Tell me a gentle 3-minute bedtime story about a brave little elephant who's scared of thunderstorms, with a happy ending." },
+    { label: "Canva Magic Media", text: "Turn your child's favourite character or idea into a simple coloring page.", prompt: "A friendly cartoon dinosaur wearing a birthday hat, simple black outline, no shading, easy for a 4-year-old to colour in." },
     { text: "Ask AI big questions kids ask (\"why is the sky blue?\") in toddler language, then read the answer together." },
     { text: "Ask AI for a rainy-day craft or activity idea using things you already have at home." },
     { text: "Use AI to write a short, personalized birthday poem or card message for a sibling or friend." },
     { label: "Golden rule at this age", isHabit: true, text: "Always use AI together with your child, never hand over the phone and walk away." },
     { text: "Ask AI to explain a big feeling (\"why do I feel scared of the dark?\") in simple words, then talk about it together." },
-    { label: "ElevenLabs", text: "Turn a favourite story into an audio story read in a fun character voice." },
+    { label: "ElevenLabs", text: "Turn a favourite story into an audio story read in a fun character voice.", prompt: "Read this story in a warm, gentle grandmother's voice, slow pace, for a 4-year-old at bedtime: [paste your child's favourite story here]" },
     { text: "Use AI to generate simple, printable flashcards for colors, shapes, or animal names." },
   ],
   primary: [
-    { label: "ChatGPT/Claude/Gemini", text: "Get step-by-step homework help, not just the final answer." },
+    { label: "ChatGPT/Claude/Gemini", text: "Get step-by-step homework help, not just the final answer.", prompt: "My 8-year-old is stuck on this maths problem: [paste the problem]. Walk me through it step by step so I can explain it, don't just give the final answer." },
     { label: "Photomath", text: "Scan a math problem for a full step-by-step solve." },
-    { label: "NotebookLM", text: "Upload class notes or a textbook chapter, get instant flashcards for revision." },
+    { label: "NotebookLM", text: "Upload class notes or a textbook chapter, get instant flashcards for revision.", prompt: "Upload this week's science chapter and create 10 flashcards plus a 5-question quiz to help my child revise." },
     { text: "Ask AI to create a fun quiz on whatever your child is currently curious about (space, dinosaurs, etc)." },
     { label: "Google Lens", text: "Point the camera at a plant or insect on a walk and learn about it together." },
     { text: "Use AI to draft a leave letter or note to the teacher (you review and send it yourself)." },
@@ -51,21 +58,21 @@ const PARENTS_TIPS: Record<ParentEducatorStage, Tip[]> = {
   ],
   middle: [
     { label: "Use AI as a tutor that quizzes, not tells", isHabit: true, text: "Ask it to test you instead of giving the answer." },
-    { label: "NotebookLM", text: "Upload notes ahead of an exam, generate flashcards and practice questions." },
+    { label: "NotebookLM", text: "Upload notes ahead of an exam, generate flashcards and practice questions.", prompt: "Upload these exam notes and quiz me one question at a time on [subject]. Don't reveal the answer until I've attempted it." },
     { label: "Teach the prompt habit", isHabit: true, text: "\"Explain this like I'm in 7th grade\" gets a much better answer than a vague question." },
     { text: "Use AI to help outline an essay, then have your child write it in their own words." },
     { text: "Talk openly about what's okay to use AI for in schoolwork, and what isn't." },
     { text: "Use AI to research project topics, but make it a rule to verify at least one source independently." },
-    { label: "Grammarly", text: "Check tone and grammar, without letting it rewrite the whole piece." },
+    { label: "Grammarly", text: "Check tone and grammar, without letting it rewrite the whole piece.", prompt: "Check the tone and grammar of this essay draft, don't rewrite the sentences, just flag what to fix and why: [paste essay]" },
     { text: "Ask AI to explain a current news topic in a simple, balanced way." },
-    { label: "Canva / Adobe Firefly", text: "Generate visuals for a school project." },
+    { label: "Canva / Adobe Firefly", text: "Generate visuals for a school project.", prompt: "A clean, colourful labelled diagram of the water cycle, suitable for a 7th-grade science project poster." },
     { label: "Set an \"AI or me\" rule", isHabit: true, text: "Big feelings and personal problems go to a parent conversation, not an AI chat." },
   ],
   senior: [
     { label: "CareerExplorer", text: "Turn your child's interests into a shortlist of real careers to research further (\"what careers use a love of biology and art?\")." },
-    { label: "Yoodli", text: "Practice mock interviews out loud and get instant feedback on pacing, filler words, and clarity." },
-    { label: "CollegeVine", text: "Brainstorm college essay angles, then have your child write the essay in their own voice." },
-    { label: "NotebookLM / Quizlet AI", text: "Turn the syllabus into flashcards and self-quizzes for board exam prep." },
+    { label: "Yoodli", text: "Practice mock interviews out loud and get instant feedback on pacing, filler words, and clarity.", prompt: "Practice answering: \"Tell me about a time you solved a difficult problem.\" Give me feedback on my pacing, filler words, and clarity." },
+    { label: "CollegeVine", text: "Brainstorm college essay angles, then have your child write the essay in their own voice.", prompt: "Here's my personal statement draft for [university/course]: [paste draft]. Suggest 3 different angles I could take that show more of who I actually am." },
+    { label: "NotebookLM / Quizlet AI", text: "Turn the syllabus into flashcards and self-quizzes for board exam prep.", prompt: "Upload this syllabus and turn every unit into flashcards, then generate a 20-question mock test covering all units." },
     { label: "Teal", text: "Get a first round of AI feedback on a resume or college application draft." },
     { label: "Set the rule", isHabit: true, text: "AI helps outline and check work, it doesn't write the assignment." },
     { text: "Ask AI to lay out multiple sides of a debate topic before your child forms their own opinion." },
@@ -78,9 +85,9 @@ const PARENTS_TIPS: Record<ParentEducatorStage, Tip[]> = {
 
 const EDUCATORS_TIPS: Record<ParentEducatorStage, Tip[]> = {
   "pre-primary": [
-    { label: "MagicSchool AI", text: "Quick activity and worksheet ideas for young learners." },
-    { label: "Curipod", text: "Interactive, story-based lesson slides for circle time." },
-    { label: "Canva Magic Design", text: "Classroom posters and decor in minutes." },
+    { label: "MagicSchool AI", text: "Quick activity and worksheet ideas for young learners.", prompt: "Create a 20-minute circle-time activity about colours and shapes for a class of 4-year-olds, ending with a simple craft." },
+    { label: "Curipod", text: "Interactive, story-based lesson slides for circle time.", prompt: "Build an interactive, story-based lesson on 'sharing and taking turns' for pre-primary circle time, with one poll for the kids." },
+    { label: "Canva Magic Design", text: "Classroom posters and decor in minutes.", prompt: "A bright, welcoming classroom poster for 'Our Class Rules' using 5 simple icons instead of long text." },
     { text: "Ask AI for simple story ideas tied to this week's classroom theme." },
     { text: "Use AI to draft short daily observation notes for parents." },
     { text: "Generate simple, printable phonics or number flashcards." },
@@ -90,38 +97,38 @@ const EDUCATORS_TIPS: Record<ParentEducatorStage, Tip[]> = {
     { text: "Generate step-by-step craft instructions matched to the week's theme." },
   ],
   primary: [
-    { label: "MagicSchool AI", text: "Lesson plans and worksheets in minutes, not hours." },
-    { label: "Diffit", text: "Turn one reading passage into three difficulty levels for a mixed-ability class." },
-    { label: "NotebookLM", text: "Turn a textbook chapter into ready-made quiz questions." },
-    { label: "Curipod", text: "Interactive lesson slides with quizzes built in." },
+    { label: "MagicSchool AI", text: "Lesson plans and worksheets in minutes, not hours.", prompt: "Create a 45-minute lesson plan on fractions for grade 3, including one hands-on activity and an exit ticket." },
+    { label: "Diffit", text: "Turn one reading passage into three difficulty levels for a mixed-ability class.", prompt: "Paste this reading passage and give me 3 versions: one for struggling readers, one on grade level, one for advanced readers: [paste passage]" },
+    { label: "NotebookLM", text: "Turn a textbook chapter into ready-made quiz questions.", prompt: "Upload this textbook chapter and generate 10 ready-made quiz questions with an answer key." },
+    { label: "Curipod", text: "Interactive lesson slides with quizzes built in.", prompt: "Turn this lesson topic into an interactive slide deck with one poll and one open-ended question, for grade 4: [topic]" },
     { text: "Use AI to generate grading rubrics for projects." },
     { label: "Otter.ai", text: "Transcribe and summarize staff meetings automatically." },
     { text: "Turn quick, rough notes into well-worded report card comments." },
     { text: "Generate differentiated homework sheets (easy/medium/hard) for the same topic." },
     { text: "Ask AI for a creative analogy or story to explain a tricky concept." },
-    { label: "Canva / CapCut", text: "Class newsletters and quick video recaps of events." },
+    { label: "Canva / CapCut", text: "Class newsletters and quick video recaps of events.", prompt: "A 30-second recap video template for our class trip, upbeat background music, with space for 5 photos." },
   ],
   middle: [
-    { label: "MagicSchool AI / Curipod", text: "Build interactive lesson content quickly." },
-    { label: "NotebookLM", text: "Generate unit-based study guides straight from your syllabus." },
+    { label: "MagicSchool AI / Curipod", text: "Build interactive lesson content quickly.", prompt: "Build a debate-style lesson on [topic] with strong arguments on both sides, for grade 7 class discussion." },
+    { label: "NotebookLM", text: "Generate unit-based study guides straight from your syllabus.", prompt: "Upload this unit's syllabus and build a study guide broken down by sub-topic, with a summary for each." },
     { text: "Use AI to design project rubrics with clear, specific criteria." },
     { text: "Ask AI to generate a debate topic with strong arguments on both sides for class discussion." },
     { text: "Create quizzes at varying difficulty levels for differentiated assessment." },
     { text: "Set and discuss a clear class policy on AI use for homework vs. assessments." },
-    { label: "Grammarly", text: "Model what good, specific writing feedback looks like." },
+    { label: "Grammarly", text: "Model what good, specific writing feedback looks like.", prompt: "Give specific, actionable feedback on this student paragraph, not 'good job', point out exactly what to improve and why: [paste paragraph]" },
     { label: "Otter.ai", text: "Transcribe parent-teacher meeting notes." },
     { text: "Draft a first pass of a tricky parent email, then personalize before sending." },
     { text: "Use AI to brainstorm real-world examples that connect the curriculum to students' lives." },
   ],
   senior: [
-    { label: "Quizizz AI", text: "Generate board-exam-style practice questions instantly for any topic." },
-    { label: "NotebookLM", text: "Build a full revision guide directly from the syllabus." },
+    { label: "Quizizz AI", text: "Generate board-exam-style practice questions instantly for any topic.", prompt: "Generate 15 board-exam-style multiple-choice questions on [topic], mixed difficulty, with an answer key." },
+    { label: "NotebookLM", text: "Build a full revision guide directly from the syllabus.", prompt: "Upload the full syllabus for [subject] and build a complete revision guide, organised unit by unit." },
     { text: "Use AI to design real-world case studies or application-based questions." },
     { text: "Set and clearly communicate an academic integrity policy around AI use." },
     { label: "Turnitin", text: "Draft detailed, specific essay feedback, then review and personalize before sending." },
     { text: "Draft a first version of a recommendation letter, then personalize it fully before sending." },
     { text: "Use AI to explore how your subject connects to real careers, for career-guidance chats." },
-    { label: "Otter.ai / Grammarly", text: "Speed up admin: meeting notes, reports, emails." },
+    { label: "Otter.ai / Grammarly", text: "Speed up admin: meeting notes, reports, emails.", prompt: "Draft a first-pass reply to this parent email in a warm but firm tone, I'll personalise before sending: [paste email]" },
     { text: "Design mock interview or viva questions for senior projects." },
     { label: "Teach AI literacy directly", isHabit: true, text: "How to question and verify AI output, not just use it." },
   ],
@@ -129,22 +136,22 @@ const EDUCATORS_TIPS: Record<ParentEducatorStage, Tip[]> = {
 
 const CREATORS_TIPS: Record<CreatorFormat, Tip[]> = {
   writing: [
-    { label: "ChatGPT/Claude", text: "Turn a rough voice note into a polished caption." },
+    { label: "ChatGPT/Claude", text: "Turn a rough voice note into a polished caption.", prompt: "Turn this rough voice note into a punchy, on-brand Instagram caption, under 150 characters: [paste transcript]" },
     { text: "Generate 3-4 caption variations and pick the one with the best tone." },
     { text: "Fact-check any claims-heavy post using AI plus a web search before posting." },
-    { label: "Grammarly", text: "Polish tone and grammar without a full rewrite." },
-    { label: "DeepL", text: "Translate captions accurately into other languages to widen your reach." },
+    { label: "Grammarly", text: "Polish tone and grammar without a full rewrite.", prompt: "Check the tone and grammar of this caption without rewriting my voice, just flag what's off: [paste caption]" },
+    { label: "DeepL", text: "Translate captions accurately into other languages to widen your reach.", prompt: "Translate this caption into Hindi and Spanish, keep it casual and match the original energy: [paste caption]" },
     { text: "Ask AI to turn a long event into a punchy 3-line recap for a story or post." },
-    { label: "Notion AI", text: "Plan and organize your content calendar." },
+    { label: "Notion AI", text: "Plan and organize your content calendar.", prompt: "Build me a 30-day content calendar for [niche], mixing educational, behind-the-scenes, and promotional posts." },
     { text: "Draft consistent, on-brand replies to common DMs and comments." },
-    { label: "Jasper", text: "Brainstorm 10 hook lines for a post, then pick the strongest one." },
+    { label: "Jasper", text: "Brainstorm 10 hook lines for a post, then pick the strongest one.", prompt: "Give me 10 different hook lines for a post about [topic]. Make them punchy and scroll-stopping, under 12 words each." },
     { label: "Ask AI directly", isHabit: true, text: "\"Does this sound engaging, or generic?\"" },
   ],
   video: [
-    { label: "CapCut", text: "Auto-captions, jump-cut removal, and music suggestions, all from your phone." },
+    { label: "CapCut", text: "Auto-captions, jump-cut removal, and music suggestions, all from your phone.", prompt: "Write a 30-second video script about [topic] with on-screen text cues and a strong hook in the first 3 seconds." },
     { label: "Opus Clip", text: "Turn one long video into several short, auto-captioned clips." },
-    { label: "Descript", text: "Edit a video by editing its text transcript." },
-    { label: "ElevenLabs", text: "AI voiceovers in different tones or languages." },
+    { label: "Descript", text: "Edit a video by editing its text transcript.", prompt: "Remove all filler words and awkward pauses from this transcript, and tighten it to under 90 seconds: [paste transcript]" },
+    { label: "ElevenLabs", text: "AI voiceovers in different tones or languages.", prompt: "Read this script in an upbeat, confident voice, mid-paced, like a young founder explaining a tip to a friend: [paste script]" },
     { text: "Write a tight script outline with AI before you start filming." },
     { text: "Ask AI for trending formats or audio ideas relevant to your niche." },
     { text: "Auto-generate subtitles for better accessibility and reach." },
@@ -153,26 +160,26 @@ const CREATORS_TIPS: Record<CreatorFormat, Tip[]> = {
     { text: "Feed AI your rough transcript and ask it to pull out the most quotable moments." },
   ],
   images: [
-    { label: "Adobe Firefly / Midjourney / Canva Magic Media", text: "Custom graphics instead of stock photos." },
+    { label: "Adobe Firefly / Midjourney / Canva Magic Media", text: "Custom graphics instead of stock photos.", prompt: "A modern, minimalist flat-lay of a laptop, coffee, and notebook, warm morning light, for a productivity post." },
     { label: "remove.bg", text: "Clean up backgrounds or fix a photo in seconds." },
     { text: "Build a consistent, branded template for recurring post types." },
-    { label: "Canva Magic Design", text: "Quick posters or announcement graphics." },
+    { label: "Canva Magic Design", text: "Quick posters or announcement graphics.", prompt: "A bold announcement graphic for '[event name], this Saturday', using our brand colours [colour 1, colour 2, colour 3]." },
     { label: "Topaz Photo AI", text: "Sharpen low-res images with AI upscaling before posting." },
     { text: "Generate a few style variations of one photo to A/B test which performs better." },
-    { label: "Piktochart", text: "Turn raw data or stats into a simple infographic using AI." },
+    { label: "Piktochart", text: "Turn raw data or stats into a simple infographic using AI.", prompt: "Turn this data into a simple, colourful infographic with 4 key stats highlighted: [paste stats]" },
     { text: "Preview how a design looks on different platforms using AI mockups." },
     { text: "Batch-generate a consistent icon set for a content series." },
-    { label: "Fotor", text: "Generate a scroll-stopping thumbnail from a template in seconds, no design skills needed." },
+    { label: "Fotor", text: "Generate a scroll-stopping thumbnail from a template in seconds, no design skills needed.", prompt: "Generate 3 thumbnail options for a video titled '[video title]', bold text, high contrast, click-worthy." },
     { text: "Ask AI for quick composition or color feedback before you post." },
   ],
 };
 
 const LEADERSHIP_TIPS: Tip[] = [
-  { label: "Common Sense AI", text: "Ready-made frameworks and templates for publishing a clear, age-appropriate AI-use policy, shared openly with parents." },
+  { label: "Common Sense AI", text: "Ready-made frameworks and templates for publishing a clear, age-appropriate AI-use policy, shared openly with parents.", prompt: "Search Common Sense AI's resources for: \"AI use policy template for K-12 schools\", and adapt the closest match to our grade levels." },
   { text: "Train teachers on 3-4 recommended tools, rather than leaving it to \"figure it out yourself.\"" },
-  { label: "Otter.ai / Fireflies", text: "Transcribe and summarise leadership and staff meetings automatically." },
-  { label: "DeepL / Google Translate", text: "Translate newsletters and circulars accurately into every language your parent community speaks." },
-  { label: "CapCut", text: "Edit event highlight reels (Annual Day, Sports Day) for social media, right from a phone." },
+  { label: "Otter.ai / Fireflies", text: "Transcribe and summarise leadership and staff meetings automatically.", prompt: "After the meeting, ask: \"Summarise the 3 key decisions from this meeting and list each action item with its owner.\"" },
+  { label: "DeepL / Google Translate", text: "Translate newsletters and circulars accurately into every language your parent community speaks.", prompt: "Translate this circular into Hindi and Marathi, keep the tone formal and simple: [paste circular text]" },
+  { label: "CapCut", text: "Edit event highlight reels (Annual Day, Sports Day) for social media, right from a phone.", prompt: "Turn these 20 event photos and 3 short clips into a 45-second highlight reel with upbeat music, for Annual Day." },
   { text: "Run parent workshops that demystify AI, instead of just restricting it." },
   { text: "Use AI-powered accessibility tools (text-to-speech, translation) to support differently-abled students." },
   { text: "Design assessments that value reasoning and process, not just a final, AI-checkable answer." },
@@ -420,6 +427,7 @@ function CheckIcon({ color }: { color: string }) {
 
 function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string; variant: "tool" | "practice"; delay?: number }) {
   const isTool = variant === "tool";
+  const [showPrompt, setShowPrompt] = useState(false);
   return (
     <div
       className="card-fade-up tip-card-hover group rounded-2xl border p-5 shadow-sm hover:shadow-md"
@@ -438,6 +446,27 @@ function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string
         <div className="min-w-0 flex-1">
           {tip.label && <p className="mb-1 text-sm font-black leading-snug" style={{ color: "#0a0a0a" }}>{tip.label}</p>}
           <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{tip.text}</p>
+          {tip.prompt && (
+            <>
+              <button
+                type="button"
+                onClick={() => setShowPrompt((v) => !v)}
+                aria-expanded={showPrompt}
+                className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold hover:underline"
+                style={{ color: accent }}
+              >
+                <svg className={`h-3 w-3 transition-transform ${showPrompt ? "rotate-90" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+                {showPrompt ? "Hide example prompt" : "See an example prompt"}
+              </button>
+              {showPrompt && (
+                <div className="mt-3">
+                  <CopyBlock text={tip.prompt} accent={accent} label="Example prompt" />
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>

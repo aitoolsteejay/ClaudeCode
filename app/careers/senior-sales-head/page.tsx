@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 };
 
 const APPLY_SUBJECT = "Application for Senior Sales Head";
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
 
 // datePosted is this page's real git creation date, not fabricated.
 // validThrough is a 6-month rolling window from that date, since this is an
@@ -49,7 +50,13 @@ export default function SeniorSalesHead() {
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["Experience", "2–5 years B2B sales"], ["CTC", "Rs 5–16 LPA + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
-                <p className="text-sm font-bold" style={{ color: "#0a0a0a" }}>{value}</p>
+                {label === "Location" ? (
+                  <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
+                    {value} <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  <p className="text-sm font-bold" style={{ color: "#0a0a0a" }}>{value}</p>
+                )}
               </div>
             ))}
           </div>

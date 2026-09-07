@@ -236,10 +236,10 @@ const PROMPT_PRINCIPLES = [
 ];
 
 const ABOUT_FAQ = [
-  { q: "Who is this guide for?", a: "Anyone in the JBCN community, parents, teachers, students who create content, and school leadership, who wants a practical, no-fluff starting point for using AI well." },
+  { q: "Who is this guide for?", a: "Anyone who wants a practical, no-fluff starting point for using AI well, parents, teachers, students who create content, and school leadership." },
   { q: "Do I need to already know these tools?", a: "No. Every tip is written to be usable the same day, whether you've never opened an AI tool before or already use one daily." },
   { q: "Is this list exhaustive?", a: "No, it's intentionally a quick-start, not a full course. Think of it as 10 solid starting points per audience, not the final word on AI in education." },
-  { q: "Who put this together?", a: "This guide was built for JBCN International School's AI seminar, in partnership with Myntmore." },
+  { q: "Who put this together?", a: "This guide was built by Myntmore, based on the practical questions we hear most often from parents, educators, and school leadership about using AI well." },
 ];
 
 /* ─── Small building blocks ───────────────────────────────────────── */
@@ -306,10 +306,10 @@ function TabGroup<T extends string>({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(tab.key)}
             onKeyDown={(e) => handleKeyDown(e, i)}
-            className={`rounded-full font-bold transition-all ${pad}`}
+            className={`rounded-full font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${pad}`}
             style={
               isActive
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff" }
+                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)" }
                 : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9" }
             }
           >
@@ -346,12 +346,15 @@ function CheckIcon({ color }: { color: string }) {
   );
 }
 
-function TipCard({ tip, accent, variant }: { tip: Tip; accent: string; variant: "tool" | "practice" }) {
+function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string; variant: "tool" | "practice"; delay?: number }) {
   const isTool = variant === "tool";
   return (
     <div
-      className="rounded-2xl border p-5 shadow-sm transition-shadow hover:shadow-md"
-      style={isTool ? { backgroundColor: `${accent}0A`, borderColor: `${accent}40` } : { backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
+      className="card-fade-up tip-card-hover rounded-2xl border p-5 shadow-sm hover:shadow-md"
+      style={{
+        ...(isTool ? { backgroundColor: `${accent}0A`, borderColor: `${accent}40` } : { backgroundColor: "#ffffff", borderColor: "#E8E2D9" }),
+        animationDelay: `${delay}ms`,
+      }}
     >
       <div className="flex items-start gap-3.5">
         <span
@@ -376,7 +379,7 @@ function TipGroup({ heading, tips, accent, variant }: { heading: string; tips: T
       <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? accent : "#16A34A" }}>{heading}</p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tips.map((tip, i) => (
-          <TipCard key={i} tip={tip} accent={accent} variant={variant} />
+          <TipCard key={i} tip={tip} accent={accent} variant={variant} delay={i * 45} />
         ))}
       </div>
     </div>
@@ -396,7 +399,7 @@ function TipGrid({ tips, accent }: { tips: Tip[]; accent: string }) {
 
 function HighlightCallout({ role, note, accent }: { role: string; note: string; accent: string }) {
   return (
-    <div className="mt-8 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: `${accent}0D`, borderColor: `${accent}4D` }}>
+    <div className="card-fade-up mt-8 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: `${accent}0D`, borderColor: `${accent}4D`, animationDelay: "180ms" }}>
       <div className="flex items-start gap-4">
         <span
           className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full"
@@ -439,7 +442,7 @@ function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: st
 
 /* ─── Main page ───────────────────────────────────────────────────── */
 
-export default function JBCNClient() {
+export default function AiTakeawaysClient() {
   const [audience, setAudience] = useState<AudienceKey>("parents");
   const [stage, setStage] = useState<ParentEducatorStage>("primary");
   const [format, setFormat] = useState<CreatorFormat>("writing");
@@ -500,24 +503,24 @@ export default function JBCNClient() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
-            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Built for JBCN International School</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
+            <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A Myntmore AI guide</span>
           </div>
-          <h1 className="mb-4 text-4xl font-black leading-tight sm:text-6xl" style={{ color: "#0a0a0a" }}>
+          <h1 className="mb-4 text-4xl font-black leading-tight sm:text-6xl hero-fade-d1" style={{ color: "#0a0a0a" }}>
             AI Quick-Start Guide
           </h1>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed sm:text-lg" style={{ color: "#52525B" }}>
-            Practical AI tips for parents, educators, and creators, built for JBCN.
+          <p className="mx-auto max-w-2xl text-base leading-relaxed sm:text-lg hero-fade-d2" style={{ color: "#52525B" }}>
+            Practical AI tips for parents, educators, and creators.
           </p>
 
-          <div className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-4">
+          <div className="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-4 hero-fade-d3">
             {[
               { v: String(totalTips) + "+", l: "Practical tips" },
               { v: "5", l: "Content pillars" },
               { v: "16", l: "Stages & formats" },
             ].map((s) => (
-              <div key={s.l}>
+              <div key={s.l} className="lp-stat">
                 <p className="text-3xl font-black" style={{ color: "#0a0a0a" }}>{s.v}</p>
                 <p className="mt-1 text-xs font-semibold" style={{ color: "#8C8279" }}>{s.l}</p>
               </div>
@@ -565,9 +568,9 @@ export default function JBCNClient() {
             </div>
           )}
 
-          <TipGrid tips={activeTips} accent={activeAudience.accent} />
+          <TipGrid key={`${audience}-${stage}-${format}`} tips={activeTips} accent={activeAudience.accent} />
 
-          <HighlightCallout {...HIGHLIGHT_TIP[audience]} accent={activeAudience.accent} />
+          <HighlightCallout key={`${audience}-${stage}-${format}`} {...HIGHLIGHT_TIP[audience]} accent={activeAudience.accent} />
         </FadeIn>
       </section>
 
@@ -583,7 +586,9 @@ export default function JBCNClient() {
           </p>
           <div className="grid grid-cols-1 gap-4">
             {PROMPT_PRINCIPLES.map((p, i) => (
-              <PromptPrincipleCard key={p.title} num={`0${i + 1}`} title={p.title} bad={p.bad} good={p.good} />
+              <FadeIn key={p.title} delay={i * 70}>
+                <PromptPrincipleCard num={`0${i + 1}`} title={p.title} bad={p.bad} good={p.good} />
+              </FadeIn>
             ))}
           </div>
 
@@ -606,11 +611,11 @@ export default function JBCNClient() {
       <footer className="border-t px-4 py-12" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
           <div>
-            <p className="text-base font-black" style={{ color: "#0a0a0a" }}>JBCN International School</p>
-            <p className="mt-1 text-xs" style={{ color: "#8C8279" }}>AI Quick-Start Guide &middot; {new Date().getFullYear()}</p>
+            <p className="text-base font-black" style={{ color: "#0a0a0a" }}>AI Quick-Start Guide</p>
+            <p className="mt-1 text-xs" style={{ color: "#8C8279" }}>&copy; {new Date().getFullYear()}</p>
           </div>
           <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "#8C8279" }}>
-            <span>Powered by</span>
+            <span>Made by</span>
             <a href="https://www.myntmore.com" className="font-black" style={{ color: "#0a0a0a" }}>Myntmore</a>
           </div>
         </div>

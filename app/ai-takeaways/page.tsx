@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import JBCNClient from "./JBCNClient";
+import AiTakeawaysClient from "./AiTakeawaysClient";
 
 export const metadata: Metadata = {
   title: "AI Quick-Start Guide",
-  description: "Practical AI tips for parents, educators, and creators, built for JBCN International School.",
+  description: "Practical AI tips for parents, educators, and creators.",
   robots: { index: false, follow: false },
 };
 
-export default function JBCNAIQuickstartPage() {
-  return <JBCNClient />;
+export default function AiTakeawaysPage() {
+  return <AiTakeawaysClient />;
 }

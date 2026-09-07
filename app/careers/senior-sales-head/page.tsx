@@ -128,7 +128,7 @@ export default function SeniorSalesHead() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Hands-on experience with cutting-edge growth marketing and AI tools, exposure to high-net-worth clients, startup founders, and senior executives, and mentorship from founders and GTM experts. You&apos;ll help build sales processes and strategy from scratch, earn a competitive salary plus performance-based incentives, and work in a hybrid setup from WeWork Worli or remotely, with real room to grow within Myntmore.
+              Hands-on experience with cutting-edge growth marketing and AI tools, exposure to high-net-worth clients, startup founders, and senior executives, and mentorship from founders and GTM experts. You&apos;ll help build sales processes and strategy from scratch, earn a competitive salary plus performance-based incentives, and work full-time from WeWork Worli, with real room to grow within Myntmore.
             </p>
           </div>
 

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Faq from "../lp/Faq";
 import FadeIn from "../components/FadeIn";
+import StatTicker from "../components/StatTicker";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {
@@ -306,11 +307,11 @@ function TabGroup<T extends string>({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(tab.key)}
             onKeyDown={(e) => handleKeyDown(e, i)}
-            className={`rounded-full font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${pad}`}
+            className={`lp-pop-in rounded-full font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${pad}`}
             style={
               isActive
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)" }
-                : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9" }
+                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)", animationDelay: `${i * 60}ms` }
+                : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9", animationDelay: `${i * 60}ms` }
             }
           >
             {tab.label}
@@ -350,7 +351,7 @@ function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string
   const isTool = variant === "tool";
   return (
     <div
-      className="card-fade-up tip-card-hover rounded-2xl border p-5 shadow-sm hover:shadow-md"
+      className="card-fade-up tip-card-hover group rounded-2xl border p-5 shadow-sm hover:shadow-md"
       style={{
         ...(isTool ? { backgroundColor: `${accent}0A`, borderColor: `${accent}40` } : { backgroundColor: "#ffffff", borderColor: "#E8E2D9" }),
         animationDelay: `${delay}ms`,
@@ -358,7 +359,7 @@ function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string
     >
       <div className="flex items-start gap-3.5">
         <span
-          className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+          className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
           style={isTool ? { backgroundColor: `${accent}22`, border: `1px solid ${accent}55` } : { backgroundColor: "#F0FDF4", border: "1px solid rgba(16,185,129,0.3)" }}
         >
           {isTool ? <ToolIcon color={accent} /> : <CheckIcon color="#16A34A" />}
@@ -401,14 +402,19 @@ function HighlightCallout({ role, note, accent }: { role: string; note: string; 
   return (
     <div className="card-fade-up mt-8 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: `${accent}0D`, borderColor: `${accent}4D`, animationDelay: "180ms" }}>
       <div className="flex items-start gap-4">
-        <span
-          className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full"
-          style={{ backgroundColor: `${accent}22`, border: `1px solid ${accent}55` }}
-          aria-hidden="true"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke={accent} strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+        <span className="relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full" aria-hidden="true">
+          <span
+            className="absolute inset-0 rounded-full"
+            style={{ border: `1.5px solid ${accent}99`, animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }}
+          />
+          <span
+            className="relative flex h-11 w-11 items-center justify-center rounded-full"
+            style={{ backgroundColor: `${accent}22`, border: `1px solid ${accent}55` }}
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke={accent} strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </span>
         </span>
         <div>
           <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>{role}</p>
@@ -421,9 +427,9 @@ function HighlightCallout({ role, note, accent }: { role: string; note: string; 
 
 function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: string; bad: string; good: string }) {
   return (
-    <div className="rounded-2xl border bg-white p-6 shadow-sm">
+    <div className="tip-card-hover group rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md">
       <div className="mb-4 flex items-center gap-3">
-        <span className="text-sm font-black tabular-nums" style={{ color: "#8C8279" }}>{num}</span>
+        <span className="inline-block text-sm font-black tabular-nums transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" style={{ color: "#8C8279" }}>{num}</span>
         <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{title}</h3>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -500,8 +506,12 @@ export default function AiTakeawaysClient() {
     <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <header className="relative overflow-hidden px-4 pb-12 pt-14 sm:pt-20">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 10s ease-in-out infinite" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 12s ease-in-out infinite reverse" }} />
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-3xl" aria-hidden="true" style={{ top: "14%", left: "8%", animationDelay: "0.2s", ["--lp-rot" as any]: "-10deg" }}>🤖</span>
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-2xl" aria-hidden="true" style={{ top: "62%", left: "5%", animationDelay: "1.5s", ["--lp-rot" as any]: "8deg" }}>✨</span>
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-3xl" aria-hidden="true" style={{ top: "18%", right: "7%", animationDelay: "0.9s", ["--lp-rot" as any]: "10deg" }}>💡</span>
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-2xl" aria-hidden="true" style={{ top: "64%", right: "10%", animationDelay: "2.2s", ["--lp-rot" as any]: "-6deg" }}>📚</span>
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
@@ -521,7 +531,7 @@ export default function AiTakeawaysClient() {
               { v: "16", l: "Stages & formats" },
             ].map((s) => (
               <div key={s.l} className="lp-stat">
-                <p className="text-3xl font-black" style={{ color: "#0a0a0a" }}>{s.v}</p>
+                <StatTicker value={s.v} className="text-3xl font-black" style={{ color: "#0a0a0a" }} />
                 <p className="mt-1 text-xs font-semibold" style={{ color: "#8C8279" }}>{s.l}</p>
               </div>
             ))}
@@ -568,9 +578,9 @@ export default function AiTakeawaysClient() {
             </div>
           )}
 
-          <TipGrid key={`${audience}-${stage}-${format}`} tips={activeTips} accent={activeAudience.accent} />
+          <TipGrid key={`tips-${audience}-${stage}-${format}`} tips={activeTips} accent={activeAudience.accent} />
 
-          <HighlightCallout key={`${audience}-${stage}-${format}`} {...HIGHLIGHT_TIP[audience]} accent={activeAudience.accent} />
+          <HighlightCallout key={`highlight-${audience}-${stage}-${format}`} {...HIGHLIGHT_TIP[audience]} accent={activeAudience.accent} />
         </FadeIn>
       </section>
 

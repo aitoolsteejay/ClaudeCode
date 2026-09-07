@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Faq from "../lp/Faq";
 import FadeIn from "../components/FadeIn";
+import StatTicker from "../components/StatTicker";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tool {
@@ -154,11 +155,11 @@ function CheckIcon() {
 function ChecklistCard({ tip, delay = 0 }: { tip: Tip; delay?: number }) {
   return (
     <div
-      className="card-fade-up tip-card-hover flex items-start gap-3.5 rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
+      className="card-fade-up tip-card-hover group flex items-start gap-3.5 rounded-2xl border bg-white p-5 shadow-sm hover:shadow-md"
       style={{ borderColor: "#E8E2D9", animationDelay: `${delay}ms` }}
     >
       <span
-        className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full"
+        className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
         style={{ backgroundColor: "#F0FDF4", border: "1px solid rgba(16,185,129,0.3)" }}
       >
         <CheckIcon />
@@ -211,7 +212,7 @@ function ToolCard({ tool, accent, delay = 0 }: { tool: Tool; accent: string; del
     >
       <div className="mb-1.5 flex items-center justify-between gap-2">
         <p className="text-sm font-black leading-snug" style={{ color: "#0a0a0a" }}>{tool.name}</p>
-        <span className="opacity-40 transition-opacity group-hover:opacity-100" style={{ color: accent }}>
+        <span className="inline-block opacity-40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" style={{ color: accent }}>
           <ExternalLinkIcon />
         </span>
       </div>
@@ -269,11 +270,11 @@ function TabGroup<T extends string>({
             tabIndex={isActive ? 0 : -1}
             onClick={() => onChange(tab.key)}
             onKeyDown={(e) => handleKeyDown(e, i)}
-            className="rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+            className="lp-pop-in rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
             style={
               isActive
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)" }
-                : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9" }
+                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)", animationDelay: `${i * 60}ms` }
+                : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9", animationDelay: `${i * 60}ms` }
             }
           >
             {tab.label}
@@ -287,11 +288,11 @@ function TabGroup<T extends string>({
 function SequenceRow({ item, delay = 0 }: { item: { step: string; title: string; delay: string }; delay?: number }) {
   return (
     <div
-      className="card-fade-up flex items-center gap-4 rounded-2xl border bg-white px-5 py-4"
+      className="card-fade-up tip-card-hover group flex items-center gap-4 rounded-2xl border bg-white px-5 py-4 shadow-sm hover:shadow-md"
       style={{ borderColor: "#E8E2D9", animationDelay: `${delay}ms` }}
     >
       <span
-        className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-black"
+        className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-black transition-transform duration-300 group-hover:scale-110"
         style={item.step ? { backgroundColor: "#F5B731", color: "#0a0a0a" } : { backgroundColor: "#F8F6F2", color: "#8C8279", border: "1px solid #E8E2D9" }}
       >
         {item.step || "•"}
@@ -332,8 +333,12 @@ export default function NmimsToolkitClient() {
     <div className="min-h-screen" style={{ backgroundColor: "#F8F6F2" }}>
       {/* ─── Hero ─────────────────────────────────────────────── */}
       <header className="relative overflow-hidden px-4 pb-12 pt-14 sm:pt-20">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(217,119,6,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 10s ease-in-out infinite" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none", animation: "lp-float 12s ease-in-out infinite reverse" }} />
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-3xl" aria-hidden="true" style={{ top: "14%", left: "8%", animationDelay: "0.2s", ["--lp-rot" as any]: "-10deg" }}>🚀</span>
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-2xl" aria-hidden="true" style={{ top: "62%", left: "5%", animationDelay: "1.5s", ["--lp-rot" as any]: "8deg" }}>🔗</span>
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-3xl" aria-hidden="true" style={{ top: "18%", right: "7%", animationDelay: "0.9s", ["--lp-rot" as any]: "10deg" }}>💼</span>
+        <span className="lp-float-icon lp-pop-in hidden sm:block text-2xl" aria-hidden="true" style={{ top: "64%", right: "10%", animationDelay: "2.2s", ["--lp-rot" as any]: "-6deg" }}>📎</span>
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
@@ -353,7 +358,7 @@ export default function NmimsToolkitClient() {
               { v: "3 weeks", l: "Outreach cadence" },
             ].map((s) => (
               <div key={s.l} className="lp-stat">
-                <p className="text-3xl font-black" style={{ color: "#0a0a0a" }}>{s.v}</p>
+                <StatTicker value={s.v} className="text-3xl font-black" style={{ color: "#0a0a0a" }} />
                 <p className="mt-1 text-xs font-semibold" style={{ color: "#8C8279" }}>{s.l}</p>
               </div>
             ))}
@@ -404,22 +409,24 @@ export default function NmimsToolkitClient() {
           </p>
 
           <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="card-fade-up rounded-2xl border p-5" style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)" }}>
-              <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>Voice notes</p>
-              <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>A 20-second personalised voice note can push reply rates from 30% up to 75%.</p>
-            </div>
-            <div className="card-fade-up rounded-2xl border p-5" style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)", animationDelay: "45ms" }}>
-              <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>Loom video edge</p>
-              <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>A problem statement plus a 45-second Loom video on how you can help gets 3x the click-through of text alone, and roughly 1 in 3 viewers book a call.</p>
-            </div>
-            <div className="card-fade-up rounded-2xl border p-5" style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)", animationDelay: "90ms" }}>
-              <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>Pattern disruption</p>
-              <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>A well-placed, personalised meme or bit of humour after a couple of unanswered follow-ups can be exactly the pattern-interrupt that finally gets a reply.</p>
-            </div>
-            <div className="card-fade-up rounded-2xl border p-5" style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)", animationDelay: "135ms" }}>
-              <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>The timing advantage</p>
-              <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>It's not just what you send, it's when. Hitting someone's "morning scroll window," coffee, commute, or meeting prep, instead of just whenever you're free, can roughly double reply rates.</p>
-            </div>
+            {[
+              { icon: "🎙️", title: "Voice notes", text: "A 20-second personalised voice note can push reply rates from 30% up to 75%." },
+              { icon: "🎥", title: "Loom video edge", text: "A problem statement plus a 45-second Loom video on how you can help gets 3x the click-through of text alone, and roughly 1 in 3 viewers book a call." },
+              { icon: "😄", title: "Pattern disruption", text: "A well-placed, personalised meme or bit of humour after a couple of unanswered follow-ups can be exactly the pattern-interrupt that finally gets a reply." },
+              { icon: "⏰", title: "The timing advantage", text: "It's not just what you send, it's when. Hitting someone's \"morning scroll window,\" coffee, commute, or meeting prep, instead of just whenever you're free, can roughly double reply rates." },
+            ].map((card, i) => (
+              <div
+                key={card.title}
+                className="card-fade-up tip-card-hover group rounded-2xl border p-5"
+                style={{ backgroundColor: "rgba(168,85,247,0.05)", borderColor: "rgba(168,85,247,0.25)", animationDelay: `${i * 45}ms` }}
+              >
+                <div className="mb-2 flex items-center gap-2.5">
+                  <span className="text-lg transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12" aria-hidden="true">{card.icon}</span>
+                  <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#7e22ce" }}>{card.title}</p>
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{card.text}</p>
+              </div>
+            ))}
           </div>
 
           <h3 className="mb-4 text-lg font-black" style={{ color: "#0a0a0a" }}>A full outreach sequence, timed out</h3>
@@ -437,7 +444,7 @@ export default function NmimsToolkitClient() {
             {OUTREACH_LIMITS.map((tip, i) => (
               <div
                 key={tip.label}
-                className="card-fade-up rounded-2xl border p-5"
+                className="card-fade-up tip-card-hover rounded-2xl border p-5"
                 style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)", animationDelay: `${i * 45}ms` }}
               >
                 <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#DC2626" }}>{tip.label}</p>

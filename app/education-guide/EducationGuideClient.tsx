@@ -548,7 +548,7 @@ function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: st
 
 /* ─── Main page ───────────────────────────────────────────────────── */
 
-export default function AiTakeawaysClient() {
+export default function EducationGuideClient() {
   const [audience, setAudience] = useState<AudienceKey>("parents");
   const [stage, setStage] = useState<ParentEducatorStage>("primary");
   const [format, setFormat] = useState<CreatorFormat>("writing");

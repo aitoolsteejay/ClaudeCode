@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AiTakeawaysClient from "./AiTakeawaysClient";
+import EducationGuideClient from "./EducationGuideClient";
 
 export const metadata: Metadata = {
   title: "AI Quick-Start Guide",
@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function AiTakeawaysPage() {
-  return <AiTakeawaysClient />;
+export default function EducationGuidePage() {
+  return <EducationGuideClient />;
 }

@@ -46,8 +46,8 @@ export default function LeadGenStrategist() {
             B2B Lead Generation Strategist
           </h1>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            {[["Location", "Worli, Mumbai"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA + incentives"], ["Office", "WeWork, Worli"]].map(([label, value]) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
                 <p className="text-sm font-bold" style={{ color: "#0a0a0a" }}>{value}</p>

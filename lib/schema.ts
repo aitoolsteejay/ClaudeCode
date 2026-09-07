@@ -250,8 +250,10 @@ export interface JobPostingInput {
   validThrough: string;
   employmentType: "FULL_TIME" | "PART_TIME" | "INTERN" | "CONTRACTOR" | "TEMPORARY";
   baseSalary?: { minValue: number; maxValue: number; unitText: "YEAR" | "MONTH"; currency?: string };
+  streetAddress?: string;
   addressLocality?: string;
   addressRegion?: string;
+  postalCode?: string;
 }
 
 // jobLocationType/applicantLocationRequirements aren't set here: every open
@@ -266,8 +268,10 @@ export function buildJobPostingSchema({
   validThrough,
   employmentType,
   baseSalary,
+  streetAddress = "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli",
   addressLocality = "Mumbai",
   addressRegion = "Maharashtra",
+  postalCode = "400025",
 }: JobPostingInput) {
   return {
     "@context": "https://schema.org",
@@ -288,8 +292,10 @@ export function buildJobPostingSchema({
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
+        streetAddress,
         addressLocality,
         addressRegion,
+        postalCode,
         addressCountry: "IN",
       },
     },

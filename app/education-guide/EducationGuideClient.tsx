@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import Faq from "../lp/Faq";
 import FadeIn from "../components/FadeIn";
 import StatTicker from "../components/StatTicker";
@@ -642,6 +643,28 @@ export default function EducationGuideClient() {
         </div>
       </section>
 
+      {/* ─── About Tejas ──────────────────────────────────────── */}
+      <section className="border-t px-4 py-14" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <FadeIn className="mx-auto block max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-8 items-start">
+            <div className="relative mx-auto h-40 w-40 flex-shrink-0 overflow-hidden rounded-2xl border sm:mx-0" style={{ backgroundColor: "#EDE9E4", borderColor: "#E8E2D9" }}>
+              <Image src="/tejas.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" />
+            </div>
+            <div>
+              <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>About Tejas</p>
+              <h2 className="mb-1 text-xl font-black" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h2>
+              <p className="mb-4 text-sm" style={{ color: "#8C8279" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
+              <div className="space-y-3 text-sm leading-relaxed" style={{ color: "#52525B" }}>
+                <p>Tejas Jhaveri is a serial entrepreneur and the founder of Myntmore, an AI-first B2B lead generation company that builds intelligent outbound systems for LinkedIn and cold outreach at scale.</p>
+                <p>Over the past 12+ years, he has built and scaled outbound engines that have generated over $80 million in pipeline and revenue for companies globally. He has built, scaled, and exited multiple ventures, notably selling one of his companies through a cold-email outreach campaign itself.</p>
+                <p>He is also the founder of Blipper, an AI-powered suicide prevention platform that works with banks, police, and fire departments across the UK and US, using AI to detect vulnerability and distress in real time and help teams respond with greater empathy.</p>
+                <p>Beyond his ventures, he is a TEDx speaker, angel investor, and visiting professor, having taught AI, growth, and modern lead generation at institutions including IIM and ISB.</p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* ─── Audience selector ────────────────────────────────── */}
       <section className="border-t px-4 py-10" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="mx-auto max-w-4xl">
@@ -690,12 +713,12 @@ export default function EducationGuideClient() {
       {/* ─── Effective prompting ──────────────────────────────── */}
       <section className="border-t px-4 py-14" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <FadeIn className="mx-auto block max-w-4xl">
-          <SectionEyebrow num="05" label="Prompting Well" accent="#0a0a0a" />
+          <SectionEyebrow num="05" label="How to prompt effectively" accent="#0a0a0a" />
           <h2 className="mb-3 text-2xl font-black sm:text-3xl" style={{ color: "#0a0a0a" }}>
-            The skill behind every tip on this page
+            How to write prompts that actually work
           </h2>
           <p className="mb-8 max-w-2xl text-sm leading-relaxed" style={{ color: "#52525B" }}>
-            Every tip above assumes you're talking to AI the right way. A vague prompt gets a vague answer. Here are five habits that make almost any AI tool noticeably better, starting today.
+            Every tip and example prompt above assumes you're talking to AI the right way. A vague prompt gets a vague answer. Here are five habits that make almost any AI tool noticeably better, starting today.
           </p>
           <div className="grid grid-cols-1 gap-4">
             {PROMPT_PRINCIPLES.map((p, i) => (

@@ -9,6 +9,11 @@ import InnerLayout from "../components/InnerLayout";
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {
   label?: string;
+  // Set when `label` is a rule/habit callout rather than an actual tool or
+  // app name (e.g. "Set the rule"), so it groups under "Habits worth
+  // building" instead of being miscategorised as a tool just because it
+  // has a bolded label.
+  isHabit?: boolean;
   text: string;
 }
 
@@ -27,7 +32,7 @@ const PARENTS_TIPS: Record<ParentEducatorStage, Tip[]> = {
     { text: "Ask AI big questions kids ask (\"why is the sky blue?\") in toddler language, then read the answer together." },
     { text: "Ask AI for a rainy-day craft or activity idea using things you already have at home." },
     { text: "Use AI to write a short, personalized birthday poem or card message for a sibling or friend." },
-    { label: "Golden rule at this age", text: "Always use AI together with your child, never hand over the phone and walk away." },
+    { label: "Golden rule at this age", isHabit: true, text: "Always use AI together with your child, never hand over the phone and walk away." },
     { text: "Ask AI to explain a big feeling (\"why do I feel scared of the dark?\") in simple words, then talk about it together." },
     { label: "ElevenLabs", text: "Turn a favourite story into an audio story read in a fun character voice." },
     { text: "Use AI to generate simple, printable flashcards for colors, shapes, or animal names." },
@@ -41,32 +46,33 @@ const PARENTS_TIPS: Record<ParentEducatorStage, Tip[]> = {
     { text: "Use AI to draft a leave letter or note to the teacher (you review and send it yourself)." },
     { text: "Have your child narrate a story idea out loud, turn it into a written story, then have them illustrate it." },
     { text: "Ask AI to explain a tricky topic using an analogy your child relates to (their favourite sport or cartoon)." },
-    { label: "Build the \"check it\" habit early", text: "After any AI answer, ask \"how do you know this is true?\"" },
+    { label: "Build the \"check it\" habit early", isHabit: true, text: "After any AI answer, ask \"how do you know this is true?\"" },
     { text: "Use a language-learning app's AI feature for extra practice outside school hours." },
   ],
   middle: [
-    { label: "Use AI as a tutor that quizzes, not tells", text: "Ask it to test you instead of giving the answer." },
+    { label: "Use AI as a tutor that quizzes, not tells", isHabit: true, text: "Ask it to test you instead of giving the answer." },
     { label: "NotebookLM", text: "Upload notes ahead of an exam, generate flashcards and practice questions." },
-    { label: "Teach the prompt habit", text: "\"Explain this like I'm in 7th grade\" gets a much better answer than a vague question." },
+    { label: "Teach the prompt habit", isHabit: true, text: "\"Explain this like I'm in 7th grade\" gets a much better answer than a vague question." },
     { text: "Use AI to help outline an essay, then have your child write it in their own words." },
     { text: "Talk openly about what's okay to use AI for in schoolwork, and what isn't." },
     { text: "Use AI to research project topics, but make it a rule to verify at least one source independently." },
     { label: "Grammarly", text: "Check tone and grammar, without letting it rewrite the whole piece." },
     { text: "Ask AI to explain a current news topic in a simple, balanced way." },
     { label: "Canva / Adobe Firefly", text: "Generate visuals for a school project." },
-    { label: "Set an \"AI or me\" rule", text: "Big feelings and personal problems go to a parent conversation, not an AI chat." },
+    { label: "Set an \"AI or me\" rule", isHabit: true, text: "Big feelings and personal problems go to a parent conversation, not an AI chat." },
   ],
   senior: [
     { text: "Ask AI to explore careers based on your child's interests (\"what careers use a love of biology and art?\")." },
-    { text: "Use AI to practice mock interviews or brainstorm college essay angles." },
+    { label: "Yoodli", text: "Practice mock interviews out loud and get instant feedback on pacing, filler words, and clarity." },
+    { text: "Use AI to brainstorm college essay angles, then have your child write the essay in their own voice." },
     { label: "NotebookLM / Quizlet AI", text: "Turn the syllabus into flashcards and self-quizzes for board exam prep." },
-    { label: "Set the rule", text: "AI helps outline and check work, it doesn't write the assignment." },
+    { label: "Set the rule", isHabit: true, text: "AI helps outline and check work, it doesn't write the assignment." },
     { text: "Ask AI to lay out multiple sides of a debate topic before your child forms their own opinion." },
     { text: "Build the habit of fact-checking anything AI says with at least one outside source." },
     { text: "Use AI to get a first round of feedback on a resume or college application draft." },
     { text: "Talk openly about how AI is changing the field your child is interested in pursuing." },
     { text: "Turn a rough voice note about a personal goal into a structured plan using AI." },
-    { label: "Discuss AI's downsides too", text: "Bias and misinformation, as part of building critical thinking." },
+    { label: "Discuss AI's downsides too", isHabit: true, text: "Bias and misinformation, as part of building critical thinking." },
   ],
 };
 
@@ -117,7 +123,7 @@ const EDUCATORS_TIPS: Record<ParentEducatorStage, Tip[]> = {
     { text: "Use AI to explore how your subject connects to real careers, for career-guidance chats." },
     { label: "Otter.ai / Grammarly", text: "Speed up admin: meeting notes, reports, emails." },
     { text: "Design mock interview or viva questions for senior projects." },
-    { label: "Teach AI literacy directly", text: "How to question and verify AI output, not just use it." },
+    { label: "Teach AI literacy directly", isHabit: true, text: "How to question and verify AI output, not just use it." },
   ],
 };
 
@@ -132,7 +138,7 @@ const CREATORS_TIPS: Record<CreatorFormat, Tip[]> = {
     { label: "Notion AI", text: "Plan and organize your content calendar." },
     { text: "Draft consistent, on-brand replies to common DMs and comments." },
     { text: "Brainstorm 10 hook lines for a post, then pick the strongest one." },
-    { label: "Ask AI directly", text: "\"Does this sound engaging, or generic?\"" },
+    { label: "Ask AI directly", isHabit: true, text: "\"Does this sound engaging, or generic?\"" },
   ],
   video: [
     { label: "CapCut", text: "Auto-captions, jump-cut removal, and music suggestions, all from your phone." },
@@ -163,14 +169,14 @@ const CREATORS_TIPS: Record<CreatorFormat, Tip[]> = {
 const LEADERSHIP_TIPS: Tip[] = [
   { text: "Publish a clear AI-use policy for students, shared openly with parents." },
   { text: "Train teachers on 3-4 recommended tools, rather than leaving it to \"figure it out yourself.\"" },
-  { label: "Use AI for internal admin", text: "Meeting notes, newsletters, and circulars in multiple languages." },
-  { text: "Use CapCut-style AI editing for event highlight reels (Annual Day, Sports Day) for social media." },
+  { label: "Google Workspace (Gemini)", text: "Draft and translate meeting notes, newsletters, and circulars in multiple languages." },
+  { label: "CapCut", text: "Edit event highlight reels (Annual Day, Sports Day) for social media, right from a phone." },
   { text: "Run parent workshops that demystify AI, instead of just restricting it." },
   { text: "Use AI-powered accessibility tools (text-to-speech, translation) to support differently-abled students." },
   { text: "Design assessments that value reasoning and process, not just a final, AI-checkable answer." },
   { text: "Build AI literacy into the curriculum across grades, not as a one-off session." },
   { text: "Use AI to quickly analyze anonymized parent and staff feedback surveys." },
-  { label: "Draw a clear line", text: "AI for admin and efficiency, never for serious pastoral care or wellbeing decisions." },
+  { label: "Draw a clear line", isHabit: true, text: "AI for admin and efficiency, never for serious pastoral care or wellbeing decisions." },
 ];
 
 /* ─── Config ──────────────────────────────────────────────────────── */
@@ -451,8 +457,8 @@ function TipGroup({ heading, tips, accent, variant }: { heading: string; tips: T
 }
 
 function TipGrid({ tips, accent }: { tips: Tip[]; accent: string }) {
-  const toolTips = tips.filter((t) => t.label);
-  const practiceTips = tips.filter((t) => !t.label);
+  const toolTips = tips.filter((t) => t.label && !t.isHabit);
+  const practiceTips = tips.filter((t) => !t.label || t.isHabit);
   return (
     <div>
       <TipGroup heading="Tools & apps to try" tips={toolTips} accent={accent} variant="tool" />

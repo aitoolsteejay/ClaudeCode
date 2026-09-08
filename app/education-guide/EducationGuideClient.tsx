@@ -648,7 +648,7 @@ export default function EducationGuideClient() {
         <FadeIn className="mx-auto block max-w-4xl">
           <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-8 items-start">
             <div className="relative mx-auto h-40 w-40 flex-shrink-0 overflow-hidden rounded-2xl border sm:mx-0" style={{ backgroundColor: "#EDE9E4", borderColor: "#E8E2D9" }}>
-              <Image src="/tejas.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" />
+              <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" />
             </div>
             <div>
               <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>About Tejas</p>

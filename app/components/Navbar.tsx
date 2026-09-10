@@ -14,6 +14,10 @@ const SERVICE_LINKS = [
   { label: "GTM Strategy", href: "/services/gtm-strategy" },
 ];
 
+const DIY_LINKS = [
+  { label: "Do It Yourself", href: "/services/do-it-yourself", comingSoon: true },
+];
+
 const RESOURCE_LINKS = [
   { label: "Blog", href: "/resources/blogs" },
   { label: "Guides", href: "/resources/guides" },
@@ -89,6 +93,7 @@ export default function Navbar() {
                     </button>
                     {servicesOpen && (
                       <div className="absolute top-full left-0 mt-3 w-72 rounded-xl border shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
+                        <p className="px-4 pt-1.5 pb-1 text-[11px] font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Done For You</p>
                         {SERVICE_LINKS.map((s) => (
                           <Link
                             key={s.href}
@@ -107,6 +112,23 @@ export default function Navbar() {
                             View all services →
                           </Link>
                         </div>
+                        <p className="px-4 pt-3 pb-1 text-[11px] font-bold uppercase tracking-widest border-t mt-2" style={{ color: "#8C8279", borderColor: "#E8E2D9" }}>Do It Yourself</p>
+                        {DIY_LINKS.map((d) => (
+                          <Link
+                            key={d.href}
+                            href={d.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="flex items-center justify-between px-4 py-2.5 text-sm transition-colors duration-150"
+                            style={{ color: "#3D3D3D" }}
+                            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#FEF9EC"; (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
+                            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D"; }}
+                          >
+                            {d.label}
+                            {d.comingSoon && (
+                              <span className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731" }}>Soon</span>
+                            )}
+                          </Link>
+                        ))}
                       </div>
                     )}
                   </div>
@@ -206,12 +228,25 @@ export default function Navbar() {
             </button>
             {mobileServicesOpen && (
               <div className="ml-4 mt-1 space-y-1 border-l-2 pl-3" style={{ borderColor: "rgba(245,183,49,0.3)" }}>
+                <p className="px-2 pt-1 pb-0.5 text-[10px] font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Done For You</p>
                 {SERVICE_LINKS.map((s) => (
                   <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                   >
                     {s.label}
+                  </Link>
+                ))}
+                <p className="px-2 pt-3 pb-0.5 text-[10px] font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Do It Yourself</p>
+                {DIY_LINKS.map((d) => (
+                  <Link key={d.href} href={d.href} onClick={() => setMobileOpen(false)} className="flex items-center justify-between px-2 py-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
+                  >
+                    {d.label}
+                    {d.comingSoon && (
+                      <span className="text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731" }}>Soon</span>
+                    )}
                   </Link>
                 ))}
               </div>

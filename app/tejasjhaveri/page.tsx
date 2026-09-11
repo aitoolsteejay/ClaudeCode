@@ -42,9 +42,9 @@ export default function TejasJhaveriCard() {
         photoSrc="/tejas-2.png"
         photoAlt="Tejas Jhaveri, Founder of Myntmore"
         contacts={[
-          { label: "WhatsApp", cta: "Reach out to me on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
-          { label: "LinkedIn", cta: "Connect with me on LinkedIn", href: LINKEDIN_URL, icon: <LinkedInIcon />, bg: "#0A66C2" },
-          { label: "Instagram", cta: "Follow me on Instagram", href: INSTAGRAM_URL, icon: <InstagramIcon />, bg: "#C13584" },
+          { label: "WhatsApp", cta: "Reach out on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
+          { label: "LinkedIn", cta: "Connect on LinkedIn", href: LINKEDIN_URL, icon: <LinkedInIcon />, bg: "#0A66C2" },
+          { label: "Instagram", cta: "Follow on Instagram", href: INSTAGRAM_URL, icon: <InstagramIcon />, bg: "#C13584" },
           { label: "Newsletter", cta: "Subscribe to my newsletter", href: NEWSLETTER_URL, icon: <NewsletterIcon />, bg: "#D97706" },
         ]}
       />

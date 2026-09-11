@@ -64,6 +64,22 @@ const GUIDES = [
     readTime: "7 min read",
     accent: "#F5B731",
   },
+  {
+    href: "/careers-and-job-guide",
+    tag: "Careers & Jobs",
+    title: "Career Jumpstart Toolkit",
+    excerpt: "A practical playbook for landing internships, jobs, and your first break: LinkedIn fixes, an outreach playbook, and a curated job-search tool directory.",
+    readTime: "10 min read",
+    accent: "#16A34A",
+  },
+  {
+    href: "/education-guide",
+    tag: "AI for Everyday Life",
+    title: "AI Quick-Start Guide",
+    excerpt: "Real tools, copy-paste prompts, and habits worth building, for parents, educators, and content creators navigating AI.",
+    readTime: "8 min read",
+    accent: "#3b82f6",
+  },
 ];
 
 export default function GuidesPage() {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import InnerLayout from "../components/InnerLayout";
+import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
 import { SITE_URL } from "@/lib/schema";
 
@@ -63,43 +64,42 @@ const CONTACT_LINKS = [
 
 export default function TejasJhaveriCard() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12" style={{ backgroundColor: "#F8F6F2" }}>
+    <InnerLayout>
       <JsonLd data={PERSON_SCHEMA} />
-      <div className="w-full max-w-sm rounded-3xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.06)" }}>
-        <Link href="/" className="inline-flex items-center justify-center mb-6" aria-label="Myntmore home">
-          <Image src="/logo.png" alt="Myntmore" width={140} height={40} className="h-8 w-auto object-contain" />
-        </Link>
-
-        <div className="relative mx-auto mb-5 h-32 w-32 overflow-hidden rounded-full border-2" style={{ backgroundColor: "#EDE9E4", borderColor: "#F5B731" }}>
-          <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" priority />
+      <section className="pt-32 pb-24 px-4 min-h-[70vh] flex flex-col items-center" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="w-full max-w-sm">
+          <Breadcrumbs items={[{ label: "Tejas Jhaveri", href: "/tejasjhaveri" }]} className="justify-center" />
         </div>
+        <div className="w-full max-w-sm rounded-3xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.06)" }}>
+          <div className="relative mx-auto mb-5 h-32 w-32 overflow-hidden rounded-full border-2" style={{ backgroundColor: "#EDE9E4", borderColor: "#F5B731" }}>
+            <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" priority />
+          </div>
 
-        <h1 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h1>
-        <p className="text-sm mb-8" style={{ color: "#8C8279" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
+          <h1 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h1>
+          <p className="text-sm mb-8" style={{ color: "#8C8279" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
 
-        <div className="flex items-center justify-center gap-4 mb-8">
-          {CONTACT_LINKS.map((c) => (
-            <a
-              key={c.label}
-              href={c.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={c.label}
-              className="flex items-center justify-center h-14 w-14 rounded-full text-white transition-transform duration-200 hover:scale-105"
-              style={{ backgroundColor: c.bg }}
-            >
-              {c.icon}
-            </a>
-          ))}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            {CONTACT_LINKS.map((c) => (
+              <a
+                key={c.label}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={c.label}
+                className="flex items-center justify-center h-14 w-14 rounded-full text-white transition-transform duration-200 hover:scale-105"
+                style={{ backgroundColor: c.bg }}
+              >
+                {c.icon}
+              </a>
+            ))}
+          </div>
+
+          <a href="/founder-meeting" className="btn-dark w-full py-3.5 text-sm font-bold inline-flex items-center justify-center gap-2">
+            Book a Call
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
         </div>
-
-        <a href="/founder-meeting" className="btn-dark w-full py-3.5 text-sm font-bold inline-flex items-center justify-center gap-2">
-          Book a Call
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </a>
-
-        <p className="mt-6 text-xs" style={{ color: "#8C8279" }}>myntmore.com</p>
-      </div>
-    </div>
+      </section>
+    </InnerLayout>
   );
 }

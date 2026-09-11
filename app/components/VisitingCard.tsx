@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import InnerLayout from "./InnerLayout";
 import Breadcrumbs from "./Breadcrumbs";
+import { SaveContactIcon } from "./ContactIcons";
 
 export interface VisitingCardContact {
   label: string;
@@ -18,6 +19,7 @@ export default function VisitingCard({
   photoSrc,
   photoAlt,
   contacts,
+  vCardHref,
   ctaHref = "/founder-meeting",
   ctaLabel = "Book a Call",
 }: {
@@ -27,6 +29,7 @@ export default function VisitingCard({
   photoSrc: string;
   photoAlt: string;
   contacts: VisitingCardContact[];
+  vCardHref?: string;
   ctaHref?: string;
   ctaLabel?: string;
 }) {
@@ -94,7 +97,18 @@ export default function VisitingCard({
           </div>
 
           <h1 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>{name}</h1>
-          <p className="text-sm mb-8" style={{ color: "#8C8279" }}>{title}</p>
+          <p className="text-sm mb-5" style={{ color: "#8C8279" }}>{title}</p>
+
+          {vCardHref && (
+            <a
+              href={vCardHref}
+              className="mb-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl border-2 px-5 py-3.5 text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+              style={{ borderColor: "#F5B731", color: "#0a0a0a", background: "linear-gradient(135deg, #FEF9EC 0%, #FDE68A 30%, #FEF9EC 100%)" }}
+            >
+              <SaveContactIcon />
+              Save Contact
+            </a>
+          )}
 
           <div className="flex flex-col gap-3 mb-8">
             {contacts.map((c) => (

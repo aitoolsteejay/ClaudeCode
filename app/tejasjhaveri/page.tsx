@@ -41,6 +41,7 @@ export default function TejasJhaveriCard() {
         title="Founder, Myntmore · TEDx Speaker · Angel Investor"
         photoSrc="/tejas-2.png"
         photoAlt="Tejas Jhaveri, Founder of Myntmore"
+        vCardHref="/api/vcard/tejas-jhaveri"
         contacts={[
           { label: "WhatsApp", cta: "Reach out on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
           { label: "LinkedIn", cta: "Connect on LinkedIn", href: LINKEDIN_URL, icon: <LinkedInIcon />, bg: "#0A66C2" },

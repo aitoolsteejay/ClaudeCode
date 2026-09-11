@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import VisitingCard from "../components/VisitingCard";
 import JsonLd from "../components/JsonLd";
-import { WhatsAppIcon, LinkedInIcon, InstagramIcon } from "../components/ContactIcons";
+import { WhatsAppIcon, LinkedInIcon, InstagramIcon, NewsletterIcon } from "../components/ContactIcons";
 import { SITE_URL } from "@/lib/schema";
 
 const WHATSAPP_URL = "https://wa.me/919867180379";
 const LINKEDIN_URL = "https://www.linkedin.com/in/tejasjhaveri/";
 const INSTAGRAM_URL = "https://www.instagram.com/tejas_jhaveri?stkn=MTZjOGlndmw2dzIxeA==";
+const NEWSLETTER_URL = "/newsletter-subscribe";
 
 export const metadata: Metadata = {
   title: "Tejas Jhaveri",
@@ -44,6 +45,7 @@ export default function TejasJhaveriCard() {
           { label: "WhatsApp", cta: "Reach out to me on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
           { label: "LinkedIn", cta: "Connect with me on LinkedIn", href: LINKEDIN_URL, icon: <LinkedInIcon />, bg: "#0A66C2" },
           { label: "Instagram", cta: "Follow me on Instagram", href: INSTAGRAM_URL, icon: <InstagramIcon />, bg: "#C13584" },
+          { label: "Newsletter", cta: "Subscribe to my newsletter", href: NEWSLETTER_URL, icon: <NewsletterIcon />, bg: "#D97706" },
         ]}
       />
     </>

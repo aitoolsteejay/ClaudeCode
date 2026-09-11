@@ -66,13 +66,65 @@ export default function TejasJhaveriCard() {
   return (
     <InnerLayout>
       <JsonLd data={PERSON_SCHEMA} />
-      <section className="pt-32 pb-24 px-4 min-h-[70vh] flex flex-col items-center" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="w-full max-w-sm">
+      <section className="relative overflow-hidden pt-32 pb-24 px-4 min-h-[70vh] flex flex-col items-center" style={{ backgroundColor: "#F8F6F2" }}>
+        {/* Yellow blob top left */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "-120px",
+            left: "-140px",
+            width: "500px",
+            height: "500px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(245,183,49,0.35) 0%, rgba(255,160,0,0.15) 40%, transparent 68%)",
+            filter: "blur(55px)",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Purple blob top right */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "-100px",
+            right: "-140px",
+            width: "460px",
+            height: "460px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(168,85,247,0.3) 0%, rgba(124,58,237,0.12) 40%, transparent 68%)",
+            filter: "blur(55px)",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Orange blob bottom */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: "-160px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "600px",
+            height: "600px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,107,53,0.22) 0%, rgba(255,60,0,0.08) 40%, transparent 68%)",
+            filter: "blur(55px)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <div className="relative z-10 w-full max-w-sm">
           <Breadcrumbs items={[{ label: "Tejas Jhaveri", href: "/tejasjhaveri" }]} className="justify-center" />
         </div>
-        <div className="w-full max-w-sm rounded-3xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.06)" }}>
-          <div className="relative mx-auto mb-5 h-32 w-32 overflow-hidden rounded-full border-2" style={{ backgroundColor: "#EDE9E4", borderColor: "#F5B731" }}>
-            <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" priority />
+        <div
+          className="relative z-10 w-full max-w-sm rounded-3xl border p-8 text-center"
+          style={{ background: "linear-gradient(135deg, #ffffff 0%, #FEF9EC 100%)", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}
+        >
+          <div className="relative mx-auto mb-5 h-[136px] w-[136px] rounded-full p-[3px]" style={{ background: "linear-gradient(135deg, #F5B731 0%, #a855f7 100%)" }}>
+            <div className="relative h-full w-full overflow-hidden rounded-full border-2" style={{ backgroundColor: "#EDE9E4", borderColor: "#ffffff" }}>
+              <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill className="object-cover object-top" priority />
+            </div>
           </div>
 
           <h1 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h1>

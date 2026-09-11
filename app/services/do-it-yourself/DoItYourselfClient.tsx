@@ -5,6 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import { LinkedInIcon } from "../../components/ContactIcons";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const ACCENT = "#7C3AED";
@@ -31,6 +32,27 @@ const HOWTO_SCHEMA = buildHowToSchema(
   "How the Do It Yourself LinkedIn Outreach Tool Works",
   STEPS.map((s) => ({ name: s.title, text: s.desc }))
 );
+
+/* ─── Interactive demo data ───────────────────────────────────── */
+
+const DEMO_LEADS = [
+  "Priya Sharma · VP Sales, Finstack",
+  "Rohan Mehta · Founder, Kwikcart",
+  "Alex Chen · Head of Growth, Helio",
+  "Meera Iyer · CRO, Vaultline",
+  "Tom Walsh · VP Marketing, Nexbridge",
+];
+
+const DEFAULT_NOTE = "Hi {{firstName}}, I help B2B teams build predictable outbound pipelines. Would love to connect and swap notes on what's working for you.";
+
+type LeadStatus = "queued" | "invited" | "connected" | "replied";
+
+const STATUS_STYLE: Record<LeadStatus, { label: string; bg: string; color: string }> = {
+  queued: { label: "Queued", bg: "#F1F5F9", color: "#64748B" },
+  invited: { label: "Invited", bg: "#FEF9EC", color: "#D97706" },
+  connected: { label: "Connected", bg: "#EFF6FF", color: "#0A66C2" },
+  replied: { label: "Replied", bg: "#F0FDF4", color: "#16A34A" },
+};
 
 const FEATURES = [
   { icon: "🔐", title: "Runs On Your LinkedIn", desc: "You log in with your own account and stay in control of it. We don't manage or touch your profile, the tool just automates the sending." },
@@ -126,6 +148,15 @@ function CapabilityChip({ label, i }: { label: string; i: number }) {
   );
 }
 
+function StatusPill({ status }: { status: LeadStatus }) {
+  const s = STATUS_STYLE[status];
+  return (
+    <span className="flex-shrink-0 text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-full" style={{ backgroundColor: s.bg, color: s.color }}>
+      {s.label}
+    </span>
+  );
+}
+
 /* ─── Page ──────────────────────────────────────────────────── */
 
 export default function DoItYourselfClient() {
@@ -135,6 +166,58 @@ export default function DoItYourselfClient() {
   const ctaBlob1 = useRef<HTMLDivElement>(null);
   const ctaBlob2 = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  /* Interactive campaign-builder demo */
+  const [demoStep, setDemoStep] = useState(1);
+  const [linkedinConnected, setLinkedinConnected] = useState(false);
+  const [campaignName, setCampaignName] = useState("");
+  const [leadsUploaded, setLeadsUploaded] = useState(false);
+  const [note, setNote] = useState(DEFAULT_NOTE);
+  const [followUps, setFollowUps] = useState([{ id: 1, day: 3 }, { id: 2, day: 7 }]);
+  const [launched, setLaunched] = useState(false);
+  const [leadStatuses, setLeadStatuses] = useState<LeadStatus[]>(Array(DEMO_LEADS.length).fill("queued"));
+
+  useEffect(() => {
+    if (!launched) return;
+    let ticks = 0;
+    const interval = setInterval(() => {
+      ticks += 1;
+      setLeadStatuses((prev) => prev.map((s) => {
+        if (s === "queued" && Math.random() < 0.9) return "invited";
+        if (s === "invited" && Math.random() < 0.7) return "connected";
+        if (s === "connected" && Math.random() < 0.45) return "replied";
+        return s;
+      }));
+      if (ticks >= 6) clearInterval(interval);
+    }, 850);
+    return () => clearInterval(interval);
+  }, [launched]);
+
+  function addFollowUp() {
+    setFollowUps((prev) => (prev.length >= 4 ? prev : [...prev, { id: Date.now(), day: (prev[prev.length - 1]?.day ?? 0) + 4 }]));
+  }
+  function removeFollowUp(id: number) {
+    setFollowUps((prev) => (prev.length <= 1 ? prev : prev.filter((f) => f.id !== id)));
+  }
+  function adjustDelay(id: number, delta: number) {
+    setFollowUps((prev) => prev.map((f) => (f.id === id ? { ...f, day: Math.max(1, Math.min(30, f.day + delta)) } : f)));
+  }
+  function resetDemo() {
+    setDemoStep(1);
+    setLinkedinConnected(false);
+    setCampaignName("");
+    setLeadsUploaded(false);
+    setNote(DEFAULT_NOTE);
+    setFollowUps([{ id: 1, day: 3 }, { id: 2, day: 7 }]);
+    setLaunched(false);
+    setLeadStatuses(Array(DEMO_LEADS.length).fill("queued"));
+  }
+
+  const invitedOrFurther = leadStatuses.filter((s) => s !== "queued").length;
+  const acceptedOrFurther = leadStatuses.filter((s) => s === "connected" || s === "replied").length;
+  const repliedCount = leadStatuses.filter((s) => s === "replied").length;
+  const acceptanceRate = invitedOrFurther ? Math.round((acceptedOrFurther / invitedOrFurther) * 100) : 0;
+  const replyRate = acceptedOrFurther ? Math.round((repliedCount / acceptedOrFurther) * 100) : 0;
 
   useEffect(() => {
     if (window.innerWidth < 768) return;
@@ -243,36 +326,225 @@ export default function DoItYourselfClient() {
         </div>
       </section>
 
-      {/* ── How it works ─────────────────────────────────────── */}
+      {/* ── How it works: interactive demo ───────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
               style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-              The Process
+              Try It Yourself
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>How it works</h2>
-            <p className="text-base mt-3 max-w-xl" style={{ color: "#52525B" }}>Six steps from your LinkedIn login to a launched campaign.</p>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Build a campaign, right here</h2>
+            <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: "#52525B" }}>Click through the six steps. Every field actually works, this is exactly what your dashboard looks like.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {STEPS.map((s) => (
-              <div key={s.n} className="relative rounded-2xl border p-7 transition-all duration-300"
-                style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.4)"; (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(124,58,237,0.03)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.backgroundColor = "#F8F6F2"; }}>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black"
-                    style={{ backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT }}>
-                    {s.n}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{s.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</p>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* Step list */}
+            <div className="space-y-3">
+              {STEPS.map((s, i) => {
+                const active = demoStep === i + 1;
+                return (
+                  <button
+                    key={s.n}
+                    onClick={() => setDemoStep(i + 1)}
+                    className="w-full text-left rounded-2xl border p-5 transition-all duration-300"
+                    style={active
+                      ? { borderColor: ACCENT, backgroundColor: "rgba(124,58,237,0.05)", boxShadow: "0 4px 20px rgba(124,58,237,0.12)" }
+                      : { borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black transition-colors duration-300"
+                        style={active ? { backgroundColor: ACCENT, color: "#fff" } : { backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT }}>
+                        {s.n}
+                      </div>
+                      <div>
+                        <h3 className="text-base font-black mb-1" style={{ color: "#0a0a0a" }}>{s.title}</h3>
+                        <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</p>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Live mockup */}
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-3xl border-2 overflow-hidden" style={{ borderColor: "rgba(124,58,237,0.25)", boxShadow: "0 20px 50px rgba(124,58,237,0.15)" }}>
+                {/* Window chrome */}
+                <div className="flex items-center gap-2 px-5 py-3.5 border-b" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
+                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
+                  <span className="ml-3 text-xs font-bold truncate" style={{ color: "#8C8279" }}>Myntmore Outreach &middot; Campaign Builder</span>
+                </div>
+
+                {/* Progress dots */}
+                <div className="flex items-center gap-1.5 px-5 pt-4">
+                  {STEPS.map((s, i) => (
+                    <span key={s.n} className="h-1 flex-1 rounded-full transition-colors duration-300" style={{ backgroundColor: demoStep > i ? ACCENT : "#E8E2D9" }} />
+                  ))}
+                </div>
+
+                <div className="p-6 sm:p-7 min-h-[340px] flex flex-col" style={{ backgroundColor: "#ffffff" }}>
+                  {/* Step 1: Connect LinkedIn */}
+                  {demoStep === 1 && (
+                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 py-4">
+                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white" style={{ backgroundColor: "#0A66C2" }}>
+                        <LinkedInIcon />
+                      </div>
+                      {!linkedinConnected ? (
+                        <>
+                          <p className="text-sm max-w-xs" style={{ color: "#52525B" }}>Log in with your own LinkedIn account. Nothing is handed over to us.</p>
+                          <button onClick={() => setLinkedinConnected(true)} className="btn-dark px-6 py-3 text-sm font-bold">Connect LinkedIn</button>
+                        </>
+                      ) : (
+                        <>
+                          <span className="inline-flex items-center gap-2 text-sm font-black" style={{ color: "#16A34A" }}>
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#16A34A" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            Connected
+                          </span>
+                          <p className="text-xs" style={{ color: "#8C8279" }}>Nice. Let&apos;s set up your first campaign &rarr;</p>
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Step 2: Campaign name */}
+                  {demoStep === 2 && (
+                    <div className="flex-1">
+                      <label className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: ACCENT }}>Campaign Name</label>
+                      <input
+                        value={campaignName}
+                        onChange={(e) => setCampaignName(e.target.value.slice(0, 60))}
+                        placeholder="Q1 SaaS Founders Outreach"
+                        className="w-full rounded-xl border px-4 py-3 text-sm outline-none"
+                        style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}
+                      />
+                      <p className="text-xs mt-4" style={{ color: "#8C8279" }}>
+                        Preview: <span className="font-bold" style={{ color: "#0a0a0a" }}>{campaignName || "Untitled Campaign"}</span>
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Step 3: Upload leads */}
+                  {demoStep === 3 && (
+                    <div className="flex-1">
+                      {!leadsUploaded ? (
+                        <div className="flex flex-col items-center justify-center text-center gap-4 py-8">
+                          <p className="text-sm max-w-xs" style={{ color: "#52525B" }}>Upload the list of leads you want to reach for this campaign.</p>
+                          <button onClick={() => setLeadsUploaded(true)} className="btn-dark px-6 py-3 text-sm font-bold">Upload Leads (CSV)</button>
+                        </div>
+                      ) : (
+                        <div>
+                          <p className="text-sm font-black mb-3" style={{ color: "#16A34A" }}>&#10003; {DEMO_LEADS.length} leads uploaded</p>
+                          <ul className="space-y-2">
+                            {DEMO_LEADS.map((l, i) => (
+                              <li key={l} className="card-fade-up text-xs rounded-lg px-3 py-2" style={{ color: "#3D3D3D", backgroundColor: "#F8F6F2", animationDelay: `${i * 80}ms` }}>{l}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Step 4: Connection note */}
+                  {demoStep === 4 && (
+                    <div className="flex-1">
+                      <label className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: ACCENT }}>Connection Note</label>
+                      <textarea
+                        value={note}
+                        onChange={(e) => setNote(e.target.value.slice(0, 300))}
+                        rows={5}
+                        className="w-full rounded-xl border px-4 py-3 text-sm outline-none resize-none"
+                        style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}
+                      />
+                      <p className="text-xs mt-2 text-right" style={{ color: note.length > 280 ? "#dc2626" : "#8C8279" }}>{note.length}/300</p>
+                    </div>
+                  )}
+
+                  {/* Step 5: Follow-ups */}
+                  {demoStep === 5 && (
+                    <div className="flex-1">
+                      <div className="space-y-3 mb-4">
+                        {followUps.map((f, i) => (
+                          <div key={f.id} className="flex items-center justify-between rounded-xl border px-4 py-3" style={{ borderColor: "#E8E2D9" }}>
+                            <span className="text-sm font-bold" style={{ color: "#0a0a0a" }}>Follow-up {i + 1}</span>
+                            <div className="flex items-center gap-3">
+                              <button onClick={() => adjustDelay(f.id, -1)} aria-label="Decrease delay" className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-black" style={{ backgroundColor: "#F8F6F2", color: ACCENT }}>&minus;</button>
+                              <span className="text-xs font-bold w-14 text-center" style={{ color: "#52525B" }}>Day {f.day}</span>
+                              <button onClick={() => adjustDelay(f.id, 1)} aria-label="Increase delay" className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-black" style={{ backgroundColor: "#F8F6F2", color: ACCENT }}>+</button>
+                              {followUps.length > 1 && (
+                                <button onClick={() => removeFollowUp(f.id)} aria-label="Remove follow-up" className="w-6 h-6 rounded-full flex items-center justify-center text-xs" style={{ color: "#dc2626" }}>&#10005;</button>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {followUps.length < 4 && (
+                        <button onClick={addFollowUp} className="text-xs font-bold" style={{ color: ACCENT }}>+ Add another follow-up</button>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Step 6: Launch */}
+                  {demoStep === 6 && (
+                    <div className="flex-1">
+                      {!launched ? (
+                        <div className="flex flex-col items-center justify-center text-center gap-4 py-6">
+                          <p className="text-sm max-w-xs" style={{ color: "#52525B" }}>
+                            &ldquo;{campaignName || "Untitled Campaign"}&rdquo; is ready with {DEMO_LEADS.length} leads and {followUps.length} follow-up{followUps.length > 1 ? "s" : ""}.
+                          </p>
+                          <button onClick={() => setLaunched(true)} className="btn-dark px-8 py-4 text-base font-black">Launch Campaign &#128640;</button>
+                        </div>
+                      ) : (
+                        <div>
+                          <div className="grid grid-cols-2 gap-4 mb-5">
+                            <div className="rounded-xl p-4 text-center" style={{ backgroundColor: "#F5F3FF" }}>
+                              <div className="text-2xl font-black" style={{ color: ACCENT }}>{acceptanceRate}%</div>
+                              <div className="text-xs" style={{ color: "#8C8279" }}>Acceptance Rate</div>
+                            </div>
+                            <div className="rounded-xl p-4 text-center" style={{ backgroundColor: "#FEF9EC" }}>
+                              <div className="text-2xl font-black" style={{ color: "#D97706" }}>{replyRate}%</div>
+                              <div className="text-xs" style={{ color: "#8C8279" }}>Reply Rate</div>
+                            </div>
+                          </div>
+                          <ul className="space-y-2 mb-4">
+                            {DEMO_LEADS.map((l, i) => (
+                              <li key={l} className="flex items-center justify-between gap-3 text-xs" style={{ color: "#3D3D3D" }}>
+                                <span className="truncate">{l}</span>
+                                <StatusPill status={leadStatuses[i]} />
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-[11px] mb-3" style={{ color: "#8C8279" }}>Simulated preview for this demo, not real send data.</p>
+                          <button onClick={resetDemo} className="text-xs font-bold underline" style={{ color: ACCENT }}>Restart demo</button>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
-            ))}
+
+              {/* Prev / Next nav */}
+              <div className="flex items-center justify-center gap-3 mt-5">
+                <button
+                  onClick={() => setDemoStep((s) => Math.max(1, s - 1))}
+                  disabled={demoStep === 1}
+                  className="px-5 py-2.5 rounded-full text-sm font-bold border transition-opacity disabled:opacity-30"
+                  style={{ borderColor: "#E8E2D9", color: "#3D3D3D" }}
+                >
+                  &larr; Back
+                </button>
+                <button
+                  onClick={() => setDemoStep((s) => Math.min(6, s + 1))}
+                  disabled={demoStep === 6}
+                  className="px-5 py-2.5 rounded-full text-sm font-bold text-white transition-opacity disabled:opacity-30"
+                  style={{ backgroundColor: ACCENT }}
+                >
+                  Next step &rarr;
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -44,6 +44,7 @@ export default function EnwilFernandesCard() {
         title="Senior Sales Head, Myntmore"
         photoSrc="/enwil.png"
         photoAlt="Enwil Fernandes, Senior Sales Head at Myntmore"
+        vCardHref="/api/vcard/enwil-fernandes"
         contacts={[
           { label: "WhatsApp", cta: "Reach out on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
           { label: "LinkedIn", cta: "Connect on LinkedIn", href: LINKEDIN_URL, icon: <LinkedInIcon />, bg: "#0A66C2" },

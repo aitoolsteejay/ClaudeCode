@@ -44,6 +44,7 @@ export default function JahnviJhaveriCard() {
         title="Growth Manager, Myntmore"
         photoSrc="/jahnvi.png"
         photoAlt="Jahnvi Jhaveri, Growth Manager at Myntmore"
+        vCardHref="/api/vcard/jahnvi-jhaveri"
         contacts={[
           { label: "WhatsApp", cta: "Reach out on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
           { label: "LinkedIn", cta: "Connect on LinkedIn", href: LINKEDIN_URL, icon: <LinkedInIcon />, bg: "#0A66C2" },

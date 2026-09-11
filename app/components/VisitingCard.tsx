@@ -5,6 +5,7 @@ import Breadcrumbs from "./Breadcrumbs";
 
 export interface VisitingCardContact {
   label: string;
+  cta: string;
   href: string;
   icon: ReactNode;
   bg: string;
@@ -95,18 +96,23 @@ export default function VisitingCard({
           <h1 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>{name}</h1>
           <p className="text-sm mb-8" style={{ color: "#8C8279" }}>{title}</p>
 
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col gap-3 mb-8">
             {contacts.map((c) => (
               <a
                 key={c.label}
                 href={c.href}
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                aria-label={c.label}
-                className="flex items-center justify-center h-14 w-14 rounded-full text-white transition-transform duration-200 hover:scale-105"
-                style={{ backgroundColor: c.bg }}
+                className="group flex items-center gap-4 w-full rounded-2xl border px-5 py-4 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
               >
-                {c.icon}
+                <span className="flex items-center justify-center h-11 w-11 rounded-full text-white flex-shrink-0" style={{ backgroundColor: c.bg }}>
+                  {c.icon}
+                </span>
+                <span className="text-sm font-bold flex-1" style={{ color: "#0a0a0a" }}>{c.cta}</span>
+                <svg className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="#8C8279" strokeWidth={2.5} aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
               </a>
             ))}
           </div>

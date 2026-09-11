@@ -42,9 +42,9 @@ export default function EnwilFernandesCard() {
         photoSrc="/enwil.png"
         photoAlt="Enwil Fernandes, Senior Sales Head at Myntmore"
         contacts={[
-          { label: "WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
-          { label: "Call", href: `tel:${PHONE}`, icon: <PhoneIcon />, bg: "#F5B731" },
-          { label: "Email", href: `mailto:${EMAIL}`, icon: <EmailIcon />, bg: "#0A66C2" },
+          { label: "WhatsApp", cta: "Reach out to me on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },
+          { label: "Call", cta: "Call me", href: `tel:${PHONE}`, icon: <PhoneIcon />, bg: "#F5B731" },
+          { label: "Email", cta: "Email me", href: `mailto:${EMAIL}`, icon: <EmailIcon />, bg: "#0A66C2" },
         ]}
       />
     </>

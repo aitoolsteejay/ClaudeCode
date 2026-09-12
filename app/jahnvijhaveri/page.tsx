@@ -12,11 +12,11 @@ const NEWSLETTER_URL = "/newsletter-subscribe";
 
 export const metadata: Metadata = {
   title: "Jahnvi Jhaveri",
-  description: "Jahnvi Jhaveri, Growth Manager at Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",
+  description: "Jahnvi Jhaveri, Co-Founder of Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",
   alternates: { canonical: `${SITE_URL}/jahnvijhaveri` },
   openGraph: {
-    title: "Jahnvi Jhaveri | Growth Manager, Myntmore",
-    description: "Jahnvi Jhaveri, Growth Manager at Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",
+    title: "Jahnvi Jhaveri | Co-Founder, Myntmore",
+    description: "Jahnvi Jhaveri, Co-Founder of Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",
     url: `${SITE_URL}/jahnvijhaveri`,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -26,7 +26,7 @@ const PERSON_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jahnvi Jhaveri",
-  jobTitle: "Growth Manager",
+  jobTitle: "Co-Founder",
   worksFor: { "@type": "Organization", name: "Myntmore", url: SITE_URL },
   url: `${SITE_URL}/jahnvijhaveri`,
   email: EMAIL,
@@ -41,9 +41,9 @@ export default function JahnviJhaveriCard() {
       <VisitingCard
         path="/jahnvijhaveri"
         name="Jahnvi Jhaveri"
-        title="Growth Manager, Myntmore"
+        title="Co-Founder, Myntmore"
         photoSrc="/jahnvi.png"
-        photoAlt="Jahnvi Jhaveri, Growth Manager at Myntmore"
+        photoAlt="Jahnvi Jhaveri, Co-Founder of Myntmore"
         vCardHref="/api/vcard/jahnvi-jhaveri"
         contacts={[
           { label: "WhatsApp", cta: "Reach out on WhatsApp", href: WHATSAPP_URL, icon: <WhatsAppIcon />, bg: "#25D366" },

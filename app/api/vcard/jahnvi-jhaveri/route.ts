@@ -9,13 +9,13 @@ const VCARD = [
   "N:Jhaveri;Jahnvi;;;",
   "FN:Jahnvi Jhaveri",
   "ORG:Myntmore",
-  "TITLE:Growth Manager",
+  "TITLE:Co-Founder",
   "TEL;TYPE=CELL,VOICE:+919821008589",
   "EMAIL;TYPE=WORK:growth@myntmore.com",
   "URL;TYPE=WORK:https://www.myntmore.com",
   "URL;TYPE=LinkedIn:https://www.linkedin.com/in/jahnvi-jhaveri-profile/",
   "PHOTO;VALUE=URI:https://www.myntmore.com/jahnvi.png",
-  "NOTE:Growth Manager at Myntmore.",
+  "NOTE:Co-Founder of Myntmore.",
   "END:VCARD",
 ].join("\r\n");
 

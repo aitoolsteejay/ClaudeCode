@@ -62,7 +62,7 @@ const EVENTS: EventItem[] = [
     description: "How Myntmore books 200+ meetings a month through cold outreach: LinkedIn, cold email, targeting, messaging, personal branding, and automation.",
     isoDate: "2026-09-19",
     displayDate: "Sep 19, 2026",
-    time: "Time TBA",
+    time: "11:30 AM – 1:00 PM IST",
     format: "Online · Live Webinar",
     accent: "#8b5cf6",
   },

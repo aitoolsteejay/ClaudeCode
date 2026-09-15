@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "We Create 200+ Meetings a Month Through Cold Outreach | Myntmore Webinar",
-    description: "A free live webinar on the cold outreach system Myntmore uses to create 200+ meetings every month. Sep 19, 2026.",
+    description: "A free live webinar on the cold outreach system Myntmore uses to create 200+ meetings every month. Sep 19, 2026 · 11:30 AM – 1:00 PM IST.",
     url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -26,7 +26,8 @@ const EVENT_SCHEMA = buildEventSchema({
   name: TITLE,
   description: DESCRIPTION,
   url: PAGE_URL,
-  startDate: "2026-09-19",
+  startDate: "2026-09-19T11:30:00+05:30",
+  endDate: "2026-09-19T13:00:00+05:30",
 });
 
 const TOPICS = [
@@ -65,7 +66,7 @@ export default function PredictablePipelineWebinar() {
             </span>
             <span className="inline-flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#8b5cf6" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              Time to be announced
+              11:30 AM – 1:00 PM IST
             </span>
           </div>
 
@@ -92,7 +93,7 @@ export default function PredictablePipelineWebinar() {
         <div className="max-w-2xl mx-auto">
           <LeadCaptureForm
             title="Reserve your seat"
-            subtitle="The exact time is still being finalised. Register now and we'll email you the confirmed time and joining link before the session."
+            subtitle="September 19, 2026 · 11:30 AM – 1:00 PM IST. Register now and we'll email you the joining link before the session."
           />
         </div>
       </section>

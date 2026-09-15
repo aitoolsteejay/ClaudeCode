@@ -49,12 +49,24 @@ interface EventItem {
   accent: string;
 }
 
-// Empty for now. To add an event once one is scheduled:
+// To add another event once one is scheduled:
 // 1. Add an entry here (slug becomes the URL: /events/{slug}).
 // 2. Create app/events/{slug}/page.tsx for its detail page, following the
 //    same pattern as app/blog/{slug}/page.tsx or app/case-studies/{slug}/page.tsx.
 // 3. Add the new route to app/sitemap.ts.
-const EVENTS: EventItem[] = [];
+const EVENTS: EventItem[] = [
+  {
+    slug: "predictable-pipeline-webinar",
+    tag: "Live Webinar",
+    title: "We Create 200+ Meetings Every Month Through Cold Outreach. Let's Help You Build a More Predictable Lead Pipeline.",
+    description: "How Myntmore books 200+ meetings a month through cold outreach: LinkedIn, cold email, targeting, messaging, personal branding, and automation.",
+    isoDate: "2026-09-19",
+    displayDate: "Sep 19, 2026",
+    time: "Time TBA",
+    format: "Online · Live Webinar",
+    accent: "#8b5cf6",
+  },
+];
 
 export default function EventsPage() {
   return (

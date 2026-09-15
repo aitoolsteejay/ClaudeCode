@@ -242,6 +242,42 @@ export function buildArticleSchema({ headline, description, url, datePublished, 
   };
 }
 
+export interface EventSchemaInput {
+  name: string;
+  description: string;
+  url: string;
+  startDate: string; // ISO 8601 date or date-time; date-only until a start time is confirmed
+  endDate?: string;
+  image?: string;
+}
+
+// Models every event as a free, online webinar Myntmore hosts itself
+// (eventAttendanceMode/location) -- that's what every event run through this
+// page has been so far; revisit if an in-person event is ever added.
+export function buildEventSchema({ name, description, url, startDate, endDate, image }: EventSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name,
+    description,
+    url,
+    startDate,
+    ...(endDate ? { endDate } : {}),
+    eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "VirtualLocation",
+      url,
+    },
+    image: image ?? `${SITE_URL}/og-image.png`,
+    organizer: {
+      "@type": "Organization",
+      name: "Myntmore",
+      url: SITE_URL,
+    },
+  };
+}
+
 export interface JobPostingInput {
   title: string;
   description: string;

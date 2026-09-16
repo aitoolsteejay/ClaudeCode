@@ -3,7 +3,11 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import NewsletterForm from "./NewsletterForm";
+
+const DIY_HREF = "/services/do-it-yourself";
+const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 
 function ParticleCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -114,6 +118,8 @@ const CITY_LINKS = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/founder-meeting";
   const breathRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let animId: number;
@@ -218,7 +224,7 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>Get in Touch</h3>
             <ul className="space-y-3 mb-6" role="list">
               <li><a href="mailto:growth@myntmore.com" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>growth@myntmore.com</a></li>
-              <li><a href="/founder-meeting" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>Book a Free GTM Audit</a></li>
+              <li><a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>Book a Free GTM Audit</a></li>
               <li><Link href="/contact-us" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>Contact Page</Link></li>
             </ul>
             <div className="mb-4 p-4 rounded-xl border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
@@ -226,7 +232,7 @@ export default function Footer() {
               <p className="text-xs mb-3" style={{ color: "#6B6B6B" }}>Weekly AI outbound insights. No fluff.</p>
               <NewsletterForm inputId="footer-newsletter-email" compact />
             </div>
-            <a href="/founder-meeting" className="btn-dark px-5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5">
+            <a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="btn-dark px-5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5">
               Book a Call
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>

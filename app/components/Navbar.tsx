@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const SERVICE_LINKS = [
   { label: "LinkedIn Outreach & Automation", href: "/services/linkedin-outreach" },
@@ -15,6 +16,7 @@ const SERVICE_LINKS = [
 ];
 
 const DIY_HREF = "/services/do-it-yourself";
+const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 
 const RESOURCE_LINKS = [
   { label: "Blog", href: "/resources/blogs" },
@@ -35,6 +37,8 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/founder-meeting";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -202,7 +206,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="/founder-meeting" className="btn-dark px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-1.5">
+            <a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="btn-dark px-5 py-2.5 text-sm font-semibold inline-flex items-center gap-1.5">
               Book a Call
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
@@ -312,7 +316,7 @@ export default function Navbar() {
           </Link>
 
           <div className="pt-3 pb-1">
-            <a href="/founder-meeting" onClick={() => setMobileOpen(false)} className="btn-dark w-full py-3 text-sm font-semibold text-center block">
+            <a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} onClick={() => setMobileOpen(false)} className="btn-dark w-full py-3 text-sm font-semibold text-center block">
               Book a Call
             </a>
           </div>

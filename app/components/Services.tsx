@@ -173,11 +173,16 @@ export default function Services() {
       { ref: stat3Ref, target: 120,  duration: 1800, format: (n: number) => `${Math.round(n)}+` },
     ];
 
+    // Declared in the effect's own scope (not the IntersectionObserver
+    // callback's) so the effect's cleanup can actually reach and cancel
+    // these -- a callback return value is not a cleanup function and is
+    // silently discarded by IntersectionObserver.
+    const animIds: number[] = [];
+
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
       observer.disconnect();
 
-      const animIds: number[] = [];
       STATS.forEach(({ ref, target, duration, format }) => {
         if (!ref.current) return;
         let startTime: number | null = null;
@@ -190,12 +195,13 @@ export default function Services() {
         }
         animIds.push(requestAnimationFrame(tick));
       });
-
-      return () => animIds.forEach(cancelAnimationFrame);
     }, { threshold: 0.4 });
 
     observer.observe(container);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      animIds.forEach(cancelAnimationFrame);
+    };
   }, []);
 
   useEffect(() => {
@@ -205,6 +211,8 @@ export default function Services() {
     const length = path.getTotalLength();
     path.style.strokeDasharray = String(length);
     path.style.strokeDashoffset = String(length);
+
+    let animId: number | null = null;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -220,16 +228,19 @@ export default function Services() {
           const progress = Math.min((ts - startTime) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
           path.style.strokeDashoffset = String(length * (1 - eased));
-          if (progress < 1) requestAnimationFrame(draw);
+          if (progress < 1) animId = requestAnimationFrame(draw);
         }
 
-        requestAnimationFrame(draw);
+        animId = requestAnimationFrame(draw);
       },
       { threshold: 0.4 }
     );
 
     observer.observe(path);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (animId !== null) cancelAnimationFrame(animId);
+    };
   }, []);
 
   return (

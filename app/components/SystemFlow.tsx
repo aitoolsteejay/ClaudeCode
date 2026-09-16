@@ -101,6 +101,8 @@ export default function SystemFlow() {
     if (!section) return;
 
     let loopStarted = false;
+    const revealTimers: ReturnType<typeof setTimeout>[] = [];
+    let startLoopTimer: ReturnType<typeof setTimeout> | null = null;
 
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
@@ -110,24 +112,26 @@ export default function SystemFlow() {
       elements.forEach((el) => {
         const seq  = Number((el as HTMLElement).dataset.seq);
         const type = (el as HTMLElement).dataset.type;
-        setTimeout(() => {
+        revealTimers.push(setTimeout(() => {
           const e = el as HTMLElement;
           if (type === "card")   { e.style.opacity = "1"; e.style.transform = "translateY(0)"; }
           if (type === "harrow") { e.style.transform = "scaleX(1)"; }
           if (type === "varrow") { e.style.transform = "scaleY(1)"; }
           if (type === "final")  { e.style.opacity = "1"; e.style.transform = "translateY(0)"; }
-        }, seq * 140);
+        }, seq * 140));
       });
 
       if (!loopStarted) {
         loopStarted = true;
-        setTimeout(startLoop, 2400);
+        startLoopTimer = setTimeout(startLoop, 2400);
       }
     }, { threshold: 0.12 });
 
     observer.observe(section);
     return () => {
       observer.disconnect();
+      revealTimers.forEach(clearTimeout);
+      if (startLoopTimer) clearTimeout(startLoopTimer);
       if (loopInterval.current) clearInterval(loopInterval.current);
     };
   }, []);

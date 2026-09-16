@@ -387,8 +387,8 @@ function FormSection() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company / Agency Name</label>
-                <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder="Rossi Digital" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company / Agency Name &amp; Website</label>
+                <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder="Rossi Digital, rossidigital.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
               </div>
               <div>
                 <label htmlFor="PhoneNumber_countrycode" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
@@ -398,10 +398,6 @@ function FormSection() {
             <div>
               <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Work Email *</label>
               <input id="Email" name="Email" type="email" required maxLength={255} placeholder="marco@rossidigital.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
-            </div>
-            <div>
-              <label htmlFor="agencyWebsite" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Agency Name / Website (optional)</label>
-              <input id="agencyWebsite" name="agencyWebsite" type="text" maxLength={255} placeholder="rossidigital.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
             <SubmitButton>Apply to Become a Partner</SubmitButton>
             <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. Final margin and terms are confirmed on your partner onboarding call.</p>

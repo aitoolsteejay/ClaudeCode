@@ -212,6 +212,11 @@ export default function Hero() {
 
   // Handwrite-in animation for annotations
   useEffect(() => {
+    // Checked at the top of every rAF tick so an in-flight animation chain
+    // stops the instant this effect's cleanup runs, instead of continuing
+    // to schedule frames (and eventually calling onDone) after unmount.
+    let cancelled = false;
+
     function animatePath(path: SVGPathElement | null, duration: number, onDone?: () => void) {
       if (!path) { onDone?.(); return; }
       const len = path.getTotalLength();
@@ -220,6 +225,7 @@ export default function Hero() {
       const el = path;
       let start: number | null = null;
       function step(ts: number) {
+        if (cancelled) return;
         if (!start) start = ts;
         const p = Math.min((ts - start) / duration, 1);
         const e = 1 - Math.pow(1 - p, 2);
@@ -237,6 +243,7 @@ export default function Hero() {
       const node = el;
       let start: number | null = null;
       function step(ts: number) {
+        if (cancelled) return;
         if (!start) start = ts;
         const p = Math.min((ts - start) / duration, 1);
         const e = 1 - Math.pow(1 - p, 2);
@@ -249,6 +256,7 @@ export default function Hero() {
 
     // Right annotation: text first, then arrow, starts at 1.2s
     const t1 = setTimeout(() => {
+      if (cancelled) return;
       revealText(textRRef.current, 900, () => {
         animatePath(arrowRRef.current, 500, () => {
           animatePath(arrowRRef2.current, 250);
@@ -258,6 +266,7 @@ export default function Hero() {
 
     // Left annotation: text first, then arrow, starts at 1.8s
     const t2 = setTimeout(() => {
+      if (cancelled) return;
       revealText(textLRef.current, 800, () => {
         animatePath(arrowLRef.current, 450, () => {
           animatePath(arrowLRef2.current, 220);
@@ -265,7 +274,7 @@ export default function Hero() {
       });
     }, 1800);
 
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    return () => { cancelled = true; clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
   return (

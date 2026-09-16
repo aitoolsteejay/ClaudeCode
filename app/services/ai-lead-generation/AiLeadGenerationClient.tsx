@@ -188,6 +188,7 @@ export default function AiLeadGenerationClient() {
     const len = path.getTotalLength();
     path.style.strokeDasharray = String(len);
     path.style.strokeDashoffset = String(len);
+    let animId: number | null = null;
     const timer = setTimeout(() => {
       let start: number | null = null;
       const dur = 1200;
@@ -197,16 +198,20 @@ export default function AiLeadGenerationClient() {
         const p = Math.min((ts - start) / dur, 1);
         const e = 1 - Math.pow(1 - p, 3);
         path.style.strokeDashoffset = String(len * (1 - e));
-        if (p < 1) requestAnimationFrame(draw);
+        if (p < 1) animId = requestAnimationFrame(draw);
       }
-      requestAnimationFrame(draw);
+      animId = requestAnimationFrame(draw);
     }, 500);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (animId !== null) cancelAnimationFrame(animId);
+    };
   }, []);
 
   useEffect(() => {
     const el = statsContainerRef.current;
     if (!el) return;
+    const animIds: number[] = [];
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !statsTriggered) {
         setStatsTriggered(true);
@@ -222,14 +227,17 @@ export default function AiLeadGenerationClient() {
             const p = Math.min((ts - s) / dur, 1);
             const e = 1 - Math.pow(1 - p, 3);
             if (ref.current) ref.current.textContent = Math.round(e * end) + suffix;
-            if (p < 1) requestAnimationFrame(tick);
+            if (p < 1) animIds.push(requestAnimationFrame(tick));
           }
-          requestAnimationFrame(tick);
+          animIds.push(requestAnimationFrame(tick));
         });
       }
     }, { threshold: 0.4 });
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      animIds.forEach(cancelAnimationFrame);
+    };
   }, [statsTriggered]);
 
   const doubled = [...BENEFITS, ...BENEFITS];

@@ -192,6 +192,7 @@ export default function GtmStrategyClient() {
     const len = path.getTotalLength();
     path.style.strokeDasharray = String(len);
     path.style.strokeDashoffset = String(len);
+    let animId: number | null = null;
     const timer = setTimeout(() => {
       let start: number | null = null;
       const dur = 1200;
@@ -201,11 +202,14 @@ export default function GtmStrategyClient() {
         const p = Math.min((ts - start) / dur, 1);
         const e = 1 - Math.pow(1 - p, 3);
         path.style.strokeDashoffset = String(len * (1 - e));
-        if (p < 1) requestAnimationFrame(draw);
+        if (p < 1) animId = requestAnimationFrame(draw);
       }
-      requestAnimationFrame(draw);
+      animId = requestAnimationFrame(draw);
     }, 500);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (animId !== null) cancelAnimationFrame(animId);
+    };
   }, []);
 
   const doubled = [...BENEFITS, ...BENEFITS];

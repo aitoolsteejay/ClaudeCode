@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about-us`, lastModified: "2026-08-27T12:26:20+05:30", changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/contact-us`, lastModified: "2026-08-25T13:13:39+05:30", changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/services`, lastModified: "2026-08-27T12:26:20+05:30", changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/myntmore-framework`, lastModified: "2026-09-16T00:00:00+05:30", changeFrequency: "monthly", priority: 0.8 },
     // Service subpages
     { url: `${base}/services/linkedin-outreach`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/cold-email`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },

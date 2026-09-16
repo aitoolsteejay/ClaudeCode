@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -67,6 +67,13 @@ const END_W = 170;
 const END_H = 56;
 const CANVAS_W = 4350;
 const CANVAS_H = 650;
+const MIN_ZOOM = 0.15;
+const MAX_ZOOM = 1.5;
+const FIT_PADDING = 48;
+
+function clamp(v: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, v));
+}
 
 type Shape = "trigger" | "regular" | "if" | "end";
 
@@ -195,8 +202,127 @@ const HOWTO_SCHEMA = buildHowToSchema(
 
 /* ─── Page ──────────────────────────────────────────────────── */
 
+interface CanvasView { zoom: number; x: number; y: number; }
+
 export default function MyntmoreFrameworkClient() {
   const [active, setActive] = useState<string | null>(null);
+  const [view, setView] = useState<CanvasView>({ zoom: 1, x: 0, y: 0 });
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const interactedRef = useRef(false);
+  const pointersRef = useRef<Map<number, { x: number; y: number }>>(new Map());
+  const gestureRef = useRef<{
+    mode: "none" | "pan" | "pinch";
+    startX: number; startY: number; startViewX: number; startViewY: number;
+    startDist: number; startZoom: number; canvasMidX: number; canvasMidY: number;
+    moved: boolean;
+  }>({ mode: "none", startX: 0, startY: 0, startViewX: 0, startViewY: 0, startDist: 0, startZoom: 1, canvasMidX: 0, canvasMidY: 0, moved: false });
+
+  const fitToView = useCallback(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const vw = el.clientWidth;
+    const vh = el.clientHeight;
+    if (!vw || !vh) return;
+    const scale = clamp(Math.min((vw - FIT_PADDING) / CANVAS_W, (vh - FIT_PADDING) / CANVAS_H), MIN_ZOOM, MAX_ZOOM);
+    setView({ zoom: scale, x: (vw - CANVAS_W * scale) / 2, y: (vh - CANVAS_H * scale) / 2 });
+  }, []);
+
+  useEffect(() => {
+    fitToView();
+    const el = viewportRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => {
+      if (!interactedRef.current) fitToView();
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [fitToView]);
+
+  const zoomAt = useCallback((px: number, py: number, factor: number) => {
+    setView((v) => {
+      const newZoom = clamp(v.zoom * factor, MIN_ZOOM, MAX_ZOOM);
+      const canvasX = (px - v.x) / v.zoom;
+      const canvasY = (py - v.y) / v.zoom;
+      return { zoom: newZoom, x: px - canvasX * newZoom, y: py - canvasY * newZoom };
+    });
+    interactedRef.current = true;
+  }, []);
+
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    function handleWheel(e: WheelEvent) {
+      e.preventDefault();
+      const rect = el!.getBoundingClientRect();
+      const factor = e.deltaY < 0 ? 1.12 : 1 / 1.12;
+      zoomAt(e.clientX - rect.left, e.clientY - rect.top, factor);
+    }
+    el.addEventListener("wheel", handleWheel, { passive: false });
+    return () => el.removeEventListener("wheel", handleWheel);
+  }, [zoomAt]);
+
+  function handlePointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    if ((e.target as HTMLElement).closest("button")) return;
+    try { (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId); } catch { /* no active pointer to capture (e.g. synthetic events) */ }
+    pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const pts = Array.from(pointersRef.current.values());
+    if (pts.length === 1) {
+      gestureRef.current = { ...gestureRef.current, mode: "pan", startX: e.clientX, startY: e.clientY, startViewX: view.x, startViewY: view.y, moved: false };
+    } else if (pts.length === 2) {
+      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      const midX = (pts[0].x + pts[1].x) / 2, midY = (pts[0].y + pts[1].y) / 2;
+      const rect = viewportRef.current!.getBoundingClientRect();
+      const px = midX - rect.left, py = midY - rect.top;
+      gestureRef.current = {
+        ...gestureRef.current, mode: "pinch", startDist: dist, startZoom: view.zoom,
+        canvasMidX: (px - view.x) / view.zoom, canvasMidY: (py - view.y) / view.zoom, moved: false,
+      };
+    }
+  }
+
+  function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (!pointersRef.current.has(e.pointerId)) return;
+    pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    const g = gestureRef.current;
+    const pts = Array.from(pointersRef.current.values());
+    if (g.mode === "pan" && pts.length === 1) {
+      const dx = e.clientX - g.startX, dy = e.clientY - g.startY;
+      if (Math.abs(dx) > 3 || Math.abs(dy) > 3) gestureRef.current.moved = true;
+      if (gestureRef.current.moved) {
+        setView((v) => ({ ...v, x: g.startViewX + dx, y: g.startViewY + dy }));
+        interactedRef.current = true;
+      }
+    } else if (g.mode === "pinch" && pts.length === 2) {
+      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      const midX = (pts[0].x + pts[1].x) / 2, midY = (pts[0].y + pts[1].y) / 2;
+      const rect = viewportRef.current!.getBoundingClientRect();
+      const px = midX - rect.left, py = midY - rect.top;
+      const newZoom = clamp(g.startZoom * (dist / (g.startDist || dist)), MIN_ZOOM, MAX_ZOOM);
+      setView({ zoom: newZoom, x: px - g.canvasMidX * newZoom, y: py - g.canvasMidY * newZoom });
+      interactedRef.current = true;
+    }
+  }
+
+  function handlePointerUp(e: React.PointerEvent<HTMLDivElement>) {
+    pointersRef.current.delete(e.pointerId);
+    const pts = Array.from(pointersRef.current.values());
+    if (pts.length === 0) {
+      gestureRef.current.mode = "none";
+    } else if (pts.length === 1) {
+      gestureRef.current = { ...gestureRef.current, mode: "pan", startX: pts[0].x, startY: pts[0].y, startViewX: view.x, startViewY: view.y, moved: true };
+    }
+  }
+
+  function zoomButton(factor: number) {
+    const el = viewportRef.current;
+    if (!el) return;
+    zoomAt(el.clientWidth / 2, el.clientHeight / 2, factor);
+  }
+
+  function handleFitClick() {
+    interactedRef.current = false;
+    fitToView();
+  }
 
   return (
     <InnerLayout>
@@ -243,12 +369,22 @@ export default function MyntmoreFrameworkClient() {
             </div>
 
             {/* Canvas */}
-            <div className="overflow-x-auto" style={{ backgroundColor: "#F4F5F8" }}>
+            <div
+              ref={viewportRef}
+              onPointerDown={handlePointerDown}
+              onPointerMove={handlePointerMove}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={handlePointerUp}
+              className="relative overflow-hidden select-none h-[420px] sm:h-[500px] lg:h-[620px]"
+              style={{ backgroundColor: "#F4F5F8", cursor: "grab", touchAction: "none" }}
+            >
               <div
-                className="relative"
+                className="absolute top-0 left-0"
                 style={{
                   width: CANVAS_W,
                   height: CANVAS_H,
+                  transform: `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`,
+                  transformOrigin: "0 0",
                   backgroundImage: "radial-gradient(circle, rgba(30,34,48,0.14) 1.4px, transparent 1.4px)",
                   backgroundSize: "26px 26px",
                 }}
@@ -367,14 +503,13 @@ export default function MyntmoreFrameworkClient() {
             <div className="flex items-center justify-between px-5 py-2.5" style={{ backgroundColor: "#1B1E27" }}>
               <span className="text-[10px] font-mono" style={{ color: "#6B7280" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections</span>
               <div className="flex items-center gap-1.5">
-                <span className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>&minus;</span>
-                <span className="text-[10px] font-mono px-1.5" style={{ color: "#9199A8" }}>100%</span>
-                <span className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>+</span>
+                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>&minus;</button>
+                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline" style={{ color: "#9199A8" }}>{Math.round(view.zoom * 100)}%</button>
+                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>+</button>
               </div>
             </div>
           </div>
-          <p className="text-center text-xs mt-4 sm:hidden" style={{ color: "#8C8279" }}>&larr; Scroll to explore the full workflow &rarr;</p>
-          <p className="text-center text-sm mt-4" style={{ color: "#8C8279" }}>Tap a node to see what it does &darr;</p>
+          <p className="text-center text-sm mt-4" style={{ color: "#8C8279" }}>Scroll or pinch to zoom &middot; drag to pan &middot; tap a node to see what it does</p>
         </div>
       </section>
 

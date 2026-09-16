@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { Caveat } from "next/font/google";
 import InnerLayout from "../../components/InnerLayout";
+import FadeIn from "../../components/FadeIn";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { LinkedInIcon } from "../../components/ContactIcons";
@@ -395,17 +396,19 @@ export default function DoItYourselfClient() {
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Everything you need to run it yourself</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {FEATURES.map((f) => (
-              <div key={f.title} className="rounded-2xl border p-7 transition-all duration-200"
-                style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-2xl">{f.icon}</span>
-                  <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{f.title}</h3>
+            {FEATURES.map((f, i) => (
+              <FadeIn key={f.title} delay={i * 90}>
+                <div className="rounded-2xl border p-7 transition-all duration-200"
+                  style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-2xl">{f.icon}</span>
+                    <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{f.title}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{f.desc}</p>
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{f.desc}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -436,25 +439,28 @@ export default function DoItYourselfClient() {
               {STEPS.map((s, i) => {
                 const active = demoStep === i + 1;
                 return (
-                  <button
-                    key={s.n}
-                    onClick={() => { stopAutoPlay(); setDemoStep(i + 1); }}
-                    className="w-full text-left rounded-2xl border p-5 transition-all duration-300"
-                    style={active
-                      ? { borderColor: ACCENT, backgroundColor: "rgba(124,58,237,0.05)", boxShadow: "0 4px 20px rgba(124,58,237,0.12)" }
-                      : { borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black transition-colors duration-300"
-                        style={active ? { backgroundColor: ACCENT, color: "#fff" } : { backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT }}>
-                        {s.n}
+                  <FadeIn key={s.n} delay={i * 70}>
+                    <button
+                      onClick={() => { stopAutoPlay(); setDemoStep(i + 1); }}
+                      className="w-full text-left rounded-2xl border p-5 transition-all duration-300"
+                      style={active
+                        ? { borderColor: ACCENT, backgroundColor: "rgba(124,58,237,0.05)", boxShadow: "0 4px 20px rgba(124,58,237,0.12)" }
+                        : { borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black transition-all duration-300"
+                          style={active
+                            ? { backgroundColor: ACCENT, color: "#fff", transform: "scale(1.12)" }
+                            : { backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT, transform: "scale(1)" }}>
+                          {s.n}
+                        </div>
+                        <div>
+                          <h3 className="text-base font-black mb-1" style={{ color: "#0a0a0a" }}>{s.title}</h3>
+                          <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-base font-black mb-1" style={{ color: "#0a0a0a" }}>{s.title}</h3>
-                        <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</p>
-                      </div>
-                    </div>
-                  </button>
+                    </button>
+                  </FadeIn>
                 );
               })}
             </div>
@@ -479,11 +485,15 @@ export default function DoItYourselfClient() {
                 {/* Progress dots */}
                 <div className="flex items-center gap-1.5 px-5 pt-4">
                   {STEPS.map((s, i) => (
-                    <span key={s.n} className="h-1 flex-1 rounded-full transition-colors duration-300" style={{ backgroundColor: demoStep > i ? ACCENT : "#E8E2D9" }} />
+                    <span
+                      key={s.n}
+                      className="h-1 flex-1 rounded-full origin-left transition-all duration-300"
+                      style={{ backgroundColor: demoStep > i ? ACCENT : "#E8E2D9", transform: demoStep === i + 1 ? "scaleY(1.8)" : "scaleY(1)" }}
+                    />
                   ))}
                 </div>
 
-                <div className="p-6 sm:p-7 min-h-[340px] flex flex-col" style={{ backgroundColor: "#ffffff" }}>
+                <div key={demoStep} className="card-fade-up p-6 sm:p-7 min-h-[340px] flex flex-col" style={{ backgroundColor: "#ffffff" }}>
                   {/* Step 1: Connect LinkedIn */}
                   {demoStep === 1 && (
                     <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 py-4">
@@ -650,26 +660,28 @@ export default function DoItYourselfClient() {
       {/* ── Deliverables + Who it's for ───────────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-              What You Get
-            </span>
-            <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Every campaign includes</h2>
-            <ul className="space-y-4">
-              {DELIVERABLES.map((d) => (
-                <li key={d} className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ backgroundColor: "rgba(124,58,237,0.1)" }}>
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{d}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FadeIn>
+            <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
+                style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
+                What You Get
+              </span>
+              <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Every campaign includes</h2>
+              <ul className="space-y-4">
+                {DELIVERABLES.map((d, i) => (
+                  <li key={d} className="card-fade-up flex items-start gap-3" style={{ animationDelay: `${i * 70}ms` }}>
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{ backgroundColor: "rgba(124,58,237,0.1)" }}>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{d}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
 
           <div>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
@@ -678,17 +690,19 @@ export default function DoItYourselfClient() {
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for people who&apos;d rather run it themselves</h2>
             <div className="space-y-4">
-              {WHO_FOR.map((w) => (
-                <div key={w.title} className="rounded-2xl border p-6 transition-all duration-200"
-                  style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; }}>
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-xl">{w.icon}</span>
-                    <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{w.title}</h3>
+              {WHO_FOR.map((w, i) => (
+                <FadeIn key={w.title} delay={i * 110}>
+                  <div className="rounded-2xl border p-6 transition-all duration-200"
+                    style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-xl">{w.icon}</span>
+                      <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{w.title}</h3>
+                    </div>
+                    <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{w.desc}</p>
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{w.desc}</p>
-                </div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -711,11 +725,13 @@ export default function DoItYourselfClient() {
               { title: "Acceptance Rate", desc: "Per campaign and lifetime, across your account." },
               { title: "Reply Rate", desc: "How many of your accepted connections reply." },
               { title: "Lead Status", desc: "Where every single lead stands, at a glance." },
-            ].map((d) => (
-              <div key={d.title} className="rounded-2xl border p-6 text-left" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{d.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{d.desc}</p>
-              </div>
+            ].map((d, i) => (
+              <FadeIn key={d.title} delay={i * 100}>
+                <div className="rounded-2xl border p-6 text-left transition-transform duration-300 hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{d.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{d.desc}</p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>

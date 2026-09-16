@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import LeadCaptureForm from "../../components/LeadCaptureForm";
 import JsonLd from "../../components/JsonLd";
 import { buildEventSchema, SITE_URL } from "@/lib/schema";
 
+const ZOOM_REGISTRATION_URL = "https://us06web.zoom.us/meeting/register/rzG-rrhQT82JFqUwF0n9SA";
 const PAGE_URL = `${SITE_URL}/events/predictable-pipeline-webinar`;
 const TITLE = "We Create 200+ Meetings Every Month Through Cold Outreach. Let's Help You Build a More Predictable Lead Pipeline.";
 const DESCRIPTION = "Most businesses don't have a lead problem. They have a predictability problem. This webinar breaks down the cold outreach system Myntmore uses to create 200+ meetings every month, covering what's actually working across LinkedIn, cold email, targeting, messaging, personal branding and automation. Expect practical strategies, real experiments and proven frameworks that businesses can adapt to build a stronger, more consistent pipeline without waiting for the next lead to come in.";
@@ -70,9 +70,14 @@ export default function PredictablePipelineWebinar() {
             </span>
           </div>
 
-          <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#52525B" }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: "#52525B" }}>
             {DESCRIPTION}
           </p>
+
+          <a href={ZOOM_REGISTRATION_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            Register on Zoom
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
         </div>
       </section>
 
@@ -90,11 +95,15 @@ export default function PredictablePipelineWebinar() {
       </section>
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-2xl mx-auto">
-          <LeadCaptureForm
-            title="Reserve your seat"
-            subtitle="September 19, 2026 · 11:30 AM – 1:00 PM IST. Register now and we'll email you the joining link before the session."
-          />
+        <div className="max-w-2xl mx-auto text-center rounded-2xl border p-10" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+          <h2 className="text-2xl font-black mb-3" style={{ color: "#0a0a0a" }}>Reserve your seat</h2>
+          <p className="text-sm mb-8" style={{ color: "#52525B" }}>
+            September 19, 2026 &middot; 11:30 AM – 1:00 PM IST. Register on Zoom and you&apos;ll get the joining link straight to your inbox.
+          </p>
+          <a href={ZOOM_REGISTRATION_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            Register on Zoom
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
         </div>
       </section>
 

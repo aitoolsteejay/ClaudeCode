@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
+import EventPopup from "./components/EventPopup";
 
 export const metadata: Metadata = {
   title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
@@ -69,6 +70,7 @@ export default function Home() {
       <JsonLd data={buildWebsiteSchema()} />
       <JsonLd data={buildLocalBusinessSchema()} />
       <Navbar />
+      <EventPopup />
       <Hero />
       <LogoStrip />
       <WhoWeHelp />

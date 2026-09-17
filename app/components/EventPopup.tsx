@@ -5,8 +5,7 @@ import Link from "next/link";
 import { EVENTS, isUpcoming } from "@/lib/events-data";
 
 const SEEN_KEY = "myntmore-event-popup-seen";
-const SHOW_DELAY_MS = 10000;
-const VISIBLE_DURATION_MS = 5000;
+const SHOW_DELAY_MS = 7000;
 
 export default function EventPopup() {
   const event = EVENTS.filter(isUpcoming)[0];
@@ -31,12 +30,6 @@ export default function EventPopup() {
 
     return () => clearTimeout(showTimer);
   }, [event]);
-
-  useEffect(() => {
-    if (!visible) return;
-    const hideTimer = setTimeout(() => setVisible(false), VISIBLE_DURATION_MS);
-    return () => clearTimeout(hideTimer);
-  }, [visible]);
 
   if (!event) return null;
 

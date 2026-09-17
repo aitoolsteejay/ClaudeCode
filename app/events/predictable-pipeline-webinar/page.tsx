@@ -5,7 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildEventSchema, SITE_URL } from "@/lib/schema";
 
-const ZOOM_REGISTRATION_URL = "https://us06web.zoom.us/meeting/register/rzG-rrhQT82JFqUwF0n9SA";
+const ZOOM_REGISTRATION_URL = "https://zcu.ge/pGv";
 const PAGE_URL = `${SITE_URL}/events/predictable-pipeline-webinar`;
 const TITLE = "We Create 200+ Meetings Every Month Through Cold Outreach. Let's Help You Build a More Predictable Lead Pipeline.";
 const DESCRIPTION = "Most businesses don't have a lead problem. They have a predictability problem. This webinar breaks down the cold outreach system Myntmore uses to create 200+ meetings every month, covering what's actually working across LinkedIn, cold email, targeting, messaging, personal branding and automation. Expect practical strategies, real experiments and proven frameworks that businesses can adapt to build a stronger, more consistent pipeline without waiting for the next lead to come in.";

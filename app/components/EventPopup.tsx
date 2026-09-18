@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { EVENTS, isUpcoming } from "@/lib/events-data";
 
-const SEEN_KEY = "myntmore-event-popup-seen";
 const SHOW_DELAY_MS = 7000;
 
 export default function EventPopup() {
@@ -13,21 +12,7 @@ export default function EventPopup() {
 
   useEffect(() => {
     if (!event) return;
-    let alreadySeen = false;
-    try {
-      alreadySeen = sessionStorage.getItem(SEEN_KEY) === "1";
-    } catch {
-      // sessionStorage unavailable (private browsing, etc.) — just show it
-    }
-    if (alreadySeen) return;
-
-    const showTimer = setTimeout(() => {
-      setVisible(true);
-      try {
-        sessionStorage.setItem(SEEN_KEY, "1");
-      } catch {}
-    }, SHOW_DELAY_MS);
-
+    const showTimer = setTimeout(() => setVisible(true), SHOW_DELAY_MS);
     return () => clearTimeout(showTimer);
   }, [event]);
 

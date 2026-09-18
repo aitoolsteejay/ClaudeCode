@@ -269,7 +269,7 @@ export default function Page() {
             ))}
           </div>
           <p className="mt-10 text-sm" style={{ color: "#8C8279" }}>
-            Since 2019, Myntmore has booked 12,000+ meetings and generated $120M+ in pipeline for clients across
+            Since 2019, Myntmore has booked 12K+ meetings and generated $120M+ in pipeline for clients across
             industries, the same AI-powered system now runs for Chennai's manufacturing, healthcare, and IT/ITES
             companies.
           </p>

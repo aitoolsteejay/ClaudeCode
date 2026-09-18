@@ -44,6 +44,12 @@ const WHO_FOR = [
   { icon: "🔬", title: "Revenue Operations Leaders", desc: "RevOps professionals building a signal-led pipeline infrastructure that replaces bought lists with continuously refreshed, context-rich account intelligence." },
 ];
 
+const NOT_FOR = [
+  "You already have a razor-sharp ICP and just need execution against it, not more research.",
+  "You want a one-time list purchase, not a continuously refreshed targeting model.",
+  "Your addressable market is small enough that you already know every account by name.",
+];
+
 const TESTIMONIALS = [
   {
     quote: "We used to buy lists and pray. Myntmore's signal intelligence showed us accounts that had just hired a VP of Sales, raised a round, and switched off a competitor's tool, all in the same week. We called them first. Our pipeline conversion went up 4x.",
@@ -489,6 +495,26 @@ export default function SalesIntelligenceClient() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Not the right fit ────────────────────────────────── */}
+      <section className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl border p-8" style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#DC2626", border: "1px solid rgba(220,38,38,0.2)" }}>
+              Honest Note
+            </span>
+            <h3 className="text-lg font-black mb-3" style={{ color: "#0a0a0a" }}>This isn&apos;t the right fit if&hellip;</h3>
+            <ul className="space-y-2">
+              {NOT_FOR.map((n) => (
+                <li key={n} className="flex items-start gap-2.5">
+                  <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#DC2626" }} />
+                  <span className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{n}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

@@ -33,6 +33,22 @@ export const metadata: Metadata = {
 
 const GUIDES = [
   {
+    href: "/how-to-choose-an-outbound-agency",
+    tag: "Buyer's Guide",
+    title: "How to Choose a B2B Outbound Agency",
+    excerpt: "A neutral evaluation checklist for vetting outbound partners: what to ask about track record, infrastructure, contracts, and how they actually run campaigns.",
+    readTime: "6 min read",
+    accent: "#0EA5E9",
+  },
+  {
+    href: "/blog/agency-vs-in-house",
+    tag: "Comparison",
+    title: "Agency vs. In-House SDR",
+    excerpt: "The real tradeoff on cost, ramp-up time, tooling, and risk, side by side, so you can figure out which fits your stage before you commit either way.",
+    readTime: "6 min read",
+    accent: "#6366f1",
+  },
+  {
     href: "/instagram-resources/golden-icp-framework",
     tag: "ICP & Targeting",
     title: "The Golden ICP Framework",

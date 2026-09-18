@@ -35,7 +35,11 @@ export const organizationSchema: OrganizationSchema = {
   description:
     "Myntmore is Mumbai's leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.",
   email: "growth@myntmore.com",
-  founder: { "@type": "Person", name: "Tejas Jhaveri", sameAs: ["https://linkedin.com/in/tejasjhaveri"] },
+  founder: {
+    "@type": "Person",
+    name: "Tejas Jhaveri",
+    sameAs: ["https://linkedin.com/in/tejasjhaveri", "https://youtube.com/@TJtheLeadGenExpert"],
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli",
@@ -156,6 +160,26 @@ export function buildWebApplicationSchema({ name, description, url }: WebApplica
       name: "Myntmore",
       url: SITE_URL,
     },
+  };
+}
+
+export interface DefinedTermInput {
+  name: string;
+  description: string;
+  url: string;
+  inDefinedTermSet?: string;
+}
+
+// For single-definition glossary pages. `inDefinedTermSet` points back at the
+// glossary hub that groups these terms, per schema.org convention.
+export function buildDefinedTermSchema({ name, description, url, inDefinedTermSet }: DefinedTermInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name,
+    description,
+    url,
+    ...(inDefinedTermSet ? { inDefinedTermSet } : {}),
   };
 }
 

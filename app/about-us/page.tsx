@@ -86,7 +86,7 @@ export default function AboutUs() {
             Built by a founder who figured outbound out the hard way
           </h1>
           <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
-            Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of lead generation experience. He founded Myntmore in 2019, and the team has since booked 12,000+ meetings and generated $120M+ in pipeline for 300+ B2B companies.
+            Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of lead generation experience. He founded Myntmore in 2019, and the team has since booked 12K+ meetings and generated $120M+ in pipeline for 300+ B2B companies.
           </p>
         </div>
       </section>

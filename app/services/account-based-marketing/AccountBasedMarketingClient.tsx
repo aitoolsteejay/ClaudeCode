@@ -44,6 +44,12 @@ const WHO_FOR = [
   { icon: "🤝", title: "RevOps & Marketing Leaders", desc: "Teams that want sales and marketing coordinated around the same named accounts, instead of running two disconnected motions that never reinforce each other." },
 ];
 
+const NOT_FOR = [
+  "You don't have a definable, finite list of named target accounts.",
+  "Your average deal size doesn't justify the cost of deep, account-level personalisation.",
+  "You're running a broad-market volume play, not a focused push on specific accounts.",
+];
+
 const TESTIMONIALS = [
   {
     quote: "We had a list of 80 target accounts and no real plan for reaching more than one person at each. Myntmore built the tiering and the multi-channel sequencing, and within a quarter we had multiple stakeholders engaged at our top accounts before a single AE call happened.",
@@ -488,6 +494,26 @@ export default function AccountBasedMarketingClient() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Not the right fit ────────────────────────────────── */}
+      <section className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl border p-8" style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#DC2626", border: "1px solid rgba(220,38,38,0.2)" }}>
+              Honest Note
+            </span>
+            <h3 className="text-lg font-black mb-3" style={{ color: "#0a0a0a" }}>This isn&apos;t the right fit if&hellip;</h3>
+            <ul className="space-y-2">
+              {NOT_FOR.map((n) => (
+                <li key={n} className="flex items-start gap-2.5">
+                  <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#DC2626" }} />
+                  <span className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{n}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

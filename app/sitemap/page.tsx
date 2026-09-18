@@ -101,9 +101,21 @@ const GROUPS: SitemapGroup[] = [
     accent: "#8B5CF6",
     links: [
       { label: "All Guides", href: "/resources/guides" },
+      { label: "Who Myntmore Is For (and Who It Isn't)", href: "/who-this-is-for" },
+      { label: "How to Choose a B2B Outbound Agency", href: "/how-to-choose-an-outbound-agency" },
       { label: "The 6 Claude Skills Guide", href: "/instagram-resources/claude-skills-guide" },
       { label: "80+ US Meetings with AI Agents", href: "/instagram-resources/80-us-meetings-ai-agents" },
       { label: "How to Set Up Vibe Prospecting", href: "/instagram-resources/how-to-set-up-vibe-prospecting" },
+    ],
+  },
+  {
+    title: "Glossary",
+    accent: "#0EA5E9",
+    links: [
+      { label: "All Terms", href: "/resources/glossary" },
+      { label: "Total Conversional Market (TCM)", href: "/resources/glossary/total-conversional-market" },
+      { label: "Signal-Heavy Structuring", href: "/resources/glossary/signal-heavy-structuring" },
+      { label: "The 3-Second Rule", href: "/resources/glossary/3-second-rule" },
     ],
   },
   {

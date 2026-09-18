@@ -42,6 +42,12 @@ const WHO_FOR = [
   { icon: "🎯", title: "ABM Teams", desc: "Account-based teams that need deep account-level research at scale to power high-impact outbound campaigns." },
 ];
 
+const NOT_FOR = [
+  "You want every message personally, manually written with no automation involved at all.",
+  "Your current volume is low enough that a small manual process already works fine.",
+  "You're in a category where any automated outreach carries real compliance risk.",
+];
+
 const TESTIMONIALS = [
   {
     quote: "We went from spending 4 hours a day manually qualifying leads to getting 400 scored, research-enriched prospects in our CRM every week. Our AE now walks into every call knowing exactly what the company does and why they're a fit.",
@@ -396,6 +402,26 @@ export default function AiLeadGenerationClient() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Not the right fit ────────────────────────────────── */}
+      <section className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl border p-8" style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#DC2626", border: "1px solid rgba(220,38,38,0.2)" }}>
+              Honest Note
+            </span>
+            <h3 className="text-lg font-black mb-3" style={{ color: "#0a0a0a" }}>This isn&apos;t the right fit if&hellip;</h3>
+            <ul className="space-y-2">
+              {NOT_FOR.map((n) => (
+                <li key={n} className="flex items-start gap-2.5">
+                  <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#DC2626" }} />
+                  <span className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{n}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

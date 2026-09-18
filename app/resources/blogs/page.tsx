@@ -41,6 +41,13 @@ export const metadata: Metadata = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/who-this-is-for",
+    tags: ["Positioning", "Lead Generation"],
+    title: "Who Myntmore Is For (and Who It Isn't)",
+    excerpt: "Myntmore is built narrowly around B2B pipeline generation, cold email, LinkedIn outreach, and ABM run as one system. Here's exactly who that's for, and who it isn't.",
+    readTime: "4 min read",
+  },
+  {
     href: "/blog/stop-selling-features-cold-outreach",
     tags: ["Cold Outreach", "Lead Generation"],
     title: "Stop Selling Features: The 3-Second Rule of Outbound Outreach",

@@ -877,22 +877,26 @@ export default function DosAndDontsClient() {
               <FadeIn key={t.href} delay={i * 60}>
                 <Link
                   href={t.href}
-                  className="group flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                  style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}
+                  className="group flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                  style={{ backgroundColor: `${t.accent}0D`, border: `1.5px solid ${t.accent}55` }}
                 >
-                  <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
+                  <div className="h-1.5" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}99)` }} />
                   <div className="flex flex-col flex-1 p-7">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <h3 className="text-lg font-black leading-snug" style={{ color: T.ink }}>{t.name}</h3>
-                      <span className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ backgroundColor: `${t.accent}14`, color: t.accent }}>
-                        <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <span className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105" style={{ backgroundColor: t.accent, color: "#ffffff" }}>
+                        <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
                       </span>
+                      <span className="text-[10px] font-black uppercase tracking-[0.18em] px-2.5 py-1 rounded-full" style={{ backgroundColor: T.paper, color: t.accent, border: `1px solid ${t.accent}55` }}>Free</span>
                     </div>
+                    <h3 className="text-xl font-black leading-snug mb-2" style={{ color: T.ink }}>{t.name}</h3>
                     <p className="text-[15px] leading-relaxed mb-5" style={{ color: T.ink2 }}>{t.plain}</p>
-                    <p className="text-sm leading-relaxed mt-auto pt-4 border-t" style={{ color: T.muted, borderColor: T.hairline }}>
+                    <p className="text-sm leading-relaxed mt-auto pt-4 border-t" style={{ color: T.muted, borderColor: `${t.accent}33` }}>
                       <span className="font-bold" style={{ color: T.ink }}>Use it when: </span>{t.useCase}
                     </p>
-                    <span className="mt-4 text-sm font-bold inline-flex items-center gap-1.5" style={{ color: t.accent }}>Try it free <ArrowRight className="w-3.5 h-3.5" strokeWidth={3} /></span>
+                    <span className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform duration-300 group-hover:translate-x-0.5" style={{ backgroundColor: t.accent, boxShadow: `0 6px 16px ${t.accent}55` }}>
+                      Try it free
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
+                    </span>
                   </div>
                 </Link>
               </FadeIn>

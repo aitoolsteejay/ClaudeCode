@@ -578,6 +578,31 @@ body {
   box-shadow: 0 0 40px hsl(var(--primary) / 0.15);
 }
 
+/* ─── Reduced motion ───────────────────────────────────────
+   Honour the OS "reduce motion" setting: entrance/idle animations
+   render in their final visible state, decorative loops stop. ─── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-fade, .hero-fade-d1, .hero-fade-d2, .hero-fade-d3, .hero-fade-d4,
+  .card-fade-up, .lp-float-icon, .lp-icon-bob, .lp-pop-in, .stack-card,
+  .marquee-track, .cta-animated-section, .lp-radar-ring {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  [style*="marquee-left"], [style*="marquee-right"],
+  [style*="handwrite-float"], [style*="bubble-float"] {
+    animation: none !important;
+  }
+  path[style*="doodle-draw"] {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
 /* ─── Mobile form input sizing ─────────────────────────────
    iOS Safari auto-zooms the whole page when a form field with a
    computed font-size under 16px receives focus -- a well-known mobile

@@ -3,6 +3,11 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { Caveat } from "next/font/google";
+import {
+  Lock, Blocks, Bot, ChartColumn, Rocket, UserCog, Handshake,
+  Play, Pause, Check, Plus, Minus, X, ArrowRight, RotateCcw, Upload,
+  type LucideIcon,
+} from "lucide-react";
 import InnerLayout from "../../components/InnerLayout";
 import FadeIn from "../../components/FadeIn";
 import JsonLd from "../../components/JsonLd";
@@ -10,10 +15,12 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import { LinkedInIcon } from "../../components/ContactIcons";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
+// This page books a product demo with the DIY tool's owner, not the founder
+// call at /founder-meeting that every other service page uses.
 const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 
 // Scoped here rather than site-wide (same reasoning as the homepage Hero):
-// only the two decorative doodle sections below use this handwritten font.
+// only the handwritten annotation sections below use this font.
 const caveat = Caveat({
   subsets: ["latin"],
   variable: "--font-caveat",
@@ -22,6 +29,8 @@ const caveat = Caveat({
 });
 
 const ACCENT = "#7C3AED";
+const GOLD_TEXT = "#B45309";
+const FOCUS = "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Do It Yourself LinkedIn Outreach Tool",
@@ -63,17 +72,17 @@ const DEFAULT_NOTE = "Hi {{firstName}}, I help B2B teams build predictable outbo
 type LeadStatus = "queued" | "invited" | "connected" | "replied";
 
 const STATUS_STYLE: Record<LeadStatus, { label: string; bg: string; color: string }> = {
-  queued: { label: "Queued", bg: "#F1F5F9", color: "#64748B" },
-  invited: { label: "Invited", bg: "#FEF9EC", color: "#D97706" },
+  queued: { label: "Queued", bg: "#F1F5F9", color: "#475569" },
+  invited: { label: "Invited", bg: "#FEF9EC", color: GOLD_TEXT },
   connected: { label: "Connected", bg: "#EFF6FF", color: "#0A66C2" },
-  replied: { label: "Replied", bg: "#F0FDF4", color: "#16A34A" },
+  replied: { label: "Replied", bg: "#F0FDF4", color: "#15803D" },
 };
 
-const FEATURES = [
-  { icon: "🔐", title: "Runs On Your LinkedIn", desc: "You log in with your own account and stay in control of it. We don't manage or touch your profile, the tool just automates the sending." },
-  { icon: "🧩", title: "Full Campaign Builder", desc: "Upload leads, write your connection note, and build a follow-up sequence, with as many campaigns running as you need." },
-  { icon: "🤖", title: "Human-Like Sending", desc: "Connection requests and follow-ups go out mimicking human behaviour, on the schedule and delays you configure." },
-  { icon: "📊", title: "A Dashboard For Every Lead", desc: "See campaign-level and lifetime metrics, acceptance rate, reply rate, and the live status of every single lead." },
+const FEATURES: { icon: LucideIcon; title: string; desc: string }[] = [
+  { icon: Lock, title: "Runs On Your LinkedIn", desc: "You log in with your own account and stay in control of it. We don't manage or touch your profile, the tool just automates the sending." },
+  { icon: Blocks, title: "Full Campaign Builder", desc: "Upload leads, write your connection note, and build a follow-up sequence, with as many campaigns running as you need." },
+  { icon: Bot, title: "Human-Like Sending", desc: "Connection requests and follow-ups go out mimicking human behaviour, on the schedule and delays you configure." },
+  { icon: ChartColumn, title: "A Dashboard For Every Lead", desc: "See campaign-level and lifetime metrics, acceptance rate, reply rate, and the live status of every single lead." },
 ];
 
 const DELIVERABLES = [
@@ -85,10 +94,16 @@ const DELIVERABLES = [
   "Status tracking for every individual lead in every campaign",
 ];
 
-const WHO_FOR = [
-  { icon: "🚀", title: "Founders & Small Teams", desc: "Run your own LinkedIn outreach without hiring an agency or an SDR, from a dashboard built for exactly this job." },
-  { icon: "🧑‍💻", title: "Sales Reps Who Want Control", desc: "Set up your own campaigns, write your own notes and follow-ups, and keep full visibility into every lead yourself." },
-  { icon: "🤝", title: "Agencies & Consultants", desc: "Run outreach across your own or your clients' LinkedIn accounts, with a separate campaign and dashboard for each." },
+const WHO_FOR: { icon: LucideIcon; title: string; desc: string }[] = [
+  { icon: Rocket, title: "Founders & Small Teams", desc: "Run your own LinkedIn outreach without hiring an agency or an SDR, from a dashboard built for exactly this job." },
+  { icon: UserCog, title: "Sales Reps Who Want Control", desc: "Set up your own campaigns, write your own notes and follow-ups, and keep full visibility into every lead yourself." },
+  { icon: Handshake, title: "Agencies & Consultants", desc: "Run outreach across your own or your clients' LinkedIn accounts, with a separate campaign and dashboard for each." },
+];
+
+const DASHBOARD_METRICS = [
+  { title: "Acceptance Rate", desc: "Per campaign and lifetime, across your account." },
+  { title: "Reply Rate", desc: "How many of your accepted connections reply." },
+  { title: "Lead Status", desc: "Where every single lead stands, at a glance." },
 ];
 
 const FAQ_ITEMS = [
@@ -97,7 +112,7 @@ const FAQ_ITEMS = [
   { q: "Can I run more than one campaign?", a: "Yes. Each campaign has its own list of leads, connection note, and follow-up sequence, so you can run as many as you need at once, for different segments, offers, or lists." },
   { q: "What can I configure for my follow-ups?", a: "For every campaign, you set how many follow-up messages go out, what each one says, and the time delay before each one is sent." },
   { q: "What do I see on my dashboard?", a: "Both campaign-level and lifetime metrics: acceptance rate, reply rate, and the live status of every lead in every campaign." },
-  { q: "How do I get access?", a: "Book a call with our team and we'll get you set up." },
+  { q: "How do I get access?", a: "Book a demo with our team and we'll get you set up." },
 ];
 
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
@@ -108,19 +123,107 @@ const CAPABILITY_CHIPS = [
   "Reply Rate Tracking", "Lifetime Metrics", "Multiple Campaigns", "Full Dashboard Access",
 ];
 
+type DriftPath = (t: number) => [number, number];
+
+const HERO_DRIFT: DriftPath[] = [
+  (t) => [Math.sin(t * 0.65) * 210 + Math.sin(t * 0.28) * 75, Math.cos(t * 0.5) * 145 + Math.cos(t * 0.2) * 55],
+  (t) => [Math.sin(t * 0.55 + 2) * 210 + Math.cos(t * 0.38) * 72, Math.cos(t * 0.72 + 1) * 145 + Math.sin(t * 0.32) * 52],
+  (t) => [Math.sin(t * 0.5 + 4) * 185 + Math.sin(t * 0.33) * 62, Math.cos(t * 0.62 + 2) * 165 + Math.cos(t * 0.43) * 52],
+];
+
+const CTA_DRIFT: DriftPath[] = [
+  (t) => [Math.sin(t * 0.75) * 310 + Math.sin(t * 0.28) * 92, Math.cos(t * 0.58) * 135 + Math.cos(t * 0.22) * 58],
+  (t) => [Math.sin(t * 0.68 + 2) * 310 + Math.cos(t * 0.38) * 92, Math.cos(t * 0.78 + 1) * 135 + Math.sin(t * 0.33) * 58],
+];
+
+/* ─── Hooks ─────────────────────────────────────────────────── */
+
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return reduced;
+}
+
+/* True while the element is on screen and the tab is visible */
+function useIsActive<T extends Element>(ref: React.RefObject<T>) {
+  const [active, setActive] = useState(true);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let intersecting = true;
+    const sync = () => setActive(intersecting && !document.hidden);
+    const observer = new IntersectionObserver(([entry]) => { intersecting = entry.isIntersecting; sync(); }, { threshold: 0.1 });
+    observer.observe(el);
+    document.addEventListener("visibilitychange", sync);
+    return () => { observer.disconnect(); document.removeEventListener("visibilitychange", sync); };
+  }, [ref]);
+  return active;
+}
+
+/* Drifts the blurred background blobs; resumes from where it paused */
+function useDrift(active: boolean, refs: React.RefObject<HTMLDivElement>[], paths: DriftPath[]) {
+  const elapsed = useRef(0);
+  useEffect(() => {
+    if (!active || window.innerWidth < 768) return;
+    let id: number;
+    const t0 = performance.now() - elapsed.current * 1000;
+    function loop() {
+      const t = (performance.now() - t0) / 1000;
+      elapsed.current = t;
+      refs.forEach((r, i) => {
+        if (!r.current) return;
+        const [x, y] = paths[i](t);
+        r.current.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      id = requestAnimationFrame(loop);
+    }
+    id = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(id);
+    // refs and paths are stable for the component's lifetime
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active]);
+}
+
 /* ─── Sub-components ─────────────────────────────────────────── */
+
+function Eyebrow({ children, tone = "purple" }: { children: React.ReactNode; tone?: "purple" | "gold" }) {
+  const style = tone === "purple"
+    ? { backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }
+    : { backgroundColor: "#FEF9EC", color: GOLD_TEXT, border: "1px solid rgba(245,183,49,0.3)" };
+  return (
+    <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={style}>
+      {children}
+    </span>
+  );
+}
+
+function IconTile({ icon: Icon, size = "lg" }: { icon: LucideIcon; size?: "lg" | "sm" }) {
+  const box = size === "lg" ? "w-11 h-11 rounded-xl" : "w-10 h-10 rounded-lg";
+  return (
+    <span className={`${box} flex-shrink-0 flex items-center justify-center`} style={{ backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT }}>
+      <Icon className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+    </span>
+  );
+}
 
 function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; open: boolean; onToggle: () => void; index: number }) {
   return (
     <div
-      className="border rounded-xl overflow-hidden transition-all duration-300"
+      className="border rounded-xl overflow-hidden transition-colors duration-300"
       style={open
         ? { borderColor: "rgba(124,58,237,0.4)", borderLeftColor: ACCENT, borderLeftWidth: "3px", backgroundColor: "rgba(124,58,237,0.04)" }
         : { borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}
     >
       <button
+        type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
+        className={`w-full flex items-center justify-between px-6 py-5 text-left gap-4 ${FOCUS}`}
         aria-expanded={open}
         aria-controls={`faq-answer-${index}`}
         id={`faq-question-${index}`}
@@ -128,20 +231,20 @@ function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; 
         <span className="text-base font-bold" style={{ color: "#0a0a0a" }}>{q}</span>
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
           style={{ backgroundColor: open ? "rgba(124,58,237,0.12)" : "#F8F6F2" }}>
-          <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
-            fill="none" viewBox="0 0 24 24" stroke={open ? ACCENT : "#6B6B6B"} strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
-          </svg>
+          <Plus className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`} strokeWidth={2.5} aria-hidden="true" style={{ color: open ? ACCENT : "#6B6B6B" }} />
         </span>
       </button>
       <div
         id={`faq-answer-${index}`}
         role="region"
         aria-labelledby={`faq-question-${index}`}
-        className="overflow-hidden transition-all duration-300"
-        style={{ maxHeight: open ? "300px" : "0px" }}
+        aria-hidden={!open}
+        className="grid transition-[grid-template-rows] duration-300"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
-        <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: "#52525B" }}>{a}</p>
+        <div className="overflow-hidden">
+          <p className="px-6 pb-5 text-sm leading-relaxed" style={{ color: "#52525B" }}>{a}</p>
+        </div>
       </div>
     </div>
   );
@@ -157,7 +260,7 @@ function CapabilityChip({ label, i }: { label: string; i: number }) {
         color: "#1a1a1a",
         boxShadow: "0 1px 6px rgba(0,0,0,0.05)",
       }}>
-      <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ backgroundColor: isPurple ? ACCENT : "#D97706" }} />
+      <span className="w-2 h-2 rounded-sm flex-shrink-0" aria-hidden="true" style={{ backgroundColor: isPurple ? ACCENT : "#D97706" }} />
       {label}
     </span>
   );
@@ -166,20 +269,43 @@ function CapabilityChip({ label, i }: { label: string; i: number }) {
 function StatusPill({ status }: { status: LeadStatus }) {
   const s = STATUS_STYLE[status];
   return (
-    <span className="flex-shrink-0 text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-full" style={{ backgroundColor: s.bg, color: s.color }}>
+    <span className="flex-shrink-0 text-xs font-bold uppercase tracking-wide px-2 py-1 rounded-full" style={{ backgroundColor: s.bg, color: s.color }}>
       {s.label}
     </span>
+  );
+}
+
+function StepperButton({ onClick, label, children }: { onClick: () => void; label: string; children: React.ReactNode }) {
+  return (
+    <button type="button" onClick={onClick} aria-label={label}
+      className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors hover:bg-[#F5F3FF] ${FOCUS}`}
+      style={{ backgroundColor: "#F8F6F2", color: ACCENT }}>
+      {children}
+    </button>
   );
 }
 
 /* ─── Page ──────────────────────────────────────────────────── */
 
 export default function DoItYourselfClient() {
+  const reducedMotion = usePrefersReducedMotion();
+
+  const heroRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
+  const demoRef = useRef<HTMLDivElement>(null);
   const blob1 = useRef<HTMLDivElement>(null);
   const blob2 = useRef<HTMLDivElement>(null);
   const blob3 = useRef<HTMLDivElement>(null);
   const ctaBlob1 = useRef<HTMLDivElement>(null);
   const ctaBlob2 = useRef<HTMLDivElement>(null);
+
+  const heroActive = useIsActive(heroRef);
+  const ctaActive = useIsActive(ctaRef);
+  const demoActive = useIsActive(demoRef);
+
+  useDrift(heroActive && !reducedMotion, [blob1, blob2, blob3], HERO_DRIFT);
+  useDrift(ctaActive && !reducedMotion, [ctaBlob1, ctaBlob2], CTA_DRIFT);
+
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   /* Interactive campaign-builder demo */
@@ -193,13 +319,17 @@ export default function DoItYourselfClient() {
   const [leadStatuses, setLeadStatuses] = useState<LeadStatus[]>(Array(DEMO_LEADS.length).fill("queued"));
   const [autoPlay, setAutoPlay] = useState(true);
 
+  useEffect(() => {
+    if (reducedMotion) setAutoPlay(false);
+  }, [reducedMotion]);
+
   function stopAutoPlay() {
     setAutoPlay(false);
   }
 
-  /* Drives the demo forward on its own, step by step, until someone touches it */
+  /* Drives the demo forward on its own while it's on screen, until someone touches it */
   useEffect(() => {
-    if (!autoPlay) return;
+    if (!autoPlay || !demoActive) return;
     const timers: ReturnType<typeof setTimeout>[] = [];
 
     if (demoStep === 1) {
@@ -225,7 +355,7 @@ export default function DoItYourselfClient() {
 
     return () => timers.forEach(clearTimeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [autoPlay, demoStep, linkedinConnected, campaignName, leadsUploaded, launched]);
+  }, [autoPlay, demoActive, demoStep, linkedinConnected, campaignName, leadsUploaded, launched]);
 
   useEffect(() => {
     if (!launched) return;
@@ -264,43 +394,17 @@ export default function DoItYourselfClient() {
     setFollowUps([{ id: 1, day: 3 }, { id: 2, day: 7 }]);
     setLaunched(false);
     setLeadStatuses(Array(DEMO_LEADS.length).fill("queued"));
-    setAutoPlay(true);
+    setAutoPlay(!reducedMotion);
   }
 
-  const invitedOrFurther = leadStatuses.filter((s) => s !== "queued").length;
-  const acceptedOrFurther = leadStatuses.filter((s) => s === "connected" || s === "replied").length;
-  const repliedCount = leadStatuses.filter((s) => s === "replied").length;
+  let invitedOrFurther = 0, acceptedOrFurther = 0, repliedCount = 0;
+  for (const s of leadStatuses) {
+    if (s !== "queued") invitedOrFurther += 1;
+    if (s === "connected" || s === "replied") acceptedOrFurther += 1;
+    if (s === "replied") repliedCount += 1;
+  }
   const acceptanceRate = invitedOrFurther ? Math.round((acceptedOrFurther / invitedOrFurther) * 100) : 0;
   const replyRate = acceptedOrFurther ? Math.round((repliedCount / acceptedOrFurther) * 100) : 0;
-
-  useEffect(() => {
-    if (window.innerWidth < 768) return;
-    let id: number;
-    const t0 = performance.now();
-    function loop() {
-      const t = (performance.now() - t0) / 1000;
-      if (blob1.current) blob1.current.style.transform = `translate(${Math.sin(t * 0.65) * 210 + Math.sin(t * 0.28) * 75}px, ${Math.cos(t * 0.5) * 145 + Math.cos(t * 0.2) * 55}px)`;
-      if (blob2.current) blob2.current.style.transform = `translate(${Math.sin(t * 0.55 + 2) * 210 + Math.cos(t * 0.38) * 72}px, ${Math.cos(t * 0.72 + 1) * 145 + Math.sin(t * 0.32) * 52}px)`;
-      if (blob3.current) blob3.current.style.transform = `translate(${Math.sin(t * 0.5 + 4) * 185 + Math.sin(t * 0.33) * 62}px, ${Math.cos(t * 0.62 + 2) * 165 + Math.cos(t * 0.43) * 52}px)`;
-      id = requestAnimationFrame(loop);
-    }
-    id = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(id);
-  }, []);
-
-  useEffect(() => {
-    if (window.innerWidth < 768) return;
-    let id: number;
-    const t0 = performance.now();
-    function loop() {
-      const t = (performance.now() - t0) / 1000;
-      if (ctaBlob1.current) ctaBlob1.current.style.transform = `translate(${Math.sin(t * 0.75) * 310 + Math.sin(t * 0.28) * 92}px, ${Math.cos(t * 0.58) * 135 + Math.cos(t * 0.22) * 58}px)`;
-      if (ctaBlob2.current) ctaBlob2.current.style.transform = `translate(${Math.sin(t * 0.68 + 2) * 310 + Math.cos(t * 0.38) * 92}px, ${Math.cos(t * 0.78 + 1) * 135 + Math.sin(t * 0.33) * 58}px)`;
-      id = requestAnimationFrame(loop);
-    }
-    id = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(id);
-  }, []);
 
   const doubled = [...CAPABILITY_CHIPS, ...CAPABILITY_CHIPS];
 
@@ -311,15 +415,10 @@ export default function DoItYourselfClient() {
       <JsonLd data={FAQ_SCHEMA} />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className={`relative pt-32 pb-20 px-4 overflow-hidden ${caveat.variable}`} style={{ backgroundColor: "#F8F6F2" }}>
+      <section ref={heroRef} className={`relative pt-32 pb-20 px-4 overflow-hidden ${caveat.variable}`} style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.18) 0%, rgba(124,58,237,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob2} aria-hidden style={{ position: "absolute", top: "40%", left: "75%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(255,130,0,0.08) 40%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob3} aria-hidden style={{ position: "absolute", top: "70%", left: "50%", width: 400, height: 400, marginTop: -200, marginLeft: -200, borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
-
-        {/* Floating doodle emoji */}
-        <span className="hidden sm:block lp-float-icon" aria-hidden="true" style={{ top: "26%", left: "6%", fontSize: "28px", "--lp-rot": "-8deg" } as React.CSSProperties}>🔗</span>
-        <span className="hidden sm:block lp-float-icon" aria-hidden="true" style={{ top: "22%", right: "9%", fontSize: "26px", "--lp-rot": "10deg", animationDelay: "0.8s" } as React.CSSProperties}>🎯</span>
-        <span className="hidden sm:block lp-float-icon" aria-hidden="true" style={{ bottom: "10%", left: "15%", fontSize: "24px", "--lp-rot": "6deg", animationDelay: "1.6s" } as React.CSSProperties}>🚀</span>
 
         {/* Handwritten annotation right side */}
         <div aria-hidden="true" className="hidden lg:flex flex-col items-center gap-1 absolute z-20" style={{ right: "2%", top: "30%", animation: "handwrite-float-r 5.5s ease-in-out 2.5s infinite" }}>
@@ -336,7 +435,7 @@ export default function DoItYourselfClient() {
         {/* Handwritten annotation left side */}
         <div aria-hidden="true" className="hidden lg:flex flex-col items-start gap-1 absolute z-20" style={{ left: "1%", top: "60%", animation: "handwrite-float-l 7s ease-in-out 3s infinite" }}>
           <div className="card-fade-up flex flex-col leading-snug" style={{ fontFamily: "var(--font-caveat)", fontSize: "19px", fontWeight: 700, color: "#D97706", lineHeight: 1.3, animationDelay: "1.3s" }}>
-            <span>⚡ 5 minutes</span>
+            <span>5 minutes</span>
             <span>to your first campaign</span>
           </div>
           <svg width="46" height="28" viewBox="0 0 46 28" fill="none" style={{ marginTop: "2px", alignSelf: "flex-end" }}>
@@ -350,7 +449,7 @@ export default function DoItYourselfClient() {
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
             style={{ borderColor: "rgba(124,58,237,0.35)", background: "rgba(124,58,237,0.07)" }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} />
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" aria-hidden="true" style={{ backgroundColor: ACCENT }} />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Do It Yourself</span>
           </div>
 
@@ -369,11 +468,11 @@ export default function DoItYourselfClient() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={`btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2 ${FOCUS}`}>
               Book a Demo
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              <ArrowRight className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
             </a>
-            <Link href="/services/linkedin-outreach" className="btn-ghost px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            <Link href="/services/linkedin-outreach" className={`btn-ghost px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2 ${FOCUS}`}>
               See the Done-for-You Service
             </Link>
           </div>
@@ -381,111 +480,93 @@ export default function DoItYourselfClient() {
       </section>
 
       {/* ── Capability marquee ───────────────────────────────── */}
-      <div className="py-8 overflow-hidden border-y" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="flex gap-4 w-max" style={{ animation: "marquee-left 32s linear infinite" }}>
+      <div className="py-8 border-y marquee-container" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }} aria-label="Included capabilities">
+        <div className="marquee-track gap-4">
           {doubled.map((label, i) => <CapabilityChip key={i} label={label} i={i} />)}
         </div>
       </div>
 
-      {/* ── Features ──────────────────────────────────────────── */}
-      <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12 text-center">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-              Built for Self-Serve
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Everything you need to run it yourself</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {FEATURES.map((f, i) => (
-              <FadeIn key={f.title} delay={i * 90}>
-                <div className="rounded-2xl border p-7 transition-all duration-200"
-                  style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">{f.icon}</span>
-                    <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{f.title}</h3>
-                  </div>
-                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{f.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── How it works: interactive demo ───────────────────── */}
-      <section className={`relative py-20 px-4 border-t ${caveat.variable}`} style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      <section className={`relative py-20 px-4 ${caveat.variable}`} style={{ backgroundColor: "#F8F6F2" }}>
         {/* Handwritten callout pointing at the live demo */}
-        <div aria-hidden="true" className="hidden lg:block absolute z-20" style={{ top: "3%", right: "6%", animation: "handwrite-float-l 6.5s ease-in-out 1s infinite" }}>
+        <div aria-hidden="true" className="hidden lg:flex flex-col items-end absolute z-20" style={{ top: "3%", right: "6%", animation: "handwrite-float-l 6.5s ease-in-out 1s infinite" }}>
           <div className="card-fade-up" style={{ fontFamily: "var(--font-caveat)", fontSize: "21px", fontWeight: 700, color: ACCENT, transform: "rotate(-5deg)", animationDelay: "0.4s" }}>
-            it&apos;s actually clickable! 👇
+            it&apos;s actually clickable!
           </div>
+          <svg width="40" height="36" viewBox="0 0 40 36" fill="none" style={{ marginRight: "10px" }}>
+            <path d="M6 4 C10 14, 18 22, 30 30" stroke={ACCENT} strokeWidth="2.2" strokeLinecap="round" fill="none" strokeDasharray="50" strokeDashoffset="50" style={{ animation: "doodle-draw 0.5s ease forwards 1s" }} />
+            <path d="M22 30 L30 30 L29 22" stroke={ACCENT} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeDasharray="26" strokeDashoffset="26" style={{ animation: "doodle-draw 0.3s ease forwards 1.5s" }} />
+          </svg>
         </div>
 
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-              Try It Yourself
-            </span>
+            <Eyebrow>Try It Yourself</Eyebrow>
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Build a campaign, right here</h2>
             <p className="text-base mt-3 max-w-xl mx-auto" style={{ color: "#52525B" }}>Click through the six steps. Every field actually works, this is exactly what your dashboard looks like.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div ref={demoRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Step list */}
-            <div className="space-y-3">
+            <ol className="space-y-3" aria-label="Campaign builder steps">
               {STEPS.map((s, i) => {
                 const active = demoStep === i + 1;
                 return (
-                  <FadeIn key={s.n} delay={i * 70}>
-                    <button
-                      onClick={() => { stopAutoPlay(); setDemoStep(i + 1); }}
-                      className="w-full text-left rounded-2xl border p-5 transition-all duration-300"
-                      style={active
-                        ? { borderColor: ACCENT, backgroundColor: "rgba(124,58,237,0.05)", boxShadow: "0 4px 20px rgba(124,58,237,0.12)" }
-                        : { borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black transition-all duration-300"
-                          style={active
-                            ? { backgroundColor: ACCENT, color: "#fff", transform: "scale(1.12)" }
-                            : { backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT, transform: "scale(1)" }}>
-                          {s.n}
+                  <li key={s.n}>
+                    <FadeIn delay={i * 70}>
+                      <button
+                        type="button"
+                        onClick={() => { stopAutoPlay(); setDemoStep(i + 1); }}
+                        aria-current={active ? "step" : undefined}
+                        className={`w-full text-left rounded-2xl border p-5 transition-all duration-300 ${FOCUS}`}
+                        style={active
+                          ? { borderColor: ACCENT, backgroundColor: "rgba(124,58,237,0.05)", boxShadow: "0 4px 20px rgba(124,58,237,0.12)" }
+                          : { borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black transition-all duration-300"
+                            style={active
+                              ? { backgroundColor: ACCENT, color: "#fff", transform: "scale(1.12)" }
+                              : { backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT, transform: "scale(1)" }}>
+                            {s.n}
+                          </div>
+                          <div>
+                            <span className="block text-base font-black mb-1" style={{ color: "#0a0a0a" }}>{s.title}</span>
+                            <span className="block text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</span>
+                          </div>
                         </div>
-                        <div>
-                          <h3 className="text-base font-black mb-1" style={{ color: "#0a0a0a" }}>{s.title}</h3>
-                          <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</p>
-                        </div>
-                      </div>
-                    </button>
-                  </FadeIn>
+                      </button>
+                    </FadeIn>
+                  </li>
                 );
               })}
-            </div>
+            </ol>
 
             {/* Live mockup */}
             <div className="lg:sticky lg:top-28">
-              <div className="rounded-3xl border-2 overflow-hidden" style={{ borderColor: "rgba(124,58,237,0.25)", boxShadow: "0 20px 50px rgba(124,58,237,0.15)" }}>
+              <div className="rounded-3xl border-2 overflow-hidden" style={{ borderColor: "rgba(124,58,237,0.25)", boxShadow: "0 20px 50px rgba(124,58,237,0.15)", backgroundColor: "#ffffff" }}>
                 {/* Window chrome */}
                 <div className="flex items-center gap-2 px-5 py-3.5 border-b" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
-                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
-                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
-                  <span className="ml-3 text-xs font-bold truncate" style={{ color: "#8C8279" }}>Myntmore Outreach &middot; Campaign Builder</span>
-                  {autoPlay && (
-                    <span className="ml-auto flex-shrink-0 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide" style={{ color: ACCENT }}>
-                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} />
-                      Playing
-                    </span>
-                  )}
+                  <span className="w-3 h-3 rounded-full" aria-hidden="true" style={{ backgroundColor: "#FF5F57" }} />
+                  <span className="w-3 h-3 rounded-full" aria-hidden="true" style={{ backgroundColor: "#FEBC2E" }} />
+                  <span className="w-3 h-3 rounded-full" aria-hidden="true" style={{ backgroundColor: "#28C840" }} />
+                  <span className="ml-3 text-xs font-bold truncate" style={{ color: "#6B6B6B" }}>Myntmore Outreach &middot; Campaign Builder</span>
+                  <button
+                    type="button"
+                    onClick={() => setAutoPlay((a) => !a)}
+                    aria-pressed={autoPlay}
+                    className={`ml-auto -my-2 flex-shrink-0 min-h-[44px] inline-flex items-center gap-1.5 px-2 rounded-lg text-xs font-bold uppercase tracking-wide ${FOCUS}`}
+                    style={{ color: ACCENT }}
+                  >
+                    {autoPlay
+                      ? <Pause className="w-3.5 h-3.5" strokeWidth={2.5} aria-hidden="true" />
+                      : <Play className="w-3.5 h-3.5" strokeWidth={2.5} aria-hidden="true" />}
+                    {autoPlay ? "Pause" : "Auto-play"}
+                  </button>
                 </div>
 
-                {/* Progress dots */}
-                <div className="flex items-center gap-1.5 px-5 pt-4">
+                {/* Progress bar */}
+                <div className="flex items-center gap-1.5 px-5 pt-4" role="img" aria-label={`Step ${demoStep} of ${STEPS.length}`}>
                   {STEPS.map((s, i) => (
                     <span
                       key={s.n}
@@ -505,15 +586,15 @@ export default function DoItYourselfClient() {
                       {!linkedinConnected ? (
                         <>
                           <p className="text-sm max-w-xs" style={{ color: "#52525B" }}>Log in with your own LinkedIn account. Nothing is handed over to us.</p>
-                          <button onClick={() => { stopAutoPlay(); setLinkedinConnected(true); }} className="btn-dark px-6 py-3 text-sm font-bold">Connect LinkedIn</button>
+                          <button type="button" onClick={() => { stopAutoPlay(); setLinkedinConnected(true); }} className={`btn-dark px-6 py-3 min-h-[44px] text-sm font-bold ${FOCUS}`}>Connect LinkedIn</button>
                         </>
                       ) : (
                         <>
-                          <span className="inline-flex items-center gap-2 text-sm font-black" style={{ color: "#16A34A" }}>
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#16A34A" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                          <span className="inline-flex items-center gap-2 text-sm font-black" style={{ color: "#15803D" }}>
+                            <Check className="w-4 h-4" strokeWidth={3} aria-hidden="true" />
                             Connected
                           </span>
-                          <p className="text-xs" style={{ color: "#8C8279" }}>Nice. Let&apos;s set up your first campaign &rarr;</p>
+                          <p className="text-xs" style={{ color: "#6B6B6B" }}>Nice. Let&apos;s set up your first campaign &rarr;</p>
                         </>
                       )}
                     </div>
@@ -522,15 +603,16 @@ export default function DoItYourselfClient() {
                   {/* Step 2: Campaign name */}
                   {demoStep === 2 && (
                     <div className="flex-1">
-                      <label className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: ACCENT }}>Campaign Name</label>
+                      <label htmlFor="demo-campaign-name" className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: ACCENT }}>Campaign Name</label>
                       <input
+                        id="demo-campaign-name"
                         value={campaignName}
                         onChange={(e) => { stopAutoPlay(); setCampaignName(e.target.value.slice(0, 60)); }}
                         placeholder="Q1 SaaS Founders Outreach"
-                        className="w-full rounded-xl border px-4 py-3 text-sm outline-none"
+                        className="w-full rounded-xl border px-4 py-3 min-h-[44px] text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/40 focus-visible:border-[#7C3AED]"
                         style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}
                       />
-                      <p className="text-xs mt-4" style={{ color: "#8C8279" }}>
+                      <p className="text-xs mt-4" style={{ color: "#6B6B6B" }}>
                         Preview: <span className="font-bold" style={{ color: "#0a0a0a" }}>{campaignName || "Untitled Campaign"}</span>
                       </p>
                     </div>
@@ -542,11 +624,17 @@ export default function DoItYourselfClient() {
                       {!leadsUploaded ? (
                         <div className="flex flex-col items-center justify-center text-center gap-4 py-8">
                           <p className="text-sm max-w-xs" style={{ color: "#52525B" }}>Upload the list of leads you want to reach for this campaign.</p>
-                          <button onClick={() => { stopAutoPlay(); setLeadsUploaded(true); }} className="btn-dark px-6 py-3 text-sm font-bold">Upload Leads (CSV)</button>
+                          <button type="button" onClick={() => { stopAutoPlay(); setLeadsUploaded(true); }} className={`btn-dark px-6 py-3 min-h-[44px] text-sm font-bold inline-flex items-center gap-2 ${FOCUS}`}>
+                            <Upload className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
+                            Upload Leads (CSV)
+                          </button>
                         </div>
                       ) : (
                         <div>
-                          <p className="text-sm font-black mb-3" style={{ color: "#16A34A" }}>&#10003; {DEMO_LEADS.length} leads uploaded</p>
+                          <p className="text-sm font-black mb-3 inline-flex items-center gap-1.5" style={{ color: "#15803D" }}>
+                            <Check className="w-4 h-4" strokeWidth={3} aria-hidden="true" />
+                            {DEMO_LEADS.length} leads uploaded
+                          </p>
                           <ul className="space-y-2">
                             {DEMO_LEADS.map((l, i) => (
                               <li key={l} className="card-fade-up text-xs rounded-lg px-3 py-2" style={{ color: "#3D3D3D", backgroundColor: "#F8F6F2", animationDelay: `${i * 80}ms` }}>{l}</li>
@@ -560,38 +648,50 @@ export default function DoItYourselfClient() {
                   {/* Step 4: Connection note */}
                   {demoStep === 4 && (
                     <div className="flex-1">
-                      <label className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: ACCENT }}>Connection Note</label>
+                      <label htmlFor="demo-note" className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: ACCENT }}>Connection Note</label>
                       <textarea
+                        id="demo-note"
                         value={note}
                         onChange={(e) => { stopAutoPlay(); setNote(e.target.value.slice(0, 300)); }}
                         rows={5}
-                        className="w-full rounded-xl border px-4 py-3 text-sm outline-none resize-none"
+                        aria-describedby="demo-note-count"
+                        className="w-full rounded-xl border px-4 py-3 text-sm resize-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/40 focus-visible:border-[#7C3AED]"
                         style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}
                       />
-                      <p className="text-xs mt-2 text-right" style={{ color: note.length > 280 ? "#dc2626" : "#8C8279" }}>{note.length}/300</p>
+                      <p id="demo-note-count" className="text-xs mt-2 text-right" style={{ color: note.length > 280 ? "#DC2626" : "#6B6B6B" }}>{note.length}/300</p>
                     </div>
                   )}
 
                   {/* Step 5: Follow-ups */}
                   {demoStep === 5 && (
                     <div className="flex-1">
-                      <div className="space-y-3 mb-4">
+                      <ul className="space-y-3 mb-4" aria-label="Follow-up messages">
                         {followUps.map((f, i) => (
-                          <div key={f.id} className="flex items-center justify-between rounded-xl border px-4 py-3" style={{ borderColor: "#E8E2D9" }}>
-                            <span className="text-sm font-bold" style={{ color: "#0a0a0a" }}>Follow-up {i + 1}</span>
-                            <div className="flex items-center gap-3">
-                              <button onClick={() => adjustDelay(f.id, -1)} aria-label="Decrease delay" className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-black" style={{ backgroundColor: "#F8F6F2", color: ACCENT }}>&minus;</button>
-                              <span className="text-xs font-bold w-14 text-center" style={{ color: "#52525B" }}>Day {f.day}</span>
-                              <button onClick={() => adjustDelay(f.id, 1)} aria-label="Increase delay" className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-black" style={{ backgroundColor: "#F8F6F2", color: ACCENT }}>+</button>
+                          <li key={f.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 rounded-xl border px-4 sm:pr-2 py-2 sm:py-1.5" style={{ borderColor: "#E8E2D9" }}>
+                            <span className="text-sm font-bold whitespace-nowrap" style={{ color: "#0a0a0a" }}>Follow-up {i + 1}</span>
+                            <div className="flex items-center gap-1 -ml-3 sm:ml-0">
+                              <StepperButton onClick={() => adjustDelay(f.id, -1)} label={`Send follow-up ${i + 1} one day earlier`}>
+                                <Minus className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
+                              </StepperButton>
+                              <span className="text-xs font-bold w-12 text-center" style={{ color: "#52525B" }} aria-live="polite">Day {f.day}</span>
+                              <StepperButton onClick={() => adjustDelay(f.id, 1)} label={`Send follow-up ${i + 1} one day later`}>
+                                <Plus className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
+                              </StepperButton>
                               {followUps.length > 1 && (
-                                <button onClick={() => removeFollowUp(f.id)} aria-label="Remove follow-up" className="w-6 h-6 rounded-full flex items-center justify-center text-xs" style={{ color: "#dc2626" }}>&#10005;</button>
+                                <button type="button" onClick={() => removeFollowUp(f.id)} aria-label={`Remove follow-up ${i + 1}`}
+                                  className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors hover:bg-[#FEF2F2] ${FOCUS}`} style={{ color: "#DC2626" }}>
+                                  <X className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
+                                </button>
                               )}
                             </div>
-                          </div>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                       {followUps.length < 4 && (
-                        <button onClick={addFollowUp} className="text-xs font-bold" style={{ color: ACCENT }}>+ Add another follow-up</button>
+                        <button type="button" onClick={addFollowUp} className={`inline-flex items-center gap-1.5 min-h-[44px] text-sm font-bold rounded-lg px-1 ${FOCUS}`} style={{ color: ACCENT }}>
+                          <Plus className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
+                          Add another follow-up
+                        </button>
                       )}
                     </div>
                   )}
@@ -604,18 +704,21 @@ export default function DoItYourselfClient() {
                           <p className="text-sm max-w-xs" style={{ color: "#52525B" }}>
                             &ldquo;{campaignName || "Untitled Campaign"}&rdquo; is ready with {DEMO_LEADS.length} leads and {followUps.length} follow-up{followUps.length > 1 ? "s" : ""}.
                           </p>
-                          <button onClick={() => { stopAutoPlay(); setLaunched(true); }} className="btn-dark px-8 py-4 text-base font-black">Launch Campaign &#128640;</button>
+                          <button type="button" onClick={() => { stopAutoPlay(); setLaunched(true); }} className={`btn-dark px-8 py-4 text-base font-black inline-flex items-center gap-2 ${FOCUS}`}>
+                            Launch Campaign
+                            <Rocket className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                          </button>
                         </div>
                       ) : (
                         <div>
-                          <div className="grid grid-cols-2 gap-4 mb-5">
+                          <div className="grid grid-cols-2 gap-4 mb-5" aria-live="polite">
                             <div className="rounded-xl p-4 text-center" style={{ backgroundColor: "#F5F3FF" }}>
                               <div className="text-2xl font-black" style={{ color: ACCENT }}>{acceptanceRate}%</div>
-                              <div className="text-xs" style={{ color: "#8C8279" }}>Acceptance Rate</div>
+                              <div className="text-xs" style={{ color: "#52525B" }}>Acceptance Rate</div>
                             </div>
                             <div className="rounded-xl p-4 text-center" style={{ backgroundColor: "#FEF9EC" }}>
-                              <div className="text-2xl font-black" style={{ color: "#D97706" }}>{replyRate}%</div>
-                              <div className="text-xs" style={{ color: "#8C8279" }}>Reply Rate</div>
+                              <div className="text-2xl font-black" style={{ color: GOLD_TEXT }}>{replyRate}%</div>
+                              <div className="text-xs" style={{ color: "#52525B" }}>Reply Rate</div>
                             </div>
                           </div>
                           <ul className="space-y-2 mb-4">
@@ -626,8 +729,11 @@ export default function DoItYourselfClient() {
                               </li>
                             ))}
                           </ul>
-                          <p className="text-[11px] mb-3" style={{ color: "#8C8279" }}>Simulated preview for this demo, not real send data.</p>
-                          <button onClick={resetDemo} className="text-xs font-bold underline" style={{ color: ACCENT }}>Restart demo</button>
+                          <p className="text-xs mb-3" style={{ color: "#6B6B6B" }}>Simulated preview for this demo, not real send data.</p>
+                          <button type="button" onClick={resetDemo} className={`inline-flex items-center gap-1.5 min-h-[44px] text-sm font-bold rounded-lg px-1 ${FOCUS}`} style={{ color: ACCENT }}>
+                            <RotateCcw className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
+                            Restart demo
+                          </button>
                         </div>
                       )}
                     </div>
@@ -638,17 +744,19 @@ export default function DoItYourselfClient() {
               {/* Prev / Next nav */}
               <div className="flex items-center justify-center gap-3 mt-5">
                 <button
+                  type="button"
                   onClick={() => { stopAutoPlay(); setDemoStep((s) => Math.max(1, s - 1)); }}
                   disabled={demoStep === 1}
-                  className="px-5 py-2.5 rounded-full text-sm font-bold border transition-opacity disabled:opacity-30"
-                  style={{ borderColor: "#E8E2D9", color: "#3D3D3D" }}
+                  className={`px-5 py-2.5 min-h-[44px] rounded-full text-sm font-bold border transition-opacity disabled:opacity-30 disabled:cursor-not-allowed ${FOCUS}`}
+                  style={{ borderColor: "#E8E2D9", color: "#3D3D3D", backgroundColor: "#ffffff" }}
                 >
                   &larr; Back
                 </button>
                 <button
+                  type="button"
                   onClick={() => { stopAutoPlay(); setDemoStep((s) => Math.min(6, s + 1)); }}
                   disabled={demoStep === 6}
-                  className="px-5 py-2.5 rounded-full text-sm font-bold text-white transition-opacity disabled:opacity-30"
+                  className={`px-5 py-2.5 min-h-[44px] rounded-full text-sm font-bold text-white transition-opacity disabled:opacity-30 disabled:cursor-not-allowed ${FOCUS}`}
                   style={{ backgroundColor: ACCENT }}
                 >
                   Next step &rarr;
@@ -659,24 +767,62 @@ export default function DoItYourselfClient() {
         </div>
       </section>
 
-      {/* ── Deliverables + Who it's for ───────────────────────── */}
+      {/* ── Features ──────────────────────────────────────────── */}
+      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12 text-center">
+            <Eyebrow>Built for Self-Serve</Eyebrow>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Everything you need to run it yourself</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {FEATURES.map((f, i) => (
+              <FadeIn key={f.title} delay={i * 90}>
+                <div className="rounded-2xl border p-7 h-full card-hover-purple" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <IconTile icon={f.icon} />
+                    <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{f.title}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{f.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Dashboard ─────────────────────────────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <Eyebrow>Your Dashboard</Eyebrow>
+          <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0a0a0a" }}>See every campaign, every lead</h2>
+          <p className="text-base max-w-xl mx-auto mb-10" style={{ color: "#52525B" }}>
+            Once a campaign is live, your dashboard tracks it in real time, at the campaign level and across your account.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {DASHBOARD_METRICS.map((d, i) => (
+              <FadeIn key={d.title} delay={i * 100}>
+                <div className="rounded-2xl border p-6 h-full text-left card-hover-purple" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{d.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{d.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Deliverables + Who it's for ───────────────────────── */}
+      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <FadeIn>
-            <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-                style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-                What You Get
-              </span>
+            <div className="rounded-2xl border p-8 h-full" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+              <Eyebrow>What You Get</Eyebrow>
               <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Every campaign includes</h2>
               <ul className="space-y-4">
                 {DELIVERABLES.map((d, i) => (
                   <li key={d} className="card-fade-up flex items-start gap-3" style={{ animationDelay: `${i * 70}ms` }}>
-                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                      style={{ backgroundColor: "rgba(124,58,237,0.1)" }}>
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke={ACCENT} strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "rgba(124,58,237,0.1)", color: ACCENT }}>
+                      <Check className="w-3 h-3" strokeWidth={3} aria-hidden="true" />
                     </span>
                     <span className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{d}</span>
                   </li>
@@ -686,20 +832,14 @@ export default function DoItYourselfClient() {
           </FadeIn>
 
           <div>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
-              Who It&apos;s For
-            </span>
+            <Eyebrow tone="gold">Who It&apos;s For</Eyebrow>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for people who&apos;d rather run it themselves</h2>
             <div className="space-y-4">
               {WHO_FOR.map((w, i) => (
                 <FadeIn key={w.title} delay={i * 110}>
-                  <div className="rounded-2xl border p-6 transition-all duration-200"
-                    style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(124,58,237,0.35)"; (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; }}>
+                  <div className="rounded-2xl border p-6 card-hover-purple" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xl">{w.icon}</span>
+                      <IconTile icon={w.icon} size="sm" />
                       <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{w.title}</h3>
                     </div>
                     <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{w.desc}</p>
@@ -711,42 +851,11 @@ export default function DoItYourselfClient() {
         </div>
       </section>
 
-      {/* ── Dashboard ─────────────────────────────────────────── */}
-      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-            style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-            Your Dashboard
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0a0a0a" }}>See every campaign, every lead</h2>
-          <p className="text-base max-w-xl mx-auto mb-10" style={{ color: "#52525B" }}>
-            Once a campaign is live, your dashboard tracks it in real time, at the campaign level and across your account.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { title: "Acceptance Rate", desc: "Per campaign and lifetime, across your account." },
-              { title: "Reply Rate", desc: "How many of your accepted connections reply." },
-              { title: "Lead Status", desc: "Where every single lead stands, at a glance." },
-            ].map((d, i) => (
-              <FadeIn key={d.title} delay={i * 100}>
-                <div className="rounded-2xl border p-6 text-left transition-transform duration-300 hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{d.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{d.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ──────────────────────────────────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <div className="mb-10">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(124,58,237,0.08)", color: ACCENT, border: "1px solid rgba(124,58,237,0.2)" }}>
-              FAQ
-            </span>
+            <Eyebrow>FAQ</Eyebrow>
             <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Frequently asked questions</h2>
           </div>
           <div className="space-y-3">
@@ -758,7 +867,7 @@ export default function DoItYourselfClient() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="relative py-28 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+      <section ref={ctaRef} className="relative py-28 px-4 overflow-hidden border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div ref={ctaBlob1} aria-hidden style={{ position: "absolute", top: "50%", left: "25%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.25) 0%, rgba(124,58,237,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={ctaBlob2} aria-hidden style={{ position: "absolute", top: "50%", left: "75%", width: 550, height: 550, marginTop: -275, marginLeft: -275, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,130,0,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
 
@@ -771,14 +880,12 @@ export default function DoItYourselfClient() {
             Book a demo and we&apos;ll walk you through building your first campaign.
           </p>
 
-          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark ${FOCUS}`}>
             Book a Demo
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <ArrowRight className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
           </a>
 
-          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>Prefer we run it for you? <Link href="/services/linkedin-outreach" className="font-semibold underline" style={{ color: ACCENT }}>See the Done-for-You service</Link>.</p>
+          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>Prefer we run it for you? <Link href="/services/linkedin-outreach" className={`font-semibold underline rounded ${FOCUS}`} style={{ color: ACCENT }}>See the Done-for-You service</Link>.</p>
         </div>
       </section>
     </InnerLayout>

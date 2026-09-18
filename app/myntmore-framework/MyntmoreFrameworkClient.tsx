@@ -95,7 +95,7 @@ const C = {
 } as const;
 
 /* Row positions for the four parallel enrichment branches */
-const ROW = [120, 330, 540, 750];
+const ROW = [140, 345, 550, 755];
 const COL = [1660, 1830, 2000, 2170, 2340];
 
 const RAW_NODES: FNode[] = [
@@ -115,7 +115,7 @@ const RAW_NODES: FNode[] = [
     { desc: "Every field is cleaned and standardised before it's checked against the ICP." }),
   N("iffilter", "Matches ICP?", "icp.filter", <IconBranch />, C.amber, 1240, 300, "if",
     { desc: "A check runs on every prospect against the ICP criteria before anything else happens." }),
-  N("discard", "Discard Lead", "icp.discard", <IconStop />, C.grey, 1240, 470, "end"),
+  N("discard", "Discard Lead", "icp.discard", <IconStop />, C.grey, 1330, 470, "end"),
 
   /* ── Loop and four enrichment branches ───────────────────── */
   N("loop", "Loop Over Prospects", "loop.batch", <IconLoop />, C.purple, 1460, 300, "regular", { meta: "batch 25" }),
@@ -155,7 +155,7 @@ const RAW_NODES: FNode[] = [
     desc: "A personalized connection request note is generated for each individual prospect, based on their profile and the enrichment above, not copy-pasted across the list." }),
   N("model3", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 3130, 545, "sub"),
   N("queue", "Add to Send Queue", "sheet.append", <IconTable />, C.green, 3380, 405),
-  N("archive1", "Archive Lead", "lead.archive", <IconStop />, C.grey, 2960, 590, "end"),
+  N("archive1", "Archive Lead", "lead.archive", <IconStop />, C.grey, 3010, 640, "end"),
 
   /* ── Group B: send connection requests ───────────────────── */
   N("sched2", "Schedule Trigger", "trigger.schedule", <IconClock />, C.yellow, 130, 980, "trigger", { meta: "09:00 to 18:00, random gaps" }),
@@ -371,7 +371,7 @@ function connPath(c: FConn): string {
 interface Group { x: number; y: number; w: number; h: number; title: string; color: string; }
 const GROUPS: Group[] = [
   { x: 80, y: 190, w: 1300, h: 400, title: "1 · Prospect discovery", color: "#B8860B" },
-  { x: 1600, y: 0, w: 900, h: 870, title: "2 · Enrichment, four parallel branches per prospect", color: "#16A34A" },
+  { x: 1600, y: 0, w: 900, h: 890, title: "2 · Enrichment, four parallel branches per prospect", color: "#16A34A" },
   { x: 2500, y: 330, w: 1000, h: 380, title: "3 · Score and personalize", color: "#6366f1" },
   { x: 70, y: 890, w: 1330, h: 300, title: "4 · Send connection requests", color: "#B8860B" },
   { x: 1350, y: 866, w: 1040, h: 340, title: "5 · Check the connections", color: "#B8860B" },
@@ -382,16 +382,16 @@ const GROUPS: Group[] = [
 interface Sticky { x: number; y: number; w: number; h?: number; title?: string; text: string; color: "green" | "yellow" | "blue" | "grey"; rot?: number; }
 const STICKIES: Sticky[] = [
   { x: 80, y: 20, w: 420, color: "grey", title: "LinkedIn Lead Automation Flow", text: "Seven linked workflows: discover, enrich, score, connect, verify, follow up, converse. Every send passes through the Human Behaviour Engine. Google Sheets is the shared state between them." },
-  { x: 1660, y: 44, w: 250, color: "green", title: "Research company website", text: "Homepage, about, pricing. Summarized to 3 lines." },
-  { x: 1940, y: 44, w: 250, color: "green", title: "Research recent posts", text: "Last 5 posts, what they care about right now." },
-  { x: 2220, y: 44, w: 250, color: "green", title: "Research company news", text: "Funding, hiring, launches in the last 90 days." },
+  { x: 1660, y: 40, w: 250, color: "green", title: "Research company website", text: "Homepage, about, pricing. Summarized to 3 lines." },
+  { x: 1940, y: 40, w: 250, color: "green", title: "Research recent posts", text: "Last 5 posts, what they care about right now." },
+  { x: 2220, y: 40, w: 250, color: "green", title: "Research company news", text: "Funding, hiring, launches in the last 90 days." },
   { x: 2560, y: 40, w: 300, rot: 1.5, color: "grey", text: "TODO: delete the manual test branch before the client demo. Also the old v2 scorer is still here." },
-  { x: 1080, y: 1270, w: 250, rot: -1, color: "yellow", text: "Any failed send anywhere lands in #alerts within a minute." },
+  { x: 1120, y: 1440, w: 300, rot: -1, color: "yellow", text: "Any failed send anywhere lands in #alerts within a minute." },
   { x: 2560, y: 724, w: 320, rot: -0.6, color: "blue", text: "Each branch writes back to the lead row on its own. If one source is empty, the others still land." },
   { x: 2960, y: 250, w: 260, rot: -2, color: "yellow", text: "Threshold is tuned per client. Below 70 goes to archive, not the bin, and is re-scored monthly." },
   { x: 130, y: 1130, w: 420, rot: 1.2, color: "yellow", text: "Never more than 25 requests a day per seat, with 45 to 180 second gaps between sends." },
   { x: 2020, y: 1120, w: 320, rot: -1.4, color: "blue", text: "We wait for a real acceptance before any follow-up. Pending requests are re-checked every 6 hours, for up to 14 days." },
-  { x: 560, y: 1248, w: 400, rot: 0.8, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
+  { x: 100, y: 1258, w: 600, rot: 0.4, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
 ];
 
 const STICKY_STYLE: Record<Sticky["color"], { bg: string; border: string; title: string; text: string }> = {

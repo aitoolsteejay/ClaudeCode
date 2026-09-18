@@ -261,6 +261,17 @@ export default function MyntmoreFrameworkClient() {
     return () => el.removeEventListener("wheel", handleWheel);
   }, [zoomAt]);
 
+  function baselinePinch(pts: { x: number; y: number }[]) {
+    const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+    const midX = (pts[0].x + pts[1].x) / 2, midY = (pts[0].y + pts[1].y) / 2;
+    const rect = viewportRef.current!.getBoundingClientRect();
+    const px = midX - rect.left, py = midY - rect.top;
+    gestureRef.current = {
+      ...gestureRef.current, mode: "pinch", startDist: dist, startZoom: view.zoom,
+      canvasMidX: (px - view.x) / view.zoom, canvasMidY: (py - view.y) / view.zoom, moved: false,
+    };
+  }
+
   function handlePointerDown(e: React.PointerEvent<HTMLDivElement>) {
     if ((e.target as HTMLElement).closest("button")) return;
     try { (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId); } catch { /* no active pointer to capture (e.g. synthetic events) */ }
@@ -269,14 +280,7 @@ export default function MyntmoreFrameworkClient() {
     if (pts.length === 1) {
       gestureRef.current = { ...gestureRef.current, mode: "pan", startX: e.clientX, startY: e.clientY, startViewX: view.x, startViewY: view.y, moved: false };
     } else if (pts.length === 2) {
-      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
-      const midX = (pts[0].x + pts[1].x) / 2, midY = (pts[0].y + pts[1].y) / 2;
-      const rect = viewportRef.current!.getBoundingClientRect();
-      const px = midX - rect.left, py = midY - rect.top;
-      gestureRef.current = {
-        ...gestureRef.current, mode: "pinch", startDist: dist, startZoom: view.zoom,
-        canvasMidX: (px - view.x) / view.zoom, canvasMidY: (py - view.y) / view.zoom, moved: false,
-      };
+      baselinePinch(pts);
     }
   }
 
@@ -297,7 +301,7 @@ export default function MyntmoreFrameworkClient() {
       const midX = (pts[0].x + pts[1].x) / 2, midY = (pts[0].y + pts[1].y) / 2;
       const rect = viewportRef.current!.getBoundingClientRect();
       const px = midX - rect.left, py = midY - rect.top;
-      const newZoom = clamp(g.startZoom * (dist / (g.startDist || dist)), MIN_ZOOM, MAX_ZOOM);
+      const newZoom = clamp(g.startZoom * (g.startDist > 0 ? dist / g.startDist : 1), MIN_ZOOM, MAX_ZOOM);
       setView({ zoom: newZoom, x: px - g.canvasMidX * newZoom, y: py - g.canvasMidY * newZoom });
       interactedRef.current = true;
     }
@@ -310,6 +314,11 @@ export default function MyntmoreFrameworkClient() {
       gestureRef.current.mode = "none";
     } else if (pts.length === 1) {
       gestureRef.current = { ...gestureRef.current, mode: "pan", startX: pts[0].x, startY: pts[0].y, startViewX: view.x, startViewY: view.y, moved: true };
+    } else if (pts.length === 2) {
+      // A 3rd+ finger just lifted, leaving exactly two down — re-baseline the
+      // pinch from their current positions instead of leaving a stale gesture
+      // (from whenever the 2nd finger originally went down) in place.
+      baselinePinch(pts);
     }
   }
 

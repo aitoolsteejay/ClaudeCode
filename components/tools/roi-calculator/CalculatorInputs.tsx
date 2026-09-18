@@ -96,7 +96,7 @@ export const CalculatorInputs = ({
   };
 
   const parseNumber = (value: string) => {
-    return parseFloat(value.replace(/,/g, '')) || 0;
+    return Math.max(0, parseFloat(value.replace(/,/g, '')) || 0);
   };
 
   const negativeResponseRate = 100 - positiveResponseRate;
@@ -137,7 +137,7 @@ export const CalculatorInputs = ({
             <Input
               type="number"
               value={connectionRequests}
-              onChange={(e) => setConnectionRequests(parseFloat(e.target.value) || 0)}
+              onChange={(e) => setConnectionRequests(Math.max(0, parseFloat(e.target.value) || 0))}
               className="bg-input border-border text-foreground"
               min="0"
             />
@@ -364,7 +364,7 @@ export const CalculatorInputs = ({
             <Input
               type="number"
               value={transactionsPerYear}
-              onChange={(e) => setTransactionsPerYear(parseFloat(e.target.value) || 0)}
+              onChange={(e) => setTransactionsPerYear(Math.max(0, parseFloat(e.target.value) || 0))}
               className="bg-input border-border text-foreground"
               min="0"
               step="1"
@@ -386,7 +386,7 @@ export const CalculatorInputs = ({
             <Input
               type="number"
               value={monthsCustomerStays}
-              onChange={(e) => setMonthsCustomerStays(Math.round(parseFloat(e.target.value) || 0))}
+              onChange={(e) => setMonthsCustomerStays(Math.max(0, Math.round(parseFloat(e.target.value) || 0)))}
               className="bg-input border-border text-foreground"
               min="0"
               step="1"

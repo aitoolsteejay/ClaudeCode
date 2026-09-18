@@ -134,6 +134,9 @@ export default function WhoWeHelp() {
   const pausedRef   = useRef(false);      // paused when user hovers
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const transitionTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const transitionRafRef = useRef<number | null>(null);
+  const transitionRafRef2 = useRef<number | null>(null);
   const [progressKey, setProgressKey] = useState(0); // forces CSS restart
 
   const switchTab = useCallback((idx: number, manual = false) => {
@@ -150,16 +153,19 @@ export default function WhoWeHelp() {
     if (idx === activeRef.current) return;
     const el = contentRef.current;
     if (el) { el.style.opacity = "0"; el.style.transform = "translateY(10px)"; }
-    setTimeout(() => {
+    if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+    transitionTimeoutRef.current = setTimeout(() => {
       activeRef.current = idx;
       setActiveIndex(idx);
       setProgressKey(k => k + 1);          // restart progress bar
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        if (contentRef.current) {
-          contentRef.current.style.opacity = "1";
-          contentRef.current.style.transform = "translateY(0px)";
-        }
-      }));
+      transitionRafRef.current = requestAnimationFrame(() => {
+        transitionRafRef2.current = requestAnimationFrame(() => {
+          if (contentRef.current) {
+            contentRef.current.style.opacity = "1";
+            contentRef.current.style.transform = "translateY(0px)";
+          }
+        });
+      });
     }, 320);
   }, []);
 
@@ -173,6 +179,9 @@ export default function WhoWeHelp() {
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
       if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+      if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+      if (transitionRafRef.current) cancelAnimationFrame(transitionRafRef.current);
+      if (transitionRafRef2.current) cancelAnimationFrame(transitionRafRef2.current);
     };
   }, [switchTab]);
 

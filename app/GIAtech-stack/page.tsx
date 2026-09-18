@@ -240,14 +240,16 @@ function useCountUp(target: number, inView: boolean, duration = 1200) {
   useEffect(() => {
     if (!inView) return;
     let start: number | null = null;
+    let rafId: number;
     const step = (ts: number) => {
       if (!start) start = ts;
       const progress = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setVal(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
+      if (progress < 1) rafId = requestAnimationFrame(step);
     };
-    requestAnimationFrame(step);
+    rafId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafId);
   }, [inView, target, duration]);
   return val;
 }

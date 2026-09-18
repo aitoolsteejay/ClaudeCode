@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlertTriangle, Handshake } from "lucide-react";
 import { ScreenTransition } from "./ScreenTransition";
 import type { GeneratedIcp } from "./types";
@@ -143,6 +143,15 @@ function ChannelPartnersTab({ icps }: { icps: GeneratedIcp[] }) {
 
 export function IcpResultsTabs({ icps }: IcpResultsTabsProps) {
   const [activeTab, setActiveTab] = useState(0);
+
+  // Regenerating can come back with a different tab layout (e.g. the
+  // "Channel Partners" tab disappearing if no ICP has partners this time),
+  // so a previously-selected tab index can point at nothing — reset it
+  // whenever a fresh set of results comes in.
+  useEffect(() => {
+    setActiveTab(0);
+  }, [icps]);
+
   const hasPartners = icps.some((icp) => icp.channelPartners && icp.channelPartners.length > 0);
   const tabCount = hasPartners ? icps.length + 1 : icps.length;
   const isPartnerTab = hasPartners && activeTab === icps.length;

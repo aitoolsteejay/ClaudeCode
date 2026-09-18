@@ -18,9 +18,10 @@ function useScrollFade(delay = 0) {
     if (!el) return;
     el.style.opacity = "0";
     el.style.transform = "translateY(32px)";
+    let fadeTimer: ReturnType<typeof setTimeout> | undefined;
     const obs = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
+        fadeTimer = setTimeout(() => {
           el.style.transition = "opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)";
           el.style.opacity = "1";
           el.style.transform = "translateY(0)";
@@ -29,7 +30,10 @@ function useScrollFade(delay = 0) {
       }
     }, { threshold: 0.12 });
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => {
+      obs.disconnect();
+      if (fadeTimer) clearTimeout(fadeTimer);
+    };
   }, [delay]);
   return ref;
 }

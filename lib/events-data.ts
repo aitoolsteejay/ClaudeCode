@@ -4,6 +4,7 @@ export interface EventItem {
   title: string;
   description: string;
   isoDate: string;
+  isoEndDateTime: string; // full ISO 8601 datetime with timezone offset, used to determine "upcoming" status
   displayDate: string;
   time: string;
   format: string;
@@ -22,6 +23,7 @@ export const EVENTS: EventItem[] = [
     title: "We Create 200+ Meetings Every Month Through Cold Outreach. Let's Help You Build a More Predictable Lead Pipeline.",
     description: "How Myntmore books 200+ meetings a month through cold outreach: LinkedIn, cold email, targeting, messaging, personal branding, and automation.",
     isoDate: "2026-09-19",
+    isoEndDateTime: "2026-09-19T13:00:00+05:30",
     displayDate: "Sep 19, 2026",
     time: "11:30 AM – 1:00 PM IST",
     format: "Online · Live Webinar",
@@ -30,5 +32,5 @@ export const EVENTS: EventItem[] = [
 ];
 
 export function isUpcoming(e: EventItem): boolean {
-  return e.isoDate >= new Date().toISOString().slice(0, 10);
+  return new Date(e.isoEndDateTime).getTime() >= Date.now();
 }

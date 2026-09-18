@@ -34,7 +34,7 @@ const leadSchema = z.object({
   companyName: z.string().trim().max(255).optional(),
   phone: z.string().trim().max(20).optional(),
   linkedinUrl: z.string().trim().max(2083).optional(),
-  email: z.string().trim().email("Please enter a valid email").max(255).optional().or(z.literal("")),
+  email: z.string().trim().min(1, "Email is required").email("Please enter a valid email").max(255),
 });
 
 export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "case_study_generator" | "battle_card_generator" | "icp_builder" | "roi_calculator";
@@ -286,12 +286,12 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
 
           <div className="space-y-1.5">
             <label htmlFor="email" className="block text-sm font-medium text-foreground">
-              Email
+              Email <span className="text-primary">*</span>
             </label>
             <Input
               id="email"
               name="Email"
-              type="text"
+              type="email"
               maxLength={255}
               placeholder="sarah@brightloop.com"
               value={formData.email}

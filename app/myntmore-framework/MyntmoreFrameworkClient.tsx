@@ -104,7 +104,7 @@ const RAW_NODES: FNode[] = [
   N("icp", "ICP Agent", "ai.agent", <IconTarget />, C.yellow, 300, 300, "ai", { narrative: true, meta: "Defines who we target",
     desc: "Every campaign starts by defining exactly who you're targeting: industry, seniority, company size, and the buying signals that matter. The agent turns that into a structured search spec." }),
   N("model1", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 300, 440, "sub"),
-  N("parser1", "Structured Output Parser", "ai.parser", <IconDocument />, C.indigo, 400, 440, "sub"),
+  N("parser1", "Structured Output Parser", "ai.parser", <IconDocument />, C.indigo, 416, 440, "sub"),
   N("ratelimit", "Check Rate Limit", "api.rateLimit", <IconGauge />, C.cyan, 560, 300, "regular", { meta: "1,000 req/day" ,
     desc: "Before anything runs, the pipeline checks it's within LinkedIn's API and usage limits, so it never pushes past what's safe." }),
   N("search", "Search LinkedIn", "linkedin.search", <IconSearch />, C.blue, 730, 300, "regular", { narrative: true, meta: "title + industry + headcount",
@@ -149,7 +149,7 @@ const RAW_NODES: FNode[] = [
   N("leadscore", "Lead Score Agent", "ai.agent", <IconSparkle />, C.indigo, 2710, 405, "ai", { narrative: true, meta: "0 to 100",
     desc: "Each prospect's profile, activity, company news, and mutual connections are read together and scored, so the outreach that follows is built around who they actually are, not a generic template." }),
   N("model2", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 2710, 545, "sub"),
-  N("memory1", "Window Memory", "ai.memory", <IconMemory />, C.indigo, 2810, 545, "sub"),
+  N("memory1", "Window Memory", "ai.memory", <IconMemory />, C.indigo, 2826, 545, "sub"),
   N("ifscore", "Score above 70?", "if.threshold", <IconBranch />, C.amber, 2960, 405, "if"),
   N("personalize", "Personalized Note Agent", "ai.agent", <IconSparkle />, C.purple, 3130, 405, "ai", { narrative: true, meta: "under 300 chars",
     desc: "A personalized connection request note is generated for each individual prospect, based on their profile and the enrichment above, not copy-pasted across the list." }),
@@ -198,7 +198,7 @@ const RAW_NODES: FNode[] = [
   N("webhook", "Reply Webhook", "trigger.webhook", <IconBolt />, C.yellow, 130, 1330, "trigger", { meta: "fires on inbound reply" }),
   N("replyagent", "Reply Agent", "ai.agent", <IconChat />, C.purple, 300, 1330, "ai", { meta: "drafts, never auto-sends" }),
   N("model4", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 300, 1470, "sub"),
-  N("memory2", "Thread Memory", "ai.memory", <IconMemory />, C.indigo, 400, 1470, "sub"),
+  N("memory2", "Thread Memory", "ai.memory", <IconMemory />, C.indigo, 416, 1470, "sub"),
   N("ifintent", "Intent?", "if.intent", <IconBranch />, C.amber, 560, 1330, "if"),
   N("book", "Book Meeting", "calendar.create", <IconCalendar />, C.green, 730, 1280),
   N("nurture", "Add to Nurture", "sheet.update", <IconTable />, C.orange, 730, 1400),
@@ -349,7 +349,17 @@ function connPath(c: FConn): string {
   if (c.kind === "loop") {
     const x2 = b.x, y2 = b.y + b.h / 2;
     const drop = c.via ?? Math.max(a.y, b.y) + a.h + 120;
-    return `M${x1} ${y1} C ${x1 + 90} ${y1}, ${x1 + 90} ${drop}, ${(x1 + x2) / 2} ${drop} S ${x2 - 90} ${y2}, ${x2} ${y2}`;
+    const r = 22;
+    const xa = x1 + 44;
+    const xb = x2 - 44;
+    return [
+      `M${x1} ${y1}`,
+      `H${xa - r} Q${xa} ${y1} ${xa} ${y1 + r}`,
+      `V${drop - r} Q${xa} ${drop} ${xa - r} ${drop}`,
+      `H${xb + r} Q${xb} ${drop} ${xb} ${drop - r}`,
+      `V${y2 + r} Q${xb} ${y2} ${xb + r} ${y2}`,
+      `H${x2}`,
+    ].join(" ");
   }
   const x2 = b.x, y2 = b.y + b.h / 2;
   const dx = Math.max(40, Math.abs(x2 - x1) * 0.5);
@@ -377,11 +387,11 @@ const STICKIES: Sticky[] = [
   { x: 2220, y: 44, w: 250, color: "green", title: "Research company news", text: "Funding, hiring, launches in the last 90 days." },
   { x: 2560, y: 40, w: 300, rot: 1.5, color: "grey", text: "TODO: delete the manual test branch before the client demo. Also the old v2 scorer is still here." },
   { x: 1080, y: 1270, w: 250, rot: -1, color: "yellow", text: "Any failed send anywhere lands in #alerts within a minute." },
-  { x: 1660, y: 816, w: 380, rot: -0.6, color: "blue", text: "Each branch writes back to the lead row on its own. If one source is empty, the others still land." },
+  { x: 2560, y: 724, w: 320, rot: -0.6, color: "blue", text: "Each branch writes back to the lead row on its own. If one source is empty, the others still land." },
   { x: 2960, y: 250, w: 260, rot: -2, color: "yellow", text: "Threshold is tuned per client. Below 70 goes to archive, not the bin, and is re-scored monthly." },
   { x: 130, y: 1130, w: 420, rot: 1.2, color: "yellow", text: "Never more than 25 requests a day per seat, with 45 to 180 second gaps between sends." },
   { x: 2020, y: 1120, w: 320, rot: -1.4, color: "blue", text: "We wait for a real acceptance before any follow-up. Pending requests are re-checked every 6 hours, for up to 14 days." },
-  { x: 560, y: 1460, w: 400, rot: 0.8, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
+  { x: 560, y: 1248, w: 400, rot: 0.8, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
 ];
 
 const STICKY_STYLE: Record<Sticky["color"], { bg: string; border: string; title: string; text: string }> = {
@@ -586,9 +596,11 @@ export default function MyntmoreFrameworkClient() {
   const activeNode = active ? NODE_MAP[active] : null;
 
   /* connection strokes keep a constant on-screen thickness at any zoom */
-  const sw = clamp(2.6 / view.zoom, 2.2, 9);
-  const dotR = clamp(3.4 / view.zoom, 3, 11);
-  const dash = `${sw * 2.4} ${sw * 1.8}`;
+  const sw = clamp(2 / view.zoom, 1.8, 5);
+  const dotR = clamp(2.6 / view.zoom, 2.4, 6.5);
+  const dash = `${sw * 3} ${sw * 2}`;
+  const aw = clamp(7 / view.zoom, 7, 18);
+  const labelPx = clamp(9 / view.zoom, 9, 15);
 
   return (
     <InnerLayout>
@@ -681,11 +693,11 @@ export default function MyntmoreFrameworkClient() {
                 {/* Connections */}
                 <svg width={CANVAS_W} height={CANVAS_H} className="absolute inset-0" style={{ pointerEvents: "none" }}>
                   <defs>
-                    <marker id="fw-arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth">
-                      <path d="M0 0 L5 2.5 L0 5 Z" fill="#C3CAD6" />
+                    <marker id="fw-arrow" markerWidth={aw} markerHeight={aw} refX={aw - 1} refY={aw / 2} orient="auto" markerUnits="userSpaceOnUse">
+                      <path d={`M0 0 L${aw} ${aw / 2} L0 ${aw} Z`} fill="#B6BECB" />
                     </marker>
-                    <marker id="fw-arrow-hi" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth">
-                      <path d="M0 0 L5 2.5 L0 5 Z" fill="#F5B731" />
+                    <marker id="fw-arrow-hi" markerWidth={aw} markerHeight={aw} refX={aw - 1} refY={aw / 2} orient="auto" markerUnits="userSpaceOnUse">
+                      <path d={`M0 0 L${aw} ${aw / 2} L0 ${aw} Z`} fill="#F5B731" />
                     </marker>
                   </defs>
                   {CONNECTIONS.map((c, i) => {
@@ -696,12 +708,11 @@ export default function MyntmoreFrameworkClient() {
                     const dashed = c.kind === "sub" || c.kind === "false" || c.kind === "error";
                     return (
                       <g key={i}>
-                        <path d={d} fill="none" stroke="#000000" strokeOpacity={0.35} strokeWidth={sw + 2} strokeLinecap="round" />
                         <path
                           d={d}
                           fill="none"
-                          stroke={isHighlighted ? color : c.kind === "sub" ? "#A78BFA" : "#C3CAD6"}
-                          strokeOpacity={isHighlighted ? 1 : c.kind === "sub" ? 0.8 : 0.92}
+                          stroke={isHighlighted ? color : c.kind === "sub" ? "#A78BFA" : "#9AA3B4"}
+                          strokeOpacity={isHighlighted ? 1 : c.kind === "sub" ? 0.75 : 0.85}
                           strokeWidth={isHighlighted ? sw * 1.35 : sw}
                           strokeLinecap="round"
                           strokeDasharray={dashed ? dash : undefined}
@@ -717,11 +728,11 @@ export default function MyntmoreFrameworkClient() {
                     );
                   })}
                   {/* true / false port labels on IF nodes */}
-                  <g className="font-mono" style={{ fontSize: clamp(9 / view.zoom, 9, 26), fontWeight: 700 }}>
+                  <g className="font-mono" style={{ fontSize: labelPx, fontWeight: 700 }}>
                     {NODES.filter((n) => n.shape === "if").map((n) => (
                       <g key={n.id}>
-                        <text x={n.x + n.w + 6} y={n.y + n.h * 0.28 - 4} fill="#4ADE80">true</text>
-                        <text x={n.x + n.w + 6} y={n.y + n.h * 0.72 + 11} fill="#F87171">false</text>
+                        <text x={n.x + n.w + 8} y={n.y + n.h * 0.28 - labelPx * 0.5} fill="#4ADE80">true</text>
+                        <text x={n.x + n.w + 8} y={n.y + n.h * 0.72 + labelPx * 1.1} fill="#F87171">false</text>
                       </g>
                     ))}
                     <text x={NODE_MAP.connect.x + NODE_MAP.connect.w / 2 + 8} y={NODE_MAP.connect.y + NODE_MAP.connect.h + 40} fill="#F87171">error</text>
@@ -790,8 +801,8 @@ export default function MyntmoreFrameworkClient() {
                         )}
                       </button>
                       {/* label */}
-                      <div className="absolute text-center pointer-events-none" style={{ top: n.h + 6, left: n.w / 2 - (isSub ? 60 : 80), width: isSub ? 120 : 160 }}>
-                        {n.shape !== "ai" && <p className="text-[11px] font-bold leading-tight" style={{ color: isSub ? "#9CA3AF" : "#E5E7EB" }}>{n.title}</p>}
+                      <div className="absolute text-center pointer-events-none" style={{ top: n.h + 6, left: n.w / 2 - (isSub ? 50 : 80), width: isSub ? 100 : 160 }}>
+                        {n.shape !== "ai" && <p className={`${isSub ? "text-[9.5px]" : "text-[11px]"} font-bold leading-tight`} style={{ color: isSub ? "#9CA3AF" : "#E5E7EB" }}>{n.title}</p>}
                         <p className="text-[9px] font-mono leading-tight mt-0.5" style={{ color: "#6B7280" }}>{n.shape === "ai" ? `${n.type} · ${n.meta}` : n.meta ?? n.type}</p>
                       </div>
                     </div>

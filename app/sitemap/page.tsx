@@ -103,7 +103,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "All Guides", href: "/resources/guides" },
       { label: "Who Myntmore Is For (and Who It Isn't)", href: "/who-this-is-for" },
       { label: "How to Choose a B2B Outbound Agency", href: "/how-to-choose-an-outbound-agency" },
-      { label: "Pattern Interruption: The Do's and Don'ts of Outreach", href: "/dos-and-donts-of-outreach" },
+      { label: "Pattern Disruption: The Do's and Don'ts of Cold Outreach", href: "/dos-and-donts-of-outreach" },
       { label: "The 6 Claude Skills Guide", href: "/instagram-resources/claude-skills-guide" },
       { label: "80+ US Meetings with AI Agents", href: "/instagram-resources/80-us-meetings-ai-agents" },
       { label: "How to Set Up Vibe Prospecting", href: "/instagram-resources/how-to-set-up-vibe-prospecting" },

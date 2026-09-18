@@ -66,8 +66,8 @@ const T = {
 } as const;
 
 const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
-const TITLE = "Pattern Interruption: The Do's and Don'ts of Outreach";
-const DESCRIPTION = "Why most outreach gets deleted without being read, how pattern interruption actually works, what to send on LinkedIn vs. cold email, what data enrichment is, and the free tools to build better outreach.";
+const TITLE = "Pattern Disruption: The Do's and Don'ts of Cold Outreach";
+const DESCRIPTION = "Why most outreach gets deleted without being read, how pattern disruption actually works, what to send on LinkedIn vs. cold email, what data enrichment is, and the free tools to build better outreach.";
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: TITLE,
@@ -402,15 +402,15 @@ export default function DosAndDontsClient() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-180px", right: "-140px", width: "640px", height: "640px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(245,183,49,0.06) 45%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Interruption", href: "/dos-and-donts-of-outreach" }]} />
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Disruption", href: "/dos-and-donts-of-outreach" }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-7">
-              <p className="hero-fade text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: T.goldText }}>Guide &middot; Pattern interruption</p>
+              <p className="hero-fade text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: T.goldText }}>Guide</p>
               <h1 className={`${playfair.className} hero-fade-d1 text-5xl sm:text-6xl lg:text-[4.75rem] font-semibold leading-[1.02] tracking-tight mb-6`} style={{ color: T.ink }}>
-                The Do&apos;s and Don&apos;ts
+                <em className="font-semibold" style={{ color: T.goldText }}>Pattern Disruption</em>
                 <br />
-                <em className="font-semibold" style={{ color: T.goldText }}>of Outreach</em>
+                The Do&apos;s and Don&apos;ts of Cold Outreach
               </h1>
               <p className="hero-fade-d2 text-lg sm:text-xl leading-relaxed max-w-xl" style={{ color: T.muted }}>
                 Every prospect&apos;s inbox has trained them to skim past your message before they&apos;ve read a word of it. Here&apos;s what actually gets one read.
@@ -495,7 +495,7 @@ export default function DosAndDontsClient() {
       <section id="interrupts" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <SectionHeader n="01" eyebrow="Pattern interrupts" title={<>Six ways to break the pattern</>} lede="Each one works for the same reason: it doesn't fit the shape a prospect has learned to skim past." />
+            <SectionHeader n="01" eyebrow="Pattern disruption" title={<>Six ways to break the pattern</>} lede="Each one works for the same reason: it doesn't fit the shape a prospect has learned to skim past." />
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {INTERRUPTS.map((item, i) => {
@@ -653,7 +653,7 @@ export default function DosAndDontsClient() {
             <h2 className={`${playfair.className} text-3xl sm:text-5xl font-semibold leading-[1.08] tracking-tight mb-5`} style={{ color: "#ffffff" }}>
               Want this built into your own sequences?
             </h2>
-            <p className="text-base sm:text-lg mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>We bake pattern interruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
+            <p className="text-base sm:text-lg mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>We bake pattern disruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
             <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Book a Call
               <ArrowRight className="w-4 h-4" strokeWidth={2.5} />

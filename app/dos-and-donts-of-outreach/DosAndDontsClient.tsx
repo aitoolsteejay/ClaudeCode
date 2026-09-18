@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Caveat, Playfair_Display } from "next/font/google";
+import { Caveat } from "next/font/google";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -28,17 +28,7 @@ import AskYourAI from "../components/AskYourAI";
 import NewsletterForm from "../components/NewsletterForm";
 import { buildArticleSchema, SITE_URL } from "@/lib/schema";
 
-/* ─── Fonts ────────────────────────────────────────────────────────
-   Playfair Display carries the editorial display type on this page only;
-   body copy stays on the sitewide Inter. Caveat is the founder sign-off. */
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-  weight: ["600", "700"],
-  style: ["normal", "italic"],
-});
-
+/* ─── Fonts: sitewide Inter for everything; Caveat only for the founder sign-off ─── */
 const caveat = Caveat({
   subsets: ["latin"],
   variable: "--font-caveat",
@@ -55,8 +45,14 @@ const T = {
   muted: "#6B6560",
   hairline: "#E8E2D9",
   gold: "#F5B731",
-  goldText: "#8A5A0B",
-  goldSoft: "rgba(245,183,49,0.14)",
+  goldText: "#7C3AED",
+  goldSoft: "rgba(124,58,237,0.08)",
+  purple: "#7C3AED",
+  amber: "#D97706",
+  amberSoft: "#FEF9EC",
+  amberBorder: "rgba(245,183,49,0.35)",
+  linkedin: "#0077b5",
+  green: "#16A34A",
   doText: "#166534",
   doFill: "#15803D",
   doSoft: "rgba(21,128,61,0.10)",
@@ -114,10 +110,11 @@ const LESSONS = [
   },
 ];
 
-const CHANNEL_TIPS: { channel: string; icon: LucideIcon; dos: string[]; donts: string[] }[] = [
+const CHANNEL_TIPS: { channel: string; icon: LucideIcon; accent: string; dos: string[]; donts: string[] }[] = [
   {
     channel: "LinkedIn",
     icon: Linkedin,
+    accent: "#0077b5",
     dos: [
       "Warm up first, a like or comment before the connection request",
       "Send blank connection requests, a note this early often reads as a pitch",
@@ -133,6 +130,7 @@ const CHANNEL_TIPS: { channel: string; icon: LucideIcon; dos: string[]; donts: s
   {
     channel: "Cold Email",
     icon: Mail,
+    accent: "#D97706",
     dos: [
       "A subject line that reads like a real email, not a broadcast",
       "Short enough to read on a phone in five seconds",
@@ -159,24 +157,28 @@ const TOOLS = [
   {
     href: "/tools/icp-builder",
     name: "ICP & Value Proposition Generator",
+    accent: "#7C3AED",
     plain: "Tell it what your business does, and it hands you back who to sell to and what to say to them.",
     useCase: "Before writing a single message, so every line is aimed at someone real.",
   },
   {
     href: "/tools/dm-angle-generator",
     name: "DM Angle Generator",
+    accent: "#0077b5",
     plain: "Type in your offer, get back five different ways to open a message.",
     useCase: "When your reply rate goes quiet and the opening line is the likely culprit.",
   },
   {
     href: "/tools/roi-calculator",
     name: "ROI Calculator",
+    accent: "#16A34A",
     plain: "Plug in sends, replies, and deal value. See what your outreach is actually worth.",
     useCase: "Before committing budget or time, so the return is a number, not a guess.",
   },
   {
     href: "/tools/lead-magnet-ideas",
     name: "Lead Magnet Idea Generator",
+    accent: "#D97706",
     plain: "Turns your business and ICP into concrete, specific things you could give away for free.",
     useCase: "When you like the “give before you ask” idea but can't think what to give.",
   },
@@ -204,15 +206,15 @@ const DOS = [
 ];
 
 /* ─── Small editorial primitives ───────────────────────────────── */
-function SectionHeader({ n, eyebrow, title, lede, align = "left" }: { n: string; eyebrow: string; title: React.ReactNode; lede?: string; align?: "left" | "center" }) {
+function SectionHeader({ n, eyebrow, title, lede, align = "left", accent = T.purple }: { n: string; eyebrow: string; title: React.ReactNode; lede?: string; align?: "left" | "center"; accent?: string }) {
   return (
     <div className={`mb-10 ${align === "center" ? "text-center" : ""}`}>
       <div className={`flex items-center gap-3 mb-4 ${align === "center" ? "justify-center" : ""}`}>
-        <span className={`${playfair.className} text-sm font-semibold tabular-nums`} style={{ color: T.goldText }}>{n}</span>
-        <span aria-hidden="true" className="h-px w-8" style={{ backgroundColor: T.gold }} />
-        <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>{eyebrow}</span>
+        <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{n}</span>
+        <span aria-hidden="true" className="h-px w-8" style={{ backgroundColor: accent }} />
+        <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: accent }}>{eyebrow}</span>
       </div>
-      <h2 className={`${playfair.className} text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-[1.1] tracking-tight`} style={{ color: T.ink }}>
+      <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black leading-[1.1] tracking-tight" style={{ color: T.ink }}>
         {title}
       </h2>
       {lede && (
@@ -255,7 +257,7 @@ function ChannelTabs() {
               aria-selected={on}
               onClick={() => setActive(i)}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-              style={{ backgroundColor: on ? T.ink : "transparent", color: on ? "#ffffff" : T.ink2 }}
+              style={{ backgroundColor: on ? tab.accent : "transparent", color: on ? "#ffffff" : T.ink2 }}
             >
               <Icon className="w-4 h-4" strokeWidth={2} />
               {tab.channel}
@@ -265,6 +267,7 @@ function ChannelTabs() {
       </div>
 
       <div key={active} role="tabpanel" className="rounded-3xl card-fade-up overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+        <div className="h-1" style={{ background: `linear-gradient(90deg,${c.accent},${c.accent}66)` }} />
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="p-7 sm:p-9 md:border-r" style={{ borderColor: T.hairline }}>
             <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: T.doText }}>Do</p>
@@ -327,7 +330,7 @@ function SelfAudit() {
       {/* Verdict strip */}
       <div className="rounded-3xl p-6 sm:p-7 mb-6 flex flex-col sm:flex-row sm:items-center gap-5" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
         <div className="flex items-baseline gap-2 flex-shrink-0">
-          <span className={`${playfair.className} text-5xl font-semibold leading-none tabular-nums`} style={{ color: T.gold }}>{doScore}</span>
+          <span className="text-5xl font-black leading-none tabular-nums" style={{ color: T.gold }}>{doScore}</span>
           <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>of {DOS.length} habits</span>
         </div>
         <div className="flex-1 min-w-0">
@@ -399,16 +402,20 @@ export default function DosAndDontsClient() {
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: T.bg }}>
-        <div aria-hidden="true" style={{ position: "absolute", top: "-180px", right: "-140px", width: "640px", height: "640px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(245,183,49,0.06) 45%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.20) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Disruption", href: "/dos-and-donts-of-outreach" }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-7">
-              <p className="hero-fade text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: T.goldText }}>Guide</p>
-              <h1 className={`${playfair.className} hero-fade-d1 text-5xl sm:text-6xl lg:text-[4.75rem] font-semibold leading-[1.02] tracking-tight mb-6`} style={{ color: T.ink }}>
-                <em className="font-semibold" style={{ color: T.goldText }}>Pattern Disruption</em>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(124,58,237,0.35)", background: "rgba(124,58,237,0.07)" }}>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: T.purple }} />
+                <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: T.purple }}>Guide &middot; 6 min read</span>
+              </div>
+              <h1 className="hero-fade-d1 text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: T.ink }}>
+                <span style={{ color: T.purple }}>Pattern Disruption</span>
                 <br />
                 The Do&apos;s and Don&apos;ts of Cold Outreach
               </h1>
@@ -416,7 +423,7 @@ export default function DosAndDontsClient() {
                 Every prospect&apos;s inbox has trained them to skim past your message before they&apos;ve read a word of it. Here&apos;s what actually gets one read.
               </p>
               <div className="hero-fade-d3 flex items-center gap-3 mt-8 text-sm" style={{ color: T.muted }}>
-                <span aria-hidden="true" className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style={{ backgroundColor: T.ink, color: T.gold }}>TJ</span>
+                <span aria-hidden="true" className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style={{ backgroundColor: T.purple, color: "#ffffff" }}>TJ</span>
                 <span><span className="font-semibold" style={{ color: T.ink }}>Tejas Jhaveri</span>, Founder of Myntmore</span>
                 <span aria-hidden="true">&middot;</span>
                 <span>6 min read</span>
@@ -432,7 +439,7 @@ export default function DosAndDontsClient() {
                       href={item.href}
                       className="group flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-colors duration-200 hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
                     >
-                      <span className={`${playfair.className} text-sm font-semibold tabular-nums w-6`} style={{ color: T.goldText }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span className="text-sm font-black tabular-nums w-6" style={{ color: T.goldText }}>{String(i + 1).padStart(2, "0")}</span>
                       <span className="flex-1 text-[15px] font-semibold" style={{ color: T.ink }}>{item.label}</span>
                       <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2} style={{ color: T.muted }} />
                     </a>
@@ -448,10 +455,9 @@ export default function DosAndDontsClient() {
       <article className="py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <h2 className={`${playfair.className} text-3xl sm:text-4xl font-semibold leading-tight tracking-tight mb-8`} style={{ color: T.ink }}>The two seconds of silence</h2>
+            <h2 className="text-3xl sm:text-4xl font-black leading-tight tracking-tight mb-8" style={{ color: T.ink }}>The two seconds of silence</h2>
             <p className="text-lg leading-[1.75]" style={{ color: T.ink2 }}>
-              <span className={`${playfair.className} float-left mr-3 mt-1 text-[4.25rem] leading-[0.85] font-semibold`} style={{ color: T.ink }}>I</span>
-              was DJing a set last year and dropped a song completely out of genre, just to see what would happen. The floor went quiet for two seconds, then louder than before. Not better, just unexpected. That&apos;s basically the entire problem with outbound right now.
+              I was DJing a set last year and dropped a song completely out of genre, just to see what would happen. The floor went quiet for two seconds, then louder than before. Not better, just unexpected. That&apos;s basically the entire problem with outbound right now.
             </p>
             <p className="text-lg leading-[1.75] mt-6" style={{ color: T.ink2 }}>
               Open any inbox and you already know what&apos;s coming: &ldquo;Thanks for connecting.&rdquo; &ldquo;Just following up.&rdquo; Read a thousand times, these lines stop registering as words. They register as noise, and noise gets deleted without guilt.
@@ -460,13 +466,12 @@ export default function DosAndDontsClient() {
 
           {/* Pull quote */}
           <FadeIn>
-            <figure className="my-14 text-center">
-              <span aria-hidden="true" className="block h-px w-12 mx-auto mb-8" style={{ backgroundColor: T.gold }} />
-              <blockquote className={`${playfair.className} text-3xl sm:text-[2.6rem] italic font-semibold leading-[1.15] tracking-tight`} style={{ color: T.ink }}>
+            <figure className="relative my-14 rounded-3xl border p-8 sm:p-10 overflow-hidden text-center" style={{ backgroundColor: T.amberSoft, borderColor: T.amberBorder }}>
+              <span aria-hidden="true" className="absolute -top-6 right-6 text-9xl font-bold opacity-10 select-none" style={{ color: T.amber }}>&ldquo;</span>
+              <blockquote className="text-3xl sm:text-[2.6rem] font-black leading-[1.15] tracking-tight" style={{ color: T.ink }}>
                 &ldquo;Not better, just unexpected.&rdquo;
               </blockquote>
-              <figcaption className="mt-5 text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>The smartest move isn&apos;t a better version of the same message</figcaption>
-              <span aria-hidden="true" className="block h-px w-12 mx-auto mt-8" style={{ backgroundColor: T.gold }} />
+              <figcaption className="mt-5 text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.amber }}>The smartest move isn&apos;t a better version of the same message</figcaption>
             </figure>
           </FadeIn>
 
@@ -504,10 +509,10 @@ export default function DosAndDontsClient() {
                 <FadeIn key={item.title} delay={i * 60}>
                   <div className="group h-full rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
                     <div className="flex items-start justify-between mb-6">
-                      <span className="w-11 h-11 rounded-2xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#F5B731]" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
-                        <Icon className="w-5 h-5 transition-colors duration-300 group-hover:text-[#0a0a0a]" strokeWidth={1.8} />
+                      <span className="w-11 h-11 rounded-2xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#7C3AED] group-hover:text-white" style={{ backgroundColor: "rgba(124,58,237,0.08)", color: T.purple }}>
+                        <Icon className="w-5 h-5" strokeWidth={1.8} />
                       </span>
-                      <span className={`${playfair.className} text-sm font-semibold tabular-nums`} style={{ color: T.goldText }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span className="text-sm font-black tabular-nums" style={{ color: T.goldText }}>{String(i + 1).padStart(2, "0")}</span>
                     </div>
                     <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: T.ink }}>{item.title}</h3>
                     <p className="text-[15px] leading-relaxed" style={{ color: T.muted }}>{item.body}</p>
@@ -523,7 +528,7 @@ export default function DosAndDontsClient() {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-0 lg:divide-x lg:divide-[#E8E2D9]">
                 {LESSONS.map((l) => (
                   <div key={l.n} className="lg:px-8 first:lg:pl-0 last:lg:pr-0">
-                    <span className={`${playfair.className} block text-4xl font-semibold mb-4 tabular-nums`} style={{ color: T.gold }}>{l.n}</span>
+                    <span className="block text-4xl font-black mb-4 tabular-nums" style={{ color: T.purple }}>{l.n}</span>
                     <h3 className="text-lg font-bold leading-snug mb-3" style={{ color: T.ink }}>{l.title}</h3>
                     <p className="text-[15px] leading-relaxed" style={{ color: T.ink2 }}>{l.body}</p>
                   </div>
@@ -532,9 +537,9 @@ export default function DosAndDontsClient() {
               <div className="mt-10 pt-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-t" style={{ borderColor: T.hairline }}>
                 <p className="text-sm" style={{ color: T.muted }}>
                   This is how we run it at{" "}
-                  <a href="https://zcu.ge/M0W" target="_blank" rel="noopener noreferrer" className="font-bold underline-offset-4 hover:underline" style={{ color: T.ink }}>Myntmore</a>.
+                  <a href="https://zcu.ge/M0W" target="_blank" rel="noopener noreferrer" className="font-bold underline-offset-4 hover:underline" style={{ color: T.purple }}>Myntmore</a>.
                 </p>
-                <p className={`${caveat.className} text-3xl leading-none`} style={{ color: T.goldText }}>&mdash; Respectfully, Teejay</p>
+                <p className={`${caveat.className} text-3xl leading-none`} style={{ color: T.goldText }}>Respectfully, Teejay</p>
               </div>
             </div>
           </FadeIn>
@@ -545,7 +550,7 @@ export default function DosAndDontsClient() {
       <section id="channels" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <SectionHeader n="02" eyebrow="By channel" title={<>Same principle, <em className="font-semibold" style={{ color: T.goldText }}>different channel</em></>} lede="What works on LinkedIn reads as a pitch in email, and vice versa. Pick one." />
+            <SectionHeader n="02" eyebrow="By channel" accent={T.linkedin} title={<>Same principle, <span style={{ color: T.linkedin }}>different channel</span></>} lede="What works on LinkedIn reads as a pitch in email, and vice versa. Pick one." />
             <ChannelTabs />
           </FadeIn>
         </div>
@@ -557,11 +562,11 @@ export default function DosAndDontsClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
               <FadeIn>
-                <SectionHeader n="03" eyebrow="The unglamorous part" title={<>What is enrichment, and why does it matter?</>} />
+                <SectionHeader n="03" eyebrow="The unglamorous part" accent={T.amber} title={<>What is enrichment, and why does it matter?</>} />
                 <p className="text-base leading-relaxed -mt-4" style={{ color: T.ink2 }}>
                   A raw list of names isn&apos;t enough to write the kind of message this guide describes. <strong style={{ color: T.ink }}>Enrichment</strong> adds real details to a lead, company size, funding, tech stack, verified email, so a message can reference something specific instead of guessing.
                 </p>
-                <p className={`${playfair.className} text-xl italic font-semibold leading-snug mt-6 pl-5 border-l-2`} style={{ color: T.ink, borderColor: T.gold }}>
+                <p className="text-xl font-black leading-snug mt-6 pl-5 border-l-2" style={{ color: T.ink, borderColor: T.amber }}>
                   Without it, personalisation is a merge field with a first name in it.
                 </p>
               </FadeIn>
@@ -589,19 +594,21 @@ export default function DosAndDontsClient() {
       <section className="py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <SectionHeader n="04" eyebrow="Free tools" title={<>Tools that do some of this for you</>} lede="No jargon, just what each one does and when to reach for it." />
+            <SectionHeader n="04" eyebrow="Free tools" accent={T.green} title={<>Tools that do some of this for you</>} lede="No jargon, just what each one does and when to reach for it." />
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {TOOLS.map((t, i) => (
               <FadeIn key={t.href} delay={i * 60}>
                 <Link
                   href={t.href}
-                  className="group flex flex-col h-full rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                  style={{ backgroundColor: T.bg, border: `1px solid ${T.hairline}` }}
+                  className="group flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                  style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}
                 >
+                  <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
+                  <div className="flex flex-col flex-1 p-7">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <h3 className="text-lg font-bold leading-snug" style={{ color: T.ink }}>{t.name}</h3>
-                    <span className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-[#0a0a0a] group-hover:text-white" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}`, color: T.ink }}>
+                    <span className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:text-white" style={{ backgroundColor: `${t.accent}14`, color: t.accent }}>
                       <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
                     </span>
                   </div>
@@ -609,6 +616,8 @@ export default function DosAndDontsClient() {
                   <p className="text-sm leading-relaxed mt-auto pt-4 border-t" style={{ color: T.muted, borderColor: T.hairline }}>
                     <span className="font-bold" style={{ color: T.ink }}>Use it when: </span>{t.useCase}
                   </p>
+                  <span className="mt-4 text-sm font-bold inline-flex items-center gap-1.5" style={{ color: t.accent }}>Try it free <ArrowRight className="w-3.5 h-3.5" strokeWidth={3} /></span>
+                  </div>
                 </Link>
               </FadeIn>
             ))}
@@ -629,10 +638,10 @@ export default function DosAndDontsClient() {
           </div>
 
           <FadeIn>
-            <div className="mt-6 rounded-3xl p-7 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+            <div className="mt-6 rounded-3xl p-7 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center" style={{ backgroundColor: T.amberSoft, border: `1px solid ${T.amberBorder}` }}>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-2" style={{ color: T.goldText }}>The Outbound Operator</p>
-                <h3 className={`${playfair.className} text-2xl font-semibold leading-tight mb-2`} style={{ color: T.ink }}>One practical growth playbook, every week</h3>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-2" style={{ color: T.amber }}>The Outbound Operator</p>
+                <h3 className="text-2xl font-black leading-tight mb-2" style={{ color: T.ink }}>One practical growth playbook, every week</h3>
                 <p className="text-sm leading-relaxed" style={{ color: T.muted }}>
                   Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.
                 </p>
@@ -646,14 +655,14 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4 text-center" style={{ backgroundColor: T.ink }}>
+      <section className="py-24 px-4 text-center border-t" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-2xl mx-auto">
           <FadeIn>
-            <span aria-hidden="true" className="block h-px w-12 mx-auto mb-8" style={{ backgroundColor: T.gold }} />
-            <h2 className={`${playfair.className} text-3xl sm:text-5xl font-semibold leading-[1.08] tracking-tight mb-5`} style={{ color: "#ffffff" }}>
+            <span aria-hidden="true" className="block h-px w-12 mx-auto mb-8" style={{ backgroundColor: T.purple }} />
+            <h2 className="text-3xl sm:text-5xl font-black leading-[1.08] tracking-tight mb-5" style={{ color: T.ink }}>
               Want this built into your own sequences?
             </h2>
-            <p className="text-base sm:text-lg mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>We bake pattern disruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
+            <p className="text-base sm:text-lg mb-10" style={{ color: T.muted }}>We bake pattern disruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
             <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Book a Call
               <ArrowRight className="w-4 h-4" strokeWidth={2.5} />

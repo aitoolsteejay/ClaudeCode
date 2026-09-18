@@ -17,7 +17,7 @@ const caveat = Caveat({
 });
 
 const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
-const TITLE = "The Do's and Don'ts of Outreach";
+const TITLE = "Pattern Interruption: The Do's and Don'ts of Outreach";
 const DESCRIPTION = "Why most outreach gets deleted without being read, how pattern interruption actually works, what to send on LinkedIn vs. cold email, what data enrichment is, and the free tools to build better outreach.";
 
 export const metadata: Metadata = {
@@ -165,12 +165,14 @@ export default function DosAndDontsOfOutreachPage() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-3xl mx-auto">
-          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Do's and Don'ts of Outreach", href: "/dos-and-donts-of-outreach" }]} />
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Interruption", href: "/dos-and-donts-of-outreach" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(124,58,237,0.35)", background: "rgba(124,58,237,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7C3AED" }} />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7C3AED" }}>Guide &middot; 9 min read</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
+            <span style={{ color: "#7C3AED" }}>Pattern Interruption</span>
+            <br />
             The Do&apos;s and Don&apos;ts of Outreach
           </h1>
           <p className="text-lg sm:text-xl leading-relaxed" style={{ color: "#52525B" }}>

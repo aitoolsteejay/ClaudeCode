@@ -35,7 +35,7 @@ const GUIDES = [
   {
     href: "/dos-and-donts-of-outreach",
     tag: "Outreach Craft",
-    title: "The Do's and Don'ts of Outreach",
+    title: "Pattern Interruption: The Do's and Don'ts of Outreach",
     excerpt: "Why most outreach gets deleted without being read, how pattern interruption actually works, what to send on LinkedIn vs. cold email, and what data enrichment even is.",
     readTime: "9 min read",
     accent: "#7C3AED",

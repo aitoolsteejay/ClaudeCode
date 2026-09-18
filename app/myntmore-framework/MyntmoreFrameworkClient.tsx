@@ -69,6 +69,7 @@ interface FNode {
   h: number;
   shape: Shape;
   narrative?: boolean;
+  disabled?: boolean;
 }
 
 function N(id: string, title: string, type: string, icon: React.ReactNode, accent: string, x: number, y: number, shape: Shape = "regular", extra: Partial<FNode> = {}): FNode {
@@ -97,7 +98,7 @@ const C = {
 const ROW = [120, 330, 540, 750];
 const COL = [1660, 1830, 2000, 2170, 2340];
 
-const NODES: FNode[] = [
+const RAW_NODES: FNode[] = [
   /* ── Group A: prospect discovery ─────────────────────────── */
   N("sched1", "Schedule Trigger", "trigger.schedule", <IconClock />, C.yellow, 130, 300, "trigger", { meta: "Daily 08:00 IST" }),
   N("icp", "ICP Agent", "ai.agent", <IconTarget />, C.yellow, 300, 300, "ai", { narrative: true, meta: "Defines who we target",
@@ -201,7 +202,38 @@ const NODES: FNode[] = [
   N("ifintent", "Intent?", "if.intent", <IconBranch />, C.amber, 560, 1330, "if"),
   N("book", "Book Meeting", "calendar.create", <IconCalendar />, C.green, 730, 1280),
   N("nurture", "Add to Nurture", "sheet.update", <IconTable />, C.orange, 730, 1400),
+
+  /* ── Leftovers, tests, and the error workflow ─────────────── */
+  N("manual", "Manual Trigger", "trigger.manual", <IconBolt />, C.grey, 2560, 110, "trigger", { meta: "testing only" }),
+  N("sample", "Get 5 Sample Leads", "sheet.read", <IconTable />, C.green, 2730, 110, "regular", { meta: "limit 5" }),
+  N("debug", "Debug Output", "flow.noop", <IconDocument />, C.grey, 2900, 110),
+  N("oldscore", "Lead Score v2 (old)", "ai.agent", <IconSparkle />, C.grey, 3420, 150, "ai", { meta: "replaced in v3", disabled: true }),
+  N("modelold", "GPT-4o mini", "ai.model", <IconSparkle />, C.grey, 3440, 280, "sub", { disabled: true }),
+  N("noop", "No Operation", "flow.noop", <IconStop />, C.grey, 1470, 640, "regular", { meta: "do nothing" }),
+  N("setfields", "Edit Fields", "data.set", <IconFilter />, C.cyan, 2210, 1330, "regular", { meta: "3 fields" }),
+  N("followup3", "Send Follow-Up #3", "linkedin.followUp3", <IconClock />, C.grey, 3690, 1130, "regular", { meta: "off since Aug", disabled: true }),
+  N("errtrig", "Error Trigger", "trigger.error", <IconWarning />, C.red, 1110, 1340, "trigger"),
+  N("fmterr", "Format Error", "code.js", <IconDocument />, C.cyan, 1280, 1340),
+  N("errslack", "Slack #alerts", "slack.message", <IconSend />, C.green, 1450, 1340),
 ];
+
+/* Deterministic nudge so nothing sits perfectly on the grid */
+function hash(str: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+function jitter(id: string, range: number, salt: number): number {
+  return ((hash(id + salt) % 1000) / 1000 - 0.5) * 2 * range;
+}
+const NODES: FNode[] = RAW_NODES.map((n) => ({
+  ...n,
+  x: Math.round(n.x + jitter(n.id, n.shape === "sub" ? 10 : 18, 1)),
+  y: Math.round(n.y + jitter(n.id, n.shape === "sub" ? 8 : 26, 2)),
+}));
 
 const NODE_MAP: Record<string, FNode> = Object.fromEntries(NODES.map((n) => [n.id, n]));
 const NARRATIVE_NODES = NODES.filter((n) => n.narrative);
@@ -283,6 +315,14 @@ const CONNECTIONS: FConn[] = [
   { from: "memory2", to: "replyagent", kind: "sub" },
   { from: "ifintent", to: "book", kind: "true" },
   { from: "ifintent", to: "nurture", kind: "false" },
+
+  ...chain("line", "manual", "sample", "debug"),
+  { from: "modelold", to: "oldscore", kind: "sub" },
+  { from: "followup2", to: "followup3", kind: "line" },
+  { from: "notify", to: "setfields", kind: "line" },
+  { from: "setfields", to: "log", kind: "line" },
+  ...chain("line", "errtrig", "fmterr", "errslack"),
+  { from: "senderror", to: "errtrig", kind: "error" },
 ];
 
 function outPoint(n: FNode, kind: Kind): [number, number] {
@@ -323,23 +363,25 @@ const GROUPS: Group[] = [
   { x: 80, y: 190, w: 1300, h: 400, title: "1 · Prospect discovery", color: "#B8860B" },
   { x: 1600, y: 0, w: 900, h: 870, title: "2 · Enrichment, four parallel branches per prospect", color: "#16A34A" },
   { x: 2500, y: 330, w: 1000, h: 380, title: "3 · Score and personalize", color: "#6366f1" },
-  { x: 80, y: 880, w: 1300, h: 320, title: "4 · Send connection requests", color: "#B8860B" },
-  { x: 1460, y: 880, w: 920, h: 320, title: "5 · Check the connections", color: "#B8860B" },
-  { x: 2440, y: 880, w: 1420, h: 320, title: "6 · Follow-ups", color: "#B8860B" },
+  { x: 70, y: 890, w: 1330, h: 300, title: "4 · Send connection requests", color: "#B8860B" },
+  { x: 1350, y: 866, w: 1040, h: 340, title: "5 · Check the connections", color: "#B8860B" },
+  { x: 2430, y: 872, w: 1440, h: 336, title: "6 · Follow-ups", color: "#B8860B" },
   { x: 80, y: 1230, w: 900, h: 320, title: "7 · Conversation agent", color: "#B8860B" },
 ];
 
-interface Sticky { x: number; y: number; w: number; h?: number; title?: string; text: string; color: "green" | "yellow" | "blue" | "grey"; }
+interface Sticky { x: number; y: number; w: number; h?: number; title?: string; text: string; color: "green" | "yellow" | "blue" | "grey"; rot?: number; }
 const STICKIES: Sticky[] = [
   { x: 80, y: 20, w: 420, color: "grey", title: "LinkedIn Lead Automation Flow", text: "Seven linked workflows: discover, enrich, score, connect, verify, follow up, converse. Every send passes through the Human Behaviour Engine. Google Sheets is the shared state between them." },
   { x: 1660, y: 44, w: 250, color: "green", title: "Research company website", text: "Homepage, about, pricing. Summarized to 3 lines." },
   { x: 1940, y: 44, w: 250, color: "green", title: "Research recent posts", text: "Last 5 posts, what they care about right now." },
   { x: 2220, y: 44, w: 250, color: "green", title: "Research company news", text: "Funding, hiring, launches in the last 90 days." },
-  { x: 1660, y: 816, w: 380, color: "blue", text: "Each branch writes back to the lead row on its own. If one source is empty, the others still land." },
-  { x: 2960, y: 250, w: 260, color: "yellow", text: "Threshold is tuned per client. Below 70 goes to archive, not the bin, and is re-scored monthly." },
-  { x: 130, y: 1130, w: 420, color: "yellow", text: "Never more than 25 requests a day per seat, with 45 to 180 second gaps between sends." },
-  { x: 2020, y: 1120, w: 320, color: "blue", text: "We wait for a real acceptance before any follow-up. Pending requests are re-checked every 6 hours, for up to 14 days." },
-  { x: 560, y: 1460, w: 400, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
+  { x: 2560, y: 40, w: 300, rot: 1.5, color: "grey", text: "TODO: delete the manual test branch before the client demo. Also the old v2 scorer is still here." },
+  { x: 1080, y: 1270, w: 250, rot: -1, color: "yellow", text: "Any failed send anywhere lands in #alerts within a minute." },
+  { x: 1660, y: 816, w: 380, rot: -0.6, color: "blue", text: "Each branch writes back to the lead row on its own. If one source is empty, the others still land." },
+  { x: 2960, y: 250, w: 260, rot: -2, color: "yellow", text: "Threshold is tuned per client. Below 70 goes to archive, not the bin, and is re-scored monthly." },
+  { x: 130, y: 1130, w: 420, rot: 1.2, color: "yellow", text: "Never more than 25 requests a day per seat, with 45 to 180 second gaps between sends." },
+  { x: 2020, y: 1120, w: 320, rot: -1.4, color: "blue", text: "We wait for a real acceptance before any follow-up. Pending requests are re-checked every 6 hours, for up to 14 days." },
+  { x: 560, y: 1460, w: 400, rot: 0.8, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
 ];
 
 const STICKY_STYLE: Record<Sticky["color"], { bg: string; border: string; title: string; text: string }> = {
@@ -629,7 +671,7 @@ export default function MyntmoreFrameworkClient() {
                 {STICKIES.map((s, i) => {
                   const st = STICKY_STYLE[s.color];
                   return (
-                    <div key={i} className="absolute rounded-lg px-3.5 py-3" style={{ left: s.x, top: s.y, width: s.w, backgroundColor: st.bg, border: `1px solid ${st.border}` }}>
+                    <div key={i} className="absolute rounded-lg px-3.5 py-3" style={{ left: s.x, top: s.y, width: s.w, backgroundColor: st.bg, border: `1px solid ${st.border}`, transform: s.rot ? `rotate(${s.rot}deg)` : undefined }}>
                       {s.title && <p className="text-[12px] font-black mb-1" style={{ color: st.title }}>{s.title}</p>}
                       <p className="text-[11px] leading-snug" style={{ color: st.text }}>{s.text}</p>
                     </div>
@@ -699,7 +741,7 @@ export default function MyntmoreFrameworkClient() {
                   const border = isCurrent ? "#F5B731" : isActive ? n.accent : isDone ? "#22C55E" : isEnd ? "#3A3F4C" : "#3A3F4C";
                   const glow = isCurrent ? "0 0 0 4px rgba(245,183,49,0.25), 0 0 24px rgba(245,183,49,0.45)" : isActive ? `0 0 0 4px ${n.accent}33, 0 10px 24px rgba(0,0,0,0.5)` : "0 2px 8px rgba(0,0,0,0.35)";
                   return (
-                    <div key={n.id} className="absolute" style={{ left: n.x, top: n.y, width: n.w, height: n.h }}>
+                    <div key={n.id} className="absolute" style={{ left: n.x, top: n.y, width: n.w, height: n.h, opacity: n.disabled ? 0.42 : 1 }}>
                       <button
                         type="button"
                         onClick={() => { pinnedRef.current = active !== n.id; setActive((v) => (v === n.id ? null : n.id)); }}
@@ -739,6 +781,7 @@ export default function MyntmoreFrameworkClient() {
                           </>
                         )}
                         {isSub && <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "50%", top: -5, marginLeft: -4, backgroundColor: "#A78BFA" }} />}
+                        {n.disabled && <span aria-hidden="true" className="absolute -top-2 -left-2 text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: "#3A3F4C", color: "#D1D5DB" }}>off</span>}
                         {/* success badge */}
                         {isDone && (
                           <span aria-hidden="true" className="absolute -top-2 -right-2 w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#22C55E" }}>

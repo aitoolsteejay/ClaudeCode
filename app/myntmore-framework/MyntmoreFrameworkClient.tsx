@@ -5,77 +5,55 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
-import { buildHowToSchema, SITE_URL } from "@/lib/schema";
+import { buildHowToSchema } from "@/lib/schema";
 
 /* ─── Icons (technical/glyph style, not emoji) ────────────────── */
 
-function IconTarget() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" /></svg>;
-}
-function IconSearch() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><circle cx="11" cy="11" r="7" /><path strokeLinecap="round" d="M21 21l-4.3-4.3" /></svg>;
-}
-function IconDocument() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><rect x="5" y="3.5" width="14" height="17" rx="2" /><path strokeLinecap="round" d="M8.5 9h7M8.5 13h7M8.5 17h4" /></svg>;
-}
-function IconBranch() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><circle cx="6" cy="6" r="2.4" /><circle cx="6" cy="18" r="2.4" /><circle cx="18" cy="12" r="2.4" /><path strokeLinecap="round" d="M6 8.4V15.6M8.2 7.2L15.8 10.8M8.2 16.8L15.8 13.2" /></svg>;
-}
-function IconDatabase() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><ellipse cx="12" cy="6" rx="7.5" ry="2.8" /><path strokeLinecap="round" d="M4.5 6v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-6" /></svg>;
-}
-function IconUser() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><circle cx="12" cy="8" r="3.6" /><path strokeLinecap="round" d="M4.5 20c0-4.1 3.4-6.6 7.5-6.6s7.5 2.5 7.5 6.6" /></svg>;
-}
-function IconSparkle() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" /></svg>;
-}
-function IconShield() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 3v6c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6l7-3z" /><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" /></svg>;
-}
-function IconSend() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13" /><path strokeLinecap="round" strokeLinejoin="round" d="M22 2l-7 20-4-9-9-4 20-7z" /></svg>;
-}
-function IconHourglass() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M6.5 3h11M6.5 21h11M7.5 3c0 4.5 4.5 5.2 4.5 9s-4.5 4.5-4.5 9M16.5 3c0 4.5-4.5 5.2-4.5 9s4.5 4.5 4.5 9" /></svg>;
-}
-function IconClock() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
-}
-function IconChart() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M4 20V11M11 20V4M18 20v-6M3 20h18" /></svg>;
-}
-function IconStop() {
-  return <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="6" y="6" width="12" height="12" rx="2.5" /></svg>;
-}
-function IconGauge() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" d="M4 16a8 8 0 1116 0" /><path strokeLinecap="round" d="M12 16l4-5" /><circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none" /></svg>;
-}
-function IconFilter() {
-  return <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5h16l-6 8v6l-4 2v-8L4 5z" /></svg>;
-}
-function IconWarning() {
-  return <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3l10 18H2L12 3z" /><path strokeLinecap="round" d="M12 9.5v4.5" /><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none" /></svg>;
-}
+const I = { className: "w-5 h-5", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.8 } as const;
 
-/* ─── Node + connector data ───────────────────────────────────── */
+function IconTarget() { return <svg {...I}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" /></svg>; }
+function IconSearch() { return <svg {...I}><circle cx="11" cy="11" r="7" /><path strokeLinecap="round" d="M21 21l-4.3-4.3" /></svg>; }
+function IconDocument() { return <svg {...I}><rect x="5" y="3.5" width="14" height="17" rx="2" /><path strokeLinecap="round" d="M8.5 9h7M8.5 13h7M8.5 17h4" /></svg>; }
+function IconBranch() { return <svg {...I}><circle cx="6" cy="6" r="2.4" /><circle cx="6" cy="18" r="2.4" /><circle cx="18" cy="12" r="2.4" /><path strokeLinecap="round" d="M6 8.4V15.6M8.2 7.2L15.8 10.8M8.2 16.8L15.8 13.2" /></svg>; }
+function IconDatabase() { return <svg {...I}><ellipse cx="12" cy="6" rx="7.5" ry="2.8" /><path strokeLinecap="round" d="M4.5 6v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6M4.5 12v6c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-6" /></svg>; }
+function IconUser() { return <svg {...I}><circle cx="12" cy="8" r="3.6" /><path strokeLinecap="round" d="M4.5 20c0-4.1 3.4-6.6 7.5-6.6s7.5 2.5 7.5 6.6" /></svg>; }
+function IconSparkle() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" /></svg>; }
+function IconShield() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 3v6c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6l7-3z" /><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" /></svg>; }
+function IconSend() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13" /><path strokeLinecap="round" strokeLinejoin="round" d="M22 2l-7 20-4-9-9-4 20-7z" /></svg>; }
+function IconHourglass() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M6.5 3h11M6.5 21h11M7.5 3c0 4.5 4.5 5.2 4.5 9s-4.5 4.5-4.5 9M16.5 3c0 4.5-4.5 5.2-4.5 9s4.5 4.5 4.5 9" /></svg>; }
+function IconClock() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>; }
+function IconChart() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M4 20V11M11 20V4M18 20v-6M3 20h18" /></svg>; }
+function IconStop() { return <svg {...I}><rect x="6" y="6" width="12" height="12" rx="2.5" /></svg>; }
+function IconGauge() { return <svg {...I}><path strokeLinecap="round" d="M4 16a8 8 0 1116 0" /><path strokeLinecap="round" d="M12 16l4-5" /><circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none" /></svg>; }
+function IconFilter() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5h16l-6 8v6l-4 2v-8L4 5z" /></svg>; }
+function IconWarning() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M12 3l10 18H2L12 3z" /><path strokeLinecap="round" d="M12 9.5v4.5" /><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none" /></svg>; }
+function IconLoop() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h5M20 20v-5h-5M4 9a9 9 0 0114.13-5.36M20 15a9 9 0 01-14.13 5.36" /></svg>; }
+function IconTable() { return <svg {...I}><rect x="3.5" y="4.5" width="17" height="15" rx="2" /><path strokeLinecap="round" d="M3.5 9.5h17M3.5 14.5h17M9.5 4.5v15" /></svg>; }
+function IconBolt() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" /></svg>; }
+function IconCheckCircle() { return <svg {...I}><circle cx="12" cy="12" r="9" /><path strokeLinecap="round" strokeLinejoin="round" d="M8.5 12.5l2.5 2.5 4.5-5" /></svg>; }
+function IconMerge() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h5l5 6-5 6H4M14 12h6m0 0l-3-3m3 3l-3 3" /></svg>; }
+function IconGlobe() { return <svg {...I}><circle cx="12" cy="12" r="9" /><path strokeLinecap="round" d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18" /></svg>; }
+function IconMemory() { return <svg {...I}><rect x="4" y="6" width="16" height="12" rx="2" /><path strokeLinecap="round" d="M8 6V3.5M12 6V3.5M16 6V3.5M8 20.5V18M12 20.5V18M16 20.5V18M8 10h8M8 14h5" /></svg>; }
+function IconSort() { return <svg {...I}><path strokeLinecap="round" d="M4 7h16M4 12h10M4 17h5" /></svg>; }
+function IconChat() { return <svg {...I}><path strokeLinecap="round" strokeLinejoin="round" d="M4 5.5A2.5 2.5 0 016.5 3h11A2.5 2.5 0 0120 5.5v8a2.5 2.5 0 01-2.5 2.5H10l-5 4v-4H6.5A2.5 2.5 0 014 13.5v-8z" /></svg>; }
+function IconCalendar() { return <svg {...I}><rect x="3.5" y="5" width="17" height="15" rx="2" /><path strokeLinecap="round" d="M3.5 10h17M8 3v4M16 3v4" /></svg>; }
 
-const NODE_W = 208;
-const NODE_H = 92;
-const IF_W = 140;
-const END_W = 170;
-const END_H = 56;
-const CANVAS_W = 4350;
-const CANVAS_H = 650;
-const MIN_ZOOM = 0.15;
-const MAX_ZOOM = 1.5;
-const FIT_PADDING = 48;
+/* ─── Canvas geometry ────────────────────────────────────────── */
+
+const TILE = 64;
+const AI_W = 150;
+const SUB = 44;
+const CANVAS_W = 3900;
+const CANVAS_H = 1580;
+const MIN_ZOOM = 0.12;
+const MAX_ZOOM = 1.6;
+const FIT_PADDING = 40;
 
 function clamp(v: number, min: number, max: number) {
   return Math.min(max, Math.max(min, v));
 }
 
-type Shape = "trigger" | "regular" | "if" | "end";
+type Shape = "trigger" | "regular" | "if" | "end" | "ai" | "sub";
 
 interface FNode {
   id: string;
@@ -90,109 +68,299 @@ interface FNode {
   w: number;
   h: number;
   shape: Shape;
-  narrative?: boolean; // shown in the "what each node does" breakdown below
+  narrative?: boolean;
 }
 
+function N(id: string, title: string, type: string, icon: React.ReactNode, accent: string, x: number, y: number, shape: Shape = "regular", extra: Partial<FNode> = {}): FNode {
+  const w = shape === "ai" ? AI_W : shape === "sub" ? SUB : TILE;
+  const h = shape === "sub" ? SUB : TILE;
+  return { id, title, type, icon, accent, x, y, w, h, shape, ...extra };
+}
+
+const C = {
+  yellow: "#F5B731",
+  purple: "#7C3AED",
+  blue: "#3b82f6",
+  linkedin: "#0A66C2",
+  cyan: "#0891B2",
+  sky: "#0EA5E9",
+  indigo: "#6366f1",
+  amber: "#F59E0B",
+  orange: "#D97706",
+  green: "#16A34A",
+  emerald: "#10B981",
+  red: "#DC2626",
+  grey: "#9199A8",
+} as const;
+
+/* Row positions for the four parallel enrichment branches */
+const ROW = [120, 330, 540, 750];
+const COL = [1660, 1830, 2000, 2170, 2340];
+
 const NODES: FNode[] = [
-  { id: "icp", title: "Define ICP & Criteria", type: "icp.define", accent: "#F5B731", icon: <IconTarget />, x: 20, y: 220, w: NODE_W, h: NODE_H, shape: "trigger", narrative: true,
-    desc: "Every campaign starts by defining exactly who you're targeting: industry, seniority, company size, and the buying signals that matter." },
-  { id: "ratelimit", title: "Check Rate Limit", type: "api.rateLimit", accent: "#0891B2", icon: <IconGauge />, x: 318, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    meta: "Quota: 1,000 req/day",
-    desc: "Before anything runs, the pipeline checks it's within LinkedIn's API and usage limits, so it never pushes past what's safe." },
-  { id: "search", title: "Search LinkedIn", type: "linkedin.search", accent: "#3b82f6", icon: <IconSearch />, x: 616, y: 220, w: NODE_W, h: NODE_H, shape: "regular", narrative: true,
-    meta: "Query: title + industry + headcount",
-    desc: "The automation searches LinkedIn against those ICP criteria and builds a live list of prospects who actually match." },
-  { id: "scrape", title: "Scrape Prospect List", type: "prospect.scrape", accent: "#3b82f6", icon: <IconDocument />, x: 914, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    desc: "Matching profiles are pulled into a structured list: name, title, company, and profile URL for every prospect found." },
-  { id: "normalize", title: "Normalize Prospect Data", type: "prospect.normalize", accent: "#0891B2", icon: <IconFilter />, x: 1212, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    desc: "Every field is cleaned and standardised, names, titles, company formats, before it's checked against the ICP." },
-  { id: "iffilter", title: "Matches ICP?", type: "icp.filter", accent: "#F59E0B", icon: <IconBranch />, x: 1510, y: 220, w: IF_W, h: NODE_H, shape: "if",
-    desc: "A check runs on every prospect against the ICP criteria before anything is sent." },
-  { id: "discard", title: "Discard Lead", type: "icp.discard", accent: "#9199A8", icon: <IconStop />, x: 1495, y: 440, w: END_W, h: END_H, shape: "end" },
-  { id: "enrich", title: "Enrich Prospect Data", type: "prospect.enrich", accent: "#0EA5E9", icon: <IconDatabase />, x: 1740, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    desc: "Extra signal is pulled in on each remaining prospect, recent activity, mutual connections, so personalization has more to work with." },
-  { id: "analyze", title: "Analyze Prospect Profile", type: "profile.analyze", accent: "#6366f1", icon: <IconUser />, x: 2038, y: 220, w: NODE_W, h: NODE_H, shape: "regular", narrative: true,
-    desc: "Each prospect's profile is read and analyzed, so the outreach that follows is built around who they actually are, not a generic template." },
-  { id: "personalize", title: "Generate Personalized Note", type: "ai.personalize", accent: "#7C3AED", icon: <IconSparkle />, x: 2336, y: 220, w: NODE_W, h: NODE_H, shape: "regular", narrative: true,
-    desc: "A personalized connection request note is generated for each individual prospect, based on their profile, not copy-pasted across the list." },
-  { id: "connect", title: "Send Connection Request", type: "linkedin.connect", accent: "#0A66C2", icon: <IconSend />, x: 2634, y: 220, w: NODE_W, h: NODE_H, shape: "regular", narrative: true,
-    desc: "The personalized note is sent as a connection request, on a schedule and pace set by the Human Behaviour Engine." },
-  { id: "senderror", title: "Log Send Error", type: "error.log", accent: "#DC2626", icon: <IconWarning />, x: 2653, y: 440, w: END_W, h: END_H, shape: "end" },
-  { id: "wait", title: "Wait For Response", type: "linkedin.wait", accent: "#0A66C2", icon: <IconHourglass />, x: 2932, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    meta: "Delay: 1–4 days",
-    desc: "The workflow waits and watches for a response before deciding what happens next, never firing off the next step blindly." },
-  { id: "ifaccepted", title: "Connection Accepted?", type: "linkedin.checkStatus", accent: "#F59E0B", icon: <IconBranch />, x: 3230, y: 220, w: IF_W, h: NODE_H, shape: "if",
-    desc: "A check runs on whether the connection was actually accepted before any follow-up goes out." },
-  { id: "archive", title: "Archive Lead", type: "lead.archive", accent: "#9199A8", icon: <IconStop />, x: 3215, y: 440, w: END_W, h: END_H, shape: "end" },
-  { id: "followup1", title: "Send Follow-Up #1", type: "linkedin.followUp1", accent: "#D97706", icon: <IconClock />, x: 3460, y: 220, w: NODE_W, h: NODE_H, shape: "regular", narrative: true,
-    desc: "Follow-up messages go out in a timely manner, on the same human-safe schedule, so no warm prospect gets forgotten." },
-  { id: "followup2", title: "Send Follow-Up #2", type: "linkedin.followUp2", accent: "#D97706", icon: <IconClock />, x: 3758, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    meta: "If no reply to #1",
-    desc: "A second, later follow-up for prospects who haven't replied yet, still on the same human-safe timing." },
-  { id: "log", title: "Log to Dashboard", type: "dashboard.log", accent: "#16A34A", icon: <IconChart />, x: 4056, y: 220, w: NODE_W, h: NODE_H, shape: "regular",
-    desc: "Every request, reply, and acceptance is logged, so campaign and lifetime metrics stay accurate in real time." },
-  { id: "safety", title: "Human Behaviour Engine", type: "safety.humanize", accent: "#16A34A", icon: <IconShield />, x: 2950, y: 480, w: NODE_W, h: NODE_H, shape: "regular", narrative: true,
-    meta: "45–180s jitter · daily cap 20–35",
-    desc: "Every send, every delay, every pause is run through this layer so sending behaviour mimics a real human, keeping the LinkedIn account safe from bans." },
+  /* ── Group A: prospect discovery ─────────────────────────── */
+  N("sched1", "Schedule Trigger", "trigger.schedule", <IconClock />, C.yellow, 130, 300, "trigger", { meta: "Daily 08:00 IST" }),
+  N("icp", "ICP Agent", "ai.agent", <IconTarget />, C.yellow, 300, 300, "ai", { narrative: true, meta: "Defines who we target",
+    desc: "Every campaign starts by defining exactly who you're targeting: industry, seniority, company size, and the buying signals that matter. The agent turns that into a structured search spec." }),
+  N("model1", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 300, 440, "sub"),
+  N("parser1", "Structured Output Parser", "ai.parser", <IconDocument />, C.indigo, 400, 440, "sub"),
+  N("ratelimit", "Check Rate Limit", "api.rateLimit", <IconGauge />, C.cyan, 560, 300, "regular", { meta: "1,000 req/day" ,
+    desc: "Before anything runs, the pipeline checks it's within LinkedIn's API and usage limits, so it never pushes past what's safe." }),
+  N("search", "Search LinkedIn", "linkedin.search", <IconSearch />, C.blue, 730, 300, "regular", { narrative: true, meta: "title + industry + headcount",
+    desc: "The automation searches LinkedIn against those ICP criteria and builds a live list of prospects who actually match." }),
+  N("scrape", "Scrape Prospect List", "prospect.scrape", <IconDocument />, C.blue, 900, 300, "regular",
+    { desc: "Matching profiles are pulled into a structured list: name, title, company, and profile URL for every prospect found." }),
+  N("normalize", "Normalize Data", "prospect.normalize", <IconFilter />, C.cyan, 1070, 300, "regular",
+    { desc: "Every field is cleaned and standardised before it's checked against the ICP." }),
+  N("iffilter", "Matches ICP?", "icp.filter", <IconBranch />, C.amber, 1240, 300, "if",
+    { desc: "A check runs on every prospect against the ICP criteria before anything else happens." }),
+  N("discard", "Discard Lead", "icp.discard", <IconStop />, C.grey, 1240, 470, "end"),
+
+  /* ── Loop and four enrichment branches ───────────────────── */
+  N("loop", "Loop Over Prospects", "loop.batch", <IconLoop />, C.purple, 1460, 300, "regular", { meta: "batch 25" }),
+
+  N("getweb", "Get Company Website", "http.request", <IconGlobe />, C.sky, COL[0], ROW[0]),
+  N("ifweb", "Website not empty?", "if.check", <IconBranch />, C.amber, COL[1], ROW[0], "if"),
+  N("scrapeweb", "Scrape Website", "html.extract", <IconDocument />, C.blue, COL[2], ROW[0]),
+  N("sumweb", "Summarize Company", "ai.summarize", <IconSparkle />, C.purple, COL[3], ROW[0]),
+  N("updweb", "Update Row", "sheet.update", <IconTable />, C.green, COL[4], ROW[0]),
+
+  N("getposts", "Get Recent Posts", "linkedin.posts", <IconUser />, C.linkedin, COL[0], ROW[1]),
+  N("ifposts", "Posts not empty?", "if.check", <IconBranch />, C.amber, COL[1], ROW[1], "if"),
+  N("loopposts", "Loop Over Posts", "loop.batch", <IconLoop />, C.purple, COL[2], ROW[1]),
+  N("sumposts", "Summarize Activity", "ai.summarize", <IconSparkle />, C.purple, COL[3], ROW[1]),
+  N("updposts", "Update Row", "sheet.update", <IconTable />, C.green, COL[4], ROW[1]),
+
+  N("getnews", "Get Company News", "news.search", <IconSearch />, C.blue, COL[0], ROW[2]),
+  N("ifnews", "News not empty?", "if.check", <IconBranch />, C.amber, COL[1], ROW[2], "if"),
+  N("aggnews", "Aggregate", "data.aggregate", <IconFilter />, C.cyan, COL[2], ROW[2]),
+  N("sumnews", "Summarize News", "ai.summarize", <IconSparkle />, C.purple, COL[3], ROW[2]),
+  N("updnews", "Update Row", "sheet.update", <IconTable />, C.green, COL[4], ROW[2]),
+
+  N("getmutual", "Get Mutual Connections", "linkedin.mutual", <IconUser />, C.linkedin, COL[0], ROW[3]),
+  N("ifmutual", "Any mutuals?", "if.check", <IconBranch />, C.amber, COL[1], ROW[3], "if"),
+  N("aggmutual", "Aggregate", "data.aggregate", <IconFilter />, C.cyan, COL[2], ROW[3]),
+  N("warmth", "Score Warmth", "score.warmth", <IconGauge />, C.orange, COL[3], ROW[3]),
+  N("updmutual", "Update Row", "sheet.update", <IconTable />, C.green, COL[4], ROW[3]),
+
+  /* ── Merge, score, personalize ───────────────────────────── */
+  N("merge", "Merge", "merge.wait", <IconMerge />, C.grey, 2540, 405, "regular", { meta: "wait for all 4" }),
+  N("leadscore", "Lead Score Agent", "ai.agent", <IconSparkle />, C.indigo, 2710, 405, "ai", { narrative: true, meta: "0 to 100",
+    desc: "Each prospect's profile, activity, company news, and mutual connections are read together and scored, so the outreach that follows is built around who they actually are, not a generic template." }),
+  N("model2", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 2710, 545, "sub"),
+  N("memory1", "Window Memory", "ai.memory", <IconMemory />, C.indigo, 2810, 545, "sub"),
+  N("ifscore", "Score above 70?", "if.threshold", <IconBranch />, C.amber, 2960, 405, "if"),
+  N("personalize", "Personalized Note Agent", "ai.agent", <IconSparkle />, C.purple, 3130, 405, "ai", { narrative: true, meta: "under 300 chars",
+    desc: "A personalized connection request note is generated for each individual prospect, based on their profile and the enrichment above, not copy-pasted across the list." }),
+  N("model3", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 3130, 545, "sub"),
+  N("queue", "Add to Send Queue", "sheet.append", <IconTable />, C.green, 3380, 405),
+  N("archive1", "Archive Lead", "lead.archive", <IconStop />, C.grey, 2960, 590, "end"),
+
+  /* ── Group B: send connection requests ───────────────────── */
+  N("sched2", "Schedule Trigger", "trigger.schedule", <IconClock />, C.yellow, 130, 980, "trigger", { meta: "09:00 to 18:00, random gaps" }),
+  N("getqueue", "Get Queued Leads", "sheet.read", <IconTable />, C.green, 300, 980),
+  N("sort", "Sort by Score", "data.sort", <IconSort />, C.cyan, 470, 980),
+  N("limit", "Limit 25 / day", "data.limit", <IconGauge />, C.cyan, 640, 980),
+  N("safety", "Human Behaviour Engine", "safety.humanize", <IconShield />, C.green, 810, 980, "regular", { narrative: true, meta: "45 to 180 s jitter",
+    desc: "Every send, every delay, every pause is run through this layer so sending behaviour mimics a real human, keeping the LinkedIn account safe from bans." }),
+  N("connect", "Send Connection Request", "linkedin.connect", <IconSend />, C.linkedin, 980, 980, "regular", { narrative: true,
+    desc: "The personalized note is sent as a connection request, on a schedule and pace set by the Human Behaviour Engine." }),
+  N("updsent", "Update Status", "sheet.update", <IconTable />, C.green, 1150, 980),
+  N("senderror", "Log Send Error", "error.log", <IconWarning />, C.red, 980, 1130, "end"),
+
+  /* ── Group C: check the connections ──────────────────────── */
+  N("sched3", "Schedule Trigger", "trigger.schedule", <IconClock />, C.yellow, 1510, 980, "trigger", { meta: "Every 6 h" }),
+  N("getpending", "Get Pending Requests", "sheet.read", <IconTable />, C.green, 1680, 980),
+  N("ifaccepted", "Connection Accepted?", "linkedin.checkStatus", <IconBranch />, C.amber, 1850, 980, "if",
+    { desc: "A check runs on whether the connection was actually accepted before any follow-up goes out." }),
+  N("markacc", "Mark Accepted", "sheet.update", <IconCheckCircle />, C.green, 2020, 980),
+  N("notify", "Notify Dashboard", "dashboard.event", <IconChart />, C.green, 2190, 980),
+  N("wait", "Wait 24 h", "flow.wait", <IconHourglass />, C.linkedin, 1850, 1130, "regular", { meta: "re-check, max 14 days",
+    desc: "The workflow waits and re-checks before deciding what happens next, never firing off the next step blindly." }),
+
+  /* ── Group D: follow-ups ─────────────────────────────────── */
+  N("sched4", "Schedule Trigger", "trigger.schedule", <IconClock />, C.yellow, 2490, 980, "trigger", { meta: "Daily 10:00" }),
+  N("getacc", "Accepted, No Reply", "sheet.read", <IconTable />, C.green, 2660, 980),
+  N("ifdays", "3 days passed?", "if.check", <IconBranch />, C.amber, 2830, 980, "if"),
+  N("humanize", "Humanize Timing", "safety.humanize", <IconShield />, C.green, 3000, 980),
+  N("followup1", "Send Follow-Up #1", "linkedin.followUp1", <IconClock />, C.orange, 3170, 980, "regular", { narrative: true,
+    desc: "Follow-up messages go out in a timely manner, on the same human-safe schedule, so no warm prospect gets forgotten." }),
+  N("ifreplied", "Replied?", "if.check", <IconBranch />, C.amber, 3340, 980, "if"),
+  N("followup2", "Send Follow-Up #2", "linkedin.followUp2", <IconClock />, C.orange, 3510, 980, "regular", { meta: "adds something new",
+    desc: "A second, later follow-up for prospects who haven't replied yet, still on the same human-safe timing." }),
+  N("log", "Log to Dashboard", "dashboard.log", <IconChart />, C.green, 3680, 980, "regular",
+    { desc: "Every request, reply, and acceptance is logged, so campaign and lifetime metrics stay accurate in real time." }),
+  N("handoff", "Hand Off to Human", "crm.assign", <IconUser />, C.purple, 3340, 1130),
+  N("slack", "Slack Alert", "slack.message", <IconSend />, C.green, 3510, 1130),
+
+  /* ── Group E: conversation agent ─────────────────────────── */
+  N("webhook", "Reply Webhook", "trigger.webhook", <IconBolt />, C.yellow, 130, 1330, "trigger", { meta: "fires on inbound reply" }),
+  N("replyagent", "Reply Agent", "ai.agent", <IconChat />, C.purple, 300, 1330, "ai", { meta: "drafts, never auto-sends" }),
+  N("model4", "OpenAI Chat Model", "ai.model", <IconSparkle />, C.emerald, 300, 1470, "sub"),
+  N("memory2", "Thread Memory", "ai.memory", <IconMemory />, C.indigo, 400, 1470, "sub"),
+  N("ifintent", "Intent?", "if.intent", <IconBranch />, C.amber, 560, 1330, "if"),
+  N("book", "Book Meeting", "calendar.create", <IconCalendar />, C.green, 730, 1280),
+  N("nurture", "Add to Nurture", "sheet.update", <IconTable />, C.orange, 730, 1400),
 ];
 
-const NODE_MAP = Object.fromEntries(NODES.map((n) => [n.id, n]));
+const NODE_MAP: Record<string, FNode> = Object.fromEntries(NODES.map((n) => [n.id, n]));
 const NARRATIVE_NODES = NODES.filter((n) => n.narrative);
 
-interface FConn { from: string; to: string; kind: "line" | "branch" | "true" | "false" | "error"; }
+type Kind = "line" | "true" | "false" | "error" | "sub" | "loop";
+interface FConn { from: string; to: string; kind: Kind; via?: number; }
+
+function chain(kind: Kind, ...ids: string[]): FConn[] {
+  const out: FConn[] = [];
+  for (let i = 0; i < ids.length - 1; i++) out.push({ from: ids[i], to: ids[i + 1], kind });
+  return out;
+}
+
 const CONNECTIONS: FConn[] = [
-  { from: "icp", to: "ratelimit", kind: "line" },
-  { from: "ratelimit", to: "search", kind: "line" },
-  { from: "search", to: "scrape", kind: "line" },
-  { from: "scrape", to: "normalize", kind: "line" },
-  { from: "normalize", to: "iffilter", kind: "line" },
-  { from: "iffilter", to: "enrich", kind: "true" },
+  ...chain("line", "sched1", "icp", "ratelimit", "search", "scrape", "normalize", "iffilter"),
+  { from: "model1", to: "icp", kind: "sub" },
+  { from: "parser1", to: "icp", kind: "sub" },
+  { from: "iffilter", to: "loop", kind: "true" },
   { from: "iffilter", to: "discard", kind: "false" },
-  { from: "enrich", to: "analyze", kind: "line" },
-  { from: "analyze", to: "personalize", kind: "line" },
-  { from: "personalize", to: "connect", kind: "line" },
+
+  { from: "loop", to: "getweb", kind: "line" },
+  { from: "loop", to: "getposts", kind: "line" },
+  { from: "loop", to: "getnews", kind: "line" },
+  { from: "loop", to: "getmutual", kind: "line" },
+
+  { from: "getweb", to: "ifweb", kind: "line" },
+  { from: "ifweb", to: "scrapeweb", kind: "true" },
+  { from: "ifweb", to: "updweb", kind: "false" },
+  ...chain("line", "scrapeweb", "sumweb", "updweb"),
+
+  { from: "getposts", to: "ifposts", kind: "line" },
+  { from: "ifposts", to: "loopposts", kind: "true" },
+  { from: "ifposts", to: "updposts", kind: "false" },
+  ...chain("line", "loopposts", "sumposts", "updposts"),
+
+  { from: "getnews", to: "ifnews", kind: "line" },
+  { from: "ifnews", to: "aggnews", kind: "true" },
+  { from: "ifnews", to: "updnews", kind: "false" },
+  ...chain("line", "aggnews", "sumnews", "updnews"),
+
+  { from: "getmutual", to: "ifmutual", kind: "line" },
+  { from: "ifmutual", to: "aggmutual", kind: "true" },
+  { from: "ifmutual", to: "updmutual", kind: "false" },
+  ...chain("line", "aggmutual", "warmth", "updmutual"),
+
+  { from: "updweb", to: "merge", kind: "line" },
+  { from: "updposts", to: "merge", kind: "line" },
+  { from: "updnews", to: "merge", kind: "line" },
+  { from: "updmutual", to: "merge", kind: "line" },
+  { from: "merge", to: "leadscore", kind: "line" },
+  { from: "model2", to: "leadscore", kind: "sub" },
+  { from: "memory1", to: "leadscore", kind: "sub" },
+  { from: "leadscore", to: "ifscore", kind: "line" },
+  { from: "ifscore", to: "personalize", kind: "true" },
+  { from: "ifscore", to: "archive1", kind: "false" },
+  { from: "model3", to: "personalize", kind: "sub" },
+  { from: "personalize", to: "queue", kind: "line" },
+  { from: "queue", to: "loop", kind: "loop", via: 875 },
+
+  ...chain("line", "sched2", "getqueue", "sort", "limit", "safety", "connect", "updsent"),
   { from: "connect", to: "senderror", kind: "error" },
-  { from: "connect", to: "wait", kind: "line" },
-  { from: "wait", to: "ifaccepted", kind: "line" },
-  { from: "ifaccepted", to: "followup1", kind: "true" },
-  { from: "ifaccepted", to: "archive", kind: "false" },
-  { from: "followup1", to: "followup2", kind: "line" },
+
+  ...chain("line", "sched3", "getpending", "ifaccepted"),
+  { from: "ifaccepted", to: "markacc", kind: "true" },
+  { from: "ifaccepted", to: "wait", kind: "false" },
+  { from: "markacc", to: "notify", kind: "line" },
+  { from: "wait", to: "getpending", kind: "loop" },
+
+  ...chain("line", "sched4", "getacc", "ifdays"),
+  { from: "ifdays", to: "humanize", kind: "true" },
+  ...chain("line", "humanize", "followup1", "ifreplied"),
+  { from: "ifreplied", to: "followup2", kind: "false" },
+  { from: "ifreplied", to: "handoff", kind: "true" },
   { from: "followup2", to: "log", kind: "line" },
-  { from: "safety", to: "connect", kind: "branch" },
-  { from: "safety", to: "followup1", kind: "branch" },
+  { from: "handoff", to: "slack", kind: "line" },
+
+  ...chain("line", "webhook", "replyagent", "ifintent"),
+  { from: "model4", to: "replyagent", kind: "sub" },
+  { from: "memory2", to: "replyagent", kind: "sub" },
+  { from: "ifintent", to: "book", kind: "true" },
+  { from: "ifintent", to: "nurture", kind: "false" },
 ];
+
+function outPoint(n: FNode, kind: Kind): [number, number] {
+  if (kind === "sub") return [n.x + n.w / 2, n.y];
+  if (n.shape === "if") return [n.x + n.w, n.y + n.h * (kind === "false" ? 0.72 : 0.28)];
+  if (kind === "error") return [n.x + n.w / 2, n.y + n.h];
+  return [n.x + n.w, n.y + n.h / 2];
+}
 
 function connPath(c: FConn): string {
   const a = NODE_MAP[c.from];
   const b = NODE_MAP[c.to];
+  const [x1, y1] = outPoint(a, c.kind);
 
-  if (c.kind === "line" || c.kind === "true") {
-    const x1 = a.x + a.w, y1 = a.y + a.h / 2;
-    const x2 = b.x, y2 = b.y + b.h / 2;
-    if (Math.abs(y1 - y2) < 1) return `M${x1} ${y1} L${x2} ${y2}`;
-    const midX = x1 + (x2 - x1) * 0.5;
-    return `M${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
+  if (c.kind === "sub") {
+    const x2 = b.x + b.w / 2 + (a.x + a.w / 2 - (b.x + b.w / 2)) * 0.4;
+    const y2 = b.y + b.h;
+    return `M${x1} ${y1} C ${x1} ${y1 - 30}, ${x2} ${y2 + 30}, ${x2} ${y2}`;
   }
-
-  if (c.kind === "false" || c.kind === "error") {
-    const x1 = a.x + a.w / 2, y1 = a.y + a.h;
+  if (c.kind === "error") {
     const x2 = b.x + b.w / 2, y2 = b.y;
-    return `M${x1} ${y1} C ${x1 - 20} ${y1 + 60}, ${x2 + 20} ${y2 - 60}, ${x2} ${y2}`;
+    return `M${x1} ${y1} C ${x1} ${y1 + 40}, ${x2} ${y2 - 40}, ${x2} ${y2}`;
   }
-
-  // branch: from the safety node curving up into the bottom of the target
-  const x1 = a.x + a.w / 2 + (c.to === "followup1" ? 30 : -30);
-  const y1 = a.y;
-  const x2 = b.x + b.w / 2;
-  const y2 = b.y + b.h;
-  const midY = y1 - (y1 - y2) * 0.55;
-  return `M${x1} ${y1} C ${x1} ${midY}, ${x2} ${midY}, ${x2} ${y2}`;
+  if (c.kind === "loop") {
+    const x2 = b.x, y2 = b.y + b.h / 2;
+    const drop = c.via ?? Math.max(a.y, b.y) + a.h + 120;
+    return `M${x1} ${y1} C ${x1 + 90} ${y1}, ${x1 + 90} ${drop}, ${(x1 + x2) / 2} ${drop} S ${x2 - 90} ${y2}, ${x2} ${y2}`;
+  }
+  const x2 = b.x, y2 = b.y + b.h / 2;
+  const dx = Math.max(40, Math.abs(x2 - x1) * 0.5);
+  return `M${x1} ${y1} C ${x1 + dx} ${y1}, ${x2 - dx} ${y2}, ${x2} ${y2}`;
 }
 
-const STICKIES = [
-  { x: 1380, y: 30, w: 260, rot: -2, text: "Only prospects that actually match the ICP move forward. Everyone else is filtered out right here." },
-  { x: 2360, y: 350, w: 250, rot: -2, text: "A failed send is logged, not retried blindly. No risk of flooding the account." },
-  { x: 3100, y: 30, w: 270, rot: 2, text: "We wait for a real acceptance before following up, never spam a pending request." },
+/* ─── Groups, stickies ───────────────────────────────────────── */
+
+interface Group { x: number; y: number; w: number; h: number; title: string; color: string; }
+const GROUPS: Group[] = [
+  { x: 80, y: 190, w: 1300, h: 400, title: "1 · Prospect discovery", color: "#B8860B" },
+  { x: 1600, y: 0, w: 900, h: 870, title: "2 · Enrichment, four parallel branches per prospect", color: "#16A34A" },
+  { x: 2500, y: 330, w: 1000, h: 380, title: "3 · Score and personalize", color: "#6366f1" },
+  { x: 80, y: 880, w: 1300, h: 320, title: "4 · Send connection requests", color: "#B8860B" },
+  { x: 1460, y: 880, w: 920, h: 320, title: "5 · Check the connections", color: "#B8860B" },
+  { x: 2440, y: 880, w: 1420, h: 320, title: "6 · Follow-ups", color: "#B8860B" },
+  { x: 80, y: 1230, w: 900, h: 320, title: "7 · Conversation agent", color: "#B8860B" },
+];
+
+interface Sticky { x: number; y: number; w: number; h?: number; title?: string; text: string; color: "green" | "yellow" | "blue" | "grey"; }
+const STICKIES: Sticky[] = [
+  { x: 80, y: 20, w: 420, color: "grey", title: "LinkedIn Lead Automation Flow", text: "Seven linked workflows: discover, enrich, score, connect, verify, follow up, converse. Every send passes through the Human Behaviour Engine. Google Sheets is the shared state between them." },
+  { x: 1660, y: 44, w: 250, color: "green", title: "Research company website", text: "Homepage, about, pricing. Summarized to 3 lines." },
+  { x: 1940, y: 44, w: 250, color: "green", title: "Research recent posts", text: "Last 5 posts, what they care about right now." },
+  { x: 2220, y: 44, w: 250, color: "green", title: "Research company news", text: "Funding, hiring, launches in the last 90 days." },
+  { x: 1660, y: 816, w: 380, color: "blue", text: "Each branch writes back to the lead row on its own. If one source is empty, the others still land." },
+  { x: 2960, y: 250, w: 260, color: "yellow", text: "Threshold is tuned per client. Below 70 goes to archive, not the bin, and is re-scored monthly." },
+  { x: 130, y: 1130, w: 420, color: "yellow", text: "Never more than 25 requests a day per seat, with 45 to 180 second gaps between sends." },
+  { x: 2020, y: 1120, w: 320, color: "blue", text: "We wait for a real acceptance before any follow-up. Pending requests are re-checked every 6 hours, for up to 14 days." },
+  { x: 560, y: 1460, w: 400, color: "blue", text: "Replies are drafted by the agent and approved by a human before anything goes back out." },
+];
+
+const STICKY_STYLE: Record<Sticky["color"], { bg: string; border: string; title: string; text: string }> = {
+  green: { bg: "rgba(22,163,74,0.16)", border: "rgba(34,197,94,0.35)", title: "#86EFAC", text: "#BBF7D0" },
+  yellow: { bg: "rgba(245,183,49,0.14)", border: "rgba(245,183,49,0.35)", title: "#FDE68A", text: "#FEF3C7" },
+  blue: { bg: "rgba(59,130,246,0.16)", border: "rgba(96,165,250,0.35)", title: "#93C5FD", text: "#BFDBFE" },
+  grey: { bg: "rgba(148,163,184,0.10)", border: "rgba(148,163,184,0.30)", title: "#E5E7EB", text: "#B7BCC7" },
+};
+
+/* Order the "Execute workflow" button walks through */
+const EXEC_ORDER = [
+  "sched1", "icp", "ratelimit", "search", "scrape", "normalize", "iffilter", "loop",
+  "getweb", "getposts", "getnews", "getmutual",
+  "ifweb", "ifposts", "ifnews", "ifmutual",
+  "scrapeweb", "loopposts", "aggnews", "aggmutual",
+  "sumweb", "sumposts", "sumnews", "warmth",
+  "updweb", "updposts", "updnews", "updmutual",
+  "merge", "leadscore", "ifscore", "personalize", "queue",
+  "sched2", "getqueue", "sort", "limit", "safety", "connect", "updsent",
+  "sched3", "getpending", "ifaccepted", "markacc", "notify",
+  "sched4", "getacc", "ifdays", "humanize", "followup1", "ifreplied", "followup2", "log",
 ];
 
 const HOWTO_SCHEMA = buildHowToSchema(
@@ -207,8 +375,11 @@ interface CanvasView { zoom: number; x: number; y: number; }
 export default function MyntmoreFrameworkClient() {
   const [active, setActive] = useState<string | null>(null);
   const [view, setView] = useState<CanvasView>({ zoom: 1, x: 0, y: 0 });
+  const [vp, setVp] = useState({ w: 1, h: 1 });
+  const [runStep, setRunStep] = useState<number>(-1);
   const viewportRef = useRef<HTMLDivElement>(null);
   const interactedRef = useRef(false);
+  const pinnedRef = useRef(false);
   const pointersRef = useRef<Map<number, { x: number; y: number }>>(new Map());
   const gestureRef = useRef<{
     mode: "none" | "pan" | "pinch";
@@ -217,12 +388,29 @@ export default function MyntmoreFrameworkClient() {
     moved: boolean;
   }>({ mode: "none", startX: 0, startY: 0, startViewX: 0, startViewY: 0, startDist: 0, startZoom: 1, canvasMidX: 0, canvasMidY: 0, moved: false });
 
+  const running = runStep >= 0 && runStep < EXEC_ORDER.length;
+  const doneSet = new Set(EXEC_ORDER.slice(0, Math.max(0, runStep)));
+  const currentId = running ? EXEC_ORDER[runStep] : null;
+
+  useEffect(() => {
+    if (!running) return;
+    const t = setTimeout(() => setRunStep((s) => s + 1), 170);
+    return () => clearTimeout(t);
+  }, [running, runStep]);
+
+  useEffect(() => {
+    if (runStep !== EXEC_ORDER.length) return;
+    const t = setTimeout(() => setRunStep(-1), 2600);
+    return () => clearTimeout(t);
+  }, [runStep]);
+
   const fitToView = useCallback(() => {
     const el = viewportRef.current;
     if (!el) return;
     const vw = el.clientWidth;
     const vh = el.clientHeight;
     if (!vw || !vh) return;
+    setVp({ w: vw, h: vh });
     const scale = clamp(Math.min((vw - FIT_PADDING) / CANVAS_W, (vh - FIT_PADDING) / CANVAS_H), MIN_ZOOM, MAX_ZOOM);
     setView({ zoom: scale, x: (vw - CANVAS_W * scale) / 2, y: (vh - CANVAS_H * scale) / 2 });
   }, []);
@@ -232,6 +420,7 @@ export default function MyntmoreFrameworkClient() {
     const el = viewportRef.current;
     if (!el) return;
     const ro = new ResizeObserver(() => {
+      setVp({ w: el.clientWidth, h: el.clientHeight });
       if (!interactedRef.current) fitToView();
     });
     ro.observe(el);
@@ -274,7 +463,7 @@ export default function MyntmoreFrameworkClient() {
 
   function handlePointerDown(e: React.PointerEvent<HTMLDivElement>) {
     if ((e.target as HTMLElement).closest("button")) return;
-    try { (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId); } catch { /* no active pointer to capture (e.g. synthetic events) */ }
+    try { (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId); } catch { /* synthetic events */ }
     pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
     const pts = Array.from(pointersRef.current.values());
     if (pts.length === 1) {
@@ -315,9 +504,6 @@ export default function MyntmoreFrameworkClient() {
     } else if (pts.length === 1) {
       gestureRef.current = { ...gestureRef.current, mode: "pan", startX: pts[0].x, startY: pts[0].y, startViewX: view.x, startViewY: view.y, moved: true };
     } else if (pts.length === 2) {
-      // A 3rd+ finger just lifted, leaving exactly two down — re-baseline the
-      // pinch from their current positions instead of leaving a stale gesture
-      // (from whenever the 2nd finger originally went down) in place.
       baselinePinch(pts);
     }
   }
@@ -332,6 +518,30 @@ export default function MyntmoreFrameworkClient() {
     interactedRef.current = false;
     fitToView();
   }
+
+  function focusNode(id: string) {
+    const el = viewportRef.current;
+    const n = NODE_MAP[id];
+    if (!el || !n) return;
+    const zoom = 0.9;
+    setView({ zoom, x: el.clientWidth / 2 - (n.x + n.w / 2) * zoom, y: el.clientHeight / 2 - (n.y + n.h / 2) * zoom });
+    interactedRef.current = true;
+    pinnedRef.current = true;
+    setActive(id);
+  }
+
+  /* minimap geometry */
+  const MINI_W = 190;
+  const miniScale = MINI_W / CANVAS_W;
+  const MINI_H = Math.round(CANVAS_H * miniScale);
+  const miniView = {
+    x: clamp((-view.x / view.zoom) * miniScale, 0, MINI_W),
+    y: clamp((-view.y / view.zoom) * miniScale, 0, MINI_H),
+    w: clamp((vp.w / view.zoom) * miniScale, 8, MINI_W),
+    h: clamp((vp.h / view.zoom) * miniScale, 8, MINI_H),
+  };
+
+  const activeNode = active ? NODE_MAP[active] : null;
 
   return (
     <InnerLayout>
@@ -355,7 +565,7 @@ export default function MyntmoreFrameworkClient() {
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl leading-relaxed" style={{ color: "#52525B" }}>
-            We identify your ICP and find real prospects, generate a personalized connection note for each one, send everything through a human-behaviour engine that keeps the account safe, then follow up right on schedule.
+            Seven linked workflows, {NODES.length} nodes. We find your ICP, research every prospect from four angles at once, score them, write a note for each one, send through a human-behaviour engine that keeps the account safe, then follow up right on schedule.
           </p>
         </div>
       </section>
@@ -363,17 +573,22 @@ export default function MyntmoreFrameworkClient() {
       {/* ── Workflow canvas ───────────────────────────────────── */}
       <section className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-2xl border-2 overflow-hidden" style={{ borderColor: "#2A2E37", boxShadow: "0 30px 70px rgba(10,10,20,0.25)" }}>
+          <div className="relative rounded-2xl border-2 overflow-hidden" style={{ borderColor: "#2A2E37", boxShadow: "0 30px 70px rgba(10,10,20,0.35)" }}>
             {/* Window chrome */}
-            <div className="flex flex-wrap items-center gap-3 px-5 py-3.5" style={{ backgroundColor: "#1B1E27", borderBottom: "1px solid #2A2E37" }}>
+            <div className="flex flex-wrap items-center gap-3 px-5 py-3" style={{ backgroundColor: "#1B1E27", borderBottom: "1px solid #2A2E37" }}>
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
               <span className="ml-2 text-xs font-mono font-bold" style={{ color: "#D7D9E0" }}>myntmore-outbound-engine.workflow</span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "#2A2E37", color: "#6B7280" }}>v2.3.1</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "#2A2E37", color: "#6B7280" }}>v3.0.0</span>
+              <div className="hidden md:flex items-center gap-1 ml-4 p-0.5 rounded-md" style={{ backgroundColor: "#12141A" }}>
+                {["Editor", "Executions", "Evaluations"].map((t, i) => (
+                  <span key={t} className="text-[11px] font-semibold px-3 py-1 rounded" style={{ backgroundColor: i === 0 ? "#2A2E37" : "transparent", color: i === 0 ? "#F3F4F6" : "#6B7280" }}>{t}</span>
+                ))}
+              </div>
               <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(34,197,94,0.15)", color: "#4ADE80" }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#4ADE80" }} />
-                Active
+                {running ? "Running" : "Active"}
               </span>
             </div>
 
@@ -384,8 +599,8 @@ export default function MyntmoreFrameworkClient() {
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
-              className="relative overflow-hidden select-none h-[420px] sm:h-[500px] lg:h-[620px]"
-              style={{ backgroundColor: "#F4F5F8", cursor: "grab", touchAction: "none" }}
+              className="relative overflow-hidden select-none h-[460px] sm:h-[560px] lg:h-[720px]"
+              style={{ backgroundColor: "#16181D", cursor: "grab", touchAction: "none" }}
             >
               <div
                 className="absolute top-0 left-0"
@@ -394,131 +609,181 @@ export default function MyntmoreFrameworkClient() {
                   height: CANVAS_H,
                   transform: `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`,
                   transformOrigin: "0 0",
-                  backgroundImage: "radial-gradient(circle, rgba(30,34,48,0.14) 1.4px, transparent 1.4px)",
-                  backgroundSize: "26px 26px",
+                  backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.09) 1.4px, transparent 1.4px)",
+                  backgroundSize: "24px 24px",
                 }}
               >
-                <svg width={CANVAS_W} height={CANVAS_H} className="absolute inset-0" style={{ pointerEvents: "none" }}>
-                  <defs>
-                    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-                      <path d="M0 0 L9 4.5 L0 9 Z" fill="#9CA3AF" />
-                    </marker>
-                  </defs>
-                  {CONNECTIONS.map((c, i) => {
-                    const d = connPath(c);
-                    const isHighlighted = active === c.from || active === c.to;
-                    const branchColor = c.kind === "true" ? "#16A34A" : c.kind === "false" || c.kind === "error" ? "#DC2626" : NODE_MAP[c.from].accent;
-                    return (
-                      <g key={i}>
-                        <path d={d} fill="none" stroke={isHighlighted ? branchColor : "#C7CBD4"} strokeWidth={isHighlighted ? 2.5 : 2} strokeDasharray={c.kind === "false" || c.kind === "error" ? "5 4" : undefined} markerEnd="url(#arrow)" style={{ transition: "stroke 0.2s ease" }} />
-                        <circle r="3.2" fill={branchColor}>
-                          <animateMotion dur="2.6s" begin={`${i * 0.3}s`} repeatCount="indefinite" path={d} />
-                        </circle>
-                      </g>
-                    );
-                  })}
-                  {/* true/false branch labels */}
-                  <g className="font-mono" style={{ fontSize: 10, fontWeight: 700 }}>
-                    <text x={NODE_MAP.iffilter.x + NODE_MAP.iffilter.w + 14} y={NODE_MAP.iffilter.y + NODE_MAP.iffilter.h / 2 - 8} fill="#16A34A">true</text>
-                    <text x={NODE_MAP.iffilter.x + NODE_MAP.iffilter.w / 2 - 14} y={NODE_MAP.iffilter.y + NODE_MAP.iffilter.h + 34} fill="#DC2626">false</text>
-                    <text x={NODE_MAP.ifaccepted.x + NODE_MAP.ifaccepted.w + 14} y={NODE_MAP.ifaccepted.y + NODE_MAP.ifaccepted.h / 2 - 8} fill="#16A34A">true</text>
-                    <text x={NODE_MAP.ifaccepted.x + NODE_MAP.ifaccepted.w / 2 - 14} y={NODE_MAP.ifaccepted.y + NODE_MAP.ifaccepted.h + 34} fill="#DC2626">false</text>
-                    <text x={NODE_MAP.connect.x + NODE_MAP.connect.w / 2 + 16} y={NODE_MAP.connect.y + NODE_MAP.connect.h + 34} fill="#DC2626">on error</text>
-                  </g>
-                </svg>
-
-                {/* Sticky notes */}
-                {STICKIES.map((s, i) => (
-                  <div key={i} className="absolute rounded-lg p-3.5 text-[12px] leading-snug font-semibold"
-                    style={{ left: s.x, top: s.y, width: s.w, backgroundColor: "#FEF3C7", color: "#78350F", transform: `rotate(${s.rot}deg)`, boxShadow: "0 6px 16px rgba(0,0,0,0.1)" }}>
-                    <span className="block w-2.5 h-2.5 rounded-full mb-1.5" style={{ backgroundColor: "#F59E0B" }} />
-                    {s.text}
+                {/* Groups */}
+                {GROUPS.map((g) => (
+                  <div key={g.title} className="absolute rounded-xl" style={{ left: g.x, top: g.y, width: g.w, height: g.h, backgroundColor: `${g.color}1A`, border: `1px solid ${g.color}55` }}>
+                    <span className="absolute left-4 top-3 text-[12px] font-black tracking-wide" style={{ color: g.color === "#B8860B" ? "#FDE68A" : g.color === "#16A34A" ? "#86EFAC" : "#C7D2FE" }}>{g.title}</span>
                   </div>
                 ))}
 
+                {/* Stickies */}
+                {STICKIES.map((s, i) => {
+                  const st = STICKY_STYLE[s.color];
+                  return (
+                    <div key={i} className="absolute rounded-lg px-3.5 py-3" style={{ left: s.x, top: s.y, width: s.w, backgroundColor: st.bg, border: `1px solid ${st.border}` }}>
+                      {s.title && <p className="text-[12px] font-black mb-1" style={{ color: st.title }}>{s.title}</p>}
+                      <p className="text-[11px] leading-snug" style={{ color: st.text }}>{s.text}</p>
+                    </div>
+                  );
+                })}
+
+                {/* Connections */}
+                <svg width={CANVAS_W} height={CANVAS_H} className="absolute inset-0" style={{ pointerEvents: "none" }}>
+                  {CONNECTIONS.map((c, i) => {
+                    const d = connPath(c);
+                    const from = NODE_MAP[c.from];
+                    const isHighlighted = active === c.from || active === c.to || (doneSet.has(c.from) && (doneSet.has(c.to) || currentId === c.to));
+                    const color = c.kind === "true" ? "#22C55E" : c.kind === "false" || c.kind === "error" ? "#F87171" : c.kind === "sub" ? "#A78BFA" : from.accent;
+                    const dashed = c.kind === "sub" || c.kind === "false" || c.kind === "error";
+                    return (
+                      <g key={i}>
+                        <path d={d} fill="none" stroke={isHighlighted ? color : "#4B5160"} strokeWidth={isHighlighted ? 2.4 : 1.6} strokeDasharray={dashed ? "5 4" : undefined} style={{ transition: "stroke 0.2s ease" }} />
+                        {c.kind !== "sub" && (
+                          <circle r="2.6" fill={color} opacity={0.9}>
+                            <animateMotion dur={`${2.2 + (i % 5) * 0.4}s`} begin={`${(i % 7) * 0.35}s`} repeatCount="indefinite" path={d} />
+                          </circle>
+                        )}
+                      </g>
+                    );
+                  })}
+                  {/* true / false port labels on IF nodes */}
+                  <g className="font-mono" style={{ fontSize: 9, fontWeight: 700 }}>
+                    {NODES.filter((n) => n.shape === "if").map((n) => (
+                      <g key={n.id}>
+                        <text x={n.x + n.w + 6} y={n.y + n.h * 0.28 - 4} fill="#4ADE80">true</text>
+                        <text x={n.x + n.w + 6} y={n.y + n.h * 0.72 + 11} fill="#F87171">false</text>
+                      </g>
+                    ))}
+                    <text x={NODE_MAP.connect.x + NODE_MAP.connect.w / 2 + 8} y={NODE_MAP.connect.y + NODE_MAP.connect.h + 40} fill="#F87171">error</text>
+                    <text x={2410} y={868} fill="#A78BFA">next batch</text>
+                    <text x={1770} y={1306} fill="#A78BFA">re-check</text>
+                  </g>
+                </svg>
+
+                {/* Nodes */}
                 {NODES.map((n) => {
                   const isActive = active === n.id;
-                  if (n.shape === "end") {
-                    return (
+                  const isDone = doneSet.has(n.id);
+                  const isCurrent = currentId === n.id;
+                  const isSub = n.shape === "sub";
+                  const isEnd = n.shape === "end";
+                  const radius = isSub ? "9999px" : n.shape === "trigger" ? "32px 12px 12px 32px" : n.shape === "if" ? "12px" : "12px";
+                  const border = isCurrent ? "#F5B731" : isActive ? n.accent : isDone ? "#22C55E" : isEnd ? "#3A3F4C" : "#3A3F4C";
+                  const glow = isCurrent ? "0 0 0 4px rgba(245,183,49,0.25), 0 0 24px rgba(245,183,49,0.45)" : isActive ? `0 0 0 4px ${n.accent}33, 0 10px 24px rgba(0,0,0,0.5)` : "0 2px 8px rgba(0,0,0,0.35)";
+                  return (
+                    <div key={n.id} className="absolute" style={{ left: n.x, top: n.y, width: n.w, height: n.h }}>
                       <button
-                        key={n.id}
-                        onClick={() => setActive((v) => (v === n.id ? null : n.id))}
-                        className="absolute rounded-full border-2 transition-all duration-200 flex items-center justify-center gap-2"
+                        type="button"
+                        onClick={() => { pinnedRef.current = active !== n.id; setActive((v) => (v === n.id ? null : n.id)); }}
+                        aria-label={n.title}
+                        aria-pressed={isActive}
+                        className="absolute inset-0 flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer"
                         style={{
-                          left: n.x, top: n.y, width: n.w, height: n.h,
-                          backgroundColor: "#F1F2F5",
-                          borderColor: isActive ? n.accent : "#DDE0E7",
-                          color: "#5A6272",
+                          backgroundColor: isEnd ? "#1F2230" : isSub ? "#1F2230" : "#2A2E37",
+                          border: `${isCurrent || isActive ? 2 : 1.5}px solid ${border}`,
+                          borderRadius: radius,
+                          boxShadow: glow,
+                          color: isEnd ? "#9199A8" : n.accent,
+                          transform: isCurrent ? "scale(1.08)" : undefined,
                         }}
                       >
-                        {n.icon}
-                        <span className="text-xs font-bold">{n.title}</span>
-                      </button>
-                    );
-                  }
-                  return (
-                    <button
-                      key={n.id}
-                      onClick={() => setActive((v) => (v === n.id ? null : n.id))}
-                      className="absolute text-left rounded-xl border-2 transition-all duration-200"
-                      style={{
-                        left: n.x, top: n.y, width: n.w, height: n.h,
-                        backgroundColor: "#ffffff",
-                        borderColor: isActive ? n.accent : "#DDE0E7",
-                        boxShadow: isActive ? `0 0 0 4px ${n.accent}22, 0 10px 24px rgba(0,0,0,0.12)` : "0 2px 6px rgba(0,0,0,0.05)",
-                        borderRadius: n.shape === "trigger" ? "9999px 14px 14px 9999px" : n.shape === "if" ? "18px" : undefined,
-                      }}
-                    >
-                      {n.shape === "if" ? (
-                        <div className="flex flex-col items-center justify-center h-full p-2 text-center gap-1">
-                          <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${n.accent}18`, color: n.accent }}>
-                            {n.icon}
-                          </span>
-                          <p className="text-[11.5px] font-black leading-tight" style={{ color: "#0a0a0a" }}>{n.title}</p>
-                          <p className="text-[9.5px] font-mono truncate max-w-full" style={{ color: "#9199A8" }}>{n.type}</p>
-                        </div>
-                      ) : (
-                        <div className="flex items-start gap-2.5 p-3.5 h-full">
-                          <span className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${n.accent}18`, color: n.accent }}>
-                            {n.icon}
-                          </span>
-                          <div className="min-w-0">
-                            <p className="text-[13px] font-black leading-tight truncate" style={{ color: "#0a0a0a" }}>{n.title}</p>
-                            <p className="text-[10.5px] font-mono mt-0.5 truncate" style={{ color: "#9199A8" }}>{n.type}</p>
-                            {n.meta && <p className="text-[9.5px] mt-1 truncate" style={{ color: "#B3B9C4" }}>{n.meta}</p>}
-                          </div>
-                          <span className="ml-auto flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#22C55E" }}>
+                        {n.shape === "ai" ? (
+                          <>
+                            <span className="flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{ backgroundColor: `${n.accent}22` }}>{n.icon}</span>
+                            <span className="text-[11px] font-black leading-tight text-left pr-1" style={{ color: "#F3F4F6" }}>{n.title}</span>
+                          </>
+                        ) : (
+                          n.icon
+                        )}
+                        {/* ports */}
+                        {!isSub && n.shape !== "trigger" && <span aria-hidden="true" className="absolute w-2 h-2 rounded-sm" style={{ left: -5, top: "50%", marginTop: -4, backgroundColor: "#6B7280" }} />}
+                        {!isSub && n.shape !== "end" && n.shape !== "if" && <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "50%", marginTop: -5, backgroundColor: "#9CA3AF" }} />}
+                        {n.shape === "if" && (
+                          <>
+                            <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "28%", marginTop: -5, backgroundColor: "#4ADE80" }} />
+                            <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "72%", marginTop: -5, backgroundColor: "#F87171" }} />
+                          </>
+                        )}
+                        {n.shape === "ai" && (
+                          <>
+                            <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "35%", bottom: -5, backgroundColor: "#A78BFA" }} />
+                            <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "60%", bottom: -5, backgroundColor: "#A78BFA" }} />
+                          </>
+                        )}
+                        {isSub && <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "50%", top: -5, marginLeft: -4, backgroundColor: "#A78BFA" }} />}
+                        {/* success badge */}
+                        {isDone && (
+                          <span aria-hidden="true" className="absolute -top-2 -right-2 w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#22C55E" }}>
                             <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                           </span>
-                        </div>
-                      )}
-                    </button>
+                        )}
+                      </button>
+                      {/* label */}
+                      <div className="absolute text-center pointer-events-none" style={{ top: n.h + 6, left: n.w / 2 - (isSub ? 60 : 80), width: isSub ? 120 : 160 }}>
+                        {n.shape !== "ai" && <p className="text-[11px] font-bold leading-tight" style={{ color: isSub ? "#9CA3AF" : "#E5E7EB" }}>{n.title}</p>}
+                        <p className="text-[9px] font-mono leading-tight mt-0.5" style={{ color: "#6B7280" }}>{n.shape === "ai" ? `${n.type} · ${n.meta}` : n.meta ?? n.type}</p>
+                      </div>
+                    </div>
                   );
                 })}
               </div>
-            </div>
 
-            {/* Minimap (fixed to the window frame, independent of canvas scroll) */}
-            <div className="hidden sm:block absolute rounded-lg border overflow-hidden" style={{ right: 16, bottom: 48, width: 160, height: 84, backgroundColor: "rgba(27,30,39,0.92)", borderColor: "#3A3F4C", backdropFilter: "blur(4px)" }}>
-              <div className="flex items-center h-full px-2 gap-1">
-                {NODES.filter((n) => n.shape !== "end").map((n) => (
-                  <span key={n.id} className="flex-shrink-0 rounded-sm" style={{ width: n.shape === "if" ? 4 : 7, height: n.y > 400 ? 6 : 10, backgroundColor: n.accent, opacity: 0.75, marginTop: n.y > 400 ? 6 : 0 }} />
-                ))}
+              {/* Node detail card (top-left, fixed to the viewport) */}
+              {activeNode && (
+                <div className="absolute left-3 top-3 max-w-[300px] rounded-xl p-4 card-fade-up" style={{ backgroundColor: "rgba(27,30,39,0.96)", border: `1px solid ${activeNode.accent}66`, backdropFilter: "blur(6px)" }}>
+                  <div className="flex items-center gap-2.5 mb-2">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{ backgroundColor: `${activeNode.accent}22`, color: activeNode.accent }}>{activeNode.icon}</span>
+                    <div className="min-w-0">
+                      <p className="text-[13px] font-black leading-tight" style={{ color: "#F3F4F6" }}>{activeNode.title}</p>
+                      <p className="text-[10px] font-mono" style={{ color: "#9CA3AF" }}>{activeNode.type}{activeNode.meta ? ` · ${activeNode.meta}` : ""}</p>
+                    </div>
+                  </div>
+                  <p className="text-[12px] leading-relaxed" style={{ color: "#C7CBD4" }}>{activeNode.desc ?? "A utility step. Tap a highlighted node in the breakdown below for the full story."}</p>
+                </div>
+              )}
+
+              {/* Execute button */}
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-3 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => { pinnedRef.current = false; setActive(null); setRunStep(0); }}
+                  disabled={running}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-colors duration-200 cursor-pointer disabled:cursor-wait"
+                  style={{ backgroundColor: "#F5B731", color: "#0a0a0a", boxShadow: "0 6px 20px rgba(245,183,49,0.35)" }}
+                >
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                  {running ? `Running ${runStep + 1} / ${EXEC_ORDER.length}` : runStep === EXEC_ORDER.length ? "Completed" : "Execute workflow"}
+                  <span className="hidden sm:inline text-[10px] font-semibold opacity-70">from Schedule Trigger</span>
+                </button>
               </div>
-              <div className="absolute inset-y-0 left-0" style={{ width: "26%", backgroundColor: "rgba(255,255,255,0.12)", borderRight: "1px solid rgba(255,255,255,0.35)" }} />
+
+              {/* Minimap */}
+              <div className="hidden sm:block absolute rounded-lg overflow-hidden" style={{ right: 12, bottom: 12, width: MINI_W, height: MINI_H, backgroundColor: "rgba(27,30,39,0.92)", border: "1px solid #3A3F4C" }}>
+                {GROUPS.map((g) => (
+                  <span key={g.title} className="absolute rounded-sm" style={{ left: g.x * miniScale, top: g.y * miniScale, width: g.w * miniScale, height: g.h * miniScale, backgroundColor: `${g.color}33` }} />
+                ))}
+                {NODES.map((n) => (
+                  <span key={n.id} className="absolute rounded-[1px]" style={{ left: n.x * miniScale, top: n.y * miniScale, width: Math.max(2, n.w * miniScale), height: Math.max(2, n.h * miniScale), backgroundColor: n.accent, opacity: 0.9 }} />
+                ))}
+                <span className="absolute" style={{ left: miniView.x, top: miniView.y, width: miniView.w, height: miniView.h, border: "1px solid rgba(255,255,255,0.7)", backgroundColor: "rgba(255,255,255,0.08)" }} />
+              </div>
             </div>
 
-            {/* Bottom bar: zoom controls */}
+            {/* Bottom bar */}
             <div className="flex items-center justify-between px-5 py-2.5" style={{ backgroundColor: "#1B1E27" }}>
-              <span className="text-[10px] font-mono" style={{ color: "#6B7280" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections</span>
+              <span className="text-[10px] font-mono" style={{ color: "#6B7280" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
               <div className="flex items-center gap-1.5">
-                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>&minus;</button>
-                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline" style={{ color: "#9199A8" }}>{Math.round(view.zoom * 100)}%</button>
-                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>+</button>
+                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>&minus;</button>
+                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline cursor-pointer" style={{ color: "#9199A8" }}>{Math.round(view.zoom * 100)}%</button>
+                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>+</button>
               </div>
             </div>
           </div>
-          <p className="text-center text-sm mt-4" style={{ color: "#8C8279" }}>Scroll or pinch to zoom &middot; drag to pan &middot; tap a node to see what it does</p>
+          <p className="text-center text-sm mt-4" style={{ color: "#8C8279" }}>Scroll or pinch to zoom &middot; drag to pan &middot; tap a node to see what it does &middot; press Execute to watch a run</p>
         </div>
       </section>
 
@@ -529,15 +794,18 @@ export default function MyntmoreFrameworkClient() {
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(124,58,237,0.08)", color: "#7C3AED", border: "1px solid rgba(124,58,237,0.2)" }}>
               How Every Step Works
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>What each node actually does</h2>
+            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>What each key node actually does</h2>
+            <p className="text-base mt-3 max-w-2xl" style={{ color: "#52525B" }}>Tap a card to jump to that node on the canvas.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {NARRATIVE_NODES.map((n) => (
-              <div
+              <button
                 key={n.id}
-                onMouseEnter={() => setActive(n.id)}
-                onMouseLeave={() => setActive(null)}
-                className="rounded-2xl border p-6 transition-all duration-200"
+                type="button"
+                onMouseEnter={() => { if (!pinnedRef.current) setActive(n.id); }}
+                onMouseLeave={() => { if (!pinnedRef.current) setActive(null); }}
+                onClick={() => { focusNode(n.id); viewportRef.current?.scrollIntoView({ behavior: "smooth", block: "center" }); }}
+                className="text-left rounded-2xl border p-6 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{
                   backgroundColor: "#ffffff",
                   borderColor: active === n.id ? n.accent : "#E8E2D9",
@@ -554,7 +822,7 @@ export default function MyntmoreFrameworkClient() {
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{n.desc}</p>
-              </div>
+              </button>
             ))}
           </div>
         </div>

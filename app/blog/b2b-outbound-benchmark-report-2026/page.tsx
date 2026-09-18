@@ -51,8 +51,8 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 });
 
 const REPLY_RATE_ROWS = [
-  { channel: "Cold email", myntmore: "27–35%", typical: "2–5%", note: "Blended across ICP-mapped, signal-based campaigns" },
-  { channel: "LinkedIn outreach", myntmore: "18–24%", typical: "8–12%", note: "Connection + follow-up sequence combined" },
+  { channel: "Cold email", myntmore: "10–12%", typical: "2–5%", note: "Blended across ICP-mapped, signal-based campaigns" },
+  { channel: "LinkedIn outreach", myntmore: "50–60%", typical: "8–12%", note: "Connection + follow-up sequence combined" },
   { channel: "AI-qualified lists", myntmore: "35–40%", typical: "N/A", note: "Leads pre-scored by intent signals before first touch" },
 ];
 

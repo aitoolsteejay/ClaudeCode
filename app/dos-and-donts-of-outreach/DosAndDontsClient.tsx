@@ -1,8 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Caveat } from "next/font/google";
+import { Caveat, Playfair_Display } from "next/font/google";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Camera,
+  Check,
+  Gift,
+  Linkedin,
+  Mail,
+  MessageCircleQuestion,
+  Mic,
+  PenLine,
+  Play,
+  RotateCcw,
+  Smile,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import FadeIn from "../components/FadeIn";
@@ -11,12 +28,42 @@ import AskYourAI from "../components/AskYourAI";
 import NewsletterForm from "../components/NewsletterForm";
 import { buildArticleSchema, SITE_URL } from "@/lib/schema";
 
+/* ─── Fonts ────────────────────────────────────────────────────────
+   Playfair Display carries the editorial display type on this page only;
+   body copy stays on the sitewide Inter. Caveat is the founder sign-off. */
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+  weight: ["600", "700"],
+  style: ["normal", "italic"],
+});
+
 const caveat = Caveat({
   subsets: ["latin"],
   variable: "--font-caveat",
   display: "swap",
   weight: ["600", "700"],
 });
+
+/* ─── Tokens (kept local: this page is an editorial one-off) ───── */
+const T = {
+  bg: "#F8F6F2",
+  paper: "#FFFFFF",
+  ink: "#0a0a0a",
+  ink2: "#3D3D3D",
+  muted: "#6B6560",
+  hairline: "#E8E2D9",
+  gold: "#F5B731",
+  goldText: "#8A5A0B",
+  goldSoft: "rgba(245,183,49,0.14)",
+  doText: "#166534",
+  doFill: "#15803D",
+  doSoft: "rgba(21,128,61,0.10)",
+  dontText: "#991B1B",
+  dontFill: "#B91C1C",
+  dontSoft: "rgba(185,28,28,0.10)",
+} as const;
 
 const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
 const TITLE = "Pattern Interruption: The Do's and Don'ts of Outreach";
@@ -32,19 +79,45 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 const AI_RESOURCES = [PAGE_URL, `${SITE_URL}/services/linkedin-outreach`, `${SITE_URL}/services/cold-email`];
 
-const INTERRUPTS = [
-  { emoji: "😂", title: "Send a relevant meme", body: "Signals you're a person, not a sequence. Read the room first: playful cultures love it, formal ones can miss completely." },
-  { emoji: "🎙️", title: "Drop a 20-second voice note", body: "Nobody expects a voice from a stranger, and an actual tone builds trust text never quite manages." },
-  { emoji: "📸", title: "Send a screenshot of something you noticed", body: "Proves you actually looked, instead of blasting the same line down a list of five hundred names." },
-  { emoji: "❓", title: "Ask one question instead of another pitch", body: "A real question invites a real answer. A pitch just invites a scroll." },
-  { emoji: "🎁", title: "Give a useful resource before asking for anything", body: "No strings, no follow-up demand, just something worth having whether they ever reply or not." },
-  { emoji: "✍️", title: "Share a handwritten note", body: "In a world of typed everything, a few real handwritten lines feel almost personal." },
+/* ─── Content ──────────────────────────────────────────────────── */
+const GUIDE_INDEX = [
+  { href: "#interrupts", label: "Six ways to break the pattern" },
+  { href: "#channels", label: "LinkedIn vs. cold email" },
+  { href: "#enrichment", label: "What enrichment actually is" },
+  { href: "#score", label: "Score your last message" },
 ];
 
-const CHANNEL_TIPS = [
+const INTERRUPTS: { icon: LucideIcon; title: string; body: string }[] = [
+  { icon: Smile, title: "Send a relevant meme", body: "Signals you're a person, not a sequence. Read the room first: playful cultures love it, formal ones can miss completely." },
+  { icon: Mic, title: "Drop a 20-second voice note", body: "Nobody expects a voice from a stranger, and an actual tone builds trust text never quite manages." },
+  { icon: Camera, title: "Screenshot something you noticed", body: "Proves you actually looked, instead of blasting the same line down a list of five hundred names." },
+  { icon: MessageCircleQuestion, title: "Ask one question, not another pitch", body: "A real question invites a real answer. A pitch just invites a scroll." },
+  { icon: Gift, title: "Give before you ask", body: "No strings, no follow-up demand, just something worth having whether they ever reply or not." },
+  { icon: PenLine, title: "Share a handwritten note", body: "In a world of typed everything, a few real handwritten lines feel almost personal." },
+];
+
+const LESSONS = [
+  {
+    n: "01",
+    title: "It's not a hack, it's physics",
+    body: "These aren't clever tricks. They work for one boring reason: they interrupt a pattern the brain has learned to ignore. The moment something doesn't fit the shape a prospect skims past, their attention holds for half a second longer. That half second is the whole game.",
+  },
+  {
+    n: "02",
+    title: "The day I stopped chasing replies",
+    body: "For years I measured outbound purely on reply rate. What I missed: earning attention and earning a reply are two different jobs. A screenshot pointing out a typo on a prospect's pricing page didn't sell anything. It proved I'd actually looked. Once someone believes that, the sales conversation gets ten times easier.",
+  },
+  {
+    n: "03",
+    title: "Where this lives in our sequences",
+    body: "We build a version of this into almost every sequence we run, as a deliberate break where the message stops sounding like a sequence. Not every message needs to be an interrupt, though. If every email is a meme, the meme becomes the new template. It works because it's rare and placed with intent.",
+  },
+];
+
+const CHANNEL_TIPS: { channel: string; icon: LucideIcon; dos: string[]; donts: string[] }[] = [
   {
     channel: "LinkedIn",
-    accent: "#0077b5",
+    icon: Linkedin,
     dos: [
       "Warm up first, a like or comment before the connection request",
       "Send blank connection requests, a note this early often reads as a pitch",
@@ -59,7 +132,7 @@ const CHANNEL_TIPS = [
   },
   {
     channel: "Cold Email",
-    accent: "#D97706",
+    icon: Mail,
     dos: [
       "A subject line that reads like a real email, not a broadcast",
       "Short enough to read on a phone in five seconds",
@@ -75,41 +148,37 @@ const CHANNEL_TIPS = [
 ];
 
 const ENRICHMENT_TOOLS = [
-  { name: "Apollo.io", body: "An all-in-one prospecting database with contact details and enrichment built in, useful when you want lists and enrichment from a single place." },
-  { name: "Clay", body: "A workflow tool that pulls from multiple data sources at once, useful for more advanced, waterfall-style enrichment." },
-  { name: "Clearbit", body: "Company-level enrichment, firmographics like headcount, funding, and tech stack, appended to a lead via API." },
+  { name: "Apollo.io", body: "All-in-one prospecting database with contact details and enrichment built in. Lists and enrichment from one place." },
+  { name: "Clay", body: "Pulls from multiple data sources at once. Built for advanced, waterfall-style enrichment." },
+  { name: "Clearbit", body: "Company-level firmographics, headcount, funding, tech stack, appended to a lead via API." },
   { name: "Hunter.io", body: "Finds and verifies email addresses for a given name and domain." },
-  { name: "ZoomInfo / Lusha", body: "Larger, paid contact and firmographic databases, for teams that need scale." },
+  { name: "ZoomInfo / Lusha", body: "Larger, paid contact and firmographic databases for teams that need scale." },
 ];
 
 const TOOLS = [
   {
     href: "/tools/icp-builder",
     name: "ICP & Value Proposition Generator",
-    accent: "#7C3AED",
-    plain: "Tell it what your business does, and it hands you back who to sell to and what to say to them, instead of you guessing.",
-    useCase: "Use it before writing a single message: get your ICP sorted first, so every message is aimed at someone real.",
+    plain: "Tell it what your business does, and it hands you back who to sell to and what to say to them.",
+    useCase: "Before writing a single message, so every line is aimed at someone real.",
   },
   {
     href: "/tools/dm-angle-generator",
     name: "DM Angle Generator",
-    accent: "#0077b5",
-    plain: "Type in your offer, get back 5 different ways to open a message, instead of staring at a blank box.",
-    useCase: "Use it when your reply rate goes quiet and the opening line is the likely culprit.",
+    plain: "Type in your offer, get back five different ways to open a message.",
+    useCase: "When your reply rate goes quiet and the opening line is the likely culprit.",
   },
   {
     href: "/tools/roi-calculator",
     name: "ROI Calculator",
-    accent: "#16A34A",
-    plain: "Plug in your numbers, sends, replies, deal value, and see what your outreach is actually worth.",
-    useCase: "Use it before committing budget or time, so the return is a number, not a guess.",
+    plain: "Plug in sends, replies, and deal value. See what your outreach is actually worth.",
+    useCase: "Before committing budget or time, so the return is a number, not a guess.",
   },
   {
     href: "/tools/lead-magnet-ideas",
     name: "Lead Magnet Idea Generator",
-    accent: "#D97706",
     plain: "Turns your business and ICP into concrete, specific things you could give away for free.",
-    useCase: "Use it when you like the “give before you ask” idea but can't think what to give.",
+    useCase: "When you like the “give before you ask” idea but can't think what to give.",
   },
 ];
 
@@ -134,112 +203,86 @@ const DOS = [
   "Give something before you ask for something",
 ];
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-/* ─── Interactive: pick-a-pattern-interrupt shuffler ───────────── */
-function InterruptShuffler() {
-  const [deck, setDeck] = useState<number[]>(INTERRUPTS.map((_, i) => i));
-  const [pos, setPos] = useState(0);
-
-  useEffect(() => {
-    setDeck((d) => shuffle(d));
-  }, []);
-
-  function next() {
-    setPos((p) => {
-      const np = p + 1;
-      if (np >= deck.length) {
-        setDeck((d) => shuffle(d));
-        return 0;
-      }
-      return np;
-    });
-  }
-
-  const current = INTERRUPTS[deck[pos]];
-
+/* ─── Small editorial primitives ───────────────────────────────── */
+function SectionHeader({ n, eyebrow, title, lede, align = "left" }: { n: string; eyebrow: string; title: React.ReactNode; lede?: string; align?: "left" | "center" }) {
   return (
-    <div className="rounded-2xl border p-7 sm:p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-      <div className="flex items-center justify-between mb-5">
-        <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#7C3AED" }}>Pick a pattern interrupt</span>
-        <div className="flex items-center gap-1.5">
-          {INTERRUPTS.map((_, i) => (
-            <span key={i} className="w-1.5 h-1.5 rounded-full transition-colors" style={{ backgroundColor: i === pos ? "#7C3AED" : "#DDE0E7" }} />
-          ))}
-        </div>
+    <div className={`mb-10 ${align === "center" ? "text-center" : ""}`}>
+      <div className={`flex items-center gap-3 mb-4 ${align === "center" ? "justify-center" : ""}`}>
+        <span className={`${playfair.className} text-sm font-semibold tabular-nums`} style={{ color: T.goldText }}>{n}</span>
+        <span aria-hidden="true" className="h-px w-8" style={{ backgroundColor: T.gold }} />
+        <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>{eyebrow}</span>
       </div>
-      <div key={deck[pos]} className="card-fade-up">
-        <div className="flex items-start gap-4 mb-5">
-          <span className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center text-2xl" style={{ backgroundColor: "#ffffff", border: "1px solid #E8E2D9" }}>{current.emoji}</span>
-          <div>
-            <h4 className="text-lg font-black leading-snug" style={{ color: "#0a0a0a" }}>{current.title}</h4>
-          </div>
-        </div>
-        <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{current.body}</p>
-      </div>
-      <button
-        type="button"
-        onClick={next}
-        className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2"
-      >
-        Show me another
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h5M20 20v-5h-5M4 9a9 9 0 0114.13-5.36M20 15a9 9 0 01-14.13 5.36" /></svg>
-      </button>
+      <h2 className={`${playfair.className} text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold leading-[1.1] tracking-tight`} style={{ color: T.ink }}>
+        {title}
+      </h2>
+      {lede && (
+        <p className={`text-base sm:text-lg leading-relaxed mt-4 max-w-2xl ${align === "center" ? "mx-auto" : ""}`} style={{ color: T.muted }}>{lede}</p>
+      )}
     </div>
   );
 }
 
-/* ─── Interactive: LinkedIn vs Cold Email tabs ─────────────────── */
+function Mark({ kind }: { kind: "do" | "dont" }) {
+  const isDo = kind === "do";
+  const Icon = isDo ? Check : X;
+  return (
+    <span
+      aria-hidden="true"
+      className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+      style={{ backgroundColor: isDo ? T.doSoft : T.dontSoft, color: isDo ? T.doFill : T.dontFill }}
+    >
+      <Icon className="w-3 h-3" strokeWidth={3} />
+    </span>
+  );
+}
+
+/* ─── Interactive: LinkedIn vs Cold Email ──────────────────────── */
 function ChannelTabs() {
   const [active, setActive] = useState(0);
   const c = CHANNEL_TIPS[active];
 
   return (
     <div>
-      <div className="flex gap-2 mb-6">
-        {CHANNEL_TIPS.map((tab, i) => (
-          <button
-            key={tab.channel}
-            type="button"
-            onClick={() => setActive(i)}
-            className="px-5 py-2.5 rounded-full text-sm font-bold transition-all"
-            style={
-              active === i
-                ? { backgroundColor: tab.accent, color: "#ffffff" }
-                : { backgroundColor: "#ffffff", color: "#3D3D3D", border: "1px solid #E8E2D9" }
-            }
-          >
-            {tab.channel}
-          </button>
-        ))}
+      <div role="tablist" aria-label="Channel" className="inline-flex p-1 rounded-full mb-8" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+        {CHANNEL_TIPS.map((tab, i) => {
+          const Icon = tab.icon;
+          const on = active === i;
+          return (
+            <button
+              key={tab.channel}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              onClick={() => setActive(i)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              style={{ backgroundColor: on ? T.ink : "transparent", color: on ? "#ffffff" : T.ink2 }}
+            >
+              <Icon className="w-4 h-4" strokeWidth={2} />
+              {tab.channel}
+            </button>
+          );
+        })}
       </div>
-      <div key={active} className="rounded-2xl border overflow-hidden card-fade-up" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-        <div className="h-1" style={{ background: `linear-gradient(90deg,${c.accent},${c.accent}66)` }} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 sm:p-7">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#16A34A" }}>Do</p>
-            <ul className="space-y-2.5">
+
+      <div key={active} role="tabpanel" className="rounded-3xl card-fade-up overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="p-7 sm:p-9 md:border-r" style={{ borderColor: T.hairline }}>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: T.doText }}>Do</p>
+            <ul className="space-y-4">
               {c.dos.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>
-                  <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#16A34A" }} />
+                <li key={d} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: T.ink2 }}>
+                  <Mark kind="do" />
                   {d}
                 </li>
               ))}
             </ul>
           </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#DC2626" }}>Don&apos;t</p>
-            <ul className="space-y-2.5">
+          <div className="p-7 sm:p-9 border-t md:border-t-0" style={{ borderColor: T.hairline }}>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: T.dontText }}>Don&apos;t</p>
+            <ul className="space-y-4">
               {c.donts.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>
-                  <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#DC2626" }} />
+                <li key={d} className="flex items-start gap-3 text-[15px] leading-relaxed" style={{ color: T.ink2 }}>
+                  <Mark kind="dont" />
                   {d}
                 </li>
               ))}
@@ -267,157 +310,174 @@ function SelfAudit() {
   const dontScore = donts.size;
   const total = doScore + dontScore;
 
-  let verdict = "Click through the list below, honestly, and see where your last outreach message actually lands.";
+  let verdict = "Think of the last cold message you sent. Tap everything that applies.";
   if (total > 0) {
     if (dontScore === 0 && doScore >= 6) verdict = "You're already pattern-interrupting. Most outbound isn't.";
     else if (dontScore >= 4) verdict = "This reads exactly like the outbound your prospects are trained to delete.";
     else verdict = "Partway there. A few small changes will do a lot.";
   }
 
+  const columns: { kind: "do" | "dont"; heading: string; hint: string; items: string[]; picked: Set<number>; set: (s: Set<number>) => void }[] = [
+    { kind: "do", heading: "Do", hint: "What your last message actually did", items: DOS, picked: dos, set: setDos },
+    { kind: "dont", heading: "Don't", hint: "What your last message was guilty of", items: DONTS, picked: donts, set: setDonts },
+  ];
+
   return (
     <div>
-      <div className="rounded-2xl border p-5 mb-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Quick self-audit</span>
-          {total > 0 && (
-            <button type="button" onClick={() => { setDos(new Set()); setDonts(new Set()); }} className="text-xs font-bold" style={{ color: "#8C8279" }}>
-              Reset
-            </button>
-          )}
+      {/* Verdict strip */}
+      <div className="rounded-3xl p-6 sm:p-7 mb-6 flex flex-col sm:flex-row sm:items-center gap-5" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
+        <div className="flex items-baseline gap-2 flex-shrink-0">
+          <span className={`${playfair.className} text-5xl font-semibold leading-none tabular-nums`} style={{ color: T.gold }}>{doScore}</span>
+          <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>of {DOS.length} habits</span>
         </div>
-        <p className="text-sm font-semibold" style={{ color: "#0a0a0a" }}>{verdict}</p>
-        {total > 0 && (
-          <div className="mt-3 h-2 rounded-full overflow-hidden" style={{ backgroundColor: "#E8E2D9" }}>
+        <div className="flex-1 min-w-0">
+          <p className="text-base font-semibold leading-snug">{verdict}</p>
+          <div className="mt-3 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.14)" }}>
             <div
-              className="h-full rounded-full transition-all"
-              style={{
-                width: `${Math.min(100, (doScore / DOS.length) * 100)}%`,
-                backgroundColor: dontScore > doScore ? "#DC2626" : "#16A34A",
-              }}
+              className="h-full rounded-full transition-[width] duration-300 ease-out"
+              style={{ width: `${Math.min(100, (doScore / DOS.length) * 100)}%`, backgroundColor: dontScore > doScore ? T.dontFill : T.gold }}
             />
           </div>
+        </div>
+        {total > 0 && (
+          <button
+            type="button"
+            onClick={() => { setDos(new Set()); setDonts(new Set()); }}
+            className="inline-flex items-center gap-1.5 text-xs font-bold self-start sm:self-auto rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            style={{ color: "#ffffff", border: "1px solid rgba(255,255,255,0.25)" }}
+          >
+            <RotateCcw className="w-3.5 h-3.5" strokeWidth={2.5} />
+            Reset
+          </button>
         )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="rounded-2xl border p-7" style={{ backgroundColor: "#F0FDF4", borderColor: "rgba(22,163,74,0.25)" }}>
-          <h3 className="text-sm font-black uppercase tracking-widest mb-1" style={{ color: "#16A34A" }}>Do</h3>
-          <p className="text-xs mb-4" style={{ color: "#166534" }}>Tap what your last message actually did</p>
-          <ul className="space-y-2">
-            {DOS.map((d, i) => {
-              const on = dos.has(i);
-              return (
-                <li key={d}>
-                  <button
-                    type="button"
-                    onClick={() => toggle(dos, setDos, i)}
-                    className="w-full flex items-start gap-2.5 text-left rounded-lg px-2 py-1.5 -mx-2 transition-colors"
-                    style={{ backgroundColor: on ? "rgba(22,163,74,0.1)" : "transparent" }}
-                  >
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5" style={{ backgroundColor: on ? "#16A34A" : "rgba(22,163,74,0.12)" }}>
-                      {on && <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>}
-                    </span>
-                    <span className="text-sm leading-relaxed" style={{ color: "#14532D" }}>{d}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="rounded-2xl border p-7" style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)" }}>
-          <h3 className="text-sm font-black uppercase tracking-widest mb-1" style={{ color: "#DC2626" }}>Don&apos;t</h3>
-          <p className="text-xs mb-4" style={{ color: "#991B1B" }}>Tap what your last message was guilty of</p>
-          <ul className="space-y-2">
-            {DONTS.map((d, i) => {
-              const on = donts.has(i);
-              return (
-                <li key={d}>
-                  <button
-                    type="button"
-                    onClick={() => toggle(donts, setDonts, i)}
-                    className="w-full flex items-start gap-2.5 text-left rounded-lg px-2 py-1.5 -mx-2 transition-colors"
-                    style={{ backgroundColor: on ? "rgba(220,38,38,0.1)" : "transparent" }}
-                  >
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5" style={{ backgroundColor: on ? "#DC2626" : "rgba(220,38,38,0.1)" }}>
-                      {on && <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>}
-                    </span>
-                    <span className="text-sm leading-relaxed" style={{ color: "#7F1D1D" }}>{d}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        {columns.map((col) => (
+          <div key={col.kind} className="rounded-3xl p-6 sm:p-7" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+            <div className="flex items-center justify-between mb-5">
+              <h3 className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: col.kind === "do" ? T.doText : T.dontText }}>{col.heading}</h3>
+              <span className="text-xs" style={{ color: T.muted }}>{col.hint}</span>
+            </div>
+            <ul className="space-y-1">
+              {col.items.map((d, i) => {
+                const on = col.picked.has(i);
+                return (
+                  <li key={d}>
+                    <button
+                      type="button"
+                      aria-pressed={on}
+                      onClick={() => toggle(col.picked, col.set, i)}
+                      className="w-full flex items-start gap-3 text-left rounded-xl px-3 py-2.5 transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+                      style={{ backgroundColor: on ? (col.kind === "do" ? T.doSoft : T.dontSoft) : "transparent" }}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 transition-colors duration-200"
+                        style={{ backgroundColor: on ? (col.kind === "do" ? T.doFill : T.dontFill) : "transparent", border: on ? "none" : `1.5px solid ${T.hairline}` }}
+                      >
+                        {on && (col.kind === "do" ? <Check className="w-3 h-3" stroke="#fff" strokeWidth={3} /> : <X className="w-3 h-3" stroke="#fff" strokeWidth={3} />)}
+                      </span>
+                      <span className="text-[15px] leading-relaxed" style={{ color: on ? T.ink : T.ink2 }}>{d}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
+/* ─── Page ─────────────────────────────────────────────────────── */
 export default function DosAndDontsClient() {
   return (
     <InnerLayout>
       <JsonLd data={ARTICLE_SCHEMA} />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.20) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: T.bg }}>
+        <div aria-hidden="true" style={{ position: "absolute", top: "-180px", right: "-140px", width: "640px", height: "640px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(245,183,49,0.06) 45%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none" }} />
 
-        <div className="relative z-10 max-w-3xl mx-auto">
+        <div className="relative z-10 max-w-6xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Interruption", href: "/dos-and-donts-of-outreach" }]} />
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(124,58,237,0.35)", background: "rgba(124,58,237,0.07)" }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7C3AED" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7C3AED" }}>Guide &middot; 6 min read</span>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+            <div className="lg:col-span-7">
+              <p className="hero-fade text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: T.goldText }}>Guide &middot; Pattern interruption</p>
+              <h1 className={`${playfair.className} hero-fade-d1 text-5xl sm:text-6xl lg:text-[4.75rem] font-semibold leading-[1.02] tracking-tight mb-6`} style={{ color: T.ink }}>
+                The Do&apos;s and Don&apos;ts
+                <br />
+                <em className="font-semibold" style={{ color: T.goldText }}>of Outreach</em>
+              </h1>
+              <p className="hero-fade-d2 text-lg sm:text-xl leading-relaxed max-w-xl" style={{ color: T.muted }}>
+                Every prospect&apos;s inbox has trained them to skim past your message before they&apos;ve read a word of it. Here&apos;s what actually gets one read.
+              </p>
+              <div className="hero-fade-d3 flex items-center gap-3 mt-8 text-sm" style={{ color: T.muted }}>
+                <span aria-hidden="true" className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style={{ backgroundColor: T.ink, color: T.gold }}>TJ</span>
+                <span><span className="font-semibold" style={{ color: T.ink }}>Tejas Jhaveri</span>, Founder of Myntmore</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+
+            <nav aria-label="In this guide" className="hero-fade-d3 lg:col-span-5 rounded-3xl p-2" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] px-5 pt-4 pb-2" style={{ color: T.muted }}>In this guide</p>
+              <ol>
+                {GUIDE_INDEX.map((item, i) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className="group flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-colors duration-200 hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+                    >
+                      <span className={`${playfair.className} text-sm font-semibold tabular-nums w-6`} style={{ color: T.goldText }}>{String(i + 1).padStart(2, "0")}</span>
+                      <span className="flex-1 text-[15px] font-semibold" style={{ color: T.ink }}>{item.label}</span>
+                      <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2} style={{ color: T.muted }} />
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            <span style={{ color: "#7C3AED" }}>Pattern Interruption</span>
-            <br />
-            The Do&apos;s and Don&apos;ts of Outreach
-          </h1>
-          <p className="text-lg sm:text-xl leading-relaxed" style={{ color: "#52525B" }}>
-            Every prospect&apos;s inbox has trained them to skim past your message before they&apos;ve read a word of it. Here&apos;s what actually gets one read.
-          </p>
         </div>
       </section>
 
-      <article className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      {/* Opening story */}
+      <article className="py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="prose-custom">
-              <h2 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>The Two Seconds of Silence</h2>
-              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                I was DJing a set last year and dropped a song completely out of genre, just to see what would happen. The floor went quiet for two seconds, then louder than before. Not better, just unexpected. That&apos;s basically the entire problem with outbound right now.
-              </p>
-              <p className="text-base leading-relaxed mt-4" style={{ color: "#3D3D3D" }}>
-                Open any inbox and you already know what&apos;s coming: &ldquo;Thanks for connecting.&rdquo; &ldquo;Just following up.&rdquo; Read a thousand times, these lines stop registering as words. They register as noise, and noise gets deleted without guilt.
-              </p>
-              <p className="text-base leading-relaxed mt-4 font-semibold" style={{ color: "#0a0a0a" }}>
-                So sometimes the smartest move isn&apos;t a better version of the same message. It&apos;s a different kind of message entirely.
-              </p>
-            </div>
-          </FadeIn>
-
-          {/* Interactive tactic shuffler */}
-          <FadeIn>
-            <div className="mt-10">
-              <InterruptShuffler />
-            </div>
+            <h2 className={`${playfair.className} text-3xl sm:text-4xl font-semibold leading-tight tracking-tight mb-8`} style={{ color: T.ink }}>The two seconds of silence</h2>
+            <p className="text-lg leading-[1.75]" style={{ color: T.ink2 }}>
+              <span className={`${playfair.className} float-left mr-3 mt-1 text-[4.25rem] leading-[0.85] font-semibold`} style={{ color: T.ink }}>I</span>
+              was DJing a set last year and dropped a song completely out of genre, just to see what would happen. The floor went quiet for two seconds, then louder than before. Not better, just unexpected. That&apos;s basically the entire problem with outbound right now.
+            </p>
+            <p className="text-lg leading-[1.75] mt-6" style={{ color: T.ink2 }}>
+              Open any inbox and you already know what&apos;s coming: &ldquo;Thanks for connecting.&rdquo; &ldquo;Just following up.&rdquo; Read a thousand times, these lines stop registering as words. They register as noise, and noise gets deleted without guilt.
+            </p>
           </FadeIn>
 
           {/* Pull quote */}
           <FadeIn>
-            <blockquote className="relative rounded-2xl border p-7 sm:p-8 mt-10 text-xl sm:text-2xl font-black leading-relaxed overflow-hidden" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", color: "#0a0a0a" }}>
-              <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#D97706" }}>&ldquo;</span>
-              Not better, just unexpected.
-              <footer className="mt-3 text-sm font-normal" style={{ color: "#8C8279" }}>Tejas Jhaveri, Founder of Myntmore</footer>
-            </blockquote>
+            <figure className="my-14 text-center">
+              <span aria-hidden="true" className="block h-px w-12 mx-auto mb-8" style={{ backgroundColor: T.gold }} />
+              <blockquote className={`${playfair.className} text-3xl sm:text-[2.6rem] italic font-semibold leading-[1.15] tracking-tight`} style={{ color: T.ink }}>
+                &ldquo;Not better, just unexpected.&rdquo;
+              </blockquote>
+              <figcaption className="mt-5 text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>The smartest move isn&apos;t a better version of the same message</figcaption>
+              <span aria-hidden="true" className="block h-px w-12 mx-auto mt-8" style={{ backgroundColor: T.gold }} />
+            </figure>
           </FadeIn>
 
           {/* Loom video */}
           <FadeIn>
-            <div className="mt-10 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#0a0a0a", borderColor: "#2a2a3e" }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#F5B731" }}>Watch Tejas Break This Down</p>
-              <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: "12px", overflow: "hidden" }}>
+            <div className="rounded-3xl p-3 sm:p-4" style={{ backgroundColor: T.ink }}>
+              <div className="flex items-center gap-2 px-3 pt-2 pb-4">
+                <Play className="w-3.5 h-3.5" strokeWidth={2.5} style={{ color: T.gold }} fill={T.gold} />
+                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.gold }}>Watch Tejas break this down</p>
+              </div>
+              <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: "16px", overflow: "hidden" }}>
                 <iframe
                   src="https://www.loom.com/embed/143c7b6ae41242bbbad797539987d214"
                   title="Tejas Jhaveri on pattern disruption in outbound"
@@ -428,110 +488,139 @@ export default function DosAndDontsClient() {
               </div>
             </div>
           </FadeIn>
-
-          <div className="prose-custom mt-10">
-            <FadeIn>
-              <h3 className="text-xl font-black mb-3" style={{ color: "#0a0a0a" }}>It&apos;s Not a Hack, It&apos;s Physics</h3>
-              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                These aren&apos;t clever tricks. They work for one boring reason: they interrupt a pattern the brain has learned to ignore. Nobody was thinking about the music until it broke. Your prospect&apos;s inbox works the same way, the moment something doesn&apos;t fit the shape they skim past, their brain pays attention for half a second longer. That half second is the whole game.
-              </p>
-
-              <h3 className="text-xl font-black mb-3 mt-8" style={{ color: "#0a0a0a" }}>The Day I Stopped Chasing Replies</h3>
-              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                For years I measured outbound purely on reply rate. What I missed: earning attention and earning a reply are two different jobs. A prospect once almost didn&apos;t reply to a screenshot pointing out a typo on her own pricing page, until she realised nobody else had noticed it either. It didn&apos;t sell anything, it just proved I&apos;d actually looked. Once someone believes that, the sales conversation gets ten times easier.
-              </p>
-
-              <h3 className="text-xl font-black mb-3 mt-8" style={{ color: "#0a0a0a" }}>Where This Lives in Our Sequences Today</h3>
-              <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                At{" "}
-                <a href="https://zcu.ge/M0W" target="_blank" rel="noopener noreferrer" className="font-bold" style={{ color: "#7C3AED" }}>Myntmore</a>{" "}
-                we build a version of this into almost every sequence we run, not as a gimmick, but as a deliberate break where the message stops sounding like a sequence. Sometimes that&apos;s a founder recording a fifteen-second video instead of email four. Sometimes it&apos;s a useful teardown sent with zero ask attached.
-              </p>
-              <p className="text-base leading-relaxed mt-4" style={{ color: "#3D3D3D" }}>
-                Not every message needs to be an interrupt, though. If every email is a meme, the meme becomes the new template, and there&apos;s no floor left to bring back. It works because it&apos;s rare, deliberate, and placed with intent.
-              </p>
-
-              <p className={`${caveat.className} text-2xl leading-snug mt-8`} style={{ color: "#7C3AED" }}>
-                &mdash; Respectfully, Teejay
-              </p>
-            </FadeIn>
-          </div>
         </div>
       </article>
 
-      {/* What works per channel */}
-      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+      {/* 01 · Pattern interrupts */}
+      <section id="interrupts" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <SectionHeader n="01" eyebrow="Pattern interrupts" title={<>Six ways to break the pattern</>} lede="Each one works for the same reason: it doesn't fit the shape a prospect has learned to skim past." />
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {INTERRUPTS.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <FadeIn key={item.title} delay={i * 60}>
+                  <div className="group h-full rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)]" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+                    <div className="flex items-start justify-between mb-6">
+                      <span className="w-11 h-11 rounded-2xl flex items-center justify-center transition-colors duration-300 group-hover:bg-[#F5B731]" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
+                        <Icon className="w-5 h-5 transition-colors duration-300 group-hover:text-[#0a0a0a]" strokeWidth={1.8} />
+                      </span>
+                      <span className={`${playfair.className} text-sm font-semibold tabular-nums`} style={{ color: T.goldText }}>{String(i + 1).padStart(2, "0")}</span>
+                    </div>
+                    <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: T.ink }}>{item.title}</h3>
+                    <p className="text-[15px] leading-relaxed" style={{ color: T.muted }}>{item.body}</p>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+
+          {/* Three lessons, editorial columns */}
+          <FadeIn>
+            <div className="mt-16 rounded-3xl p-8 sm:p-10 lg:p-12" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-0 lg:divide-x lg:divide-[#E8E2D9]">
+                {LESSONS.map((l) => (
+                  <div key={l.n} className="lg:px-8 first:lg:pl-0 last:lg:pr-0">
+                    <span className={`${playfair.className} block text-4xl font-semibold mb-4 tabular-nums`} style={{ color: T.gold }}>{l.n}</span>
+                    <h3 className="text-lg font-bold leading-snug mb-3" style={{ color: T.ink }}>{l.title}</h3>
+                    <p className="text-[15px] leading-relaxed" style={{ color: T.ink2 }}>{l.body}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 pt-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-t" style={{ borderColor: T.hairline }}>
+                <p className="text-sm" style={{ color: T.muted }}>
+                  This is how we run it at{" "}
+                  <a href="https://zcu.ge/M0W" target="_blank" rel="noopener noreferrer" className="font-bold underline-offset-4 hover:underline" style={{ color: T.ink }}>Myntmore</a>.
+                </p>
+                <p className={`${caveat.className} text-3xl leading-none`} style={{ color: T.goldText }}>&mdash; Respectfully, Teejay</p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 02 · By channel */}
+      <section id="channels" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(0,119,181,0.08)", color: "#0077b5", border: "1px solid rgba(0,119,181,0.2)" }}>
-              By Channel
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>What actually works, LinkedIn vs. cold email</h2>
-            <p className="text-base mb-8 max-w-2xl" style={{ color: "#52525B" }}>Same principle, different channel. Tap one to see it.</p>
+            <SectionHeader n="02" eyebrow="By channel" title={<>Same principle, <em className="font-semibold" style={{ color: T.goldText }}>different channel</em></>} lede="What works on LinkedIn reads as a pitch in email, and vice versa. Pick one." />
             <ChannelTabs />
           </FadeIn>
         </div>
       </section>
 
-      {/* Enrichment */}
-      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>
-              The Unglamorous Part
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0a0a0a" }}>What is enrichment, and why does it matter?</h2>
-            <p className="text-base leading-relaxed mb-8" style={{ color: "#3D3D3D" }}>
-              A raw list of names isn&apos;t enough to write the kind of message this guide is describing. <strong>Enrichment</strong> adds real details to a lead, company size, funding, tech stack, verified email, so a message can reference something specific instead of guessing. Without it, personalisation is a merge field with a first name in it.
-            </p>
-            <div className="space-y-3">
-              {ENRICHMENT_TOOLS.map((t) => (
-                <div key={t.name} className="rounded-2xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-base font-black mb-1" style={{ color: "#0a0a0a" }}>{t.name}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{t.body}</p>
-                </div>
-              ))}
+      {/* 03 · Enrichment */}
+      <section id="enrichment" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-5">
+              <FadeIn>
+                <SectionHeader n="03" eyebrow="The unglamorous part" title={<>What is enrichment, and why does it matter?</>} />
+                <p className="text-base leading-relaxed -mt-4" style={{ color: T.ink2 }}>
+                  A raw list of names isn&apos;t enough to write the kind of message this guide describes. <strong style={{ color: T.ink }}>Enrichment</strong> adds real details to a lead, company size, funding, tech stack, verified email, so a message can reference something specific instead of guessing.
+                </p>
+                <p className={`${playfair.className} text-xl italic font-semibold leading-snug mt-6 pl-5 border-l-2`} style={{ color: T.ink, borderColor: T.gold }}>
+                  Without it, personalisation is a merge field with a first name in it.
+                </p>
+              </FadeIn>
             </div>
-          </FadeIn>
+            <div className="lg:col-span-7">
+              <FadeIn>
+                <div className="rounded-3xl overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] px-7 pt-6 pb-4" style={{ color: T.muted }}>Tools worth knowing</p>
+                  <ul className="divide-y" style={{ borderColor: T.hairline }}>
+                    {ENRICHMENT_TOOLS.map((t) => (
+                      <li key={t.name} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6 px-7 py-5" style={{ borderColor: T.hairline }}>
+                        <span className="text-[15px] font-bold" style={{ color: T.ink }}>{t.name}</span>
+                        <span className="text-[15px] leading-relaxed" style={{ color: T.muted }}>{t.body}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Free tools */}
-      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-4xl mx-auto">
+      {/* 04 · Free tools */}
+      <section className="py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(22,163,74,0.08)", color: "#16A34A", border: "1px solid rgba(22,163,74,0.2)" }}>
-              Free Tools
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Tools that do some of this for you</h2>
-            <p className="text-base mb-8 max-w-2xl" style={{ color: "#52525B" }}>No jargon, just what each one does and when to reach for it.</p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {TOOLS.map((t) => (
-                <div key={t.href} className="rounded-2xl border overflow-hidden" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                  <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
-                  <div className="p-6">
-                    <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{t.name}</h3>
-                    <p className="text-sm leading-relaxed mb-3" style={{ color: "#52525B" }}>{t.plain}</p>
-                    <p className="text-xs leading-relaxed mb-4" style={{ color: "#8C8279" }}><strong>Use it when:</strong> {t.useCase}</p>
-                    <Link href={t.href} className="text-sm font-bold inline-flex items-center gap-1.5" style={{ color: t.accent }}>
-                      Try it free
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </Link>
+            <SectionHeader n="04" eyebrow="Free tools" title={<>Tools that do some of this for you</>} lede="No jargon, just what each one does and when to reach for it." />
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {TOOLS.map((t, i) => (
+              <FadeIn key={t.href} delay={i * 60}>
+                <Link
+                  href={t.href}
+                  className="group flex flex-col h-full rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                  style={{ backgroundColor: T.bg, border: `1px solid ${T.hairline}` }}
+                >
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <h3 className="text-lg font-bold leading-snug" style={{ color: T.ink }}>{t.name}</h3>
+                    <span className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-[#0a0a0a] group-hover:text-white" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}`, color: T.ink }}>
+                      <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
+                    </span>
                   </div>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
+                  <p className="text-[15px] leading-relaxed mb-5" style={{ color: T.ink2 }}>{t.plain}</p>
+                  <p className="text-sm leading-relaxed mt-auto pt-4 border-t" style={{ color: T.muted, borderColor: T.hairline }}>
+                    <span className="font-bold" style={{ color: T.ink }}>Use it when: </span>{t.useCase}
+                  </p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Interactive self-audit */}
-      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      {/* 05 · Self-audit */}
+      <section id="score" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Score your last message</h2>
-            <p className="text-base mb-8 max-w-2xl" style={{ color: "#52525B" }}>Think of the last cold message you sent. Tap everything that applies.</p>
+            <SectionHeader n="05" eyebrow="Self-audit" title={<>Score your last message</>} />
             <SelfAudit />
           </FadeIn>
 
@@ -540,27 +629,36 @@ export default function DosAndDontsClient() {
           </div>
 
           <FadeIn>
-            <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
-              <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
-                Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.
-              </p>
-              <NewsletterForm inputId="dos-donts-newsletter-email" compact />
+            <div className="mt-6 rounded-3xl p-7 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-2" style={{ color: T.goldText }}>The Outbound Operator</p>
+                <h3 className={`${playfair.className} text-2xl font-semibold leading-tight mb-2`} style={{ color: T.ink }}>One practical growth playbook, every week</h3>
+                <p className="text-sm leading-relaxed" style={{ color: T.muted }}>
+                  Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.
+                </p>
+              </div>
+              <div className="md:min-w-[20rem]">
+                <NewsletterForm inputId="dos-donts-newsletter-email" compact />
+              </div>
             </div>
           </FadeIn>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 px-4 border-t text-center" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+      <section className="py-24 px-4 text-center" style={{ backgroundColor: T.ink }}>
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>Want this built into your own sequences?</h2>
-          <p className="text-base mb-8" style={{ color: "#52525B" }}>We bake pattern interruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
-          <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
-            Book a Call
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
+          <FadeIn>
+            <span aria-hidden="true" className="block h-px w-12 mx-auto mb-8" style={{ backgroundColor: T.gold }} />
+            <h2 className={`${playfair.className} text-3xl sm:text-5xl font-semibold leading-[1.08] tracking-tight mb-5`} style={{ color: "#ffffff" }}>
+              Want this built into your own sequences?
+            </h2>
+            <p className="text-base sm:text-lg mb-10" style={{ color: "rgba(255,255,255,0.7)" }}>We bake pattern interruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
+            <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+              Book a Call
+              <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+            </a>
+          </FadeIn>
         </div>
       </section>
     </InnerLayout>

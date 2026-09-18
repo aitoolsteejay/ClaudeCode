@@ -272,13 +272,13 @@ function ReadingProgress() {
 /* ─── Section header with per-section accent ───────────────────── */
 function SectionHeader({ n, eyebrow, title, lede, accent = T.purple }: { n: string; eyebrow: string; title: React.ReactNode; lede?: string; accent?: string }) {
   return (
-    <div className="mb-10">
+    <div className="mb-8 sm:mb-10">
       <div className="flex items-center gap-3 mb-4">
         <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{n}</span>
         <span aria-hidden="true" className="h-px w-8" style={{ backgroundColor: accent }} />
         <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: accent }}>{eyebrow}</span>
       </div>
-      <h2 className="text-3xl sm:text-4xl font-black leading-tight tracking-tight" style={{ color: T.ink }}>{title}</h2>
+      <h2 className="text-[1.75rem] sm:text-4xl font-black leading-tight tracking-tight" style={{ color: T.ink }}>{title}</h2>
       {lede && <p className="text-base sm:text-lg leading-relaxed mt-4 max-w-2xl" style={{ color: T.muted }}>{lede}</p>}
     </div>
   );
@@ -302,7 +302,7 @@ function MessageMakeover() {
 
   return (
     <div className="rounded-3xl overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 px-6 sm:px-8 pt-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 px-5 sm:px-8 pt-5 sm:pt-6">
         <div role="group" aria-label="Message version" className="inline-flex p-1 rounded-full self-start" style={{ backgroundColor: T.bg, border: `1px solid ${T.hairline}` }}>
           {[MAKEOVER.before, MAKEOVER.after].map((v, i) => {
             const on = (i === 1) === fixed;
@@ -325,7 +325,7 @@ function MessageMakeover() {
         </p>
       </div>
 
-      <div className="px-6 sm:px-8 py-6">
+      <div className="px-5 sm:px-8 py-5 sm:py-6">
         <div key={m.label} className="card-fade-up">
           <div className="flex items-start gap-3">
             <span aria-hidden="true" className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style={{ backgroundColor: T.purpleSoft, color: T.purple }}>You</span>
@@ -333,7 +333,7 @@ function MessageMakeover() {
               <p className="text-[15px] leading-relaxed" style={{ color: T.ink }}>{m.text}</p>
             </div>
           </div>
-          <ul className="flex flex-wrap gap-2 mt-5 pl-12">
+          <ul className="flex flex-wrap gap-2 mt-4 sm:mt-5 sm:pl-12">
             {m.tags.map((t) => (
               <li key={t} className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: fixed ? T.doSoft : T.dontSoft, color: fixed ? T.doText : T.dontText }}>
                 {fixed ? <Check className="w-3 h-3" strokeWidth={3} /> : <X className="w-3 h-3" strokeWidth={3} />}
@@ -344,7 +344,7 @@ function MessageMakeover() {
         </div>
       </div>
 
-      <div className="px-6 sm:px-8 py-4 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      <div className="px-5 sm:px-8 py-4 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <p className="text-sm" style={{ color: T.muted }}>Same prospect, same product. Only the shape of the message changed.</p>
         <button
           type="button"
@@ -373,7 +373,7 @@ function InterruptCards() {
               type="button"
               aria-expanded={on}
               onClick={() => setOpen(on ? null : i)}
-              className="group w-full h-full text-left rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="group w-full h-full text-left rounded-3xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{ backgroundColor: T.paper, border: `1px solid ${on ? T.purpleBorder : T.hairline}` }}
             >
               <div className="flex items-center justify-between gap-4">
@@ -406,7 +406,7 @@ function LessonStepper() {
   return (
     <div className="rounded-3xl overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
       <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div role="tablist" aria-label="Lessons" aria-orientation="vertical" className="lg:col-span-5 p-3 lg:border-r border-b lg:border-b-0" style={{ borderColor: T.hairline }}>
+        <div role="tablist" aria-label="Lessons" className="lg:col-span-5 flex lg:block gap-2 lg:gap-0 overflow-x-auto lg:overflow-visible snap-x snap-mandatory p-3 lg:border-r border-b lg:border-b-0 [-webkit-overflow-scrolling:touch]" style={{ borderColor: T.hairline }}>
           {LESSONS.map((item, idx) => {
             const on = idx === i;
             return (
@@ -416,8 +416,8 @@ function LessonStepper() {
                 role="tab"
                 aria-selected={on}
                 onClick={() => setI(idx)}
-                className="w-full flex items-start gap-4 text-left rounded-2xl px-4 py-4 transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
-                style={{ backgroundColor: on ? T.purpleSoft : "transparent" }}
+                className="flex-shrink-0 w-[78vw] max-w-[300px] lg:w-full lg:max-w-none snap-start flex items-start gap-3 lg:gap-4 text-left rounded-2xl px-4 py-3.5 lg:py-4 transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+                style={{ backgroundColor: on ? T.purpleSoft : "transparent", border: `1px solid ${on ? T.purpleBorder : T.hairline}` }}
               >
                 <span className="text-sm font-black tabular-nums mt-0.5" style={{ color: on ? T.purple : T.muted }}>{item.n}</span>
                 <span>
@@ -428,10 +428,10 @@ function LessonStepper() {
             );
           })}
         </div>
-        <div className="lg:col-span-7 p-7 sm:p-9 flex flex-col">
+        <div className="lg:col-span-7 p-5 sm:p-9 flex flex-col">
           <div key={l.n} className="card-fade-up flex-1">
-            <span className="text-5xl font-black tabular-nums" style={{ color: T.purple }}>{l.n}</span>
-            <h3 className="text-2xl font-black leading-tight mt-3 mb-4" style={{ color: T.ink }}>{l.title}</h3>
+            <span className="text-4xl sm:text-5xl font-black tabular-nums" style={{ color: T.purple }}>{l.n}</span>
+            <h3 className="text-xl sm:text-2xl font-black leading-tight mt-3 mb-4" style={{ color: T.ink }}>{l.title}</h3>
             <p className="text-base leading-relaxed" style={{ color: T.ink2 }}>{l.body}</p>
           </div>
           <div className="flex items-center justify-between mt-8 pt-6 border-t" style={{ borderColor: T.hairline }}>
@@ -463,7 +463,7 @@ function ChannelTabs() {
 
   return (
     <div>
-      <div role="tablist" aria-label="Channel" className="inline-flex p-1 rounded-full mb-8" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+      <div role="tablist" aria-label="Channel" className="flex sm:inline-flex p-1 rounded-full mb-6 sm:mb-8" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
         {CHANNEL_TIPS.map((tab, i) => {
           const Icon = tab.icon;
           const on = active === i;
@@ -474,7 +474,7 @@ function ChannelTabs() {
               role="tab"
               aria-selected={on}
               onClick={() => setActive(i)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="flex-1 sm:flex-none justify-center inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{ backgroundColor: on ? tab.accent : "transparent", color: on ? "#ffffff" : T.ink2 }}
             >
               <Icon className="w-4 h-4" strokeWidth={2} />
@@ -487,7 +487,7 @@ function ChannelTabs() {
       <div key={active} role="tabpanel" className="rounded-3xl card-fade-up overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
         <div className="h-1" style={{ background: `linear-gradient(90deg,${c.accent},${c.accent}66)` }} />
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="p-7 sm:p-9 md:border-r" style={{ borderColor: T.hairline }}>
+          <div className="p-5 sm:p-9 md:border-r" style={{ borderColor: T.hairline }}>
             <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: T.doText }}>Do</p>
             <ul className="space-y-4">
               {c.dos.map((d) => (
@@ -498,7 +498,7 @@ function ChannelTabs() {
               ))}
             </ul>
           </div>
-          <div className="p-7 sm:p-9 border-t md:border-t-0" style={{ borderColor: T.hairline }}>
+          <div className="p-5 sm:p-9 border-t md:border-t-0" style={{ borderColor: T.hairline }}>
             <p className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: T.dontText }}>Don&apos;t</p>
             <ul className="space-y-4">
               {c.donts.map((d) => (
@@ -539,7 +539,7 @@ function EnrichDemo() {
   return (
     <div className="rounded-3xl overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
       <div className="h-1" style={{ background: `linear-gradient(90deg,${T.amber},${T.amber}66)` }} />
-      <div className="p-6 sm:p-7">
+      <div className="p-5 sm:p-7">
         <div className="flex items-center justify-between gap-4 mb-5">
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>Example lead</p>
           <span className="text-xs font-bold px-2.5 py-1 rounded-full transition-colors duration-300" style={{ backgroundColor: done ? T.doSoft : T.amberSoft, color: done ? T.doText : T.amber, border: `1px solid ${done ? "rgba(21,128,61,0.2)" : T.amberBorder}` }}>
@@ -562,7 +562,7 @@ function EnrichDemo() {
             const Icon = f.icon;
             const visible = i < shown;
             return (
-              <li key={f.label} className="grid grid-cols-[1.75rem_7.5rem_1fr] items-center gap-3 rounded-xl px-3 py-2.5" style={{ backgroundColor: visible ? T.bg : "transparent", border: `1px dashed ${visible ? "transparent" : T.hairline}` }}>
+              <li key={f.label} className="grid grid-cols-[1.75rem_5.5rem_1fr] sm:grid-cols-[1.75rem_7.5rem_1fr] items-center gap-2 sm:gap-3 rounded-xl px-2.5 sm:px-3 py-2.5" style={{ backgroundColor: visible ? T.bg : "transparent", border: `1px dashed ${visible ? "transparent" : T.hairline}` }}>
                 <span className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: visible ? T.amberSoft : "transparent", color: visible ? T.amber : T.hairline }}>
                   <Icon className="w-4 h-4" strokeWidth={2} />
                 </span>
@@ -628,7 +628,7 @@ function SelfAudit() {
 
   return (
     <div>
-      <div className="rounded-3xl p-6 sm:p-7 mb-6 flex flex-col sm:flex-row sm:items-center gap-5" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
+      <div className="rounded-3xl p-5 sm:p-7 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
         <div className="flex items-baseline gap-2 flex-shrink-0">
           <span className="text-5xl font-black leading-none tabular-nums" style={{ color: T.gold }}>{doScore}</span>
           <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>of {DOS.length} habits</span>
@@ -654,10 +654,10 @@ function SelfAudit() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {columns.map((col) => (
-          <div key={col.kind} className="rounded-3xl p-6 sm:p-7" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
-            <div className="flex items-center justify-between mb-5">
+          <div key={col.kind} className="rounded-3xl p-4 sm:p-7" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+            <div className="flex items-center justify-between gap-3 mb-4 sm:mb-5">
               <h3 className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: col.kind === "do" ? T.doText : T.dontText }}>{col.heading}</h3>
-              <span className="text-xs" style={{ color: T.muted }}>{col.hint}</span>
+              <span className="text-xs text-right" style={{ color: T.muted }}>{col.hint}</span>
             </div>
             <ul className="space-y-1">
               {col.items.map((d, i) => {
@@ -695,14 +695,14 @@ export default function DosAndDontsClient() {
       <ReadingProgress />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: T.bg }}>
+      <section className="relative pt-28 sm:pt-32 pb-14 sm:pb-20 px-4 overflow-hidden" style={{ backgroundColor: T.bg }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.20) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Disruption", href: "/dos-and-donts-of-outreach" }]} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-end">
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: T.purpleBorder, background: "rgba(124,58,237,0.07)" }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: T.purple }} />
@@ -727,7 +727,7 @@ export default function DosAndDontsClient() {
               <ol>
                 {GUIDE_INDEX.map((item, i) => (
                   <li key={item.href}>
-                    <a href={item.href} className="group flex items-center gap-4 px-5 py-3 rounded-2xl transition-colors duration-200 hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1">
+                    <a href={item.href} className="group flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl transition-colors duration-200 hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1">
                       <span className="text-sm font-black tabular-nums w-6" style={{ color: T.purple }}>{String(i + 1).padStart(2, "0")}</span>
                       <span className="flex-1 text-[15px] font-semibold" style={{ color: T.ink }}>{item.label}</span>
                       <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2} style={{ color: T.muted }} />
@@ -741,7 +741,7 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* Opening story + makeover */}
-      <article id="makeover" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
+      <article id="makeover" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
@@ -772,7 +772,7 @@ export default function DosAndDontsClient() {
 
           {/* Loom video */}
           <FadeIn>
-            <div className="mt-14 max-w-3xl mx-auto rounded-3xl p-3 sm:p-4" style={{ backgroundColor: T.ink }}>
+            <div className="mt-10 sm:mt-14 max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-2.5 sm:p-4" style={{ backgroundColor: T.ink }}>
               <div className="flex items-center gap-2 px-3 pt-2 pb-4">
                 <Play className="w-3.5 h-3.5" strokeWidth={2.5} style={{ color: T.gold }} fill={T.gold} />
                 <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.gold }}>Watch Tejas break this down</p>
@@ -792,7 +792,7 @@ export default function DosAndDontsClient() {
       </article>
 
       {/* 01 · Pattern interrupts */}
-      <section id="interrupts" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      <section id="interrupts" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <SectionHeader n="01" eyebrow="Pattern disruption" title="Six ways to break the pattern" lede="Tap a card. Each one works for the same reason: it doesn't fit the shape a prospect has learned to skim past." />
@@ -818,7 +818,7 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* 02 · By channel */}
-      <section id="channels" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
+      <section id="channels" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <SectionHeader n="02" eyebrow="By channel" accent={T.linkedin} title={<>Same principle, <span style={{ color: T.linkedin }}>different channel</span></>} lede="What works on LinkedIn reads as a pitch in email, and vice versa. Pick one." />
@@ -828,7 +828,7 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* 03 · Enrichment */}
-      <section id="enrichment" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      <section id="enrichment" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
@@ -867,7 +867,7 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* 04 · Free tools */}
-      <section className="py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
+      <section className="py-14 sm:py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <SectionHeader n="04" eyebrow="Free tools" accent={T.green} title="Tools that do some of this for you" lede="No jargon, just what each one does and when to reach for it." />
@@ -881,7 +881,7 @@ export default function DosAndDontsClient() {
                   style={{ backgroundColor: `${t.accent}0D`, border: `1.5px solid ${t.accent}55` }}
                 >
                   <div className="h-1.5" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}99)` }} />
-                  <div className="flex flex-col flex-1 p-7">
+                  <div className="flex flex-col flex-1 p-5 sm:p-7">
                     <div className="flex items-start justify-between gap-4 mb-4">
                       <span className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105" style={{ backgroundColor: t.accent, color: "#ffffff" }}>
                         <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
@@ -906,7 +906,7 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* 05 · Self-audit */}
-      <section id="score" className="py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      <section id="score" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <SectionHeader n="05" eyebrow="Self-audit" title="Score your last message" />
@@ -918,7 +918,7 @@ export default function DosAndDontsClient() {
           </div>
 
           <FadeIn>
-            <div className="mt-6 rounded-3xl p-7 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center" style={{ backgroundColor: T.amberSoft, border: `1px solid ${T.amberBorder}` }}>
+            <div className="mt-6 rounded-3xl p-5 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center" style={{ backgroundColor: T.amberSoft, border: `1px solid ${T.amberBorder}` }}>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.18em] mb-2" style={{ color: T.amber }}>The Outbound Operator</p>
                 <h3 className="text-2xl font-black leading-tight mb-2" style={{ color: T.ink }}>One practical growth playbook, every week</h3>
@@ -935,11 +935,11 @@ export default function DosAndDontsClient() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-4 text-center border-t" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      <section className="py-16 sm:py-24 px-4 text-center border-t" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-2xl mx-auto">
           <FadeIn>
             <span aria-hidden="true" className="block h-px w-12 mx-auto mb-8" style={{ backgroundColor: T.purple }} />
-            <h2 className="text-3xl sm:text-5xl font-black leading-tight tracking-tight mb-5" style={{ color: T.ink }}>
+            <h2 className="text-[1.75rem] sm:text-5xl font-black leading-tight tracking-tight mb-5" style={{ color: T.ink }}>
               Want this built into your own sequences?
             </h2>
             <p className="text-base sm:text-lg mb-10" style={{ color: T.muted }}>We bake pattern disruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>

@@ -543,6 +543,11 @@ export default function MyntmoreFrameworkClient() {
 
   const activeNode = active ? NODE_MAP[active] : null;
 
+  /* connection strokes keep a constant on-screen thickness at any zoom */
+  const sw = clamp(2.6 / view.zoom, 2.2, 9);
+  const dotR = clamp(3.4 / view.zoom, 3, 11);
+  const dash = `${sw * 2.4} ${sw * 1.8}`;
+
   return (
     <InnerLayout>
       <JsonLd data={HOWTO_SCHEMA} />
@@ -633,6 +638,14 @@ export default function MyntmoreFrameworkClient() {
 
                 {/* Connections */}
                 <svg width={CANVAS_W} height={CANVAS_H} className="absolute inset-0" style={{ pointerEvents: "none" }}>
+                  <defs>
+                    <marker id="fw-arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth">
+                      <path d="M0 0 L5 2.5 L0 5 Z" fill="#C3CAD6" />
+                    </marker>
+                    <marker id="fw-arrow-hi" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth">
+                      <path d="M0 0 L5 2.5 L0 5 Z" fill="#F5B731" />
+                    </marker>
+                  </defs>
                   {CONNECTIONS.map((c, i) => {
                     const d = connPath(c);
                     const from = NODE_MAP[c.from];
@@ -641,9 +654,20 @@ export default function MyntmoreFrameworkClient() {
                     const dashed = c.kind === "sub" || c.kind === "false" || c.kind === "error";
                     return (
                       <g key={i}>
-                        <path d={d} fill="none" stroke={isHighlighted ? color : "#4B5160"} strokeWidth={isHighlighted ? 2.4 : 1.6} strokeDasharray={dashed ? "5 4" : undefined} style={{ transition: "stroke 0.2s ease" }} />
+                        <path d={d} fill="none" stroke="#000000" strokeOpacity={0.35} strokeWidth={sw + 2} strokeLinecap="round" />
+                        <path
+                          d={d}
+                          fill="none"
+                          stroke={isHighlighted ? color : c.kind === "sub" ? "#A78BFA" : "#C3CAD6"}
+                          strokeOpacity={isHighlighted ? 1 : c.kind === "sub" ? 0.8 : 0.92}
+                          strokeWidth={isHighlighted ? sw * 1.35 : sw}
+                          strokeLinecap="round"
+                          strokeDasharray={dashed ? dash : undefined}
+                          markerEnd={c.kind === "sub" ? undefined : isHighlighted ? "url(#fw-arrow-hi)" : "url(#fw-arrow)"}
+                          style={{ transition: "stroke 0.2s ease, stroke-width 0.2s ease" }}
+                        />
                         {c.kind !== "sub" && (
-                          <circle r="2.6" fill={color} opacity={0.9}>
+                          <circle r={dotR} fill={color} stroke="#16181D" strokeWidth={sw * 0.5}>
                             <animateMotion dur={`${2.2 + (i % 5) * 0.4}s`} begin={`${(i % 7) * 0.35}s`} repeatCount="indefinite" path={d} />
                           </circle>
                         )}
@@ -651,7 +675,7 @@ export default function MyntmoreFrameworkClient() {
                     );
                   })}
                   {/* true / false port labels on IF nodes */}
-                  <g className="font-mono" style={{ fontSize: 9, fontWeight: 700 }}>
+                  <g className="font-mono" style={{ fontSize: clamp(9 / view.zoom, 9, 26), fontWeight: 700 }}>
                     {NODES.filter((n) => n.shape === "if").map((n) => (
                       <g key={n.id}>
                         <text x={n.x + n.w + 6} y={n.y + n.h * 0.28 - 4} fill="#4ADE80">true</text>

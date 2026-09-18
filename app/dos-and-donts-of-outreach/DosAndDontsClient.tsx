@@ -10,6 +10,7 @@ import {
   Camera,
   Check,
   ChevronDown,
+  Copy,
   Gift,
   Linkedin,
   Mail,
@@ -87,6 +88,7 @@ const GUIDE_INDEX = [
   { href: "#makeover", label: "See a message get fixed" },
   { href: "#interrupts", label: "Six ways to break the pattern" },
   { href: "#channels", label: "LinkedIn vs. cold email" },
+  { href: "#subjects", label: "Subject lines that get opened" },
   { href: "#enrichment", label: "What enrichment actually is" },
   { href: "#score", label: "Score your last message" },
 ];
@@ -169,6 +171,24 @@ const CHANNEL_TIPS: { channel: string; icon: LucideIcon; accent: string; dos: st
       "More than two or three follow-ups with nothing new to say",
     ],
   },
+];
+
+const SUBJECT_LINES: { text: string; why: string }[] = [
+  { text: "the founder who cracked global outreach", why: "Story hook, no ask" },
+  { text: "re: your expansion plans", why: "Reads like a reply" },
+  { text: "quick one on your expansion plans", why: "Short and specific" },
+  { text: "not sure if this is relevant to you", why: "Low pressure" },
+  { text: "why your last hire changes things", why: "Trigger event" },
+  { text: "re: growing outside India", why: "Reads like a reply" },
+  { text: "saw this and thought of you", why: "Personal, not promotional" },
+  { text: "this might be bad timing", why: "Disarming" },
+  { text: "one question before I let this go", why: "Last touch" },
+  { text: "random thought after seeing your funding news", why: "Trigger event" },
+];
+
+const DECOY_SUBJECTS = [
+  { from: "Growth Team", subject: "Partnership opportunity for Acme", preview: "Hope this email finds you well. We help companies like yours..." },
+  { from: "Sales Dept", subject: "Quick 15-min call this week?", preview: "Just following up on my previous email regarding our..." },
 ];
 
 const ENRICHED_FIELDS: { icon: LucideIcon; label: string; value: string }[] = [
@@ -515,6 +535,108 @@ function ChannelTabs() {
   );
 }
 
+/* ─── Interactive: subject line swipe file + inbox preview ─────── */
+function SubjectLines() {
+  const [picked, setPicked] = useState(0);
+  const [copied, setCopied] = useState<number | "all" | null>(null);
+
+  async function copy(text: string, key: number | "all") {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(key);
+      setTimeout(() => setCopied((c) => (c === key ? null : c)), 1400);
+    } catch {
+      /* clipboard unavailable, nothing to do */
+    }
+  }
+
+  const line = SUBJECT_LINES[picked];
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+      {/* Swipe file */}
+      <div className="lg:col-span-6 rounded-3xl overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+        <div className="flex items-center justify-between gap-3 px-5 sm:px-6 pt-5 pb-3">
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>Swipe file</p>
+          <button
+            type="button"
+            onClick={() => copy(SUBJECT_LINES.map((l) => l.text).join("\n"), "all")}
+            className="inline-flex items-center gap-1.5 text-xs font-bold rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+            style={{ color: T.ink, border: `1px solid ${T.hairline}` }}
+          >
+            {copied === "all" ? <Check className="w-3.5 h-3.5" strokeWidth={3} style={{ color: T.doFill }} /> : <Copy className="w-3.5 h-3.5" strokeWidth={2.5} />}
+            {copied === "all" ? "Copied all 10" : "Copy all"}
+          </button>
+        </div>
+        <ol>
+          {SUBJECT_LINES.map((l, i) => {
+            const on = picked === i;
+            return (
+              <li key={l.text} className="border-t" style={{ borderColor: T.hairline }}>
+                <div className="flex items-center gap-2 sm:gap-3 pl-4 sm:pl-6 pr-3 transition-colors duration-200" style={{ backgroundColor: on ? T.amberSoft : "transparent" }}>
+                  <button
+                    type="button"
+                    aria-pressed={on}
+                    onClick={() => setPicked(i)}
+                    className="flex-1 min-w-0 flex items-baseline gap-3 text-left py-3 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 rounded-lg"
+                  >
+                    <span className="text-xs font-black tabular-nums w-5 flex-shrink-0" style={{ color: on ? T.amber : T.muted }}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className="min-w-0">
+                      <span className="block text-[15px] font-semibold leading-snug" style={{ color: T.ink }}>{l.text}</span>
+                      <span className="block text-xs mt-0.5" style={{ color: T.muted }}>{l.why}</span>
+                    </span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => copy(l.text, i)}
+                    aria-label={copied === i ? "Copied" : `Copy subject line ${i + 1}`}
+                    className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+                    style={{ color: copied === i ? T.doFill : T.muted }}
+                  >
+                    {copied === i ? <Check className="w-4 h-4" strokeWidth={3} /> : <Copy className="w-4 h-4" strokeWidth={2} />}
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+
+      {/* Inbox preview */}
+      <div className="lg:col-span-6 lg:sticky lg:top-28">
+        <div className="rounded-3xl overflow-hidden" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}` }}>
+          <div className="flex items-center gap-2 px-5 py-3 border-b" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+            <Mail className="w-4 h-4" strokeWidth={2} style={{ color: T.muted }} />
+            <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>Their inbox, Tuesday 9:14 am</p>
+          </div>
+          <ul>
+            <li className="flex items-start gap-3 px-5 py-3.5 border-b" style={{ borderColor: T.hairline, color: T.muted }}>
+              <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "transparent" }} />
+              <span className="w-24 flex-shrink-0 text-sm truncate">{DECOY_SUBJECTS[0].from}</span>
+              <span className="min-w-0 flex-1 text-sm truncate"><span style={{ color: T.ink2 }}>{DECOY_SUBJECTS[0].subject}</span> <span className="hidden sm:inline">{DECOY_SUBJECTS[0].preview}</span></span>
+            </li>
+            <li key={line.text} className="card-fade-up flex items-start gap-3 px-5 py-3.5 border-b" style={{ borderColor: T.hairline, backgroundColor: T.amberSoft }}>
+              <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: T.amber }} />
+              <span className="w-24 flex-shrink-0 text-sm font-black truncate" style={{ color: T.ink }}>Tejas Jhaveri</span>
+              <span className="min-w-0 flex-1 text-sm"><span className="font-black" style={{ color: T.ink }}>{line.text}</span> <span className="hidden sm:inline" style={{ color: T.muted }}>Priya, noticed something on your pricing page while looking at...</span></span>
+            </li>
+            <li className="flex items-start gap-3 px-5 py-3.5" style={{ color: T.muted }}>
+              <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: "transparent" }} />
+              <span className="w-24 flex-shrink-0 text-sm truncate">{DECOY_SUBJECTS[1].from}</span>
+              <span className="min-w-0 flex-1 text-sm truncate"><span style={{ color: T.ink2 }}>{DECOY_SUBJECTS[1].subject}</span> <span className="hidden sm:inline">{DECOY_SUBJECTS[1].preview}</span></span>
+            </li>
+          </ul>
+          <div className="px-5 py-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+            <p className="text-sm leading-relaxed" style={{ color: T.ink2 }}>
+              <span className="font-bold" style={{ color: T.ink }}>All lowercase on purpose.</span> It reads like something a person typed on their phone, not a campaign. Pick a line on the left to see it sit between the broadcasts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Interactive: enrich-a-lead demo ──────────────────────────── */
 function EnrichDemo() {
   const [shown, setShown] = useState(0);
@@ -827,13 +949,23 @@ export default function DosAndDontsClient() {
         </div>
       </section>
 
-      {/* 03 · Enrichment */}
-      <section id="enrichment" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      {/* 03 · Subject lines */}
+      <section id="subjects" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+        <div className="max-w-6xl mx-auto">
+          <FadeIn>
+            <SectionHeader n="03" eyebrow="Cold email" accent={T.amber} title="Ten subject lines that get opened" lede="Pulled from sequences that are running right now. Every one of them looks like a real email, not a broadcast." />
+            <SubjectLines />
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 04 · Enrichment */}
+      <section id="enrichment" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
               <FadeIn>
-                <SectionHeader n="03" eyebrow="The unglamorous part" accent={T.amber} title="What is enrichment?" />
+                <SectionHeader n="04" eyebrow="The unglamorous part" accent={T.amber} title="What is enrichment?" />
                 <p className="text-base leading-relaxed -mt-4" style={{ color: T.ink2 }}>
                   A raw list of names isn&apos;t enough to write the kind of message this guide describes. <strong style={{ color: T.ink }}>Enrichment</strong> adds real details to a lead, so a message can reference something specific instead of guessing.
                 </p>
@@ -866,11 +998,11 @@ export default function DosAndDontsClient() {
         </div>
       </section>
 
-      {/* 04 · Free tools */}
-      <section className="py-14 sm:py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
+      {/* 05 · Free tools */}
+      <section className="py-14 sm:py-20 px-4 border-t" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <SectionHeader n="04" eyebrow="Free tools" accent={T.green} title="Tools that do some of this for you" lede="No jargon, just what each one does and when to reach for it." />
+            <SectionHeader n="05" eyebrow="Free tools" accent={T.green} title="Tools that do some of this for you" lede="No jargon, just what each one does and when to reach for it." />
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {TOOLS.map((t, i) => (
@@ -905,11 +1037,11 @@ export default function DosAndDontsClient() {
         </div>
       </section>
 
-      {/* 05 · Self-audit */}
-      <section id="score" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.bg }}>
+      {/* 06 · Self-audit */}
+      <section id="score" className="py-14 sm:py-20 px-4 border-t scroll-mt-24" style={{ borderColor: T.hairline, backgroundColor: T.paper }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <SectionHeader n="05" eyebrow="Self-audit" title="Score your last message" />
+            <SectionHeader n="06" eyebrow="Self-audit" title="Score your last message" />
             <SelfAudit />
           </FadeIn>
 

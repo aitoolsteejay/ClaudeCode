@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/myntmore-framework`, lastModified: "2026-09-16T00:00:00+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/who-this-is-for`, lastModified: "2026-09-18T00:00:00+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/how-to-choose-an-outbound-agency`, lastModified: "2026-09-18T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/dos-and-donts-of-outreach`, lastModified: "2026-09-18T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Service subpages
     { url: `${base}/services/linkedin-outreach`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/cold-email`, lastModified: "2026-08-21T15:18:01+05:30", changeFrequency: "monthly", priority: 0.8 },

@@ -25,6 +25,7 @@
 - [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.
 - [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
 - [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
+- [The Do's and Don'ts of Outreach](https://www.myntmore.com/dos-and-donts-of-outreach): Pattern interruption in outbound, channel-specific tips for LinkedIn and cold email, what data enrichment is, and Myntmore's free outreach tools.
 - [Glossary](https://www.myntmore.com/resources/glossary): Definitions of Myntmore's own frameworks (Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule).
 - [2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Reply rate, inbox placement, and time-to-meeting benchmarks aggregated across managed accounts.
 

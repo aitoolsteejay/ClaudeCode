@@ -6,7 +6,7 @@ import { buildWebApplicationSchema } from "@/lib/schema";
 import DmAngleGeneratorClient from "./DmAngleGeneratorClient";
 
 export const metadata: Metadata = {
-  title: "DM Angle Generator",
+  title: "Free DM Angle Generator for B2B Outreach",
   description: "Free AI tool that generates 5 psychology-aligned DM opening angles for your outreach, tailored to your industry, ICP role, and offer.",
   keywords: [
     "dm angle generator",

@@ -83,6 +83,7 @@ const SERVICES_LINKS = [
 ];
 const COMPANY_LINKS = [
   { label: "About Myntmore", href: "/about-us" },
+  { label: "The Myntmore Framework", href: "/myntmore-framework" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources & Playbooks", href: "/resources" },
   { label: "Blog", href: "/resources/blogs" },

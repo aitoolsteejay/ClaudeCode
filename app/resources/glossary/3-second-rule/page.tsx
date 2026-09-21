@@ -9,15 +9,18 @@ import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
 const PAGE_URL = `${SITE_URL}/resources/glossary/3-second-rule`;
 const TITLE = "The 3-Second Rule";
 const DESCRIPTION = "The 3-Second Rule: a prospect decides whether to keep reading an outbound message within about 3 seconds, and spending that window pitching features, services, or company history loses their attention before curiosity is earned.";
+// Short form for the SERP snippet; DESCRIPTION stays full-length for the
+// DefinedTerm schema, where the complete definition is the point.
+const META_DESCRIPTION = "The 3-Second Rule: prospects decide whether to keep reading an outbound message in about 3 seconds. Why pitching features in that window loses them.";
 
 export const metadata: Metadata = {
   title: `${TITLE} — B2B Outbound Glossary`,
-  description: DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   keywords: ["3-second rule cold outreach", "how to write cold outreach that gets replies", "pattern breaking cold email", "earn curiosity outbound", "cold email opening lines"],
   openGraph: {
     title: `${TITLE} | Myntmore Glossary`,
-    description: DESCRIPTION,
+    description: META_DESCRIPTION,
     url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

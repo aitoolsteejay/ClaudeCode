@@ -104,6 +104,14 @@ const GUIDES = [
     readTime: "8 min read",
     accent: "#3b82f6",
   },
+  {
+    href: "/resources/guides/ai-tech-stack-jewellery",
+    tag: "AI Tool Stacks",
+    title: "AI Tech Stack for Jewellery Brands",
+    excerpt: "106 AI tools across 14 categories, curated for jewellery brand owners and retailers, from product photography and reels to paid ads.",
+    readTime: "12 min read",
+    accent: "#D97706",
+  },
 ];
 
 export default function GuidesPage() {

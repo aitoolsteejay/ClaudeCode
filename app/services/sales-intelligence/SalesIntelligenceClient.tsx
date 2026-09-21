@@ -5,7 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { buildServiceSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "ICP Mapping & Lead Scoring",
@@ -87,6 +87,7 @@ const FAQ_ITEMS = [
     a: "Clients who switch from bought lists to signal-led outreach typically see 3–5x improvement in pipeline conversion within 90 days. The exact number depends on how well-defined your ICP is and how quickly your team adopts signal-triggered outreach. We build in a calibration period of 30 days to tune the scoring model to your market.",
   },
 ];
+const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [
   "40+ intent signals", "Daily list refresh", "Trigger-based leads", "Funding signals",
@@ -280,6 +281,7 @@ export default function SalesIntelligenceClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={HOWTO_SCHEMA} />
+      <JsonLd data={FAQ_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.18) 0%, rgba(124,58,237,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

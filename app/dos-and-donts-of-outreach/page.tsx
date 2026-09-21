@@ -3,8 +3,11 @@ import { SITE_URL } from "@/lib/schema";
 import DosAndDontsClient from "./DosAndDontsClient";
 
 const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
-const TITLE = "Pattern Disruption: The Do's and Don'ts of Cold Outreach";
-const DESCRIPTION = "Why most outreach gets deleted without being read, how pattern disruption actually works, what to send on LinkedIn vs. cold email, what data enrichment is, and the free tools to build better outreach.";
+// Shortened from the page's full name so the title tag plus the "| Myntmore"
+// template stays inside Google's ~60-character cutoff; the H1 keeps the
+// long form.
+const TITLE = "Pattern Disruption: Cold Outreach Do's & Don'ts";
+const DESCRIPTION = "Why most outreach gets deleted unread, how pattern disruption works, and what to send on LinkedIn vs. cold email.";
 
 export const metadata: Metadata = {
   title: TITLE,

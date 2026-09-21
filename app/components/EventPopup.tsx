@@ -6,8 +6,14 @@ import { EVENTS, isUpcoming } from "@/lib/events-data";
 
 const SHOW_DELAY_MS = 7000;
 
+// Manually paused. `isUpcoming` already hides the popup once an event ends,
+// but a statically prerendered homepage keeps serving the build-time result
+// until the next deploy, so a past event can still flash up. Set this back to
+// true when a live event is scheduled -- see lib/events-data.ts.
+const POPUP_ENABLED = false;
+
 export default function EventPopup() {
-  const event = EVENTS.filter(isUpcoming)[0];
+  const event = POPUP_ENABLED ? EVENTS.filter(isUpcoming)[0] : undefined;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

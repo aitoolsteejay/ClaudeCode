@@ -21,13 +21,39 @@
 - [How to Choose a B2B Outbound Agency](https://www.myntmore.com/how-to-choose-an-outbound-agency): A neutral evaluation checklist for vetting any outbound agency, not just Myntmore.
 - [Agency vs. In-House SDR](https://www.myntmore.com/blog/agency-vs-in-house): A balanced comparison of building outbound in-house vs. hiring an agency.
 
+## Methodology
+- [The Myntmore Framework](https://www.myntmore.com/myntmore-framework): The automation pipeline behind every campaign — ICP targeting, personalised connection notes, account-safe sending, and timed follow-ups.
+
 ## Resources
 - [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.
 - [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
 - [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
 - [Pattern Interruption: The Do's and Don'ts of Outreach](https://www.myntmore.com/dos-and-donts-of-outreach): Pattern interruption in outbound, channel-specific tips for LinkedIn and cold email, what data enrichment is, and Myntmore's free outreach tools.
+- [AI Tech Stack for Jewellery Brands](https://www.myntmore.com/resources/guides/ai-tech-stack-jewellery): 106 AI tools across 14 categories for jewellery brand owners and retailers.
 - [Glossary](https://www.myntmore.com/resources/glossary): Definitions of Myntmore's own frameworks (Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule).
 - [2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Reply rate, inbox placement, and time-to-meeting benchmarks aggregated across managed accounts.
+
+## Free Tools
+- [ROI Calculator](https://www.myntmore.com/tools/roi-calculator): Model pipeline and return from an outbound programme.
+- [ICP Builder](https://www.myntmore.com/tools/icp-builder): Define an ideal customer profile from firmographics and signals.
+- [LinkedIn Profile Optimizer](https://www.myntmore.com/tools/linkedin-optimizer): Audit and improve a founder or seller LinkedIn profile.
+- [DM Angle Generator](https://www.myntmore.com/tools/dm-angle-generator): Generate psychology-aligned DM opening angles for outreach.
+- [Battle Card Generator](https://www.myntmore.com/tools/battle-card-generator): Build competitive battle cards for sales conversations.
+- [Case Study Generator](https://www.myntmore.com/tools/case-study-generator): Turn client results into a structured case study.
+- [Lead Magnet Ideas](https://www.myntmore.com/tools/lead-magnet-ideas): Generate lead magnet concepts for a given ICP.
+- [Posting Rhythm Builder](https://www.myntmore.com/tools/posting-rhythm-builder): Plan a sustainable LinkedIn posting cadence.
+- [Founder Presence Analyzer](https://www.myntmore.com/tools/founder-presence-analyzer): Assess a founder's online presence and positioning.
+
+## Locations
+Myntmore serves B2B clients across India. City pages cover local market context, not separate offices.
+- [B2B Lead Generation in Mumbai](https://www.myntmore.com/b2b-lead-generation-mumbai)
+- [B2B Lead Generation in Delhi](https://www.myntmore.com/b2b-lead-generation-delhi)
+- [B2B Lead Generation in Bengaluru](https://www.myntmore.com/b2b-lead-generation-bengaluru)
+- [B2B Lead Generation in Pune](https://www.myntmore.com/b2b-lead-generation-pune)
+- [B2B Lead Generation in Hyderabad](https://www.myntmore.com/b2b-lead-generation-hyderabad)
+- [B2B Lead Generation in Chennai](https://www.myntmore.com/b2b-lead-generation-chennai)
+- [B2B Lead Generation in Kolkata](https://www.myntmore.com/b2b-lead-generation-kolkata)
+- [B2B Lead Generation in Ahmedabad](https://www.myntmore.com/b2b-lead-generation-ahmedabad)
 
 ## About
 - [About Myntmore & Tejas Jhaveri](https://www.myntmore.com/about-us)

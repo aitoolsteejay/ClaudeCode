@@ -3,7 +3,7 @@ import DoItYourselfClient from "./DoItYourselfClient";
 
 export const metadata: Metadata = {
   title: "Do It Yourself LinkedIn Outreach Tool",
-  description: "A self-serve LinkedIn outreach tool. Log in with your own LinkedIn account, build a campaign, upload your leads, and let it send connection requests and follow-ups for you, with a full metrics dashboard.",
+  description: "A self-serve LinkedIn outreach tool: log in with your own account, upload leads, and send connection requests and follow-ups with a metrics dashboard.",
   keywords: ["self serve linkedin outreach tool", "linkedin automation software", "linkedin outreach tool for founders", "linkedin connection request automation tool", "linkedin campaign builder", "diy linkedin outreach"],
   alternates: { canonical: "https://www.myntmore.com/services/do-it-yourself" },
   openGraph: {

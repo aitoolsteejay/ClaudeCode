@@ -5,7 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { buildServiceSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Account-Based Marketing",
@@ -87,6 +87,7 @@ const FAQ_ITEMS = [
     a: "ABM makes the most sense once your average deal size and sales cycle justify a multi-touch, multi-stakeholder approach, typically mid-market and enterprise B2B deals with several decision-makers involved. For simpler, single-stakeholder sales motions, our LinkedIn outreach or cold email services are usually a better fit.",
   },
 ];
+const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [
   "Tiered account lists", "Multi-channel campaigns", "Buying committee reach", "Account-level reporting",
@@ -279,6 +280,7 @@ export default function AccountBasedMarketingClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={HOWTO_SCHEMA} />
+      <JsonLd data={FAQ_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, rgba(79,70,229,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

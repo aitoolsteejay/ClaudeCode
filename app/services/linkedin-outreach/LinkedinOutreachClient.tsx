@@ -5,7 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { buildServiceSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "LinkedIn Outreach & Automation",
@@ -87,6 +87,7 @@ const FAQ_ITEMS = [
     a: "It's one of the most effective combinations we run. A prospect who gets a cold email and then receives a LinkedIn connection request from the same person converts at a significantly higher rate. The multi-channel approach creates familiarity before the first real conversation.",
   },
 ];
+const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [
   "48% acceptance rate", "Human-safe automation", "Multi-touch sequences", "Reply management",
@@ -274,6 +275,7 @@ export default function LinkedinOutreachClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={HOWTO_SCHEMA} />
+      <JsonLd data={FAQ_SCHEMA} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,119,181,0.18) 0%, rgba(0,119,181,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />

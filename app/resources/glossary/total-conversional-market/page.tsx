@@ -9,15 +9,18 @@ import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
 const PAGE_URL = `${SITE_URL}/resources/glossary/total-conversional-market`;
 const TITLE = "Total Conversional Market (TCM)";
 const DESCRIPTION = "Total Conversional Market (TCM) is the highly specific, highly motivated subset of prospects actively feeling a pain point today, already looking for workarounds, and ready to act immediately, as distinct from the broad, theoretical Total Addressable Market (TAM).";
+// Short form for the SERP snippet; DESCRIPTION stays full-length for the
+// DefinedTerm schema, where the complete definition is the point.
+const META_DESCRIPTION = "Total Conversional Market (TCM): the motivated slice of your TAM feeling the pain today and ready to act. How TCM differs from TAM, and how to target it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} — B2B Outbound Glossary`,
-  description: DESCRIPTION,
+  title: `${TITLE} — B2B Glossary`,
+  description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   keywords: ["total conversional market", "tcm vs tam", "total addressable market vs total conversional market", "b2b targeting definition", "how to define your icp"],
   openGraph: {
     title: `${TITLE} | Myntmore Glossary`,
-    description: DESCRIPTION,
+    description: META_DESCRIPTION,
     url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

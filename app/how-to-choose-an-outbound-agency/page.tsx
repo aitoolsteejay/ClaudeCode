@@ -10,7 +10,7 @@ import { buildFaqSchema, buildArticleSchema, SITE_URL } from "@/lib/schema";
 
 const PAGE_URL = `${SITE_URL}/how-to-choose-an-outbound-agency`;
 const TITLE = "How to Choose a B2B Outbound Agency";
-const DESCRIPTION = "A neutral evaluation checklist for vetting B2B outbound agencies: what to ask about data ownership, deliverability infrastructure, real reply rates, ICP methodology, and contract terms before you sign.";
+const DESCRIPTION = "A neutral checklist for vetting B2B outbound agencies: what to ask about data ownership, deliverability, real reply rates, and contract terms.";
 
 const AI_RESOURCES = [PAGE_URL, `${SITE_URL}/blog/agency-vs-in-house`, `${SITE_URL}/blog/b2b-outbound-benchmark-report-2026`];
 

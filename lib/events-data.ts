@@ -19,6 +19,10 @@ export interface EventItem {
 // 3. Add the new route to app/sitemap.ts.
 // 4. Flip POPUP_ENABLED back to true in app/components/EventPopup.tsx --
 //    the homepage popup is manually paused and will stay hidden otherwise.
+// Note: a new event will NOT appear on the homepage. The "Come see us live"
+// section was deliberately removed from app/page.tsx; UpcomingEvents still
+// works and can be dropped back in there if that slot is ever wanted again.
+// Events otherwise surface on /events and via the popup once re-enabled.
 export const EVENTS: EventItem[] = [
   {
     slug: "predictable-pipeline-webinar",

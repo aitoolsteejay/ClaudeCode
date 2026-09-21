@@ -49,7 +49,6 @@ import Testimonials from "./components/Testimonials";
 import Promise from "./components/Promise";
 import FAQ from "./components/FAQ";
 import AskYourAI from "./components/AskYourAI";
-import UpcomingEvents from "./components/UpcomingEvents";
 import CTABanner from "./components/CTABanner";
 import Footer from "./components/Footer";
 import JsonLd from "./components/JsonLd";
@@ -86,7 +85,6 @@ export default function Home() {
           <AskYourAI resources={HOME_AI_RESOURCES} />
         </div>
       </section>
-      <UpcomingEvents />
       <CTABanner />
       <Footer />
     </main>

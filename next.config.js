@@ -33,6 +33,10 @@ const nextConfig = {
       // Renamed from the opaque "GIAtech-stack" slug and moved under guides.
       // It was in the sitemap, so Google may already hold the old URL.
       { source: "/GIAtech-stack", destination: "/resources/guides/ai-tech-stack-jewellery", permanent: true },
+      // Retired full-time role (removed 2026-07-28), still 404ing in Search
+      // Console. Points at the careers hub rather than the similarly named
+      // intern listing, which is a different seniority and salary band.
+      { source: "/careers/content-strategist", destination: "/careers", permanent: true },
     ];
   },
 };

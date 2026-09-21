@@ -37,6 +37,20 @@ const nextConfig = {
       // Console. Points at the careers hub rather than the similarly named
       // intern listing, which is a different seniority and salary band.
       { source: "/careers/content-strategist", destination: "/careers", permanent: true },
+
+      // Legacy WordPress URLs from the previous site, still being crawled and
+      // reported as 404s. Only the ones with a genuine present-day equivalent
+      // are mapped here. The discontinued service lines (/cro, /sem,
+      // /app-development, /web-development, /custom-erp-development,
+      // /photography-videography, /academy) are deliberately left to 404:
+      // Myntmore no longer sells any of them, and pointing them at /services
+      // would be an irrelevant redirect that Google treats as a soft 404.
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/webinar", destination: "/events", permanent: true },
+      { source: "/branding", destination: "/services/personal-branding", permanent: true },
+      { source: "/website-newsletter", destination: "/newsletter-subscribe", permanent: true },
+      { source: "/discover-our-most-popular-services", destination: "/services", permanent: true },
+      { source: "/other-services", destination: "/services", permanent: true },
     ];
   },
 };

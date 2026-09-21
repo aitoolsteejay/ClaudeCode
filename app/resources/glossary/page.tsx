@@ -6,7 +6,7 @@ import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Outbound Glossary",
-  description: "Clear, single-page definitions of the frameworks and terms Myntmore uses in its own outbound systems: Total Conversional Market, Signal-Heavy Structuring, and the 3-Second Rule.",
+  description: "Single-page definitions of the frameworks Myntmore uses in its own outbound systems: Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule.",
   keywords: [
     "b2b outbound glossary",
     "total conversional market definition",

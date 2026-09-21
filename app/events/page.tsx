@@ -13,7 +13,7 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "Events & Webinars",
+  title: "B2B Outbound Events & Webinars",
   description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the team that has booked 12K+ meetings and generated $120M+ in pipeline.",
   alternates: { canonical: "https://www.myntmore.com/events" },
   keywords: [

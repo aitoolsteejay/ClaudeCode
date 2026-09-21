@@ -3,8 +3,8 @@ import { SITE_URL } from "@/lib/schema";
 import DosAndDontsClient from "./DosAndDontsClient";
 
 const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
-const TITLE = "Pattern Interruption: The Do's and Don'ts of Outreach";
-const DESCRIPTION = "Why most outreach gets deleted without being read, how pattern interruption actually works, what to send on LinkedIn vs. cold email, what data enrichment is, and the free tools to build better outreach.";
+const TITLE = "Pattern Interruption: Outreach Do's & Don'ts";
+const DESCRIPTION = "Why most outreach gets deleted unread, how pattern interruption works, and what to send on LinkedIn vs. cold email.";
 
 export const metadata: Metadata = {
   title: TITLE,

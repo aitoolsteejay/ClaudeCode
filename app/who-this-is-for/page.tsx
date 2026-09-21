@@ -9,7 +9,7 @@ import { buildArticleSchema, SITE_URL } from "@/lib/schema";
 
 const PAGE_URL = `${SITE_URL}/who-this-is-for`;
 const TITLE = "Who Myntmore Is For (and Who It Isn't)";
-const DESCRIPTION = "Myntmore is built narrowly around B2B pipeline generation, cold email, LinkedIn outreach, and ABM, run as one system. Here's exactly who that's for, and who it isn't.";
+const DESCRIPTION = "Myntmore is built narrowly around B2B pipeline generation via cold email, LinkedIn, and ABM, run as one system. Exactly who that fits, and who it doesn't.";
 
 export const metadata: Metadata = {
   title: TITLE,

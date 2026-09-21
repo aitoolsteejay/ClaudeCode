@@ -30,6 +30,9 @@ const nextConfig = {
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
       { source: "/personal-branding", destination: "/services/personal-branding", permanent: true },
+      // Renamed from the opaque "GIAtech-stack" slug and moved under guides.
+      // It was in the sitemap, so Google may already hold the old URL.
+      { source: "/GIAtech-stack", destination: "/resources/guides/ai-tech-stack-jewellery", permanent: true },
     ];
   },
 };

@@ -90,9 +90,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "G-PEY6FXLPMH",
-  },
   category: "business",
   icons: {
     icon: "/logo.png",

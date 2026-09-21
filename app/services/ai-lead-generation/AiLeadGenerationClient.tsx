@@ -5,7 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import { buildServiceSchema, buildHowToSchema, SITE_URL } from "@/lib/schema";
+import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "AI Lead Generation",
@@ -85,6 +85,7 @@ const FAQ_ITEMS = [
     a: "Often better than broad markets. A smaller TAM means we go deeper on each account, track more specific signals, and personalise outreach at a level generic tools can't. Some of our best results come from clients with a TAM under 5,000 accounts.",
   },
 ];
+const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [
   "AI-scored leads", "24/7 agent operation", "Research summaries", "Clean lead exports",
@@ -252,6 +253,7 @@ export default function AiLeadGenerationClient() {
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
       <JsonLd data={HOWTO_SCHEMA} />
+      <JsonLd data={FAQ_SCHEMA} />
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={blob1} aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(99,102,241,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blob2} aria-hidden style={{ position: "absolute", top: "40%", left: "75%", width: 500, height: 500, marginTop: -250, marginLeft: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.2) 0%, rgba(255,130,0,0.08) 40%, transparent 70%)", filter: "blur(55px)", pointerEvents: "none", willChange: "transform" }} />

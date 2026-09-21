@@ -2,12 +2,14 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
-import JsonLd from "../components/JsonLd";
+import JsonLd from "../../../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
-  { name: "GIA Tech Stack", url: `${SITE_URL}/GIAtech-stack` },
+  { name: "Resources", url: `${SITE_URL}/resources` },
+  { name: "Guides", url: `${SITE_URL}/resources/guides` },
+  { name: "AI Tech Stack for Jewellery Brands", url: `${SITE_URL}/resources/guides/ai-tech-stack-jewellery` },
 ]);
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
@@ -714,6 +716,16 @@ export default function GIATechStackPage() {
             Book a Free Call
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+
+          {/* This page renders its own nav rather than InnerLayout, so without
+              these it is a crawl dead-end: nothing links back into the site. */}
+          <nav className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="More from Myntmore">
+            <a href="/" style={{ color: "#A8A29E" }}>Myntmore Home</a>
+            <a href="/resources/guides" style={{ color: "#A8A29E" }}>All Guides</a>
+            <a href="/resources" style={{ color: "#A8A29E" }}>Resources</a>
+            <a href="/services" style={{ color: "#A8A29E" }}>Services</a>
+            <a href="/case-studies" style={{ color: "#A8A29E" }}>Case Studies</a>
+          </nav>
         </div>
 
       </div>

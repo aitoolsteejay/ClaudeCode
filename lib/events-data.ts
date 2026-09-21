@@ -15,7 +15,10 @@ export interface EventItem {
 // 1. Add an entry here (slug becomes the URL: /events/{slug}).
 // 2. Create app/events/{slug}/page.tsx for its detail page, following the
 //    same pattern as app/blog/{slug}/page.tsx or app/case-studies/{slug}/page.tsx.
+//    Drop the `robots: { index: false }` line that past events carry.
 // 3. Add the new route to app/sitemap.ts.
+// 4. Flip POPUP_ENABLED back to true in app/components/EventPopup.tsx --
+//    the homepage popup is manually paused and will stay hidden otherwise.
 export const EVENTS: EventItem[] = [
   {
     slug: "predictable-pipeline-webinar",

@@ -9,15 +9,18 @@ import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
 const PAGE_URL = `${SITE_URL}/resources/glossary/signal-heavy-structuring`;
 const TITLE = "Signal-Heavy Structuring";
 const DESCRIPTION = "Signal-Heavy Structuring is a content framework built around including a concrete, immediately usable asset, a template, a tool, a specific breakdown, rather than generic branding copy, so the content earns a reply on its own.";
+// Short form for the SERP snippet; DESCRIPTION stays full-length for the
+// DefinedTerm schema, where the complete definition is the point.
+const META_DESCRIPTION = "Signal-Heavy Structuring: build content around a concrete, usable asset, a template, a tool, a breakdown, so it earns a reply instead of reading as branding.";
 
 export const metadata: Metadata = {
   title: `${TITLE} — B2B Outbound Glossary`,
-  description: DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   keywords: ["signal-heavy structuring", "b2b content framework", "lead magnets that convert", "value-first content marketing", "b2b content that gets replies"],
   openGraph: {
     title: `${TITLE} | Myntmore Glossary`,
-    description: DESCRIPTION,
+    description: META_DESCRIPTION,
     url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

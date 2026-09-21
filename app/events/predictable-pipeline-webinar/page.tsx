@@ -9,10 +9,17 @@ const ZOOM_REGISTRATION_URL = "https://zcu.ge/pGv";
 const PAGE_URL = `${SITE_URL}/events/predictable-pipeline-webinar`;
 const TITLE = "We Create 200+ Meetings Every Month Through Cold Outreach. Let's Help You Build a More Predictable Lead Pipeline.";
 const DESCRIPTION = "Most businesses don't have a lead problem. They have a predictability problem. This webinar breaks down the cold outreach system Myntmore uses to create 200+ meetings every month, covering what's actually working across LinkedIn, cold email, targeting, messaging, personal branding and automation. Expect practical strategies, real experiments and proven frameworks that businesses can adapt to build a stronger, more consistent pipeline without waiting for the next lead to come in.";
+// Short form for the SERP snippet; DESCRIPTION stays full-length for the
+// Event schema and on-page copy.
+const META_DESCRIPTION = "A free live webinar on the cold outreach system Myntmore uses to create 200+ meetings a month, across LinkedIn, cold email, targeting and automation.";
 
 export const metadata: Metadata = {
-  title: "Free Webinar: Build a Predictable Lead Pipeline with Cold Outreach",
-  description: DESCRIPTION,
+  title: "Free Webinar: Build a Predictable Lead Pipeline",
+  description: META_DESCRIPTION,
+  // The event ran on 2026-09-19. Noindexed rather than deleted so existing
+  // links and registrations still resolve; flip this back when the page is
+  // updated for the next session.
+  robots: { index: false, follow: true },
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "We Create 200+ Meetings a Month Through Cold Outreach | Myntmore Webinar",

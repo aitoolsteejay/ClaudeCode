@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "gdpr-cold-outreach";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "GDPR for Cold Outreach";
+const DESCRIPTION = "GDPR is the EU data protection law that governs how personal data, including a prospect's name and work email, can be collected and used for cold outreach targeting people in the EU or EEA.";
+const META_DESCRIPTION = "How GDPR applies to B2B cold outreach, what 'legitimate interest' means for sending to EU prospects, and where the limits actually are.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["gdpr cold email", "is cold email gdpr compliant", "gdpr b2b outreach", "legitimate interest gdpr cold email"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function GdprColdOutreachPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Compliance"
+      accent="#BE123C"
+      title={TITLE}
+      tagline="The EU rulebook that decides what's fair game when a prospect on your list happens to sit in Europe."
+      definition="The EU law governing how personal data like a prospect's name and work email can be used for outreach, which for B2B allows outreach under 'legitimate interest' rather than requiring prior opt-in."
+      body="Legitimate interest is narrower than it sounds: the outreach has to be relevant to the recipient's professional role, and it has to include an easy, immediate way to opt out. It does not license the same broad, unfiltered blasting that some other regions tolerate."
+      sourceLabel="Read: Cold Email Compliance: CAN-SPAM, GDPR & DPDP"
+      sourceHref="/blog/cold-email-compliance-guide"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

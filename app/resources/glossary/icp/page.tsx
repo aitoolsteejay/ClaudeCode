@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "icp";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "ICP (Ideal Customer Profile)";
+const DESCRIPTION = "An Ideal Customer Profile (ICP) is a detailed description of the company and buyer most likely to want a product and get real value from it, used to decide who is worth targeting before outbound outreach begins.";
+const META_DESCRIPTION = "What an Ideal Customer Profile (ICP) is, why it's the filter that decides who's worth messaging, and how it differs from a buyer persona.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is icp", "ideal customer profile definition", "icp meaning b2b", "icp vs buyer persona"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function IcpPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Targeting"
+      accent="#0891B2"
+      title={TITLE}
+      tagline="The filter that decides who's even worth messaging, before a single outbound email goes out."
+      definition="A description of the exact type of company and buyer most likely to want your product, used to decide who's worth messaging before outreach starts."
+      body="An ICP is narrower than a buyer persona: it filters by company traits (industry, size, tech stack, buying signals) first, then names the specific role inside that company who actually has the pain and the authority to act on it."
+      sourceLabel="Read: ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close"
+      sourceHref="/blog/icp-mapping-b2b"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

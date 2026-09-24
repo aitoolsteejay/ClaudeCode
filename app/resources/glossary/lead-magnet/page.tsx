@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "lead-magnet";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Lead Magnet";
+const DESCRIPTION = "A lead magnet is a free, specific piece of value, such as a tool, template, or report, offered in exchange for a prospect's attention or contact details, used to earn a reply before pitching anything.";
+const META_DESCRIPTION = "What a lead magnet is, what makes one actually work in B2B outbound, and why generic ebooks rarely earn a reply.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is a lead magnet", "lead magnet definition b2b", "b2b lead magnet examples", "lead magnet ideas"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function LeadMagnetPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Content Strategy"
+      accent="#9333EA"
+      title={TITLE}
+      tagline="A specific, usable thing offered upfront, not a generic ebook nobody asked for."
+      definition="A free, specific piece of value, like a calculator, template, or custom report, offered in exchange for a prospect's attention, used to earn a reply before any pitch is made."
+      body="The ones that actually convert are narrow and immediately usable by the exact ICP they're built for, not broad awareness content repackaged as a PDF. A generic '10 tips' guide reads as marketing; a tool that solves one specific problem for one specific role reads as genuinely useful, which is the entire difference."
+      sourceLabel="Read: The Value Premium: Creating Magnetic Lead Magnets"
+      sourceHref="/blog/value-premium-lead-magnets"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

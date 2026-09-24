@@ -6,7 +6,7 @@ import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Outbound Glossary",
-  description: "Single-page definitions of the frameworks Myntmore uses in its own outbound systems: Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule.",
+  description: "Plain-English definitions of the terms and frameworks that come up across Myntmore's outbound systems, from industry basics like SPF/DKIM/DMARC and ICP to Myntmore's own frameworks like Total Conversional Market.",
   keywords: [
     "b2b outbound glossary",
     "total conversional market definition",
@@ -14,11 +14,14 @@ export const metadata: Metadata = {
     "3-second rule cold outreach",
     "b2b outbound terminology",
     "cold outreach frameworks explained",
+    "what is icp",
+    "what is abm",
+    "spf dkim dmarc explained",
   ],
   alternates: { canonical: "https://www.myntmore.com/resources/glossary" },
   openGraph: {
     title: "B2B Outbound Glossary | Myntmore",
-    description: "Clear definitions of the frameworks Myntmore uses in its own outbound systems.",
+    description: "Plain-English definitions of the terms and frameworks behind Myntmore's outbound systems.",
     url: "https://www.myntmore.com/resources/glossary",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -46,6 +49,125 @@ const TERMS = [
     excerpt: "You have roughly 3 seconds to earn a prospect's curiosity before an outbound message gets ignored, and pitching in that window loses it.",
     accent: "#F97316",
   },
+  {
+    href: "/resources/glossary/spf-dkim-dmarc",
+    tag: "Cold Email",
+    title: "SPF, DKIM & DMARC",
+    excerpt: "The three DNS records that prove a cold email actually came from your domain, and decide whether it lands in the inbox or spam.",
+    accent: "#16A34A",
+  },
+  {
+    href: "/resources/glossary/icp",
+    tag: "Targeting",
+    title: "ICP (Ideal Customer Profile)",
+    excerpt: "The exact type of company and buyer most likely to want your product, used to decide who's worth messaging before outreach starts.",
+    accent: "#0891B2",
+  },
+  {
+    href: "/resources/glossary/abm",
+    tag: "GTM Strategy",
+    title: "ABM (Account-Based Marketing)",
+    excerpt: "Targeting a short list of named companies directly, instead of messaging a broad, generic list.",
+    accent: "#2563EB",
+  },
+  {
+    href: "/resources/glossary/cold-email",
+    tag: "Cold Outreach",
+    title: "Cold Email",
+    excerpt: "Outbound email to a prospect with no prior relationship, written to open a real conversation, not blast a list.",
+    accent: "#EA580C",
+  },
+  {
+    href: "/resources/glossary/domain-warmup",
+    tag: "Cold Email",
+    title: "Domain Warm-up",
+    excerpt: "Gradually ramping up email volume from a new domain so inbox providers build a positive sending reputation.",
+    accent: "#15803D",
+  },
+  {
+    href: "/resources/glossary/sender-reputation",
+    tag: "Cold Email",
+    title: "Sender Reputation",
+    excerpt: "The ongoing score inbox providers assign a domain based on past behaviour, deciding inbox or spam.",
+    accent: "#059669",
+  },
+  {
+    href: "/resources/glossary/can-spam-act",
+    tag: "Compliance",
+    title: "CAN-SPAM Act",
+    excerpt: "The US law setting the rules for commercial email: accurate sender info, honest subject lines, a working opt-out.",
+    accent: "#DC2626",
+  },
+  {
+    href: "/resources/glossary/gdpr-cold-outreach",
+    tag: "Compliance",
+    title: "GDPR for Cold Outreach",
+    excerpt: "The EU law governing outreach to prospects in Europe, and what \"legitimate interest\" actually allows.",
+    accent: "#BE123C",
+  },
+  {
+    href: "/resources/glossary/buyer-persona",
+    tag: "Targeting",
+    title: "Buyer Persona",
+    excerpt: "A profile of a job role's goals and objections, used to shape messaging rather than decide who to target.",
+    accent: "#C2410C",
+  },
+  {
+    href: "/resources/glossary/buying-signal",
+    tag: "Targeting",
+    title: "Buying Signal",
+    excerpt: "An observable event, like a new hire or funding round, suggesting a company may be ready to buy now.",
+    accent: "#0D9488",
+  },
+  {
+    href: "/resources/glossary/sdr",
+    tag: "Sales Ops",
+    title: "SDR (Sales Development Rep)",
+    excerpt: "The role responsible for prospecting and qualifying leads, booking meetings for account executives.",
+    accent: "#475569",
+  },
+  {
+    href: "/resources/glossary/multi-threading",
+    tag: "GTM Strategy",
+    title: "Multi-Threading",
+    excerpt: "Engaging several stakeholders inside one account at once, instead of relying on a single champion.",
+    accent: "#1D4ED8",
+  },
+  {
+    href: "/resources/glossary/lead-magnet",
+    tag: "Content Strategy",
+    title: "Lead Magnet",
+    excerpt: "A free, specific piece of value offered upfront to earn a reply, before any pitch is made.",
+    accent: "#9333EA",
+  },
+  {
+    href: "/resources/glossary/founder-led-sales",
+    tag: "Personal Branding",
+    title: "Founder-Led Sales",
+    excerpt: "The founder personally running early sales conversations, before a dedicated sales team exists.",
+    accent: "#DB2777",
+  },
+  {
+    href: "/resources/glossary/vanity-metrics",
+    tag: "Personal Branding",
+    title: "Vanity Metrics",
+    excerpt: "Likes, follower counts, and impressions that look impressive but don't reliably predict pipeline.",
+    accent: "#E11D48",
+  },
+  {
+    href: "/resources/glossary/sales-pipeline",
+    tag: "GTM Strategy",
+    title: "Sales Pipeline",
+    excerpt: "Every active deal moving through defined stages, from first contact to closed-won.",
+    accent: "#3B82F6",
+  },
+  {
+    href: "/resources/glossary/inbound-vs-outbound",
+    tag: "Cold Outreach",
+    title: "Inbound vs. Outbound",
+    excerpt: "Waiting for the right people to find you, versus proactively reaching out to find them.",
+    accent: "#F59E0B",
+  },
 ];
 
 export default function GlossaryPage() {
@@ -65,7 +187,7 @@ export default function GlossaryPage() {
             The terms behind the system
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl" style={{ color: "#52525B" }}>
-            A few frameworks come up repeatedly across Myntmore&apos;s own content and campaigns. Here&apos;s exactly what each one means, in one place.
+            The terms and frameworks that come up repeatedly across Myntmore&apos;s own content and campaigns, from industry basics to a few ideas we coined ourselves. Here&apos;s exactly what each one means, in one place.
           </p>
         </div>
       </section>
@@ -73,7 +195,7 @@ export default function GlossaryPage() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {TERMS.map((t) => (
                 <Link key={t.href} href={t.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />

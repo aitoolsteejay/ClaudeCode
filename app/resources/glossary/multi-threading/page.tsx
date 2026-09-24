@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "multi-threading";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Multi-Threading";
+const DESCRIPTION = "Multi-threading is the practice of engaging several stakeholders inside one target account at the same time, instead of relying on a single champion who might leave or lose interest.";
+const META_DESCRIPTION = "What multi-threading means in B2B sales, why single-threaded deals are fragile, and how it connects to account-based marketing.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is multi-threading in sales", "multi-threading b2b definition", "single-threaded deal risk", "multi-threading vs abm"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function MultiThreadingPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#1D4ED8"
+      title={TITLE}
+      tagline="Why a deal riding on one champion inside an account is a deal one resignation away from dying."
+      definition="Engaging several stakeholders inside a single target account at once, rather than relying on one internal champion to carry the deal alone."
+      body="A single-threaded deal collapses the moment that one contact goes quiet, changes roles, or leaves the company. Multi-threading spreads the relationship across the economic buyer, the end user, and any technical evaluator, which is also what makes coordinated outreach at the account level, not just the individual level, so central to ABM."
+      sourceLabel="Read the related term: ABM (Account-Based Marketing)"
+      sourceHref="/resources/glossary/abm"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

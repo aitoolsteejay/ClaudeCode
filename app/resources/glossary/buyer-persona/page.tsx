@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "buyer-persona";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Buyer Persona";
+const DESCRIPTION = "A buyer persona is a semi-fictional profile of a specific job role, describing that role's goals, pain points, and objections, used to shape messaging rather than to decide which companies to target.";
+const META_DESCRIPTION = "What a buyer persona is, how it's used to shape outbound messaging, and how it's different from an ICP.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is a buyer persona", "buyer persona definition b2b", "buyer persona vs icp", "b2b buyer persona example"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function BuyerPersonaPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Targeting"
+      accent="#C2410C"
+      title={TITLE}
+      tagline="A picture of the person on the other end of the message, not the company they work for."
+      definition="A semi-fictional profile of a specific job role describing its goals, daily frustrations, and likely objections, used to shape what a message says rather than who it's sent to."
+      body="An ICP answers which companies and roles to target; a buyer persona answers what to actually say to them once they're on the list, by capturing how that role thinks and what convinces it. The two work together rather than replacing each other."
+      sourceLabel="Read the related term: ICP (Ideal Customer Profile)"
+      sourceHref="/resources/glossary/icp"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

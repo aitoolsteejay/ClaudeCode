@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "vanity-metrics";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Vanity Metrics";
+const DESCRIPTION = "Vanity metrics are numbers like likes, follower counts, or impressions that look impressive but don't reliably indicate whether content is actually generating leads or revenue.";
+const META_DESCRIPTION = "What vanity metrics are, why likes and impressions don't predict pipeline, and which numbers to track instead for personal branding content.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what are vanity metrics", "vanity metrics definition", "vanity metrics vs pipeline metrics", "linkedin vanity metrics"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function VanityMetricsPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Personal Branding"
+      accent="#E11D48"
+      title={TITLE}
+      tagline="The numbers that feel good on a Tuesday and mean nothing by the end of the quarter."
+      definition="Surface numbers like likes, follower counts, or impressions that look impressive but don't reliably show whether content is actually generating leads or revenue."
+      body="A post can get thousands of likes from people who will never buy anything, while a quieter post reaches the twenty right people and books three calls. The fix isn't ignoring engagement entirely, it's tracking it alongside pipeline-linked numbers like profile visits from ICP-matching titles and inbound DMs that turn into conversations."
+      sourceLabel="Read: Founder Personal Branding: Pipeline, Not Likes"
+      sourceHref="/blog/vanity-metrics-personal-brand-pipeline"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

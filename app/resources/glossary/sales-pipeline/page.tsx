@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "sales-pipeline";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Sales Pipeline";
+const DESCRIPTION = "A sales pipeline is the set of active deals moving through defined stages, from first contact to closed-won, used to forecast revenue and identify where deals are stalling.";
+const META_DESCRIPTION = "What a sales pipeline is, how it's structured into stages, and why outbound is what keeps it consistently filled.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is a sales pipeline", "sales pipeline definition", "sales pipeline stages", "pipeline vs sales funnel"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function SalesPipelinePage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#3B82F6"
+      title={TITLE}
+      tagline="Every active deal a team is working, laid out by how close it is to closing."
+      definition="The set of active deals moving through defined stages, from first contact to closed-won, used to forecast revenue and spot exactly where deals are getting stuck."
+      body="A pipeline is only as reliable as what feeds it. Inbound alone is unpredictable month to month, which is why most B2B teams treat consistent outbound as the mechanism that keeps the top of the pipeline full on a schedule, rather than leaving revenue to chance."
+      sourceLabel="See the service: AI Lead Generation"
+      sourceHref="/services/ai-lead-generation"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "cold-email";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Cold Email";
+const DESCRIPTION = "Cold email is outbound email sent to a prospect who has no prior relationship with the sender, aiming to start a sales conversation rather than nurture an existing lead.";
+const META_DESCRIPTION = "What cold email is, how it differs from spam and from nurture email, and why B2B teams still use it to start sales conversations.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is cold email", "cold email definition", "cold email vs spam", "b2b cold email"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function ColdEmailPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Cold Outreach"
+      accent="#EA580C"
+      title={TITLE}
+      tagline="The first message to someone who has never heard of you, sent to open a real conversation, not to blast a list."
+      definition="An email sent to a prospect with no prior relationship to the sender, written to start a genuine sales conversation rather than announce a product."
+      body="Done well, cold email is permission-based and targeted: it goes to a narrow list matching a defined ICP, references something specific about the recipient, and is legally compliant with laws like CAN-SPAM and GDPR. Done poorly, it collapses into the same broad, generic blasting that gives the channel its bad name."
+      sourceLabel="See the service: Cold Email"
+      sourceHref="/services/cold-email"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

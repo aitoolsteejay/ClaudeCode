@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "sender-reputation";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Sender Reputation";
+const DESCRIPTION = "Sender reputation is a score inbox providers assign to a sending domain or IP based on past behaviour, such as spam complaints and bounce rates, that determines whether future emails reach the inbox or spam.";
+const META_DESCRIPTION = "What sender reputation is, which signals inbox providers actually track, and how a damaged reputation quietly kills cold email deliverability.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is sender reputation", "email sender score", "sender reputation cold email", "improve sender reputation"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function SenderReputationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Cold Email"
+      accent="#059669"
+      title={TITLE}
+      tagline="The invisible score that decides whether every future email from a domain gets trusted or filtered out."
+      definition="An ongoing score inbox providers assign to a sending domain or IP based on past behaviour, deciding whether future emails land in the inbox or get routed to spam."
+      body="It's built from signals like spam complaint rate, bounce rate, and how often recipients open or reply, and it's cumulative: one bad sending burst can suppress deliverability for weeks after, which is why reputation is monitored continuously rather than checked once."
+      sourceLabel="Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"
+      sourceHref="/blog/cold-email-deliverability-guide"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "abm";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "ABM (Account-Based Marketing)";
+const DESCRIPTION = "Account-based marketing (ABM) is a B2B strategy that targets a short list of named companies directly, coordinating research, messaging, and outreach across every relevant stakeholder inside each account, rather than sending a generic message to a broad list.";
+const META_DESCRIPTION = "What account-based marketing (ABM) is, how it differs from broad outbound, and when a named-account strategy actually makes sense.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is abm", "account-based marketing definition", "abm vs outbound", "account based marketing meaning"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function AbmPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#2563EB"
+      title={TITLE}
+      tagline="Treating a short list of named companies as a market of one each, instead of one broad list."
+      definition="Account-based marketing targets a short list of named companies directly, coordinating outreach across every relevant stakeholder inside each one, instead of messaging a broad, generic list."
+      body="Where broad outbound optimises for volume across thousands of leads, ABM optimises for depth across a few dozen accounts that are individually worth the extra research and multi-threaded outreach it takes to win them."
+      sourceLabel="See the service: Account-Based Marketing"
+      sourceHref="/services/account-based-marketing"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

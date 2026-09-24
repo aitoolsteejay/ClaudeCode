@@ -104,7 +104,7 @@ export default function LeadsOnAutopilotGuide() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(0,119,181,0.3)", backgroundColor: "rgba(0,119,181,0.08)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#0077b5" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0077b5" }}>LinkedIn Lead Generation</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0077b5" }}>LinkedIn Lead Generation · Step-by-Step Guide</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Leads on<br />

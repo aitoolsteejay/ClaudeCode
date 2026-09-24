@@ -26,6 +26,7 @@ export const TAG_COLORS: Record<string, string> = {
   "Metrics & Reporting": "#10b981",
   "Sales Strategy": "#f97316",
   Positioning: "#7C3AED",
+  "GTM Strategy": "#2563EB",
 };
 
 const DEFAULT_ACCENT = "#8C8279";

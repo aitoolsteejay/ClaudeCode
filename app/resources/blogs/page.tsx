@@ -215,6 +215,20 @@ const BLOG_POSTS: BlogPost[] = [
     excerpt: "Most outbound teams track the wrong numbers. These 7 metrics tell you exactly where your pipeline is leaking, and how to fix it.",
     readTime: "7 min read",
   },
+  {
+    href: "/blog/what-is-b2b-outbound-sales",
+    tags: ["GTM Strategy"],
+    title: "What Is B2B Outbound Sales? A Complete Guide",
+    excerpt: "What outbound sales actually means, the channels and roles behind it, and how to tell if it's the right fit for your company.",
+    readTime: "8 min read",
+  },
+  {
+    href: "/blog/cold-email-sequence-templates",
+    tags: ["Cold Outreach"],
+    title: "Cold Email Sequence Templates That Get Replies",
+    excerpt: "5 cold email templates for a full outbound sequence, from the first touch to the breakup email, with the reasoning behind each one.",
+    readTime: "7 min read",
+  },
 ];
 
 interface MediumPost {

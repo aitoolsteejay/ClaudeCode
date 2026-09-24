@@ -122,6 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/how-to-set-up-vibe-prospecting`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/golden-icp-framework`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/instagram-resources/leads-on-autopilot-guide`, lastModified: "2026-09-24T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Careers
     { url: `${base}/careers`, lastModified: "2026-09-07T14:47:31+05:30", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/careers/lead-gen-strategist`, lastModified: "2026-09-07T13:17:10+05:30", changeFrequency: "monthly", priority: 0.5 },

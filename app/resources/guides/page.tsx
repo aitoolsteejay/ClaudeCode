@@ -89,6 +89,14 @@ const GUIDES = [
     accent: "#F5B731",
   },
   {
+    href: "/instagram-resources/leads-on-autopilot-guide",
+    tag: "LinkedIn Lead Generation",
+    title: "Leads on Autopilot: A Step-by-Step Framework",
+    excerpt: "A complete system to generate high-quality leads on LinkedIn without cold pitching: audience clarity, content authority, outreach, nurturing, and follow-ups.",
+    readTime: "9 min read",
+    accent: "#0077b5",
+  },
+  {
     href: "/careers-and-job-guide",
     tag: "Careers & Jobs",
     title: "Career Jumpstart Toolkit",

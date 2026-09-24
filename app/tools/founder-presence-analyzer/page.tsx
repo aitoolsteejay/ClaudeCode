@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
+import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
 import FounderPresenceClient from "./FounderPresenceClient";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     "ai linkedin presence checker",
   ],
   alternates: { canonical: "https://www.myntmore.com/tools/founder-presence-analyzer" },
+  ...buildToolSocialMetadata("Founder Presence Analyzer", "Free AI tool that benchmarks your LinkedIn presence against competitors and gives you positioning recommendations. Try it free.", "/tools/founder-presence-analyzer"),
 };
 
 const APP_SCHEMA = buildWebApplicationSchema({

@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
+import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
 import CaseStudyGeneratorClient from "./CaseStudyGeneratorClient";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     "free proposal draft generator",
   ],
   alternates: { canonical: "https://www.myntmore.com/tools/case-study-generator" },
+  ...buildToolSocialMetadata("Case Study & Proposal Generator", "Free AI tool that turns a finished project into a case study, or a conversation into a proposal draft. No invented numbers. Try it free.", "/tools/case-study-generator"),
 };
 
 const APP_SCHEMA = buildWebApplicationSchema({

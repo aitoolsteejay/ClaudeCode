@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
+import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
 import LeadMagnetIdeasClient from "./LeadMagnetIdeasClient";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     "how to create a lead magnet",
   ],
   alternates: { canonical: "https://www.myntmore.com/tools/lead-magnet-ideas" },
+  ...buildToolSocialMetadata("Lead Magnet Idea Generator", "Free AI tool that turns your business, ICP, and industry into concrete lead magnet ideas you can use in cold email and LinkedIn outreach.", "/tools/lead-magnet-ideas"),
 };
 
 const APP_SCHEMA = buildWebApplicationSchema({

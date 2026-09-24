@@ -74,9 +74,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@myntmore",
     creator: "@myntmore",
-    title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
-    description:
-      "We build and run your outbound engine using AI agents and human intelligence. Cold email, LinkedIn outreach, and ABM that books qualified meetings at scale.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
+import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
 import ICPBuilderClient from "./ICPBuilderClient";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     "generate ideal customer profile from business description",
   ],
   alternates: { canonical: "https://www.myntmore.com/tools/icp-builder" },
+  ...buildToolSocialMetadata("ICP Builder & Value Proposition Generator", "Free AI tool that builds deep B2B and D2C ICPs from your business description, plus a value proposition for each. Try it free.", "/tools/icp-builder"),
 };
 
 const APP_SCHEMA = buildWebApplicationSchema({

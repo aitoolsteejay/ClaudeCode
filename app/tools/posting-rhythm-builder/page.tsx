@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
+import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
 import PostingRhythmClient from "./PostingRhythmClient";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     "linkedin posting cadence generator",
   ],
   alternates: { canonical: "https://www.myntmore.com/tools/posting-rhythm-builder" },
+  ...buildToolSocialMetadata("Posting Rhythm Builder", "Free tool to plan a consistent LinkedIn posting rhythm and content cadence for your ICP. Try it free.", "/tools/posting-rhythm-builder"),
 };
 
 const APP_SCHEMA = buildWebApplicationSchema({

@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
+import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
 import ProfileOptimizerClient from "./ProfileOptimizerClient";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     "ai linkedin headline generator",
   ],
   alternates: { canonical: "https://www.myntmore.com/tools/linkedin-optimizer" },
+  ...buildToolSocialMetadata("LinkedIn Profile Optimizer", "Free AI-powered LinkedIn profile audit and rewrite. Get a profile optimised to convert visitors into high-intent inbound replies.", "/tools/linkedin-optimizer"),
 };
 
 const APP_SCHEMA = buildWebApplicationSchema({

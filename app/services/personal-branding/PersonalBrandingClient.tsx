@@ -50,20 +50,6 @@ const NOT_FOR = [
   "You're chasing viral reach rather than a steady, credibility-building presence with your ICP.",
 ];
 
-const TESTIMONIALS = [
-  {
-    quote: "I used to spend Sunday nights trying to write a LinkedIn post that didn't sound like everyone else's. Myntmore's interview process pulled out stories I wouldn't have thought to share myself, and my profile views are up 9x in two months.",
-    name: "Founder & CEO",
-    co: "B2B SaaS · Series A",
-    color: "#D97706",
-  },
-  {
-    quote: "The best part isn't the posts, it's the DMs. Prospects reference something I wrote before they've even had a call with our team. That never happened when we were relying on outbound alone.",
-    name: "Managing Partner",
-    co: "Professional Services",
-    color: "#0077b5",
-  },
-];
 
 const FAQ_ITEMS = [
   {
@@ -514,43 +500,20 @@ export default function PersonalBrandingClient() {
         </div>
       </section>
 
-      {/* ── Testimonials ─────────────────────────────────────── */}
+      {/* ── Track record ─────────────────────────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
-              Client Results
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>What clients say</h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="rounded-2xl border p-8 relative" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                <div className="absolute top-6 right-6 text-5xl font-black leading-none select-none" style={{ color: t.color, opacity: 0.15 }}>&ldquo;</div>
-                <p className="text-sm leading-relaxed mb-6 relative z-10" style={{ color: "#3D3D3D" }}>&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0"
-                    style={{ backgroundColor: `${t.color}15`, color: t.color }}>
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold" style={{ color: "#0a0a0a" }}>{t.name}</div>
-                    <div className="text-xs" style={{ color: "#8C8279" }}>{t.co}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/case-studies/professional-services-linkedin" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-              style={{ color: "#D97706" }}>
-              Read how a LinkedIn brand drove 3x inbound in 90 days
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#3D3D3D" }}>
+            Built by the same team running the personal-brand content behind{" "}
+            <span className="font-bold" style={{ color: "#0a0a0a" }}>12K+ B2B meetings booked</span> and $120M+ in pipeline generated for our clients.
+          </p>
+          <Link href="/case-studies/professional-services-linkedin" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+            style={{ color: "#D97706" }}>
+            Read how a LinkedIn brand drove 3x inbound in 90 days
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 

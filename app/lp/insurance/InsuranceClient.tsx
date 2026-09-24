@@ -73,25 +73,15 @@ const STATS = [
   { value: 1.4, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for broker clients", decimal: true },
 ];
 
-const CASE_STUDIES = [
-  {
-    tag: "Group Health Insurance Broker · Mumbai",
-    headline: "0 to 17 qualified corporate conversations in 60 days",
-    body: "A group health insurance brokerage was entirely dependent on referrals from existing clients. We mapped their ICP to 150-800 employee companies across IT and manufacturing, built verified HR Head and CFO contact lists timed to each company's renewal month, and ran a credibility-led email plus LinkedIn sequence. In 60 days they had 17 qualified conversations booked, with 5 converting into new corporate accounts.",
-    results: ["17 meetings booked", "5 new corporate accounts", "60-day ramp"],
-  },
-  {
-    tag: "Commercial & Property Insurance Agency · Bengaluru",
-    headline: "22 decision-maker meetings booked in one quarter",
-    body: "A commercial property and liability insurance agency had a strong book of business but no outbound motion of its own. We built a target list of asset-heavy businesses, manufacturing units, warehouses, and multi-site retail chains, approaching Admin Heads and CFOs roughly 90 days ahead of their renewal dates. The agency booked 22 qualified meetings in the quarter and added 6 new commercial accounts.",
-    results: ["22 meetings booked", "6 new accounts", "90-day renewal targeting"],
-  },
-  {
-    tag: "Keyman & Corporate Liability Specialist · Mumbai",
-    headline: "A steady stream of CFO conversations, replacing word-of-mouth",
-    body: "A boutique broker specialising in keyman insurance and corporate liability cover for mid-size companies relied entirely on founder relationships for new business. We built an ICP around funded companies with recent leadership hires, ran LinkedIn credibility content alongside targeted outreach to CFOs and Finance Heads, and stood up a repeatable meeting pipeline. They now book 8 to 10 qualified conversations every month without a single referral ask.",
-    results: ["8-10 meetings/month (ongoing)", "Zero referral dependency", "Consistent CFO pipeline"],
-  },
+// Real, sitewide-published track record (same figures used on /1-on-1-consultation,
+// /marketing-automation, and the services index), not broker-specific results we
+// don't have a verified breakdown for. Deliberately not inventing per-client
+// case studies to fill this section.
+const TRACK_RECORD = [
+  { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
+  { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
+  { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
+  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
 ];
 
 const PROCESS = [
@@ -303,29 +293,28 @@ function ProcessSection() {
 
 function CaseStudiesSection() {
   const titleFade = useScrollFade(0);
-  const c1 = useScrollFade(0);
-  const c2 = useScrollFade(80);
-  const c3 = useScrollFade(160);
-  const cRefs = [c1, c2, c3];
+  const r0 = useCountUp(12, 1600, (n) => `${Math.round(n)}K+`);
+  const r1 = useCountUp(38, 1400, (n) => `${Math.round(n)}%`);
+  const r2 = useCountUp(120, 1800, (n) => `$${Math.round(n)}M+`);
+  const r3 = useCountUp(18, 1500, (n) => `${Math.round(n)} days`);
+  const refs = [r0, r1, r2, r3];
+  const initials = ["0K+", "0%", "$0M+", "0 days"];
 
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What we have built for brokers like yours</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for brokers</h2>
         </div>
-        <div className="space-y-6">
-          {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
-              <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
-              <div className="flex flex-wrap gap-3">
-                {cs.results.map((r) => (
-                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
-                ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {TRACK_RECORD.map((t, i) => (
+            <div key={t.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-xl mb-2" aria-hidden="true">{t.icon}</div>
+              <div className="text-3xl sm:text-4xl font-black mb-2" style={{ color: "#0a0a0a" }}>
+                <span ref={refs[i]}>{initials[i]}</span>
               </div>
+              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{t.label}</div>
             </div>
           ))}
         </div>

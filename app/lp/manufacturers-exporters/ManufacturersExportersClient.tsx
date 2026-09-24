@@ -64,25 +64,15 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
   return ref;
 }
 
-const CASE_STUDIES = [
-  {
-    tag: "Auto Parts Exporter · Gujarat",
-    headline: "14 qualified international buyer meetings in one quarter",
-    body: "An auto components manufacturer with ISO certification was relying solely on trade fairs and B2B portals. We built a prospect list of procurement managers and sourcing heads at Tier-1 auto manufacturers in Europe and Southeast Asia, and ran a targeted cold email + LinkedIn campaign. In one quarter, they booked 14 meetings, with 3 leading to formal RFQs.",
-    results: ["14 international buyer meetings", "3 RFQs initiated", "2 new export markets"],
-  },
-  {
-    tag: "Textile Manufacturer · Surat",
-    headline: "Distributor partnerships in 3 new countries within 90 days",
-    body: "A Surat-based synthetic textile manufacturer wanted to break into the Middle East and African markets without spending on trade delegations. We mapped importer and distributor profiles across UAE, Kenya, and Nigeria, built personalised outreach referencing their product categories, and ran a consistent campaign. 90 days later: 11 distributor conversations, 3 signed partnership agreements.",
-    results: ["11 distributor conversations", "3 partnership agreements", "UAE, Kenya, Nigeria markets"],
-  },
-  {
-    tag: "Industrial Equipment · Pune",
-    headline: "₹3.2Cr B2B export pipeline for a capital goods manufacturer",
-    body: "A Pune-based capital goods company was selling domestically but struggling to break into international markets. We identified their target buyer, factory operators and procurement VPs at mid-sized industrial companies in ASEAN, and built an ABM campaign with personalised decks and email sequences. Result: 9 meetings with qualified buyers, ₹3.2Cr in active pipeline.",
-    results: ["9 qualified buyer meetings", "₹3.2Cr pipeline", "ASEAN market entry"],
-  },
+// Real, sitewide-published track record (same figures used on /1-on-1-consultation,
+// /marketing-automation, and the services index), not manufacturer-specific
+// results we don't have a verified breakdown for. Deliberately not inventing
+// per-client case studies to fill this section.
+const TRACK_RECORD = [
+  { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
+  { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
+  { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
+  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
 ];
 
 const PROCESS = [
@@ -294,26 +284,27 @@ function ProcessSection() {
 
 function CaseStudiesSection() {
   const titleFade = useScrollFade(0);
-  const c1 = useScrollFade(0); const c2 = useScrollFade(80); const c3 = useScrollFade(160);
-  const cRefs = [c1, c2, c3];
+  const r0 = useCountUp(12, 1600, (n) => `${Math.round(n)}K+`);
+  const r1 = useCountUp(38, 1400, (n) => `${Math.round(n)}%`);
+  const r2 = useCountUp(120, 1800, (n) => `$${Math.round(n)}M+`);
+  const r3 = useCountUp(18, 1500, (n) => `${Math.round(n)} days`);
+  const refs = [r0, r1, r2, r3];
+  const initials = ["0K+", "0%", "$0M+", "0 days"];
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What we have built for manufacturers like yours</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for manufacturers</h2>
         </div>
-        <div className="space-y-6">
-          {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
-              <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
-              <div className="flex flex-wrap gap-3">
-                {cs.results.map((r) => (
-                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
-                ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {TRACK_RECORD.map((t, i) => (
+            <div key={t.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-xl mb-2" aria-hidden="true">{t.icon}</div>
+              <div className="text-3xl sm:text-4xl font-black mb-2" style={{ color: "#0a0a0a" }}>
+                <span ref={refs[i]}>{initials[i]}</span>
               </div>
+              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{t.label}</div>
             </div>
           ))}
         </div>

@@ -73,25 +73,15 @@ const STATS = [
   { value: 2.4, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for agency clients", decimal: true },
 ];
 
-const CASE_STUDIES = [
-  {
-    tag: "Digital Marketing Agency · Mumbai",
-    headline: "0 to 23 qualified retainer conversations in 60 days",
-    body: "A 14-person performance marketing agency was relying entirely on referrals. We mapped their ICP to funded D2C and e-commerce brands, built a 3-touch cold email sequence, and layered LinkedIn DMs targeting CMOs and Growth Leads. Within 60 days they had 23 qualified conversations booked, with 6 converting to retainers in the first quarter.",
-    results: ["23 meetings booked", "6 retainer clients won", "₹78L new ARR"],
-  },
-  {
-    tag: "IT Services & Staffing · Pune",
-    headline: "₹1.2Cr pipeline built for an IT staffing firm in 45 days",
-    body: "An IT staffing company was burning budget on job boards with zero outbound motion. We built an ABM list of 400 engineering-heavy companies raising Series A/B, crafted hyper-personalised emails referencing their job postings, and ran a LinkedIn outreach sequence to HR Heads and CTOs. Result: 18 meetings, 4 commercial proposals sent, ₹1.2Cr pipeline created.",
-    results: ["18 meetings booked", "4 proposals sent", "₹1.2Cr pipeline"],
-  },
-  {
-    tag: "Web & App Development Agency · Bengaluru",
-    headline: "Consistent 15 demos/month for a dev shop with no sales team",
-    body: "A 30-person product development agency had great delivery but no repeatable lead generation. We identified their sweet spot, funded fintech and healthtech startups needing a tech partner, and built a full outbound engine with automated personalisation at scale. They now run 15 qualified demos every month with one part-time SDR.",
-    results: ["15 demos/month (ongoing)", "₹60L avg deal size", "1 SDR, fully handled"],
-  },
+// Real, sitewide-published track record (same figures used on /1-on-1-consultation,
+// /marketing-automation, and the services index), not agency-specific results we
+// don't have a verified breakdown for. Deliberately not inventing per-client
+// case studies to fill this section.
+const TRACK_RECORD = [
+  { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
+  { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
+  { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
+  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
 ];
 
 const PROCESS = [
@@ -303,29 +293,28 @@ function ProcessSection() {
 
 function CaseStudiesSection() {
   const titleFade = useScrollFade(0);
-  const c1 = useScrollFade(0);
-  const c2 = useScrollFade(80);
-  const c3 = useScrollFade(160);
-  const cRefs = [c1, c2, c3];
+  const r0 = useCountUp(12, 1600, (n) => `${Math.round(n)}K+`);
+  const r1 = useCountUp(38, 1400, (n) => `${Math.round(n)}%`);
+  const r2 = useCountUp(120, 1800, (n) => `$${Math.round(n)}M+`);
+  const r3 = useCountUp(18, 1500, (n) => `${Math.round(n)} days`);
+  const refs = [r0, r1, r2, r3];
+  const initials = ["0K+", "0%", "$0M+", "0 days"];
 
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What we have built for agencies like yours</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for agencies</h2>
         </div>
-        <div className="space-y-6">
-          {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
-              <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
-              <div className="flex flex-wrap gap-3">
-                {cs.results.map((r) => (
-                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
-                ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {TRACK_RECORD.map((t, i) => (
+            <div key={t.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-xl mb-2" aria-hidden="true">{t.icon}</div>
+              <div className="text-3xl sm:text-4xl font-black mb-2" style={{ color: "#0a0a0a" }}>
+                <span ref={refs[i]}>{initials[i]}</span>
               </div>
+              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{t.label}</div>
             </div>
           ))}
         </div>

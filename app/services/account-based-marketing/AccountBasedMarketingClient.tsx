@@ -50,21 +50,6 @@ const NOT_FOR = [
   "You're running a broad-market volume play, not a focused push on specific accounts.",
 ];
 
-const TESTIMONIALS = [
-  {
-    quote: "We had a list of 80 target accounts and no real plan for reaching more than one person at each. Myntmore built the tiering and the multi-channel sequencing, and within a quarter we had multiple stakeholders engaged at our top accounts before a single AE call happened.",
-    name: "VP Marketing",
-    co: "B2B SaaS · Series B",
-    color: "#6366f1",
-  },
-  {
-    quote: "The account-level reporting alone changed how our sales and marketing teams talk to each other. Everyone can see exactly who's been touched, on which channel, and what they engaged with, before the first sales call is even booked.",
-    name: "Head of RevOps",
-    co: "Enterprise Software",
-    color: "#D97706",
-  },
-];
-
 const FAQ_ITEMS = [
   {
     q: "How is this different from your other lead generation services?",
@@ -520,43 +505,20 @@ export default function AccountBasedMarketingClient() {
         </div>
       </section>
 
-      {/* ── Testimonials ─────────────────────────────────────── */}
+      {/* ── Track record ─────────────────────────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
-              Client Results
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>What clients say</h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="rounded-2xl border p-8 relative" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                <div className="absolute top-6 right-6 text-5xl font-black leading-none select-none" style={{ color: t.color, opacity: 0.15 }}>&ldquo;</div>
-                <p className="text-sm leading-relaxed mb-6 relative z-10" style={{ color: "#3D3D3D" }}>&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0"
-                    style={{ backgroundColor: `${t.color}15`, color: t.color }}>
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold" style={{ color: "#0a0a0a" }}>{t.name}</div>
-                    <div className="text-xs" style={{ color: "#8C8279" }}>{t.co}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/case-studies" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-              style={{ color: "#6366f1" }}>
-              Read the full case studies
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#3D3D3D" }}>
+            Built by the same team running the account-based programs behind{" "}
+            <span className="font-bold" style={{ color: "#0a0a0a" }}>12K+ B2B meetings booked</span> and $120M+ in pipeline generated for our clients.
+          </p>
+          <Link href="/case-studies" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+            style={{ color: "#6366f1" }}>
+            Read the full case studies
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 

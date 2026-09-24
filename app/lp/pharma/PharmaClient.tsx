@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 import LpLayout from "../LpLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
@@ -64,25 +65,15 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
   return ref;
 }
 
-const CASE_STUDIES = [
-  {
-    tag: "API Manufacturer · Gujarat",
-    headline: "16 international buyer meetings in one quarter for a WHO-GMP certified facility",
-    body: "A mid-sized API manufacturer had a strong certification profile but relied entirely on CPHI and one or two exhibitions a year to find buyers. We mapped their therapeutic categories and target geographies, built verified contact lists of procurement heads and import managers at formulation companies abroad, and ran outreach that referenced their certifications factually. In one quarter: 16 buyer meetings, 4 contract-manufacturing discussions opened.",
-    results: ["16 international buyer meetings", "4 CDMO discussions opened", "2 new export markets"],
-  },
-  {
-    tag: "Formulation Manufacturer · Himachal Pradesh",
-    headline: "22 hospital and distributor meetings booked in 90 days, domestically",
-    body: "A domestic formulation manufacturer wanted to reach hospital purchase committees and regional distributors directly instead of waiting on tender notices and field visits. We built a list of purchase committee members, distribution partners, and chemist chain buyers across four states, and ran a compliance-aware outreach sequence referencing their plant certifications. Result: 22 qualified meetings and 5 new distributor tie-ups within 90 days.",
-    results: ["22 meetings booked", "5 distributor tie-ups", "₹1.4Cr pipeline"],
-  },
-  {
-    tag: "CDMO / Contract Manufacturer · Ahmedabad",
-    headline: "Parallel domestic and export pipeline for a contract manufacturing company",
-    body: "A contract manufacturer wanted both new export partners and domestic institutional buyers running at the same time, without adding headcount. We split targeting into two tracks, global importers and sourcing heads for one, hospital procurement and distributors for the other, each with its own messaging. Within the first quarter, both tracks were producing qualified meetings every week.",
-    results: ["19 meetings across both tracks", "3 export LOIs signed", "₹2.1Cr combined pipeline"],
-  },
+// Real, sitewide-published track record (same figures used on /1-on-1-consultation,
+// /marketing-automation, and the services index). We do have a real, verified
+// pharma case study (see the link below) -- deliberately not inventing
+// additional per-client examples on top of it.
+const TRACK_RECORD = [
+  { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
+  { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
+  { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
+  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
 ];
 
 const PROCESS = [
@@ -300,29 +291,90 @@ function ProcessSection() {
 
 function CaseStudiesSection() {
   const titleFade = useScrollFade(0);
-  const c1 = useScrollFade(0);
-  const c2 = useScrollFade(80);
-  const c3 = useScrollFade(160);
-  const cRefs = [c1, c2, c3];
+  const r0 = useCountUp(12, 1600, (n) => `${Math.round(n)}K+`);
+  const r1 = useCountUp(38, 1400, (n) => `${Math.round(n)}%`);
+  const r2 = useCountUp(120, 1800, (n) => `$${Math.round(n)}M+`);
+  const r3 = useCountUp(18, 1500, (n) => `${Math.round(n)} days`);
+  const refs = [r0, r1, r2, r3];
+  const initials = ["0K+", "0%", "$0M+", "0 days"];
 
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What we have built for pharma companies like yours</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for pharma</h2>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          {TRACK_RECORD.map((t, i) => (
+            <div key={t.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-xl mb-2" aria-hidden="true">{t.icon}</div>
+              <div className="text-3xl sm:text-4xl font-black mb-2" style={{ color: "#0a0a0a" }}>
+                <span ref={refs[i]}>{initials[i]}</span>
+              </div>
+              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{t.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center">
+          <Link href="/case-studies/uk-pharma-qualified-meetings" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+            style={{ color: "#D97706" }}>
+            Read how a UK pharma company grew to 20+ qualified meetings a month
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Hypothetical, clearly-labeled scenarios (same "Illustrative example" convention
+// used on /lp/agency-partners) showing what each real service angle from the
+// pharma playbook looks like in a specific market. Not real client claims --
+// we don't have verified per-country pharma results to publish yet.
+const MARKET_SCENARIOS = [
+  {
+    tag: "Formulation manufacturer entering Nigeria · Illustrative example",
+    headline: "Finding the distributor who already sells to the chemists you can't reach",
+    body: "An Indian formulation maker wants to sell in Nigeria but has no one on the ground. Rather than cold-emailing hospitals directly, outreach targets owners and BD heads at established pharma importers and distributors already selling to that market; local partners who know the registration process, the stockists, and which chemist chains matter. The win isn't a single sale, it's a partner who keeps bringing business after the first container lands.",
+  },
+  {
+    tag: "API maker sourcing backup buyers in the UAE · Illustrative example",
+    headline: "Reaching purchase heads who need a second source, not a new vendor pitch",
+    body: "Formulation companies in the Middle East often want a backup API supplier so one shipment delay doesn't stop their plant. Outreach here isn't a generic sales pitch, it names the specific API and the approvals behind it, and asks a purchase or sourcing head a direct question: do you have a second source for this. Short, specific, and easy to say yes to a 20-minute call.",
+  },
+  {
+    tag: "Contract manufacturer filling capacity in Vietnam · Illustrative example",
+    headline: "Turning empty plant lines into conversations with brand owners who need one",
+    body: "A contract manufacturer with spare capacity loses money on every idle line. Outreach targets brand owners and sourcing heads at Southeast Asian pharma companies who don't run their own plant, positioning the dosage form and the approval the facility already holds. The goal is a short list of real conversations with buyers who need exactly that capacity, not a mass blast to every company in the region.",
+  },
+];
+
+function MarketScenariosSection() {
+  const titleFade = useScrollFade(0);
+  const c1 = useScrollFade(0);
+  const c2 = useScrollFade(80);
+  const c3 = useScrollFade(160);
+  const cRefs = [c1, c2, c3];
+
+  return (
+    <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      <div className="max-w-5xl mx-auto">
+        <div ref={titleFade} className="mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Illustrative scenarios</span>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What this looks like, market by market</h2>
+          <p className="text-sm mt-3 max-w-2xl" style={{ color: "#8C8279" }}>
+            Hypothetical examples built from the real angles we run, not claims about a specific past client.
+          </p>
         </div>
         <div className="space-y-6">
-          {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+          {MARKET_SCENARIOS.map((cs, i) => (
+            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
               <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
-              <div className="flex flex-wrap gap-3">
-                {cs.results.map((r) => (
-                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
-                ))}
-              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{cs.body}</p>
             </div>
           ))}
         </div>
@@ -439,6 +491,7 @@ export default function PharmaClient() {
       />
       <ProcessSection />
       <CaseStudiesSection />
+      <MarketScenariosSection />
       <Faq title="Common questions from pharma manufacturers" items={FAQ_ITEMS} />
       <DarkCTASection />
       <FormSection />

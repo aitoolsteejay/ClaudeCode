@@ -64,25 +64,16 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
   return ref;
 }
 
-const CASE_STUDIES = [
-  {
-    tag: "B2B SaaS · HR Tech · Series A",
-    headline: "0 to 28 qualified demos per month in 60 days",
-    body: "An HR-tech startup had great product-market fit within their network but couldn't scale beyond warm intros. We mapped their ICP to CHROs and HR Heads at companies with 200-1000 employees scaling through a hiring spike, and built a cold email + LinkedIn sequence referencing hiring triggers. In 60 days, their AE calendar was fully booked with 28 demos/month, 7 converted to paid.",
-    results: ["28 demos/month", "7 paid conversions", "60-day ramp"],
-  },
-  {
-    tag: "PropTech SaaS · Seed Stage · Mumbai",
-    headline: "Sales calendar filled in 45 days, ₹48L in new ARR",
-    body: "A PropTech SaaS founder was spending 20 hours a week on manual LinkedIn outreach with no system. We rebuilt their outbound from scratch: ICP mapping to real estate developers and property management companies, automated personalisation based on their portfolio size and recent projects, and a 4-touch sequence. 45 days later: 19 demos, ₹48L ARR in new contracts.",
-    results: ["19 qualified demos", "₹48L new ARR", "45-day turnaround"],
-  },
-  {
-    tag: "Fintech SaaS · Pre-Series A · Bengaluru",
-    headline: "3 enterprise pilots closed from cold outreach in one quarter",
-    body: "A B2B fintech startup targeting CFOs at mid-market companies was struggling to get past gatekeepers. We built a hyper-targeted ABM campaign (personalised research notes for each account, multi-touch sequences mixing email and LinkedIn) and coached them on objection handling. In one quarter: 22 meetings, 3 enterprise pilots closed, 2 expanding.",
-    results: ["22 meetings booked", "3 enterprise pilots", "2 expansion deals"],
-  },
+// Real, sitewide-published track record (same figures used on /1-on-1-consultation,
+// /marketing-automation, and the services index) describing our general B2B
+// outbound capability -- not SaaS-specific results, since we don't have a
+// verified per-client breakdown to publish here yet. Deliberately not
+// inventing per-client case studies to fill this section.
+const TRACK_RECORD = [
+  { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
+  { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
+  { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
+  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
 ];
 
 const PROCESS = [
@@ -283,26 +274,27 @@ function ProcessSection() {
 
 function CaseStudiesSection() {
   const titleFade = useScrollFade(0);
-  const c1 = useScrollFade(0); const c2 = useScrollFade(80); const c3 = useScrollFade(160);
-  const cRefs = [c1, c2, c3];
+  const r0 = useCountUp(12, 1600, (n) => `${Math.round(n)}K+`);
+  const r1 = useCountUp(38, 1400, (n) => `${Math.round(n)}%`);
+  const r2 = useCountUp(120, 1800, (n) => `$${Math.round(n)}M+`);
+  const r3 = useCountUp(18, 1500, (n) => `${Math.round(n)} days`);
+  const refs = [r0, r1, r2, r3];
+  const initials = ["0K+", "0%", "$0M+", "0 days"];
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What we have built for SaaS companies like yours</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for SaaS founders</h2>
         </div>
-        <div className="space-y-6">
-          {CASE_STUDIES.map((cs, i) => (
-            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
-              <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
-              <div className="flex flex-wrap gap-3">
-                {cs.results.map((r) => (
-                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
-                ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {TRACK_RECORD.map((t, i) => (
+            <div key={t.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-xl mb-2" aria-hidden="true">{t.icon}</div>
+              <div className="text-3xl sm:text-4xl font-black mb-2" style={{ color: "#0a0a0a" }}>
+                <span ref={refs[i]}>{initials[i]}</span>
               </div>
+              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{t.label}</div>
             </div>
           ))}
         </div>

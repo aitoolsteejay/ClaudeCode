@@ -50,21 +50,6 @@ const NOT_FOR = [
   "You don't have a verifiable business email list to build a real ICP from.",
 ];
 
-const TESTIMONIALS = [
-  {
-    quote: "Our previous agency's cold email campaigns had a 12% inbox rate. Within three weeks of Myntmore taking over the infrastructure, we were at 97% inbox placement. The difference in reply volume was night and day: we went from 2 meetings a month to 14.",
-    name: "VP of Sales",
-    co: "Series B SaaS · MarTech",
-    color: "#16a34a",
-  },
-  {
-    quote: "I was sceptical that deliverability could make that much difference. Myntmore showed me the data: same copy, same list, but going from spam folder to primary inbox literally tripled our reply rate. The infrastructure layer is everything.",
-    name: "Founder & CEO",
-    co: "B2B Fintech · Seed Stage",
-    color: "#7C3AED",
-  },
-];
-
 const FAQ_ITEMS = [
   {
     q: "Why do we need separate sending domains?",
@@ -521,43 +506,20 @@ export default function ColdEmailClient() {
         </div>
       </section>
 
-      {/* ── Testimonials ─────────────────────────────────────── */}
+      {/* ── Track record ─────────────────────────────────────── */}
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
-              Client Results
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>What clients say</h2>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="rounded-2xl border p-8 relative" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                <div className="absolute top-6 right-6 text-5xl font-black leading-none select-none" style={{ color: t.color, opacity: 0.15 }}>&ldquo;</div>
-                <p className="text-sm leading-relaxed mb-6 relative z-10" style={{ color: "#3D3D3D" }}>&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0"
-                    style={{ backgroundColor: `${t.color}15`, color: t.color }}>
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold" style={{ color: "#0a0a0a" }}>{t.name}</div>
-                    <div className="text-xs" style={{ color: "#8C8279" }}>{t.co}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/case-studies/ecommerce-conversion-playbook" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-              style={{ color: "#16a34a" }}>
-              Read how cold email added $400K in pipeline in 6 weeks
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "#3D3D3D" }}>
+            Built by the same team running the cold email infrastructure behind{" "}
+            <span className="font-bold" style={{ color: "#0a0a0a" }}>12K+ B2B meetings booked</span> and $120M+ in pipeline generated for our clients.
+          </p>
+          <Link href="/case-studies/ecommerce-conversion-playbook" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+            style={{ color: "#16a34a" }}>
+            Read how cold email added $400K in pipeline in 6 weeks
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 

@@ -14,7 +14,7 @@ const DESCRIPTION = "Total Conversional Market (TCM) is the highly specific, hig
 const META_DESCRIPTION = "Total Conversional Market (TCM): the motivated slice of your TAM feeling the pain today and ready to act. How TCM differs from TAM, and how to target it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} — B2B Glossary`,
+  title: `${TITLE} | B2B Glossary`,
   description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   keywords: ["total conversional market", "tcm vs tam", "total addressable market vs total conversional market", "b2b targeting definition", "how to define your icp"],
@@ -83,7 +83,7 @@ export default function TotalConversionalMarketPage() {
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#8C8279" }}>Where this comes from</p>
             <Link href="/blog/tam-trap-vague-targeting" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#D97706" }}>
-              Read: The TAM Trap — Why Vague Targeting Is Quietly Killing Your Outbound Pipeline
+              Read: The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>

@@ -249,6 +249,19 @@ function formatMediumDate(pubDate: string): string {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
+// Press mentions of the team, separate from the Medium feed above since these
+// aren't Medium posts -- keep them out of the "Also on Medium" grid so the
+// section heading and "Follow on Medium" CTA stay accurate.
+const PRESS_MENTIONS = [
+  {
+    outlet: "Mid-Day",
+    date: "Sep 20, 2026",
+    title: "New podcast 'The Next Lesson with Hemali Dalal' explores the realities of education and growing up",
+    excerpt: "Founder Tejas Jhaveri joined journalist Faye D'Souza at the launch of Hemali Dalal's new podcast on education and growing up today.",
+    link: "https://www.mid-day.com/sunday-mid-day/article/new-podcast-the-next-lesson-with-hemali-dalal-explores-the-realities-of-education-and-growing-up-23650899",
+  },
+];
+
 export default async function BlogsPage() {
   const mediumPosts = await getMediumPosts();
 
@@ -324,6 +337,27 @@ export default async function BlogsPage() {
                   <span className="text-xs font-semibold" style={{ color: "#8C8279" }}>{formatMediumDate(post.pubDate)}</span>
                   <h3 className="text-base font-black mt-2 mb-3 leading-snug" style={{ color: "#0a0a0a" }}>{post.title}</h3>
                   <span className="text-xs font-bold" style={{ color: "#0a0a0a" }}>Read on Medium ↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {PRESS_MENTIONS.length > 0 && (
+        <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" strokeWidth="2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4 5h16M4 12h16M4 19h10" /></svg>
+              <h2 className="text-2xl font-black" style={{ color: "#0a0a0a" }}>In the press</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {PRESS_MENTIONS.map((mention) => (
+                <a key={mention.link} href={mention.link} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                  <span className="text-xs font-semibold" style={{ color: "#8C8279" }}>{mention.outlet} · {mention.date}</span>
+                  <h3 className="text-base font-black mt-2 mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{mention.title}</h3>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "#52525B" }}>{mention.excerpt}</p>
+                  <span className="text-xs font-bold" style={{ color: "#0a0a0a" }}>Read on {mention.outlet} ↗</span>
                 </a>
               ))}
             </div>

@@ -208,6 +208,22 @@ export default function InternationalPricingPage() {
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full" style={{ minWidth: 560 }}>
+                  <thead>
+                    <tr style={{ borderBottom: "1px solid #E8E2D9" }}>
+                      <th className="px-4 sm:px-6 py-3 text-left text-xs font-black uppercase tracking-widest sticky left-0" style={{ color: "#8C8279", backgroundColor: "#ffffff", minWidth: 220 }}>
+                        Feature
+                      </th>
+                      {TIERS.map((tier) => (
+                        <th
+                          key={tier.name}
+                          className="px-4 py-3 text-center text-xs font-black"
+                          style={{ color: tier.featured ? "#B45309" : "#0a0a0a", backgroundColor: tier.featured ? "rgba(245,183,49,0.06)" : "#ffffff", width: 130 }}
+                        >
+                          {tier.name}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
                   <tbody>
                     {DIFFERENTIATORS.map((row, i) => (
                       <tr key={row.label} style={{ borderTop: i > 0 ? "1px solid #E8E2D9" : "none" }}>

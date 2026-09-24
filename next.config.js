@@ -37,6 +37,8 @@ const nextConfig = {
       // Console. Points at the careers hub rather than the similarly named
       // intern listing, which is a different seniority and salary band.
       { source: "/careers/content-strategist", destination: "/careers", permanent: true },
+      // Retired full-time role (removed 2026-09-24), no longer listed on /careers.
+      { source: "/careers/senior-sales-head", destination: "/careers", permanent: true },
 
       // Legacy WordPress URLs from the previous site, still being crawled and
       // reported as 404s. Only the ones with a genuine present-day equivalent

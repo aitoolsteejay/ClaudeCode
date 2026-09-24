@@ -95,7 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/instagram-resources/golden-icp-framework`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Careers
     { url: `${base}/careers`, lastModified: "2026-09-07T14:47:31+05:30", changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/careers/senior-sales-head`, lastModified: "2026-09-07T14:47:31+05:30", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/lead-gen-strategist`, lastModified: "2026-09-07T13:17:10+05:30", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/gtm-strategist`, lastModified: "2026-09-07T13:17:10+05:30", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/hr-operations-intern`, lastModified: "2026-09-07T13:17:10+05:30", changeFrequency: "monthly", priority: 0.5 },

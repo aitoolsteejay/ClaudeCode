@@ -88,13 +88,6 @@ function Marquee() {
 
 const ROLES = [
   {
-    slug: "senior-sales-head", accent: "#F5B731", tag: "Sales",
-    title: "Senior Sales Head",
-    type: "Full-time · Worli, Mumbai", location: "India",
-    desc: "You'll own outbound sales end to end: prospecting, sales calls, closing, and CRM, building Myntmore's client base directly.",
-    bullets: ["2–5 years B2B sales experience", "Cold calling & cold emailing skills", "CRM-savvy (Zoho or similar)"],
-  },
-  {
     slug: "lead-gen-strategist", accent: "#3b82f6", tag: "Outbound & GTM",
     title: "Lead Generation Strategist",
     type: "Full-time · Worli, Mumbai", location: "India",

@@ -155,7 +155,6 @@ const GROUPS: SitemapGroup[] = [
     accent: "#6366F1",
     links: [
       { label: "All Open Roles", href: "/careers" },
-      { label: "Senior Sales Head", href: "/careers/senior-sales-head" },
       { label: "Lead Gen Strategist", href: "/careers/lead-gen-strategist" },
       { label: "GTM Strategist", href: "/careers/gtm-strategist" },
       { label: "HR Operations Intern", href: "/careers/hr-operations-intern" },

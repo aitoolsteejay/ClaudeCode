@@ -160,12 +160,10 @@ export default function LeadGenStrategist() {
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Our values</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: "💡", title: "Innovate with purpose", desc: "We push boundaries with meaningful, innovative solutions that help businesses scale and grow." },
-                { icon: "🎯", title: "Focus on impact", desc: "We value results over busyness. Every action is aimed at measurable impact." },
-                { icon: "💪", title: "Hustle with heart", desc: "Working hard, working smart, and making things happen with real passion." },
-                { icon: "🔑", title: "Embrace collaboration", desc: "Great ideas come from working together and valuing diversity of thought." },
-                { icon: "🙏", title: "Take ownership", desc: "Accountability and responsibility, for your role and the company's success." },
-                { icon: "🏆", title: "Excellence is the standard", desc: "We don't settle for anything less than our best, in everything we do." },
+                { icon: "⚡", title: "Ship fast", desc: "We move in days, not quarters. If it can be tested, it gets tested this week." },
+                { icon: "🎯", title: "Outcome over hours", desc: "We don't track time. We track results. Own your output, own your schedule." },
+                { icon: "✨", title: "AI-native by default", desc: "Every workflow starts with: how do we use AI here? Not as a buzzword, as leverage." },
+                { icon: "📖", title: "Learn out loud", desc: "Share what's working. Share what failed. The whole team gets smarter together." },
               ].map((v) => (
                 <div key={v.title} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="text-xl mb-2">{v.icon}</div>

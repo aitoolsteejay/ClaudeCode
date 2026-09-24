@@ -59,6 +59,47 @@ const DIFFERENTIATORS: DiffRow[] = [
 
 const GOLD = "#F5B731";
 
+const COLD_EMAIL_FEATURES = [
+  "1,200 emails/day (26,400/month)",
+  "10 domains + 40 email accounts",
+  "Full DNS setup & IP rotation",
+  "ICP-based lead list (8,800 prospects/month)",
+  "A/B testing & ongoing campaign optimization",
+  "Advanced reporting & real-time tracking",
+  "Cold email copywriting & strategy",
+  "3-4 follow-ups & lead nurturing",
+];
+
+const LINKEDIN_TOOL_FEATURES = [
+  "Log in via LinkedIn, full campaign control",
+  "AI-suggested messaging & follow-up sequences",
+  "Automated connection requests & follow-ups",
+  "Full analytics: acceptance, reply rates, lead status",
+  "Direct human support, no AI chatbots, no queues",
+];
+
+function NumberBadge({ n, dark }: { n: string; dark?: boolean }) {
+  return (
+    <span
+      className="inline-flex items-center justify-center w-8 h-8 rounded-lg font-black text-sm shrink-0"
+      style={{ backgroundColor: dark ? "#0a0a0a" : GOLD, color: dark ? GOLD : "#0a0a0a" }}
+    >
+      {n}
+    </span>
+  );
+}
+
+function CheckedItem({ label, dark }: { label: string; dark?: boolean }) {
+  return (
+    <li className="flex items-start gap-2.5 text-sm" style={{ color: dark ? "#e5e5e5" : "#3D3D3D" }}>
+      <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke={dark ? "#4ADE80" : "#16A34A"} strokeWidth={3}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+      <span className="font-semibold">{label}</span>
+    </li>
+  );
+}
+
 function Cell({ value }: { value: Cell }) {
   if (value === false) {
     return <span className="text-sm" style={{ color: "#C9C2B7" }}>&mdash;</span>;
@@ -90,6 +131,16 @@ export default function InternationalPricingPage() {
         </div>
 
         <div className="max-w-5xl mx-auto space-y-10">
+          <FadeIn>
+            <div className="flex items-center gap-3">
+              <NumberBadge n="01" />
+              <div>
+                <h2 className="text-lg font-black leading-tight" style={{ color: "#0a0a0a" }}>LinkedIn Growth Plans</h2>
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Done For You</p>
+              </div>
+            </div>
+          </FadeIn>
+
           {/* Shared inclusions, shown once */}
           <FadeIn>
             <div className="rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
@@ -179,6 +230,70 @@ export default function InternationalPricingPage() {
               </div>
             </div>
           </FadeIn>
+
+          {/* Additional standalone options */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
+            <FadeIn>
+              <div className="h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-5">
+                  <NumberBadge n="02" />
+                  <div>
+                    <h2 className="text-lg font-black leading-tight" style={{ color: "#0a0a0a" }}>Cold Email Outbound System</h2>
+                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Done For You</p>
+                  </div>
+                </div>
+                <div className="rounded-2xl border p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                  <ul className="space-y-2.5 mb-6">
+                    {COLD_EMAIL_FEATURES.map((f) => <CheckedItem key={f} label={f} />)}
+                  </ul>
+                  <div className="mt-auto pt-6" style={{ borderTop: "1px solid #E8E2D9" }}>
+                    <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
+                      <div>
+                        <span className="text-3xl font-black" style={{ color: "#0a0a0a" }}>$1,600</span>
+                        <span className="text-sm font-semibold" style={{ color: "#8C8279" }}> / month</span>
+                      </div>
+                      <span className="text-xs font-bold" style={{ color: "#B45309" }}>100% advance for first month</span>
+                    </div>
+                    <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "#F8F6F2" }}>
+                      <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Note</p>
+                      <p className="text-xs leading-relaxed" style={{ color: "#52525B" }}>
+                        You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
+                      </p>
+                    </div>
+                    <a href="/founder-meeting" className="inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full" style={{ backgroundColor: "#0a0a0a", color: "#ffffff" }}>
+                      Book a Call
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <div className="h-full flex flex-col">
+                <div className="flex items-center gap-3 mb-5">
+                  <NumberBadge n="03" dark />
+                  <div>
+                    <h2 className="text-lg font-black leading-tight" style={{ color: "#0a0a0a" }}>LinkedIn Automation Tool</h2>
+                    <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Do It Yourself</p>
+                  </div>
+                </div>
+                <div className="rounded-2xl border p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: "#0a0a0a", borderColor: "rgba(245,183,49,0.35)" }}>
+                  <ul className="space-y-2.5 mb-6">
+                    {LINKEDIN_TOOL_FEATURES.map((f) => <CheckedItem key={f} label={f} dark />)}
+                  </ul>
+                  <div className="mt-auto pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
+                    <div className="mb-6">
+                      <span className="text-3xl font-black" style={{ color: GOLD }}>$199</span>
+                      <span className="text-sm font-semibold" style={{ color: "#b8c1bc" }}> / LinkedIn account / month</span>
+                    </div>
+                    <a href="/founder-meeting" className="btn-dark inline-block w-full text-center px-6 py-3 text-sm font-bold">
+                      Book a Call
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto text-center mt-14">

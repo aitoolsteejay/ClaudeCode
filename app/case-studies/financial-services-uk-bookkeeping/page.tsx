@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import { buildArticleSchema } from "@/lib/schema";
+
+const URL = "https://www.myntmore.com/case-studies/financial-services-uk-bookkeeping";
+
+export const metadata: Metadata = {
+  title: "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices",
+  description: "An illustrative example of how Myntmore's outreach builds partnerships between a bookkeeping firm and UK accounting practices. Not a specific past client engagement.",
+  keywords: [
+    "bookkeeping firm lead generation",
+    "accounting practice partnership outreach uk",
+    "b2b financial services lead generation",
+  ],
+  alternates: { canonical: URL },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices | Myntmore",
+    description: "15 meetings booked · 5 delivery-model reviews requested · illustrative example, not a real client result",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices | Myntmore",
+  description: "15 meetings booked · 5 delivery-model reviews requested · illustrative example, not a real client result",
+  url: URL,
+  datePublished: "2026-09-24T10:00:00+05:30",
+  dateModified: "2026-09-24T10:00:00+05:30",
+});
+
+export default function FinancialServicesUkCaseStudy() {
+  return (
+    <IllustrativeCaseStudy
+      slug="financial-services-uk-bookkeeping"
+      tag="Financial Services · United Kingdom"
+      accent="#a21caf"
+      title="Connecting a bookkeeping firm with accounting practices"
+      intro="A bookkeeping services company seeking partnerships with UK accounting practices had found direct outreach to individual businesses produced inconsistent results and wanted partnerships with practices needing additional delivery capacity."
+      heroStats={[
+        { value: "15", label: "Meetings booked" },
+        { value: "5", label: "Delivery-model reviews requested" },
+        { value: "2", label: "Paid pilots agreed" },
+      ]}
+      challengeTitle="Inconsistent results from direct business outreach"
+      challengeBody={[
+        "A bookkeeping services company seeking partnerships with UK accounting practices had found direct outreach to individual businesses produced inconsistent results. The company wanted partnerships with practices needing additional delivery capacity.",
+      ]}
+      approachTitle="Opening on workload and overflow, not a generic pitch"
+      approachBody={[
+        "Myntmore built a list of accounting practices and contacted managing partners and operations heads.",
+        "Messages introduced the client's delivery model and invited conversations about workload, review processes, and potential overflow support.",
+      ]}
+      metrics={[
+        { l: "Target practices", v: "110" },
+        { l: "Unique decision-makers contacted", v: "180" },
+        { l: "Positive replies", v: "25" },
+        { l: "Meetings booked", v: "15" },
+        { l: "Meetings held", v: "12" },
+        { l: "Practices requesting delivery-model reviews", v: "5" },
+        { l: "Practices agreeing to paid pilot engagements", v: "2" },
+      ]}
+      outcomeTitle="Two paid pilots to assess service quality"
+      outcomeBody="The company secured two paid pilots, giving both parties an opportunity to assess service quality before discussing a longer engagement."
+      roleBody="Identifying practices, starting conversations, and booking meetings. The client owned the delivery-model review and pilot delivery."
+      services={[
+        { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+        { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+        { name: "LinkedIn Outreach", href: "/services/linkedin-outreach" },
+      ]}
+      articleSchema={ARTICLE_SCHEMA}
+    />
+  );
+}

@@ -1,0 +1,78 @@
+import type { Metadata } from "next";
+import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import { buildArticleSchema } from "@/lib/schema";
+
+const URL = "https://www.myntmore.com/case-studies/pharma-uae-distribution-partners";
+
+export const metadata: Metadata = {
+  title: "Illustrative Example: Building a Shortlist of UAE Distribution Partners",
+  description: "An illustrative example of how Myntmore's pharma outreach builds a shortlist of UAE distribution partners for market entry. Not a specific past client engagement.",
+  keywords: [
+    "pharma distributor outreach uae",
+    "pharma market entry uae",
+    "pharma distribution partner search",
+    "b2b pharma lead generation",
+  ],
+  alternates: { canonical: URL },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Illustrative Example: Building a Shortlist of UAE Distribution Partners | Myntmore",
+    description: "12 partner meetings held · 3 distributors shortlisted · illustrative example, not a real client result",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Illustrative Example: Building a Shortlist of UAE Distribution Partners | Myntmore",
+  description: "12 partner meetings held · 3 distributors shortlisted · illustrative example, not a real client result",
+  url: URL,
+  datePublished: "2026-09-24T10:00:00+05:30",
+  dateModified: "2026-09-24T10:00:00+05:30",
+});
+
+export default function PharmaUaeCaseStudy() {
+  return (
+    <IllustrativeCaseStudy
+      slug="pharma-uae-distribution-partners"
+      tag="Pharma · UAE"
+      accent="#ec4899"
+      title="Building a shortlist of distribution partners in the UAE"
+      intro="An Indian finished-formulation company wanted to explore expansion into the UAE. It needed a local partner whose portfolio, customer coverage, and commercial priorities matched its product range."
+      heroStats={[
+        { value: "12", label: "Partner meetings held" },
+        { value: "3", label: "Distributors shortlisted" },
+        { value: "20", label: "Positive replies" },
+      ]}
+      challengeTitle="General interest, but no clarity on fit"
+      challengeBody={[
+        "An Indian finished-formulation company wanted to explore expansion into the UAE. It needed a local partner whose portfolio, customer coverage, and commercial priorities matched its product range.",
+        "Previous introductions had generated general interest but little clarity about partner fit.",
+      ]}
+      approachTitle="Qualifying fit before the first call"
+      approachBody={[
+        "Myntmore mapped potential UAE distributors and importers, then approached owners, business development heads, and portfolio managers.",
+        "The outreach introduced a defined product range and invited a conversation about portfolio fit. Follow-up questions covered customer segments, existing product lines, launch expectations, and interest in supporting the market-entry process.",
+        "The client received meeting briefs and a comparison of the interested partners.",
+      ]}
+      metrics={[
+        { l: "Target distributor and importer companies", v: "55" },
+        { l: "Unique decision-makers contacted", v: "100" },
+        { l: "Positive replies", v: "20" },
+        { l: "Meetings booked", v: "15" },
+        { l: "Meetings held", v: "12" },
+        { l: "Companies shortlisted for due diligence", v: "3" },
+        { l: "Shortlisted companies entering commercial discussions", v: "2" },
+      ]}
+      outcomeTitle="From an unstructured search to a shortlist"
+      outcomeBody="The client moved from an unstructured search to three potential partners for due diligence. Two progressed to discussions about territory, responsibilities, and commercial terms."
+      roleBody="Finding and engaging potential partners. The client owned due diligence, registration planning, and any distribution agreement."
+      services={[
+        { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+        { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+        { name: "LinkedIn Outreach", href: "/services/linkedin-outreach" },
+      ]}
+      articleSchema={ARTICLE_SCHEMA}
+    />
+  );
+}

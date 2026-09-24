@@ -1,0 +1,78 @@
+import type { Metadata } from "next";
+import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import { buildArticleSchema } from "@/lib/schema";
+
+const URL = "https://www.myntmore.com/case-studies/pharma-singapore-product-licensing";
+
+export const metadata: Metadata = {
+  title: "Illustrative Example: Starting Product Licensing Discussions in Singapore",
+  description: "An illustrative example of how Myntmore's pharma outreach opens product-licensing discussions with Singapore-based pharma businesses. Not a specific past client engagement.",
+  keywords: [
+    "pharma licensing outreach singapore",
+    "pharma business development singapore",
+    "b2b pharma lead generation",
+    "pharma product licensing partners",
+  ],
+  alternates: { canonical: URL },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Illustrative Example: Starting Product Licensing Discussions in Singapore | Myntmore",
+    description: "10 licensing meetings held · 4 confidential portfolio reviews · illustrative example, not a real client result",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Illustrative Example: Starting Product Licensing Discussions in Singapore | Myntmore",
+  description: "10 licensing meetings held · 4 confidential portfolio reviews · illustrative example, not a real client result",
+  url: URL,
+  datePublished: "2026-09-24T10:00:00+05:30",
+  dateModified: "2026-09-24T10:00:00+05:30",
+});
+
+export default function PharmaSingaporeCaseStudy() {
+  return (
+    <IllustrativeCaseStudy
+      slug="pharma-singapore-product-licensing"
+      tag="Pharma · Singapore"
+      accent="#dc2626"
+      title="Starting product licensing discussions in Singapore"
+      intro="An Indian specialty pharma developer wanted to explore licensing opportunities for two products, reaching Singapore-based pharmaceutical businesses and regional teams with relevant portfolio interests."
+      heroStats={[
+        { value: "10", label: "Licensing meetings held" },
+        { value: "4", label: "Confidential portfolio reviews" },
+        { value: "16", label: "Positive replies" },
+      ]}
+      challengeTitle="Ready material, limited access to decision-makers"
+      challengeBody={[
+        "An Indian specialty pharma developer wanted to explore licensing opportunities for two products. It aimed to reach Singapore-based pharmaceutical businesses and regional teams with relevant portfolio interests.",
+        "The client had technical material ready but limited access to licensing decision-makers.",
+      ]}
+      approachTitle="Qualifying territory before sharing anything confidential"
+      approachBody={[
+        "Myntmore identified companies with a potential therapeutic and commercial fit, then mapped business development, licensing, and portfolio leaders.",
+        "Initial outreach used a client-approved, non-confidential product summary. Interested contacts were asked about therapeutic priorities, territories of interest, and evaluation timelines.",
+        "Where the discussion progressed, the client handled confidentiality agreements and detailed information sharing. Singapore-based contacts were qualified for their actual territory responsibilities rather than assumed to cover all of Southeast Asia.",
+      ]}
+      metrics={[
+        { l: "Target companies", v: "45" },
+        { l: "Unique decision-makers contacted", v: "90" },
+        { l: "Positive replies", v: "16" },
+        { l: "Meetings booked", v: "12" },
+        { l: "Meetings held", v: "10" },
+        { l: "Companies signing an NDA and reviewing the portfolio", v: "4" },
+        { l: "Companies progressing to detailed licensing evaluation", v: "2" },
+      ]}
+      outcomeTitle="A clearer view of partner interest"
+      outcomeBody="Four companies entered confidential portfolio reviews, and two progressed to detailed licensing evaluation. The client gained a clearer view of partner interest and the information required to move discussions forward."
+      roleBody="Opening licensing conversations and coordinating handovers. The client owned product evaluation, territory rights, and deal negotiation."
+      services={[
+        { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+        { name: "AI Lead Generation", href: "/services/ai-lead-generation" },
+        { name: "GTM Strategy", href: "/services/gtm-strategy" },
+      ]}
+      articleSchema={ARTICLE_SCHEMA}
+    />
+  );
+}

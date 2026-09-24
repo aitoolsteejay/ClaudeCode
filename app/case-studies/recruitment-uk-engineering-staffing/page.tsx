@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import { buildArticleSchema } from "@/lib/schema";
+
+const URL = "https://www.myntmore.com/case-studies/recruitment-uk-engineering-staffing";
+
+export const metadata: Metadata = {
+  title: "Illustrative Example: Winning Conversations With Employers That Are Hiring",
+  description: "An illustrative example of how Myntmore's outreach wins conversations with UK employers actively hiring for engineering and manufacturing roles. Not a specific past client engagement.",
+  keywords: [
+    "recruitment agency lead generation",
+    "staffing firm lead generation uk",
+    "b2b recruitment lead generation",
+  ],
+  alternates: { canonical: URL },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Illustrative Example: Winning Conversations With Employers That Are Hiring | Myntmore",
+    description: "23 meetings booked · 8 hiring briefs shared · illustrative example, not a real client result",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Illustrative Example: Winning Conversations With Employers That Are Hiring | Myntmore",
+  description: "23 meetings booked · 8 hiring briefs shared · illustrative example, not a real client result",
+  url: URL,
+  datePublished: "2026-09-24T10:00:00+05:30",
+  dateModified: "2026-09-24T10:00:00+05:30",
+});
+
+export default function RecruitmentUkCaseStudy() {
+  return (
+    <IllustrativeCaseStudy
+      slug="recruitment-uk-engineering-staffing"
+      tag="Recruitment & Staffing · United Kingdom"
+      accent="#0d9488"
+      title="Winning conversations with employers that are hiring"
+      intro="A UK-based specialist recruitment firm serving engineering and manufacturing employers had its consultants spending substantial time on business development, leaving less time for candidate delivery. Broad outreach frequently reached companies with no relevant hiring needs."
+      heroStats={[
+        { value: "23", label: "Meetings booked" },
+        { value: "8", label: "Hiring briefs shared" },
+        { value: "4", label: "Searches authorized" },
+      ]}
+      challengeTitle="Consultant time spent finding demand, not delivering candidates"
+      challengeBody={[
+        "A UK-based specialist recruitment firm serving engineering and manufacturing employers had its consultants spending substantial time on business development, leaving less time for candidate delivery. Broad outreach frequently reached companies with no relevant hiring needs.",
+      ]}
+      approachTitle="Targeting employers with a live, relevant vacancy"
+      approachBody={[
+        "Myntmore identified employers with relevant advertised vacancies and mapped talent acquisition leaders, HR heads, and hiring managers.",
+        "Messages focused on the recruitment firm's specialist coverage and asked about current hiring requirements. Interested employers were qualified by role type, urgency, and willingness to work with an external recruiter.",
+      ]}
+      metrics={[
+        { l: "Target employers", v: "170" },
+        { l: "Unique decision-makers contacted", v: "300" },
+        { l: "Positive replies", v: "38" },
+        { l: "Meetings booked", v: "23" },
+        { l: "Meetings held", v: "18" },
+        { l: "Employers sharing hiring briefs", v: "8" },
+        { l: "Employers authorizing searches", v: "4" },
+      ]}
+      outcomeTitle="Four authorized searches, ready for delivery"
+      outcomeBody="The recruitment firm gained four employers with authorized searches, allowing its consultants to move into candidate delivery. No placements or placement revenue are assumed."
+      roleBody="Identifying employers with live hiring needs and booking meetings. The client's consultants owned the search, candidate delivery, and placement."
+      services={[
+        { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+        { name: "LinkedIn Outreach", href: "/services/linkedin-outreach" },
+        { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+      ]}
+      articleSchema={ARTICLE_SCHEMA}
+    />
+  );
+}

@@ -1,0 +1,78 @@
+import type { Metadata } from "next";
+import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import { buildArticleSchema } from "@/lib/schema";
+
+const URL = "https://www.myntmore.com/case-studies/pharma-france-contract-manufacturing";
+
+export const metadata: Metadata = {
+  title: "Illustrative Example: Contract Manufacturing Buyers in France",
+  description: "An illustrative example of how Myntmore's pharma outreach opens conversations with French contract-manufacturing buyers. Not a specific past client engagement.",
+  keywords: [
+    "pharma contract manufacturing lead generation",
+    "france pharma outbound",
+    "b2b pharma lead generation",
+    "pharma export outreach",
+  ],
+  alternates: { canonical: URL },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Illustrative Example: Contract Manufacturing Buyers in France | Myntmore",
+    description: "18 buyer meetings held · 6 requests for quotation · illustrative example, not a real client result",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Illustrative Example: Contract Manufacturing Buyers in France | Myntmore",
+  description: "18 buyer meetings held · 6 requests for quotation · illustrative example, not a real client result",
+  url: URL,
+  datePublished: "2026-09-24T10:00:00+05:30",
+  dateModified: "2026-09-24T10:00:00+05:30",
+});
+
+export default function PharmaFranceCaseStudy() {
+  return (
+    <IllustrativeCaseStudy
+      slug="pharma-france-contract-manufacturing"
+      tag="Pharma · France"
+      accent="#0ea5e9"
+      title="Opening conversations with contract manufacturing buyers in France"
+      intro="A mid-sized Indian tablet and capsule manufacturer wanted ongoing relationships with French pharmaceutical companies evaluating additional manufacturing partners, not just conversations that started and stopped at trade shows."
+      heroStats={[
+        { value: "18", label: "Buyer meetings held" },
+        { value: "6", label: "Requests for quotation" },
+        { value: "36", label: "Positive replies" },
+      ]}
+      challengeTitle="Few ongoing conversations between trade shows"
+      challengeBody={[
+        "A mid-sized Indian manufacturer of tablets and capsules wanted to build relationships with pharmaceutical companies in France. Its business development team relied on referrals and trade shows, leaving it with few ongoing conversations between events.",
+        "The client wanted to meet companies evaluating additional manufacturing partners for selected products.",
+      ]}
+      approachTitle="A focused list, not a broad blast"
+      approachBody={[
+        "Myntmore built a focused list of French pharmaceutical companies whose portfolios matched the client's manufacturing capabilities. Within each company, the campaign targeted sourcing, external manufacturing, and supply chain decision-makers.",
+        "French and English messages introduced a specific manufacturing capability and offered a short discovery call. Follow-ups used client-approved information about dosage forms, capacity, and technical documentation.",
+        "Interested buyers were handed over with notes on their product requirements, timelines, and supplier evaluation process.",
+      ]}
+      metrics={[
+        { l: "Target companies", v: "120" },
+        { l: "Unique decision-makers contacted", v: "240" },
+        { l: "Positive replies", v: "36" },
+        { l: "Meetings booked", v: "22" },
+        { l: "Meetings held", v: "18" },
+        { l: "Companies requesting quotations", v: "6" },
+        { l: "Companies progressing to technical review", v: "2" },
+      ]}
+      outcomeTitle="Six defined quotation opportunities"
+      outcomeBody="The client finished the campaign with six defined quotation opportunities, including two that advanced to technical review. Its team could focus on specific buyer requirements instead of starting every conversation from scratch."
+      roleBody="Identifying buyers, starting conversations, and booking meetings. The client owned technical assessment, pricing, and negotiations."
+      services={[
+        { name: "AI Lead Generation", href: "/services/ai-lead-generation" },
+        { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+        { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+      ]}
+      articleSchema={ARTICLE_SCHEMA}
+    />
+  );
+}

@@ -1,0 +1,75 @@
+import type { Metadata } from "next";
+import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import { buildArticleSchema } from "@/lib/schema";
+
+const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-france-packaging";
+
+export const metadata: Metadata = {
+  title: "Illustrative Example: Finding Packaging Buyers in France",
+  description: "An illustrative example of how Myntmore's outreach finds French cosmetics brands for an Indian packaging manufacturer. Not a specific past client engagement.",
+  keywords: [
+    "packaging manufacturer lead generation",
+    "cosmetics packaging buyer outreach france",
+    "b2b export lead generation",
+  ],
+  alternates: { canonical: URL },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: "Illustrative Example: Finding Packaging Buyers in France | Myntmore",
+    description: "18 meetings booked · 6 packaging briefs shared · illustrative example, not a real client result",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const ARTICLE_SCHEMA = buildArticleSchema({
+  headline: "Illustrative Example: Finding Packaging Buyers in France | Myntmore",
+  description: "18 meetings booked · 6 packaging briefs shared · illustrative example, not a real client result",
+  url: URL,
+  datePublished: "2026-09-24T10:00:00+05:30",
+  dateModified: "2026-09-24T10:00:00+05:30",
+});
+
+export default function ManufacturersExportersFranceCaseStudy() {
+  return (
+    <IllustrativeCaseStudy
+      slug="manufacturers-exporters-france-packaging"
+      tag="Manufacturers & Exporters · France"
+      accent="#0284c7"
+      title="Finding packaging buyers in France"
+      intro="An Indian manufacturer of folding cartons and printed packaging targeting French cosmetics brands wanted to diversify its export customer base but lacked direct relationships with relevant packaging procurement teams."
+      heroStats={[
+        { value: "18", label: "Meetings booked" },
+        { value: "6", label: "Packaging briefs shared" },
+        { value: "4", label: "Sample and quotation requests" },
+      ]}
+      challengeTitle="No direct line to packaging procurement teams"
+      challengeBody={[
+        "An Indian manufacturer of folding cartons and printed packaging targeting French cosmetics brands wanted to diversify its export customer base but lacked direct relationships with relevant packaging procurement teams.",
+      ]}
+      approachTitle="Leading with production information, not a generic pitch"
+      approachBody={[
+        "Myntmore mapped brands matching the manufacturer's capabilities and contacted packaging development, procurement, and operations leaders.",
+        "Outreach used client-approved production information and offered a discussion about upcoming packaging requirements.",
+      ]}
+      metrics={[
+        { l: "Target companies", v: "140" },
+        { l: "Unique decision-makers contacted", v: "250" },
+        { l: "Positive replies", v: "30" },
+        { l: "Meetings booked", v: "18" },
+        { l: "Meetings held", v: "14" },
+        { l: "Companies sharing packaging briefs", v: "6" },
+        { l: "Companies requesting sample development and quotations", v: "4" },
+      ]}
+      outcomeTitle="Four opportunities against specific buyer briefs"
+      outcomeBody="The manufacturer gained four opportunities to demonstrate its capabilities against specific buyer briefs. Production orders are not assumed."
+      roleBody="Identifying buyers, starting conversations, and booking meetings. The client owned sample development, quotation, and order fulfillment."
+      services={[
+        { name: "ICP Mapping & Lead Scoring", href: "/services/sales-intelligence" },
+        { name: "Cold Email Infrastructure", href: "/services/cold-email" },
+        { name: "AI Lead Generation", href: "/services/ai-lead-generation" },
+      ]}
+      articleSchema={ARTICLE_SCHEMA}
+    />
+  );
+}

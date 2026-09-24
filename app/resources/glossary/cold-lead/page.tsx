@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "cold-lead";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Cold Lead";
+const DESCRIPTION = "A cold lead is a prospect matching your ICP who hasn't engaged with any outreach yet, the starting point of a sequence, not a signal that they won't ever respond.";
+const META_DESCRIPTION = "What a cold lead actually is, why it's a starting point rather than a dead end, and how it becomes a warm or hot lead over a sequence.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is a cold lead", "cold lead definition b2b", "cold lead vs warm lead", "cold lead outreach"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function ColdLeadPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#64748B"
+      title={TITLE}
+      tagline="Every warm lead was a cold lead first; the label describes a stage, not a verdict."
+      definition="A prospect matching your ICP who hasn't engaged with any outreach yet, the starting point of a sequence, not a signal that they won't ever respond."
+      body="Treating a cold lead as a lost cause after one unanswered email is the most common way outbound teams undersell their own pipeline. Most replies come from the second, third, or fourth touch in a sequence, not the first, which is exactly why a real cadence exists instead of a single email."
+      sourceLabel="Read: Cold Email Sequence Templates That Get Replies"
+      sourceHref="/blog/cold-email-sequence-templates"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

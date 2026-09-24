@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "warm-lead";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Warm Lead";
+const DESCRIPTION = "A warm lead is a prospect who has engaged with outreach, opened, replied neutrally, connected, but hasn't shown clear buying intent yet, and is worth continued nurturing rather than a hard pitch.";
+const META_DESCRIPTION = "What a warm lead is, how it sits between cold and hot in the pipeline, and the right way to keep nurturing one without overselling too early.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is a warm lead", "warm lead definition", "warm lead vs hot lead", "how to nurture a warm lead"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function WarmLeadPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#B45309"
+      title={TITLE}
+      tagline="Not ready to buy, not ignoring you either, the stage where patience actually pays off."
+      definition="A prospect who has engaged with outreach, opened, replied neutrally, connected, but hasn't shown clear buying intent yet, and is worth continued nurturing rather than a hard pitch."
+      body="Pushing a warm lead too hard, too fast usually resets it back to cold: a premature pitch reads as exactly the pattern-matched sales behaviour they were starting to trust you weren't doing. The right move is another touch of genuine value, not an escalated ask, until a real signal shows up."
+      sourceLabel="Read the related term: Sales Pipeline"
+      sourceHref="/resources/glossary/sales-pipeline"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

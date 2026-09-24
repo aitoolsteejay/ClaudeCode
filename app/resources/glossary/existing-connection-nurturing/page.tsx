@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "existing-connection-nurturing";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Existing Connection Nurturing";
+const DESCRIPTION = "Existing connection nurturing is the practice of maintaining light, ongoing engagement with people already in your network, so a future outreach message lands as familiar rather than cold.";
+const META_DESCRIPTION = "What existing connection nurturing means, why it's cheaper than net-new outbound, and how to do it without it looking scripted.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["existing connection nurturing definition", "nurturing linkedin connections", "warm network outreach", "how to nurture b2b leads"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function ExistingConnectionNurturingPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#6D28D9"
+      title={TITLE}
+      tagline="The network you've already built is cheaper to reactivate than a cold list is to build from scratch."
+      definition="Maintaining light, ongoing engagement, likes, comments, the occasional genuine check-in, with people already in your network, so a future outreach message lands as familiar rather than cold."
+      body="Most connections on LinkedIn or in an old contact list go completely dormant, which wastes a relationship that took no cold-outreach effort to build in the first place. A short comment on a recent post or a no-ask check-in every few months keeps the relationship live enough that a real outreach message later doesn't feel like it's coming out of nowhere."
+      sourceLabel="Read: LinkedIn Outreach Sequences That Actually Get Replies"
+      sourceHref="/blog/linkedin-outreach-sequences"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

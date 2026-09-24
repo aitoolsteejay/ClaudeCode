@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "lead-scoring";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Lead Scoring";
+const DESCRIPTION = "Lead scoring is a system for ranking leads by fit and engagement, so sales effort goes to the prospects most likely to convert first, instead of treating every lead the same.";
+const META_DESCRIPTION = "What lead scoring is, how fit and engagement combine into a single score, and why it matters once outbound volume grows past a few dozen leads a week.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is lead scoring", "lead scoring model b2b", "lead scoring definition", "how to score leads"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function LeadScoringPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#0EA5E9"
+      title={TITLE}
+      tagline="A way to decide which lead to call first when there are more leads than hours in the day."
+      definition="A system for ranking leads by fit and engagement, so sales effort goes to the prospects most likely to convert first, instead of treating every lead identically."
+      body="A basic score combines two inputs: how well the lead matches the ICP, and how much they've actually engaged (opens, replies, meeting requests). A lead that's a perfect ICP fit but silent scores lower than an imperfect fit who's actively replying, because engagement is the stronger near-term predictor of a closed deal."
+      sourceLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
+      sourceHref="/blog/b2b-lead-gen-metrics"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "value-proposition";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Value Proposition";
+const DESCRIPTION = "A value proposition is a clear statement of the specific result a buyer gets by using a product or service, and why that result matters more coming from you than from any alternative, including doing nothing.";
+const META_DESCRIPTION = "What a value proposition actually is, why 'we help companies grow' isn't one, and how a sharp value proposition changes outbound reply rates.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is a value proposition", "value proposition definition b2b", "value proposition examples", "how to write a value proposition"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function ValuePropositionPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#0F766E"
+      title={TITLE}
+      tagline="The specific answer to 'why you, why this, why now,' not a slogan about what the company generally does."
+      definition="A clear statement of the specific result a buyer gets by using a product or service, and why that result matters more coming from you than from any alternative, including doing nothing."
+      body="“We help companies grow” describes an industry, not a value proposition; it could be the first line of almost any B2B company's homepage. A real one names the buyer, the specific problem, and the specific outcome, which is also what makes an outbound message land as relevant instead of generic. It's the written form of the same idea behind an aha moment."
+      sourceLabel="Read the related term: Aha Moment"
+      sourceHref="/resources/glossary/aha-moment"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

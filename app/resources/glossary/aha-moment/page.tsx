@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "aha-moment";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Aha Moment";
+const DESCRIPTION = "In outbound, an aha moment is the point in a message or conversation where a prospect suddenly recognizes their own problem in what's being described, and the outreach stops feeling like a pitch.";
+const META_DESCRIPTION = "What an 'aha moment' means in B2B outbound, why it's engineered rather than accidental, and how it turns a cold message into a real reply.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is an aha moment in sales", "aha moment b2b outbound", "aha moment definition", "aha moment cold email"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function AhaMomentPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#CA8A04"
+      title={TITLE}
+      tagline="The moment a cold message stops reading like a pitch and starts reading like someone finally gets it."
+      definition="The point in an outbound message or conversation where a prospect suddenly recognizes their own problem in what's being described, and the outreach stops feeling like a pitch."
+      body="It doesn't happen by accident. It comes from referencing a specific, recognizable pain point rather than a generic benefit, so the prospect feels described rather than sold to. This is the same logic behind building content around a concrete, usable asset instead of branding copy."
+      sourceLabel="Read the related term: Signal-Heavy Structuring"
+      sourceHref="/resources/glossary/signal-heavy-structuring"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

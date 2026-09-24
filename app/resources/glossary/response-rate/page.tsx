@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "response-rate";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Response Rate";
+const DESCRIPTION = "Response rate is the percentage of prospects who reply to an outreach message, the first real signal that targeting and messaging are working, before any meeting gets booked.";
+const META_DESCRIPTION = "What response rate measures in B2B outbound, what counts as a healthy number, and why it's an earlier signal than meeting-booked rate.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is response rate cold email", "cold email response rate benchmark", "response rate definition b2b", "good response rate outbound"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function ResponseRatePage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#047857"
+      title={TITLE}
+      tagline="The earliest number that tells you whether the targeting and the message are actually working."
+      definition="The percentage of prospects who reply to an outreach message, whether positive, negative, or a question, the first real signal that targeting and messaging are working before any meeting gets booked."
+      body="A reply of any kind, including a 'not interested,' still confirms the message reached a real inbox and got read, which a silent non-response never tells you. That's why response rate is tracked as its own number rather than folded straight into meeting-booked rate: a low response rate usually points to a targeting or messaging problem, while a healthy response rate with a low booking rate points to a weaker ask instead."
+      sourceLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
+      sourceHref="/blog/b2b-lead-gen-metrics"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

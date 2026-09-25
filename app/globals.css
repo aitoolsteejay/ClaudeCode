@@ -581,6 +581,55 @@ body {
   to { stroke-dashoffset: 0; }
 }
 
+/* ─── Pricing page motion kit (international/indian pricing) ──
+   Same easing curve as .reveal/.hero-fade for consistency. Card and
+   button hover states are the "barely noticeable" production-polish
+   kind, not attention-seeking -- no loops, no continuous pulsing. ── */
+.price-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(10,10,10,0.08), 0 2px 8px rgba(10,10,10,0.04);
+}
+.price-card-dark:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(245,183,49,0.3);
+}
+
+.price-cta {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+.price-cta:active { transform: translateY(0) scale(0.97); }
+
+.price-cta-light:hover {
+  transform: translateY(-2px);
+  border-color: #0a0a0a !important;
+  box-shadow: 0 6px 16px rgba(10,10,10,0.1);
+}
+.price-cta-solid-dark:hover {
+  transform: translateY(-2px);
+  background-color: #1f1f1f !important;
+  box-shadow: 0 6px 16px rgba(10,10,10,0.2);
+}
+
+.price-row td {
+  transition: background-color 0.2s ease;
+}
+.price-row:hover td {
+  background-color: rgba(245,183,49,0.06) !important;
+}
+
+@keyframes priceBadgePop {
+  from { opacity: 0; transform: translate(-50%, 6px) scale(0.85); }
+  to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+.price-badge-pop {
+  animation: priceBadgePop 0.5s 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
 /* ─── Reduced motion ───────────────────────────────────────
    Honour the OS "reduce motion" setting: entrance/idle animations
    render in their final visible state, decorative loops stop. ─── */
@@ -603,6 +652,16 @@ body {
   path[style*="doodle-draw"] {
     animation: none !important;
     stroke-dashoffset: 0 !important;
+  }
+  .price-card, .price-card-dark, .price-cta, .price-cta-light,
+  .price-cta-solid-dark, .price-row td {
+    transition: none !important;
+    transform: none !important;
+  }
+  .price-badge-pop {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translate(-50%, 0) !important;
   }
 }
 

@@ -118,10 +118,10 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
         <div className="relative max-w-3xl mx-auto text-center mb-14 overflow-visible">
           <div aria-hidden="true" style={{ position: "absolute", top: "-120px", left: "50%", transform: "translateX(-50%)", width: 560, height: 320, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.16) 0%, rgba(245,183,49,0.05) 45%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none" }} />
           <div className="relative">
-            <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "#0a0a0a" }}>
+            <h1 className="hero-fade text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "#0a0a0a" }}>
               {pageTitle}
             </h1>
-            <p className="text-lg leading-relaxed max-w-xl mx-auto" style={{ color: "#52525B" }}>
+            <p className="hero-fade-d1 text-lg leading-relaxed max-w-xl mx-auto" style={{ color: "#52525B" }}>
               LinkedIn growth and lead generation, run as a done-for-you system. Every plan shares the same foundation, the difference is how much volume and content sits on top of it.
             </p>
           </div>
@@ -139,7 +139,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
           </FadeIn>
 
           {/* Shared inclusions, shown once */}
-          <FadeIn>
+          <FadeIn delay={60}>
             <div className="rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="flex items-baseline justify-between flex-wrap gap-2 mb-5">
                 <h2 className="text-sm font-black uppercase tracking-widest" style={{ color: "#0a0a0a" }}>Included in every plan</h2>
@@ -159,19 +159,19 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
           </FadeIn>
 
           {/* Tier headers: name, price, CTA */}
-          <FadeIn>
+          <FadeIn delay={120}>
             <div className="grid grid-cols-3 rounded-2xl border" style={{ borderColor: "#E8E2D9" }}>
               {tiers.map((tier, i) => (
                 <div
                   key={tier.name}
-                  className={`relative px-4 sm:px-6 py-8 text-center ${i === 0 ? "rounded-l-2xl" : ""} ${i === tiers.length - 1 ? "rounded-r-2xl" : ""}`}
+                  className={`price-card relative px-4 sm:px-6 py-8 text-center ${i === 0 ? "rounded-l-2xl" : ""} ${i === tiers.length - 1 ? "rounded-r-2xl" : ""}`}
                   style={{
                     backgroundColor: tier.featured ? "rgba(245,183,49,0.07)" : "#ffffff",
                     borderLeft: i > 0 ? "1px solid #E8E2D9" : "none",
                   }}
                 >
                   {tier.featured && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-2 sm:px-4 py-1.5 text-center font-black whitespace-nowrap" style={{ backgroundColor: GOLD, color: "#0a0a0a", fontSize: "9px", zIndex: 10 }}>
+                    <div className="price-badge-pop absolute -top-3.5 left-1/2 rounded-full px-2 sm:px-4 py-1.5 text-center font-black whitespace-nowrap" style={{ backgroundColor: GOLD, color: "#0a0a0a", fontSize: "9px", zIndex: 10 }}>
                       <span className="hidden sm:inline">For highest impact &#128640;</span>
                       <span className="sm:hidden">Best value &#128640;</span>
                     </div>
@@ -184,7 +184,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                   </div>
                   <a
                     href="/founder-meeting"
-                    className="inline-block w-full px-2 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-full transition-colors"
+                    className={`price-cta inline-block w-full px-2 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold rounded-full ${tier.featured ? "price-cta-solid-dark" : "price-cta-light"}`}
                     style={
                       tier.featured
                         ? { backgroundColor: "#0a0a0a", color: "#ffffff" }
@@ -199,7 +199,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
           </FadeIn>
 
           {/* Differentiator comparison table */}
-          <FadeIn>
+          <FadeIn delay={180}>
             <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "#E8E2D9" }}>
               <div className="px-6 py-4" style={{ backgroundColor: "#F8F6F2", borderBottom: "1px solid #E8E2D9" }}>
                 <h2 className="text-sm font-black uppercase tracking-widest" style={{ color: "#0a0a0a" }}>Where the plans differ</h2>
@@ -224,7 +224,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                   </thead>
                   <tbody>
                     {DIFFERENTIATORS.map((row, i) => (
-                      <tr key={row.label} style={{ borderTop: i > 0 ? "1px solid #E8E2D9" : "none" }}>
+                      <tr key={row.label} className="price-row" style={{ borderTop: i > 0 ? "1px solid #E8E2D9" : "none" }}>
                         <td className="px-4 sm:px-6 py-4 text-sm font-semibold sticky left-0" style={{ color: "#3D3D3D", backgroundColor: "#ffffff", minWidth: 220 }}>
                           {row.label}
                         </td>
@@ -256,7 +256,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Done For You</p>
                   </div>
                 </div>
-                <div className="rounded-2xl border p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                <div className="price-card rounded-2xl border p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                   <ul className="space-y-2.5 mb-6">
                     {COLD_EMAIL_FEATURES.map((f) => <CheckedItem key={f} label={f} />)}
                   </ul>
@@ -275,7 +275,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
                       </p>
                     </div>
-                    <a href="/founder-meeting" className="inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full" style={{ backgroundColor: "#0a0a0a", color: "#ffffff" }}>
+                    <a href="/founder-meeting" className="price-cta price-cta-solid-dark inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full" style={{ backgroundColor: "#0a0a0a", color: "#ffffff" }}>
                       Book a Call
                     </a>
                   </div>
@@ -283,7 +283,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
               </div>
             </FadeIn>
 
-            <FadeIn>
+            <FadeIn delay={90}>
               <div className="h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-5">
                   <NumberBadge n="03" dark />
@@ -292,7 +292,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Do It Yourself</p>
                   </div>
                 </div>
-                <div className="rounded-2xl border p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: "#0a0a0a", borderColor: "rgba(245,183,49,0.35)" }}>
+                <div className="price-card price-card-dark rounded-2xl border p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: "#0a0a0a", borderColor: "rgba(245,183,49,0.35)" }}>
                   <ul className="space-y-2.5 mb-6">
                     {LINKEDIN_TOOL_FEATURES.map((f) => <CheckedItem key={f} label={f} dark />)}
                   </ul>
@@ -302,7 +302,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                       {currencySuffix && <span className="text-sm font-semibold" style={{ color: "#b8c1bc" }}> {currencySuffix}</span>}
                       <span className="text-sm font-semibold" style={{ color: "#b8c1bc" }}> / LinkedIn account / month</span>
                     </div>
-                    <a href="/founder-meeting" className="btn-dark inline-block w-full text-center px-6 py-3 text-sm font-bold">
+                    <a href="/founder-meeting" className="price-cta btn-dark inline-block w-full text-center px-6 py-3 text-sm font-bold">
                       Book a Call
                     </a>
                   </div>
@@ -310,6 +310,29 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
               </div>
             </FadeIn>
           </div>
+
+          {/* Terms & Conditions */}
+          <FadeIn delay={60}>
+            <div className="rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <h2 className="text-sm font-black uppercase tracking-widest mb-4" style={{ color: "#0a0a0a" }}>Terms &amp; Conditions</h2>
+              <ul className="space-y-2.5">
+                {[
+                  "Prices shown are indicative and exclude any applicable taxes unless stated otherwise.",
+                  "Billing is monthly, in advance, on the plan selected.",
+                  "The Cold Email Outbound System requires 100% advance payment for the first month; domains and email accounts are purchased separately by the client and are not included in the plan price.",
+                  "Plan inclusions, volumes, and deliverables are typical monthly figures and may vary based on scope, ICP, and campaign performance.",
+                  "A written service agreement covering contract term, cancellation, and other conditions is shared and signed before onboarding begins.",
+                  "This page is indicative pricing for discussion purposes and does not itself constitute a binding offer.",
+                ].map((term) => (
+                  <li key={term} className="flex items-start gap-2.5 text-xs leading-relaxed" style={{ color: "#8C8279" }}>
+                    <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: "#C9C2B7" }} />
+                    <span>{term}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-[11px] font-semibold mt-5" style={{ color: "#C9C2B7" }}>Last updated September 25, 2026.</p>
+            </div>
+          </FadeIn>
         </div>
 
         <div className="max-w-3xl mx-auto text-center mt-14">

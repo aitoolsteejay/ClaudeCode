@@ -1,4 +1,6 @@
-import { Fragment } from "react";
+"use client";
+
+import { Fragment, useEffect, useRef } from "react";
 import { Rocket, Zap, Target, Mail, Bot } from "lucide-react";
 import InnerLayout from "@/app/components/InnerLayout";
 import FadeIn from "@/app/components/FadeIn";
@@ -208,12 +210,45 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
     { name: "Lead Generation", tagline: "Volume-focused outbound", icon: Target, price: prices.leadGen, accent: TEAL },
   ];
 
+  // Same slow ambient drift as Hero.tsx / CTABanner.tsx's background blobs,
+  // just with smaller travel since this section is shorter. Skipped on
+  // mobile (matching those components) and under prefers-reduced-motion
+  // (an addition on top of the homepage's own version).
+  const blobGoldRef = useRef<HTMLDivElement>(null);
+  const blobPurpleRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let animId: number;
+    const startTime = performance.now();
+
+    function animate() {
+      const t = (performance.now() - startTime) / 1000;
+      if (blobGoldRef.current) {
+        const x = Math.sin(t * 0.7) * 60 + Math.sin(t * 0.3) * 20;
+        const y = Math.cos(t * 0.5) * 40 + Math.cos(t * 0.2) * 15;
+        blobGoldRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      }
+      if (blobPurpleRef.current) {
+        const x = Math.sin(t * 0.6 + 2) * 60 + Math.cos(t * 0.4) * 20;
+        const y = Math.cos(t * 0.8 + 1) * 40 + Math.sin(t * 0.35) * 15;
+        blobPurpleRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      }
+      animId = requestAnimationFrame(animate);
+    }
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
   return (
     <InnerLayout>
       <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        {/* Subtle blobs, same treatment as Services.tsx / CTABanner.tsx */}
-        <div aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", bottom: "-80px", left: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none" }} />
+        {/* Subtle blobs, same treatment as Services.tsx / CTABanner.tsx, now drifting like Hero.tsx's */}
+        <div ref={blobGoldRef} aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
+        <div ref={blobPurpleRef} aria-hidden="true" style={{ position: "absolute", bottom: "-80px", left: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
 
         <div className="relative max-w-3xl mx-auto text-center mb-14">
           <span className="hero-fade inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>

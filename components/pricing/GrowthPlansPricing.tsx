@@ -28,16 +28,33 @@ type Cell = boolean | string;
 interface DiffRow {
   label: string;
   values: [Cell, Cell, Cell]; // Starter, Growth, Lead Generation
+  info?: string;
 }
 
 const DIFFERENTIATORS: DiffRow[] = [
-  { label: "Connection Requests / Month", values: ["300", "600", "600"] },
-  { label: "Follow-Up Messages per Prospect", values: ["2", "4", "4"] },
-  { label: "InMails / Month", values: [false, "15", "15"] },
-  { label: "Video-Based Posts / Month", values: [false, "2", false] },
-  { label: "Cheatsheet / PDF (Lead Magnet)", values: [false, true, false] },
-  { label: "Strategic Engagements / Post", values: [false, "5", false] },
+  { label: "Connection Requests / Month", values: ["300", "600", "600"], info: "LinkedIn has an 800 connection request monthly limit." },
+  { label: "Follow-Up Messages per Prospect", values: ["2", "4", "4"], info: "Most people reply on the 3rd follow-up." },
+  { label: "InMails / Month", values: [false, "15", "15"], info: "We use InMails to reach out to your ICPs without having to connect with them first." },
+  { label: "Video-Based Posts / Month", values: [false, "2", false], info: "Short-form video content posted directly to your profile to increase reach and engagement." },
+  { label: "Cheatsheet / PDF (Lead Magnet)", values: [false, true, false], info: "A downloadable resource offered on your profile or in outreach to generate inbound interest." },
+  { label: "Strategic Engagements / Post", values: [false, "5", false], info: "Thoughtful, ICP-relevant comments placed on other people's posts to increase your visibility." },
 ];
+
+// Short clarifications for the less self-explanatory Growth Infrastructure
+// and Content rows, keyed by label so they can be attached when building
+// TABLE_SECTIONS below without changing the shape of the arrays above.
+const ROW_INFO: Record<string, string> = {
+  "ICP Definition Template": "A structured worksheet defining exactly who your ideal customer is, used to guide targeting and messaging.",
+  "Value Proposition Template": "A framework for articulating why a prospect should choose you, used across your profile, content, and outreach.",
+  "One-Time Profile Optimisation": "A single pass to rewrite and restructure your LinkedIn profile for credibility and inbound interest.",
+  "One-Time Competitor Analysis": "A one-time review of how competitors position themselves, used to sharpen your own positioning.",
+  "ORM - Comments & Responses": "We monitor and respond to comments on your posts to keep engagement active and protect your reputation.",
+  "End-of-Month (EOM) Reports": "A monthly summary of what was posted, sent, and booked, so you can see exactly what happened.",
+  "Monthly Video Interview": "A monthly video interview with you or your team, edited and repurposed into short-form content.",
+  "2 Video-Based Posts / Month": "Short-form video content posted directly to your profile to increase reach and engagement.",
+  "1 Cheatsheet / PDF (Lead Magnet)": "A downloadable resource offered on your profile or in outreach to generate inbound interest.",
+  "5 Strategic Engagements / Post": "Thoughtful, ICP-relevant comments placed on other people's posts to increase your visibility.",
+};
 
 interface TableSection {
   title: string;
@@ -82,11 +99,11 @@ const LEAD_GEN_PER_TIER: { label: string; included: boolean }[][] = [
 const TABLE_SECTIONS: TableSection[] = [
   {
     title: "Growth Infrastructure",
-    rows: INCLUDED_IN_EVERY_PLAN.slice(0, 8).map((label) => ({ label, values: [true, true, true] as [Cell, Cell, Cell] })),
+    rows: INCLUDED_IN_EVERY_PLAN.slice(0, 8).map((label) => ({ label, values: [true, true, true] as [Cell, Cell, Cell], info: ROW_INFO[label] })),
   },
   {
     title: "Content",
-    rows: CONTENT_ITEMS.map((c) => ({ label: c.label, values: c.included as [Cell, Cell, Cell] })),
+    rows: CONTENT_ITEMS.map((c) => ({ label: c.label, values: c.included as [Cell, Cell, Cell], info: ROW_INFO[c.label] })),
   },
   {
     title: "Lead Generation",
@@ -166,6 +183,27 @@ function DiffCell({ value, accent }: { value: Cell; accent: string }) {
     return <CheckIcon color={accent} />;
   }
   return <span className="text-sm font-black" style={{ color: TEXT_DARK }}>{value}</span>;
+}
+
+function InfoTooltip({ text }: { text: string }) {
+  return (
+    <span className="group relative inline-flex items-center ml-1.5 align-middle">
+      <span
+        tabIndex={0}
+        className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[10px] font-black cursor-help"
+        style={{ backgroundColor: "#EFEBE4", color: TEXT_MUTED }}
+        aria-label={text}
+      >
+        i
+      </span>
+      <span
+        className="pointer-events-none absolute left-1/2 bottom-full mb-2 w-56 -translate-x-1/2 rounded-lg px-3 py-2 text-xs font-normal leading-snug text-left opacity-0 scale-95 transition-all duration-150 group-hover:opacity-100 group-hover:scale-100 group-focus-within:opacity-100 group-focus-within:scale-100 z-20"
+        style={{ backgroundColor: TEXT_DARK, color: "#ffffff" }}
+      >
+        {text}
+      </span>
+    </span>
+  );
 }
 
 function GhostNumber({ n, accent }: { n: string; accent: string }) {
@@ -398,6 +436,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                           <tr key={row.label} className="price-row" style={{ borderTop: `1px solid ${BORDER}` }}>
                             <td className="px-4 sm:px-6 py-4 text-sm font-semibold sticky left-0 bg-white" style={{ color: "#3D3D3D", minWidth: 220 }}>
                               {row.label}
+                              {row.info && <InfoTooltip text={row.info} />}
                             </td>
                             {row.values.map((v, ci) => (
                               <td

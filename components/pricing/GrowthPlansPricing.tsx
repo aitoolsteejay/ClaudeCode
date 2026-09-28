@@ -115,6 +115,9 @@ const LINKEDIN_TOOL_FEATURES = [
 const GOLD = "#F5B731";
 const BLUE = "#3B82F6";
 const PURPLE = "#7C3AED";
+const ORANGE = "#F97316";
+const TEAL = "#14B8A6";
+const GREEN = "#10B981";
 const TEXT_DARK = "#0a0a0a";
 const TEXT_BODY = "#52525B";
 const TEXT_MUTED = "#8C8279";
@@ -200,9 +203,9 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
   const leadWords = titleWords.slice(0, -1).join(" ");
 
   const tiers = [
-    { name: "LinkedIn Starter", tagline: "Foundational LinkedIn growth", icon: Rocket, price: prices.starter },
-    { name: "LinkedIn Growth", tagline: "Best for maximum pipeline", icon: Zap, price: prices.growth, featured: true },
-    { name: "Lead Generation", tagline: "Volume-focused outbound", icon: Target, price: prices.leadGen },
+    { name: "LinkedIn Starter", tagline: "Foundational LinkedIn growth", icon: Rocket, price: prices.starter, accent: BLUE },
+    { name: "LinkedIn Growth", tagline: "Best for maximum pipeline", icon: Zap, price: prices.growth, featured: true, accent: GOLD },
+    { name: "Lead Generation", tagline: "Volume-focused outbound", icon: Target, price: prices.leadGen, accent: TEAL },
   ];
 
   return (
@@ -247,21 +250,21 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                       className="price-card relative flex flex-col rounded-2xl overflow-hidden bg-white"
                       style={{
                         border: `1px solid ${BORDER}`,
-                        borderTop: `3px solid ${GOLD}`,
-                        boxShadow: tier.featured ? "0 8px 28px rgba(245,183,49,0.18)" : "0 2px 10px rgba(0,0,0,0.04)",
+                        borderTop: `3px solid ${tier.accent}`,
+                        boxShadow: tier.featured ? `0 8px 28px ${tier.accent}30` : "0 2px 10px rgba(0,0,0,0.04)",
                       }}
                     >
                       {tier.featured && (
-                        <div className="price-badge-pop absolute top-0 left-1/2 rounded-b-lg px-4 py-1 text-center font-black text-[10px] text-white whitespace-nowrap" style={{ backgroundColor: GOLD, zIndex: 10 }}>
+                        <div className="price-badge-pop absolute top-0 left-1/2 rounded-b-lg px-4 py-1 text-center font-black text-[10px] text-white whitespace-nowrap" style={{ backgroundColor: tier.accent, zIndex: 10 }}>
                           MOST POPULAR
                         </div>
                       )}
                       <div className="p-6 sm:p-7 flex flex-col flex-1 relative">
-                        <GhostNumber n={String(i + 1)} accent={GOLD} />
+                        <GhostNumber n={String(i + 1)} accent={tier.accent} />
 
                         <div className="flex items-center gap-3 mb-5 mt-2">
-                          <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(245,183,49,0.13)", border: "1.5px solid rgba(245,183,49,0.35)" }}>
-                            <Icon className="w-5 h-5" color="#B45309" strokeWidth={2} />
+                          <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${tier.accent}15`, border: `1.5px solid ${tier.accent}38` }}>
+                            <Icon className="w-5 h-5" color={tier.accent} strokeWidth={2} />
                           </div>
                           <div>
                             <h3 className="text-base font-black leading-tight" style={{ color: TEXT_DARK }}>{tier.name}</h3>
@@ -279,15 +282,15 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                           <PlanFeatureSection
                             title="Content"
                             items={CONTENT_ITEMS.map((c) => ({ label: c.label, included: c.included[i as 0 | 1 | 2] }))}
-                            accent="#B45309"
+                            accent={tier.accent}
                           />
                           <PlanFeatureSection
                             title="Lead Generation"
                             items={LEAD_GEN_PER_TIER[i]}
-                            accent="#B45309"
+                            accent={tier.accent}
                           />
                           <p className="text-xs leading-snug pt-1" style={{ color: TEXT_MUTED }}>
-                            <a href="#included-in-every-plan" className="font-bold underline" style={{ color: "#B45309" }}>+ Growth Infrastructure (same on every plan)</a>
+                            <a href="#included-in-every-plan" className="font-bold underline" style={{ color: tier.accent }}>+ Growth Infrastructure (same on every plan)</a>
                           </p>
                         </div>
 
@@ -312,7 +315,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
                 {INCLUDED_IN_EVERY_PLAN.map((item) => (
                   <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
-                    <CheckIcon color={GOLD} />
+                    <CheckIcon color={GREEN} />
                     <span className="font-semibold">{item}</span>
                   </div>
                 ))}
@@ -337,7 +340,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         <th
                           key={tier.name}
                           className="px-4 py-3 text-center text-xs font-black"
-                          style={{ color: tier.featured ? "#B45309" : TEXT_DARK, backgroundColor: tier.featured ? "#FEF9EC" : "transparent", width: 130 }}
+                          style={{ color: tier.accent, backgroundColor: `${tier.accent}0d`, width: 130 }}
                         >
                           {tier.name}
                         </th>
@@ -361,9 +364,9 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                               <td
                                 key={ci}
                                 className="px-4 py-4 text-center"
-                                style={{ backgroundColor: tiers[ci].featured ? "#FEF9EC" : "transparent", width: 130 }}
+                                style={{ backgroundColor: `${tiers[ci].accent}0d`, width: 130 }}
                               >
-                                <DiffCell value={v} accent={tiers[ci].featured ? "#B45309" : "#16A34A"} />
+                                <DiffCell value={v} accent={tiers[ci].accent} />
                               </td>
                             ))}
                           </tr>
@@ -383,17 +386,17 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 <div className="mb-6">
                   <SectionHeading eyebrow="02" title="Cold Email Outbound System" subtitle="Done For You" />
                 </div>
-                <article className="price-card relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${BLUE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+                <article className="price-card relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${ORANGE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
                   <div className="p-6 sm:p-8 flex flex-col flex-1 relative">
-                    <GhostNumber n="02" accent={BLUE} />
+                    <GhostNumber n="02" accent={ORANGE} />
                     <div className="flex items-center gap-3 mb-5 mt-2">
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${BLUE}15`, border: `1.5px solid ${BLUE}38` }}>
-                        <Mail className="w-5 h-5" color={BLUE} strokeWidth={2} />
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${ORANGE}15`, border: `1.5px solid ${ORANGE}38` }}>
+                        <Mail className="w-5 h-5" color={ORANGE} strokeWidth={2} />
                       </div>
                       <p className="text-sm font-semibold" style={{ color: TEXT_BODY }}>Fully managed sending infrastructure and outreach</p>
                     </div>
                     <ul className="space-y-2.5 mb-6 flex-1">
-                      {COLD_EMAIL_FEATURES.map((f) => <CheckedItem key={f} label={f} accent={BLUE} />)}
+                      {COLD_EMAIL_FEATURES.map((f) => <CheckedItem key={f} label={f} accent={ORANGE} />)}
                     </ul>
                     <div className="pt-6" style={{ borderTop: `1px solid ${BORDER}` }}>
                       <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
@@ -402,7 +405,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                           {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                           <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> / month</span>
                         </div>
-                        <span className="text-xs font-bold" style={{ color: BLUE }}>100% advance for first month</span>
+                        <span className="text-xs font-bold" style={{ color: ORANGE }}>100% advance for first month</span>
                       </div>
                       <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "#F8F6F2" }}>
                         <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>

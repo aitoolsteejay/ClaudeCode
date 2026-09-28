@@ -33,6 +33,14 @@ const nextConfig = {
       // Renamed from the opaque "GIAtech-stack" slug and moved under guides.
       // It was in the sitemap, so Google may already hold the old URL.
       { source: "/GIAtech-stack", destination: "/resources/guides/ai-tech-stack-jewellery", permanent: true },
+      // Renamed 2026-09-07 and never redirected -- these were shared directly
+      // with JBCN/NMIMS students (talks, QR codes), so the dead links were
+      // driving real visitor 404s, not just crawler noise. Point straight at
+      // the final destination rather than chaining through the intermediate
+      // slug each was briefly renamed to.
+      { source: "/jbcn-ai-quickstart", destination: "/education-guide", permanent: true },
+      { source: "/ai-takeaways", destination: "/education-guide", permanent: true },
+      { source: "/nmims-toolkit", destination: "/careers-and-job-guide", permanent: true },
       // Retired full-time role (removed 2026-07-28), still 404ing in Search
       // Console. Points at the careers hub rather than the similarly named
       // intern listing, which is a different seniority and salary band.

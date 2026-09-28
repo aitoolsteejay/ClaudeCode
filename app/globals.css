@@ -586,40 +586,23 @@ body {
    button hover states are the "barely noticeable" production-polish
    kind, not attention-seeking -- no loops, no continuous pulsing. ── */
 .price-card {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .price-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(108,92,231,0.14), 0 2px 8px rgba(31,33,51,0.05);
-}
-.price-card-dark:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(196,181,253,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.10);
 }
 
 .price-cta {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .price-cta:active { transform: translateY(0) scale(0.97); }
-
-.price-cta-light:hover {
-  transform: translateY(-2px);
-  border-color: #6C5CE7 !important;
-  box-shadow: 0 6px 16px rgba(108,92,231,0.18);
-}
-.price-cta-solid-dark:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.08);
-  box-shadow: 0 6px 18px rgba(108,92,231,0.3);
-}
 
 .price-row td {
   transition: background-color 0.2s ease;
 }
 .price-row:hover td {
-  background-color: rgba(108,92,231,0.06) !important;
+  background-color: rgba(245,183,49,0.06) !important;
 }
 
 @keyframes priceBadgePop {
@@ -653,8 +636,7 @@ body {
     animation: none !important;
     stroke-dashoffset: 0 !important;
   }
-  .price-card, .price-card-dark, .price-cta, .price-cta-light,
-  .price-cta-solid-dark, .price-row td {
+  .price-card, .price-cta, .price-row td {
     transition: none !important;
     transform: none !important;
   }

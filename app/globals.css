@@ -591,11 +591,11 @@ body {
 }
 .price-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(10,10,10,0.08), 0 2px 8px rgba(10,10,10,0.04);
+  box-shadow: 0 16px 32px rgba(108,92,231,0.14), 0 2px 8px rgba(31,33,51,0.05);
 }
 .price-card-dark:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(245,183,49,0.3);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.4), 0 0 0 1px rgba(196,181,253,0.35);
 }
 
 .price-cta {
@@ -606,20 +606,20 @@ body {
 
 .price-cta-light:hover {
   transform: translateY(-2px);
-  border-color: #0a0a0a !important;
-  box-shadow: 0 6px 16px rgba(10,10,10,0.1);
+  border-color: #6C5CE7 !important;
+  box-shadow: 0 6px 16px rgba(108,92,231,0.18);
 }
 .price-cta-solid-dark:hover {
   transform: translateY(-2px);
-  background-color: #1f1f1f !important;
-  box-shadow: 0 6px 16px rgba(10,10,10,0.2);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 18px rgba(108,92,231,0.3);
 }
 
 .price-row td {
   transition: background-color 0.2s ease;
 }
 .price-row:hover td {
-  background-color: rgba(245,183,49,0.06) !important;
+  background-color: rgba(108,92,231,0.06) !important;
 }
 
 @keyframes priceBadgePop {

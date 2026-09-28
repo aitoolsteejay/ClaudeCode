@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Rocket, Zap, Target, Mail, Bot } from "lucide-react";
 import InnerLayout from "@/app/components/InnerLayout";
 import FadeIn from "@/app/components/FadeIn";
@@ -36,6 +37,11 @@ const DIFFERENTIATORS: DiffRow[] = [
   { label: "Strategic Engagements / Post", values: [false, "5", false] },
 ];
 
+interface TableSection {
+  title: string;
+  rows: DiffRow[];
+}
+
 // Full per-card breakdown for the Content and Lead Generation sections
 // (Growth Infrastructure is identical across all 3 tiers, so it stays in the
 // shared "Included in every plan" band instead of repeating 3x here).
@@ -68,6 +74,33 @@ const LEAD_GEN_PER_TIER: { label: string; included: boolean }[][] = [
   ],
 ];
 
+// Full comparison table: every row from the PDF, grouped the same way as the
+// per-card sections above (Growth Infrastructure is identical across tiers,
+// shown here too since the table is meant to be the single complete view).
+const TABLE_SECTIONS: TableSection[] = [
+  {
+    title: "Growth Infrastructure",
+    rows: [
+      "Dedicated Account Manager",
+      "Monthly Check-In with Founder",
+      "End-of-Month (EOM) Reports",
+      "ICP Definition Template",
+      "Value Proposition Template",
+      "One-Time Profile Optimisation",
+      "One-Time Competitor Analysis",
+      "ORM - Comments & Responses",
+    ].map((label) => ({ label, values: [true, true, true] as [Cell, Cell, Cell] })),
+  },
+  {
+    title: "Content",
+    rows: CONTENT_ITEMS.map((c) => ({ label: c.label, values: c.included as [Cell, Cell, Cell] })),
+  },
+  {
+    title: "Lead Generation",
+    rows: DIFFERENTIATORS.slice(0, 3),
+  },
+];
+
 const COLD_EMAIL_FEATURES = [
   "1,200 emails/day (26,400/month)",
   "10 domains + 40 email accounts",
@@ -87,13 +120,13 @@ const LINKEDIN_TOOL_FEATURES = [
   "Direct human support, no AI chatbots, no queues",
 ];
 
-const ACCENT = "#6C5CE7";
-const GRADIENT = "linear-gradient(135deg, #8B7CF6 0%, #F472B6 100%)";
-const TEXT_DARK = "#1F2133";
-const TEXT_MUTED = "#6B7089";
-const CARD_BG = "rgba(255,255,255,0.72)";
-const CARD_BORDER = "rgba(148,130,255,0.22)";
-const DARK_CARD_BG = "#211B3D";
+const ACCENT = "#B45309";
+const GRADIENT = "linear-gradient(135deg, #F5B731 0%, #D97706 100%)";
+const TEXT_DARK = "#0A0A0A";
+const TEXT_MUTED = "#8C8279";
+const CARD_BG = "rgba(255,255,255,0.78)";
+const CARD_BORDER = "rgba(232,226,217,0.9)";
+const DARK_CARD_BG = "#0a0a0a";
 
 function CheckIcon({ color = "#16A34A" }: { color?: string }) {
   return (
@@ -105,7 +138,7 @@ function CheckIcon({ color = "#16A34A" }: { color?: string }) {
 
 function CrossIcon() {
   return (
-    <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="#C4BEDD" strokeWidth={2.5}>
+    <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="#C9C2B7" strokeWidth={2.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
     </svg>
   );
@@ -117,7 +150,7 @@ function PlanFeatureSection({ title, items, accent }: { title: string; items: { 
       <p className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: accent }}>{title}</p>
       <ul className="space-y-1.5">
         {items.map((item) => (
-          <li key={item.label} className="flex items-start gap-2 text-xs leading-snug" style={{ color: item.included ? "#3D3D4D" : "#B8B4CC" }}>
+          <li key={item.label} className="flex items-start gap-2 text-xs leading-snug" style={{ color: item.included ? "#3D3D4D" : "#C9C2B7" }}>
             {item.included ? <CheckIcon color={accent} /> : <CrossIcon />}
             <span className={item.included ? "font-semibold" : ""}>{item.label}</span>
           </li>
@@ -130,7 +163,7 @@ function PlanFeatureSection({ title, items, accent }: { title: string; items: { 
 function CheckedItem({ label, dark }: { label: string; dark?: boolean }) {
   return (
     <li className="flex items-start gap-2.5 text-sm" style={{ color: dark ? "#E4E1F5" : "#3D3D4D" }}>
-      <CheckIcon color={dark ? "#C4B5FD" : "#16A34A"} />
+      <CheckIcon color={dark ? "#F5B731" : "#16A34A"} />
       <span className="font-semibold">{label}</span>
     </li>
   );
@@ -189,12 +222,12 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
 
   return (
     <InnerLayout>
-      <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{ background: "#FAF9FF" }}>
+      <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{ background: "#F8F6F2" }}>
         {/* Soft pastel gradient blobs */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div style={{ position: "absolute", top: "-160px", left: "-120px", width: 560, height: 560, borderRadius: "50%", background: "radial-gradient(circle, rgba(244,114,182,0.28) 0%, rgba(244,114,182,0.08) 45%, transparent 70%)", filter: "blur(60px)" }} />
-          <div style={{ position: "absolute", top: "-80px", right: "-140px", width: 620, height: 620, borderRadius: "50%", background: "radial-gradient(circle, rgba(139,124,246,0.28) 0%, rgba(139,124,246,0.08) 45%, transparent 70%)", filter: "blur(60px)" }} />
-          <div style={{ position: "absolute", top: "420px", left: "50%", transform: "translateX(-50%)", width: 700, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(96,165,250,0.18) 0%, rgba(96,165,250,0.05) 45%, transparent 70%)", filter: "blur(70px)" }} />
+          <div style={{ position: "absolute", top: "-160px", left: "-120px", width: 560, height: 560, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(245,183,49,0.06) 45%, transparent 70%)", filter: "blur(60px)" }} />
+          <div style={{ position: "absolute", top: "-80px", right: "-140px", width: 620, height: 620, borderRadius: "50%", background: "radial-gradient(circle, rgba(217,119,6,0.16) 0%, rgba(217,119,6,0.05) 45%, transparent 70%)", filter: "blur(60px)" }} />
+          <div style={{ position: "absolute", top: "420px", left: "50%", transform: "translateX(-50%)", width: 700, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(232,226,217,0.5) 0%, rgba(232,226,217,0.15) 45%, transparent 70%)", filter: "blur(70px)" }} />
         </div>
 
         <div className="relative max-w-3xl mx-auto text-center mb-10">
@@ -204,14 +237,6 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
           <p className="hero-fade-d1 text-lg leading-relaxed max-w-xl mx-auto" style={{ color: TEXT_MUTED }}>
             LinkedIn growth and lead generation, run as a done-for-you system. Every plan shares the same foundation, the difference is how much volume and content sits on top of it.
           </p>
-        </div>
-
-        {/* Decorative monthly/yearly pill -- yearly pricing doesn't exist yet, so it's shown disabled rather than wired to fake numbers */}
-        <div className="relative flex justify-center mb-14">
-          <div className="inline-flex items-center rounded-full p-1" style={{ backgroundColor: "#ffffff", border: `1px solid ${CARD_BORDER}` }}>
-            <span className="px-5 py-2 rounded-full text-sm font-bold text-white" style={{ background: GRADIENT }}>Monthly</span>
-            <span className="px-5 py-2 rounded-full text-sm font-semibold" style={{ color: "#B8B4CC" }}>Yearly &middot; coming soon</span>
-          </div>
         </div>
 
         <div className="relative max-w-5xl mx-auto space-y-10">
@@ -235,7 +260,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                       backgroundImage: tier.featured ? `linear-gradient(${CARD_BG}, ${CARD_BG}), ${GRADIENT}` : undefined,
                       backgroundOrigin: tier.featured ? "border-box" : undefined,
                       backgroundClip: tier.featured ? "padding-box, border-box" : undefined,
-                      boxShadow: tier.featured ? "0 20px 45px rgba(139,124,246,0.22)" : "0 8px 24px rgba(31,33,51,0.05)",
+                      boxShadow: tier.featured ? "0 20px 45px rgba(245,183,49,0.25)" : "0 8px 24px rgba(31,33,51,0.05)",
                       transform: tier.featured ? "translateY(-8px)" : undefined,
                     }}
                   >
@@ -245,7 +270,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                       </div>
                     )}
                     <div className="flex items-center gap-3 mb-4 mt-1">
-                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ background: tier.featured ? GRADIENT : "rgba(108,92,231,0.10)" }}>
+                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ background: tier.featured ? GRADIENT : "rgba(245,183,49,0.12)" }}>
                         <Icon className="w-5 h-5" color={tier.featured ? "#ffffff" : ACCENT} strokeWidth={2.2} />
                       </span>
                       <div>
@@ -328,7 +353,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         <th
                           key={tier.name}
                           className="px-4 py-3 text-center text-xs font-black"
-                          style={{ color: tier.featured ? ACCENT : TEXT_DARK, backgroundColor: tier.featured ? "rgba(108,92,231,0.06)" : "transparent", width: 130 }}
+                          style={{ color: tier.featured ? ACCENT : TEXT_DARK, backgroundColor: tier.featured ? "rgba(245,183,49,0.08)" : "transparent", width: 130 }}
                         >
                           {tier.name}
                         </th>
@@ -336,21 +361,30 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     </tr>
                   </thead>
                   <tbody>
-                    {DIFFERENTIATORS.map((row, i) => (
-                      <tr key={row.label} className="price-row" style={{ borderTop: i > 0 ? `1px solid ${CARD_BORDER}` : "none" }}>
-                        <td className="px-4 sm:px-6 py-4 text-sm font-semibold sticky left-0" style={{ color: "#3D3D4D", backgroundColor: "rgba(255,255,255,0.9)", minWidth: 220 }}>
-                          {row.label}
-                        </td>
-                        {row.values.map((v, ci) => (
-                          <td
-                            key={ci}
-                            className="px-4 py-4 text-center"
-                            style={{ backgroundColor: tiers[ci].featured ? "rgba(108,92,231,0.06)" : "transparent", width: 130 }}
-                          >
-                            <DiffCell value={v} accent={tiers[ci].featured} />
+                    {TABLE_SECTIONS.map((section) => (
+                      <Fragment key={section.title}>
+                        <tr>
+                          <td colSpan={4} className="px-4 sm:px-6 py-2.5 text-[10px] font-black uppercase tracking-widest" style={{ color: ACCENT, backgroundColor: "rgba(245,183,49,0.08)" }}>
+                            {section.title}
                           </td>
+                        </tr>
+                        {section.rows.map((row) => (
+                          <tr key={row.label} className="price-row" style={{ borderTop: `1px solid ${CARD_BORDER}` }}>
+                            <td className="px-4 sm:px-6 py-4 text-sm font-semibold sticky left-0" style={{ color: "#3D3D4D", backgroundColor: "rgba(255,255,255,0.9)", minWidth: 220 }}>
+                              {row.label}
+                            </td>
+                            {row.values.map((v, ci) => (
+                              <td
+                                key={ci}
+                                className="px-4 py-4 text-center"
+                                style={{ backgroundColor: tiers[ci].featured ? "rgba(245,183,49,0.08)" : "transparent", width: 130 }}
+                              >
+                                <DiffCell value={v} accent={tiers[ci].featured} />
+                              </td>
+                            ))}
+                          </tr>
                         ))}
-                      </tr>
+                      </Fragment>
                     ))}
                   </tbody>
                 </table>
@@ -367,7 +401,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 </div>
                 <div className="price-card rounded-3xl p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: CARD_BG, backdropFilter: "blur(14px)", border: `1px solid ${CARD_BORDER}` }}>
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ backgroundColor: "rgba(108,92,231,0.10)" }}>
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ backgroundColor: "rgba(245,183,49,0.12)" }}>
                       <Mail className="w-5 h-5" color={ACCENT} strokeWidth={2.2} />
                     </span>
                     <p className="text-xs font-semibold" style={{ color: TEXT_MUTED }}>Fully managed sending infrastructure and outreach</p>
@@ -384,7 +418,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                       </div>
                       <span className="text-xs font-bold" style={{ color: ACCENT }}>100% advance for first month</span>
                     </div>
-                    <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "rgba(108,92,231,0.06)" }}>
+                    <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "rgba(245,183,49,0.08)" }}>
                       <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>
                       <p className="text-xs leading-relaxed" style={{ color: "#4B4B5F" }}>
                         You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
@@ -403,21 +437,21 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 <div className="mb-5">
                   <SectionEyebrow n="03" title="LinkedIn Automation Tool" subtitle="Do It Yourself" />
                 </div>
-                <div className="price-card price-card-dark rounded-3xl p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: DARK_CARD_BG, border: "1px solid rgba(196,181,253,0.25)" }}>
+                <div className="price-card price-card-dark rounded-3xl p-6 sm:p-8 flex-1 flex flex-col" style={{ backgroundColor: DARK_CARD_BG, border: "1px solid rgba(245,183,49,0.35)" }}>
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ backgroundColor: "rgba(196,181,253,0.15)" }}>
-                      <Bot className="w-5 h-5" color="#C4B5FD" strokeWidth={2.2} />
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl shrink-0" style={{ backgroundColor: "rgba(245,183,49,0.15)" }}>
+                      <Bot className="w-5 h-5" color="#F5B731" strokeWidth={2.2} />
                     </span>
-                    <p className="text-xs font-semibold" style={{ color: "#B8AEDD" }}>Self-serve, you stay in the driver's seat</p>
+                    <p className="text-xs font-semibold" style={{ color: "#b8c1bc" }}>Self-serve, you stay in the driver's seat</p>
                   </div>
                   <ul className="space-y-2.5 mb-6">
                     {LINKEDIN_TOOL_FEATURES.map((f) => <CheckedItem key={f} label={f} dark />)}
                   </ul>
-                  <div className="mt-auto pt-6" style={{ borderTop: "1px solid rgba(196,181,253,0.18)" }}>
+                  <div className="mt-auto pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
                     <div className="mb-6">
-                      <span className="text-2xl sm:text-3xl font-black" style={{ color: "#C4B5FD" }}>{currencyPrefix}{prices.automation}</span>
-                      {currencySuffix && <span className="text-sm font-semibold" style={{ color: "#B8AEDD" }}> {currencySuffix}</span>}
-                      <span className="text-sm font-semibold" style={{ color: "#B8AEDD" }}> / LinkedIn account / month</span>
+                      <span className="text-2xl sm:text-3xl font-black" style={{ color: "#F5B731" }}>{currencyPrefix}{prices.automation}</span>
+                      {currencySuffix && <span className="text-sm font-semibold" style={{ color: "#b8c1bc" }}> {currencySuffix}</span>}
+                      <span className="text-sm font-semibold" style={{ color: "#b8c1bc" }}> / LinkedIn account / month</span>
                     </div>
                     <a href="/founder-meeting" className="price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full" style={{ background: GRADIENT, color: "#ffffff" }}>
                       Get Started
@@ -442,12 +476,12 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                   "This page is indicative pricing for discussion purposes and does not itself constitute a binding offer.",
                 ].map((term) => (
                   <li key={term} className="flex items-start gap-2.5 text-xs leading-relaxed" style={{ color: TEXT_MUTED }}>
-                    <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: "#C4B5FD" }} />
+                    <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: "#F5B731" }} />
                     <span>{term}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-[11px] font-semibold mt-5" style={{ color: "#C4BEDD" }}>Last updated September 25, 2026.</p>
+              <p className="text-[11px] font-semibold mt-5" style={{ color: "#C9C2B7" }}>Last updated September 25, 2026.</p>
             </div>
           </FadeIn>
         </div>

@@ -178,10 +178,14 @@ function GhostNumber({ n, accent }: { n: string; accent: string }) {
 
 function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
   return (
-    <div className="flex items-baseline gap-3 flex-wrap">
-      <h2 className="text-2xl font-black leading-tight" style={{ color: TEXT_DARK }}>{title}</h2>
-      <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-full" style={{ color: GOLD, backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)" }}>{eyebrow}</span>
-      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: TEXT_MUTED }}>{subtitle}</span>
+    <div>
+      <div className="flex items-center gap-3 flex-wrap">
+        <h2 className="text-2xl font-black leading-tight" style={{ color: TEXT_DARK }}>{title}</h2>
+        <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-full" style={{ color: GOLD, backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)" }}>{eyebrow}</span>
+      </div>
+      {/* Always its own line, regardless of title length, so every section
+          heading takes up the same height and the cards below line up. */}
+      <p className="text-xs font-bold uppercase tracking-widest mt-1.5" style={{ color: TEXT_MUTED }}>{subtitle}</p>
     </div>
   );
 }

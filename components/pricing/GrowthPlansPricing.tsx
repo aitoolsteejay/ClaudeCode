@@ -35,7 +35,7 @@ const DIFFERENTIATORS: DiffRow[] = [
   { label: "Connection Requests / Month", values: ["300", "600", "600"], info: "LinkedIn has an 800 connection request monthly limit." },
   { label: "Follow-Up Messages per Prospect", values: ["2", "4", "4"], info: "Most people reply on the 3rd follow-up." },
   { label: "InMails / Month", values: [false, "15", "15"], info: "We use InMails to reach out to your ICPs without having to connect with them first." },
-  { label: "Video-Based Posts / Month", values: [false, "2", false], info: "Short-form video content posted directly to your profile to increase reach and engagement." },
+  { label: "Video-Based Posts / Month", values: [false, "2", false], info: "We strongly believe LinkedIn is going to be a video-first platform very soon." },
   { label: "Cheatsheet / PDF (Lead Magnet)", values: [false, true, false], info: "A downloadable resource offered on your profile or in outreach to generate inbound interest." },
   { label: "Strategic Engagements / Post", values: [false, "5", false], info: "Thoughtful, ICP-relevant comments placed on other people's posts to increase your visibility." },
 ];
@@ -51,7 +51,7 @@ const ROW_INFO: Record<string, string> = {
   "ORM - Comments & Responses": "We monitor and respond to comments on your posts to keep engagement active and protect your reputation.",
   "End-of-Month (EOM) Reports": "A monthly summary of what was posted, sent, and booked, so you can see exactly what happened.",
   "Monthly Video Interview": "A monthly video interview with you or your team, edited and repurposed into short-form content.",
-  "2 Video-Based Posts / Month": "Short-form video content posted directly to your profile to increase reach and engagement.",
+  "2 Video-Based Posts / Month": "We strongly believe LinkedIn is going to be a video-first platform very soon.",
   "1 Cheatsheet / PDF (Lead Magnet)": "A downloadable resource offered on your profile or in outreach to generate inbound interest.",
   "5 Strategic Engagements / Post": "Thoughtful, ICP-relevant comments placed on other people's posts to increase your visibility.",
 };

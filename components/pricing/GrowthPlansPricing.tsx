@@ -206,6 +206,60 @@ function InfoTooltip({ text }: { text: string }) {
   );
 }
 
+// Same count-up technique as Hero.tsx / Services.tsx's stat counters:
+// animate a plain digit count on scroll-into-view, then snap to the exact
+// pre-formatted price string on completion so region-specific comma
+// grouping (e.g. India's 1,74,999 vs the West's 1,799) is never reformatted
+// by this component -- it only ever displays strings the caller already
+// formatted correctly.
+function AnimatedPrice({ target }: { target: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const numericTarget = parseInt(target.replace(/[^0-9]/g, ""), 10);
+    if (!numericTarget) {
+      el.textContent = target;
+      return;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      el.textContent = target;
+      return;
+    }
+
+    let animId: number;
+    const duration = 900;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        let startTime: number | null = null;
+        function tick(ts: number) {
+          if (!startTime) startTime = ts;
+          const progress = Math.min((ts - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          if (el) {
+            el.textContent = progress < 1 ? Math.round(eased * numericTarget).toLocaleString("en-US") : target;
+          }
+          if (progress < 1) animId = requestAnimationFrame(tick);
+        }
+        animId = requestAnimationFrame(tick);
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animId);
+    };
+  }, [target]);
+
+  return <span ref={ref}>0</span>;
+}
+
 function GhostNumber({ n, accent }: { n: string; accent: string }) {
   return (
     <span className="text-6xl font-black leading-none select-none absolute top-6 right-6" aria-hidden="true" style={{ color: accent, opacity: 0.12 }}>
@@ -316,15 +370,15 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
               <SectionHeading eyebrow="01" title="LinkedIn Growth Plans" subtitle="Done For You" />
             </FadeIn>
 
-            {/* Tier cards */}
-            <FadeIn delay={80}>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mt-6">
-                {tiers.map((tier, i) => {
-                  const Icon = tier.icon;
-                  return (
+            {/* Tier cards -- each fades in with its own slightly later delay
+                so they cascade left-to-right instead of arriving as one block. */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch mt-6">
+              {tiers.map((tier, i) => {
+                const Icon = tier.icon;
+                return (
+                  <FadeIn key={tier.name} delay={80 + i * 90}>
                     <article
-                      key={tier.name}
-                      className="price-card relative flex flex-col rounded-2xl overflow-hidden bg-white"
+                      className="price-card group relative flex flex-col rounded-2xl overflow-hidden bg-white"
                       style={{
                         border: `1px solid ${BORDER}`,
                         borderTop: `3px solid ${tier.accent}`,
@@ -340,7 +394,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         <GhostNumber n={String(i + 1)} accent={tier.accent} />
 
                         <div className="flex items-center gap-3 mb-5 mt-2">
-                          <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${tier.accent}15`, border: `1.5px solid ${tier.accent}38` }}>
+                          <div className="price-icon w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${tier.accent}15`, border: `1.5px solid ${tier.accent}38` }}>
                             <Icon className="w-5 h-5" color={tier.accent} strokeWidth={2} />
                           </div>
                           <div>
@@ -350,7 +404,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         </div>
 
                         <div className="mb-5">
-                          <span className="text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}{tier.price}</span>
+                          <span className="text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={tier.price} /></span>
                           {currencySuffix && <span className="text-xs font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                           <span className="text-xs font-semibold" style={{ color: TEXT_MUTED }}> / month</span>
                         </div>
@@ -376,10 +430,10 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         </a>
                       </div>
                     </article>
-                  );
-                })}
-              </div>
-            </FadeIn>
+                  </FadeIn>
+                );
+              })}
+            </div>
           </div>
 
           {/* Shared inclusions, shown once */}
@@ -465,11 +519,11 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 <div className="mb-6">
                   <SectionHeading eyebrow="02" title="Cold Email Outbound System" subtitle="Done For You" />
                 </div>
-                <article className="price-card relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${ORANGE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+                <article className="price-card group relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${ORANGE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
                   <div className="p-6 sm:p-8 flex flex-col flex-1 relative">
                     <GhostNumber n="02" accent={ORANGE} />
                     <div className="flex items-center gap-3 mb-5 mt-2">
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${ORANGE}15`, border: `1.5px solid ${ORANGE}38` }}>
+                      <div className="price-icon w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${ORANGE}15`, border: `1.5px solid ${ORANGE}38` }}>
                         <Mail className="w-5 h-5" color={ORANGE} strokeWidth={2} />
                       </div>
                       <p className="text-sm font-semibold" style={{ color: TEXT_BODY }}>Fully managed sending infrastructure and outreach</p>
@@ -480,7 +534,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     <div className="pt-6" style={{ borderTop: `1px solid ${BORDER}` }}>
                       <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
                         <div>
-                          <span className="text-2xl sm:text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}{prices.coldEmail}</span>
+                          <span className="text-2xl sm:text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.coldEmail} /></span>
                           {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                           <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> / month</span>
                         </div>
@@ -506,11 +560,11 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 <div className="mb-6">
                   <SectionHeading eyebrow="03" title="LinkedIn Automation Tool" subtitle="Do It Yourself" />
                 </div>
-                <article className="price-card relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${PURPLE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+                <article className="price-card group relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${PURPLE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
                   <div className="p-6 sm:p-8 flex flex-col flex-1 relative">
                     <GhostNumber n="03" accent={PURPLE} />
                     <div className="flex items-center gap-3 mb-5 mt-2">
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${PURPLE}15`, border: `1.5px solid ${PURPLE}38` }}>
+                      <div className="price-icon w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${PURPLE}15`, border: `1.5px solid ${PURPLE}38` }}>
                         <Bot className="w-5 h-5" color={PURPLE} strokeWidth={2} />
                       </div>
                       <p className="text-sm font-semibold" style={{ color: TEXT_BODY }}>Self-serve, you stay in the driver&apos;s seat</p>
@@ -520,7 +574,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     </ul>
                     <div className="pt-6" style={{ borderTop: `1px solid ${BORDER}` }}>
                       <div className="mb-6">
-                        <span className="text-2xl sm:text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}{prices.automation}</span>
+                        <span className="text-2xl sm:text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.automation} /></span>
                         {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                         <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> / LinkedIn account / month</span>
                       </div>

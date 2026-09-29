@@ -353,20 +353,22 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
             top: 0,
             left: 0,
             right: 0,
-            height: "780px",
+            height: "820px",
             background:
-              "radial-gradient(ellipse 55% 50% at 18% 15%, rgba(245,183,49,0.22) 0%, transparent 60%)," +
-              "radial-gradient(ellipse 50% 45% at 82% 10%, rgba(124,58,237,0.18) 0%, transparent 60%)," +
-              "radial-gradient(ellipse 50% 45% at 50% 42%, rgba(20,184,166,0.14) 0%, transparent 65%)," +
-              "radial-gradient(ellipse 45% 40% at 88% 55%, rgba(59,130,246,0.12) 0%, transparent 65%)",
-            WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
-            maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+              "radial-gradient(ellipse 62% 55% at 14% 10%, rgba(245,183,49,0.40) 0%, rgba(245,183,49,0.12) 45%, transparent 72%)," +
+              "radial-gradient(ellipse 58% 52% at 86% 6%, rgba(124,58,237,0.36) 0%, rgba(124,58,237,0.10) 45%, transparent 72%)," +
+              "radial-gradient(ellipse 55% 50% at 50% 38%, rgba(20,184,166,0.26) 0%, rgba(20,184,166,0.08) 45%, transparent 72%)," +
+              "radial-gradient(ellipse 52% 48% at 92% 58%, rgba(59,130,246,0.28) 0%, rgba(59,130,246,0.08) 45%, transparent 72%)," +
+              "radial-gradient(ellipse 48% 42% at 6% 60%, rgba(249,115,22,0.20) 0%, transparent 70%)," +
+              "radial-gradient(ellipse 42% 38% at 55% 4%, rgba(16,185,129,0.16) 0%, transparent 68%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 62%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, black 62%, transparent 100%)",
             pointerEvents: "none",
           }}
         />
         {/* Subtle blobs, same treatment as Services.tsx / CTABanner.tsx, now drifting like Hero.tsx's */}
-        <div ref={blobGoldRef} aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
-        <div ref={blobPurpleRef} aria-hidden="true" style={{ position: "absolute", bottom: "-80px", left: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
+        <div ref={blobGoldRef} aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
+        <div ref={blobPurpleRef} aria-hidden="true" style={{ position: "absolute", bottom: "-80px", left: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.14) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
 
         <div className="relative max-w-3xl mx-auto text-center mb-14">
           <span className="hero-fade inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>

@@ -342,6 +342,28 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
   return (
     <InnerLayout>
       <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+        {/* Soft multi-color mesh wash behind the hero, in the site's real
+            accent rotation (Industries.tsx's gold/purple/teal/blue) instead
+            of a single tint -- fades out via mask before the cards so the
+            table/cards below sit back on plain cream. */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "780px",
+            background:
+              "radial-gradient(ellipse 55% 50% at 18% 15%, rgba(245,183,49,0.22) 0%, transparent 60%)," +
+              "radial-gradient(ellipse 50% 45% at 82% 10%, rgba(124,58,237,0.18) 0%, transparent 60%)," +
+              "radial-gradient(ellipse 50% 45% at 50% 42%, rgba(20,184,166,0.14) 0%, transparent 65%)," +
+              "radial-gradient(ellipse 45% 40% at 88% 55%, rgba(59,130,246,0.12) 0%, transparent 65%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, black 55%, transparent 100%)",
+            pointerEvents: "none",
+          }}
+        />
         {/* Subtle blobs, same treatment as Services.tsx / CTABanner.tsx, now drifting like Hero.tsx's */}
         <div ref={blobGoldRef} aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blobPurpleRef} aria-hidden="true" style={{ position: "absolute", bottom: "-80px", left: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />

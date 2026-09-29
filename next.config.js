@@ -61,6 +61,13 @@ const nextConfig = {
       { source: "/website-newsletter", destination: "/newsletter-subscribe", permanent: true },
       { source: "/discover-our-most-popular-services", destination: "/services", permanent: true },
       { source: "/other-services", destination: "/services", permanent: true },
+
+      // Private pricing pages moved from descriptive region slugs to a
+      // code-based URL (/plans/alpha, /plans/beta) so neither the URL nor
+      // the page itself names a region. Redirected in case either old link
+      // was already sent to a prospect.
+      { source: "/international-pricing", destination: "/plans/alpha", permanent: true },
+      { source: "/indian-pricing", destination: "/plans/beta", permanent: true },
     ];
   },
 };

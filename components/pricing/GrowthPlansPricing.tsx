@@ -394,6 +394,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                   <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
                     <CheckIcon color={GREEN} />
                     <span className="font-semibold">{item}</span>
+                    {ROW_INFO[item] && <InfoTooltip text={ROW_INFO[item]} />}
                   </div>
                 ))}
               </div>

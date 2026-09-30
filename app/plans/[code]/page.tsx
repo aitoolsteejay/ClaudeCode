@@ -28,6 +28,16 @@ const PLANS: Record<string, Pick<GrowthPlansPricingProps, "currencyPrefix" | "cu
       automation: "19,499",
     },
   },
+  neptune: {
+    currencyPrefix: "$",
+    prices: {
+      starter: "1,999",
+      growth: "2,799",
+      leadGen: "2,499",
+      coldEmail: "2,600",
+      automation: "199",
+    },
+  },
 };
 
 export const metadata: Metadata = {

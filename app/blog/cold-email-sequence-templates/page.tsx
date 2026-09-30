@@ -116,7 +116,7 @@ export default function ColdEmailSequenceTemplates() {
       </section>
 
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
             { stat: "8 touches", source: "average number needed before a prospect engages", cite: "RAIN Group" },

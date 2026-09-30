@@ -53,7 +53,7 @@ export default function PredictableB2BLeadGen() {
 
       {/* Stats bar */}
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "80%", source: "of B2B leads never convert due to poor follow-up", cite: "Marketing Sherpa" },
             { stat: "2%", source: "of cold outreach gets a reply without personalisation", cite: "Backlinko" },

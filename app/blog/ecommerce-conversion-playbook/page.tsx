@@ -59,7 +59,7 @@ export default function EcommerceConversionPlaybook() {
       </section>
 
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "69%", source: "of carts abandoned before checkout", cite: "Baymard Institute" },
             { stat: "270%", source: "conversion boost from social proof", cite: "Spiegel Research" },

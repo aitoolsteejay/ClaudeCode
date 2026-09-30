@@ -52,7 +52,7 @@ export default function B2BLeadGenMetrics() {
       </section>
 
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "Only 23%", source: "of B2B companies track outbound metrics beyond open rate", cite: "HubSpot State of Sales" },
             { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },

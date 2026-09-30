@@ -52,7 +52,7 @@ export default function LinkedInOutreachSequences() {
       </section>
 
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "49%", source: "of B2B buyers research vendors on LinkedIn before responding", cite: "LinkedIn Research" },
             { stat: "3–5x", source: "higher reply rate for LinkedIn DMs vs cold email in B2B", cite: "Expandi Data" },

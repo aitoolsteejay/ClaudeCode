@@ -59,6 +59,13 @@ const ROW_INFO: Record<string, string> = {
 interface TableSection {
   title: string;
   rows: DiffRow[];
+  // Ties each section's header row back to the part of the brand palette it
+  // most relates to, so the three groups read as distinct categories rather
+  // than one repeated amber divider: Growth Infrastructure is the neutral
+  // foundation everyone gets, Content mirrors the Growth tier's own gold
+  // accent, Lead Generation mirrors the Lead Generation tier's teal.
+  tint: string;
+  tintText: string;
 }
 
 // Full per-card breakdown for the Content and Lead Generation sections
@@ -91,14 +98,20 @@ const TABLE_SECTIONS: TableSection[] = [
   {
     title: "Growth Infrastructure",
     rows: INCLUDED_IN_EVERY_PLAN.slice(0, 8).map((label) => ({ label, values: [true, true, true] as [Cell, Cell, Cell], info: ROW_INFO[label] })),
+    tint: "#F1EEE7",
+    tintText: "#8C8279",
   },
   {
     title: "Content",
     rows: CONTENT_ITEMS.map((c) => ({ label: c.label, values: c.included as [Cell, Cell, Cell], info: ROW_INFO[c.label] })),
+    tint: "#FEF9EC",
+    tintText: "#B45309",
   },
   {
     title: "Lead Generation",
     rows: DIFFERENTIATORS.slice(0, 3),
+    tint: "#ECFBF9",
+    tintText: "#0F766E",
   },
 ];
 
@@ -375,13 +388,13 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
               {tiers.map((tier, i) => {
                 const Icon = tier.icon;
                 return (
-                  <FadeIn key={tier.name} delay={80 + i * 90}>
+                  <FadeIn key={tier.name} delay={80 + i * 90} className={tier.featured ? "sm:-mt-4 sm:relative sm:z-10" : ""}>
                     <article
                       className="price-card group relative flex flex-col rounded-2xl overflow-hidden bg-white"
                       style={{
-                        border: `1px solid ${BORDER}`,
+                        border: tier.featured ? `1.5px solid ${tier.accent}` : `1px solid ${BORDER}`,
                         borderTop: `3px solid ${tier.accent}`,
-                        boxShadow: tier.featured ? `0 8px 28px ${tier.accent}30` : "0 2px 10px rgba(0,0,0,0.04)",
+                        boxShadow: tier.featured ? `0 16px 40px ${tier.accent}38` : "0 2px 10px rgba(0,0,0,0.04)",
                       }}
                     >
                       {tier.featured && (
@@ -389,12 +402,12 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                           MOST POPULAR
                         </div>
                       )}
-                      <div className="p-6 sm:p-7 flex flex-col flex-1 relative">
+                      <div className={tier.featured ? "p-6 sm:p-8 pt-8 sm:pt-10 flex flex-col flex-1 relative" : "p-6 sm:p-7 flex flex-col flex-1 relative"}>
                         <GhostNumber n={String(i + 1)} accent={tier.accent} />
 
                         <div className="flex items-center gap-3 mb-5 mt-2">
-                          <div className="price-icon w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${tier.accent}15`, border: `1.5px solid ${tier.accent}38` }}>
-                            <Icon className="w-5 h-5" color={tier.accent} strokeWidth={2} />
+                          <div className={`price-icon rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110 ${tier.featured ? "w-12 h-12" : "w-11 h-11"}`} style={{ background: `${tier.accent}15`, border: `1.5px solid ${tier.accent}38` }}>
+                            <Icon className={tier.featured ? "w-6 h-6" : "w-5 h-5"} color={tier.accent} strokeWidth={2} />
                           </div>
                           <div>
                             <h3 className="text-base font-black leading-tight" style={{ color: TEXT_DARK }}>{tier.name}</h3>
@@ -403,7 +416,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                         </div>
 
                         <div className="mb-5">
-                          <span className="text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={tier.price} /></span>
+                          <span className={tier.featured ? "text-4xl font-black" : "text-3xl font-black"} style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={tier.price} /></span>
                           {currencySuffix && <span className="text-xs font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                           <span className="text-xs font-semibold" style={{ color: TEXT_MUTED }}> / month</span>
                         </div>
@@ -443,14 +456,31 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 <h2 className="text-sm font-black uppercase tracking-widest" style={{ color: TEXT_DARK }}>Included in every plan</h2>
                 <span className="text-xs font-semibold" style={{ color: TEXT_MUTED }}>Same on all 3 tiers</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
-                {INCLUDED_IN_EVERY_PLAN.map((item) => (
-                  <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
-                    <CheckIcon color={GREEN} />
-                    <span className="font-semibold">{item}</span>
-                    {ROW_INFO[item] && <InfoTooltip text={ROW_INFO[item]} />}
+              <div className="space-y-5">
+                <div>
+                  <p className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: TEXT_MUTED }}>Growth Infrastructure</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
+                    {INCLUDED_IN_EVERY_PLAN.slice(0, 8).map((item) => (
+                      <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
+                        <CheckIcon color={GREEN} />
+                        <span className="font-semibold">{item}</span>
+                        {ROW_INFO[item] && <InfoTooltip text={ROW_INFO[item]} />}
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div className="pt-5" style={{ borderTop: `1px solid ${BORDER}` }}>
+                  <p className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: TEXT_MUTED }}>Content Foundation</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
+                    {INCLUDED_IN_EVERY_PLAN.slice(8).map((item) => (
+                      <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
+                        <CheckIcon color={GREEN} />
+                        <span className="font-semibold">{item}</span>
+                        {ROW_INFO[item] && <InfoTooltip text={ROW_INFO[item]} />}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </FadeIn>
@@ -483,7 +513,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     {TABLE_SECTIONS.map((section) => (
                       <Fragment key={section.title}>
                         <tr>
-                          <td colSpan={4} className="px-4 sm:px-6 py-2.5 text-[10px] font-black uppercase tracking-widest" style={{ color: "#B45309", backgroundColor: "#FEF9EC" }}>
+                          <td colSpan={4} className="px-4 sm:px-6 py-2.5 text-[10px] font-black uppercase tracking-widest" style={{ color: section.tintText, backgroundColor: section.tint }}>
                             {section.title}
                           </td>
                         </tr>
@@ -512,86 +542,94 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
             </div>
           </FadeIn>
 
-          {/* Additional standalone options */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Additional standalone options -- a horizontal split (features
+              left, price/CTA right on larger screens) so these read as
+              distinct single-item offers rather than a repeat of the
+              3-tier comparison cards above. */}
+          <div className="space-y-10">
             <FadeIn>
-              <div className="h-full flex flex-col">
+              <div>
                 <div className="mb-6">
                   <SectionHeading eyebrow="02" title="Cold Email Outbound System" subtitle="Done For You" />
                 </div>
-                <article className="price-card group relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${ORANGE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
-                  <div className="p-6 sm:p-8 flex flex-col flex-1 relative">
-                    <GhostNumber n="02" accent={ORANGE} />
-                    <div className="flex items-center gap-3 mb-5 mt-2">
-                      <div className="price-icon w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${ORANGE}15`, border: `1.5px solid ${ORANGE}38` }}>
-                        <Mail className="w-5 h-5" color={ORANGE} strokeWidth={2} />
+                <article className="price-card group relative flex flex-col lg:flex-row rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${ORANGE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col relative">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="price-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${ORANGE}15`, border: `1.5px solid ${ORANGE}38` }}>
+                        <Mail className="w-6 h-6" color={ORANGE} strokeWidth={2} />
                       </div>
                       <p className="text-sm font-semibold" style={{ color: TEXT_BODY }}>Fully managed sending infrastructure and outreach</p>
                     </div>
-                    <ul className="space-y-2.5 mb-6 flex-1">
+                    <ul className="space-y-2.5">
                       {COLD_EMAIL_FEATURES.map((f) => <CheckedItem key={f} label={f} accent={ORANGE} />)}
                     </ul>
-                    <div className="pt-6" style={{ borderTop: `1px solid ${BORDER}` }}>
-                      <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
-                        <div>
-                          <span className="text-2xl sm:text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.coldEmail} /></span>
-                          {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
-                          <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> / month</span>
-                        </div>
-                        <span className="text-xs font-bold" style={{ color: ORANGE }}>100% advance for first month</span>
-                      </div>
-                      <div className="rounded-xl p-4 mb-6" style={{ backgroundColor: "#F8F6F2" }}>
-                        <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>
-                        <p className="text-xs leading-relaxed" style={{ color: TEXT_BODY }}>
-                          You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
-                        </p>
-                      </div>
-                      <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
-                        Get Started
-                      </a>
+                  </div>
+                  <div
+                    className="p-6 sm:p-8 flex flex-col justify-center lg:w-[300px] lg:shrink-0"
+                    style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: `${ORANGE}08` }}
+                  >
+                    <div className="mb-3">
+                      <span className="text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.coldEmail} /></span>
+                      {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
+                      <div className="text-sm font-semibold" style={{ color: TEXT_MUTED }}>/ month</div>
                     </div>
+                    <span className="inline-block text-xs font-bold mb-4" style={{ color: ORANGE }}>100% advance for first month</span>
+                    <div className="rounded-xl p-4 mb-5 bg-white" style={{ border: `1px solid ${BORDER}` }}>
+                      <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>
+                      <p className="text-xs leading-relaxed" style={{ color: TEXT_BODY }}>
+                        You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
+                      </p>
+                    </div>
+                    <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
+                      Get Started
+                    </a>
                   </div>
                 </article>
               </div>
             </FadeIn>
 
             <FadeIn delay={90}>
-              <div className="h-full flex flex-col">
+              <div>
                 <div className="mb-6">
                   <SectionHeading eyebrow="03" title="LinkedIn Automation Tool" subtitle="Do It Yourself" />
                 </div>
-                <article className="price-card group relative flex-1 flex flex-col rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${PURPLE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
-                  <div className="p-6 sm:p-8 flex flex-col flex-1 relative">
-                    <GhostNumber n="03" accent={PURPLE} />
-                    <div className="flex items-center gap-3 mb-5 mt-2">
-                      <div className="price-icon w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${PURPLE}15`, border: `1.5px solid ${PURPLE}38` }}>
-                        <Bot className="w-5 h-5" color={PURPLE} strokeWidth={2} />
+                <article className="price-card group relative flex flex-col lg:flex-row rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}`, borderTop: `3px solid ${PURPLE}`, boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col relative">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="price-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110" style={{ background: `${PURPLE}15`, border: `1.5px solid ${PURPLE}38` }}>
+                        <Bot className="w-6 h-6" color={PURPLE} strokeWidth={2} />
                       </div>
                       <p className="text-sm font-semibold" style={{ color: TEXT_BODY }}>Self-serve, you stay in the driver&apos;s seat</p>
                     </div>
-                    <ul className="space-y-2.5 mb-6 flex-1">
+                    <ul className="space-y-2.5">
                       {LINKEDIN_TOOL_FEATURES.map((f) => <CheckedItem key={f} label={f} accent={PURPLE} />)}
                     </ul>
-                    <div className="pt-6" style={{ borderTop: `1px solid ${BORDER}` }}>
-                      <div className="mb-6">
-                        <span className="text-2xl sm:text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.automation} /></span>
-                        {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
-                        <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> / LinkedIn account / month</span>
-                      </div>
-                      <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
-                        Get Started
-                      </a>
+                  </div>
+                  <div
+                    className="p-6 sm:p-8 flex flex-col justify-center lg:w-[300px] lg:shrink-0"
+                    style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: `${PURPLE}08` }}
+                  >
+                    <div className="mb-5">
+                      <span className="text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.automation} /></span>
+                      {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
+                      <div className="text-sm font-semibold" style={{ color: TEXT_MUTED }}>/ LinkedIn account / month</div>
                     </div>
+                    <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
+                      Get Started
+                    </a>
                   </div>
                 </article>
               </div>
             </FadeIn>
           </div>
 
-          {/* Terms & Conditions */}
+          {/* Terms & Conditions -- deliberately the quietest thing on the
+              page: a plain footnote below a hairline, not another bordered
+              white card competing for the same attention as the pricing
+              and comparison content above. */}
           <FadeIn delay={60}>
-            <div className="rounded-2xl p-6 sm:p-8 bg-white" style={{ border: `1px solid ${BORDER}` }}>
-              <h2 className="text-sm font-black uppercase tracking-widest mb-4" style={{ color: TEXT_DARK }}>Terms &amp; Conditions</h2>
+            <div className="pt-8" style={{ borderTop: `1px solid ${BORDER}` }}>
+              <h2 className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: TEXT_MUTED }}>Terms &amp; Conditions</h2>
               <ul className="space-y-2.5">
                 {[
                   "Prices shown are indicative and exclude any applicable taxes unless stated otherwise.",

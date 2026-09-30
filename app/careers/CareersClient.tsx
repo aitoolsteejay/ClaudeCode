@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Briefcase, Building2, Globe2, Target, Rocket, TrendingUp, Users, PenTool, Zap, Sparkles, BookOpen } from "lucide-react";
+import { Briefcase, Building2, Globe2, Target, Rocket, TrendingUp, Users, PenTool, Zap, Sparkles, BookOpen, Bot } from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import StatTicker from "../components/StatTicker";
@@ -122,6 +122,13 @@ const ROLES = [
     desc: "You'll prospect and close deals with founders, executives, and professionals, helping them unlock personal branding with Myntmore.",
     bullets: ["Background in sales or B2B services", "CRM-savvy (Zoho or similar)", "Confident, client-facing communicator"],
   },
+  {
+    slug: "systems-ai-automation-intern", accent: "#14B8A6", tag: "Systems & AI",
+    title: "Systems & AI Automation Intern",
+    type: "Internship · Worli, Mumbai", location: "India",
+    desc: "You'll build the internal and client-facing AI agents and automations that run Myntmore, and own SEO, AEO, and GEO along the way.",
+    bullets: ["Comfortable with n8n, Clay, or Python", "SEO nerd, curious about AI search", "Ownership mindset, ships fast"],
+  },
 ];
 
 // Department pills, derived from each role's tag rather than hand-listed a
@@ -134,6 +141,7 @@ const TAG_ICONS: Record<string, React.ElementType> = {
   "Growth Marketing": TrendingUp,
   "People & Ops": Users,
   "Content & Branding": PenTool,
+  "Systems & AI": Bot,
 };
 
 function SearchIcon() {

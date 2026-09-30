@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BookOpen, Compass, Sparkles, Library, Instagram } from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
-import BlogCardCarousel from "./BlogCardCarousel";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
@@ -39,84 +39,56 @@ export const metadata: Metadata = {
   },
 };
 
-const BLOG_PREVIEW = [
+// A real directory, not a fourth copy of content: each tile links out to
+// its own hub page rather than duplicating a hand-picked preview of posts
+// that would need to be kept in sync by hand and inevitably goes stale
+// (the old BLOG_PREVIEW/GUIDES_PREVIEW/TOOLS_PREVIEW arrays here were
+// already missing newer posts). Counts are hand-maintained alongside the
+// arrays they describe -- update here when a category's count changes.
+const DIRECTORY = [
   {
-    href: "/blog/case-study-procrastination",
-    tag: "Content Strategy",
-    title: "Case Study Procrastination: Why Your Best Proof Is Still Undocumented",
-    readTime: "4 min read",
-    accent: "#14b8a6",
+    href: "/resources/blogs",
+    icon: BookOpen,
+    accent: "#3B82F6",
+    count: "26 posts",
+    title: "Blog",
+    desc: "In-depth playbooks on cold email, ICP mapping, and outreach, no fluff.",
   },
   {
-    href: "/blog/pitching-trap-competitor-positioning",
-    tag: "Sales Strategy",
-    title: "The Pitching Trap: How to Articulate Pain Better Than Your Competitors",
-    readTime: "4 min read",
-    accent: "#f97316",
-  },
-  {
-    href: "/blog/icp-mapping-b2b",
-    tag: "ICP & Targeting",
-    title: "ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
-    readTime: "5 min read",
-    accent: "#10b981",
-  },
-  {
-    href: "/blog/b2b-outbound-benchmark-report-2026",
-    tag: "Lead Generation",
-    title: "The 2026 B2B Outbound Benchmark Report",
-    readTime: "8 min read",
-    accent: "#3b82f6",
-  },
-];
-
-const GUIDES_PREVIEW = [
-  {
-    href: "/instagram-resources/golden-icp-framework",
-    tag: "ICP & Targeting",
-    title: "The Golden ICP Framework",
-    accent: "#D97706",
-  },
-  {
-    href: "/instagram-resources/80-us-meetings-ai-agents",
-    tag: "AI Agents",
-    title: "80+ US Meetings Booked in 1 Month with AI Agents",
+    href: "/resources/guides",
+    icon: Compass,
     accent: "#F97316",
+    count: "11 guides",
+    title: "Guides",
+    desc: "Step-by-step, copy-paste-ready setup guides for AI and outbound.",
   },
   {
-    href: "/instagram-resources/how-to-set-up-vibe-prospecting",
-    tag: "Prospecting",
-    title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
-    accent: "#8b5cf6",
-  },
-];
-
-const TOOLS_PREVIEW = [
-  {
-    title: "LinkedIn Profile Optimizer",
-    desc: "Audit and rewrite your LinkedIn profile to convert visitors into high-intent inbound replies. Paste your current profile and get a full rewrite in minutes.",
-    href: "/tools/linkedin-optimizer",
-    icon: "🔗",
-    cta: "Optimize my profile",
+    href: "/resources/tools",
+    icon: Sparkles,
+    accent: "#F5B731",
+    count: "9 tools",
+    title: "Free Tools",
+    desc: "AI-powered tools for outreach. No sign-up, no credit card.",
   },
   {
-    title: "DM Angle Generator",
-    desc: "Generate hyper-personalised outreach opening angles based on prospect triggers and recent activity. Stop sending the same opener to every lead.",
-    href: "https://mynt-more-angles.lovable.app",
-    icon: "⚡",
-    cta: "Generate angles",
+    href: "/resources/glossary",
+    icon: Library,
+    accent: "#7C3AED",
+    count: "30 terms",
+    title: "Glossary",
+    desc: "Plain-English definitions for every term and framework we use.",
   },
-];
-
-const MARQUEE_ITEMS = [
-  "Cold Email Playbooks", "LinkedIn Outreach", "ICP Mapping", "Free AI Tools",
-  "Case Studies", "Deliverability Guides", "Outbound Metrics", "GTM Frameworks",
-  "Pipeline Building", "Lead Scoring", "Reply Rate Optimisation", "B2B Strategy",
+  {
+    href: "/resources/feed",
+    icon: Instagram,
+    accent: "#14B8A6",
+    count: "@myntmore",
+    title: "The Feed",
+    desc: "Short, practical reels on outbound and LinkedIn, under 60 seconds.",
+  },
 ];
 
 export default function Resources() {
-  const doubled = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
-
   return (
     <InnerLayout>
       <JsonLd data={BREADCRUMB_SCHEMA} />
@@ -152,11 +124,11 @@ export default function Resources() {
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-3 gap-6 mt-16 pt-10 border-t hero-fade-d4" style={{ borderColor: "#E8E2D9" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-10 border-t hero-fade-d4" style={{ borderColor: "#E8E2D9" }}>
             {[
               { n: "12K+", label: "B2B meetings booked" },
               { n: "$120M+", label: "Pipeline generated" },
-              { n: "5", label: "Free guides & tools" },
+              { n: "76+", label: "Posts, guides & tools" },
             ].map((s) => (
               <div key={s.n}>
                 <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.n}</div>
@@ -167,127 +139,43 @@ export default function Resources() {
         </div>
       </section>
 
-      {/* ── Marquee strip ── */}
-      <div className="py-5 overflow-hidden border-b" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-        <div className="flex gap-4 w-max" style={{ animation: "marquee-left 30s linear infinite" }}>
-          {doubled.map((label, i) => (
-            <span key={i} className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold whitespace-nowrap border flex-shrink-0"
-              style={{
-                background: i % 2 === 0 ? "linear-gradient(135deg,#fff 0%,#FEF9EC 100%)" : "linear-gradient(135deg,#fff 0%,#EFF6FF 100%)",
-                borderColor: i % 2 === 0 ? "rgba(245,183,49,0.35)" : "rgba(59,130,246,0.25)",
-                color: "#1a1a1a",
-                boxShadow: "0 1px 6px rgba(0,0,0,0.05)",
-              }}>
-              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: i % 2 === 0 ? "#D97706" : "#3b82f6" }} />
-              {label}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Blogs ── */}
+      {/* ── Directory ── */}
       <section className="py-20 px-4" style={{ backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.2)" }}>Blog</span>
-                <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>In-depth guides & playbooks</h2>
-                <p className="text-sm mt-2" style={{ color: "#52525B" }}>No fluff. Just the frameworks we use with real clients.</p>
-              </div>
-              <Link href="/resources/blogs" className="text-sm font-bold hidden sm:inline-flex items-center gap-1 flex-shrink-0 ml-6" style={{ color: "#F5B731" }}>
-                View all guides →
-              </Link>
+            <div className="mb-10">
+              <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Where to start</h2>
+              <p className="text-sm mt-2" style={{ color: "#52525B" }}>Five kinds of resources, all built from the same systems we run for real clients.</p>
             </div>
 
-            <div className="rounded-3xl p-4 sm:p-8" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 50%,#0f0f0f 100%)" }}>
-              <BlogCardCarousel posts={BLOG_PREVIEW} />
-            </div>
-
-            <div className="mt-8 text-center sm:hidden">
-              <Link href="/resources/blogs" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all guides →</Link>
-            </div>
-            <div className="mt-4 hidden sm:block text-right">
-              <Link href="/resources/blogs" className="text-xs font-semibold" style={{ color: "#8C8279" }}>More guides in the blog →</Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── Guides ── */}
-      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#F97316", border: "1px solid rgba(249,115,22,0.2)" }}>Guides</span>
-                <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>Step-by-step, copy-paste ready</h2>
-                <p className="text-sm mt-2" style={{ color: "#52525B" }}>AI and outbound setup guides built from the systems we run for our own clients.</p>
-              </div>
-              <Link href="/resources/guides" className="text-sm font-bold hidden sm:inline-flex items-center gap-1 flex-shrink-0 ml-6" style={{ color: "#F5B731" }}>
-                View all guides →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {GUIDES_PREVIEW.map((g) => (
-                <Link key={g.href} href={g.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                  <div className="h-1.5" style={{ background: `linear-gradient(90deg,${g.accent},${g.accent}66)` }} />
-                  <div className="p-6">
-                    <span className="inline-flex text-xs font-bold px-2.5 py-1 rounded-full mb-4" style={{ backgroundColor: `${g.accent}12`, color: g.accent }}>{g.tag}</span>
-                    <h3 className="text-base font-black mb-4 leading-snug" style={{ color: "#0a0a0a" }}>{g.title}</h3>
-                    <div className="flex items-center justify-end">
-                      <span className="text-xs font-bold transition-all duration-200 group-hover:gap-2" style={{ color: g.accent }}>Read →</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {DIRECTORY.map((d) => {
+                const Icon = d.icon;
+                return (
+                  <Link
+                    key={d.href}
+                    href={d.href}
+                    className="group relative block rounded-2xl border p-7 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                    style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}
+                  >
+                    <div aria-hidden style={{ position: "absolute", top: "-40px", right: "-40px", width: 140, height: 140, borderRadius: "50%", background: `radial-gradient(circle, ${d.accent}18 0%, transparent 70%)`, pointerEvents: "none" }} />
+                    <div className="relative">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-200 group-hover:scale-110" style={{ backgroundColor: `${d.accent}15`, border: `1.5px solid ${d.accent}38` }}>
+                        <Icon className="w-6 h-6" color={d.accent} strokeWidth={2} />
+                      </div>
+                      <div className="flex items-baseline justify-between gap-3 mb-2">
+                        <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{d.title}</h3>
+                        <span className="text-xs font-bold whitespace-nowrap" style={{ color: d.accent }}>{d.count}</span>
+                      </div>
+                      <p className="text-sm leading-relaxed mb-5" style={{ color: "#52525B" }}>{d.desc}</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold transition-all duration-200 group-hover:gap-2.5" style={{ color: d.accent }}>
+                        Browse
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      </span>
                     </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-8 text-center sm:hidden">
-              <Link href="/resources/guides" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all guides →</Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ── Tools ── */}
-      <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(245,183,49,0.1)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>Free Tools</span>
-                <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>AI tools built for outbound</h2>
-                <p className="text-sm mt-2" style={{ color: "#52525B" }}>No sign-up. No credit card. No catch.</p>
-              </div>
-              <Link href="/resources/tools" className="text-sm font-bold hidden sm:inline-flex items-center gap-1 flex-shrink-0 ml-6" style={{ color: "#F5B731" }}>
-                View all tools →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {TOOLS_PREVIEW.map((t, i) => (
-                <a key={t.title} href={t.href} target="_blank" rel="noopener noreferrer"
-                  className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
-                  style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                  <div className="h-1.5" style={{ background: i === 0 ? "linear-gradient(90deg,#F5B731,#f97316)" : "linear-gradient(90deg,#a855f7,#3b82f6)" }} />
-                  <div className="p-8">
-                    <div className="text-4xl mb-4">{t.icon}</div>
-                    <h3 className="text-xl font-black mb-3" style={{ color: "#0a0a0a" }}>{t.title}</h3>
-                    <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{t.desc}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full transition-all duration-200"
-                      style={{ backgroundColor: "#0a0a0a", color: "#ffffff" }}>
-                      {t.cta}
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </span>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div className="mt-6 sm:hidden text-center">
-              <Link href="/resources/tools" className="text-sm font-bold" style={{ color: "#F5B731" }}>View all tools →</Link>
+                  </Link>
+                );
+              })}
             </div>
           </FadeIn>
         </div>

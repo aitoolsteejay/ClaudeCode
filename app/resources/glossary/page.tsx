@@ -240,45 +240,78 @@ const TERMS = [
   },
 ];
 
+// Alphabetized like a real reference, not left in ad-hoc authoring order --
+// "The 3-Second Rule" sorts under "3", not "T", and a parenthetical like
+// "(TCM)" or "(Ideal Customer Profile)" never affects sort position.
+function sortKey(title: string): string {
+  return title.replace(/^The\s+/i, "").replace(/\s*\([^)]*\)\s*$/, "");
+}
+
+const SORTED_TERMS = [...TERMS].sort((a, b) => sortKey(a.title).localeCompare(sortKey(b.title)));
+
+const GROUPED = SORTED_TERMS.reduce<Record<string, typeof TERMS>>((acc, term) => {
+  const first = sortKey(term.title)[0].toUpperCase();
+  const key = /[A-Z]/.test(first) ? first : "#";
+  (acc[key] ??= []).push(term);
+  return acc;
+}, {});
+
+const LETTERS = Object.keys(GROUPED).sort();
+
 export default function GlossaryPage() {
   return (
     <InnerLayout>
-      <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.18) 0%, rgba(124,58,237,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.18) 0%, rgba(255,160,0,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-
+      <section className="relative pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Glossary", href: "/resources/glossary" }]} />
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(124,58,237,0.35)", background: "rgba(124,58,237,0.07)" }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#7C3AED" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7C3AED" }}>Glossary</span>
-          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The terms behind the system
           </h1>
-          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: "#52525B" }}>
-            The terms and frameworks that come up repeatedly across Myntmore&apos;s own content and campaigns, from industry basics to a few ideas we coined ourselves. Here&apos;s exactly what each one means, in one place.
+          <p className="text-lg sm:text-xl max-w-2xl mb-10" style={{ color: "#52525B" }}>
+            {TERMS.length} terms and frameworks that come up repeatedly across Myntmore&apos;s own content and campaigns, from industry basics to a few ideas we coined ourselves, A to Z.
           </p>
+
+          {/* A-Z quick nav -- only letters that actually have an entry */}
+          <div className="flex flex-wrap gap-2 pb-8 border-b" style={{ borderColor: "#E8E2D9" }}>
+            {LETTERS.map((letter) => (
+              <a
+                key={letter}
+                href={`#letter-${letter}`}
+                className="w-8 h-8 flex items-center justify-center rounded-lg text-sm font-black border transition-colors duration-150"
+                style={{ borderColor: "#E8E2D9", color: "#3D3D3D", backgroundColor: "#ffffff" }}
+              >
+                {letter}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-        <div className="max-w-4xl mx-auto">
-          <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {TERMS.map((t) => (
-                <Link key={t.href} href={t.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
-                  <div className="p-6">
-                    <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${t.accent}12`, color: t.accent }}>{t.tag}</span>
-                    <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{t.title}</h2>
-                    <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{t.excerpt}</p>
-                    <span className="text-xs font-bold" style={{ color: t.accent }}>Read the definition &rarr;</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </FadeIn>
+      <section className="py-16 px-4" style={{ backgroundColor: "#ffffff" }}>
+        <div className="max-w-4xl mx-auto space-y-14">
+          {LETTERS.map((letter) => (
+            <FadeIn key={letter}>
+              <div id={`letter-${letter}`} className="scroll-mt-28">
+                <div className="flex items-baseline gap-3 mb-6">
+                  <span className="text-3xl font-black" style={{ color: "#7C3AED" }}>{letter}</span>
+                  <div className="h-px flex-1" style={{ backgroundColor: "#E8E2D9" }} />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {GROUPED[letter].map((t) => (
+                    <Link key={t.href} href={t.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                      <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
+                      <div className="p-6">
+                        <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${t.accent}12`, color: t.accent }}>{t.tag}</span>
+                        <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{t.title}</h2>
+                        <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{t.excerpt}</p>
+                        <span className="text-xs font-bold" style={{ color: t.accent }}>Read the definition &rarr;</span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
         </div>
       </section>
     </InnerLayout>

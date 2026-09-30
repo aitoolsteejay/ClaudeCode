@@ -136,41 +136,31 @@ export default function ToolsPage() {
   return (
     <InnerLayout>
       <JsonLd data={BREADCRUMB_SCHEMA} />
-      <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,160,0,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.20) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", bottom: "-140px", left: "10%", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.16) 0%, rgba(37,99,235,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-
+      <section className="relative pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-6">
             <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
             <span style={{ color: "#E8E2D9" }}>/</span>
             <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Tools</span>
           </div>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
-            style={{ borderColor: "rgba(245,183,49,0.35)", background: "rgba(245,183,49,0.07)" }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D97706" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>Free Tools</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            AI tools<br />
-            <span className="relative inline-block">
-              Free to use
-              <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 260 10" preserveAspectRatio="none" aria-hidden>
-                <path d="M2 7 Q65 2 130 6 Q195 10 258 5" stroke="#F5B731" strokeWidth="3" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
+            9 tools. Zero forms<br />until you want the output.
           </h1>
-          <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
-            Tools we have built to help B2B founders run smarter outreach. No sign-up, no credit card, no catch.
+          <p className="text-lg sm:text-xl max-w-2xl mb-8" style={{ color: "#52525B" }}>
+            AI tools built to help B2B founders run smarter outreach — try any of them free.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
+          <div className="flex flex-wrap gap-3 mb-10">
+            {["No sign-up to try", "No credit card", "Built by us, used by us"].map((chip) => (
+              <span key={chip} className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#D97706" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                {chip}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
             <a href="#tools-grid" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Explore Tools
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
-            <a href="/founder-meeting" className="btn-ghost px-8 py-4 text-base font-bold inline-flex items-center gap-2">
-              Book a Free GTM Audit
             </a>
           </div>
         </div>

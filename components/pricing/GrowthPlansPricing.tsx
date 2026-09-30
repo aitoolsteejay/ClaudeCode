@@ -74,23 +74,14 @@ const CONTENT_ITEMS: { label: string; included: [boolean, boolean, boolean] }[] 
   { label: "5 Strategic Engagements / Post", included: [false, true, false] },
 ];
 
+// A few standout numbers per tier, not the full breakdown -- the complete
+// itemised Content/Lead Generation/Growth Infrastructure list lives once, in
+// the comparison table below, so it isn't repeated card-by-card.
 // Indexed by tier: 0 = Starter, 1 = Growth, 2 = Lead Generation
-const LEAD_GEN_PER_TIER: { label: string; included: boolean }[][] = [
-  [
-    { label: "300 Connection Requests / Month", included: true },
-    { label: "2 Follow-Up Messages per Prospect", included: true },
-    { label: "15 InMails / Month", included: false },
-  ],
-  [
-    { label: "600 Connection Requests / Month", included: true },
-    { label: "4 Follow-Up Messages per Prospect", included: true },
-    { label: "15 InMails / Month", included: true },
-  ],
-  [
-    { label: "600 Connection Requests / Month", included: true },
-    { label: "4 Follow-Up Messages per Prospect", included: true },
-    { label: "15 InMails / Month", included: true },
-  ],
+const CARD_HIGHLIGHTS: string[][] = [
+  ["300 Connection Requests / Month", "2 Follow-Ups per Prospect", "4 Content Pieces / Month"],
+  ["600 Connection Requests / Month", "15 InMails / Month", "2 Video-Based Posts / Month"],
+  ["600 Connection Requests / Month", "15 InMails / Month", "4 Content Pieces / Month"],
 ];
 
 // Full comparison table: every row from the PDF, grouped the same way as the
@@ -147,22 +138,6 @@ function CheckIcon({ color }: { color: string }) {
     <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke={color} strokeWidth={2.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
-  );
-}
-
-function PlanFeatureSection({ title, items, accent }: { title: string; items: { label: string; included: boolean }[]; accent: string }) {
-  return (
-    <div>
-      <p className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: accent }}>{title}</p>
-      <ul className="space-y-1.5">
-        {items.map((item) => (
-          <li key={item.label} className="flex items-start gap-2 text-xs leading-snug" style={{ color: item.included ? "#3D3D3D" : "#B7AFA0" }}>
-            {item.included ? <CheckIcon color={accent} /> : <span className="w-4 shrink-0 text-center">&mdash;</span>}
-            <span className={item.included ? "font-semibold" : ""}>{item.label}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
 
@@ -433,19 +408,20 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                           <span className="text-xs font-semibold" style={{ color: TEXT_MUTED }}> / month</span>
                         </div>
 
-                        <div className="flex-1 space-y-4 mb-5">
-                          <PlanFeatureSection
-                            title="Content"
-                            items={CONTENT_ITEMS.map((c) => ({ label: c.label, included: c.included[i as 0 | 1 | 2] }))}
-                            accent={tier.accent}
-                          />
-                          <PlanFeatureSection
-                            title="Lead Generation"
-                            items={LEAD_GEN_PER_TIER[i]}
-                            accent={tier.accent}
-                          />
-                          <p className="text-xs leading-snug pt-1" style={{ color: TEXT_MUTED }}>
+                        <div className="flex-1 space-y-2.5 mb-5">
+                          <p className="text-[10px] font-black uppercase tracking-widest mb-1" style={{ color: tier.accent }}>Highlights</p>
+                          <ul className="space-y-1.5">
+                            {CARD_HIGHLIGHTS[i].map((label) => (
+                              <li key={label} className="flex items-start gap-2 text-sm" style={{ color: "#3D3D3D" }}>
+                                <CheckIcon color={tier.accent} />
+                                <span className="font-semibold">{label}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-xs leading-snug pt-1.5" style={{ color: TEXT_MUTED }}>
                             <a href="#included-in-every-plan" className="font-bold underline" style={{ color: tier.accent }}>+ Growth Infrastructure (same on every plan)</a>
+                            {" · "}
+                            <a href="#plan-comparison" className="font-bold underline" style={{ color: tier.accent }}>Full comparison</a>
                           </p>
                         </div>
 
@@ -481,7 +457,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
 
           {/* Full comparison table */}
           <FadeIn delay={200}>
-            <div className="rounded-2xl overflow-hidden bg-white" style={{ border: `1px solid ${BORDER}` }}>
+            <div id="plan-comparison" className="rounded-2xl overflow-hidden bg-white scroll-mt-28" style={{ border: `1px solid ${BORDER}` }}>
               <div className="px-6 py-4" style={{ borderBottom: `1px solid ${BORDER}` }}>
                 <h2 className="text-sm font-black uppercase tracking-widest" style={{ color: TEXT_DARK }}>Overview</h2>
               </div>

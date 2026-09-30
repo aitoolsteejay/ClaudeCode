@@ -7,7 +7,7 @@ import GrowthPlansPricing, { type GrowthPlansPricingProps } from "@/components/p
 // the URL or on the page. Deliberately not linked from any nav, footer, or
 // sitemap, and kept out of search indexing via robots below.
 const PLANS: Record<string, Pick<GrowthPlansPricingProps, "currencyPrefix" | "currencySuffix" | "prices">> = {
-  alpha: {
+  mars: {
     currencyPrefix: "$",
     prices: {
       starter: "999",
@@ -17,7 +17,7 @@ const PLANS: Record<string, Pick<GrowthPlansPricingProps, "currencyPrefix" | "cu
       automation: "199",
     },
   },
-  beta: {
+  earth: {
     currencyPrefix: "₹",
     currencySuffix: "+ GST",
     prices: {

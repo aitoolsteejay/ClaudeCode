@@ -183,7 +183,7 @@ Every tool except the ROI Calculator gates its actual output behind `components/
 
 ### Pricing (`/plans/*`)
 
-`/plans/[code]` is a **dynamic route** — the only one in the codebase — resolving `alpha` → USD/international pricing and `beta` → INR/Indian pricing via a lookup `Record` in `app/plans/[code]/page.tsx`. Both are unlisted (`robots: noindex`, not in any nav/footer/sitemap) and share 100% of their UI via `components/pricing/GrowthPlansPricing.tsx`, which takes `currencyPrefix`/`currencySuffix`/`prices` as props. The URLs are intentionally region-blind codes rather than `/international-pricing` / `/indian-pricing` (old URLs 308-redirect to the new ones — see `next.config.js`).
+`/plans/[code]` is a **dynamic route** — the only one in the codebase — resolving `mars` → USD/international pricing and `earth` → INR/Indian pricing via a lookup `Record` in `app/plans/[code]/page.tsx`. Both are unlisted (`robots: noindex`, not in any nav/footer/sitemap) and share 100% of their UI via `components/pricing/GrowthPlansPricing.tsx`, which takes `currencyPrefix`/`currencySuffix`/`prices` as props. The URLs are intentionally region-blind codes rather than `/international-pricing` / `/indian-pricing` (old URLs 308-redirect to the new ones — see `next.config.js`).
 
 If you need to add a 3rd pricing variant, add a key to the `PLANS` record in `app/plans/[code]/page.tsx` — do not create a new page.
 

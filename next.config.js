@@ -63,11 +63,15 @@ const nextConfig = {
       { source: "/other-services", destination: "/services", permanent: true },
 
       // Private pricing pages moved from descriptive region slugs to a
-      // code-based URL (/plans/alpha, /plans/beta) so neither the URL nor
-      // the page itself names a region. Redirected in case either old link
-      // was already sent to a prospect.
-      { source: "/international-pricing", destination: "/plans/alpha", permanent: true },
-      { source: "/indian-pricing", destination: "/plans/beta", permanent: true },
+      // code-based URL so neither the URL nor the page itself names a
+      // region. Redirected in case either old link was already sent to a
+      // prospect.
+      { source: "/international-pricing", destination: "/plans/mars", permanent: true },
+      { source: "/indian-pricing", destination: "/plans/earth", permanent: true },
+      // Renamed 2026-09-30 from the first-round codes (alpha/beta) to
+      // mars/earth -- redirected in case either was already sent out.
+      { source: "/plans/alpha", destination: "/plans/mars", permanent: true },
+      { source: "/plans/beta", destination: "/plans/earth", permanent: true },
     ];
   },
 };

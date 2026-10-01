@@ -4,7 +4,10 @@ import EventPopup from "./components/EventPopup";
 import ReelWidget from "./components/ReelWidget";
 
 export const metadata: Metadata = {
-  title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
+  // Names Mumbai because GSC shows this page ranking top-3 for ~15
+  // "lead generation / b2b marketing agency in mumbai" queries with
+  // near-zero clicks under the previous location-less title.
+  title: "Myntmore | AI-Powered B2B Lead Generation Agency, Mumbai",
   description:
     "AI-powered B2B outbound agency in Mumbai. Cold email, LinkedIn & ABM that books meetings. 12K+ booked, $120M+ pipeline. Book a free audit.",
   alternates: { canonical: "https://www.myntmore.com" },
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
     "myntmore",
   ],
   openGraph: {
-    title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
+    title: "Myntmore | AI-Powered B2B Lead Generation Agency, Mumbai",
     description:
       "We build and run your outbound engine using AI agents and human intelligence. Cold email, LinkedIn outreach, and ABM that books qualified meetings at scale.",
     url: "https://www.myntmore.com",

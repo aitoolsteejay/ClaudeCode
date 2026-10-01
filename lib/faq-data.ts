@@ -8,6 +8,9 @@
 export interface FAQItem {
   question: string;
   answer: string;
+  // Rendered as links under the answer; kept out of `answer` so the
+  // FAQPage JSON-LD stays plain text.
+  links?: { label: string; href: string }[];
 }
 
 export const FAQ_ITEMS: FAQItem[] = [
@@ -20,6 +23,21 @@ export const FAQ_ITEMS: FAQItem[] = [
     question: "What industries do you work with?",
     answer:
       "We work primarily with B2B companies SaaS, fintech, professional services, HR tech, martech, and enterprise software. We've run campaigns for companies selling to SMBs, mid-market, and enterprise buyers. If your target audience is a business buyer (founder, executive, or department head) and your deal size justifies outbound, we can build a program that works.",
+  },
+  {
+    question: "Do you work with companies outside Mumbai?",
+    answer:
+      "Yes. We're headquartered in Mumbai and run outbound campaigns for B2B companies across India and internationally. There are no separate city offices; the same Mumbai team runs every campaign, adapted to each market's industries and buyers. We've written up how outbound works in each major Indian market.",
+    links: [
+      { label: "Mumbai", href: "/b2b-lead-generation-mumbai" },
+      { label: "Delhi NCR", href: "/b2b-lead-generation-delhi" },
+      { label: "Bengaluru", href: "/b2b-lead-generation-bengaluru" },
+      { label: "Pune", href: "/b2b-lead-generation-pune" },
+      { label: "Hyderabad", href: "/b2b-lead-generation-hyderabad" },
+      { label: "Chennai", href: "/b2b-lead-generation-chennai" },
+      { label: "Kolkata", href: "/b2b-lead-generation-kolkata" },
+      { label: "Ahmedabad", href: "/b2b-lead-generation-ahmedabad" },
+    ],
   },
   {
     question: "Do you handle copywriting and strategy?",

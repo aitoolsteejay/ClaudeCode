@@ -75,6 +75,20 @@ function AccordionItem({ item, isOpen, onToggle, index }: AccordionItemProps) {
         className={`accordion-content px-6 ${isOpen ? "open pb-6" : ""}`}
       >
         <p className="text-[#52525B] text-sm leading-relaxed">{item.answer}</p>
+        {item.links && (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {item.links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors duration-150 hover:border-[#F5B731]"
+                style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 
-export default function CopyBlock({ text, accent = "#0a0a0a", label = "Copy into Claude" }: { text: string; accent?: string; label?: string }) {
+export default function CopyBlock({ text, accent = "#0a0a0a", label = "Copy into Claude", successMessage = "Prompt copied to clipboard" }: { text: string; accent?: string; label?: string; successMessage?: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      toast.success("Prompt copied to clipboard");
+      toast.success(successMessage);
       setTimeout(() => setCopied(false), 2000);
     } catch {
       toast.error("Failed to copy");

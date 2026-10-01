@@ -184,7 +184,8 @@ export default function ColdEmailSequenceTemplates() {
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 The same five-touch logic runs in parallel on LinkedIn, and running both channels together consistently outperforms either alone, since a prospect who ignores an email might still accept a connection request, or vice versa. For the LinkedIn-specific version of this sequence, see{" "}
                 <a href="/blog/linkedin-outreach-sequences" className="font-bold underline" style={{ color: "#EA580C" }}>LinkedIn Outreach Sequences That Actually Get Replies</a>. And before sending any of this at volume, make sure the sending domain is actually warmed up, covered in our{" "}
-                <a href="/blog/cold-email-deliverability-guide" className="font-bold underline" style={{ color: "#EA580C" }}>cold email deliverability guide</a>.
+                <a href="/blog/cold-email-deliverability-guide" className="font-bold underline" style={{ color: "#EA580C" }}>cold email deliverability guide</a>. For the exact tools we use to scrape, enrich, verify, and send, plus a second sequence with live variants, see{" "}
+                <a href="/instagram-resources/cold-email-tech-stack" className="font-bold underline" style={{ color: "#EA580C" }}>the cold email stack behind an extra $7,000 in revenue</a>.
               </p>
             </div>
           </div>

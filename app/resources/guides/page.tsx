@@ -97,6 +97,14 @@ const GUIDES = [
     accent: "#0077b5",
   },
   {
+    href: "/instagram-resources/cold-email-tech-stack",
+    tag: "Cold Email",
+    title: "The Cold Email Stack Behind an Extra $7,000 in Revenue",
+    excerpt: "The exact 7-tool stack (scraping, enrichment, verification, sending) and the 3-email sequence with copy-ready variants that we use to scale cold outreach.",
+    readTime: "5 min read",
+    accent: "#EA580C",
+  },
+  {
     href: "/careers-and-job-guide",
     tag: "Careers & Jobs",
     title: "Career Jumpstart Toolkit",
@@ -130,7 +138,7 @@ export default function GuidesPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>11 guides</span>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>{GUIDES.length} guides</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Copy the setup.<br />Skip the trial and error.
           </h1>

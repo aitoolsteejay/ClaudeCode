@@ -111,6 +111,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "How to Set Up Vibe Prospecting", href: "/instagram-resources/how-to-set-up-vibe-prospecting" },
       { label: "The Golden ICP Framework", href: "/instagram-resources/golden-icp-framework" },
       { label: "Leads on Autopilot: A Step-by-Step Framework", href: "/instagram-resources/leads-on-autopilot-guide" },
+      { label: "The Cold Email Stack Behind an Extra $7,000", href: "/instagram-resources/cold-email-tech-stack" },
     ],
   },
   {

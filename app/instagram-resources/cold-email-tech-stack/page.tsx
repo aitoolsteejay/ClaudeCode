@@ -232,7 +232,6 @@ export default function ColdEmailTechStack() {
                   </div>
                 ))}
               </div>
-              <p className="text-xs mt-3" style={{ color: "#8C8279" }}>Clay, BounceBan, and Smartlead links are referral links.</p>
             </section>
           </FadeIn>
 

@@ -92,7 +92,7 @@ export default function VisitingCard({
         >
           <div className="relative mx-auto mb-5 h-[136px] w-[136px] rounded-full p-[3px]" style={{ background: "linear-gradient(135deg, #F5B731 0%, #a855f7 100%)" }}>
             <div className="relative h-full w-full overflow-hidden rounded-full border-2" style={{ backgroundColor: "#EDE9E4", borderColor: "#ffffff" }}>
-              <Image src={photoSrc} alt={photoAlt} fill className="object-cover object-top" priority />
+              <Image src={photoSrc} alt={photoAlt} fill sizes="136px" className="object-cover object-top" priority />
             </div>
           </div>
 

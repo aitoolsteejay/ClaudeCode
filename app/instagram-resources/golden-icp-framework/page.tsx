@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: "The Golden ICP Framework | Myntmore",
     description: "Stop building lists around job titles. Find buyers under pressure to solve the problem you solve.",
     url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

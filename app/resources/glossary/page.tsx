@@ -6,7 +6,7 @@ import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "B2B Outbound Glossary",
-  description: "Plain-English definitions of the terms and frameworks that come up across Myntmore's outbound systems, from industry basics like SPF/DKIM/DMARC and ICP to Myntmore's own frameworks like Total Conversional Market.",
+  description: "Plain-English definitions of the terms behind Myntmore's outbound systems, from SPF/DKIM/DMARC and ICP to our own Total Conversional Market framework.",
   keywords: [
     "b2b outbound glossary",
     "total conversional market definition",

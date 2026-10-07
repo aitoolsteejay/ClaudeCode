@@ -182,7 +182,7 @@ const GROUPS: SitemapGroup[] = [
     accent: "#8B5CF6",
     links: [
       { label: "Events & Webinars", href: "/events" },
-      { label: "Agency vs. In-House SDR", href: "/agency-vs-in-house" },
+      { label: "Agency vs. In-House SDR", href: "/blog/agency-vs-in-house" },
     ],
   },
   {

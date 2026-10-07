@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Enwil Fernandes",
   description: "Enwil Fernandes, Senior Sales Head at Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",
   alternates: { canonical: `${SITE_URL}/enwilfernandes` },
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Enwil Fernandes | Senior Sales Head, Myntmore",
     description: "Enwil Fernandes, Senior Sales Head at Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",

@@ -11,7 +11,7 @@ const TITLE = "Signal-Heavy Structuring";
 const DESCRIPTION = "Signal-Heavy Structuring is a content framework built around including a concrete, immediately usable asset, a template, a tool, a specific breakdown, rather than generic branding copy, so the content earns a reply on its own.";
 // Short form for the SERP snippet; DESCRIPTION stays full-length for the
 // DefinedTerm schema, where the complete definition is the point.
-const META_DESCRIPTION = "Signal-Heavy Structuring: build content around a concrete, usable asset, a template, a tool, a breakdown, so it earns a reply instead of reading as branding.";
+const META_DESCRIPTION = "Signal-Heavy Structuring: build content around a concrete, usable asset (a template, tool or breakdown) so it earns a reply, not just a like.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | B2B Outbound Glossary`,

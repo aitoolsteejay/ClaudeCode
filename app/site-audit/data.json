@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-07T10:37:15.647Z",
+  "generatedAt": "2026-10-07T12:26:42.221Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 173,
     "linked": 160,
     "orphan": 13,
-    "noindex": 34,
+    "noindex": 37,
     "notInXmlSitemap": 38,
     "privateHidden": 4
   },
@@ -62,7 +62,7 @@
       "inboundCount": 0,
       "noindex": false,
       "inXmlSitemap": false,
-      "inHtmlSitemap": true
+      "inHtmlSitemap": false
     },
     {
       "path": "/b2b-lead-generation-ahmedabad",
@@ -218,7 +218,7 @@
       "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
-      "inHtmlSitemap": false
+      "inHtmlSitemap": true
     },
     {
       "path": "/blog/b2b-lead-gen-metrics",
@@ -1104,7 +1104,7 @@
       "status": "orphan",
       "linkedFrom": [],
       "inboundCount": 0,
-      "noindex": false,
+      "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -1248,7 +1248,7 @@
     },
     {
       "path": "/instagram-resources/leads-on-autopilot-guide",
-      "title": "Leads on Autopilot: A Step-by-Step LinkedIn Framework",
+      "title": "Leads on Autopilot: A LinkedIn Framework",
       "section": "instagram-resources",
       "status": "linked",
       "linkedFrom": [
@@ -1266,7 +1266,7 @@
       "status": "orphan",
       "linkedFrom": [],
       "inboundCount": 0,
-      "noindex": false,
+      "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -2192,7 +2192,7 @@
       "status": "orphan",
       "linkedFrom": [],
       "inboundCount": 0,
-      "noindex": false,
+      "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },

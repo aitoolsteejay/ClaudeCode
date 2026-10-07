@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     title: "80+ US Meetings Booked in 1 Month with AI Agents",
     description: "800 connections/month → 80+ US meetings/month → 4 new clients/month. The full AI-agent blueprint.",
     url: "https://www.myntmore.com/instagram-resources/80-us-meetings-ai-agents",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

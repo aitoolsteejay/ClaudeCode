@@ -16,7 +16,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "What Is B2B Outbound Sales? A Complete Guide",
-  description: "B2B outbound sales explained: what it is, how it differs from inbound, the channels and roles involved, and how to know if it's the right fit for your company.",
+  description: "B2B outbound sales explained: how it differs from inbound, the channels and roles involved, and how to tell if it fits your company.",
   keywords: ["what is b2b outbound sales", "outbound sales definition", "outbound vs inbound sales", "b2b outbound sales explained", "how does outbound sales work", "outbound sales process b2b"],
   alternates: { canonical: "https://www.myntmore.com/blog/what-is-b2b-outbound-sales" },
   openGraph: {
@@ -53,7 +53,7 @@ const FAQ_ITEMS: FaqEntry[] = [
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "What Is B2B Outbound Sales? A Complete Guide",
-  description: "B2B outbound sales explained: what it is, how it differs from inbound, the channels and roles involved, and how to know if it's the right fit for your company.",
+  description: "B2B outbound sales explained: how it differs from inbound, the channels and roles involved, and how to tell if it fits your company.",
   url: "https://www.myntmore.com/blog/what-is-b2b-outbound-sales",
   datePublished: "2026-09-24T00:00:00Z",
   dateModified: "2026-09-24T00:00:00Z",

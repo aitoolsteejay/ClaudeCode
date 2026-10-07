@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: "The 6 Claude Skills Guide",
     description: "Six ready-to-use Claude skills for founders and marketers, complete with copy-paste prompts.",
     url: "https://www.myntmore.com/instagram-resources/claude-skills-guide",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

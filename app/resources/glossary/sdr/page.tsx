@@ -9,7 +9,7 @@ const DESCRIPTION = "A Sales Development Representative (SDR) is the role respon
 const META_DESCRIPTION = "What a Sales Development Representative (SDR) does, how the role differs from an account executive, and why teams outsource it to agencies.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} | B2B Glossary`,
+  title: `${TITLE} | Glossary`,
   description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   keywords: ["what is an sdr", "sdr meaning sales", "sdr vs account executive", "sales development representative definition"],

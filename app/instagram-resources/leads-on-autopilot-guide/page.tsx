@@ -10,8 +10,8 @@ import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 const URL = "https://www.myntmore.com/instagram-resources/leads-on-autopilot-guide";
 
 export const metadata: Metadata = {
-  title: "Leads on Autopilot: A Step-by-Step LinkedIn Framework",
-  description: "A complete system to generate high-quality B2B leads on LinkedIn without cold pitching: audience clarity, content authority, outreach, nurturing, and follow-ups.",
+  title: "Leads on Autopilot: A LinkedIn Framework",
+  description: "A complete system to generate high-quality B2B leads on LinkedIn without cold pitching: audience, content, outreach, nurturing, and follow-ups.",
   keywords: [
     "linkedin lead generation framework",
     "leads on autopilot",
@@ -24,9 +24,10 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: "Leads on Autopilot: A Step-by-Step LinkedIn Framework | Myntmore",
+    title: "Leads on Autopilot: A LinkedIn Framework | Myntmore",
     description: "Generate high-quality B2B leads on LinkedIn without cold pitching. Audience clarity, content authority, outreach, nurturing, and follow-ups, in one system.",
     url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

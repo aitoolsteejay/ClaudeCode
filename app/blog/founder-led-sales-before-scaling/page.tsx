@@ -14,7 +14,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "Why Founders Must Sell Before They Scale",
-  description: "You can't delegate a sales process you haven't personally proven. Why founder-led sales, not a hired team, has to come first for an early-stage B2B business.",
+  description: "You can't delegate a sales process you haven't proven. Why founder-led sales, not a hired team, has to come first for an early-stage B2B business.",
   alternates: { canonical: "https://www.myntmore.com/blog/founder-led-sales-before-scaling" },
   keywords: [
     "founder led sales b2b",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The Founder's Pipeline: Why You Must Sell the Product Before You Scale the System",
-  description: "You can't delegate a sales process you haven't personally proven. Why founder-led sales, not a hired team, has to come first for an early-stage B2B business.",
+  description: "You can't delegate a sales process you haven't proven. Why founder-led sales, not a hired team, has to come first for an early-stage B2B business.",
   url: "https://www.myntmore.com/blog/founder-led-sales-before-scaling",
   datePublished: "2026-09-04T12:00:00+05:30",
   dateModified: "2026-09-04T12:00:00+05:30",

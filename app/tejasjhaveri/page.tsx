@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Tejas Jhaveri",
   description: "Tejas Jhaveri, Founder of Myntmore. Connect on WhatsApp, LinkedIn, or Instagram.",
   alternates: { canonical: `${SITE_URL}/tejasjhaveri` },
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Tejas Jhaveri | Founder, Myntmore",
     description: "Tejas Jhaveri, Founder of Myntmore. Connect on WhatsApp, LinkedIn, or Instagram.",

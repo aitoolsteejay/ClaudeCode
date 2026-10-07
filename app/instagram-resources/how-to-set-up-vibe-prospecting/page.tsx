@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
     description: "Connect Vibe Prospecting to Claude in 7 steps, then run 10 ready-to-copy prompts for verified B2B leads.",
     url: "https://www.myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 

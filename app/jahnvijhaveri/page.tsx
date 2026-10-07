@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Jahnvi Jhaveri",
   description: "Jahnvi Jhaveri, Co-Founder of Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",
   alternates: { canonical: `${SITE_URL}/jahnvijhaveri` },
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Jahnvi Jhaveri | Co-Founder, Myntmore",
     description: "Jahnvi Jhaveri, Co-Founder of Myntmore. Connect on WhatsApp, LinkedIn, call, or email.",

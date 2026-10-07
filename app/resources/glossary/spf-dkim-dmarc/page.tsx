@@ -6,7 +6,7 @@ const SLUG = "spf-dkim-dmarc";
 const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
 const TITLE = "SPF, DKIM & DMARC";
 const DESCRIPTION = "SPF, DKIM, and DMARC are three DNS-based email authentication records. SPF lists which servers may send for a domain, DKIM cryptographically signs each message to prove it wasn't altered, and DMARC tells receiving inboxes what to do if either check fails.";
-const META_DESCRIPTION = "SPF, DKIM, and DMARC explained in plain English: the DNS records that prove a cold email actually came from your domain, and why they decide inbox placement.";
+const META_DESCRIPTION = "SPF, DKIM, and DMARC explained in plain English: the DNS records that prove a cold email came from your domain, and why they decide inbox placement.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | B2B Glossary`,

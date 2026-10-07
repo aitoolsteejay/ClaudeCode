@@ -11,12 +11,12 @@ export const ADMIN_COOKIE_NAME = "menti_admin";
 
 const SESSION_MESSAGE = "menti-admin-session-v1";
 
-// Hardcoded fallback so this works without any Vercel env var setup.
-// MENTI_ADMIN_PASSWORD, if set, overrides it.
-const DEFAULT_ADMIN_PASSWORD = "Myntmore@123";
-
-function getPassword(): string {
-  return process.env.MENTI_ADMIN_PASSWORD || DEFAULT_ADMIN_PASSWORD;
+// MENTI_ADMIN_PASSWORD must be set (Vercel env var / .env.local). There is
+// deliberately no fallback value: a default checked into the repo would be a
+// known password for anyone who can read it. If it is unset, the admin gate
+// fails closed -- no password is accepted and no cookie validates.
+function getPassword(): string | null {
+  return process.env.MENTI_ADMIN_PASSWORD || null;
 }
 
 function timingSafeEqualStrings(a: string, b: string): boolean {
@@ -26,17 +26,20 @@ function timingSafeEqualStrings(a: string, b: string): boolean {
   return crypto.timingSafeEqual(bufA, bufB);
 }
 
-export function getAdminToken(): string {
-  return crypto.createHmac("sha256", getPassword()).update(SESSION_MESSAGE).digest("hex");
+export function getAdminToken(): string | null {
+  const password = getPassword();
+  if (!password) return null;
+  return crypto.createHmac("sha256", password).update(SESSION_MESSAGE).digest("hex");
 }
 
 export function checkPassword(candidate: string): boolean {
   const password = getPassword();
-  if (!candidate) return false;
+  if (!password || !candidate) return false;
   return timingSafeEqualStrings(candidate, password);
 }
 
 export function isValidAdminCookie(token: string | undefined | null): boolean {
-  if (!token) return false;
-  return timingSafeEqualStrings(token, getAdminToken());
+  const expected = getAdminToken();
+  if (!expected || !token) return false;
+  return timingSafeEqualStrings(token, expected);
 }

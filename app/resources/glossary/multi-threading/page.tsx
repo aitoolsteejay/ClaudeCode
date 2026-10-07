@@ -40,6 +40,8 @@ export default function MultiThreadingPage() {
       body="A single-threaded deal collapses the moment that one contact goes quiet, changes roles, or leaves the company. Multi-threading spreads the relationship across the economic buyer, the end user, and any technical evaluator, which is also what makes coordinated outreach at the account level, not just the individual level, so central to ABM."
       sourceLabel="Read the related term: ABM (Account-Based Marketing)"
       sourceHref="/resources/glossary/abm"
+      furtherLabel="Go deeper: Single-Threaded Deals Die (the full buying-committee guide)"
+      furtherHref="/blog/multi-threading-b2b-buying-committee"
       articleSchema={TERM_SCHEMA}
     />
   );

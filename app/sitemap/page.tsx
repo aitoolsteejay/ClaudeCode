@@ -96,6 +96,9 @@ const GROUPS: SitemapGroup[] = [
       { label: "The Pitching Trap", href: "/blog/pitching-trap-competitor-positioning" },
       { label: "What Is B2B Outbound Sales?", href: "/blog/what-is-b2b-outbound-sales" },
       { label: "Cold Email Sequence Templates", href: "/blog/cold-email-sequence-templates" },
+      { label: "The Reply Isn't the Win: Handling Cold Email Replies", href: "/blog/handling-cold-email-replies" },
+      { label: "Single-Threaded Deals Die: Multi-Threading the Buying Committee", href: "/blog/multi-threading-b2b-buying-committee" },
+      { label: "The Pipeline Graveyard: Reviving Closed-Lost Leads", href: "/blog/reviving-closed-lost-leads" },
     ],
   },
   {

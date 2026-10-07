@@ -1,0 +1,128 @@
+import type { Metadata } from "next";
+import BlogArticle, { type BlogSection } from "../../components/BlogArticle";
+
+const URL = "https://www.myntmore.com/blog/reviving-closed-lost-leads";
+const TITLE = "How to Revive Closed-Lost B2B Leads";
+const DESCRIPTION = "Your cheapest pipeline is already in your CRM. Learn how to segment closed-lost leads and re-engage each with a real reason to reply. Read the guide.";
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "how to revive closed-lost leads",
+    "closed lost lead re-engagement",
+    "re-engage closed lost deals b2b",
+    "revive dead leads in crm",
+    "lead re-engagement email",
+    "track job changes of past contacts",
+    "sales pipeline graveyard",
+    "closed lost deals follow up timing",
+  ],
+  alternates: { canonical: URL },
+  openGraph: {
+    title: `${TITLE} | Myntmore`,
+    description: "Hundreds of warm prospects sit untouched in your CRM. Here's how to bring the right ones back.",
+    url: URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const SECTIONS: BlogSection[] = [
+  {
+    heading: "You've Already Paid for These Leads",
+    paragraphs: [
+      "Every \"maybe later\" in your CRM cost you something: sends, research, a discovery call, sometimes a proposal. They already know your name, they've heard your pitch, and at some point they had the problem you solve. Yet most teams file them away and go back to cold lists, because a new prospect feels like progress and an old one feels like failure.",
+    ],
+  },
+  {
+    heading: "\"No\" Usually Means \"Not Right Now\"",
+    paragraphs: [
+      "Deals rarely die because the prospect decided they never want a solution. They die because of timing: budget was frozen, a key person left, another project took priority, or they signed with a competitor on a 12-month contract. Every one of those reasons has an expiry date. The team that shows up when it expires wins the deal, and it's almost never the team that forgot the account existed.",
+    ],
+  },
+  {
+    heading: "The Three Graveyard Segments",
+    paragraphs: ["Don't blast your whole closed-lost list with one \"just checking in\" email. Split it by why the deal died:"],
+    items: [
+      {
+        lead: "Lost on timing:",
+        text: "\"Not this quarter,\" \"revisit next year.\" Re-engage close to the date they gave you, and open by referencing that conversation directly.",
+      },
+      {
+        lead: "Lost to a competitor:",
+        text: "Contract renewals are your window. Re-engage 60 to 90 days before the likely renewal date with a question, not a pitch: \"How's it going with your current setup? Anything you'd change?\"",
+      },
+      {
+        lead: "Lost to silence:",
+        text: "They went dark with no reason given. Something probably changed internally. Look for a new trigger, like funding, a new hire or a leadership change, and lead with that instead of the old thread.",
+      },
+    ],
+  },
+  {
+    heading: "Lead With What's Changed, Not \"Checking In\"",
+    paragraphs: [
+      "\"Just circling back\" is the fastest way to confirm you have nothing new to say. Every re-engagement message needs a reason to exist now: a new result you've delivered for a similar company, a change at their company you noticed, or a change in your own offer that fixes their original objection. If nothing has changed on either side, wait until something does.",
+    ],
+  },
+  {
+    heading: "Watch for People Who Moved Jobs",
+    paragraphs: [
+      "Your champion from a lost deal might now work somewhere else, and they already trust you. Job changes are one of the warmest signals in B2B. Track where your past contacts move, and reach out when they land somewhere new. You're not a cold vendor to them. You're the person they wanted to work with last time.",
+    ],
+  },
+  {
+    heading: "Build a Resurrection Rhythm",
+    paragraphs: [
+      "Put it on the calendar. Once a month, pull every deal lost 3 to 12 months ago, tag each by segment, check for new triggers, and pick the 10 to 20 worth a fresh, specific message. It takes an afternoon. Predictable pipeline isn't only about who you haven't met yet. It's about not forgetting the people who almost said yes.",
+    ],
+  },
+];
+
+const FAQ = [
+  {
+    question: "How long should I wait before re-engaging a closed-lost lead?",
+    answer: "Match the wait to why the deal was lost. Re-engage timing losses near the date the prospect gave you, competitor losses 60 to 90 days before their likely renewal, and silent losses when a new trigger appears.",
+  },
+  {
+    question: "What should a re-engagement email say?",
+    answer: "Lead with something that has changed, like a new result, a change at their company, or an update to your offer that addresses their original objection. Avoid generic \"just checking in\" messages.",
+  },
+  {
+    question: "Is it worth tracking job changes of past contacts?",
+    answer: "Yes. A past champion who moves to a new company already knows and trusts you, which makes them one of the warmest outbound targets you can have.",
+  },
+];
+
+export default function RevivingClosedLostLeads() {
+  return (
+    <BlogArticle
+      url={URL}
+      tag="Lead Generation"
+      readTime="5 min read"
+      accent="#3b82f6"
+      title="The Pipeline Graveyard: Why Your Next Best Deal Is One You Already Lost"
+      intro={"Founders spend fortunes finding new prospects while hundreds of warm ones sit untouched in the CRM, marked \"closed-lost\" or \"not now.\" That isn't a dead list. It's the cheapest pipeline you'll ever build."}
+      sections={SECTIONS}
+      faq={FAQ}
+      articleSchema={{
+        headline: "The Pipeline Graveyard: Why Your Next Best Deal Is One You Already Lost",
+        description: DESCRIPTION,
+        datePublished: "2026-10-07T16:00:00+05:30",
+        dateModified: "2026-10-07T16:00:00+05:30",
+      }}
+      related={[
+        { label: "Glossary: Re-Engagement Campaign", href: "/resources/glossary/re-engagement-campaign" },
+        { label: "Glossary: Buying Signal", href: "/resources/glossary/buying-signal" },
+        { label: "Cold Email Sequence Templates That Get Replies", href: "/blog/cold-email-sequence-templates" },
+        { label: "LinkedIn Outreach Sequences That Actually Get Replies", href: "/blog/linkedin-outreach-sequences" },
+      ]}
+      cta={{
+        heading: "Want help mining your closed-lost pipeline?",
+        body: "Book a free audit and we'll review how a re-engagement campaign could work for the deals already sitting in your CRM.",
+        button: "Book a Free GTM Audit",
+        href: "/founder-meeting",
+      }}
+      aiResources={[URL, "https://www.myntmore.com/resources/glossary/re-engagement-campaign", "https://www.myntmore.com"]}
+    />
+  );
+}

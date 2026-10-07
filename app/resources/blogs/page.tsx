@@ -229,6 +229,27 @@ const BLOG_POSTS: BlogPost[] = [
     excerpt: "5 cold email templates for a full outbound sequence, from the first touch to the breakup email, with the reasoning behind each one.",
     readTime: "7 min read",
   },
+  {
+    href: "/blog/handling-cold-email-replies",
+    tags: ["Cold Email", "Sales Strategy"],
+    title: "The Reply Isn't the Win: What to Do in the First Hour After a Prospect Responds",
+    excerpt: "A reply is a door left open for about an hour. How to answer the four reply types and turn responses into booked meetings.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/multi-threading-b2b-buying-committee",
+    tags: ["Sales Strategy", "GTM Strategy"],
+    title: "Single-Threaded Deals Die: Why You Need the Whole Buying Committee, Not One Champion",
+    excerpt: "One champion isn't an account. How to map the buying committee and multi-thread deals so they survive a quiet or departing contact.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/reviving-closed-lost-leads",
+    tags: ["Lead Generation", "Sales Strategy"],
+    title: "The Pipeline Graveyard: Why Your Next Best Deal Is One You Already Lost",
+    excerpt: "Hundreds of warm prospects sit untouched in your CRM. How to segment closed-lost leads and re-engage each with a real reason to reply.",
+    readTime: "5 min read",
+  },
 ];
 
 interface MediumPost {

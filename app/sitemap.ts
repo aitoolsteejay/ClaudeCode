@@ -117,6 +117,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/pitching-trap-competitor-positioning`, lastModified: "2026-09-07T12:15:28+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/what-is-b2b-outbound-sales`, lastModified: "2026-09-24T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/cold-email-sequence-templates`, lastModified: "2026-09-24T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/handling-cold-email-replies`, lastModified: "2026-10-07T16:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/multi-threading-b2b-buying-committee`, lastModified: "2026-10-07T16:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/reviving-closed-lost-leads`, lastModified: "2026-10-07T16:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Guides (surfaced under /resources/guides, originally Instagram bio-link pages)
     { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },

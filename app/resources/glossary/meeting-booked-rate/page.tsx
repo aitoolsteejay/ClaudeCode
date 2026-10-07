@@ -40,6 +40,8 @@ export default function MeetingBookedRatePage() {
       body="A campaign can have a strong response rate and a weak meeting-booked rate if the ask is vague or the follow-through is slow, which is why the two are tracked separately rather than as one combined number. A healthy meeting-booked rate for cold outreach is typically in the 4-8% range, though it varies by ICP, offer, and channel."
       sourceLabel="Read: The 2026 B2B Outbound Benchmark Report"
       sourceHref="/blog/b2b-outbound-benchmark-report-2026"
+      furtherLabel="Go deeper: What to do in the first hour after a prospect replies"
+      furtherHref="/blog/handling-cold-email-replies"
       articleSchema={TERM_SCHEMA}
     />
   );

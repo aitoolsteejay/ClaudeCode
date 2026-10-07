@@ -14,6 +14,9 @@ export interface GlossaryTermProps {
   body: string;
   sourceLabel: string;
   sourceHref: string;
+  // Optional second link, e.g. a blog post that goes deeper on the term.
+  furtherLabel?: string;
+  furtherHref?: string;
   articleSchema: Record<string, unknown>;
 }
 
@@ -32,6 +35,8 @@ export default function GlossaryTerm({
   body,
   sourceLabel,
   sourceHref,
+  furtherLabel,
+  furtherHref,
   articleSchema,
 }: GlossaryTermProps) {
   return (
@@ -65,6 +70,14 @@ export default function GlossaryTerm({
               {sourceLabel}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
+            {furtherLabel && furtherHref && (
+              <div className="mt-3">
+                <Link href={furtherHref} className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: accent }}>
+                  {furtherLabel}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+              </div>
+            )}
           </div>
 
           <div className="mt-6">

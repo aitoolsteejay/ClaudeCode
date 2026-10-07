@@ -1,0 +1,2543 @@
+{
+  "generatedAt": "2026-10-07T10:37:15.647Z",
+  "site": "https://www.myntmore.com",
+  "counts": {
+    "total": 173,
+    "linked": 160,
+    "orphan": 13,
+    "noindex": 34,
+    "notInXmlSitemap": 38,
+    "privateHidden": 4
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Myntmore | AI-Powered B2B Lead Generation Agency, Mumbai",
+      "section": "(home)",
+      "status": "linked",
+      "linkedFrom": [
+        "/instagram-resources/80-us-meetings-ai-agents",
+        "/instagram-resources/how-to-set-up-vibe-prospecting",
+        "/resources/guides/ai-tech-stack-jewellery",
+        "/thankyou"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/1-on-1-consultation",
+      "title": "1-on-1 B2B Growth Consultation | Free GTM Audit",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/about-us",
+      "title": "About Tejas Jhaveri, B2B Growth Expert",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers/systems-ai-automation-intern",
+        "/"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/agency-vs-in-house",
+      "title": "Agency Vs In House",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-ahmedabad",
+      "title": "B2B Lead Generation Agency in Ahmedabad",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-bengaluru",
+      "title": "B2B Lead Generation Agency in Bengaluru",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-chennai",
+      "title": "B2B Lead Generation Agency in Chennai",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-delhi",
+      "title": "B2B Lead Generation Agency in Delhi",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-hyderabad",
+      "title": "B2B Lead Generation Agency in Hyderabad",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-kolkata",
+      "title": "B2B Lead Generation Agency in Kolkata",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-mumbai",
+      "title": "B2B Lead Generation Agency in Mumbai",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/b2b-lead-generation-pune",
+      "title": "B2B Lead Generation Agency in Pune",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "lib/faq-data.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/3-second-rule-cold-outreach",
+      "title": "The 3-Second Rule for Cold Outreach",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/5-second-hero-section-test",
+      "title": "The 5-Second Homepage Test for B2B Leads",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/agency-vs-in-house",
+      "title": "Agency vs. In-House SDR for B2B Outbound",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/agency-vs-in-house",
+        "/blog/what-is-b2b-outbound-sales",
+        "/how-to-choose-an-outbound-agency",
+        "/resources/blogs",
+        "/resources/guides",
+        "/who-this-is-for"
+      ],
+      "inboundCount": 6,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/blog/b2b-lead-gen-metrics",
+      "title": "The 7 B2B Lead Gen Metrics That Actually Matter",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/handling-cold-email-replies",
+        "/resources/blogs"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/b2b-outbound-benchmark-report-2026",
+      "title": "The 2026 B2B Outbound Benchmark Report",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/b2b-lead-gen-metrics",
+        "/blog/cold-email-sequence-templates",
+        "/blog/icp-mapping-b2b",
+        "/blog/what-is-b2b-outbound-sales",
+        "/",
+        "/resources/blogs"
+      ],
+      "inboundCount": 6,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/case-study-procrastination",
+      "title": "Case Study Procrastination: Document Your Proof",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/cold-email-compliance-guide",
+      "title": "Cold Email Compliance: CAN-SPAM, GDPR & DPDP",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-deliverability-guide",
+        "/resources/blogs"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/cold-email-deliverability-guide",
+      "title": "Cold Email Deliverability Guide",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-compliance-guide",
+        "/blog/cold-email-sequence-templates",
+        "/instagram-resources/cold-email-tech-stack",
+        "/resources/blogs"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/cold-email-sequence-templates",
+      "title": "Cold Email Sequence Templates That Get Replies",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/handling-cold-email-replies",
+        "/blog/reviving-closed-lost-leads",
+        "/instagram-resources/cold-email-tech-stack",
+        "/resources/blogs"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/cold-email-vs-linkedin-outreach",
+      "title": "Cold Email vs. LinkedIn Outreach for B2B Pipeline",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/conversations-not-impressions-outbound",
+      "title": "Outbound Success: Conversations, Not Sends",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/handling-cold-email-replies",
+        "/resources/blogs"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/ecommerce-conversion-playbook",
+      "title": "The eCommerce Conversion Playbook",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/founder-led-sales-before-scaling",
+      "title": "Why Founders Must Sell Before They Scale",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "/who-this-is-for"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/founder-personal-brand-linkedin",
+      "title": "The Founder's Edge: Your Best Marketing Asset",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/handling-cold-email-replies",
+      "title": "Handling Cold Email Replies",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-sequence-templates",
+        "/resources/blogs"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/icp-mapping-b2b",
+      "title": "ICP Mapping for B2B: Define Your Exact Buyer",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/multi-threading-b2b-buying-committee",
+        "/resources/blogs"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/linkedin-outreach-sequences",
+      "title": "LinkedIn Outreach Sequences That Get Replies",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-sequence-templates",
+        "/blog/multi-threading-b2b-buying-committee",
+        "/blog/reviving-closed-lost-leads",
+        "/resources/blogs"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/linkedin-profile-inbound-lead-machine",
+      "title": "The Silent Salesperson: LinkedIn Lead Machine",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/multi-threading-b2b-buying-committee",
+      "title": "Multi Threading B2b Buying Committee",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/outbound-funnel-math-not-guesswork",
+      "title": "Outbound Funnel Math, Not Gut Feel",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/pitching-trap-competitor-positioning",
+      "title": "The Pitching Trap: Better Competitor Positioning",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/predictable-b2b-lead-gen-engine",
+      "title": "Building a Predictable B2B Lead Generation Engine",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/relevance-beats-reach-b2b-outbound",
+      "title": "Relevance Beats Reach in B2B Outbound",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/reviving-closed-lost-leads",
+      "title": "Reviving Closed Lost Leads",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/stop-selling-features-cold-outreach",
+      "title": "Stop Selling Features in Cold Outreach",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "/resources/glossary/3-second-rule"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/tam-trap-vague-targeting",
+      "title": "The TAM Trap: Vague Targeting Kills Your Pipeline",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "/resources/glossary/total-conversional-market"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/value-premium-lead-magnets",
+      "title": "The Value Premium: Creating Magnetic Lead Magnets",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "/resources/glossary/signal-heavy-structuring"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/vanity-metrics-personal-brand-pipeline",
+      "title": "Founder Personal Branding: Pipeline, Not Likes",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/what-is-b2b-outbound-sales",
+      "title": "What Is B2B Outbound Sales? A Complete Guide",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers",
+      "title": "Careers at Myntmore",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers/content-marketing-strategist-intern",
+        "/careers/gtm-strategist",
+        "/careers/hr-operations-intern",
+        "/careers/lead-gen-strategist",
+        "/careers/sales-executive",
+        "/careers/systems-ai-automation-intern",
+        "/"
+      ],
+      "inboundCount": 7,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers-and-job-guide",
+      "title": "Career Jumpstart Toolkit",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/careers/content-marketing-strategist-intern",
+      "title": "Content Marketing Intern, Mumbai | Rs 30-50K/mo",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers/gtm-strategist",
+      "title": "GTM Strategist, Mumbai | Rs 6–15 LPA",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers/hr-operations-intern",
+      "title": "HR & Operations Intern, Mumbai | Rs 7-15K/mo",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers/lead-gen-strategist",
+      "title": "B2B Lead Gen Strategist, Mumbai | Rs 4-7 LPA",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers/sales-executive",
+      "title": "Sales Executive, Mumbai | Rs 4–7 LPA",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers/systems-ai-automation-intern",
+      "title": "AI Automation Intern, Mumbai | Rs 7-20K/mo",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies",
+      "title": "B2B Case Studies & Client Results",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies/ecommerce-conversion-playbook",
+        "/case-studies/founder-personal-brand-linkedin",
+        "/case-studies/predictable-b2b-lead-gen-engine",
+        "/case-studies/professional-services-linkedin",
+        "/case-studies/saas-series-a",
+        "/case-studies/uk-pharma-qualified-meetings",
+        "/",
+        "/resources/guides/ai-tech-stack-jewellery"
+      ],
+      "inboundCount": 18,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/agencies-it-uae-managed-it",
+      "title": "Illustrative Example: Opening Managed IT Service Conversations",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/agencies-it-usa-conversion-optimization",
+      "title": "Illustrative Example: Finding Buyers for a Conversion Optimization Agency",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/agencies-it-usa-software-development",
+      "title": "Illustrative Example: Finding a Software Development Partner Fit",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/ecommerce-conversion-playbook",
+      "title": "Cold Email Added $400K Pipeline in 6 Weeks",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/services/cold-email",
+        "/case-studies"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/financial-services-india-payroll",
+      "title": "Illustrative Example: Building an Outsourced Payroll Pipeline",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/financial-services-singapore-outsourced-cfo",
+      "title": "Illustrative Example: Finding Businesses That Need Outsourced Finance Support",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/financial-services-uk-bookkeeping",
+      "title": "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/founder-personal-brand-linkedin",
+      "title": "Bootstrapped Founder: 0 to 22K Followers, 8 Deals",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/services/gtm-strategy",
+        "/services/linkedin-outreach",
+        "/case-studies"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/insurance-india-hr-consultants-referral",
+      "title": "Illustrative Example: Developing Referral Relationships With HR Consultants",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/insurance-singapore-commercial-coverage",
+      "title": "Illustrative Example: Reaching Businesses Reviewing Commercial Coverage",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/insurance-uae-employee-benefits",
+      "title": "Illustrative Example: Opening Employee Benefits Conversations Before Renewal",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/manufacturers-exporters-france-packaging",
+      "title": "Illustrative Example: Finding Packaging Buyers in France",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/manufacturers-exporters-germany-industrial-components",
+      "title": "Illustrative Example: Finding Overseas Buyers for Industrial Components",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/manufacturers-exporters-uae-kitchen-equipment",
+      "title": "Illustrative Example: Building a Distributor Shortlist in the UAE",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-france-contract-manufacturing",
+      "title": "Illustrative Example: Contract Manufacturing Buyers in France",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-india-dermatologist-outreach",
+      "title": "Illustrative Example: Reaching Dermatologists Beyond Field Coverage",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-singapore-product-licensing",
+      "title": "Illustrative Example: Starting Product Licensing Discussions in Singapore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-uae-distribution-partners",
+      "title": "Illustrative Example: Building a Shortlist of UAE Distribution Partners",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-usa-api-second-source",
+      "title": "Illustrative Example: US Buyers Evaluating a Second API Supplier",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/predictable-b2b-lead-gen-engine",
+      "title": "Outbound Engine That Books 15+ Meetings a Month",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/services/sales-intelligence",
+        "/case-studies"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/professional-services-linkedin",
+      "title": "LinkedIn Brand Drove 3x Inbound in 90 Days",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/services/personal-branding",
+        "/case-studies"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/recruitment-singapore-contract-staffing",
+      "title": "Illustrative Example: Developing Contract Staffing Opportunities",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-uk-engineering-staffing",
+      "title": "Illustrative Example: Winning Conversations With Employers That Are Hiring",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-usa-tech-recruitment",
+      "title": "Illustrative Example: Winning Specialist Technology Recruitment Briefs",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/saas-series-a",
+      "title": "40 Qualified Meetings in 8 Weeks | SaaS Series A",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-vs-linkedin-outreach",
+        "/case-studies",
+        "/services/ai-lead-generation"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/uk-pharma-qualified-meetings",
+      "title": "20+ Qualified Meetings/Month for UK Pharma",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/lp/pharma",
+        "/case-studies"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/contact-us",
+      "title": "Contact Myntmore | Book a Free B2B GTM Audit",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers",
+        "/"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/dos-and-donts-of-outreach",
+      "title": "Dos And Donts Of Outreach",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/education-guide",
+      "title": "AI Quick-Start Guide",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/enwilfernandes",
+      "title": "Enwil Fernandes",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/events",
+      "title": "B2B Outbound Events & Webinars",
+      "section": "events",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/events/predictable-pipeline-webinar"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/events/predictable-pipeline-webinar",
+      "title": "Free Webinar: Build a Predictable Lead Pipeline",
+      "section": "events",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/events"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/feedback",
+      "title": "Feedback",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/founder-meeting",
+      "title": "Book a Call with Our Founder",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/1-on-1-consultation",
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata"
+      ],
+      "inboundCount": 70,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/how-to-choose-an-outbound-agency",
+      "title": "How To Choose An Outbound Agency",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/instagram-resources/80-us-meetings-ai-agents",
+      "title": "80+ US Meetings Booked in 1 Month with AI Agents",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/instagram-resources/claude-skills-guide",
+      "title": "The 6 Claude Skills Guide",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/instagram-resources/cold-email-tech-stack",
+      "title": "The opener",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-sequence-templates",
+        "/resources/guides"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/instagram-resources/golden-icp-framework",
+      "title": "The Golden ICP Framework for B2B Outbound",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/instagram-resources/how-to-set-up-vibe-prospecting",
+      "title": "How to Set Up Vibe Prospecting on Claude",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/instagram-resources/leads-on-autopilot-guide",
+      "title": "Leads on Autopilot: A Step-by-Step LinkedIn Framework",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/jahnvijhaveri",
+      "title": "Jahnvi Jhaveri",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/lp/agencies-it",
+      "title": "B2B Outbound for Agencies & IT Companies",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/agency-partners",
+      "title": "White-Label B2B Outbound Partner Program",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/financial-services",
+      "title": "B2B Outbound for Financial Services Firms",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/fundraising",
+      "title": "Investor Outreach for Founders Raising Capital",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/insurance",
+      "title": "B2B Outbound for Insurance Brokers & Agencies",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/manufacturers-exporters",
+      "title": "B2B Outbound for Manufacturers & Exporters",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/pharma",
+      "title": "B2B Outbound for Pharmaceutical Companies",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/recruitment-firms",
+      "title": "B2B Outbound for Recruitment & Staffing Firms",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/lp/saas-founders",
+      "title": "B2B Outbound for SaaS Founders",
+      "section": "lp",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/marketing-automation",
+      "title": "B2B Marketing Automation Services",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/menti",
+      "title": "Live Q&A",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/myntmore-framework",
+      "title": "The Myntmore Framework",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/newsletter-subscribe",
+      "title": "Subscribe to The Outbound Operator",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/enwilfernandes",
+        "/jahnvijhaveri",
+        "/tejasjhaveri"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources",
+      "title": "B2B Growth Resources: Blogs & Free Tools",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/3-second-rule-cold-outreach",
+        "/blog/5-second-hero-section-test",
+        "/blog/agency-vs-in-house",
+        "/blog/b2b-lead-gen-metrics",
+        "/blog/b2b-outbound-benchmark-report-2026",
+        "/blog/case-study-procrastination",
+        "/blog/cold-email-compliance-guide",
+        "/blog/cold-email-deliverability-guide"
+      ],
+      "inboundCount": 47,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/blogs",
+      "title": "B2B Lead Generation Blog",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/3-second-rule-cold-outreach",
+        "/blog/5-second-hero-section-test",
+        "/blog/agency-vs-in-house",
+        "/blog/b2b-lead-gen-metrics",
+        "/blog/b2b-outbound-benchmark-report-2026",
+        "/blog/case-study-procrastination",
+        "/blog/cold-email-compliance-guide",
+        "/blog/cold-email-deliverability-guide"
+      ],
+      "inboundCount": 29,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/feed",
+      "title": "The Feed: B2B Outbound Reels",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/resources"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary",
+      "title": "B2B Outbound Glossary",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/resources/glossary/3-second-rule",
+        "/resources/glossary/signal-heavy-structuring",
+        "/resources/glossary/total-conversional-market",
+        "/resources",
+        "glossary/GlossaryTerm.tsx"
+      ],
+      "inboundCount": 6,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/3-second-rule",
+      "title": "3 Second Rule",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/abm",
+      "title": "Abm",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/aha-moment",
+      "title": "Aha Moment",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/buyer-persona",
+      "title": "Buyer Persona",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/buying-signal",
+      "title": "Buying Signal",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/reviving-closed-lost-leads",
+        "/blog/what-is-b2b-outbound-sales",
+        "/resources/glossary"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/can-spam-act",
+      "title": "Can Spam Act",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/cold-email",
+      "title": "Cold Email",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/cold-lead",
+      "title": "Cold Lead",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/domain-warmup",
+      "title": "Domain Warmup",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/instagram-resources/cold-email-tech-stack",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/existing-connection-nurturing",
+      "title": "Existing Connection Nurturing",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/founder-led-sales",
+      "title": "Founder Led Sales",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/gdpr-cold-outreach",
+      "title": "Gdpr Cold Outreach",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/hot-lead",
+      "title": "Hot Lead",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/icp",
+      "title": "Icp",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/what-is-b2b-outbound-sales",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/inbound-vs-outbound",
+      "title": "Inbound Vs Outbound",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/what-is-b2b-outbound-sales",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/lead-magnet",
+      "title": "Lead Magnet",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/lead-scoring",
+      "title": "Lead Scoring",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/meeting-booked-rate",
+      "title": "Meeting Booked Rate",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/handling-cold-email-replies",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/multi-threading",
+      "title": "Multi Threading",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/multi-threading-b2b-buying-committee",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/re-engagement-campaign",
+      "title": "Re Engagement Campaign",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/reviving-closed-lost-leads",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/response-rate",
+      "title": "Response Rate",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/sales-pipeline",
+      "title": "Sales Pipeline",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/what-is-b2b-outbound-sales",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/sdr",
+      "title": "Sdr",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/what-is-b2b-outbound-sales",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/sender-reputation",
+      "title": "Sender Reputation",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/signal-heavy-structuring",
+      "title": "Signal Heavy Structuring",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/spf-dkim-dmarc",
+      "title": "Spf Dkim Dmarc",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/instagram-resources/cold-email-tech-stack",
+        "/resources/glossary"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/total-conversional-market",
+      "title": "Total Conversional Market",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/value-proposition",
+      "title": "Value Proposition",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/vanity-metrics",
+      "title": "Vanity Metrics",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/warm-lead",
+      "title": "Warm Lead",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides",
+      "title": "Free B2B Growth Guides",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/dos-and-donts-of-outreach",
+        "/how-to-choose-an-outbound-agency",
+        "/instagram-resources/80-us-meetings-ai-agents",
+        "/instagram-resources/claude-skills-guide",
+        "/instagram-resources/cold-email-tech-stack",
+        "/instagram-resources/golden-icp-framework",
+        "/instagram-resources/how-to-set-up-vibe-prospecting"
+      ],
+      "inboundCount": 11,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/ai-tech-stack-jewellery",
+      "title": "Ai Tech Stack Jewellery",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/tools",
+      "title": "Free B2B Lead Generation Tools",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/",
+        "/resources",
+        "/tools/battle-card-generator",
+        "/tools/case-study-generator",
+        "/tools/dm-angle-generator",
+        "/tools/founder-presence-analyzer",
+        "/tools/icp-builder",
+        "/tools/lead-magnet-ideas"
+      ],
+      "inboundCount": 11,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/seo",
+      "title": "SEO Services Mumbai | B2B Content SEO",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services",
+      "title": "AI-Powered B2B Lead Generation Services",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai"
+      ],
+      "inboundCount": 22,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/account-based-marketing",
+      "title": "Account-Based Marketing Services for B2B",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai",
+        "/b2b-lead-generation-pune"
+      ],
+      "inboundCount": 12,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/ai-lead-generation",
+      "title": "AI Lead Generation Services for B2B",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai"
+      ],
+      "inboundCount": 27,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/cold-email",
+      "title": "Cold Email Infrastructure & Deliverability",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai"
+      ],
+      "inboundCount": 38,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/do-it-yourself",
+      "title": "Do It Yourself LinkedIn Outreach Tool",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/services/gtm-strategy",
+      "title": "B2B GTM Strategy & Execution",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies/founder-personal-brand-linkedin",
+        "/case-studies/pharma-singapore-product-licensing",
+        "/",
+        "/services"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/linkedin-outreach",
+      "title": "LinkedIn Outreach & Automation Services",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai"
+      ],
+      "inboundCount": 30,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/personal-branding",
+      "title": "Personal Branding & LinkedIn Ghostwriting",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai"
+      ],
+      "inboundCount": 16,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/services/sales-intelligence",
+      "title": "ICP Mapping & Lead Scoring Services",
+      "section": "services",
+      "status": "linked",
+      "linkedFrom": [
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai",
+        "/b2b-lead-generation-pune"
+      ],
+      "inboundCount": 35,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/site-audit",
+      "title": "Site Audit",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/sitemap",
+      "title": "Site Map",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/tejasjhaveri",
+      "title": "Tejas Jhaveri",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/thank-you",
+      "title": "Thanks, We've Got Your Details",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/components/LeadCaptureForm.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/thankyou",
+      "title": "You're Booked!",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/founder-meeting"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/tools/battle-card-generator",
+      "title": "Competitor Battle Card Generator",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/pitching-trap-competitor-positioning",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/case-study-generator",
+      "title": "Case Study & Proposal Generator",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/case-study-procrastination",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/dm-angle-generator",
+      "title": "Free DM Angle Generator for B2B Outreach",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/3-second-rule-cold-outreach",
+        "/blog/stop-selling-features-cold-outreach",
+        "/dos-and-donts-of-outreach",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 5,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/founder-presence-analyzer",
+      "title": "Founder Presence Analyzer",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/vanity-metrics-personal-brand-pipeline",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/icp-builder",
+      "title": "ICP Builder & Value Proposition Generator",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/5-second-hero-section-test",
+        "/blog/tam-trap-vague-targeting",
+        "/dos-and-donts-of-outreach",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 5,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/lead-magnet-ideas",
+      "title": "Lead Magnet Idea Generator",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/value-premium-lead-magnets",
+        "/dos-and-donts-of-outreach",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/linkedin-optimizer",
+      "title": "LinkedIn Profile Optimizer",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/linkedin-profile-inbound-lead-machine",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/posting-rhythm-builder",
+      "title": "Posting Rhythm Builder",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/roi-calculator",
+      "title": "B2B Outreach ROI Calculator",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/outbound-funnel-math-not-guesswork",
+        "/dos-and-donts-of-outreach",
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/who-this-is-for",
+      "title": "You sell to businesses, not consumers",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/workshop",
+      "title": "Workshop",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    }
+  ],
+  "redirects": [
+    {
+      "from": "/about",
+      "to": "/about-us",
+      "permanent": true
+    },
+    {
+      "from": "/contact",
+      "to": "/contact-us",
+      "permanent": true
+    },
+    {
+      "from": "/personal-branding",
+      "to": "/services/personal-branding",
+      "permanent": true
+    },
+    {
+      "from": "/GIAtech-stack",
+      "to": "/resources/guides/ai-tech-stack-jewellery",
+      "permanent": true
+    },
+    {
+      "from": "/jbcn-ai-quickstart",
+      "to": "/education-guide",
+      "permanent": true
+    },
+    {
+      "from": "/ai-takeaways",
+      "to": "/education-guide",
+      "permanent": true
+    },
+    {
+      "from": "/nmims-toolkit",
+      "to": "/careers-and-job-guide",
+      "permanent": true
+    },
+    {
+      "from": "/careers/content-strategist",
+      "to": "/careers",
+      "permanent": true
+    },
+    {
+      "from": "/careers/senior-sales-head",
+      "to": "/careers",
+      "permanent": true
+    },
+    {
+      "from": "/home",
+      "to": "/",
+      "permanent": true
+    },
+    {
+      "from": "/webinar",
+      "to": "/events",
+      "permanent": true
+    },
+    {
+      "from": "/branding",
+      "to": "/services/personal-branding",
+      "permanent": true
+    },
+    {
+      "from": "/website-newsletter",
+      "to": "/newsletter-subscribe",
+      "permanent": true
+    },
+    {
+      "from": "/discover-our-most-popular-services",
+      "to": "/services",
+      "permanent": true
+    },
+    {
+      "from": "/other-services",
+      "to": "/services",
+      "permanent": true
+    }
+  ],
+  "hiddenRedirects": 4,
+  "rewrites": [
+    {
+      "from": "/tools/dm-angle-generator",
+      "to": "https://mynt-more-angles.lovable.app"
+    },
+    {
+      "from": "/tools/dm-angle-generator/:path*",
+      "to": "https://mynt-more-angles.lovable.app/:path*"
+    }
+  ],
+  "apiRoutes": [
+    "/api/gemini",
+    "/api/menti/auth",
+    "/api/menti/gist",
+    "/api/menti/reset",
+    "/api/tools/battle-card-generator",
+    "/api/tools/case-study-generator",
+    "/api/tools/dm-angles",
+    "/api/tools/dm-angles/regenerate",
+    "/api/tools/founder-presence",
+    "/api/tools/lead-magnet-ideas",
+    "/api/tools/posting-rhythm",
+    "/api/tools/profile-optimizer",
+    "/api/vcard/enwil-fernandes",
+    "/api/vcard/jahnvi-jhaveri",
+    "/api/vcard/tejas-jhaveri"
+  ],
+  "method": "A page is 'linked' if it can be reached by following internal links from the homepage. Links in the XML sitemap, the HTML /sitemap page and this audit page are ignored."
+}

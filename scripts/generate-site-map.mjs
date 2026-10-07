@@ -1,0 +1,313 @@
+// Generates app/site-audit/data.json: every page on the site, whether it is
+// reachable through real internal links (or an orphan), and the legacy
+// redirects. Runs automatically before `next build` (see package.json), so
+// the /site-audit page is rebuilt from the code on every deploy.
+//
+//   node scripts/generate-site-map.mjs
+//
+// How "linked" is decided
+// -----------------------
+// A page counts as linked only if it can be reached by following links from
+// the homepage. A link is a string in a link-like position in the source
+// (href=, to:, link:, path:, router.push(), redirect(), ...). Links found in
+// the XML sitemap, the HTML /sitemap page and the audit page itself are
+// ignored -- those exist to list every page, so counting them would make
+// everything look linked. A link to a legacy redirect source counts as a
+// link to its destination.
+//
+// Files under app/<route>/ belong to that route. Every other file
+// (components/, lib/, app/components/, layouts) is "shared": its links are
+// treated as reachable from everywhere (nav, footer, shared widgets).
+//
+// Known limits: links assembled at runtime (template literals such as
+// `/blog/${slug}`) are matched by the slug appearing as a quoted string next
+// to such a link; anything fancier will show up as an orphan and is worth a
+// manual look.
+
+import fs from "node:fs";
+import path from "node:path";
+import { createRequire } from "node:module";
+
+const ROOT = process.cwd();
+const APP = path.join(ROOT, "app");
+const OUT = path.join(APP, "site-audit", "data.json");
+const SITE = "https://www.myntmore.com";
+const require = createRequire(import.meta.url);
+
+// URLs that must not be published on a publicly reachable page: the private
+// pricing pages (shared only with prospects) and the admin room.
+const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room");
+// Legacy redirects that point at (or stand in for) a private page.
+const isPrivateRedirect = (r) =>
+  isPrivate(r.from) || isPrivate(r.to) || r.from === "/international-pricing" || r.from === "/indian-pricing";
+
+const read = (f) => fs.readFileSync(f, "utf8");
+const exists = (f) => fs.existsSync(f);
+const rel = (f) => path.relative(ROOT, f).split(path.sep).join("/");
+
+function walk(dir, out = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (e.name === "node_modules" || e.name.startsWith(".")) continue;
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walk(p, out);
+    else out.push(p);
+  }
+  return out;
+}
+
+const normalize = (p) => {
+  let s = p.split("#")[0].split("?")[0];
+  if (!s.startsWith("/")) s = "/" + s;
+  s = s.replace(/\/{2,}/g, "/");
+  if (s.length > 1) s = s.replace(/\/$/, "");
+  return s;
+};
+
+// ---- 1. Pages ---------------------------------------------------------------
+const PAGE_RE = /^page\.(tsx|ts|jsx|js|mdx)$/;
+const appFiles = walk(APP);
+const pageDirs = appFiles
+  .filter((f) => PAGE_RE.test(path.basename(f)))
+  .map((f) => ({ file: f, dir: path.dirname(f) }));
+
+function dirToRoute(dir) {
+  const segs = path
+    .relative(APP, dir)
+    .split(path.sep)
+    .filter(Boolean)
+    .filter((s) => !/^\(.*\)$/.test(s)); // route groups don't appear in the URL
+  return "/" + segs.join("/");
+}
+
+// Expand a dynamic segment from a page that keeps its params in a literal
+// object (app/plans/[code] keeps them as the keys of a PLANS record).
+function expandDynamic(route, file) {
+  const m = route.match(/\[([^\]]+)\]/);
+  if (!m) return [route];
+  const src = read(file);
+  const block = src.match(/const\s+\w+[^=]*=\s*\{([\s\S]*?)\n\};/);
+  const keys = block ? [...block[1].matchAll(/^ {2}["']?([\w-]+)["']?:\s*\{/gm)].map((k) => k[1]) : [];
+  return keys.length ? keys.map((k) => route.replace(m[0], k)) : [route];
+}
+
+const pages = [];
+for (const { file, dir } of pageDirs) {
+  const route = dirToRoute(dir);
+  const src = [file, path.join(dir, "layout.tsx")].filter(exists).map(read).join("\n");
+  const titleMatch = read(file).match(/metadata[^=]*=\s*\{[\s\S]*?\btitle:\s*(?:"([^"]+)"|'([^']+)'|`([^`$]+)`)/);
+  const title = titleMatch ? (titleMatch[1] || titleMatch[2] || titleMatch[3]).trim() : null;
+  const noindex = /index:\s*false/.test(src);
+  for (const p of expandDynamic(route, file)) {
+    pages.push({ path: p, dir: rel(dir), title, noindex, dynamic: p !== route });
+  }
+}
+const routeSet = new Set(pages.map((p) => p.path));
+
+// ---- 2. Redirects & rewrites ------------------------------------------------
+const nextConfig = require(path.join(ROOT, "next.config.js"));
+const redirects = nextConfig.redirects ? await nextConfig.redirects() : [];
+const rewrites = nextConfig.rewrites ? await nextConfig.rewrites() : [];
+const redirectMap = new Map(redirects.map((r) => [normalize(r.source), normalize(r.destination)]));
+
+// ---- 3. What the XML / HTML sitemaps list -----------------------------------
+const xmlSrc = read(path.join(APP, "sitemap.ts"));
+const inXml = new Set(
+  [...xmlSrc.matchAll(/\$\{base\}(\/[^`"'\s]*)/g)].map((m) => normalize(m[1])).concat(/url:\s*base\b/.test(xmlSrc) ? ["/"] : []),
+);
+const htmlSitemapFile = path.join(APP, "sitemap", "page.tsx");
+const inHtml = new Set(
+  exists(htmlSitemapFile)
+    ? [...read(htmlSitemapFile).matchAll(/href:\s*["'`](\/[^"'`\s]*)/g)].map((m) => normalize(m[1]))
+    : [],
+);
+
+// ---- 4. Links -----------------------------------------------------------------
+// Sources that list pages rather than link to them.
+const IGNORED_SOURCES = [rel(path.join(APP, "sitemap.ts")), "app/sitemap/", "app/site-audit/"];
+const ignored = (f) => IGNORED_SOURCES.some((s) => rel(f) === s || rel(f).startsWith(s));
+
+const codeFiles = [APP, path.join(ROOT, "components"), path.join(ROOT, "lib")]
+  .filter(exists)
+  .flatMap((d) => walk(d))
+  .filter((f) => /\.(tsx?|jsx?|mdx?)$/.test(f))
+  .filter((f) => !ignored(f));
+
+const ownerOf = (file) => {
+  // Nearest ancestor directory (under app/) that holds a page.
+  let d = path.dirname(file);
+  while (d.startsWith(APP) && d !== path.dirname(APP)) {
+    if (pageDirs.some((p) => p.dir === d)) return dirToRoute(d);
+    if (d === APP) break;
+    d = path.dirname(d);
+  }
+  return "shared";
+};
+
+const ORIGIN = String.raw`(?:https?:\/\/(?:www\.)?myntmore\.com)?`;
+const CTX = String.raw`(?:href|to|link|path|route|cta\w*|push|replace|redirect|permanentRedirect|location(?:\.href)?)`;
+const LINK_RE = new RegExp(CTX + String.raw`\s*[=:(]\s*\{?\s*["'\x60]` + ORIGIN + String.raw`(\/[^"'\x60\s$\{\}<>]*)`, "g");
+const TEMPLATE_RE = new RegExp(CTX + String.raw`\s*[=:(]\s*\{?\s*\x60` + ORIGIN + String.raw`(\/[^"'\x60\s$\{\}<>]*)\$\{`, "g");
+
+const edges = []; // { from: route|"shared", fromFile, to }
+const templatePrefixes = []; // { owner, file, prefix, src }
+for (const f of codeFiles) {
+  const src = read(f);
+  const owner = ownerOf(f);
+  for (const m of src.matchAll(LINK_RE)) {
+    const to = normalize(m[1]);
+    edges.push({ from: owner, fromFile: rel(f), to: redirectMap.get(to) ?? to });
+  }
+  for (const m of src.matchAll(TEMPLATE_RE)) {
+    templatePrefixes.push({ owner, file: rel(f), prefix: m[1], src });
+  }
+  // Links held in a constant, e.g. `const DIY_HREF = "/services/x"` ... `href={DIY_HREF}`.
+  for (const m of src.matchAll(/\b(?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*["'`]((?:https?:\/\/(?:www\.)?myntmore\.com)?\/[^"'`\s$\{\}<>]*)["'`]/g)) {
+    const [, name, value] = m;
+    const used = new RegExp(CTX + String.raw`\s*[=:(]\s*\{?\s*` + name.replace(/\$/g, "\\$") + String.raw`\b`).test(src);
+    if (!used) continue;
+    const to = normalize(value.replace(/^https?:\/\/(?:www\.)?myntmore\.com/, ""));
+    edges.push({ from: owner, fromFile: rel(f), to: redirectMap.get(to) ?? to });
+  }
+}
+
+// Runtime-built links like `/blog/${slug}`: attribute them to every page under
+// that prefix whose last segment appears as a quoted string in the same file
+// (or in a data file in lib/ or the same folder).
+const dataSources = codeFiles.filter((f) => /\/(lib|data)\//.test(rel(f)) || /data|posts|articles|glossary/i.test(path.basename(f)));
+for (const t of templatePrefixes) {
+  const prefix = normalize(t.prefix);
+  const pool = [t.src, ...dataSources.filter((f) => rel(f).startsWith(path.dirname(t.file)) || rel(f).startsWith("lib/")).map(read)];
+  for (const p of pages) {
+    if (!p.path.startsWith(prefix + "/")) continue;
+    const slug = p.path.split("/").pop();
+    if (pool.some((s) => s.includes(`"${slug}"`) || s.includes(`'${slug}'`) || s.includes("`" + slug + "`"))) {
+      edges.push({ from: t.owner, fromFile: t.file, to: p.path });
+    }
+  }
+}
+
+// Pages named as a string somewhere outside their own folder without being a
+// navigation link (form redirect targets, embeds, canonical hints in other
+// files). Not enough to count as linked, but worth showing.
+const referencedElsewhere = new Map(); // route -> first file that names it
+for (const f of codeFiles) {
+  const src = read(f);
+  for (const m of src.matchAll(/["'`](?:https?:\/\/(?:www\.)?myntmore\.com)?(\/[a-z0-9][a-z0-9\-_/]*)["'`]/gi)) {
+    const to = normalize(m[1]);
+    if (!routeSet.has(to)) continue;
+    const owner = ownerOf(f);
+    if (owner === to) continue;
+    if (!referencedElsewhere.has(to)) referencedElsewhere.set(to, rel(f));
+  }
+}
+
+// ---- 5. Reachability from the homepage -----------------------------------------
+const outgoing = new Map();
+for (const e of edges) {
+  if (e.from === "shared") continue;
+  if (!outgoing.has(e.from)) outgoing.set(e.from, new Set());
+  outgoing.get(e.from).add(e.to);
+}
+const roots = new Set(["/"]);
+for (const e of edges) if (e.from === "shared") roots.add(e.to);
+
+const reachable = new Set();
+const queue = [...roots].filter((r) => routeSet.has(r) || r === "/");
+for (const r of queue) reachable.add(r);
+while (queue.length) {
+  const cur = queue.shift();
+  for (const to of outgoing.get(cur) ?? []) {
+    if (reachable.has(to)) continue;
+    reachable.add(to);
+    queue.push(to);
+  }
+}
+
+// ---- 6. Assemble ------------------------------------------------------------------
+const inboundFor = (p) => {
+  const seen = new Map();
+  for (const e of edges) {
+    if (e.to !== p || e.from === p || isPrivate(e.from)) continue;
+    const key = e.from === "shared" ? `shared:${e.fromFile}` : e.from;
+    if (!seen.has(key)) seen.set(key, e.from === "shared" ? e.fromFile.replace(/^(app\/components|components)\//, "") : e.from);
+  }
+  return [...seen.values()];
+};
+
+const titleFor = (p) =>
+  p.title ||
+  (p.path === "/"
+    ? "Home"
+    : p.path
+        .split("/")
+        .pop()
+        .replace(/[-_]/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase()));
+
+const out = pages
+  .map((p) => {
+    const inbound = inboundFor(p.path);
+    const linked = p.path === "/" || reachable.has(p.path);
+    const priv = isPrivate(p.path);
+    return {
+      path: priv ? null : p.path,
+      private: priv || undefined,
+      title: priv ? "Private pricing / admin page (URL withheld)" : titleFor(p),
+      section: priv ? "private" : p.path === "/" ? "(home)" : p.path.split("/")[1],
+      status: linked ? "linked" : "orphan",
+      // An orphan with inbound links only has them from other orphans.
+      linkedFrom: priv ? [] : inbound.slice(0, 8),
+      inboundCount: priv ? 0 : inbound.length,
+      noindex: p.noindex,
+      referencedIn: !linked && !priv ? referencedElsewhere.get(p.path) ?? undefined : undefined,
+      inXmlSitemap: inXml.has(p.path),
+      inHtmlSitemap: inHtml.has(p.path),
+    };
+  })
+  .sort((a, b) => (a.path ?? "~").localeCompare(b.path ?? "~"));
+
+// A section with a single page (e.g. /feedback) isn't worth a group of its own.
+const sectionSize = new Map();
+for (const p of out) sectionSize.set(p.section, (sectionSize.get(p.section) ?? 0) + 1);
+for (const p of out) {
+  if (p.section !== "(home)" && p.section !== "private" && sectionSize.get(p.section) === 1) p.section = "other";
+}
+
+const publicRedirects = redirects.map((r) => ({ from: normalize(r.source), to: normalize(r.destination), permanent: !!r.permanent })).filter((r) => !isPrivateRedirect(r));
+const hiddenRedirects = redirects.length - publicRedirects.length;
+
+const data = {
+  generatedAt: new Date().toISOString(),
+  site: SITE,
+  counts: {
+    total: out.length,
+    linked: out.filter((p) => p.status === "linked").length,
+    orphan: out.filter((p) => p.status === "orphan").length,
+    noindex: out.filter((p) => p.noindex).length,
+    notInXmlSitemap: out.filter((p) => !p.inXmlSitemap).length,
+    privateHidden: out.filter((p) => p.private).length,
+  },
+  pages: out,
+  redirects: publicRedirects,
+  hiddenRedirects,
+  rewrites: rewrites.map((r) => ({ from: normalize(r.source), to: r.destination })),
+  apiRoutes: appFiles.filter((f) => path.basename(f) === "route.ts").map((f) => dirToRoute(path.dirname(f))).sort(),
+  method:
+    "A page is 'linked' if it can be reached by following internal links from the homepage. Links in the XML sitemap, the HTML /sitemap page and this audit page are ignored.",
+};
+
+fs.mkdirSync(path.dirname(OUT), { recursive: true });
+// Stable output unless something changed: keep the old timestamp if the
+// page list is identical, so builds don't dirty the file for no reason.
+let write = true;
+if (exists(OUT)) {
+  try {
+    const prev = JSON.parse(read(OUT));
+    const strip = (d) => JSON.stringify({ ...d, generatedAt: null });
+    if (strip(prev) === strip(data)) write = false;
+  } catch {}
+}
+if (write) fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
+console.log(
+  `site-audit: ${data.counts.total} pages (${data.counts.linked} linked, ${data.counts.orphan} orphan), ${publicRedirects.length} redirects${write ? "" : " [unchanged]"}`,
+);

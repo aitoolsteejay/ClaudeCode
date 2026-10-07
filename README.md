@@ -265,7 +265,7 @@ Zoho CRM is the primary lead record for each tool (a dedicated form per tool, or
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase client init (`lib/supabase.ts`) |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase client init |
 | `GEMINI_API_KEY` | Server-side Gemini calls in `app/api/**/route.ts` |
-| `MENTI_ADMIN_PASSWORD` | Gates the `/menti/room` admin flow |
+| `MENTI_ADMIN_PASSWORD` | Gates the `/menti/room` admin flow. **Required** -- there is no default; if unset, nobody can log in to the room |
 
 No `.env.example` is committed — set these in your local `.env.local` and in the Vercel project's environment settings.
 

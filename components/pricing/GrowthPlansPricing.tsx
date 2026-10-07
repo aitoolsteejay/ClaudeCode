@@ -119,7 +119,7 @@ const COLD_EMAIL_FEATURES = [
   "1,200 emails/day (26,400/month)",
   "10 domains + 40 email accounts",
   "Full DNS setup & IP rotation",
-  "ICP-based lead list (8,800 prospects/month)",
+  "ICP-based lead list (5,000 prospects/month)",
   "A/B testing & ongoing campaign optimization",
   "Advanced reporting & real-time tracking",
   "Cold email copywriting & strategy",
@@ -168,7 +168,15 @@ function DiffCell({ value, accent }: { value: Cell; accent: string }) {
     return <span className="text-sm" style={{ color: "#C9C2B7" }}>&mdash;</span>;
   }
   if (value === true) {
-    return <CheckIcon color={accent} />;
+    // The shared CheckIcon is a block-level svg (with a small top margin for
+    // list-item alignment), so text-center on the cell doesn't center it;
+    // center it explicitly and drop the margin so it lines up with the
+    // numbers and dashes in the same row.
+    return (
+      <span className="flex justify-center [&>svg]:mt-0">
+        <CheckIcon color={accent} />
+      </span>
+    );
   }
   return <span className="text-sm font-black" style={{ color: TEXT_DARK }}>{value}</span>;
 }
@@ -568,12 +576,11 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                     className="p-6 sm:p-8 flex flex-col justify-center lg:w-[300px] lg:shrink-0"
                     style={{ borderTop: `1px solid ${BORDER}`, backgroundColor: `${ORANGE}08` }}
                   >
-                    <div className="mb-3">
+                    <div className="mb-5">
                       <span className="text-3xl font-black" style={{ color: TEXT_DARK }}>{currencyPrefix}<AnimatedPrice target={prices.coldEmail} /></span>
                       {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                       <div className="text-sm font-semibold" style={{ color: TEXT_MUTED }}>/ month</div>
                     </div>
-                    <span className="inline-block text-xs font-bold mb-4" style={{ color: ORANGE }}>100% advance for first month</span>
                     <div className="rounded-xl p-4 mb-5 bg-white" style={{ border: `1px solid ${BORDER}` }}>
                       <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>
                       <p className="text-xs leading-relaxed" style={{ color: TEXT_BODY }}>
@@ -634,7 +641,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
                 {[
                   "Prices shown are indicative and exclude any applicable taxes unless stated otherwise.",
                   "Billing is monthly, in advance, on the plan selected.",
-                  "The Cold Email Outbound System requires 100% advance payment for the first month; domains and email accounts are purchased separately by the client and are not included in the plan price.",
+                  "For the Cold Email Outbound System, domains and email accounts are purchased separately by the client and are not included in the plan price.",
                   "Plan inclusions, volumes, and deliverables are typical monthly figures and may vary based on scope, ICP, and campaign performance.",
                   "A written service agreement covering contract term, cancellation, and other conditions is shared and signed before onboarding begins.",
                   "This page is indicative pricing for discussion purposes and does not itself constitute a binding offer.",

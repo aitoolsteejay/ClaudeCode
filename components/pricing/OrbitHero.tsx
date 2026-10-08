@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 const GOLD = "#F5B731";
 const INK = "#0f0f14";
 
@@ -9,11 +7,6 @@ const INK = "#0f0f14";
 const CX = 300;
 const CY = 300;
 const SPHERE_R = 205;
-// The gold dot is a small moon on a tilted, invisible orbit.
-const ORBIT_RX = 285;
-const ORBIT_RY = 118;
-const ORBIT_TILT = -20; // degrees
-
 export type PlanetKind = "mars" | "earth" | "neptune";
 
 interface OrbitHeroProps {
@@ -77,46 +70,9 @@ function Surface({ kind }: { kind: PlanetKind }) {
 }
 
 // Hero for the private pricing pages: bold two-line title, a planet that
-// matches the page (Mars, Earth or Neptune) with an orbiting moon, and a price
-// card. Decorative parts are aria-hidden; the moon's motion is skipped under
-// prefers-reduced-motion.
+// matches the page (Mars, Earth or Neptune), and a price
+// card. Decorative parts are aria-hidden.
 export default function OrbitHero({ leadWords, accentWord, planet = "mars", priceNode, billingNote, summary }: OrbitHeroProps) {
-  const frontRef = useRef<SVGCircleElement>(null);
-  const backRef = useRef<SVGCircleElement>(null);
-  const glowFrontRef = useRef<SVGCircleElement>(null);
-  const glowBackRef = useRef<SVGCircleElement>(null);
-
-  useEffect(() => {
-    const els = [frontRef.current, backRef.current, glowFrontRef.current, glowBackRef.current];
-    if (els.some((e) => !e)) return;
-    const [front, back, glowFront, glowBack] = els as SVGCircleElement[];
-    const place = (theta: number) => {
-      const phi = (ORBIT_TILT * Math.PI) / 180;
-      const ex = ORBIT_RX * Math.cos(theta);
-      const ey = ORBIT_RY * Math.sin(theta);
-      const x = CX + ex * Math.cos(phi) - ey * Math.sin(phi);
-      const y = CY + ex * Math.sin(phi) + ey * Math.cos(phi);
-      // The lower half of the orbit is in front of the planet, the upper half behind it.
-      const inFront = Math.sin(theta) > 0;
-      for (const [el, show] of [[front, inFront], [glowFront, inFront], [back, !inFront], [glowBack, !inFront]] as [SVGCircleElement, boolean][]) {
-        el.setAttribute("cx", x.toFixed(1));
-        el.setAttribute("cy", y.toFixed(1));
-        el.style.visibility = show ? "visible" : "hidden";
-      }
-    };
-    place(Math.PI * 1.12); // resting position: upper left of the planet
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let id: number;
-    const start = performance.now();
-    const tick = () => {
-      place(Math.PI * 1.12 + ((performance.now() - start) / 1000) * 0.22);
-      id = requestAnimationFrame(tick);
-    };
-    id = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(id);
-  }, []);
-
   return (
     <div className="relative max-w-6xl mx-auto mb-14">
       <div className="hero-fade flex flex-wrap items-center justify-between gap-3 mb-8">
@@ -172,10 +128,6 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
                 <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
               </radialGradient>
-              <radialGradient id="orbit-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor={GOLD} stopOpacity="0.55" />
-                <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
-              </radialGradient>
               <clipPath id="orbit-clip">
                 <circle cx={CX} cy={CY} r={SPHERE_R} />
               </clipPath>
@@ -229,10 +181,6 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
               </linearGradient>
             </defs>
 
-            {/* moon while it is behind the planet */}
-            <circle ref={glowBackRef} cx="120" cy="170" r="30" fill="url(#orbit-glow)" style={{ visibility: "hidden" }} />
-            <circle ref={backRef} cx="120" cy="170" r="13" fill={GOLD} style={{ visibility: "hidden" }} />
-
             {/* soft planet shadow, then the sphere with its surface */}
             <circle cx={CX + 18} cy={CY + 52} r={SPHERE_R - 14} fill="#a78bfa" opacity="0.28" filter="url(#orbit-shadow)" />
             <circle cx={CX} cy={CY} r={SPHERE_R} fill="url(#orbit-sphere)" />
@@ -242,9 +190,6 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
               <circle cx={CX} cy={CY} r={SPHERE_R} fill="url(#orbit-shade)" />
             </g>
 
-            {/* moon while it is in front of the planet */}
-            <circle ref={glowFrontRef} cx="120" cy="170" r="30" fill="url(#orbit-glow)" />
-            <circle ref={frontRef} cx="120" cy="170" r="13" fill={GOLD} />
           </svg>
 
           <div className="absolute" style={{ left: "46%", top: "38%", width: "50%" }}>

@@ -26,80 +26,52 @@ interface OrbitHeroProps {
   summary: string;
 }
 
-// Surface detail for each planet, drawn tone-on-tone in the page's existing
-// lavender, white and gold palette (no new colours). Everything sits inside
-// the sphere's clip path, and a soft white wash behind the caption keeps the
-// text readable over the surface.
+// Surface detail for each planet, built from soft procedural noise and shading
+// rather than hand-drawn shapes, so patches, continents and bands look natural.
+// Everything is tone-on-tone in the page's existing lavender, white and gold
+// palette (no new colours) and sits inside the sphere's clip path.
+const SPHERE_BOX = { x: CX - SPHERE_R, y: CY - SPHERE_R, width: SPHERE_R * 2, height: SPHERE_R * 2 };
+
+function Crater({ x, y, r }: { x: number; y: number; r: number }) {
+  // A shallow bowl: shaded on the side away from the light (upper left), lit on the other.
+  return (
+    <g>
+      <circle cx={x} cy={y} r={r} fill="url(#crater-bowl)" />
+      <circle cx={x} cy={y} r={r} fill="none" stroke="#ffffff" strokeWidth="1.6" opacity="0.5" strokeDasharray={`${r * 1.7} ${r * 4.6}`} strokeDashoffset={r * 0.4} transform={`rotate(20 ${x} ${y})`} />
+    </g>
+  );
+}
+
 function Surface({ kind }: { kind: PlanetKind }) {
-  const dark = "#b29be8"; // deeper lavender
-  const mid = "#c7b5f0";
-  if (kind === "mars") {
-    return (
-      <g>
-        {/* dusty plains, using the page's gold at low strength */}
-        <g filter="url(#planet-rough)">
-          <path d="M120 250 C190 215 300 225 380 270 C450 310 470 380 420 440 C340 500 190 470 130 380 C100 335 100 285 120 250 Z" fill={GOLD} opacity="0.13" />
-          <path d="M150 300 C170 250 240 235 280 262 C310 282 300 330 262 350 C220 372 160 352 150 300 Z" fill={dark} opacity="0.62" />
-          <path d="M318 150 C345 132 398 146 404 178 C408 204 372 214 346 202 C322 190 304 168 318 150 Z" fill={dark} opacity="0.5" />
-          <path d="M238 428 C285 405 352 420 346 452 C340 480 276 486 242 462 C228 450 226 436 238 428 Z" fill={dark} opacity="0.55" />
-          <path d="M200 160 C230 140 262 150 262 178 C262 200 232 208 210 196 C192 186 188 170 200 160 Z" fill={dark} opacity="0.4" />
-        </g>
-        {/* canyon system */}
-        <path d="M118 334 C190 318 262 340 340 322 C384 312 410 318 440 326" stroke={dark} strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.5" />
-        <path d="M196 328 C224 346 254 348 284 340" stroke={dark} strokeWidth="4" strokeLinecap="round" fill="none" opacity="0.4" />
-        <path d="M300 322 C312 346 330 360 352 366" stroke={dark} strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.35" />
-        {/* a few craters */}
-        {[
-          [178, 386, 12],
-          [350, 404, 16],
-          [276, 468, 9],
-        ].map(([x, y, r]) => (
-          <g key={`${x}-${y}`}>
-            <circle cx={x} cy={y} r={r} fill={dark} opacity="0.28" />
-            <circle cx={x} cy={y} r={r} fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.7" strokeDasharray={`${r * 2.2} ${r * 4.2}`} transform={`rotate(200 ${x} ${y})`} />
-          </g>
-        ))}
-        {/* polar ice cap with a defined rim */}
-        <ellipse cx="300" cy="104" rx="98" ry="40" fill="#ffffff" opacity="0.98" filter="url(#planet-soft)" />
-        <ellipse cx="300" cy="104" rx="98" ry="40" fill="none" stroke={mid} strokeWidth="3" opacity="0.8" />
-      </g>
-    );
-  }
   if (kind === "earth") {
     return (
       <g>
-        <g filter="url(#planet-rough)">
-          <path d="M150 190 C185 165 235 170 255 200 C270 225 245 245 255 275 C265 305 300 325 285 360 C270 395 235 420 215 400 C195 380 215 340 190 315 C165 290 120 245 150 190 Z" fill={dark} opacity="0.42" />
-          <path d="M372 296 C402 282 442 298 440 334 C438 376 406 420 380 406 C358 394 364 352 350 332 C342 316 352 306 372 296 Z" fill={dark} opacity="0.4" />
-          <path d="M330 150 C352 140 382 150 380 170 C378 188 350 190 334 178 C324 170 322 158 330 150 Z" fill={dark} opacity="0.3" />
-        </g>
-        {/* cloud swirls */}
-        <path d="M128 262 C188 238 232 276 304 250" stroke="#ffffff" strokeWidth="9" strokeLinecap="round" fill="none" opacity="0.7" />
-        <path d="M170 412 C232 388 280 430 350 404" stroke="#ffffff" strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.65" />
-        <path d="M262 150 C300 134 350 142 384 164" stroke="#ffffff" strokeWidth="7" strokeLinecap="round" fill="none" opacity="0.6" />
-        {/* ice caps */}
-        <ellipse cx="300" cy="96" rx="92" ry="28" fill="#ffffff" opacity="0.9" filter="url(#planet-soft)" />
-        <ellipse cx="300" cy="506" rx="92" ry="26" fill="#ffffff" opacity="0.9" filter="url(#planet-soft)" />
+        <rect {...SPHERE_BOX} filter="url(#tex-land)" opacity="0.8" />
+        <rect {...SPHERE_BOX} filter="url(#tex-clouds)" opacity="0.5" />
+        <ellipse cx={CX} cy={CY - SPHERE_R + 6} rx="120" ry="46" fill="url(#polar-cap)" />
+        <ellipse cx={CX} cy={CY + SPHERE_R - 6} rx="110" ry="42" fill="url(#polar-cap)" />
       </g>
     );
   }
-  // neptune: banded atmosphere with a dark storm
+  if (kind === "neptune") {
+    return (
+      <g>
+        <rect {...SPHERE_BOX} filter="url(#tex-bands)" opacity="0.4" />
+        <ellipse cx="205" cy="352" rx="54" ry="30" fill="url(#storm)" />
+        <ellipse cx="258" cy="336" rx="34" ry="6" fill="#ffffff" opacity="0.7" transform="rotate(-14 258 336)" filter="url(#planet-soft)" />
+      </g>
+    );
+  }
+  // mars
   return (
     <g>
-      <g filter="url(#planet-rough)">
-        {[
-          [140, 36, 0.22],
-          [214, 28, 0.16],
-          [276, 40, 0.24],
-          [350, 30, 0.16],
-          [414, 44, 0.24],
-          [468, 30, 0.18],
-        ].map(([y, h, o]) => (
-          <rect key={y} x="80" y={y} width="440" height={h} fill={dark} opacity={o} />
-        ))}
-      </g>
-      <ellipse cx="206" cy="352" rx="50" ry="29" fill={dark} opacity="0.55" filter="url(#planet-soft)" />
-      <ellipse cx="252" cy="334" rx="32" ry="6" fill="#ffffff" opacity="0.85" transform="rotate(-14 252 334)" filter="url(#planet-soft)" />
+      <rect {...SPHERE_BOX} filter="url(#tex-dust)" opacity="0.24" />
+      <rect {...SPHERE_BOX} filter="url(#tex-patches)" opacity="0.62" />
+      <Crater x={176} y={222} r={30} />
+      <Crater x={242} y={424} r={20} />
+      <Crater x={356} y={412} r={24} />
+      <Crater x={338} y={150} r={13} />
+      <ellipse cx={CX} cy={CY + SPHERE_R + 8} rx="128" ry="62" fill="url(#polar-cap)" />
     </g>
   );
 }
@@ -193,7 +165,7 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
               <radialGradient id="orbit-shade" cx="34%" cy="28%" r="85%">
                 <stop offset="0%" stopColor="#ffffff" stopOpacity="0.35" />
                 <stop offset="55%" stopColor="#ffffff" stopOpacity="0" />
-                <stop offset="100%" stopColor="#8b6fd8" stopOpacity="0.28" />
+                <stop offset="100%" stopColor="#7a5ccf" stopOpacity="0.4" />
               </radialGradient>
               {/* soft white wash behind the caption so it stays readable */}
               <radialGradient id="orbit-caption" cx="50%" cy="50%" r="50%">
@@ -210,15 +182,51 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
               <filter id="orbit-shadow" x="-30%" y="-30%" width="160%" height="160%">
                 <feGaussianBlur stdDeviation="26" />
               </filter>
+              {/* soft procedural textures (tinted with the page's lavender and gold) */}
+              <filter id="tex-patches" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.0055" numOctaves="2" seed="11" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0.58  0 0 0 0 0.46  0 0 0 0 0.88  3 0 0 0 -1.15" />
+              </filter>
+              <filter id="tex-dust" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="2" seed="29" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0.96  0 0 0 0 0.72  0 0 0 0 0.19  2 0 0 0 -0.7" />
+              </filter>
+              <filter id="tex-grain" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="5" result="g" />
+                <feDiffuseLighting in="g" surfaceScale="3" diffuseConstant="1" lightingColor="#ffffff">
+                  <feDistantLight azimuth="225" elevation="55" />
+                </feDiffuseLighting>
+              </filter>
+              <filter id="tex-land" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="3" seed="8" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0.55  0 0 0 0 0.43  0 0 0 0 0.86  6 0 0 0 -2.55" />
+              </filter>
+              <filter id="tex-clouds" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.004 0.016" numOctaves="3" seed="21" />
+                <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  3.5 0 0 0 -1.6" />
+              </filter>
+              <filter id="tex-bands" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.001 0.02" numOctaves="2" seed="4" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0.58  0 0 0 0 0.46  0 0 0 0 0.88  2.6 0 0 0 -0.9" />
+              </filter>
               <filter id="planet-soft" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="3" />
               </filter>
-              {/* organic, uneven edges for surface patches and bands */}
-              <filter id="planet-rough" x="-10%" y="-10%" width="120%" height="120%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" />
-                <feGaussianBlur stdDeviation="1.4" />
-              </filter>
+              <radialGradient id="polar-cap" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.98" />
+                <stop offset="55%" stopColor="#ffffff" stopOpacity="0.85" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient id="storm" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#8f74dc" stopOpacity="0.6" />
+                <stop offset="70%" stopColor="#a98fe6" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#a98fe6" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id="crater-bowl" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#7d5fd0" stopOpacity="0.4" />
+                <stop offset="55%" stopColor="#9d84e3" stopOpacity="0.15" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.55" />
+              </linearGradient>
             </defs>
 
             {/* moon while it is behind the planet */}

@@ -14,6 +14,7 @@ function LpFooter() {
           <Link href="/case-studies" className="text-xs" style={{ color: "#8C8279" }}>Case Studies</Link>
           <Link href="/privacy-policy" className="text-xs" style={{ color: "#8C8279" }}>Privacy Policy</Link>
           <a href="mailto:growth@myntmore.com" className="text-xs" style={{ color: "#8C8279" }}>growth@myntmore.com</a>
+          <a href="tel:+918169318951" className="text-xs" style={{ color: "#8C8279" }}>+91 81693 18951</a>
         </div>
       </div>
     </footer>

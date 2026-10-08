@@ -89,7 +89,7 @@ const SECTIONS = [
   {
     heading: "Contact Us",
     body: [
-      "If you have questions about this policy or how your information is handled, email us at growth@myntmore.com or write to us at WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025.",
+      "If you have questions about this policy or how your information is handled, email us at growth@myntmore.com, call us on +91 81693 18951, or write to us at WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025.",
     ],
   },
 ];

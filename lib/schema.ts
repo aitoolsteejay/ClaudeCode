@@ -14,6 +14,7 @@ export interface OrganizationSchema {
   logo: string;
   description: string;
   email: string;
+  telephone: string;
   founder: { "@type": "Person"; name: string; sameAs: string[] };
   address: {
     "@type": "PostalAddress";
@@ -35,6 +36,7 @@ export const organizationSchema: OrganizationSchema = {
   description:
     "Myntmore is Mumbai's leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.",
   email: "growth@myntmore.com",
+  telephone: "+91-81693-18951",
   founder: {
     "@type": "Person",
     name: "Tejas Jhaveri",
@@ -58,9 +60,9 @@ export const organizationSchema: OrganizationSchema = {
 
 // ProfessionalService (a LocalBusiness subtype, more specific and accurate
 // for an agency than generic LocalBusiness) for local-pack / "near me" and
-// city-qualified search relevance. Deliberately omits telephone and geo
-// coordinates: there's no phone number displayed anywhere on the site, and
-// no verified lat/long for the office -- inventing either would be
+// city-qualified search relevance. Includes the telephone number shown on
+// /contact-us and in the footer, and deliberately omits geo coordinates:
+// there's no verified lat/long for the office -- inventing it would be
 // structured data that doesn't match a real, checkable fact. openingHours
 // reflects the office hours actually stated on the careers pages (10:00-
 // 19:00 is the range common to multiple role listings), not a guess.
@@ -72,6 +74,7 @@ export function buildLocalBusinessSchema(url: string = SITE_URL) {
     url,
     image: `${SITE_URL}/logo.png`,
     description: organizationSchema.description,
+    telephone: organizationSchema.telephone,
     address: organizationSchema.address,
     areaServed: [
       "Mumbai", "Delhi", "Ahmedabad", "Pune", "Chennai", "Bengaluru", "Kolkata", "Hyderabad",

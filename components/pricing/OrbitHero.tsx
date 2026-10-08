@@ -8,62 +8,142 @@ const INK = "#0f0f14";
 // Planet geometry, in the 600x600 SVG coordinate space.
 const CX = 300;
 const CY = 300;
-const RING_RX = 285;
-const RING_RY = 118;
-const RING_TILT = -20; // degrees
 const SPHERE_R = 205;
+// The gold dot is a small moon on a tilted, invisible orbit.
+const ORBIT_RX = 285;
+const ORBIT_RY = 118;
+const ORBIT_TILT = -20; // degrees
+
+export type PlanetKind = "mars" | "earth" | "neptune";
 
 interface OrbitHeroProps {
   leadWords: string;
   accentWord: string;
+  planet?: PlanetKind;
   // Rendered by the parent so the animated price counter stays in one place.
   priceNode: React.ReactNode;
   billingNote: string;
   summary: string;
 }
 
-// Hero for the private pricing pages: bold two-line title, a planet with an
-// orbiting dot, and a price card. Decorative parts are aria-hidden; the dot's
-// motion is skipped under prefers-reduced-motion.
-export default function OrbitHero({ leadWords, accentWord, priceNode, billingNote, summary }: OrbitHeroProps) {
-  const dotRef = useRef<SVGCircleElement>(null);
-  const glowRef = useRef<SVGCircleElement>(null);
+// Surface detail for each planet, drawn tone-on-tone in the page's existing
+// lavender, white and gold palette (no new colours). Everything sits inside
+// the sphere's clip path, and a soft white wash behind the caption keeps the
+// text readable over the surface.
+function Surface({ kind }: { kind: PlanetKind }) {
+  const dark = "#b29be8"; // deeper lavender
+  const mid = "#c7b5f0";
+  if (kind === "mars") {
+    return (
+      <g>
+        {/* dusty plains, using the page's gold at low strength */}
+        <g filter="url(#planet-rough)">
+          <path d="M120 250 C190 215 300 225 380 270 C450 310 470 380 420 440 C340 500 190 470 130 380 C100 335 100 285 120 250 Z" fill={GOLD} opacity="0.13" />
+          <path d="M150 300 C170 250 240 235 280 262 C310 282 300 330 262 350 C220 372 160 352 150 300 Z" fill={dark} opacity="0.62" />
+          <path d="M318 150 C345 132 398 146 404 178 C408 204 372 214 346 202 C322 190 304 168 318 150 Z" fill={dark} opacity="0.5" />
+          <path d="M238 428 C285 405 352 420 346 452 C340 480 276 486 242 462 C228 450 226 436 238 428 Z" fill={dark} opacity="0.55" />
+          <path d="M200 160 C230 140 262 150 262 178 C262 200 232 208 210 196 C192 186 188 170 200 160 Z" fill={dark} opacity="0.4" />
+        </g>
+        {/* canyon system */}
+        <path d="M118 334 C190 318 262 340 340 322 C384 312 410 318 440 326" stroke={dark} strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.5" />
+        <path d="M196 328 C224 346 254 348 284 340" stroke={dark} strokeWidth="4" strokeLinecap="round" fill="none" opacity="0.4" />
+        <path d="M300 322 C312 346 330 360 352 366" stroke={dark} strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.35" />
+        {/* a few craters */}
+        {[
+          [178, 386, 12],
+          [350, 404, 16],
+          [276, 468, 9],
+        ].map(([x, y, r]) => (
+          <g key={`${x}-${y}`}>
+            <circle cx={x} cy={y} r={r} fill={dark} opacity="0.28" />
+            <circle cx={x} cy={y} r={r} fill="none" stroke="#ffffff" strokeWidth="2" opacity="0.7" strokeDasharray={`${r * 2.2} ${r * 4.2}`} transform={`rotate(200 ${x} ${y})`} />
+          </g>
+        ))}
+        {/* polar ice cap with a defined rim */}
+        <ellipse cx="300" cy="104" rx="98" ry="40" fill="#ffffff" opacity="0.98" filter="url(#planet-soft)" />
+        <ellipse cx="300" cy="104" rx="98" ry="40" fill="none" stroke={mid} strokeWidth="3" opacity="0.8" />
+      </g>
+    );
+  }
+  if (kind === "earth") {
+    return (
+      <g>
+        <g filter="url(#planet-rough)">
+          <path d="M150 190 C185 165 235 170 255 200 C270 225 245 245 255 275 C265 305 300 325 285 360 C270 395 235 420 215 400 C195 380 215 340 190 315 C165 290 120 245 150 190 Z" fill={dark} opacity="0.42" />
+          <path d="M372 296 C402 282 442 298 440 334 C438 376 406 420 380 406 C358 394 364 352 350 332 C342 316 352 306 372 296 Z" fill={dark} opacity="0.4" />
+          <path d="M330 150 C352 140 382 150 380 170 C378 188 350 190 334 178 C324 170 322 158 330 150 Z" fill={dark} opacity="0.3" />
+        </g>
+        {/* cloud swirls */}
+        <path d="M128 262 C188 238 232 276 304 250" stroke="#ffffff" strokeWidth="9" strokeLinecap="round" fill="none" opacity="0.7" />
+        <path d="M170 412 C232 388 280 430 350 404" stroke="#ffffff" strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.65" />
+        <path d="M262 150 C300 134 350 142 384 164" stroke="#ffffff" strokeWidth="7" strokeLinecap="round" fill="none" opacity="0.6" />
+        {/* ice caps */}
+        <ellipse cx="300" cy="96" rx="92" ry="28" fill="#ffffff" opacity="0.9" filter="url(#planet-soft)" />
+        <ellipse cx="300" cy="506" rx="92" ry="26" fill="#ffffff" opacity="0.9" filter="url(#planet-soft)" />
+      </g>
+    );
+  }
+  // neptune: banded atmosphere with a dark storm
+  return (
+    <g>
+      <g filter="url(#planet-rough)">
+        {[
+          [140, 36, 0.22],
+          [214, 28, 0.16],
+          [276, 40, 0.24],
+          [350, 30, 0.16],
+          [414, 44, 0.24],
+          [468, 30, 0.18],
+        ].map(([y, h, o]) => (
+          <rect key={y} x="80" y={y} width="440" height={h} fill={dark} opacity={o} />
+        ))}
+      </g>
+      <ellipse cx="206" cy="352" rx="50" ry="29" fill={dark} opacity="0.55" filter="url(#planet-soft)" />
+      <ellipse cx="252" cy="334" rx="32" ry="6" fill="#ffffff" opacity="0.85" transform="rotate(-14 252 334)" filter="url(#planet-soft)" />
+    </g>
+  );
+}
+
+// Hero for the private pricing pages: bold two-line title, a planet that
+// matches the page (Mars, Earth or Neptune) with an orbiting moon, and a price
+// card. Decorative parts are aria-hidden; the moon's motion is skipped under
+// prefers-reduced-motion.
+export default function OrbitHero({ leadWords, accentWord, planet = "mars", priceNode, billingNote, summary }: OrbitHeroProps) {
+  const frontRef = useRef<SVGCircleElement>(null);
+  const backRef = useRef<SVGCircleElement>(null);
+  const glowFrontRef = useRef<SVGCircleElement>(null);
+  const glowBackRef = useRef<SVGCircleElement>(null);
 
   useEffect(() => {
-    const dot = dotRef.current;
-    const glow = glowRef.current;
-    if (!dot || !glow) return;
+    const els = [frontRef.current, backRef.current, glowFrontRef.current, glowBackRef.current];
+    if (els.some((e) => !e)) return;
+    const [front, back, glowFront, glowBack] = els as SVGCircleElement[];
     const place = (theta: number) => {
-      const phi = (RING_TILT * Math.PI) / 180;
-      const ex = RING_RX * Math.cos(theta);
-      const ey = RING_RY * Math.sin(theta);
+      const phi = (ORBIT_TILT * Math.PI) / 180;
+      const ex = ORBIT_RX * Math.cos(theta);
+      const ey = ORBIT_RY * Math.sin(theta);
       const x = CX + ex * Math.cos(phi) - ey * Math.sin(phi);
       const y = CY + ex * Math.sin(phi) + ey * Math.cos(phi);
-      for (const el of [dot, glow]) {
+      // The lower half of the orbit is in front of the planet, the upper half behind it.
+      const inFront = Math.sin(theta) > 0;
+      for (const [el, show] of [[front, inFront], [glowFront, inFront], [back, !inFront], [glowBack, !inFront]] as [SVGCircleElement, boolean][]) {
         el.setAttribute("cx", x.toFixed(1));
         el.setAttribute("cy", y.toFixed(1));
+        el.style.visibility = show ? "visible" : "hidden";
       }
     };
-    // Resting position matches the reference: upper left of the planet.
-    place(Math.PI * 1.12);
+    place(Math.PI * 1.12); // resting position: upper left of the planet
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let id: number;
     const start = performance.now();
     const tick = () => {
-      const t = (performance.now() - start) / 1000;
-      place(Math.PI * 1.12 + t * 0.22);
+      place(Math.PI * 1.12 + ((performance.now() - start) / 1000) * 0.22);
       id = requestAnimationFrame(tick);
     };
     id = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(id);
   }, []);
-
-  const top = `M ${-RING_RX} 0 A ${RING_RX} ${RING_RY} 0 0 1 ${RING_RX} 0`;
-  const bottom = `M ${RING_RX} 0 A ${RING_RX} ${RING_RY} 0 0 1 ${-RING_RX} 0`;
-  const innerTop = `M ${-(RING_RX - 22)} 0 A ${RING_RX - 22} ${RING_RY - 16} 0 0 1 ${RING_RX - 22} 0`;
-  const innerBottom = `M ${RING_RX - 22} 0 A ${RING_RX - 22} ${RING_RY - 16} 0 0 1 ${-(RING_RX - 22)} 0`;
-  const frame = `translate(${CX} ${CY}) rotate(${RING_TILT})`;
 
   return (
     <div className="relative max-w-6xl mx-auto mb-14">
@@ -109,34 +189,54 @@ export default function OrbitHero({ leadWords, accentWord, priceNode, billingNot
                 <stop offset="78%" stopColor="#e5d9fb" />
                 <stop offset="100%" stopColor="#d3bff6" />
               </radialGradient>
+              {/* light falling across the surface: bright upper left, shaded lower right */}
+              <radialGradient id="orbit-shade" cx="34%" cy="28%" r="85%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.35" />
+                <stop offset="55%" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="100%" stopColor="#8b6fd8" stopOpacity="0.28" />
+              </radialGradient>
+              {/* soft white wash behind the caption so it stays readable */}
+              <radialGradient id="orbit-caption" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+              </radialGradient>
               <radialGradient id="orbit-glow" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor={GOLD} stopOpacity="0.55" />
                 <stop offset="100%" stopColor={GOLD} stopOpacity="0" />
               </radialGradient>
+              <clipPath id="orbit-clip">
+                <circle cx={CX} cy={CY} r={SPHERE_R} />
+              </clipPath>
               <filter id="orbit-shadow" x="-30%" y="-30%" width="160%" height="160%">
                 <feGaussianBlur stdDeviation="26" />
               </filter>
+              <filter id="planet-soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" />
+              </filter>
+              {/* organic, uneven edges for surface patches and bands */}
+              <filter id="planet-rough" x="-10%" y="-10%" width="120%" height="120%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" />
+                <feGaussianBlur stdDeviation="1.4" />
+              </filter>
             </defs>
 
-            {/* back half of the rings */}
-            <g transform={frame} fill="none">
-              <path d={top} stroke="#b9b1c8" strokeWidth="1.6" opacity="0.7" />
-              <path d={innerTop} stroke={GOLD} strokeWidth="1.2" opacity="0.5" />
-            </g>
+            {/* moon while it is behind the planet */}
+            <circle ref={glowBackRef} cx="120" cy="170" r="30" fill="url(#orbit-glow)" style={{ visibility: "hidden" }} />
+            <circle ref={backRef} cx="120" cy="170" r="13" fill={GOLD} style={{ visibility: "hidden" }} />
 
-            {/* soft planet shadow, then the sphere */}
+            {/* soft planet shadow, then the sphere with its surface */}
             <circle cx={CX + 18} cy={CY + 52} r={SPHERE_R - 14} fill="#a78bfa" opacity="0.28" filter="url(#orbit-shadow)" />
             <circle cx={CX} cy={CY} r={SPHERE_R} fill="url(#orbit-sphere)" />
-
-            {/* front half of the rings */}
-            <g transform={frame} fill="none">
-              <path d={bottom} stroke="#b9b1c8" strokeWidth="1.8" />
-              <path d={innerBottom} stroke={GOLD} strokeWidth="1.3" opacity="0.7" />
+            <g clipPath="url(#orbit-clip)">
+              <Surface kind={planet} />
+              <circle cx="410" cy="330" r="140" fill="url(#orbit-caption)" />
+              <circle cx={CX} cy={CY} r={SPHERE_R} fill="url(#orbit-shade)" />
             </g>
 
-            {/* orbiting dot */}
-            <circle ref={glowRef} cx="120" cy="170" r="30" fill="url(#orbit-glow)" />
-            <circle ref={dotRef} cx="120" cy="170" r="13" fill={GOLD} />
+            {/* moon while it is in front of the planet */}
+            <circle ref={glowFrontRef} cx="120" cy="170" r="30" fill="url(#orbit-glow)" />
+            <circle ref={frontRef} cx="120" cy="170" r="13" fill={GOLD} />
           </svg>
 
           <div className="absolute" style={{ left: "46%", top: "38%", width: "50%" }}>

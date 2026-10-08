@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import GrowthPlansPricing, { type GrowthPlansPricingProps } from "@/components/pricing/GrowthPlansPricing";
+import type { PlanetKind } from "@/components/pricing/OrbitHero";
 
 // Private, unlisted pricing pages for direct sharing with prospects,
 // distinguished only by an easy-to-say code rather than a region name in
@@ -50,5 +51,5 @@ export default function PlansPage({ params }: { params: { code: string } }) {
   const plan = PLANS[params.code];
   if (!plan) notFound();
 
-  return <GrowthPlansPricing pageTitle="Growth Plans" {...plan} />;
+  return <GrowthPlansPricing pageTitle="Growth Plans" planet={params.code as PlanetKind} {...plan} />;
 }

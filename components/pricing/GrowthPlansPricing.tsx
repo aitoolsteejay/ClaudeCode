@@ -4,7 +4,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { Rocket, Zap, Target, Mail, Bot } from "lucide-react";
 import InnerLayout from "@/app/components/InnerLayout";
 import FadeIn from "@/app/components/FadeIn";
-import OrbitHero from "./OrbitHero";
+import OrbitHero, { type PlanetKind } from "./OrbitHero";
 
 // Every one of these is identical across all 3 tiers (8 infrastructure items
 // + the first 4 content items), so they're shown once instead of being
@@ -281,6 +281,8 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
 
 export interface GrowthPlansPricingProps {
   pageTitle: string;
+  // Which planet the hero shows; matches the plan code in the URL.
+  planet?: PlanetKind;
   currencyPrefix: string;
   currencySuffix?: string;
   prices: {
@@ -292,7 +294,7 @@ export interface GrowthPlansPricingProps {
   };
 }
 
-export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currencySuffix, prices }: GrowthPlansPricingProps) {
+export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, currencySuffix, prices }: GrowthPlansPricingProps) {
   const titleWords = pageTitle.split(" ");
   const accentWord = titleWords[titleWords.length - 1];
   const leadWords = titleWords.slice(0, -1).join(" ");
@@ -367,6 +369,7 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
         <OrbitHero
           leadWords={leadWords}
           accentWord={accentWord}
+          planet={planet}
           priceNode={<>{currencyPrefix}<AnimatedPrice target={prices.starter} /></>}
           billingNote={`${currencySuffix ? `${currencySuffix}, ` : ""}billed monthly`}
           summary="LinkedIn growth and lead generation, run as a done-for-you system. Every plan shares the same foundation, the difference is how much volume and content sits on top of it."

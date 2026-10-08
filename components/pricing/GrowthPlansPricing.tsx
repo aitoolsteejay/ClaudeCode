@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { Rocket, Zap, Target, Mail, Bot } from "lucide-react";
 import InnerLayout from "@/app/components/InnerLayout";
 import FadeIn from "@/app/components/FadeIn";
+import OrbitHero from "./OrbitHero";
 
 // Every one of these is identical across all 3 tiers (8 infrastructure items
 // + the first 4 content items), so they're shown once instead of being
@@ -338,10 +339,9 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
   return (
     <InnerLayout>
       <section className="relative pt-32 pb-24 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        {/* Soft multi-color mesh wash behind the hero, in the site's real
-            accent rotation (Industries.tsx's gold/purple/teal/blue) instead
-            of a single tint -- fades out via mask before the cards so the
-            table/cards below sit back on plain cream. */}
+        {/* Soft gold-to-lavender wash behind the hero, matching the planet
+            artwork -- fades out via mask before the cards so the table and
+            cards below sit back on plain cream. */}
         <div
           aria-hidden="true"
           style={{
@@ -351,12 +351,10 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
             right: 0,
             height: "820px",
             background:
-              "radial-gradient(ellipse 62% 55% at 14% 10%, rgba(245,183,49,0.40) 0%, rgba(245,183,49,0.12) 45%, transparent 72%)," +
-              "radial-gradient(ellipse 58% 52% at 86% 6%, rgba(124,58,237,0.36) 0%, rgba(124,58,237,0.10) 45%, transparent 72%)," +
-              "radial-gradient(ellipse 55% 50% at 50% 38%, rgba(20,184,166,0.26) 0%, rgba(20,184,166,0.08) 45%, transparent 72%)," +
-              "radial-gradient(ellipse 52% 48% at 92% 58%, rgba(59,130,246,0.28) 0%, rgba(59,130,246,0.08) 45%, transparent 72%)," +
-              "radial-gradient(ellipse 48% 42% at 6% 60%, rgba(249,115,22,0.20) 0%, transparent 70%)," +
-              "radial-gradient(ellipse 42% 38% at 55% 4%, rgba(16,185,129,0.16) 0%, transparent 68%)",
+              "radial-gradient(ellipse 60% 62% at 8% 22%, rgba(245,183,49,0.34) 0%, rgba(245,183,49,0.10) 48%, transparent 74%)," +
+              "radial-gradient(ellipse 52% 60% at 92% 30%, rgba(167,139,250,0.34) 0%, rgba(167,139,250,0.10) 48%, transparent 74%)," +
+              "radial-gradient(ellipse 46% 40% at 86% 72%, rgba(167,139,250,0.26) 0%, transparent 70%)," +
+              "radial-gradient(ellipse 40% 36% at 10% 66%, rgba(245,183,49,0.18) 0%, transparent 70%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 62%, transparent 100%)",
             maskImage: "linear-gradient(to bottom, black 62%, transparent 100%)",
             pointerEvents: "none",
@@ -366,23 +364,13 @@ export default function GrowthPlansPricing({ pageTitle, currencyPrefix, currency
         <div ref={blobGoldRef} aria-hidden="true" style={{ position: "absolute", top: "-80px", right: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={blobPurpleRef} aria-hidden="true" style={{ position: "absolute", bottom: "-80px", left: "-60px", width: "480px", height: "480px", borderRadius: "50%", background: "radial-gradient(circle, rgba(124,58,237,0.14) 0%, transparent 70%)", filter: "blur(80px)", pointerEvents: "none", willChange: "transform" }} />
 
-        <div className="relative max-w-3xl mx-auto text-center mb-14">
-          <span className="hero-fade inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: GOLD }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: GOLD }}>Pricing</span>
-          </span>
-          <h1 className="hero-fade-d1 text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: TEXT_DARK }}>
-            {leadWords} <span style={{ color: GOLD }}>{accentWord}</span>
-          </h1>
-          <div className="flex justify-center -mt-2 mb-5" aria-hidden="true">
-            <svg viewBox="0 0 420 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[200px] sm:w-[260px]">
-              <path d="M4 10 C40 4, 80 16, 120 10 S200 4, 240 10 S320 16, 360 10 S400 4, 416 10" stroke={GOLD} strokeWidth="3.5" strokeLinecap="round" fill="none" />
-            </svg>
-          </div>
-          <p className="hero-fade-d2 text-lg leading-relaxed max-w-xl mx-auto" style={{ color: TEXT_BODY }}>
-            LinkedIn growth and lead generation, run as a done-for-you system. Every plan shares the same foundation, the difference is how much volume and content sits on top of it.
-          </p>
-        </div>
+        <OrbitHero
+          leadWords={leadWords}
+          accentWord={accentWord}
+          priceNode={<>{currencyPrefix}<AnimatedPrice target={prices.starter} /></>}
+          billingNote={`${currencySuffix ? `${currencySuffix}, ` : ""}billed monthly`}
+          summary="LinkedIn growth and lead generation, run as a done-for-you system. Every plan shares the same foundation, the difference is how much volume and content sits on top of it."
+        />
 
         <div className="relative max-w-5xl mx-auto space-y-14">
           <div>

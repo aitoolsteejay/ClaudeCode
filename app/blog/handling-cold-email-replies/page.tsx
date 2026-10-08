@@ -112,6 +112,7 @@ export default function HandlingColdEmailReplies() {
         { label: "The 7 B2B Lead Gen Metrics That Actually Matter", href: "/blog/b2b-lead-gen-metrics" },
         { label: "The Impression Illusion: Conversations, Not Sends", href: "/blog/conversations-not-impressions-outbound" },
         { label: "Glossary: Meeting Booked Rate", href: "/resources/glossary/meeting-booked-rate" },
+        { label: "5 Claude Prompts for Sales Calls (before and after every call)", href: "/instagram-resources/claude-sales-call-prompts" },
         { label: "Cold email agency services", href: "/services/cold-email" },
       ]}
       cta={{

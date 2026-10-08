@@ -115,6 +115,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "The Golden ICP Framework", href: "/instagram-resources/golden-icp-framework" },
       { label: "Leads on Autopilot: A Step-by-Step Framework", href: "/instagram-resources/leads-on-autopilot-guide" },
       { label: "The Cold Email Stack Behind an Extra $7,000", href: "/instagram-resources/cold-email-tech-stack" },
+      { label: "5 Claude Prompts for Sales Calls", href: "/instagram-resources/claude-sales-call-prompts" },
     ],
   },
   {

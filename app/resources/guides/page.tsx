@@ -105,6 +105,14 @@ const GUIDES = [
     accent: "#EA580C",
   },
   {
+    href: "/instagram-resources/claude-sales-call-prompts",
+    tag: "Sales & Claude",
+    title: "5 Claude Prompts for Sales Calls",
+    excerpt: "Five copy-paste prompts for before and after every call: a meeting prep brief, discovery questions, objection prep, call openers and a follow-up email, each under 3 minutes.",
+    readTime: "4 min read",
+    accent: "#0891B2",
+  },
+  {
     href: "/careers-and-job-guide",
     tag: "Careers & Jobs",
     title: "Career Jumpstart Toolkit",

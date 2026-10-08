@@ -127,6 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/instagram-resources/golden-icp-framework`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/leads-on-autopilot-guide`, lastModified: "2026-09-24T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/instagram-resources/cold-email-tech-stack`, lastModified: "2026-10-01T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/instagram-resources/claude-sales-call-prompts`, lastModified: "2026-10-08T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Careers
     { url: `${base}/careers`, lastModified: "2026-09-30T18:08:59+05:30", changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/careers/lead-gen-strategist`, lastModified: "2026-09-07T13:17:10+05:30", changeFrequency: "monthly", priority: 0.5 },

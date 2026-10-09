@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-09T06:52:40.257Z",
+  "generatedAt": "2026-10-09T09:44:58.532Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 175,
+    "total": 176,
     "linked": 161,
-    "orphan": 14,
-    "noindex": 37,
-    "notInXmlSitemap": 39,
-    "privateHidden": 4
+    "orphan": 15,
+    "noindex": 38,
+    "notInXmlSitemap": 40,
+    "privateHidden": 5
   },
   "pages": [
     {
@@ -2407,6 +2407,18 @@
       "path": "/workshop",
       "title": "Workshop",
       "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
       "status": "orphan",
       "linkedFrom": [],
       "inboundCount": 0,

@@ -36,7 +36,7 @@ const require = createRequire(import.meta.url);
 
 // URLs that must not be published on a publicly reachable page: the private
 // pricing pages (shared only with prospects) and the admin room.
-const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room");
+const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room") || p === "/cold-emailing-package";
 // Legacy redirects that point at (or stand in for) a private page.
 const isPrivateRedirect = (r) =>
   isPrivate(r.from) || isPrivate(r.to) || r.from === "/international-pricing" || r.from === "/indian-pricing";

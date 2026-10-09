@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-07T12:26:42.221Z",
+  "generatedAt": "2026-10-09T06:52:40.257Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 173,
-    "linked": 160,
-    "orphan": 13,
+    "total": 175,
+    "linked": 161,
+    "orphan": 14,
     "noindex": 37,
-    "notInXmlSitemap": 38,
+    "notInXmlSitemap": 39,
     "privateHidden": 4
   },
   "pages": [
@@ -303,10 +303,11 @@
       "linkedFrom": [
         "/blog/handling-cold-email-replies",
         "/blog/reviving-closed-lost-leads",
+        "/instagram-resources/claude-sales-call-prompts",
         "/instagram-resources/cold-email-tech-stack",
         "/resources/blogs"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -385,9 +386,10 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/cold-email-sequence-templates",
+        "/instagram-resources/claude-sales-call-prompts",
         "/resources/blogs"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -441,9 +443,10 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/instagram-resources/claude-sales-call-prompts",
         "/resources/blogs"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -710,6 +713,17 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/[filter]",
+      "title": "[Filter]",
+      "section": "case-studies",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/agencies-it-uae-managed-it",
@@ -1194,14 +1208,29 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/instagram-resources/claude-sales-call-prompts",
+      "title": "Meeting Prep Brief",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/handling-cold-email-replies",
+        "/resources/guides"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/instagram-resources/claude-skills-guide",
       "title": "The 6 Claude Skills Guide",
       "section": "instagram-resources",
       "status": "linked",
       "linkedFrom": [
+        "/instagram-resources/claude-sales-call-prompts",
         "/resources/guides"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1468,7 +1497,7 @@
         "/blog/cold-email-compliance-guide",
         "/blog/cold-email-deliverability-guide"
       ],
-      "inboundCount": 47,
+      "inboundCount": 48,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1936,12 +1965,12 @@
         "/dos-and-donts-of-outreach",
         "/how-to-choose-an-outbound-agency",
         "/instagram-resources/80-us-meetings-ai-agents",
+        "/instagram-resources/claude-sales-call-prompts",
         "/instagram-resources/claude-skills-guide",
         "/instagram-resources/cold-email-tech-stack",
-        "/instagram-resources/golden-icp-framework",
-        "/instagram-resources/how-to-set-up-vibe-prospecting"
+        "/instagram-resources/golden-icp-framework"
       ],
-      "inboundCount": 11,
+      "inboundCount": 12,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2136,7 +2165,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 16,
+      "inboundCount": 17,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "./components/InnerLayout";
+import { ContextualSuggestion, NotFoundActions } from "./components/NotFoundRecovery";
 
 export const metadata: Metadata = {
   title: "404: This page went outbound",
@@ -26,27 +27,23 @@ export default function NotFound() {
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
             <section className="max-w-2xl">
               <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#f5b731]/50 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#b66c00] shadow-sm backdrop-blur">
-                <span className="h-2 w-2 rounded-full bg-[#f5b731]" aria-hidden="true" />
+                <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
+                  <span className="not-found-signal absolute inset-0 rounded-full bg-[#f5b731]" />
+                  <span className="relative h-2.5 w-2.5 rounded-full bg-[#f5b731]" />
+                </span>
                 404 · signal lost
               </div>
 
-              <h1 className="text-6xl font-black leading-[0.9] tracking-[-0.07em] text-[#090909] sm:text-8xl lg:text-[9.5rem]">
+              <h1 className="text-5xl font-black leading-[0.94] tracking-[-0.06em] text-[#090909] sm:text-6xl lg:text-[4.75rem] xl:text-[5.25rem]">
                 <span className="block">This page</span>
                 <span className="block text-[#f5b731]">went outbound.</span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-lg leading-8 text-[#5b5862] sm:text-xl">
+              <p className="mt-7 max-w-xl text-lg leading-8 text-[#5b5862] sm:text-xl">
                 We checked the list, followed up, and still could not find it. Let&apos;s get you back to something useful.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Link href="/" className="rounded-full bg-[#0b0b0c] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b731]">
-                  Back to homepage
-                </Link>
-                <Link href="/founder-meeting" className="rounded-full border border-[#0b0b0c]/20 bg-white/75 px-6 py-3.5 text-sm font-bold text-[#0b0b0c] transition-colors hover:border-[#f5b731] hover:bg-[#fff8e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b731]">
-                  Book a call
-                </Link>
-              </div>
+              <NotFoundActions />
             </section>
 
             <section aria-label="Quick links" className="relative">
@@ -58,6 +55,8 @@ export default function NotFound() {
                   </div>
                   <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f5b731] text-2xl font-black text-[#0b0b0c] shadow-[6px_6px_0_#a855f7]">404</div>
                 </div>
+
+                <ContextualSuggestion />
 
                 <div className="space-y-3">
                   {PRIMARY_LINKS.map((link) => (
@@ -74,7 +73,7 @@ export default function NotFound() {
 
                 <p className="mt-6 text-sm leading-6 text-[#77716a]">If you followed a link here, it may have moved or retired. The routes above are all live.</p>
               </div>
-              <div aria-hidden="true" className="absolute -bottom-8 -left-6 hidden h-24 w-24 rotate-12 rounded-3xl border-4 border-white bg-[#a855f7] shadow-xl sm:block" />
+              <div aria-hidden="true" className="pointer-events-none absolute -bottom-12 -left-12 hidden h-16 w-16 rotate-12 rounded-2xl border-4 border-white bg-[#a855f7] shadow-xl sm:block" />
               <div aria-hidden="true" className="absolute -right-4 -top-8 hidden h-16 w-16 -rotate-12 rounded-2xl border-4 border-white bg-[#60a5fa] shadow-xl sm:block" />
             </section>
           </div>

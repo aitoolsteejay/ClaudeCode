@@ -507,6 +507,15 @@ body {
   animation: stack-cycle 8s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
 }
 
+/* Restrained status pulse for the 404 page. */
+@keyframes not-found-signal {
+  0%, 45% { opacity: 0.45; transform: scale(1); }
+  80%, 100% { opacity: 0; transform: scale(2.4); }
+}
+.not-found-signal {
+  animation: not-found-signal 2.8s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
 /* ─── Hero handwritten annotation floats ─────────────────── */
 @keyframes handwrite-float-r {
   0%   { transform: rotate(-10deg) translate(0px, 0px); }
@@ -620,7 +629,7 @@ body {
   html { scroll-behavior: auto; }
   .hero-fade, .hero-fade-d1, .hero-fade-d2, .hero-fade-d3, .hero-fade-d4,
   .card-fade-up, .lp-float-icon, .lp-icon-bob, .lp-pop-in, .stack-card,
-  .marquee-track, .cta-animated-section, .lp-radar-ring {
+  .marquee-track, .cta-animated-section, .lp-radar-ring, .not-found-signal {
     animation: none !important;
   }
   .reveal {

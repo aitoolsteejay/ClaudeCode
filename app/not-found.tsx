@@ -3,165 +3,88 @@ import Link from "next/link";
 import InnerLayout from "./components/InnerLayout";
 
 export const metadata: Metadata = {
-  title: "404: Ghosted",
-  description: "We followed up on every channel. This page still never replied. Here's how to get back to one that's actually live.",
+  title: "404: This page went outbound",
+  description: "This Myntmore page could not be found. Find your way back to our services, case studies, or contact page.",
   robots: { index: false, follow: true },
 };
 
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Contact", href: "/contact-us" },
+const PRIMARY_LINKS = [
+  { label: "Explore services", href: "/services", eyebrow: "Build your engine", tone: "yellow" },
+  { label: "See case studies", href: "/case-studies", eyebrow: "Proof, not promises", tone: "purple" },
+  { label: "Talk to Myntmore", href: "/contact-us", eyebrow: "Start a conversation", tone: "blue" },
 ];
-
-// The 4 real channels Myntmore follows up on, cycling through a shuffling
-// "deck" in place of the middle 0 in "404" — a card always sits on top for
-// a beat, then rotates to the back as the next one comes forward, on loop.
-const CHANNEL_CARDS = [
-  {
-    key: "email",
-    delay: "0s",
-    bg: "#FEF9EC",
-    icon: (
-      <svg className="w-[52%] h-[52%]" fill="none" viewBox="0 0 24 24" stroke="#D97706" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    key: "linkedin",
-    delay: "-2s",
-    bg: "#EAF6FF",
-    href: "https://linkedin.com/company/myntmore",
-    label: "Myntmore on LinkedIn",
-    icon: (
-      <svg className="w-[46%] h-[46%]" fill="currentColor" viewBox="0 0 24 24" style={{ color: "#0077b5" }}>
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-      </svg>
-    ),
-  },
-  {
-    key: "signal",
-    delay: "-4s",
-    bg: "#F5F0FF",
-    icon: (
-      <svg className="w-[46%] h-[46%]" fill="none" viewBox="0 0 24 24" stroke="#a855f7" strokeWidth={2}>
-        <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.5" fill="#a855f7" />
-      </svg>
-    ),
-  },
-  {
-    key: "abm",
-    delay: "-6s",
-    bg: "#EEF2FF",
-    icon: (
-      <svg className="w-[46%] h-[46%]" fill="none" viewBox="0 0 24 24" stroke="#6366f1" strokeWidth={1.8}>
-        <rect x="4" y="4" width="9" height="9" rx="2" /><rect x="11" y="11" width="9" height="9" rx="2" />
-      </svg>
-    ),
-  },
-];
-
-function ChannelStack() {
-  return (
-    <span className="relative inline-flex items-center justify-center flex-shrink-0" style={{ width: "1.05em", height: "1.05em" }}>
-      {CHANNEL_CARDS.map((c) => {
-        const className = "stack-card absolute inset-[6%] rounded-[22%] flex items-center justify-center";
-        const style = { backgroundColor: c.bg, border: "2px solid #ffffff", boxShadow: "0 6px 16px rgba(0,0,0,0.14)", animationDelay: c.delay };
-        if (c.href) {
-          return (
-            <a key={c.key} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.label} className={className} style={style}>
-              {c.icon}
-            </a>
-          );
-        }
-        return (
-          <span key={c.key} aria-hidden="true" className={className} style={style}>
-            {c.icon}
-          </span>
-        );
-      })}
-    </span>
-  );
-}
 
 export default function NotFound() {
   return (
     <InnerLayout>
-      <section className="relative pt-32 pb-24 px-4 min-h-[80vh] flex items-center overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-        <div aria-hidden="true" style={{ position: "absolute", top: "-10%", left: "-8%", width: 550, height: 550, borderRadius: "50%", background: "radial-gradient(circle, rgba(168,85,247,0.16) 0%, rgba(124,58,237,0.06) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", bottom: "-12%", right: "-8%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,160,0,0.08) 40%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "35%", right: "10%", width: 350, height: 350, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,119,181,0.12) 0%, transparent 70%)", filter: "blur(50px)", pointerEvents: "none" }} />
+      <main className="relative isolate overflow-hidden bg-[#F8F6F2] px-4 pb-20 pt-24 sm:pb-28 sm:pt-32">
+        <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-0 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#f5b731]/20 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-48 top-40 -z-10 h-[38rem] w-[38rem] rounded-full bg-[#a855f7]/15 blur-3xl" />
+        <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-[#60a5fa]/10 blur-3xl" />
 
-        <div className="relative z-10 max-w-3xl w-full mx-auto">
-          {/* ── Bold frame card ───────────────────────────────── */}
-          <div className="relative rounded-[2rem] bg-white px-6 sm:px-14 py-14 sm:py-16 text-center hero-fade" style={{ border: "9px solid #F5B731" }}>
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
+            <section className="max-w-2xl">
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#f5b731]/50 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#b66c00] shadow-sm backdrop-blur">
+                <span className="h-2 w-2 rounded-full bg-[#f5b731]" aria-hidden="true" />
+                404 · signal lost
+              </div>
 
-            {/* back arrow */}
-            <Link href="/" aria-label="Back to homepage"
-              className="absolute -top-6 -left-6 w-14 h-14 rounded-full bg-white flex items-center justify-center transition-transform hover:-translate-x-0.5"
-              style={{ border: "2.5px solid #F5B731" }}>
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0a0a0a" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M11 17l-5-5 5-5M6 12h12" /></svg>
-            </Link>
+              <h1 className="text-6xl font-black leading-[0.9] tracking-[-0.07em] text-[#090909] sm:text-8xl lg:text-[9.5rem]">
+                <span className="block">This page</span>
+                <span className="block text-[#f5b731]">went outbound.</span>
+              </h1>
 
-            <p className="text-lg sm:text-xl mb-2 mt-2" style={{ color: "#52525B" }}>
-              oh no&hellip; <span style={{ color: "#0a0a0a", fontWeight: 700 }}>ghosted</span>
-            </p>
+              <p className="mt-8 max-w-xl text-lg leading-8 text-[#5b5862] sm:text-xl">
+                We checked the list, followed up, and still could not find it. Let&apos;s get you back to something useful.
+              </p>
 
-            <div className="flex items-center justify-center gap-1 sm:gap-3 mb-6" style={{ color: "#0a0a0a" }}>
-              <span className="font-black leading-none" style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}>4</span>
-              <span style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}><ChannelStack /></span>
-              <span className="font-black leading-none" style={{ fontSize: "clamp(4.5rem, 16vw, 9rem)" }}>4</span>
-            </div>
-
-            <p className="text-base sm:text-lg max-w-md mx-auto mb-10" style={{ color: "#52525B" }}>
-              We followed up on email. We followed up on LinkedIn. This page still never replied.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-9">
-              {NAV_LINKS.map((l) => (
-                <Link key={l.href} href={l.href} className="text-sm font-semibold transition-colors" style={{ color: "#3D3D3D" }}>
-                  {l.label}
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link href="/" className="rounded-full bg-[#0b0b0c] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b731]">
+                  Back to homepage
                 </Link>
-              ))}
-            </div>
+                <Link href="/founder-meeting" className="rounded-full border border-[#0b0b0c]/20 bg-white/75 px-6 py-3.5 text-sm font-bold text-[#0b0b0c] transition-colors hover:border-[#f5b731] hover:bg-[#fff8e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b731]">
+                  Book a call
+                </Link>
+              </div>
+            </section>
 
-            <div className="flex items-center justify-center max-w-md mx-auto gap-3">
-              <Link href="/" className="flex-1 rounded-full px-6 py-3.5 text-sm font-bold text-left" style={{ border: "1.5px solid rgba(168,85,247,0.25)", color: "#8C8279" }}>
-                Back to Homepage
-              </Link>
-              <a href="/founder-meeting" aria-label="Book a call"
-                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 btn-dark">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
-            </div>
+            <section aria-label="Quick links" className="relative">
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_80px_rgba(30,20,60,0.12)] backdrop-blur sm:p-7">
+                <div className="mb-6 flex items-start justify-between gap-4 border-b border-[#e8e4dc] pb-5">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9b948a]">Recovery menu</p>
+                    <h2 className="mt-2 text-2xl font-black tracking-tight text-[#101010]">Pick a better route</h2>
+                  </div>
+                  <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f5b731] text-2xl font-black text-[#0b0b0c] shadow-[6px_6px_0_#a855f7]">404</div>
+                </div>
+
+                <div className="space-y-3">
+                  {PRIMARY_LINKS.map((link) => (
+                    <Link key={link.href} href={link.href} className="group flex items-center gap-4 rounded-2xl border border-[#e8e4dc] bg-white px-4 py-4 transition-all hover:-translate-y-0.5 hover:border-[#f5b731] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b731]">
+                      <span className={`h-12 w-12 shrink-0 rounded-xl ${link.tone === "yellow" ? "bg-[#fff3cf]" : link.tone === "purple" ? "bg-[#f1e8ff]" : "bg-[#e5f4ff]"}`} aria-hidden="true" />
+                      <span className="min-w-0">
+                        <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#9b948a]">{link.eyebrow}</span>
+                        <span className="mt-1 block text-base font-bold text-[#171717]">{link.label}</span>
+                      </span>
+                      <span className="ml-auto text-xl text-[#9b948a] transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
+                    </Link>
+                  ))}
+                </div>
+
+                <p className="mt-6 text-sm leading-6 text-[#77716a]">If you followed a link here, it may have moved or retired. The routes above are all live.</p>
+              </div>
+              <div aria-hidden="true" className="absolute -bottom-8 -left-6 hidden h-24 w-24 rotate-12 rounded-3xl border-4 border-white bg-[#a855f7] shadow-xl sm:block" />
+              <div aria-hidden="true" className="absolute -right-4 -top-8 hidden h-16 w-16 -rotate-12 rounded-2xl border-4 border-white bg-[#60a5fa] shadow-xl sm:block" />
+            </section>
           </div>
 
-          {/* ── Floating channel badges (real links to services) ── */}
-          <div className="hidden sm:block absolute -bottom-8 -right-8">
-            <div className="relative w-36 h-36">
-              <Link href="/services/cold-email" aria-label="Cold Email Infrastructure"
-                className="absolute w-20 h-20 rounded-full flex items-center justify-center rotate-[-8deg] transition-transform hover:scale-110 hover:rotate-0"
-                style={{ backgroundColor: "#FEF9EC", border: "3px solid #ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", top: 0, left: 8, zIndex: 1 }}>
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#D97706" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              </Link>
-              <a href="https://linkedin.com/company/myntmore" target="_blank" rel="noopener noreferrer" aria-label="Myntmore on LinkedIn"
-                className="absolute w-20 h-20 rounded-full flex items-center justify-center rotate-[6deg] transition-transform hover:scale-110 hover:rotate-0"
-                style={{ backgroundColor: "#EAF6FF", border: "3px solid #ffffff", boxShadow: "0 10px 30px rgba(0,0,0,0.12)", top: 26, left: 42, zIndex: 2 }}>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" style={{ color: "#0077b5" }}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
-              </a>
-              <Link href="/services/sales-intelligence" aria-label="ICP Mapping & Lead Scoring"
-                className="absolute w-11 h-11 rounded-full flex items-center justify-center transition-transform hover:scale-110"
-                style={{ backgroundColor: "#F5F0FF", border: "3px solid #ffffff", boxShadow: "0 8px 22px rgba(0,0,0,0.12)", top: -8, right: 4, zIndex: 3 }}>
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="#a855f7" strokeWidth={2.2}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.5" fill="#a855f7" /></svg>
-              </Link>
-              <span className="absolute w-2.5 h-2.5 rounded-full pointer-events-none" style={{ backgroundColor: "#6366f1", bottom: 4, left: -4 }} aria-hidden="true" />
-              <span className="absolute w-1.5 h-1.5 rounded-full pointer-events-none" style={{ backgroundColor: "#16a34a", top: 40, right: -6 }} aria-hidden="true" />
-            </div>
+          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-[#ded8cf] pt-6 text-sm text-[#8b847c]">
+            <span>Myntmore · outbound systems with intent</span>
+            <Link href="/contact-us" className="font-semibold text-[#3d3d3d] underline decoration-[#f5b731] decoration-2 underline-offset-4">Need help finding something?</Link>
           </div>
         </div>
-      </section>
+      </main>
     </InnerLayout>
   );
 }

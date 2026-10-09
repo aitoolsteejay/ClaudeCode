@@ -726,6 +726,10 @@ export default function GIATechStackPage() {
             <a href="/services" style={{ color: "#A8A29E" }}>Services</a>
             <a href="/case-studies" style={{ color: "#A8A29E" }}>Case Studies</a>
           </nav>
+          <p className="mt-6 text-sm" style={{ color: "#A8A29E" }}>
+            Questions? Call us on{" "}
+            <a href="tel:+918169318951" className="font-semibold underline" style={{ color: "#F5B731" }}>+91 81693 18951</a>
+          </p>
         </div>
 
       </div>

@@ -7,6 +7,8 @@ import AskYourAI from "../components/AskYourAI";
 import StatTicker from "../components/StatTicker";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { caseStudyFilterSlug, CASE_STUDY_FILTERS } from "@/lib/case-study-filters";
+import { usePathname, useRouter } from "next/navigation";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -337,11 +339,18 @@ const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
-const INDUSTRIES = ["All", ...Array.from(new Set(CASE_STUDIES.map((cs) => cs.industry)))];
+const INDUSTRIES = CASE_STUDY_FILTERS.map((filter) => filter.label);
 
 // ── Page ───────────────────────────────────────────────────────────────────────
-export default function CaseStudiesClient() {
-  const [industryFilter, setIndustryFilter] = useState("All");
+export default function CaseStudiesClient({ initialFilter = "All" }: { initialFilter?: string }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [industryFilter, setIndustryFilter] = useState(initialFilter);
+  useEffect(() => {
+    const slug = pathname.split("/").filter(Boolean).at(-1);
+    const filter = slug === "case-studies" ? "All" : CASE_STUDY_FILTERS.find((item) => item.slug === slug)?.label;
+    if (filter && filter !== industryFilter) setIndustryFilter(filter);
+  }, [pathname, industryFilter]);
   const filteredCaseStudies = industryFilter === "All" ? CASE_STUDIES : CASE_STUDIES.filter((cs) => cs.industry === industryFilter);
 
   return (
@@ -401,7 +410,11 @@ export default function CaseStudiesClient() {
                 <button
                   key={industry}
                   type="button"
-                  onClick={() => setIndustryFilter(industry)}
+                  onClick={() => {
+                    const slug = caseStudyFilterSlug(industry);
+                    router.push(slug === "all" ? "/case-studies" : `/case-studies/${slug}`, { scroll: false });
+                    setIndustryFilter(industry);
+                  }}
                   aria-pressed={active}
                   className="text-sm font-semibold px-4 py-2 rounded-full border transition-colors"
                   style={active

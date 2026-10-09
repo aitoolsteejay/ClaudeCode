@@ -42,6 +42,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/case-studies/founder-personal-brand-linkedin`, lastModified: "2026-09-04T16:55:47+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/predictable-b2b-lead-gen-engine`, lastModified: "2026-09-04T16:55:47+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/uk-pharma-qualified-meetings`, lastModified: "2026-09-04T18:46:50+05:30", changeFrequency: "monthly", priority: 0.7 },
+    // Shareable case-study industry filters
+    { url: `${base}/case-studies/pharma`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/saas`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/professional-services`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/ecommerce-tech`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/b2b-founder`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/agencies-it`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/financial-services`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/insurance`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/manufacturers-exporters`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/recruitment-staffing`, lastModified: "2026-10-09T00:00:00+05:30", changeFrequency: "monthly", priority: 0.6 },
     // Resources & blog
     { url: `${base}/resources`, lastModified: "2026-09-30T15:23:35+05:30", changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/resources/blogs`, lastModified: "2026-09-30T15:23:35+05:30", changeFrequency: "weekly", priority: 0.8 },

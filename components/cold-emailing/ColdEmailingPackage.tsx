@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,21 +24,18 @@ import {
   MessagesSquare,
   type LucideIcon,
 } from "lucide-react";
-import InnerLayout from "../components/InnerLayout";
-import FadeIn from "../components/FadeIn";
-import Faq from "../lp/Faq";
-import Underline from "../instagram-resources/how-to-set-up-vibe-prospecting/Underline";
+import InnerLayout from "@/app/components/InnerLayout";
+import FadeIn from "@/app/components/FadeIn";
+import Faq from "@/app/lp/Faq";
+import Underline from "@/app/instagram-resources/how-to-set-up-vibe-prospecting/Underline";
 import FlowVisual from "./FlowVisual";
 import ProcessExplorer from "./ProcessExplorer";
 
 // Private, unlisted overview of the done-for-you cold email package, for
-// sharing directly with prospects. Deliberately not linked from any nav,
-// footer or sitemap, and kept out of search indexing via robots below.
-export const metadata: Metadata = {
-  title: "Cold Emailing",
-  description: "How Myntmore runs cold email for B2B teams: targeting, deliverability, copy and optimisation.",
-  robots: { index: false, follow: false },
-};
+// sharing directly with prospects. One design, two routes
+// (/cold-emailing-package-mars and /cold-emailing-package-earth) that differ
+// only in the retainer. Each route's page.tsx declares its own noindex
+// metadata (the site audit reads it from there), so any new clone must too.
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
@@ -109,7 +105,17 @@ function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) 
 
 const h2Style = { letterSpacing: "-0.035em", lineHeight: 1.04 } as const;
 
-export default function ColdEmailingPackage() {
+export type ColdEmailingPackageProps = {
+  /** Headline retainer, currency code first: "USD 1,600", "INR 1,54,999". */
+  price: string;
+  /** Line under the price: "per month", "+ GST / month". */
+  priceNote: string;
+};
+
+export default function ColdEmailingPackage({ price, priceNote }: ColdEmailingPackageProps) {
+  // The longer rupee figure ("INR 1,54,999") would wrap inside the card at the
+  // size the shorter dollar one ("USD 1,600") uses, so step it down a little.
+  const priceFontSize = price.length > 10 ? "clamp(2.4rem, 5.6vw, 3.8rem)" : "clamp(3.2rem, 7vw, 4.8rem)";
   return (
     <InnerLayout>
       {/* Hero */}
@@ -250,8 +256,8 @@ export default function ColdEmailingPackage() {
               <div className="relative overflow-hidden p-8 sm:p-10" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#241a14 100%)" }}>
                 <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.35), transparent 70%)", filter: "blur(30px)" }} />
                 <p className="relative text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: GOLD }}>Monthly retainer</p>
-                <p className="relative mt-4 font-black text-white" style={{ fontSize: "clamp(3.2rem, 7vw, 4.8rem)", lineHeight: 1, letterSpacing: "-0.045em" }}>USD 1,600</p>
-                <p className="relative mt-2 text-sm font-semibold" style={{ color: "#c9bfb8" }}>per month</p>
+                <p className="relative mt-4 font-black text-white" style={{ fontSize: priceFontSize, lineHeight: 1, letterSpacing: "-0.045em" }}>{price}</p>
+                <p className="relative mt-2 text-sm font-semibold" style={{ color: "#c9bfb8" }}>{priceNote}</p>
               </div>
               <div className="space-y-5 bg-white p-8 sm:p-10">
                 {[

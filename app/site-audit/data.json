@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-09T09:44:58.532Z",
+  "generatedAt": "2026-10-09T13:09:25.956Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 176,
+    "total": 177,
     "linked": 161,
-    "orphan": 15,
-    "noindex": 38,
-    "notInXmlSitemap": 40,
-    "privateHidden": 5
+    "orphan": 16,
+    "noindex": 39,
+    "notInXmlSitemap": 41,
+    "privateHidden": 6
   },
   "pages": [
     {
@@ -2096,7 +2096,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 38,
+      "inboundCount": 39,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2473,6 +2473,18 @@
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     }
   ],
   "redirects": [
@@ -2552,7 +2564,7 @@
       "permanent": true
     }
   ],
-  "hiddenRedirects": 4,
+  "hiddenRedirects": 5,
   "rewrites": [
     {
       "from": "/tools/dm-angle-generator",

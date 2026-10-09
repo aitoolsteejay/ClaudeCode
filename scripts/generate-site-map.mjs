@@ -35,8 +35,10 @@ const SITE = "https://www.myntmore.com";
 const require = createRequire(import.meta.url);
 
 // URLs that must not be published on a publicly reachable page: the private
-// pricing pages (shared only with prospects) and the admin room.
-const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room") || p === "/cold-emailing-package";
+// pricing pages and cold emailing overviews (shared only with prospects) and
+// the admin room. The cold emailing prefix covers the -mars and -earth pages
+// and the redirect from the original /cold-emailing-package slug.
+const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room") || p.startsWith("/cold-emailing-package");
 // Legacy redirects that point at (or stand in for) a private page.
 const isPrivateRedirect = (r) =>
   isPrivate(r.from) || isPrivate(r.to) || r.from === "/international-pricing" || r.from === "/indian-pricing";

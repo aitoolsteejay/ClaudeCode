@@ -76,6 +76,7 @@ const nextConfig = {
       // Job application guide moved from the Instagram bio-link namespace
       // into the canonical resources/guides hierarchy.
       { source: "/instagram-resources/job-applications-sales-funnel", destination: "/resources/guides/job-applications-sales-funnel", permanent: true },
+      { source: "/resource/guides/job-applications-sales-funnel", destination: "/resources/guides/job-applications-sales-funnel", permanent: true },
 
       // Private cold emailing overview renamed to carry a planet code (the
       // USD page is mars, a rupee clone sits at -earth). Redirected in case

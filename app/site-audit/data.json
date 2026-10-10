@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-10T05:18:32.417Z",
+  "generatedAt": "2026-10-10T06:04:36.014Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 175,
+    "total": 177,
     "linked": 162,
-    "orphan": 13,
-    "noindex": 38,
-    "notInXmlSitemap": 39,
-    "privateHidden": 4
+    "orphan": 15,
+    "noindex": 40,
+    "notInXmlSitemap": 41,
+    "privateHidden": 6
   },
   "pages": [
     {

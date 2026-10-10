@@ -15,8 +15,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "What Is B2B Outbound Sales? A Complete Guide",
-  description: "B2B outbound sales explained: how it differs from inbound, the channels and roles involved, and how to tell if it fits your company.",
+  title: "B2B Outbound Sales: What It Is & How It Works",
+  description: "Learn what B2B outbound sales is, how the channels and process work, and when it makes sense for a growing company. Includes examples and FAQs.",
   keywords: ["what is b2b outbound sales", "outbound sales definition", "outbound vs inbound sales", "b2b outbound sales explained", "how does outbound sales work", "outbound sales process b2b"],
   alternates: { canonical: "https://www.myntmore.com/blog/what-is-b2b-outbound-sales" },
   openGraph: {
@@ -52,11 +52,11 @@ const FAQ_ITEMS: FaqEntry[] = [
 ];
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "What Is B2B Outbound Sales? A Complete Guide",
-  description: "B2B outbound sales explained: how it differs from inbound, the channels and roles involved, and how to tell if it fits your company.",
+  headline: "B2B Outbound Sales: What It Is & How It Works",
+  description: "Learn what B2B outbound sales is, how the channels and process work, and when it makes sense for a growing company. Includes examples and FAQs.",
   url: "https://www.myntmore.com/blog/what-is-b2b-outbound-sales",
   datePublished: "2026-09-24T00:00:00Z",
-  dateModified: "2026-09-24T00:00:00Z",
+  dateModified: "2026-10-10T00:00:00Z",
 });
 
 const CHANNELS = [
@@ -97,7 +97,7 @@ export default function WhatIsB2bOutboundSales() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
           <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>GTM Strategy · 8 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            What Is B2B Outbound Sales? A Complete Guide
+            B2B Outbound Sales: What It Is & How It Works
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Outbound sales is the practice of proactively reaching out to prospects who haven&apos;t found you yet, instead of waiting for them to come to you. Here&apos;s what that actually means in practice: the channels, the roles, and how the whole system fits together.

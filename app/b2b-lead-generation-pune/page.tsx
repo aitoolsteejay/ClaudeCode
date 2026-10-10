@@ -69,7 +69,7 @@ export default function B2BLeadGenerationPunePage() {
             B2B Lead Generation Agency in Pune
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl mb-8" style={{ color: "#52525B" }}>
-            Pune runs on IT services, SaaS, and auto-component manufacturing. We build the AI-powered cold email, LinkedIn, and ABM systems that turn strong engineering into a predictable pipeline of meetings.
+            Pune runs on IT services, SaaS, and auto-component manufacturing. If you are comparing B2B lead generation companies in Pune, we build the AI-powered cold email, LinkedIn, and ABM systems that turn strong engineering into a predictable pipeline of meetings.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">

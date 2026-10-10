@@ -9,7 +9,7 @@ import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/instagram-resources/job-applications-sales-funnel";
 const ACCENT = "#7C3AED";
-const TITLE = "Job Applications Are a Sales Funnel: The Framework to Land More Interviews";
+const TITLE = "Job application are like a sales funnel";
 const DESCRIPTION = "A practical job-search funnel for generating interview leads, reaching hiring managers directly, following up with proof, and closing the offer.";
 
 export const metadata: Metadata = {

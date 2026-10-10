@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-10T06:33:14.485Z",
+  "generatedAt": "2026-10-10T09:36:13.787Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 177,
-    "linked": 162,
+    "total": 178,
+    "linked": 163,
     "orphan": 15,
     "noindex": 40,
     "notInXmlSitemap": 41,
@@ -1276,6 +1276,19 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/instagram-resources/job-applications-sales-funnel",
+      "title": "Job Applications Sales Funnel",
+      "section": "instagram-resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/instagram-resources/leads-on-autopilot-guide",
       "title": "Leads on Autopilot: A LinkedIn Framework",
       "section": "instagram-resources",
@@ -1497,7 +1510,7 @@
         "/blog/cold-email-compliance-guide",
         "/blog/cold-email-deliverability-guide"
       ],
-      "inboundCount": 48,
+      "inboundCount": 49,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1970,7 +1983,7 @@
         "/instagram-resources/cold-email-tech-stack",
         "/instagram-resources/golden-icp-framework"
       ],
-      "inboundCount": 12,
+      "inboundCount": 13,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2107,9 +2120,10 @@
       "section": "services",
       "status": "linked",
       "linkedFrom": [
-        "/"
+        "/",
+        "/instagram-resources/job-applications-sales-funnel"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2352,10 +2366,11 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/linkedin-profile-inbound-lead-machine",
+        "/instagram-resources/job-applications-sales-funnel",
         "/resources/tools",
         "lib/tools-registry.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

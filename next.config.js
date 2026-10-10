@@ -73,6 +73,10 @@ const nextConfig = {
       { source: "/plans/alpha", destination: "/plans/mars", permanent: true },
       { source: "/plans/beta", destination: "/plans/earth", permanent: true },
 
+      // Job application guide moved from the Instagram bio-link namespace
+      // into the canonical resources/guides hierarchy.
+      { source: "/instagram-resources/job-applications-sales-funnel", destination: "/resources/guides/job-applications-sales-funnel", permanent: true },
+
       // Private cold emailing overview renamed to carry a planet code (the
       // USD page is mars, a rupee clone sits at -earth). Redirected in case
       // the original link was already sent to a prospect.

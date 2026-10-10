@@ -113,7 +113,7 @@ const GUIDES = [
     accent: "#0891B2",
   },
   {
-    href: "/instagram-resources/job-applications-sales-funnel",
+    href: "/resources/guides/job-applications-sales-funnel",
     tag: "Careers & Jobs",
     title: "Job Applications Are a Sales Funnel",
     excerpt: "A practical system to reach hiring managers, stand out with proof, follow up with Loom and voice notes, and turn interviews into offers.",

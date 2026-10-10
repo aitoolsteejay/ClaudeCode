@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-10T09:36:13.787Z",
+  "generatedAt": "2026-10-10T11:20:10.680Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 178,
+    "total": 179,
     "linked": 163,
-    "orphan": 15,
+    "orphan": 16,
     "noindex": 40,
-    "notInXmlSitemap": 41,
+    "notInXmlSitemap": 42,
     "privateHidden": 6
   },
   "pages": [
@@ -1279,14 +1279,12 @@
       "path": "/instagram-resources/job-applications-sales-funnel",
       "title": "Job Applications Sales Funnel",
       "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
       "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     },
     {
       "path": "/instagram-resources/leads-on-autopilot-guide",
@@ -2002,6 +2000,20 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/resources/guides/job-applications-sales-funnel",
+      "title": "Job Applications Sales Funnel",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/instagram-resources/job-applications-sales-funnel",
+        "/resources/guides"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/resources/tools",
       "title": "Free B2B Lead Generation Tools",
       "section": "resources",
@@ -2121,7 +2133,7 @@
       "status": "linked",
       "linkedFrom": [
         "/",
-        "/instagram-resources/job-applications-sales-funnel"
+        "/resources/guides/job-applications-sales-funnel"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -2366,7 +2378,7 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/linkedin-profile-inbound-lead-machine",
-        "/instagram-resources/job-applications-sales-funnel",
+        "/resources/guides/job-applications-sales-funnel",
         "/resources/tools",
         "lib/tools-registry.ts"
       ],
@@ -2576,6 +2588,11 @@
     {
       "from": "/other-services",
       "to": "/services",
+      "permanent": true
+    },
+    {
+      "from": "/instagram-resources/job-applications-sales-funnel",
+      "to": "/resources/guides/job-applications-sales-funnel",
       "permanent": true
     }
   ],

@@ -122,7 +122,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "Leads on Autopilot: A Step-by-Step Framework", href: "/instagram-resources/leads-on-autopilot-guide" },
       { label: "The Cold Email Stack Behind an Extra $7,000", href: "/instagram-resources/cold-email-tech-stack" },
       { label: "5 Claude Prompts for Sales Calls", href: "/instagram-resources/claude-sales-call-prompts" },
-      { label: "Job Applications Are a Sales Funnel", href: "/instagram-resources/job-applications-sales-funnel" },
+      { label: "Job Applications Are a Sales Funnel", href: "/resources/guides/job-applications-sales-funnel" },
     ],
   },
   {

@@ -90,7 +90,7 @@ export default function JobApplicationsSalesFunnel() {
       <div aria-hidden="true" style={{ position: "absolute", top: "-120px", right: "-180px", width: 620, height: 620, borderRadius: "50%", background: "radial-gradient(circle,rgba(245,183,49,0.19),rgba(245,183,49,0.06) 42%,transparent 70%)", filter: "blur(55px)" }} />
       <div className="relative z-10 max-w-4xl mx-auto"><Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(124,58,237,0.3)", backgroundColor: "rgba(124,58,237,0.08)" }}><span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} /><span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Career · Job Search Playbook</span></div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>Job applications are a <span style={{ color: ACCENT }}>sales funnel.</span></h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>Job application are like a <span style={{ color: ACCENT }}>sales funnel</span></h1>
         <p className="text-lg sm:text-xl max-w-2xl leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>Stop applying and hoping. Use a step-by-step system to generate interview leads, reach hiring managers directly, and close the offer.</p>
       </div>
     </section>

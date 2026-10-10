@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-09T13:09:25.956Z",
+  "generatedAt": "2026-10-10T05:18:32.417Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 177,
-    "linked": 161,
-    "orphan": 16,
-    "noindex": 39,
-    "notInXmlSitemap": 41,
-    "privateHidden": 6
+    "total": 175,
+    "linked": 162,
+    "orphan": 13,
+    "noindex": 38,
+    "notInXmlSitemap": 39,
+    "privateHidden": 4
   },
   "pages": [
     {
@@ -60,7 +60,7 @@
       "status": "orphan",
       "linkedFrom": [],
       "inboundCount": 0,
-      "noindex": false,
+      "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -718,7 +718,7 @@
       "path": "/case-studies/[filter]",
       "title": "[Filter]",
       "section": "case-studies",
-      "status": "orphan",
+      "status": "linked",
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": false,
@@ -834,7 +834,7 @@
     },
     {
       "path": "/case-studies/insurance-india-hr-consultants-referral",
-      "title": "Illustrative Example: Developing Referral Relationships With HR Consultants",
+      "title": "Illustrative Example: Insurance Referral Outreach",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
@@ -847,7 +847,7 @@
     },
     {
       "path": "/case-studies/insurance-singapore-commercial-coverage",
-      "title": "Illustrative Example: Reaching Businesses Reviewing Commercial Coverage",
+      "title": "Illustrative Example: Commercial Insurance Outreach",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
@@ -925,7 +925,7 @@
     },
     {
       "path": "/case-studies/pharma-india-dermatologist-outreach",
-      "title": "Illustrative Example: Reaching Dermatologists Beyond Field Coverage",
+      "title": "Illustrative Example: Pharma Doctor Outreach",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
@@ -1005,7 +1005,7 @@
     },
     {
       "path": "/case-studies/recruitment-singapore-contract-staffing",
-      "title": "Illustrative Example: Developing Contract Staffing Opportunities",
+      "title": "Illustrative Example: Singapore Staffing Outreach",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
@@ -1018,7 +1018,7 @@
     },
     {
       "path": "/case-studies/recruitment-uk-engineering-staffing",
-      "title": "Illustrative Example: Winning Conversations With Employers That Are Hiring",
+      "title": "Illustrative Example: UK Engineering Recruitment",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
@@ -1031,7 +1031,7 @@
     },
     {
       "path": "/case-studies/recruitment-usa-tech-recruitment",
-      "title": "Illustrative Example: Winning Specialist Technology Recruitment Briefs",
+      "title": "Illustrative Example: US Tech Recruitment Outreach",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [

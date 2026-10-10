@@ -5,8 +5,8 @@ import { buildArticleSchema } from "@/lib/schema";
 const URL = "https://www.myntmore.com/case-studies/pharma-india-dermatologist-outreach";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Reaching Dermatologists Beyond Field Coverage",
-  description: "An illustrative example of how Myntmore's pharma outreach reaches specialist doctors beyond a field team's coverage, for a product launch across India. Not a specific past client engagement.",
+  title: "Illustrative Example: Pharma Doctor Outreach",
+  description: "Illustrative pharma outreach example reaching specialist doctors beyond field coverage during an India product launch. Not a specific past client.",
   keywords: [
     "pharma doctor outreach india",
     "dermatologist outreach campaign",

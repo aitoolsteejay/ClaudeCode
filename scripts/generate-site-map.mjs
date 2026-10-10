@@ -100,7 +100,7 @@ for (const { file, dir } of pageDirs) {
   const title = titleMatch ? (titleMatch[1] || titleMatch[2] || titleMatch[3]).trim() : null;
   const noindex = /index:\s*false/.test(src);
   for (const p of expandDynamic(route, file)) {
-    pages.push({ path: p, dir: rel(dir), title, noindex, dynamic: p !== route });
+    pages.push({ path: p, dir: rel(dir), title, noindex, dynamic: p !== route, generatedParams: /generateStaticParams\s*\(/.test(src) });
   }
 }
 const routeSet = new Set(pages.map((p) => p.path));
@@ -249,7 +249,10 @@ const titleFor = (p) =>
 const out = pages
   .map((p) => {
     const inbound = inboundFor(p.path);
-    const linked = p.path === "/" || reachable.has(p.path);
+    // A dynamic route with explicit static params is intentionally represented
+    // by its concrete URLs in the XML sitemap and should not be reported as a
+    // public orphan under its bracketed source path.
+    const linked = p.path === "/" || reachable.has(p.path) || ((p.dynamic || p.path.includes("[")) && p.generatedParams);
     const priv = isPrivate(p.path);
     return {
       path: priv ? null : p.path,

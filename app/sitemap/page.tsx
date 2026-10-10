@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Site Map",
   description: "Every page on Myntmore, organised by section: services, case studies, blog, guides, free tools, careers, and more.",
   alternates: { canonical: "https://www.myntmore.com/sitemap" },
+  openGraph: {
+    title: "Site Map | Myntmore",
+    description: "Every page on Myntmore, organised by services, case studies, resources, free tools, careers, and more.",
+    url: "https://www.myntmore.com/sitemap",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
   keywords: [
     "myntmore sitemap",
     "myntmore site navigation",

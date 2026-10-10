@@ -26,6 +26,7 @@
 
 ## Resources
 - [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.
+- [Industry Case Study Filters](https://www.myntmore.com/case-studies/pharma): Shareable filtered case-study views are available for pharma, SaaS, professional services, eCommerce tech, B2B founders, agencies and IT, financial services, insurance, manufacturers and exporters, and recruitment and staffing.
 - [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
 - [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
 - [Pattern Interruption: The Do's and Don'ts of Outreach](https://www.myntmore.com/dos-and-donts-of-outreach): Pattern interruption in outbound, channel-specific tips for LinkedIn and cold email, what data enrichment is, and Myntmore's free outreach tools.

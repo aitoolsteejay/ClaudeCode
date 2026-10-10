@@ -5,8 +5,8 @@ import { buildArticleSchema } from "@/lib/schema";
 const URL = "https://www.myntmore.com/case-studies/recruitment-uk-engineering-staffing";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Winning Conversations With Employers That Are Hiring",
-  description: "An illustrative example of how Myntmore's outreach wins conversations with UK employers actively hiring for engineering and manufacturing roles. Not a specific past client engagement.",
+  title: "Illustrative Example: UK Engineering Recruitment",
+  description: "Illustrative outreach example starting conversations with UK employers hiring for engineering and manufacturing roles. Not a specific past client.",
   keywords: [
     "recruitment agency lead generation",
     "staffing firm lead generation uk",

@@ -131,6 +131,7 @@ export function buildServiceSchema({ name, description, serviceType, url, areaSe
       "@type": "Organization",
       name: "Myntmore",
       url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
     },
   };
 }
@@ -162,6 +163,7 @@ export function buildWebApplicationSchema({ name, description, url }: WebApplica
       "@type": "Organization",
       name: "Myntmore",
       url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
     },
   };
 }
@@ -259,7 +261,7 @@ export function buildArticleSchema({ headline, description, url, datePublished, 
     datePublished,
     dateModified,
     image: image ?? `${SITE_URL}/logo.png`,
-    author: { "@type": "Organization", name: "Myntmore", url: SITE_URL },
+    author: { "@type": "Organization", name: "Myntmore", url: SITE_URL, logo: `${SITE_URL}/logo.png` },
     publisher: {
       "@type": "Organization",
       name: "Myntmore",
@@ -301,6 +303,7 @@ export function buildEventSchema({ name, description, url, startDate, endDate, i
       "@type": "Organization",
       name: "Myntmore",
       url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
     },
   };
 }

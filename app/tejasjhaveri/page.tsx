@@ -27,7 +27,7 @@ const PERSON_SCHEMA = {
   "@type": "Person",
   name: "Tejas Jhaveri",
   jobTitle: "Founder",
-  worksFor: { "@type": "Organization", name: "Myntmore", url: SITE_URL },
+  worksFor: { "@type": "Organization", name: "Myntmore", url: SITE_URL, logo: `${SITE_URL}/logo.png` },
   url: `${SITE_URL}/tejasjhaveri`,
   sameAs: [LINKEDIN_URL, INSTAGRAM_URL],
 };

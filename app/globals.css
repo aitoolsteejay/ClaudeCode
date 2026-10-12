@@ -622,6 +622,17 @@ body {
   animation: priceBadgePop 0.5s 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
+/* ─── Hero glow ─────────────────────────────────────────────
+   Every page's hero is the first <section> in <main>. Give the ones that
+   don't already draw their own blurred blobs a soft brand glow: gold from
+   the top right, a faint purple from the bottom left. background-image
+   layers on top of each section's inline background-color. ──────── */
+main > section:first-of-type:not([style*="gradient"]):not(:has([style*="radial-gradient"])) {
+  background-image:
+    radial-gradient(ellipse 60% 85% at 100% 0%, rgba(245, 183, 49, 0.32) 0%, rgba(249, 115, 22, 0.10) 42%, transparent 72%),
+    radial-gradient(ellipse 50% 75% at 0% 100%, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+}
+
 /* ─── Fredoka labels (guides and blogs) ─────────────────────
    Every small label/eyebrow on the site is an `uppercase` + `tracking-*`
    element, so this one rule restyles all of them inside sections wrapped in

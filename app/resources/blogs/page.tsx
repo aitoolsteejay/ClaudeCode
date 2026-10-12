@@ -313,7 +313,7 @@ export default async function BlogsPage() {
           <div className="flex items-start justify-between gap-8 flex-wrap">
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-                26 posts. <span style={{ color: "#3b82f6" }}>Zero fluff.</span>
+                {BLOG_POSTS.length} posts. <span style={{ color: "#3b82f6" }}>Zero fluff.</span>
               </h1>
               <p className="text-lg sm:text-xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
                 Practical B2B lead generation playbooks from the team that has booked 12K+ meetings and generated $120M+ in pipeline.

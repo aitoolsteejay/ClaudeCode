@@ -103,7 +103,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
         <button
           type="button"
           onClick={() => setActiveTag("All")}
-          className="text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
+          className="fredoka-pill text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
           style={
             activeTag === "All"
               ? { backgroundColor: "#0a0a0a", borderColor: "#0a0a0a", color: "#ffffff" }
@@ -121,7 +121,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
               key={tag}
               type="button"
               onClick={() => setActiveTag(tag)}
-              className="text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
+              className="fredoka-pill text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
               style={
                 isActive
                   ? { backgroundColor: accent, borderColor: accent, color: "#ffffff" }

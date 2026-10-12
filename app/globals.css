@@ -627,17 +627,21 @@ body {
    element, so this one rule restyles all of them inside sections wrapped in
    <FredokaLabels>, in sentence case as authored. Scoped to <main> so the
    nav and footer keep Inter. ───────────────────────────────── */
-.fredoka-labels main .uppercase[class*="tracking-"],
-.fredoka-labels main .fredoka-pill {
+.fredoka-labels main :is(.uppercase[class*="tracking-"], .fredoka-pill) {
   font-family: var(--font-fredoka), var(--font-inter), system-ui, sans-serif;
   font-weight: 600;
   text-transform: none;
   letter-spacing: 0.01em;
-  /* Sentence case without wide tracking reads smaller than the caps it
-     replaces, so nudge small labels up (12px lands at ~14px) while labels
-     already 14px or larger keep their size. */
-  font-size: min(max(1.15em, 13px), max(1em, 14px));
   line-height: 1.35;
+}
+/* Sentence case without wide tracking reads smaller than the caps it
+   replaces, so step the small sizes up one notch. Done per size class
+   because em in font-size resolves against the parent, not the class. */
+.fredoka-labels main :is(.uppercase[class*="tracking-"], .fredoka-pill).text-xs {
+  font-size: 0.875rem;
+}
+.fredoka-labels main :is(.uppercase[class*="tracking-"], .fredoka-pill):is(.text-\[10px\], .text-\[11px\]) {
+  font-size: 0.8125rem;
 }
 
 /* ─── Reduced motion ───────────────────────────────────────

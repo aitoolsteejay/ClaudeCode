@@ -345,7 +345,20 @@ export default async function BlogsPage() {
         </div>
       </section>
 
-      <section id="blog-grid" className="py-16 px-4 border-t scroll-mt-24" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      <section
+        id="blog-grid"
+        className="py-16 px-4 border-t scroll-mt-24"
+        style={{
+          borderColor: "#E8E2D9",
+          backgroundColor: "#ffffff",
+          backgroundImage: [
+            "radial-gradient(700px 520px at 0% 6%, rgba(124,58,237,0.10), transparent 70%)",
+            "radial-gradient(760px 600px at 100% 38%, rgba(245,183,49,0.16), transparent 70%)",
+            "radial-gradient(720px 560px at 0% 72%, rgba(59,130,246,0.10), transparent 70%)",
+            "radial-gradient(680px 520px at 100% 100%, rgba(249,115,22,0.10), transparent 70%)",
+          ].join(", "),
+        }}
+      >
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <BlogGrid posts={BLOG_POSTS} />

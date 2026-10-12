@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "account-penetration";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Account Penetration";
+const DESCRIPTION = "Account penetration is a measure of how widely a seller is engaged inside a target company, based on the number of relevant stakeholders, teams, or business units with whom they have active relationships.";
+const META_DESCRIPTION = "What account penetration means in B2B sales, why single-threaded deals are fragile, and how teams increase penetration in key accounts.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is account penetration", "account penetration definition", "account penetration b2b", "increase account penetration"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function AccountPenetrationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#5B21B6"
+      title={TITLE}
+      tagline="How deeply you're connected inside a target company, and how many of the people who matter know who you are."
+      definition="How widely a seller is engaged inside a target company, measured by how many relevant stakeholders, teams, or business units they have active relationships with."
+      body="Low penetration means a deal rests on one person; if they change roles or lose interest, it's gone. Teams raise penetration by multi-threading outreach to other members of the buying committee and, in existing customers, by expanding from the first team that bought into neighbouring departments."
+      sourceLabel="Read the related term: Multi-Threading"
+      sourceHref="/resources/glossary/multi-threading"
+      furtherLabel="See the service: Account-Based Marketing"
+      furtherHref="/services/account-based-marketing"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

@@ -6,13 +6,14 @@ const SLUG = "cold-email";
 const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
 const TITLE = "Cold Email";
 const DESCRIPTION = "Cold email is outbound email sent to a prospect who has no prior relationship with the sender, aiming to start a sales conversation rather than nurture an existing lead.";
+const ALSO_KNOWN_AS = ["Cold Emailing", "Email Outreach", "Outbound Email", "Email Prospecting", "B2B Email Outreach"];
 const META_DESCRIPTION = "What cold email is, how it differs from spam and from nurture email, and why B2B teams still use it to start sales conversations.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | B2B Glossary`,
   description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  keywords: ["what is cold email", "cold email definition", "cold email vs spam", "b2b cold email"],
+  keywords: ["what is cold email", "cold email definition", "cold email vs spam", "b2b cold email", "cold emailing", "email outreach", "outbound email", "email prospecting", "b2b email outreach"],
   openGraph: {
     title: `${TITLE} | Myntmore Glossary`,
     description: META_DESCRIPTION,
@@ -26,6 +27,7 @@ const TERM_SCHEMA = buildDefinedTermSchema({
   description: DESCRIPTION,
   url: PAGE_URL,
   inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
 });
 
 export default function ColdEmailPage() {
@@ -35,6 +37,7 @@ export default function ColdEmailPage() {
       tag="Cold Outreach"
       accent="#EA580C"
       title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
       tagline="The first message to someone who has never heard of you, sent to open a real conversation, not to blast a list."
       definition="An email sent to a prospect with no prior relationship to the sender, written to start a genuine sales conversation rather than announce a product."
       body="Done well, cold email is permission-based and targeted: it goes to a narrow list matching a defined ICP, references something specific about the recipient, and is legally compliant with laws like CAN-SPAM and GDPR. Done poorly, it collapses into the same broad, generic blasting that gives the channel its bad name."

@@ -10,6 +10,7 @@ export interface GlossaryTermProps {
   accent: string;
   title: string;
   tagline: string;
+  alsoKnownAs?: string[];
   definition: string;
   body: string;
   sourceLabel: string;
@@ -31,6 +32,7 @@ export default function GlossaryTerm({
   accent,
   title,
   tagline,
+  alsoKnownAs,
   definition,
   body,
   sourceLabel,
@@ -50,6 +52,16 @@ export default function GlossaryTerm({
           <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}33` }}>{tag}</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>{title}</h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>{tagline}</p>
+          {alsoKnownAs && alsoKnownAs.length > 0 && (
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#6B6B6B" }}>Also known as</span>
+              {alsoKnownAs.map((name) => (
+                <span key={name} className="inline-flex text-xs font-semibold px-2.5 py-1 rounded-full border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}>
+                  {name}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

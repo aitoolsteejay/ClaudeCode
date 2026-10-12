@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "target-account-strategy";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Target Account Strategy";
+const DESCRIPTION = "A target account strategy is the process of selecting a defined list of high-value companies to pursue and planning the approach for each, based on customer fit, buying signals, and potential deal size.";
+const ALSO_KNOWN_AS = ["Strategic Account Targeting"];
+const META_DESCRIPTION = "What a target account strategy is, how to choose target accounts, and how strategic account targeting feeds account-based marketing.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is target account strategy", "target account list", "strategic account targeting", "how to choose target accounts"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
+});
+
+export default function TargetAccountStrategyPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Targeting"
+      accent="#3730A3"
+      title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
+      tagline="Choosing a specific list of companies worth winning, and planning how to approach each one, before any outreach goes out."
+      definition="Selecting a defined list of high-value companies to pursue and planning how to reach each one, based on fit, buying signals, and potential deal size."
+      body="It's the planning layer underneath ABM: before you can run account-based outreach, you need a short, ranked list of accounts and a reason each one belongs on it. Good lists are built from firmographic fit plus timing signals, then tiered so the highest-value accounts get the most research and personalization."
+      sourceLabel="Read the related term: ABM (Account-Based Marketing)"
+      sourceHref="/resources/glossary/abm"
+      furtherLabel="Read the related term: Buying Signal"
+      furtherHref="/resources/glossary/buying-signal"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

@@ -173,11 +173,12 @@ export interface DefinedTermInput {
   description: string;
   url: string;
   inDefinedTermSet?: string;
+  alternateName?: string[];
 }
 
 // For single-definition glossary pages. `inDefinedTermSet` points back at the
 // glossary hub that groups these terms, per schema.org convention.
-export function buildDefinedTermSchema({ name, description, url, inDefinedTermSet }: DefinedTermInput) {
+export function buildDefinedTermSchema({ name, description, url, inDefinedTermSet, alternateName }: DefinedTermInput) {
   return {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
@@ -185,6 +186,7 @@ export function buildDefinedTermSchema({ name, description, url, inDefinedTermSe
     description,
     url,
     ...(inDefinedTermSet ? { inDefinedTermSet } : {}),
+    ...(alternateName?.length ? { alternateName } : {}),
   };
 }
 

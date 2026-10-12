@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "pipeline-acceleration";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Pipeline Acceleration";
+const DESCRIPTION = "Pipeline acceleration is the practice of shortening the sales cycle by moving existing opportunities through pipeline stages faster, typically by engaging more stakeholders and removing the causes of stalled deals.";
+const META_DESCRIPTION = "What pipeline acceleration is, why B2B deals stall between stages, and the practical levers that shorten a sales cycle.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is pipeline acceleration", "pipeline acceleration definition", "shorten b2b sales cycle", "accelerate sales pipeline"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function PipelineAccelerationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#7E22CE"
+      title={TITLE}
+      tagline="Getting deals already in the pipeline to a decision faster, instead of only adding more at the top."
+      definition="Shortening the time it takes open deals to move from first meeting to a closed decision, by removing the stalls between pipeline stages."
+      body="Most B2B deals don't die, they stall: one champion goes quiet, a second stakeholder was never involved, or nobody owns the next step. Acceleration tactics target those stalls directly, by multi-threading into the buying committee, following up on a fixed cadence, and re-engaging deals that went quiet before they're written off."
+      sourceLabel="Read the related term: Multi-Threading"
+      sourceHref="/resources/glossary/multi-threading"
+      furtherLabel="Read the related term: Re-engagement Campaign"
+      furtherHref="/resources/glossary/re-engagement-campaign"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

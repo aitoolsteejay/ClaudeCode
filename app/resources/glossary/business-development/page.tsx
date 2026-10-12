@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "business-development";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Business Development";
+const DESCRIPTION = "Business development is the work of creating new growth opportunities for a company by acquiring new customers, entering new markets, and forming strategic partnerships, as distinct from managing existing customer accounts.";
+const ALSO_KNOWN_AS = ["New Business Development"];
+const META_DESCRIPTION = "What business development means in B2B, how new business development differs from sales and account management, and where outbound fits.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is business development", "business development definition b2b", "new business development", "business development vs sales"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
+});
+
+export default function BusinessDevelopmentPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Sales Ops"
+      accent="#57534E"
+      title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
+      tagline="Creating new revenue opportunities, through new customers, partnerships, and markets, rather than managing existing accounts."
+      definition="The work of creating new growth opportunities for a company, by finding new customers, opening new markets, and forming partnerships, as distinct from managing existing accounts."
+      body="In many B2B teams, especially in India, business development is the title given to whoever runs outbound prospecting and early sales conversations, which overlaps heavily with the SDR role. New business development specifically means winning logos you don't have yet, which is why it relies on outbound rather than on upselling the customers you already serve."
+      sourceLabel="Read the related term: SDR (Sales Development Rep)"
+      sourceHref="/resources/glossary/sdr"
+      furtherLabel="Read: Agency vs. In-House SDR for B2B Outbound"
+      furtherHref="/blog/agency-vs-in-house"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

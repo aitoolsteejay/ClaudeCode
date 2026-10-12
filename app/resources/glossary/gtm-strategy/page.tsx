@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "gtm-strategy";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Go-to-Market Strategy (GTM)";
+const DESCRIPTION = "A go-to-market (GTM) strategy is a company's plan for bringing a product to market, defining its target customers, value proposition, pricing, and the sales and marketing channels used to reach and convert those customers.";
+const ALSO_KNOWN_AS = ["GTM"];
+const META_DESCRIPTION = "What a go-to-market (GTM) strategy is, what it includes, and why it has to be settled before outbound outreach can work.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is gtm", "go to market strategy definition", "gtm meaning b2b", "gtm strategy"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
+});
+
+export default function GtmStrategyPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#1E40AF"
+      title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
+      tagline="The plan for who you sell to, what you say to them, and which channels you use to reach them."
+      definition="The plan for bringing a product to market: which customers to target, what value to promise them, how to price it, and which sales and marketing channels will reach them."
+      body="In B2B, a GTM strategy answers four questions before any campaign runs: who exactly is the buyer, what problem are they feeling right now, why choose you over the alternatives, and which channel reaches them best, whether that's cold email, LinkedIn, events, or partners. Skipping it is why so many outbound campaigns send plenty of messages and get very few replies."
+      sourceLabel="See the service: GTM Strategy"
+      sourceHref="/services/gtm-strategy"
+      furtherLabel="Read the related term: Value Proposition"
+      furtherHref="/resources/glossary/value-proposition"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

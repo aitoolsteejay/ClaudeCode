@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import EventPopup from "./components/EventPopup";
-import ReelWidget from "./components/ReelWidget";
 
 export const metadata: Metadata = {
   // Names Mumbai because GSC shows this page ranking top-3 for ~15
@@ -74,7 +73,6 @@ export default function Home() {
       <JsonLd data={buildLocalBusinessSchema()} />
       <Navbar />
       <EventPopup />
-      <ReelWidget />
       <Hero />
       <LogoStrip />
       <WhoWeHelp />

@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import JsonLd from "./components/JsonLd";
+import ReelWidget from "./components/ReelWidget";
 import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
 
@@ -87,6 +88,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-white antialiased">
         {children}
+        <ReelWidget />
         <Toaster />
         <Analytics />
 

@@ -15,8 +15,9 @@ const SHOW_AT_SCROLL_FRACTION = 0.5;
 const SESSION_KEY = "myntmore:reel-offered";
 
 // Live workshop and feedback flows, where a promo would get in the way, plus
-// the internal audit page.
-const EXCLUDED_PREFIXES = ["/menti", "/feedback", "/workshop", "/site-audit"];
+// the internal audit page and the framework page, whose full-width workflow
+// diagram the reel would cover.
+const EXCLUDED_PREFIXES = ["/menti", "/feedback", "/workshop", "/site-audit", "/myntmore-framework"];
 
 const isExcluded = (path: string) => EXCLUDED_PREFIXES.some((prefix) => path === prefix || path.startsWith(`${prefix}/`));
 

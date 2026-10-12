@@ -42,7 +42,7 @@ export default function ThreeSecondRulePage() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.18) 0%, rgba(217,119,6,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div className="relative z-10 max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Glossary", href: "/resources/glossary" }, { label: TITLE, href: "/resources/glossary/3-second-rule" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#F97316", border: "1px solid rgba(249,115,22,0.2)" }}>Cold Outreach</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#F97316", border: "1px solid rgba(249,115,22,0.2)" }}>Cold Outreach</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>{TITLE}</h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             You have roughly 3 seconds to earn a prospect&apos;s curiosity before an outbound message gets ignored, and spending those seconds pitching loses it.

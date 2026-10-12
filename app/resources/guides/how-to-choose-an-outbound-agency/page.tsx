@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import InnerLayout from "../components/InnerLayout";
-import Breadcrumbs from "../components/Breadcrumbs";
-import FadeIn from "../components/FadeIn";
-import JsonLd from "../components/JsonLd";
-import AskYourAI from "../components/AskYourAI";
-import Faq from "../lp/Faq";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import FadeIn from "@/app/components/FadeIn";
+import JsonLd from "@/app/components/JsonLd";
+import AskYourAI from "@/app/components/AskYourAI";
+import Faq from "@/app/lp/Faq";
 import { buildFaqSchema, buildArticleSchema, SITE_URL } from "@/lib/schema";
 
-const PAGE_URL = `${SITE_URL}/how-to-choose-an-outbound-agency`;
+const PAGE_URL = `${SITE_URL}/resources/guides/how-to-choose-an-outbound-agency`;
 const TITLE = "How to Choose a B2B Outbound Agency";
 const DESCRIPTION = "A neutral checklist for vetting B2B outbound agencies: what to ask about data ownership, deliverability, real reply rates, and contract terms.";
 
@@ -75,7 +75,7 @@ export default function HowToChooseOutboundAgencyPage() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "How to Choose an Outbound Agency", href: "/how-to-choose-an-outbound-agency" }]} />
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "How to Choose an Outbound Agency", href: "/resources/guides/how-to-choose-an-outbound-agency" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(14,165,233,0.35)", background: "rgba(14,165,233,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#0EA5E9" }} />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0EA5E9" }}>Buyer&apos;s Guide · 6 min read</span>

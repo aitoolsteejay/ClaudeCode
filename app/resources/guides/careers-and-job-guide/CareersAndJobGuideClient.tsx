@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Faq from "../lp/Faq";
-import FadeIn from "../components/FadeIn";
-import StatTicker from "../components/StatTicker";
-import InnerLayout from "../components/InnerLayout";
+import Faq from "@/app/lp/Faq";
+import FadeIn from "@/app/components/FadeIn";
+import StatTicker from "@/app/components/StatTicker";
+import InnerLayout from "@/app/components/InnerLayout";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tool {

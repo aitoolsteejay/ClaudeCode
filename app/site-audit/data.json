@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-10T11:20:10.680Z",
+  "generatedAt": "2026-10-12T11:11:48.582Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 179,
-    "linked": 163,
-    "orphan": 16,
+    "total": 198,
+    "linked": 183,
+    "orphan": 15,
     "noindex": 40,
-    "notInXmlSitemap": 42,
+    "notInXmlSitemap": 41,
     "privateHidden": 6
   },
   "pages": [
@@ -16,9 +16,9 @@
       "section": "(home)",
       "status": "linked",
       "linkedFrom": [
-        "/instagram-resources/80-us-meetings-ai-agents",
-        "/instagram-resources/how-to-set-up-vibe-prospecting",
+        "/resources/guides/80-us-meetings-ai-agents",
         "/resources/guides/ai-tech-stack-jewellery",
+        "/resources/guides/how-to-set-up-vibe-prospecting",
         "/thankyou"
       ],
       "inboundCount": 4,
@@ -210,8 +210,8 @@
       "linkedFrom": [
         "/agency-vs-in-house",
         "/blog/what-is-b2b-outbound-sales",
-        "/how-to-choose-an-outbound-agency",
         "/resources/blogs",
+        "/resources/guides/how-to-choose-an-outbound-agency",
         "/resources/guides",
         "/who-this-is-for"
       ],
@@ -287,8 +287,8 @@
       "linkedFrom": [
         "/blog/cold-email-compliance-guide",
         "/blog/cold-email-sequence-templates",
-        "/instagram-resources/cold-email-tech-stack",
-        "/resources/blogs"
+        "/resources/blogs",
+        "/resources/guides/cold-email-tech-stack"
       ],
       "inboundCount": 4,
       "noindex": false,
@@ -303,9 +303,9 @@
       "linkedFrom": [
         "/blog/handling-cold-email-replies",
         "/blog/reviving-closed-lost-leads",
-        "/instagram-resources/claude-sales-call-prompts",
-        "/instagram-resources/cold-email-tech-stack",
-        "/resources/blogs"
+        "/resources/blogs",
+        "/resources/guides/claude-sales-call-prompts",
+        "/resources/guides/cold-email-tech-stack"
       ],
       "inboundCount": 5,
       "noindex": false,
@@ -386,8 +386,8 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/cold-email-sequence-templates",
-        "/instagram-resources/claude-sales-call-prompts",
-        "/resources/blogs"
+        "/resources/blogs",
+        "/resources/guides/claude-sales-call-prompts"
       ],
       "inboundCount": 3,
       "noindex": false,
@@ -443,8 +443,8 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/instagram-resources/claude-sales-call-prompts",
-        "/resources/blogs"
+        "/resources/blogs",
+        "/resources/guides/claude-sales-call-prompts"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -602,19 +602,6 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
-    },
-    {
-      "path": "/careers-and-job-guide",
-      "title": "Career Jumpstart Toolkit",
-      "section": "other",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
-      "inHtmlSitemap": false
     },
     {
       "path": "/careers/content-marketing-strategist-intern",
@@ -1086,32 +1073,6 @@
       "inHtmlSitemap": true
     },
     {
-      "path": "/dos-and-donts-of-outreach",
-      "title": "Dos And Donts Of Outreach",
-      "section": "other",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/education-guide",
-      "title": "AI Quick-Start Guide",
-      "section": "other",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
-      "inHtmlSitemap": false
-    },
-    {
       "path": "/enwilfernandes",
       "title": "Enwil Fernandes",
       "section": "other",
@@ -1158,6 +1119,7 @@
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": true,
+      "referencedIn": "app/components/ReelWidget.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -1179,124 +1141,6 @@
       "inboundCount": 70,
       "noindex": true,
       "inXmlSitemap": false,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/how-to-choose-an-outbound-agency",
-      "title": "How To Choose An Outbound Agency",
-      "section": "other",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/80-us-meetings-ai-agents",
-      "title": "80+ US Meetings Booked in 1 Month with AI Agents",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/claude-sales-call-prompts",
-      "title": "Meeting Prep Brief",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/blog/handling-cold-email-replies",
-        "/resources/guides"
-      ],
-      "inboundCount": 2,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/claude-skills-guide",
-      "title": "The 6 Claude Skills Guide",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/instagram-resources/claude-sales-call-prompts",
-        "/resources/guides"
-      ],
-      "inboundCount": 2,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/cold-email-tech-stack",
-      "title": "The opener",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/blog/cold-email-sequence-templates",
-        "/resources/guides"
-      ],
-      "inboundCount": 2,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/golden-icp-framework",
-      "title": "The Golden ICP Framework for B2B Outbound",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/how-to-set-up-vibe-prospecting",
-      "title": "How to Set Up Vibe Prospecting on Claude",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/instagram-resources/job-applications-sales-funnel",
-      "title": "Job Applications Sales Funnel",
-      "section": "instagram-resources",
-      "status": "orphan",
-      "linkedFrom": [],
-      "inboundCount": 0,
-      "noindex": false,
-      "inXmlSitemap": false,
-      "inHtmlSitemap": false
-    },
-    {
-      "path": "/instagram-resources/leads-on-autopilot-guide",
-      "title": "Leads on Autopilot: A LinkedIn Framework",
-      "section": "instagram-resources",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/guides"
-      ],
-      "inboundCount": 1,
-      "noindex": false,
-      "inXmlSitemap": true,
       "inHtmlSitemap": true
     },
     {
@@ -1448,6 +1292,7 @@
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": true,
+      "referencedIn": "app/components/ReelWidget.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -1592,6 +1437,19 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/resources/glossary/account-penetration",
+      "title": "Account Penetration",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/resources/glossary/aha-moment",
       "title": "Aha Moment",
       "section": "resources",
@@ -1603,6 +1461,71 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/appointment-setting",
+      "title": "Appointment Setting",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/b2b-lead-generation",
+      "title": "B2b Lead Generation",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/b2b-prospecting",
+      "title": "B2b Prospecting",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/business-development",
+      "title": "Business Development",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/buyer-engagement",
+      "title": "Buyer Engagement",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources/glossary/buyer-persona",
@@ -1672,13 +1595,26 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/resources/glossary/cold-outreach",
+      "title": "Cold Outreach",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/resources/glossary/domain-warmup",
       "title": "Domain Warmup",
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/instagram-resources/cold-email-tech-stack",
-        "/resources/glossary"
+        "/resources/glossary",
+        "/resources/guides/cold-email-tech-stack"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1723,6 +1659,45 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/growth-strategy",
+      "title": "Growth Strategy",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/gtm-execution",
+      "title": "Gtm Execution",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/gtm-strategy",
+      "title": "Gtm Strategy",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources/glossary/hot-lead",
@@ -1779,6 +1754,19 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/resources/glossary/lead-qualification",
+      "title": "Lead Qualification",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/resources/glossary/lead-scoring",
       "title": "Lead Scoring",
       "section": "resources",
@@ -1790,6 +1778,19 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/linkedin-outreach",
+      "title": "Linkedin Outreach",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources/glossary/meeting-booked-rate",
@@ -1806,6 +1807,19 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/resources/glossary/multi-channel-outreach",
+      "title": "Multi Channel Outreach",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/resources/glossary/multi-threading",
       "title": "Multi Threading",
       "section": "resources",
@@ -1818,6 +1832,45 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/outbound-sales",
+      "title": "Outbound Sales",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/pipeline-acceleration",
+      "title": "Pipeline Acceleration",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/pipeline-generation",
+      "title": "Pipeline Generation",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources/glossary/re-engagement-campaign",
@@ -1845,6 +1898,32 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/revenue-generation",
+      "title": "Revenue Generation",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/sales-outreach",
+      "title": "Sales Outreach",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources/glossary/sales-pipeline",
@@ -1901,18 +1980,44 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/resources/glossary/social-selling",
+      "title": "Social Selling",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/resources/glossary/spf-dkim-dmarc",
       "title": "Spf Dkim Dmarc",
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/instagram-resources/cold-email-tech-stack",
-        "/resources/glossary"
+        "/resources/glossary",
+        "/resources/guides/cold-email-tech-stack"
       ],
       "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/glossary/target-account-strategy",
+      "title": "Target Account Strategy",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources/glossary/total-conversional-market",
@@ -1973,15 +2078,28 @@
       "status": "linked",
       "linkedFrom": [
         "/",
-        "/dos-and-donts-of-outreach",
-        "/how-to-choose-an-outbound-agency",
-        "/instagram-resources/80-us-meetings-ai-agents",
-        "/instagram-resources/claude-sales-call-prompts",
-        "/instagram-resources/claude-skills-guide",
-        "/instagram-resources/cold-email-tech-stack",
-        "/instagram-resources/golden-icp-framework"
+        "/resources/guides/80-us-meetings-ai-agents",
+        "/resources/guides/ai-tech-stack-jewellery",
+        "/resources/guides/claude-sales-call-prompts",
+        "/resources/guides/claude-skills-guide",
+        "/resources/guides/cold-email-tech-stack",
+        "/resources/guides/dos-and-donts-of-outreach",
+        "/resources/guides/golden-icp-framework"
       ],
       "inboundCount": 13,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/80-us-meetings-ai-agents",
+      "title": "80+ US Meetings Booked in 1 Month with AI Agents",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2000,15 +2118,147 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/resources/guides/careers-and-job-guide",
+      "title": "Career Jumpstart Toolkit",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/guides/claude-sales-call-prompts",
+      "title": "Meeting Prep Brief",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/handling-cold-email-replies",
+        "/resources/guides"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/claude-skills-guide",
+      "title": "The 6 Claude Skills Guide",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides/claude-sales-call-prompts",
+        "/resources/guides"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/cold-email-tech-stack",
+      "title": "The opener",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-sequence-templates",
+        "/resources/guides"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/dos-and-donts-of-outreach",
+      "title": "Dos And Donts Of Outreach",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/education-guide",
+      "title": "AI Quick-Start Guide",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/guides/golden-icp-framework",
+      "title": "The Golden ICP Framework for B2B Outbound",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/how-to-choose-an-outbound-agency",
+      "title": "How To Choose An Outbound Agency",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/how-to-set-up-vibe-prospecting",
+      "title": "How to Set Up Vibe Prospecting on Claude",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/resources/guides/job-applications-sales-funnel",
       "title": "Job Applications Sales Funnel",
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/instagram-resources/job-applications-sales-funnel",
         "/resources/guides"
       ],
-      "inboundCount": 2,
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/leads-on-autopilot-guide",
+      "title": "Leads on Autopilot: A LinkedIn Framework",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2224,6 +2474,7 @@
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": true,
+      "referencedIn": "app/components/ReelWidget.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -2314,7 +2565,7 @@
       "linkedFrom": [
         "/blog/3-second-rule-cold-outreach",
         "/blog/stop-selling-features-cold-outreach",
-        "/dos-and-donts-of-outreach",
+        "/resources/guides/dos-and-donts-of-outreach",
         "/resources/tools",
         "lib/tools-registry.ts"
       ],
@@ -2346,7 +2597,7 @@
       "linkedFrom": [
         "/blog/5-second-hero-section-test",
         "/blog/tam-trap-vague-targeting",
-        "/dos-and-donts-of-outreach",
+        "/resources/guides/dos-and-donts-of-outreach",
         "/resources/tools",
         "lib/tools-registry.ts"
       ],
@@ -2362,7 +2613,7 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/value-premium-lead-magnets",
-        "/dos-and-donts-of-outreach",
+        "/resources/guides/dos-and-donts-of-outreach",
         "/resources/tools",
         "lib/tools-registry.ts"
       ],
@@ -2408,7 +2659,7 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/outbound-funnel-math-not-guesswork",
-        "/dos-and-donts-of-outreach",
+        "/resources/guides/dos-and-donts-of-outreach",
         "/resources/tools",
         "lib/tools-registry.ts"
       ],
@@ -2438,6 +2689,7 @@
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": true,
+      "referencedIn": "app/components/ReelWidget.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -2537,17 +2789,17 @@
     },
     {
       "from": "/jbcn-ai-quickstart",
-      "to": "/education-guide",
+      "to": "/resources/guides/education-guide",
       "permanent": true
     },
     {
       "from": "/ai-takeaways",
-      "to": "/education-guide",
+      "to": "/resources/guides/education-guide",
       "permanent": true
     },
     {
       "from": "/nmims-toolkit",
-      "to": "/careers-and-job-guide",
+      "to": "/resources/guides/careers-and-job-guide",
       "permanent": true
     },
     {
@@ -2591,7 +2843,37 @@
       "permanent": true
     },
     {
-      "from": "/instagram-resources/job-applications-sales-funnel",
+      "from": "/instagram-resources",
+      "to": "/resources/guides",
+      "permanent": true
+    },
+    {
+      "from": "/instagram-resources/:slug",
+      "to": "/resources/guides/:slug",
+      "permanent": true
+    },
+    {
+      "from": "/dos-and-donts-of-outreach",
+      "to": "/resources/guides/dos-and-donts-of-outreach",
+      "permanent": true
+    },
+    {
+      "from": "/how-to-choose-an-outbound-agency",
+      "to": "/resources/guides/how-to-choose-an-outbound-agency",
+      "permanent": true
+    },
+    {
+      "from": "/careers-and-job-guide",
+      "to": "/resources/guides/careers-and-job-guide",
+      "permanent": true
+    },
+    {
+      "from": "/education-guide",
+      "to": "/resources/guides/education-guide",
+      "permanent": true
+    },
+    {
+      "from": "/resource/guides/job-applications-sales-funnel",
       "to": "/resources/guides/job-applications-sales-funnel",
       "permanent": true
     }

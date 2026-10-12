@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import InnerLayout from "../../components/InnerLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import CopyBlock from "../../components/CopyBlock";
-import FadeIn from "../../components/FadeIn";
+import { Check, ArrowRight, Camera, CalendarCheck, Mail } from "lucide-react";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import CopyBlock from "@/app/components/CopyBlock";
+import FadeIn from "@/app/components/FadeIn";
 import Underline from "./Underline";
 
 export const metadata: Metadata = {
@@ -23,11 +24,11 @@ export const metadata: Metadata = {
     "claude ai connector guide",
     "b2b lead list builder ai",
   ],
-  alternates: { canonical: "https://www.myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting" },
+  alternates: { canonical: "https://www.myntmore.com/resources/guides/how-to-set-up-vibe-prospecting" },
   openGraph: {
     title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
     description: "Connect Vibe Prospecting to Claude in 7 steps, then run 10 ready-to-copy prompts for verified B2B leads.",
-    url: "https://www.myntmore.com/instagram-resources/how-to-set-up-vibe-prospecting",
+    url: "https://www.myntmore.com/resources/guides/how-to-set-up-vibe-prospecting",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
@@ -136,7 +137,7 @@ export default function VibeProspectingGuide() {
       {/* Hero */}
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "How to Set Up Vibe Prospecting", href: "/instagram-resources/how-to-set-up-vibe-prospecting" }]} />
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "How to Set Up Vibe Prospecting", href: "/resources/guides/how-to-set-up-vibe-prospecting" }]} />
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "rgba(139,92,246,0.08)", color: ACCENT, border: "1px solid rgba(139,92,246,0.3)" }}>
             Free Guide
           </span>
@@ -191,7 +192,7 @@ export default function VibeProspectingGuide() {
           <FadeIn delay={150}>
             <div className="rounded-xl p-4 sm:p-5 mt-4" style={{ backgroundColor: ACCENT_BG, border: `1px solid ${ACCENT}30` }}>
               <p className="text-sm sm:text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>
-                ✔ You also get 400 free credits just for signing up. Done, you&apos;re ready to pull leads.
+                <Check className="w-4 h-4 inline-block mr-1.5 -mt-0.5" strokeWidth={3} aria-hidden="true" />You also get 400 free credits just for signing up. Done, you&apos;re ready to pull leads.
               </p>
             </div>
           </FadeIn>
@@ -257,7 +258,7 @@ export default function VibeProspectingGuide() {
           <FadeIn delay={150}>
             <div className="rounded-xl p-4 sm:p-5 mt-6" style={{ backgroundColor: ACCENT_BG, border: `1px solid ${ACCENT}30` }}>
               <p className="text-sm sm:text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>
-                👉 Set it up, run a test prompt, and see what comes back. The funding + hiring signal combos tend to give the tightest lists.
+                <ArrowRight className="inline-block w-4 h-4 mr-1.5 -mt-0.5" strokeWidth={2.5} aria-hidden="true" />Set it up, run a test prompt, and see what comes back. The funding + hiring signal combos tend to give the tightest lists.
               </p>
             </div>
           </FadeIn>
@@ -269,7 +270,7 @@ export default function VibeProspectingGuide() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">💬 Keep the momentum going</h2>
+              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">Keep the momentum going</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
                 <a
                   href="https://www.instagram.com/tejas_jhaveri"
@@ -278,18 +279,16 @@ export default function VibeProspectingGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="block text-2xl mb-2">📸</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Follow along</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejas_jhaveri</span>
                 </a>
                 <a
-                  href="https://calendly.com/founder-myntmore/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/founder-meeting"
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="block text-2xl mb-2">📅</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Book a call</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
                 </a>
@@ -298,7 +297,7 @@ export default function VibeProspectingGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="block text-2xl mb-2">📬</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Email us</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
                 </a>

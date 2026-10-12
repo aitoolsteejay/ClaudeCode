@@ -23,8 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/myntmore-framework`, lastModified: "2026-09-18T11:01:20+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/who-this-is-for`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/how-to-choose-an-outbound-agency`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/dos-and-donts-of-outreach`, lastModified: "2026-09-18T18:13:12+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/how-to-choose-an-outbound-agency`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/dos-and-donts-of-outreach`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Service subpages
     { url: `${base}/services/linkedin-outreach`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services/cold-email`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.8 },
@@ -151,14 +151,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/handling-cold-email-replies`, lastModified: "2026-10-07T16:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/multi-threading-b2b-buying-committee`, lastModified: "2026-10-07T16:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/reviving-closed-lost-leads`, lastModified: "2026-10-07T16:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
-    // Guides (surfaced under /resources/guides, originally Instagram bio-link pages)
-    { url: `${base}/instagram-resources/claude-skills-guide`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/instagram-resources/80-us-meetings-ai-agents`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/instagram-resources/how-to-set-up-vibe-prospecting`, lastModified: "2026-09-18T16:45:55+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/instagram-resources/golden-icp-framework`, lastModified: "2026-08-24T17:33:25+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/instagram-resources/leads-on-autopilot-guide`, lastModified: "2026-09-24T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/instagram-resources/cold-email-tech-stack`, lastModified: "2026-10-01T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/instagram-resources/claude-sales-call-prompts`, lastModified: "2026-10-08T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    // Guides moved from /instagram-resources/* on 2026-10-12 (301s in next.config.js)
+    { url: `${base}/resources/guides/claude-skills-guide`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/80-us-meetings-ai-agents`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/how-to-set-up-vibe-prospecting`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/golden-icp-framework`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/leads-on-autopilot-guide`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/cold-email-tech-stack`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/claude-sales-call-prompts`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/job-applications-sales-funnel`, lastModified: "2026-10-10T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     // Careers
     { url: `${base}/careers`, lastModified: "2026-09-30T18:08:59+05:30", changeFrequency: "monthly", priority: 0.6 },

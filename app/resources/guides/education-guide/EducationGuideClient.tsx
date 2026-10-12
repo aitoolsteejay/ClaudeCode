@@ -2,11 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import Faq from "../lp/Faq";
-import FadeIn from "../components/FadeIn";
-import StatTicker from "../components/StatTicker";
-import InnerLayout from "../components/InnerLayout";
-import CopyBlock from "../components/CopyBlock";
+import Faq from "@/app/lp/Faq";
+import FadeIn from "@/app/components/FadeIn";
+import StatTicker from "@/app/components/StatTicker";
+import InnerLayout from "@/app/components/InnerLayout";
+import CopyBlock from "@/app/components/CopyBlock";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {

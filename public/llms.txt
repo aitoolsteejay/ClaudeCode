@@ -18,7 +18,7 @@
 
 ## Who this is for
 - [Who Myntmore Is For (and Who It Isn't)](https://www.myntmore.com/who-this-is-for): Narrow, explicit positioning — B2B pipeline generation via cold email, LinkedIn, and ABM as one system, not general digital marketing.
-- [How to Choose a B2B Outbound Agency](https://www.myntmore.com/how-to-choose-an-outbound-agency): A neutral evaluation checklist for vetting any outbound agency, not just Myntmore.
+- [How to Choose a B2B Outbound Agency](https://www.myntmore.com/resources/guides/how-to-choose-an-outbound-agency): A neutral evaluation checklist for vetting any outbound agency, not just Myntmore.
 - [Agency vs. In-House SDR](https://www.myntmore.com/blog/agency-vs-in-house): A balanced comparison of building outbound in-house vs. hiring an agency.
 
 ## Methodology
@@ -29,7 +29,7 @@
 - [Industry Case Study Filters](https://www.myntmore.com/case-studies/pharma): Shareable filtered case-study views are available for pharma, SaaS, professional services, eCommerce tech, B2B founders, agencies and IT, financial services, insurance, manufacturers and exporters, and recruitment and staffing.
 - [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
 - [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
-- [Pattern Interruption: The Do's and Don'ts of Outreach](https://www.myntmore.com/dos-and-donts-of-outreach): Pattern interruption in outbound, channel-specific tips for LinkedIn and cold email, what data enrichment is, and Myntmore's free outreach tools.
+- [Pattern Interruption: The Do's and Don'ts of Outreach](https://www.myntmore.com/resources/guides/dos-and-donts-of-outreach): Pattern interruption in outbound, channel-specific tips for LinkedIn and cold email, what data enrichment is, and Myntmore's free outreach tools.
 - [AI Tech Stack for Jewellery Brands](https://www.myntmore.com/resources/guides/ai-tech-stack-jewellery): 106 AI tools across 14 categories for jewellery brand owners and retailers.
 - [Glossary](https://www.myntmore.com/resources/glossary): Definitions of Myntmore's own frameworks (Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule).
 - [2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Reply rate, inbox placement, and time-to-meeting benchmarks aggregated across managed accounts.

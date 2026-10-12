@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import InnerLayout from "../../components/InnerLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import CopyBlock from "../../components/CopyBlock";
-import FadeIn from "../../components/FadeIn";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import CopyBlock from "@/app/components/CopyBlock";
+import FadeIn from "@/app/components/FadeIn";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 
-const URL = "https://www.myntmore.com/instagram-resources/leads-on-autopilot-guide";
+const URL = "https://www.myntmore.com/resources/guides/leads-on-autopilot-guide";
 
 export const metadata: Metadata = {
   title: "Leads on Autopilot: A LinkedIn Framework",
@@ -49,7 +49,7 @@ const OUTREACH_STEPS = [
     name: "Connection Note",
     goal: "Get accepted + spark relevance",
     psychology: "Curiosity + similarity",
-    template: `Hey [First Name] — saw your role at [Company], especially your work on [X]. I work with a few folks in [industry/space], always good to connect with others building sharp. Let's connect?`,
+    template: `Hey [First Name], saw your role at [Company], especially your work on [X]. I work with a few folks in [industry/space], always good to connect with others building sharp. Let's connect?`,
     example: `Hey Sarah, saw your role at UpStack, especially the work you're doing in ops automation. I work with a few SaaS founders scaling GTM, always good to connect with others building sharp.`,
   },
   {
@@ -57,8 +57,8 @@ const OUTREACH_STEPS = [
     name: "Follow-Up (Day 1–2)",
     goal: "Start a conversation without pitching",
     psychology: "Empathy + curiosity",
-    template: `Thanks for connecting, [First Name]! Quick Q — how are you currently tackling [problem]? A lot of [role]s we talk to hit [pain point]. Happy to share what's working if it's useful.`,
-    example: `Thanks for connecting, Sarah! Quick Q — how are you currently tackling outbound messaging? A lot of GTM leads we talk to are stuck with low reply rates. We've seen sharp turnarounds with structured DMs. Happy to share if relevant.`,
+    template: `Thanks for connecting, [First Name]! Quick Q: how are you currently tackling [problem]? A lot of [role]s we talk to hit [pain point]. Happy to share what's working if it's useful.`,
+    example: `Thanks for connecting, Sarah! Quick Q: how are you currently tackling outbound messaging? A lot of GTM leads we talk to are stuck with low reply rates. We've seen sharp turnarounds with structured DMs. Happy to share if relevant.`,
   },
   {
     step: "3",

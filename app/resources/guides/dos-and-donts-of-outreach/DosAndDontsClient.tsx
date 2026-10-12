@@ -28,12 +28,12 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import InnerLayout from "../components/InnerLayout";
-import Breadcrumbs from "../components/Breadcrumbs";
-import FadeIn from "../components/FadeIn";
-import JsonLd from "../components/JsonLd";
-import AskYourAI from "../components/AskYourAI";
-import NewsletterForm from "../components/NewsletterForm";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import FadeIn from "@/app/components/FadeIn";
+import JsonLd from "@/app/components/JsonLd";
+import AskYourAI from "@/app/components/AskYourAI";
+import NewsletterForm from "@/app/components/NewsletterForm";
 import { buildArticleSchema, SITE_URL } from "@/lib/schema";
 
 /* ─── Fonts: sitewide Inter for everything; Caveat only for the founder sign-off ─── */
@@ -69,7 +69,7 @@ const T = {
   dontSoft: "rgba(185,28,28,0.10)",
 } as const;
 
-const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
+const PAGE_URL = `${SITE_URL}/resources/guides/dos-and-donts-of-outreach`;
 const TITLE = "Pattern Disruption: The Do's and Don'ts of Cold Outreach";
 const DESCRIPTION = "Why most outreach gets deleted without being read, how pattern disruption actually works, what to send on LinkedIn vs. cold email, what data enrichment is, and the free tools to build better outreach.";
 
@@ -822,7 +822,7 @@ export default function DosAndDontsClient() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 max-w-6xl mx-auto">
-          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Disruption", href: "/dos-and-donts-of-outreach" }]} />
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "Pattern Disruption", href: "/resources/guides/dos-and-donts-of-outreach" }]} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-end">
             <div className="lg:col-span-7">

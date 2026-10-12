@@ -27,7 +27,7 @@ import {
 import InnerLayout from "@/app/components/InnerLayout";
 import FadeIn from "@/app/components/FadeIn";
 import Faq from "@/app/lp/Faq";
-import Underline from "@/app/instagram-resources/how-to-set-up-vibe-prospecting/Underline";
+import Underline from "@/app/resources/guides/how-to-set-up-vibe-prospecting/Underline";
 import FlowVisual from "./FlowVisual";
 import ProcessExplorer from "./ProcessExplorer";
 

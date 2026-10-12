@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/schema";
 import DosAndDontsClient from "./DosAndDontsClient";
 
-const PAGE_URL = `${SITE_URL}/dos-and-donts-of-outreach`;
+const PAGE_URL = `${SITE_URL}/resources/guides/dos-and-donts-of-outreach`;
 // Shortened from the page's full name so the title tag plus the "| Myntmore"
 // template stays inside Google's ~60-character cutoff; the H1 keeps the
 // long form.

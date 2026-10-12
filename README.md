@@ -125,12 +125,12 @@ The site is organized less like a typical small marketing site and more like a *
 Bespoke, hand-built pages, each its own `app/<slug>/page.tsx` (occasionally with a co-located `*Client.tsx` for interactive parts):
 
 - `/` — homepage (`app/page.tsx`), composed from the shared section components in `app/components/` (`Hero`, `Services`, `Industries`, `WhoWeHelp`, `Testimonials`, `Results`, `CTABanner`, `LogoStrip`, `BenefitsMarquee`, `HowItWorks`, `SystemFlow`).
-- `/about-us`, `/contact-us`, `/careers`, `/events`, `/who-this-is-for`, `/how-to-choose-an-outbound-agency`, `/myntmore-framework`, `/dos-and-donts-of-outreach`, `/agency-vs-in-house`
+- `/about-us`, `/contact-us`, `/careers`, `/events`, `/who-this-is-for`, `/resources/guides/how-to-choose-an-outbound-agency`, `/myntmore-framework`, `/resources/guides/dos-and-donts-of-outreach`, `/agency-vs-in-house`
 - `/founder-meeting`, `/1-on-1-consultation` — both are call-booking pages that embed Calendly, worded/targeted slightly differently (one is the primary nav CTA destination, the other a dedicated organic-search landing page)
 - `/newsletter-subscribe`, `/feedback`, `/privacy-policy`
 - `/thank-you` and `/thankyou` — **both exist** (post-conversion confirmation pages); check before assuming either is dead code or safe to remove
-- `/careers-and-job-guide`, `/education-guide` — long-form guide-style pages aimed at students/early-career audiences (also linked from `llms.txt`)
-- `/instagram-resources` — landing page(s) for social-driven traffic
+- `/resources/guides/careers-and-job-guide`, `/resources/guides/education-guide` — long-form guide-style pages aimed at students/early-career audiences (also linked from `llms.txt`)
+- `/resources/guides/*` — every guide, including the ones linked from Instagram (old `/instagram-resources/*` URLs 301 here)
 
 ### Services
 

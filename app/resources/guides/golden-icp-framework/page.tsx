@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import InnerLayout from "../../components/InnerLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import CopyBlock from "../../components/CopyBlock";
-import FadeIn from "../../components/FadeIn";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import CopyBlock from "@/app/components/CopyBlock";
+import FadeIn from "@/app/components/FadeIn";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 
-const URL = "https://www.myntmore.com/instagram-resources/golden-icp-framework";
+const URL = "https://www.myntmore.com/resources/guides/golden-icp-framework";
 
 export const metadata: Metadata = {
   title: "The Golden ICP Framework for B2B Outbound",

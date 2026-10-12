@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 const GUIDES = [
   {
-    href: "/dos-and-donts-of-outreach",
+    href: "/resources/guides/dos-and-donts-of-outreach",
     tag: "Outreach Craft",
     title: "Pattern Disruption: The Do's and Don'ts of Cold Outreach",
     excerpt: "Why most outreach gets deleted without being read, how pattern disruption actually works, what to send on LinkedIn vs. cold email, and what data enrichment even is.",
@@ -41,7 +41,7 @@ const GUIDES = [
     accent: "#7C3AED",
   },
   {
-    href: "/how-to-choose-an-outbound-agency",
+    href: "/resources/guides/how-to-choose-an-outbound-agency",
     tag: "Buyer's Guide",
     title: "How to Choose a B2B Outbound Agency",
     excerpt: "A neutral evaluation checklist for vetting outbound partners: what to ask about track record, infrastructure, contracts, and how they actually run campaigns.",
@@ -57,7 +57,7 @@ const GUIDES = [
     accent: "#6366f1",
   },
   {
-    href: "/instagram-resources/golden-icp-framework",
+    href: "/resources/guides/golden-icp-framework",
     tag: "ICP & Targeting",
     title: "The Golden ICP Framework",
     excerpt: "Build prospect lists around pressure, buying triggers, and real-time context so your cold outreach reaches the right buyers at the right moment.",
@@ -65,7 +65,7 @@ const GUIDES = [
     accent: "#D97706",
   },
   {
-    href: "/instagram-resources/80-us-meetings-ai-agents",
+    href: "/resources/guides/80-us-meetings-ai-agents",
     tag: "AI Agents",
     title: "80+ US Meetings Booked in 1 Month with AI Agents",
     excerpt: "The exact AI-agent blueprint behind 800 LinkedIn connections, 80+ US B2B meetings, and 4 new clients a month, fully automated with n8n, Apollo/Clay, and AI enrichment.",
@@ -73,7 +73,7 @@ const GUIDES = [
     accent: "#F97316",
   },
   {
-    href: "/instagram-resources/how-to-set-up-vibe-prospecting",
+    href: "/resources/guides/how-to-set-up-vibe-prospecting",
     tag: "Prospecting",
     title: "How to Set Up Vibe Prospecting on Claude for B2B Leads",
     excerpt: "A step-by-step setup guide for the Vibe Prospecting Claude connector, plus 10 ready-to-copy prompts for pulling verified B2B leads by funding, headcount, tech stack, and hiring signals.",
@@ -81,7 +81,7 @@ const GUIDES = [
     accent: "#8b5cf6",
   },
   {
-    href: "/instagram-resources/claude-skills-guide",
+    href: "/resources/guides/claude-skills-guide",
     tag: "AI & Claude",
     title: "The 6 Claude Skills Guide",
     excerpt: "Six ready-to-use Claude skills for founders and marketers: content distribution, LinkedIn growth, lead generation, competitor research, proposals, and personal brand.",
@@ -89,7 +89,7 @@ const GUIDES = [
     accent: "#F5B731",
   },
   {
-    href: "/instagram-resources/leads-on-autopilot-guide",
+    href: "/resources/guides/leads-on-autopilot-guide",
     tag: "LinkedIn Lead Generation",
     title: "Leads on Autopilot: A Step-by-Step Framework",
     excerpt: "A complete system to generate high-quality leads on LinkedIn without cold pitching: audience clarity, content authority, outreach, nurturing, and follow-ups.",
@@ -97,7 +97,7 @@ const GUIDES = [
     accent: "#0077b5",
   },
   {
-    href: "/instagram-resources/cold-email-tech-stack",
+    href: "/resources/guides/cold-email-tech-stack",
     tag: "Cold Email",
     title: "The Cold Email Stack Behind an Extra $7,000 in Revenue",
     excerpt: "The exact 7-tool stack (scraping, enrichment, verification, sending) and the 3-email sequence with copy-ready variants that we use to scale cold outreach.",
@@ -105,7 +105,7 @@ const GUIDES = [
     accent: "#EA580C",
   },
   {
-    href: "/instagram-resources/claude-sales-call-prompts",
+    href: "/resources/guides/claude-sales-call-prompts",
     tag: "Sales & Claude",
     title: "5 Claude Prompts for Sales Calls",
     excerpt: "Five copy-paste prompts for before and after every call: a meeting prep brief, discovery questions, objection prep, call openers and a follow-up email, each under 3 minutes.",
@@ -121,7 +121,7 @@ const GUIDES = [
     accent: "#7C3AED",
   },
   {
-    href: "/careers-and-job-guide",
+    href: "/resources/guides/careers-and-job-guide",
     tag: "Careers & Jobs",
     title: "Career Jumpstart Toolkit",
     excerpt: "A practical playbook for landing internships, jobs, and your first break: LinkedIn fixes, an outreach playbook, and a curated job-search tool directory.",
@@ -129,7 +129,7 @@ const GUIDES = [
     accent: "#16A34A",
   },
   {
-    href: "/education-guide",
+    href: "/resources/guides/education-guide",
     tag: "AI for Everyday Life",
     title: "AI Quick-Start Guide",
     excerpt: "Real tools, copy-paste prompts, and habits worth building, for parents, educators, and content creators navigating AI.",
@@ -159,7 +159,7 @@ export default function GuidesPage() {
             Copy the setup.<br />Skip the trial and error.
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl mb-10" style={{ color: "#52525B" }}>
-            Step-by-step AI and outbound guides, built from the exact systems we run for our own clients — not theory.
+            Step-by-step AI and outbound guides, built from the exact systems we run for our own clients, not theory.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#guides-grid" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">

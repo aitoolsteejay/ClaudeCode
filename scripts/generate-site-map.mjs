@@ -278,7 +278,7 @@ for (const p of out) {
   if (p.section !== "(home)" && p.section !== "private" && sectionSize.get(p.section) === 1) p.section = "other";
 }
 
-const publicRedirects = redirects.map((r) => ({ from: normalize(r.source), to: normalize(r.destination), permanent: !!r.permanent })).filter((r) => !isPrivateRedirect(r));
+const publicRedirects = redirects.map((r) => ({ from: normalize(r.source), to: normalize(r.destination), permanent: !!r.permanent || r.statusCode === 301 || r.statusCode === 308 })).filter((r) => !isPrivateRedirect(r));
 const hiddenRedirects = redirects.length - publicRedirects.length;
 
 const data = {

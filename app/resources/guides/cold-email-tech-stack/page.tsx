@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import InnerLayout from "../../components/InnerLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import CopyBlock from "../../components/CopyBlock";
-import FadeIn from "../../components/FadeIn";
-import JsonLd from "../../components/JsonLd";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import CopyBlock from "@/app/components/CopyBlock";
+import FadeIn from "@/app/components/FadeIn";
+import JsonLd from "@/app/components/JsonLd";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
 
-const URL = "https://www.myntmore.com/instagram-resources/cold-email-tech-stack";
+const URL = "https://www.myntmore.com/resources/guides/cold-email-tech-stack";
 const ACCENT = "#EA580C";
 const TITLE = "Cold Email Tech Stack & Sequence Behind $7K";
 const DESCRIPTION = "The exact cold email tech stack (Clay, Smartlead, BounceBan) and 3-email sequence that got Myntmore an extra $7,000 in revenue. Copy the templates free.";
@@ -284,7 +284,7 @@ export default function ColdEmailTechStack() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/services/cold-email" className="btn-dark px-8 py-4 text-sm font-bold">Explore Our Cold Email Services</Link>
-                <a href="https://calendly.com/founder-myntmore/30min" target="_blank" rel="noopener noreferrer" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Free Strategy Call</a>
+                <a href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Free Strategy Call</a>
               </div>
               <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
             </section>

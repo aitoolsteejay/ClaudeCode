@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import InnerLayout from "../../components/InnerLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import CopyBlock from "../../components/CopyBlock";
-import FadeIn from "../../components/FadeIn";
+import { Camera, CalendarCheck, Mail } from "lucide-react";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import CopyBlock from "@/app/components/CopyBlock";
+import FadeIn from "@/app/components/FadeIn";
 import Underline from "./Underline";
 
 export const metadata: Metadata = {
@@ -23,11 +24,11 @@ export const metadata: Metadata = {
     "claude prompts for sales",
     "claude skills for marketers",
   ],
-  alternates: { canonical: "https://www.myntmore.com/instagram-resources/claude-skills-guide" },
+  alternates: { canonical: "https://www.myntmore.com/resources/guides/claude-skills-guide" },
   openGraph: {
     title: "The 6 Claude Skills Guide",
     description: "Six ready-to-use Claude skills for founders and marketers, complete with copy-paste prompts.",
-    url: "https://www.myntmore.com/instagram-resources/claude-skills-guide",
+    url: "https://www.myntmore.com/resources/guides/claude-skills-guide",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
@@ -334,7 +335,7 @@ export default function ClaudeSkillsGuide() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
-          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "The 6 Claude Skills Guide", href: "/instagram-resources/claude-skills-guide" }]} />
+          <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "The 6 Claude Skills Guide", href: "/resources/guides/claude-skills-guide" }]} />
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
             Free Guide
           </span>
@@ -407,7 +408,7 @@ export default function ClaudeSkillsGuide() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">💬 Stay in the loop</h2>
+              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">Stay in the loop</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
                 <a
                   href="https://instagram.com/tejas_jhaveri"
@@ -416,7 +417,7 @@ export default function ClaudeSkillsGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="block text-2xl mb-2">📸</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Follow along</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejas_jhaveri</span>
                 </a>
@@ -425,7 +426,7 @@ export default function ClaudeSkillsGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="block text-2xl mb-2">📅</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Book a call</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
                 </a>
@@ -434,7 +435,7 @@ export default function ClaudeSkillsGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="block text-2xl mb-2">📬</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Email us</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
                 </a>

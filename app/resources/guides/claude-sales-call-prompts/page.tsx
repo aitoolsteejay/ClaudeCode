@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import InnerLayout from "../../components/InnerLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import CopyBlock from "../../components/CopyBlock";
-import FadeIn from "../../components/FadeIn";
-import JsonLd from "../../components/JsonLd";
+import InnerLayout from "@/app/components/InnerLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import CopyBlock from "@/app/components/CopyBlock";
+import FadeIn from "@/app/components/FadeIn";
+import JsonLd from "@/app/components/JsonLd";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
 
-const URL = "https://www.myntmore.com/instagram-resources/claude-sales-call-prompts";
+const URL = "https://www.myntmore.com/resources/guides/claude-sales-call-prompts";
 const ACCENT = "#0891B2";
 const TITLE = "5 Claude Prompts for Sales Calls (Copy-Paste)";
 const DESCRIPTION = "Five copy-paste Claude prompts for sales calls: meeting prep, discovery questions, objection prep, call openers and follow-up. Copy them free.";
@@ -146,7 +146,7 @@ const GROUPS = [
 const RELATED = [
   { label: "The Reply Isn't the Win: Handling Cold Email Replies", href: "/blog/handling-cold-email-replies", note: "What to say in the first hour after a prospect responds." },
   { label: "Cold Email Sequence Templates", href: "/blog/cold-email-sequence-templates", note: "A full 5-email sequence, from first touch to breakup email." },
-  { label: "The 6 Claude Skills Guide", href: "/instagram-resources/claude-skills-guide", note: "Six ready-to-use Claude skills for founders and marketers." },
+  { label: "The 6 Claude Skills Guide", href: "/resources/guides/claude-skills-guide", note: "Six ready-to-use Claude skills for founders and marketers." },
   { label: "Multi-Threading B2B Deals", href: "/blog/multi-threading-b2b-buying-committee", note: "Why one champion is never enough to close a deal." },
 ];
 
@@ -253,7 +253,7 @@ export default function ClaudeSalesCallPrompts() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/services/personal-branding" className="btn-dark px-8 py-4 text-sm font-bold">Explore Our LinkedIn Personal Branding Services</Link>
-                <a href="https://calendly.com/founder-myntmore/30min" target="_blank" rel="noopener noreferrer" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Complimentary Strategy Call</a>
+                <a href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Complimentary Strategy Call</a>
               </div>
               <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
             </section>

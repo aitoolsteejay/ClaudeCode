@@ -157,6 +157,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/resources/guides/how-to-set-up-vibe-prospecting`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/golden-icp-framework`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/leads-on-autopilot-guide`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/58-meetings-600-linkedin-connections`, lastModified: "2026-10-13T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/cold-email-tech-stack`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/claude-sales-call-prompts`, lastModified: "2026-10-12T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/job-applications-sales-funnel`, lastModified: "2026-10-10T00:00:00+05:30", changeFrequency: "monthly", priority: 0.7 },

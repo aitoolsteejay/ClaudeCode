@@ -58,7 +58,7 @@ const DIRECTORY = [
     href: "/resources/guides",
     icon: Compass,
     accent: "#F97316",
-    count: "12 guides",
+    count: "15 guides",
     title: "Guides",
     desc: "Step-by-step, copy-paste-ready setup guides for AI and outbound.",
   },

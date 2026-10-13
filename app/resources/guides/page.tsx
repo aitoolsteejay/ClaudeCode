@@ -97,6 +97,14 @@ const GUIDES = [
     accent: "#0077b5",
   },
   {
+    href: "/resources/guides/58-meetings-600-linkedin-connections",
+    tag: "LinkedIn Lead Generation",
+    title: "58 Meetings Booked from 600 LinkedIn Connections in 1 Month",
+    excerpt: "The 5-step LinkedIn framework behind 58 meetings from 600 connections: a sharper ICP, positioning that opens doors, a warm-up layer, a 5-message sequence and a follow-up stack.",
+    readTime: "3 min read",
+    accent: "#0077b5",
+  },
+  {
     href: "/resources/guides/cold-email-tech-stack",
     tag: "Cold Email",
     title: "The Cold Email Stack Behind an Extra $7,000 in Revenue",

@@ -488,6 +488,9 @@ export default function AiAgentsMeetingsBlueprint() {
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
                 </a>
               </div>
+              <Link href="/resources/guides/58-meetings-600-linkedin-connections" className="inline-block mt-6 text-sm font-semibold underline underline-offset-4" style={{ color: "#F5B731" }}>
+                Prefer the manual version? 58 meetings from 600 LinkedIn connections
+              </Link>
             </div>
           </FadeIn>
         </div>

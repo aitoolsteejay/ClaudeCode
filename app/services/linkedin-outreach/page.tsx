@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LinkedinOutreachClient from "./LinkedinOutreachClient";
+import LinkedinOutreach from "@/components/linkedin-outreach/LinkedinOutreachPage";
 
 export const metadata: Metadata = {
   title: "LinkedIn Outreach & Automation Services",
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function LinkedinOutreachPage() {
-  return <LinkedinOutreachClient />;
+  return <LinkedinOutreach />;
 }

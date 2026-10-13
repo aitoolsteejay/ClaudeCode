@@ -120,6 +120,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "How to Set Up Vibe Prospecting", href: "/resources/guides/how-to-set-up-vibe-prospecting" },
       { label: "The Golden ICP Framework", href: "/resources/guides/golden-icp-framework" },
       { label: "Leads on Autopilot: A Step-by-Step Framework", href: "/resources/guides/leads-on-autopilot-guide" },
+      { label: "58 Meetings from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections" },
       { label: "The Cold Email Stack Behind an Extra $7,000", href: "/resources/guides/cold-email-tech-stack" },
       { label: "5 Claude Prompts for Sales Calls", href: "/resources/guides/claude-sales-call-prompts" },
       { label: "Job Applications Are a Sales Funnel", href: "/resources/guides/job-applications-sales-funnel" },

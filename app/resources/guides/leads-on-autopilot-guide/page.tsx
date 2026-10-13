@@ -262,6 +262,9 @@ export default function LeadsOnAutopilotGuide() {
                 <Link href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Strategy Call</Link>
               </div>
               <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
+              <Link href="/resources/guides/58-meetings-600-linkedin-connections" className="block mt-5 text-sm font-semibold underline underline-offset-4" style={{ color: "#b8c1bc" }}>
+                Next: the 5-step framework behind 58 meetings from 600 LinkedIn connections
+              </Link>
             </section>
           </FadeIn>
         </div>

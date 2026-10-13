@@ -88,7 +88,6 @@ const nextConfig = {
       // Private cold emailing overview renamed to carry a planet code (the
       // USD page is mars, a rupee clone sits at -earth). Redirected in case
       // the original link was already sent to a prospect.
-      { source: "/cold-emailing-package", destination: "/cold-emailing-package-mars", permanent: true },
     ];
   },
 };

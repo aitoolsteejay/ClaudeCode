@@ -33,9 +33,8 @@ import ProcessExplorer from "./ProcessExplorer";
 
 // Private, unlisted overview of the done-for-you cold email package, for
 // sharing directly with prospects. One design, two routes
-// (/cold-emailing-package-mars and /cold-emailing-package-earth) that differ
-// only in the retainer. Each route's page.tsx declares its own noindex
-// metadata (the site audit reads it from there), so any new clone must too.
+// (/cold-emailing-package-earth). The route's page.tsx declares noindex
+// metadata because this is a private, unlisted overview.
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
@@ -105,17 +104,7 @@ function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) 
 
 const h2Style = { letterSpacing: "-0.035em", lineHeight: 1.04 } as const;
 
-export type ColdEmailingPackageProps = {
-  /** Headline retainer, currency code first: "USD 1,600", "INR 1,54,999". */
-  price: string;
-  /** Line under the price: "per month", "+ GST / month". */
-  priceNote: string;
-};
-
-export default function ColdEmailingPackage({ price, priceNote }: ColdEmailingPackageProps) {
-  // The longer rupee figure ("INR 1,54,999") would wrap inside the card at the
-  // size the shorter dollar one ("USD 1,600") uses, so step it down a little.
-  const priceFontSize = price.length > 10 ? "clamp(2.4rem, 5.6vw, 3.8rem)" : "clamp(3.2rem, 7vw, 4.8rem)";
+export default function ColdEmailingPackage() {
   return (
     <InnerLayout>
       {/* Hero */}
@@ -252,13 +241,7 @@ export default function ColdEmailingPackage({ price, priceNote }: ColdEmailingPa
           </div>
 
           <FadeIn>
-            <div className="mt-6 grid overflow-hidden rounded-[30px] border md:grid-cols-[0.9fr_1.1fr]" style={{ borderColor: "#EDE7DD", boxShadow: "0 30px 80px rgba(15,15,20,0.08)" }}>
-              <div className="relative overflow-hidden p-8 sm:p-10" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#241a14 100%)" }}>
-                <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.35), transparent 70%)", filter: "blur(30px)" }} />
-                <p className="relative text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: GOLD }}>Monthly retainer</p>
-                <p className="relative mt-4 font-black text-white" style={{ fontSize: priceFontSize, lineHeight: 1, letterSpacing: "-0.045em" }}>{price}</p>
-                <p className="relative mt-2 text-sm font-semibold" style={{ color: "#c9bfb8" }}>{priceNote}</p>
-              </div>
+            <div className="mt-6 overflow-hidden rounded-[30px] border" style={{ borderColor: "#EDE7DD", boxShadow: "0 30px 80px rgba(15,15,20,0.08)" }}>
               <div className="space-y-5 bg-white p-8 sm:p-10">
                 {[
                   { icon: Server, label: "You provide", value: "Domains & inbox accounts" },

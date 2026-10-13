@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import ColdEmailingPackage from "@/components/cold-emailing/ColdEmailingPackage";
 
-// Private, unlisted. Same page as /cold-emailing-package-mars, priced in INR
-// (Indian digit grouping, GST on top, matching /plans/earth). Deliberately
+// Private, unlisted. Deliberately
 // not linked from any nav, footer or sitemap, and kept out of search indexing
 // via robots below.
 export const metadata: Metadata = {
@@ -12,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function ColdEmailingPackageEarthPage() {
-  return <ColdEmailingPackage price="INR 1,54,999" priceNote="+ GST / month" />;
+  return <ColdEmailingPackage />;
 }

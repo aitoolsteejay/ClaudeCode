@@ -27,7 +27,6 @@ const EXCLUDED_PREFIXES = [
   "/site-audit",
   "/myntmore-framework",
   "/plans",
-  "/cold-emailing-package-mars",
   "/cold-emailing-package-earth",
 ];
 

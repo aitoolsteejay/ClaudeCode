@@ -16,8 +16,20 @@ const SESSION_KEY = "myntmore:reel-offered";
 
 // Live workshop and feedback flows, where a promo would get in the way, plus
 // the internal audit page and the framework page, whose full-width workflow
-// diagram the reel would cover.
-const EXCLUDED_PREFIXES = ["/menti", "/feedback", "/workshop", "/site-audit", "/myntmore-framework"];
+// diagram the reel would cover. Also the private pricing pages (plans and the
+// cold emailing package), where on a phone the reel sits over the price and
+// plan details prospects came to read. Matching is per path segment, so the
+// two cold emailing pages are listed by their full slugs.
+const EXCLUDED_PREFIXES = [
+  "/menti",
+  "/feedback",
+  "/workshop",
+  "/site-audit",
+  "/myntmore-framework",
+  "/plans",
+  "/cold-emailing-package-mars",
+  "/cold-emailing-package-earth",
+];
 
 const isExcluded = (path: string) => EXCLUDED_PREFIXES.some((prefix) => path === prefix || path.startsWith(`${prefix}/`));
 

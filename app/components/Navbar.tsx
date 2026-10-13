@@ -51,6 +51,16 @@ export default function Navbar() {
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const resourcesRef = useRef<HTMLDivElement>(null);
+  const doneForYouCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const keepDoneForYouOpen = () => {
+    if (doneForYouCloseTimer.current) clearTimeout(doneForYouCloseTimer.current);
+    setDoneForYouOpen(true);
+  };
+
+  const closeDoneForYouSoon = () => {
+    doneForYouCloseTimer.current = setTimeout(() => setDoneForYouOpen(false), 180);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -102,8 +112,8 @@ export default function Navbar() {
                       <div className="absolute top-full left-0 mt-3 w-64 rounded-xl border shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
                         <div
                           className="relative"
-                          onMouseEnter={() => setDoneForYouOpen(true)}
-                          onMouseLeave={() => setDoneForYouOpen(false)}
+                          onMouseEnter={keepDoneForYouOpen}
+                          onMouseLeave={closeDoneForYouSoon}
                         >
                           <button
                             type="button"
@@ -116,7 +126,7 @@ export default function Navbar() {
                             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                           </button>
                           {doneForYouOpen && (
-                            <div className="absolute top-0 left-full ml-2 w-72 rounded-xl border shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
+                            <div onMouseEnter={keepDoneForYouOpen} onMouseLeave={closeDoneForYouSoon} className="absolute top-0 left-full w-72 rounded-xl border shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
                               {SERVICE_LINKS.map((s) => (
                                 <Link
                                   key={s.href}

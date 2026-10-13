@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "multi-channel-outreach";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Multi-Channel Outreach";
+const DESCRIPTION = "Multi-channel outreach is an outbound approach that contacts the same prospect across several channels, such as email, LinkedIn, and phone, in a coordinated sequence rather than relying on a single channel.";
+const META_DESCRIPTION = "What multi-channel outreach is, why combining email and LinkedIn lifts reply rates, and how to sequence channels without overwhelming prospects.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is multi-channel outreach", "multichannel outreach definition", "email and linkedin outreach sequence", "multi-channel sales outreach"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function MultiChannelOutreachPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Cold Outreach"
+      accent="#115E59"
+      title={TITLE}
+      tagline="Reaching the same prospect across email, LinkedIn, and phone in one coordinated sequence, instead of betting on a single channel."
+      definition="An outreach sequence that contacts the same prospect across several channels, such as email, LinkedIn, and phone, in a coordinated order, rather than relying on one channel alone."
+      body="Prospects don't all live in the same inbox: some ignore email but answer LinkedIn messages, others are the reverse. A coordinated sequence, for example a LinkedIn connection, then an email, then a follow-up that references both, raises the odds of reaching each person, as long as every touch adds something new rather than repeating the same pitch louder."
+      sourceLabel="Read: Cold Email vs. LinkedIn Outreach for B2B Pipeline"
+      sourceHref="/blog/cold-email-vs-linkedin-outreach"
+      furtherLabel="Read: LinkedIn Outreach Sequences That Get Replies"
+      furtherHref="/blog/linkedin-outreach-sequences"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

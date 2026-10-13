@@ -35,8 +35,10 @@ const SITE = "https://www.myntmore.com";
 const require = createRequire(import.meta.url);
 
 // URLs that must not be published on a publicly reachable page: the private
-// pricing pages (shared only with prospects) and the admin room.
-const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room") || p === "/cold-emailing-package";
+// pricing pages and cold emailing overviews (shared only with prospects) and
+// the admin room. The cold emailing prefix covers the -mars and -earth pages
+// and the redirect from the original /cold-emailing-package slug.
+const isPrivate = (p) => p === "/plans" || p.startsWith("/plans/") || p.startsWith("/menti/room") || p.startsWith("/cold-emailing-package");
 // Legacy redirects that point at (or stand in for) a private page.
 const isPrivateRedirect = (r) =>
   isPrivate(r.from) || isPrivate(r.to) || r.from === "/international-pricing" || r.from === "/indian-pricing";
@@ -98,7 +100,7 @@ for (const { file, dir } of pageDirs) {
   const title = titleMatch ? (titleMatch[1] || titleMatch[2] || titleMatch[3]).trim() : null;
   const noindex = /index:\s*false/.test(src);
   for (const p of expandDynamic(route, file)) {
-    pages.push({ path: p, dir: rel(dir), title, noindex, dynamic: p !== route });
+    pages.push({ path: p, dir: rel(dir), title, noindex, dynamic: p !== route, generatedParams: /generateStaticParams\s*\(/.test(src) });
   }
 }
 const routeSet = new Set(pages.map((p) => p.path));
@@ -247,7 +249,10 @@ const titleFor = (p) =>
 const out = pages
   .map((p) => {
     const inbound = inboundFor(p.path);
-    const linked = p.path === "/" || reachable.has(p.path);
+    // A dynamic route with explicit static params is intentionally represented
+    // by its concrete URLs in the XML sitemap and should not be reported as a
+    // public orphan under its bracketed source path.
+    const linked = p.path === "/" || reachable.has(p.path) || ((p.dynamic || p.path.includes("[")) && p.generatedParams);
     const priv = isPrivate(p.path);
     return {
       path: priv ? null : p.path,
@@ -273,7 +278,7 @@ for (const p of out) {
   if (p.section !== "(home)" && p.section !== "private" && sectionSize.get(p.section) === 1) p.section = "other";
 }
 
-const publicRedirects = redirects.map((r) => ({ from: normalize(r.source), to: normalize(r.destination), permanent: !!r.permanent })).filter((r) => !isPrivateRedirect(r));
+const publicRedirects = redirects.map((r) => ({ from: normalize(r.source), to: normalize(r.destination), permanent: !!r.permanent || r.statusCode === 301 || r.statusCode === 308 })).filter((r) => !isPrivateRedirect(r));
 const hiddenRedirects = redirects.length - publicRedirects.length;
 
 const data = {

@@ -38,9 +38,9 @@ const nextConfig = {
       // driving real visitor 404s, not just crawler noise. Point straight at
       // the final destination rather than chaining through the intermediate
       // slug each was briefly renamed to.
-      { source: "/jbcn-ai-quickstart", destination: "/education-guide", permanent: true },
-      { source: "/ai-takeaways", destination: "/education-guide", permanent: true },
-      { source: "/nmims-toolkit", destination: "/careers-and-job-guide", permanent: true },
+      { source: "/jbcn-ai-quickstart", destination: "/resources/guides/education-guide", permanent: true },
+      { source: "/ai-takeaways", destination: "/resources/guides/education-guide", permanent: true },
+      { source: "/nmims-toolkit", destination: "/resources/guides/careers-and-job-guide", permanent: true },
       // Retired full-time role (removed 2026-07-28), still 404ing in Search
       // Console. Points at the careers hub rather than the similarly named
       // intern listing, which is a different seniority and salary band.
@@ -72,6 +72,23 @@ const nextConfig = {
       // mars/earth -- redirected in case either was already sent out.
       { source: "/plans/alpha", destination: "/plans/mars", permanent: true },
       { source: "/plans/beta", destination: "/plans/earth", permanent: true },
+
+      // Every guide lives at /resources/guides/<slug>. The Instagram bio-link
+      // pages and the four root-level guides moved there 2026-10-12; 301 (not
+      // Next's default 308) as requested, and old Instagram bio links and
+      // QR codes keep working through the wildcard.
+      { source: "/instagram-resources", destination: "/resources/guides", statusCode: 301 },
+      { source: "/instagram-resources/:slug", destination: "/resources/guides/:slug", statusCode: 301 },
+      { source: "/dos-and-donts-of-outreach", destination: "/resources/guides/dos-and-donts-of-outreach", statusCode: 301 },
+      { source: "/how-to-choose-an-outbound-agency", destination: "/resources/guides/how-to-choose-an-outbound-agency", statusCode: 301 },
+      { source: "/careers-and-job-guide", destination: "/resources/guides/careers-and-job-guide", statusCode: 301 },
+      { source: "/education-guide", destination: "/resources/guides/education-guide", statusCode: 301 },
+      { source: "/resource/guides/job-applications-sales-funnel", destination: "/resources/guides/job-applications-sales-funnel", permanent: true },
+
+      // Private cold emailing overview renamed to carry a planet code (the
+      // USD page is mars, a rupee clone sits at -earth). Redirected in case
+      // the original link was already sent to a prospect.
+      { source: "/cold-emailing-package", destination: "/cold-emailing-package-mars", permanent: true },
     ];
   },
 };

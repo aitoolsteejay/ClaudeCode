@@ -27,7 +27,16 @@ export const metadata: Metadata = {
   },
 };
 
-const TERMS = [
+interface Term {
+  href: string;
+  tag: string;
+  title: string;
+  excerpt: string;
+  accent: string;
+  aliases?: string[];
+}
+
+const TERMS: Term[] = [
   {
     href: "/resources/glossary/total-conversional-market",
     tag: "Targeting",
@@ -69,6 +78,7 @@ const TERMS = [
     title: "ABM (Account-Based Marketing)",
     excerpt: "Targeting a short list of named companies directly, instead of messaging a broad, generic list.",
     accent: "#2563EB",
+    aliases: ["Account-Based Marketing", "Account-Based Outreach"],
   },
   {
     href: "/resources/glossary/cold-email",
@@ -76,6 +86,7 @@ const TERMS = [
     title: "Cold Email",
     excerpt: "Outbound email to a prospect with no prior relationship, written to open a real conversation, not blast a list.",
     accent: "#EA580C",
+    aliases: ["Cold Emailing", "Email Outreach", "Outbound Email", "Email Prospecting", "B2B Email Outreach"],
   },
   {
     href: "/resources/glossary/domain-warmup",
@@ -125,6 +136,7 @@ const TERMS = [
     title: "SDR (Sales Development Rep)",
     excerpt: "The role responsible for prospecting and qualifying leads, booking meetings for account executives.",
     accent: "#475569",
+    aliases: ["Sales Development Representative", "Sales Development"],
   },
   {
     href: "/resources/glossary/multi-threading",
@@ -238,6 +250,157 @@ const TERMS = [
     excerpt: "A sequence aimed at prospects who went quiet, existing connections, or non-responders, not a cold audience.",
     accent: "#BE185D",
   },
+  {
+    href: "/resources/glossary/b2b-lead-generation",
+    tag: "GTM Strategy",
+    title: "B2B Lead Generation",
+    excerpt: "Finding companies that fit your offer and turning their decision-makers into real sales conversations.",
+    accent: "#B45309",
+    aliases: ["Outbound Lead Generation"],
+  },
+  {
+    href: "/resources/glossary/b2b-prospecting",
+    tag: "Targeting",
+    title: "B2B Prospecting",
+    excerpt: "Researching and choosing which companies and contacts to reach out to, before any message goes out.",
+    accent: "#0E7490",
+    aliases: ["Prospecting", "Outbound Prospecting"],
+  },
+  {
+    href: "/resources/glossary/pipeline-generation",
+    tag: "GTM Strategy",
+    title: "Pipeline Generation",
+    excerpt: "Creating new qualified sales opportunities on purpose, so the pipeline holds enough to hit target.",
+    accent: "#4F46E5",
+    aliases: ["Sales Pipeline Generation", "Pipeline Building"],
+  },
+  {
+    href: "/resources/glossary/pipeline-acceleration",
+    tag: "GTM Strategy",
+    title: "Pipeline Acceleration",
+    excerpt: "Moving deals already in the pipeline to a decision faster by removing the stalls between stages.",
+    accent: "#7E22CE",
+  },
+  {
+    href: "/resources/glossary/gtm-strategy",
+    tag: "GTM Strategy",
+    title: "Go-to-Market Strategy (GTM)",
+    excerpt: "The plan for who you sell to, what you promise them, and which channels you use to reach them.",
+    accent: "#1E40AF",
+    aliases: ["GTM"],
+  },
+  {
+    href: "/resources/glossary/gtm-execution",
+    tag: "GTM Strategy",
+    title: "GTM Execution",
+    excerpt: "Running the go-to-market plan week to week, and adjusting it based on real reply and meeting data.",
+    accent: "#0369A1",
+  },
+  {
+    href: "/resources/glossary/growth-strategy",
+    tag: "GTM Strategy",
+    title: "Growth Strategy",
+    excerpt: "A company's plan for growing revenue, and which levers, like new customers or markets, it pulls.",
+    accent: "#4D7C0F",
+  },
+  {
+    href: "/resources/glossary/appointment-setting",
+    tag: "Sales Ops",
+    title: "Appointment Setting",
+    excerpt: "Booking qualified sales meetings with the right decision-makers, so closers talk to real buyers.",
+    accent: "#334155",
+    aliases: ["Meeting Generation", "Meeting Booking", "Qualified Meeting Generation"],
+  },
+  {
+    href: "/resources/glossary/cold-outreach",
+    tag: "Cold Outreach",
+    title: "Cold Outreach",
+    excerpt: "Reaching out first to prospects who don't know you yet, across email, LinkedIn, or phone.",
+    accent: "#C2410C",
+    aliases: ["Proactive Outreach"],
+  },
+  {
+    href: "/resources/glossary/sales-outreach",
+    tag: "Cold Outreach",
+    title: "Sales Outreach",
+    excerpt: "Any message a sales team sends to start or advance a conversation with a prospect, cold or warm.",
+    accent: "#9A3412",
+  },
+  {
+    href: "/resources/glossary/buyer-engagement",
+    tag: "GTM Strategy",
+    title: "Buyer Engagement",
+    excerpt: "The measurable ways a prospect interacts with you, used to decide who to follow up with first.",
+    accent: "#A21CAF",
+    aliases: ["Prospect Engagement"],
+  },
+  {
+    href: "/resources/glossary/linkedin-outreach",
+    tag: "Cold Outreach",
+    title: "LinkedIn Outreach",
+    excerpt: "Connection requests and messages on LinkedIn, aimed at the exact decision-makers you want to reach.",
+    accent: "#0077B5",
+    aliases: ["LinkedIn Prospecting", "LinkedIn Lead Generation"],
+  },
+  {
+    href: "/resources/glossary/social-selling",
+    tag: "Personal Branding",
+    title: "Social Selling",
+    excerpt: "Building trust with prospects on social platforms, so your outreach arrives from a familiar name.",
+    accent: "#9D174D",
+    aliases: ["Social Outreach"],
+  },
+  {
+    href: "/resources/glossary/outbound-sales",
+    tag: "Cold Outreach",
+    title: "Outbound Sales",
+    excerpt: "A sales motion where you choose the targets and make the first move, instead of waiting for inbound.",
+    accent: "#A16207",
+  },
+  {
+    href: "/resources/glossary/business-development",
+    tag: "Sales Ops",
+    title: "Business Development",
+    excerpt: "Creating new revenue from new customers, markets, and partnerships, not managing existing accounts.",
+    accent: "#57534E",
+    aliases: ["New Business Development"],
+  },
+  {
+    href: "/resources/glossary/lead-qualification",
+    tag: "Sales Ops",
+    title: "Lead Qualification",
+    excerpt: "Deciding whether a lead fits and can actually buy, before a salesperson spends time on it.",
+    accent: "#0284C7",
+  },
+  {
+    href: "/resources/glossary/target-account-strategy",
+    tag: "Targeting",
+    title: "Target Account Strategy",
+    excerpt: "Choosing a defined list of high-value companies to pursue, and planning how to approach each.",
+    accent: "#3730A3",
+    aliases: ["Strategic Account Targeting"],
+  },
+  {
+    href: "/resources/glossary/account-penetration",
+    tag: "GTM Strategy",
+    title: "Account Penetration",
+    excerpt: "How many of the people who matter inside a target company you're actively engaged with.",
+    accent: "#5B21B6",
+  },
+  {
+    href: "/resources/glossary/multi-channel-outreach",
+    tag: "Cold Outreach",
+    title: "Multi-Channel Outreach",
+    excerpt: "Reaching the same prospect across email, LinkedIn, and phone in one coordinated sequence.",
+    accent: "#115E59",
+  },
+  {
+    href: "/resources/glossary/revenue-generation",
+    tag: "GTM Strategy",
+    title: "Revenue Generation",
+    excerpt: "The activities that turn prospects into paying customers, and the outcome every sales metric serves.",
+    accent: "#166534",
+  },
 ];
 
 // Alphabetized like a real reference, not left in ad-hoc authoring order --
@@ -247,16 +410,38 @@ function sortKey(title: string): string {
   return title.replace(/^The\s+/i, "").replace(/\s*\([^)]*\)\s*$/, "");
 }
 
+function letterOf(title: string): string {
+  const first = sortKey(title)[0].toUpperCase();
+  return /[A-Z]/.test(first) ? first : "#";
+}
+
 const SORTED_TERMS = [...TERMS].sort((a, b) => sortKey(a.title).localeCompare(sortKey(b.title)));
 
-const GROUPED = SORTED_TERMS.reduce<Record<string, typeof TERMS>>((acc, term) => {
-  const first = sortKey(term.title)[0].toUpperCase();
-  const key = /[A-Z]/.test(first) ? first : "#";
-  (acc[key] ??= []).push(term);
+const GROUPED = SORTED_TERMS.reduce<Record<string, Term[]>>((acc, term) => {
+  (acc[letterOf(term.title)] ??= []).push(term);
   return acc;
 }, {});
 
-const LETTERS = Object.keys(GROUPED).sort();
+// Synonyms get a "see X" pointer under their own letter, like a print
+// glossary, so every name a buyer might search for is findable A to Z
+// without a duplicate page competing with the canonical one.
+interface CrossRef {
+  alias: string;
+  target: Term;
+}
+
+const CROSS_REFS = TERMS.flatMap((t) =>
+  (t.aliases ?? [])
+    .filter((alias) => sortKey(alias).toLowerCase() !== sortKey(t.title).toLowerCase())
+    .map((alias) => ({ alias, target: t }))
+).sort((a, b) => sortKey(a.alias).localeCompare(sortKey(b.alias)));
+
+const GROUPED_REFS = CROSS_REFS.reduce<Record<string, CrossRef[]>>((acc, ref) => {
+  (acc[letterOf(ref.alias)] ??= []).push(ref);
+  return acc;
+}, {});
+
+const LETTERS = Array.from(new Set([...Object.keys(GROUPED), ...Object.keys(GROUPED_REFS)])).sort();
 
 export default function GlossaryPage() {
   return (
@@ -296,12 +481,13 @@ export default function GlossaryPage() {
                   <span className="text-3xl font-black" style={{ color: "#7C3AED" }}>{letter}</span>
                   <div className="h-px flex-1" style={{ backgroundColor: "#E8E2D9" }} />
                 </div>
+                {GROUPED[letter] && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {GROUPED[letter].map((t) => (
                     <Link key={t.href} href={t.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                       <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
                       <div className="p-6">
-                        <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${t.accent}12`, color: t.accent }}>{t.tag}</span>
+                        <span className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${t.accent}12`, color: t.accent }}>{t.tag}</span>
                         <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{t.title}</h2>
                         <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{t.excerpt}</p>
                         <span className="text-xs font-bold" style={{ color: t.accent }}>Read the definition &rarr;</span>
@@ -309,6 +495,20 @@ export default function GlossaryPage() {
                     </Link>
                   ))}
                 </div>
+                )}
+                {GROUPED_REFS[letter] && (
+                  <ul className={`flex flex-wrap gap-x-6 gap-y-2 ${GROUPED[letter] ? "mt-6" : ""}`}>
+                    {GROUPED_REFS[letter].map((r) => (
+                      <li key={r.alias}>
+                        <Link href={r.target.href} className="group inline-flex flex-wrap items-baseline gap-x-1.5 py-1 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50">
+                          <span className="font-bold" style={{ color: "#0a0a0a" }}>{r.alias}</span>
+                          <span style={{ color: "#6B6B6B" }}>see</span>
+                          <span className="font-bold underline decoration-1 underline-offset-2 group-hover:no-underline" style={{ color: r.target.accent }}>{r.target.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </FadeIn>
           ))}

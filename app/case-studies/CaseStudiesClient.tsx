@@ -8,7 +8,6 @@ import StatTicker from "../components/StatTicker";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { caseStudyFilterSlug, CASE_STUDY_FILTERS } from "@/lib/case-study-filters";
-import { usePathname, useRouter } from "next/navigation";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -343,19 +342,16 @@ const INDUSTRIES = CASE_STUDY_FILTERS.map((filter) => filter.label);
 
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default function CaseStudiesClient({ initialFilter = "All" }: { initialFilter?: string }) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [industryFilter, setIndustryFilter] = useState(initialFilter);
-  useEffect(() => {
-    const slug = pathname.split("/").filter(Boolean).at(-1);
-    const filter = slug === "case-studies" ? "All" : CASE_STUDY_FILTERS.find((item) => item.slug === slug)?.label;
-    if (filter && filter !== industryFilter) setIndustryFilter(filter);
-  }, [pathname, industryFilter]);
+  const industryFilter = initialFilter;
   const filteredCaseStudies = industryFilter === "All" ? CASE_STUDIES : CASE_STUDIES.filter((cs) => cs.industry === industryFilter);
 
   return (
     <InnerLayout>
-      <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={industryFilter === "All" ? BREADCRUMB_SCHEMA : buildBreadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "Case Studies", url: `${SITE_URL}/case-studies` },
+        { name: industryFilter, url: `${SITE_URL}/case-studies/${caseStudyFilterSlug(industryFilter)}` },
+      ])} />
       {/* Hero */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <Blobs />
@@ -407,22 +403,18 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
             {INDUSTRIES.map((industry) => {
               const active = industryFilter === industry;
               return (
-                <button
+                <Link
                   key={industry}
-                  type="button"
-                  onClick={() => {
-                    const slug = caseStudyFilterSlug(industry);
-                    router.push(slug === "all" ? "/case-studies" : `/case-studies/${slug}`, { scroll: false });
-                    setIndustryFilter(industry);
-                  }}
-                  aria-pressed={active}
+                  href={industry === "All" ? "/case-studies" : `/case-studies/${caseStudyFilterSlug(industry)}`}
+                  scroll={false}
+                  aria-current={active ? "page" : undefined}
                   className="text-sm font-semibold px-4 py-2 rounded-full border transition-colors"
                   style={active
                     ? { backgroundColor: "#0a0a0a", color: "#ffffff", borderColor: "#0a0a0a" }
                     : { backgroundColor: "#ffffff", color: "#52525B", borderColor: "#E8E2D9" }}
                 >
                   {industry}
-                </button>
+                </Link>
               );
             })}
           </div>

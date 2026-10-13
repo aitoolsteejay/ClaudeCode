@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "gtm-execution";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "GTM Execution";
+const DESCRIPTION = "GTM execution is the operational work of carrying out a go-to-market strategy, including building prospect lists, running outbound campaigns, booking meetings, and iterating on targeting and messaging based on results.";
+const META_DESCRIPTION = "What GTM execution means, how it differs from GTM strategy, and why most go-to-market plans fail in execution rather than on paper.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is gtm execution", "gtm execution definition", "go to market execution", "gtm strategy vs execution"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function GtmExecutionPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#0369A1"
+      title={TITLE}
+      tagline="Turning the go-to-market plan into campaigns that actually run every week, and measuring whether they work."
+      definition="The day-to-day work of running a go-to-market plan: building lists, launching outreach, booking meetings, and adjusting targeting and messaging based on real results."
+      body="Strategy decides the target and the message; execution is where it meets real prospects. Good execution runs on short feedback loops: launch to a small segment, read reply and meeting-booked rates within a couple of weeks, and change the list or the message before scaling, rather than committing a full quarter to an untested plan."
+      sourceLabel="Read the related term: Go-to-Market Strategy (GTM)"
+      sourceHref="/resources/glossary/gtm-strategy"
+      furtherLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
+      furtherHref="/blog/b2b-lead-gen-metrics"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

@@ -5,8 +5,8 @@ import { buildArticleSchema } from "@/lib/schema";
 const URL = "https://www.myntmore.com/case-studies/insurance-india-hr-consultants-referral";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Developing Referral Relationships With HR Consultants",
-  description: "An illustrative example of how Myntmore's outreach develops referral relationships between an Indian benefits brokerage and HR consulting firms. Not a specific past client engagement.",
+  title: "Illustrative Example: Insurance Referral Outreach",
+  description: "Illustrative example of outreach that develops referral relationships between an Indian benefits brokerage and HR consulting firms. Not a specific past client.",
   keywords: [
     "employee benefits broker lead generation",
     "hr consultancy referral partnership india",

@@ -74,7 +74,7 @@ const DIRECTORY = [
     href: "/resources/glossary",
     icon: Library,
     accent: "#7C3AED",
-    count: "30 terms",
+    count: "50 terms",
     title: "Glossary",
     desc: "Plain-English definitions for every term and framework we use.",
   },

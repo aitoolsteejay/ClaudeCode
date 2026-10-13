@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "lead-qualification";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Lead Qualification";
+const DESCRIPTION = "Lead qualification is the process of determining whether a lead matches a seller's ideal customer profile and has the need, budget, authority, and timing to buy, so sales resources go only to viable prospects.";
+const META_DESCRIPTION = "What lead qualification is, the criteria B2B teams use to qualify leads, and how it differs from lead scoring.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is lead qualification", "lead qualification definition", "how to qualify b2b leads", "lead qualification vs lead scoring"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function LeadQualificationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Sales Ops"
+      accent="#0284C7"
+      title={TITLE}
+      tagline="Deciding whether a lead is worth a salesperson's time, before the meeting, not halfway through it."
+      definition="Checking whether a lead fits your ideal customer profile and has a real need, budget, authority, and timeline, so sales only spends time on prospects who can actually buy."
+      body="Lead scoring ranks leads by how likely they are to convert; qualification is the yes-or-no decision on whether one is worth pursuing at all. Frameworks like BANT (budget, authority, need, timeline) give it structure, but the most common failure is simpler: qualifying too late, after a closer has already spent an hour on a prospect who was never a fit."
+      sourceLabel="Read the related term: Lead Scoring"
+      sourceHref="/resources/glossary/lead-scoring"
+      furtherLabel="Read the related term: ICP (Ideal Customer Profile)"
+      furtherHref="/resources/glossary/icp"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

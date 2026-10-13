@@ -5,8 +5,8 @@ import { buildArticleSchema } from "@/lib/schema";
 const URL = "https://www.myntmore.com/case-studies/recruitment-singapore-contract-staffing";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Developing Contract Staffing Opportunities",
-  description: "An illustrative example of how Myntmore's outreach develops contract staffing opportunities for a Singapore-based temporary staffing firm. Not a specific past client engagement.",
+  title: "Illustrative Example: Singapore Staffing Outreach",
+  description: "Illustrative outreach example developing contract staffing opportunities for a Singapore temporary staffing firm. Not a specific past client.",
   keywords: [
     "contract staffing lead generation",
     "temporary staffing firm lead generation singapore",

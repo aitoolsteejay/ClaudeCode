@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "revenue-generation";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Revenue Generation";
+const DESCRIPTION = "Revenue generation refers to the combined activities that convert prospects into paying customers and grow revenue from existing customers, spanning pipeline generation, sales outreach, closing, and account expansion.";
+const META_DESCRIPTION = "What revenue generation means in B2B, how it connects lead generation and pipeline to closed deals, and why it's the metric that matters most.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is revenue generation", "revenue generation definition", "b2b revenue generation", "revenue generation vs lead generation"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function RevenueGenerationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#166534"
+      title={TITLE}
+      tagline="Everything a company does that results in closed, paying business, and the measure every other sales metric serves."
+      definition="The activities that turn prospects into paying customers and existing customers into more revenue, from pipeline generation and outreach through to closing and expansion."
+      body="It's the outcome the rest of this glossary feeds into: leads become pipeline, and pipeline becomes closed revenue. Measuring outbound by revenue rather than by emails sent or leads gathered keeps a team honest, because activity that never reaches a signed deal doesn't count, however impressive the dashboard looks."
+      sourceLabel="Read the related term: Vanity Metrics"
+      sourceHref="/resources/glossary/vanity-metrics"
+      furtherLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
+      furtherHref="/blog/b2b-lead-gen-metrics"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

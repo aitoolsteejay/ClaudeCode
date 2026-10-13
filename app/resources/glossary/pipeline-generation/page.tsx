@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "pipeline-generation";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Pipeline Generation";
+const DESCRIPTION = "Pipeline generation is the activity of creating new qualified sales opportunities through outbound outreach, inbound marketing, and referrals, so a sales pipeline holds enough deal value to meet revenue targets.";
+const ALSO_KNOWN_AS = ["Sales Pipeline Generation", "Pipeline Building"];
+const META_DESCRIPTION = "What pipeline generation means in B2B sales, how it differs from lead generation, and how to work out how much pipeline you actually need.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is pipeline generation", "pipeline generation definition", "sales pipeline generation", "pipeline building b2b"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
+});
+
+export default function PipelineGenerationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#4F46E5"
+      title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
+      tagline="Creating new, qualified sales opportunities on purpose, instead of hoping enough show up each quarter."
+      definition="The activity of creating new qualified sales opportunities, through outbound, inbound, and referrals, so the sales pipeline has enough deals in it to hit revenue targets."
+      body="Lead generation produces contacts; pipeline generation is measured one step later, in qualified opportunities with a real deal value attached. Teams usually work backwards from a revenue target: if you close one in four qualified opportunities, you need four times your target in pipeline, and outbound is the lever you control most directly to build it."
+      sourceLabel="Read: Outbound Funnel Math, Not Gut Feel"
+      sourceHref="/blog/outbound-funnel-math-not-guesswork"
+      furtherLabel="Read the related term: Sales Pipeline"
+      furtherHref="/resources/glossary/sales-pipeline"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

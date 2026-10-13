@@ -313,7 +313,7 @@ export default async function BlogsPage() {
           <div className="flex items-start justify-between gap-8 flex-wrap">
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-                26 posts. <span style={{ color: "#3b82f6" }}>Zero fluff.</span>
+                {BLOG_POSTS.length} posts. <span style={{ color: "#3b82f6" }}>Zero fluff.</span>
               </h1>
               <p className="text-lg sm:text-xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
                 Practical B2B lead generation playbooks from the team that has booked 12K+ meetings and generated $120M+ in pipeline.
@@ -345,7 +345,20 @@ export default async function BlogsPage() {
         </div>
       </section>
 
-      <section id="blog-grid" className="py-16 px-4 border-t scroll-mt-24" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      <section
+        id="blog-grid"
+        className="py-16 px-4 border-t scroll-mt-24"
+        style={{
+          borderColor: "#E8E2D9",
+          backgroundColor: "#ffffff",
+          backgroundImage: [
+            "radial-gradient(700px 520px at 0% 6%, rgba(124,58,237,0.10), transparent 70%)",
+            "radial-gradient(760px 600px at 100% 38%, rgba(245,183,49,0.16), transparent 70%)",
+            "radial-gradient(720px 560px at 0% 72%, rgba(59,130,246,0.10), transparent 70%)",
+            "radial-gradient(680px 520px at 100% 100%, rgba(249,115,22,0.10), transparent 70%)",
+          ].join(", "),
+        }}
+      >
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <BlogGrid posts={BLOG_POSTS} />

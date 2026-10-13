@@ -42,7 +42,7 @@ export default function TotalConversionalMarketPage() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(217,119,6,0.18) 0%, rgba(217,119,6,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div className="relative z-10 max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Glossary", href: "/resources/glossary" }, { label: TITLE, href: "/resources/glossary/total-conversional-market" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>Targeting</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>Targeting</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>{TITLE}</h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             The specific, motivated slice of your market that&apos;s actually ready to buy right now, as opposed to the much larger group who theoretically could someday.

@@ -6,13 +6,14 @@ const SLUG = "sdr";
 const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
 const TITLE = "SDR (Sales Development Representative)";
 const DESCRIPTION = "A Sales Development Representative (SDR) is the role responsible for prospecting and qualifying leads through outbound outreach, booking meetings for account executives rather than closing deals directly.";
+const ALSO_KNOWN_AS = ["Sales Development Representative", "Sales Development"];
 const META_DESCRIPTION = "What a Sales Development Representative (SDR) does, how the role differs from an account executive, and why teams outsource it to agencies.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Glossary`,
   description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  keywords: ["what is an sdr", "sdr meaning sales", "sdr vs account executive", "sales development representative definition"],
+  keywords: ["what is an sdr", "sdr meaning sales", "sdr vs account executive", "sales development representative definition", "sales development representative", "sales development"],
   openGraph: {
     title: `${TITLE} | Myntmore Glossary`,
     description: META_DESCRIPTION,
@@ -26,6 +27,7 @@ const TERM_SCHEMA = buildDefinedTermSchema({
   description: DESCRIPTION,
   url: PAGE_URL,
   inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
 });
 
 export default function SdrPage() {
@@ -35,6 +37,7 @@ export default function SdrPage() {
       tag="Sales Ops"
       accent="#475569"
       title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
       tagline="The role that finds and opens conversations, so the rest of the sales team can focus on closing them."
       definition="The role responsible for prospecting and qualifying leads through outbound outreach, handing off booked meetings to account executives rather than closing deals directly."
       body="Because the job is largely about volume, consistency, and list quality rather than relationship-building, it's one of the easiest sales functions to outsource, which is why many growing teams run it through an agency before hiring it in-house."

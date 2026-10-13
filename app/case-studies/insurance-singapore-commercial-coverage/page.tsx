@@ -5,8 +5,8 @@ import { buildArticleSchema } from "@/lib/schema";
 const URL = "https://www.myntmore.com/case-studies/insurance-singapore-commercial-coverage";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Reaching Businesses Reviewing Commercial Coverage",
-  description: "An illustrative example of how Myntmore's outreach reaches Singapore logistics and warehousing businesses reviewing commercial insurance. Not a specific past client engagement.",
+  title: "Illustrative Example: Commercial Insurance Outreach",
+  description: "Illustrative example of outreach to Singapore logistics and warehousing businesses reviewing commercial insurance. Not a specific past client.",
   keywords: [
     "commercial insurance lead generation",
     "insurance broker lead generation singapore",

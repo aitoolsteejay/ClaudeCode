@@ -129,7 +129,7 @@ Not in the main nav, used for targeted ad/outreach campaigns to a specific ICP:
 
 ### Instagram / social bio-link pages (`app/instagram-resources/*`)
 Not in the main nav, meant to be linked directly from a social bio:
-- `/instagram-resources/claude-skills-guide` — "The 6 Claude Skills Guide"
+- `/resources/guides/claude-skills-guide` — "The 6 Claude Skills Guide"
 
 ### SEO-only / redirect / utility pages
 | Route | What it actually does |

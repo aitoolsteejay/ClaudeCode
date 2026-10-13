@@ -57,6 +57,18 @@ Not calendar-based; do these as part of shipping the change itself, same commit 
 - Dedicated GEO/AI-citation tracking (Profound, Otterly, or similar) if manual monthly spot-checks stop being enough — these platforms automate what the monthly GEO check above does by hand.
 - Benchmark report distribution/outreach (PR, newsletter placements, etc.) to actually get it cited elsewhere, not just published.
 
+## Checkpoint: 2026-10-10
+
+- GSC Wizard now has active owner access to the domain and both URL-prefix properties. The earlier GSC-access prerequisite is resolved.
+- Live audit of 15 high-impression URLs: no critical or high findings. Five medium findings concerned nested Organization logos; one low finding was the expected non-www redirect.
+- Added the existing logo to article authors, service/tool providers, event organizers and profile employers. A production re-audit is still needed after deployment.
+- Google URL Inspection confirms the homepage is submitted and indexed, with crawling and indexing allowed. This does not verify every URL.
+- Both registered sitemaps report zero errors and warnings. Their reported indexed count of zero is not evidence of sitewide deindexing.
+- Production build passed with 204 generated pages. Optional Medium feed fetching failed DNS resolution without failing the build.
+- Checked 146 indexable built HTML files for titles, descriptions, www canonicals and valid JSON-LD: no missing fields or invalid JSON. No duplicate primary keyword strings across service, tool, blog and vertical landing-page arrays. This is not a real query-level cannibalization test.
+- GSC opportunities for September 10 through October 7: `gtm` has 331 impressions and zero clicks; `b2b lead generation companies in pune` has 60 impressions, one click and average position 13.33. Review query-to-page intent before changing content; these are not guaranteed click gains.
+- Still open: full URL-level indexing review, query/page cannibalization, broken-link sweep, Core Web Vitals, content backlog reconciliation and off-page/citation work. Recurring publishing and outreach remain ongoing.
+
 ## Re-auditing later
 
 Every checklist item that says "re-run the script/method" points to a doc that already contains that exact, mechanical method (`docs/keyword-map.md`, `docs/featured-snippet-audit.md`, `docs/content-gaps.md`). Update this file itself whenever a new recurring pattern gets established, the same way those docs get updated when they're re-run.

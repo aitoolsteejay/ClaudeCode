@@ -1,5 +1,6 @@
 "use client";
 
+import { Phone } from "lucide-react";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -153,9 +154,22 @@ export default function Footer() {
             <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: "#6B6B6B" }}>
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
-            <p className="text-xs mb-6" style={{ color: "#8C8279" }}>
+            <p className="text-xs mb-3" style={{ color: "#8C8279" }}>
               WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar, Worli, Mumbai 400025
             </p>
+            <a
+              href="tel:+918169318951"
+              className="mb-6 inline-flex items-center gap-2.5 text-sm font-semibold transition-colors duration-200"
+              style={{ color: "#3D3D3D" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D"; }}
+              aria-label="Call Myntmore on +91 81693 18951"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.16)", color: "#B45309" }}>
+                <Phone className="h-3.5 w-3.5" strokeWidth={2.4} aria-hidden="true" />
+              </span>
+              +91 81693 18951
+            </a>
             <div className="flex items-center gap-3">
               {[
                 { href: "https://linkedin.com/company/myntmore", icon: <LinkedInIcon />, label: "Myntmore on LinkedIn" },

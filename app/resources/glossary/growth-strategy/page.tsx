@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "growth-strategy";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Growth Strategy";
+const DESCRIPTION = "A growth strategy is a company's plan for increasing revenue over a defined period, specifying which levers it will prioritize, such as acquiring new customers, entering new markets, changing pricing, or expanding existing accounts.";
+const META_DESCRIPTION = "What a growth strategy is in B2B, how it relates to go-to-market strategy, and where outbound fits as a growth lever.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is growth strategy", "b2b growth strategy definition", "growth strategy vs gtm strategy", "b2b growth levers"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+});
+
+export default function GrowthStrategyPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#4D7C0F"
+      title={TITLE}
+      tagline="The overall plan for how a company will grow revenue, and which levers it will pull to get there."
+      definition="A company's plan for increasing revenue over a defined period, choosing which levers to pull, such as new customers, new markets, pricing, or expanding existing accounts."
+      body="Growth strategy sits above GTM strategy: it decides where growth should come from, and GTM decides how to win in each of those places. For most early and mid-stage B2B companies, the most controllable lever is new customer acquisition through outbound, because it doesn't depend on waiting for search rankings or referrals to compound."
+      sourceLabel="Read: Building a Predictable B2B Lead Generation Engine"
+      sourceHref="/blog/predictable-b2b-lead-gen-engine"
+      furtherLabel="Read the related term: Go-to-Market Strategy (GTM)"
+      furtherHref="/resources/glossary/gtm-strategy"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

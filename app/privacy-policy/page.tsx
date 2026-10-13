@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Myntmore collects, uses, and protects your information.",
   alternates: { canonical: "https://www.myntmore.com/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy | Myntmore",
+    description: "How Myntmore collects, uses, and protects your information.",
+    url: "https://www.myntmore.com/privacy-policy",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
   keywords: [
     "myntmore privacy policy",
     "data privacy policy",

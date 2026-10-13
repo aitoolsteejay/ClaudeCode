@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "cold-outreach";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "Cold Outreach";
+const DESCRIPTION = "Cold outreach is the practice of contacting prospects who have no prior relationship with the sender, through channels such as email, LinkedIn, or phone, to start a sales conversation.";
+const ALSO_KNOWN_AS = ["Proactive Outreach"];
+const META_DESCRIPTION = "What cold outreach is, which channels it covers, and what separates proactive outreach that earns replies from outreach that gets ignored.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is cold outreach", "cold outreach definition", "proactive outreach", "b2b cold outreach"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
+});
+
+export default function ColdOutreachPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="Cold Outreach"
+      accent="#C2410C"
+      title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
+      tagline="Reaching out first to people who don't know you yet, across email, LinkedIn, or phone."
+      definition="Contacting prospects who have no prior relationship with you, through channels like email, LinkedIn, or phone, with the aim of starting a relevant sales conversation."
+      body="Cold outreach is channel-agnostic: cold email and LinkedIn outreach are both forms of it. What makes it work is the same everywhere: a narrow list, a reason to contact this person now, and an opening that earns curiosity in the first few seconds instead of leading with a pitch."
+      sourceLabel="Read the related term: The 3-Second Rule"
+      sourceHref="/resources/glossary/3-second-rule"
+      furtherLabel="Read: Stop Selling Features in Cold Outreach"
+      furtherHref="/blog/stop-selling-features-cold-outreach"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

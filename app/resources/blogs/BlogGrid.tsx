@@ -103,7 +103,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
         <button
           type="button"
           onClick={() => setActiveTag("All")}
-          className="text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
+          className="fredoka-pill text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
           style={
             activeTag === "All"
               ? { backgroundColor: "#0a0a0a", borderColor: "#0a0a0a", color: "#ffffff" }
@@ -121,7 +121,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
               key={tag}
               type="button"
               onClick={() => setActiveTag(tag)}
-              className="text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
+              className="fredoka-pill text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
               style={
                 isActive
                   ? { backgroundColor: accent, borderColor: accent, color: "#ffffff" }
@@ -154,7 +154,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
                 <div className="p-6">
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {p.tags.map((t) => (
-                      <span key={t} className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${accentFor(t)}12`, color: accentFor(t) }}>{t}</span>
+                      <span key={t} className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${accentFor(t)}12`, color: accentFor(t) }}>{t}</span>
                     ))}
                   </div>
                   <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</h2>

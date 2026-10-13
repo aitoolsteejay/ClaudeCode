@@ -1,0 +1,51 @@
+import type { Metadata } from "next";
+import GlossaryTerm from "@/components/glossary/GlossaryTerm";
+import { buildDefinedTermSchema, SITE_URL } from "@/lib/schema";
+
+const SLUG = "b2b-lead-generation";
+const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
+const TITLE = "B2B Lead Generation";
+const DESCRIPTION = "B2B lead generation is the process of identifying businesses that match a company's ideal customer profile and generating interest from their decision-makers, so the sales team has qualified prospects to pursue.";
+const ALSO_KNOWN_AS = ["Outbound Lead Generation"];
+const META_DESCRIPTION = "What B2B lead generation is, how outbound lead generation differs from waiting on inbound, and what separates a real lead from a name on a list.";
+
+export const metadata: Metadata = {
+  title: `${TITLE} | B2B Glossary`,
+  description: META_DESCRIPTION,
+  alternates: { canonical: PAGE_URL },
+  keywords: ["what is b2b lead generation", "b2b lead generation definition", "outbound lead generation", "b2b lead generation meaning"],
+  openGraph: {
+    title: `${TITLE} | Myntmore Glossary`,
+    description: META_DESCRIPTION,
+    url: PAGE_URL,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+const TERM_SCHEMA = buildDefinedTermSchema({
+  name: TITLE,
+  description: DESCRIPTION,
+  url: PAGE_URL,
+  inDefinedTermSet: `${SITE_URL}/resources/glossary`,
+  alternateName: ALSO_KNOWN_AS,
+});
+
+export default function BTwobLeadGenerationPage() {
+  return (
+    <GlossaryTerm
+      slug={SLUG}
+      tag="GTM Strategy"
+      accent="#B45309"
+      title={TITLE}
+      alsoKnownAs={ALSO_KNOWN_AS}
+      tagline="The work of finding businesses that fit your offer and turning them into conversations your sales team can actually work."
+      definition="The process of identifying companies that match your ideal customer profile and starting conversations with the decision-makers inside them, so sales has qualified prospects to work."
+      body="Outbound lead generation is the proactive version: instead of waiting for inbound form fills, you build a targeted list, research it, and reach out first through cold email, LinkedIn, or both. The output that matters isn't the number of contacts gathered, it's how many of them turn into replies and booked meetings with people who can actually buy."
+      sourceLabel="See the service: AI Lead Generation"
+      sourceHref="/services/ai-lead-generation"
+      furtherLabel="Read: Building a Predictable B2B Lead Generation Engine"
+      furtherHref="/blog/predictable-b2b-lead-gen-engine"
+      articleSchema={TERM_SCHEMA}
+    />
+  );
+}

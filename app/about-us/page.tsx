@@ -49,6 +49,7 @@ const PERSON_SCHEMA = {
     "@type": "Organization",
     name: "Myntmore",
     url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
   },
   description: "Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of B2B lead generation experience. He founded Myntmore in 2019 and has taught B2B growth methodologies at IIT and IIM.",
   sameAs: ["https://linkedin.com/in/tejasjhaveri"],

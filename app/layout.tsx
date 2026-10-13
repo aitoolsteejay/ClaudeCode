@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
 import JsonLd from "./components/JsonLd";
+import ReelWidget from "./components/ReelWidget";
 import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
 
@@ -31,36 +32,14 @@ export const metadata: Metadata = {
   },
   description:
     "Myntmore is Mumbai's leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.",
-  keywords: [
-    "b2b lead generation",
-    "b2b lead generation agency",
-    "cold outreach agency",
-    "ai agency in mumbai",
-    "ai agency",
-    "personal brand building mumbai",
-    "account-based marketing",
-    "linkedin outreach",
-    "cold email agency",
-    "myntmore",
-    "tejas jhaveri",
-    "b2b pipeline",
-    "outbound sales agency",
-    "sales intelligence",
-    "icp mapping",
-  ],
   authors: [{ name: "Tejas Jhaveri", url: "https://linkedin.com/in/tejasjhaveri" }],
   creator: "Myntmore",
   publisher: "Myntmore",
   metadataBase: new URL("https://www.myntmore.com"),
-  alternates: { canonical: "https://www.myntmore.com" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.myntmore.com",
     siteName: "Myntmore",
-    title: "Myntmore | B2B Lead Generation & AI-Powered Outbound Agency",
-    description:
-      "We build and run your outbound engine using AI agents and human intelligence. Cold email, LinkedIn outreach, and ABM that books qualified meetings at scale.",
     images: [
       {
         url: "/og-image.png",
@@ -109,6 +88,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-white antialiased">
         {children}
+        <ReelWidget />
         <Toaster />
         <Analytics />
 

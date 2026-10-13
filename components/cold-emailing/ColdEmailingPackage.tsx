@@ -31,17 +31,12 @@ import Underline from "@/app/resources/guides/how-to-set-up-vibe-prospecting/Und
 import FlowVisual from "./FlowVisual";
 import ProcessExplorer from "./ProcessExplorer";
 
-// Private, unlisted overview of the done-for-you cold email package, for
-// sharing directly with prospects. One design, two routes
-// (/cold-emailing-package-earth). The route's page.tsx declares noindex
-// metadata because this is a private, unlisted overview.
+// Done-for-you cold email service overview.
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
 const INK = "#0f0f14";
 const CREAM = "#F8F6F2";
-const CALENDLY = "https://calendly.com/founder-myntmore/30min";
-
 const STATS = [
   { value: "1,200", label: "emails a day" },
   { value: "40", label: "inboxes on 10 domains" },
@@ -129,9 +124,9 @@ export default function ColdEmailingPackage() {
               Targeting, deliverability, copy and optimisation, run end to end to book you calls.
             </p>
             <div className="hero-fade-d2 mt-9 flex flex-wrap gap-3">
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className="btn-dark inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold">
-                Book a consultation call <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
+              <Link href="/founder-meeting" className="btn-dark inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold">
+                Get a free deliverability audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
               <a href="#process" className="inline-flex items-center gap-2 rounded-full border bg-white/70 px-7 py-3.5 text-sm font-bold backdrop-blur transition-colors hover:border-[#EA580C]" style={{ borderColor: "#E8E2D9", color: INK }}>
                 See how it works
               </a>
@@ -346,11 +341,11 @@ export default function ColdEmailingPackage() {
                 </h2>
                 <p className="mx-auto mt-5 max-w-md text-base" style={{ color: "#c9bfb8" }}>You&apos;ve got the business. We&apos;ve got the system.</p>
                 <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-                  <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: GOLD, color: INK }}>
-                    Book a consultation call <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </a>
-                  <Link href="/services/cold-email" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>
-                    Explore cold email services
+                  <Link href="/founder-meeting" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: GOLD, color: INK }}>
+                    Book a free audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link href="/case-studies" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>
+                    See real results
                   </Link>
                 </div>
               </div>

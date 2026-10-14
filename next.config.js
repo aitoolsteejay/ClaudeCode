@@ -72,10 +72,11 @@ const nextConfig = {
       // mars/earth -- redirected in case either was already sent out.
       { source: "/plans/alpha", destination: "/plans/mars", permanent: true },
       { source: "/plans/beta", destination: "/plans/earth", permanent: true },
-      // The private Mars cold emailing page was removed when the package pages
-      // were folded into the public cold email service page. The URL had already
-      // been sent to prospects, so it now lands on that service page.
+      // The private Mars and Earth cold emailing pages were removed when the
+      // package pages were folded into the public cold email service page. Both
+      // URLs had already been sent to prospects, so they now land on that page.
       { source: "/cold-emailing-package-mars", destination: "/services/cold-email", permanent: true },
+      { source: "/cold-emailing-package-earth", destination: "/services/cold-email", permanent: true },
 
       // Every guide lives at /resources/guides/<slug>. The Instagram bio-link
       // pages and the four root-level guides moved there 2026-10-12; 301 (not

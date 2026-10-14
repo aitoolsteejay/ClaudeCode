@@ -437,7 +437,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
               <ul className="space-y-2.5 max-w-md mx-auto mb-9">
                 {["Hidden AI tools you can actually use", "Insider tech updates made simple", "Real marketing + growth hacks powered by AI"].map((t) => (
                   <li key={t} className="flex items-start gap-3 text-sm sm:text-base font-semibold text-white">
-                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#A14A08" }} strokeWidth={2.5} aria-hidden="true" />
+                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#F5B731" }} strokeWidth={2.5} aria-hidden="true" />
                     {t}
                   </li>
                 ))}

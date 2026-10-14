@@ -42,13 +42,16 @@ export default function ReelWidget() {
   const [triggered, setTriggered] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [muted, setMuted] = useState(true);
-  const [paused, setPaused] = useState(false);
+  // `paused` mirrors the video element itself (set only by its play/pause
+  // events), so the button stays right even when the browser blocks autoplay.
+  const [paused, setPaused] = useState(true);
+  const [autoplay, setAutoplay] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Visitors who ask the OS for reduced motion get the reel paused on its
   // first frame instead of auto-playing on a loop; the play button starts it.
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPaused(true);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setAutoplay(false);
   }, []);
 
   const togglePaused = () => {
@@ -161,7 +164,7 @@ export default function ReelWidget() {
             ref={videoRef}
             src="/videos/homepage-reel.mp4"
             className="w-full h-full object-cover"
-            autoPlay={!paused}
+            autoPlay={autoplay}
             loop
             aria-label="Myntmore reel"
             muted={muted}

@@ -279,7 +279,7 @@ export default function VibeProspectingGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Follow along</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejas_jhaveri</span>
                 </a>
@@ -288,7 +288,7 @@ export default function VibeProspectingGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Book a call</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
                 </a>
@@ -297,7 +297,7 @@ export default function VibeProspectingGuide() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Email us</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
                 </a>

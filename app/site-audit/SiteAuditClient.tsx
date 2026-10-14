@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
+import { GOLD_TEXT } from "@/lib/colors";
 
 interface AuditPage {
   path: string | null;
@@ -125,10 +126,10 @@ export default function SiteAuditClient({ audit }: { audit: AuditData }) {
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-5" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: GOLD }}>Internal · unlisted</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: GOLD_TEXT }}>Internal · unlisted</span>
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: TEXT_DARK }}>
-            Site <span style={{ color: GOLD }}>audit</span>
+            Site <span style={{ color: GOLD_TEXT }}>audit</span>
           </h1>
           <p className="text-base leading-relaxed max-w-2xl" style={{ color: TEXT_BODY }}>
             Every page on the website, and whether a visitor can actually reach it by clicking. <strong>Orphan</strong> means no page, menu or footer links to it, so

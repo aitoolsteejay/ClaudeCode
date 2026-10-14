@@ -7,6 +7,7 @@ import FadeIn from "@/app/components/FadeIn";
 import StatTicker from "@/app/components/StatTicker";
 import InnerLayout from "@/app/components/InnerLayout";
 import CopyBlock from "@/app/components/CopyBlock";
+import { textTone } from "@/lib/colors";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {
@@ -327,7 +328,7 @@ function BackToTop() {
 function SectionEyebrow({ num, label, accent }: { num: string; label: string; accent: string }) {
   return (
     <div className="flex items-center gap-3 mb-4">
-      <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{num}</span>
+      <span className="text-sm font-black tabular-nums" style={{ color: textTone(accent) }}>{num}</span>
       <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{label}</span>
     </div>
   );
@@ -454,7 +455,7 @@ function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string
                 onClick={() => setShowPrompt((v) => !v)}
                 aria-expanded={showPrompt}
                 className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold hover:underline"
-                style={{ color: accent }}
+                style={{ color: textTone(accent) }}
               >
                 <svg className={`h-3 w-3 transition-transform ${showPrompt ? "rotate-90" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -478,7 +479,7 @@ function TipGroup({ heading, tips, accent, variant }: { heading: string; tips: T
   if (tips.length === 0) return null;
   return (
     <div className="mb-8">
-      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? accent : "#16A34A" }}>{heading}</p>
+      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? textTone(accent) : "#16A34A" }}>{heading}</p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tips.map((tip, i) => (
           <TipCard key={i} tip={tip} accent={accent} variant={variant} delay={i * 45} />
@@ -518,7 +519,7 @@ function HighlightCallout({ role, note, accent }: { role: string; note: string; 
           </span>
         </span>
         <div>
-          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>{role}</p>
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>{role}</p>
           <p className="text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>{note}</p>
         </div>
       </div>

@@ -20,7 +20,7 @@ export function GET() {
       >
         <div style={{ display: "flex", alignItems: "center", fontSize: 34, fontWeight: 800 }}>
           <span>Mynt</span>
-          <span style={{ color: "#A14A08" }}>more</span>
+          <span style={{ color: "#F5B731" }}>more</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 1000 }}>

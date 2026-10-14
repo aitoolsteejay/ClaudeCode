@@ -18,25 +18,34 @@ body {
 /* ─── Keyboard focus ──────────────────────────────────────────
    One visible, on-brand focus ring for keyboard users sitewide. Kept in
    the base layer so components that draw their own ring with
-   focus-visible:* utilities still win. Gold #F5B731 is too light to read
-   as a ring on the warm background (1.7:1), so the ring uses the darker
-   amber #A14A08 (4.6:1). ─────────────────────────────────────────── */
+   focus-visible:* utilities still win. Two-tone so it reads everywhere:
+   an amber #A14A08 outline (5.6:1 on the warm page; gold #F5B731 would be
+   1.7:1) with a white halo between it and the element, which carries the
+   contrast on the dark CTA sections where amber alone is under 3:1. ──── */
 @layer base {
   :focus-visible {
     outline: 2px solid #A14A08;
     outline-offset: 2px;
-  }
-  /* Inputs styled with a bare `outline-none` (contact form, lead forms,
-     search boxes) had no focus indicator at all. */
-  :is(input, textarea, select).outline-none:focus-visible {
-    outline: 2px solid #A14A08;
-    outline-offset: 1px;
+    box-shadow: 0 0 0 2px #ffffff;
   }
   /* Balanced wrapping keeps short headings from leaving one orphan word on
      the last line. Browsers without support just wrap normally. */
   h1, h2, h3 {
     text-wrap: balance;
   }
+}
+
+/* Inputs styled with a bare `outline-none` (contact form, lead forms,
+   search boxes) had no focus indicator at all. Deliberately outside
+   @layer: inside one, Tailwind treats `.outline-none` here as a utility and
+   copies the rule onto `focus:outline-none` / `focus-visible:outline-none`,
+   which drew a second ring on fields that already have their own. Fields
+   with a ring class are left to that ring. */
+input.outline-none:not([class*="ring"]):focus-visible,
+textarea.outline-none:not([class*="ring"]):focus-visible,
+select.outline-none:not([class*="ring"]):focus-visible {
+  outline: 2px solid #A14A08;
+  outline-offset: 1px;
 }
 
 /* ─── Skip link ─────────────────────────────────────────────
@@ -56,6 +65,20 @@ body {
 }
 .skip-link:focus {
   transform: none;
+}
+
+/* ─── Count-up numbers ──────────────────────────────────────
+   The HTML carries the final figures. When motion is welcome and JS runs
+   (html.motion-ok, set by an inline script in the root layout), they stay
+   invisible until the count-up resets them to zero and marks them
+   [data-counting], so visitors never see real -> zero -> real. If JS never
+   gets there, they fade in on their own after 4s. */
+.motion-ok [data-count-up]:not([data-counting]) {
+  opacity: 0;
+  animation: count-up-failsafe 0.3s ease-out 4s forwards;
+}
+@keyframes count-up-failsafe {
+  to { opacity: 1; }
 }
 
 /* ─── Text selection ──────────────────────────────────────── */

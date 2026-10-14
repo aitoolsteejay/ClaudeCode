@@ -6,6 +6,7 @@ import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/lead-magnet-ideas/LandingPage";
 import { Lightbulb, TrendingUp, Send, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+import { textTone } from "@/lib/colors";
 
 const INDUSTRY_OPTIONS = [
   "B2B SaaS",
@@ -300,7 +301,7 @@ export default function LeadMagnetIdeasClient() {
                         >
                           <Lightbulb className="w-4 h-4" style={{ color }} />
                         </div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color }}>
+                        <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: textTone(color) }}>
                           Idea {idx + 1}
                         </p>
                       </div>

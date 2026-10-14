@@ -85,8 +85,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    // suppressHydrationWarning: the inline script below adds a class to <html>
+    // before React hydrates, which would otherwise be reported as a mismatch.
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
+        {/* Runs before first paint. Marks pages where count-up animations may
+            run, so CSS can hide those numbers until JS starts them (Hero). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion-ok")`,
+          }}
+        />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <JsonLd data={organizationSchema} />
       </head>

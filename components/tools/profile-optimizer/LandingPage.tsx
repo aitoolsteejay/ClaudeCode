@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { GOLD_TEXT } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Profile Optimizer Works", [
   { name: "Paste your headline and About section", text: "Quick and easy input of your current profile details." },
@@ -133,7 +134,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
               { step: "03", title: "Copy in the rewrite", desc: "Three headline angles, a rewritten About section, ready to paste." },
             ].map((item) => (
               <div key={item.step}>
-                <div className="text-4xl font-black mb-3" style={{ color: "rgba(245,183,49,0.55)" }}>{item.step}</div>
+                <div className="text-4xl font-black mb-3" style={{ color: GOLD_TEXT }}>{item.step}</div>
                 <h3 className="text-lg font-bold mb-2" style={{ color: "#0A0A0A" }}>{item.title}</h3>
                 <p style={{ color: "#52525B" }}>{item.desc}</p>
               </div>

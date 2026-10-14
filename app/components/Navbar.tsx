@@ -270,8 +270,10 @@ export default function Navbar() {
       </nav>
 
       {/* `invisible` (applied after the collapse transition ends) keeps the
-          hidden links out of the tab order and the accessibility tree. */}
-      <div id="mobile-nav" ref={mobilePanelRef} className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "visible max-h-screen opacity-100" : "invisible max-h-0 opacity-0"}`}>
+          hidden links out of the tab order and the accessibility tree. When
+          open, the panel is capped at the space below the header and scrolls,
+          so every link stays reachable on short phones with accordions open. */}
+      <div id="mobile-nav" ref={mobilePanelRef} className={`lg:hidden transition-all duration-300 ease-in-out ${mobileOpen ? "visible max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain opacity-100" : "invisible max-h-0 overflow-hidden opacity-0"}`}>
         <div className="border-t px-4 py-4 space-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           {/* Services accordion */}
           <div>
@@ -354,7 +356,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact-us" onClick={() => setMobileOpen(false)} className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
+          <Link href="/contact-us" onClick={() => setMobileOpen(false)} aria-current={isActive("/contact-us") ? "page" : undefined} className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
           >

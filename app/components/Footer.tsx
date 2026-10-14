@@ -178,7 +178,7 @@ export default function Footer() {
               ].map((s) => (
                 <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-200" style={{ border: "1px solid #E8E2D9", color: "#6B6B6B" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#A14A08"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(245,183,49,0.4)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "#E8E2D9"; }}
                   aria-label={s.label}
                 >
                   {s.icon}
@@ -194,7 +194,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}
                   >
                     {link.label}
                   </Link>
@@ -210,7 +210,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}
                   >
                     {link.label}
                   </Link>
@@ -226,7 +226,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}
                   >
                     {link.label}
                   </Link>
@@ -238,10 +238,10 @@ export default function Footer() {
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>Get in Touch</h3>
             <ul className="space-y-3 mb-6" role="list">
-              <li><a href="mailto:growth@myntmore.com" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}>growth@myntmore.com</a></li>
-              <li><a href="tel:+918169318951" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}>+91 81693 18951</a></li>
-              <li><a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}>Book a Free GTM Audit</a></li>
-              <li><Link href="/contact-us" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}>Contact Page</Link></li>
+              <li><a href="mailto:growth@myntmore.com" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>growth@myntmore.com</a></li>
+              <li><a href="tel:+918169318951" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>+91 81693 18951</a></li>
+              <li><a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>Book a Free GTM Audit</a></li>
+              <li><Link href="/contact-us" className="text-sm transition-colors duration-200" style={{ color: "#6B6B6B" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B6B6B"; }}>Contact Page</Link></li>
             </ul>
             <div className="mb-4 p-4 rounded-xl border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
               <Link href="/newsletter-subscribe" className="inline-block text-xs font-semibold mb-1 hover:underline" style={{ color: "#0a0a0a" }}>The Outbound Operator</Link>

@@ -5,6 +5,7 @@ import { Rocket, Zap, Target, Mail, Bot } from "lucide-react";
 import InnerLayout from "@/app/components/InnerLayout";
 import FadeIn from "@/app/components/FadeIn";
 import OrbitHero, { type PlanetKind } from "./OrbitHero";
+import { GOLD_TEXT, textTone } from "@/lib/colors";
 
 // Every one of these is identical across all 3 tiers (8 infrastructure items
 // + the first 4 content items), so they're shown once instead of being
@@ -270,7 +271,7 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
     <div>
       <div className="flex items-center gap-3 flex-wrap">
         <h2 className="text-2xl font-black leading-tight" style={{ color: TEXT_DARK }}>{title}</h2>
-        <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-full" style={{ color: GOLD, backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)" }}>{eyebrow}</span>
+        <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded-full" style={{ color: GOLD_TEXT, backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)" }}>{eyebrow}</span>
       </div>
       {/* Always its own line, regardless of title length, so every section
           heading takes up the same height and the cards below line up. */}
@@ -421,7 +422,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                         </div>
 
                         <div className="flex-1 space-y-2.5 mb-5">
-                          <p className="text-[10px] font-black uppercase tracking-widest mb-1" style={{ color: tier.accent }}>Highlights</p>
+                          <p className="text-[10px] font-black uppercase tracking-widest mb-1" style={{ color: textTone(tier.accent) }}>Highlights</p>
                           <ul className="space-y-1.5">
                             {CARD_HIGHLIGHTS[i].map((label) => (
                               <li key={label} className="flex items-start gap-2 text-sm" style={{ color: "#3D3D3D" }}>
@@ -431,9 +432,9 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                             ))}
                           </ul>
                           <p className="text-xs leading-snug pt-1.5" style={{ color: TEXT_MUTED }}>
-                            <a href="#included-in-every-plan" className="font-bold underline" style={{ color: tier.accent }}>+ Growth Infrastructure (same on every plan)</a>
+                            <a href="#included-in-every-plan" className="font-bold underline" style={{ color: textTone(tier.accent) }}>+ Growth Infrastructure (same on every plan)</a>
                             {" · "}
-                            <a href="#plan-comparison" className="font-bold underline" style={{ color: tier.accent }}>Full comparison</a>
+                            <a href="#plan-comparison" className="font-bold underline" style={{ color: textTone(tier.accent) }}>Full comparison</a>
                           </p>
                         </div>
 
@@ -501,7 +502,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                         <th
                           key={tier.name}
                           className="px-4 py-3 text-center text-xs font-black"
-                          style={{ color: tier.accent, backgroundColor: `${tier.accent}0d`, width: 130 }}
+                          style={{ color: textTone(tier.accent), backgroundColor: `${tier.accent}0d`, width: 130 }}
                         >
                           {tier.name}
                         </th>

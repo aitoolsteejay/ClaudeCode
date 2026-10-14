@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { GOLD_TEXT } from "@/lib/colors";
 
 export interface FlowStep {
   n: string;
@@ -188,7 +189,8 @@ function StepCard({ step, delay, active = false }: { step: FlowStep; delay: numb
         <span
           className="text-xs font-black tracking-widest"
           style={{
-            color: active ? solid : "#71675E",
+            // Gold steps (rgba(245,183,49,…)) would put 1.8:1 gold text on white.
+            color: active ? (solid === "rgb(245, 183, 49)" ? GOLD_TEXT : solid) : "#71675E",
             opacity: inView ? 1 : 0,
             transition: `opacity 0.4s ease ${delay + 200}ms, color 0.3s ease`,
           }}

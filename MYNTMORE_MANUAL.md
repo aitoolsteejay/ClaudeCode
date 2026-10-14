@@ -158,12 +158,15 @@ Card border:         #E8E2D9   (used everywhere for borders/dividers)
 Text primary:        #0a0a0a
 Text secondary:      #52525B
 Text muted:          #6B6B6B / #71675E
-Text disabled:       #B8B0A7
+Text disabled:       #B8B0A7   (disabled controls only; 2:1, not for readable text)
 
-Brand gold:          #F5B731   (the primary accent — CTAs, underlines, badges)
+Brand gold:          #F5B731   (the primary accent — CTA fills, underlines, badge fills, dots)
 Gold hover/dark:      #D97706
+Gold as text:        #A14A08   (GOLD_TEXT in lib/colors.ts; gold text on light surfaces)
 Gold bg tint:        #FEF9EC
 ```
+
+**Gold is for fills, not text on light backgrounds.** Gold `#F5B731` and `#D97706` work for fills, borders, dots, underlines and for text on dark sections, but as text on the light page they read at 1.7:1 and 3.0:1 (WCAG AA needs 4.5:1). Gold-coloured text on a light surface uses `GOLD_TEXT` (`#A14A08`) from `lib/colors.ts`, and any accent colour that drives text goes through `textTone(accent)`, which turns gold into `#A14A08` and leaves every other colour alone.
 
 **Accent rotation** (used for per-item coloring — service cards, tool cards, testimonial cards, blog tags, career role tags):
 ```
@@ -174,7 +177,7 @@ Teal:      #14B8A6
 Orange:    #F97316        Gold/amber: #D97706
 Red/rose:  #ef4444
 ```
-When adding a new card/tile that needs its own color (a new tool, a new role, a new blog tag), pick a color from this list that isn't already used by its immediate siblings — don't invent a new hex value unless nothing here fits.
+When adding a new card/tile that needs its own color (a new tool, a new role, a new blog tag), pick a color from this list that isn't already used by its immediate siblings — don't invent a new hex value unless nothing here fits. If the colour is also used for the card's text (a tag, an eyebrow, a link), render that text with `textTone(accent)` so a gold pick stays readable.
 
 ### Typography
 - Headings: `font-black` (900 weight), never `font-bold` or `font-extrabold`.

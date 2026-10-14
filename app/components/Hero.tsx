@@ -109,10 +109,15 @@ export default function Hero() {
 
     // The markup carries the real figures, so crawlers, no-JS visitors and
     // anyone who asked for reduced motion read them as-is; the count-up from
-    // zero only runs once JS is here and motion is welcome.
+    // zero only runs once JS is here and motion is welcome. In that case CSS
+    // (.motion-ok [data-count-up], set before first paint in the root layout)
+    // keeps the figures invisible until they are reset to zero here, so they
+    // never show real -> zero -> real.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     stats.forEach(({ ref, format }) => {
-      if (ref.current) ref.current.textContent = format(0);
+      if (!ref.current) return;
+      ref.current.textContent = format(0);
+      ref.current.setAttribute("data-counting", "");
     });
 
     const animIds: number[] = [];
@@ -494,7 +499,7 @@ export default function Hero() {
               className={`flex flex-col items-center px-8 py-5 w-full sm:w-auto ${i !== 2 ? "border-b sm:border-b-0 sm:border-r" : ""}`}
               style={{ borderColor: "#E8E2D9" }}
             >
-              <span ref={stat.ref} className="text-2xl sm:text-3xl font-bold text-[#0a0a0a]">{stat.value}</span>
+              <span ref={stat.ref} data-count-up className="text-2xl sm:text-3xl font-bold text-[#0a0a0a]">{stat.value}</span>
               <span className="text-xs sm:text-sm font-medium mt-0.5 text-center max-w-[160px] sm:max-w-none" style={{ color: "#71675E" }}>{stat.label}</span>
             </div>
           ))}

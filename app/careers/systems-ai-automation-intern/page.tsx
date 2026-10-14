@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "AI Automation Intern, Mumbai | Rs 7-20K/mo",
@@ -165,7 +166,7 @@ export default function SystemsAiAutomationIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Systems & AI Automation Intern", href: "/careers/systems-ai-automation-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${ACCENT}14`, color: ACCENT, border: `1px solid ${ACCENT}33` }}>Internship · Work from Office · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${ACCENT}14`, color: textTone(ACCENT), border: `1px solid ${ACCENT}33` }}>Internship · Work from Office · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Systems & AI Automation Intern
           </h1>
@@ -207,7 +208,7 @@ export default function SystemsAiAutomationIntern() {
             <div className="space-y-4">
               {WHAT_YOU_DO.map((group) => (
                 <div key={group.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-3" style={{ color: ACCENT }}>{group.title}</h3>
+                  <h3 className="text-sm font-black mb-3" style={{ color: textTone(ACCENT) }}>{group.title}</h3>
                   <ul className="space-y-1.5">
                     {group.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: "#52525B" }}>
@@ -240,7 +241,7 @@ export default function SystemsAiAutomationIntern() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {WHO_YOU_ARE.map((group) => (
                 <div key={group.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <p className="text-xs font-black mb-2" style={{ color: ACCENT }}>{group.label}</p>
+                  <p className="text-xs font-black mb-2" style={{ color: textTone(ACCENT) }}>{group.label}</p>
                   <ul className="space-y-1.5">
                     {group.bullets.map((b) => (
                       <li key={b} className="text-sm leading-snug" style={{ color: "#52525B" }}>{b}</li>
@@ -290,7 +291,7 @@ export default function SystemsAiAutomationIntern() {
                 "Tell us in one line: what's the coolest thing you've built with n8n, Python, Clay, or GPTs?",
               ].map((step, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>
-                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0" style={{ backgroundColor: ACCENT, color: "#ffffff" }}>{i + 1}</span>
+                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0" style={{ backgroundColor: textTone(ACCENT), color: "#ffffff" }}>{i + 1}</span>
                   <span className="pt-0.5">{step}</span>
                 </li>
               ))}

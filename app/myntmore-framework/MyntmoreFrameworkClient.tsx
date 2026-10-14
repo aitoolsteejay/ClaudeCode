@@ -639,10 +639,10 @@ export default function MyntmoreFrameworkClient() {
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
               <span className="ml-2 text-xs font-mono font-bold" style={{ color: "#D7D9E0" }}>myntmore-outbound-engine.workflow</span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "#2A2E37", color: "#6B7280" }}>v3.0.0</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "#2A2E37", color: "#9CA3AF" }}>v3.0.0</span>
               <div className="hidden md:flex items-center gap-1 ml-4 p-0.5 rounded-md" style={{ backgroundColor: "#12141A" }}>
                 {["Editor", "Executions", "Evaluations"].map((t, i) => (
-                  <span key={t} className="text-[11px] font-semibold px-3 py-1 rounded" style={{ backgroundColor: i === 0 ? "#2A2E37" : "transparent", color: i === 0 ? "#F3F4F6" : "#6B7280" }}>{t}</span>
+                  <span key={t} className="text-[11px] font-semibold px-3 py-1 rounded" style={{ backgroundColor: i === 0 ? "#2A2E37" : "transparent", color: i === 0 ? "#F3F4F6" : "#9CA3AF" }}>{t}</span>
                 ))}
               </div>
               <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(34,197,94,0.15)", color: "#4ADE80" }}>
@@ -803,7 +803,7 @@ export default function MyntmoreFrameworkClient() {
                       {/* label */}
                       <div className="absolute text-center pointer-events-none" style={{ top: n.h + 6, left: n.w / 2 - (isSub ? 50 : 80), width: isSub ? 100 : 160 }}>
                         {n.shape !== "ai" && <p className={`${isSub ? "text-[9.5px]" : "text-[11px]"} font-bold leading-tight`} style={{ color: isSub ? "#9CA3AF" : "#E5E7EB" }}>{n.title}</p>}
-                        <p className="text-[9px] font-mono leading-tight mt-0.5" style={{ color: "#6B7280" }}>{n.shape === "ai" ? `${n.type} · ${n.meta}` : n.meta ?? n.type}</p>
+                        <p className="text-[9px] font-mono leading-tight mt-0.5" style={{ color: "#9CA3AF" }}>{n.shape === "ai" ? `${n.type} · ${n.meta}` : n.meta ?? n.type}</p>
                       </div>
                     </div>
                   );
@@ -853,7 +853,7 @@ export default function MyntmoreFrameworkClient() {
 
             {/* Bottom bar */}
             <div className="flex items-center justify-between px-5 py-2.5" style={{ backgroundColor: "#1B1E27" }}>
-              <span className="text-[10px] font-mono" style={{ color: "#6B7280" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
+              <span className="text-[10px] font-mono" style={{ color: "#9CA3AF" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
               <div className="flex items-center gap-1.5">
                 <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>&minus;</button>
                 <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline cursor-pointer" style={{ color: "#9199A8" }}>{Math.round(view.zoom * 100)}%</button>

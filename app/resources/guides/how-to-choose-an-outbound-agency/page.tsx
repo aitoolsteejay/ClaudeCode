@@ -79,7 +79,7 @@ export default function HowToChooseOutboundAgencyPage() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "How to Choose an Outbound Agency", href: "/resources/guides/how-to-choose-an-outbound-agency" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(14,165,233,0.35)", background: "rgba(14,165,233,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#0EA5E9" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0EA5E9" }}>Buyer&apos;s Guide · 6 min read</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0369A1" }}>Buyer&apos;s Guide · 6 min read</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             How to choose a B2B outbound agency
@@ -157,14 +157,14 @@ export default function HowToChooseOutboundAgencyPage() {
                   "What did you change the last time a campaign underperformed?",
                 ].map((q, i) => (
                   <div key={q} className="flex items-start gap-3 px-6 py-4" style={{ borderBottom: i < 5 ? "1px solid #F0EBE3" : "none" }}>
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5" style={{ backgroundColor: "rgba(14,165,233,0.1)", color: "#0EA5E9" }}>{i + 1}</span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5" style={{ backgroundColor: "rgba(14,165,233,0.1)", color: "#0369A1" }}>{i + 1}</span>
                     <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{q}</p>
                   </div>
                 ))}
               </div>
               <p className="text-sm mt-6" style={{ color: "#52525B" }}>
                 Still deciding between an agency and hiring in-house at all? See the full{" "}
-                <Link href="/blog/agency-vs-in-house" className="font-bold" style={{ color: "#0EA5E9" }}>agency vs. in-house comparison</Link>.
+                <Link href="/blog/agency-vs-in-house" className="font-bold" style={{ color: "#0369A1" }}>agency vs. in-house comparison</Link>.
               </p>
             </FadeIn>
           </div>

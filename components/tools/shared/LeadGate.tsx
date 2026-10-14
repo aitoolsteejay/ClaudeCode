@@ -90,7 +90,7 @@ const ZOHO_IFRAME_NAME = "zoho-lead-magnet-iframe";
 
 const DEFAULT_HEADING = (
   <>
-    Myntmore <span className="text-primary">LinkedIn</span> Profile Optimizer
+    Myntmore <span className="text-[#A14A08]">LinkedIn</span> Profile Optimizer
   </>
 );
 const DEFAULT_DESCRIPTION = "Audit your LinkedIn profile and get specific improvements to make it work harder for you.";

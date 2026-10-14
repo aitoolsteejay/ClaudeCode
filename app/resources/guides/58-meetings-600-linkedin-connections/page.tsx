@@ -199,7 +199,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "58 Meetings from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#E8F3FA", color: BLUE, border: `1px solid ${BLUE}4D` }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#E8F3FA", color: textTone(BLUE), border: `1px solid ${BLUE}4D` }}>
             Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -268,7 +268,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {ICP_LAYERS.map((l, i) => (
               <div key={l.label} className="rounded-xl p-5" style={{ backgroundColor: `rgba(249,115,22,${0.04 + l.tone * 0.12})`, border: `1px solid rgba(249,115,22,${0.15 + l.tone * 0.3})` }}>
-                <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#C2570C" }}>Layer {i + 1}</span>
+                <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#9A3412" }}>Layer {i + 1}</span>
                 <p className="text-base font-black mt-1" style={{ color: "#0a0a0a" }}>{l.label}</p>
                 <p className="text-sm mt-1" style={{ color: "#3D3D3D" }}>{l.text}</p>
               </div>
@@ -283,7 +283,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           </h3>
           <div className="flex flex-wrap gap-2">
             {TRIGGERS.map((t) => (
-              <span key={t} className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-full inline-block" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#C2570C", border: "1px solid rgba(249,115,22,0.3)" }}>
+              <span key={t} className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-full inline-block" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>
                 {t}
               </span>
             ))}

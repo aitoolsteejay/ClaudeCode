@@ -105,7 +105,7 @@ export default function ColdEmailComplianceGuide() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(99,102,241,0.08)", color: "#6366f1", border: "1px solid rgba(99,102,241,0.2)" }}>Cold Email · 7 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(99,102,241,0.08)", color: "#4F46E5", border: "1px solid rgba(99,102,241,0.2)" }}>Cold Email · 7 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Is Cold Email Legal? A Compliance Guide for B2B Outbound
           </h1>
@@ -139,7 +139,7 @@ export default function ColdEmailComplianceGuide() {
                   <div key={l.region} className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
                       <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{l.region}</h3>
-                      <span className="text-sm font-bold" style={{ color: "#6366f1" }}>{l.law}</span>
+                      <span className="text-sm font-bold" style={{ color: "#4F46E5" }}>{l.law}</span>
                       <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ backgroundColor: "#ffffff", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{l.basis}</span>
                     </div>
                     <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{l.body}</p>
@@ -156,7 +156,7 @@ export default function ColdEmailComplianceGuide() {
               <ul className="space-y-4">
                 {CHECKLIST.map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "rgba(99,102,241,0.1)", color: "#6366f1", border: "1px solid rgba(99,102,241,0.25)" }}>{i + 1}</span>
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "rgba(99,102,241,0.1)", color: "#4F46E5", border: "1px solid rgba(99,102,241,0.25)" }}>{i + 1}</span>
                     <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{item}</p>
                   </li>
                 ))}
@@ -167,7 +167,7 @@ export default function ColdEmailComplianceGuide() {
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The compliance and deliverability overlap</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 Compliance and inbox placement aren&apos;t separate problems, they reinforce each other. A real unsubscribe link, honest sender identity, and prompt suppression aren&apos;t just legal requirements, they&apos;re exactly the signals email providers use to decide whether your domain is legitimate. Get the legal basics right and your deliverability tends to improve alongside it. For the technical side of that, see our{" "}
-                <a href="/blog/cold-email-deliverability-guide" className="font-bold underline" style={{ color: "#6366f1" }}>cold email deliverability guide</a>.
+                <a href="/blog/cold-email-deliverability-guide" className="font-bold underline" style={{ color: "#4F46E5" }}>cold email deliverability guide</a>.
               </p>
             </div>
           </div>

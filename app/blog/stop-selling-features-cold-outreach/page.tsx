@@ -50,7 +50,7 @@ export default function StopSellingFeaturesColdOutreach() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#f97316", border: "1px solid rgba(249,115,22,0.2)" }}>Cold Outreach · 4 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.2)" }}>Cold Outreach · 4 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Stop Selling Features: The 3-Second Rule of Outbound Outreach
           </h1>
@@ -83,7 +83,7 @@ export default function StopSellingFeaturesColdOutreach() {
                   "Start pattern breaking: disarm the prospect by opening with a pattern breaker. Share a sharp, highly specific observation about their operational bottleneck, or ask a direct, peer-to-peer question about a challenge they're likely facing today.",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#f97316", border: "1px solid rgba(249,115,22,0.3)" }}>{i + 1}</span>
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>{i + 1}</span>
                     <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{item}</p>
                   </li>
                 ))}

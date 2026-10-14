@@ -147,7 +147,7 @@ export default function LeadMagnetIdeasClient() {
             style={{ background: "rgba(59,130,246,0.07)", borderColor: "rgba(59,130,246,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#3b82f6" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#3b82f6" }}>Lead Magnet Idea Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#1D4ED8" }}>Lead Magnet Idea Generator</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
             Lead Magnet{" "}

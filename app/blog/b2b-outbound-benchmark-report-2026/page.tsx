@@ -70,7 +70,7 @@ export default function B2BOutboundBenchmarkReport2026() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: "#10b981", border: "1px solid rgba(16,185,129,0.2)" }}>Benchmark Report · 8 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: "#047857", border: "1px solid rgba(16,185,129,0.2)" }}>Benchmark Report · 8 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The 2026 B2B Outbound Benchmark Report
           </h1>
@@ -114,7 +114,7 @@ export default function B2BOutboundBenchmarkReport2026() {
                           <p className="font-bold" style={{ color: "#0a0a0a" }}>{row.channel}</p>
                           <p className="text-xs" style={{ color: "#71675E" }}>{row.note}</p>
                         </td>
-                        <td className="p-4 font-black" style={{ color: "#10b981" }}>{row.myntmore}</td>
+                        <td className="p-4 font-black" style={{ color: "#047857" }}>{row.myntmore}</td>
                         <td className="p-4" style={{ color: "#71675E" }}>{row.typical}</td>
                       </tr>
                     ))}
@@ -136,7 +136,7 @@ export default function B2BOutboundBenchmarkReport2026() {
                   <div key={row.milestone} className="flex gap-4 rounded-2xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <span className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
                     <div>
-                      <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{row.milestone} <span style={{ color: "#10b981" }}>· {row.days}</span></p>
+                      <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{row.milestone} <span style={{ color: "#047857" }}>· {row.days}</span></p>
                       <p className="text-sm" style={{ color: "#52525B" }}>{row.note}</p>
                     </div>
                   </div>

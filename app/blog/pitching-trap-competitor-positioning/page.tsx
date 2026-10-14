@@ -56,7 +56,7 @@ export default function PitchingTrapBlogPost() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(249,115,22,0.35)", background: "rgba(249,115,22,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#f97316" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#c2410c" }}>Sales Strategy · 4 min read</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#9A3412" }}>Sales Strategy · 4 min read</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             The Pitching Trap: How to Articulate Pain Better Than Your Competitors

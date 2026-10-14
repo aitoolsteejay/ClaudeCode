@@ -105,7 +105,7 @@ export default function LeadsOnAutopilotGuide() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(0,119,181,0.3)", backgroundColor: "rgba(0,119,181,0.08)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#0077b5" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0077b5" }}>LinkedIn Lead Generation · Step-by-Step Guide</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#00669C" }}>LinkedIn Lead Generation · Step-by-Step Guide</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Leads on<br />
@@ -199,7 +199,7 @@ export default function LeadsOnAutopilotGuide() {
                 {OUTREACH_STEPS.map((s) => (
                   <div key={s.step}>
                     <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "rgba(0,119,181,0.1)", color: "#0077b5", border: "1px solid rgba(0,119,181,0.25)" }}>{s.step}</span>
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "rgba(0,119,181,0.1)", color: "#00669C", border: "1px solid rgba(0,119,181,0.25)" }}>{s.step}</span>
                       <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{s.name}</h3>
                       <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s.goal}</span>
                     </div>

@@ -163,7 +163,7 @@ export default function GuidesPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>{GUIDES.length} guides</span>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>{GUIDES.length} guides</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Copy the setup.<br />Skip the trial and error.
           </h1>

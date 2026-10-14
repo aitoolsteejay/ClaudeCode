@@ -5,6 +5,7 @@ import { Copy, Clock, Frown, ArrowRight, MousePointer2, Zap, CheckCircle } from 
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { textTone } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Lead Magnet Ideas Tool Works", [
   { name: "Describe your business and ICP", text: "What you do, who you sell to, and your industry." },
@@ -33,7 +34,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
             style={{ background: "rgba(59,130,246,0.07)", borderColor: "rgba(59,130,246,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Lead Magnet Idea Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Lead Magnet Idea Generator</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">

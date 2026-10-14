@@ -132,7 +132,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       namecol: "#0a0a0a",
       rolecol: "#0369a1",
       quotecol: "#3D3D3D",
-      avatarbg: "#0284C7",
+      avatarbg: "#0369A1",
       avatartext: "#ffffff",
       starcol: "#F5B731",
     },
@@ -152,7 +152,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       namecol: "#0a0a0a",
       rolecol: "#15803d",
       quotecol: "#3D3D3D",
-      avatarbg: "#16A34A",
+      avatarbg: "#166534",
       avatartext: "#ffffff",
       starcol: "#F5B731",
     },
@@ -162,7 +162,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       namecol: "#0a0a0a",
       rolecol: "#a14a08",
       quotecol: "#3D3D3D",
-      avatarbg: "#D97706",
+      avatarbg: "#A14A08",
       avatartext: "#ffffff",
       starcol: "#F5B731",
     },
@@ -317,7 +317,7 @@ export default function Testimonials() {
         <ScrollRow items={ROW_2} direction="right" duration="40s" />
       </div>
 
-      <p className="text-center text-xs text-neutral-400 mt-10 px-4">
+      <p className="text-center text-xs text-neutral-600 mt-10 px-4">
         Results vary by industry, deal size, and engagement scope. Testimonials reflect real anonymised client feedback.
       </p>
     </section>

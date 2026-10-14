@@ -42,7 +42,7 @@ export default function ColdEmailDeliverability() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: "#3b82f6", border: "1px solid rgba(59,130,246,0.2)" }}>Cold Email · 6 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: "#1D4ED8", border: "1px solid rgba(59,130,246,0.2)" }}>Cold Email · 6 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)
           </h1>
@@ -142,7 +142,7 @@ export default function ColdEmailDeliverability() {
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Deliverability and compliance are the same conversation</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 A real unsubscribe link, honest sender identity, and prompt suppression aren&apos;t just legal requirements under laws like CAN-SPAM and GDPR, they&apos;re exactly the signals email providers use to decide whether your domain is legitimate. Get the legal basics right and inbox placement tends to improve alongside it. See our{" "}
-                <Link href="/blog/cold-email-compliance-guide" className="font-bold underline" style={{ color: "#3b82f6" }}>cold email compliance guide</Link>{" "}
+                <Link href="/blog/cold-email-compliance-guide" className="font-bold underline" style={{ color: "#1D4ED8" }}>cold email compliance guide</Link>{" "}
                 for the specifics by region.
               </p>
             </div>

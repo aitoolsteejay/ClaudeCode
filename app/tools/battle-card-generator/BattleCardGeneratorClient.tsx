@@ -7,6 +7,7 @@ import { LandingPage } from "@/components/tools/battle-card-generator/LandingPag
 import { BattleCardForm } from "@/components/tools/battle-card-generator/BattleCardForm";
 import { BattleCardResults } from "@/components/tools/battle-card-generator/BattleCardResults";
 import type { BattleCardInput, BattleCardOutput } from "@/components/tools/battle-card-generator/types";
+import { textTone } from "@/lib/colors";
 
 const ACCENT = "#ef4444";
 
@@ -83,7 +84,7 @@ export default function BattleCardGeneratorClient() {
                 style={{ background: "rgba(239,68,68,0.07)", borderColor: "rgba(239,68,68,0.35)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-                <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Competitor Battle Card Generator</span>
+                <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Competitor Battle Card Generator</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
                 <span className="relative inline-block">

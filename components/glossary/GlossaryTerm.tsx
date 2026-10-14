@@ -3,6 +3,7 @@ import InnerLayout from "@/app/components/InnerLayout";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import FadeIn from "@/app/components/FadeIn";
 import JsonLd from "@/app/components/JsonLd";
+import { textTone } from "@/lib/colors";
 
 export interface GlossaryTermProps {
   slug: string;
@@ -49,7 +50,7 @@ export default function GlossaryTerm({
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: `radial-gradient(circle, ${accent}2e 0%, ${accent}0f 40%, transparent 68%)`, filter: "blur(55px)", pointerEvents: "none" }} />
         <div className="relative z-10 max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Glossary", href: "/resources/glossary" }, { label: title, href: `/resources/glossary/${slug}` }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}33` }}>{tag}</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${accent}14`, color: textTone(accent), border: `1px solid ${accent}33` }}>{tag}</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>{title}</h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>{tagline}</p>
           {alsoKnownAs && alsoKnownAs.length > 0 && (
@@ -69,7 +70,7 @@ export default function GlossaryTerm({
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="rounded-2xl border-l-4 p-6 mb-10" style={{ backgroundColor: `${accent}0d`, borderColor: accent }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: accent }}>Definition</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: textTone(accent) }}>Definition</p>
               <p className="text-base leading-relaxed" style={{ color: "#0a0a0a" }}>{definition}</p>
             </div>
 
@@ -78,13 +79,13 @@ export default function GlossaryTerm({
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>
-            <Link href={sourceHref} className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: accent }}>
+            <Link href={sourceHref} className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: textTone(accent) }}>
               {sourceLabel}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
             {furtherLabel && furtherHref && (
               <div className="mt-3">
-                <Link href={furtherHref} className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: accent }}>
+                <Link href={furtherHref} className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: textTone(accent) }}>
                   {furtherLabel}
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>

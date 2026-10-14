@@ -8,6 +8,7 @@ import FadeIn from "@/app/components/FadeIn";
 import JsonLd from "@/app/components/JsonLd";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/resources/guides/cold-email-tech-stack";
@@ -173,7 +174,7 @@ export default function ColdEmailTechStack() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(234,88,12,0.3)", backgroundColor: "rgba(234,88,12,0.08)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Cold Email · Stack & Sequence</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Cold Email · Stack & Sequence</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             The cold email stack that got us an extra{" "}
@@ -210,12 +211,12 @@ export default function ColdEmailTechStack() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: ACCENT }}>Part 01</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: textTone(ACCENT) }}>Part 01</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-6" style={{ color: "#0a0a0a" }}>The tech stack</h2>
               <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "#E8E2D9" }}>
                 {STACK.map((row, i) => (
                   <div key={row.step} className="flex items-center gap-4 px-5 py-4" style={{ backgroundColor: i % 2 === 0 ? "#ffffff" : "#FCFBF8", borderBottom: i < STACK.length - 1 ? "1px solid #E8E2D9" : "none" }}>
-                    <span className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "rgba(234,88,12,0.1)", color: ACCENT, border: "1px solid rgba(234,88,12,0.25)" }}>{row.step}</span>
+                    <span className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "rgba(234,88,12,0.1)", color: textTone(ACCENT), border: "1px solid rgba(234,88,12,0.25)" }}>{row.step}</span>
                     <div className="flex-1 min-w-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                       <span className="text-sm font-semibold" style={{ color: "#52525B" }}>{row.job}</span>
                       <span className="text-sm font-black" style={{ color: "#0a0a0a" }}>
@@ -239,7 +240,7 @@ export default function ColdEmailTechStack() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: ACCENT }}>Part 02</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: textTone(ACCENT) }}>Part 02</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>The email sequence</h2>
               <p className="text-base leading-relaxed mb-8" style={{ color: "#52525B" }}>
                 Three emails, each with variants to test against each other. Replace the bracketed placeholders before sending.

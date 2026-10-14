@@ -189,8 +189,9 @@ function StepCard({ step, delay, active = false }: { step: FlowStep; delay: numb
         <span
           className="text-xs font-black tracking-widest"
           style={{
-            // Gold steps (rgba(245,183,49,…)) would put 1.8:1 gold text on white.
-            color: active ? (solid === "rgb(245, 183, 49)" ? GOLD_TEXT : solid) : "#71675E",
+            // The active card puts a 0.35-alpha tint of the step's own hue behind
+            // the number, so use a deep shade of that hue (each >= 4.9:1 on its tint).
+            color: active ? (({ "rgb(139, 92, 246)": "#5B21B6", "rgb(59, 130, 246)": "#1E40AF", "rgb(245, 183, 49)": GOLD_TEXT, "rgb(239, 68, 68)": "#991B1B", "rgb(16, 185, 129)": "#065F46", "rgb(249, 115, 22)": "#9A3412" } as Record<string, string>)[solid] ?? "#0a0a0a") : "#71675E",
             opacity: inView ? 1 : 0,
             transition: `opacity 0.4s ease ${delay + 200}ms, color 0.3s ease`,
           }}

@@ -147,7 +147,7 @@ export default function FAQ() {
 
         {/* Still have questions nudge */}
         <div className="mt-12 text-center">
-          <p className="text-neutral-500 text-sm mb-4">
+          <p className="text-neutral-600 text-sm mb-4">
             Still have questions? We&rsquo;re happy to chat.
           </p>
           <a

@@ -37,7 +37,7 @@ export default function FounderPersonalBrandLinkedIn() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "B2B Founder", href: "/case-studies/founder-personal-brand-linkedin" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#f97316", border: "1px solid rgba(249,115,22,0.2)" }}>B2B Founder · Bootstrapped</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.2)" }}>B2B Founder · Bootstrapped</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Bootstrapped founder went from 0 to 22K followers and 8 inbound deals
           </h1>
@@ -83,7 +83,7 @@ export default function FounderPersonalBrandLinkedIn() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 rounded-2xl border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
               {[{ v: "22K", l: "LinkedIn followers gained" }, { v: "8", l: "Inbound deals in 6 months" }, { v: "6.2%", l: "Average engagement rate" }].map((s) => (
                 <div key={s.l} className="text-center">
-                  <div className="text-3xl font-black" style={{ color: "#f97316" }}><StatTicker value={s.v} /></div>
+                  <div className="text-3xl font-black" style={{ color: "#9A3412" }}><StatTicker value={s.v} /></div>
                   <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
@@ -97,7 +97,7 @@ export default function FounderPersonalBrandLinkedIn() {
             <p className="text-lg font-semibold italic mb-3" style={{ color: "#0a0a0a" }}>
               &ldquo;I was sceptical that LinkedIn could actually drive revenue. Six months later it&apos;s our number one source of new business. The content doesn&apos;t just get likes. It brings in clients.&rdquo;
             </p>
-            <p className="text-sm font-bold" style={{ color: "#f97316" }}>Founder, B2B Operations Consulting</p>
+            <p className="text-sm font-bold" style={{ color: "#9A3412" }}>Founder, B2B Operations Consulting</p>
           </div>
 
           <div>

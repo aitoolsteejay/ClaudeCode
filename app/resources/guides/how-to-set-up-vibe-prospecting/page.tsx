@@ -6,6 +6,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 import CopyBlock from "@/app/components/CopyBlock";
 import FadeIn from "@/app/components/FadeIn";
 import Underline from "./Underline";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "How to Set Up Vibe Prospecting on Claude",
@@ -125,7 +126,7 @@ const ACCENT_BG = "rgba(139,92,246,0.08)";
 function PromptCard({ title, prompt }: { title: string; prompt: string }) {
   return (
     <div className="rounded-xl border p-4 sm:p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-      <h4 className="text-sm font-black mb-3" style={{ color: ACCENT }}>{title}</h4>
+      <h4 className="text-sm font-black mb-3" style={{ color: textTone(ACCENT) }}>{title}</h4>
       <CopyBlock text={prompt} accent={ACCENT} label="Copy this prompt" />
     </div>
   );
@@ -138,7 +139,7 @@ export default function VibeProspectingGuide() {
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "How to Set Up Vibe Prospecting", href: "/resources/guides/how-to-set-up-vibe-prospecting" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "rgba(139,92,246,0.08)", color: ACCENT, border: "1px solid rgba(139,92,246,0.3)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "rgba(139,92,246,0.08)", color: textTone(ACCENT), border: "1px solid rgba(139,92,246,0.3)" }}>
             Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -149,7 +150,7 @@ export default function VibeProspectingGuide() {
             </span>{" "}
             on Claude
           </h1>
-          <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: ACCENT }}>
+          <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: textTone(ACCENT) }}>
             And actually use it for B2B leads. A Claude connector that pulls verified names, emails, and LinkedIn profiles straight into your chat, no separate tool to log into.
           </p>
           <p className="text-base leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
@@ -175,7 +176,7 @@ export default function VibeProspectingGuide() {
                   <li key={i} className="flex items-start gap-4">
                     <span
                       className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black mt-0.5"
-                      style={{ backgroundColor: ACCENT_BG, color: ACCENT }}
+                      style={{ backgroundColor: ACCENT_BG, color: textTone(ACCENT) }}
                     >
                       {i + 1}
                     </span>

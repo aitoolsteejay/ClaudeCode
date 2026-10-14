@@ -6,6 +6,7 @@ import JsonLd from "../../components/JsonLd";
 import BlogGrid, { type BlogPost } from "./BlogGrid";
 import NewsletterForm from "../../components/NewsletterForm";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -356,7 +357,7 @@ export default async function BlogsPage() {
                 { label: "ICP & Targeting", accent: "#10b981" },
                 { label: "GTM Strategy", accent: "#7C3AED" },
               ].map((cat) => (
-                <span key={cat.label} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border" style={{ color: cat.accent, backgroundColor: `${cat.accent}0d`, borderColor: `${cat.accent}30` }}>
+                <span key={cat.label} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border" style={{ color: textTone(cat.accent), backgroundColor: `${cat.accent}0d`, borderColor: `${cat.accent}30` }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: cat.accent }} />
                   {cat.label}
                 </span>

@@ -340,7 +340,7 @@ function ToolRow({ tool, index, globalNum, accent, color }: {
         backgroundColor: hovered ? color + "55" : "transparent",
       }}
     >
-      <td className="px-6 py-3.5 text-xs font-black w-10" style={{ color: "#D0C9BF" }}>{globalNum}</td>
+      <td className="px-6 py-3.5 text-xs font-black w-10" style={{ color: "#71675E" }}>{globalNum}</td>
       <td className="px-4 py-3.5 font-black text-sm" style={{ color: hovered ? textTone(accent) : "#0a0a0a", whiteSpace: "nowrap", transition: "color 0.15s ease" }}>{tool.name}</td>
       <td className="px-4 py-3.5 text-sm leading-relaxed" style={{ color: "#52525B" }}>{tool.what}</td>
       <td className="px-4 py-3.5"><FreeBadge type={tool.free} /></td>

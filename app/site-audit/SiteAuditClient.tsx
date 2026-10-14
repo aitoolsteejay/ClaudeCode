@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
-import { GOLD_TEXT } from "@/lib/colors";
+import { GOLD_TEXT, textTone } from "@/lib/colors";
 
 interface AuditPage {
   path: string | null;
@@ -66,7 +66,7 @@ function Badge({ children, color, solid }: { children: React.ReactNode; color: s
   return (
     <span
       className="inline-flex items-center text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap"
-      style={solid ? { backgroundColor: color, color: "#fff" } : { backgroundColor: `${color}14`, color, border: `1px solid ${color}33` }}
+      style={solid ? { backgroundColor: color, color: "#fff" } : { backgroundColor: `${color}14`, color: textTone(color), border: `1px solid ${color}33` }}
     >
       {children}
     </span>

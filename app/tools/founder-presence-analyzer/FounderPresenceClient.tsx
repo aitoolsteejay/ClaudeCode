@@ -191,7 +191,7 @@ export default function FounderPresenceClient() {
               style={{ background: "rgba(20,184,166,0.07)", borderColor: "rgba(20,184,166,0.35)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#14B8A6" }} aria-hidden="true" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#14B8A6" }}>Founder Presence Analyzer</span>
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#0F766E" }}>Founder Presence Analyzer</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
               <span className="relative inline-block">

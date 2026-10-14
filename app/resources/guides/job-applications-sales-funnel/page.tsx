@@ -54,10 +54,10 @@ const METRICS = [
 
 const JOB_FUNNEL = [
   { label: "HR / Hiring managers reached out to", value: "800", rate: "", width: 100, color: "#1478C9", text: "#ffffff" },
-  { label: "Accepted connection request", value: "240", rate: "30%", width: 88, color: "#2588D3", text: "#ffffff" },
-  { label: "Responded", value: "120", rate: "50%", width: 74, color: "#4598D8", text: "#ffffff" },
-  { label: "Positive replies", value: "36", rate: "30%", width: 58, color: "#6AA7DD", text: "#ffffff" },
-  { label: "Interviews", value: "28", rate: "80%", width: 43, color: "#16A85A", text: "#ffffff" },
+  { label: "Accepted connection request", value: "240", rate: "30%", width: 88, color: "#1E6DA9", text: "#ffffff" },
+  { label: "Responded", value: "120", rate: "50%", width: 74, color: "#326D9C", text: "#ffffff" },
+  { label: "Positive replies", value: "36", rate: "30%", width: 58, color: "#446B8D", text: "#ffffff" },
+  { label: "Interviews", value: "28", rate: "80%", width: 43, color: "#107941", text: "#ffffff" },
   { label: "Job offers", value: "3", rate: "", width: 36, color: "#FFB82E", text: "#18214D" },
 ];
 

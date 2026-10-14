@@ -102,7 +102,7 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-3xl mx-auto space-y-14">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#14b8a6" }}>01 · The problem</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#0F766E" }}>01 · The problem</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Precision mattered more than volume</h2>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: "#52525B" }}>
               <p>The client was operating in a specialised pharma market where the number of genuinely relevant accounts was limited. Their existing outbound was generating just 3 meetings per month, with a 5% positive response rate and only 1 qualified opportunity.</p>
@@ -111,7 +111,7 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
           </div>
 
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#14b8a6" }}>02 · The solution</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#0F766E" }}>02 · The solution</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>We rebuilt outbound from the buyer backwards</h2>
             <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "#52525B" }}>
               <p>Instead of maximising the size of the prospect database, we narrowed the ICP, mapped high-fit accounts and decision-makers, and segmented outreach around the specific priorities of each buyer group.</p>
@@ -129,7 +129,7 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
           </div>
 
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#14b8a6" }}>03 · The results</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#0F766E" }}>03 · The results</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>A repeatable source of qualified opportunities</h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: "#52525B" }}>Within 4 months, the outbound system went from inconsistent prospecting to a repeatable source of qualified B2B opportunities.</p>
             <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
@@ -140,7 +140,7 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
                 <div key={result.label} className="grid grid-cols-[1fr_auto_1fr] gap-3 items-center px-5 py-5" style={{ borderBottom: index < BEFORE_AFTER.length - 1 ? "1px solid #E8E2D9" : "none" }}>
                   <div><div className="text-2xl font-black" style={{ color: "#71675E" }}>{result.before}</div><div className="text-xs mt-1" style={{ color: "#71675E" }}>{result.label}</div></div>
                   <span className="text-xl" style={{ color: "#A14A08" }} aria-hidden="true">→</span>
-                  <div className="text-right"><div className="text-2xl font-black" style={{ color: "#14b8a6" }}>{result.after}</div><div className="text-xs mt-1" style={{ color: "#52525B" }}>{result.label}</div></div>
+                  <div className="text-right"><div className="text-2xl font-black" style={{ color: "#0F766E" }}>{result.after}</div><div className="text-xs mt-1" style={{ color: "#52525B" }}>{result.label}</div></div>
                 </div>
               ))}
             </div>

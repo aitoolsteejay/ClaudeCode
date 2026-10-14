@@ -681,7 +681,7 @@ function EnrichDemo() {
                 <span className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: visible ? T.amberSoft : "transparent", color: visible ? T.amber : T.hairline }}>
                   <Icon className="w-4 h-4" strokeWidth={2} />
                 </span>
-                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: visible ? T.muted : T.hairline }}>{f.label}</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: visible ? T.muted : "#71675E" }}>{f.label}</span>
                 {visible ? (
                   <span className="card-fade-up text-sm font-semibold truncate" style={{ color: T.ink }}>{f.value}</span>
                 ) : (
@@ -1018,7 +1018,7 @@ export default function DosAndDontsClient() {
                     <p className="text-sm leading-relaxed mt-auto pt-4 border-t" style={{ color: T.muted, borderColor: `${t.accent}33` }}>
                       <span className="font-bold" style={{ color: T.ink }}>Use it when: </span>{t.useCase}
                     </p>
-                    <span className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform duration-300 group-hover:translate-x-0.5" style={{ backgroundColor: t.accent, boxShadow: `0 6px 16px ${t.accent}55` }}>
+                    <span className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform duration-300 group-hover:translate-x-0.5" style={{ backgroundColor: textTone(t.accent), boxShadow: `0 6px 16px ${t.accent}55` }}>
                       Try it free
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
                     </span>

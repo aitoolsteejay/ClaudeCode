@@ -283,7 +283,7 @@ export default function RoiCalculatorClient() {
               style={{ background: "rgba(34,197,94,0.07)", borderColor: "rgba(34,197,94,0.35)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#16a34a" }} aria-hidden="true" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#16a34a" }}>ROI Calculator</span>
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#166534" }}>ROI Calculator</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">
               <span className="relative inline-block">

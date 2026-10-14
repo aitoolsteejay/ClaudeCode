@@ -171,7 +171,7 @@ export default function AiAgentsMeetingsBlueprint() {
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "80+ US Meetings with AI Agents", href: "/resources/guides/80-us-meetings-ai-agents" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF3EC", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF3EC", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>
             Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -181,7 +181,7 @@ export default function AiAgentsMeetingsBlueprint() {
               <Underline color="#F97316" />
             </span>
           </h1>
-          <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: "#F97316" }}>
+          <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: "#9A3412" }}>
             80+ US B2B Meetings/Month, Fully AI-Driven. A step-by-step blueprint you can copy, tweak, and run tomorrow.
           </p>
           <p className="text-base leading-relaxed hero-fade-d2 mb-8" style={{ color: "#52525B" }}>
@@ -207,7 +207,7 @@ export default function AiAgentsMeetingsBlueprint() {
       <StepSection number="1" icon={Target} title="Foundations (Before Automation)" accent="#F97316" accentBg="rgba(249,115,22,0.08)">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#F97316" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />ICP Locked</h4>
+            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#9A3412" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />ICP Locked</h4>
             <div className="space-y-3">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Roles</p>
@@ -231,7 +231,7 @@ export default function AiAgentsMeetingsBlueprint() {
           />
 
           <div className="rounded-xl p-5 flex flex-col justify-center" style={{ backgroundColor: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.3)" }}>
-            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#F97316" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />Value Proposition</h4>
+            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#9A3412" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />Value Proposition</h4>
             <p className="text-sm italic leading-relaxed" style={{ color: "#0a0a0a" }}>
               &quot;We help B2B founders book predictable sales meetings using AI agents + laser-targeted outbound.&quot;
             </p>
@@ -388,8 +388,8 @@ export default function AiAgentsMeetingsBlueprint() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl font-black" style={{ color: "#ec4899" }}>8</span>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: "#ec4899", border: "1px solid rgba(236,72,153,0.3)" }}>
+              <span className="text-3xl font-black" style={{ color: "#BE185D" }}>8</span>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: "#BE185D", border: "1px solid rgba(236,72,153,0.3)" }}>
                 Step 8
               </span>
             </div>
@@ -424,8 +424,8 @@ export default function AiAgentsMeetingsBlueprint() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl font-black" style={{ color: "#F97316" }}>9</span>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>
+              <span className="text-3xl font-black" style={{ color: "#9A3412" }}>9</span>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>
                 Step 9
               </span>
             </div>

@@ -398,7 +398,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                       }}
                     >
                       {tier.featured && (
-                        <div className="price-badge-pop absolute top-0 left-1/2 rounded-b-lg px-4 py-1 text-center font-black text-[10px] text-white whitespace-nowrap" style={{ backgroundColor: tier.accent, zIndex: 10 }}>
+                        <div className="price-badge-pop absolute top-0 left-1/2 rounded-b-lg px-4 py-1 text-center font-black text-[10px] text-white whitespace-nowrap" style={{ backgroundColor: textTone(tier.accent), zIndex: 10 }}>
                           MOST POPULAR
                         </div>
                       )}
@@ -644,7 +644,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                   </li>
                 ))}
               </ul>
-              <p className="text-[11px] font-semibold mt-5" style={{ color: "#C9C2B7" }}>Last updated September 25, 2026.</p>
+              <p className="text-[11px] font-semibold mt-5" style={{ color: "#71675E" }}>Last updated September 25, 2026.</p>
             </div>
           </FadeIn>
         </div>

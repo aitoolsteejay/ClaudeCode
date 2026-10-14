@@ -37,6 +37,7 @@ import FlowVisual from "./FlowVisual";
 import ProcessExplorer from "./ProcessExplorer";
 import { PROCESS_STEPS } from "./process-steps";
 import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 // Done-for-you cold email service overview.
 
@@ -113,7 +114,7 @@ const FAQ_SCHEMA = buildFaqSchema(FAQS.map(({ q, a }) => ({ question: q, answer:
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? GOLD : ORANGE }}>
+    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? GOLD : textTone(ORANGE) }}>
       {children}
     </p>
   );

@@ -8,6 +8,7 @@ import StatTicker from "../components/StatTicker";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { caseStudyFilterSlug, CASE_STUDY_FILTERS } from "@/lib/case-study-filters";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -103,7 +104,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
       <div style={{ height: 4, background: `linear-gradient(90deg,${cs.accent},${cs.accent}88)`, opacity: hov ? 1 : 0, transition: "opacity 0.3s" }} />
       <div className="p-8">
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${cs.accent}12`, color: cs.accent, border: `1px solid ${cs.accent}30` }}>{cs.tag}</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${cs.accent}12`, color: textTone(cs.accent), border: `1px solid ${cs.accent}30` }}>{cs.tag}</span>
           {cs.illustrative && (
             <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "#F3F3F1", color: "#71675E", border: "1px dashed #C9C2B8" }}>Illustrative example</span>
           )}
@@ -113,7 +114,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
         <div className="grid grid-cols-3 gap-6 mb-6 py-6 border-y" style={{ borderColor: "#E8E2D9" }}>
           {cs.stats.map((s) => (
             <div key={s.l}>
-              <div className="text-3xl font-black" style={{ color: cs.accent }}><StatTicker value={s.v} /></div>
+              <div className="text-3xl font-black" style={{ color: textTone(cs.accent) }}><StatTicker value={s.v} /></div>
               <div className="text-xs mt-0.5" style={{ color: "#71675E" }}>{s.l}</div>
             </div>
           ))}
@@ -124,7 +125,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
               <span key={s} className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s}</span>
             ))}
           </div>
-          <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: cs.accent }}>
+          <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: textTone(cs.accent) }}>
             Read full case study
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
           </span>

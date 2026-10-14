@@ -25,11 +25,16 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import InnerLayout from "@/app/components/InnerLayout";
+import JsonLd from "@/app/components/JsonLd";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import AnswerBlock from "@/app/components/AnswerBlock";
 import FadeIn from "@/app/components/FadeIn";
 import Faq from "@/app/lp/Faq";
 import Underline from "@/app/resources/guides/how-to-set-up-vibe-prospecting/Underline";
 import FlowVisual from "./FlowVisual";
 import ProcessExplorer from "./ProcessExplorer";
+import { PROCESS_STEPS } from "./process-steps";
+import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
 
 // Done-for-you cold email service overview.
 
@@ -82,12 +87,27 @@ const WHY: { icon: LucideIcon; title: string; line: string }[] = [
 const FOUNDER_STATS = ["4x entrepreneur", "Flintstop: $6M a year", "120+ B2B companies", "12K+ meetings booked", "$120M+ pipeline", "TEDx speaker"];
 
 const FAQS = [
-  { q: "How does this work?", a: "We define your audience, craft the messaging and set up automated campaigns, then handle optimisation, nurturing and booking meetings." },
-  { q: "How do we measure success?", a: "Deliverability, reply rates, meetings booked and conversions, with real-time tracking and reports." },
-  { q: "What's the timeline?", a: "Campaigns go live within 18 days of onboarding, including domain setup, inbox warm-up, the lead list and the copy." },
-  { q: "Who sees the best results?", a: "B2B businesses, service providers, SaaS companies, agencies and consultants." },
-  { q: "How many leads can I expect?", a: "Clients typically see 1-3% reply rates, with steady meetings from Week 2. Some campaigns convert at 4x the industry average." },
+  { q: "How does this work?", a: "We run cold email end to end in ten steps. First we map your ideal customer profile and build a targeted lead list, then write the copy and set up domains, inboxes and DNS. After launch we handle follow-ups, A/B testing, nurturing replies into meetings, and real-time reporting." },
+  { q: "How do we measure success?", a: "We measure four things: deliverability, reply rates, meetings booked and conversions. You get real-time tracking and regular reports, so you always see what is working. The targets we aim for are 90%+ email health, a 1%+ reply rate and 20%+ positive replies." },
+  { q: "What's the timeline?", a: "Campaigns go live within 18 days of onboarding. That window covers domain and inbox setup, warm-up, building your lead list and writing the copy. Once the campaign is running and being optimised, clients typically see steady meetings from Week 2." },
+  { q: "Who sees the best results?", a: "B2B businesses see the best results, particularly service providers, SaaS companies, agencies and consultants. These teams sell to a clearly defined set of business buyers, so a targeted list with every prospect handpicked, plus relevant soft-sell copy, starts conversations with exactly the right people." },
+  { q: "How many leads can I expect?", a: "Clients typically see 1-3% reply rates, with steady meetings from Week 2. Volume depends on your list and offer: the package sends up to 1,200 emails a day to 5,000 fresh prospects a month, and results improve as we test copy and targeting. Some campaigns convert at 4x the industry average." },
 ];
+
+// Structured data for the page. HowTo describes the ten-step process the
+// explorer shows (same data module), Service and FAQPage describe the offer and
+// the visible FAQ below.
+const SERVICE_SCHEMA = buildServiceSchema({
+  name: "Cold Email Infrastructure & Deliverability",
+  description: "Done-for-you B2B cold email: domain and inbox setup, deliverability, targeting, copy, follow-ups and reporting, run end to end to book qualified calls.",
+  serviceType: "Cold Email Management and Deliverability",
+  url: `${SITE_URL}/services/cold-email`,
+});
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How Done-for-You Cold Email Works",
+  PROCESS_STEPS.map((s) => ({ name: s.title, text: `${s.summary} ${s.result}` }))
+);
+const FAQ_SCHEMA = buildFaqSchema(FAQS.map(({ q, a }) => ({ question: q, answer: a })));
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
@@ -102,12 +122,16 @@ const h2Style = { letterSpacing: "-0.035em", lineHeight: 1.04 } as const;
 export default function ColdEmailingPackage() {
   return (
     <InnerLayout>
+      <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
+      <JsonLd data={FAQ_SCHEMA} />
       {/* Hero */}
       <section className="relative overflow-hidden px-4 pb-28 pt-32 sm:pb-32" style={{ backgroundColor: CREAM }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-160px", left: "-180px", width: 680, height: 680, borderRadius: "50%", background: "radial-gradient(circle,rgba(234,88,12,0.18),rgba(234,88,12,0.06) 42%,transparent 70%)", filter: "blur(55px)" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-120px", right: "-180px", width: 620, height: 620, borderRadius: "50%", background: "radial-gradient(circle,rgba(167,139,250,0.2),rgba(245,183,49,0.07) 45%,transparent 70%)", filter: "blur(55px)" }} />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
+            <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "Cold Email", href: "/services/cold-email" }]} />
             <div className="hero-fade mb-7 inline-flex items-center gap-2.5 rounded-full border bg-white/70 px-5 py-2 backdrop-blur" style={{ borderColor: "rgba(234,88,12,0.35)" }}>
               <span className="h-2 w-2 animate-pulse rounded-full" style={{ backgroundColor: ORANGE }} />
               <span className="text-[11px] font-bold uppercase tracking-[0.3em]" style={{ color: INK }}>Cold emailing · Done for you</span>
@@ -135,6 +159,8 @@ export default function ColdEmailingPackage() {
           <FlowVisual />
         </div>
       </section>
+
+      <AnswerBlock slug="cold-email" accent={ORANGE} />
 
       {/* Numbers */}
       <section className="relative z-20 -mt-14 px-4 sm:-mt-16" style={{ backgroundColor: CREAM }}>

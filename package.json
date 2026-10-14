@@ -8,6 +8,7 @@
     "sitemap:dates": "node scripts/generate-sitemap-dates.mjs",
     "sitemap:check": "node scripts/generate-sitemap-dates.mjs --check",
     "audit:links": "node scripts/audit-internal-links.mjs",
+    "audit:answers": "node scripts/audit-answers.mjs",
     "build": "next build",
     "start": "next start"
   },

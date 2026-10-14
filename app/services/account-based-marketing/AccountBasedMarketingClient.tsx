@@ -5,6 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import AnswerBlock from "../../components/AnswerBlock";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
@@ -308,6 +309,8 @@ export default function AccountBasedMarketingClient() {
           </div>
         </div>
       </section>
+
+      <AnswerBlock slug="account-based-marketing" accent="#6366f1" />
 
       {/* ── Stats strip ──────────────────────────────────────── */}
       <div ref={statsContainerRef} className="border-y py-10 px-4" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>

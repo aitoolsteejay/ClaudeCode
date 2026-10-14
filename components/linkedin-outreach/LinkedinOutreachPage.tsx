@@ -32,8 +32,9 @@ import StatTicker from "@/app/components/StatTicker";
 import Faq from "@/app/lp/Faq";
 import JsonLd from "@/app/components/JsonLd";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import AnswerBlock from "@/app/components/AnswerBlock";
 import Underline from "@/app/resources/guides/how-to-set-up-vibe-prospecting/Underline";
-import { buildFaqSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
+import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
 import LinkedinFlowVisual from "./LinkedinFlowVisual";
 import AgentExplorer from "./AgentExplorer";
 import InView from "./InView";
@@ -108,7 +109,7 @@ const FAQS = [
   { q: "What's in it for me?", a: "A steady pipeline of conversations and qualified meetings, a profile and content that make your outreach credible, and a calendar that fills consistently, all for about 90 minutes of your time a month." },
   { q: "How do AI agents fit into the process?", a: "They work like a silent growth team, 24/7. They break down your ICP, rank who is most likely to engage, enrich every lead with context, track your competitors, and draft comments, replies and follow-ups that sound like you." },
   { q: "What makes AI agents so effective for LinkedIn?", a: "LinkedIn rewards relevance. Agents work from real-time data, so every connection request, InMail and follow-up reaches the right person with the right context, at a volume no human team can match, while we keep the voice yours." },
-  { q: "How much time do I need to spend as a founder?", a: "About 90 minutes a month. We handle the research, content, outreach, replies and reporting around that input." },
+  { q: "How much time do I need to spend as a founder?", a: "About 90 minutes a month. We handle the research, content writing, outreach, replies to comments and reporting around that input, so your time goes into the conversations and meetings the work produces rather than into producing content or chasing leads." },
   { q: "How does Myntmore help me stand out from the competition?", a: "We track how often your competitors post, what works for them and where they fall short, then position you one step ahead with sharper messaging and content that gets you seen by the right people." },
   { q: "What makes Myntmore different from other agencies?", a: "Most agencies stop at profile optimisation, content and reporting. We also do ICP research, LinkedIn and InMail lead generation, multi-channel sequences, personalised connection requests, competitor and buyer intelligence, AI agent-led prospecting, weekly pipeline updates and monthly strategy reviews." },
   { q: "How soon will I see results?", a: "You won't get an explosion of leads on day one. The first weeks go into the right setup, the right audience and consistent content that builds trust. Traction builds from there as your content and outreach start working together." },
@@ -117,6 +118,12 @@ const FAQS = [
 
 const FOUNDER_STATS = ["4x entrepreneur", "Scaled Flintstop to $6M ARR", "TEDx speaker", "Growth marketing professor", "300+ clients"];
 
+// The four steps below are the visible "How it works" timeline on this page,
+// so the schema describes content the visitor can actually read.
+const HOWTO_SCHEMA = buildHowToSchema(
+  "How LinkedIn Outreach Works",
+  STEPS.map((s) => ({ name: s.title, text: s.text }))
+);
 const FAQ_SCHEMA = buildFaqSchema(FAQS.map(({ q, a }) => ({ question: q, answer: a })));
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "LinkedIn Outreach & Automation",
@@ -157,6 +164,7 @@ export default function LinkedinOutreachPage() {
   return (
     <InnerLayout>
       <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={HOWTO_SCHEMA} />
       <JsonLd data={FAQ_SCHEMA} />
       <style>{`
         .li-tl-line { transform-origin: left center; transform: scaleX(0); transition: transform 1.7s cubic-bezier(.4,0,.2,1) .2s; }
@@ -213,6 +221,8 @@ export default function LinkedinOutreachPage() {
           </div>
         </div>
       </section>
+
+      <AnswerBlock slug="linkedin-outreach" accent={BLUE} />
 
       {/* Numbers */}
       <section className="relative z-20 -mt-14 px-4 sm:-mt-16" style={{ backgroundColor: CREAM }}>

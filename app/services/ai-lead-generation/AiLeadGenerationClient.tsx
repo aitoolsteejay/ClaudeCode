@@ -5,6 +5,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import AnswerBlock from "../../components/AnswerBlock";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
@@ -270,6 +271,8 @@ export default function AiLeadGenerationClient() {
           </div>
         </div>
       </section>
+
+      <AnswerBlock slug="ai-lead-generation" accent="#3b82f6" />
 
       <div ref={statsContainerRef} className="border-y py-10 px-4" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">

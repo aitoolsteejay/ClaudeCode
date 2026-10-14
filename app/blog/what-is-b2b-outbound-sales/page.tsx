@@ -47,7 +47,7 @@ const FAQ_ITEMS: FaqEntry[] = [
   },
   {
     question: "Should I hire an in-house SDR or use an outbound agency?",
-    answer: "It depends on stage and volume. An agency is typically faster to start, cheaper below a certain scale, and comes with existing infrastructure and playbooks. In-house makes more sense once outbound is a proven, permanent part of the GTM motion and you're running it at real volume. We break down the tradeoffs in detail in our agency vs. in-house guide.",
+    answer: "Use an agency while outbound is still being proven, and hire in-house once it is a permanent, high-volume part of your go-to-market motion. An agency is typically faster to start, cheaper below a certain scale, and arrives with infrastructure and playbooks. We break down the tradeoffs in our agency vs. in-house guide.",
   },
 ];
 

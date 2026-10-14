@@ -1,0 +1,103 @@
+// One definition per service: the direct answer shown at the top of each
+// service page (app/components/AnswerBlock.tsx) and reused verbatim in
+// public/llms-full.txt, so the wording a visitor, a search engine and an AI
+// system each see is the same.
+//
+// Every claim here restates something the service page itself already says
+// (its hero, deliverables, who-it's-for, FAQ). Add nothing here that the page
+// does not back up, and keep `answer` between 40 and 60 words with the
+// definition in the first sentence -- the snippet-friendly range described in
+// docs/seo-aeo-geo-cadence.md. `npm run audit:answers` checks the length.
+
+export interface ServiceAnswer {
+  slug: string;
+  name: string;
+  url: string;
+  question: string;
+  answer: string;
+  who: string;
+  gets: string;
+  outcome: string;
+}
+
+export const SERVICE_ANSWERS: ServiceAnswer[] = [
+  {
+    slug: "cold-email",
+    name: "Cold email infrastructure and management",
+    url: "/services/cold-email",
+    question: "What is done-for-you cold email?",
+    answer:
+      "Done-for-you cold email is a managed service that sets up and runs B2B email outreach end to end: sending domains and inboxes, DNS setup and warm-up, a targeted lead list, copywriting, follow-ups and reporting. Myntmore launches campaigns within 18 days of onboarding and optimises them continuously.",
+    who: "B2B companies, SaaS teams, agencies, service providers and consultants.",
+    gets: "10 domains and 40 inboxes, up to 1,200 emails a day, 5,000 new prospects a month, copy, follow-ups, A/B testing and real-time reporting.",
+    outcome: "Targets of 90%+ email health, a 1%+ reply rate and 20%+ positive replies, with meetings booked from replies.",
+  },
+  {
+    slug: "linkedin-outreach",
+    name: "LinkedIn outreach and automation",
+    url: "/services/linkedin-outreach",
+    question: "What is LinkedIn outreach?",
+    answer:
+      "LinkedIn outreach is a managed process that combines profile positioning, authority-building content, targeted connection requests, personalised follow-ups and reply management to start qualified B2B conversations. Myntmore runs it with AI agents and a dedicated team, inside LinkedIn's limits, so founders and sales teams grow credibility and pipeline together.",
+    who: "Founders, CXOs and B2B sales teams who want pipeline from LinkedIn.",
+    gets: "A lead gen expert, content writer and account manager; a LinkedIn makeover; monthly content; done-for-you outreach and engagement; weekly check-ins and monthly growth reports.",
+    outcome: "Qualified conversations with the right buyers, plus a profile that makes them credible at a glance.",
+  },
+  {
+    slug: "sales-intelligence",
+    name: "ICP mapping and lead scoring",
+    url: "/services/sales-intelligence",
+    question: "What is ICP mapping and lead scoring?",
+    answer:
+      "ICP mapping and lead scoring defines your ideal customer profile, then ranks accounts by how well they fit it and by live buying signals. Myntmore monitors 40+ signals daily, such as funding rounds, hiring surges and tech-stack changes, and surfaces in-market accounts with the context needed to write a relevant first message.",
+    who: "ABM and outbound teams, high-velocity sales teams and revenue operations leaders.",
+    gets: "Daily refreshed, scored account lists with the trigger behind each account, exportable to your own tools, plus a signal dashboard.",
+    outcome: "Your team works the accounts most likely to buy now instead of triaging raw lists.",
+  },
+  {
+    slug: "ai-lead-generation",
+    name: "AI lead generation",
+    url: "/services/ai-lead-generation",
+    question: "What is AI lead generation?",
+    answer:
+      "AI lead generation uses custom AI agents to research, enrich and score B2B prospects so your sales team only speaks to accounts worth their time. Myntmore configures the agents around your ideal customer profile, a human team audits their output, and you receive scored lead lists with research summaries, ready to import.",
+    who: "High-volume go-to-market teams, growth-stage companies and account-based teams.",
+    gets: "AI-scored lead lists, a research summary on every prospect, clean exports mapped to your fields and weekly pipeline reports.",
+    outcome: "Relevance over volume: for most clients, 300 to 1,500 scored, research-enriched leads a month.",
+  },
+  {
+    slug: "account-based-marketing",
+    name: "Account-based marketing",
+    url: "/services/account-based-marketing",
+    question: "What is account-based marketing?",
+    answer:
+      "Account-based marketing (ABM) is a B2B approach that concentrates effort on a defined list of high-value accounts instead of a broad market. Myntmore runs coordinated LinkedIn and email campaigns that reach several stakeholders inside each account, then hands your sales team account-level engagement data so every first conversation starts warm.",
+    who: "Enterprise and complex-sale teams, teams with a finite list of target accounts, and RevOps and marketing leaders.",
+    gets: "A tiered target account list, coordinated LinkedIn and email campaigns, multi-threaded messaging, account-level reporting and a structured sales handoff.",
+    outcome: "Several people at each target account already know your name before your account executive reaches out.",
+  },
+  {
+    slug: "personal-branding",
+    name: "Personal branding and LinkedIn ghostwriting",
+    url: "/services/personal-branding",
+    question: "What is personal branding for B2B founders?",
+    answer:
+      "Personal branding for B2B founders is building authority on LinkedIn so buyers recognise and trust you before any sales conversation. Myntmore ghostwrites four to eight posts a month from one voice interview, you approve every post, and we track profile visits and engagement so warm inbound leads surface.",
+    who: "Founders and executives, consultants and advisors, and sales and go-to-market leaders.",
+    gets: "A monthly voice interview, 4 to 8 ghostwritten posts, approval before publishing, scheduling, monthly reporting and inbound lead flagging.",
+    outcome: "A steady, credible presence with your ideal buyers and inbound conversations that start warm.",
+  },
+  {
+    slug: "gtm-strategy",
+    name: "GTM strategy and execution",
+    url: "/services/gtm-strategy",
+    question: "What is a go-to-market (GTM) strategy?",
+    answer:
+      "A go-to-market strategy decides who you sell to, what you say to them and which channels you use, in what order. Myntmore builds the ideal customer profile, positioning and channel plan, then the same team runs it across cold email, LinkedIn, ABM or personal branding and adjusts it monthly using real reply and booking data.",
+    who: "Founders raising or scaling, teams entering a new market or ICP, and companies whose outbound is scattered across channels.",
+    gets: "A documented GTM strategy, a competitive landscape map, a messaging framework, channel prioritisation and a monthly strategy review.",
+    outcome: "A plan that is executed and iterated, not a deck that sits in a folder.",
+  },
+];
+
+export const SERVICE_ANSWER_BY_SLUG: Record<string, ServiceAnswer> = Object.fromEntries(SERVICE_ANSWERS.map((s) => [s.slug, s]));

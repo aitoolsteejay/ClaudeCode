@@ -86,7 +86,7 @@ const WHY: { icon: LucideIcon; title: string; line: string }[] = [
   { icon: Eye, title: "Transparent", line: "Full campaign visibility." },
 ];
 
-const FOUNDER_STATS = ["4x entrepreneur", "Flintstop: $6M a year", "120+ B2B companies", "12K+ meetings booked", "$120M+ pipeline", "TEDx speaker"];
+const FOUNDER_STATS = ["4x entrepreneur", "Flintstop: $6M a year", "300+ B2B companies", "12K+ meetings booked", "$120M+ pipeline", "TEDx speaker"];
 
 const FAQS = [
   { q: "How does this work?", a: "We run cold email end to end in ten steps. First we map your ideal customer profile and build a targeted lead list, then write the copy and set up domains, inboxes and DNS. After launch we handle follow-ups, A/B testing, nurturing replies into meetings, and real-time reporting." },

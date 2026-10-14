@@ -107,6 +107,14 @@ export default function Hero() {
       { ref: stat3Ref, target: 12000, duration: 2200, format: (n: number) => `${Math.round(n / 1000)}K+` },
     ];
 
+    // The markup carries the real figures, so crawlers, no-JS visitors and
+    // anyone who asked for reduced motion read them as-is; the count-up from
+    // zero only runs once JS is here and motion is welcome.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    stats.forEach(({ ref, format }) => {
+      if (ref.current) ref.current.textContent = format(0);
+    });
+
     const animIds: number[] = [];
 
     const timer = setTimeout(() => {
@@ -477,9 +485,9 @@ export default function Hero() {
           style={{ border: "1px solid #E8E2D9", background: "rgba(255,255,255,0.8)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)", backdropFilter: "blur(8px)" }}
         >
           {[
-            { ref: stat1Ref, value: "$0M+",    label: "Pipeline Created for Clients" },
-            { ref: stat2Ref, value: "0 Days",   label: "Avg. Days to First Booked Meeting" },
-            { ref: stat3Ref, value: "0+",       label: "Meetings Booked for Clients Annually" },
+            { ref: stat1Ref, value: "$120M+",  label: "Pipeline Created for Clients" },
+            { ref: stat2Ref, value: "18 Days",  label: "Avg. Days to First Booked Meeting" },
+            { ref: stat3Ref, value: "12K+",     label: "Meetings Booked for Clients" },
           ].map((stat, i) => (
             <div
               key={stat.label}

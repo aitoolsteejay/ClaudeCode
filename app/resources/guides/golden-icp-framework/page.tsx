@@ -119,7 +119,7 @@ export default function GoldenICPFrameworkGuide() {
           <div>
             <h2 className="text-xl font-black mb-2" style={{ color: "#0a0a0a" }}>From Tejas Jhaveri, founder to founder</h2>
             <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
-              Tejas is a four-time entrepreneur who built Flintstop into a $6M-a-year D2C business before selling it in 2020. At Myntmore, he has helped 120+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He is also a TEDx speaker and has taught B2B growth methodologies at IIT and IIM.
+              Tejas is a four-time entrepreneur who built Flintstop into a $6M-a-year D2C business before selling it in 2020. At Myntmore, he has helped 300+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He is also a TEDx speaker and has taught B2B growth methodologies at IIT and IIM.
             </p>
           </div>
         </div>

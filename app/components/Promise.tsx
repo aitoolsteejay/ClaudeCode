@@ -124,8 +124,9 @@ export default function Promise() {
           Our Promise to You
         </span>
 
-        {/* Typewriter heading */}
-        <h2 className="text-3xl sm:text-5xl font-black text-[#0a0a0a] tracking-tight leading-tight">
+        {/* Typewriter heading. Opts out of the sitewide balanced wrapping:
+            re-balancing on every typed letter made finished words jump lines. */}
+        <h2 className="text-3xl sm:text-5xl font-black text-[#0a0a0a] tracking-tight leading-tight" style={{ textWrap: "wrap" }}>
           We book{" "}
           <span ref={typedRef} style={{ color: "#0a0a0a" }} />
           <span

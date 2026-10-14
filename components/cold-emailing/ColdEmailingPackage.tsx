@@ -160,8 +160,6 @@ export default function ColdEmailingPackage() {
         </div>
       </section>
 
-      <AnswerBlock slug="cold-email" accent={ORANGE} />
-
       {/* Numbers */}
       <section className="relative z-20 -mt-14 px-4 sm:-mt-16" style={{ backgroundColor: CREAM }}>
         <div className="mx-auto max-w-6xl">
@@ -186,6 +184,8 @@ export default function ColdEmailingPackage() {
           </FadeIn>
         </div>
       </section>
+
+      <AnswerBlock slug="cold-email" accent={ORANGE} />
 
       {/* Pillars */}
       <section className="px-4 py-24" style={{ backgroundColor: CREAM }}>

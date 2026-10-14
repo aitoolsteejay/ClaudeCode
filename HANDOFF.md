@@ -56,7 +56,7 @@ Section dividers:  #E8E2D9
 
 Text primary:      #0a0a0a
 Text secondary:    #52525B
-Text muted:        #6B6B6B / #8C8279
+Text muted:        #6B6B6B / #71675E
 Text disabled:     #B8B0A7
 ```
 

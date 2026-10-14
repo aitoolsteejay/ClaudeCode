@@ -13,7 +13,7 @@ export function ModeSelect({ onSelect }: ModeSelectProps) {
   return (
     <div className="max-w-2xl mx-auto">
       <h1 className="text-3xl sm:text-4xl font-black mb-2 text-center" style={{ color: "#0a0a0a" }}>What do you want to draft?</h1>
-      <p className="text-sm sm:text-base text-center mb-10" style={{ color: "#8C8279" }}>Pick one, you can always come back and do the other.</p>
+      <p className="text-sm sm:text-base text-center mb-10" style={{ color: "#71675E" }}>Pick one, you can always come back and do the other.</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <button

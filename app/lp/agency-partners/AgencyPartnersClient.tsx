@@ -204,7 +204,7 @@ function HeroSection() {
             See Partner Terms
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No delivery team to hire. No branding shown to your client unless you want it.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>No delivery team to hire. No branding shown to your client unless you want it.</p>
       </div>
 
       {/* Scroll cue */}
@@ -319,7 +319,7 @@ function CaseStudiesSection() {
         <div className="space-y-6">
           {CASE_STUDIES.map((cs, i) => (
             <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
               <div className="flex flex-wrap gap-3">
@@ -404,7 +404,7 @@ function FormSection() {
               <input id="Email" name="Email" type="email" required maxLength={255} placeholder="marco@rossidigital.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
             <SubmitButton>Apply to Become a Partner</SubmitButton>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. Final margin and terms are confirmed on your partner onboarding call.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>We respond within 24 hours. Final margin and terms are confirmed on your partner onboarding call.</p>
           </form>
         </div>
       </div>

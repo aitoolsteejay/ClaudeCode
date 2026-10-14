@@ -287,7 +287,7 @@ function StatCard({ n, label, color, bg, delay }: { n: number; label: string; co
       }}
     >
       <div className="text-4xl font-black tabular-nums" style={{ color }}>{val}+</div>
-      <div className="text-xs font-semibold" style={{ color: "#8C8279" }}>{label}</div>
+      <div className="text-xs font-semibold" style={{ color: "#71675E" }}>{label}</div>
     </div>
   );
 }
@@ -535,7 +535,7 @@ export default function GIATechStackPage() {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>AI Tech Stack for Jewellery Brands</div>
-              <div style={{ fontSize: 11, color: "#8C8279", marginTop: 2 }}>GIA India AI Marketing Workshop · Curated by Myntmore · myntmore.com</div>
+              <div style={{ fontSize: 11, color: "#71675E", marginTop: 2 }}>GIA India AI Marketing Workshop · Curated by Myntmore · myntmore.com</div>
             </div>
             <div style={{ fontSize: 10, color: "#B8B0A7", textAlign: "right" }}>106 tools · 14 categories</div>
           </div>
@@ -635,7 +635,7 @@ export default function GIATechStackPage() {
             )}
           </div>
           {search && (
-            <p className="mt-3 text-sm" style={{ color: "#8C8279" }}>
+            <p className="mt-3 text-sm" style={{ color: "#71675E" }}>
               Showing results for <strong style={{ color: "#0a0a0a" }}>"{search}"</strong>: {CATEGORIES.flatMap(c => c.tools).filter(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase())).length} tools found
             </p>
           )}
@@ -658,7 +658,7 @@ export default function GIATechStackPage() {
             <div className="text-center py-20">
               <div className="text-5xl mb-4">🔍</div>
               <p className="font-black text-lg" style={{ color: "#0a0a0a" }}>No tools found for "{search}"</p>
-              <p className="text-sm mt-2" style={{ color: "#8C8279" }}>Try a different keyword</p>
+              <p className="text-sm mt-2" style={{ color: "#71675E" }}>Try a different keyword</p>
             </div>
           )}
         </div>
@@ -670,7 +670,7 @@ export default function GIATechStackPage() {
               <span className="text-2xl">⭐</span>
               <div>
                 <h2 className="font-black text-xl" style={{ color: "#0a0a0a" }}>Day 1 Starter Pack</h2>
-                <p className="text-sm" style={{ color: "#8C8279" }}>Feeling overwhelmed? Start with just these 8 tools.</p>
+                <p className="text-sm" style={{ color: "#71675E" }}>Feeling overwhelmed? Start with just these 8 tools.</p>
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -687,7 +687,7 @@ export default function GIATechStackPage() {
                 <div key={t.name} className="rounded-xl p-4" style={{ backgroundColor: "#ffffff", border: "1px solid rgba(245,183,49,0.25)" }}>
                   <div className="text-xl mb-2">{t.icon}</div>
                   <div className="font-black text-sm" style={{ color: "#0a0a0a" }}>{t.name}</div>
-                  <div className="text-xs mt-0.5" style={{ color: "#8C8279" }}>{t.why}</div>
+                  <div className="text-xs mt-0.5" style={{ color: "#71675E" }}>{t.why}</div>
                 </div>
               ))}
             </div>

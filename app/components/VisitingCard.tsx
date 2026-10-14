@@ -97,7 +97,7 @@ export default function VisitingCard({
           </div>
 
           <h1 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>{name}</h1>
-          <p className="text-sm mb-5" style={{ color: "#8C8279" }}>{title}</p>
+          <p className="text-sm mb-5" style={{ color: "#71675E" }}>{title}</p>
 
           {vCardHref && (
             <a
@@ -124,7 +124,7 @@ export default function VisitingCard({
                   {c.icon}
                 </span>
                 <span className="text-sm font-bold flex-1" style={{ color: "#0a0a0a" }}>{c.cta}</span>
-                <svg className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="#8C8279" strokeWidth={2.5} aria-hidden="true">
+                <svg className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="#71675E" strokeWidth={2.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </a>

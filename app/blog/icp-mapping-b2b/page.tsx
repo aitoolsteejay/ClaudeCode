@@ -63,7 +63,7 @@ export default function ICPMappingB2B() {
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>
+              <p className="text-xs" style={{ color: "#71675E" }}>
                 Source: {s.href ? <Link href={s.href} className="link-subtle font-semibold">{s.cite}</Link> : s.cite}
               </p>
             </div>

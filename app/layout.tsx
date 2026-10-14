@@ -91,6 +91,9 @@ export default function RootLayout({
         <JsonLd data={organizationSchema} />
       </head>
       <body className="bg-background text-white antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         {children}
         <ReelWidget />
         <Toaster />

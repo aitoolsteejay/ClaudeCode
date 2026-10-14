@@ -48,7 +48,7 @@ export default function PredictableB2BLeadGenEngine() {
             {[{ v: "15+", l: "Meetings/month" }, { v: "29%", l: "Reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -84,7 +84,7 @@ export default function PredictableB2BLeadGenEngine() {
               {[{ v: "15+", l: "Qualified meetings/month" }, { v: "29%", l: "Average reply rate" }, { v: "4x", l: "Pipeline vs prior quarter" }].map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-3xl font-black" style={{ color: "#ef4444" }}><StatTicker value={s.v} /></div>
-                  <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>

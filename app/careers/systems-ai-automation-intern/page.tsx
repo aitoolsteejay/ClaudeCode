@@ -173,7 +173,7 @@ export default function SystemsAiAutomationIntern() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Hours", "Full-time, 10:00 AM – 7:00 PM"], ["Stipend", "Rs 7,000–20,000 (based on experience)"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
                   <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
                     {value} <span aria-hidden="true">↗</span>
@@ -189,7 +189,7 @@ export default function SystemsAiAutomationIntern() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>See the 3-step apply process below — it&apos;s not just a resume.</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>See the 3-step apply process below — it&apos;s not just a resume.</p>
         </div>
       </section>
 
@@ -278,7 +278,7 @@ export default function SystemsAiAutomationIntern() {
                 <p className="text-base" style={{ color: "#3D3D3D" }}>{item}</p>
               </div>
             ))}
-            <p className="text-sm mt-4 italic" style={{ color: "#8C8279" }}>Not just an intern, but an early operator with leverage.</p>
+            <p className="text-sm mt-4 italic" style={{ color: "#71675E" }}>Not just an intern, but an early operator with leverage.</p>
           </div>
 
           <div className="rounded-2xl p-8 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
@@ -299,12 +299,12 @@ export default function SystemsAiAutomationIntern() {
               Apply Now
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <p className="text-xs mt-5 pt-5" style={{ color: "#8C8279", borderTop: "1px solid rgba(245,183,49,0.3)" }}>
+            <p className="text-xs mt-5 pt-5" style={{ color: "#71675E", borderTop: "1px solid rgba(245,183,49,0.3)" }}>
               Know someone perfect for this role? Share this page with them to help us find our ideal match.
             </p>
           </div>
 
-          <p className="text-sm text-center" style={{ color: "#8C8279" }}>
+          <p className="text-sm text-center" style={{ color: "#71675E" }}>
             More on who we are and what we&apos;ve built: <a href="/about-us" className="font-bold underline" style={{ color: "#0a0a0a" }}>About Myntmore &amp; Tejas Jhaveri</a>
           </p>
         </div>

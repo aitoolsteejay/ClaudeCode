@@ -53,7 +53,7 @@ export function BattleCardResults({ result, onReset }: { result: BattleCardOutpu
       </div>
 
       <div className="rounded-xl p-5" style={{ backgroundColor: "#F8F6F2", border: "1px solid #E8E2D9" }}>
-        <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>Pricing</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>Pricing</p>
         <p className="text-sm font-medium" style={{ color: "#3D3D3D" }}>{result.pricingModel}</p>
       </div>
 
@@ -92,7 +92,7 @@ export function BattleCardResults({ result, onReset }: { result: BattleCardOutpu
         <div className="space-y-3">
           {result.objectionResponses.map((o, i) => (
             <div key={i} className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>&quot;{o.objection}&quot;</p>
+              <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>&quot;{o.objection}&quot;</p>
               <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{o.response}</p>
             </div>
           ))}

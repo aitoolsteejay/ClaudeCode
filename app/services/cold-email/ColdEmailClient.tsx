@@ -320,7 +320,7 @@ export default function ColdEmailClient() {
           ].map((s, i) => (
             <div key={i} className={`${i < 2 ? "sm:border-r" : ""} px-4`} style={{ borderColor: "#E8E2D9" }}>
               <span ref={s.ref} className="block text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.init}</span>
-              <span className="text-sm" style={{ color: "#8C8279" }}>{s.label}</span>
+              <span className="text-sm" style={{ color: "#71675E" }}>{s.label}</span>
             </div>
           ))}
         </div>

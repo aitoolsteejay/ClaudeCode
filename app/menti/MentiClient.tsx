@@ -82,8 +82,8 @@ export default function MentiClient() {
                   autoFocus
                 />
                 <div className="flex items-center justify-between mt-2 mb-6">
-                  <p className="text-xs" style={{ color: error ? "#DC2626" : "#8C8279" }}>{error || "Anonymous, nobody will see your name."}</p>
-                  <p className="text-xs" style={{ color: "#8C8279" }}>{answer.length}/{MAX_LENGTH}</p>
+                  <p className="text-xs" style={{ color: error ? "#DC2626" : "#71675E" }}>{error || "Anonymous, nobody will see your name."}</p>
+                  <p className="text-xs" style={{ color: "#71675E" }}>{answer.length}/{MAX_LENGTH}</p>
                 </div>
                 <button type="submit" disabled={submitting} className="btn-dark w-full px-6 py-3.5 text-base font-bold inline-flex items-center justify-center gap-2 disabled:opacity-60">
                   {submitting ? "Submitting..." : "Submit answer"}

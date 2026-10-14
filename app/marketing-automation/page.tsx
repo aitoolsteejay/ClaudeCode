@@ -87,7 +87,7 @@ export default function MarketingAutomation() {
           {[{ v: "12K+", l: "Meetings booked" }, { v: "38%", l: "Avg reply rate" }, { v: "98.5%", l: "Email inbox rate" }, { v: "80%", l: "Less manual research" }].map((s) => (
             <div key={s.l}>
               <div className="text-3xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.v}</div>
-              <div className="text-xs" style={{ color: "#8C8279" }}>{s.l}</div>
+              <div className="text-xs" style={{ color: "#71675E" }}>{s.l}</div>
             </div>
           ))}
         </div>

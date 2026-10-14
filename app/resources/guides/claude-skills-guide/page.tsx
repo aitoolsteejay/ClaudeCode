@@ -275,17 +275,17 @@ function SkillSection({ skill }: { skill: Skill }) {
         <FadeIn delay={100}>
           <div className="space-y-8">
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>What it does</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>What it does</h3>
               <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whatItDoes}</p>
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>When to use it</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>When to use it</h3>
               <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whenToUse}</p>
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Tools you need</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Tools you need</h3>
               <ul className="space-y-2">
                 {skill.tools.map((t, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-base" style={{ color: "#3D3D3D" }}>
@@ -297,7 +297,7 @@ function SkillSection({ skill }: { skill: Skill }) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>How to set it up</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>How to set it up</h3>
               <ol className="space-y-3">
                 {skill.setupSteps.map((s, i) => (
                   <li key={i} className="flex items-start gap-3 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
@@ -314,7 +314,7 @@ function SkillSection({ skill }: { skill: Skill }) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Ready-to-use prompt</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Ready-to-use prompt</h3>
               <CopyBlock text={skill.prompt} accent={skill.accent} />
             </div>
 

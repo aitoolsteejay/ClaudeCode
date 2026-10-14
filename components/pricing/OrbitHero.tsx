@@ -214,7 +214,7 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
           {summary}
         </p>
         <div className="sm:pl-10 sm:border-l sm:text-right" style={{ borderColor: "#E8E2D9" }}>
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: "#8C8279" }}>Plans start at</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: "#71675E" }}>Plans start at</p>
           <div className="font-black leading-none" style={{ color: INK, fontSize: "clamp(2.6rem, 6vw, 4.2rem)", letterSpacing: "-0.04em" }}>{priceNode}</div>
           <p className="mt-2 text-sm font-medium" style={{ color: "#3b3b45" }}>{billingNote}</p>
         </div>

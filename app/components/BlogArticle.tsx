@@ -107,7 +107,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
                   <table className="w-full text-sm" style={{ backgroundColor: "#ffffff", minWidth: 560 }}>
                     <thead>
                       <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
-                        <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#8C8279" }}>Factor</th>
+                        <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
                         <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: accent }}>{comparison.columns[0]}</th>
                         <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#0a0a0a" }}>{comparison.columns[1]}</th>
                       </tr>
@@ -125,7 +125,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
                 </div>
               </div>
               {comparison.note && (
-                <p className="text-xs mt-4 leading-relaxed" style={{ color: "#8C8279" }}>{comparison.note}</p>
+                <p className="text-xs mt-4 leading-relaxed" style={{ color: "#71675E" }}>{comparison.note}</p>
               )}
             </div>
           )}

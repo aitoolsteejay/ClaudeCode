@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>
             Privacy Policy
           </h1>
-          <p className="text-sm" style={{ color: "#8C8279" }}>Last updated July 22, 2026</p>
+          <p className="text-sm" style={{ color: "#71675E" }}>Last updated July 22, 2026</p>
         </div>
       </section>
 

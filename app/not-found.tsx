@@ -18,7 +18,7 @@ const PRIMARY_LINKS = [
 export default function NotFound() {
   return (
     <InnerLayout>
-      <main className="relative isolate overflow-hidden bg-[#F8F6F2] px-4 pb-20 pt-24 sm:pb-28 sm:pt-32">
+      <div className="relative isolate overflow-hidden bg-[#F8F6F2] px-4 pb-20 pt-24 sm:pb-28 sm:pt-32">
         <div aria-hidden="true" className="pointer-events-none absolute -left-40 top-0 -z-10 h-[34rem] w-[34rem] rounded-full bg-[#f5b731]/20 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -right-48 top-40 -z-10 h-[38rem] w-[38rem] rounded-full bg-[#a855f7]/15 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-[#60a5fa]/10 blur-3xl" />
@@ -83,7 +83,7 @@ export default function NotFound() {
             <Link href="/contact-us" className="font-semibold text-[#3d3d3d] underline decoration-[#f5b731] decoration-2 underline-offset-4">Need help finding something?</Link>
           </div>
         </div>
-      </main>
+      </div>
     </InnerLayout>
   );
 }

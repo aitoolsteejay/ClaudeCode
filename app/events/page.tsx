@@ -87,7 +87,7 @@ export default function EventsPage() {
                       <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{e.title}</h2>
                       <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{e.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-xs" style={{ color: "#8C8279" }}>{e.displayDate} &middot; {e.time}</span>
+                        <span className="text-xs" style={{ color: "#71675E" }}>{e.displayDate} &middot; {e.time}</span>
                         <span className="text-xs font-bold" style={{ color: e.accent }}>Details &rarr;</span>
                       </div>
                     </div>

@@ -328,7 +328,7 @@ function SectionEyebrow({ num, label, accent }: { num: string; label: string; ac
   return (
     <div className="flex items-center gap-3 mb-4">
       <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{num}</span>
-      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{label}</span>
+      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{label}</span>
     </div>
   );
 }
@@ -530,7 +530,7 @@ function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: st
   return (
     <div className="tip-card-hover group rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md">
       <div className="mb-4 flex items-center gap-3">
-        <span className="inline-block text-sm font-black tabular-nums transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" style={{ color: "#8C8279" }}>{num}</span>
+        <span className="inline-block text-sm font-black tabular-nums transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" style={{ color: "#71675E" }}>{num}</span>
         <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{title}</h3>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -636,7 +636,7 @@ export default function EducationGuideClient() {
             ].map((s) => (
               <div key={s.l} className="lp-stat">
                 <StatTicker value={s.v} className="text-3xl font-black" style={{ color: "#0a0a0a" }} />
-                <p className="mt-1 text-xs font-semibold" style={{ color: "#8C8279" }}>{s.l}</p>
+                <p className="mt-1 text-xs font-semibold" style={{ color: "#71675E" }}>{s.l}</p>
               </div>
             ))}
           </div>
@@ -653,7 +653,7 @@ export default function EducationGuideClient() {
             <div>
               <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>About Tejas</p>
               <h2 className="mb-1 text-xl font-black" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h2>
-              <p className="mb-4 text-sm" style={{ color: "#8C8279" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
+              <p className="mb-4 text-sm" style={{ color: "#71675E" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
               <div className="space-y-3 text-sm leading-relaxed" style={{ color: "#52525B" }}>
                 <p>Tejas Jhaveri is a serial entrepreneur and the founder of Myntmore, an AI-first B2B lead generation company that builds intelligent outbound systems for LinkedIn and cold outreach at scale.</p>
                 <p>Over the past 12+ years, he has built and scaled outbound engines that have generated over $80 million in pipeline and revenue for companies globally. He has built, scaled, and exited multiple ventures, notably selling one of his companies through a cold-email outreach campaign itself.</p>
@@ -668,7 +668,7 @@ export default function EducationGuideClient() {
       {/* ─── Audience selector ────────────────────────────────── */}
       <section className="border-t px-4 py-10" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="mx-auto max-w-4xl">
-          <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Who are you here for?</p>
+          <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>Who are you here for?</p>
           <div className="flex justify-center">
             <TabGroup tabs={AUDIENCES.map((a) => ({ key: a.key, label: a.label }))} active={audience} onChange={setAudience} ariaLabel="Choose your audience" />
           </div>

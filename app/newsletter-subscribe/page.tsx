@@ -49,7 +49,7 @@ export default function NewsletterSubscribePage() {
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-3" style={{ color: "#0a0a0a" }}>Get the next playbook</h2>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#6B6B6B" }}>Join founders and growth operators learning how to create more qualified sales conversations.</p>
               <NewsletterForm inputId="newsletter-page-email" buttonLabel="Send me the playbooks" />
-              <p className="text-[11px] leading-relaxed mt-4 text-center" style={{ color: "#8C8279" }}>By subscribing, you agree to receive marketing emails from Myntmore. Unsubscribe at any time.</p>
+              <p className="text-[11px] leading-relaxed mt-4 text-center" style={{ color: "#71675E" }}>By subscribing, you agree to receive marketing emails from Myntmore. Unsubscribe at any time.</p>
             </div>
           </div>
         </div>

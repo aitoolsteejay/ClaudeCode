@@ -123,7 +123,7 @@ export default function ProcessExplorer() {
                         ? { background: `linear-gradient(135deg, ${ORANGE}, ${GOLD})`, color: "#fff", transform: "scale(1.12)", boxShadow: "0 12px 26px rgba(234,88,12,0.35)" }
                         : isDone
                           ? { backgroundColor: "#fff", color: ORANGE, border: `2px solid ${ORANGE}` }
-                          : { backgroundColor: "#fff", color: "#8C8279", border: "2px solid #E8E2D9" }
+                          : { backgroundColor: "#fff", color: "#71675E", border: "2px solid #E8E2D9" }
                     }
                   >
                     {i + 1}
@@ -131,7 +131,7 @@ export default function ProcessExplorer() {
                   <span
                     aria-hidden="true"
                     className="pointer-events-none absolute left-1/2 top-[56px] hidden w-24 -translate-x-1/2 text-center text-[11px] font-bold leading-tight transition-colors lg:block"
-                    style={{ color: isActive ? INK : "#8C8279" }}
+                    style={{ color: isActive ? INK : "#71675E" }}
                   >
                     {s.short}
                   </span>
@@ -205,7 +205,7 @@ export default function ProcessExplorer() {
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Previous
         </button>
-        <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#8C8279" }}>
+        <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#71675E" }}>
           {active + 1} / {STEPS.length}
         </span>
         <button

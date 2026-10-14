@@ -62,7 +62,7 @@ export default function IllustrativeCaseStudy({
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]">{tag}</span>
             </div>
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-dashed hero-fade" style={{ backgroundColor: "#F3F3F1", color: "#8C8279", borderColor: "#C9C2B8" }}>
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-dashed hero-fade" style={{ backgroundColor: "#F3F3F1", color: "#71675E", borderColor: "#C9C2B8" }}>
               <span className="text-xs font-bold uppercase tracking-[0.15em]">Illustrative example</span>
             </div>
           </div>
@@ -72,14 +72,14 @@ export default function IllustrativeCaseStudy({
           <p className="text-lg sm:text-xl leading-relaxed mb-4 max-w-3xl hero-fade-d2" style={{ color: "#52525B" }}>
             {intro}
           </p>
-          <p className="text-sm leading-relaxed mb-10 max-w-3xl px-4 py-3 rounded-xl border" style={{ color: "#8C8279", backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+          <p className="text-sm leading-relaxed mb-10 max-w-3xl px-4 py-3 rounded-xl border" style={{ color: "#71675E", backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             This is an illustrative example built from Myntmore&apos;s real outreach methodology. It shows what a strong campaign and result can look like, it is not the result of a specific past client engagement. We&apos;ll swap this for a real, verified case study as one becomes available.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 sm:p-6 rounded-2xl border hero-fade-d3" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
             {heroStats.map((stat) => (
               <div key={stat.label} className="text-center py-3 sm:py-1">
                 <div className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={stat.value} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{stat.label}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{stat.label}</div>
               </div>
             ))}
           </div>

@@ -119,7 +119,7 @@ export default function AboutUs() {
             </div>
             <div>
               <h2 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h2>
-              <p className="text-sm mb-4" style={{ color: "#8C8279" }}>Founder, Myntmore · TEDx Speaker · Angel Investor</p>
+              <p className="text-sm mb-4" style={{ color: "#71675E" }}>Founder, Myntmore · TEDx Speaker · Angel Investor</p>
               <a href="https://linkedin.com/in/tejasjhaveri" target="_blank" rel="noopener noreferrer" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
                 Connect on LinkedIn
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -150,7 +150,7 @@ export default function AboutUs() {
               <blockquote className="text-lg font-black leading-snug mb-3" style={{ color: "#0a0a0a" }}>
                 &ldquo;Stop treating outbound like an art form. Build it like a software product.&rdquo;
               </blockquote>
-              <cite className="text-sm not-italic" style={{ color: "#8C8279" }}>- Tejas Jhaveri, Founder</cite>
+              <cite className="text-sm not-italic" style={{ color: "#71675E" }}>- Tejas Jhaveri, Founder</cite>
             </div>
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function AboutUs() {
               Email Directly
             </a>
           </div>
-          <p className="mt-4 text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
+          <p className="mt-4 text-xs" style={{ color: "#71675E" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
         </div>
       </section>
 

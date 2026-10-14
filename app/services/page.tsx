@@ -73,7 +73,7 @@ export default function Services() {
                     {s.stats.map((st) => (
                       <div key={st.l}>
                         <StatTicker value={st.v} className="text-xl font-black" style={{ color: "#0a0a0a" }} />
-                        <span className="block text-xs" style={{ color: "#8C8279" }}>{st.l}</span>
+                        <span className="block text-xs" style={{ color: "#71675E" }}>{st.l}</span>
                       </div>
                     ))}
                   </div>

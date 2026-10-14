@@ -200,7 +200,7 @@ export default function ClaudeSalesCallPrompts() {
                   <a key={p.id} href={`#prompt-${p.id}`} className="rounded-xl border p-4 transition-colors duration-150 hover:border-[#0891B2]" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                     <span className="text-xs font-black" style={{ color: ACCENT }}>{p.id}</span>
                     <p className="text-sm font-black mt-1 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</p>
-                    <p className="text-xs mt-1" style={{ color: "#8C8279" }}>{p.time}</p>
+                    <p className="text-xs mt-1" style={{ color: "#71675E" }}>{p.time}</p>
                   </a>
                 ))}
               </div>
@@ -211,7 +211,7 @@ export default function ClaudeSalesCallPrompts() {
             <FadeIn key={g.label}>
               <section>
                 <h2 className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}>{g.label}</h2>
-                <p className="text-sm mt-1 mb-8" style={{ color: "#8C8279" }}>{g.note}</p>
+                <p className="text-sm mt-1 mb-8" style={{ color: "#71675E" }}>{g.note}</p>
                 <div className="space-y-12">
                   {g.items.map((p) => (
                     <div key={p.id} id={`prompt-${p.id}`} className="scroll-mt-28">
@@ -261,7 +261,7 @@ export default function ClaudeSalesCallPrompts() {
             </section>
           </FadeIn>
 
-          <p className="text-center text-sm" style={{ color: "#8C8279" }}>
+          <p className="text-center text-sm" style={{ color: "#71675E" }}>
             Made by Tejas Jhaveri. Follow{" "}
             <a href="https://www.instagram.com/tejas_jhaveri" target="_blank" rel="noopener noreferrer" className="font-bold underline" style={{ color: "#0a0a0a" }}>@tejas_jhaveri</a>{" "}
             on Instagram for more prompts like these.

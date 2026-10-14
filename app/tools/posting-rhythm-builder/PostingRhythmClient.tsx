@@ -190,7 +190,7 @@ export default function PostingRhythmClient() {
           </p>
         </header>
 
-        <main>
+        <div>
           {/* Lead Gate */}
           {step === "lead" && (
             <LeadGate
@@ -432,7 +432,7 @@ export default function PostingRhythmClient() {
               </div>
             </div>
           )}
-        </main>
+        </div>
       </div>
     </div>
   );

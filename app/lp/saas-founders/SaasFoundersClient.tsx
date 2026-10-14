@@ -178,7 +178,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No deck, no pressure. Just a 30-minute strategy call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>No deck, no pressure. Just a 30-minute strategy call.</p>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hero-fade-d3" aria-hidden="true">
@@ -372,7 +372,7 @@ function FormSection() {
               <input id="Email" name="Email" type="email" required maxLength={255} placeholder="arjun@acmesaas.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
             <SubmitButton>Get My Free Outbound Audit</SubmitButton>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. No spam, ever.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>We respond within 24 hours. No spam, ever.</p>
           </form>
         </div>
       </div>

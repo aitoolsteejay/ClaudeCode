@@ -861,7 +861,7 @@ export default function MyntmoreFrameworkClient() {
               </div>
             </div>
           </div>
-          <p className="text-center text-sm mt-4" style={{ color: "#8C8279" }}>Scroll or pinch to zoom &middot; drag to pan &middot; tap a node to see what it does &middot; press Execute to watch a run</p>
+          <p className="text-center text-sm mt-4" style={{ color: "#71675E" }}>Scroll or pinch to zoom &middot; drag to pan &middot; tap a node to see what it does &middot; press Execute to watch a run</p>
         </div>
       </section>
 
@@ -896,7 +896,7 @@ export default function MyntmoreFrameworkClient() {
                   </span>
                   <div>
                     <h3 className="text-base font-black leading-tight" style={{ color: "#0a0a0a" }}>{n.title}</h3>
-                    <p className="text-[11px] font-mono" style={{ color: "#8C8279" }}>{n.type}</p>
+                    <p className="text-[11px] font-mono" style={{ color: "#71675E" }}>{n.type}</p>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{n.desc}</p>

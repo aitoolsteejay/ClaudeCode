@@ -22,7 +22,7 @@ export function CopyButton({ text, accent, label = "Copy" }: { text: string; acc
     <button
       onClick={handleCopy}
       className="flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-lg transition-colors"
-      style={{ color: copied ? accent : "#8C8279" }}
+      style={{ color: copied ? accent : "#71675E" }}
     >
       {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
       {copied ? "Copied" : label}

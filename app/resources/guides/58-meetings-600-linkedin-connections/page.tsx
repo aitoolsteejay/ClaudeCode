@@ -130,7 +130,7 @@ function Callout({ children, accent }: { children: React.ReactNode; accent: stri
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>
+    <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>
       {children}
     </p>
   );
@@ -223,7 +223,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
               {HERO_STATS.map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -231,7 +231,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
 
           <FadeIn delay={250}>
             <nav aria-label="The 5 steps" className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest mr-1" style={{ color: "#8C8279" }}>The 5 steps</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest mr-1" style={{ color: "#71675E" }}>The 5 steps</span>
               {STEPS_AT_A_GLANCE.map((s, i) => (
                 <a key={s} href={`#step-${i + 1}`} className="inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs sm:text-[13px] font-bold transition-colors hover:border-[#0077b5]" style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}>
                   <span className="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-black text-white" style={{ backgroundColor: BLUE }}>{i + 1}</span>
@@ -255,7 +255,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             <Target className="w-5 h-5" style={{ color: "#F97316" }} strokeWidth={2.4} aria-hidden="true" />
             Identify NOW Buyers (not “everyone”)
           </h3>
-          <p className="text-sm font-semibold mb-4" style={{ color: "#8C8279" }}>People who:</p>
+          <p className="text-sm font-semibold mb-4" style={{ color: "#71675E" }}>People who:</p>
           <CheckList items={NOW_BUYERS} accent="#F97316" />
         </div>
 
@@ -304,7 +304,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             {["Who", "Pain", "Unique System", "Outcome"].map((w, i, arr) => (
               <span key={w} className="flex items-center gap-2">
                 <span className="text-sm font-black px-4 py-2 rounded-lg" style={{ backgroundColor: "#0a0a0a", color: "#4ade80" }}>{w}</span>
-                {i < arr.length - 1 && <span className="font-black" style={{ color: "#8C8279" }}>+</span>}
+                {i < arr.length - 1 && <span className="font-black" style={{ color: "#71675E" }}>+</span>}
               </span>
             ))}
           </div>

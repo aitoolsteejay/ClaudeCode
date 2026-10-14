@@ -146,7 +146,7 @@ function ServiceCard({
         </div>
         <div
           className="text-[10px] font-bold uppercase tracking-widest mt-0.5"
-          style={{ color: "#8C8279" }}
+          style={{ color: "#71675E" }}
         >
           {metric.label}
         </div>
@@ -303,7 +303,7 @@ export default function Services() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <p className="text-sm text-[#8C8279]">No commitment · 30-minute call · Results in 14 days</p>
+          <p className="text-sm text-[#71675E]">No commitment · 30-minute call · Results in 14 days</p>
         </div>
 
         {/* Bottom stat strip */}

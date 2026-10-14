@@ -117,7 +117,7 @@ export default function ColdEmailComplianceGuide() {
       </section>
 
       <div className="px-4 pb-4" style={{ backgroundColor: "#F8F6F2" }}>
-        <div className="max-w-3xl mx-auto rounded-xl border p-4 text-xs leading-relaxed" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#8C8279" }}>
+        <div className="max-w-3xl mx-auto rounded-xl border p-4 text-xs leading-relaxed" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#71675E" }}>
           This is general information for B2B teams running outbound, not legal advice. Rules vary by jurisdiction and change over time, especially for newer laws like India&apos;s DPDP Act. Confirm specifics with qualified counsel before scaling a campaign into a new market.
         </div>
       </div>

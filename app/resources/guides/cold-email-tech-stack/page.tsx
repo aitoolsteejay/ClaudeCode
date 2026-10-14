@@ -221,7 +221,7 @@ export default function ColdEmailTechStack() {
                       <span className="text-sm font-black" style={{ color: "#0a0a0a" }}>
                         {row.tools.map((t, ti) => (
                           <span key={t.name}>
-                            {ti > 0 && <span style={{ color: "#8C8279" }}>, </span>}
+                            {ti > 0 && <span style={{ color: "#71675E" }}>, </span>}
                             {t.href ? (
                               <a href={t.href} target="_blank" rel={t.sponsored ? "sponsored noopener noreferrer" : "noopener noreferrer"} className="underline decoration-[#E8E2D9] underline-offset-4 hover:decoration-current" style={{ color: "#0a0a0a" }}>{t.name}</a>
                             ) : (
@@ -251,7 +251,7 @@ export default function ColdEmailTechStack() {
                       <h3 className="text-xl font-black" style={{ color: "#0a0a0a" }}>{s.email}</h3>
                       <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ backgroundColor: "#ffffff", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s.title}</span>
                     </div>
-                    <p className="text-sm mb-4" style={{ color: "#8C8279" }}>{s.intro}</p>
+                    <p className="text-sm mb-4" style={{ color: "#71675E" }}>{s.intro}</p>
                     <div className="space-y-4">
                       {s.variants.map((v) => (
                         <CopyBlock key={v.id} text={v.body} accent={ACCENT} label={`Email ${v.id}`} successMessage="Email copied to clipboard" />

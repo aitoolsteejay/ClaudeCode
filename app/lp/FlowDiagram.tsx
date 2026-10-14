@@ -310,7 +310,7 @@ export default function FlowDiagram({
                 <PulsingDot />
                 Running in parallel
               </span>
-              <span className="text-xs font-semibold" style={{ color: "#8C8279" }}>Active throughout</span>
+              <span className="text-xs font-semibold" style={{ color: "#71675E" }}>Active throughout</span>
             </div>
             <p className="font-black text-base mb-5" style={{ color: "#0a0a0a" }}>{parallel.label}</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

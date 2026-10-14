@@ -487,7 +487,7 @@ export default function Hero() {
               style={{ borderColor: "#E8E2D9" }}
             >
               <span ref={stat.ref} className="text-2xl sm:text-3xl font-bold text-[#0a0a0a]">{stat.value}</span>
-              <span className="text-xs sm:text-sm font-medium mt-0.5 text-center max-w-[160px] sm:max-w-none" style={{ color: "#8C8279" }}>{stat.label}</span>
+              <span className="text-xs sm:text-sm font-medium mt-0.5 text-center max-w-[160px] sm:max-w-none" style={{ color: "#71675E" }}>{stat.label}</span>
             </div>
           ))}
         </div>

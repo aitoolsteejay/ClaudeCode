@@ -15,6 +15,49 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
+/* ─── Keyboard focus ──────────────────────────────────────────
+   One visible, on-brand focus ring for keyboard users sitewide. Kept in
+   the base layer so components that draw their own ring with
+   focus-visible:* utilities still win. Gold #F5B731 is too light to read
+   as a ring on the warm background (1.7:1), so the ring uses the darker
+   amber #B45309 (4.6:1). ─────────────────────────────────────────── */
+@layer base {
+  :focus-visible {
+    outline: 2px solid #B45309;
+    outline-offset: 2px;
+  }
+  /* Inputs styled with a bare `outline-none` (contact form, lead forms,
+     search boxes) had no focus indicator at all. */
+  :is(input, textarea, select).outline-none:focus-visible {
+    outline: 2px solid #B45309;
+    outline-offset: 1px;
+  }
+  /* Balanced wrapping keeps short headings from leaving one orphan word on
+     the last line. Browsers without support just wrap normally. */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+/* ─── Skip link ─────────────────────────────────────────────
+   First tab stop on every page; hidden until focused. ─────────────── */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
 /* ─── Text selection ──────────────────────────────────────── */
 ::selection {
   background-color: rgba(245, 183, 49, 0.3);
@@ -343,7 +386,7 @@ body {
 /* ─── Inner page hover utilities (server-component safe) ─── */
 .link-muted { color: #6B6B6B; transition: color 0.2s ease; }
 .link-muted:hover { color: #0a0a0a; }
-.link-subtle { color: #8C8279; transition: color 0.2s ease; }
+.link-subtle { color: #71675E; transition: color 0.2s ease; }
 .link-subtle:hover { color: #F5B731; }
 .link-dark { color: #3D3D3D; transition: color 0.2s ease; }
 .link-dark:hover { color: #0a0a0a; }

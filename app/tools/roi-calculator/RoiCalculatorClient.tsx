@@ -275,7 +275,7 @@ export default function RoiCalculatorClient() {
       <div aria-hidden="true" style={{ position: "absolute", bottom: "-160px", left: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-12 pb-8 relative z-10">
+      <div className="container mx-auto px-4 pt-12 pb-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <div
@@ -384,7 +384,7 @@ export default function RoiCalculatorClient() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       {showGate && <LeadGateModal onComplete={handleLeadComplete} onClose={() => setShowGate(false)} />}
     </div>

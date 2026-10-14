@@ -143,7 +143,7 @@ export default function LeadsOnAutopilotGuide() {
             <section>
               <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>Step 01</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>Clarify your audience</h2>
-              <p className="text-sm italic mb-5" style={{ color: "#8C8279" }}>Why this matters: the more precise your audience, the higher the quality of leads and the easier it is to write messages that land.</p>
+              <p className="text-sm italic mb-5" style={{ color: "#71675E" }}>Why this matters: the more precise your audience, the higher the quality of leads and the easier it is to write messages that land.</p>
               <ul className="space-y-3 mb-6">
                 {[
                   ["Demographics", "Job role, company size, industry, location"],
@@ -170,7 +170,7 @@ export default function LeadsOnAutopilotGuide() {
             <section>
               <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>Step 02</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>Build authority</h2>
-              <p className="text-sm italic mb-5" style={{ color: "#8C8279" }}>Why this matters: people reach out to those they already trust and see as experts, before any business conversation starts.</p>
+              <p className="text-sm italic mb-5" style={{ color: "#71675E" }}>Why this matters: people reach out to those they already trust and see as experts, before any business conversation starts.</p>
               <p className="text-base leading-relaxed mb-5" style={{ color: "#52525B" }}>
                 Plan content that answers your audience&apos;s most common questions, using posts, carousels, videos, polls, and newsletters. Include storytelling, real wins, real failures, real lessons, and make sure it actually demonstrates experience and expertise, not just claims it.
               </p>
@@ -191,7 +191,7 @@ export default function LeadsOnAutopilotGuide() {
             <section>
               <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>Step 03</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>Outreach</h2>
-              <p className="text-sm italic mb-6" style={{ color: "#8C8279" }}>Why this matters: thoughtful outreach builds a connection without ever feeling like a sales pitch.</p>
+              <p className="text-sm italic mb-6" style={{ color: "#71675E" }}>Why this matters: thoughtful outreach builds a connection without ever feeling like a sales pitch.</p>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>
                 Send a personalized connection request referencing their profile, recent activity, or a company milestone, then follow up with a sequence of three thoughtful messages: appreciation, value, then a soft, low-pressure invitation.
               </p>
@@ -203,10 +203,10 @@ export default function LeadsOnAutopilotGuide() {
                       <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{s.name}</h3>
                       <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s.goal}</span>
                     </div>
-                    <p className="text-xs mb-3" style={{ color: "#8C8279" }}>Psychology: {s.psychology}</p>
+                    <p className="text-xs mb-3" style={{ color: "#71675E" }}>Psychology: {s.psychology}</p>
                     <CopyBlock text={s.template} accent="#0077b5" label="Copy message template" />
                     <div className="mt-3 rounded-xl p-4 border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                      <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#8C8279" }}>Example</p>
+                      <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#71675E" }}>Example</p>
                       <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.example}</p>
                     </div>
                   </div>
@@ -219,7 +219,7 @@ export default function LeadsOnAutopilotGuide() {
             <section>
               <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>Step 04</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>Nurture</h2>
-              <p className="text-sm italic mb-5" style={{ color: "#8C8279" }}>Why this matters: leads rarely convert on the first touch, staying visible is what increases the odds of a real conversation.</p>
+              <p className="text-sm italic mb-5" style={{ color: "#71675E" }}>Why this matters: leads rarely convert on the first touch, staying visible is what increases the odds of a real conversation.</p>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>
                 Engage consistently with your leads&apos; content, like, comment, and add real insight. Share valuable posts and industry trends periodically, and track each lead&apos;s interactions so you know their interest level and what the right next action is.
               </p>
@@ -235,7 +235,7 @@ export default function LeadsOnAutopilotGuide() {
             <section>
               <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>Step 05</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>Follow-ups</h2>
-              <p className="text-sm italic mb-5" style={{ color: "#8C8279" }}>Why this matters: consistent, respectful follow-up is what converts a lead without ever being pushy about it.</p>
+              <p className="text-sm italic mb-5" style={{ color: "#71675E" }}>Why this matters: consistent, respectful follow-up is what converts a lead without ever being pushy about it.</p>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>
                 Follow up 3–7 days after the initial outreach if there&apos;s no response, adding a new insight or resource each time rather than repeating yourself. Adjust the tone based on prior engagement, and mix up the touchpoint: a DM, a comment on their post, or a piece of content shared directly.
               </p>

@@ -140,7 +140,7 @@ export default function AgencyVsInHouseBlogPost() {
                 <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
                   <thead>
                     <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#8C8279" }}>Factor</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#3b82f6" }}>Agency</th>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>In-House SDR</th>
                     </tr>
@@ -157,7 +157,7 @@ export default function AgencyVsInHouseBlogPost() {
                 </table>
               </div>
             </div>
-            <p className="text-xs mt-4" style={{ color: "#8C8279" }}>
+            <p className="text-xs mt-4" style={{ color: "#71675E" }}>
               Time-to-first-meeting and minimum engagement figures are Myntmore&apos;s actual averages. In-house salary and ramp-up ranges are typical industry figures, not Myntmore-specific data, since we don&apos;t run your hiring process.
             </p>
           </FadeIn>

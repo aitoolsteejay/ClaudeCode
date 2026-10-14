@@ -77,7 +77,7 @@ export default function LeadCaptureForm({
             <button type="submit" disabled={submitting} className="btn-dark w-full py-4 text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed">
               {submitting ? "Submitting…" : "Get Your Custom Strategy"}
             </button>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
           </form>
         </div>
       </div>

@@ -289,7 +289,7 @@ export default function SitemapPage() {
                         <Link href={link.href} className="text-sm leading-snug hover:underline" style={{ color: "#3D3D3D" }}>
                           {link.label}
                         </Link>
-                        {link.note && <span className="text-xs ml-2" style={{ color: "#8C8279" }}>{link.note}</span>}
+                        {link.note && <span className="text-xs ml-2" style={{ color: "#71675E" }}>{link.note}</span>}
                       </li>
                     ))}
                   </ul>

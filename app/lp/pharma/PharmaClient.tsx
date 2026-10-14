@@ -185,7 +185,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No commitment, no pitch deck, just a focused 30-minute call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>No commitment, no pitch deck, just a focused 30-minute call.</p>
       </div>
 
       {/* Scroll cue */}
@@ -365,14 +365,14 @@ function MarketScenariosSection() {
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Illustrative scenarios</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What this looks like, market by market</h2>
-          <p className="text-sm mt-3 max-w-2xl" style={{ color: "#8C8279" }}>
+          <p className="text-sm mt-3 max-w-2xl" style={{ color: "#71675E" }}>
             Hypothetical examples built from the real angles we run, not claims about a specific past client.
           </p>
         </div>
         <div className="space-y-6">
           {MARKET_SCENARIOS.map((cs, i) => (
             <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
               <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{cs.body}</p>
             </div>
@@ -452,7 +452,7 @@ function FormSection() {
               <input id="Email" name="Email" type="email" required maxLength={255} placeholder="anil@deshmukhpharma.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
             <SubmitButton>Get My Free GTM Audit</SubmitButton>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. No spam, ever.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>We respond within 24 hours. No spam, ever.</p>
           </form>
         </div>
       </div>

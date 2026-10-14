@@ -105,7 +105,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${cs.accent}12`, color: cs.accent, border: `1px solid ${cs.accent}30` }}>{cs.tag}</span>
           {cs.illustrative && (
-            <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "#F3F3F1", color: "#8C8279", border: "1px dashed #C9C2B8" }}>Illustrative example</span>
+            <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "#F3F3F1", color: "#71675E", border: "1px dashed #C9C2B8" }}>Illustrative example</span>
           )}
         </div>
         <h2 className="text-2xl font-black mb-3 leading-snug" style={{ color: "#0a0a0a" }}>{cs.title}</h2>
@@ -114,7 +114,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
           {cs.stats.map((s) => (
             <div key={s.l}>
               <div className="text-3xl font-black" style={{ color: cs.accent }}><StatTicker value={s.v} /></div>
-              <div className="text-xs mt-0.5" style={{ color: "#8C8279" }}>{s.l}</div>
+              <div className="text-xs mt-0.5" style={{ color: "#71675E" }}>{s.l}</div>
             </div>
           ))}
         </div>
@@ -382,14 +382,14 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
       {/* Stat strip */}
       <FadeIn>
         <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
-          <p className="text-center text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>
+          <p className="text-center text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>
             Highlights from the case studies below, not a sitewide average
           </p>
           <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-5 gap-6">
             {STATS.map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#F5B731" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}
           </div>

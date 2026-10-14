@@ -29,7 +29,7 @@ export const TAG_COLORS: Record<string, string> = {
   "GTM Strategy": "#2563EB",
 };
 
-const DEFAULT_ACCENT = "#8C8279";
+const DEFAULT_ACCENT = "#71675E";
 
 function accentFor(tag: string): string {
   return TAG_COLORS[tag] || DEFAULT_ACCENT;
@@ -83,7 +83,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
   return (
     <div>
       <div className="max-w-md mx-auto mb-6 relative">
-        <span className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8C8279" }} aria-hidden="true">
+        <span className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#71675E" }} aria-hidden="true">
           <SearchIcon />
         </span>
         <input
@@ -160,7 +160,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
                   <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</h2>
                   <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{p.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs" style={{ color: "#8C8279" }}>{p.readTime}</span>
+                    <span className="text-xs" style={{ color: "#71675E" }}>{p.readTime}</span>
                     <span className="text-xs font-bold" style={{ color: primaryAccent }}>Read →</span>
                   </div>
                 </div>

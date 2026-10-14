@@ -139,7 +139,7 @@ export default function ColdEmailVsLinkedInOutreach() {
                 <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
                   <thead>
                     <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#8C8279" }}>Factor</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#16a34a" }}>Cold Email</th>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>LinkedIn Outreach</th>
                     </tr>
@@ -156,7 +156,7 @@ export default function ColdEmailVsLinkedInOutreach() {
                 </table>
               </div>
             </div>
-            <p className="text-xs mt-4" style={{ color: "#8C8279" }}>
+            <p className="text-xs mt-4" style={{ color: "#71675E" }}>
               Reply-rate range is Myntmore&apos;s own published benchmark across client engagements (see the 2026 benchmark report). Platform limits and general channel behavior reflect publicly known LinkedIn and email-provider policies, not client-specific data.
             </p>
           </FadeIn>

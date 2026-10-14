@@ -48,7 +48,7 @@ export default function ProfessionalServicesLinkedIn() {
             {[{ v: "3x", l: "Inbound lead volume" }, { v: "18K", l: "New followers" }, { v: "4.8%", l: "Post engagement rate" }].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default function ProfessionalServicesLinkedIn() {
                 <div key={s.l} className="text-center">
                   <div className="text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.v}</div>
                   <div className="text-sm font-semibold mb-1" style={{ color: "#3D3D3D" }}>{s.l}</div>
-                  <div className="text-xs" style={{ color: "#8C8279" }}>{s.sub}</div>
+                  <div className="text-xs" style={{ color: "#71675E" }}>{s.sub}</div>
                 </div>
               ))}
             </div>

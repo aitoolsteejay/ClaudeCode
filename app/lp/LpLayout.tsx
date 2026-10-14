@@ -8,13 +8,13 @@ function LpFooter() {
   return (
     <footer className="border-t py-8 px-4" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-xs" style={{ color: "#8C8279" }}>© 2026 Myntmore. Built in Mumbai.</p>
+        <p className="text-xs" style={{ color: "#71675E" }}>© 2026 Myntmore. Built in Mumbai.</p>
         <div className="flex items-center gap-6">
-          <Link href="/about-us" className="text-xs" style={{ color: "#8C8279" }}>About</Link>
-          <Link href="/case-studies" className="text-xs" style={{ color: "#8C8279" }}>Case Studies</Link>
-          <Link href="/privacy-policy" className="text-xs" style={{ color: "#8C8279" }}>Privacy Policy</Link>
-          <a href="mailto:growth@myntmore.com" className="text-xs" style={{ color: "#8C8279" }}>growth@myntmore.com</a>
-          <a href="tel:+918169318951" className="text-xs" style={{ color: "#8C8279" }}>+91 81693 18951</a>
+          <Link href="/about-us" className="text-xs" style={{ color: "#71675E" }}>About</Link>
+          <Link href="/case-studies" className="text-xs" style={{ color: "#71675E" }}>Case Studies</Link>
+          <Link href="/privacy-policy" className="text-xs" style={{ color: "#71675E" }}>Privacy Policy</Link>
+          <a href="mailto:growth@myntmore.com" className="text-xs" style={{ color: "#71675E" }}>growth@myntmore.com</a>
+          <a href="tel:+918169318951" className="text-xs" style={{ color: "#71675E" }}>+91 81693 18951</a>
         </div>
       </div>
     </footer>
@@ -46,7 +46,7 @@ export default function LpLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#F8F6F2" }}>
       <Navbar />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <LpFooter />
     </div>
   );

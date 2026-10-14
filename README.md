@@ -205,7 +205,7 @@ Brand tokens (used as inline `style` hex values throughout, *not* as Tailwind th
 | Gold (primary accent) | `#F5B731` |
 | Tan (borders) | `#E8E2D9` |
 | Body text | `#52525B` |
-| Muted text | `#8C8279` |
+| Muted text | `#71675E` |
 
 Secondary accent rotation (used for tiered/categorized content — service icons, tier cards, table sections, industry cards): Blue `#3B82F6`, Purple `#7C3AED`, Orange `#F97316`, Teal `#14B8A6`, Green `#10B981`, alongside the Gold above. `app/components/Industries.tsx` is the canonical source of this 6-color rotation.
 

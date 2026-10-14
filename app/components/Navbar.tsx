@@ -51,6 +51,8 @@ export default function Navbar() {
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const resourcesRef = useRef<HTMLDivElement>(null);
+  const mobilePanelRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const doneForYouCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const keepDoneForYouOpen = () => {
@@ -82,6 +84,25 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Escape closes whichever menu is open and puts focus back on its toggle,
+  // so keyboard users are never stuck inside a dropdown.
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key !== "Escape") return;
+      if (servicesRef.current?.contains(document.activeElement)) servicesRef.current.querySelector("button")?.focus();
+      if (resourcesRef.current?.contains(document.activeElement)) resourcesRef.current.querySelector("button")?.focus();
+      if (mobilePanelRef.current?.contains(document.activeElement)) mobileToggleRef.current?.focus();
+      setServicesOpen(false);
+      setDoneForYouOpen(false);
+      setResourcesOpen(false);
+      setMobileOpen(false);
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "backdrop-blur-md border-b shadow-sm" : ""}`}
@@ -99,13 +120,14 @@ export default function Navbar() {
                 return (
                   <div key={link.href} className="relative" ref={servicesRef}>
                     <button
+                      type="button"
                       onClick={() => { setServicesOpen((v) => !v); setResourcesOpen(false); setDoneForYouOpen(false); }}
                       className="flex items-center gap-1 text-sm font-medium transition-colors duration-200 relative group"
                       style={{ color: "#3D3D3D" }}
                       aria-expanded={servicesOpen}
                     >
                       {link.label}
-                      <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                      <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                       <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] rounded-full transition-all duration-300 group-hover:w-full" style={{ backgroundColor: "#F5B731" }} />
                     </button>
                     {servicesOpen && (
@@ -123,7 +145,7 @@ export default function Navbar() {
                             aria-expanded={doneForYouOpen}
                           >
                             Done For You
-                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                           </button>
                           {doneForYouOpen && (
                             <div onMouseEnter={keepDoneForYouOpen} onMouseLeave={closeDoneForYouSoon} className="absolute top-0 left-full w-72 rounded-xl border shadow-lg py-2 z-50" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
@@ -141,7 +163,7 @@ export default function Navbar() {
                                 </Link>
                               ))}
                               <div className="border-t mt-2 pt-2 px-4" style={{ borderColor: "#E8E2D9" }}>
-                                <Link href="/services" onClick={() => { setServicesOpen(false); setDoneForYouOpen(false); }} className="text-xs font-semibold" style={{ color: "#F5B731" }}>
+                                <Link href="/services" onClick={() => { setServicesOpen(false); setDoneForYouOpen(false); }} className="text-xs font-semibold" style={{ color: "#B45309" }}>
                                   View all services →
                                 </Link>
                               </div>
@@ -168,13 +190,14 @@ export default function Navbar() {
                 return (
                   <div key={link.href} className="relative" ref={resourcesRef}>
                     <button
+                      type="button"
                       onClick={() => { setResourcesOpen((v) => !v); setServicesOpen(false); }}
                       className="flex items-center gap-1 text-sm font-medium transition-colors duration-200 relative group"
                       style={{ color: "#3D3D3D" }}
                       aria-expanded={resourcesOpen}
                     >
                       {link.label}
-                      <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                      <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                       <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] rounded-full transition-all duration-300 group-hover:w-full" style={{ backgroundColor: "#F5B731" }} />
                     </button>
                     {resourcesOpen && (
@@ -193,7 +216,7 @@ export default function Navbar() {
                           </Link>
                         ))}
                         <div className="border-t mt-2 pt-2 px-4" style={{ borderColor: "#E8E2D9" }}>
-                          <Link href="/resources" onClick={() => setResourcesOpen(false)} className="text-xs font-semibold" style={{ color: "#F5B731" }}>
+                          <Link href="/resources" onClick={() => setResourcesOpen(false)} className="text-xs font-semibold" style={{ color: "#B45309" }}>
                             View all resources →
                           </Link>
                         </div>
@@ -207,11 +230,12 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                   className="text-sm font-medium hover:text-[#0a0a0a] transition-colors duration-200 relative group"
-                  style={{ color: "#3D3D3D" }}
+                  style={{ color: isActive(link.href) ? "#0a0a0a" : "#3D3D3D" }}
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] rounded-full transition-all duration-300 group-hover:w-full" style={{ backgroundColor: "#F5B731" }} />
+                  <span className={`absolute -bottom-0.5 left-0 h-[2px] rounded-full transition-all duration-300 group-hover:w-full ${isActive(link.href) ? "w-full" : "w-0"}`} style={{ backgroundColor: "#F5B731" }} />
                 </Link>
               );
             })}
@@ -225,6 +249,7 @@ export default function Navbar() {
           </div>
 
           <button
+            ref={mobileToggleRef}
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
             className="lg:hidden p-3.5 rounded-lg transition-colors"
@@ -232,43 +257,50 @@ export default function Navbar() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#EDE9E4"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent"; }}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
             aria-label="Toggle navigation menu"
           >
             {mobileOpen ? (
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             ) : (
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
             )}
           </button>
         </div>
       </nav>
 
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"}`}>
+      {/* `invisible` (applied after the collapse transition ends) keeps the
+          hidden links out of the tab order and the accessibility tree. */}
+      <div id="mobile-nav" ref={mobilePanelRef} className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "visible max-h-screen opacity-100" : "invisible max-h-0 opacity-0"}`}>
         <div className="border-t px-4 py-4 space-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           {/* Services accordion */}
           <div>
             <button
+              type="button"
               onClick={() => setMobileServicesOpen((v) => !v)}
+              aria-expanded={mobileServicesOpen}
               className="flex items-center justify-between w-full px-3 py-3 rounded-lg text-sm font-medium"
               style={{ color: "#3D3D3D" }}
             >
               Services
-              <svg className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              <svg className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {mobileServicesOpen && (
               <div className="ml-4 mt-1 space-y-1 border-l-2 pl-3" style={{ borderColor: "rgba(245,183,49,0.3)" }}>
                 <button
+                  type="button"
                   onClick={() => setMobileDoneForYouOpen((v) => !v)}
-                  className="flex items-center justify-between w-full px-2 py-2 text-xs font-bold rounded-lg transition-colors"
+                  aria-expanded={mobileDoneForYouOpen}
+                  className="flex items-center justify-between w-full min-h-[40px] px-2 text-xs font-bold rounded-lg transition-colors"
                   style={{ color: "#3D3D3D" }}
                 >
                   Done For You
-                  <svg className={`w-3.5 h-3.5 transition-transform ${mobileDoneForYouOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-3.5 h-3.5 transition-transform ${mobileDoneForYouOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileDoneForYouOpen && (
                   <div className="ml-3 space-y-1 border-l-2 pl-3" style={{ borderColor: "rgba(124,58,237,0.2)" }}>
                     {SERVICE_LINKS.map((s) => (
-                      <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
+                      <Link key={s.href} href={s.href} onClick={() => setMobileOpen(false)} className="flex items-center min-h-[40px] px-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
                         onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
                         onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                       >
@@ -277,7 +309,7 @@ export default function Navbar() {
                     ))}
                   </div>
                 )}
-                <Link href={DIY_HREF} onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
+                <Link href={DIY_HREF} onClick={() => setMobileOpen(false)} className="flex items-center min-h-[40px] px-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                 >
@@ -290,17 +322,19 @@ export default function Navbar() {
           {/* Resources accordion */}
           <div>
             <button
+              type="button"
               onClick={() => setMobileResourcesOpen((v) => !v)}
+              aria-expanded={mobileResourcesOpen}
               className="flex items-center justify-between w-full px-3 py-3 rounded-lg text-sm font-medium"
               style={{ color: "#3D3D3D" }}
             >
               Resources
-              <svg className={`w-4 h-4 transition-transform ${mobileResourcesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              <svg className={`w-4 h-4 transition-transform ${mobileResourcesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </button>
             {mobileResourcesOpen && (
               <div className="ml-4 mt-1 space-y-1 border-l-2 pl-3" style={{ borderColor: "rgba(245,183,49,0.3)" }}>
                 {RESOURCE_LINKS.map((r) => (
-                  <Link key={r.href} href={r.href} onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
+                  <Link key={r.href} href={r.href} onClick={() => setMobileOpen(false)} className="flex items-center min-h-[40px] px-2 text-xs rounded-lg transition-colors" style={{ color: "#52525B" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                   >
@@ -313,7 +347,7 @@ export default function Navbar() {
 
           {/* Remaining flat links (excluding Services, Resources, and duplicate Contact) */}
           {NAV_LINKS.filter(l => !l.hasDropdown && l.href !== "/contact-us").map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
+            <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} aria-current={isActive(link.href) ? "page" : undefined} className="block px-3 py-3 rounded-lg text-sm font-medium transition-colors" style={{ color: "#3D3D3D" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EDE9E4"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
             >

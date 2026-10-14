@@ -154,7 +154,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: "#6B6B6B" }}>
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
-            <p className="text-xs mb-3" style={{ color: "#8C8279" }}>
+            <p className="text-xs mb-3" style={{ color: "#71675E" }}>
               WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar, Worli, Mumbai 400025
             </p>
             <a
@@ -256,7 +256,7 @@ export default function Footer() {
         </div>
 
         <div className="py-6 flex flex-wrap items-center gap-x-2 gap-y-2 border-b" style={{ borderColor: "#E8E2D9" }}>
-          <span className="text-xs font-semibold uppercase tracking-wider mr-1" style={{ color: "#8C8279" }}>B2B Lead Generation In:</span>
+          <span className="text-xs font-semibold uppercase tracking-wider mr-1" style={{ color: "#71675E" }}>B2B Lead Generation In:</span>
           {CITY_LINKS.map((link, i) => (
             <span key={link.href} className="flex items-center gap-x-2">
               <Link href={link.href} className="text-xs transition-colors" style={{ color: "#B8B0A7" }}

@@ -111,7 +111,7 @@ export default function OneOnOneConsultation() {
               <blockquote className="text-base font-semibold leading-relaxed mb-3" style={{ color: "#0a0a0a" }}>
                 &ldquo;Stop treating outbound like an art form. Build it like a software product.&rdquo;
               </blockquote>
-              <cite className="text-sm not-italic" style={{ color: "#8C8279" }}>- Tejas Jhaveri, Founder · TEDx Speaker · IIT/IIM Educator</cite>
+              <cite className="text-sm not-italic" style={{ color: "#71675E" }}>- Tejas Jhaveri, Founder · TEDx Speaker · IIT/IIM Educator</cite>
             </div>
 
             <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>

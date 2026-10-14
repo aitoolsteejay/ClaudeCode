@@ -100,7 +100,7 @@ const TABLE_SECTIONS: TableSection[] = [
     title: "Growth Infrastructure",
     rows: INCLUDED_IN_EVERY_PLAN.slice(0, 8).map((label) => ({ label, values: [true, true, true] as [Cell, Cell, Cell], info: ROW_INFO[label] })),
     tint: "#F1EEE7",
-    tintText: "#8C8279",
+    tintText: "#71675E",
   },
   {
     title: "Content",
@@ -144,7 +144,7 @@ const TEAL = "#14B8A6";
 const GREEN = "#10B981";
 const TEXT_DARK = "#0a0a0a";
 const TEXT_BODY = "#52525B";
-const TEXT_MUTED = "#8C8279";
+const TEXT_MUTED = "#71675E";
 const BORDER = "#E8E2D9";
 
 function CheckIcon({ color }: { color: string }) {

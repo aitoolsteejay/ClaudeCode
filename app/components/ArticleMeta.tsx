@@ -19,7 +19,7 @@ export default function ArticleMeta({ schema, className = "" }: { schema: { date
   const showPublished = published && fmt(published) !== fmt(modified);
 
   return (
-    <p className={`-mt-3 mb-5 text-sm ${className}`} style={{ color: "#8C8279" }}>
+    <p className={`-mt-3 mb-5 text-sm ${className}`} style={{ color: "#71675E" }}>
       By <span className="font-semibold" style={{ color: "#52525B" }}>Myntmore</span>
       {showPublished && (
         <>

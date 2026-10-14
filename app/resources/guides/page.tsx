@@ -193,7 +193,7 @@ export default function GuidesPage() {
                     <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{g.title}</h2>
                     <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{g.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs" style={{ color: "#8C8279" }}>{g.readTime}</span>
+                      <span className="text-xs" style={{ color: "#71675E" }}>{g.readTime}</span>
                       <span className="text-xs font-bold" style={{ color: g.accent }}>Read →</span>
                     </div>
                   </div>

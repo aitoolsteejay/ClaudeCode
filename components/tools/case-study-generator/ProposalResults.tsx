@@ -87,7 +87,7 @@ export function ProposalResults({ result, onReset }: { result: ProposalOutput; o
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="rounded-xl p-5" style={{ backgroundColor: "#F8F6F2", border: "1px solid #E8E2D9" }}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>Investment</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>Investment</p>
           <p className="text-sm font-medium" style={{ color: "#3D3D3D" }}>{result.investment}</p>
         </div>
         <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(99,102,241,0.06)", border: `1px solid ${ACCENT}30` }}>

@@ -20,7 +20,7 @@ export default function LogoStrip() {
       aria-label="Trusted companies"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#8C8279" }}>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#71675E" }}>
           Trusted by fast-growing B2B teams
         </p>
       </div>

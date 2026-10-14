@@ -81,7 +81,7 @@ export default function CaseStudyProcrastinationBlogPost() {
             <blockquote className="relative rounded-2xl border p-7 sm:p-8 text-xl sm:text-2xl font-black leading-relaxed overflow-hidden" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", color: "#0a0a0a" }}>
               <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#D97706" }}>“</span>
               “People believe other people more than your headline.”
-              <footer className="mt-3 text-sm font-normal" style={{ color: "#8C8279" }}>Tejas Jhaveri, Founder of Myntmore</footer>
+              <footer className="mt-3 text-sm font-normal" style={{ color: "#71675E" }}>Tejas Jhaveri, Founder of Myntmore</footer>
             </blockquote>
 
             <p>In a noisy B2B environment, prospects are constantly asking two questions: “Do I trust them?” and “Is this actually for me?” Concrete, data-backed proof answers both questions faster than another polished claim ever could.</p>

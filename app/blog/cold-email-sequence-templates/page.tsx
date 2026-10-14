@@ -127,7 +127,7 @@ export default function ColdEmailSequenceTemplates() {
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>
+              <p className="text-xs" style={{ color: "#71675E" }}>
                 Source: {s.href ? <a href={s.href} className="underline">{s.cite}</a> : s.cite}
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function ColdEmailSequenceTemplates() {
                       <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#EA580C" }}>{email.day}</span>
                       <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{email.name}</h3>
                     </div>
-                    <p className="px-6 text-sm italic mb-4" style={{ color: "#8C8279" }}>Goal: {email.goal}</p>
+                    <p className="px-6 text-sm italic mb-4" style={{ color: "#71675E" }}>Goal: {email.goal}</p>
                     <div className="mx-6 mb-6 rounded-xl p-5 whitespace-pre-line text-sm leading-relaxed" style={{ backgroundColor: "#ffffff", border: "1px solid #E8E2D9", color: "#3D3D3D" }}>
                       <p className="font-bold mb-2" style={{ color: "#0a0a0a" }}>{email.subject}</p>
                       {email.body}

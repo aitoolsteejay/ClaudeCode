@@ -52,7 +52,7 @@ export default function ThankYouLeadFormPage() {
             </Link>
           </div>
 
-          <p className="mt-8 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>
+          <p className="mt-8 text-xs hero-fade-d3" style={{ color: "#71675E" }}>
             Wrong email or need to add something?{" "}
             <a href="mailto:growth@myntmore.com" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Email us directly</a>.
           </p>

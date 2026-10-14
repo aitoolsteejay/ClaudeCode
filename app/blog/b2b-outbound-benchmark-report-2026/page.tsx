@@ -83,7 +83,7 @@ export default function B2BOutboundBenchmarkReport2026() {
 
       <div className="px-4 pb-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-          <h2 className="text-sm font-black uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Methodology</h2>
+          <h2 className="text-sm font-black uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Methodology</h2>
           <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
             These figures are aggregated and anonymized across the 300+ B2B accounts Myntmore has managed cold email, LinkedIn outreach, and AI-qualified list campaigns for. No single client&apos;s data is broken out or identifiable. Ranges reflect the spread across account size, industry, and ICP, not a single blended average, since a flat number would hide more than it reveals. &quot;Typical&quot; figures for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
           </p>
@@ -112,16 +112,16 @@ export default function B2BOutboundBenchmarkReport2026() {
                       <tr key={row.channel} style={{ borderTop: i > 0 ? "1px solid #E8E2D9" : undefined }}>
                         <td className="p-4">
                           <p className="font-bold" style={{ color: "#0a0a0a" }}>{row.channel}</p>
-                          <p className="text-xs" style={{ color: "#8C8279" }}>{row.note}</p>
+                          <p className="text-xs" style={{ color: "#71675E" }}>{row.note}</p>
                         </td>
                         <td className="p-4 font-black" style={{ color: "#10b981" }}>{row.myntmore}</td>
-                        <td className="p-4" style={{ color: "#8C8279" }}>{row.typical}</td>
+                        <td className="p-4" style={{ color: "#71675E" }}>{row.typical}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-sm mt-4" style={{ color: "#8C8279" }}>
+              <p className="text-sm mt-4" style={{ color: "#71675E" }}>
                 Individual campaigns land across the full range depending on ICP fit and offer clarity. A specific SaaS Series A account of ours landed at 34% on cold email; a B2B services account landed at 29%, both within the range above.
               </p>
             </div>

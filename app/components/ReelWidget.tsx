@@ -42,7 +42,21 @@ export default function ReelWidget() {
   const [triggered, setTriggered] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [paused, setPaused] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Visitors who ask the OS for reduced motion get the reel paused on its
+  // first frame instead of auto-playing on a loop; the play button starts it.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPaused(true);
+  }, []);
+
+  const togglePaused = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) video.play().catch(() => {});
+    else video.pause();
+  };
 
   // Claims the session's one showing. The ref keeps StrictMode's second dev
   // pass from reading the flag the first pass just set.
@@ -95,13 +109,31 @@ export default function ReelWidget() {
         <button
           type="button"
           onClick={() => setDismissed(true)}
-          aria-label="Dismiss"
-          className="absolute top-2 right-2 z-10 w-6 h-6 flex items-center justify-center rounded-full"
+          aria-label="Dismiss video"
+          className="absolute top-2 right-2 z-10 w-7 h-7 flex items-center justify-center rounded-full"
           style={{ backgroundColor: "rgba(0,0,0,0.5)", color: "#ffffff" }}
         >
-          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
+        </button>
+
+        <button
+          type="button"
+          onClick={togglePaused}
+          aria-label={paused ? "Play video" : "Pause video"}
+          className="absolute bottom-2 left-2 z-10 w-7 h-7 flex items-center justify-center rounded-full"
+          style={{ backgroundColor: "rgba(0,0,0,0.5)", color: "#ffffff" }}
+        >
+          {paused ? (
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          ) : (
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" />
+            </svg>
+          )}
         </button>
 
         <button
@@ -112,12 +144,12 @@ export default function ReelWidget() {
           style={{ backgroundColor: "rgba(0,0,0,0.5)", color: "#ffffff" }}
         >
           {muted ? (
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M23 9l-6 6M17 9l6 6" />
             </svg>
           ) : (
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M11 5L6 9H2v6h4l5 4V5z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.5 8.5a5 5 0 010 7M19 5.5a9 9 0 010 13" />
             </svg>
@@ -129,10 +161,13 @@ export default function ReelWidget() {
             ref={videoRef}
             src="/videos/homepage-reel.mp4"
             className="w-full h-full object-cover"
-            autoPlay
+            autoPlay={!paused}
             loop
+            aria-label="Myntmore reel"
             muted={muted}
             playsInline
+            onPlay={() => setPaused(false)}
+            onPause={() => setPaused(true)}
           />
         )}
       </div>
@@ -141,7 +176,7 @@ export default function ReelWidget() {
         target="_blank"
         rel="noopener noreferrer"
         className="block text-center mt-2 text-xs font-bold"
-        style={{ color: "#8C8279" }}
+        style={{ color: "#71675E" }}
       >
         Follow @myntmore
       </a>

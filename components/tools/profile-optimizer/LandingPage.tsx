@@ -68,7 +68,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-3 items-center">
             <div className="rounded-2xl p-6 bg-white" style={{ border: "1px solid #E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#8C8279" }}>Before</span>
+              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#71675E" }}>Before</span>
               <p className="mt-2 text-base leading-snug" style={{ color: "#6B6B6B" }}>{VAGUE_BEFORE}</p>
             </div>
             <div className="flex justify-center" aria-hidden="true">

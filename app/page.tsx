@@ -67,7 +67,7 @@ const HOME_AI_RESOURCES = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-background overflow-x-hidden">
       <JsonLd data={buildFaqSchema(FAQ_ITEMS)} />
       <JsonLd data={buildWebsiteSchema()} />
       <JsonLd data={buildLocalBusinessSchema()} />

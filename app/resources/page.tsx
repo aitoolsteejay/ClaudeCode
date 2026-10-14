@@ -132,7 +132,7 @@ export default function Resources() {
             ].map((s) => (
               <div key={s.n}>
                 <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.n}</div>
-                <div className="text-xs sm:text-sm" style={{ color: "#8C8279" }}>{s.label}</div>
+                <div className="text-xs sm:text-sm" style={{ color: "#71675E" }}>{s.label}</div>
               </div>
             ))}
           </div>

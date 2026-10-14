@@ -50,7 +50,7 @@ export default function HrOperationsIntern() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "6 months minimum"], ["Stipend", "Rs 7,000–15,000 (based on experience)"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
                   <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
                     {value} <span aria-hidden="true">↗</span>
@@ -66,7 +66,7 @@ export default function HrOperationsIntern() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
         </div>
       </section>
 
@@ -137,7 +137,7 @@ export default function HrOperationsIntern() {
                 <p className="text-base" style={{ color: "#3D3D3D" }}>{item}</p>
               </div>
             ))}
-            <p className="text-sm mt-4" style={{ color: "#8C8279" }}>
+            <p className="text-sm mt-4" style={{ color: "#71675E" }}>
               This internship will fast-track your career in HR & People Operations, Talent Acquisition, Organisational Design, Startup Ops, or Chief of Staff / founder-track roles.
             </p>
           </div>

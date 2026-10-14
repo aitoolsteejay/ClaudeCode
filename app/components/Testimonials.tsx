@@ -249,7 +249,7 @@ function RatingBadge({ score, label, icon }: { score: string; label: string; ico
             </svg>
           ))}
         </div>
-        <span className="text-xs text-[#8C8279]">{label}</span>
+        <span className="text-xs text-[#71675E]">{label}</span>
       </div>
     </div>
   );

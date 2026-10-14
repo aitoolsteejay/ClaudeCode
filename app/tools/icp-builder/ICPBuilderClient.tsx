@@ -185,12 +185,12 @@ export default function ICPBuilderClient() {
                   style={
                     i <= currentStepIndex
                       ? { backgroundColor: "#F97316", color: "#ffffff" }
-                      : { backgroundColor: "#ffffff", color: "#8C8279", border: "1px solid #E8E2D9" }
+                      : { backgroundColor: "#ffffff", color: "#71675E", border: "1px solid #E8E2D9" }
                   }
                 >
                   {i + 1}
                 </span>
-                <span className="text-xs font-semibold hidden sm:inline" style={{ color: i <= currentStepIndex ? "#0a0a0a" : "#8C8279" }}>
+                <span className="text-xs font-semibold hidden sm:inline" style={{ color: i <= currentStepIndex ? "#0a0a0a" : "#71675E" }}>
                   {step.label}
                 </span>
                 {i < STEP_LABELS.length - 1 && <span className="w-6 h-px" style={{ backgroundColor: "#E8E2D9" }} />}
@@ -199,7 +199,7 @@ export default function ICPBuilderClient() {
           </div>
         </header>
 
-        <main>
+        <div>
           <ScreenTransition screenKey={screen}>
             {screen === "intake" && (
               <IntakeScreen data={intake} onChange={setIntake} onContinue={handleIntakeContinue} />
@@ -226,7 +226,7 @@ export default function ICPBuilderClient() {
               />
             )}
           </ScreenTransition>
-        </main>
+        </div>
       </div>
     </div>
   );

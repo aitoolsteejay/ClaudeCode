@@ -167,7 +167,7 @@ function RoleList() {
   return (
     <div>
       <div className="relative mb-5 max-w-md">
-        <span className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: focused ? "#F5B731" : "#8C8279", transition: "color 0.15s" }}>
+        <span className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: focused ? "#F5B731" : "#71675E", transition: "color 0.15s" }}>
           <SearchIcon />
         </span>
         <input
@@ -225,7 +225,7 @@ function RoleList() {
       </div>
 
       {filtered.length === 0 ? (
-        <p className="text-sm" style={{ color: "#8C8279" }}>
+        <p className="text-sm" style={{ color: "#71675E" }}>
           {q ? `No roles match "${query.trim()}".` : "No open roles in this department right now."} Check back soon, or send us a note anyway.
         </p>
       ) : (
@@ -303,7 +303,7 @@ export default function CareersClient() {
                 </div>
                 <div>
                   <div className="text-2xl font-black leading-none" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-xs mt-1.5 font-semibold" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-xs mt-1.5 font-semibold" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               </div>
             </FadeIn>
@@ -437,8 +437,8 @@ function RoleCard({ role }: { role: typeof ROLES[0] }) {
             <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-3">
               <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${role.accent}12`, color: role.accent, border: `1px solid ${role.accent}30` }}>{role.tag}</span>
               <div className="text-right">
-                <p className="text-xs font-semibold" style={{ color: "#8C8279" }}>{role.type}</p>
-                <p className="text-xs" style={{ color: "#8C8279" }}>{role.location}</p>
+                <p className="text-xs font-semibold" style={{ color: "#71675E" }}>{role.type}</p>
+                <p className="text-xs" style={{ color: "#71675E" }}>{role.location}</p>
               </div>
             </div>
             <h3 className="text-xl font-black mb-2 transition-colors duration-200" style={{ color: hov ? role.accent : "#0a0a0a" }}>{role.title}</h3>

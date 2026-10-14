@@ -165,7 +165,7 @@ export default function VibeProspectingGuide() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-2xl sm:text-3xl font-black mb-2" style={{ color: "#0a0a0a" }}>Step-by-Step Setup</h2>
-            <p className="text-sm sm:text-base mb-6" style={{ color: "#8C8279" }}>7 steps. About 5 minutes.</p>
+            <p className="text-sm sm:text-base mb-6" style={{ color: "#71675E" }}>7 steps. About 5 minutes.</p>
           </FadeIn>
 
           <FadeIn delay={100}>
@@ -204,7 +204,7 @@ export default function VibeProspectingGuide() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-2xl sm:text-3xl font-black mb-2" style={{ color: "#0a0a0a" }}>First Prompt to Run</h2>
-            <p className="text-sm sm:text-base mb-6" style={{ color: "#8C8279" }}>Start simple. Get a feel for the output format before going deep.</p>
+            <p className="text-sm sm:text-base mb-6" style={{ color: "#71675E" }}>Start simple. Get a feel for the output format before going deep.</p>
           </FadeIn>
           <FadeIn delay={100}>
             <CopyBlock text={FIRST_PROMPT} accent={ACCENT} label="Copy this prompt" />
@@ -249,7 +249,7 @@ export default function VibeProspectingGuide() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <h2 className="text-2xl sm:text-3xl font-black mb-2" style={{ color: "#0a0a0a" }}>Master Prompt Template</h2>
-            <p className="text-sm sm:text-base mb-6" style={{ color: "#8C8279" }}>Copy this, fill it in, run it.</p>
+            <p className="text-sm sm:text-base mb-6" style={{ color: "#71675E" }}>Copy this, fill it in, run it.</p>
           </FadeIn>
           <FadeIn delay={100}>
             <CopyBlock text={MASTER_TEMPLATE} accent={ACCENT} label="Copy this template" />

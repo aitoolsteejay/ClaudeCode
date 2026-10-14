@@ -80,7 +80,7 @@ export default function PitchingTrapBlogPost() {
             <blockquote className="relative rounded-2xl border p-7 sm:p-8 text-xl sm:text-2xl font-black leading-relaxed overflow-hidden" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", color: "#0a0a0a" }}>
               <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#D97706" }}>“</span>
               “Stop listing features and start breaking patterns.”
-              <footer className="mt-3 text-sm font-normal" style={{ color: "#8C8279" }}>Tejas Jhaveri, Founder of Myntmore</footer>
+              <footer className="mt-3 text-sm font-normal" style={{ color: "#71675E" }}>Tejas Jhaveri, Founder of Myntmore</footer>
             </blockquote>
 
             <p>If you open with a generic claim about how your software “streamlines workflows,” the buyer’s brain tunes out. If you identify a specific point of friction and articulate the day-to-day problem better than the buyer can, you earn trust and curiosity.</p>

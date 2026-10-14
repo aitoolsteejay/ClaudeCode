@@ -175,7 +175,7 @@ export default function ColdEmailingPackage() {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
-              <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#8C8279" }}>Our targets</span>
+              <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#71675E" }}>Our targets</span>
               {TARGETS.map((t) => (
                 <span key={t} className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-bold" style={{ borderColor: "#EDE7DD", color: INK }}>
                   <BadgeCheck className="h-4 w-4" style={{ color: ORANGE }} aria-hidden="true" />
@@ -278,7 +278,7 @@ export default function ColdEmailingPackage() {
                         <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
                       </span>
                       <div>
-                        <p className="text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: "#8C8279" }}>{row.label}</p>
+                        <p className="text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: "#71675E" }}>{row.label}</p>
                         <p className="text-base font-bold" style={{ color: INK }}>{row.value}</p>
                       </div>
                     </div>

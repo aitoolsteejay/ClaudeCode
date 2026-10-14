@@ -92,7 +92,7 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
             {HERO_STATS.map((stat) => (
               <div key={stat.label} className="text-center py-3 sm:py-1">
                 <div className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={stat.value} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{stat.label}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -133,12 +133,12 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>A repeatable source of qualified opportunities</h2>
             <p className="text-base leading-relaxed mb-8" style={{ color: "#52525B" }}>Within 4 months, the outbound system went from inconsistent prospecting to a repeatable source of qualified B2B opportunities.</p>
             <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-              <div className="grid grid-cols-[1fr_auto_1fr] gap-3 px-5 py-3 border-b text-xs font-bold uppercase tracking-widest" style={{ borderColor: "#E8E2D9", color: "#8C8279" }}>
+              <div className="grid grid-cols-[1fr_auto_1fr] gap-3 px-5 py-3 border-b text-xs font-bold uppercase tracking-widest" style={{ borderColor: "#E8E2D9", color: "#71675E" }}>
                 <span>Before</span><span aria-hidden="true">→</span><span className="text-right">After</span>
               </div>
               {BEFORE_AFTER.map((result, index) => (
                 <div key={result.label} className="grid grid-cols-[1fr_auto_1fr] gap-3 items-center px-5 py-5" style={{ borderBottom: index < BEFORE_AFTER.length - 1 ? "1px solid #E8E2D9" : "none" }}>
-                  <div><div className="text-2xl font-black" style={{ color: "#8C8279" }}>{result.before}</div><div className="text-xs mt-1" style={{ color: "#8C8279" }}>{result.label}</div></div>
+                  <div><div className="text-2xl font-black" style={{ color: "#71675E" }}>{result.before}</div><div className="text-xs mt-1" style={{ color: "#71675E" }}>{result.label}</div></div>
                   <span className="text-xl" style={{ color: "#F5B731" }} aria-hidden="true">→</span>
                   <div className="text-right"><div className="text-2xl font-black" style={{ color: "#14b8a6" }}>{result.after}</div><div className="text-xs mt-1" style={{ color: "#52525B" }}>{result.label}</div></div>
                 </div>

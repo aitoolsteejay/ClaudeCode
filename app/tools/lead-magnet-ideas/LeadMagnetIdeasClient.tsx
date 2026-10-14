@@ -162,7 +162,7 @@ export default function LeadMagnetIdeasClient() {
           </p>
         </header>
 
-        <main>
+        <div>
           {/* Lead Gate */}
           {step === "lead" && (
             <LeadGate
@@ -361,7 +361,7 @@ export default function LeadMagnetIdeasClient() {
               </div>
             </div>
           )}
-        </main>
+        </div>
       </div>
     </div>
   );

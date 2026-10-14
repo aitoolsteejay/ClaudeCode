@@ -64,7 +64,7 @@ export default function ContactUs() {
             {CONTACT_CARDS.map((c) => (
               <a key={c.title} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined} className="block rounded-2xl border p-6 card-hover-warm" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <div className="text-2xl mb-3">{c.icon}</div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#8C8279" }}>{c.title}</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#71675E" }}>{c.title}</p>
                 <p className="text-base font-semibold mb-3" style={{ color: "#0a0a0a" }}>{c.value}</p>
                 <span className="text-sm font-bold" style={{ color: "#F5B731" }}>{c.cta} →</span>
               </a>
@@ -105,7 +105,7 @@ export default function ContactUs() {
                     <input id="Email" name="Email" type="email" required maxLength={255} placeholder="amara@northbridge.co" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <SubmitButton>Get Your Custom Strategy</SubmitButton>
-                  <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just clarity.</p>
+                  <p className="text-center text-xs" style={{ color: "#71675E" }}>No commitments. No agency pitch decks. Just clarity.</p>
                 </form>
               </div>
             </div>

@@ -114,7 +114,7 @@ function FlowChips({ steps, accent }: { steps: string[]; accent: string }) {
           <span className="text-xs sm:text-sm font-bold px-3 py-1.5 rounded-lg" style={{ backgroundColor: "#0a0a0a", color: accent }}>
             {s}
           </span>
-          {i < steps.length - 1 && <span style={{ color: "#8C8279" }}>→</span>}
+          {i < steps.length - 1 && <span style={{ color: "#71675E" }}>→</span>}
         </span>
       ))}
     </div>
@@ -194,7 +194,7 @@ export default function AiAgentsMeetingsBlueprint() {
               {HERO_STATS.map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -209,15 +209,15 @@ export default function AiAgentsMeetingsBlueprint() {
             <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#F97316" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />ICP Locked</h4>
             <div className="space-y-3">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Roles</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Roles</p>
                 <ChipGroup items={["Founders", "CEOs", "COOs", "Partners", "VP Sales"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Industries</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Industries</p>
                 <ChipGroup items={["SaaS", "Consulting", "Manufacturing", "Recruitment"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Geo</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Geo</p>
                 <ChipGroup items={["United States"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
             </div>
@@ -241,17 +241,17 @@ export default function AiAgentsMeetingsBlueprint() {
       {/* Step 2: Prospect Discovery Engine */}
       <StepSection number="2" icon={Search} title="Prospect Discovery Engine" subtitle="n8n + Apollo/Clay" accent="#16a34a" accentBg="rgba(34,197,94,0.08)">
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>Daily automated lead pull, 6 AM IST</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>Daily automated lead pull, 6 AM IST</p>
           <FlowChips steps={["n8n", "Apollo/Clay API", "Airtable/Sheet"]} accent="#16a34a" />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Filters</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Filters</h4>
             <ChipGroup items={["US-based", "Founder/CXO-level", "5–200 employees", "Relevant industries"]} accent="#16a34a" accentBg="rgba(34,197,94,0.08)" />
           </div>
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Nodes in the workflow</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Nodes in the workflow</h4>
             <NumberedList
               items={["Cron Node, triggers daily run", "HTTP Request Node (Apollo/Clay API)", "Set Node, clean fields", "IF Node, remove duplicates", "Airtable/Google Sheet Node, store leads"]}
               accent="#16a34a"
@@ -275,7 +275,7 @@ export default function AiAgentsMeetingsBlueprint() {
         </div>
 
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>AI Agent (OpenAI/Gemini) prompt</h4>
+          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>AI Agent (OpenAI/Gemini) prompt</h4>
           <CopyBlock
             accent="#a855f7"
             label="Copy this prompt"
@@ -286,7 +286,7 @@ export default function AiAgentsMeetingsBlueprint() {
         <Callout accent="#a855f7" accentBg="rgba(168,85,247,0.08)">
           &quot;Noticed you&apos;re scaling US sales hiring, personalised outbound could compound that momentum.&quot;
         </Callout>
-        <p className="text-sm" style={{ color: "#8C8279" }}>This becomes the spine of your messaging.</p>
+        <p className="text-sm" style={{ color: "#71675E" }}>This becomes the spine of your messaging.</p>
       </StepSection>
 
       {/* Step 4: Hyper-Personalised Outreach Generator */}
@@ -304,7 +304,7 @@ export default function AiAgentsMeetingsBlueprint() {
           ]}
         />
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Nodes</h4>
+          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Nodes</h4>
           <ChipGroup items={["AI Agent Node, message generation", "Set Node, store final sequence", "Database Node, push to CRM"]} accent="#D97706" accentBg="rgba(217,119,6,0.08)" />
         </div>
         <Callout accent="#D97706" accentBg="rgba(217,119,6,0.08)">
@@ -361,7 +361,7 @@ export default function AiAgentsMeetingsBlueprint() {
       <StepSection number="7" icon={ChartColumn} title="Self-Optimising Weekly Report" subtitle="Every Friday evening" accent="#6366f1" accentBg="rgba(99,102,241,0.08)">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Pull all metrics</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Pull all metrics</h4>
             <ChipGroup
               items={["Connection acceptance rate", "Reply rate", "Positive reply rate", "Meetings booked", "Show-up rate"]}
               accent="#6366f1"
@@ -369,7 +369,7 @@ export default function AiAgentsMeetingsBlueprint() {
             />
           </div>
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>AI Agent analyses</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>AI Agent analyses</h4>
             <ChipGroup
               items={["Best-responding ICP segment", "Highest-replying message", "Winning personalisation angle", "What to change next week"]}
               accent="#6366f1"
@@ -411,7 +411,7 @@ export default function AiAgentsMeetingsBlueprint() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-sm sm:text-base font-semibold mt-5" style={{ color: "#8C8279" }}>
+            <p className="text-center text-sm sm:text-base font-semibold mt-5" style={{ color: "#71675E" }}>
               You only show up for calls.
             </p>
           </FadeIn>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T06:24:02.378Z",
+  "generatedAt": "2026-10-14T08:04:05.835Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 201,
@@ -2966,7 +2966,7 @@
       "permanent": true
     }
   ],
-  "hiddenRedirects": 4,
+  "hiddenRedirects": 5,
   "rewrites": [
     {
       "from": "/tools/dm-angle-generator",

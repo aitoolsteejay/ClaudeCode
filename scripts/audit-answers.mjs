@@ -1,6 +1,6 @@
 // Checks that answer copy is snippet-shaped: 40-60 words, the answer in the
 // first sentence, no hedge opener ("it depends", "great question"...). Covers
-//   - the direct-answer definitions in lib/service-answers.ts (must pass)
+//   - the direct-answer definitions in lib/service-answers.json (must pass)
 //   - every FAQ question/answer pair found in app/, components/ and lib/
 //
 //   node scripts/audit-answers.mjs               summary + files with the most misses
@@ -47,7 +47,7 @@ const pairRe = new RegExp(String.raw`\b(?:q|question)\s*:\s*${strLit}\s*,\s*(?:a
 const results = [];
 for (const file of [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib"))]) {
   const rel = path.relative(ROOT, file);
-  if (rel.startsWith("lib/service-answers")) continue;
+  if (rel.startsWith("lib/service-answers")) continue; // checked separately below
   const src = fs.readFileSync(file, "utf8");
   for (const m of src.matchAll(pairRe)) {
     const q = unescape(m[1]);
@@ -84,16 +84,14 @@ if (hedged.length) {
 }
 
 // The direct-answer definitions must pass.
-const svc = fs.readFileSync(path.join(ROOT, "lib", "service-answers.ts"), "utf8");
+const svcData = JSON.parse(fs.readFileSync(path.join(ROOT, "lib", "service-answers.json"), "utf8"));
 const svcFail = [];
-let svcCount = 0;
-for (const m of svc.matchAll(/slug:\s*"([^"]+)"[\s\S]*?answer:\s*"((?:[^"\\]|\\.)*)"/g)) {
-  svcCount++;
-  const n = words(unescape(m[2]));
-  const first = unescape(m[2]).split(/(?<=[.?!])\s/)[0];
-  if (n < MIN || n > MAX) svcFail.push(`${m[1]}: ${n} words`);
-  if (HEDGE.test(unescape(m[2]))) svcFail.push(`${m[1]}: hedge opener`);
-  if (words(first) < 6) svcFail.push(`${m[1]}: first sentence too short to hold the answer`);
+for (const entry of svcData) {
+  const n = words(entry.answer);
+  const first = entry.answer.split(/(?<=[.?!])\s/)[0];
+  if (n < MIN || n > MAX) svcFail.push(`${entry.slug}: ${n} words`);
+  if (HEDGE.test(entry.answer)) svcFail.push(`${entry.slug}: hedge opener`);
+  if (words(first) < 6) svcFail.push(`${entry.slug}: first sentence too short to hold the answer`);
 }
-console.log(`\nService direct answers (lib/service-answers.ts): ${svcCount - svcFail.length}/${svcCount} pass` + (svcFail.length ? `\n  ${svcFail.join("\n  ")}` : ""));
+console.log(`\nService direct answers (lib/service-answers.json): ${svcData.length - svcFail.length}/${svcData.length} pass` + (svcFail.length ? `\n  ${svcFail.join("\n  ")}` : ""));
 if (STRICT && svcFail.length) process.exit(1);

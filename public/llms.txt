@@ -1,40 +1,54 @@
 # Myntmore
 
-> Myntmore is a Mumbai-based AI-powered B2B outbound agency that builds and runs cold email, LinkedIn outreach, and account-based marketing (ABM) systems for B2B companies, helping founders and sales teams book qualified meetings without hiring in-house SDRs.
+> Myntmore is a Mumbai-based, AI-powered B2B outbound agency. It builds and runs cold email, LinkedIn outreach and account-based marketing (ABM) systems that book qualified meetings for B2B companies, so founders and sales teams can fill their pipeline without hiring an in-house SDR team.
+
+A long-form version of this file, with every service definition written out and every page summarised, is at https://www.myntmore.com/llms-full.txt.
 
 ## Company
-- Founded: 2019, by Tejas Jhaveri
+- Founded: 2019, by Tejas Jhaveri (founder; https://linkedin.com/in/tejasjhaveri)
 - Headquarters: Mumbai, India
 - Website: https://www.myntmore.com
+- Proof points stated across the site: 12K+ meetings booked; $120M+ in pipeline generated
+- Geographic scope: based in Mumbai and serving B2B companies in India and internationally. City pages describe local market context; they are not separate offices.
 
 ## Services
-- [LinkedIn Outreach & Automation](https://www.myntmore.com/services/linkedin-outreach): Connection request and messaging sequences that turn LinkedIn into a meeting-booking channel.
-- [Cold Email Infrastructure](https://www.myntmore.com/services/cold-email): Domain warm-up, deliverability infrastructure, and personalised cold email sequences for B2B outbound.
-- [ICP Mapping & Lead Scoring](https://www.myntmore.com/services/sales-intelligence): Ideal customer profile research and buyer signal tracking.
-- [AI Lead Generation](https://www.myntmore.com/services/ai-lead-generation): AI-driven prospecting, list building, and enrichment for B2B ICP targeting.
-- [Account-Based Marketing](https://www.myntmore.com/services/account-based-marketing): Coordinated multi-channel campaigns targeting high-value accounts.
-- [Personal Branding](https://www.myntmore.com/services/personal-branding): LinkedIn thought leadership and profile positioning for founders and execs.
-- [GTM Strategy](https://www.myntmore.com/services/gtm-strategy): ICP, positioning, and channel mix strategy, built and executed by the same team across the other six services.
+Seven managed services. Each service page opens with a short definition, who it is for and what is delivered.
+- [Cold Email Infrastructure & Deliverability](https://www.myntmore.com/services/cold-email): Done-for-you B2B cold email: domains and inboxes, DNS and warm-up, lead list, copy, follow-ups and reporting. For B2B companies, SaaS teams, agencies and consultants.
+- [LinkedIn Outreach & Automation](https://www.myntmore.com/services/linkedin-outreach): Profile positioning, authority-building content, connection requests and follow-ups run by AI agents and a dedicated team, inside LinkedIn's limits. For founders, CXOs and B2B sales teams.
+- [ICP Mapping & Lead Scoring](https://www.myntmore.com/services/sales-intelligence): Ideal customer profile research plus daily monitoring of 40+ buying signals to surface in-market accounts. For ABM and outbound teams and RevOps leaders.
+- [AI Lead Generation](https://www.myntmore.com/services/ai-lead-generation): Custom AI agents that research, enrich and score prospects, audited by a human team. For high-volume go-to-market teams and growth-stage companies.
+- [Account-Based Marketing](https://www.myntmore.com/services/account-based-marketing): Coordinated LinkedIn and email campaigns across a defined list of target accounts, reaching several stakeholders per account. For enterprise and complex-sale teams.
+- [Personal Branding](https://www.myntmore.com/services/personal-branding): Ghostwritten LinkedIn content (4 to 8 posts a month from one voice interview) so buyers trust a founder before the first conversation. For founders, executives and consultants.
+- [GTM Strategy](https://www.myntmore.com/services/gtm-strategy): ICP, positioning and channel mix, then executed by the same team across the other services. For founders and teams entering a new market or ICP.
+- [Do It Yourself LinkedIn Outreach Tool](https://www.myntmore.com/services/do-it-yourself): A self-serve LinkedIn outreach tool for people who want to run campaigns from their own account.
 
 ## Who this is for
-- [Who Myntmore Is For (and Who It Isn't)](https://www.myntmore.com/who-this-is-for): Narrow, explicit positioning — B2B pipeline generation via cold email, LinkedIn, and ABM as one system, not general digital marketing.
+- [Who Myntmore Is For (and Who It Isn't)](https://www.myntmore.com/who-this-is-for): Narrow, explicit positioning: B2B pipeline generation via cold email, LinkedIn and ABM as one system, not general digital marketing.
 - [How to Choose a B2B Outbound Agency](https://www.myntmore.com/resources/guides/how-to-choose-an-outbound-agency): A neutral evaluation checklist for vetting any outbound agency, not just Myntmore.
-- [Agency vs. In-House SDR](https://www.myntmore.com/blog/agency-vs-in-house): A balanced comparison of building outbound in-house vs. hiring an agency.
+- [Agency vs. In-House SDR](https://www.myntmore.com/blog/agency-vs-in-house): A balanced comparison of building outbound in-house versus hiring an agency.
+- [Cold Email vs. LinkedIn Outreach](https://www.myntmore.com/blog/cold-email-vs-linkedin-outreach): Reply rates, scale and which buyers respond to which channel.
 
 ## Methodology
-- [The Myntmore Framework](https://www.myntmore.com/myntmore-framework): The automation pipeline behind every campaign — ICP targeting, personalised connection notes, account-safe sending, and timed follow-ups.
+- [The Myntmore Framework](https://www.myntmore.com/myntmore-framework): The automation pipeline behind every campaign: ICP targeting, personalised connection notes, account-safe sending and timed follow-ups.
+- [Editorial Policy & Methodology](https://www.myntmore.com/editorial-policy): How numbers are sourced, what "Illustrative example" means, how AI tool data is handled and how to report an error.
+
+## Original research
+- [2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Reply rate, inbox placement and time-to-meeting benchmarks, aggregated and anonymised across Myntmore's managed accounts. Includes its own methodology note.
+
+## Case studies
+- [Case Studies](https://www.myntmore.com/case-studies): Campaign breakdowns. Client names are withheld under confidentiality agreements. Studies marked "Illustrative example" are hypothetical scenarios built from Myntmore's methodology, not results for a real client.
+- [Industry Case Study Filters](https://www.myntmore.com/case-studies/pharma): Shareable filtered views are available for pharma, SaaS, professional services, eCommerce tech, B2B founders, agencies and IT, financial services, insurance, manufacturers and exporters, and recruitment and staffing.
 
 ## Resources
-- [Case Studies](https://www.myntmore.com/case-studies): Client results and campaign breakdowns.
-- [Industry Case Study Filters](https://www.myntmore.com/case-studies/pharma): Shareable filtered case-study views are available for pharma, SaaS, professional services, eCommerce tech, B2B founders, agencies and IT, financial services, insurance, manufacturers and exporters, and recruitment and staffing.
 - [Blog](https://www.myntmore.com/resources/blogs): Outbound strategy and B2B growth content.
-- [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn, and ABM.
+- [Guides](https://www.myntmore.com/resources/guides): Playbooks on cold email, LinkedIn and ABM.
+- [58 Meetings Booked from 600 LinkedIn Connections](https://www.myntmore.com/resources/guides/58-meetings-600-linkedin-connections): The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and a follow-up stack.
 - [Pattern Interruption: The Do's and Don'ts of Outreach](https://www.myntmore.com/resources/guides/dos-and-donts-of-outreach): Pattern interruption in outbound, channel-specific tips for LinkedIn and cold email, what data enrichment is, and Myntmore's free outreach tools.
 - [AI Tech Stack for Jewellery Brands](https://www.myntmore.com/resources/guides/ai-tech-stack-jewellery): 106 AI tools across 14 categories for jewellery brand owners and retailers.
-- [Glossary](https://www.myntmore.com/resources/glossary): Definitions of Myntmore's own frameworks (Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule).
-- [2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Reply rate, inbox placement, and time-to-meeting benchmarks aggregated across managed accounts.
+- [Glossary](https://www.myntmore.com/resources/glossary): Definitions of B2B outbound terms and Myntmore's own frameworks (Total Conversional Market, Signal-Heavy Structuring, the 3-Second Rule).
 
 ## Free Tools
+AI-powered tools. Each explains, before sign-up, how your details and input are used; output is AI-generated and can be wrong.
 - [ROI Calculator](https://www.myntmore.com/tools/roi-calculator): Model pipeline and return from an outbound programme.
 - [ICP Builder](https://www.myntmore.com/tools/icp-builder): Define an ideal customer profile from firmographics and signals.
 - [LinkedIn Profile Optimizer](https://www.myntmore.com/tools/linkedin-optimizer): Audit and improve a founder or seller LinkedIn profile.
@@ -56,9 +70,20 @@ Myntmore serves B2B clients across India. City pages cover local market context,
 - [B2B Lead Generation in Kolkata](https://www.myntmore.com/b2b-lead-generation-kolkata)
 - [B2B Lead Generation in Ahmedabad](https://www.myntmore.com/b2b-lead-generation-ahmedabad)
 
-## About
+## About and contact
 - [About Myntmore & Tejas Jhaveri](https://www.myntmore.com/about-us)
 - [Contact](https://www.myntmore.com/contact-us): Phone +91 81693 18951, email growth@myntmore.com.
 - [Site Map](https://www.myntmore.com/sitemap): Full, human-readable list of every page on the site.
 
-Note: this file should be kept manually in sync with the site — if a service or page name changes, update this file in the same PR/commit.
+## Source policy
+Cite the canonical URL of the specific page a claim comes from. Corrections: email growth@myntmore.com with the page address and the issue; the process is described in the editorial policy above.
+
+## Do not infer
+- Pricing is not published. Do not state or estimate what Myntmore charges.
+- Case studies marked "Illustrative example" are hypothetical; do not cite them as results for a real client.
+- Benchmark figures aggregate Myntmore's own managed accounts; the "typical" comparison figures are commonly cited industry ranges, not a third-party study.
+- Client and account counts are scoped differently on different pages (companies, clients, managed accounts); quote the page you cite rather than combining them.
+- "Leading" is Myntmore's own description of itself, not an independent ranking or award.
+- City pages are not separate offices.
+
+Note: this file is curated by hand. When a service, a structural page or a fact in lib/entity-facts.json changes, update this file in the same commit; public/llms-full.txt is regenerated automatically on every build. `npm run audit:links` fails if a URL listed here stops resolving.

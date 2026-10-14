@@ -11,7 +11,8 @@
 //                           (works for users, wastes crawl budget and dilutes link signals).
 //   3. Redirect health      chains of 2+ hops, loops, and redirects whose destination does not exist.
 //   4. Sitemap              URLs in sitemap.xml that 404, redirect, or are not canonical.
-//   5. Retired routes       paths that were removed on purpose (RETIRED below) must not appear in
+//   5. llms files          every myntmore.com URL listed in public/llms.txt and public/llms-full.txt must exist.
+//   6. Retired routes       paths that were removed on purpose (RETIRED below) must not appear in
 //                           the sitemap, the generated site-audit data, internal links, or redirect
 //                           destinations.
 //
@@ -198,9 +199,26 @@ for (const f of htmlFiles) {
   else if (!exists(p)) canonicalProblems.push(`${pageOf(f)}: canonical ${p} does not exist`);
 }
 
+// ── llms.txt / llms-full.txt ─────────────────────────────────────────────
+const llmsProblems = [];
+for (const file of ["llms.txt", "llms-full.txt"]) {
+  const f = path.join(ROOT, "public", file);
+  if (!fs.existsSync(f)) { llmsProblems.push(`public/${file} is missing`); continue; }
+  const urlsInFile = new Set([...fs.readFileSync(f, "utf8").matchAll(/https:\/\/www\.myntmore\.com(\/[^\s)\]>"']*)?/g)].map((m) => norm((m[1] ?? "/").replace(/[.,;:]+$/, "") || "/")));
+  for (const p of urlsInFile) {
+    if (p === "/llms.txt" || p === "/llms-full.txt") { if (!publicFiles.has(p)) llmsProblems.push(`${file}: ${p} is not in public/`); continue; }
+    if (matchRedirect(p)) llmsProblems.push(`${file}: ${p} is a redirect source, list the destination`);
+    else if (!exists(p)) llmsProblems.push(`${file}: ${p} does not exist`);
+  }
+}
+
 // ── Retired routes ───────────────────────────────────────────────────────
 const retiredProblems = [];
 const isRetired = (p) => RETIRED.some((r) => p === r || p.startsWith(r + "/"));
+for (const file of ["llms.txt", "llms-full.txt"]) {
+  const f = path.join(ROOT, "public", file);
+  if (fs.existsSync(f)) for (const r of RETIRED) if (fs.readFileSync(f, "utf8").includes(r)) retiredProblems.push(`public/${file} mentions ${r}`);
+}
 for (const u of sitemapUrls) if (isRetired(norm(u.slice(SITE.length) || "/"))) retiredProblems.push(`sitemap.xml lists ${u}`);
 for (const r of redirects) if (isRetired(norm(r.destination))) retiredProblems.push(`next.config.js redirects ${r.source} -> ${r.destination} (retired destination)`);
 for (const f of htmlFiles) if (isRetired(pageOf(f))) retiredProblems.push(`a page is still being built at ${pageOf(f)}`);
@@ -226,8 +244,9 @@ if (!VERBOSE && viaRows.length > 15) console.log(`  ... ${viaRows.length - 15} m
 section("Redirect problems", redirectProblems);
 section("Sitemap problems", sitemapProblems);
 section("Canonical problems", canonicalProblems);
+section("llms.txt / llms-full.txt problems", llmsProblems);
 section("Retired routes still referenced", retiredProblems);
 
-const failed = brokenRows.length + redirectProblems.length + sitemapProblems.length + canonicalProblems.length + retiredProblems.length;
+const failed = brokenRows.length + redirectProblems.length + sitemapProblems.length + canonicalProblems.length + llmsProblems.length + retiredProblems.length;
 console.log(failed ? `\nFAIL: ${failed} issue${failed === 1 ? "" : "s"} (links via redirects are advisory and not counted)` : "\nOK: no broken links, redirect problems, sitemap problems or retired routes.");
 process.exit(failed ? 1 : 0);

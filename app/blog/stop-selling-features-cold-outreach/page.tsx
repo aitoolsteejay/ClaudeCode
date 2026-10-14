@@ -5,6 +5,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/stop-selling-features-cold-outreach",
@@ -53,6 +54,7 @@ export default function StopSellingFeaturesColdOutreach() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Stop Selling Features: The 3-Second Rule of Outbound Outreach
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             B2B outbound isn&apos;t dead. Boring, formulaic outbound is. Here&apos;s what to do with the 3 seconds you actually get.
           </p>

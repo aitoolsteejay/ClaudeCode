@@ -34,6 +34,7 @@ import JsonLd from "@/app/components/JsonLd";
 import StatTicker from "@/app/components/StatTicker";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/resources/guides/58-meetings-600-linkedin-connections";
 const BLUE = "#0077b5";
@@ -207,6 +208,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
               <Underline color={BLUE} />
             </span>
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: BLUE }}>
             A holistic LinkedIn lead gen strategy: a clear 5-step framework to go from random outreach to predictable meetings.
           </p>

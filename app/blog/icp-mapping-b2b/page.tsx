@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/icp-mapping-b2b",
@@ -45,6 +46,7 @@ export default function ICPMappingB2B() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             If your outbound is getting replies but no meetings, or meetings but no closes, the issue is almost always targeting. You are talking to the wrong people. ICP mapping fixes this at the root.
           </p>

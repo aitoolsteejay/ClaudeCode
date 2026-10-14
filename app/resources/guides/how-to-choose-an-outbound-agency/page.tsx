@@ -7,6 +7,7 @@ import JsonLd from "@/app/components/JsonLd";
 import AskYourAI from "@/app/components/AskYourAI";
 import Faq from "@/app/lp/Faq";
 import { buildFaqSchema, buildArticleSchema, SITE_URL } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const PAGE_URL = `${SITE_URL}/resources/guides/how-to-choose-an-outbound-agency`;
 const TITLE = "How to Choose a B2B Outbound Agency";
@@ -83,6 +84,7 @@ export default function HowToChooseOutboundAgencyPage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             How to choose a B2B outbound agency
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl max-w-2xl" style={{ color: "#52525B" }}>
             Most outbound agencies pitch the same three promises: more meetings, done for you, fast. What actually separates a real system from a list-and-pray operation shows up in the questions they&apos;d rather you not ask. Here&apos;s what to ask before you sign anything.
           </p>

@@ -6,6 +6,7 @@ import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import Faq from "../../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-sequence-templates",
@@ -109,6 +110,7 @@ export default function ColdEmailSequenceTemplates() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold Email Sequence Templates That Get Replies
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             A single cold email rarely does the work. Here&apos;s the 5-touch sequence structure we use, with a template for each email and the reasoning behind why it's placed where it is.
           </p>

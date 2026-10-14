@@ -7,6 +7,7 @@ import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import Faq from "../../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/what-is-b2b-outbound-sales",
@@ -99,6 +100,7 @@ export default function WhatIsB2bOutboundSales() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             B2B Outbound Sales: What It Is & How It Works
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Outbound sales is the practice of proactively reaching out to prospects who haven&apos;t found you yet, instead of waiting for them to come to you. Here&apos;s what that actually means in practice: the channels, the roles, and how the whole system fits together.
           </p>

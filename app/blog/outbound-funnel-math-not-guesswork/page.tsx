@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/outbound-funnel-math-not-guesswork",
@@ -76,6 +77,7 @@ export default function OutboundFunnelMathNotGuesswork() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Gut Feel vs. Funnel Math: Why Outbound Is a Technical System, Not a Guessing Game
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Outbound doesn&apos;t fail because of timing or budget. It fails because nobody mapped the actual math behind a single booked meeting.
           </p>

@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/tam-trap-vague-targeting",
@@ -59,6 +60,7 @@ export default function TamTrapVagueTargeting() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             "Our market is huge, we target founders, CXOs, and mid-sized B2B business owners." It sounds focused. It isn't. Targeting an audience that broad is essentially praying in the dark.
           </p>

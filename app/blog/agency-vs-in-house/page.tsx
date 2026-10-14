@@ -8,6 +8,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import Faq from "../../lp/Faq";
 import { buildFaqSchema, buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/agency-vs-in-house",
@@ -119,6 +120,7 @@ export default function AgencyVsInHouseBlogPost() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Agency vs. in-house: how should you actually build B2B outbound?
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl max-w-2xl mb-4" style={{ color: "#52525B" }}>
             Every founder hits this decision eventually: hire an SDR (or a team of them) and build outbound in-house, or bring in an agency that already has the system running. There's no universally right answer, it comes down to how fast you need pipeline, how much risk you can absorb if a hire doesn't work out, and whether outbound is a core, ownable skill for your team or a function you'd rather not manage.
           </p>

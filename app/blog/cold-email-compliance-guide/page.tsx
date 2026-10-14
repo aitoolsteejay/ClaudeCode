@@ -6,6 +6,7 @@ import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import Faq from "../../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-compliance-guide",
@@ -108,6 +109,7 @@ export default function ColdEmailComplianceGuide() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Is Cold Email Legal? A Compliance Guide for B2B Outbound
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             The short answer: yes, in most places, when it's done right. Cold email and illegal spam aren&apos;t the same thing, but the line between them is defined by real, jurisdiction-specific rules, not a gut feeling. Here&apos;s what those rules actually say across the four regimes most B2B teams run into.
           </p>

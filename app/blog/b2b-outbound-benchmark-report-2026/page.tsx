@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
@@ -73,6 +74,7 @@ export default function B2BOutboundBenchmarkReport2026() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The 2026 B2B Outbound Benchmark Report
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             &quot;Is our reply rate good?&quot; is the question every founder running outbound eventually asks and rarely gets a straight answer to. We pulled aggregated, anonymized performance data across our own managed accounts to give you real numbers to check yours against.
           </p>

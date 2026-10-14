@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/conversations-not-impressions-outbound",
@@ -57,6 +58,7 @@ export default function ConversationsNotImpressionsOutbound() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The Impression Illusion: Why Outbound Success Is Mapped in Conversations, Not Sends
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Sending more messages isn&apos;t a strategy. Predictable B2B pipelines are built on conversation momentum, not impression volume.
           </p>

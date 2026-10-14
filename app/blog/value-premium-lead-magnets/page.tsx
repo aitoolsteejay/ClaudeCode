@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/value-premium-lead-magnets",
@@ -60,6 +61,7 @@ export default function ValuePremiumLeadMagnets() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The Value Premium: Stop Chasing Attention and Start Creating Magnetic Leads
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Most B2B newsletters and lead generation campaigns suffer from a critical flaw: they are designed to clamour for attention rather than prove direct, undeniable value.
           </p>

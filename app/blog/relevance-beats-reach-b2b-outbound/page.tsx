@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/relevance-beats-reach-b2b-outbound",
@@ -57,6 +58,7 @@ export default function RelevanceBeatsReachB2bOutbound() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Relevance Beats Reach: Why Your Outbound Strategy Is Failing to Trigger Responses
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Optimised outbound engines see 50 to 70% open rates and 12 to 20% reply rates. If yours doesn&apos;t, the problem isn&apos;t your list size, it&apos;s your relevance.
           </p>

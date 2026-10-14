@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/ecommerce-conversion-playbook",
@@ -52,6 +53,7 @@ export default function EcommerceConversionPlaybook() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The eCommerce Conversion Playbook: Turning Browsers into Buyers
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Traffic without conversion is just expensive noise. Most eCommerce stores have a &apos;broken bucket&apos; problem, pouring more and more water in, but it runs out the bottom just as fast.
           </p>

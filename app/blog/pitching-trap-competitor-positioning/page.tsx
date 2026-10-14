@@ -7,6 +7,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/blog/pitching-trap-competitor-positioning";
 
@@ -60,6 +61,7 @@ export default function PitchingTrapBlogPost() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             The Pitching Trap: How to Articulate Pain Better Than Your Competitors
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
             When SDRs struggle to get replies on LinkedIn or email, they usually rewrite the pitch. The real problem is simpler: most outbound messages sound exactly the same.
           </p>

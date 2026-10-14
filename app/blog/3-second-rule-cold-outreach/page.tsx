@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/3-second-rule-cold-outreach",
@@ -60,6 +61,7 @@ export default function ThreeSecondRuleColdOutreach() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The 3-Second Rule: How to Stop Writing Outbound Messages That Get Ignored
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             If you are sending outbound emails or LinkedIn connection requests and getting met with total silence, you are probably blaming the platform, the algorithm, or your pricing. The truth is much simpler: your outbound is boring.
           </p>

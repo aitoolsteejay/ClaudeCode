@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-deliverability-guide",
@@ -45,6 +46,7 @@ export default function ColdEmailDeliverability() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             You can write the best cold email in the world and it will not matter if it never reaches the inbox. Deliverability is the silent killer of outbound, and most founders don&apos;t even know it is happening to them.
           </p>

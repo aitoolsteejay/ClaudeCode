@@ -5,6 +5,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/5-second-hero-section-test",
@@ -72,6 +73,7 @@ export default function FiveSecondHeroSectionTest() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The 5-Second Test: Why Your Website&apos;s Hero Section Is Halting Your B2B Leads
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Most B2B websites don&apos;t suffer from a lack of traffic. They suffer from a clarity problem, and it usually starts right at the top of the homepage.
           </p>

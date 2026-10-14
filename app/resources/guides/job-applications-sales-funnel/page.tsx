@@ -6,6 +6,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs";
 import FadeIn from "../../../components/FadeIn";
 import JsonLd from "../../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/resources/guides/job-applications-sales-funnel";
 const ACCENT = "#7C3AED";
@@ -98,6 +99,7 @@ export default function JobApplicationsSalesFunnel() {
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-end mt-2">
           <div><div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(124,58,237,0.3)", backgroundColor: "rgba(124,58,237,0.08)" }}><span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} /><span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Career · Job Search Playbook</span></div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-[0.98] hero-fade-d1" style={{ color: "#0a0a0a" }}>Job application are like a <span style={{ color: ACCENT }}>sales funnel</span></h1>
+            <ArticleMeta schema={ARTICLE_SCHEMA} />
             <p className="text-lg sm:text-xl max-w-2xl leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>Stop applying and hoping. Use a step-by-step system to generate interview leads, reach hiring managers directly, and close the offer.</p>
           </div>
           <div className="hero-fade-d3 rounded-[28px] border p-5 sm:p-6 shadow-[0_18px_50px_rgba(124,58,237,0.1)]" style={{ backgroundColor: "rgba(255,255,255,0.78)", borderColor: "rgba(124,58,237,0.16)", backdropFilter: "blur(12px)" }}>

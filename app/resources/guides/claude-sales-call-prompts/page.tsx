@@ -8,6 +8,7 @@ import FadeIn from "@/app/components/FadeIn";
 import JsonLd from "@/app/components/JsonLd";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/resources/guides/claude-sales-call-prompts";
 const ACCENT = "#0891B2";
@@ -168,6 +169,7 @@ export default function ClaudeSalesCallPrompts() {
             <span className="relative inline-block">5 prompts<Underline color="#F5B731" /></span>{" "}
             that changed how I sell.
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl max-w-2xl leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
             Each one takes under 3 minutes. Copy any prompt straight into Claude, then swap the bracketed parts for your details.
           </p>

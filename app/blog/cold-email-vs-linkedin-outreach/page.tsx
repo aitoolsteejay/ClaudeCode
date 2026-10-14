@@ -7,6 +7,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import Faq from "../../lp/Faq";
 import { buildFaqSchema, buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-vs-linkedin-outreach",
@@ -118,6 +119,7 @@ export default function ColdEmailVsLinkedInOutreach() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold email vs. LinkedIn outreach: which actually wins for B2B?
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl max-w-2xl mb-4" style={{ color: "#52525B" }}>
             Neither one universally beats the other, and picking a single winner misses what each channel is actually good at. Cold email scales further and reaches buyers who aren&apos;t on social platforms; LinkedIn is warmer and lands better with buyers who are genuinely active there.
           </p>

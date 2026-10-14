@@ -8,6 +8,7 @@ import FadeIn from "@/app/components/FadeIn";
 import JsonLd from "@/app/components/JsonLd";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/resources/guides/cold-email-tech-stack";
 const ACCENT = "#EA580C";
@@ -178,6 +179,7 @@ export default function ColdEmailTechStack() {
             The cold email stack that got us an extra{" "}
             <span className="relative inline-block">$7,000 in revenue<Underline color="#F5B731" /></span>
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl max-w-2xl leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
             Not fancy hacks or creative copywriting. The backend: the exact tools and email sequence we use at Myntmore to scale cold outreach, from scraping leads to booking qualified calls.
           </p>

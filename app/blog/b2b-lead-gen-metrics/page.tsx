@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/b2b-lead-gen-metrics",
@@ -45,6 +46,7 @@ export default function B2BLeadGenMetrics() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The 7 B2B Lead Gen Metrics That Actually Matter (And What to Do When They Drop)
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Most founders running outbound are flying blind. They know emails are going out and occasionally a meeting gets booked, but they have no idea which part of the funnel is working and which part is leaking. These are the 7 numbers that tell you everything.
           </p>

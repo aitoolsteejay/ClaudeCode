@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/vanity-metrics-personal-brand-pipeline",
@@ -76,6 +77,7 @@ export default function VanityMetricsPersonalBrandPipeline() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Visibility vs. Value: Optimising the Founder&apos;s Personal Brand for Pipeline, Not Likes
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             A single LinkedIn message once turned into a ₹3.5 crore order. But chasing likes and views won&apos;t get you there: more visibility does not mean more money.
           </p>

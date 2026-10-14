@@ -3,6 +3,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import AskYourAI from "./AskYourAI";
 import NewsletterForm from "./NewsletterForm";
 import JsonLd from "./JsonLd";
+import ArticleMeta from "./ArticleMeta";
 import Faq from "../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
 
@@ -49,6 +50,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
           <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}33` }}>{tag} · {readTime}</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>{title}</h1>
+          <ArticleMeta schema={article} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>{intro}</p>
         </div>
       </section>

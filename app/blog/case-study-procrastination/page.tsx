@@ -7,6 +7,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/blog/case-study-procrastination";
 
@@ -61,6 +62,7 @@ export default function CaseStudyProcrastinationBlogPost() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Case Study Procrastination: Why Your Best Proof Is Still Undocumented
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
             Most B2B websites do not have a traffic problem. They have a clarity and trust problem. The strongest answer is often a real customer outcome, yet too many wins stay buried in Slack threads, call notes, and scratchpads.
           </p>

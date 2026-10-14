@@ -200,6 +200,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/seo`, lastModified: lastMod("/seo"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/1-on-1-consultation`, lastModified: lastMod("/1-on-1-consultation"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/ai-tech-stack-jewellery`, lastModified: lastMod("/resources/guides/ai-tech-stack-jewellery"), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/editorial-policy`, lastModified: lastMod("/editorial-policy"), changeFrequency: "yearly", priority: 0.4 },
     { url: `${base}/privacy-policy`, lastModified: lastMod("/privacy-policy"), changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/sitemap`, lastModified: lastMod("/sitemap"), changeFrequency: "monthly", priority: 0.5 },
   ];

@@ -243,6 +243,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "Book a Call", href: "/founder-meeting" },
       { label: "1-on-1 Consultation", href: "/1-on-1-consultation" },
       { label: "Partner with Us", href: "/lp/agency-partners" },
+      { label: "Editorial Policy & Methodology", href: "/editorial-policy" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },

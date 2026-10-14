@@ -6,6 +6,7 @@ import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
 import { buildArticleSchema } from "@/lib/schema";
+import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/predictable-b2b-lead-gen-engine",
@@ -45,6 +46,7 @@ export default function PredictableB2BLeadGen() {
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Beyond the &apos;Pray and Spray&apos;: Building a Predictable B2B Lead Generation Engine
           </h1>
+          <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             Most B2B founders I talk to are frustrated with outbound. They&apos;ve tried hiring an SDR, buying a list, and sending a few batches of emails. Usually, the result is the same: a lot of effort, very few replies, and a growing belief that outbound just doesn&apos;t work for their niche.
           </p>

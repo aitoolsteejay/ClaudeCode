@@ -101,7 +101,7 @@ export default function GoldenICPFrameworkGuide() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(217,119,6,0.3)", backgroundColor: "rgba(245,183,49,0.09)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D97706" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>ICP &amp; Targeting Guide</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>ICP &amp; Targeting Guide</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             The Golden ICP<br />
@@ -136,7 +136,7 @@ export default function GoldenICPFrameworkGuide() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>Step 01</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Step 01</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Redefine your ICP using pressure, not personas</h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>“Marketing manager at a 20 to 500-person SaaS company” tells you who somebody is, but not what they are under pressure to achieve. Go beyond identity and identify the commercial pressure shaping what they care about now.</p>
               <DataTable rows={PRESSURE_TRAITS} />
@@ -146,7 +146,7 @@ export default function GoldenICPFrameworkGuide() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>Step 02</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Step 02</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Use buying triggers, not job titles</h2>
               <p className="text-base leading-relaxed mb-5" style={{ color: "#52525B" }}>Buyers do not always look like buyers until something changes. That change is your trigger. Triggers turn static lists into real-time context.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
@@ -158,7 +158,7 @@ export default function GoldenICPFrameworkGuide() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>Step 03</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Step 03</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Turn ICP and triggers into a living prospect list</h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>Smartlead remains Myntmore&apos;s go-to sending platform because it is fast, flexible, and built for scale. Clay is not simply a scraping tool. Used well, it becomes the strategy and enrichment layer behind the campaign.</p>
               <h3 className="text-lg font-black mb-3" style={{ color: "#0a0a0a" }}>Enrichments that add context</h3>
@@ -169,7 +169,7 @@ export default function GoldenICPFrameworkGuide() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>Step 04</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Step 04</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Write emails that feel like timing, not pitching</h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>Send while the trigger is still fresh. Do not overthink surface-level personalisation. Relevance is the real personal touch.</p>
               <CopyBlock text={COLD_EMAIL} accent="#F5B731" label="Copy cold email template" />
@@ -178,7 +178,7 @@ export default function GoldenICPFrameworkGuide() {
 
           <FadeIn>
             <section>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>Step 05</span>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Step 05</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Follow up with credibility, not pressure</h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>If the first message demonstrates timing, the second should demonstrate perspective. Follow-up is not about nagging. It is about returning with something useful and real.</p>
               <CopyBlock text={FOLLOW_UP} accent="#14b8a6" label="Copy follow-up template" />

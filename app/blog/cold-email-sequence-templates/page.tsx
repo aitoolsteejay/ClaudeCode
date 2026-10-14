@@ -125,7 +125,7 @@ export default function ColdEmailSequenceTemplates() {
             { stat: "45 days", source: "minimum domain warm-up period before full send volume", cite: "Instantly.ai Data" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
+              <div className="text-2xl font-black mb-1" style={{ color: "#A14A08" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
               <p className="text-xs" style={{ color: "#71675E" }}>
                 Source: {s.href ? <a href={s.href} className="underline">{s.cite}</a> : s.cite}
@@ -212,7 +212,7 @@ export default function ColdEmailSequenceTemplates() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

@@ -61,7 +61,7 @@ export default function B2BLeadGenerationDelhiPage() {
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Delhi", href: "/b2b-lead-generation-delhi" }]} />
           <div className="mb-4">
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Delhi NCR
             </span>
           </div>

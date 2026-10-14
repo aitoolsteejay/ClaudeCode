@@ -33,7 +33,7 @@ export default function WarmLeadPage() {
     <GlossaryTerm
       slug={SLUG}
       tag="GTM Strategy"
-      accent="#B45309"
+      accent="#A14A08"
       title={TITLE}
       tagline="Not ready to buy, not ignoring you either, the stage where patience actually pays off."
       definition="A prospect who has engaged with outreach, opened, replied neutrally, connected, but hasn't shown clear buying intent yet, and is worth continued nurturing rather than a hard pitch."

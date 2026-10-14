@@ -439,7 +439,7 @@ export default async function BlogsPage() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <FadeIn className="mx-auto block max-w-2xl">
           <div className="rounded-2xl p-8 sm:p-10 border text-center" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h2>
             <p className="text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

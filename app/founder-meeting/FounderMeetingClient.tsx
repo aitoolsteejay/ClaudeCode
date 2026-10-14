@@ -25,7 +25,7 @@ export default function FounderMeetingClient() {
         <div className="max-w-4xl mx-auto text-center mb-10">
           <span
             className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
-            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}
+            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}
           >
             Book a call
           </span>

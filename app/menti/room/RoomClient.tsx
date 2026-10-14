@@ -168,7 +168,7 @@ export default function RoomClient() {
         )}
 
         <div className="rounded-3xl border p-6 sm:p-8 mb-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The question</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The question</p>
           <p className="text-lg font-bold leading-snug" style={{ color: "#0a0a0a" }}>{QUESTION}</p>
         </div>
 
@@ -188,7 +188,7 @@ export default function RoomClient() {
 
         {gist && (
           <div className="rounded-3xl border p-6 sm:p-8 mb-8" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#D97706" }}>Gist of the room · {gist.responseCount} responses</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#A14A08" }}>Gist of the room · {gist.responseCount} responses</p>
             <p className="text-base leading-relaxed mb-5" style={{ color: "#0a0a0a" }}>{gist.summary}</p>
             {gist.themes?.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-5">

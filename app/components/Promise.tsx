@@ -119,7 +119,7 @@ export default function Promise() {
         {/* Label */}
         <span
           className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-6 px-4 py-1.5 rounded-full border"
-          style={{ color: "#F5B731", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
+          style={{ color: "#A14A08", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
         >
           Our Promise to You
         </span>
@@ -131,7 +131,7 @@ export default function Promise() {
           <span
             ref={cursorRef}
             aria-hidden="true"
-            style={{ color: "#F5B731", marginLeft: "3px", fontWeight: 900 }}
+            style={{ color: "#A14A08", marginLeft: "3px", fontWeight: 900 }}
           >
             |
           </span>

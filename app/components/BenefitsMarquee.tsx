@@ -99,7 +99,7 @@ export default function BenefitsMarquee() {
     >
       {/* Heading */}
       <div className="text-center mb-12 px-4">
-        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#F5B731" }}>
+        <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#A14A08" }}>
           What you unlock
         </p>
         <h2 className="text-2xl sm:text-4xl font-black text-[#0a0a0a]">

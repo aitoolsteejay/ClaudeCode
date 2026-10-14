@@ -36,7 +36,7 @@ export default function NotFound() {
 
               <h1 className="text-5xl font-black leading-[0.94] tracking-[-0.06em] text-[#090909] sm:text-6xl lg:text-[4.75rem] xl:text-[5.25rem]">
                 <span className="block">This page</span>
-                <span className="block text-[#f5b731]">went outbound.</span>
+                <span className="block text-[#a14a08]">went outbound.</span>
               </h1>
 
               <p className="mt-7 max-w-xl text-lg leading-8 text-[#5b5862] sm:text-xl">

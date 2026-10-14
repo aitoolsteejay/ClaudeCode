@@ -139,7 +139,7 @@ export default function UKPharmaQualifiedMeetingsCaseStudy() {
               {BEFORE_AFTER.map((result, index) => (
                 <div key={result.label} className="grid grid-cols-[1fr_auto_1fr] gap-3 items-center px-5 py-5" style={{ borderBottom: index < BEFORE_AFTER.length - 1 ? "1px solid #E8E2D9" : "none" }}>
                   <div><div className="text-2xl font-black" style={{ color: "#71675E" }}>{result.before}</div><div className="text-xs mt-1" style={{ color: "#71675E" }}>{result.label}</div></div>
-                  <span className="text-xl" style={{ color: "#F5B731" }} aria-hidden="true">→</span>
+                  <span className="text-xl" style={{ color: "#A14A08" }} aria-hidden="true">→</span>
                   <div className="text-right"><div className="text-2xl font-black" style={{ color: "#14b8a6" }}>{result.after}</div><div className="text-xs mt-1" style={{ color: "#52525B" }}>{result.label}</div></div>
                 </div>
               ))}

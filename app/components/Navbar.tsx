@@ -163,7 +163,7 @@ export default function Navbar() {
                                 </Link>
                               ))}
                               <div className="border-t mt-2 pt-2 px-4" style={{ borderColor: "#E8E2D9" }}>
-                                <Link href="/services" onClick={() => { setServicesOpen(false); setDoneForYouOpen(false); }} className="text-xs font-semibold" style={{ color: "#B45309" }}>
+                                <Link href="/services" onClick={() => { setServicesOpen(false); setDoneForYouOpen(false); }} className="text-xs font-semibold" style={{ color: "#A14A08" }}>
                                   View all services →
                                 </Link>
                               </div>
@@ -216,7 +216,7 @@ export default function Navbar() {
                           </Link>
                         ))}
                         <div className="border-t mt-2 pt-2 px-4" style={{ borderColor: "#E8E2D9" }}>
-                          <Link href="/resources" onClick={() => setResourcesOpen(false)} className="text-xs font-semibold" style={{ color: "#B45309" }}>
+                          <Link href="/resources" onClick={() => setResourcesOpen(false)} className="text-xs font-semibold" style={{ color: "#A14A08" }}>
                             View all resources →
                           </Link>
                         </div>

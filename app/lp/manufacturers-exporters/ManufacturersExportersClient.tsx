@@ -158,7 +158,7 @@ function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <Breadcrumbs items={[{ label: "For Manufacturers & Exporters", href: "/lp/manufacturers-exporters" }]} className="justify-center" />
         <div className="mb-6 hero-fade-d1">
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             For Manufacturers & Exporters
           </span>
         </div>
@@ -238,7 +238,7 @@ function PainSection() {
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>The export challenge</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>The export challenge</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Trade fairs and portals are not enough</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -263,13 +263,13 @@ function ProcessSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>How it works</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>How it works</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Your global buyer pipeline, built and managed</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {PROCESS.map((p, i) => (
             <div key={p.n} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
+              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#A14A08" }}>{p.n}</span>
               <div>
                 <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
@@ -294,7 +294,7 @@ function CaseStudiesSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Client results</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for manufacturers</h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">

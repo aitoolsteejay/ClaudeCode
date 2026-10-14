@@ -134,7 +134,7 @@ export default function B2BOutboundBenchmarkReport2026() {
               <div className="space-y-4">
                 {TIMELINE_ROWS.map((row, i) => (
                   <div key={row.milestone} className="flex gap-4 rounded-2xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                    <span className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
+                    <span className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
                     <div>
                       <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{row.milestone} <span style={{ color: "#10b981" }}>· {row.days}</span></p>
                       <p className="text-sm" style={{ color: "#52525B" }}>{row.note}</p>
@@ -161,7 +161,7 @@ export default function B2BOutboundBenchmarkReport2026() {
                   "Above range on every metric: you've found message-market fit. Scale volume before you change anything else.",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
-                    <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
                     <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{item}</p>
                   </li>
                 ))}
@@ -185,7 +185,7 @@ export default function B2BOutboundBenchmarkReport2026() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

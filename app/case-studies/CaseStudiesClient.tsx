@@ -246,7 +246,7 @@ const CASE_STUDIES: CaseStudy[] = [
     services: ["ICP Mapping & Lead Scoring", "AI Lead Generation", "Cold Email Infrastructure"],
   },
   {
-    slug: "insurance-uae-employee-benefits", tag: "Insurance · UAE", industry: "Insurance", accent: "#b45309", illustrative: true,
+    slug: "insurance-uae-employee-benefits", tag: "Insurance · UAE", industry: "Insurance", accent: "#a14a08", illustrative: true,
     title: "Opening employee benefits conversations before renewal",
     stats: [{ v: "20", l: "Meetings booked" }, { v: "7", l: "Benefits reviews agreed" }, { v: "4", l: "Quotation exercises requested" }],
     excerpt: "A UAE-based insurance brokerage often reached employers after renewal decisions were already underway and needed earlier access to HR and finance teams. Illustrative example of how this campaign runs.",
@@ -357,7 +357,7 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
         <Blobs />
         <div className="relative max-w-4xl mx-auto">
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Client Results
             </span>
           </div>
@@ -388,7 +388,7 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
           <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-5 gap-6">
             {STATS.map((s) => (
               <div key={s.l} className="text-center">
-                <div className="text-3xl font-black" style={{ color: "#F5B731" }}><StatTicker value={s.v} /></div>
+                <div className="text-3xl font-black" style={{ color: "#A14A08" }}><StatTicker value={s.v} /></div>
                 <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}

@@ -6,6 +6,7 @@ import { Briefcase, Building2, Globe2, Target, Rocket, TrendingUp, Users, PenToo
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import StatTicker from "../components/StatTicker";
+import { textTone } from "@/lib/colors";
 
 function Blobs() {
   const b1 = useRef<HTMLDivElement>(null);
@@ -257,7 +258,7 @@ export default function CareersClient() {
         <div className="relative max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }]} />
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               We&apos;re Hiring
             </span>
           </div>
@@ -316,7 +317,7 @@ export default function CareersClient() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="mb-8">
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Careers</span>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Careers</span>
               <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Open roles</h2>
             </div>
           </FadeIn>
@@ -331,7 +332,7 @@ export default function CareersClient() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="mb-10">
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>How we work</span>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>How we work</span>
               <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Built for builders</h2>
             </div>
           </FadeIn>
@@ -364,7 +365,7 @@ export default function CareersClient() {
                 { step: "04", title: "Offer", desc: "Fast decisions. We don&apos;t ghost candidates." },
               ].map((item) => (
                 <div key={item.step} className="flex gap-4 mb-5 last:mb-0">
-                  <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{item.step}</span>
+                  <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{item.step}</span>
                   <div>
                     <p className="text-sm font-bold mb-0.5" style={{ color: "#0a0a0a" }}>{item.title}</p>
                     <p className="text-sm" style={{ color: "#52525B" }} dangerouslySetInnerHTML={{ __html: item.desc }} />
@@ -387,7 +388,7 @@ export default function CareersClient() {
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Not seeing your role?</h3>
                 <p className="text-sm mb-4" style={{ color: "#52525B" }}>We hire for attitude and skill. Send us a note anyway.</p>
-                <a href="mailto:growth@myntmore.com" className="text-sm font-bold" style={{ color: "#F5B731" }}>growth@myntmore.com →</a>
+                <a href="mailto:growth@myntmore.com" className="text-sm font-bold" style={{ color: "#A14A08" }}>growth@myntmore.com →</a>
               </div>
             </div>
           </FadeIn>
@@ -435,13 +436,13 @@ function RoleCard({ role }: { role: typeof ROLES[0] }) {
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-3">
-              <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${role.accent}12`, color: role.accent, border: `1px solid ${role.accent}30` }}>{role.tag}</span>
+              <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${role.accent}12`, color: textTone(role.accent), border: `1px solid ${role.accent}30` }}>{role.tag}</span>
               <div className="text-right">
                 <p className="text-xs font-semibold" style={{ color: "#71675E" }}>{role.type}</p>
                 <p className="text-xs" style={{ color: "#71675E" }}>{role.location}</p>
               </div>
             </div>
-            <h3 className="text-xl font-black mb-2 transition-colors duration-200" style={{ color: hov ? role.accent : "#0a0a0a" }}>{role.title}</h3>
+            <h3 className="text-xl font-black mb-2 transition-colors duration-200" style={{ color: hov ? textTone(role.accent) : "#0a0a0a" }}>{role.title}</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>{role.desc}</p>
             <ul className="space-y-1.5 mb-5">
               {role.bullets.map((b) => (
@@ -451,7 +452,7 @@ function RoleCard({ role }: { role: typeof ROLES[0] }) {
                 </li>
               ))}
             </ul>
-            <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: role.accent }}>
+            <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: textTone(role.accent) }}>
               View role
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
             </span>

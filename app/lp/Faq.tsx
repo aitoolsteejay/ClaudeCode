@@ -93,7 +93,7 @@ export default function Faq({
             transition: "opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)",
           }}
         >
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>{badge}</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{badge}</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{title}</h2>
         </div>
         <div ref={listRef} className="space-y-4">

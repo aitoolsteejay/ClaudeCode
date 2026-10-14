@@ -188,7 +188,7 @@ function StepCard({ step, delay, active = false }: { step: FlowStep; delay: numb
         <span
           className="text-xs font-black tracking-widest"
           style={{
-            color: active ? solid : "#B8B0A7",
+            color: active ? solid : "#71675E",
             opacity: inView ? 1 : 0,
             transition: `opacity 0.4s ease ${delay + 200}ms, color 0.3s ease`,
           }}
@@ -264,7 +264,7 @@ export default function FlowDiagram({
 
         {/* Title */}
         <div ref={titleFade.ref} style={titleFade.style} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>{badge}</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{badge}</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3 leading-tight" style={{ color: "#0a0a0a" }}>{title}</h2>
         </div>
 
@@ -305,7 +305,7 @@ export default function FlowDiagram({
             <div className="flex items-center gap-3 mb-5">
               <span
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                style={{ backgroundColor: "rgba(245,183,49,0.2)", color: "#D97706", border: "1px solid rgba(245,183,49,0.4)" }}
+                style={{ backgroundColor: "rgba(245,183,49,0.2)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.4)" }}
               >
                 <PulsingDot />
                 Running in parallel

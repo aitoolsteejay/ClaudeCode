@@ -201,7 +201,7 @@ export default function SiteAuditClient({ audit }: { audit: AuditData }) {
                         <div className="flex flex-wrap items-center gap-1.5">
                           <Badge color={p.status === "linked" ? GREEN : RED} solid={p.status === "orphan"}>{p.status}</Badge>
                           {p.noindex && <Badge color={TEXT_MUTED}>noindex</Badge>}
-                          {!p.inXmlSitemap && !p.private && <Badge color="#B45309">not in XML sitemap</Badge>}
+                          {!p.inXmlSitemap && !p.private && <Badge color="#A14A08">not in XML sitemap</Badge>}
                           {expandable && (
                             <button
                               type="button"

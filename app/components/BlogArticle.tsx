@@ -6,6 +6,7 @@ import JsonLd from "./JsonLd";
 import ArticleMeta from "./ArticleMeta";
 import Faq from "../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export interface BlogSection {
   heading: string;
@@ -64,7 +65,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
         <ol className="space-y-4 mt-4">
           {section.items.map((item, i) => (
             <li key={item.lead} className="flex gap-3">
-              <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: `${accent}1a`, color: accent, border: `1px solid ${accent}4d` }}>{i + 1}</span>
+              <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: `${accent}1a`, color: textTone(accent), border: `1px solid ${accent}4d` }}>{i + 1}</span>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 <strong style={{ color: "#0a0a0a" }}>{item.lead}</strong> {item.text}
               </p>
@@ -86,7 +87,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}33` }}>{tag} · {readTime}</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${accent}14`, color: textTone(accent), border: `1px solid ${accent}33` }}>{tag} · {readTime}</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>{title}</h1>
           <ArticleMeta schema={article} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>{intro}</p>
@@ -108,7 +109,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
                     <thead>
                       <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
                         <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
-                        <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: accent }}>{comparison.columns[0]}</th>
+                        <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: textTone(accent) }}>{comparison.columns[0]}</th>
                         <th scope="col" className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#0a0a0a" }}>{comparison.columns[1]}</th>
                       </tr>
                     </thead>
@@ -143,7 +144,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
             <ul className="space-y-2">
               {related.map((r) => (
                 <li key={r.href}>
-                  <a href={r.href} className="text-base font-bold underline" style={{ color: accent }}>{r.label}</a>
+                  <a href={r.href} className="text-base font-bold underline" style={{ color: textTone(accent) }}>{r.label}</a>
                 </li>
               ))}
             </ul>
@@ -163,7 +164,7 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

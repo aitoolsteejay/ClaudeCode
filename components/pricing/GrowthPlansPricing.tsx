@@ -106,7 +106,7 @@ const TABLE_SECTIONS: TableSection[] = [
     title: "Content",
     rows: CONTENT_ITEMS.map((c) => ({ label: c.label, values: c.included as [Cell, Cell, Cell], info: ROW_INFO[c.label] })),
     tint: "#FEF9EC",
-    tintText: "#B45309",
+    tintText: "#A14A08",
   },
   {
     title: "Lead Generation",

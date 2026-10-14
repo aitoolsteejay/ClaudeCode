@@ -3,6 +3,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import FadeIn from "../../components/FadeIn";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "B2B Outbound Glossary",
@@ -206,7 +207,7 @@ const TERMS: Term[] = [
     tag: "GTM Strategy",
     title: "Warm Lead",
     excerpt: "A prospect who's engaged but hasn't shown clear buying intent yet, worth nurturing rather than a hard pitch.",
-    accent: "#B45309",
+    accent: "#A14A08",
   },
   {
     href: "/resources/glossary/cold-lead",
@@ -255,7 +256,7 @@ const TERMS: Term[] = [
     tag: "GTM Strategy",
     title: "B2B Lead Generation",
     excerpt: "Finding companies that fit your offer and turning their decision-makers into real sales conversations.",
-    accent: "#B45309",
+    accent: "#A14A08",
     aliases: ["Outbound Lead Generation"],
   },
   {
@@ -487,10 +488,10 @@ export default function GlossaryPage() {
                     <Link key={t.href} href={t.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                       <div className="h-1" style={{ background: `linear-gradient(90deg,${t.accent},${t.accent}66)` }} />
                       <div className="p-6">
-                        <span className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${t.accent}12`, color: t.accent }}>{t.tag}</span>
+                        <span className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${t.accent}12`, color: textTone(t.accent) }}>{t.tag}</span>
                         <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{t.title}</h2>
                         <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{t.excerpt}</p>
-                        <span className="text-xs font-bold" style={{ color: t.accent }}>Read the definition &rarr;</span>
+                        <span className="text-xs font-bold" style={{ color: textTone(t.accent) }}>Read the definition &rarr;</span>
                       </div>
                     </Link>
                   ))}
@@ -503,7 +504,7 @@ export default function GlossaryPage() {
                         <Link href={r.target.href} className="group inline-flex flex-wrap items-baseline gap-x-1.5 py-1 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50">
                           <span className="font-bold" style={{ color: "#0a0a0a" }}>{r.alias}</span>
                           <span style={{ color: "#6B6B6B" }}>see</span>
-                          <span className="font-bold underline decoration-1 underline-offset-2 group-hover:no-underline" style={{ color: r.target.accent }}>{r.target.title}</span>
+                          <span className="font-bold underline decoration-1 underline-offset-2 group-hover:no-underline" style={{ color: textTone(r.target.accent) }}>{r.target.title}</span>
                         </Link>
                       </li>
                     ))}

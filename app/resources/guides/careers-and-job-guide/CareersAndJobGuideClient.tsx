@@ -408,7 +408,7 @@ export default function CareersAndJobGuideClient() {
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A Myntmore career guide</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>A Myntmore career guide</span>
           </div>
           <h1 className="mb-4 text-4xl font-black leading-tight sm:text-6xl hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Career Jumpstart Toolkit

@@ -96,13 +96,13 @@ export default function Results() {
         {/* Heading */}
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-3 py-1 rounded-full border"
-            style={{ color: "#F5B731", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}>
+            style={{ color: "#A14A08", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}>
             Results
           </span>
           <h2 id="results-heading" className="text-3xl sm:text-5xl font-black text-[#0a0a0a] tracking-tight">
             Numbers That Actually
             <br />
-            <span style={{ color: "#F5B731" }}>Move the Needle</span>
+            <span style={{ color: "#A14A08" }}>Move the Needle</span>
           </h2>
           <p className="mt-4 text-[#52525B] text-lg max-w-xl mx-auto font-normal">
             We measure success by one metric: qualified pipeline generated for our clients. Here&rsquo;s what that looks like.
@@ -136,7 +136,7 @@ export default function Results() {
               style={{ borderColor: "#E8E2D9", borderLeftColor: "#F5B731", borderLeftWidth: "4px" }}
             >
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] mb-3 px-2.5 py-1 rounded-full self-start"
-                style={{ color: "#F5B731", background: "#FEF9EC", border: "1px solid rgba(245,183,49,0.3)" }}>
+                style={{ color: "#A14A08", background: "#FEF9EC", border: "1px solid rgba(245,183,49,0.3)" }}>
                 {cs.sector}
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-[#0a0a0a] mb-2">

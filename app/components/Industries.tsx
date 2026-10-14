@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { textTone } from "@/lib/colors";
 
 const PILLS: { label: string; color: string; delay: string; duration: string }[] = [
   { label: "B2B SaaS",             color: "#3B82F6", delay: "0s",    duration: "4.2s" },
@@ -46,7 +47,7 @@ function Pill({ label, color, delay, duration }: typeof PILLS[0]) {
       style={{
         backgroundColor: hovered ? `${color}15` : "#ffffff",
         border: `1.5px solid ${hovered ? color : `${color}35`}`,
-        color: hovered ? color : "#3D3D3D",
+        color: hovered ? textTone(color) : "#3D3D3D",
         boxShadow: hovered
           ? `0 4px 20px ${color}25, 0 0 0 3px ${color}12`
           : "0 1px 4px rgba(0,0,0,0.06)",
@@ -90,7 +91,7 @@ export default function Industries() {
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-5 px-3 py-1 rounded-full border"
-            style={{ color: "#F5B731", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
+            style={{ color: "#A14A08", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
           >
             Industries We Serve
           </span>
@@ -99,7 +100,7 @@ export default function Industries() {
             className="text-3xl sm:text-5xl font-black tracking-tight text-[#0a0a0a]"
           >
             Every B2B sector.{" "}
-            <span style={{ color: "#F5B731" }}>One outbound engine</span>
+            <span style={{ color: "#A14A08" }}>One outbound engine</span>
           </h2>
           <p className="mt-4 text-lg text-[#6B6B6B] max-w-xl mx-auto">
             If you sell to businesses, we know how to reach your buyers regardless of vertical.
@@ -114,12 +115,12 @@ export default function Industries() {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-sm text-[#B8B0A7] mt-10">
+        <p className="text-center text-sm text-[#71675E] mt-10">
           Don&rsquo;t see your sector?{" "}
           <a
             href="/founder-meeting"
             className="font-semibold underline underline-offset-2"
-            style={{ color: "#F5B731" }}
+            style={{ color: "#A14A08" }}
           >
             Let&rsquo;s talk we&rsquo;ve probably done it.
           </a>

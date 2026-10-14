@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-3xl mx-auto text-center">
           <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} className="justify-center" />
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Legal
             </span>
           </div>

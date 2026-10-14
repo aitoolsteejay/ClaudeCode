@@ -78,7 +78,7 @@ export default function PitchingTrapBlogPost() {
             </section>
 
             <blockquote className="relative rounded-2xl border p-7 sm:p-8 text-xl sm:text-2xl font-black leading-relaxed overflow-hidden" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", color: "#0a0a0a" }}>
-              <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#D97706" }}>“</span>
+              <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#A14A08" }}>“</span>
               “Stop listing features and start breaking patterns.”
               <footer className="mt-3 text-sm font-normal" style={{ color: "#71675E" }}>Tejas Jhaveri, Founder of Myntmore</footer>
             </blockquote>
@@ -115,7 +115,7 @@ export default function PitchingTrapBlogPost() {
           <div className="mt-8"><AskYourAI resources={BLOG_AI_RESOURCES} /></div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

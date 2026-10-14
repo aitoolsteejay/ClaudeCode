@@ -47,7 +47,7 @@ export default function MarketingAutomation() {
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Marketing Automation", href: "/marketing-automation" }]} />
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Marketing Automation</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Marketing Automation</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             B2B marketing automation that actually builds pipeline.
@@ -75,7 +75,7 @@ export default function MarketingAutomation() {
               <Link key={s.href} href={s.href} className="group block rounded-2xl border p-6 card-hover-warm" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h3 className="text-lg font-black mb-3" style={{ color: "#0a0a0a" }}>{s.title}</h3>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>{s.desc}</p>
-                <span className="text-xs font-bold" style={{ color: "#F5B731" }}>Learn more →</span>
+                <span className="text-xs font-bold" style={{ color: "#A14A08" }}>Learn more →</span>
               </Link>
             ))}
           </div>

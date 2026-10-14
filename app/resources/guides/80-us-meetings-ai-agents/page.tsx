@@ -7,6 +7,7 @@ import CopyBlock from "@/app/components/CopyBlock";
 import FadeIn from "@/app/components/FadeIn";
 import StatTicker from "@/app/components/StatTicker";
 import Underline from "./Underline";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "80+ US Meetings Booked in 1 Month with AI Agents",
@@ -47,7 +48,7 @@ function Chip({ text, accent, accentBg }: { text: string; accent: string; accent
   return (
     <span
       className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-full inline-block"
-      style={{ backgroundColor: accentBg, color: accent, border: `1px solid ${accent}30` }}
+      style={{ backgroundColor: accentBg, color: textTone(accent), border: `1px solid ${accent}30` }}
     >
       {text}
     </span>
@@ -67,7 +68,7 @@ function ChipGroup({ items, accent, accentBg }: { items: string[]; accent: strin
 function MiniCard({ title, items, accent }: { title: React.ReactNode; items: string[]; accent: string }) {
   return (
     <div className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-      <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: accent }}>{title}</h4>
+      <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: textTone(accent) }}>{title}</h4>
       <ul className="space-y-1.5">
         {items.map((it, i) => (
           <li key={i} className="flex items-start gap-2 text-sm leading-snug" style={{ color: "#3D3D3D" }}>
@@ -87,7 +88,7 @@ function NumberedList({ items, accent, accentBg }: { items: string[]; accent: st
         <li key={i} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
           <span
             className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5"
-            style={{ backgroundColor: accentBg, color: accent }}
+            style={{ backgroundColor: accentBg, color: textTone(accent) }}
           >
             {i + 1}
           </span>
@@ -143,8 +144,8 @@ function StepSection({
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl font-black" style={{ color: accent }}>{number}</span>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: accentBg, color: accent, border: `1px solid ${accent}30` }}>
+            <span className="text-3xl font-black" style={{ color: textTone(accent) }}>{number}</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: accentBg, color: textTone(accent), border: `1px solid ${accent}30` }}>
               Step {number}
             </span>
           </div>
@@ -152,7 +153,7 @@ function StepSection({
             <Icon className="inline-block w-7 h-7 mr-2 -mt-1 align-middle" style={{ color: accent }} strokeWidth={2.25} aria-hidden="true" />
             {title}
           </h2>
-          {subtitle && <p className="text-sm sm:text-base font-medium mb-6" style={{ color: accent }}>{subtitle}</p>}
+          {subtitle && <p className="text-sm sm:text-base font-medium mb-6" style={{ color: textTone(accent) }}>{subtitle}</p>}
         </FadeIn>
 
         <FadeIn delay={100}>
@@ -393,7 +394,7 @@ export default function AiAgentsMeetingsBlueprint() {
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-              <Trophy className="inline-block w-7 h-7 mr-2 -mt-1 align-middle" style={{ color: "#D97706" }} strokeWidth={2.25} aria-hidden="true" />Results (real)
+              <Trophy className="inline-block w-7 h-7 mr-2 -mt-1 align-middle" style={{ color: "#A14A08" }} strokeWidth={2.25} aria-hidden="true" />Results (real)
             </h2>
           </FadeIn>
 
@@ -465,7 +466,7 @@ export default function AiAgentsMeetingsBlueprint() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Follow along</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejasjhaveri</span>
                 </a>
@@ -474,7 +475,7 @@ export default function AiAgentsMeetingsBlueprint() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Book a call</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
                 </a>
@@ -483,7 +484,7 @@ export default function AiAgentsMeetingsBlueprint() {
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(255,255,255,0.15)" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
                   <span className="block text-sm font-bold text-white mb-1">Email us</span>
                   <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
                 </a>

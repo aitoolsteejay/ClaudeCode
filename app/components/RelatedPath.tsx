@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONSULTATION, type PathItem } from "@/lib/internal-paths";
+import { textTone } from "@/lib/colors";
 
 // One row of the deliberate internal-link path (see lib/internal-paths.ts):
 // where to look next, ending in the consultation page. Plain presentational
@@ -39,7 +40,7 @@ export default function RelatedPath({
                 className="group flex h-full flex-col rounded-2xl border p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
                 style={{ borderColor: "#E8E2D9", backgroundColor: "#FCFBF8" }}
               >
-                <span className="mb-2 text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: accent }}>
+                <span className="mb-2 text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: textTone(accent) }}>
                   {item.kind}
                 </span>
                 <span className="mb-2 text-base font-bold leading-snug group-hover:underline" style={{ color: "#0a0a0a" }}>

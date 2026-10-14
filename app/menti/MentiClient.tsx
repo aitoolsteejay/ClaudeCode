@@ -63,7 +63,7 @@ export default function MentiClient() {
             </div>
           ) : (
             <>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
                 One question for the room
               </span>
               <h1 className="text-2xl sm:text-3xl font-black mb-6 leading-snug" style={{ color: "#0a0a0a" }}>

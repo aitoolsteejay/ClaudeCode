@@ -142,7 +142,7 @@ export default function AgencyVsInHouseBlogPost() {
                     <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#3b82f6" }}>Agency</th>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>In-House SDR</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>In-House SDR</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -216,7 +216,7 @@ export default function AgencyVsInHouseBlogPost() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

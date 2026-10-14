@@ -393,7 +393,7 @@ export default function Hero() {
             fontFamily: "var(--font-caveat)",
             fontSize: "19px",
             fontWeight: 700,
-            color: "#D97706",
+            color: "#A14A08",
             lineHeight: 1.3,
             opacity: 0,
             clipPath: "inset(0 100% 0 0)",

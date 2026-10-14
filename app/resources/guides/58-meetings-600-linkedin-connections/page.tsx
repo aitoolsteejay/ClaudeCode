@@ -35,6 +35,7 @@ import StatTicker from "@/app/components/StatTicker";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { textTone } from "@/lib/colors";
 
 const URL = "https://www.myntmore.com/resources/guides/58-meetings-600-linkedin-connections";
 const BLUE = "#0077b5";
@@ -141,7 +142,7 @@ function CheckList({ items, accent }: { items: string[]; accent: string }) {
     <ul className="space-y-2.5">
       {items.map((it) => (
         <li key={it} className="flex items-start gap-3 text-sm sm:text-base leading-snug" style={{ color: "#3D3D3D" }}>
-          <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${accent}18`, color: accent }}>
+          <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${accent}18`, color: textTone(accent) }}>
             <Check className="w-3 h-3" strokeWidth={3.5} aria-hidden="true" />
           </span>
           {it}
@@ -171,8 +172,8 @@ function StepSection({
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl font-black" style={{ color: accent }}>{number}</span>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}30` }}>
+            <span className="text-3xl font-black" style={{ color: textTone(accent) }}>{number}</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${accent}14`, color: textTone(accent), border: `1px solid ${accent}30` }}>
               Step {number}
             </span>
           </div>
@@ -409,10 +410,10 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             return (
               <li key={f.name} className="rounded-xl border bg-white p-5 sm:p-6" style={{ borderColor: "#E8E2D9" }}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-black" style={{ backgroundColor: "rgba(217,119,6,0.1)", color: "#D97706" }}>{i + 1}</span>
+                  <span className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-black" style={{ backgroundColor: "rgba(217,119,6,0.1)", color: "#A14A08" }}>{i + 1}</span>
                   <h3 className="flex items-center gap-2 text-base sm:text-lg font-black" style={{ color: "#0a0a0a" }}>
                     {f.name}
-                    <Icon className="w-4 h-4" style={{ color: "#D97706" }} strokeWidth={2.4} aria-hidden="true" />
+                    <Icon className="w-4 h-4" style={{ color: "#A14A08" }} strokeWidth={2.4} aria-hidden="true" />
                   </h3>
                 </div>
                 <CopyBlock accent="#fbbf24" label={`Follow-up ${i + 1}`} successMessage="Message copied to clipboard" text={f.text} />
@@ -436,7 +437,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
               <ul className="space-y-2.5 max-w-md mx-auto mb-9">
                 {["Hidden AI tools you can actually use", "Insider tech updates made simple", "Real marketing + growth hacks powered by AI"].map((t) => (
                   <li key={t} className="flex items-start gap-3 text-sm sm:text-base font-semibold text-white">
-                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#F5B731" }} strokeWidth={2.5} aria-hidden="true" />
+                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#A14A08" }} strokeWidth={2.5} aria-hidden="true" />
                     {t}
                   </li>
                 ))}

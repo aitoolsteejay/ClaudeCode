@@ -116,7 +116,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 title: "Describe your offer and ideal client",
                 description: "Input basic details about what you sell and who you sell to.",
                 icon: MousePointer2,
-                color: "#F5B731",
+                color: "#A14A08",
               },
               {
                 step: "02",
@@ -158,7 +158,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 title: "Psychology-based",
                 benefit: "Angles rooted in how your ICP actually thinks and decides",
                 description: "We focus on the underlying motivations that drive action.",
-                color: "#F5B731",
+                color: "#A14A08",
               },
               {
                 title: "Pattern interrupt",

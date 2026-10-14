@@ -30,7 +30,7 @@ export default function ThankYouLeadFormPage() {
             </svg>
           </div>
 
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 hero-fade-d1" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 hero-fade-d1" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             Message received
           </span>
 

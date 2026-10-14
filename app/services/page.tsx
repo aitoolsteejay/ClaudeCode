@@ -6,6 +6,7 @@ import StatTicker from "../components/StatTicker";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
 import { buildFaqSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "AI-Powered B2B Lead Generation Services",
@@ -44,7 +45,7 @@ export default function Services() {
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Services", href: "/services" }]} />
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               B2B Lead Generation Services
             </span>
           </div>
@@ -64,10 +65,10 @@ export default function Services() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-black" style={{ color: s.accentColor }}>{s.number}</span>
+                    <span className="text-xs font-black" style={{ color: textTone(s.accentColor) }}>{s.number}</span>
                     <h2 className="text-xl font-black" style={{ color: "#0a0a0a" }}>{s.title}</h2>
                   </div>
-                  <p className="text-sm font-semibold mb-3" style={{ color: s.accentColor }}>{s.tagline}</p>
+                  <p className="text-sm font-semibold mb-3" style={{ color: textTone(s.accentColor) }}>{s.tagline}</p>
                   <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{s.desc}</p>
                   <div className="flex gap-6 mt-4">
                     {s.stats.map((st) => (

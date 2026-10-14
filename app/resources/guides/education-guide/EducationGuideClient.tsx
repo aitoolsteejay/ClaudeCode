@@ -619,7 +619,7 @@ export default function EducationGuideClient() {
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A Myntmore AI guide</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>A Myntmore AI guide</span>
           </div>
           <h1 className="mb-4 text-4xl font-black leading-tight sm:text-6xl hero-fade-d1" style={{ color: "#0a0a0a" }}>
             AI Quick-Start Guide
@@ -651,7 +651,7 @@ export default function EducationGuideClient() {
               <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill sizes="160px" className="object-cover object-top" />
             </div>
             <div>
-              <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>About Tejas</p>
+              <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>About Tejas</p>
               <h2 className="mb-1 text-xl font-black" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h2>
               <p className="mb-4 text-sm" style={{ color: "#71675E" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
               <div className="space-y-3 text-sm leading-relaxed" style={{ color: "#52525B" }}>
@@ -729,7 +729,7 @@ export default function EducationGuideClient() {
           </div>
 
           <div className="mt-8 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="mb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A formula worth memorising</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>A formula worth memorising</p>
             <p className="text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>
               Role or audience + specific task + format or constraints = a prompt that actually works.
             </p>

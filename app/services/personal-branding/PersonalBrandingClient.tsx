@@ -277,7 +277,7 @@ export default function PersonalBrandingClient() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
             style={{ borderColor: "rgba(217,119,6,0.35)", background: "rgba(217,119,6,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D97706" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>Personal Branding</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>Personal Branding</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -365,7 +365,7 @@ export default function PersonalBrandingClient() {
             </div>
             <div>
               <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5"
-                style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>
+                style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#A14A08", border: "1px solid rgba(217,119,6,0.2)" }}>
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
@@ -399,7 +399,7 @@ export default function PersonalBrandingClient() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>
+              style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#A14A08", border: "1px solid rgba(217,119,6,0.2)" }}>
               The Process
             </span>
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>How it works</h2>
@@ -414,7 +414,7 @@ export default function PersonalBrandingClient() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.backgroundColor = "#F8F6F2"; }}>
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black"
-                    style={{ backgroundColor: "rgba(217,119,6,0.1)", color: "#D97706" }}>
+                    style={{ backgroundColor: "rgba(217,119,6,0.1)", color: "#A14A08" }}>
                     {s.n}
                   </div>
                   <div>
@@ -442,7 +442,7 @@ export default function PersonalBrandingClient() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>
+              style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#A14A08", border: "1px solid rgba(217,119,6,0.2)" }}>
               What You Get
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Every engagement includes</h2>
@@ -463,7 +463,7 @@ export default function PersonalBrandingClient() {
 
           <div>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+              style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Who It&apos;s For
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for people whose credibility is the product</h2>
@@ -513,7 +513,7 @@ export default function PersonalBrandingClient() {
             <span className="font-bold" style={{ color: "#0a0a0a" }}>12K+ B2B meetings booked</span> and $120M+ in pipeline generated for our clients.
           </p>
           <Link href="/case-studies/professional-services-linkedin" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-            style={{ color: "#D97706" }}>
+            style={{ color: "#A14A08" }}>
             Read how a LinkedIn brand drove 3x inbound in 90 days
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -527,7 +527,7 @@ export default function PersonalBrandingClient() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-10">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>
+              style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#A14A08", border: "1px solid rgba(217,119,6,0.2)" }}>
               FAQ
             </span>
             <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Frequently asked questions</h2>
@@ -551,11 +551,11 @@ export default function PersonalBrandingClient() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8"
             style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F5B731" }}>Limited spots available</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>Limited spots available</span>
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
-            Let&apos;s make your buyers<br /><span style={{ color: "#D97706" }}>see you as the authority</span>
+            Let&apos;s make your buyers<br /><span style={{ color: "#A14A08" }}>see you as the authority</span>
           </h2>
 
           <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10" style={{ color: "#52525B" }}>
@@ -575,7 +575,7 @@ export default function PersonalBrandingClient() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             {["Live in 2–3 weeks", "One interview a month", "Results or we make it right"].map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#F5B731" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#A14A08" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-sm" style={{ color: "#52525B" }}>{item}</span>

@@ -35,7 +35,7 @@ export default function InsuranceUaeCaseStudy() {
     <IllustrativeCaseStudy
       slug="insurance-uae-employee-benefits"
       tag="Insurance · UAE"
-      accent="#b45309"
+      accent="#a14a08"
       title="Opening employee benefits conversations before renewal"
       intro="A UAE-based insurance brokerage targeting employers with 50-500 employees often reached companies after their employee benefits renewal decisions were already underway. Its advisers needed earlier access to relevant HR and finance teams."
       heroStats={[

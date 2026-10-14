@@ -35,7 +35,7 @@ export default function BTwobLeadGenerationPage() {
     <GlossaryTerm
       slug={SLUG}
       tag="GTM Strategy"
-      accent="#B45309"
+      accent="#A14A08"
       title={TITLE}
       alsoKnownAs={ALSO_KNOWN_AS}
       tagline="The work of finding businesses that fit your offer and turning them into conversations your sales team can actually work."

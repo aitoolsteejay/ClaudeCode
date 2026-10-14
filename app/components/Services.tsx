@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { textTone } from "@/lib/colors";
 
 // ─── Service data ─────────────────────────────────────────────────────────────
 const SERVICES = [
@@ -141,7 +142,7 @@ function ServiceCard({
         className="px-8 py-5"
         style={{ borderTop: "1px solid #E8E2D9", background: `${accentColor}08` }}
       >
-        <div className="text-2xl font-black tabular-nums" style={{ color: accentColor }}>
+        <div className="text-2xl font-black tabular-nums" style={{ color: textTone(accentColor) }}>
           {metric.value}
         </div>
         <div
@@ -260,7 +261,7 @@ export default function Services() {
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-5 px-3 py-1 rounded-full border"
-            style={{ color: "#F5B731", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
+            style={{ color: "#A14A08", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
           >
             Our Services
           </span>
@@ -270,7 +271,7 @@ export default function Services() {
           >
             Three Channels. One Goal.
             <br />
-            <span style={{ color: "#F5B731" }}>Meetings on Your Calendar</span>
+            <span style={{ color: "#A14A08" }}>Meetings on Your Calendar</span>
           </h2>
           {/* Wavy gold underline */}
           <div className="flex justify-center -mt-1 mb-1" aria-hidden="true">

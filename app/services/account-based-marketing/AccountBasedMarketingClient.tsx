@@ -468,7 +468,7 @@ export default function AccountBasedMarketingClient() {
 
           <div>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+              style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Who It&apos;s For
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for teams going deep on a defined list</h2>
@@ -556,7 +556,7 @@ export default function AccountBasedMarketingClient() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8"
             style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F5B731" }}>Limited spots available</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>Limited spots available</span>
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
@@ -580,7 +580,7 @@ export default function AccountBasedMarketingClient() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             {["Tiered account targeting", "Multi-channel coordination", "Results or we make it right"].map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#F5B731" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#A14A08" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-sm" style={{ color: "#52525B" }}>{item}</span>

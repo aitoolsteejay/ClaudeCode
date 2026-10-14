@@ -38,7 +38,7 @@ export default function OneOnOneConsultation() {
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "1-on-1 Consultation", href: "/1-on-1-consultation" }]} />
           <div className="mb-4">
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               1-on-1 Consultation
             </span>
           </div>
@@ -59,10 +59,10 @@ export default function OneOnOneConsultation() {
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "rgba(245,183,49,0.4)", boxShadow: "0 4px 16px rgba(245,183,49,0.1)" }}>
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-2" style={{ backgroundColor: "#FEF9EC", color: "#F5B731" }}>Most Popular</span>
+                    <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-2" style={{ backgroundColor: "#FEF9EC", color: "#A14A08" }}>Most Popular</span>
                     <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>Free 30-min GTM Audit</h3>
                   </div>
-                  <span className="text-lg font-black" style={{ color: "#F5B731" }}>Free</span>
+                  <span className="text-lg font-black" style={{ color: "#A14A08" }}>Free</span>
                 </div>
                 <ul className="space-y-2 mb-6">
                   {["Outreach system review", "ICP clarity session", "Pipeline bottleneck diagnosis", "Custom action plan delivered after"].map((item) => (
@@ -101,7 +101,7 @@ export default function OneOnOneConsultation() {
               <h3 className="text-base font-black mb-4" style={{ color: "#0a0a0a" }}>What you get from the call</h3>
               {["A clear picture of where your pipeline is leaking", "An honest assessment of your ICP and messaging", "Specific recommendations on the highest-leverage changes", "A custom action plan sent within 24 hours after the call"].map((item, i) => (
                 <div key={i} className="flex gap-3 mb-4">
-                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
+                  <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
                   <p className="text-sm" style={{ color: "#52525B" }}>{item}</p>
                 </div>
               ))}

@@ -30,7 +30,7 @@ export function RelatedTools({ currentSlug }: RelatedToolsProps) {
                 <h3 className="text-base font-black mb-2">{tool.name}</h3>
                 <p className="text-sm text-muted-foreground">{tool.tagline}</p>
               </div>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: "#F5B731" }}>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold" style={{ color: "#A14A08" }}>
                 Try it free
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </span>

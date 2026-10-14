@@ -26,6 +26,8 @@ export default function StatTicker({ value, className = "", style, duration = 14
     if (!el) return;
     const parsed = parse(value);
     if (!parsed) return;
+    // Reduced motion: keep the final value that is already rendered.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let animId = 0;
     let startTime: number | null = null;

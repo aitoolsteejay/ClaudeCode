@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Caveat } from "next/font/google";
+import { caveat } from "@/app/fonts/caveat";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -35,14 +35,6 @@ import JsonLd from "@/app/components/JsonLd";
 import AskYourAI from "@/app/components/AskYourAI";
 import NewsletterForm from "@/app/components/NewsletterForm";
 import { buildArticleSchema, SITE_URL } from "@/lib/schema";
-
-/* ─── Fonts: sitewide Inter for everything; Caveat only for the founder sign-off ─── */
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  display: "swap",
-  weight: ["600", "700"],
-});
 
 /* ─── Site tokens ─────────────────────────────────────────────── */
 const T = {

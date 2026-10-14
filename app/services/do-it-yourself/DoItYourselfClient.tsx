@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { Caveat } from "next/font/google";
+import { caveat } from "@/app/fonts/caveat";
 import {
   Lock, Blocks, Bot, ChartColumn, Rocket, UserCog, Handshake,
   Play, Pause, Check, Plus, Minus, X, ArrowRight, RotateCcw, Upload,
@@ -19,14 +19,8 @@ import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "
 // call at /founder-meeting that every other service page uses.
 const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 
-// Scoped here rather than site-wide (same reasoning as the homepage Hero):
-// only the handwritten annotation sections below use this font.
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  display: "swap",
-  weight: ["600", "700"],
-});
+// Caveat is imported here rather than loaded site-wide (same reasoning as the
+// homepage Hero): only the handwritten annotation sections below use it.
 
 const ACCENT = "#7C3AED";
 const GOLD_TEXT = "#B45309";

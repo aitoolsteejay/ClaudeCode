@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
@@ -8,15 +8,19 @@ import ReelWidget from "./components/ReelWidget";
 import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
 
-// Only the weights actually used sitewide (font-normal/medium/semibold/bold/black
-// map to 400/500/600/700/900 respectively) — every declared weight here is a
-// separate font file that next/font preloads on every single page, so 300 and
-// 800 (unused anywhere in the codebase) were pure dead weight on every load.
-const inter = Inter({
-  subsets: ["latin"],
+// Inter is self-hosted (app/fonts, SIL Open Font License) instead of fetched
+// from Google at build time: next/font/google downloads the font during
+// `next build`, so a blocked or failed fetch from fonts.googleapis.com used to
+// fail the whole production build (it did, in a cloud build environment).
+// The file is the official Latin subset of the variable font -- one ~48 KB
+// file covering every weight (400-900 are used sitewide), where the Google
+// loader emitted a separate file per declared weight.
+const inter = localFont({
+  src: "./fonts/Inter-latin-variable.woff2",
   variable: "--font-inter",
   display: "swap",
-  weight: ["400", "500", "600", "700", "900"],
+  weight: "100 900",
+  fallback: ["system-ui", "Arial", "sans-serif"],
 });
 
 export const viewport: Viewport = {

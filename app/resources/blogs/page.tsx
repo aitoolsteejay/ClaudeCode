@@ -250,6 +250,27 @@ const BLOG_POSTS: BlogPost[] = [
     excerpt: "Hundreds of warm prospects sit untouched in your CRM. How to segment closed-lost leads and re-engage each with a real reason to reply.",
     readTime: "5 min read",
   },
+  {
+    href: "/blog/linkedin-outreach-agency-vs-manual-prospecting",
+    tags: ["LinkedIn Outreach", "Comparison"],
+    title: "LinkedIn Outreach Agency vs. Manual Prospecting: Which Should You Choose?",
+    excerpt: "Prospect manually while you learn who buys, hire an agency once the approach works and your time is the bottleneck. The trade-offs side by side.",
+    readTime: "6 min read",
+  },
+  {
+    href: "/blog/ai-vs-traditional-lead-generation",
+    tags: ["Lead Generation", "Comparison"],
+    title: "AI vs. Traditional B2B Lead Generation: What Actually Changes",
+    excerpt: "What AI changes in research, enrichment and scoring, where it falls short, and when manual research is still the better choice.",
+    readTime: "6 min read",
+  },
+  {
+    href: "/blog/personal-branding-agency-vs-content-freelancer",
+    tags: ["Personal Branding", "Comparison"],
+    title: "Personal Branding Agency vs. Content Freelancer: Which Should a Founder Hire?",
+    excerpt: "Scope, voice, consistency and reporting compared, and when a freelancer is enough versus when a founder needs the whole loop.",
+    readTime: "6 min read",
+  },
 ];
 
 interface MediumPost {

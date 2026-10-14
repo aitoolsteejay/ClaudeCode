@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-12T11:11:48.582Z",
+  "generatedAt": "2026-10-14T05:25:48.408Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 198,
-    "linked": 183,
-    "orphan": 15,
-    "noindex": 40,
-    "notInXmlSitemap": 41,
-    "privateHidden": 6
+    "total": 197,
+    "linked": 184,
+    "orphan": 13,
+    "noindex": 38,
+    "notInXmlSitemap": 39,
+    "privateHidden": 4
   },
   "pages": [
     {
@@ -16,12 +16,13 @@
       "section": "(home)",
       "status": "linked",
       "linkedFrom": [
+        "/resources/guides/58-meetings-600-linkedin-connections",
         "/resources/guides/80-us-meetings-ai-agents",
         "/resources/guides/ai-tech-stack-jewellery",
         "/resources/guides/how-to-set-up-vibe-prospecting",
         "/thankyou"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -696,7 +697,7 @@
         "/",
         "/resources/guides/ai-tech-stack-jewellery"
       ],
-      "inboundCount": 18,
+      "inboundCount": 19,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -811,10 +812,9 @@
       "status": "linked",
       "linkedFrom": [
         "/services/gtm-strategy",
-        "/services/linkedin-outreach",
         "/case-studies"
       ],
-      "inboundCount": 3,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1065,9 +1065,10 @@
       "status": "linked",
       "linkedFrom": [
         "/careers",
-        "/"
+        "/",
+        "linkedin-outreach/LinkedinOutreachPage.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1138,7 +1139,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 70,
+      "inboundCount": 76,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -1302,9 +1303,10 @@
       "section": "other",
       "status": "linked",
       "linkedFrom": [
-        "/"
+        "/",
+        "linkedin-outreach/LinkedinOutreachPage.tsx"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1353,7 +1355,7 @@
         "/blog/cold-email-compliance-guide",
         "/blog/cold-email-deliverability-guide"
       ],
-      "inboundCount": 49,
+      "inboundCount": 50,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2078,15 +2080,31 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/resources/guides/58-meetings-600-linkedin-connections",
         "/resources/guides/80-us-meetings-ai-agents",
         "/resources/guides/ai-tech-stack-jewellery",
         "/resources/guides/claude-sales-call-prompts",
         "/resources/guides/claude-skills-guide",
         "/resources/guides/cold-email-tech-stack",
-        "/resources/guides/dos-and-donts-of-outreach",
-        "/resources/guides/golden-icp-framework"
+        "/resources/guides/dos-and-donts-of-outreach"
       ],
-      "inboundCount": 13,
+      "inboundCount": 14,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/58-meetings-600-linkedin-connections",
+      "title": "58 Meetings Booked from 600 LinkedIn Connections",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides/80-us-meetings-ai-agents",
+        "/resources/guides/leads-on-autopilot-guide",
+        "/resources/guides",
+        "linkedin-outreach/LinkedinOutreachPage.tsx"
+      ],
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2256,9 +2274,10 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
+        "/resources/guides/58-meetings-600-linkedin-connections",
         "/resources/guides"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2371,7 +2390,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 39,
+      "inboundCount": 38,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2421,7 +2440,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 30,
+      "inboundCount": 32,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2740,30 +2759,6 @@
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
-    },
-    {
-      "path": null,
-      "private": true,
-      "title": "Private pricing / admin page (URL withheld)",
-      "section": "private",
-      "status": "orphan",
-      "linkedFrom": [],
-      "inboundCount": 0,
-      "noindex": true,
-      "inXmlSitemap": false,
-      "inHtmlSitemap": false
-    },
-    {
-      "path": null,
-      "private": true,
-      "title": "Private pricing / admin page (URL withheld)",
-      "section": "private",
-      "status": "orphan",
-      "linkedFrom": [],
-      "inboundCount": 0,
-      "noindex": true,
-      "inXmlSitemap": false,
-      "inHtmlSitemap": false
     }
   ],
   "redirects": [
@@ -2878,7 +2873,7 @@
       "permanent": true
     }
   ],
-  "hiddenRedirects": 5,
+  "hiddenRedirects": 4,
   "rewrites": [
     {
       "from": "/tools/dm-angle-generator",

@@ -105,6 +105,9 @@ const GROUPS: SitemapGroup[] = [
       { label: "The Reply Isn't the Win: Handling Cold Email Replies", href: "/blog/handling-cold-email-replies" },
       { label: "Single-Threaded Deals Die: Multi-Threading the Buying Committee", href: "/blog/multi-threading-b2b-buying-committee" },
       { label: "The Pipeline Graveyard: Reviving Closed-Lost Leads", href: "/blog/reviving-closed-lost-leads" },
+      { label: "LinkedIn Outreach Agency vs. Manual Prospecting", href: "/blog/linkedin-outreach-agency-vs-manual-prospecting" },
+      { label: "AI vs. Traditional B2B Lead Generation", href: "/blog/ai-vs-traditional-lead-generation" },
+      { label: "Personal Branding Agency vs. Content Freelancer", href: "/blog/personal-branding-agency-vs-content-freelancer" },
     ],
   },
   {

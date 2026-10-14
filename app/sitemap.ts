@@ -157,6 +157,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/handling-cold-email-replies`, lastModified: lastMod("/blog/handling-cold-email-replies"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/multi-threading-b2b-buying-committee`, lastModified: lastMod("/blog/multi-threading-b2b-buying-committee"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/reviving-closed-lost-leads`, lastModified: lastMod("/blog/reviving-closed-lost-leads"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/linkedin-outreach-agency-vs-manual-prospecting`, lastModified: lastMod("/blog/linkedin-outreach-agency-vs-manual-prospecting"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/ai-vs-traditional-lead-generation`, lastModified: lastMod("/blog/ai-vs-traditional-lead-generation"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/personal-branding-agency-vs-content-freelancer`, lastModified: lastMod("/blog/personal-branding-agency-vs-content-freelancer"), changeFrequency: "monthly", priority: 0.7 },
     // Guides moved from /instagram-resources/* on 2026-10-12 (301s in next.config.js)
     { url: `${base}/resources/guides/claude-skills-guide`, lastModified: lastMod("/resources/guides/claude-skills-guide"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/80-us-meetings-ai-agents`, lastModified: lastMod("/resources/guides/80-us-meetings-ai-agents"), changeFrequency: "monthly", priority: 0.7 },

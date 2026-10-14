@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
-import { supabase } from "@/lib/supabase";
 import LandingPage from "@/components/tools/profile-optimizer/LandingPage";
 import ProfileWizard from "@/components/tools/profile-optimizer/ProfileWizard";
 import { StepOneData } from "@/components/tools/profile-optimizer/StepOne";
@@ -217,13 +216,18 @@ export default function ProfileOptimizerClient() {
       setShowResults(true);
 
       if (leadData?.id) {
-        supabase
-          .from("leads")
-          .update({ inputs: profileData, outputs: finalResults })
-          .eq("id", leadData.id)
-          .then(({ error }) => {
-            if (error) console.error("Supabase inputs/outputs update failed:", error);
-          });
+        // The Supabase client (~200 kB) is loaded on first use, not with the page.
+        void import("@/lib/supabase")
+          .then(({ supabase }) => {
+            supabase
+              .from("leads")
+              .update({ inputs: profileData, outputs: finalResults })
+              .eq("id", leadData.id)
+              .then(({ error }) => {
+                if (error) console.error("Supabase inputs/outputs update failed:", error);
+              });
+          })
+          .catch((error) => console.error("Supabase inputs/outputs update failed:", error));
       }
 
       setTimeout(() => {

@@ -6,7 +6,6 @@ import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/battle-card-generator/LandingPage";
 import { BattleCardForm } from "@/components/tools/battle-card-generator/BattleCardForm";
 import { BattleCardResults } from "@/components/tools/battle-card-generator/BattleCardResults";
-import { supabase } from "@/lib/supabase";
 import type { BattleCardInput, BattleCardOutput } from "@/components/tools/battle-card-generator/types";
 
 const ACCENT = "#ef4444";
@@ -21,13 +20,18 @@ export default function BattleCardGeneratorClient() {
 
   const saveOutputs = (inputs: unknown, outputs: unknown) => {
     if (!leadData?.id) return;
-    supabase
-      .from("leads")
-      .update({ inputs, outputs })
-      .eq("id", leadData.id)
-      .then(({ error }) => {
-        if (error) console.error("Supabase inputs/outputs update failed:", error);
-      });
+    // The Supabase client (~200 kB) is loaded on first use, not with the page.
+    void import("@/lib/supabase")
+      .then(({ supabase }) => {
+        supabase
+          .from("leads")
+          .update({ inputs, outputs })
+          .eq("id", leadData.id)
+          .then(({ error }) => {
+            if (error) console.error("Supabase inputs/outputs update failed:", error);
+          });
+      })
+      .catch((error) => console.error("Supabase inputs/outputs update failed:", error));
   };
 
   const handleLeadComplete = (data: LeadData) => {

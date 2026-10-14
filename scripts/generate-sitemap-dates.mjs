@@ -153,6 +153,22 @@ const shared = (f) => (useCount.get(f) ?? 0) >= SHARED_MIN_ROUTES;
 const alwaysIgnored = new Set([path.join(APP, "layout.tsx"), path.join(APP, "globals.css")]);
 
 // ── Dates ─────────────────────────────────────────────────────────────────
+// Commits that must not move a date (see scripts/sitemap-dates-ignore.txt).
+const ignoreRules = new Map(); // sha prefix -> path prefixes ([] = whole commit)
+const ignoreFile = path.join(ROOT, "scripts", "sitemap-dates-ignore.txt");
+if (exists(ignoreFile)) {
+  for (const raw of read(ignoreFile).split("\n")) {
+    const line = raw.replace(/#.*$/, "").trim();
+    if (!line) continue;
+    const [sha, ...prefixes] = line.split(/\s+/);
+    ignoreRules.set(sha, prefixes);
+  }
+}
+const isIgnored = (sha, file) => {
+  for (const [prefix, paths] of ignoreRules) if (sha.startsWith(prefix) && (paths.length === 0 || paths.some((p) => file === p || file.startsWith(p + "/")))) return true;
+  return false;
+};
+
 const dateCache = new Map();
 function lastCommit(files) {
   const key = files.join("\0");
@@ -162,11 +178,18 @@ function lastCommit(files) {
   // committer date of every commit it replays, which would stamp "now" on
   // pages nobody edited. The maximum over the recent commits is used because
   // after a cherry-pick the topologically newest commit is not always the one
-  // with the newest author date.
+  // with the newest author date. Commits named in the ignore file are skipped
+  // for the files they are ignored for.
   for (let i = 0; i < files.length; i += 200) {
     const chunk = files.slice(i, i + 200).map(rel);
-    const out = git(["log", "-n", "40", "--format=%aI", "--", ...chunk]);
-    for (const d of (out ?? "").split("\n").filter(Boolean)) if (!latest || new Date(d) > new Date(latest)) latest = d;
+    const out = git(["log", "-n", "80", "--format=@@%H%x09%aI", "--name-only", "--", ...chunk]) ?? "";
+    for (const block of out.split("@@").slice(1)) {
+      const [head, ...names] = block.split("\n").filter(Boolean);
+      const [sha, date] = head.split("\t");
+      const touched = names.filter((n) => chunk.includes(n));
+      if (touched.length === 0 || touched.every((n) => isIgnored(sha, n))) continue;
+      if (!latest || new Date(date) > new Date(latest)) latest = date;
+    }
   }
   dateCache.set(key, latest);
   return latest;

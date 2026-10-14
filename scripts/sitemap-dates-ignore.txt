@@ -1,0 +1,12 @@
+# Commits that touched many pages without changing what a page says, so they
+# must not move a sitemap <lastmod>. One per line:
+#
+#   <commit sha>  [path prefix ...]   # reason
+#
+# With no path prefix the whole commit is ignored; with prefixes it is ignored
+# only for files under them (so a commit that also created a new page still dates
+# that page). Add a line here after any sitewide mechanical edit, then run
+# `npm run sitemap:dates`. Do not list commits that changed copy, facts or structure.
+6ba4ba8  # Set guide and blog labels in Fredoka (styling only)
+d1d9f4b  # Self-host fonts: import path changes in Hero and two clients, no copy change
+cb8ddf7  app/blog app/resources/guides  # Added the publisher/updated byline line to blog posts and guides

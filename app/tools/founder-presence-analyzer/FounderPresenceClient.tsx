@@ -6,7 +6,6 @@ import Link from "next/link";
 import { toast } from "sonner";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/founder-presence/LandingPage";
-import { supabase } from "@/lib/supabase";
 import { ScoreRing } from "@/components/tools/founder-presence/ScoreRing";
 
 // GapChart pulls in recharts (~5MB of source), so it's kept out of this
@@ -131,13 +130,18 @@ export default function FounderPresenceClient() {
       setStep("results");
 
       if (leadData?.id) {
-        supabase
-          .from("leads")
-          .update({ inputs: { ...formData, calculated }, outputs: result })
-          .eq("id", leadData.id)
-          .then(({ error }) => {
-            if (error) console.error("Supabase inputs/outputs update failed:", error);
-          });
+        // The Supabase client (~200 kB) is loaded on first use, not with the page.
+        void import("@/lib/supabase")
+          .then(({ supabase }) => {
+            supabase
+              .from("leads")
+              .update({ inputs: { ...formData, calculated }, outputs: result })
+              .eq("id", leadData.id)
+              .then(({ error }) => {
+                if (error) console.error("Supabase inputs/outputs update failed:", error);
+              });
+          })
+          .catch((error) => console.error("Supabase inputs/outputs update failed:", error));
       }
     } catch (error) {
       console.error("Analysis failed", error);

@@ -9,7 +9,6 @@ import { CaseStudyForm } from "@/components/tools/case-study-generator/CaseStudy
 import { ProposalForm } from "@/components/tools/case-study-generator/ProposalForm";
 import { CaseStudyResults } from "@/components/tools/case-study-generator/CaseStudyResults";
 import { ProposalResults } from "@/components/tools/case-study-generator/ProposalResults";
-import { supabase } from "@/lib/supabase";
 import type { GeneratorMode, CaseStudyInput, ProposalInput, CaseStudyOutput, ProposalOutput } from "@/components/tools/case-study-generator/types";
 
 const ACCENT = "#6366f1";
@@ -26,13 +25,18 @@ export default function CaseStudyGeneratorClient() {
 
   const saveOutputs = (inputs: unknown, outputs: unknown) => {
     if (!leadData?.id) return;
-    supabase
-      .from("leads")
-      .update({ inputs, outputs })
-      .eq("id", leadData.id)
-      .then(({ error }) => {
-        if (error) console.error("Supabase inputs/outputs update failed:", error);
-      });
+    // The Supabase client (~200 kB) is loaded on first use, not with the page.
+    void import("@/lib/supabase")
+      .then(({ supabase }) => {
+        supabase
+          .from("leads")
+          .update({ inputs, outputs })
+          .eq("id", leadData.id)
+          .then(({ error }) => {
+            if (error) console.error("Supabase inputs/outputs update failed:", error);
+          });
+      })
+      .catch((error) => console.error("Supabase inputs/outputs update failed:", error));
   };
 
   const handleLeadComplete = (data: LeadData) => {

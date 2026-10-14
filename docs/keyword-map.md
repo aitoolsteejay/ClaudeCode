@@ -51,10 +51,13 @@ Added to this doc's tracked scope 2026-09-03 (previously only Services/Tools/Blo
 | `/tools/posting-rhythm-builder` | linkedin posting rhythm builder |
 | `/tools/roi-calculator` | roi calculator for cold outreach |
 
-## Blog (Informational) — 27 pages
+## Blog (Informational) — 30 pages
 
 | Page | Primary keyword |
 |---|---|
+| `/blog/linkedin-outreach-agency-vs-manual-prospecting` | linkedin outreach agency vs manual prospecting |
+| `/blog/ai-vs-traditional-lead-generation` | ai vs traditional lead generation |
+| `/blog/personal-branding-agency-vs-content-freelancer` | personal branding agency vs content freelancer |
 | `/blog/handling-cold-email-replies` | how to respond to cold email replies |
 | `/blog/multi-threading-b2b-buying-committee` | multi-threading in b2b sales deals |
 | `/blog/reviving-closed-lost-leads` | how to revive closed-lost leads |

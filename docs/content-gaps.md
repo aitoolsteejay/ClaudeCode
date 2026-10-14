@@ -2,6 +2,15 @@
 
 Audit of high-intent B2B outbound topics, questions, and comparison queries not yet covered by any existing page, as of 2026-08-21. Cross-checked against all 28 pages in [`keyword-map.md`](./keyword-map.md) (6 services + 9 tools + 13 blog) plus the 8 `/lp/*` vertical pages and 8 `/b2b-lead-generation-{city}` pages, to avoid proposing anything that would cannibalize an existing primary keyword.
 
+## Status, 2026-10-14
+
+Built since this audit: `cold-email-compliance-guide`, `cold-email-vs-linkedin-outreach`, `what-is-b2b-outbound-sales`, `cold-email-sequence-templates` and the glossary pillar (50 terms), plus three decision-stage comparison posts (`linkedin-outreach-agency-vs-manual-prospecting`, `ai-vs-traditional-lead-generation`, `personal-branding-agency-vs-content-freelancer`).
+
+Deliberately not built:
+- **`cold-email-agency-pricing-guide`** (and any "how much does an agency cost" page). Pricing is kept private, and the pricing pages were removed from the public site on purpose. A page quoting market ranges would also be the kind of unsourced number the editorial policy rules out. Revisit only if pricing becomes public.
+- **Tool-vs-tool pages (for example Instantly vs Smartlead).** Same reasoning as the "Explicitly NOT recommended" list below: third-party claims, naming risk, off-strategy for a services agency.
+- **Benchmark-style answer pages** ("what is a good reply rate", "safe sending volume"). The benchmark report and the deliverability guide already answer these with Myntmore's own data; a thinner second page would compete with them. Add a new one only with new, real data.
+
 ## Method
 
 Existing content answers "how do I do X" (tactics: sequences, deliverability, ICP mapping, lead magnets) and "why should I pick an agency" (agency-vs-in-house). It does not yet answer the questions a buyer asks in the two moments right before they convert or right after they start comparing options — pricing, legal risk, and channel choice — nor does it own the top-of-funnel definitional searches ("what is X") that a glossary/pillar strategy would normally capture. Gaps below are grouped by funnel stage.

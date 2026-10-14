@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/lead-magnet-ideas/LandingPage";
-import { supabase } from "@/lib/supabase";
 import { Lightbulb, TrendingUp, Send, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 
@@ -105,13 +104,18 @@ export default function LeadMagnetIdeasClient() {
       setStep("results");
 
       if (leadData?.id) {
-        supabase
-          .from("leads")
-          .update({ inputs: requestInputs, outputs: result })
-          .eq("id", leadData.id)
-          .then(({ error }) => {
-            if (error) console.error("Supabase inputs/outputs update failed:", error);
-          });
+        // The Supabase client (~200 kB) is loaded on first use, not with the page.
+        void import("@/lib/supabase")
+          .then(({ supabase }) => {
+            supabase
+              .from("leads")
+              .update({ inputs: requestInputs, outputs: result })
+              .eq("id", leadData.id)
+              .then(({ error }) => {
+                if (error) console.error("Supabase inputs/outputs update failed:", error);
+              });
+          })
+          .catch((error) => console.error("Supabase inputs/outputs update failed:", error));
       }
 
       window.scrollTo({ top: 0, behavior: "smooth" });

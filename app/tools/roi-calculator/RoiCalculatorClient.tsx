@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
 import { LeadData } from "@/components/tools/shared/LeadGate";
-import { supabase } from "@/lib/supabase";
 
 // RevenueChart pulls in recharts (~5MB of source), so it's kept out of this
 // route's initial bundle and only fetched once the calculator is actually
@@ -244,16 +243,21 @@ export default function RoiCalculatorClient() {
     setShowGate(false);
 
     if (data.id) {
-      supabase
-        .from("leads")
-        .update({
-          inputs: { currency, connectionRequests, acceptanceRate, replyRate, positiveResponseRate, meetingRateFromPositive, closingRate, averageTicketPrice, transactionsPerYear, monthsCustomerStays, duration, monthlyCost },
-          outputs: { totalRequests, acceptedConnections, replies, positiveReplies, negativeReplies, meetings, deals, revenue, roi },
+      // The Supabase client (~200 kB) is loaded on first use, not with the page.
+      void import("@/lib/supabase")
+        .then(({ supabase }) => {
+          supabase
+            .from("leads")
+            .update({
+              inputs: { currency, connectionRequests, acceptanceRate, replyRate, positiveResponseRate, meetingRateFromPositive, closingRate, averageTicketPrice, transactionsPerYear, monthsCustomerStays, duration, monthlyCost },
+              outputs: { totalRequests, acceptedConnections, replies, positiveReplies, negativeReplies, meetings, deals, revenue, roi },
+            })
+            .eq("id", data.id)
+            .then(({ error }) => {
+              if (error) console.error("Supabase inputs/outputs update failed:", error);
+            });
         })
-        .eq("id", data.id)
-        .then(({ error }) => {
-          if (error) console.error("Supabase inputs/outputs update failed:", error);
-        });
+        .catch((error) => console.error("Supabase inputs/outputs update failed:", error));
     }
 
     handleExport();

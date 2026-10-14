@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-14T05:25:48.408Z",
+  "generatedAt": "2026-10-14T06:24:02.378Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 197,
-    "linked": 184,
+    "total": 201,
+    "linked": 188,
     "orphan": 13,
     "noindex": 38,
     "notInXmlSitemap": 39,
@@ -47,9 +47,10 @@
       "status": "linked",
       "linkedFrom": [
         "/careers/systems-ai-automation-intern",
-        "/"
+        "/",
+        "/editorial-policy"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -210,13 +211,29 @@
       "status": "linked",
       "linkedFrom": [
         "/agency-vs-in-house",
+        "/blog/ai-vs-traditional-lead-generation",
+        "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/blog/what-is-b2b-outbound-sales",
         "/resources/blogs",
         "/resources/guides/how-to-choose-an-outbound-agency",
         "/resources/guides",
         "/who-this-is-for"
       ],
-      "inboundCount": 6,
+      "inboundCount": 8,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/ai-vs-traditional-lead-generation",
+      "title": "Ai Vs Traditional Lead Generation",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "lib/internal-paths.ts"
+      ],
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -228,9 +245,10 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/handling-cold-email-replies",
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -246,9 +264,10 @@
         "/blog/icp-mapping-b2b",
         "/blog/what-is-b2b-outbound-sales",
         "/",
+        "/editorial-policy",
         "/resources/blogs"
       ],
-      "inboundCount": 6,
+      "inboundCount": 7,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -289,9 +308,10 @@
         "/blog/cold-email-compliance-guide",
         "/blog/cold-email-sequence-templates",
         "/resources/blogs",
-        "/resources/guides/cold-email-tech-stack"
+        "/resources/guides/cold-email-tech-stack",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -306,9 +326,10 @@
         "/blog/reviving-closed-lost-leads",
         "/resources/blogs",
         "/resources/guides/claude-sales-call-prompts",
-        "/resources/guides/cold-email-tech-stack"
+        "/resources/guides/cold-email-tech-stack",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 5,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -319,9 +340,10 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -373,9 +395,11 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/blog/personal-branding-agency-vs-content-freelancer",
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -401,8 +425,24 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/ai-vs-traditional-lead-generation",
         "/blog/multi-threading-b2b-buying-committee",
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
+      ],
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/linkedin-outreach-agency-vs-manual-prospecting",
+      "title": "Linkedin Outreach Agency Vs Manual Prospecting",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -416,11 +456,12 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/cold-email-sequence-templates",
+        "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/blog/multi-threading-b2b-buying-committee",
         "/blog/reviving-closed-lost-leads",
         "/resources/blogs"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -431,9 +472,10 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -445,9 +487,10 @@
       "status": "linked",
       "linkedFrom": [
         "/resources/blogs",
-        "/resources/guides/claude-sales-call-prompts"
+        "/resources/guides/claude-sales-call-prompts",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -458,9 +501,24 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/personal-branding-agency-vs-content-freelancer",
+      "title": "Personal Branding Agency Vs Content Freelancer",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "lib/internal-paths.ts"
+      ],
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -538,9 +596,10 @@
       "status": "linked",
       "linkedFrom": [
         "/resources/blogs",
-        "/resources/glossary/total-conversional-market"
+        "/resources/glossary/total-conversional-market",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -565,9 +624,11 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/blog/personal-branding-agency-vs-content-freelancer",
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -578,9 +639,10 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -695,9 +757,9 @@
         "/case-studies/saas-series-a",
         "/case-studies/uk-pharma-qualified-meetings",
         "/",
-        "/resources/guides/ai-tech-stack-jewellery"
+        "/editorial-policy"
       ],
-      "inboundCount": 19,
+      "inboundCount": 20,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -759,9 +821,10 @@
       "status": "linked",
       "linkedFrom": [
         "/services/cold-email",
+        "lib/internal-paths.ts",
         "/case-studies"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -811,10 +874,12 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/services/gtm-strategy",
+        "lib/internal-paths.ts",
         "/case-studies"
       ],
-      "inboundCount": 2,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -968,10 +1033,12 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/blog/ai-vs-traditional-lead-generation",
         "/services/sales-intelligence",
+        "lib/internal-paths.ts",
         "/case-studies"
       ],
-      "inboundCount": 2,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -982,10 +1049,12 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/blog/personal-branding-agency-vs-content-freelancer",
         "/services/personal-branding",
+        "lib/internal-paths.ts",
         "/case-studies"
       ],
-      "inboundCount": 2,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1037,9 +1106,10 @@
       "linkedFrom": [
         "/blog/cold-email-vs-linkedin-outreach",
         "/case-studies",
-        "/services/ai-lead-generation"
+        "/services/ai-lead-generation",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1051,9 +1121,10 @@
       "status": "linked",
       "linkedFrom": [
         "/lp/pharma",
+        "lib/internal-paths.ts",
         "/case-studies"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1069,6 +1140,19 @@
         "linkedin-outreach/LinkedinOutreachPage.tsx"
       ],
       "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/editorial-policy",
+      "title": "Editorial Policy & Methodology",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1139,7 +1223,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 76,
+      "inboundCount": 80,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -1333,9 +1417,11 @@
       "section": "other",
       "status": "linked",
       "linkedFrom": [
-        "/"
+        "/",
+        "/editorial-policy",
+        "tools/shared/LeadGate.tsx"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2099,12 +2185,14 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
+        "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/resources/guides/80-us-meetings-ai-agents",
         "/resources/guides/leads-on-autopilot-guide",
         "/resources/guides",
-        "linkedin-outreach/LinkedinOutreachPage.tsx"
+        "linkedin-outreach/LinkedinOutreachPage.tsx",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 4,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2115,9 +2203,11 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/blog/ai-vs-traditional-lead-generation",
+        "/resources/guides",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2222,9 +2312,10 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/resources/guides",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2235,9 +2326,11 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/blog/personal-branding-agency-vs-content-freelancer",
+        "/resources/guides",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2330,7 +2423,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 22,
+      "inboundCount": 23,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2370,7 +2463,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 27,
+      "inboundCount": 28,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2390,7 +2483,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 38,
+      "inboundCount": 39,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2440,7 +2533,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 32,
+      "inboundCount": 33,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2460,7 +2553,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 17,
+      "inboundCount": 18,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

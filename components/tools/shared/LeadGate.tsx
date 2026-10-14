@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import { z } from "zod";
-import { supabase } from "@/lib/supabase";
 
 export interface LeadData {
   id?: string;
@@ -136,22 +135,29 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
     // Also log to our own Supabase leads table as a secondary record. The
     // returned row id lets the tool attach its inputs/outputs to this same
     // row once it has something to show.
+    // The Supabase client (~200 kB) is loaded here, on submit, rather than with the page;
+    // the 600 ms pause below hides the download. A failed chunk load is reported like any
+    // other failed insert instead of leaving the form stuck on "Saving".
     const [{ data: insertedLead, error }] = await Promise.all([
-      supabase
-        .from("leads")
-        .insert([
-          {
-            source,
-            name: `${d.firstName} ${d.lastName}`.trim(),
-            email: d.email || null,
-            phone: d.phone || null,
-            company_name: d.companyName || null,
-            linkedin_url: d.linkedinUrl || null,
-            metadata: { designation: d.designation },
-          },
-        ])
-        .select()
-        .single(),
+      import("@/lib/supabase")
+        .then(({ supabase }) =>
+          supabase
+            .from("leads")
+            .insert([
+              {
+                source,
+                name: `${d.firstName} ${d.lastName}`.trim(),
+                email: d.email || null,
+                phone: d.phone || null,
+                company_name: d.companyName || null,
+                linkedin_url: d.linkedinUrl || null,
+                metadata: { designation: d.designation },
+              },
+            ])
+            .select()
+            .single(),
+        )
+        .catch((err: unknown) => ({ data: null, error: err })),
       new Promise((resolve) => setTimeout(resolve, 600)),
     ]);
 

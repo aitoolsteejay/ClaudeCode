@@ -10,3 +10,4 @@
 6ba4ba8  # Set guide and blog labels in Fredoka (styling only)
 d1d9f4b  # Self-host fonts: import path changes in Hero and two clients, no copy change
 cb8ddf7  app/blog app/resources/guides  # Added the publisher/updated byline line to blog posts and guides
+7ba00bf  app/tools components/tools  # Tools: Supabase client loaded on demand (performance only, no copy change)

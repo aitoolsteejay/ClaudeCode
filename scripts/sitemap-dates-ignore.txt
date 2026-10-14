@@ -14,3 +14,4 @@ cb8ddf7  app/blog app/resources/guides  # Added the publisher/updated byline lin
 dc9df8a  # Accessibility and contrast pass: muted text colour, focus rings, skip link, nav ARIA (styling only, no copy change)
 df5ee6b  # Gold text to amber, footer grey, main landmarks, textTone helper (styling only, no copy change)
 67f4e6e  # Review fixes: footer hover, landmarks, focus ring, counters, gold text on unreached surfaces (styling/markup only, no copy change)
+98f259f  # textTone for every accent colour, typewriter wrap (styling only, no copy change)

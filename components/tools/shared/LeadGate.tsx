@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 import { z } from "zod";
 import { supabase } from "@/lib/supabase";
 
@@ -38,6 +39,20 @@ const leadSchema = z.object({
 });
 
 export type LeadSource = "profile_optimizer" | "posting_rhythm_builder" | "lead_magnet_ideas" | "dm_angle_generator" | "founder_presence_analyzer" | "case_study_generator" | "battle_card_generator" | "icp_builder" | "roi_calculator";
+
+// Every tool except the ROI calculator sends what the visitor types to Google's
+// Gemini API (through our /api routes) to generate the result. Keep this list in
+// step with the tools that call /api/gemini or /api/tools/*.
+const AI_SOURCES: LeadSource[] = [
+  "profile_optimizer",
+  "posting_rhythm_builder",
+  "lead_magnet_ideas",
+  "dm_angle_generator",
+  "founder_presence_analyzer",
+  "case_study_generator",
+  "battle_card_generator",
+  "icp_builder",
+];
 
 interface LeadGateProps {
   onComplete: (data: LeadData) => void;
@@ -312,6 +327,25 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
               "Get Started →"
             )}
           </Button>
+
+          {/* Data use, stated plainly: what the code below actually does with the form
+              and with whatever the visitor later types into the tool. */}
+          <p className="text-xs leading-relaxed text-muted-foreground" data-testid="tool-data-notice">
+            <strong className="font-semibold text-foreground">How your details are used.</strong> Your contact details are saved in
+            Myntmore&apos;s CRM (Zoho) and our database, and what you enter into this tool is saved with that record.
+            {AI_SOURCES.includes(source) && (
+              <>
+                {" "}
+                This tool sends what you enter to Google&apos;s Gemini API to generate your result, so please don&apos;t enter confidential
+                information or personal details about other people.
+              </>
+            )}{" "}
+            See our{" "}
+            <Link href="/privacy-policy" className="underline underline-offset-2">
+              privacy policy
+            </Link>
+            .
+          </p>
         </form>
       </div>
     </div>

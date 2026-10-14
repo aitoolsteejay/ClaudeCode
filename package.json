@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/generate-site-map.mjs",
+    "prebuild": "node scripts/generate-site-map.mjs && (node scripts/generate-sitemap-dates.mjs --check || echo '[sitemap-dates] warning: lib/sitemap-dates.json is stale, run npm run sitemap:dates')",
+    "sitemap:dates": "node scripts/generate-sitemap-dates.mjs",
+    "sitemap:check": "node scripts/generate-sitemap-dates.mjs --check",
     "build": "next build",
     "start": "next start"
   },

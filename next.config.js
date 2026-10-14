@@ -72,9 +72,11 @@ const nextConfig = {
       // mars/earth -- redirected in case either was already sent out.
       { source: "/plans/alpha", destination: "/plans/mars", permanent: true },
       { source: "/plans/beta", destination: "/plans/earth", permanent: true },
-      // The private Mars and Earth cold emailing pages were removed when the
-      // package pages were folded into the public cold email service page. Both
-      // URLs had already been sent to prospects, so they now land on that page.
+      // The cold emailing package pages (the overview and the private Mars and
+      // Earth versions) were removed when they were folded into the public cold
+      // email service page. The URLs had already been sent to prospects, so they
+      // now land on that page.
+      { source: "/cold-emailing-package", destination: "/services/cold-email", permanent: true },
       { source: "/cold-emailing-package-mars", destination: "/services/cold-email", permanent: true },
       { source: "/cold-emailing-package-earth", destination: "/services/cold-email", permanent: true },
 

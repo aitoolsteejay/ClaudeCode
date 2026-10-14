@@ -6,6 +6,8 @@ import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AnswerBlock from "../../components/AnswerBlock";
+import RelatedPath from "../../components/RelatedPath";
+import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
@@ -444,7 +446,9 @@ export default function AiLeadGenerationClient() {
         </div>
       </section>
 
-      <section className="relative py-28 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
+            <RelatedPath heading="See it in action" intro="A case study, the thinking behind it, and the next step." items={SERVICE_PATHS["ai-lead-generation"]} accent="#3b82f6" />
+
+<section className="relative py-28 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div ref={ctaBlob1} aria-hidden style={{ position: "absolute", top: "50%", left: "25%", width: 600, height: 600, marginTop: -300, marginLeft: -300, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.25) 0%, rgba(99,102,241,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
         <div ref={ctaBlob2} aria-hidden style={{ position: "absolute", top: "50%", left: "75%", width: 550, height: 550, marginTop: -275, marginLeft: -275, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,130,0,0.1) 40%, transparent 70%)", filter: "blur(65px)", pointerEvents: "none", willChange: "transform" }} />
         <div className="relative z-10 max-w-4xl mx-auto text-center">

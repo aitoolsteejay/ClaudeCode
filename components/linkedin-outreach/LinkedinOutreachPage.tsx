@@ -33,6 +33,8 @@ import Faq from "@/app/lp/Faq";
 import JsonLd from "@/app/components/JsonLd";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import AnswerBlock from "@/app/components/AnswerBlock";
+import RelatedPath from "@/app/components/RelatedPath";
+import { SERVICE_PATHS } from "@/lib/internal-paths";
 import Underline from "@/app/resources/guides/how-to-set-up-vibe-prospecting/Underline";
 import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
 import LinkedinFlowVisual from "./LinkedinFlowVisual";
@@ -512,6 +514,8 @@ export default function LinkedinOutreachPage() {
       <div className="mt-24">
         <Faq badge="FAQ" title="Questions, answered" items={FAQS} />
       </div>
+
+      <RelatedPath heading="See it in action" intro="A case study, the thinking behind it, and the next step." items={SERVICE_PATHS["linkedin-outreach"]} accent={BLUE} />
 
       {/* Outcomes, founder + CTA */}
       <section className="px-4 py-24" style={{ backgroundColor: CREAM }}>

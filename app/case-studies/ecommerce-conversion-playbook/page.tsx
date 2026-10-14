@@ -5,6 +5,8 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import LeadCaptureForm from "../../components/LeadCaptureForm";
 import StatTicker from "../../components/StatTicker";
 import JsonLd from "../../components/JsonLd";
+import RelatedPath from "../../components/RelatedPath";
+import { CASE_STUDY_PATHS } from "@/lib/internal-paths";
 import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -112,6 +114,8 @@ export default function EcommerceConversionPlaybook() {
           </div>
         </div>
       </section>
+
+      <RelatedPath heading="Go deeper" intro="The method behind this result." items={CASE_STUDY_PATHS["ecommerce-conversion-playbook"]} />
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">

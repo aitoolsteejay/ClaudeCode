@@ -6,6 +6,8 @@ import InnerLayout from "../../components/InnerLayout";
 import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AnswerBlock from "../../components/AnswerBlock";
+import RelatedPath from "../../components/RelatedPath";
+import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 const SERVICE_SCHEMA = buildServiceSchema({
@@ -537,6 +539,8 @@ export default function PersonalBrandingClient() {
           </div>
         </div>
       </section>
+
+      <RelatedPath heading="See it in action" intro="A case study, the thinking behind it, and the next step." items={SERVICE_PATHS["personal-branding"]} accent="#D97706" />
 
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="relative py-28 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>

@@ -12,3 +12,4 @@ d1d9f4b  # Self-host fonts: import path changes in Hero and two clients, no copy
 cb8ddf7  app/blog app/resources/guides  # Added the publisher/updated byline line to blog posts and guides
 7ba00bf  app/tools components/tools  # Tools: Supabase client loaded on demand (performance only, no copy change)
 dc9df8a  # Accessibility and contrast pass: muted text colour, focus rings, skip link, nav ARIA (styling only, no copy change)
+df5ee6b  # Gold text to amber, footer grey, main landmarks, textTone helper (styling only, no copy change)

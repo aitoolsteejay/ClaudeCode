@@ -6,7 +6,8 @@
 //     expired and drops it, with no error anywhere. The Lead Gen Strategist posting
 //     was six weeks from that when it was caught.
 //   - apply addresses: every posting should offer founder@ and growth@myntmore.com
-//     and no other address (content@ was removed on 2026-10-15).
+//     and no other address (content@ was removed on 2026-10-15), and every
+//     "Apply Now" button must email BOTH of them (To or Cc), not just one.
 //
 //   node scripts/audit-job-postings.mjs             report; exit 1 if a posting has expired
 //   node scripts/audit-job-postings.mjs --strict    also exit 1 when one ends within 45 days
@@ -40,6 +41,19 @@ for (const dir of fs.readdirSync(CAREERS, { withFileTypes: true })) {
   const sal = body.match(/baseSalary:\s*\{\s*minValue:\s*(\d+),\s*maxValue:\s*(\d+),\s*unitText:\s*"(\w+)"/);
   const emails = [...new Set(src.match(/[A-Za-z0-9._-]+@myntmore\.com/g) ?? [])].sort();
   const validThrough = get("validThrough");
+  // Every Apply Now button: which of the two addresses does it reach?
+  const buttons = src
+    .split("<a ")
+    .slice(1)
+    .map((c) => c.split("</a>")[0])
+    .filter((a) => /Apply Now/.test(a) && /mailto:/.test(a))
+    .map((a) => {
+      const m = a.match(/mailto:([^?`"]*)(\?[^`"]*)?/);
+      const to = (m?.[1] ?? "").split(",").map((x) => x.trim().toLowerCase());
+      const cc = [...(m?.[2] ?? "").matchAll(/[?&]cc=([^&`"]+)/g)].flatMap((x) => x[1].split(",").map((y) => y.trim().toLowerCase()));
+      return [...to, ...cc];
+    });
+  const buttonsMissing = buttons.filter((r) => !EXPECTED.every((e) => r.includes(e))).length;
   rows.push({
     slug: dir.name,
     title: get("title"),
@@ -49,12 +63,15 @@ for (const dir of fs.readdirSync(CAREERS, { withFileTypes: true })) {
     validThrough: validThrough?.slice(0, 10),
     daysLeft: validThrough ? days(validThrough) : null,
     emails,
+    buttons: buttons.length,
+    buttonsMissing,
   });
 }
 
 let expired = 0;
 let soon = 0;
 let badEmail = 0;
+let badButtons = 0;
 console.log(`Job postings (${rows.length}), checked ${today.toISOString().slice(0, 10)}\n`);
 for (const r of rows.sort((a, b) => (a.daysLeft ?? 0) - (b.daysLeft ?? 0))) {
   const flag = r.daysLeft === null ? "NO DATE" : r.daysLeft < 0 ? "EXPIRED" : r.daysLeft <= WARN_DAYS ? "ENDING SOON" : "ok";
@@ -67,8 +84,11 @@ for (const r of rows.sort((a, b) => (a.daysLeft ?? 0) - (b.daysLeft ?? 0))) {
   console.log(`${r.slug}`);
   console.log(`  ${r.title} | ${r.employment} | ${r.pay}`);
   console.log(`  posted ${r.posted}, valid through ${r.validThrough} (${r.daysLeft === null ? "?" : r.daysLeft + " days left"})  [${flag}]`);
+  const buttonsOk = r.buttons > 0 && r.buttonsMissing === 0;
+  if (!buttonsOk) badButtons++;
   console.log(`  apply addresses: ${r.emails.join(", ") || "none"}${emailOk ? "" : `  [CHECK: ${unexpected.length ? "unexpected " + unexpected.join(", ") : ""}${missing.length ? " missing " + missing.join(", ") : ""}]`}`);
+  console.log(`  apply buttons: ${r.buttons}, each reaching both addresses: ${buttonsOk ? "yes" : `NO (${r.buttons === 0 ? "none found" : r.buttonsMissing + " reach only one"})`}`);
 }
 
-console.log(`\n${expired} expired or undated, ${soon} ending within ${WARN_DAYS} days, ${badEmail} with unexpected apply addresses.`);
-if (expired || badEmail || (STRICT && soon)) process.exit(1);
+console.log(`\n${expired} expired or undated, ${soon} ending within ${WARN_DAYS} days, ${badEmail} with unexpected apply addresses, ${badButtons} with an Apply button that misses an address.`);
+if (expired || badEmail || badButtons || (STRICT && soon)) process.exit(1);

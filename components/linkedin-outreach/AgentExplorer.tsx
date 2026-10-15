@@ -26,8 +26,10 @@ function VisualTargeting() {
       <svg viewBox="0 0 240 118" className="w-full max-w-[300px]">
         {DOTS.map((d, i) => {
           const k = PICKED.indexOf(i);
-          return <circle key={i} cx={d.x} cy={d.y} r="7" className={`ax-dot ${k >= 0 ? "ax-dot-pick" : "ax-dot-fade"}`} style={{ animationDelay: k >= 0 ? `${1.6 + k * 0.2}s` : "1.6s" }} />;
+          // Each dot reacts when the scanner reaches its column.
+          return <circle key={i} cx={d.x} cy={d.y} r="7" className={`ax-dot ${k >= 0 ? "ax-dot-pick" : "ax-dot-fade"}`} style={{ animationDelay: `${((d.x + 4) / 250) * 3.13}s` }} />;
         })}
+        <rect className="ax-scan" x="0" y="0" width="2.5" height="118" rx="1.25" fill={BLUE} opacity="0" />
       </svg>
       <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: MUTED }}>Best-fit buyers light up</p>
     </div>
@@ -45,12 +47,15 @@ function VisualPriority() {
   return (
     <div className="flex h-full flex-col justify-center gap-2.5 p-6">
       {PRIORITY.map((r, i) => (
-        <div key={r.tag} className="ax-chip flex items-center gap-3 rounded-2xl border bg-white p-3" style={{ borderColor: EDGE, animationDelay: `${i * 0.15}s` }}>
+        <div key={r.tag} className="ax-chip relative flex items-center gap-3 rounded-2xl border bg-white p-3" style={{ borderColor: EDGE, animationDelay: `${i * 0.15}s` }}>
+          <span aria-hidden="true" className="ax-ring pointer-events-none absolute inset-0 rounded-2xl" style={{ animationDelay: `${1 + i * 1.1}s` }} />
           <span className="h-9 w-9 shrink-0 rounded-full" style={{ background: r.bg }} />
           <div className="min-w-0 flex-1">
             <div className="h-2 w-24 rounded-full bg-zinc-200" />
             <div className="mt-2 h-2 rounded-full" style={{ backgroundColor: "#E6EEF7" }}>
-              <div className="ax-bar h-2 rounded-full" style={{ width: `${r.w}%`, background: i === 0 ? `linear-gradient(90deg, ${BLUE}, ${BLUE_LIGHT})` : "#B9C6D4", animationDelay: `${0.4 + i * 0.2}s` }} />
+              <div className="ax-live h-2" style={{ width: `${r.w}%`, animationDelay: `${1.4 + i * 0.35}s` }}>
+                <div className="ax-bar h-2 w-full rounded-full" style={{ background: i === 0 ? `linear-gradient(90deg, ${BLUE}, ${BLUE_LIGHT})` : "#B9C6D4", animationDelay: `${0.4 + i * 0.2}s` }} />
+              </div>
             </div>
           </div>
           <span className="rounded-full px-2.5 py-1 text-[10px] font-black" style={i === 0 ? { backgroundColor: BLUE, color: "#fff" } : { backgroundColor: "#EEF2F6", color: "#64748b" }}>
@@ -74,7 +79,9 @@ function VisualProspecting() {
     <div className="flex h-full items-center justify-center p-6">
       <div className="w-full max-w-[340px] rounded-2xl border bg-white p-5" style={{ borderColor: EDGE, boxShadow: "0 18px 40px rgba(10,102,194,0.10)" }}>
         <div className="mb-4 flex items-center gap-3">
-          <span className="h-11 w-11 rounded-full" style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})` }} />
+          <span className="relative h-11 w-11 shrink-0 rounded-full" style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})` }}>
+            <span aria-hidden="true" className="ax-ping absolute inset-0 rounded-full" style={{ border: `2px solid ${BLUE_LIGHT}` }} />
+          </span>
           <div className="flex-1 space-y-2">
             <div className="h-2.5 w-28 rounded-full bg-zinc-300" />
             <div className="h-2 w-20 rounded-full bg-zinc-200" />
@@ -85,9 +92,9 @@ function VisualProspecting() {
             <div key={f.label} className="flex items-center gap-3">
               <span className="w-[92px] shrink-0 text-[10px] font-black uppercase tracking-[0.14em]" style={{ color: MUTED }}>{f.label}</span>
               <div className="h-2 flex-1 rounded-full" style={{ backgroundColor: "#E6EEF7" }}>
-                <div className="ax-bar h-2 rounded-full" style={{ width: `${f.w}%`, backgroundColor: BLUE_LIGHT, animationDelay: `${0.3 + i * 0.5}s` }} />
+                <div className="ax-enrich h-2 rounded-full" style={{ width: `${f.w}%`, backgroundColor: BLUE_LIGHT, animationDelay: `${0.3 + i * 0.5}s` }} />
               </div>
-              <span className="ax-chip grid h-4 w-4 place-items-center rounded-full" style={{ backgroundColor: BLUE, color: "#fff", animationDelay: `${0.9 + i * 0.5}s` }}>
+              <span className="ax-tick grid h-4 w-4 place-items-center rounded-full" style={{ backgroundColor: BLUE, color: "#fff", animationDelay: `${0.5 + i * 0.5}s` }}>
                 <Check className="h-2.5 w-2.5" strokeWidth={4} />
               </span>
             </div>
@@ -110,14 +117,18 @@ function VisualCompetitors() {
       <div className="flex h-[150px] items-end gap-7">
         {RIVALS.map((r, i) => (
           <div key={r.label} className="flex h-full flex-col items-center justify-end gap-2">
-            <div className="ax-col w-12 rounded-t-xl" style={{ height: `${r.h}%`, backgroundColor: r.color, animationDelay: `${0.2 + i * 0.25}s` }} />
+            <div className={`${r.label === "You" ? "ax-lead" : "ax-sway"} w-12 rounded-t-xl`} style={{ height: `${r.h}%`, animationDelay: `${1.2 + i * 0.4}s`, animationDuration: r.label === "You" ? undefined : `${3.4 + i * 0.7}s` }}>
+              <div className="ax-col h-full w-full rounded-t-xl" style={{ backgroundColor: r.color, animationDelay: `${0.2 + i * 0.25}s` }} />
+            </div>
             <span className="text-[11px] font-black" style={{ color: r.label === "You" ? BLUE : MUTED }}>{r.label}</span>
           </div>
         ))}
       </div>
-      <span className="ax-chip inline-flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ borderColor: EDGE, color: INK, animationDelay: "1.3s" }}>
-        <Radar className="h-3.5 w-3.5" style={{ color: BLUE }} strokeWidth={2.4} />
-        One step ahead
+      <span className="ax-float inline-flex">
+        <span className="ax-chip inline-flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ borderColor: EDGE, color: INK, animationDelay: "1.3s" }}>
+          <Radar className="h-3.5 w-3.5" style={{ color: BLUE }} strokeWidth={2.4} />
+          One step ahead
+        </span>
       </span>
     </div>
   );
@@ -330,28 +341,65 @@ export default function AgentExplorer() {
         @keyframes ax-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
         @keyframes ax-chip { from { opacity: 0; transform: translateY(6px) scale(.94); } to { opacity: 1; transform: none; } }
         .ax-chip { animation: ax-chip .45s cubic-bezier(.22,1,.36,1) both; }
-        @keyframes ax-pick { from { fill: #D4D4D8; transform: scale(1); } to { fill: ${BLUE}; transform: scale(1.4); } }
+
+        /* Keep quotes, apostrophes, ampersands and angle brackets out of this style text: React escapes
+           them when rendering on the server, which breaks hydration. */
+        /* Each illustration keeps moving for as long as it is on screen (an agent stays up
+           7 s or more) instead of playing once and freezing. */
+
+        /* 1 Targeting: a scanner sweeps the audience; best-fit dots light up as it passes, the rest dim. */
+        @keyframes ax-scan { 0% { transform: translateX(-4px); opacity: 0; } 5% { opacity: 1; } 68% { transform: translateX(246px); opacity: 1; } 74%, 100% { transform: translateX(246px); opacity: 0; } }
+        .ax-scan { animation: ax-scan 4.6s linear infinite; }
         .ax-dot { fill: #D4D4D8; transform-box: fill-box; transform-origin: center; }
-        .ax-dot-pick { animation: ax-pick .5s cubic-bezier(.22,1,.36,1) both; }
-        @keyframes ax-fade { to { opacity: .18; } }
-        .ax-dot-fade { animation: ax-fade .6s ease both; }
+        @keyframes ax-pick { 0% { fill: #D4D4D8; transform: scale(1); } 3% { fill: ${BLUE}; transform: scale(1.6); } 9%, 80% { fill: ${BLUE}; transform: scale(1.4); } 92%, 100% { fill: #D4D4D8; transform: scale(1); } }
+        .ax-dot-pick { animation: ax-pick 4.6s ease-in-out infinite both; }
+        @keyframes ax-fade { 0% { opacity: 1; } 3% { opacity: .5; } 10%, 80% { opacity: .18; } 92%, 100% { opacity: 1; } }
+        .ax-dot-fade { animation: ax-fade 4.6s ease-in-out infinite both; }
+
+        /* 2 Prioritised outreach: bars grow once, then keep re-scoring; a highlight walks down the list. */
         @keyframes ax-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
         .ax-bar { transform-origin: left; animation: ax-grow-x .9s cubic-bezier(.22,1,.36,1) both; }
+        @keyframes ax-live { 0%, 100% { transform: scaleX(1); } 30% { transform: scaleX(.8); } 55% { transform: scaleX(1); } 78% { transform: scaleX(.9); } }
+        .ax-live { transform-origin: left; animation: ax-live 4.2s ease-in-out infinite; }
+        @keyframes ax-ring { 0%, 24%, 100% { box-shadow: 0 0 0 0 rgba(10,102,194,0); } 6% { box-shadow: 0 0 0 3px rgba(10,102,194,.32); } }
+        .ax-ring { animation: ax-ring 5.2s ease-in-out infinite; }
+
+        /* 3 Prospecting: a lead is enriched field by field, then the next one starts. */
+        @keyframes ax-enrich { 0% { transform: scaleX(0); } 14%, 80% { transform: scaleX(1); } 94%, 100% { transform: scaleX(0); } }
+        .ax-enrich { transform-origin: left; animation: ax-enrich 5.6s cubic-bezier(.22,1,.36,1) infinite both; }
+        @keyframes ax-tick { 0%, 4% { opacity: 0; transform: scale(.3); } 10% { opacity: 1; transform: scale(1.25); } 15%, 80% { opacity: 1; transform: scale(1); } 92%, 100% { opacity: 0; transform: scale(.3); } }
+        .ax-tick { animation: ax-tick 5.6s ease-out infinite both; }
+        @keyframes ax-ping { 0% { transform: scale(1); opacity: .55; } 70%, 100% { transform: scale(1.75); opacity: 0; } }
+        .ax-ping { animation: ax-ping 1.9s ease-out infinite; }
+
+        /* 4 Competitor intelligence: the rival bars keep moving while yours stays ahead. */
         @keyframes ax-grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
         .ax-col { transform-origin: bottom; animation: ax-grow-y .9s cubic-bezier(.22,1,.36,1) both; }
+        @keyframes ax-sway { 0%, 100% { transform: scaleY(1); } 28% { transform: scaleY(1.16); } 58% { transform: scaleY(.8); } 80% { transform: scaleY(1.06); } }
+        .ax-sway { transform-origin: bottom; animation: ax-sway 3.8s ease-in-out infinite; }
+        @keyframes ax-lead { 0%, 100% { transform: scaleY(1); box-shadow: 0 0 0 0 rgba(10,102,194,0); } 40% { transform: scaleY(1.05); box-shadow: 0 0 22px 2px rgba(10,102,194,.35); } 70% { transform: scaleY(.98); box-shadow: 0 0 0 0 rgba(10,102,194,0); } }
+        .ax-lead { transform-origin: bottom; animation: ax-lead 3.2s ease-in-out infinite; }
+        @keyframes ax-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        .ax-float { animation: ax-float 2.6s ease-in-out infinite; }
+
+        /* 5 Human-sounding engagement: typing dots, then a drafted reply, over and over. */
         @keyframes ax-dots { 0%, 80%, 100% { transform: translateY(0); opacity: .35; } 40% { transform: translateY(-4px); opacity: 1; } }
         .ax-tdot { animation: ax-dots 1s ease-in-out infinite; }
-        @keyframes ax-hide { to { opacity: 0; visibility: hidden; } }
-        .ax-typing { animation: ax-hide .3s ease 1.7s both; }
-        @keyframes ax-reveal { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-        .ax-reply { animation: ax-reveal .5s ease 1.9s both; }
-        @keyframes ax-slide { from { opacity: 0; transform: translateX(-24px) rotate(var(--r, 0deg)); } to { opacity: 1; transform: translateX(0) rotate(var(--r, 0deg)); } }
-        .ax-msg { animation: ax-slide .6s cubic-bezier(.22,1,.36,1) both; }
+        @keyframes ax-typing { 0%, 26% { opacity: 1; visibility: visible; } 30%, 94% { opacity: 0; visibility: hidden; } 98%, 100% { opacity: 1; visibility: visible; } }
+        .ax-typing { animation: ax-typing 6.4s ease infinite both; }
+        @keyframes ax-reply { 0%, 28% { opacity: 0; transform: translateY(4px); } 35%, 88% { opacity: 1; transform: none; } 95%, 100% { opacity: 0; transform: translateY(4px); } }
+        .ax-reply { animation: ax-reply 6.4s ease infinite both; }
+
+        /* 6 Personalised at scale: messages keep streaming through; tokens keep filling in. */
+        @keyframes ax-msg { 0% { opacity: 0; transform: translateX(-24px) rotate(var(--r, 0deg)); } 10%, 76% { opacity: 1; transform: translateX(0) rotate(var(--r, 0deg)); } 90%, 100% { opacity: 0; transform: translateX(24px) rotate(var(--r, 0deg)); } }
+        .ax-msg { animation: ax-msg 5.8s cubic-bezier(.22,1,.36,1) infinite both; }
         @keyframes ax-token { 0%, 100% { background-color: rgba(245,183,49,.2); } 50% { background-color: rgba(245,183,49,.65); } }
         .ax-token { animation: ax-token 2.4s ease-in-out infinite; }
+
         .ax-track::-webkit-scrollbar { display: none; }
         @media (prefers-reduced-motion: reduce) {
-          .ax-in, .ax-chip, .ax-dot-pick, .ax-dot-fade, .ax-bar, .ax-col, .ax-tdot, .ax-typing, .ax-reply, .ax-msg, .ax-token { animation: none !important; }
+          .ax-in, .ax-chip, .ax-dot-pick, .ax-dot-fade, .ax-bar, .ax-live, .ax-ring, .ax-enrich, .ax-tick, .ax-col, .ax-sway, .ax-lead, .ax-float, .ax-tdot, .ax-typing, .ax-reply, .ax-msg, .ax-token { animation: none !important; }
+          .ax-scan, .ax-ping { display: none; }
           .ax-dot-pick { fill: ${BLUE}; transform: scale(1.4); }
           .ax-dot-fade { opacity: .18; }
           .ax-typing { display: none; }

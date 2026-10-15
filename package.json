@@ -12,6 +12,7 @@
     "llms:check": "node scripts/generate-llms-full.mjs --check",
     "audit:answers": "node scripts/audit-answers.mjs",
     "audit:entity": "node scripts/audit-entity-claims.mjs",
+    "audit:jobs": "node scripts/audit-job-postings.mjs",
     "build": "next build",
     "start": "next start"
   },

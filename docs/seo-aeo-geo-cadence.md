@@ -32,6 +32,7 @@ Not calendar-based; do these as part of shipping the change itself, same commit 
 ## Monthly
 
 - [ ] Re-run the keyword-collision script sitewide, even with no new pages shipped — catches keyword edits made outside the "new page" checklist above.
+- [ ] `npm run audit:jobs`: each job posting's structured data has a `validThrough` date (a rolling 6-month window); past it Google for Jobs silently drops the posting. Extend any that end within 45 days (add `--strict` to fail on that). It also checks every posting offers only founder@ and growth@myntmore.com.
 - [ ] Broken internal-link sweep (same method used in the free-tools cross-linking pass).
 - [ ] Publish 1-2 pieces of content from the `docs/content-gaps.md` backlog. Steady cadence beats sporadic bursts for both SEO freshness signals and GEO surface area (more indexed, citable pages).
 - [ ] Spot-check the one known off-page stale listing (Edverise) and scan for any new ones — third-party directories drift independent of the site's own changes.

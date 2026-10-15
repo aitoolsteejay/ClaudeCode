@@ -37,7 +37,7 @@ export default function ProfessionalServicesLinkedIn() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "Professional Services", href: "/case-studies/professional-services-linkedin" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>Professional Services · Bootstrapped</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#7E22CE", border: "1px solid rgba(168,85,247,0.2)" }}>Professional Services · Bootstrapped</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             LinkedIn brand drove 3x inbound in 90 days
           </h1>
@@ -48,7 +48,7 @@ export default function ProfessionalServicesLinkedIn() {
             {[{ v: "3x", l: "Inbound lead volume" }, { v: "18K", l: "New followers" }, { v: "4.8%", l: "Post engagement rate" }].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default function ProfessionalServicesLinkedIn() {
                 <div key={s.l} className="text-center">
                   <div className="text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.v}</div>
                   <div className="text-sm font-semibold mb-1" style={{ color: "#3D3D3D" }}>{s.l}</div>
-                  <div className="text-xs" style={{ color: "#8C8279" }}>{s.sub}</div>
+                  <div className="text-xs" style={{ color: "#71675E" }}>{s.sub}</div>
                 </div>
               ))}
             </div>

@@ -5,6 +5,7 @@ import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { EVENTS } from "@/lib/events-data";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -56,7 +57,7 @@ export default function EventsPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
             style={{ borderColor: "rgba(139,92,246,0.35)", background: "rgba(139,92,246,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#8b5cf6" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#8b5cf6" }}>Events & Webinars</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7C3AED" }}>Events & Webinars</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Learn what&apos;s{" "}
@@ -83,12 +84,12 @@ export default function EventsPage() {
                   <Link key={e.slug} href={`/events/${e.slug}`} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <div className="h-1" style={{ background: `linear-gradient(90deg,${e.accent},${e.accent}66)` }} />
                     <div className="p-6">
-                      <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${e.accent}12`, color: e.accent }}>{e.tag}</span>
+                      <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${e.accent}12`, color: textTone(e.accent) }}>{e.tag}</span>
                       <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{e.title}</h2>
                       <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{e.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-xs" style={{ color: "#8C8279" }}>{e.displayDate} &middot; {e.time}</span>
-                        <span className="text-xs font-bold" style={{ color: e.accent }}>Details &rarr;</span>
+                        <span className="text-xs" style={{ color: "#71675E" }}>{e.displayDate} &middot; {e.time}</span>
+                        <span className="text-xs font-bold" style={{ color: textTone(e.accent) }}>Details &rarr;</span>
                       </div>
                     </div>
                   </Link>

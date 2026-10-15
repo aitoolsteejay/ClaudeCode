@@ -3,6 +3,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "Content Marketing Intern, Mumbai | Rs 30-50K/mo",
@@ -42,7 +43,7 @@ export default function ContentMarketingStrategistIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Content Marketing Strategist Intern", href: "/careers/content-marketing-strategist-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: ACCENT, border: "1px solid rgba(236,72,153,0.2)" }}>Internship · Work from Office · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: textTone(ACCENT), border: "1px solid rgba(236,72,153,0.2)" }}>Internship · Work from Office · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Content Marketing Strategist Intern
           </h1>
@@ -50,7 +51,7 @@ export default function ContentMarketingStrategistIntern() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "6 months minimum"], ["Stipend", "Rs 30,000–50,000 (based on experience)"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
                   <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
                     {value} <span aria-hidden="true">↗</span>
@@ -66,7 +67,7 @@ export default function ContentMarketingStrategistIntern() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>Send to founder@myntmore.com and growth@myntmore.com with subject: {APPLY_SUBJECT}</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to founder@myntmore.com and growth@myntmore.com with subject: {APPLY_SUBJECT}</p>
         </div>
       </section>
 
@@ -96,7 +97,7 @@ export default function ContentMarketingStrategistIntern() {
                 { title: "Cross-Team Collaboration", desc: "Collaborate with strategists, editors, and account managers to ensure smooth execution, timely delivery, and high-quality output across all assigned accounts." },
               ].map((item) => (
                 <div key={item.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{item.title}</h3>
+                  <h3 className="text-sm font-black mb-2" style={{ color: textTone(ACCENT) }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -117,7 +118,7 @@ export default function ContentMarketingStrategistIntern() {
                 { label: "Bonus", desc: "1-2 years in research/writing, or ghostwriting experience for founders" },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <p className="text-xs font-black mb-1" style={{ color: ACCENT }}>{item.label}</p>
+                  <p className="text-xs font-black mb-1" style={{ color: textTone(ACCENT) }}>{item.label}</p>
                   <p className="text-sm" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -163,8 +164,8 @@ export default function ContentMarketingStrategistIntern() {
               Send your resume and a brief note on why you&apos;re the perfect fit.
             </p>
             <div className="space-y-2 mb-6">
-              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
-              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>growth@myntmore.com</a>
+              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
+              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>growth@myntmore.com</a>
             </div>
             <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Apply Now

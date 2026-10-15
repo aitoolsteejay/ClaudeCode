@@ -5,6 +5,7 @@ import { CalendarX2, FileQuestion, TrendingDown, ArrowRight, MousePointer2, Zap,
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { textTone } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Posting Rhythm Builder Works", [
   { name: "Tell us your lifestyle and tone", text: "How often you can realistically post, and how you want to sound." },
@@ -33,7 +34,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
             style={{ background: "rgba(245,183,49,0.07)", borderColor: "rgba(245,183,49,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Posting Rhythm Builder</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Posting Rhythm Builder</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">
@@ -65,7 +66,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Posting sporadically because there's no plan",
                 description: "A burst of activity, then two weeks of silence. Without a system, consistency depends on motivation, and motivation runs out.",
                 icon: CalendarX2,
-                color: "#D97706",
+                color: "#A14A08",
               },
               {
                 title: "Staring at a blank post box with no idea what to write",
@@ -116,7 +117,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Tell us your lifestyle and tone",
                 description: "How often you can realistically post, and how you want to sound.",
                 icon: MousePointer2,
-                color: "#D97706",
+                color: "#A14A08",
               },
               {
                 title: "Get your best days and times",

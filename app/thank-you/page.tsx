@@ -30,7 +30,7 @@ export default function ThankYouLeadFormPage() {
             </svg>
           </div>
 
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 hero-fade-d1" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 hero-fade-d1" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             Message received
           </span>
 
@@ -52,7 +52,7 @@ export default function ThankYouLeadFormPage() {
             </Link>
           </div>
 
-          <p className="mt-8 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>
+          <p className="mt-8 text-xs hero-fade-d3" style={{ color: "#71675E" }}>
             Wrong email or need to add something?{" "}
             <a href="mailto:growth@myntmore.com" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Email us directly</a>.
           </p>

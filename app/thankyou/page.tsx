@@ -30,7 +30,7 @@ export default function ThankYouPage() {
             </svg>
           </div>
 
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 hero-fade-d1" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 hero-fade-d1" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             You&apos;re all set
           </span>
 
@@ -52,7 +52,7 @@ export default function ThankYouPage() {
             </Link>
           </div>
 
-          <p className="mt-8 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>
+          <p className="mt-8 text-xs hero-fade-d3" style={{ color: "#71675E" }}>
             Need to reschedule? Just use the link in your confirmation email.
           </p>
         </div>

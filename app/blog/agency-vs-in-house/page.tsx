@@ -115,7 +115,7 @@ export default function AgencyVsInHouseBlogPost() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(59,130,246,0.35)", background: "rgba(59,130,246,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#3b82f6" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#3b82f6" }}>Comparison · 6 min read</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#1D4ED8" }}>Comparison · 6 min read</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Agency vs. in-house: how should you actually build B2B outbound?
@@ -140,9 +140,9 @@ export default function AgencyVsInHouseBlogPost() {
                 <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
                   <thead>
                     <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#8C8279" }}>Factor</th>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#3b82f6" }}>Agency</th>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#D97706" }}>In-House SDR</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#1D4ED8" }}>Agency</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>In-House SDR</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -157,7 +157,7 @@ export default function AgencyVsInHouseBlogPost() {
                 </table>
               </div>
             </div>
-            <p className="text-xs mt-4" style={{ color: "#8C8279" }}>
+            <p className="text-xs mt-4" style={{ color: "#71675E" }}>
               Time-to-first-meeting and minimum engagement figures are Myntmore&apos;s actual averages. In-house salary and ramp-up ranges are typical industry figures, not Myntmore-specific data, since we don&apos;t run your hiring process.
             </p>
           </FadeIn>
@@ -216,7 +216,7 @@ export default function AgencyVsInHouseBlogPost() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

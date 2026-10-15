@@ -107,6 +107,19 @@ export default function Hero() {
       { ref: stat3Ref, target: 12000, duration: 2200, format: (n: number) => `${Math.round(n / 1000)}K+` },
     ];
 
+    // The markup carries the real figures, so crawlers, no-JS visitors and
+    // anyone who asked for reduced motion read them as-is; the count-up from
+    // zero only runs once JS is here and motion is welcome. In that case CSS
+    // (.motion-ok [data-count-up], set before first paint in the root layout)
+    // keeps the figures invisible until they are reset to zero here, so they
+    // never show real -> zero -> real.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    stats.forEach(({ ref, format }) => {
+      if (!ref.current) return;
+      ref.current.textContent = format(0);
+      ref.current.setAttribute("data-counting", "");
+    });
+
     const animIds: number[] = [];
 
     const timer = setTimeout(() => {
@@ -393,7 +406,7 @@ export default function Hero() {
             fontFamily: "var(--font-caveat)",
             fontSize: "19px",
             fontWeight: 700,
-            color: "#D97706",
+            color: "#A14A08",
             lineHeight: 1.3,
             opacity: 0,
             clipPath: "inset(0 100% 0 0)",
@@ -426,7 +439,7 @@ export default function Hero() {
             aria-hidden="true"
           />
           <span className="text-sm font-semibold text-[#0a0a0a]">
-            Trusted by <span style={{ color: "#b87a00" }}>300+</span> Companies Worldwide
+            Trusted by <span style={{ color: "#A14A08" }}>300+</span> Companies Worldwide
           </span>
         </div>
 
@@ -477,17 +490,17 @@ export default function Hero() {
           style={{ border: "1px solid #E8E2D9", background: "rgba(255,255,255,0.8)", boxShadow: "0 2px 16px rgba(0,0,0,0.06)", backdropFilter: "blur(8px)" }}
         >
           {[
-            { ref: stat1Ref, value: "$0M+",    label: "Pipeline Created for Clients" },
-            { ref: stat2Ref, value: "0 Days",   label: "Avg. Days to First Booked Meeting" },
-            { ref: stat3Ref, value: "0+",       label: "Meetings Booked for Clients Annually" },
+            { ref: stat1Ref, value: "$120M+",  label: "Pipeline Created for Clients" },
+            { ref: stat2Ref, value: "18 Days",  label: "Avg. Days to First Booked Meeting" },
+            { ref: stat3Ref, value: "12K+",     label: "Meetings Booked for Clients" },
           ].map((stat, i) => (
             <div
               key={stat.label}
               className={`flex flex-col items-center px-8 py-5 w-full sm:w-auto ${i !== 2 ? "border-b sm:border-b-0 sm:border-r" : ""}`}
               style={{ borderColor: "#E8E2D9" }}
             >
-              <span ref={stat.ref} className="text-2xl sm:text-3xl font-bold text-[#0a0a0a]">{stat.value}</span>
-              <span className="text-xs sm:text-sm font-medium mt-0.5 text-center max-w-[160px] sm:max-w-none" style={{ color: "#8C8279" }}>{stat.label}</span>
+              <span ref={stat.ref} data-count-up className="text-2xl sm:text-3xl font-bold text-[#0a0a0a]">{stat.value}</span>
+              <span className="text-xs sm:text-sm font-medium mt-0.5 text-center max-w-[160px] sm:max-w-none" style={{ color: "#71675E" }}>{stat.label}</span>
             </div>
           ))}
         </div>

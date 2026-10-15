@@ -10,4 +10,4 @@ export const CREAM = "#F8F6F2";
 export const LINE = "#E8E2D9";
 export const SOFT_LINE = "#EDE7DD";
 export const BODY = "#52525B";
-export const MUTED = "#8C8279";
+export const MUTED = "#71675E";

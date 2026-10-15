@@ -8,6 +8,7 @@ import LeadCaptureForm from "../components/LeadCaptureForm";
 import JsonLd from "../components/JsonLd";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { SITE_URL, buildLocalBusinessSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "About Tejas Jhaveri, B2B Growth Expert",
@@ -79,7 +80,7 @@ export default function AboutUs() {
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "About", href: "/about-us" }]} />
           <div className="mb-4">
-            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               About Myntmore
             </span>
           </div>
@@ -96,7 +97,7 @@ export default function AboutUs() {
         <FadeIn><div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6">
           {CREDENTIALS.map((c) => (
             <div key={c.stat} className="text-center">
-              <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: c.accent }}><StatTicker value={c.stat} /></div>
+              <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: textTone(c.accent) }}><StatTicker value={c.stat} /></div>
               <div className="text-xs" style={{ color: "#6B6B6B" }}>{c.label}</div>
             </div>
           ))}
@@ -119,7 +120,7 @@ export default function AboutUs() {
             </div>
             <div>
               <h2 className="text-2xl font-black mb-1" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h2>
-              <p className="text-sm mb-4" style={{ color: "#8C8279" }}>Founder, Myntmore · TEDx Speaker · Angel Investor</p>
+              <p className="text-sm mb-4" style={{ color: "#71675E" }}>Founder, Myntmore · TEDx Speaker · Angel Investor</p>
               <a href="https://linkedin.com/in/tejasjhaveri" target="_blank" rel="noopener noreferrer" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
                 Connect on LinkedIn
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -141,7 +142,7 @@ export default function AboutUs() {
               </p>
             </div>
             <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <h3 className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: "#F5B731" }}>Company Philosophy</h3>
+              <h3 className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: "#A14A08" }}>Company Philosophy</h3>
               <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                 We&apos;re not a generalist agency. We specialise in one thing: building B2B pipelines that don&apos;t depend on luck, referrals, or one brilliant SDR. Our philosophy is that outbound is an engineering problem, not a hustle problem.
               </p>
@@ -150,7 +151,7 @@ export default function AboutUs() {
               <blockquote className="text-lg font-black leading-snug mb-3" style={{ color: "#0a0a0a" }}>
                 &ldquo;Stop treating outbound like an art form. Build it like a software product.&rdquo;
               </blockquote>
-              <cite className="text-sm not-italic" style={{ color: "#8C8279" }}>- Tejas Jhaveri, Founder</cite>
+              <cite className="text-sm not-italic" style={{ color: "#71675E" }}>- Tejas Jhaveri, Founder</cite>
             </div>
           </div>
         </div>
@@ -184,7 +185,7 @@ export default function AboutUs() {
               Email Directly
             </a>
           </div>
-          <p className="mt-4 text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
+          <p className="mt-4 text-xs" style={{ color: "#71675E" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
         </div>
       </section>
 

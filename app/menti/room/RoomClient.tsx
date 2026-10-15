@@ -124,7 +124,7 @@ export default function RoomClient() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <p className="text-3xl font-black leading-none" style={{ color: "#0a0a0a" }}>{loadingInitial ? "–" : responses.length}</p>
-            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#8C8279" }}>responses</p>
+            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#71675E" }}>responses</p>
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -135,7 +135,7 @@ export default function RoomClient() {
             >
               Reset room
             </button>
-            <button onClick={handleLogout} className="p-2.5 text-xs font-semibold underline" style={{ color: "#8C8279" }}>
+            <button onClick={handleLogout} className="p-2.5 text-xs font-semibold underline" style={{ color: "#71675E" }}>
               Log out
             </button>
           </div>
@@ -168,7 +168,7 @@ export default function RoomClient() {
         )}
 
         <div className="rounded-3xl border p-6 sm:p-8 mb-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The question</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The question</p>
           <p className="text-lg font-bold leading-snug" style={{ color: "#0a0a0a" }}>{QUESTION}</p>
         </div>
 
@@ -180,15 +180,15 @@ export default function RoomClient() {
           {generating ? "Reading the room..." : gist ? "Regenerate the gist" : "Generate the gist"}
         </button>
         {responses.length < 3 && (
-          <p className="text-xs text-center mb-6" style={{ color: "#8C8279" }}>Need at least 3 responses to generate a gist.</p>
+          <p className="text-xs text-center mb-6" style={{ color: "#71675E" }}>Need at least 3 responses to generate a gist.</p>
         )}
         {gist && newSinceGist > 0 && (
-          <p className="text-xs text-center mb-6" style={{ color: "#8C8279" }}>{newSinceGist} new response{newSinceGist === 1 ? "" : "s"} since this gist was generated.</p>
+          <p className="text-xs text-center mb-6" style={{ color: "#71675E" }}>{newSinceGist} new response{newSinceGist === 1 ? "" : "s"} since this gist was generated.</p>
         )}
 
         {gist && (
           <div className="rounded-3xl border p-6 sm:p-8 mb-8" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#D97706" }}>Gist of the room · {gist.responseCount} responses</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#A14A08" }}>Gist of the room · {gist.responseCount} responses</p>
             <p className="text-base leading-relaxed mb-5" style={{ color: "#0a0a0a" }}>{gist.summary}</p>
             {gist.themes?.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-5">
@@ -208,11 +208,11 @@ export default function RoomClient() {
         )}
 
         <div className="rounded-3xl border p-6 sm:p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#8C8279" }}>Live answers</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#71675E" }}>Live answers</p>
           {loadingInitial ? (
-            <p className="text-sm" style={{ color: "#8C8279" }}>Loading...</p>
+            <p className="text-sm" style={{ color: "#71675E" }}>Loading...</p>
           ) : responses.length === 0 ? (
-            <p className="text-sm" style={{ color: "#8C8279" }}>No responses yet. Share the link with the room.</p>
+            <p className="text-sm" style={{ color: "#71675E" }}>No responses yet. Share the link with the room.</p>
           ) : (
             <div className="flex flex-col gap-3 max-h-[480px] overflow-y-auto pr-1">
               {responses.map((r) => (

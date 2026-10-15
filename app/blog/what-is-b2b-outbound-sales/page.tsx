@@ -96,7 +96,7 @@ export default function WhatIsB2bOutboundSales() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>GTM Strategy · 8 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#A14A08", border: "1px solid rgba(217,119,6,0.2)" }}>GTM Strategy · 8 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             B2B Outbound Sales: What It Is & How It Works
           </h1>
@@ -115,9 +115,9 @@ export default function WhatIsB2bOutboundSales() {
             { stat: "49%", source: "of B2B buyers research vendors on LinkedIn before responding", cite: "LinkedIn Research" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
+              <div className="text-2xl font-black mb-1" style={{ color: "#A14A08" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>
+              <p className="text-xs" style={{ color: "#71675E" }}>
                 Source: {s.href ? <a href={s.href} className="underline">{s.cite}</a> : s.cite}
               </p>
             </div>
@@ -132,7 +132,7 @@ export default function WhatIsB2bOutboundSales() {
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The definition, in one sentence</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 B2B outbound sales is the process of a company identifying prospects that fit its ideal customer profile and initiating contact with them directly, rather than relying on those prospects to discover the company on their own. It&apos;s the opposite motion of inbound, which attracts prospects through content, search rankings, or word of mouth. See the full breakdown in our{" "}
-                <Link href="/resources/glossary/inbound-vs-outbound" className="font-bold underline" style={{ color: "#D97706" }}>Inbound vs. Outbound glossary entry</Link>.
+                <Link href="/resources/glossary/inbound-vs-outbound" className="font-bold underline" style={{ color: "#A14A08" }}>Inbound vs. Outbound glossary entry</Link>.
               </p>
             </div>
 
@@ -146,7 +146,7 @@ export default function WhatIsB2bOutboundSales() {
                   <div key={c.name} className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <h3 className="text-lg font-black mb-2" style={{ color: "#0a0a0a" }}>{c.name}</h3>
                     <p className="text-base leading-relaxed mb-3" style={{ color: "#52525B" }}>{c.body}</p>
-                    <Link href={c.href} className="text-sm font-bold" style={{ color: "#D97706" }}>See the service &rarr;</Link>
+                    <Link href={c.href} className="text-sm font-bold" style={{ color: "#A14A08" }}>See the service &rarr;</Link>
                   </div>
                 ))}
               </div>
@@ -161,14 +161,14 @@ export default function WhatIsB2bOutboundSales() {
                 {SYSTEM_STEPS.map((step, i) => (
                   <li key={step.label} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <div className="flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
                       <div>
                         <span className="font-bold" style={{ color: "#0a0a0a" }}>{step.label}. </span>
                         <span className="text-base leading-relaxed" style={{ color: "#52525B" }}>{step.body}</span>
                         {step.href && (
                           <>
                             {" "}
-                            <Link href={step.href} className="text-sm font-bold" style={{ color: "#D97706" }}>Learn more &rarr;</Link>
+                            <Link href={step.href} className="text-sm font-bold" style={{ color: "#A14A08" }}>Learn more &rarr;</Link>
                           </>
                         )}
                       </div>
@@ -182,7 +182,7 @@ export default function WhatIsB2bOutboundSales() {
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Building it in-house vs. outsourcing it</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 Most companies eventually face this decision directly: hire an SDR (or a small team) and build the infrastructure internally, or run outbound through an agency that already has the domains, tooling, and playbooks in place. There&apos;s no universally right answer, it comes down to stage, volume, and how proven the motion already is inside your company. We cover the actual tradeoffs, cost, speed, and control, in{" "}
-                <a href="/blog/agency-vs-in-house" className="font-bold underline" style={{ color: "#D97706" }}>Agency vs. In-House SDR for B2B Outbound</a>.
+                <a href="/blog/agency-vs-in-house" className="font-bold underline" style={{ color: "#A14A08" }}>Agency vs. In-House SDR for B2B Outbound</a>.
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function WhatIsB2bOutboundSales() {
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>How to know if outbound is worth it for you</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 Outbound tends to pay off fastest for companies that already know their ICP with some precision, sell something with a clear, explainable value proposition, and need pipeline on a predictable schedule rather than whenever inbound happens to convert. It tends to underperform when the ICP is still genuinely unclear, since no amount of sequencing or channel choice fixes a targeting problem. If that&apos;s where you are, start with{" "}
-                <Link href="/resources/glossary/icp" className="font-bold underline" style={{ color: "#D97706" }}>defining the ICP</Link>{" "}
+                <Link href="/resources/glossary/icp" className="font-bold underline" style={{ color: "#A14A08" }}>defining the ICP</Link>{" "}
                 before building any outreach on top of it.
               </p>
             </div>
@@ -214,7 +214,7 @@ export default function WhatIsB2bOutboundSales() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

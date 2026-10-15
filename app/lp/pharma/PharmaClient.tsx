@@ -156,7 +156,7 @@ function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <Breadcrumbs items={[{ label: "For Pharmaceutical Companies", href: "/lp/pharma" }]} className="justify-center" />
         <div className="mb-6 hero-fade-d1">
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             For Pharmaceutical Companies
           </span>
         </div>
@@ -185,7 +185,7 @@ function HeroSection() {
             Get a Custom Plan
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No commitment, no pitch deck, just a focused 30-minute call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>No commitment, no pitch deck, just a focused 30-minute call.</p>
       </div>
 
       {/* Scroll cue */}
@@ -245,7 +245,7 @@ function PainSection() {
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Sound familiar?</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Sound familiar?</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Trade shows alone won&apos;t fill your pipeline</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -270,13 +270,13 @@ function ProcessSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>How it works</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>How it works</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Your buyer pipeline, fully managed</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {PROCESS.map((p, i) => (
             <div key={p.n} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
+              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#A14A08" }}>{p.n}</span>
               <div>
                 <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
@@ -302,7 +302,7 @@ function CaseStudiesSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Client results</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Client results</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for pharma</h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
@@ -318,7 +318,7 @@ function CaseStudiesSection() {
         </div>
         <div className="text-center">
           <Link href="/case-studies/uk-pharma-qualified-meetings" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-            style={{ color: "#D97706" }}>
+            style={{ color: "#A14A08" }}>
             Read how a UK pharma company grew to 20+ qualified meetings a month
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -363,16 +363,16 @@ function MarketScenariosSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Illustrative scenarios</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Illustrative scenarios</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What this looks like, market by market</h2>
-          <p className="text-sm mt-3 max-w-2xl" style={{ color: "#8C8279" }}>
+          <p className="text-sm mt-3 max-w-2xl" style={{ color: "#71675E" }}>
             Hypothetical examples built from the real angles we run, not claims about a specific past client.
           </p>
         </div>
         <div className="space-y-6">
           {MARKET_SCENARIOS.map((cs, i) => (
             <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
               <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{cs.body}</p>
             </div>
@@ -452,7 +452,7 @@ function FormSection() {
               <input id="Email" name="Email" type="email" required maxLength={255} placeholder="anil@deshmukhpharma.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
             <SubmitButton>Get My Free GTM Audit</SubmitButton>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. No spam, ever.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>We respond within 24 hours. No spam, ever.</p>
           </form>
         </div>
       </div>

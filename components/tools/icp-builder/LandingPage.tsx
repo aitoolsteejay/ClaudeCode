@@ -5,6 +5,7 @@ import { Target, MessageSquare, Users, ArrowRight, MousePointer2, Zap, CheckCirc
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { textTone } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the ICP Builder Works", [
   { name: "Describe your business", text: "Your core offer, who you sell to, and how you sell it." },
@@ -33,7 +34,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
             style={{ background: "rgba(249,115,22,0.07)", borderColor: "rgba(249,115,22,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>ICP Builder & Value Prop Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>ICP Builder & Value Prop Generator</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">

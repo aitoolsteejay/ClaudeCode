@@ -8,6 +8,7 @@ import FadeIn from "@/app/components/FadeIn";
 import JsonLd from "@/app/components/JsonLd";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 import ArticleMeta from "@/app/components/ArticleMeta";
 
 const URL = "https://www.myntmore.com/resources/guides/claude-sales-call-prompts";
@@ -162,7 +163,7 @@ export default function ClaudeSalesCallPrompts() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(8,145,178,0.3)", backgroundColor: "rgba(8,145,178,0.08)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Sales · Claude Prompts</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Sales · Claude Prompts</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             I use Claude before every sales call. These are the{" "}
@@ -182,7 +183,7 @@ export default function ClaudeSalesCallPrompts() {
           <div>
             <h2 className="text-xl font-black mb-2" style={{ color: "#0a0a0a" }}>From one growth team to another</h2>
             <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
-              Tejas isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his B2B outbound agency, he&apos;s helped 120+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
+              Tejas isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his B2B outbound agency, he&apos;s helped 300+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
             </p>
           </div>
         </div>
@@ -198,9 +199,9 @@ export default function ClaudeSalesCallPrompts() {
               <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
                 {PROMPTS.map((p) => (
                   <a key={p.id} href={`#prompt-${p.id}`} className="rounded-xl border p-4 transition-colors duration-150 hover:border-[#0891B2]" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                    <span className="text-xs font-black" style={{ color: ACCENT }}>{p.id}</span>
+                    <span className="text-xs font-black" style={{ color: textTone(ACCENT) }}>{p.id}</span>
                     <p className="text-sm font-black mt-1 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</p>
-                    <p className="text-xs mt-1" style={{ color: "#8C8279" }}>{p.time}</p>
+                    <p className="text-xs mt-1" style={{ color: "#71675E" }}>{p.time}</p>
                   </a>
                 ))}
               </div>
@@ -211,12 +212,12 @@ export default function ClaudeSalesCallPrompts() {
             <FadeIn key={g.label}>
               <section>
                 <h2 className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}>{g.label}</h2>
-                <p className="text-sm mt-1 mb-8" style={{ color: "#8C8279" }}>{g.note}</p>
+                <p className="text-sm mt-1 mb-8" style={{ color: "#71675E" }}>{g.note}</p>
                 <div className="space-y-12">
                   {g.items.map((p) => (
                     <div key={p.id} id={`prompt-${p.id}`} className="scroll-mt-28">
                       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                        <span className="w-8 h-8 rounded-full inline-flex items-center justify-center text-xs font-black" style={{ backgroundColor: "rgba(8,145,178,0.1)", color: ACCENT, border: "1px solid rgba(8,145,178,0.25)" }}>{p.id}</span>
+                        <span className="w-8 h-8 rounded-full inline-flex items-center justify-center text-xs font-black" style={{ backgroundColor: "rgba(8,145,178,0.1)", color: textTone(ACCENT), border: "1px solid rgba(8,145,178,0.25)" }}>{p.id}</span>
                         <h3 className="text-xl font-black" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                         <span className="text-xs px-2.5 py-1 rounded-full font-semibold" style={{ backgroundColor: "#ffffff", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{p.when} · {p.time}</span>
                       </div>
@@ -261,7 +262,7 @@ export default function ClaudeSalesCallPrompts() {
             </section>
           </FadeIn>
 
-          <p className="text-center text-sm" style={{ color: "#8C8279" }}>
+          <p className="text-center text-sm" style={{ color: "#71675E" }}>
             Made by Tejas Jhaveri. Follow{" "}
             <a href="https://www.instagram.com/tejas_jhaveri" target="_blank" rel="noopener noreferrer" className="font-bold underline" style={{ color: "#0a0a0a" }}>@tejas_jhaveri</a>{" "}
             on Instagram for more prompts like these.

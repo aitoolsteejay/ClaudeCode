@@ -54,7 +54,7 @@ export default function FounderPersonalBrandLinkedIn() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>Personal Branding · 5 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#7E22CE", border: "1px solid rgba(168,85,247,0.2)" }}>Personal Branding · 5 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             The Founder&apos;s Edge: Why You Are Your Company&apos;s Best Marketing Asset
           </h1>
@@ -73,9 +73,9 @@ export default function FounderPersonalBrandLinkedIn() {
             { stat: "50%", source: "lower cost per lead for founders with strong brands", cite: "LinkedIn Data" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
+              <div className="text-2xl font-black mb-1" style={{ color: "#A14A08" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>Source: {s.cite}</p>
+              <p className="text-xs" style={{ color: "#71675E" }}>Source: {s.cite}</p>
             </div>
           ))}
         </div>
@@ -114,7 +114,7 @@ export default function FounderPersonalBrandLinkedIn() {
             <div className="space-y-4">
               {CONTENT_TYPES.map((ct) => (
                 <div key={ct.n} className="flex gap-4 rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <span className="text-xs font-black flex-shrink-0 mt-0.5" style={{ color: "#a855f7" }}>{ct.n}</span>
+                  <span className="text-xs font-black flex-shrink-0 mt-0.5" style={{ color: "#7E22CE" }}>{ct.n}</span>
                   <div>
                     <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{ct.title}</h3>
                     <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{ct.desc}</p>
@@ -171,7 +171,7 @@ export default function FounderPersonalBrandLinkedIn() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

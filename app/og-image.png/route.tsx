@@ -42,7 +42,7 @@ export function GET() {
           <div style={{ display: "flex", flexDirection: "column", fontSize: 74, fontWeight: 900, lineHeight: 1.06 }}>
             <span>More conversations.</span>
             <span>More pipeline.</span>
-            <span style={{ color: "#D97706" }}>Less guesswork.</span>
+            <span style={{ color: "#A14A08" }}>Less guesswork.</span>
           </div>
         </div>
 

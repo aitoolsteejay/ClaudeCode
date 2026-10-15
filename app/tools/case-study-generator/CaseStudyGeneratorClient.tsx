@@ -10,6 +10,7 @@ import { ProposalForm } from "@/components/tools/case-study-generator/ProposalFo
 import { CaseStudyResults } from "@/components/tools/case-study-generator/CaseStudyResults";
 import { ProposalResults } from "@/components/tools/case-study-generator/ProposalResults";
 import type { GeneratorMode, CaseStudyInput, ProposalInput, CaseStudyOutput, ProposalOutput } from "@/components/tools/case-study-generator/types";
+import { textTone } from "@/lib/colors";
 
 const ACCENT = "#6366f1";
 
@@ -116,7 +117,7 @@ export default function CaseStudyGeneratorClient() {
                 style={{ background: "rgba(99,102,241,0.07)", borderColor: "rgba(99,102,241,0.35)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-                <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Case Study & Proposal Generator</span>
+                <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Case Study & Proposal Generator</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
                 <span className="relative inline-block">

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { GOLD_TEXT } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Profile Optimizer Works", [
   { name: "Paste your headline and About section", text: "Quick and easy input of your current profile details." },
@@ -68,14 +69,14 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-3 items-center">
             <div className="rounded-2xl p-6 bg-white" style={{ border: "1px solid #E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#8C8279" }}>Before</span>
+              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#71675E" }}>Before</span>
               <p className="mt-2 text-base leading-snug" style={{ color: "#6B6B6B" }}>{VAGUE_BEFORE}</p>
             </div>
             <div className="flex justify-center" aria-hidden="true">
-              <ArrowRight className="h-5 w-5 rotate-90 md:rotate-0" style={{ color: "#D97706" }} />
+              <ArrowRight className="h-5 w-5 rotate-90 md:rotate-0" style={{ color: "#A14A08" }} />
             </div>
             <div className="rounded-2xl p-6" style={{ backgroundColor: "#FFFFFF", border: "1.5px solid #F5B731", boxShadow: "0 8px 28px rgba(245,183,49,0.15)" }}>
-              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#B45309" }}>After &middot; Authority angle</span>
+              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#A14A08" }}>After &middot; Authority angle</span>
               <p className="mt-2 text-base font-semibold leading-snug" style={{ color: "#0A0A0A" }}>{AUTHORITY_AFTER}</p>
             </div>
           </div>
@@ -110,7 +111,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                   style={{ backgroundColor: "rgba(245,183,49,0.15)" }}
                   aria-hidden="true"
                 >
-                  <Check className="h-4 w-4" style={{ color: "#B45309" }} strokeWidth={2.5} />
+                  <Check className="h-4 w-4" style={{ color: "#A14A08" }} strokeWidth={2.5} />
                 </div>
                 <div>
                   <p className="text-base font-bold mb-1" style={{ color: "#0A0A0A" }}>{item.label}</p>
@@ -133,7 +134,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
               { step: "03", title: "Copy in the rewrite", desc: "Three headline angles, a rewritten About section, ready to paste." },
             ].map((item) => (
               <div key={item.step}>
-                <div className="text-4xl font-black mb-3" style={{ color: "rgba(245,183,49,0.55)" }}>{item.step}</div>
+                <div className="text-4xl font-black mb-3" style={{ color: GOLD_TEXT }}>{item.step}</div>
                 <h3 className="text-lg font-bold mb-2" style={{ color: "#0A0A0A" }}>{item.title}</h3>
                 <p style={{ color: "#52525B" }}>{item.desc}</p>
               </div>

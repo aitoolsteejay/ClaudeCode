@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { textTone } from "@/lib/colors";
 
 export interface BlogPost {
   href: string;
@@ -29,7 +30,7 @@ export const TAG_COLORS: Record<string, string> = {
   "GTM Strategy": "#2563EB",
 };
 
-const DEFAULT_ACCENT = "#8C8279";
+const DEFAULT_ACCENT = "#71675E";
 
 function accentFor(tag: string): string {
   return TAG_COLORS[tag] || DEFAULT_ACCENT;
@@ -83,7 +84,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
   return (
     <div>
       <div className="max-w-md mx-auto mb-6 relative">
-        <span className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8C8279" }} aria-hidden="true">
+        <span className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#71675E" }} aria-hidden="true">
           <SearchIcon />
         </span>
         <input
@@ -125,7 +126,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
               style={
                 isActive
                   ? { backgroundColor: accent, borderColor: accent, color: "#ffffff" }
-                  : { backgroundColor: `${accent}0F`, borderColor: `${accent}33`, color: accent }
+                  : { backgroundColor: `${accent}0F`, borderColor: `${accent}33`, color: textTone(accent) }
               }
             >
               {tag} ({count})
@@ -154,14 +155,14 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
                 <div className="p-6">
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {p.tags.map((t) => (
-                      <span key={t} className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${accentFor(t)}12`, color: accentFor(t) }}>{t}</span>
+                      <span key={t} className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: `${accentFor(t)}12`, color: textTone(accentFor(t)) }}>{t}</span>
                     ))}
                   </div>
                   <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{p.title}</h2>
                   <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{p.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs" style={{ color: "#8C8279" }}>{p.readTime}</span>
-                    <span className="text-xs font-bold" style={{ color: primaryAccent }}>Read →</span>
+                    <span className="text-xs" style={{ color: "#71675E" }}>{p.readTime}</span>
+                    <span className="text-xs font-bold" style={{ color: textTone(primaryAccent) }}>Read →</span>
                   </div>
                 </div>
               </Link>

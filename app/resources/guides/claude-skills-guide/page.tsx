@@ -6,6 +6,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 import CopyBlock from "@/app/components/CopyBlock";
 import FadeIn from "@/app/components/FadeIn";
 import Underline from "./Underline";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "The 6 Claude Skills Guide",
@@ -263,29 +264,29 @@ function SkillSection({ skill }: { skill: Skill }) {
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl font-black transition-transform duration-300 hover:scale-110 inline-block" style={{ color: skill.accent }}>{skill.number}</span>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: skill.accentBg, color: skill.accent, border: `1px solid ${skill.accent}30` }}>
+            <span className="text-3xl font-black transition-transform duration-300 hover:scale-110 inline-block" style={{ color: textTone(skill.accent) }}>{skill.number}</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: skill.accentBg, color: textTone(skill.accent), border: `1px solid ${skill.accent}30` }}>
               Skill {skill.number}
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black mb-3 leading-tight" style={{ color: "#0a0a0a" }}>{skill.title}</h2>
-          <p className="text-lg mb-8 font-medium" style={{ color: skill.accent }}>{skill.tagline}</p>
+          <p className="text-lg mb-8 font-medium" style={{ color: textTone(skill.accent) }}>{skill.tagline}</p>
         </FadeIn>
 
         <FadeIn delay={100}>
           <div className="space-y-8">
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>What it does</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>What it does</h3>
               <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whatItDoes}</p>
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>When to use it</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>When to use it</h3>
               <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.whenToUse}</p>
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Tools you need</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Tools you need</h3>
               <ul className="space-y-2">
                 {skill.tools.map((t, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-base" style={{ color: "#3D3D3D" }}>
@@ -297,13 +298,13 @@ function SkillSection({ skill }: { skill: Skill }) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>How to set it up</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>How to set it up</h3>
               <ol className="space-y-3">
                 {skill.setupSteps.map((s, i) => (
                   <li key={i} className="flex items-start gap-3 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                     <span
                       className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5"
-                      style={{ backgroundColor: skill.accentBg, color: skill.accent }}
+                      style={{ backgroundColor: skill.accentBg, color: textTone(skill.accent) }}
                     >
                       {i + 1}
                     </span>
@@ -314,12 +315,12 @@ function SkillSection({ skill }: { skill: Skill }) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Ready-to-use prompt</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Ready-to-use prompt</h3>
               <CopyBlock text={skill.prompt} accent={skill.accent} />
             </div>
 
             <div className="rounded-xl p-6" style={{ backgroundColor: skill.accentBg, border: `1px solid ${skill.accent}30` }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: skill.accent }}>Pro tip</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: textTone(skill.accent) }}>Pro tip</p>
               <p className="text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>{skill.proTip}</p>
             </div>
           </div>
@@ -336,7 +337,7 @@ export default function ClaudeSkillsGuide() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "The 6 Claude Skills Guide", href: "/resources/guides/claude-skills-guide" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
             Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -347,7 +348,7 @@ export default function ClaudeSkillsGuide() {
             </span>
           </h1>
           <p className="text-lg leading-relaxed hero-fade-d2" style={{ color: "#52525B" }}>
-            Tejas isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his B2B outbound agency, he&apos;s helped 120+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
+            Tejas isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his B2B outbound agency, he&apos;s helped 300+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
           </p>
         </div>
       </section>
@@ -367,7 +368,7 @@ export default function ClaudeSkillsGuide() {
 
           <FadeIn delay={120}>
             <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.3)" }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>Before you begin</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>Before you begin</p>
               <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                 All prompts in this guide work best inside a Claude Project. Create a project for each skill and save your brand voice, ICP, and past results in the Project system prompt. Claude will inherit this context across every conversation, so you never repeat yourself.
               </p>
@@ -392,7 +393,7 @@ export default function ClaudeSkillsGuide() {
             <ol className="space-y-4">
               {NEXT_STEPS.map((step, i) => (
                 <li key={i} className="flex items-start gap-4 text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
                     {i + 1}
                   </span>
                   {step}

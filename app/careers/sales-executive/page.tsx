@@ -40,7 +40,7 @@ export default function SalesExecutive() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Sales Executive", href: "/careers/sales-executive" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Sales Executive
           </h1>
@@ -48,7 +48,7 @@ export default function SalesExecutive() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
                   <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
                     {value} <span aria-hidden="true">↗</span>
@@ -64,7 +64,7 @@ export default function SalesExecutive() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>Send to founder@myntmore.com and content@myntmore.com with subject: {APPLY_SUBJECT}</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to founder@myntmore.com and content@myntmore.com with subject: {APPLY_SUBJECT}</p>
         </div>
       </section>
 
@@ -88,7 +88,7 @@ export default function SalesExecutive() {
                 { title: "Close Like a Pro", desc: "Guide leads through the sales process, handle objections with ease, and close deals successfully. Track leads, follow-ups, and conversions meticulously to hit your targets consistently." },
               ].map((item) => (
                 <div key={item.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-2" style={{ color: "#F5B731" }}>{item.title}</h3>
+                  <h3 className="text-sm font-black mb-2" style={{ color: "#A14A08" }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -109,7 +109,7 @@ export default function SalesExecutive() {
                 { label: "Team Player", desc: "Collaborative, sharing ideas and working together to meet goals" },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <p className="text-xs font-black mb-1" style={{ color: "#F5B731" }}>{item.label}</p>
+                  <p className="text-xs font-black mb-1" style={{ color: "#A14A08" }}>{item.label}</p>
                   <p className="text-sm" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -147,8 +147,8 @@ export default function SalesExecutive() {
               Send your resume and a brief note on why you&apos;re the perfect fit.
             </p>
             <div className="space-y-2 mb-6">
-              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
-              <a href={`mailto:content@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>content@myntmore.com</a>
+              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
+              <a href={`mailto:content@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>content@myntmore.com</a>
             </div>
             <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Apply Now

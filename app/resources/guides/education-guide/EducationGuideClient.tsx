@@ -7,6 +7,7 @@ import FadeIn from "@/app/components/FadeIn";
 import StatTicker from "@/app/components/StatTicker";
 import InnerLayout from "@/app/components/InnerLayout";
 import CopyBlock from "@/app/components/CopyBlock";
+import { textTone } from "@/lib/colors";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tip {
@@ -327,8 +328,8 @@ function BackToTop() {
 function SectionEyebrow({ num, label, accent }: { num: string; label: string; accent: string }) {
   return (
     <div className="flex items-center gap-3 mb-4">
-      <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{num}</span>
-      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{label}</span>
+      <span className="text-sm font-black tabular-nums" style={{ color: textTone(accent) }}>{num}</span>
+      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{label}</span>
     </div>
   );
 }
@@ -454,7 +455,7 @@ function TipCard({ tip, accent, variant, delay = 0 }: { tip: Tip; accent: string
                 onClick={() => setShowPrompt((v) => !v)}
                 aria-expanded={showPrompt}
                 className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold hover:underline"
-                style={{ color: accent }}
+                style={{ color: textTone(accent) }}
               >
                 <svg className={`h-3 w-3 transition-transform ${showPrompt ? "rotate-90" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -478,7 +479,7 @@ function TipGroup({ heading, tips, accent, variant }: { heading: string; tips: T
   if (tips.length === 0) return null;
   return (
     <div className="mb-8">
-      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? accent : "#16A34A" }}>{heading}</p>
+      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? textTone(accent) : "#16A34A" }}>{heading}</p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tips.map((tip, i) => (
           <TipCard key={i} tip={tip} accent={accent} variant={variant} delay={i * 45} />
@@ -518,7 +519,7 @@ function HighlightCallout({ role, note, accent }: { role: string; note: string; 
           </span>
         </span>
         <div>
-          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>{role}</p>
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>{role}</p>
           <p className="text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>{note}</p>
         </div>
       </div>
@@ -530,7 +531,7 @@ function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: st
   return (
     <div className="tip-card-hover group rounded-2xl border bg-white p-6 shadow-sm hover:shadow-md">
       <div className="mb-4 flex items-center gap-3">
-        <span className="inline-block text-sm font-black tabular-nums transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" style={{ color: "#8C8279" }}>{num}</span>
+        <span className="inline-block text-sm font-black tabular-nums transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:scale-110" style={{ color: "#71675E" }}>{num}</span>
         <h3 className="text-base font-black" style={{ color: "#0a0a0a" }}>{title}</h3>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -619,7 +620,7 @@ export default function EducationGuideClient() {
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A Myntmore AI guide</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>A Myntmore AI guide</span>
           </div>
           <h1 className="mb-4 text-4xl font-black leading-tight sm:text-6xl hero-fade-d1" style={{ color: "#0a0a0a" }}>
             AI Quick-Start Guide
@@ -636,7 +637,7 @@ export default function EducationGuideClient() {
             ].map((s) => (
               <div key={s.l} className="lp-stat">
                 <StatTicker value={s.v} className="text-3xl font-black" style={{ color: "#0a0a0a" }} />
-                <p className="mt-1 text-xs font-semibold" style={{ color: "#8C8279" }}>{s.l}</p>
+                <p className="mt-1 text-xs font-semibold" style={{ color: "#71675E" }}>{s.l}</p>
               </div>
             ))}
           </div>
@@ -651,9 +652,9 @@ export default function EducationGuideClient() {
               <Image src="/tejas-2.png" alt="Tejas Jhaveri, Founder of Myntmore" fill sizes="160px" className="object-cover object-top" />
             </div>
             <div>
-              <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>About Tejas</p>
+              <p className="mb-1 text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>About Tejas</p>
               <h2 className="mb-1 text-xl font-black" style={{ color: "#0a0a0a" }}>Tejas Jhaveri</h2>
-              <p className="mb-4 text-sm" style={{ color: "#8C8279" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
+              <p className="mb-4 text-sm" style={{ color: "#71675E" }}>Founder, Myntmore &middot; TEDx Speaker &middot; Angel Investor</p>
               <div className="space-y-3 text-sm leading-relaxed" style={{ color: "#52525B" }}>
                 <p>Tejas Jhaveri is a serial entrepreneur and the founder of Myntmore, an AI-first B2B lead generation company that builds intelligent outbound systems for LinkedIn and cold outreach at scale.</p>
                 <p>Over the past 12+ years, he has built and scaled outbound engines that have generated over $80 million in pipeline and revenue for companies globally. He has built, scaled, and exited multiple ventures, notably selling one of his companies through a cold-email outreach campaign itself.</p>
@@ -668,7 +669,7 @@ export default function EducationGuideClient() {
       {/* ─── Audience selector ────────────────────────────────── */}
       <section className="border-t px-4 py-10" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="mx-auto max-w-4xl">
-          <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>Who are you here for?</p>
+          <p className="mb-4 text-center text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>Who are you here for?</p>
           <div className="flex justify-center">
             <TabGroup tabs={AUDIENCES.map((a) => ({ key: a.key, label: a.label }))} active={audience} onChange={setAudience} ariaLabel="Choose your audience" />
           </div>
@@ -729,7 +730,7 @@ export default function EducationGuideClient() {
           </div>
 
           <div className="mt-8 rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="mb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A formula worth memorising</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>A formula worth memorising</p>
             <p className="text-base font-semibold leading-relaxed" style={{ color: "#0a0a0a" }}>
               Role or audience + specific task + format or constraints = a prompt that actually works.
             </p>

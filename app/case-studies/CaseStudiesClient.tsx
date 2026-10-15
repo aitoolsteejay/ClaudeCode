@@ -8,6 +8,7 @@ import StatTicker from "../components/StatTicker";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { caseStudyFilterSlug, CASE_STUDY_FILTERS } from "@/lib/case-study-filters";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -103,9 +104,9 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
       <div style={{ height: 4, background: `linear-gradient(90deg,${cs.accent},${cs.accent}88)`, opacity: hov ? 1 : 0, transition: "opacity 0.3s" }} />
       <div className="p-8">
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${cs.accent}12`, color: cs.accent, border: `1px solid ${cs.accent}30` }}>{cs.tag}</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: `${cs.accent}12`, color: textTone(cs.accent), border: `1px solid ${cs.accent}30` }}>{cs.tag}</span>
           {cs.illustrative && (
-            <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "#F3F3F1", color: "#8C8279", border: "1px dashed #C9C2B8" }}>Illustrative example</span>
+            <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "#F3F3F1", color: "#71675E", border: "1px dashed #C9C2B8" }}>Illustrative example</span>
           )}
         </div>
         <h2 className="text-2xl font-black mb-3 leading-snug" style={{ color: "#0a0a0a" }}>{cs.title}</h2>
@@ -113,8 +114,8 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
         <div className="grid grid-cols-3 gap-6 mb-6 py-6 border-y" style={{ borderColor: "#E8E2D9" }}>
           {cs.stats.map((s) => (
             <div key={s.l}>
-              <div className="text-3xl font-black" style={{ color: cs.accent }}><StatTicker value={s.v} /></div>
-              <div className="text-xs mt-0.5" style={{ color: "#8C8279" }}>{s.l}</div>
+              <div className="text-3xl font-black" style={{ color: textTone(cs.accent) }}><StatTicker value={s.v} /></div>
+              <div className="text-xs mt-0.5" style={{ color: "#71675E" }}>{s.l}</div>
             </div>
           ))}
         </div>
@@ -124,7 +125,7 @@ function CaseCard({ cs }: { cs: CaseStudy }) {
               <span key={s} className="text-xs px-3 py-1 rounded-full" style={{ backgroundColor: "#F8F6F2", color: "#52525B", border: "1px solid #E8E2D9" }}>{s}</span>
             ))}
           </div>
-          <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: cs.accent }}>
+          <span className="text-sm font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1" style={{ color: textTone(cs.accent) }}>
             Read full case study
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
           </span>
@@ -246,7 +247,7 @@ const CASE_STUDIES: CaseStudy[] = [
     services: ["ICP Mapping & Lead Scoring", "AI Lead Generation", "Cold Email Infrastructure"],
   },
   {
-    slug: "insurance-uae-employee-benefits", tag: "Insurance · UAE", industry: "Insurance", accent: "#b45309", illustrative: true,
+    slug: "insurance-uae-employee-benefits", tag: "Insurance · UAE", industry: "Insurance", accent: "#a14a08", illustrative: true,
     title: "Opening employee benefits conversations before renewal",
     stats: [{ v: "20", l: "Meetings booked" }, { v: "7", l: "Benefits reviews agreed" }, { v: "4", l: "Quotation exercises requested" }],
     excerpt: "A UAE-based insurance brokerage often reached employers after renewal decisions were already underway and needed earlier access to HR and finance teams. Illustrative example of how this campaign runs.",
@@ -357,7 +358,7 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
         <Blobs />
         <div className="relative max-w-4xl mx-auto">
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Client Results
             </span>
           </div>
@@ -382,14 +383,14 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
       {/* Stat strip */}
       <FadeIn>
         <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
-          <p className="text-center text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>
+          <p className="text-center text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>
             Highlights from the case studies below, not a sitewide average
           </p>
           <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-5 gap-6">
             {STATS.map((s) => (
               <div key={s.l} className="text-center">
-                <div className="text-3xl font-black" style={{ color: "#F5B731" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                <div className="text-3xl font-black" style={{ color: "#A14A08" }}><StatTicker value={s.v} /></div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}
           </div>

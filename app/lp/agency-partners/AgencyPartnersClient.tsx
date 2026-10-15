@@ -174,7 +174,7 @@ function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <Breadcrumbs items={[{ label: "For Agency & Reseller Partners", href: "/lp/agency-partners" }]} className="justify-center" />
         <div className="mb-6 hero-fade-d1">
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             For Agency & Reseller Partners
           </span>
         </div>
@@ -204,7 +204,7 @@ function HeroSection() {
             See Partner Terms
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#8C8279" }}>No delivery team to hire. No branding shown to your client unless you want it.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>No delivery team to hire. No branding shown to your client unless you want it.</p>
       </div>
 
       {/* Scroll cue */}
@@ -258,7 +258,7 @@ function PainSection() {
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Sound familiar?</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Sound familiar?</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>The outbound gap in your service stack</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -283,13 +283,13 @@ function ProcessSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>How the partnership works</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>How the partnership works</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>A new revenue line, none of the delivery risk</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {PROCESS.map((p, i) => (
             <div key={p.n} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#F5B731" }}>{p.n}</span>
+              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#A14A08" }}>{p.n}</span>
               <div>
                 <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
@@ -313,18 +313,18 @@ function CaseStudiesSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>Partner scenarios</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Partner scenarios</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What this looks like for partners like you</h2>
         </div>
         <div className="space-y-6">
           {CASE_STUDIES.map((cs, i) => (
             <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{cs.tag}</span>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{cs.tag}</span>
               <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
               <div className="flex flex-wrap gap-3">
                 {cs.results.map((r) => (
-                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
+                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
                 ))}
               </div>
             </div>
@@ -404,7 +404,7 @@ function FormSection() {
               <input id="Email" name="Email" type="email" required maxLength={255} placeholder="marco@rossidigital.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
             <SubmitButton>Apply to Become a Partner</SubmitButton>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>We respond within 24 hours. Final margin and terms are confirmed on your partner onboarding call.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>We respond within 24 hours. Final margin and terms are confirmed on your partner onboarding call.</p>
           </form>
         </div>
       </div>

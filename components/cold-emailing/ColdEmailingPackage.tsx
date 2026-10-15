@@ -32,6 +32,7 @@ import ProcessExplorer from "./ProcessExplorer";
 import PackageGrid from "./PackageGrid";
 import { PROCESS_STEPS } from "./process-steps";
 import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 // Done-for-you cold email service overview.
 
@@ -68,7 +69,7 @@ const WHY: { icon: LucideIcon; title: string; line: string }[] = [
   { icon: Eye, title: "Transparent", line: "Full campaign visibility." },
 ];
 
-const FOUNDER_STATS = ["4x entrepreneur", "Flintstop: $6M a year", "120+ B2B companies", "12K+ meetings booked", "$120M+ pipeline", "TEDx speaker"];
+const FOUNDER_STATS = ["4x entrepreneur", "Flintstop: $6M a year", "300+ B2B companies", "12K+ meetings booked", "$120M+ pipeline", "TEDx speaker"];
 
 const FAQS = [
   { q: "How does this work?", a: "We run cold email end to end in ten steps. First we map your ideal customer profile and build a targeted lead list, then write the copy and set up domains, inboxes and DNS. After launch we handle follow-ups, A/B testing, nurturing replies into meetings, and real-time reporting." },
@@ -95,7 +96,7 @@ const FAQ_SCHEMA = buildFaqSchema(FAQS.map(({ q, a }) => ({ question: q, answer:
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? GOLD : ORANGE }}>
+    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? GOLD : textTone(ORANGE) }}>
       {children}
     </p>
   );
@@ -162,7 +163,7 @@ export default function ColdEmailingPackage() {
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
               <FadeIn delay={420}>
-                <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#8C8279" }}>Our targets</span>
+                <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#71675E" }}>Our targets</span>
               </FadeIn>
               {TARGETS.map((t, i) => (
                 <FadeIn key={t} delay={520 + i * 130}>
@@ -254,7 +255,7 @@ export default function ColdEmailingPackage() {
                         <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
                       </span>
                       <div>
-                        <p className="text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: "#8C8279" }}>{row.label}</p>
+                        <p className="text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: "#71675E" }}>{row.label}</p>
                         <p className="text-base font-bold" style={{ color: INK }}>{row.value}</p>
                       </div>
                     </div>

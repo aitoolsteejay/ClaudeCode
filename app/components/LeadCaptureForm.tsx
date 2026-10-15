@@ -44,13 +44,13 @@ export default function LeadCaptureForm({
             <input type="hidden" name="zc_gad" value="" />
 
             <div>
-              <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name <span style={{ color: "#F5B731" }}>*</span></label>
+              <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name <span style={{ color: "#A14A08" }}>*</span></label>
               <input id="SingleLine" name="SingleLine" type="text" required maxLength={255}
                 className={inputClass} style={inputStyle} {...focusHandlers} placeholder="David Kim" />
             </div>
 
             <div>
-              <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation <span style={{ color: "#F5B731" }}>*</span></label>
+              <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation <span style={{ color: "#A14A08" }}>*</span></label>
               <input id="SingleLine2" name="SingleLine2" type="text" required maxLength={255}
                 className={inputClass} style={inputStyle} {...focusHandlers} placeholder="Founder / Head of Sales" />
             </div>
@@ -69,7 +69,7 @@ export default function LeadCaptureForm({
             </div>
 
             <div>
-              <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email <span style={{ color: "#F5B731" }}>*</span></label>
+              <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Email <span style={{ color: "#A14A08" }}>*</span></label>
               <input id="Email" name="Email" type="email" required maxLength={255}
                 className={inputClass} style={inputStyle} {...focusHandlers} placeholder="david@kimventures.com" />
             </div>
@@ -77,7 +77,7 @@ export default function LeadCaptureForm({
             <button type="submit" disabled={submitting} className="btn-dark w-full py-4 text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed">
               {submitting ? "Submitting…" : "Get Your Custom Strategy"}
             </button>
-            <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>No commitments. No agency pitch decks. Just a real conversation about your pipeline.</p>
           </form>
         </div>
       </div>

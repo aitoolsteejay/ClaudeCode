@@ -18,7 +18,7 @@ export function GapChart({ userAvg, compAvg }: GapChartProps) {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#E8E2D9" vertical={false} />
-          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: "#8C8279", fontSize: 12 }} />
+          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: "#71675E", fontSize: 12 }} />
           <YAxis hide />
           <Tooltip
             cursor={{ fill: "rgba(0,0,0,0.03)" }}

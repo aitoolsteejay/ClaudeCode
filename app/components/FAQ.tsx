@@ -114,7 +114,7 @@ export default function FAQ() {
           <span
             className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-3 py-1 rounded-full border"
             style={{
-              color: "#F5B731",
+              color: "#A14A08",
               borderColor: "rgba(245,183,49,0.35)",
               background: "#FEF9EC",
             }}
@@ -147,7 +147,7 @@ export default function FAQ() {
 
         {/* Still have questions nudge */}
         <div className="mt-12 text-center">
-          <p className="text-neutral-500 text-sm mb-4">
+          <p className="text-neutral-600 text-sm mb-4">
             Still have questions? We&rsquo;re happy to chat.
           </p>
           <a

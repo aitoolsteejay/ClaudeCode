@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import JsonLd from "../../../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -192,7 +193,7 @@ const CATEGORIES = [
     ],
   },
   {
-    id: "productivity", icon: "⚡", color: "#FFFBEB", accent: "#B45309", textAccent: "#78350F",
+    id: "productivity", icon: "⚡", color: "#FFFBEB", accent: "#A14A08", textAccent: "#78350F",
     title: "Productivity & Automation",
     subtitle: "So you can run marketing without it taking over your day.",
     tools: [
@@ -286,8 +287,8 @@ function StatCard({ n, label, color, bg, delay }: { n: number; label: string; co
         transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${delay}ms, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${delay}ms`,
       }}
     >
-      <div className="text-4xl font-black tabular-nums" style={{ color }}>{val}+</div>
-      <div className="text-xs font-semibold" style={{ color: "#8C8279" }}>{label}</div>
+      <div className="text-4xl font-black tabular-nums" style={{ color: textTone(color) }}>{val}+</div>
+      <div className="text-xs font-semibold" style={{ color: "#71675E" }}>{label}</div>
     </div>
   );
 }
@@ -315,7 +316,7 @@ function CategoryOverviewCard({ cat, index, active, onClick }: {
     >
       <div className="text-2xl mb-2" style={{ display: "inline-block", transform: hovered || active ? "scale(1.15)" : "scale(1)", transition: "transform 0.2s cubic-bezier(0.34,1.56,0.64,1)" }}>{cat.icon}</div>
       <div className="text-xs font-black leading-tight mb-1" style={{ color: active ? "#ffffff" : "#0a0a0a" }}>{cat.title}</div>
-      <div className="text-xs font-bold" style={{ color: active ? "rgba(255,255,255,0.7)" : "#B8B0A7" }}>{cat.tools.length} tools</div>
+      <div className="text-xs font-bold" style={{ color: active ? "rgba(255,255,255,0.7)" : "#71675E" }}>{cat.tools.length} tools</div>
     </button>
   );
 }
@@ -339,8 +340,8 @@ function ToolRow({ tool, index, globalNum, accent, color }: {
         backgroundColor: hovered ? color + "55" : "transparent",
       }}
     >
-      <td className="px-6 py-3.5 text-xs font-black w-10" style={{ color: "#D0C9BF" }}>{globalNum}</td>
-      <td className="px-4 py-3.5 font-black text-sm" style={{ color: hovered ? accent : "#0a0a0a", whiteSpace: "nowrap", transition: "color 0.15s ease" }}>{tool.name}</td>
+      <td className="px-6 py-3.5 text-xs font-black w-10" style={{ color: "#71675E" }}>{globalNum}</td>
+      <td className="px-4 py-3.5 font-black text-sm" style={{ color: hovered ? textTone(accent) : "#0a0a0a", whiteSpace: "nowrap", transition: "color 0.15s ease" }}>{tool.name}</td>
       <td className="px-4 py-3.5 text-sm leading-relaxed" style={{ color: "#52525B" }}>{tool.what}</td>
       <td className="px-4 py-3.5"><FreeBadge type={tool.free} /></td>
     </tr>
@@ -398,10 +399,10 @@ function CategorySection({ cat, globalStart, search }: {
           <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
             <thead>
               <tr style={{ borderBottom: "1px solid #F0EBE3" }}>
-                <th className="text-left px-6 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>#</th>
-                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Tool</th>
-                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Why it's relevant for jewellery</th>
-                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#B8B0A7" }}>Pricing</th>
+                <th className="text-left px-6 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>#</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Tool</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Why it's relevant for jewellery</th>
+                <th className="text-left px-4 py-3 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Pricing</th>
               </tr>
             </thead>
             <tbody>
@@ -481,7 +482,7 @@ export default function GIATechStackPage() {
           /* ── Tables ── */
           table { width: 100% !important; border-collapse: collapse !important; font-size: 9.5pt !important; }
           thead tr { background-color: #F8F6F2 !important; }
-          th { padding: 6px 10px !important; font-size: 8pt !important; font-weight: 800 !important; text-transform: uppercase; letter-spacing: 0.08em; color: #B8B0A7 !important; border-bottom: 1px solid #E8E2D9 !important; }
+          th { padding: 6px 10px !important; font-size: 8pt !important; font-weight: 800 !important; text-transform: uppercase; letter-spacing: 0.08em; color: #71675E !important; border-bottom: 1px solid #E8E2D9 !important; }
           td { padding: 6px 10px !important; vertical-align: top; border-bottom: 1px solid #F5F2EE !important; }
 
           /* ── Page breaks ── */
@@ -514,7 +515,7 @@ export default function GIATechStackPage() {
           style={{ backgroundColor: "rgba(248,246,242,0.96)", backdropFilter: "blur(16px)", borderColor: "#E8E2D9" }}>
           <a href="/"><Image src="/logo.png" alt="Myntmore" width={130} height={36} className="h-9 w-auto object-contain" /></a>
           <div className="flex items-center gap-3">
-            <span className="hidden sm:block text-xs font-semibold" style={{ color: "#B8B0A7" }}>GIA India Workshop</span>
+            <span className="hidden sm:block text-xs font-semibold" style={{ color: "#71675E" }}>GIA India Workshop</span>
             <button
               onClick={() => window.print()}
               className="no-print flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm"
@@ -530,14 +531,16 @@ export default function GIATechStackPage() {
           </div>
         </nav>
 
+        <main id="main-content">
+
         {/* ── Print-only cover ── */}
         <div className="print-header" style={{ display: "none", borderBottom: "3px solid #F5B731", paddingBottom: 16, marginBottom: 24 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ fontSize: 22, fontWeight: 900, color: "#0a0a0a", letterSpacing: "-0.02em" }}>AI Tech Stack for Jewellery Brands</div>
-              <div style={{ fontSize: 11, color: "#8C8279", marginTop: 2 }}>GIA India AI Marketing Workshop · Curated by Myntmore · myntmore.com</div>
+              <div style={{ fontSize: 11, color: "#71675E", marginTop: 2 }}>GIA India AI Marketing Workshop · Curated by Myntmore · myntmore.com</div>
             </div>
-            <div style={{ fontSize: 10, color: "#B8B0A7", textAlign: "right" }}>106 tools · 14 categories</div>
+            <div style={{ fontSize: 10, color: "#71675E", textAlign: "right" }}>106 tools · 14 categories</div>
           </div>
         </div>
 
@@ -548,7 +551,7 @@ export default function GIATechStackPage() {
           style={{ opacity: heroIn ? 1 : 0, transform: heroIn ? "translateY(0)" : "translateY(28px)", transition: "opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)" }}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8"
-            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.3)" }}>
+            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
             <span style={{ animation: "float 2.2s ease-in-out infinite", display: "inline-block" }}>💎</span>
             GIA India AI Marketing Workshop
           </div>
@@ -556,7 +559,7 @@ export default function GIATechStackPage() {
           <h1 className="text-5xl sm:text-7xl font-black leading-none mb-6 tracking-tight" style={{ color: "#0a0a0a" }}>
             AI Tech Stack for<br />
             <span style={{
-              background: "linear-gradient(90deg, #B45309, #F5B731, #D97706, #F5B731, #B45309)",
+              background: "linear-gradient(90deg, #A14A08, #F5B731, #D97706, #F5B731, #A14A08)",
               backgroundSize: "300% auto",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -579,7 +582,7 @@ export default function GIATechStackPage() {
 
         {/* ── Category overview grid ── */}
         <div ref={overviewRef} className="no-print px-6 pb-8 max-w-5xl mx-auto">
-          <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: "#B8B0A7", opacity: overviewIn ? 1 : 0, transition: "opacity 0.5s ease 0.1s" }}>Browse by category</p>
+          <p className="text-xs font-black uppercase tracking-widest mb-4" style={{ color: "#71675E", opacity: overviewIn ? 1 : 0, transition: "opacity 0.5s ease 0.1s" }}>Browse by category</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             <button
               onClick={() => setActiveFilter("all")}
@@ -595,7 +598,7 @@ export default function GIATechStackPage() {
             >
               <div className="text-2xl mb-2">🗂</div>
               <div className="text-xs font-black">All Categories</div>
-              <div className="text-xs font-bold mt-0.5" style={{ color: activeFilter === "all" ? "rgba(255,255,255,0.6)" : "#B8B0A7" }}>106 tools</div>
+              <div className="text-xs font-bold mt-0.5" style={{ color: activeFilter === "all" ? "rgba(255,255,255,0.6)" : "#71675E" }}>106 tools</div>
             </button>
             {CATEGORIES.map((cat, i) => (
               <CategoryOverviewCard
@@ -635,7 +638,7 @@ export default function GIATechStackPage() {
             )}
           </div>
           {search && (
-            <p className="mt-3 text-sm" style={{ color: "#8C8279" }}>
+            <p className="mt-3 text-sm" style={{ color: "#71675E" }}>
               Showing results for <strong style={{ color: "#0a0a0a" }}>"{search}"</strong>: {CATEGORIES.flatMap(c => c.tools).filter(t => t.name.toLowerCase().includes(search.toLowerCase()) || t.what.toLowerCase().includes(search.toLowerCase())).length} tools found
             </p>
           )}
@@ -658,7 +661,7 @@ export default function GIATechStackPage() {
             <div className="text-center py-20">
               <div className="text-5xl mb-4">🔍</div>
               <p className="font-black text-lg" style={{ color: "#0a0a0a" }}>No tools found for "{search}"</p>
-              <p className="text-sm mt-2" style={{ color: "#8C8279" }}>Try a different keyword</p>
+              <p className="text-sm mt-2" style={{ color: "#71675E" }}>Try a different keyword</p>
             </div>
           )}
         </div>
@@ -670,7 +673,7 @@ export default function GIATechStackPage() {
               <span className="text-2xl">⭐</span>
               <div>
                 <h2 className="font-black text-xl" style={{ color: "#0a0a0a" }}>Day 1 Starter Pack</h2>
-                <p className="text-sm" style={{ color: "#8C8279" }}>Feeling overwhelmed? Start with just these 8 tools.</p>
+                <p className="text-sm" style={{ color: "#71675E" }}>Feeling overwhelmed? Start with just these 8 tools.</p>
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -687,12 +690,14 @@ export default function GIATechStackPage() {
                 <div key={t.name} className="rounded-xl p-4" style={{ backgroundColor: "#ffffff", border: "1px solid rgba(245,183,49,0.25)" }}>
                   <div className="text-xl mb-2">{t.icon}</div>
                   <div className="font-black text-sm" style={{ color: "#0a0a0a" }}>{t.name}</div>
-                  <div className="text-xs mt-0.5" style={{ color: "#8C8279" }}>{t.why}</div>
+                  <div className="text-xs mt-0.5" style={{ color: "#71675E" }}>{t.why}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        </main>
 
         {/* ── Footer CTA ── */}
         <div className="no-print border-t px-6 py-20 text-center" style={{ borderColor: "#E8E2D9", backgroundColor: "#0a0a0a" }}>

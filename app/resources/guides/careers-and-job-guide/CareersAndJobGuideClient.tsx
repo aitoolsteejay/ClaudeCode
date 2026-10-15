@@ -202,7 +202,7 @@ function SectionEyebrow({ num, label, accent = "#0a0a0a" }: { num: string; label
   return (
     <div className="flex items-center gap-3 mb-4">
       <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{num}</span>
-      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{label}</span>
+      <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{label}</span>
     </div>
   );
 }
@@ -356,12 +356,12 @@ function SequenceRow({ item, delay = 0 }: { item: { step: string; title: string;
     >
       <span
         className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-xs font-black transition-transform duration-300 group-hover:scale-110"
-        style={item.step ? { backgroundColor: "#F5B731", color: "#0a0a0a" } : { backgroundColor: "#F8F6F2", color: "#8C8279", border: "1px solid #E8E2D9" }}
+        style={item.step ? { backgroundColor: "#F5B731", color: "#0a0a0a" } : { backgroundColor: "#F8F6F2", color: "#71675E", border: "1px solid #E8E2D9" }}
       >
         {item.step || "•"}
       </span>
       <p className="min-w-0 flex-1 text-sm font-semibold" style={{ color: "#0a0a0a" }}>{item.title}</p>
-      <span className="flex-shrink-0 text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>{item.delay}</span>
+      <span className="flex-shrink-0 text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{item.delay}</span>
     </div>
   );
 }
@@ -408,7 +408,7 @@ export default function CareersAndJobGuideClient() {
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 hero-fade" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "rgba(245,183,49,0.07)" }}>
             <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "#F5B731", animation: "lp-radar-ping 2.4s cubic-bezier(0.22,1,0.36,1) infinite" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>A Myntmore career guide</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>A Myntmore career guide</span>
           </div>
           <h1 className="mb-4 text-4xl font-black leading-tight sm:text-6xl hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Career Jumpstart Toolkit
@@ -425,7 +425,7 @@ export default function CareersAndJobGuideClient() {
             ].map((s) => (
               <div key={s.l} className="lp-stat">
                 <StatTicker value={s.v} className="text-3xl font-black" style={{ color: "#0a0a0a" }} />
-                <p className="mt-1 text-xs font-semibold" style={{ color: "#8C8279" }}>{s.l}</p>
+                <p className="mt-1 text-xs font-semibold" style={{ color: "#71675E" }}>{s.l}</p>
               </div>
             ))}
           </div>
@@ -504,7 +504,7 @@ export default function CareersAndJobGuideClient() {
                 <SequenceRow key={item.title} item={item} delay={i * 45} />
               ))}
             </div>
-            <p className="mt-5 max-w-2xl text-xs leading-relaxed" style={{ color: "#8C8279" }}>
+            <p className="mt-5 max-w-2xl text-xs leading-relaxed" style={{ color: "#71675E" }}>
               If a withdrawn request still gets no response, wait roughly three weeks, then retarget from the top.
             </p>
           </FadeIn>

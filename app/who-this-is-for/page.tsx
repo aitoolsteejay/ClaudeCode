@@ -117,7 +117,7 @@ export default function WhoThisIsForPage() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(22,163,74,0.08)", color: "#16A34A", border: "1px solid rgba(22,163,74,0.2)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(22,163,74,0.08)", color: "#166534", border: "1px solid rgba(22,163,74,0.2)" }}>
               This is for you if
             </span>
             <h2 className="text-3xl sm:text-4xl font-black mb-8" style={{ color: "#0a0a0a" }}>Five signs it&apos;s a fit</h2>
@@ -142,7 +142,7 @@ export default function WhoThisIsForPage() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#DC2626", border: "1px solid rgba(220,38,38,0.2)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#B91C1C", border: "1px solid rgba(220,38,38,0.2)" }}>
               This isn&apos;t for you if
             </span>
             <h2 className="text-3xl sm:text-4xl font-black mb-8" style={{ color: "#0a0a0a" }}>Five signs it isn&apos;t, yet or at all</h2>

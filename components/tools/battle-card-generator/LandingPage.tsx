@@ -5,6 +5,7 @@ import { HelpCircle, Frown, TrendingDown, ArrowRight, MousePointer2, Zap, CheckC
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { textTone } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Battle Card Generator Works", [
   { name: "Name the competitor", text: "And tell us what you sell, and to whom." },
@@ -33,7 +34,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
             style={{ background: "rgba(239,68,68,0.07)", borderColor: "rgba(239,68,68,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Competitor Battle Card Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Competitor Battle Card Generator</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">

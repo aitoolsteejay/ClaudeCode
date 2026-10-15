@@ -283,7 +283,7 @@ export default function SalesIntelligenceClient() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade"
             style={{ borderColor: "rgba(168,85,247,0.35)", background: "rgba(168,85,247,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#a855f7" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#a855f7" }}>ICP Mapping & Lead Scoring</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7E22CE" }}>ICP Mapping & Lead Scoring</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -326,7 +326,7 @@ export default function SalesIntelligenceClient() {
           ].map((s, i) => (
             <div key={i} className={`${i < 2 ? "sm:border-r" : ""} px-4`} style={{ borderColor: "#E8E2D9" }}>
               <span ref={s.ref} className="block text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.init}</span>
-              <span className="text-sm" style={{ color: "#8C8279" }}>{s.label}</span>
+              <span className="text-sm" style={{ color: "#71675E" }}>{s.label}</span>
             </div>
           ))}
         </div>
@@ -345,7 +345,7 @@ export default function SalesIntelligenceClient() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5"
-                style={{ backgroundColor: "rgba(239,68,68,0.08)", color: "#dc2626", border: "1px solid rgba(239,68,68,0.2)" }}>
+                style={{ backgroundColor: "rgba(239,68,68,0.08)", color: "#B91C1C", border: "1px solid rgba(239,68,68,0.2)" }}>
                 The Problem
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
@@ -372,7 +372,7 @@ export default function SalesIntelligenceClient() {
             </div>
             <div>
               <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5"
-                style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+                style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#7E22CE", border: "1px solid rgba(168,85,247,0.2)" }}>
                 The Myntmore Way
               </span>
               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
@@ -406,7 +406,7 @@ export default function SalesIntelligenceClient() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#7E22CE", border: "1px solid rgba(168,85,247,0.2)" }}>
               The Process
             </span>
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0a0a0a" }}>How it works</h2>
@@ -421,7 +421,7 @@ export default function SalesIntelligenceClient() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "#E8E2D9"; (e.currentTarget as HTMLElement).style.backgroundColor = "#F8F6F2"; }}>
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xs font-black"
-                    style={{ backgroundColor: "rgba(168,85,247,0.1)", color: "#a855f7" }}>
+                    style={{ backgroundColor: "rgba(168,85,247,0.1)", color: "#7E22CE" }}>
                     {s.n}
                   </div>
                   <div>
@@ -449,7 +449,7 @@ export default function SalesIntelligenceClient() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#7E22CE", border: "1px solid rgba(168,85,247,0.2)" }}>
               What You Get
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Every engagement includes</h2>
@@ -470,7 +470,7 @@ export default function SalesIntelligenceClient() {
 
           <div>
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+              style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Who It&apos;s For
             </span>
             <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Built for teams tired of guessing who to call</h2>
@@ -496,7 +496,7 @@ export default function SalesIntelligenceClient() {
       <section className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl border p-8" style={{ backgroundColor: "#FEF2F2", borderColor: "rgba(220,38,38,0.2)" }}>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#DC2626", border: "1px solid rgba(220,38,38,0.2)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4" style={{ backgroundColor: "rgba(220,38,38,0.08)", color: "#B91C1C", border: "1px solid rgba(220,38,38,0.2)" }}>
               Honest Note
             </span>
             <h3 className="text-lg font-black mb-3" style={{ color: "#0a0a0a" }}>This isn&apos;t the right fit if&hellip;</h3>
@@ -520,7 +520,7 @@ export default function SalesIntelligenceClient() {
             <span className="font-bold" style={{ color: "#0a0a0a" }}>12K+ B2B meetings booked</span> and $120M+ in pipeline generated for our clients.
           </p>
           <Link href="/case-studies/predictable-b2b-lead-gen-engine" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
-            style={{ color: "#a855f7" }}>
+            style={{ color: "#7E22CE" }}>
             Read how one client built a 15+ meetings/month engine
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -534,7 +534,7 @@ export default function SalesIntelligenceClient() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-10">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#a855f7", border: "1px solid rgba(168,85,247,0.2)" }}>
+              style={{ backgroundColor: "rgba(168,85,247,0.08)", color: "#7E22CE", border: "1px solid rgba(168,85,247,0.2)" }}>
               FAQ
             </span>
             <h2 className="text-3xl font-black" style={{ color: "#0a0a0a" }}>Frequently asked questions</h2>
@@ -558,7 +558,7 @@ export default function SalesIntelligenceClient() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8"
             style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F5B731" }}>Limited spots available</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>Limited spots available</span>
           </div>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[0.95]" style={{ color: "#0a0a0a" }}>
@@ -583,7 +583,7 @@ export default function SalesIntelligenceClient() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             {["Daily signal refresh", "40+ intent triggers", "Results or we make it right"].map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#F5B731" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#A14A08" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-sm" style={{ color: "#52525B" }}>{item}</span>

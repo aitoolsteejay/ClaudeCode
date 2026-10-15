@@ -63,7 +63,7 @@ export default function MentiClient() {
             </div>
           ) : (
             <>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
                 One question for the room
               </span>
               <h1 className="text-2xl sm:text-3xl font-black mb-6 leading-snug" style={{ color: "#0a0a0a" }}>
@@ -82,8 +82,8 @@ export default function MentiClient() {
                   autoFocus
                 />
                 <div className="flex items-center justify-between mt-2 mb-6">
-                  <p className="text-xs" style={{ color: error ? "#DC2626" : "#8C8279" }}>{error || "Anonymous, nobody will see your name."}</p>
-                  <p className="text-xs" style={{ color: "#8C8279" }}>{answer.length}/{MAX_LENGTH}</p>
+                  <p className="text-xs" style={{ color: error ? "#DC2626" : "#71675E" }}>{error || "Anonymous, nobody will see your name."}</p>
+                  <p className="text-xs" style={{ color: "#71675E" }}>{answer.length}/{MAX_LENGTH}</p>
                 </div>
                 <button type="submit" disabled={submitting} className="btn-dark w-full px-6 py-3.5 text-base font-bold inline-flex items-center justify-center gap-2 disabled:opacity-60">
                   {submitting ? "Submitting..." : "Submit answer"}

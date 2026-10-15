@@ -106,7 +106,7 @@ export default function ColdEmailSequenceTemplates() {
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(234,88,12,0.08)", color: "#EA580C", border: "1px solid rgba(234,88,12,0.2)" }}>Cold Email · 7 min read</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(234,88,12,0.08)", color: "#9A3412", border: "1px solid rgba(234,88,12,0.2)" }}>Cold Email · 7 min read</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold Email Sequence Templates That Get Replies
           </h1>
@@ -125,9 +125,9 @@ export default function ColdEmailSequenceTemplates() {
             { stat: "45 days", source: "minimum domain warm-up period before full send volume", cite: "Instantly.ai Data" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-2xl font-black mb-1" style={{ color: "#F5B731" }}>{s.stat}</div>
+              <div className="text-2xl font-black mb-1" style={{ color: "#A14A08" }}>{s.stat}</div>
               <p className="text-xs leading-snug mb-1" style={{ color: "#52525B" }}>{s.source}</p>
-              <p className="text-xs" style={{ color: "#8C8279" }}>
+              <p className="text-xs" style={{ color: "#71675E" }}>
                 Source: {s.href ? <a href={s.href} className="underline">{s.cite}</a> : s.cite}
               </p>
             </div>
@@ -154,10 +154,10 @@ export default function ColdEmailSequenceTemplates() {
                 {SEQUENCE.map((email) => (
                   <div key={email.day} className="rounded-2xl border overflow-hidden" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <div className="px-6 pt-5 pb-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                      <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#EA580C" }}>{email.day}</span>
+                      <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#9A3412" }}>{email.day}</span>
                       <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{email.name}</h3>
                     </div>
-                    <p className="px-6 text-sm italic mb-4" style={{ color: "#8C8279" }}>Goal: {email.goal}</p>
+                    <p className="px-6 text-sm italic mb-4" style={{ color: "#71675E" }}>Goal: {email.goal}</p>
                     <div className="mx-6 mb-6 rounded-xl p-5 whitespace-pre-line text-sm leading-relaxed" style={{ backgroundColor: "#ffffff", border: "1px solid #E8E2D9", color: "#3D3D3D" }}>
                       <p className="font-bold mb-2" style={{ color: "#0a0a0a" }}>{email.subject}</p>
                       {email.body}
@@ -185,11 +185,11 @@ export default function ColdEmailSequenceTemplates() {
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Pairing this with LinkedIn</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 The same five-touch logic runs in parallel on LinkedIn, and running both channels together consistently outperforms either alone, since a prospect who ignores an email might still accept a connection request, or vice versa. For the LinkedIn-specific version of this sequence, see{" "}
-                <a href="/blog/linkedin-outreach-sequences" className="font-bold underline" style={{ color: "#EA580C" }}>LinkedIn Outreach Sequences That Actually Get Replies</a>. And before sending any of this at volume, make sure the sending domain is actually warmed up, covered in our{" "}
-                <a href="/blog/cold-email-deliverability-guide" className="font-bold underline" style={{ color: "#EA580C" }}>cold email deliverability guide</a>. For the exact tools we use to scrape, enrich, verify, and send, plus a second sequence with live variants, see{" "}
-                <a href="/resources/guides/cold-email-tech-stack" className="font-bold underline" style={{ color: "#EA580C" }}>the cold email stack behind an extra $7,000 in revenue</a>.{" "}
+                <a href="/blog/linkedin-outreach-sequences" className="font-bold underline" style={{ color: "#9A3412" }}>LinkedIn Outreach Sequences That Actually Get Replies</a>. And before sending any of this at volume, make sure the sending domain is actually warmed up, covered in our{" "}
+                <a href="/blog/cold-email-deliverability-guide" className="font-bold underline" style={{ color: "#9A3412" }}>cold email deliverability guide</a>. For the exact tools we use to scrape, enrich, verify, and send, plus a second sequence with live variants, see{" "}
+                <a href="/resources/guides/cold-email-tech-stack" className="font-bold underline" style={{ color: "#9A3412" }}>the cold email stack behind an extra $7,000 in revenue</a>.{" "}
                 And once the replies start landing, here is{" "}
-                <a href="/blog/handling-cold-email-replies" className="font-bold underline" style={{ color: "#EA580C" }}>what to do in the first hour after a prospect responds</a>.
+                <a href="/blog/handling-cold-email-replies" className="font-bold underline" style={{ color: "#9A3412" }}>what to do in the first hour after a prospect responds</a>.
               </p>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function ColdEmailSequenceTemplates() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

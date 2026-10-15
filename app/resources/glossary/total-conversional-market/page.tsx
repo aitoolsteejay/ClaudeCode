@@ -42,7 +42,7 @@ export default function TotalConversionalMarketPage() {
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(217,119,6,0.18) 0%, rgba(217,119,6,0.06) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div className="relative z-10 max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Glossary", href: "/resources/glossary" }, { label: TITLE, href: "/resources/glossary/total-conversional-market" }]} />
-          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#D97706", border: "1px solid rgba(217,119,6,0.2)" }}>Targeting</span>
+          <span className="fredoka-pill inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(217,119,6,0.08)", color: "#A14A08", border: "1px solid rgba(217,119,6,0.2)" }}>Targeting</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>{TITLE}</h1>
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
             The specific, motivated slice of your market that&apos;s actually ready to buy right now, as opposed to the much larger group who theoretically could someday.
@@ -54,7 +54,7 @@ export default function TotalConversionalMarketPage() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="rounded-2xl border-l-4 p-6 mb-10" style={{ backgroundColor: "#FEF9EC", borderColor: "#D97706" }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>Definition</p>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>Definition</p>
               <p className="text-base leading-relaxed" style={{ color: "#0a0a0a" }}>
                 <strong>Total Conversional Market (TCM):</strong> the highly specific, highly motivated subset of prospects who are actively feeling the pain point today, are already looking for workarounds, and are ready to act immediately.
               </p>
@@ -81,15 +81,15 @@ export default function TotalConversionalMarketPage() {
           </FadeIn>
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
-            <p className="text-sm mb-4" style={{ color: "#8C8279" }}>Where this comes from</p>
-            <Link href="/blog/tam-trap-vague-targeting" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#D97706" }}>
+            <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>
+            <Link href="/blog/tam-trap-vague-targeting" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#A14A08" }}>
               Read: The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </div>
 
           <div className="mt-6">
-            <Link href="/resources/glossary" className="text-sm font-bold" style={{ color: "#8C8279" }}>&larr; Back to the glossary</Link>
+            <Link href="/resources/glossary" className="text-sm font-bold" style={{ color: "#71675E" }}>&larr; Back to the glossary</Link>
           </div>
         </div>
       </article>

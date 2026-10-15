@@ -67,29 +67,33 @@ const HOME_AI_RESOURCES = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <JsonLd data={buildFaqSchema(FAQ_ITEMS)} />
       <JsonLd data={buildWebsiteSchema()} />
       <JsonLd data={buildLocalBusinessSchema()} />
       <Navbar />
       <EventPopup />
-      <Hero />
-      <LogoStrip />
-      <WhoWeHelp />
-      <Industries />
-      <Services />
-      <SystemFlow />
-      <BenefitsMarquee />
-      <Testimonials />
-      <Promise />
-      <FAQ />
-      <section className="py-16 px-4" style={{ backgroundColor: "#ffffff" }}>
-        <div className="max-w-3xl mx-auto">
-          <AskYourAI resources={HOME_AI_RESOURCES} />
-        </div>
-      </section>
-      <CTABanner />
+      {/* Header and footer sit outside <main> (as in InnerLayout) so the
+          skip link lands past the navigation. */}
+      <main id="main-content">
+        <Hero />
+        <LogoStrip />
+        <WhoWeHelp />
+        <Industries />
+        <Services />
+        <SystemFlow />
+        <BenefitsMarquee />
+        <Testimonials />
+        <Promise />
+        <FAQ />
+        <section className="py-16 px-4" style={{ backgroundColor: "#ffffff" }}>
+          <div className="max-w-3xl mx-auto">
+            <AskYourAI resources={HOME_AI_RESOURCES} />
+          </div>
+        </section>
+        <CTABanner />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }

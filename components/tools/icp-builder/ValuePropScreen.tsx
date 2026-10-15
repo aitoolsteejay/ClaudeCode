@@ -53,7 +53,7 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
       {isPartner ? (
         <>
           <div className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#8C8279" }}>What&apos;s In It For Them</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#71675E" }}>What&apos;s In It For Them</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {(result.whatsInItForThem || []).map((item, i) => (
                 <div key={i} className="rounded-xl p-4 text-sm text-gray-700" style={{ backgroundColor: "#F8F6F2", border: "1px solid #E8E2D9" }}>
@@ -64,12 +64,12 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
           </div>
 
           <div className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Ideal Partner Profile</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Ideal Partner Profile</h3>
             <p className="text-sm leading-relaxed text-gray-700">{result.idealPartnerProfile}</p>
           </div>
 
           <div className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>How the Partnership Works</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>How the Partnership Works</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {(result.partnershipSteps || []).map((step, i) => (
                 <div key={i} className="rounded-xl p-5" style={{ backgroundColor: "#F8F6F2", border: "1px solid #E8E2D9" }}>
@@ -82,7 +82,7 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
           </div>
 
           <div className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#8C8279" }}>Why Partner With Us</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: "#71675E" }}>Why Partner With Us</h3>
             <ul className="space-y-2.5">
               {(result.whyPartnerWithUs || []).map((item, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
@@ -121,7 +121,7 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
           </div>
 
           <div className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-            <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>3-Step System</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>3-Step System</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {(result.threeStepSystem || []).map((step, i) => (
                 <div key={i} className="rounded-xl p-5" style={{ backgroundColor: "#F8F6F2", border: "1px solid #E8E2D9" }}>
@@ -135,11 +135,11 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-2xl p-6" style={{ border: "1px solid #E8E2D9" }}>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#8C8279" }}>Why Others Fail</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#71675E" }}>Why Others Fail</h3>
               <ul className="space-y-2.5">
                 {(result.whyOthersFail || []).map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#8C8279" }} />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#71675E" }} />
                     {item}
                   </li>
                 ))}
@@ -163,7 +163,7 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
       <CoreAngleCard coreAngle={result.coreAngle} />
 
       <div className="bg-white rounded-2xl p-6 md:p-8 space-y-6" style={{ border: "1px solid #E8E2D9" }}>
-        <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: "#8C8279" }}>
+        <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>
           {isPartner ? "How to Reach Out" : "Strategy Behind Your Content Creation"}
         </h3>
 

@@ -4,6 +4,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "B2B Lead Gen Strategist, Mumbai | Rs 4-7 LPA",
@@ -42,7 +43,7 @@ export default function LeadGenStrategist() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "B2B Lead Gen Strategist", href: "/careers/lead-gen-strategist" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: ACCENT, border: "1px solid rgba(59,130,246,0.2)" }}>Full-Time · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: textTone(ACCENT), border: "1px solid rgba(59,130,246,0.2)" }}>Full-Time · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             B2B Lead Generation Strategist
           </h1>
@@ -50,7 +51,7 @@ export default function LeadGenStrategist() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
                   <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
                     {value} <span aria-hidden="true">↗</span>
@@ -66,7 +67,7 @@ export default function LeadGenStrategist() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
         </div>
       </section>
 
@@ -103,7 +104,7 @@ export default function LeadGenStrategist() {
                 { title: "Analytics & Optimisation", desc: "Track leads generated, reply rates, booking rates, and channel performance. Optimise messaging, targeting, and campaign strategy to keep increasing lead volume." },
               ].map((item) => (
                 <div key={item.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{item.title}</h3>
+                  <h3 className="text-sm font-black mb-2" style={{ color: textTone(ACCENT) }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -122,7 +123,7 @@ export default function LeadGenStrategist() {
                 { label: "Quality-Focused", desc: "Obsessed with lead quality, not just activity" },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <p className="text-xs font-black mb-1" style={{ color: ACCENT }}>{item.label}</p>
+                  <p className="text-xs font-black mb-1" style={{ color: textTone(ACCENT) }}>{item.label}</p>
                   <p className="text-sm" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -177,8 +178,8 @@ export default function LeadGenStrategist() {
           <div className="rounded-2xl p-8 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
             <h3 className="text-lg font-black mb-4" style={{ color: "#0a0a0a" }}>Ready to apply?</h3>
             <div className="space-y-2 mb-6">
-              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>growth@myntmore.com</a>
-              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
+              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>growth@myntmore.com</a>
+              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
             </div>
             <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Apply Now

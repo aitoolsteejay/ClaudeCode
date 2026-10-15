@@ -132,7 +132,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       namecol: "#0a0a0a",
       rolecol: "#0369a1",
       quotecol: "#3D3D3D",
-      avatarbg: "#0284C7",
+      avatarbg: "#0369A1",
       avatartext: "#ffffff",
       starcol: "#F5B731",
     },
@@ -152,7 +152,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       namecol: "#0a0a0a",
       rolecol: "#15803d",
       quotecol: "#3D3D3D",
-      avatarbg: "#16A34A",
+      avatarbg: "#166534",
       avatartext: "#ffffff",
       starcol: "#F5B731",
     },
@@ -160,9 +160,9 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       bg: "linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)",
       border: "rgba(251,191,36,0.18)",
       namecol: "#0a0a0a",
-      rolecol: "#b45309",
+      rolecol: "#a14a08",
       quotecol: "#3D3D3D",
-      avatarbg: "#D97706",
+      avatarbg: "#A14A08",
       avatartext: "#ffffff",
       starcol: "#F5B731",
     },
@@ -249,7 +249,7 @@ function RatingBadge({ score, label, icon }: { score: string; label: string; ico
             </svg>
           ))}
         </div>
-        <span className="text-xs text-[#8C8279]">{label}</span>
+        <span className="text-xs text-[#71675E]">{label}</span>
       </div>
     </div>
   );
@@ -271,7 +271,7 @@ export default function Testimonials() {
         >
           This is why clients
           <br />
-          <span style={{ color: "#F5B731" }}>love working with us</span>
+          <span style={{ color: "#A14A08" }}>love working with us</span>
         </h2>
 
         <p className="mt-5 text-lg text-[#52525B] max-w-2xl mx-auto">
@@ -317,7 +317,7 @@ export default function Testimonials() {
         <ScrollRow items={ROW_2} direction="right" duration="40s" />
       </div>
 
-      <p className="text-center text-xs text-neutral-400 mt-10 px-4">
+      <p className="text-center text-xs text-neutral-600 mt-10 px-4">
         Results vary by industry, deal size, and engagement scope. Testimonials reflect real anonymised client feedback.
       </p>
     </section>

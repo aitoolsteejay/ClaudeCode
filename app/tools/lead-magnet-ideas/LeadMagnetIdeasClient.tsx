@@ -6,6 +6,7 @@ import LeadGate, { LeadData } from "@/components/tools/shared/LeadGate";
 import { LandingPage } from "@/components/tools/lead-magnet-ideas/LandingPage";
 import { Lightbulb, TrendingUp, Send, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+import { textTone } from "@/lib/colors";
 
 const INDUSTRY_OPTIONS = [
   "B2B SaaS",
@@ -146,7 +147,7 @@ export default function LeadMagnetIdeasClient() {
             style={{ background: "rgba(59,130,246,0.07)", borderColor: "rgba(59,130,246,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#3b82f6" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#3b82f6" }}>Lead Magnet Idea Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#1D4ED8" }}>Lead Magnet Idea Generator</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
             Lead Magnet{" "}
@@ -162,7 +163,7 @@ export default function LeadMagnetIdeasClient() {
           </p>
         </header>
 
-        <main>
+        <div>
           {/* Lead Gate */}
           {step === "lead" && (
             <LeadGate
@@ -300,7 +301,7 @@ export default function LeadMagnetIdeasClient() {
                         >
                           <Lightbulb className="w-4 h-4" style={{ color }} />
                         </div>
-                        <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color }}>
+                        <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: textTone(color) }}>
                           Idea {idx + 1}
                         </p>
                       </div>
@@ -361,7 +362,7 @@ export default function LeadMagnetIdeasClient() {
               </div>
             </div>
           )}
-        </main>
+        </div>
       </div>
     </div>
   );

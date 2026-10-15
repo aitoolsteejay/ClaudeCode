@@ -4,6 +4,7 @@ import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildJobPostingSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "HR & Operations Intern, Mumbai | Rs 7-15K/mo",
@@ -42,7 +43,7 @@ export default function HrOperationsIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "HR and Operations Intern", href: "/careers/hr-operations-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: ACCENT, border: "1px solid rgba(168,85,247,0.2)" }}>Internship · Work from Office · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: textTone(ACCENT), border: "1px solid rgba(168,85,247,0.2)" }}>Internship · Work from Office · Worli, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             HR and Operations Intern
           </h1>
@@ -50,7 +51,7 @@ export default function HrOperationsIntern() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "6 months minimum"], ["Stipend", "Rs 7,000–15,000 (based on experience)"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <p className="text-xs mb-1" style={{ color: "#8C8279" }}>{label}</p>
+                <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
                   <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline" style={{ color: "#0a0a0a" }}>
                     {value} <span aria-hidden="true">↗</span>
@@ -66,7 +67,7 @@ export default function HrOperationsIntern() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#8C8279" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to growth@myntmore.com and founder@myntmore.com with subject: {APPLY_SUBJECT}</p>
         </div>
       </section>
 
@@ -97,7 +98,7 @@ export default function HrOperationsIntern() {
                 { title: "Founder-Level Exposure", desc: "Work directly with the founder on organisation design and people decisions, and support high-priority people projects as they come up." },
               ].map((item) => (
                 <div key={item.title} className="rounded-xl border p-5" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <h3 className="text-sm font-black mb-2" style={{ color: ACCENT }}>{item.title}</h3>
+                  <h3 className="text-sm font-black mb-2" style={{ color: textTone(ACCENT) }}>{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -116,7 +117,7 @@ export default function HrOperationsIntern() {
                 { label: "Bonus", desc: "Prior HR, recruitment, or people ops work, or experience organising projects, events, or teams" },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <p className="text-xs font-black mb-1" style={{ color: ACCENT }}>{item.label}</p>
+                  <p className="text-xs font-black mb-1" style={{ color: textTone(ACCENT) }}>{item.label}</p>
                   <p className="text-sm" style={{ color: "#52525B" }}>{item.desc}</p>
                 </div>
               ))}
@@ -137,7 +138,7 @@ export default function HrOperationsIntern() {
                 <p className="text-base" style={{ color: "#3D3D3D" }}>{item}</p>
               </div>
             ))}
-            <p className="text-sm mt-4" style={{ color: "#8C8279" }}>
+            <p className="text-sm mt-4" style={{ color: "#71675E" }}>
               This internship will fast-track your career in HR & People Operations, Talent Acquisition, Organisational Design, Startup Ops, or Chief of Staff / founder-track roles.
             </p>
           </div>
@@ -170,8 +171,8 @@ export default function HrOperationsIntern() {
           <div className="rounded-2xl p-8 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
             <h3 className="text-lg font-black mb-4" style={{ color: "#0a0a0a" }}>Ready to apply?</h3>
             <div className="space-y-2 mb-6">
-              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>growth@myntmore.com</a>
-              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
+              <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>growth@myntmore.com</a>
+              <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="block text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
             </div>
             <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Apply Now

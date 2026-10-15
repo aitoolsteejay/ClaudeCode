@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
+import { GOLD_TEXT, textTone } from "@/lib/colors";
 
 interface AuditPage {
   path: string | null;
@@ -39,7 +40,7 @@ type Filter = "all" | "linked" | "orphan" | "noindex" | "no-xml";
 const GOLD = "#F5B731";
 const TEXT_DARK = "#0a0a0a";
 const TEXT_BODY = "#52525B";
-const TEXT_MUTED = "#8C8279";
+const TEXT_MUTED = "#71675E";
 const BORDER = "#E8E2D9";
 const GREEN = "#059669";
 const RED = "#DC2626";
@@ -65,7 +66,7 @@ function Badge({ children, color, solid }: { children: React.ReactNode; color: s
   return (
     <span
       className="inline-flex items-center text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap"
-      style={solid ? { backgroundColor: color, color: "#fff" } : { backgroundColor: `${color}14`, color, border: `1px solid ${color}33` }}
+      style={solid ? { backgroundColor: color, color: "#fff" } : { backgroundColor: `${color}14`, color: textTone(color), border: `1px solid ${color}33` }}
     >
       {children}
     </span>
@@ -125,10 +126,10 @@ export default function SiteAuditClient({ audit }: { audit: AuditData }) {
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-5" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}>
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: GOLD }}>Internal · unlisted</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: GOLD_TEXT }}>Internal · unlisted</span>
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: TEXT_DARK }}>
-            Site <span style={{ color: GOLD }}>audit</span>
+            Site <span style={{ color: GOLD_TEXT }}>audit</span>
           </h1>
           <p className="text-base leading-relaxed max-w-2xl" style={{ color: TEXT_BODY }}>
             Every page on the website, and whether a visitor can actually reach it by clicking. <strong>Orphan</strong> means no page, menu or footer links to it, so
@@ -201,7 +202,7 @@ export default function SiteAuditClient({ audit }: { audit: AuditData }) {
                         <div className="flex flex-wrap items-center gap-1.5">
                           <Badge color={p.status === "linked" ? GREEN : RED} solid={p.status === "orphan"}>{p.status}</Badge>
                           {p.noindex && <Badge color={TEXT_MUTED}>noindex</Badge>}
-                          {!p.inXmlSitemap && !p.private && <Badge color="#B45309">not in XML sitemap</Badge>}
+                          {!p.inXmlSitemap && !p.private && <Badge color="#A14A08">not in XML sitemap</Badge>}
                           {expandable && (
                             <button
                               type="button"

@@ -275,7 +275,7 @@ export default function RoiCalculatorClient() {
       <div aria-hidden="true" style={{ position: "absolute", bottom: "-160px", left: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-12 pb-8 relative z-10">
+      <div className="container mx-auto px-4 pt-12 pb-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
             <div
@@ -283,7 +283,7 @@ export default function RoiCalculatorClient() {
               style={{ background: "rgba(34,197,94,0.07)", borderColor: "rgba(34,197,94,0.35)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#16a34a" }} aria-hidden="true" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#16a34a" }}>ROI Calculator</span>
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#166534" }}>ROI Calculator</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">
               <span className="relative inline-block">
@@ -384,7 +384,7 @@ export default function RoiCalculatorClient() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       {showGate && <LeadGateModal onComplete={handleLeadComplete} onClose={() => setShowGate(false)} />}
     </div>

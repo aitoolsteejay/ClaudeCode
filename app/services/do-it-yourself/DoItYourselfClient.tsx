@@ -23,7 +23,7 @@ const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 // homepage Hero): only the handwritten annotation sections below use it.
 
 const ACCENT = "#7C3AED";
-const GOLD_TEXT = "#B45309";
+const GOLD_TEXT = "#A14A08";
 const FOCUS = "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
 const SERVICE_SCHEMA = buildServiceSchema({
@@ -428,7 +428,7 @@ export default function DoItYourselfClient() {
 
         {/* Handwritten annotation left side */}
         <div aria-hidden="true" className="hidden lg:flex flex-col items-start gap-1 absolute z-20" style={{ left: "1%", top: "60%", animation: "handwrite-float-l 7s ease-in-out 3s infinite" }}>
-          <div className="card-fade-up flex flex-col leading-snug" style={{ fontFamily: "var(--font-caveat)", fontSize: "19px", fontWeight: 700, color: "#D97706", lineHeight: 1.3, animationDelay: "1.3s" }}>
+          <div className="card-fade-up flex flex-col leading-snug" style={{ fontFamily: "var(--font-caveat)", fontSize: "19px", fontWeight: 700, color: "#A14A08", lineHeight: 1.3, animationDelay: "1.3s" }}>
             <span>5 minutes</span>
             <span>to your first campaign</span>
           </div>

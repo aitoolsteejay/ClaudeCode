@@ -5,6 +5,7 @@ import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -101,12 +102,12 @@ export default function Resources() {
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.08)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>Free Resources</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>Free Resources</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Learn the system.<br />
-            <span style={{ color: "#F5B731" }}>Then let us run it</span>
+            <span style={{ color: "#A14A08" }}>Then let us run it</span>
           </h1>
 
           <p className="text-lg sm:text-xl max-w-2xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
@@ -132,7 +133,7 @@ export default function Resources() {
             ].map((s) => (
               <div key={s.n}>
                 <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.n}</div>
-                <div className="text-xs sm:text-sm" style={{ color: "#8C8279" }}>{s.label}</div>
+                <div className="text-xs sm:text-sm" style={{ color: "#71675E" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -165,10 +166,10 @@ export default function Resources() {
                       </div>
                       <div className="flex items-baseline justify-between gap-3 mb-2">
                         <h3 className="text-lg font-black" style={{ color: "#0a0a0a" }}>{d.title}</h3>
-                        <span className="text-xs font-bold whitespace-nowrap" style={{ color: d.accent }}>{d.count}</span>
+                        <span className="text-xs font-bold whitespace-nowrap" style={{ color: textTone(d.accent) }}>{d.count}</span>
                       </div>
                       <p className="text-sm leading-relaxed mb-5" style={{ color: "#52525B" }}>{d.desc}</p>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold transition-all duration-200 group-hover:gap-2.5" style={{ color: d.accent }}>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold transition-all duration-200 group-hover:gap-2.5" style={{ color: textTone(d.accent) }}>
                         Browse
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </span>

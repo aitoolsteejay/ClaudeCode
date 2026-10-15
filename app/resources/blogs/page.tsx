@@ -6,6 +6,7 @@ import JsonLd from "../../components/JsonLd";
 import BlogGrid, { type BlogPost } from "./BlogGrid";
 import NewsletterForm from "../../components/NewsletterForm";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -356,7 +357,7 @@ export default async function BlogsPage() {
                 { label: "ICP & Targeting", accent: "#10b981" },
                 { label: "GTM Strategy", accent: "#7C3AED" },
               ].map((cat) => (
-                <span key={cat.label} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border" style={{ color: cat.accent, backgroundColor: `${cat.accent}0d`, borderColor: `${cat.accent}30` }}>
+                <span key={cat.label} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border" style={{ color: textTone(cat.accent), backgroundColor: `${cat.accent}0d`, borderColor: `${cat.accent}30` }}>
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: cat.accent }} />
                   {cat.label}
                 </span>
@@ -405,7 +406,7 @@ export default async function BlogsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {mediumPosts.map((post) => (
                 <a key={post.link} href={post.link} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                  <span className="text-xs font-semibold" style={{ color: "#8C8279" }}>{formatMediumDate(post.pubDate)}</span>
+                  <span className="text-xs font-semibold" style={{ color: "#71675E" }}>{formatMediumDate(post.pubDate)}</span>
                   <h3 className="text-base font-black mt-2 mb-3 leading-snug" style={{ color: "#0a0a0a" }}>{post.title}</h3>
                   <span className="text-xs font-bold" style={{ color: "#0a0a0a" }}>Read on Medium ↗</span>
                 </a>
@@ -425,7 +426,7 @@ export default async function BlogsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {PRESS_MENTIONS.map((mention) => (
                 <a key={mention.link} href={mention.link} target="_blank" rel="noopener noreferrer" className="group block rounded-2xl border p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                  <span className="text-xs font-semibold" style={{ color: "#8C8279" }}>{mention.outlet} · {mention.date}</span>
+                  <span className="text-xs font-semibold" style={{ color: "#71675E" }}>{mention.outlet} · {mention.date}</span>
                   <h3 className="text-base font-black mt-2 mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{mention.title}</h3>
                   <p className="text-sm leading-relaxed mb-3" style={{ color: "#52525B" }}>{mention.excerpt}</p>
                   <span className="text-xs font-bold" style={{ color: "#0a0a0a" }}>Read on {mention.outlet} ↗</span>
@@ -439,7 +440,7 @@ export default async function BlogsPage() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <FadeIn className="mx-auto block max-w-2xl">
           <div className="rounded-2xl p-8 sm:p-10 border text-center" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h2>
             <p className="text-sm sm:text-base leading-relaxed mb-6 max-w-lg mx-auto" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.
@@ -452,7 +453,7 @@ export default async function BlogsPage() {
       </section>
 
       <section className="py-10 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
-        <p className="text-sm text-center" style={{ color: "#8C8279" }}>
+        <p className="text-sm text-center" style={{ color: "#71675E" }}>
           Rather have us run this for you?{" "}
           <a href="/founder-meeting" className="font-bold underline" style={{ color: "#0a0a0a" }}>Book a free GTM audit →</a>
         </p>

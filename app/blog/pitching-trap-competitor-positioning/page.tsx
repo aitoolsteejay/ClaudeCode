@@ -56,7 +56,7 @@ export default function PitchingTrapBlogPost() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(249,115,22,0.35)", background: "rgba(249,115,22,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#f97316" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#c2410c" }}>Sales Strategy · 4 min read</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#9A3412" }}>Sales Strategy · 4 min read</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             The Pitching Trap: How to Articulate Pain Better Than Your Competitors
@@ -78,9 +78,9 @@ export default function PitchingTrapBlogPost() {
             </section>
 
             <blockquote className="relative rounded-2xl border p-7 sm:p-8 text-xl sm:text-2xl font-black leading-relaxed overflow-hidden" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", color: "#0a0a0a" }}>
-              <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#D97706" }}>“</span>
+              <span aria-hidden="true" className="absolute -top-5 right-4 text-8xl font-black opacity-10" style={{ color: "#A14A08" }}>“</span>
               “Stop listing features and start breaking patterns.”
-              <footer className="mt-3 text-sm font-normal" style={{ color: "#8C8279" }}>Tejas Jhaveri, Founder of Myntmore</footer>
+              <footer className="mt-3 text-sm font-normal" style={{ color: "#71675E" }}>Tejas Jhaveri, Founder of Myntmore</footer>
             </blockquote>
 
             <p>If you open with a generic claim about how your software “streamlines workflows,” the buyer’s brain tunes out. If you identify a specific point of friction and articulate the day-to-day problem better than the buyer can, you earn trust and curiosity.</p>
@@ -115,7 +115,7 @@ export default function PitchingTrapBlogPost() {
           <div className="mt-8"><AskYourAI resources={BLOG_AI_RESOURCES} /></div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

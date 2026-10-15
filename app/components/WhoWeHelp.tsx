@@ -242,7 +242,7 @@ export default function WhoWeHelp() {
                 {/* Persona name */}
                 <span
                   className="text-sm font-semibold mb-4 transition-colors duration-200"
-                  style={{ color: isActive ? "#0a0a0a" : "#8C8279" }}
+                  style={{ color: isActive ? "#0a0a0a" : "#71675E" }}
                 >
                   {p.tab}
                 </span>

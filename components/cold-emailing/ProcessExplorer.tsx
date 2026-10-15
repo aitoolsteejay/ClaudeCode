@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { PROCESS_STEPS } from "./process-steps";
 import { useAutoAdvance } from "@/lib/use-auto-advance";
+import { GOLD_TEXT, textTone } from "@/lib/colors";
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
@@ -130,10 +131,10 @@ export default function ProcessExplorer() {
                     className="grid h-11 w-11 place-items-center rounded-full text-sm font-black transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#EA580C]"
                     style={
                       isActive
-                        ? { background: `linear-gradient(135deg, ${ORANGE}, ${GOLD})`, color: "#fff", transform: "scale(1.12)", boxShadow: "0 12px 26px rgba(234,88,12,0.35)" }
+                        ? { background: `linear-gradient(135deg, ${textTone(ORANGE)}, ${GOLD_TEXT})`, color: "#fff", transform: "scale(1.12)", boxShadow: "0 12px 26px rgba(234,88,12,0.35)" }
                         : isDone
-                          ? { backgroundColor: "#fff", color: ORANGE, border: `2px solid ${ORANGE}` }
-                          : { backgroundColor: "#fff", color: "#8C8279", border: "2px solid #E8E2D9" }
+                          ? { backgroundColor: "#fff", color: textTone(ORANGE), border: `2px solid ${ORANGE}` }
+                          : { backgroundColor: "#fff", color: "#71675E", border: "2px solid #E8E2D9" }
                     }
                   >
                     {i + 1}
@@ -141,7 +142,7 @@ export default function ProcessExplorer() {
                   <span
                     aria-hidden="true"
                     className="pointer-events-none absolute left-1/2 top-[56px] hidden w-24 -translate-x-1/2 text-center text-[11px] font-bold leading-tight transition-colors lg:block"
-                    style={{ color: isActive ? INK : "#8C8279" }}
+                    style={{ color: isActive ? INK : "#71675E" }}
                   >
                     {s.short}
                   </span>
@@ -183,7 +184,7 @@ export default function ProcessExplorer() {
           <span className="mb-5 grid h-14 w-14 place-items-center rounded-2xl text-white" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${GOLD})`, boxShadow: "0 14px 30px rgba(234,88,12,0.28)" }}>
             <Icon className="h-7 w-7" strokeWidth={2} aria-hidden="true" />
           </span>
-          <p className="text-[11px] font-black uppercase tracking-[0.28em]" style={{ color: ORANGE }}>
+          <p className="text-[11px] font-black uppercase tracking-[0.28em]" style={{ color: textTone(ORANGE) }}>
             Step {active + 1} of {STEPS.length}
           </p>
           <h3 className="mt-2 text-2xl font-black leading-tight sm:text-3xl" style={{ color: INK, letterSpacing: "-0.03em" }}>
@@ -243,7 +244,7 @@ export default function ProcessExplorer() {
               {paused ? <Play className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" /> : <Pause className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" />}
             </button>
           )}
-          <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#8C8279" }}>
+          <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#71675E" }}>
             {active + 1} / {STEPS.length}
           </span>
         </div>

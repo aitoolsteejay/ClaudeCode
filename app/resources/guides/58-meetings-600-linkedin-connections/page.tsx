@@ -35,6 +35,7 @@ import StatTicker from "@/app/components/StatTicker";
 import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { textTone } from "@/lib/colors";
 
 const URL = "https://www.myntmore.com/resources/guides/58-meetings-600-linkedin-connections";
 const BLUE = "#0077b5";
@@ -130,7 +131,7 @@ function Callout({ children, accent }: { children: React.ReactNode; accent: stri
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>
+    <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>
       {children}
     </p>
   );
@@ -141,7 +142,7 @@ function CheckList({ items, accent }: { items: string[]; accent: string }) {
     <ul className="space-y-2.5">
       {items.map((it) => (
         <li key={it} className="flex items-start gap-3 text-sm sm:text-base leading-snug" style={{ color: "#3D3D3D" }}>
-          <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${accent}18`, color: accent }}>
+          <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${accent}18`, color: textTone(accent) }}>
             <Check className="w-3 h-3" strokeWidth={3.5} aria-hidden="true" />
           </span>
           {it}
@@ -171,8 +172,8 @@ function StepSection({
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl font-black" style={{ color: accent }}>{number}</span>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${accent}14`, color: accent, border: `1px solid ${accent}30` }}>
+            <span className="text-3xl font-black" style={{ color: textTone(accent) }}>{number}</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: `${accent}14`, color: textTone(accent), border: `1px solid ${accent}30` }}>
               Step {number}
             </span>
           </div>
@@ -198,7 +199,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "58 Meetings from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#E8F3FA", color: BLUE, border: `1px solid ${BLUE}4D` }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#E8F3FA", color: textTone(BLUE), border: `1px solid ${BLUE}4D` }}>
             Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -215,7 +216,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           <p className="text-base leading-relaxed hero-fade-d2 mb-8" style={{ color: "#52525B" }}>
             <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Tejas</a>{" "}
             isn’t your average marketer. He’s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At{" "}
-            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he’s partnered with over 300 clients to generate $80M+ in revenue. He’s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he’s here to do it for you.
+            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he’s partnered with 300+ clients to generate $80M+ in revenue. He’s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he’s here to do it for you.
           </p>
 
           <FadeIn delay={150}>
@@ -223,7 +224,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
               {HERO_STATS.map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -231,7 +232,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
 
           <FadeIn delay={250}>
             <nav aria-label="The 5 steps" className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest mr-1" style={{ color: "#8C8279" }}>The 5 steps</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest mr-1" style={{ color: "#71675E" }}>The 5 steps</span>
               {STEPS_AT_A_GLANCE.map((s, i) => (
                 <a key={s} href={`#step-${i + 1}`} className="inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs sm:text-[13px] font-bold transition-colors hover:border-[#0077b5]" style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}>
                   <span className="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-black text-white" style={{ backgroundColor: BLUE }}>{i + 1}</span>
@@ -255,7 +256,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             <Target className="w-5 h-5" style={{ color: "#F97316" }} strokeWidth={2.4} aria-hidden="true" />
             Identify NOW Buyers (not “everyone”)
           </h3>
-          <p className="text-sm font-semibold mb-4" style={{ color: "#8C8279" }}>People who:</p>
+          <p className="text-sm font-semibold mb-4" style={{ color: "#71675E" }}>People who:</p>
           <CheckList items={NOW_BUYERS} accent="#F97316" />
         </div>
 
@@ -267,7 +268,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {ICP_LAYERS.map((l, i) => (
               <div key={l.label} className="rounded-xl p-5" style={{ backgroundColor: `rgba(249,115,22,${0.04 + l.tone * 0.12})`, border: `1px solid rgba(249,115,22,${0.15 + l.tone * 0.3})` }}>
-                <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#C2570C" }}>Layer {i + 1}</span>
+                <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#9A3412" }}>Layer {i + 1}</span>
                 <p className="text-base font-black mt-1" style={{ color: "#0a0a0a" }}>{l.label}</p>
                 <p className="text-sm mt-1" style={{ color: "#3D3D3D" }}>{l.text}</p>
               </div>
@@ -282,7 +283,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           </h3>
           <div className="flex flex-wrap gap-2">
             {TRIGGERS.map((t) => (
-              <span key={t} className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-full inline-block" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#C2570C", border: "1px solid rgba(249,115,22,0.3)" }}>
+              <span key={t} className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-full inline-block" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>
                 {t}
               </span>
             ))}
@@ -304,7 +305,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             {["Who", "Pain", "Unique System", "Outcome"].map((w, i, arr) => (
               <span key={w} className="flex items-center gap-2">
                 <span className="text-sm font-black px-4 py-2 rounded-lg" style={{ backgroundColor: "#0a0a0a", color: "#4ade80" }}>{w}</span>
-                {i < arr.length - 1 && <span className="font-black" style={{ color: "#8C8279" }}>+</span>}
+                {i < arr.length - 1 && <span className="font-black" style={{ color: "#71675E" }}>+</span>}
               </span>
             ))}
           </div>
@@ -409,10 +410,10 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             return (
               <li key={f.name} className="rounded-xl border bg-white p-5 sm:p-6" style={{ borderColor: "#E8E2D9" }}>
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-black" style={{ backgroundColor: "rgba(217,119,6,0.1)", color: "#D97706" }}>{i + 1}</span>
+                  <span className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-black" style={{ backgroundColor: "rgba(217,119,6,0.1)", color: "#A14A08" }}>{i + 1}</span>
                   <h3 className="flex items-center gap-2 text-base sm:text-lg font-black" style={{ color: "#0a0a0a" }}>
                     {f.name}
-                    <Icon className="w-4 h-4" style={{ color: "#D97706" }} strokeWidth={2.4} aria-hidden="true" />
+                    <Icon className="w-4 h-4" style={{ color: "#A14A08" }} strokeWidth={2.4} aria-hidden="true" />
                   </h3>
                 </div>
                 <CopyBlock accent="#fbbf24" label={`Follow-up ${i + 1}`} successMessage="Message copied to clipboard" text={f.text} />

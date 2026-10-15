@@ -3,6 +3,7 @@
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import FadeIn from "../../components/FadeIn";
+import { textTone } from "@/lib/colors";
 
 const ACCENT = "#E1306C";
 const PROFILE_URL = "https://www.instagram.com/tejas_jhaveri/";
@@ -41,7 +42,7 @@ export default function FeedClient() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 mb-8">
                   {["Cold Outreach", "LinkedIn Growth", "AI Prospecting"].map((topic) => (
-                    <span key={topic} className="text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(225,48,108,0.08)", color: ACCENT }}>{topic}</span>
+                    <span key={topic} className="text-xs font-bold px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(225,48,108,0.08)", color: textTone(ACCENT) }}>{topic}</span>
                   ))}
                 </div>
                 <a href={PROFILE_URL} target="_blank" rel="noopener noreferrer" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">

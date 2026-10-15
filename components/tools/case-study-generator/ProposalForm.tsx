@@ -40,7 +40,7 @@ function Field({
       <label className="block text-xs font-bold text-gray-500 uppercase tracking-[0.15em]">
         {label} {required && <span style={{ color: ACCENT }}>*</span>}
       </label>
-      {hint && <p className="text-xs" style={{ color: "#8C8279" }}>{hint}</p>}
+      {hint && <p className="text-xs" style={{ color: "#71675E" }}>{hint}</p>}
       {rows ? (
         <textarea
           rows={rows}
@@ -77,7 +77,7 @@ export function ProposalForm({ onGenerate, isLoading }: ProposalFormProps) {
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="text-2xl sm:text-3xl font-black mb-2" style={{ color: "#0a0a0a" }}>Tell us about the prospect</h2>
-      <p className="text-sm mb-8" style={{ color: "#8C8279" }}>We&apos;ll mirror their language back to them, not generic filler.</p>
+      <p className="text-sm mb-8" style={{ color: "#71675E" }}>We&apos;ll mirror their language back to them, not generic filler.</p>
 
       <div className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

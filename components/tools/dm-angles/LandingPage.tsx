@@ -32,7 +32,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             style={{ background: "rgba(168,85,247,0.07)", borderColor: "rgba(168,85,247,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#a855f7" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#a855f7" }}>DM Angle Generator</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7E22CE" }}>DM Angle Generator</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">

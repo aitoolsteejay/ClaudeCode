@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { GOLD_TEXT } from "@/lib/colors";
 
 export interface FlowStep {
   n: string;
@@ -188,7 +189,9 @@ function StepCard({ step, delay, active = false }: { step: FlowStep; delay: numb
         <span
           className="text-xs font-black tracking-widest"
           style={{
-            color: active ? solid : "#B8B0A7",
+            // The active card puts a 0.35-alpha tint of the step's own hue behind
+            // the number, so use a deep shade of that hue (each >= 4.9:1 on its tint).
+            color: active ? (({ "rgb(139, 92, 246)": "#5B21B6", "rgb(59, 130, 246)": "#1E40AF", "rgb(245, 183, 49)": GOLD_TEXT, "rgb(239, 68, 68)": "#991B1B", "rgb(16, 185, 129)": "#065F46", "rgb(249, 115, 22)": "#9A3412" } as Record<string, string>)[solid] ?? "#0a0a0a") : "#71675E",
             opacity: inView ? 1 : 0,
             transition: `opacity 0.4s ease ${delay + 200}ms, color 0.3s ease`,
           }}
@@ -264,7 +267,7 @@ export default function FlowDiagram({
 
         {/* Title */}
         <div ref={titleFade.ref} style={titleFade.style} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>{badge}</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{badge}</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3 leading-tight" style={{ color: "#0a0a0a" }}>{title}</h2>
         </div>
 
@@ -305,12 +308,12 @@ export default function FlowDiagram({
             <div className="flex items-center gap-3 mb-5">
               <span
                 className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                style={{ backgroundColor: "rgba(245,183,49,0.2)", color: "#D97706", border: "1px solid rgba(245,183,49,0.4)" }}
+                style={{ backgroundColor: "rgba(245,183,49,0.2)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.4)" }}
               >
                 <PulsingDot />
                 Running in parallel
               </span>
-              <span className="text-xs font-semibold" style={{ color: "#8C8279" }}>Active throughout</span>
+              <span className="text-xs font-semibold" style={{ color: "#71675E" }}>Active throughout</span>
             </div>
             <p className="font-black text-base mb-5" style={{ color: "#0a0a0a" }}>{parallel.label}</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

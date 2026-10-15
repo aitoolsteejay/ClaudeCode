@@ -7,6 +7,7 @@ import CopyBlock from "@/app/components/CopyBlock";
 import FadeIn from "@/app/components/FadeIn";
 import StatTicker from "@/app/components/StatTicker";
 import Underline from "./Underline";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "80+ US Meetings Booked in 1 Month with AI Agents",
@@ -47,7 +48,7 @@ function Chip({ text, accent, accentBg }: { text: string; accent: string; accent
   return (
     <span
       className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-full inline-block"
-      style={{ backgroundColor: accentBg, color: accent, border: `1px solid ${accent}30` }}
+      style={{ backgroundColor: accentBg, color: textTone(accent), border: `1px solid ${accent}30` }}
     >
       {text}
     </span>
@@ -67,7 +68,7 @@ function ChipGroup({ items, accent, accentBg }: { items: string[]; accent: strin
 function MiniCard({ title, items, accent }: { title: React.ReactNode; items: string[]; accent: string }) {
   return (
     <div className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-      <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: accent }}>{title}</h4>
+      <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: textTone(accent) }}>{title}</h4>
       <ul className="space-y-1.5">
         {items.map((it, i) => (
           <li key={i} className="flex items-start gap-2 text-sm leading-snug" style={{ color: "#3D3D3D" }}>
@@ -87,7 +88,7 @@ function NumberedList({ items, accent, accentBg }: { items: string[]; accent: st
         <li key={i} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
           <span
             className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black mt-0.5"
-            style={{ backgroundColor: accentBg, color: accent }}
+            style={{ backgroundColor: accentBg, color: textTone(accent) }}
           >
             {i + 1}
           </span>
@@ -114,7 +115,7 @@ function FlowChips({ steps, accent }: { steps: string[]; accent: string }) {
           <span className="text-xs sm:text-sm font-bold px-3 py-1.5 rounded-lg" style={{ backgroundColor: "#0a0a0a", color: accent }}>
             {s}
           </span>
-          {i < steps.length - 1 && <span style={{ color: "#8C8279" }}>→</span>}
+          {i < steps.length - 1 && <span style={{ color: "#71675E" }}>→</span>}
         </span>
       ))}
     </div>
@@ -143,8 +144,8 @@ function StepSection({
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl font-black" style={{ color: accent }}>{number}</span>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: accentBg, color: accent, border: `1px solid ${accent}30` }}>
+            <span className="text-3xl font-black" style={{ color: textTone(accent) }}>{number}</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: accentBg, color: textTone(accent), border: `1px solid ${accent}30` }}>
               Step {number}
             </span>
           </div>
@@ -152,7 +153,7 @@ function StepSection({
             <Icon className="inline-block w-7 h-7 mr-2 -mt-1 align-middle" style={{ color: accent }} strokeWidth={2.25} aria-hidden="true" />
             {title}
           </h2>
-          {subtitle && <p className="text-sm sm:text-base font-medium mb-6" style={{ color: accent }}>{subtitle}</p>}
+          {subtitle && <p className="text-sm sm:text-base font-medium mb-6" style={{ color: textTone(accent) }}>{subtitle}</p>}
         </FadeIn>
 
         <FadeIn delay={100}>
@@ -170,7 +171,7 @@ export default function AiAgentsMeetingsBlueprint() {
       <section className="pt-32 pb-14 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }, { label: "80+ US Meetings with AI Agents", href: "/resources/guides/80-us-meetings-ai-agents" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF3EC", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4 hero-fade" style={{ backgroundColor: "#FEF3EC", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>
             Free Guide
           </span>
           <h1 className="text-4xl sm:text-5xl font-black mb-5 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
@@ -180,13 +181,13 @@ export default function AiAgentsMeetingsBlueprint() {
               <Underline color="#F97316" />
             </span>
           </h1>
-          <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: "#F97316" }}>
+          <p className="text-base sm:text-lg font-semibold mb-5 hero-fade-d1" style={{ color: "#9A3412" }}>
             80+ US B2B Meetings/Month, Fully AI-Driven. A step-by-step blueprint you can copy, tweak, and run tomorrow.
           </p>
           <p className="text-base leading-relaxed hero-fade-d2 mb-8" style={{ color: "#52525B" }}>
             <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Tejas</a>{" "}
             isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At{" "}
-            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his B2B outbound agency, he&apos;s helped 120+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
+            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his B2B outbound agency, he&apos;s helped 300+ B2B companies book 12K+ meetings and generate $120M+ in pipeline. He&apos;s a TEDx speaker, angel investor, and has taught B2B growth methodologies at IIT and IIM. Now, he&apos;s here to do it for you.
           </p>
 
           <FadeIn delay={150}>
@@ -194,7 +195,7 @@ export default function AiAgentsMeetingsBlueprint() {
               {HERO_STATS.map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -206,18 +207,18 @@ export default function AiAgentsMeetingsBlueprint() {
       <StepSection number="1" icon={Target} title="Foundations (Before Automation)" accent="#F97316" accentBg="rgba(249,115,22,0.08)">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#F97316" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />ICP Locked</h4>
+            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#9A3412" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />ICP Locked</h4>
             <div className="space-y-3">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Roles</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Roles</p>
                 <ChipGroup items={["Founders", "CEOs", "COOs", "Partners", "VP Sales"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Industries</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Industries</p>
                 <ChipGroup items={["SaaS", "Consulting", "Manufacturing", "Recruitment"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#8C8279" }}>Geo</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Geo</p>
                 <ChipGroup items={["United States"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
             </div>
@@ -230,7 +231,7 @@ export default function AiAgentsMeetingsBlueprint() {
           />
 
           <div className="rounded-xl p-5 flex flex-col justify-center" style={{ backgroundColor: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.3)" }}>
-            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#F97316" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />Value Proposition</h4>
+            <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#9A3412" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />Value Proposition</h4>
             <p className="text-sm italic leading-relaxed" style={{ color: "#0a0a0a" }}>
               &quot;We help B2B founders book predictable sales meetings using AI agents + laser-targeted outbound.&quot;
             </p>
@@ -241,17 +242,17 @@ export default function AiAgentsMeetingsBlueprint() {
       {/* Step 2: Prospect Discovery Engine */}
       <StepSection number="2" icon={Search} title="Prospect Discovery Engine" subtitle="n8n + Apollo/Clay" accent="#16a34a" accentBg="rgba(34,197,94,0.08)">
         <div>
-          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#8C8279" }}>Daily automated lead pull, 6 AM IST</p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>Daily automated lead pull, 6 AM IST</p>
           <FlowChips steps={["n8n", "Apollo/Clay API", "Airtable/Sheet"]} accent="#16a34a" />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Filters</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Filters</h4>
             <ChipGroup items={["US-based", "Founder/CXO-level", "5–200 employees", "Relevant industries"]} accent="#16a34a" accentBg="rgba(34,197,94,0.08)" />
           </div>
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Nodes in the workflow</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Nodes in the workflow</h4>
             <NumberedList
               items={["Cron Node, triggers daily run", "HTTP Request Node (Apollo/Clay API)", "Set Node, clean fields", "IF Node, remove duplicates", "Airtable/Google Sheet Node, store leads"]}
               accent="#16a34a"
@@ -275,7 +276,7 @@ export default function AiAgentsMeetingsBlueprint() {
         </div>
 
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>AI Agent (OpenAI/Gemini) prompt</h4>
+          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>AI Agent (OpenAI/Gemini) prompt</h4>
           <CopyBlock
             accent="#a855f7"
             label="Copy this prompt"
@@ -286,7 +287,7 @@ export default function AiAgentsMeetingsBlueprint() {
         <Callout accent="#a855f7" accentBg="rgba(168,85,247,0.08)">
           &quot;Noticed you&apos;re scaling US sales hiring, personalised outbound could compound that momentum.&quot;
         </Callout>
-        <p className="text-sm" style={{ color: "#8C8279" }}>This becomes the spine of your messaging.</p>
+        <p className="text-sm" style={{ color: "#71675E" }}>This becomes the spine of your messaging.</p>
       </StepSection>
 
       {/* Step 4: Hyper-Personalised Outreach Generator */}
@@ -304,7 +305,7 @@ export default function AiAgentsMeetingsBlueprint() {
           ]}
         />
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Nodes</h4>
+          <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Nodes</h4>
           <ChipGroup items={["AI Agent Node, message generation", "Set Node, store final sequence", "Database Node, push to CRM"]} accent="#D97706" accentBg="rgba(217,119,6,0.08)" />
         </div>
         <Callout accent="#D97706" accentBg="rgba(217,119,6,0.08)">
@@ -361,7 +362,7 @@ export default function AiAgentsMeetingsBlueprint() {
       <StepSection number="7" icon={ChartColumn} title="Self-Optimising Weekly Report" subtitle="Every Friday evening" accent="#6366f1" accentBg="rgba(99,102,241,0.08)">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>Pull all metrics</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Pull all metrics</h4>
             <ChipGroup
               items={["Connection acceptance rate", "Reply rate", "Positive reply rate", "Meetings booked", "Show-up rate"]}
               accent="#6366f1"
@@ -369,7 +370,7 @@ export default function AiAgentsMeetingsBlueprint() {
             />
           </div>
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#8C8279" }}>AI Agent analyses</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>AI Agent analyses</h4>
             <ChipGroup
               items={["Best-responding ICP segment", "Highest-replying message", "Winning personalisation angle", "What to change next week"]}
               accent="#6366f1"
@@ -387,13 +388,13 @@ export default function AiAgentsMeetingsBlueprint() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl font-black" style={{ color: "#ec4899" }}>8</span>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: "#ec4899", border: "1px solid rgba(236,72,153,0.3)" }}>
+              <span className="text-3xl font-black" style={{ color: "#BE185D" }}>8</span>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: "#BE185D", border: "1px solid rgba(236,72,153,0.3)" }}>
                 Step 8
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-              <Trophy className="inline-block w-7 h-7 mr-2 -mt-1 align-middle" style={{ color: "#D97706" }} strokeWidth={2.25} aria-hidden="true" />Results (real)
+              <Trophy className="inline-block w-7 h-7 mr-2 -mt-1 align-middle" style={{ color: "#A14A08" }} strokeWidth={2.25} aria-hidden="true" />Results (real)
             </h2>
           </FadeIn>
 
@@ -411,7 +412,7 @@ export default function AiAgentsMeetingsBlueprint() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-sm sm:text-base font-semibold mt-5" style={{ color: "#8C8279" }}>
+            <p className="text-center text-sm sm:text-base font-semibold mt-5" style={{ color: "#71675E" }}>
               You only show up for calls.
             </p>
           </FadeIn>
@@ -423,8 +424,8 @@ export default function AiAgentsMeetingsBlueprint() {
         <div className="max-w-3xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl font-black" style={{ color: "#F97316" }}>9</span>
-              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>
+              <span className="text-3xl font-black" style={{ color: "#9A3412" }}>9</span>
+              <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(249,115,22,0.08)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>
                 Step 9
               </span>
             </div>

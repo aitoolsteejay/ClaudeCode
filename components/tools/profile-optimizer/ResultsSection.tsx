@@ -285,7 +285,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         <div className="animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <div className="flex items-center gap-3 mb-6">
             <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(245,183,49,0.15)" }}>
-              <Target className="h-5 w-5" style={{ color: "#F5B731" }} />
+              <Target className="h-5 w-5" style={{ color: "#A14A08" }} />
             </div>
             <h2 className="text-2xl font-black">Optimized About Section</h2>
           </div>

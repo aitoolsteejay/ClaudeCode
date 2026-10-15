@@ -158,7 +158,7 @@ export default function Page() {
           <Breadcrumbs items={[{ label: "Chennai", href: "/b2b-lead-generation-chennai" }]} className="justify-center" />
           <span
             className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6"
-            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#D97706", border: "1px solid rgba(245,183,49,0.35)" }}
+            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}
           >
             B2B Growth · Chennai
           </span>
@@ -197,7 +197,7 @@ export default function Page() {
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>
               Why Chennai businesses need this
             </span>
             <h2 className="text-3xl sm:text-4xl font-black mt-3" style={{ color: "#0a0a0a" }}>
@@ -220,7 +220,7 @@ export default function Page() {
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>
               What we run for you
             </span>
             <h2 className="text-3xl sm:text-4xl font-black mt-3" style={{ color: "#0a0a0a" }}>
@@ -237,7 +237,7 @@ export default function Page() {
               >
                 <h3 className="font-black text-base mb-2" style={{ color: "#0a0a0a" }}>{s.title}</h3>
                 <p className="text-sm leading-relaxed mb-3" style={{ color: "#52525B" }}>{s.body}</p>
-                <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: "#D97706" }}>
+                <span className="text-xs font-bold inline-flex items-center gap-1" style={{ color: "#A14A08" }}>
                   Learn more
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -253,7 +253,7 @@ export default function Page() {
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>
               Why Myntmore
             </span>
             <h2 className="text-3xl sm:text-4xl font-black mt-3" style={{ color: "#0a0a0a" }}>
@@ -268,7 +268,7 @@ export default function Page() {
               </div>
             ))}
           </div>
-          <p className="mt-10 text-sm" style={{ color: "#8C8279" }}>
+          <p className="mt-10 text-sm" style={{ color: "#71675E" }}>
             Since 2019, Myntmore has booked 12K+ meetings and generated $120M+ in pipeline for clients across
             industries, the same AI-powered system now runs for Chennai's manufacturing, healthcare, and IT/ITES
             companies.
@@ -280,7 +280,7 @@ export default function Page() {
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <div className="mb-12 text-center">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#D97706" }}>FAQ</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>FAQ</span>
             <h2 className="text-3xl sm:text-4xl font-black mt-3" style={{ color: "#0a0a0a" }}>
               Common questions from Chennai companies
             </h2>
@@ -290,7 +290,7 @@ export default function Page() {
               <details key={item.q} className="rounded-2xl border p-6 group" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <summary className="font-black text-base cursor-pointer list-none flex items-center justify-between gap-4" style={{ color: "#0a0a0a" }}>
                   {item.q}
-                  <span className="text-lg flex-shrink-0" style={{ color: "#D97706" }} aria-hidden="true">+</span>
+                  <span className="text-lg flex-shrink-0" style={{ color: "#A14A08" }} aria-hidden="true">+</span>
                 </summary>
                 <p className="text-sm leading-relaxed mt-4" style={{ color: "#52525B" }}>{item.a}</p>
               </details>

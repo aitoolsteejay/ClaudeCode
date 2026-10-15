@@ -35,6 +35,7 @@ import JsonLd from "@/app/components/JsonLd";
 import AskYourAI from "@/app/components/AskYourAI";
 import NewsletterForm from "@/app/components/NewsletterForm";
 import { buildArticleSchema, SITE_URL } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 /* ─── Site tokens ─────────────────────────────────────────────── */
 const T = {
@@ -286,9 +287,9 @@ function SectionHeader({ n, eyebrow, title, lede, accent = T.purple }: { n: stri
   return (
     <div className="mb-8 sm:mb-10">
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{n}</span>
+        <span className="text-sm font-black tabular-nums" style={{ color: textTone(accent) }}>{n}</span>
         <span aria-hidden="true" className="h-px w-8" style={{ backgroundColor: accent }} />
-        <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: accent }}>{eyebrow}</span>
+        <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: textTone(accent) }}>{eyebrow}</span>
       </div>
       <h2 className="text-[1.75rem] sm:text-4xl font-black leading-tight tracking-tight" style={{ color: T.ink }}>{title}</h2>
       {lede && <p className="text-base sm:text-lg leading-relaxed mt-4 max-w-2xl" style={{ color: T.muted }}>{lede}</p>}
@@ -572,7 +573,7 @@ function SubjectLines() {
                     onClick={() => setPicked(i)}
                     className="flex-1 min-w-0 flex items-baseline gap-3 text-left py-3 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 rounded-lg"
                   >
-                    <span className="text-xs font-black tabular-nums w-5 flex-shrink-0" style={{ color: on ? T.amber : T.muted }}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-xs font-black tabular-nums w-5 flex-shrink-0" style={{ color: on ? textTone(T.amber) : T.muted }}>{String(i + 1).padStart(2, "0")}</span>
                     <span className="min-w-0">
                       <span className="block text-[15px] font-semibold leading-snug" style={{ color: T.ink }}>{l.text}</span>
                       <span className="block text-xs mt-0.5" style={{ color: T.muted }}>{l.why}</span>
@@ -656,7 +657,7 @@ function EnrichDemo() {
       <div className="p-5 sm:p-7">
         <div className="flex items-center justify-between gap-4 mb-5">
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.muted }}>Example lead</p>
-          <span className="text-xs font-bold px-2.5 py-1 rounded-full transition-colors duration-300" style={{ backgroundColor: done ? T.doSoft : T.amberSoft, color: done ? T.doText : T.amber, border: `1px solid ${done ? "rgba(21,128,61,0.2)" : T.amberBorder}` }}>
+          <span className="text-xs font-bold px-2.5 py-1 rounded-full transition-colors duration-300" style={{ backgroundColor: done ? T.doSoft : T.amberSoft, color: done ? T.doText : textTone(T.amber), border: `1px solid ${done ? "rgba(21,128,61,0.2)" : T.amberBorder}` }}>
             {done ? "Enriched" : running ? "Enriching" : "Raw"}
           </span>
         </div>
@@ -680,7 +681,7 @@ function EnrichDemo() {
                 <span className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ backgroundColor: visible ? T.amberSoft : "transparent", color: visible ? T.amber : T.hairline }}>
                   <Icon className="w-4 h-4" strokeWidth={2} />
                 </span>
-                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: visible ? T.muted : T.hairline }}>{f.label}</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: visible ? T.muted : "#71675E" }}>{f.label}</span>
                 {visible ? (
                   <span className="card-fade-up text-sm font-semibold truncate" style={{ color: T.ink }}>{f.value}</span>
                 ) : (
@@ -872,7 +873,7 @@ export default function DosAndDontsClient() {
                   <blockquote className="text-2xl sm:text-3xl font-black leading-tight tracking-tight" style={{ color: T.ink }}>
                     Not better, just unexpected.
                   </blockquote>
-                  <figcaption className="mt-3 text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.amber }}>Tejas Jhaveri, Founder of Myntmore</figcaption>
+                  <figcaption className="mt-3 text-xs font-bold uppercase tracking-[0.18em]" style={{ color: textTone(T.amber) }}>Tejas Jhaveri, Founder of Myntmore</figcaption>
                 </figure>
               </FadeIn>
             </div>
@@ -1010,14 +1011,14 @@ export default function DosAndDontsClient() {
                       <span className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105" style={{ backgroundColor: t.accent, color: "#ffffff" }}>
                         <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
                       </span>
-                      <span className="text-[10px] font-black uppercase tracking-[0.18em] px-2.5 py-1 rounded-full" style={{ backgroundColor: T.paper, color: t.accent, border: `1px solid ${t.accent}55` }}>Free</span>
+                      <span className="text-[10px] font-black uppercase tracking-[0.18em] px-2.5 py-1 rounded-full" style={{ backgroundColor: T.paper, color: textTone(t.accent), border: `1px solid ${t.accent}55` }}>Free</span>
                     </div>
                     <h3 className="text-xl font-black leading-snug mb-2" style={{ color: T.ink }}>{t.name}</h3>
                     <p className="text-[15px] leading-relaxed mb-5" style={{ color: T.ink2 }}>{t.plain}</p>
                     <p className="text-sm leading-relaxed mt-auto pt-4 border-t" style={{ color: T.muted, borderColor: `${t.accent}33` }}>
                       <span className="font-bold" style={{ color: T.ink }}>Use it when: </span>{t.useCase}
                     </p>
-                    <span className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform duration-300 group-hover:translate-x-0.5" style={{ backgroundColor: t.accent, boxShadow: `0 6px 16px ${t.accent}55` }}>
+                    <span className="mt-5 inline-flex items-center justify-center gap-2 self-start rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform duration-300 group-hover:translate-x-0.5" style={{ backgroundColor: textTone(t.accent), boxShadow: `0 6px 16px ${t.accent}55` }}>
                       Try it free
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
                     </span>
@@ -1044,7 +1045,7 @@ export default function DosAndDontsClient() {
           <FadeIn>
             <div className="mt-6 rounded-3xl p-5 sm:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center" style={{ backgroundColor: T.amberSoft, border: `1px solid ${T.amberBorder}` }}>
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-2" style={{ color: T.amber }}>The Outbound Operator</p>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] mb-2" style={{ color: textTone(T.amber) }}>The Outbound Operator</p>
                 <h3 className="text-2xl font-black leading-tight mb-2" style={{ color: T.ink }}>One practical growth playbook, every week</h3>
                 <p className="text-sm leading-relaxed" style={{ color: T.muted }}>
                   Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

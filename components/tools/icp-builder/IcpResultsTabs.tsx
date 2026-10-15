@@ -52,7 +52,7 @@ function IcpTabContent({ icp }: { icp: GeneratedIcp }) {
       )}
 
       <section className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-        <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>Who They Are</h3>
+        <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>Who They Are</h3>
         <div className="space-y-6">
           <BulletList items={icp.whoTheyAre} />
           <div>
@@ -69,7 +69,7 @@ function IcpTabContent({ icp }: { icp: GeneratedIcp }) {
       </section>
 
       <section className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-        <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>What Drives Them</h3>
+        <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>What Drives Them</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#ef4444" }}>Pain Points</p>
@@ -87,7 +87,7 @@ function IcpTabContent({ icp }: { icp: GeneratedIcp }) {
       </section>
 
       <section className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-        <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>How To Win Them</h3>
+        <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>How To Win Them</h3>
         <div className="space-y-6">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest mb-2 text-gray-400">Objections</p>
@@ -123,7 +123,7 @@ function ChannelPartnersTab({ icps }: { icps: GeneratedIcp[] }) {
     <div className="space-y-8">
       {groups.map((icp, i) => (
         <section key={i} className="bg-white rounded-2xl p-6 md:p-8" style={{ border: "1px solid #E8E2D9" }}>
-          <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#8C8279" }}>
+          <h3 className="text-xs font-bold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>
             For ICP {icps.indexOf(icp) + 1}: {icp.name}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

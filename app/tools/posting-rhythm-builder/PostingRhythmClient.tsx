@@ -174,7 +174,7 @@ export default function PostingRhythmClient() {
             style={{ background: "rgba(245,183,49,0.07)", borderColor: "rgba(245,183,49,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D97706" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#D97706" }}>Posting Rhythm Builder</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>Posting Rhythm Builder</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
             Myntmore{" "}
@@ -190,7 +190,7 @@ export default function PostingRhythmClient() {
           </p>
         </header>
 
-        <main>
+        <div>
           {/* Lead Gate */}
           {step === "lead" && (
             <LeadGate
@@ -308,7 +308,7 @@ export default function PostingRhythmClient() {
             <div id="results-section" className="space-y-12 animate-in fade-in slide-in-from-bottom-10 duration-700">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 <div className="bg-white rounded-2xl p-8 md:p-10 flex flex-col shadow-sm" style={{ borderTop: "3px solid #F5B731", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: "#F5B731" }}>Best Posting Days</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-6" style={{ color: "#A14A08" }}>Best Posting Days</h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-8 flex-grow">{strategy.bestPostingDays.explanation}</p>
                   <div className="space-y-4 mb-10">
                     {strategy.bestPostingDays.days.map((day) => (
@@ -432,7 +432,7 @@ export default function PostingRhythmClient() {
               </div>
             </div>
           )}
-        </main>
+        </div>
       </div>
     </div>
   );

@@ -119,19 +119,20 @@ export default function Promise() {
         {/* Label */}
         <span
           className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-6 px-4 py-1.5 rounded-full border"
-          style={{ color: "#F5B731", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
+          style={{ color: "#A14A08", borderColor: "rgba(245,183,49,0.35)", background: "#FEF9EC" }}
         >
           Our Promise to You
         </span>
 
-        {/* Typewriter heading */}
-        <h2 className="text-3xl sm:text-5xl font-black text-[#0a0a0a] tracking-tight leading-tight">
+        {/* Typewriter heading. Opts out of the sitewide balanced wrapping:
+            re-balancing on every typed letter made finished words jump lines. */}
+        <h2 className="text-3xl sm:text-5xl font-black text-[#0a0a0a] tracking-tight leading-tight" style={{ textWrap: "wrap" }}>
           We book{" "}
           <span ref={typedRef} style={{ color: "#0a0a0a" }} />
           <span
             ref={cursorRef}
             aria-hidden="true"
-            style={{ color: "#F5B731", marginLeft: "3px", fontWeight: 900 }}
+            style={{ color: "#A14A08", marginLeft: "3px", fontWeight: 900 }}
           >
             |
           </span>

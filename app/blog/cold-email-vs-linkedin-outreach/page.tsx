@@ -114,7 +114,7 @@ export default function ColdEmailVsLinkedInOutreach() {
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ borderColor: "rgba(22,163,74,0.35)", background: "rgba(22,163,74,0.07)" }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#16a34a" }} />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#16a34a" }}>Comparison · 6 min read</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#166534" }}>Comparison · 6 min read</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold email vs. LinkedIn outreach: which actually wins for B2B?
@@ -139,8 +139,8 @@ export default function ColdEmailVsLinkedInOutreach() {
                 <table className="w-full text-sm" style={{ backgroundColor: "#ffffff" }}>
                   <thead>
                     <tr style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#8C8279" }}>Factor</th>
-                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#16a34a" }}>Cold Email</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#71675E" }}>Factor</th>
+                      <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#166534" }}>Cold Email</th>
                       <th className="text-left px-5 py-4 text-xs font-black uppercase tracking-widest" style={{ color: "#0077b5" }}>LinkedIn Outreach</th>
                     </tr>
                   </thead>
@@ -156,7 +156,7 @@ export default function ColdEmailVsLinkedInOutreach() {
                 </table>
               </div>
             </div>
-            <p className="text-xs mt-4" style={{ color: "#8C8279" }}>
+            <p className="text-xs mt-4" style={{ color: "#71675E" }}>
               Reply-rate range is Myntmore&apos;s own published benchmark across client engagements (see the 2026 benchmark report). Platform limits and general channel behavior reflect publicly known LinkedIn and email-provider policies, not client-specific data.
             </p>
           </FadeIn>
@@ -200,9 +200,9 @@ export default function ColdEmailVsLinkedInOutreach() {
             <h2 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "#0a0a0a" }}>The honest answer: most teams shouldn&apos;t pick just one</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
               In one of our SaaS engagements, running cold email and LinkedIn outreach in parallel, the same prospect seeing both touches within days of each other, produced a 34% reply rate and $1.2M in tracked pipeline over 8 weeks. Neither channel alone was the lever; the overlap between them was. See the full{" "}
-              <a href="/case-studies/saas-series-a" className="font-bold underline" style={{ color: "#16a34a" }}>SaaS Series A case study</a>{" "}
+              <a href="/case-studies/saas-series-a" className="font-bold underline" style={{ color: "#166534" }}>SaaS Series A case study</a>{" "}
               for the details, or read how we approach each channel individually on our{" "}
-              <a href="/services/cold-email" className="font-bold underline" style={{ color: "#16a34a" }}>cold email</a>{" "}
+              <a href="/services/cold-email" className="font-bold underline" style={{ color: "#166534" }}>cold email</a>{" "}
               and{" "}
               <a href="/services/linkedin-outreach" className="font-bold underline" style={{ color: "#0077b5" }}>LinkedIn outreach</a>{" "}
               service pages.
@@ -233,7 +233,7 @@ export default function ColdEmailVsLinkedInOutreach() {
           </div>
 
           <div className="mt-8 rounded-2xl p-6 border" style={{ backgroundColor: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#D97706" }}>The Outbound Operator</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>The Outbound Operator</p>
             <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>One practical growth playbook, every week</h3>
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Outbound systems, AI prospecting, cold email, and LinkedIn tactics, built from real campaigns, not recycled theory.

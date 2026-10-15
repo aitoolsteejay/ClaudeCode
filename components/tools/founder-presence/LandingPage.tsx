@@ -5,6 +5,7 @@ import { EyeOff, Users2, PenLine, ArrowRight, MousePointer2, Zap, CheckCircle } 
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
+import { textTone } from "@/lib/colors";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the Founder Presence Analyzer Works", [
   { name: "Add your activity", text: "Your posting frequency and average engagement over the last 30 days." },
@@ -33,7 +34,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
             style={{ background: "rgba(20,184,166,0.07)", borderColor: "rgba(20,184,166,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: ACCENT }}>Founder Presence Analyzer</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Founder Presence Analyzer</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight">

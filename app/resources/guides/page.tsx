@@ -3,6 +3,7 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import FadeIn from "../../components/FadeIn";
+import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "Free B2B Growth Guides",
@@ -162,7 +163,7 @@ export default function GuidesPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Guides", href: "/resources/guides" }]} />
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#F97316", border: "1px solid rgba(249,115,22,0.3)" }}>{GUIDES.length} guides</span>
+          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6" style={{ backgroundColor: "rgba(249,115,22,0.1)", color: "#9A3412", border: "1px solid rgba(249,115,22,0.3)" }}>{GUIDES.length} guides</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Copy the setup.<br />Skip the trial and error.
           </h1>
@@ -189,12 +190,12 @@ export default function GuidesPage() {
                 <Link key={g.href} href={g.href} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="h-1" style={{ background: `linear-gradient(90deg,${g.accent},${g.accent}66)` }} />
                   <div className="p-6">
-                    <span className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${g.accent}12`, color: g.accent }}>{g.tag}</span>
+                    <span className="fredoka-pill inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${g.accent}12`, color: textTone(g.accent) }}>{g.tag}</span>
                     <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{g.title}</h2>
                     <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{g.excerpt}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs" style={{ color: "#8C8279" }}>{g.readTime}</span>
-                      <span className="text-xs font-bold" style={{ color: g.accent }}>Read →</span>
+                      <span className="text-xs" style={{ color: "#71675E" }}>{g.readTime}</span>
+                      <span className="text-xs font-bold" style={{ color: textTone(g.accent) }}>Read →</span>
                     </div>
                   </div>
                 </Link>

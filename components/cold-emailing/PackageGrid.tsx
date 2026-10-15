@@ -135,7 +135,7 @@ function PackageCard({ item, index }: { item: (typeof ITEMS)[number]; index: num
             setOpen((o) => !o);
           }}
           className="absolute right-2.5 top-2.5 grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-[rgba(234,88,12,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
-          style={{ color: open ? ORANGE : "#9a8f84" }}
+          style={{ color: open ? ORANGE : "#71675E" }}
         >
           <Info className="h-[18px] w-[18px]" strokeWidth={2.2} aria-hidden="true" />
         </button>

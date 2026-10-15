@@ -114,7 +114,7 @@ export default function CTABanner() {
           style={{ borderColor: "rgba(245,183,49,0.4)", background: "rgba(245,183,49,0.1)" }}
         >
           <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} aria-hidden="true" />
-          <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F5B731" }}>
+          <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#A14A08" }}>
             Limited spots available
           </span>
         </div>
@@ -125,7 +125,7 @@ export default function CTABanner() {
         >
           Let&apos;s Fill
           <br />
-          <span style={{ color: "#F5B731" }}>Your Pipeline</span>
+          <span style={{ color: "#A14A08" }}>Your Pipeline</span>
         </h2>
 
         <p className="text-lg sm:text-xl text-[#52525B] max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -151,7 +151,7 @@ export default function CTABanner() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-10 pt-8 sm:pt-10 border-t" style={{ borderColor: "#E8E2D9" }}>
           {["30-minute call, no sales pressure", "Custom strategy for your ICP", "Results or we make it right"].map((item) => (
             <div key={item} className="flex items-center gap-2">
-              <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#F5B731" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+              <svg className="w-4 h-4 flex-shrink-0" style={{ color: "#A14A08" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-sm text-[#52525B]">{item}</span>

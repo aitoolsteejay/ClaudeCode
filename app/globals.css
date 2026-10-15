@@ -15,6 +15,72 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
+/* ─── Keyboard focus ──────────────────────────────────────────
+   One visible, on-brand focus ring for keyboard users sitewide. Kept in
+   the base layer so components that draw their own ring with
+   focus-visible:* utilities still win. Two-tone so it reads everywhere:
+   an amber #A14A08 outline (5.6:1 on the warm page; gold #F5B731 would be
+   1.7:1) with a white halo between it and the element, which carries the
+   contrast on the dark CTA sections where amber alone is under 3:1. ──── */
+@layer base {
+  :focus-visible {
+    outline: 2px solid #A14A08;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+  /* Balanced wrapping keeps short headings from leaving one orphan word on
+     the last line. Browsers without support just wrap normally. */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+}
+
+/* Inputs styled with a bare `outline-none` (contact form, lead forms,
+   search boxes) had no focus indicator at all. Deliberately outside
+   @layer: inside one, Tailwind treats `.outline-none` here as a utility and
+   copies the rule onto `focus:outline-none` / `focus-visible:outline-none`,
+   which drew a second ring on fields that already have their own. Fields
+   with a ring class are left to that ring. */
+input.outline-none:not([class*="ring"]):focus-visible,
+textarea.outline-none:not([class*="ring"]):focus-visible,
+select.outline-none:not([class*="ring"]):focus-visible {
+  outline: 2px solid #A14A08;
+  outline-offset: 1px;
+}
+
+/* ─── Skip link ─────────────────────────────────────────────
+   First tab stop on every page; hidden until focused. ─────────────── */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* ─── Count-up numbers ──────────────────────────────────────
+   The HTML carries the final figures. When motion is welcome and JS runs
+   (html.motion-ok, set by an inline script in the root layout), they stay
+   invisible until the count-up resets them to zero and marks them
+   [data-counting], so visitors never see real -> zero -> real. If JS never
+   gets there, they fade in on their own after 4s. */
+.motion-ok [data-count-up]:not([data-counting]) {
+  opacity: 0;
+  animation: count-up-failsafe 0.3s ease-out 4s forwards;
+}
+@keyframes count-up-failsafe {
+  to { opacity: 1; }
+}
+
 /* ─── Text selection ──────────────────────────────────────── */
 ::selection {
   background-color: rgba(245, 183, 49, 0.3);
@@ -343,8 +409,8 @@ body {
 /* ─── Inner page hover utilities (server-component safe) ─── */
 .link-muted { color: #6B6B6B; transition: color 0.2s ease; }
 .link-muted:hover { color: #0a0a0a; }
-.link-subtle { color: #8C8279; transition: color 0.2s ease; }
-.link-subtle:hover { color: #F5B731; }
+.link-subtle { color: #71675E; transition: color 0.2s ease; }
+.link-subtle:hover { color: #A14A08; }
 .link-dark { color: #3D3D3D; transition: color 0.2s ease; }
 .link-dark:hover { color: #0a0a0a; }
 .card-hover-warm { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
@@ -368,7 +434,7 @@ body {
 .card-hover-red { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
 .card-hover-red:hover { border-color: rgba(239,68,68,0.5) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important; }
 .chip-hover { transition: border-color 0.15s ease, color 0.15s ease; }
-.chip-hover:hover { border-color: rgba(245,183,49,0.6) !important; color: #D97706 !important; }
+.chip-hover:hover { border-color: rgba(245,183,49,0.6) !important; color: #A14A08 !important; }
 
 /* ─── Scroll reveal (FadeIn component) ───────────────────── */
 .reveal {
@@ -430,7 +496,7 @@ body {
 }
 .lp-card:hover .lp-card-number {
   transform: scale(1.15);
-  color: #F5B731 !important;
+  color: #A14A08 !important;
 }
 .lp-card-number {
   transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), color 0.3s ease;

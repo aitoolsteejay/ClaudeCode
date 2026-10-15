@@ -37,7 +37,7 @@ export default function EcommerceConversionPlaybook() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: "eCommerce Tech", href: "/case-studies/ecommerce-conversion-playbook" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: "#10b981", border: "1px solid rgba(16,185,129,0.2)" }}>eCommerce Tech · Seed</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: "#047857", border: "1px solid rgba(16,185,129,0.2)" }}>eCommerce Tech · Seed</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Cold email added $400K pipeline for an eCommerce SaaS in 6 weeks
           </h1>
@@ -48,7 +48,7 @@ export default function EcommerceConversionPlaybook() {
             {[{ v: "28", l: "Meetings booked" }, { v: "41%", l: "Open rate" }, { v: "$400K", l: "Pipeline generated" }].map((s) => (
               <div key={s.l} className="text-center">
                 <div className="text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -83,8 +83,8 @@ export default function EcommerceConversionPlaybook() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-6 rounded-2xl border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
               {[{ v: "28", l: "Qualified meetings in 6 weeks" }, { v: "41%", l: "Average email open rate" }, { v: "$400K", l: "Pipeline generated" }].map((s) => (
                 <div key={s.l} className="text-center">
-                  <div className="text-3xl font-black" style={{ color: "#10b981" }}><StatTicker value={s.v} /></div>
-                  <div className="text-xs mt-1" style={{ color: "#8C8279" }}>{s.l}</div>
+                  <div className="text-3xl font-black" style={{ color: "#047857" }}><StatTicker value={s.v} /></div>
+                  <div className="text-xs mt-1" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -97,7 +97,7 @@ export default function EcommerceConversionPlaybook() {
             <p className="text-lg font-semibold italic mb-3" style={{ color: "#0a0a0a" }}>
               &ldquo;We&apos;d tried cold email before and it never worked. Myntmore showed us the problem wasn&apos;t the channel. It was the targeting. The list quality and personalisation changed everything.&rdquo;
             </p>
-            <p className="text-sm font-bold" style={{ color: "#10b981" }}>Co-founder, eCommerce SaaS (Seed stage)</p>
+            <p className="text-sm font-bold" style={{ color: "#047857" }}>Co-founder, eCommerce SaaS (Seed stage)</p>
           </div>
 
           <div>

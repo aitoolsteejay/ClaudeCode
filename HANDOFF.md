@@ -44,8 +44,9 @@ vercel --prod     # requires Vercel CLI + auth
 ## Colour System
 
 ```
-Brand gold:        #F5B731
+Brand gold:        #F5B731   (fills, borders, dots, underlines; text only on dark)
 Gold hover/dark:   #D97706
+Gold as text:      #A14A08   (GOLD_TEXT in lib/colors.ts, on light surfaces)
 Gold border:       rgba(245,183,49,0.35)
 Gold bg tint:      #FEF9EC
 
@@ -56,9 +57,11 @@ Section dividers:  #E8E2D9
 
 Text primary:      #0a0a0a
 Text secondary:    #52525B
-Text muted:        #6B6B6B / #8C8279
-Text disabled:     #B8B0A7
+Text muted:        #6B6B6B / #71675E
+Text disabled:     #B8B0A7   (disabled controls only; 2:1, not for readable text)
 ```
+
+**Gold is for fills, not text on light backgrounds.** Gold `#F5B731` and `#D97706` work for fills, borders, dots, underlines and for text on dark sections, but as text on the light page they read at 1.7:1 and 3.0:1 (WCAG AA needs 4.5:1). Gold-coloured text on a light surface uses `GOLD_TEXT` (`#A14A08`) from `lib/colors.ts`, and any accent colour that drives text goes through `textTone(accent)`, which turns gold into `#A14A08` and leaves every other colour alone.
 
 **Accent colours (service cards / chips only):**
 ```
@@ -185,7 +188,7 @@ All sections are mobile-optimised. Key breakpoints used: `sm` (640px), `lg` (102
 - **Logos**: `/public/logo.png` — the Myntmore logo file.
 - **Testimonials**: Anonymised fictional client names (Sarah K., James R., etc.) — replace with real ones when available.
 - **Case studies (Results section)**: Anonymised — "Series B SaaS Fintech", "B2B Professional Services".
-- **Stats**: 120+ companies, $120M+ pipeline, 30,000+ meetings, 18 days avg — confirm these are accurate before launch.
+- **Stats**: 300+ B2B companies, $120M+ pipeline, 12K+ meetings booked, 18 days avg to first meeting. `lib/entity-facts.json` is the source of truth; `npm run audit:entity` checks the pages against it.
 
 ---
 

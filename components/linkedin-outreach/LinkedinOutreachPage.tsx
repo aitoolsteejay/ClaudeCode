@@ -172,14 +172,14 @@ export default function LinkedinOutreachPage() {
         .li-tl-line { transform-origin: left center; transform: scaleX(0); transition: transform 1.7s cubic-bezier(.4,0,.2,1) .2s; }
         [data-inview=true] .li-tl-line { transform: scaleX(1); }
         .li-tl-badge { background: #fff; color: ${MUTED}; border: 2px solid #DCE3EA; transform: scale(.82); transition: transform .55s cubic-bezier(.22,1,.36,1), background .4s ease, color .4s ease, border-color .4s ease, box-shadow .4s ease; transition-delay: calc(var(--i) * .38s + .35s); }
-        [data-inview=true] .li-tl-badge { background: linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT}); color: #fff; border-color: transparent; transform: scale(1); box-shadow: 0 12px 26px rgba(10,102,194,.32); }
+        [data-inview=true] .li-tl-badge { background: linear-gradient(135deg, ${BLUE}, #1D6FD4); color: #fff; border-color: transparent; transform: scale(1); box-shadow: 0 12px 26px rgba(10,102,194,.32); }
         .li-bar-fill { transform-origin: left center; transform: scaleX(0); transition: transform 1.5s cubic-bezier(.4,0,.2,1) .5s; }
         [data-inview=true] .li-bar-fill { transform: scaleX(1); }
         @keyframes li-ping { 0% { transform: scale(1); opacity: .5; } 75%, 100% { transform: scale(1.9); opacity: 0; } }
         .li-ping { animation: li-ping 2.4s cubic-bezier(0, 0, .2, 1) infinite; }
         @media (prefers-reduced-motion: reduce) {
           .li-tl-line, .li-bar-fill { transition: none; transform: none; }
-          .li-tl-badge { transition: none; transform: none; background: linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT}); color: #fff; border-color: transparent; }
+          .li-tl-badge { transition: none; transform: none; background: linear-gradient(135deg, ${BLUE}, #1D6FD4); color: #fff; border-color: transparent; }
           .li-ping { animation: none; display: none; }
         }
       `}</style>
@@ -288,7 +288,7 @@ export default function LinkedinOutreachPage() {
                 <span className="relative mb-6 grid h-14 w-14 place-items-center rounded-2xl" style={{ background: `linear-gradient(135deg, ${GOLD}, #f59e0b)`, color: INK, boxShadow: "0 14px 30px rgba(245,183,49,0.35)" }}>
                   <KeyRound className="h-7 w-7" strokeWidth={2} aria-hidden="true" />
                 </span>
-                <p className="relative text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#B7791F" }}>Pipeline</p>
+                <p className="relative text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#A14A08" }}>Pipeline</p>
                 <h3 className="relative mt-1 text-2xl font-black" style={{ color: INK, letterSpacing: "-0.03em" }}>Takes you inside</h3>
                 <p className="relative mt-2 text-base leading-relaxed" style={{ color: BODY }}>Outreach that starts real conversations and fills your calendar with qualified meetings.</p>
               </div>
@@ -318,7 +318,7 @@ export default function LinkedinOutreachPage() {
               <div className="grid grid-cols-[1fr_84px_84px] items-center sm:grid-cols-[1fr_150px_150px]" style={{ backgroundColor: "#FAF8F4" }}>
                 <p className="px-4 py-4 text-[11px] font-black uppercase tracking-[0.22em] sm:px-6" style={{ color: MUTED }}>What you get</p>
                 <div className="flex justify-center py-3" style={{ backgroundColor: "rgba(10,102,194,0.08)" }}>
-                  <span className="rounded-full px-3 py-1 text-xs font-black text-white" style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})` }}>Myntmore</span>
+                  <span className="rounded-full px-3 py-1 text-xs font-black text-white" style={{ background: `linear-gradient(135deg, ${BLUE}, #1D6FD4)` }}>Myntmore</span>
                 </div>
                 <p className="px-1 py-4 text-center text-[11px] font-black uppercase leading-tight tracking-[0.12em]" style={{ color: MUTED }}>Other agencies</p>
               </div>

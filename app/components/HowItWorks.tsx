@@ -84,7 +84,7 @@ export default function HowItWorks() {
           <span
             className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-4 px-3 py-1 rounded-full border"
             style={{
-              color: "#F5B731",
+              color: "#A14A08",
               borderColor: "rgba(245,183,49,0.35)",
               background: "#FEF9EC",
             }}
@@ -97,7 +97,7 @@ export default function HowItWorks() {
           >
             From Zero to Pipeline
             <br />
-            <span style={{ color: "#F5B731" }}>in 4 Steps</span>
+            <span style={{ color: "#A14A08" }}>in 4 Steps</span>
           </h2>
           <p className="mt-4 text-[#52525B] text-lg max-w-xl mx-auto">
             A repeatable, proven process that turns your outbound into a

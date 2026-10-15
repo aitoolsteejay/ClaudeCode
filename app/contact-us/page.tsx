@@ -47,7 +47,7 @@ export default function ContactUs() {
         <div className="max-w-4xl mx-auto text-center">
           <Breadcrumbs items={[{ label: "Contact", href: "/contact-us" }]} className="justify-center" />
           <div className="mb-4">
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>Get in Touch</span>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Get in Touch</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Stop guessing<br />Start closing
@@ -64,9 +64,9 @@ export default function ContactUs() {
             {CONTACT_CARDS.map((c) => (
               <a key={c.title} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined} className="block rounded-2xl border p-6 card-hover-warm" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <div className="text-2xl mb-3">{c.icon}</div>
-                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#8C8279" }}>{c.title}</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: "#71675E" }}>{c.title}</p>
                 <p className="text-base font-semibold mb-3" style={{ color: "#0a0a0a" }}>{c.value}</p>
-                <span className="text-sm font-bold" style={{ color: "#F5B731" }}>{c.cta} →</span>
+                <span className="text-sm font-bold" style={{ color: "#A14A08" }}>{c.cta} →</span>
               </a>
             ))}
           </div></FadeIn>
@@ -105,7 +105,7 @@ export default function ContactUs() {
                     <input id="Email" name="Email" type="email" required maxLength={255} placeholder="amara@northbridge.co" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
                   </div>
                   <SubmitButton>Get Your Custom Strategy</SubmitButton>
-                  <p className="text-center text-xs" style={{ color: "#8C8279" }}>No commitments. No agency pitch decks. Just clarity.</p>
+                  <p className="text-center text-xs" style={{ color: "#71675E" }}>No commitments. No agency pitch decks. Just clarity.</p>
                 </form>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function ContactUs() {
                   "Custom action plan sent within 24 hours",
                 ].map((text, i) => (
                   <div key={i} className="flex gap-3 mb-4">
-                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>{`0${i + 1}`}</span>
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 mt-0.5" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{`0${i + 1}`}</span>
                     <p className="text-sm" style={{ color: "#52525B" }}>{text}</p>
                   </div>
                 ))}

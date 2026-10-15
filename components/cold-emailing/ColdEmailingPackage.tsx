@@ -4,20 +4,13 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
-  BarChart3,
   Eye,
   FlaskConical,
   Inbox,
-  Layers,
-  Mail,
   PenLine,
-  Repeat,
-  Send,
   Server,
-  ShieldCheck,
   Target,
   TrendingUp,
-  Users,
   Wrench,
   Zap,
   Handshake,
@@ -31,10 +24,12 @@ import AnswerBlock from "@/app/components/AnswerBlock";
 import RelatedPath from "@/app/components/RelatedPath";
 import { SERVICE_PATHS } from "@/lib/internal-paths";
 import FadeIn from "@/app/components/FadeIn";
+import StatTicker from "@/app/components/StatTicker";
 import Faq from "@/app/lp/Faq";
 import Underline from "@/app/resources/guides/how-to-set-up-vibe-prospecting/Underline";
 import FlowVisual from "./FlowVisual";
 import ProcessExplorer from "./ProcessExplorer";
+import PackageGrid from "./PackageGrid";
 import { PROCESS_STEPS } from "./process-steps";
 import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
 
@@ -64,19 +59,6 @@ const RESULTS: { icon: LucideIcon; label: string }[] = [
   { icon: Handshake, label: "More meetings" },
   { icon: TrendingUp, label: "Higher conversions" },
   { icon: FlaskConical, label: "Always optimising" },
-];
-
-const PACKAGE: { icon: LucideIcon; label: string }[] = [
-  { icon: Server, label: "10 domains + 40 inboxes" },
-  { icon: ShieldCheck, label: "DNS setup & IP rotation" },
-  { icon: Mail, label: "1,200 emails a day" },
-  { icon: Users, label: "5,000 prospects a month" },
-  { icon: PenLine, label: "Copy & strategy" },
-  { icon: Repeat, label: "3-4 follow-ups & nurturing" },
-  { icon: FlaskConical, label: "A/B testing & optimisation" },
-  { icon: BarChart3, label: "Real-time reporting" },
-  { icon: Layers, label: "Complete backend setup" },
-  { icon: Send, label: "Sending tool included" },
 ];
 
 const WHY: { icon: LucideIcon; title: string; line: string }[] = [
@@ -167,20 +149,28 @@ export default function ColdEmailingPackage() {
         <div className="mx-auto max-w-6xl">
           <FadeIn>
             <div className="grid grid-cols-2 gap-px overflow-hidden rounded-[28px] border md:grid-cols-4" style={{ borderColor: "#EDE7DD", backgroundColor: "#F0EADF", boxShadow: "0 30px 80px rgba(15,15,20,0.09)" }}>
-              {STATS.map((s) => (
-                <div key={s.label} className="bg-white px-6 py-7 sm:px-8 sm:py-9">
-                  <p className="text-5xl font-black tabular-nums md:text-[2.6rem] lg:text-6xl" style={{ color: INK, letterSpacing: "-0.045em" }}>{s.value}</p>
-                  <p className="mt-1 text-sm font-semibold" style={{ color: "#6b655e" }}>{s.label}</p>
-                </div>
+              {STATS.map((s, i) => (
+                <FadeIn key={s.label} delay={i * 110} className="h-full">
+                  <div className="h-full bg-white px-6 py-7 sm:px-8 sm:py-9">
+                    <p className="text-5xl font-black tabular-nums md:text-[2.6rem] lg:text-6xl" style={{ color: INK, letterSpacing: "-0.045em" }}>
+                      <StatTicker value={s.value} duration={1600} />
+                    </p>
+                    <p className="mt-1 text-sm font-semibold" style={{ color: "#6b655e" }}>{s.label}</p>
+                  </div>
+                </FadeIn>
               ))}
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
-              <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#8C8279" }}>Our targets</span>
-              {TARGETS.map((t) => (
-                <span key={t} className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-bold" style={{ borderColor: "#EDE7DD", color: INK }}>
-                  <BadgeCheck className="h-4 w-4" style={{ color: ORANGE }} aria-hidden="true" />
-                  {t}
-                </span>
+              <FadeIn delay={420}>
+                <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#8C8279" }}>Our targets</span>
+              </FadeIn>
+              {TARGETS.map((t, i) => (
+                <FadeIn key={t} delay={520 + i * 130}>
+                  <span className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-bold transition-transform duration-300 hover:-translate-y-0.5" style={{ borderColor: "#EDE7DD", color: INK }}>
+                    <BadgeCheck className="ce-badge h-4 w-4" style={{ color: ORANGE, animationDelay: "160ms" }} aria-hidden="true" />
+                    {t}
+                  </span>
+                </FadeIn>
               ))}
             </div>
           </FadeIn>
@@ -247,21 +237,7 @@ export default function ColdEmailingPackage() {
               <p className="mt-4 text-lg" style={{ color: "#52525B" }}>A hands-off system that runs end to end.</p>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {PACKAGE.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <FadeIn key={item.label} delay={(i % 5) * 60} className="h-full">
-                  <div className="flex h-full min-h-[148px] flex-col justify-between rounded-[22px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#EA580C]" style={{ borderColor: "#EDE7DD", backgroundColor: "#FCFBF8" }}>
-                    <span className="grid h-11 w-11 place-items-center rounded-xl" style={{ backgroundColor: "rgba(234,88,12,0.1)", color: ORANGE }}>
-                      <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
-                    </span>
-                    <p className="mt-5 text-sm font-black leading-snug" style={{ color: INK }}>{item.label}</p>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
+          <PackageGrid />
 
           <FadeIn>
             <div className="mt-6 overflow-hidden rounded-[30px] border" style={{ borderColor: "#EDE7DD", boxShadow: "0 30px 80px rgba(15,15,20,0.08)" }}>

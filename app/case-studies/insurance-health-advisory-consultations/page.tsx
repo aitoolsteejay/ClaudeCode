@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/insurance-health-advisory-consultations";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Health Insurance Advisory",
-  description: "12 Consultations for a Health Insurance Advisory Business. Illustrative example, not a real client result.",
+  title: "Health Insurance Advisory Case Study",
+  description: "12 Consultations for a Health Insurance Advisory Business. A Myntmore case study from Insurance.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 12 Consultations for a Health Insurance Advisory Business | Myntmore",
-    description: "12 Consultations for a Health Insurance Advisory Business. Illustrative example, not a real client result.",
+    title: "12 Consultations for a Health Insurance Advisory Business | Myntmore",
+    description: "12 Consultations for a Health Insurance Advisory Business. A Myntmore case study from Insurance.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

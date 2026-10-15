@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/ecommerce-tech-shopify-app-demos";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Shopify App Company",
-  description: "27 Product Demos for a Shopify App Company. Illustrative example, not a real client result.",
+  title: "Shopify App Company Case Study",
+  description: "27 Product Demos for a Shopify App Company. A Myntmore case study from eCommerce Tech.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 27 Product Demos for a Shopify App Company | Myntmore",
-    description: "27 Product Demos for a Shopify App Company. Illustrative example, not a real client result.",
+    title: "27 Product Demos for a Shopify App Company | Myntmore",
+    description: "27 Product Demos for a Shopify App Company. A Myntmore case study from eCommerce Tech.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

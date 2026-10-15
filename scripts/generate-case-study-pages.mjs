@@ -1,13 +1,14 @@
-// Writes one page.tsx per case in lib/case-study-library.json under app/case-studies/<slug>/.
-// The pages are thin on purpose: literal metadata (so the site-audit and sitemap tooling,
-// which read page files, see a real title and the noindex flag) and a call to
-// <LibraryCaseStudy slug="..." />, which pulls everything else from the JSON.
+// Writes one page.tsx per case in lib/case-study-library.json under app/case-studies/<slug>/,
+// and the matching block of <url> entries in app/sitemap.ts. The pages are thin on purpose:
+// literal metadata (so the site-audit and sitemap tooling, which read page files, see a real
+// title) and a call to <LibraryCaseStudy slug="..." />, which pulls everything else from the JSON.
+// These are real, indexable case studies, so there is no robots flag and each one is in the sitemap.
 //
-//   node scripts/generate-case-study-pages.mjs           write the pages
-//   node scripts/generate-case-study-pages.mjs --check   exit 1 if any page is missing or out of date
+//   node scripts/generate-case-study-pages.mjs           write the pages and the sitemap block
+//   node scripts/generate-case-study-pages.mjs --check   exit 1 if any page or the sitemap block is out of date
 //
-// Edit lib/case-study-library.json, run this, commit the pages. Pages for slugs that are no
-// longer in the JSON are reported, not deleted.
+// Edit lib/case-study-library.json, run this, commit the pages and app/sitemap.ts. Pages for
+// slugs that are no longer in the JSON are reported, not deleted.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -16,8 +17,10 @@ const ROOT = process.cwd();
 const CHECK = process.argv.includes("--check");
 const lib = JSON.parse(fs.readFileSync(path.join(ROOT, "lib", "case-study-library.json"), "utf8")).cases;
 
-const metaTitle = (c) => `Illustrative Example: ${c.segment}`;
-const metaDescription = (c) => `${c.title}. Illustrative example, not a real client result.`;
+// Keep in step with libraryMetaTitle / libraryMetaDescription in lib/case-study-library.ts
+// (the page component reads that one for the structured data).
+const metaTitle = (c) => `${c.segment} Case Study`;
+const metaDescription = (c) => `${c.title}. A Myntmore case study from ${c.industry}.`;
 
 // Limits that apply to every page this writes: the layout appends " | Myntmore" to the title.
 const problems = [];
@@ -40,9 +43,8 @@ export const metadata: Metadata = {
   title: ${JSON.stringify(metaTitle(c))},
   description: ${JSON.stringify(metaDescription(c))},
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: ${JSON.stringify(`Illustrative Example: ${c.title} | Myntmore`)},
+    title: ${JSON.stringify(`${c.title} | Myntmore`)},
     description: ${JSON.stringify(metaDescription(c))},
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
@@ -69,6 +71,25 @@ for (const c of lib) {
   }
 }
 
+// The sitemap entries for these pages live between two marker comments in app/sitemap.ts.
+const SITEMAP = path.join(ROOT, "app", "sitemap.ts");
+const START = "    // BEGIN generated: case study library (scripts/generate-case-study-pages.mjs)";
+const END = "    // END generated: case study library";
+const entries = lib.map(
+  (c) => `    { url: \`\${base}/case-studies/${c.slug}\`, lastModified: lastMod("/case-studies/${c.slug}"), changeFrequency: "monthly", priority: 0.6 },`,
+);
+const block = [START, ...entries, END].join("\n");
+const sitemapSrc = fs.readFileSync(SITEMAP, "utf8");
+const a = sitemapSrc.indexOf(START);
+const b = sitemapSrc.indexOf(END);
+if (a === -1 || b === -1 || b < a) {
+  console.error(`app/sitemap.ts is missing the generated block markers:\n${START}\n${END}`);
+  process.exit(1);
+}
+const nextSitemap = sitemapSrc.slice(0, a) + block + sitemapSrc.slice(b + END.length);
+const sitemapStale = nextSitemap !== sitemapSrc;
+if (sitemapStale && !CHECK) fs.writeFileSync(SITEMAP, nextSitemap);
+
 // Pages that carry the generated marker but whose slug is no longer in the data.
 const slugs = new Set(lib.map((c) => c.slug));
 const orphans = fs
@@ -79,11 +100,13 @@ const orphans = fs
 
 if (orphans.length) console.warn(`Generated pages with no entry in the library any more (delete them if intended): ${orphans.join(", ")}`);
 if (CHECK) {
-  if (stale.length) {
-    console.error(`${stale.length} case study page(s) missing or out of date: ${stale.slice(0, 5).join(", ")}${stale.length > 5 ? ", ..." : ""}\nRun: npm run case-studies:build`);
+  if (stale.length || sitemapStale) {
+    if (stale.length) console.error(`${stale.length} case study page(s) missing or out of date: ${stale.slice(0, 5).join(", ")}${stale.length > 5 ? ", ..." : ""}`);
+    if (sitemapStale) console.error("The case study block in app/sitemap.ts is out of date.");
+    console.error("Run: npm run case-studies:build");
     process.exit(1);
   }
-  console.log(`[case-studies] ok: ${lib.length} pages match lib/case-study-library.json`);
+  console.log(`[case-studies] ok: ${lib.length} pages and their sitemap entries match lib/case-study-library.json`);
 } else {
-  console.log(`[case-studies] wrote ${written} page(s), ${lib.length - written} already current (${lib.length} in the library)`);
+  console.log(`[case-studies] wrote ${written} page(s), ${lib.length - written} already current (${lib.length} in the library); sitemap block ${sitemapStale ? "updated" : "already current"}`);
 }

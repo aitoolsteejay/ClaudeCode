@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/pharma-clinical-research-meetings";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Clinical Research Services",
-  description: "14 High-Intent Meetings for a Clinical Research Services Firm. Illustrative example, not a real client result.",
+  title: "Clinical Research Services Case Study",
+  description: "14 High-Intent Meetings for a Clinical Research Services Firm. A Myntmore case study from Pharma.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 14 High-Intent Meetings for a Clinical Research Services Firm | Myntmore",
-    description: "14 High-Intent Meetings for a Clinical Research Services Firm. Illustrative example, not a real client result.",
+    title: "14 High-Intent Meetings for a Clinical Research Services Firm | Myntmore",
+    description: "14 High-Intent Meetings for a Clinical Research Services Firm. A Myntmore case study from Pharma.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

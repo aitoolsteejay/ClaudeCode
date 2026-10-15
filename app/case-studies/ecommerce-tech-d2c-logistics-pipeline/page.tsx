@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/ecommerce-tech-d2c-logistics-pipeline";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: D2C Logistics Tech",
-  description: "₹38 Lakh Pipeline for a D2C Logistics Tech Company. Illustrative example, not a real client result.",
+  title: "D2C Logistics Tech Case Study",
+  description: "₹38 Lakh Pipeline for a D2C Logistics Tech Company. A Myntmore case study from eCommerce Tech.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: ₹38 Lakh Pipeline for a D2C Logistics Tech Company | Myntmore",
-    description: "₹38 Lakh Pipeline for a D2C Logistics Tech Company. Illustrative example, not a real client result.",
+    title: "₹38 Lakh Pipeline for a D2C Logistics Tech Company | Myntmore",
+    description: "₹38 Lakh Pipeline for a D2C Logistics Tech Company. A Myntmore case study from eCommerce Tech.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

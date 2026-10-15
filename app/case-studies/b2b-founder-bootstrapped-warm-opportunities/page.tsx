@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/b2b-founder-bootstrapped-warm-opportunities";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Bootstrapped Founder",
-  description: "Creating 14 Warm Opportunities for a Bootstrapped Founder. Illustrative example, not a real client result.",
+  title: "Bootstrapped Founder Case Study",
+  description: "Creating 14 Warm Opportunities for a Bootstrapped Founder. A Myntmore case study from B2B Founder.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Creating 14 Warm Opportunities for a Bootstrapped Founder | Myntmore",
-    description: "Creating 14 Warm Opportunities for a Bootstrapped Founder. Illustrative example, not a real client result.",
+    title: "Creating 14 Warm Opportunities for a Bootstrapped Founder | Myntmore",
+    description: "Creating 14 Warm Opportunities for a Bootstrapped Founder. A Myntmore case study from B2B Founder.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

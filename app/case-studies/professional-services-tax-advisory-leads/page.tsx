@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/professional-services-tax-advisory-leads";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Tax Advisory Firm",
-  description: "23 Qualified Leads for a Tax Advisory Firm. Illustrative example, not a real client result.",
+  title: "Tax Advisory Firm Case Study",
+  description: "23 Qualified Leads for a Tax Advisory Firm. A Myntmore case study from Professional Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 23 Qualified Leads for a Tax Advisory Firm | Myntmore",
-    description: "23 Qualified Leads for a Tax Advisory Firm. Illustrative example, not a real client result.",
+    title: "23 Qualified Leads for a Tax Advisory Firm | Myntmore",
+    description: "23 Qualified Leads for a Tax Advisory Firm. A Myntmore case study from Professional Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

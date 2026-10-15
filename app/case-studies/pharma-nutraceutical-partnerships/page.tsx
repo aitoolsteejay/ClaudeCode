@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/pharma-nutraceutical-partnerships";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Nutraceutical Manufacturer",
-  description: "22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer. Illustrative example, not a real client result.",
+  title: "Nutraceutical Manufacturer Case Study",
+  description: "22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer. A Myntmore case study from Pharma.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer | Myntmore",
-    description: "22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer. Illustrative example, not a real client result.",
+    title: "22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer | Myntmore",
+    description: "22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer. A Myntmore case study from Pharma.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

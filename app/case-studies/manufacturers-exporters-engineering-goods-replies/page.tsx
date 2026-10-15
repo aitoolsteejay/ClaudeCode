@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-engineering-goods-replies";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Engineering Goods Exporter",
-  description: "2.1x Higher Positive Replies for an Engineering Goods Exporter. Illustrative example, not a real client result.",
+  title: "Engineering Goods Exporter Case Study",
+  description: "2.1x Higher Positive Replies for an Engineering Goods Exporter. A Myntmore case study from Manufacturers & Exporters.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 2.1x Higher Positive Replies for an Engineering Goods Exporter | Myntmore",
-    description: "2.1x Higher Positive Replies for an Engineering Goods Exporter. Illustrative example, not a real client result.",
+    title: "2.1x Higher Positive Replies for an Engineering Goods Exporter | Myntmore",
+    description: "2.1x Higher Positive Replies for an Engineering Goods Exporter. A Myntmore case study from Manufacturers & Exporters.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

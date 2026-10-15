@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/insurance-risk-consulting-proposals";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Risk Consulting Firm",
-  description: "9 Proposal Opportunities for a Risk Consulting Firm. Illustrative example, not a real client result.",
+  title: "Risk Consulting Firm Case Study",
+  description: "9 Proposal Opportunities for a Risk Consulting Firm. A Myntmore case study from Insurance.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 9 Proposal Opportunities for a Risk Consulting Firm | Myntmore",
-    description: "9 Proposal Opportunities for a Risk Consulting Firm. Illustrative example, not a real client result.",
+    title: "9 Proposal Opportunities for a Risk Consulting Firm | Myntmore",
+    description: "9 Proposal Opportunities for a Risk Consulting Firm. A Myntmore case study from Insurance.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

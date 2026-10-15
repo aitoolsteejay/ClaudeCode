@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/professional-services-hr-consulting-mandates";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: HR Consulting Company",
-  description: "3 New Mandates for an HR Consulting Company. Illustrative example, not a real client result.",
+  title: "HR Consulting Company Case Study",
+  description: "3 New Mandates for an HR Consulting Company. A Myntmore case study from Professional Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 3 New Mandates for an HR Consulting Company | Myntmore",
-    description: "3 New Mandates for an HR Consulting Company. Illustrative example, not a real client result.",
+    title: "3 New Mandates for an HR Consulting Company | Myntmore",
+    description: "3 New Mandates for an HR Consulting Company. A Myntmore case study from Professional Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

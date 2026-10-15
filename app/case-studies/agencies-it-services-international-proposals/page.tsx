@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/agencies-it-services-international-proposals";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: IT Services Company",
-  description: "9 Proposal-Stage Opportunities for an IT Services Company. Illustrative example, not a real client result.",
+  title: "IT Services Company Case Study",
+  description: "9 Proposal-Stage Opportunities for an IT Services Company. A Myntmore case study from Agencies & IT.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 9 Proposal-Stage Opportunities for an IT Services Company | Myntmore",
-    description: "9 Proposal-Stage Opportunities for an IT Services Company. Illustrative example, not a real client result.",
+    title: "9 Proposal-Stage Opportunities for an IT Services Company | Myntmore",
+    description: "9 Proposal-Stage Opportunities for an IT Services Company. A Myntmore case study from Agencies & IT.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/b2b-founder-linkedin-visibility";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Service Business Founder",
-  description: "Tripling LinkedIn Visibility for a B2B Service Founder. Illustrative example, not a real client result.",
+  title: "Service Business Founder Case Study",
+  description: "Tripling LinkedIn Visibility for a B2B Service Founder. A Myntmore case study from B2B Founder.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Tripling LinkedIn Visibility for a B2B Service Founder | Myntmore",
-    description: "Tripling LinkedIn Visibility for a B2B Service Founder. Illustrative example, not a real client result.",
+    title: "Tripling LinkedIn Visibility for a B2B Service Founder | Myntmore",
+    description: "Tripling LinkedIn Visibility for a B2B Service Founder. A Myntmore case study from B2B Founder.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

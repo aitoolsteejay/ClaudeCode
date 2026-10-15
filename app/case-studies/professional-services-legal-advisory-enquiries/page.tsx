@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/professional-services-legal-advisory-enquiries";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Legal Advisory Practice",
-  description: "Generating 11 Inbound Enquiries for a Legal Advisory Practice. Illustrative example, not a real client result.",
+  title: "Legal Advisory Practice Case Study",
+  description: "Generating 11 Inbound Enquiries for a Legal Advisory Practice. A Myntmore case study from Professional Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Generating 11 Inbound Enquiries for a Legal Advisory Practice | Myntmore",
-    description: "Generating 11 Inbound Enquiries for a Legal Advisory Practice. Illustrative example, not a real client result.",
+    title: "Generating 11 Inbound Enquiries for a Legal Advisory Practice | Myntmore",
+    description: "Generating 11 Inbound Enquiries for a Legal Advisory Practice. A Myntmore case study from Professional Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

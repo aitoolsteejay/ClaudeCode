@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/b2b-founder-niche-consultant-retainers";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Niche B2B Consultant",
-  description: "5 New Retainers for a Niche B2B Consultant. Illustrative example, not a real client result.",
+  title: "Niche B2B Consultant Case Study",
+  description: "5 New Retainers for a Niche B2B Consultant. A Myntmore case study from B2B Founder.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 5 New Retainers for a Niche B2B Consultant | Myntmore",
-    description: "5 New Retainers for a Niche B2B Consultant. Illustrative example, not a real client result.",
+    title: "5 New Retainers for a Niche B2B Consultant | Myntmore",
+    description: "5 New Retainers for a Niche B2B Consultant. A Myntmore case study from B2B Founder.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

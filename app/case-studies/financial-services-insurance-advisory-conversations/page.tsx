@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/financial-services-insurance-advisory-conversations";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Insurance Advisory",
-  description: "16 Consultative Conversations for an Insurance Advisory Business. Illustrative example, not a real client result.",
+  title: "Insurance Advisory Case Study",
+  description: "16 Consultative Conversations for an Insurance Advisory Business. A Myntmore case study from Financial Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 16 Consultative Conversations for an Insurance Advisory Business | Myntmore",
-    description: "16 Consultative Conversations for an Insurance Advisory Business. Illustrative example, not a real client result.",
+    title: "16 Consultative Conversations for an Insurance Advisory Business | Myntmore",
+    description: "16 Consultative Conversations for an Insurance Advisory Business. A Myntmore case study from Financial Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

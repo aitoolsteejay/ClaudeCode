@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/pharma-contract-manufacturer-pipeline";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Contract Manufacturer",
-  description: "Building a ₹48 Lakh Pipeline for a Contract Pharma Manufacturer. Illustrative example, not a real client result.",
+  title: "Contract Manufacturer Case Study",
+  description: "Building a ₹48 Lakh Pipeline for a Contract Pharma Manufacturer. A Myntmore case study from Pharma.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Building a ₹48 Lakh Pipeline for a Contract Pharma Manufacturer | Myntmore",
-    description: "Building a ₹48 Lakh Pipeline for a Contract Pharma Manufacturer. Illustrative example, not a real client result.",
+    title: "Building a ₹48 Lakh Pipeline for a Contract Pharma Manufacturer | Myntmore",
+    description: "Building a ₹48 Lakh Pipeline for a Contract Pharma Manufacturer. A Myntmore case study from Pharma.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/recruitment-staffing-consulting-founder-visibility";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Recruitment Consulting",
-  description: "Building Founder Visibility for a Recruitment Consulting Firm. Illustrative example, not a real client result.",
+  title: "Recruitment Consulting Case Study",
+  description: "Building Founder Visibility for a Recruitment Consulting Firm. A Myntmore case study from Recruitment & Staffing.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Building Founder Visibility for a Recruitment Consulting Firm | Myntmore",
-    description: "Building Founder Visibility for a Recruitment Consulting Firm. Illustrative example, not a real client result.",
+    title: "Building Founder Visibility for a Recruitment Consulting Firm | Myntmore",
+    description: "Building Founder Visibility for a Recruitment Consulting Firm. A Myntmore case study from Recruitment & Staffing.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

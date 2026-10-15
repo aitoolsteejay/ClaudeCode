@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-industrial-packaging-conversations";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Industrial Packaging",
-  description: "24 Sales Conversations for an Industrial Packaging Manufacturer. Illustrative example, not a real client result.",
+  title: "Industrial Packaging Case Study",
+  description: "24 Sales Conversations for an Industrial Packaging Manufacturer. A Myntmore case study from Manufacturers & Exporters.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 24 Sales Conversations for an Industrial Packaging Manufacturer | Myntmore",
-    description: "24 Sales Conversations for an Industrial Packaging Manufacturer. Illustrative example, not a real client result.",
+    title: "24 Sales Conversations for an Industrial Packaging Manufacturer | Myntmore",
+    description: "24 Sales Conversations for an Industrial Packaging Manufacturer. A Myntmore case study from Manufacturers & Exporters.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

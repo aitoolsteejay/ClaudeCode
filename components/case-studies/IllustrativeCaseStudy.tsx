@@ -22,15 +22,21 @@ export interface IllustrativeCaseStudyProps {
   roleBody: string;
   services: { name: string; href: string }[];
   articleSchema: Record<string, unknown>;
+  // true (the default) for hypothetical examples: shows the badge and the disclosure. false for
+  // case studies that report real client work: same layout, no illustrative labelling.
+  illustrative?: boolean;
 }
 
-// Shared layout for every "Illustrative example" case study (pharma, agencies & IT,
-// financial services, insurance, manufacturers & exporters, recruitment & staffing).
-// These are hypothetical scenarios built from real service methodology, not claims
-// about a specific past client -- the "Illustrative example" badge and disclosure
-// line below are load-bearing, not decoration. Keep them on every page that uses
-// this component. Swap a slug over to a real, bespoke page.tsx once real client
-// data is available for it.
+// Shared layout for the structured case study pages.
+//
+// Default (illustrative = true): the "Illustrative example" pages (pharma, agencies & IT,
+// financial services, insurance, manufacturers & exporters, recruitment & staffing). Those are
+// hypothetical scenarios built from real service methodology, not claims about a specific past
+// client, so the badge and the disclosure are load-bearing, not decoration: keep them on every
+// page that uses the default.
+//
+// illustrative = false: case studies that report real client work (the industry case study
+// library) use the same layout without any illustrative labelling.
 export default function IllustrativeCaseStudy({
   slug,
   tag,
@@ -48,6 +54,7 @@ export default function IllustrativeCaseStudy({
   roleBody,
   services,
   articleSchema,
+  illustrative = true,
 }: IllustrativeCaseStudyProps) {
   return (
     <InnerLayout>
@@ -62,19 +69,23 @@ export default function IllustrativeCaseStudy({
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]">{tag}</span>
             </div>
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-dashed hero-fade" style={{ backgroundColor: "#F3F3F1", color: "#71675E", borderColor: "#C9C2B8" }}>
-              <span className="text-xs font-bold uppercase tracking-[0.15em]">Illustrative example</span>
-            </div>
+            {illustrative && (
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-dashed hero-fade" style={{ backgroundColor: "#F3F3F1", color: "#71675E", borderColor: "#C9C2B8" }}>
+                <span className="text-xs font-bold uppercase tracking-[0.15em]">Illustrative example</span>
+              </div>
+            )}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             {title}
           </h1>
-          <p className="text-lg sm:text-xl leading-relaxed mb-4 max-w-3xl hero-fade-d2" style={{ color: "#52525B" }}>
+          <p className={`text-lg sm:text-xl leading-relaxed max-w-3xl hero-fade-d2 ${illustrative ? "mb-4" : "mb-10"}`} style={{ color: "#52525B" }}>
             {intro}
           </p>
-          <p className="text-sm leading-relaxed mb-10 max-w-3xl px-4 py-3 rounded-xl border" style={{ color: "#71675E", backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-            This is an illustrative example built from Myntmore&apos;s real outreach methodology. It shows what a strong campaign and result can look like, it is not the result of a specific past client engagement. We&apos;ll swap this for a real, verified case study as one becomes available.
-          </p>
+          {illustrative && (
+            <p className="text-sm leading-relaxed mb-10 max-w-3xl px-4 py-3 rounded-xl border" style={{ color: "#71675E", backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              This is an illustrative example built from Myntmore&apos;s real outreach methodology. It shows what a strong campaign and result can look like, it is not the result of a specific past client engagement. We&apos;ll swap this for a real, verified case study as one becomes available.
+            </p>
+          )}
           <div className={`grid grid-cols-1 gap-4 p-5 sm:p-6 rounded-2xl border hero-fade-d3 ${heroStats.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3"}`} style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
             {heroStats.map((stat) => (
               <div key={stat.label} className="text-center py-3 sm:py-1">
@@ -106,7 +117,7 @@ export default function IllustrativeCaseStudy({
 
           <div>
             <span className="text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>03 · Campaign metrics</span>
-            <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Illustrative results across the funnel</h2>
+            <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>{illustrative ? "Illustrative results across the funnel" : "Results across the funnel"}</h2>
             <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
               {metrics.map((m, index) => (
                 <div key={m.l} className="flex items-center justify-between gap-3 px-5 py-4" style={{ borderBottom: index < metrics.length - 1 ? "1px solid #E8E2D9" : "none" }}>

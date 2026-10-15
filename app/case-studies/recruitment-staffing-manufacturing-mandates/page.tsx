@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/recruitment-staffing-manufacturing-mandates";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Manufacturing Staffing",
-  description: "3 New Mandate Discussions for a Manufacturing Staffing Firm. Illustrative example, not a real client result.",
+  title: "Manufacturing Staffing Case Study",
+  description: "3 New Mandate Discussions for a Manufacturing Staffing Firm. A Myntmore case study from Recruitment & Staffing.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 3 New Mandate Discussions for a Manufacturing Staffing Firm | Myntmore",
-    description: "3 New Mandate Discussions for a Manufacturing Staffing Firm. Illustrative example, not a real client result.",
+    title: "3 New Mandate Discussions for a Manufacturing Staffing Firm | Myntmore",
+    description: "3 New Mandate Discussions for a Manufacturing Staffing Firm. A Myntmore case study from Recruitment & Staffing.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

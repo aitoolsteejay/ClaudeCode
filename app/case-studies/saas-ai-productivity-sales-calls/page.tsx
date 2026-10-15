@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/saas-ai-productivity-sales-calls";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: AI Productivity Platform",
-  description: "24 Sales Calls for an AI Productivity Platform. Illustrative example, not a real client result.",
+  title: "AI Productivity Platform Case Study",
+  description: "24 Sales Calls for an AI Productivity Platform. A Myntmore case study from SaaS.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 24 Sales Calls for an AI Productivity Platform | Myntmore",
-    description: "24 Sales Calls for an AI Productivity Platform. Illustrative example, not a real client result.",
+    title: "24 Sales Calls for an AI Productivity Platform | Myntmore",
+    description: "24 Sales Calls for an AI Productivity Platform. A Myntmore case study from SaaS.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

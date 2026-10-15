@@ -70,7 +70,7 @@ function metaOf(file) {
     description: pick("description"),
     // Glossary pages keep the full definition in a DESCRIPTION constant.
     definition: constValue(src, "DESCRIPTION"),
-    illustrative: /IllustrativeCaseStudy|LibraryCaseStudy/.test(src),
+    illustrative: /IllustrativeCaseStudy/.test(src),
   };
 }
 

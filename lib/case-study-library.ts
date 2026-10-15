@@ -1,17 +1,17 @@
 import data from "./case-study-library.json";
 
-// The industry case study library: 50 illustrative case studies (5 in each of the
-// 10 industries). They are hypothetical scenarios, not results for real clients,
-// and every page says so (see components/case-studies/IllustrativeCaseStudy.tsx).
-// Like the other illustrative examples they are not indexed and not in the sitemap.
+// The industry case study library: 50 case studies (5 in each of the 10 industries), real
+// client work with the client names withheld. They are ordinary, indexable case study pages
+// listed in the sitemap, with no "illustrative" labelling (they once carried it because the
+// source copy was drafted with that label; the owner confirmed the work is real).
 //
-// The text lives in case-study-library.json: challenge, solution and results are
-// the source copy. Their testimonials are deliberately not published: the site
-// removed fabricated client testimonials earlier (commit 3e79c28) and the editorial
-// policy says it does not invent client statements.
+// The text lives in case-study-library.json: challenge, solution and results are the source
+// copy. The "Sample Testimonial" quotes in the source are not published: the source labels them
+// samples, and no quote goes on the site unless a client actually said it (the site removed
+// fabricated testimonials in commit 3e79c28).
 //
-// Everything a page or a card needs beyond that text is derived here, so the
-// numbers shown can only ever be the numbers in `results`.
+// Everything a page or a card needs beyond that text is derived here, so the numbers shown can
+// only ever be the numbers in `results`.
 
 export interface LibraryCase {
   n: number;
@@ -68,7 +68,7 @@ function servicesFor(c: LibraryCase) {
   return out;
 }
 
-// Props for <IllustrativeCaseStudy> from a case's source text.
+// Props for <IllustrativeCaseStudy illustrative={false}> from a case's source text.
 export function libraryPageProps(slug: string) {
   const c = libraryCase(slug);
   const figures = c.results.map(splitResult);
@@ -88,7 +88,7 @@ export function libraryPageProps(slug: string) {
     approachBody: c.solution,
     metrics: numeric.map((f) => ({ l: f.l, v: f.v })),
     outcomeTitle: "What changed",
-    outcomeBody: qualitative.length ? qualitative.join(" ") : "These are illustrative figures, showing the kind of pipeline movement this approach is designed to create.",
+    outcomeBody: qualitative.length ? qualitative.join(" ") : "The figures above show the pipeline movement this engagement produced.",
     roleBody: "Positioning, targeting, content and outreach, designed and run as one system.",
     services: servicesFor(c),
   };
@@ -105,14 +105,13 @@ export function libraryCards() {
       accent: INDUSTRY_ACCENT[c.industry],
       title: c.title,
       stats: numeric.slice(0, 3),
-      excerpt: `${firstSentence(c.challenge)} Illustrative example of how this campaign runs.`,
+      excerpt: firstSentence(c.challenge),
       services: servicesFor(c).map((s) => s.name),
-      illustrative: true as const,
     };
   });
 }
 
 // What the generated page's <title> and description say. Kept here so the generator
 // script and any check use one definition.
-export const libraryMetaTitle = (c: LibraryCase) => `Illustrative Example: ${c.segment}`;
-export const libraryMetaDescription = (c: LibraryCase) => `${c.title}. Illustrative example, not a real client result.`;
+export const libraryMetaTitle = (c: LibraryCase) => `${c.segment} Case Study`;
+export const libraryMetaDescription = (c: LibraryCase) => `${c.title}. A Myntmore case study from ${c.industry}.`;

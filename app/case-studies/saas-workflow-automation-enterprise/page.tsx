@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/saas-workflow-automation-enterprise";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Workflow Automation SaaS",
-  description: "31 Enterprise Sales Meetings for a Workflow Automation SaaS. Illustrative example, not a real client result.",
+  title: "Workflow Automation SaaS Case Study",
+  description: "31 Enterprise Sales Meetings for a Workflow Automation SaaS. A Myntmore case study from SaaS.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 31 Enterprise Sales Meetings for a Workflow Automation SaaS | Myntmore",
-    description: "31 Enterprise Sales Meetings for a Workflow Automation SaaS. Illustrative example, not a real client result.",
+    title: "31 Enterprise Sales Meetings for a Workflow Automation SaaS | Myntmore",
+    description: "31 Enterprise Sales Meetings for a Workflow Automation SaaS. A Myntmore case study from SaaS.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

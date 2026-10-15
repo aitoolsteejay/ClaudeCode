@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-food-processing-partners";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Food Processing",
-  description: "17 Qualified Partner Discussions for a Food Processing Manufacturer. Illustrative example, not a real client result.",
+  title: "Food Processing Case Study",
+  description: "17 Qualified Partner Discussions for a Food Processing Manufacturer. A Myntmore case study from Manufacturers & Exporters.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 17 Qualified Partner Discussions for a Food Processing Manufacturer | Myntmore",
-    description: "17 Qualified Partner Discussions for a Food Processing Manufacturer. Illustrative example, not a real client result.",
+    title: "17 Qualified Partner Discussions for a Food Processing Manufacturer | Myntmore",
+    description: "17 Qualified Partner Discussions for a Food Processing Manufacturer. A Myntmore case study from Manufacturers & Exporters.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

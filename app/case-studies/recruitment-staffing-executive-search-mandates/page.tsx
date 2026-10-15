@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/recruitment-staffing-executive-search-mandates";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Executive Search Firm",
-  description: "4 Recruitment Mandates for an Executive Search Firm. Illustrative example, not a real client result.",
+  title: "Executive Search Firm Case Study",
+  description: "4 Recruitment Mandates for an Executive Search Firm. A Myntmore case study from Recruitment & Staffing.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 4 Recruitment Mandates for an Executive Search Firm | Myntmore",
-    description: "4 Recruitment Mandates for an Executive Search Firm. Illustrative example, not a real client result.",
+    title: "4 Recruitment Mandates for an Executive Search Firm | Myntmore",
+    description: "4 Recruitment Mandates for an Executive Search Firm. A Myntmore case study from Recruitment & Staffing.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

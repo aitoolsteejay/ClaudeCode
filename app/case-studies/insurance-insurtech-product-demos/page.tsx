@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/insurance-insurtech-product-demos";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Insurtech Platform",
-  description: "16 Product Demos for an Insurtech Platform. Illustrative example, not a real client result.",
+  title: "Insurtech Platform Case Study",
+  description: "16 Product Demos for an Insurtech Platform. A Myntmore case study from Insurance.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 16 Product Demos for an Insurtech Platform | Myntmore",
-    description: "16 Product Demos for an Insurtech Platform. Illustrative example, not a real client result.",
+    title: "16 Product Demos for an Insurtech Platform | Myntmore",
+    description: "16 Product Demos for an Insurtech Platform. A Myntmore case study from Insurance.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/recruitment-staffing-it-staffing-meetings";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: IT Staffing Agency",
-  description: "26 Meetings for an IT Staffing Agency. Illustrative example, not a real client result.",
+  title: "IT Staffing Agency Case Study",
+  description: "26 Meetings for an IT Staffing Agency. A Myntmore case study from Recruitment & Staffing.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 26 Meetings for an IT Staffing Agency | Myntmore",
-    description: "26 Meetings for an IT Staffing Agency. Illustrative example, not a real client result.",
+    title: "26 Meetings for an IT Staffing Agency | Myntmore",
+    description: "26 Meetings for an IT Staffing Agency. A Myntmore case study from Recruitment & Staffing.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

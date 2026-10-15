@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-textile-buyer-opportunities";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Textile Exporter",
-  description: "15 Buyer Opportunities for a Textile Exporter. Illustrative example, not a real client result.",
+  title: "Textile Exporter Case Study",
+  description: "15 Buyer Opportunities for a Textile Exporter. A Myntmore case study from Manufacturers & Exporters.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 15 Buyer Opportunities for a Textile Exporter | Myntmore",
-    description: "15 Buyer Opportunities for a Textile Exporter. Illustrative example, not a real client result.",
+    title: "15 Buyer Opportunities for a Textile Exporter | Myntmore",
+    description: "15 Buyer Opportunities for a Textile Exporter. A Myntmore case study from Manufacturers & Exporters.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

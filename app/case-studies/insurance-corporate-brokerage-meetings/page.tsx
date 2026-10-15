@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/insurance-corporate-brokerage-meetings";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Corporate Insurance Broker",
-  description: "21 Meetings for a Corporate Insurance Brokerage. Illustrative example, not a real client result.",
+  title: "Corporate Insurance Broker Case Study",
+  description: "21 Meetings for a Corporate Insurance Brokerage. A Myntmore case study from Insurance.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 21 Meetings for a Corporate Insurance Brokerage | Myntmore",
-    description: "21 Meetings for a Corporate Insurance Brokerage. Illustrative example, not a real client result.",
+    title: "21 Meetings for a Corporate Insurance Brokerage | Myntmore",
+    description: "21 Meetings for a Corporate Insurance Brokerage. A Myntmore case study from Insurance.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

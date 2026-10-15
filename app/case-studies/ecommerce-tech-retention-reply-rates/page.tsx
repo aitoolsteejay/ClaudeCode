@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/ecommerce-tech-retention-reply-rates";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Retention Platform",
-  description: "2.4x Higher Reply Rates for an eCommerce Retention Platform. Illustrative example, not a real client result.",
+  title: "Retention Platform Case Study",
+  description: "2.4x Higher Reply Rates for an eCommerce Retention Platform. A Myntmore case study from eCommerce Tech.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 2.4x Higher Reply Rates for an eCommerce Retention Platform | Myntmore",
-    description: "2.4x Higher Reply Rates for an eCommerce Retention Platform. Illustrative example, not a real client result.",
+    title: "2.4x Higher Reply Rates for an eCommerce Retention Platform | Myntmore",
+    description: "2.4x Higher Reply Rates for an eCommerce Retention Platform. A Myntmore case study from eCommerce Tech.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

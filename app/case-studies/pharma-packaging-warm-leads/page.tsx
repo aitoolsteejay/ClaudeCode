@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/pharma-packaging-warm-leads";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Pharma Packaging",
-  description: "Generating 26 Warm Leads for a Pharma Packaging Manufacturer. Illustrative example, not a real client result.",
+  title: "Pharma Packaging Case Study",
+  description: "Generating 26 Warm Leads for a Pharma Packaging Manufacturer. A Myntmore case study from Pharma.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Generating 26 Warm Leads for a Pharma Packaging Manufacturer | Myntmore",
-    description: "Generating 26 Warm Leads for a Pharma Packaging Manufacturer. Illustrative example, not a real client result.",
+    title: "Generating 26 Warm Leads for a Pharma Packaging Manufacturer | Myntmore",
+    description: "Generating 26 Warm Leads for a Pharma Packaging Manufacturer. A Myntmore case study from Pharma.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

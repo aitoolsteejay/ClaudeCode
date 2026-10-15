@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/ecommerce-tech-analytics-demand";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: eCommerce Analytics",
-  description: "Building Demand for an eCommerce Analytics Platform. Illustrative example, not a real client result.",
+  title: "eCommerce Analytics Case Study",
+  description: "Building Demand for an eCommerce Analytics Platform. A Myntmore case study from eCommerce Tech.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Building Demand for an eCommerce Analytics Platform | Myntmore",
-    description: "Building Demand for an eCommerce Analytics Platform. Illustrative example, not a real client result.",
+    title: "Building Demand for an eCommerce Analytics Platform | Myntmore",
+    description: "Building Demand for an eCommerce Analytics Platform. A Myntmore case study from eCommerce Tech.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

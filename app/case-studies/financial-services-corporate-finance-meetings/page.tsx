@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/financial-services-corporate-finance-meetings";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Corporate Finance",
-  description: "13 Qualified Meetings for a Corporate Finance Consultant. Illustrative example, not a real client result.",
+  title: "Corporate Finance Case Study",
+  description: "13 Qualified Meetings for a Corporate Finance Consultant. A Myntmore case study from Financial Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 13 Qualified Meetings for a Corporate Finance Consultant | Myntmore",
-    description: "13 Qualified Meetings for a Corporate Finance Consultant. Illustrative example, not a real client result.",
+    title: "13 Qualified Meetings for a Corporate Finance Consultant | Myntmore",
+    description: "13 Qualified Meetings for a Corporate Finance Consultant. A Myntmore case study from Financial Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

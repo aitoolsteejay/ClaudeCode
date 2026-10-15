@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/financial-services-investment-advisory-authority";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: PMS & Investment Advisory",
-  description: "Building Founder Authority for a PMS and Investment Advisory Brand. Illustrative example, not a real client result.",
+  title: "PMS & Investment Advisory Case Study",
+  description: "Building Founder Authority for a PMS and Investment Advisory Brand. A Myntmore case study from Financial Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Building Founder Authority for a PMS and Investment Advisory Brand | Myntmore",
-    description: "Building Founder Authority for a PMS and Investment Advisory Brand. Illustrative example, not a real client result.",
+    title: "Building Founder Authority for a PMS and Investment Advisory Brand | Myntmore",
+    description: "Building Founder Authority for a PMS and Investment Advisory Brand. A Myntmore case study from Financial Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

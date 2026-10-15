@@ -342,17 +342,23 @@ const CASE_STUDIES: CaseStudy[] = [
 const INDUSTRIES = CASE_STUDY_FILTERS.map((filter) => filter.label);
 
 // ── Page ───────────────────────────────────────────────────────────────────────
-// "Show more" reveals the industry case study library in steps; the page itself still lists
-// the original cards first, exactly as before.
-const SHOW_MORE_STEP = 10;
+// "Show more" reveals the rest of the list in steps. Order: the original case studies, then the
+// industry case study library (real client work), then the cards labelled "Illustrative example"
+// (hypothetical scenarios), so nothing hypothetical sits ahead of real work.
+const INITIAL_SHOWN = 24;
+const SHOW_MORE_STEP = 12;
 
 export default function CaseStudiesClient({ initialFilter = "All", libraryCards = [] }: { initialFilter?: string; libraryCards?: CaseStudy[] }) {
   const industryFilter = initialFilter;
-  const allCaseStudies = [...CASE_STUDIES, ...libraryCards];
+  const allCaseStudies = [
+    ...CASE_STUDIES.filter((cs) => !cs.illustrative),
+    ...libraryCards,
+    ...CASE_STUDIES.filter((cs) => cs.illustrative),
+  ];
   const filteredCaseStudies = industryFilter === "All" ? allCaseStudies : allCaseStudies.filter((cs) => cs.industry === industryFilter);
-  // The "All" view starts with the original cards; the library follows on request. An industry
-  // view is short (at most about a dozen cards), so it shows everything at once.
-  const [shown, setShown] = useState(CASE_STUDIES.length);
+  // The "All" view starts with the first INITIAL_SHOWN cards and reveals more on request. An
+  // industry view is short (at most about a dozen cards), so it shows everything at once.
+  const [shown, setShown] = useState(INITIAL_SHOWN);
   const limit = industryFilter === "All" ? shown : filteredCaseStudies.length;
   const remaining = filteredCaseStudies.length - limit;
 

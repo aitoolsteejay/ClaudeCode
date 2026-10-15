@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/pharma-api-supplier-conversations";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: API Supplier",
-  description: "Opening New Commercial Conversations for an API Supplier. Illustrative example, not a real client result.",
+  title: "API Supplier Case Study",
+  description: "Opening New Commercial Conversations for an API Supplier. A Myntmore case study from Pharma.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Opening New Commercial Conversations for an API Supplier | Myntmore",
-    description: "Opening New Commercial Conversations for an API Supplier. Illustrative example, not a real client result.",
+    title: "Opening New Commercial Conversations for an API Supplier | Myntmore",
+    description: "Opening New Commercial Conversations for an API Supplier. A Myntmore case study from Pharma.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

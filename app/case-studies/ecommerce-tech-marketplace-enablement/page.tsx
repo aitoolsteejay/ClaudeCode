@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/ecommerce-tech-marketplace-enablement";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Marketplace Enablement",
-  description: "13 High-Intent Opportunities for a Marketplace Enablement Platform. Illustrative example, not a real client result.",
+  title: "Marketplace Enablement Case Study",
+  description: "13 High-Intent Opportunities for a Marketplace Enablement Platform. A Myntmore case study from eCommerce Tech.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 13 High-Intent Opportunities for a Marketplace Enablement Platform | Myntmore",
-    description: "13 High-Intent Opportunities for a Marketplace Enablement Platform. Illustrative example, not a real client result.",
+    title: "13 High-Intent Opportunities for a Marketplace Enablement Platform | Myntmore",
+    description: "13 High-Intent Opportunities for a Marketplace Enablement Platform. A Myntmore case study from eCommerce Tech.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/saas-hr-tech-reply-rates";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: HR Tech SaaS",
-  description: "Doubling Reply Rates for an HR Tech SaaS Platform. Illustrative example, not a real client result.",
+  title: "HR Tech SaaS Case Study",
+  description: "Doubling Reply Rates for an HR Tech SaaS Platform. A Myntmore case study from SaaS.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Doubling Reply Rates for an HR Tech SaaS Platform | Myntmore",
-    description: "Doubling Reply Rates for an HR Tech SaaS Platform. Illustrative example, not a real client result.",
+    title: "Doubling Reply Rates for an HR Tech SaaS Platform | Myntmore",
+    description: "Doubling Reply Rates for an HR Tech SaaS Platform. A Myntmore case study from SaaS.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

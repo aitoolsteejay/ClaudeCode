@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/saas-fintech-pipeline";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Fintech SaaS",
-  description: "Creating a ₹72 Lakh Pipeline for a Fintech SaaS Company. Illustrative example, not a real client result.",
+  title: "Fintech SaaS Case Study",
+  description: "Creating a ₹72 Lakh Pipeline for a Fintech SaaS Company. A Myntmore case study from SaaS.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Creating a ₹72 Lakh Pipeline for a Fintech SaaS Company | Myntmore",
-    description: "Creating a ₹72 Lakh Pipeline for a Fintech SaaS Company. Illustrative example, not a real client result.",
+    title: "Creating a ₹72 Lakh Pipeline for a Fintech SaaS Company | Myntmore",
+    description: "Creating a ₹72 Lakh Pipeline for a Fintech SaaS Company. A Myntmore case study from SaaS.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

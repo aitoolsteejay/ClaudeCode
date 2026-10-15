@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/financial-services-wealth-management-discovery";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Wealth Management Firm",
-  description: "11 High-Value Discovery Meetings for a Wealth Management Firm. Illustrative example, not a real client result.",
+  title: "Wealth Management Firm Case Study",
+  description: "11 High-Value Discovery Meetings for a Wealth Management Firm. A Myntmore case study from Financial Services.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 11 High-Value Discovery Meetings for a Wealth Management Firm | Myntmore",
-    description: "11 High-Value Discovery Meetings for a Wealth Management Firm. Illustrative example, not a real client result.",
+    title: "11 High-Value Discovery Meetings for a Wealth Management Firm | Myntmore",
+    description: "11 High-Value Discovery Meetings for a Wealth Management Firm. A Myntmore case study from Financial Services.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

@@ -5,13 +5,12 @@ import LibraryCaseStudy from "@/components/case-studies/LibraryCaseStudy";
 const URL = "https://www.myntmore.com/case-studies/insurance-claims-support-conversations";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Claims Support Company",
-  description: "14 Qualified Conversations for a Claims Support Company. Illustrative example, not a real client result.",
+  title: "Claims Support Company Case Study",
+  description: "14 Qualified Conversations for a Claims Support Company. A Myntmore case study from Insurance.",
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: 14 Qualified Conversations for a Claims Support Company | Myntmore",
-    description: "14 Qualified Conversations for a Claims Support Company. Illustrative example, not a real client result.",
+    title: "14 Qualified Conversations for a Claims Support Company | Myntmore",
+    description: "14 Qualified Conversations for a Claims Support Company. A Myntmore case study from Insurance.",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

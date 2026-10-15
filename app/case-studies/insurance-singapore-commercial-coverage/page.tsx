@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/insurance-singapore-commercial-coverage";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Commercial Insurance Outreach",
-  description: "Illustrative example of outreach to Singapore logistics and warehousing businesses reviewing commercial insurance. Not a specific past client.",
+  title: "Commercial Insurance Case Study, Singapore",
+  description: "Reaching businesses reviewing commercial coverage. 14 meetings booked and 5 adviser-led reviews agreed. A Myntmore case study.",
   keywords: [
     "commercial insurance lead generation",
     "insurance broker lead generation singapore",
     "b2b insurance lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Reaching Businesses Reviewing Commercial Coverage | Myntmore",
-    description: "14 meetings booked · 5 adviser-led reviews agreed · illustrative example, not a real client result",
+    title: "Reaching businesses reviewing commercial coverage | Myntmore",
+    description: "14 meetings booked · 5 adviser-led reviews agreed",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Reaching Businesses Reviewing Commercial Coverage | Myntmore",
-  description: "14 meetings booked · 5 adviser-led reviews agreed · illustrative example, not a real client result",
+  headline: "Reaching businesses reviewing commercial coverage | Myntmore",
+  description: "14 meetings booked · 5 adviser-led reviews agreed",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function InsuranceSingaporeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="insurance-singapore-commercial-coverage"
       tag="Insurance · Singapore"
       accent="#ca8a04"

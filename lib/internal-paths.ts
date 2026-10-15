@@ -62,7 +62,7 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
   ],
 };
 
-// Real (non-illustrative) case studies -> the post that explains the method.
+// Case studies -> the post that explains the method.
 export const CASE_STUDY_PATHS: Record<string, PathItem[]> = {
   "founder-personal-brand-linkedin": [
     { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },

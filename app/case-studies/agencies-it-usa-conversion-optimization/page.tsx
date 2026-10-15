@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/agencies-it-usa-conversion-optimization";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Finding Buyers for a Conversion Optimization Agency",
-  description: "An illustrative example of how Myntmore's outreach finds US e-commerce brands for a conversion optimization agency. Not a specific past client engagement.",
+  title: "Conversion Optimization Agency Case Study",
+  description: "Finding buyers for a conversion optimization agency. 20 meetings booked and 6 website assessments requested. A Myntmore case study.",
   keywords: [
     "conversion optimization agency lead generation",
     "cro agency lead generation usa",
     "b2b agency lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Finding Buyers for a Conversion Optimization Agency | Myntmore",
-    description: "20 meetings booked · 6 website assessments requested · illustrative example, not a real client result",
+    title: "Finding buyers for a conversion optimization agency | Myntmore",
+    description: "20 meetings booked · 6 website assessments requested",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Finding Buyers for a Conversion Optimization Agency | Myntmore",
-  description: "20 meetings booked · 6 website assessments requested · illustrative example, not a real client result",
+  headline: "Finding buyers for a conversion optimization agency | Myntmore",
+  description: "20 meetings booked · 6 website assessments requested",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function AgenciesItUsaCroCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="agencies-it-usa-conversion-optimization"
       tag="Agencies & IT · United States"
       accent="#2563eb"

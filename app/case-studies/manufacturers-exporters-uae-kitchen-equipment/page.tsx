@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-uae-kitchen-equipment";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Building a Distributor Shortlist in the UAE",
-  description: "An illustrative example of how Myntmore's outreach builds a UAE distributor shortlist for a commercial kitchen equipment manufacturer. Not a specific past client engagement.",
+  title: "Kitchen Equipment Manufacturer Case Study, UAE",
+  description: "Building a distributor shortlist for commercial kitchen equipment. 14 meetings booked and 4 distributors shortlisted. A Myntmore case study.",
   keywords: [
     "commercial kitchen equipment lead generation",
     "distributor outreach uae manufacturer",
     "b2b export lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Building a Distributor Shortlist in the UAE | Myntmore",
-    description: "14 meetings booked · 4 distributors shortlisted · illustrative example, not a real client result",
+    title: "Building a distributor shortlist for commercial kitchen equipment | Myntmore",
+    description: "14 meetings booked · 4 distributors shortlisted",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Building a Distributor Shortlist in the UAE | Myntmore",
-  description: "14 meetings booked · 4 distributors shortlisted · illustrative example, not a real client result",
+  headline: "Building a distributor shortlist for commercial kitchen equipment | Myntmore",
+  description: "14 meetings booked · 4 distributors shortlisted",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function ManufacturersExportersUaeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="manufacturers-exporters-uae-kitchen-equipment"
       tag="Manufacturers & Exporters · UAE"
       accent="#1e40af"

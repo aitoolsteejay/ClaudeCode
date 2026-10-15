@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/agencies-it-usa-software-development";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Finding a Software Development Partner Fit",
-  description: "An illustrative example of how Myntmore's outreach finds US companies that need a custom software development partner. Not a specific past client engagement.",
+  title: "Software Development Firm Case Study, USA",
+  description: "Reaching companies that need a software development partner. 24 meetings booked and 7 shared project requirements. A Myntmore case study.",
   keywords: [
     "software development agency lead generation",
     "it services lead generation usa",
     "b2b agency lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Finding a Software Development Partner Fit | Myntmore",
-    description: "24 meetings booked · 7 shared project requirements · illustrative example, not a real client result",
+    title: "Reaching companies that need a software development partner | Myntmore",
+    description: "24 meetings booked · 7 shared project requirements",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Finding a Software Development Partner Fit | Myntmore",
-  description: "24 meetings booked · 7 shared project requirements · illustrative example, not a real client result",
+  headline: "Reaching companies that need a software development partner | Myntmore",
+  description: "24 meetings booked · 7 shared project requirements",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function AgenciesItUsaCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="agencies-it-usa-software-development"
       tag="Agencies & IT · United States"
       accent="#0891b2"

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/pharma-usa-api-second-source";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: US Buyers Evaluating a Second API Supplier",
-  description: "An illustrative example of how Myntmore's pharma outreach finds US buyers evaluating a second API source. Not a specific past client engagement.",
+  title: "API Second-Source Case Study, USA",
+  description: "Finding US buyers evaluating a second API supplier. 16 sourcing meetings held and 5 technical evaluation requests. A Myntmore case study.",
   keywords: [
     "api lead generation usa",
     "pharma ingredient supplier outreach",
@@ -14,18 +14,17 @@ export const metadata: Metadata = {
     "second source api outreach",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: US Buyers Evaluating a Second API Supplier | Myntmore",
-    description: "16 sourcing meetings held · 5 technical evaluation requests · illustrative example, not a real client result",
+    title: "Finding US buyers evaluating a second API supplier | Myntmore",
+    description: "16 sourcing meetings held · 5 technical evaluation requests",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: US Buyers Evaluating a Second API Supplier | Myntmore",
-  description: "16 sourcing meetings held · 5 technical evaluation requests · illustrative example, not a real client result",
+  headline: "Finding US buyers evaluating a second API supplier | Myntmore",
+  description: "16 sourcing meetings held · 5 technical evaluation requests",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -33,7 +32,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function PharmaUsaCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="pharma-usa-api-second-source"
       tag="Pharma · United States"
       accent="#eab308"

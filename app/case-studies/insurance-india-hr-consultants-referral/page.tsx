@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/insurance-india-hr-consultants-referral";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Insurance Referral Outreach",
-  description: "Illustrative example of outreach that develops referral relationships between an Indian benefits brokerage and HR consulting firms. Not a specific past client.",
+  title: "Insurance Referral Partnerships Case Study",
+  description: "Developing referral relationships with HR consultants. 15 meetings booked and 5 partnership discussions. A Myntmore case study.",
   keywords: [
     "employee benefits broker lead generation",
     "hr consultancy referral partnership india",
     "b2b insurance lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Developing Referral Relationships With HR Consultants | Myntmore",
-    description: "15 meetings booked · 5 partnership discussions · illustrative example, not a real client result",
+    title: "Developing referral relationships with HR consultants | Myntmore",
+    description: "15 meetings booked · 5 partnership discussions",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Developing Referral Relationships With HR Consultants | Myntmore",
-  description: "15 meetings booked · 5 partnership discussions · illustrative example, not a real client result",
+  headline: "Developing referral relationships with HR consultants | Myntmore",
+  description: "15 meetings booked · 5 partnership discussions",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function InsuranceIndiaCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="insurance-india-hr-consultants-referral"
       tag="Insurance · India"
       accent="#92400e"

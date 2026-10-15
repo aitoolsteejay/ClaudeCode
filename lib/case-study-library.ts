@@ -2,8 +2,8 @@ import data from "./case-study-library.json";
 
 // The industry case study library: 50 case studies (5 in each of the 10 industries), real
 // client work with the client names withheld. They are ordinary, indexable case study pages
-// listed in the sitemap, with no "illustrative" labelling (they once carried it because the
-// source copy was drafted with that label; the owner confirmed the work is real).
+// listed in the sitemap. (The source copy was drafted with a hypothetical-example label; the
+// owner confirmed the work is real, so none of that wording belongs on the site.)
 //
 // The text lives in case-study-library.json: challenge, solution and results are the source
 // copy. The "Sample Testimonial" quotes in the source are not published: the source labels them
@@ -68,7 +68,7 @@ function servicesFor(c: LibraryCase) {
   return out;
 }
 
-// Props for <IllustrativeCaseStudy illustrative={false}> from a case's source text.
+// Props for <CaseStudyLayout> from a case's source text.
 export function libraryPageProps(slug: string) {
   const c = libraryCase(slug);
   const figures = c.results.map(splitResult);

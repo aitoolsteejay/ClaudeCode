@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/pharma-singapore-product-licensing";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Starting Product Licensing Discussions in Singapore",
-  description: "An illustrative example of how Myntmore's pharma outreach opens product-licensing discussions with Singapore-based pharma businesses. Not a specific past client engagement.",
+  title: "Pharma Product Licensing Case Study, Singapore",
+  description: "Starting product licensing discussions in Singapore. 10 licensing meetings held and 4 confidential portfolio reviews. A Myntmore case study.",
   keywords: [
     "pharma licensing outreach singapore",
     "pharma business development singapore",
@@ -14,18 +14,17 @@ export const metadata: Metadata = {
     "pharma product licensing partners",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Starting Product Licensing Discussions in Singapore | Myntmore",
-    description: "10 licensing meetings held · 4 confidential portfolio reviews · illustrative example, not a real client result",
+    title: "Starting product licensing discussions in Singapore | Myntmore",
+    description: "10 licensing meetings held · 4 confidential portfolio reviews",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Starting Product Licensing Discussions in Singapore | Myntmore",
-  description: "10 licensing meetings held · 4 confidential portfolio reviews · illustrative example, not a real client result",
+  headline: "Starting product licensing discussions in Singapore | Myntmore",
+  description: "10 licensing meetings held · 4 confidential portfolio reviews",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -33,7 +32,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function PharmaSingaporeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="pharma-singapore-product-licensing"
       tag="Pharma · Singapore"
       accent="#dc2626"

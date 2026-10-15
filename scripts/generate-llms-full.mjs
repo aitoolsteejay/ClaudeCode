@@ -70,7 +70,6 @@ function metaOf(file) {
     description: pick("description"),
     // Glossary pages keep the full definition in a DESCRIPTION constant.
     definition: constValue(src, "DESCRIPTION"),
-    illustrative: /IllustrativeCaseStudy/.test(src),
   };
 }
 
@@ -97,7 +96,6 @@ const pages = urls.map((u) => {
     url: SITE + u,
     title: meta.title ?? slug.replace(/-/g, " "),
     description: meta.definition && u.startsWith("/resources/glossary/") ? meta.definition : meta.description ?? "",
-    illustrative: !!meta.illustrative,
   };
 });
 
@@ -127,7 +125,7 @@ out.push(`- Address: ${facts.contact.address}`);
 out.push(`- Profiles: ${facts.sameAs.join(", ")}`);
 out.push("");
 out.push("## How to cite this site");
-out.push(`Cite the canonical page URL of the specific page a claim comes from. How numbers are sourced, what "Illustrative example" means and how errors are corrected is set out at ${SITE}/editorial-policy.`);
+out.push(`Cite the canonical page URL of the specific page a claim comes from. How numbers are sourced, how AI tool data is handled and how errors are corrected is set out at ${SITE}/editorial-policy.`);
 out.push("");
 
 out.push("## Services");

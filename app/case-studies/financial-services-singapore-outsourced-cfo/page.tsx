@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/financial-services-singapore-outsourced-cfo";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Finding Businesses That Need Outsourced Finance Support",
-  description: "An illustrative example of how Myntmore's outreach finds Singapore businesses that need outsourced CFO and accounting support. Not a specific past client engagement.",
+  title: "Outsourced CFO Firm Case Study, Singapore",
+  description: "Finding businesses that need outsourced finance support. 19 meetings booked and 6 needs assessments requested. A Myntmore case study.",
   keywords: [
     "outsourced cfo lead generation",
     "accounting firm lead generation singapore",
     "b2b financial services lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Finding Businesses That Need Outsourced Finance Support | Myntmore",
-    description: "19 meetings booked · 6 needs assessments requested · illustrative example, not a real client result",
+    title: "Finding businesses that need outsourced finance support | Myntmore",
+    description: "19 meetings booked · 6 needs assessments requested",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Finding Businesses That Need Outsourced Finance Support | Myntmore",
-  description: "19 meetings booked · 6 needs assessments requested · illustrative example, not a real client result",
+  headline: "Finding businesses that need outsourced finance support | Myntmore",
+  description: "19 meetings booked · 6 needs assessments requested",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function FinancialServicesSingaporeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="financial-services-singapore-outsourced-cfo"
       tag="Financial Services · Singapore"
       accent="#7c3aed"

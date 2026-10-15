@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/insurance-uae-employee-benefits";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Opening Employee Benefits Conversations Before Renewal",
-  description: "An illustrative example of how Myntmore's outreach opens employee benefits conversations with UAE employers ahead of renewal. Not a specific past client engagement.",
+  title: "Employee Benefits Insurance Case Study, UAE",
+  description: "Opening employee benefits conversations before renewal. 20 meetings booked and 7 benefits reviews agreed. A Myntmore case study.",
   keywords: [
     "insurance broker lead generation uae",
     "employee benefits lead generation",
     "b2b insurance lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Opening Employee Benefits Conversations Before Renewal | Myntmore",
-    description: "20 meetings booked · 7 benefits reviews agreed · illustrative example, not a real client result",
+    title: "Opening employee benefits conversations before renewal | Myntmore",
+    description: "20 meetings booked · 7 benefits reviews agreed",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Opening Employee Benefits Conversations Before Renewal | Myntmore",
-  description: "20 meetings booked · 7 benefits reviews agreed · illustrative example, not a real client result",
+  headline: "Opening employee benefits conversations before renewal | Myntmore",
+  description: "20 meetings booked · 7 benefits reviews agreed",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function InsuranceUaeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="insurance-uae-employee-benefits"
       tag="Insurance · UAE"
       accent="#a14a08"

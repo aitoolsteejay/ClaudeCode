@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/pharma-france-contract-manufacturing";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Contract Manufacturing Buyers in France",
-  description: "An illustrative example of how Myntmore's pharma outreach opens conversations with French contract-manufacturing buyers. Not a specific past client engagement.",
+  title: "Contract Manufacturing Case Study, France",
+  description: "Opening conversations with contract manufacturing buyers in France. 18 buyer meetings held and 6 requests for quotation. A Myntmore case study.",
   keywords: [
     "pharma contract manufacturing lead generation",
     "france pharma outbound",
@@ -14,18 +14,17 @@ export const metadata: Metadata = {
     "pharma export outreach",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Contract Manufacturing Buyers in France | Myntmore",
-    description: "18 buyer meetings held · 6 requests for quotation · illustrative example, not a real client result",
+    title: "Opening conversations with contract manufacturing buyers in France | Myntmore",
+    description: "18 buyer meetings held · 6 requests for quotation",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Contract Manufacturing Buyers in France | Myntmore",
-  description: "18 buyer meetings held · 6 requests for quotation · illustrative example, not a real client result",
+  headline: "Opening conversations with contract manufacturing buyers in France | Myntmore",
+  description: "18 buyer meetings held · 6 requests for quotation",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -33,7 +32,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function PharmaFranceCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="pharma-france-contract-manufacturing"
       tag="Pharma · France"
       accent="#0ea5e9"

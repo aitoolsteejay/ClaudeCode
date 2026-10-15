@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/manufacturers-exporters-germany-industrial-components";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Finding Overseas Buyers for Industrial Components",
-  description: "An illustrative example of how Myntmore's outreach finds German buyers for an Indian precision components manufacturer. Not a specific past client engagement.",
+  title: "Industrial Components Case Study, Germany",
+  description: "Finding overseas buyers for industrial components. 18 meetings booked and 6 requests for quotation. A Myntmore case study.",
   keywords: [
     "industrial component export lead generation",
     "manufacturer lead generation germany",
     "b2b export lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Finding Overseas Buyers for Industrial Components | Myntmore",
-    description: "18 meetings booked · 6 requests for quotation · illustrative example, not a real client result",
+    title: "Finding overseas buyers for industrial components | Myntmore",
+    description: "18 meetings booked · 6 requests for quotation",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Finding Overseas Buyers for Industrial Components | Myntmore",
-  description: "18 meetings booked · 6 requests for quotation · illustrative example, not a real client result",
+  headline: "Finding overseas buyers for industrial components | Myntmore",
+  description: "18 meetings booked · 6 requests for quotation",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function ManufacturersExportersGermanyCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="manufacturers-exporters-germany-industrial-components"
       tag="Manufacturers & Exporters · Germany"
       accent="#1d4ed8"

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/pharma-uae-distribution-partners";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Building a Shortlist of UAE Distribution Partners",
-  description: "An illustrative example of how Myntmore's pharma outreach builds a shortlist of UAE distribution partners for market entry. Not a specific past client engagement.",
+  title: "Pharma Distribution Partners Case Study, UAE",
+  description: "Building a shortlist of distribution partners in the UAE. 12 partner meetings held and 3 distributors shortlisted. A Myntmore case study.",
   keywords: [
     "pharma distributor outreach uae",
     "pharma market entry uae",
@@ -14,18 +14,17 @@ export const metadata: Metadata = {
     "b2b pharma lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Building a Shortlist of UAE Distribution Partners | Myntmore",
-    description: "12 partner meetings held · 3 distributors shortlisted · illustrative example, not a real client result",
+    title: "Building a shortlist of distribution partners in the UAE | Myntmore",
+    description: "12 partner meetings held · 3 distributors shortlisted",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Building a Shortlist of UAE Distribution Partners | Myntmore",
-  description: "12 partner meetings held · 3 distributors shortlisted · illustrative example, not a real client result",
+  headline: "Building a shortlist of distribution partners in the UAE | Myntmore",
+  description: "12 partner meetings held · 3 distributors shortlisted",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -33,7 +32,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function PharmaUaeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="pharma-uae-distribution-partners"
       tag="Pharma · UAE"
       accent="#ec4899"

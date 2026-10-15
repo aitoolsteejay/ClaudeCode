@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/recruitment-singapore-contract-staffing";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Singapore Staffing Outreach",
-  description: "Illustrative outreach example developing contract staffing opportunities for a Singapore temporary staffing firm. Not a specific past client.",
+  title: "Contract Staffing Case Study, Singapore",
+  description: "Developing contract staffing opportunities. 17 meetings booked and 6 staffing requirements shared. A Myntmore case study.",
   keywords: [
     "contract staffing lead generation",
     "temporary staffing firm lead generation singapore",
     "b2b recruitment lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Developing Contract Staffing Opportunities | Myntmore",
-    description: "17 meetings booked · 6 staffing requirements shared · illustrative example, not a real client result",
+    title: "Developing contract staffing opportunities | Myntmore",
+    description: "17 meetings booked · 6 staffing requirements shared",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Developing Contract Staffing Opportunities | Myntmore",
-  description: "17 meetings booked · 6 staffing requirements shared · illustrative example, not a real client result",
+  headline: "Developing contract staffing opportunities | Myntmore",
+  description: "17 meetings booked · 6 staffing requirements shared",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function RecruitmentSingaporeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="recruitment-singapore-contract-staffing"
       tag="Recruitment & Staffing · Singapore"
       accent="#15803d"

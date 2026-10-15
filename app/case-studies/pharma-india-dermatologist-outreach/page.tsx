@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/pharma-india-dermatologist-outreach";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Pharma Doctor Outreach",
-  description: "Illustrative pharma outreach example reaching specialist doctors beyond field coverage during an India product launch. Not a specific past client.",
+  title: "Dermatology Pharma Case Study, India",
+  description: "Reaching dermatologists beyond the field team's coverage. 72 webinar attendees and 24 medical-team discussions. A Myntmore case study.",
   keywords: [
     "pharma doctor outreach india",
     "dermatologist outreach campaign",
@@ -14,18 +14,17 @@ export const metadata: Metadata = {
     "b2b pharma lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Reaching Dermatologists Beyond Field Coverage | Myntmore",
-    description: "72 webinar attendees · 24 medical-team discussions · illustrative example, not a real client result",
+    title: "Reaching dermatologists beyond the field team's coverage | Myntmore",
+    description: "72 webinar attendees · 24 medical-team discussions",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Reaching Dermatologists Beyond Field Coverage | Myntmore",
-  description: "72 webinar attendees · 24 medical-team discussions · illustrative example, not a real client result",
+  headline: "Reaching dermatologists beyond the field team's coverage | Myntmore",
+  description: "72 webinar attendees · 24 medical-team discussions",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -33,7 +32,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function PharmaIndiaCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="pharma-india-dermatologist-outreach"
       tag="Pharma · India"
       accent="#6366f1"

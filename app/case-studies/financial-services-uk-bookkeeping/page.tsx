@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/financial-services-uk-bookkeeping";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices",
-  description: "An illustrative example of how Myntmore's outreach builds partnerships between a bookkeeping firm and UK accounting practices. Not a specific past client engagement.",
+  title: "Bookkeeping Firm Case Study, UK",
+  description: "Connecting a bookkeeping firm with accounting practices. 15 meetings booked and 5 delivery-model reviews requested. A Myntmore case study.",
   keywords: [
     "bookkeeping firm lead generation",
     "accounting practice partnership outreach uk",
     "b2b financial services lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices | Myntmore",
-    description: "15 meetings booked · 5 delivery-model reviews requested · illustrative example, not a real client result",
+    title: "Connecting a bookkeeping firm with accounting practices | Myntmore",
+    description: "15 meetings booked · 5 delivery-model reviews requested",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices | Myntmore",
-  description: "15 meetings booked · 5 delivery-model reviews requested · illustrative example, not a real client result",
+  headline: "Connecting a bookkeeping firm with accounting practices | Myntmore",
+  description: "15 meetings booked · 5 delivery-model reviews requested",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function FinancialServicesUkCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="financial-services-uk-bookkeeping"
       tag="Financial Services · United Kingdom"
       accent="#a21caf"

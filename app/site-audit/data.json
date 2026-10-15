@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-15T09:57:53.411Z",
+  "generatedAt": "2026-10-15T11:27:00.842Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 252,
     "linked": 239,
     "orphan": 13,
-    "noindex": 38,
-    "notInXmlSitemap": 39,
+    "noindex": 18,
+    "notInXmlSitemap": 19,
     "privateHidden": 4
   },
   "pages": [
@@ -796,7 +796,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -810,7 +810,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -824,7 +824,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -838,7 +838,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -847,41 +847,41 @@
     },
     {
       "path": "/case-studies/agencies-it-uae-managed-it",
-      "title": "Illustrative Example: Opening Managed IT Service Conversations",
+      "title": "Managed IT Services Case Study, UAE",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/agencies-it-usa-conversion-optimization",
-      "title": "Illustrative Example: Finding Buyers for a Conversion Optimization Agency",
+      "title": "Conversion Optimization Agency Case Study",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/agencies-it-usa-software-development",
-      "title": "Illustrative Example: Finding a Software Development Partner Fit",
+      "title": "Software Development Firm Case Study, USA",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -891,7 +891,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -905,7 +905,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -919,7 +919,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -933,7 +933,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -947,7 +947,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -961,7 +961,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -990,7 +990,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1004,7 +1004,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1018,7 +1018,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1032,7 +1032,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1046,7 +1046,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1060,7 +1060,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1074,7 +1074,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1083,15 +1083,15 @@
     },
     {
       "path": "/case-studies/financial-services-india-payroll",
-      "title": "Illustrative Example: Building an Outsourced Payroll Pipeline",
+      "title": "Outsourced Payroll Case Study, India",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1101,7 +1101,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1115,7 +1115,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1124,28 +1124,28 @@
     },
     {
       "path": "/case-studies/financial-services-singapore-outsourced-cfo",
-      "title": "Illustrative Example: Finding Businesses That Need Outsourced Finance Support",
+      "title": "Outsourced CFO Firm Case Study, Singapore",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/financial-services-uk-bookkeeping",
-      "title": "Illustrative Example: Connecting a Bookkeeping Firm With Accounting Practices",
+      "title": "Bookkeeping Firm Case Study, UK",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1155,7 +1155,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1185,7 +1185,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1199,7 +1199,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1213,7 +1213,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1222,15 +1222,15 @@
     },
     {
       "path": "/case-studies/insurance-india-hr-consultants-referral",
-      "title": "Illustrative Example: Insurance Referral Outreach",
+      "title": "Insurance Referral Partnerships Case Study",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1240,7 +1240,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1254,7 +1254,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1263,28 +1263,28 @@
     },
     {
       "path": "/case-studies/insurance-singapore-commercial-coverage",
-      "title": "Illustrative Example: Commercial Insurance Outreach",
+      "title": "Commercial Insurance Case Study, Singapore",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/insurance-uae-employee-benefits",
-      "title": "Illustrative Example: Opening Employee Benefits Conversations Before Renewal",
+      "title": "Employee Benefits Insurance Case Study, UAE",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1294,7 +1294,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1308,7 +1308,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1317,28 +1317,28 @@
     },
     {
       "path": "/case-studies/manufacturers-exporters-france-packaging",
-      "title": "Illustrative Example: Finding Packaging Buyers in France",
+      "title": "Packaging Manufacturer Case Study, France",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/manufacturers-exporters-germany-industrial-components",
-      "title": "Illustrative Example: Finding Overseas Buyers for Industrial Components",
+      "title": "Industrial Components Case Study, Germany",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1348,7 +1348,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1362,7 +1362,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1376,7 +1376,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1385,15 +1385,15 @@
     },
     {
       "path": "/case-studies/manufacturers-exporters-uae-kitchen-equipment",
-      "title": "Illustrative Example: Building a Distributor Shortlist in the UAE",
+      "title": "Kitchen Equipment Manufacturer Case Study, UAE",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1403,7 +1403,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1417,7 +1417,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1431,7 +1431,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1440,28 +1440,28 @@
     },
     {
       "path": "/case-studies/pharma-france-contract-manufacturing",
-      "title": "Illustrative Example: Contract Manufacturing Buyers in France",
+      "title": "Contract Manufacturing Case Study, France",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/pharma-india-dermatologist-outreach",
-      "title": "Illustrative Example: Pharma Doctor Outreach",
+      "title": "Dermatology Pharma Case Study, India",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1471,7 +1471,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1485,7 +1485,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1494,41 +1494,41 @@
     },
     {
       "path": "/case-studies/pharma-singapore-product-licensing",
-      "title": "Illustrative Example: Starting Product Licensing Discussions in Singapore",
+      "title": "Pharma Product Licensing Case Study, Singapore",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/pharma-uae-distribution-partners",
-      "title": "Illustrative Example: Building a Shortlist of UAE Distribution Partners",
+      "title": "Pharma Distribution Partners Case Study, UAE",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/pharma-usa-api-second-source",
-      "title": "Illustrative Example: US Buyers Evaluating a Second API Supplier",
+      "title": "API Second-Source Case Study, USA",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1554,7 +1554,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1568,7 +1568,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1582,7 +1582,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1596,7 +1596,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1626,7 +1626,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1635,15 +1635,15 @@
     },
     {
       "path": "/case-studies/recruitment-singapore-contract-staffing",
-      "title": "Illustrative Example: Singapore Staffing Outreach",
+      "title": "Contract Staffing Case Study, Singapore",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1653,7 +1653,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1667,7 +1667,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1681,7 +1681,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1695,7 +1695,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1709,7 +1709,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1718,28 +1718,28 @@
     },
     {
       "path": "/case-studies/recruitment-uk-engineering-staffing",
-      "title": "Illustrative Example: UK Engineering Recruitment",
+      "title": "Engineering Recruitment Case Study, UK",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/recruitment-usa-tech-recruitment",
-      "title": "Illustrative Example: US Tech Recruitment Outreach",
+      "title": "Tech Recruitment Case Study, USA",
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
         "/case-studies"
       ],
       "inboundCount": 1,
-      "noindex": true,
-      "inXmlSitemap": false,
+      "noindex": false,
+      "inXmlSitemap": true,
       "inHtmlSitemap": false
     },
     {
@@ -1749,7 +1749,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1763,7 +1763,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1777,7 +1777,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1791,7 +1791,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,
@@ -1821,7 +1821,7 @@
       "status": "linked",
       "linkedFrom": [
         "/case-studies",
-        "case-studies/IllustrativeCaseStudy.tsx"
+        "case-studies/CaseStudyLayout.tsx"
       ],
       "inboundCount": 2,
       "noindex": false,

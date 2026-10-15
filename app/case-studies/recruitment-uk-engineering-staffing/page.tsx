@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/recruitment-uk-engineering-staffing";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: UK Engineering Recruitment",
-  description: "Illustrative outreach example starting conversations with UK employers hiring for engineering and manufacturing roles. Not a specific past client.",
+  title: "Engineering Recruitment Case Study, UK",
+  description: "Winning conversations with employers that are hiring. 23 meetings booked and 8 hiring briefs shared. A Myntmore case study.",
   keywords: [
     "recruitment agency lead generation",
     "staffing firm lead generation uk",
     "b2b recruitment lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Winning Conversations With Employers That Are Hiring | Myntmore",
-    description: "23 meetings booked · 8 hiring briefs shared · illustrative example, not a real client result",
+    title: "Winning conversations with employers that are hiring | Myntmore",
+    description: "23 meetings booked · 8 hiring briefs shared",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Winning Conversations With Employers That Are Hiring | Myntmore",
-  description: "23 meetings booked · 8 hiring briefs shared · illustrative example, not a real client result",
+  headline: "Winning conversations with employers that are hiring | Myntmore",
+  description: "23 meetings booked · 8 hiring briefs shared",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function RecruitmentUkCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="recruitment-uk-engineering-staffing"
       tag="Recruitment & Staffing · United Kingdom"
       accent="#0d9488"

@@ -5,11 +5,11 @@ import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Editorial Policy & Methodology",
-  description: "How Myntmore sources numbers, labels illustrative case studies, handles AI tool data and corrects errors across its guides, benchmarks and tools.",
+  description: "How Myntmore sources numbers, describes its case studies, handles AI tool data and corrects errors across its guides, benchmarks and tools.",
   alternates: { canonical: "https://www.myntmore.com/editorial-policy" },
   openGraph: {
     title: "Editorial Policy & Methodology | Myntmore",
-    description: "How Myntmore sources numbers, labels illustrative case studies, handles AI tool data and corrects errors.",
+    description: "How Myntmore sources numbers, describes its case studies, handles AI tool data and corrects errors.",
     url: "https://www.myntmore.com/editorial-policy",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "how myntmore sources data",
     "myntmore benchmark methodology",
     "myntmore corrections policy",
-    "illustrative case study disclosure",
+    "myntmore case studies confidentiality",
   ],
 };
 
@@ -58,10 +58,10 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    heading: "Case studies and what is illustrative",
+    heading: "Case studies and client confidentiality",
     body: [
       <>
-        Client names are withheld because of confidentiality agreements. Case studies marked <strong>Illustrative example</strong> are hypothetical scenarios built from Myntmore&apos;s real outreach methodology: they show what a strong campaign can look like and are not the result of a specific past client. They say so on the page. Browse them all on the <Link href="/case-studies" className="underline underline-offset-2">case studies page</Link>.
+        Every case study on this site describes a real client engagement. Client names are withheld because of confidentiality agreements, so a case study identifies the client by industry and market instead of by name. Browse them all on the <Link href="/case-studies" className="underline underline-offset-2">case studies page</Link>. If a figure in one looks wrong, tell us: the correction process is below.
       </>,
     ],
   },

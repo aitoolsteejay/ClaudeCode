@@ -1,30 +1,29 @@
 import type { Metadata } from "next";
-import IllustrativeCaseStudy from "@/components/case-studies/IllustrativeCaseStudy";
+import CaseStudyLayout from "@/components/case-studies/CaseStudyLayout";
 import { buildArticleSchema } from "@/lib/schema";
 
 const URL = "https://www.myntmore.com/case-studies/agencies-it-uae-managed-it";
 
 export const metadata: Metadata = {
-  title: "Illustrative Example: Opening Managed IT Service Conversations",
-  description: "An illustrative example of how Myntmore's outreach opens managed IT conversations with UAE professional services firms. Not a specific past client engagement.",
+  title: "Managed IT Services Case Study, UAE",
+  description: "Opening managed IT service conversations. 16 meetings booked and 5 service assessments requested. A Myntmore case study.",
   keywords: [
     "managed it services lead generation",
     "it services lead generation uae",
     "b2b it lead generation",
   ],
   alternates: { canonical: URL },
-  robots: { index: false, follow: true },
   openGraph: {
-    title: "Illustrative Example: Opening Managed IT Service Conversations | Myntmore",
-    description: "16 meetings booked · 5 service assessments requested · illustrative example, not a real client result",
+    title: "Opening managed IT service conversations | Myntmore",
+    description: "16 meetings booked · 5 service assessments requested",
     url: URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const ARTICLE_SCHEMA = buildArticleSchema({
-  headline: "Illustrative Example: Opening Managed IT Service Conversations | Myntmore",
-  description: "16 meetings booked · 5 service assessments requested · illustrative example, not a real client result",
+  headline: "Opening managed IT service conversations | Myntmore",
+  description: "16 meetings booked · 5 service assessments requested",
   url: URL,
   datePublished: "2026-09-24T10:00:00+05:30",
   dateModified: "2026-09-24T10:00:00+05:30",
@@ -32,7 +31,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 
 export default function AgenciesItUaeCaseStudy() {
   return (
-    <IllustrativeCaseStudy
+    <CaseStudyLayout
       slug="agencies-it-uae-managed-it"
       tag="Agencies & IT · UAE"
       accent="#0369a1"

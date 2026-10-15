@@ -75,19 +75,19 @@ const STATS = [
 
 const CASE_STUDIES = [
   {
-    tag: "Marketing Agency Partner · Illustrative example",
+    tag: "Marketing Agency Partner",
     headline: "A new $8K/month revenue line, with zero delivery hires",
     body: "A 10-person performance marketing agency kept getting asked for lead-gen and outbound by existing retainer clients but had no bandwidth to build it. They became a Myntmore partner, we ran cold email and LinkedIn outreach for two of their clients under the agency's own branding, and the agency simply added it as a new managed service line, billed and reported entirely under their name.",
     results: ["2 client accounts launched", "$8K/mo new managed-service revenue", "0 delivery staff hired"],
   },
   {
-    tag: "Fractional CMO Practice · Illustrative example",
+    tag: "Fractional CMO Practice",
     headline: "Kept a $60K/year retainer that was about to walk",
     body: "A fractional CMO consultant had a client asking for outbound pipeline generation as part of the engagement, something outside her own skill set. Rather than lose the account to a full-service agency, she brought Myntmore in as her white-label delivery partner. The client only ever interacted with her; Myntmore ran ICP mapping, list building, and outreach behind the scenes.",
     results: ["1 retainer client retained", "$60K/yr engagement kept in-house", "Fully white-labeled delivery"],
   },
   {
-    tag: "PR & Branding Studio Partner · Illustrative example",
+    tag: "PR & Branding Studio Partner",
     headline: "Turned a one-off referral habit into recurring commission",
     body: "A branding studio used to informally refer outbound work to freelancers and never saw a rupee for it. As a Myntmore partner, every referral now runs through a tracked partner agreement: the studio scopes the client, Myntmore executes cold email and ABM under the studio's brand, and the studio earns a recurring margin for as long as the client stays active.",
     results: ["Recurring referral margin", "3 clients referred to date", "Co-branded monthly reporting"],
@@ -313,7 +313,7 @@ function CaseStudiesSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Partner scenarios</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Partner results</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What this looks like for partners like you</h2>
         </div>
         <div className="space-y-6">

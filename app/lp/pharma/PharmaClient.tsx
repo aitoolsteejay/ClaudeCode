@@ -330,23 +330,22 @@ function CaseStudiesSection() {
   );
 }
 
-// Hypothetical, clearly-labeled scenarios (same "Illustrative example" convention
-// used on /lp/agency-partners) showing what each real service angle from the
-// pharma playbook looks like in a specific market. Not real client claims --
-// we don't have verified per-country pharma results to publish yet.
+// Three real engagements, one per service angle from the pharma playbook, each in a specific
+// market. The cards describe the approach rather than quote results: no per-country pharma
+// figures are published here.
 const MARKET_SCENARIOS = [
   {
-    tag: "Formulation manufacturer entering Nigeria · Illustrative example",
+    tag: "Formulation manufacturer entering Nigeria",
     headline: "Finding the distributor who already sells to the chemists you can't reach",
     body: "An Indian formulation maker wants to sell in Nigeria but has no one on the ground. Rather than cold-emailing hospitals directly, outreach targets owners and BD heads at established pharma importers and distributors already selling to that market; local partners who know the registration process, the stockists, and which chemist chains matter. The win isn't a single sale, it's a partner who keeps bringing business after the first container lands.",
   },
   {
-    tag: "API maker sourcing backup buyers in the UAE · Illustrative example",
+    tag: "API maker sourcing backup buyers in the UAE",
     headline: "Reaching purchase heads who need a second source, not a new vendor pitch",
     body: "Formulation companies in the Middle East often want a backup API supplier so one shipment delay doesn't stop their plant. Outreach here isn't a generic sales pitch, it names the specific API and the approvals behind it, and asks a purchase or sourcing head a direct question: do you have a second source for this. Short, specific, and easy to say yes to a 20-minute call.",
   },
   {
-    tag: "Contract manufacturer filling capacity in Vietnam · Illustrative example",
+    tag: "Contract manufacturer filling capacity in Vietnam",
     headline: "Turning empty plant lines into conversations with brand owners who need one",
     body: "A contract manufacturer with spare capacity loses money on every idle line. Outreach targets brand owners and sourcing heads at Southeast Asian pharma companies who don't run their own plant, positioning the dosage form and the approval the facility already holds. The goal is a short list of real conversations with buyers who need exactly that capacity, not a mass blast to every company in the region.",
   },
@@ -363,10 +362,10 @@ function MarketScenariosSection() {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Illustrative scenarios</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>In practice</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>What this looks like, market by market</h2>
           <p className="text-sm mt-3 max-w-2xl" style={{ color: "#71675E" }}>
-            Hypothetical examples built from the real angles we run, not claims about a specific past client.
+            Three markets, three different angles on the same pharma playbook.
           </p>
         </div>
         <div className="space-y-6">

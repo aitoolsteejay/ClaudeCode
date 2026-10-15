@@ -131,7 +131,9 @@ const ignored = (f) => IGNORED_SOURCES.some((s) => rel(f) === s || rel(f).starts
 const codeFiles = [APP, path.join(ROOT, "components"), path.join(ROOT, "lib")]
   .filter(exists)
   .flatMap((d) => walk(d))
-  .filter((f) => /\.(tsx?|jsx?|mdx?)$/.test(f))
+  // lib/case-study-library.json holds the slugs of the 50 library case studies that the
+  // /case-studies listing links to (as `/case-studies/${cs.slug}`), so it is read as a data source.
+  .filter((f) => /\.(tsx?|jsx?|mdx?)$/.test(f) || rel(f) === "lib/case-study-library.json")
   .filter((f) => !ignored(f));
 
 const ownerOf = (file) => {
@@ -175,7 +177,7 @@ for (const f of codeFiles) {
 // Runtime-built links like `/blog/${slug}`: attribute them to every page under
 // that prefix whose last segment appears as a quoted string in the same file
 // (or in a data file in lib/ or the same folder).
-const dataSources = codeFiles.filter((f) => /\/(lib|data)\//.test(rel(f)) || /data|posts|articles|glossary/i.test(path.basename(f)));
+const dataSources = codeFiles.filter((f) => /\/(lib|data)\//.test(rel(f)) || /data|posts|articles|glossary/i.test(path.basename(f)) || rel(f) === "lib/case-study-library.json");
 for (const t of templatePrefixes) {
   const prefix = normalize(t.prefix);
   const pool = [t.src, ...dataSources.filter((f) => rel(f).startsWith(path.dirname(t.file)) || rel(f).startsWith("lib/")).map(read)];

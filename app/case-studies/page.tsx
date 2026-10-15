@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CaseStudiesClient from "./CaseStudiesClient";
+import { libraryCards } from "@/lib/case-study-library";
 
 export const metadata: Metadata = {
   title: "B2B Case Studies & Client Results",
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-  return <CaseStudiesClient />;
+  return <CaseStudiesClient libraryCards={libraryCards()} />;
 }

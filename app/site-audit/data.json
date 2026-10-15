@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-14T08:04:05.835Z",
+  "generatedAt": "2026-10-15T09:44:07.957Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 201,
-    "linked": 188,
+    "total": 252,
+    "linked": 239,
     "orphan": 13,
-    "noindex": 38,
-    "notInXmlSitemap": 39,
+    "noindex": 88,
+    "notInXmlSitemap": 89,
     "privateHidden": 4
   },
   "pages": [
@@ -657,11 +657,12 @@
         "/careers/gtm-strategist",
         "/careers/hr-operations-intern",
         "/careers/lead-gen-strategist",
+        "/careers/sales-and-growth-intern",
         "/careers/sales-executive",
         "/careers/systems-ai-automation-intern",
         "/"
       ],
-      "inboundCount": 7,
+      "inboundCount": 8,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -708,6 +709,19 @@
     {
       "path": "/careers/lead-gen-strategist",
       "title": "B2B Lead Gen Strategist, Mumbai | Rs 4-7 LPA",
+      "section": "careers",
+      "status": "linked",
+      "linkedFrom": [
+        "/careers"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/careers/sales-and-growth-intern",
+      "title": "Sales & Growth Intern, Mumbai | Rs 10-20K/mo",
       "section": "careers",
       "status": "linked",
       "linkedFrom": [
@@ -776,6 +790,62 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/agencies-it-branding-agency-meetings",
+      "title": "Illustrative Example: Branding Agency",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/agencies-it-performance-marketing-inbound",
+      "title": "Illustrative Example: Performance Marketing",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/agencies-it-services-international-proposals",
+      "title": "Illustrative Example: IT Services Company",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/agencies-it-software-development-conversations",
+      "title": "Illustrative Example: Software Development Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/agencies-it-uae-managed-it",
       "title": "Illustrative Example: Opening Managed IT Service Conversations",
       "section": "case-studies",
@@ -815,6 +885,90 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/agencies-it-web-development-retainers",
+      "title": "Illustrative Example: Web Development Agency",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/b2b-founder-bootstrapped-warm-opportunities",
+      "title": "Illustrative Example: Bootstrapped Founder",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/b2b-founder-linkedin-visibility",
+      "title": "Illustrative Example: Service Business Founder",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/b2b-founder-niche-consultant-retainers",
+      "title": "Illustrative Example: Niche B2B Consultant",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/b2b-founder-services-meetings-pipeline",
+      "title": "Illustrative Example: Services Founder",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/b2b-founder-tech-decision-makers",
+      "title": "Illustrative Example: Tech Founder",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/ecommerce-conversion-playbook",
       "title": "Cold Email Added $400K Pipeline in 6 Weeks",
       "section": "case-studies",
@@ -830,6 +984,104 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/case-studies/ecommerce-tech-analytics-demand",
+      "title": "Illustrative Example: eCommerce Analytics",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/ecommerce-tech-d2c-logistics-pipeline",
+      "title": "Illustrative Example: D2C Logistics Tech",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/ecommerce-tech-marketplace-enablement",
+      "title": "Illustrative Example: Marketplace Enablement",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/ecommerce-tech-retention-reply-rates",
+      "title": "Illustrative Example: Retention Platform",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/ecommerce-tech-shopify-app-demos",
+      "title": "Illustrative Example: Shopify App Company",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/financial-services-advisory-conversations",
+      "title": "Illustrative Example: Financial Advisory Practice",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/financial-services-corporate-finance-meetings",
+      "title": "Illustrative Example: Corporate Finance",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/financial-services-india-payroll",
       "title": "Illustrative Example: Building an Outsourced Payroll Pipeline",
       "section": "case-studies",
@@ -838,6 +1090,34 @@
         "/case-studies"
       ],
       "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/financial-services-insurance-advisory-conversations",
+      "title": "Illustrative Example: Insurance Advisory",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/financial-services-investment-advisory-authority",
+      "title": "Illustrative Example: PMS & Investment Advisory",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
@@ -869,6 +1149,20 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/financial-services-wealth-management-discovery",
+      "title": "Illustrative Example: Wealth Management Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/founder-personal-brand-linkedin",
       "title": "Bootstrapped Founder: 0 to 22K Followers, 8 Deals",
       "section": "case-studies",
@@ -885,6 +1179,48 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/case-studies/insurance-claims-support-conversations",
+      "title": "Illustrative Example: Claims Support Company",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/insurance-corporate-brokerage-meetings",
+      "title": "Illustrative Example: Corporate Insurance Broker",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/insurance-health-advisory-consultations",
+      "title": "Illustrative Example: Health Insurance Advisory",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/insurance-india-hr-consultants-referral",
       "title": "Illustrative Example: Insurance Referral Outreach",
       "section": "case-studies",
@@ -893,6 +1229,34 @@
         "/case-studies"
       ],
       "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/insurance-insurtech-product-demos",
+      "title": "Illustrative Example: Insurtech Platform",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/insurance-risk-consulting-proposals",
+      "title": "Illustrative Example: Risk Consulting Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
@@ -924,6 +1288,34 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/manufacturers-exporters-engineering-goods-replies",
+      "title": "Illustrative Example: Engineering Goods Exporter",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/manufacturers-exporters-food-processing-partners",
+      "title": "Illustrative Example: Food Processing",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/manufacturers-exporters-france-packaging",
       "title": "Illustrative Example: Finding Packaging Buyers in France",
       "section": "case-studies",
@@ -950,6 +1342,48 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/manufacturers-exporters-industrial-buyer-conversations",
+      "title": "Illustrative Example: Industrial Manufacturer",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/manufacturers-exporters-industrial-packaging-conversations",
+      "title": "Illustrative Example: Industrial Packaging",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/manufacturers-exporters-textile-buyer-opportunities",
+      "title": "Illustrative Example: Textile Exporter",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/manufacturers-exporters-uae-kitchen-equipment",
       "title": "Illustrative Example: Building a Distributor Shortlist in the UAE",
       "section": "case-studies",
@@ -958,6 +1392,48 @@
         "/case-studies"
       ],
       "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-api-supplier-conversations",
+      "title": "Illustrative Example: API Supplier",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-clinical-research-meetings",
+      "title": "Illustrative Example: Clinical Research Services",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-contract-manufacturer-pipeline",
+      "title": "Illustrative Example: Contract Manufacturer",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
@@ -984,6 +1460,34 @@
         "/case-studies"
       ],
       "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-nutraceutical-partnerships",
+      "title": "Illustrative Example: Nutraceutical Manufacturer",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/pharma-packaging-warm-leads",
+      "title": "Illustrative Example: Pharma Packaging",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
@@ -1044,6 +1548,62 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/case-studies/professional-services-business-coaching-workshops",
+      "title": "Illustrative Example: Business Coaching Practice",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/professional-services-consulting-conversations",
+      "title": "Illustrative Example: Management Consulting Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/professional-services-hr-consulting-mandates",
+      "title": "Illustrative Example: HR Consulting Company",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/professional-services-legal-advisory-enquiries",
+      "title": "Illustrative Example: Legal Advisory Practice",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/professional-services-linkedin",
       "title": "LinkedIn Brand Drove 3x Inbound in 90 Days",
       "section": "case-studies",
@@ -1060,6 +1620,20 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/case-studies/professional-services-tax-advisory-leads",
+      "title": "Illustrative Example: Tax Advisory Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/recruitment-singapore-contract-staffing",
       "title": "Illustrative Example: Singapore Staffing Outreach",
       "section": "case-studies",
@@ -1068,6 +1642,76 @@
         "/case-studies"
       ],
       "inboundCount": 1,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-staffing-consulting-founder-visibility",
+      "title": "Illustrative Example: Recruitment Consulting",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-staffing-executive-search-mandates",
+      "title": "Illustrative Example: Executive Search Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-staffing-gcc-meetings",
+      "title": "Illustrative Example: GCC Recruitment",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-staffing-it-staffing-meetings",
+      "title": "Illustrative Example: IT Staffing Agency",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/recruitment-staffing-manufacturing-mandates",
+      "title": "Illustrative Example: Manufacturing Staffing",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
@@ -1099,6 +1743,62 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/saas-ai-productivity-sales-calls",
+      "title": "Illustrative Example: AI Productivity Platform",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/saas-customer-support-conversations",
+      "title": "Illustrative Example: Customer Support SaaS",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/saas-fintech-pipeline",
+      "title": "Illustrative Example: Fintech SaaS",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/saas-hr-tech-reply-rates",
+      "title": "Illustrative Example: HR Tech SaaS",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/case-studies/saas-series-a",
       "title": "40 Qualified Meetings in 8 Weeks | SaaS Series A",
       "section": "case-studies",
@@ -1113,6 +1813,20 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/saas-workflow-automation-enterprise",
+      "title": "Illustrative Example: Workflow Automation SaaS",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies",
+        "case-studies/IllustrativeCaseStudy.tsx"
+      ],
+      "inboundCount": 2,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     },
     {
       "path": "/case-studies/uk-pharma-qualified-meetings",
@@ -1150,9 +1864,10 @@
       "section": "other",
       "status": "linked",
       "linkedFrom": [
+        "/case-studies",
         "/"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2533,7 +3248,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 33,
+      "inboundCount": 34,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2553,7 +3268,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 18,
+      "inboundCount": 19,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2573,7 +3288,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 35,
+      "inboundCount": 36,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2966,7 +3681,7 @@
       "permanent": true
     }
   ],
-  "hiddenRedirects": 5,
+  "hiddenRedirects": 7,
   "rewrites": [
     {
       "from": "/tools/dm-angle-generator",

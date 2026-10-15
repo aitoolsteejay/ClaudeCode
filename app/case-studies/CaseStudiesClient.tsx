@@ -342,9 +342,19 @@ const CASE_STUDIES: CaseStudy[] = [
 const INDUSTRIES = CASE_STUDY_FILTERS.map((filter) => filter.label);
 
 // ── Page ───────────────────────────────────────────────────────────────────────
-export default function CaseStudiesClient({ initialFilter = "All" }: { initialFilter?: string }) {
+// "Show more" reveals the industry case study library in steps; the page itself still lists
+// the original cards first, exactly as before.
+const SHOW_MORE_STEP = 10;
+
+export default function CaseStudiesClient({ initialFilter = "All", libraryCards = [] }: { initialFilter?: string; libraryCards?: CaseStudy[] }) {
   const industryFilter = initialFilter;
-  const filteredCaseStudies = industryFilter === "All" ? CASE_STUDIES : CASE_STUDIES.filter((cs) => cs.industry === industryFilter);
+  const allCaseStudies = [...CASE_STUDIES, ...libraryCards];
+  const filteredCaseStudies = industryFilter === "All" ? allCaseStudies : allCaseStudies.filter((cs) => cs.industry === industryFilter);
+  // The "All" view starts with the original cards; the library follows on request. An industry
+  // view is short (at most about a dozen cards), so it shows everything at once.
+  const [shown, setShown] = useState(CASE_STUDIES.length);
+  const limit = industryFilter === "All" ? shown : filteredCaseStudies.length;
+  const remaining = filteredCaseStudies.length - limit;
 
   return (
     <InnerLayout>
@@ -419,13 +429,34 @@ export default function CaseStudiesClient({ initialFilter = "All" }: { initialFi
               );
             })}
           </div>
+          <p className="-mt-4 mb-10 text-sm leading-relaxed" style={{ color: "#71675E" }}>
+            Cards marked <strong style={{ color: "#52525B" }}>Illustrative example</strong> are hypothetical scenarios built from our methodology, not results for a real client. How we label and source numbers is on our{" "}
+            <Link href="/editorial-policy" className="underline underline-offset-2">editorial policy</Link> page.
+          </p>
           <div className="space-y-8">
             {filteredCaseStudies.map((cs, i) => (
-              <FadeIn key={cs.slug} delay={i * 80}>
-                <CaseCard cs={cs} />
-              </FadeIn>
+              // Every card is in the page (so every link is crawlable); cards past the limit are just hidden.
+              <div key={cs.slug} hidden={i >= limit}>
+                <FadeIn delay={(i % 6) * 80}>
+                  <CaseCard cs={cs} />
+                </FadeIn>
+              </div>
             ))}
           </div>
+          {industryFilter === "All" && remaining > 0 && (
+            <div className="mt-10 text-center">
+              <p className="mb-4 text-sm" style={{ color: "#71675E" }}>Showing {limit} of {filteredCaseStudies.length} case studies</p>
+              <button
+                type="button"
+                onClick={() => setShown((n) => n + SHOW_MORE_STEP)}
+                className="px-7 py-3.5 text-sm font-bold rounded-full border transition-colors hover:border-[#0a0a0a]"
+                style={{ backgroundColor: "#ffffff", color: "#0a0a0a", borderColor: "#E8E2D9" }}
+              >
+                Show {Math.min(SHOW_MORE_STEP, remaining)} more
+              </button>
+              <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Or filter by industry above to see every example for one sector.</p>
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CaseStudiesClient from "../CaseStudiesClient";
+import { libraryCards } from "@/lib/case-study-library";
 import { CASE_STUDY_FILTERS, caseStudyFilterFromSlug } from "@/lib/case-study-filters";
 
 type Props = { params: { filter: string } };
@@ -26,5 +27,5 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function FilteredCaseStudiesPage({ params }: Props) {
   const filter = caseStudyFilterFromSlug(params.filter);
   if (!filter || filter === "All") notFound();
-  return <CaseStudiesClient initialFilter={filter} />;
+  return <CaseStudiesClient initialFilter={filter} libraryCards={libraryCards()} />;
 }

@@ -13,6 +13,8 @@
     "audit:answers": "node scripts/audit-answers.mjs",
     "audit:entity": "node scripts/audit-entity-claims.mjs",
     "audit:jobs": "node scripts/audit-job-postings.mjs",
+    "case-studies:build": "node scripts/generate-case-study-pages.mjs",
+    "case-studies:check": "node scripts/generate-case-study-pages.mjs --check",
     "build": "next build",
     "start": "next start"
   },

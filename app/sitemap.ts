@@ -177,6 +177,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/careers/hr-operations-intern`, lastModified: lastMod("/careers/hr-operations-intern"), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/content-marketing-strategist-intern`, lastModified: lastMod("/careers/content-marketing-strategist-intern"), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/sales-executive`, lastModified: lastMod("/careers/sales-executive"), changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/careers/sales-and-growth-intern`, lastModified: lastMod("/careers/sales-and-growth-intern"), changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/careers/systems-ai-automation-intern`, lastModified: lastMod("/careers/systems-ai-automation-intern"), changeFrequency: "monthly", priority: 0.5 },
     // Industry landing pages
     { url: `${base}/lp/agencies-it`, lastModified: lastMod("/lp/agencies-it"), changeFrequency: "monthly", priority: 0.6 },

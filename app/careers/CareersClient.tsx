@@ -124,6 +124,13 @@ const ROLES = [
     bullets: ["Background in sales or B2B services", "CRM-savvy (Zoho or similar)", "Confident, client-facing communicator"],
   },
   {
+    slug: "sales-and-growth-intern", accent: "#F5B731", tag: "Sales",
+    title: "Sales and Growth Intern",
+    type: "Full-time Internship · Worli, Mumbai", location: "India",
+    desc: "You'll prospect and help close deals with founders, executives, and professionals, learning the CRM and the sales cycle hands-on.",
+    bullets: ["Rs 10,000–20,000 a month + incentives", "Interest in sales or B2B services", "Confident, client-facing communicator"],
+  },
+  {
     slug: "systems-ai-automation-intern", accent: "#14B8A6", tag: "Systems & AI",
     title: "Systems & AI Automation Intern",
     type: "Internship · Worli, Mumbai", location: "India",

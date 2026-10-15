@@ -310,13 +310,17 @@ export function buildEventSchema({ name, description, url, startDate, endDate, i
   };
 }
 
+export type JobEmploymentType = "FULL_TIME" | "PART_TIME" | "INTERN" | "CONTRACTOR" | "TEMPORARY";
+
 export interface JobPostingInput {
   title: string;
   description: string;
   url: string;
   datePosted: string;
   validThrough: string;
-  employmentType: "FULL_TIME" | "PART_TIME" | "INTERN" | "CONTRACTOR" | "TEMPORARY";
+  // A list for roles that are two things at once: a full-time internship is
+  // ["FULL_TIME", "INTERN"], which Google for Jobs accepts as an array.
+  employmentType: JobEmploymentType | JobEmploymentType[];
   baseSalary?: { minValue: number; maxValue: number; unitText: "YEAR" | "MONTH"; currency?: string };
   streetAddress?: string;
   addressLocality?: string;

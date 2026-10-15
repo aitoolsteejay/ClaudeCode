@@ -61,7 +61,7 @@ for (const [family, byValue] of Object.entries(report)) {
   console.log(`\n${family}`);
   if (byValue.size === 0) { console.log("  (none found)"); continue; }
   // For "clients/companies/accounts" the noun is part of the key, so compare by number only.
-  const distinctNumbers = new Set([...byValue.keys()].map((k) => k.split(" ")[0]));
+  const distinctNumbers = new Set([...byValue.keys()].map((k) => k.split(" ")[0].replace(/\+$/, "")));
   if (distinctNumbers.size > 1) conflicts++;
   for (const [value, set] of [...byValue].sort((a, b) => b[1].size - a[1].size)) {
     const list = [...set];

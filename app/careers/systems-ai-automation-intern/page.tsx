@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-const APPLY_SUBJECT = "Application: AI Automation";
+const APPLY_SUBJECT = "Application for Systems and AI Automation Intern";
 const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
 const ACCENT = "#14B8A6";
 
@@ -186,11 +186,11 @@ export default function SystemsAiAutomationIntern() {
             ))}
           </div>
 
-          <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+          <a href={`mailto:founder@myntmore.com?cc=growth@myntmore.com&subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>See the 3-step apply process below — it&apos;s not just a resume.</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to founder@myntmore.com and growth@myntmore.com with subject: {APPLY_SUBJECT}. See the 3-step apply process below — it&apos;s not just a resume.</p>
         </div>
       </section>
 
@@ -287,7 +287,7 @@ export default function SystemsAiAutomationIntern() {
             <ol className="space-y-3 mb-6">
               {[
                 "Share a Loom showing an automation or agent you've built, or any project you've worked on.",
-                <>Drop your LinkedIn and resume at <a href="mailto:founder@myntmore.com" className="font-semibold underline">founder@myntmore.com</a> and <a href="mailto:growth@myntmore.com" className="font-semibold underline">growth@myntmore.com</a> with subject line &ldquo;[Your Name] - Application: AI Automation&rdquo;.</>,
+                <>Drop your LinkedIn and resume at <a href={`mailto:founder@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="font-semibold underline">founder@myntmore.com</a> and <a href={`mailto:growth@myntmore.com?subject=${encodeURIComponent(APPLY_SUBJECT)}`} className="font-semibold underline">growth@myntmore.com</a> with subject line &ldquo;[Your Name] - {APPLY_SUBJECT}&rdquo;.</>,
                 "Tell us in one line: what's the coolest thing you've built with n8n, Python, Clay, or GPTs?",
               ].map((step, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>

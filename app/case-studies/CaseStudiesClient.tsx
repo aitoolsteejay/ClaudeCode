@@ -429,10 +429,6 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
               );
             })}
           </div>
-          <p className="-mt-4 mb-10 text-sm leading-relaxed" style={{ color: "#71675E" }}>
-            Cards marked <strong style={{ color: "#52525B" }}>Illustrative example</strong> are hypothetical scenarios built from our methodology, not results for a real client. How we label and source numbers is on our{" "}
-            <Link href="/editorial-policy" className="underline underline-offset-2">editorial policy</Link> page.
-          </p>
           <div className="space-y-8">
             {filteredCaseStudies.map((cs, i) => (
               // Every card is in the page (so every link is crawlable); cards past the limit are just hidden.

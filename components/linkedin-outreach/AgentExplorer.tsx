@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
-import { Check, Crosshair, Layers, ListOrdered, MessageCircle, Radar, ScanSearch, Sparkles, type LucideIcon } from "lucide-react";
+import { useEffect, useRef, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
+import { Check, Crosshair, Layers, ListOrdered, MessageCircle, Pause, Play, Radar, ScanSearch, Sparkles, type LucideIcon } from "lucide-react";
 import { BLUE, BLUE_LIGHT, BLUE_PALE, GOLD, INK, MUTED } from "./theme";
+import { useAutoAdvance } from "@/lib/use-auto-advance";
 
-const AUTO_MS = 7000;
 const EDGE = "#DCE8F5";
 
 // ---- Small illustrations, one per agent. Decorative (the text beside them
@@ -273,33 +273,17 @@ const AGENTS: Agent[] = [
 ];
 
 export default function AgentExplorer() {
-  const [active, setActive] = useState(0);
-  const [auto, setAuto] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [visible, setVisible] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const firstRun = useRef(true);
   const last = AGENTS.length - 1;
+  // Auto-advance (and its pause rules) is shared with the cold email process
+  // explorer: see lib/use-auto-advance.ts for exactly when it holds still.
+  const { active, select, advance, ready, paused, setPaused, playing, running, dwell, cycle, focusProps } = useAutoAdvance(AGENTS.length, rootRef);
   const agent = AGENTS[active];
   const Icon = agent.icon;
   const Visual = agent.Visual;
-
-  // Auto-play is an enhancement: it only starts for visitors who have not asked
-  // for reduced motion, only while the explorer is on screen, and it stops for
-  // good the moment someone picks an agent themselves.
-  useEffect(() => {
-    setAuto(!window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  }, []);
-
-  useEffect(() => {
-    const el = rootRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.35 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
 
   // On narrow screens the agent list scrolls sideways: keep the active one centred.
   useEffect(() => {
@@ -315,10 +299,10 @@ export default function AgentExplorer() {
     scroller.scrollBy({ left: t.left + t.width / 2 - (s.left + s.width / 2), behavior: "smooth" });
   }, [active]);
 
+  // Choosing an agent shows it and restarts the clock with a longer first pause.
   const go = (i: number, focus = false) => {
     const next = Math.max(0, Math.min(last, i));
-    setAuto(false);
-    setActive(next);
+    select(next);
     if (focus) tabRefs.current[next]?.focus({ preventScroll: true });
   };
 
@@ -338,10 +322,8 @@ export default function AgentExplorer() {
     }
   };
 
-  const running = auto && visible && !hovered;
-
   return (
-    <div ref={rootRef} className="grid gap-5 lg:grid-cols-[290px_1fr]" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setHovered(true)} onBlurCapture={() => setHovered(false)}>
+    <div ref={rootRef} className="grid gap-5 lg:grid-cols-[290px_1fr]" {...focusProps}>
       <style>{`
         @keyframes ax-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
         .ax-in { animation: ax-in .4s ease both; }
@@ -378,57 +360,72 @@ export default function AgentExplorer() {
       `}</style>
 
       {/* Agent list */}
-      <div
-        ref={scrollerRef}
-        role="tablist"
-        aria-label="AI agents"
-        onKeyDown={onKeyDown}
-        className="ax-track -mx-4 flex gap-3 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0"
-        style={{ scrollbarWidth: "none" }}
-      >
-        {AGENTS.map((a, i) => {
-          const isActive = i === active;
-          const TabIcon = a.icon;
-          return (
-            <button
-              key={a.title}
-              ref={(el) => {
-                tabRefs.current[i] = el;
-              }}
-              type="button"
-              role="tab"
-              id={`ax-tab-${i}`}
-              aria-selected={isActive}
-              aria-controls="ax-panel"
-              tabIndex={isActive ? 0 : -1}
-              onClick={() => go(i)}
-              className="relative flex min-w-[215px] shrink-0 items-center gap-3 overflow-hidden rounded-2xl border px-4 py-3.5 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A66C2] lg:min-w-0"
-              style={isActive ? { backgroundColor: "#fff", borderColor: BLUE, boxShadow: "0 16px 36px rgba(10,102,194,0.14)" } : { backgroundColor: "rgba(255,255,255,0.6)", borderColor: "#E8E2D9" }}
-            >
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl transition-colors duration-300" style={isActive ? { background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})`, color: "#fff" } : { backgroundColor: BLUE_PALE, color: BLUE }}>
-                <TabIcon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: isActive ? BLUE : MUTED }}>{`Agent ${i + 1}`}</span>
-                <span className="block text-sm font-black leading-tight" style={{ color: INK }}>{a.title}</span>
-              </span>
-              {isActive && auto && (
-                <span
-                  key={`bar-${active}`}
-                  aria-hidden="true"
-                  className="absolute bottom-0 left-0 h-[3px] w-full"
-                  style={{
-                    transformOrigin: "left",
-                    background: `linear-gradient(90deg, ${BLUE}, ${GOLD})`,
-                    animation: `ax-progress ${AUTO_MS}ms linear forwards`,
-                    animationPlayState: running ? "running" : "paused",
-                  }}
-                  onAnimationEnd={() => setActive((cur) => (cur + 1) % AGENTS.length)}
-                />
-              )}
-            </button>
-          );
-        })}
+      <div className="min-w-0">
+        <div
+          ref={scrollerRef}
+          role="tablist"
+          aria-label="AI agents"
+          onKeyDown={onKeyDown}
+          className="ax-track -mx-4 flex gap-3 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {AGENTS.map((a, i) => {
+            const isActive = i === active;
+            const TabIcon = a.icon;
+            return (
+              <button
+                key={a.title}
+                ref={(el) => {
+                  tabRefs.current[i] = el;
+                }}
+                type="button"
+                role="tab"
+                id={`ax-tab-${i}`}
+                aria-selected={isActive}
+                aria-controls="ax-panel"
+                tabIndex={isActive ? 0 : -1}
+                onClick={() => go(i)}
+                className="relative flex min-w-[215px] shrink-0 items-center gap-3 overflow-hidden rounded-2xl border px-4 py-3.5 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A66C2] lg:min-w-0"
+                style={isActive ? { backgroundColor: "#fff", borderColor: BLUE, boxShadow: "0 16px 36px rgba(10,102,194,0.14)" } : { backgroundColor: "rgba(255,255,255,0.6)", borderColor: "#E8E2D9" }}
+              >
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl transition-colors duration-300" style={isActive ? { background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})`, color: "#fff" } : { backgroundColor: BLUE_PALE, color: BLUE }}>
+                  <TabIcon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: isActive ? BLUE : MUTED }}>{`Agent ${i + 1}`}</span>
+                  <span className="block text-sm font-black leading-tight" style={{ color: INK }}>{a.title}</span>
+                </span>
+                {isActive && playing && (
+                  <span
+                    key={`bar-${active}-${cycle}`}
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 h-[3px] w-full"
+                    style={{
+                      transformOrigin: "left",
+                      background: `linear-gradient(90deg, ${BLUE}, ${GOLD})`,
+                      animation: `ax-progress ${dwell}ms linear forwards`,
+                      animationPlayState: running ? "running" : "paused",
+                    }}
+                    onAnimationEnd={advance}
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {ready && (
+          <button
+            type="button"
+            onClick={() => setPaused((p) => !p)}
+            aria-pressed={!paused}
+            className="mt-3 inline-flex items-center gap-2 rounded-full border bg-white/70 px-3.5 py-1.5 text-xs font-bold transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A66C2]"
+            style={{ borderColor: EDGE, color: INK }}
+          >
+            {paused ? <Play className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" /> : <Pause className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" />}
+            {paused ? "Play auto-advance" : "Pause auto-advance"}
+          </button>
+        )}
       </div>
 
       {/* Active agent */}

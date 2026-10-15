@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, type KeyboardEvent } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -8,6 +8,8 @@ import {
   Check,
   FlaskConical,
   Handshake,
+  Pause,
+  Play,
   PartyPopper,
   PenLine,
   Rocket,
@@ -18,6 +20,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { PROCESS_STEPS } from "./process-steps";
+import { useAutoAdvance } from "@/lib/use-auto-advance";
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
@@ -37,26 +40,32 @@ const ICONS: LucideIcon[] = [Telescope, Search, PenLine, ShieldCheck, Rocket, Ha
 const STEPS: Step[] = PROCESS_STEPS.map((step, i) => ({ ...step, icon: ICONS[i] }));
 
 export default function ProcessExplorer() {
-  const [active, setActive] = useState(0);
+  const rootRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const interacted = useRef(false);
+  const firstRun = useRef(true);
   const last = STEPS.length - 1;
+  // The ten steps play through on their own and loop. When it holds still, how a
+  // visitor's own pick is handled and the pause button are all in
+  // lib/use-auto-advance.ts, shared with the LinkedIn agent explorer.
+  const { active, select, advance, ready, paused, setPaused, playing, running, dwell, cycle, focusProps } = useAutoAdvance(STEPS.length, rootRef);
   const step = STEPS[active];
   const Icon = step.icon;
 
   const go = (i: number, focus = false) => {
     const next = Math.max(0, Math.min(last, i));
-    interacted.current = true;
-    setActive(next);
+    select(next);
     if (focus) tabRefs.current[next]?.focus({ preventScroll: true });
   };
 
   // On narrow screens the step track scrolls sideways: keep the active step
-  // centred after the visitor changes it (not on first render, so the page
-  // itself never jumps).
+  // centred as it changes, whether the visitor or the auto-advance changed it
+  // (not on first render, so the page itself never jumps).
   useEffect(() => {
-    if (!interacted.current) return;
+    if (firstRun.current) {
+      firstRun.current = false;
+      return;
+    }
     const scroller = scrollerRef.current;
     const tab = tabRefs.current[active];
     if (!scroller || !tab) return;
@@ -82,8 +91,9 @@ export default function ProcessExplorer() {
   };
 
   return (
-    <div>
+    <div ref={rootRef} {...focusProps}>
       <style>{`
+        @keyframes ce-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
         @keyframes ce-panel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
         .ce-panel-in { animation: ce-panel-in .35s ease both; }
         .ce-track::-webkit-scrollbar { display: none; }
@@ -151,6 +161,20 @@ export default function ProcessExplorer() {
         className="ce-panel-in relative mt-4 grid gap-8 overflow-hidden rounded-[28px] border bg-white p-6 sm:p-10 md:grid-cols-[0.9fr_1.1fr]"
         style={{ borderColor: "#E8E2D9", boxShadow: "0 24px 70px rgba(234,88,12,0.08)" }}
       >
+        {playing && (
+          <span
+            key={`bar-${active}-${cycle}`}
+            aria-hidden="true"
+            className="absolute bottom-0 left-0 h-[3px] w-full"
+            style={{
+              transformOrigin: "left",
+              background: `linear-gradient(90deg, ${ORANGE}, ${GOLD})`,
+              animation: `ce-progress ${dwell}ms linear forwards`,
+              animationPlayState: running ? "running" : "paused",
+            }}
+            onAnimationEnd={advance}
+          />
+        )}
         <span aria-hidden="true" className="pointer-events-none absolute -left-3 -top-8 select-none text-[9.5rem] font-black leading-none" style={{ color: "rgba(234,88,12,0.07)", letterSpacing: "-0.06em" }}>
           {String(active + 1).padStart(2, "0")}
         </span>
@@ -205,17 +229,31 @@ export default function ProcessExplorer() {
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" /> Previous
         </button>
-        <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#8C8279" }}>
-          {active + 1} / {STEPS.length}
-        </span>
+        <div className="flex items-center gap-3">
+          {ready && (
+            <button
+              type="button"
+              onClick={() => setPaused((p) => !p)}
+              aria-pressed={!paused}
+              aria-label={paused ? "Play auto-advance" : "Pause auto-advance"}
+              title={paused ? "Play auto-advance" : "Pause auto-advance"}
+              className="grid h-8 w-8 place-items-center rounded-full border bg-white transition-colors hover:border-[#EA580C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+              style={{ borderColor: "#E8E2D9", color: INK }}
+            >
+              {paused ? <Play className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" /> : <Pause className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" />}
+            </button>
+          )}
+          <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#8C8279" }}>
+            {active + 1} / {STEPS.length}
+          </span>
+        </div>
         <button
           type="button"
-          onClick={() => go(active + 1)}
-          disabled={active === last}
-          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0"
+          onClick={() => go(active === last ? 0 : active + 1)}
+          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
           style={{ backgroundColor: INK }}
         >
-          Next <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          {active === last ? "Start over" : "Next"} <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
     </div>

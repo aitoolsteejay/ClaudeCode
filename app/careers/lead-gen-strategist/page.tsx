@@ -24,14 +24,17 @@ const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURICom
 const ACCENT = "#3b82f6";
 
 // datePosted is this page's real git creation date, not fabricated.
-// validThrough is a 6-month rolling window from that date, since this is an
-// ongoing/rolling posting with no fixed application deadline.
+// validThrough is a rolling 6-month window, since this is an ongoing posting
+// with no fixed application deadline. It was extended on 2026-10-15 (from
+// 2026-11-29 to 2027-04-15). Extend it again before it runs out: past
+// validThrough, Google for Jobs treats the posting as expired.
+// `npm run audit:jobs` lists every posting's date and warns 45 days ahead.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "B2B Lead Generation Strategist",
   description: "Join Myntmore as a B2B Lead Generation Strategist in Worli, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
   url: "https://www.myntmore.com/careers/lead-gen-strategist",
   datePosted: "2026-05-29T18:55:36+05:30",
-  validThrough: "2026-11-29T18:55:36+05:30",
+  validThrough: "2027-04-15T00:00:00+05:30",
   employmentType: "FULL_TIME",
   baseSalary: { minValue: 400000, maxValue: 700000, unitText: "YEAR" },
 });

@@ -1,0 +1,597 @@
+<callout icon="✅" color="blue_bg">
+	**59 objective SEO tasks** across four cadences. Each one has an exact method, a pass threshold and a fix action. Baseline measured 2026-10-07.
+	Every task has an exact way to measure it, a pass threshold, and a defined action if it fails. If a task can't be marked pass or fail from a number or a yes/no check, it doesn't belong here.
+</callout>
+
+- **Search Console property:** `sc-domain:myntmore.com` (the domain property), never the bare-domain URL property.
+- **When:** Weeks run Monday to Sunday. Weekly list on Monday. Bi-weekly list on alternate Mondays. Monthly list in the first week of the month. Quarterly list in the first two weeks of Jan, Apr, Jul and Oct.
+- **Three tracks in each list:** Technical and indexing, search performance, and content and publishing.
+- **Related docs:** `docs/seo-aeo-geo-cadence.md` (reasoning and the every-new-page list), `docs/keyword-map.md`, `docs/featured-snippet-audit.md`, `docs/content-gaps.md`.
+
+<table_of_contents/>
+
+## Baseline (measured 2026-10-07)
+
+<table header-row="true" fit-page-width="true">
+	<tr>
+		<td>Metric</td>
+		<td>Baseline</td>
+		<td>Target</td>
+	</tr>
+	<tr>
+		<td>Site Health (`python3 scripts/seo-crawl.py`)</td>
+		<td>100% (135 of 135 URLs)</td>
+		<td>stays 100%</td>
+	</tr>
+	<tr>
+		<td>Schema coverage (page-specific JSON-LD)</td>
+		<td>84.4% (114 of 135)</td>
+		<td>90% by end of quarter</td>
+	</tr>
+	<tr>
+		<td>Sitemap URLs</td>
+		<td>135</td>
+		<td>+2 content pages per month</td>
+	</tr>
+	<tr>
+		<td>Indexed pages (URL Inspection)</td>
+		<td>77% (105 of 137)</td>
+		<td>at least 90%</td>
+	</tr>
+	<tr>
+		<td>Pages marked Duplicate without user-selected canonical (8 of 12 confirmed pointing at another domain)</td>
+		<td>12</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>Search Console, last 28 days</td>
+		<td>122 clicks, 4,184 impressions, 2.9% CTR, position 10.3</td>
+		<td>rising</td>
+	</tr>
+	<tr>
+		<td>Sitemaps submitted in Search Console</td>
+		<td>2 (www and bare domain)</td>
+		<td>1 (www only)</td>
+	</tr>
+	<tr>
+		<td>Redirect hops for `http://myntmore.com`</td>
+		<td>2</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>Public orphan pages</td>
+		<td>8 (the allow-list in task B3)</td>
+		<td>no unlisted orphans</td>
+	</tr>
+	<tr>
+		<td>City page positions</td>
+		<td>Ahmedabad 8.7, Chennai 7.7, Hyderabad 11.6, Mumbai 14.4, Delhi 15.3, Pune 17.6, Kolkata 23.9, Bengaluru 61.8</td>
+		<td>all at 20 or better</td>
+	</tr>
+	<tr>
+		<td>Blog posts / median body length / posts under 700 words</td>
+		<td>29 / 619 words / 15 posts</td>
+		<td>new posts 800+, under-700 count falling</td>
+	</tr>
+	<tr>
+		<td>Blog posts with FAQ schema</td>
+		<td>8 of 29</td>
+		<td>29 of 29</td>
+	</tr>
+	<tr>
+		<td>Glossary entries / median body length</td>
+		<td>30 / 125 words</td>
+		<td>all 300+ words</td>
+	</tr>
+	<tr>
+		<td>Indexed case studies, tools, industry landing pages</td>
+		<td>6 / 9 / 9</td>
+		<td>case studies 8 by year end</td>
+	</tr>
+	<tr>
+		<td>Blog posts linking to each industry landing page</td>
+		<td>0 of 9 pages have any</td>
+		<td>at least 2 each</td>
+	</tr>
+	<tr>
+		<td>Blog and glossary links into each service page</td>
+		<td>GTM 0, Do It Yourself 0, AI lead gen 1, Sales intelligence 1, LinkedIn 2, Personal branding 2, ABM 3, Cold email 4</td>
+		<td>at least 5 each</td>
+	</tr>
+</table>
+
+# Weekly
+*Every Monday, about 2.5 hours in total. 13 tasks.*
+
+## Technical and indexing
+
+- [ ] **W1 · Site health crawl** (10 min · Terminal)
+	**Why:** Catches broken pages, bad canonicals, duplicate or oversized titles and invalid schema before Google does.
+	**Steps:**
+	1. Run `python3 scripts/seo-crawl.py` from the repo root.
+	2. Read the PASS and FAIL lines, then the Site Health and Schema percentages at the bottom.
+	3. Record both percentages in the scorecard.
+	**Pass:** Exit code 0, Site Health 100%, Schema coverage no lower than last week.
+	**If it fails:** Fix every FAIL line before the next Monday. A new page that fails is fixed the same day.
+- [ ] **W2 · Sitemap and robots live** (5 min · Browser or curl)
+	**Why:** A broken sitemap or robots file quietly stops indexing of new pages.
+	**Steps:**
+	1. Open `https://www.myntmore.com/sitemap.xml` and count the URLs.
+	2. Count the entries in `app/sitemap.ts`.
+	3. Open `https://www.myntmore.com/robots.txt` and confirm the `Sitemap:` line is present.
+	**Pass:** Both return 200. The live URL count equals the count in `app/sitemap.ts`. The robots file contains the Sitemap line.
+	**If it fails:** Redeploy, then check `app/sitemap.ts` and `app/robots.ts`.
+- [ ] **W3 · Manual actions and security issues** (5 min · Search Console)
+	**Why:** A manual action or hack warning removes pages from search until resolved.
+	**Steps:**
+	1. In Search Console open Security and Manual actions, then Manual actions.
+	2. Open Security issues.
+	**Pass:** Both pages say No issues.
+	**If it fails:** Treat as urgent. Fix within 48 hours and file the review request.
+- [ ] **W4 · Wrong-canonical tripwire** (15 min · Search Console URL Inspection)
+	**Why:** Google has picked other domains (including a gambling site) as the canonical for 12 Myntmore pages. This check catches that pattern early.
+	**Steps:**
+	1. Inspect `/`, `/services` and every page published or edited in the last 14 days.
+	2. Compare Google-selected canonical with User-declared canonical.
+	3. Record any page where the two differ.
+	**Pass:** Every Google-selected canonical is the page's own URL, never another domain.
+	**If it fails:** Run Test Live URL, compare the rendered page and screenshot to the browser view, then Request Indexing. If it repeats, check Vercel logs for the status codes Googlebot received.
+- [ ] **W5 · Indexing errors** (10 min · Search Console)
+	**Why:** New crawl or server problems show up here first.
+	**Steps:**
+	1. Open Indexing, then Pages.
+	2. Read the table Why pages aren't indexed.
+	3. Compare each row's count with last week.
+	**Pass:** No new rows for Server error (5xx), Soft 404, Blocked by robots.txt or Redirect error. The total Not indexed is no higher than last week.
+	**If it fails:** Open the example URLs, fix the cause, then click Validate Fix.
+- [ ] **W6 · Core Web Vitals** (5 min · Search Console)
+	**Why:** Poor page experience can hold back rankings and conversions.
+	**Steps:**
+	1. Open Experience, then Core Web Vitals, mobile report.
+	**Pass:** 0 URLs in Poor.
+	**If it fails:** Identify the failing template and open a fix ticket the same week.
+
+## Search performance
+
+- [ ] **W7 · Search performance snapshot** (10 min · Search Console)
+	**Why:** Week-over-week movement is the earliest signal of a win or a problem.
+	**Steps:**
+	1. Open Performance and compare the last 7 days with the previous 7.
+	2. Record clicks, impressions, CTR and average position.
+	3. Sort pages by clicks and note any that dropped.
+	**Pass:** Numbers recorded. No page that had 20 or more clicks the previous week lost more than 50% of them.
+	**If it fails:** Open the page and check for a recent edit, deploy, ranking loss or indexing change.
+- [ ] **W8 · KPI scorecard** (20 min · Scorecard sheet)
+	**Why:** One consistent scorecard is how progress is judged. Definitions must not drift.
+	**Steps:**
+	1. Fill all 11 rows for the Monday to Sunday week using the definitions at the end of this document.
+	2. Compare each row with the target and last week.
+	**Pass:** All 11 rows filled using the same definitions as last week.
+	**If it fails:** Never change a definition silently. If one must change, restate the prior week under the new rule.
+
+## Content and publishing
+
+- [ ] **W9 · Newsletter issue sent** (10 min · Email tool)
+	**Why:** The site promises The Outbound Operator weekly. Missing issues breaks that promise and loses return traffic.
+	**Steps:**
+	1. Confirm an issue went out this week.
+	2. Confirm it links to at least one myntmore.com page with UTM tags (`utm_source=newsletter&utm_medium=email&utm_campaign=` plus the issue date).
+	3. Record sends and open rate.
+	**Pass:** One issue sent, with at least one tagged link to the site.
+	**If it fails:** If two consecutive weeks are missed, either resume or change the weekly wording on the site.
+- [ ] **W10 · Distribute what shipped** (20 min · LinkedIn, Instagram)
+	**Why:** New pages get indexed and cited faster when they get early traffic and links.
+	**Steps:**
+	1. List every page published or materially updated last week.
+	2. For each, post once on LinkedIn within 48 hours of publishing, with the link tagged `utm_source=linkedin&utm_medium=social&utm_campaign=` plus the page slug.
+	3. Log the post link next to the page.
+	**Pass:** 100% of pages published last week have a logged LinkedIn post.
+	**If it fails:** Post it the same day. Skip only if the page is noindex.
+- [ ] **W11 · Content backlog depth** (15 min · docs/content-gaps.md)
+	**Why:** A full backlog is what makes the bi-weekly publishing target achievable.
+	**Steps:**
+	1. Count briefs that are ready. Ready means: working title, primary keyword that passes the collision check, search intent, 3 internal link targets, and a source for every statistic.
+	2. If fewer than 4, build new briefs from Search Console queries (position 8 to 30) and the gap list.
+	**Pass:** At least 4 ready briefs.
+	**If it fails:** Spend one hour this week building briefs. Do not draft without a brief.
+- [ ] **W12 · Events page accuracy** (5 min · Browser)
+	**Why:** Past events shown as upcoming damage trust and can invalidate Event schema.
+	**Steps:**
+	1. Open `/events` and read every listed date.
+	2. Confirm each upcoming event has valid Event schema (the crawl lists its schema types).
+	**Pass:** 0 events with a start date in the past in the upcoming list.
+	**If it fails:** Move past events to the archive or remove them, and deploy.
+- [ ] **W13 · Careers accuracy** (10 min · Browser, curl)
+	**Why:** Expired job postings and 404 role pages hurt both search and applicants.
+	**Steps:**
+	1. Compare the roles on `/careers` with the roles actually open.
+	2. Check each job page's `validThrough` date in its JobPosting schema.
+	3. For every closed role run `curl -sI` on its old URL and confirm a 308 redirect, not a 404.
+	**Pass:** Every listed role is open, every `validThrough` is at least 7 days ahead, and every closed role redirects.
+	**If it fails:** Remove or update the role and add a redirect in `next.config.js`.
+
+# Bi-weekly
+*Alternate Mondays, about 6 hours in total (2 to 3 of them writing the blog post). 9 tasks.*
+
+## Technical and indexing
+
+- [ ] **B1 · Indexing follow-up** (20 min · Search Console URL Inspection)
+	**Why:** New pages that never get indexed produce no traffic however good they are.
+	**Steps:**
+	1. List pages that went live at least 14 days ago.
+	2. Run URL Inspection on each (10 per batch).
+	3. For any not indexed, confirm it is in the sitemap and has 3 or more inbound internal links (task B2), then click Request Indexing.
+	**Pass:** 100% show Submitted and indexed.
+	**If it fails:** Re-check in 7 days. Still not indexed at 28 days: queue a content improvement (more depth, clearer intent, more internal links).
+- [ ] **B2 · Internal links for new pages** (20 min · `/site-audit`, repo)
+	**Why:** Internal links are how Google finds and weighs new pages.
+	**Steps:**
+	1. Run `node scripts/generate-site-map.mjs`, open `/site-audit` and expand each page published in the last 14 days.
+	2. Check it has at least 3 inbound links from other content pages (not only nav or footer).
+	3. Check it links out to at least 2 relevant existing pages.
+	**Pass:** Every page published in the last 14 days has 3 or more inbound and 2 or more outbound contextual links.
+	**If it fails:** Add contextual links from the 3 most related existing pages.
+- [ ] **B3 · Orphan check** (10 min · `/site-audit`)
+	**Why:** A page nothing links to is invisible to visitors and weakly signalled to Google.
+	**Steps:**
+	1. Open `/site-audit` and click the Orphan filter.
+	**Pass:** Orphans are only the allow-list: `/enwilfernandes`, `/jahnvijhaveri`, `/tejasjhaveri`, `/workshop`, `/feedback`, `/menti`, `/thank-you`, `/site-audit`.
+	**If it fails:** For any other orphan: link it from a relevant page, redirect it, or mark it noindex, within the cycle.
+
+## Search performance
+
+- [ ] **B4 · Striking-distance queries** (30 min · Search Console)
+	**Why:** Queries at positions 8 to 20 are the cheapest traffic gains.
+	**Steps:**
+	1. Open Performance for the last 14 days with Queries and Pages together.
+	2. Filter: position 8 to 20 and impressions at least 20.
+	3. Take the top 3 pages by impressions. For each make one change: better title, a new H2 answering the query, or added internal links.
+	4. Log the page, change and date.
+	**Pass:** 3 pages changed and logged this cycle.
+	**If it fails:** Log no candidates only if the filter returns fewer than 3 rows. Re-measure each change after 28 days.
+- [ ] **B5 · Low-CTR pages** (30 min · Search Console)
+	**Why:** Pages that are seen but not clicked are losing traffic to a weak title or description.
+	**Steps:**
+	1. Open Performance for the last 28 days and filter impressions at least 100 and CTR under 1%.
+	2. Rewrite the title and description of each listed page, one page at a time, keeping the primary keyword near the front and a clear benefit or CTA at the end.
+	3. Log the change and date.
+	**Pass:** Every listed page has a rewritten title and description.
+	**If it fails:** After 28 days, if CTR has not improved, try a different angle.
+
+## Content and publishing
+
+- [ ] **B6 · Publish one blog post** (2 to 3 hours · Repo, Search Console)
+	**Why:** Steady publishing builds the indexed surface that search and AI answers draw from.
+	**Steps:**
+	1. Take the next brief from the backlog (task W11).
+	2. Write at least 800 words of body copy with one H1, at least 4 H2s, and a FAQ of 3 questions with 40 to 60 word answers that start with a direct answer.
+	3. Primary keyword goes in the title, H1, URL slug and first 100 words. It must pass the collision check in `docs/keyword-map.md`.
+	4. Title 60 characters or fewer including the suffix. Description 155 or fewer with a call to action.
+	5. Use the `BlogArticle` layout so Article, FAQPage and Breadcrumb schema are included. Add an og image.
+	6. Link out to at least 3 pages: one service or tool, one glossary term, one related post. Add the CTA block.
+	7. Register it in `app/sitemap.ts`, the `/sitemap` page and the blog hub. Get at least 3 inbound links (task B2).
+	8. Run `python3 scripts/seo-crawl.py` and confirm no FAIL lines. Check any statistic has a named source.
+	**Pass:** One post live, 800 or more words, passing the crawl, listed in the sitemap, hub and `/sitemap`, with 3 or more inbound links.
+	**If it fails:** Do not skip the cycle. Ship a shorter piece, then expand it next cycle.
+- [ ] **B7 · Publish one glossary term** (45 min · Repo)
+	**Why:** Glossary entries earn definitional searches and give blog posts natural link targets.
+	**Steps:**
+	1. Pick a term from `docs/content-gaps.md` or from Search Console what-is queries.
+	2. Write a 20 to 30 word definition, a supporting section, a worked example and one outbound link, reaching at least 300 words of body copy.
+	3. Keep DefinedTerm schema and the breadcrumb. Check the primary keyword for collisions.
+	4. Link to it from at least one blog post and list it on the glossary index and sitemap.
+	**Pass:** One new entry live, 300 or more words, with an inbound link from at least one blog post.
+	**If it fails:** Hold the entry until it reaches 300 words. Thin entries are not being indexed.
+- [ ] **B8 · Repurpose what shipped** (45 min · LinkedIn, Instagram, newsletter)
+	**Why:** One idea earns more reach and more links when it appears in several formats.
+	**Steps:**
+	1. For each blog post published this cycle, produce at least one extra asset: a LinkedIn carousel, a short video, or a newsletter section.
+	2. Each asset links back to the post with UTM tags.
+	3. Log the asset link next to the post.
+	**Pass:** Every post published this cycle has at least one repurposed asset logged.
+	**If it fails:** Schedule it within the next 3 days.
+- [ ] **B9 · Keep the records current** (15 min · Repo docs)
+	**Why:** The keyword map and gap list only protect against collisions if they are up to date.
+	**Steps:**
+	1. After publishing, add each new page's primary keyword to `docs/keyword-map.md` and update its page counts.
+	2. Remove or tick off the matching row in `docs/content-gaps.md`.
+	**Pass:** Every page published this cycle appears in the keyword map, and the gap list reflects what is now covered.
+	**If it fails:** Update both before the next publish.
+
+# Monthly
+*First week of the month, about 9 hours in total. 20 tasks.*
+
+## Technical and indexing
+
+- [ ] **M1 · Keyword collisions** (15 min · Terminal)
+	**Why:** Two pages competing for the same primary keyword split their rankings.
+	**Steps:**
+	1. Run the script in the Method section of `docs/keyword-map.md`.
+	2. Update the counts and table in the same file.
+	**Pass:** 0 duplicate primary keywords and 0 exact overlaps involving a page changed this month.
+	**If it fails:** Reorder or remove the colliding keyword on the lower-intent page.
+- [ ] **M2 · Indexed ratio** (45 min · Search Console URL Inspection)
+	**Why:** This is the single best measure of whether Google trusts the site's content.
+	**Steps:**
+	1. Run URL Inspection on every sitemap URL, 10 per batch.
+	2. Count Submitted and indexed. Group the rest by reason.
+	3. Compare each reason with last month.
+	**Pass:** At least 90% indexed, and no reason bucket larger than last month.
+	**If it fails:** Work the largest bucket first (duplicate-canonical, then discovered-not-indexed).
+- [ ] **M3 · Sitemap submission** (5 min · Search Console)
+	**Why:** A second submitted sitemap that redirects splits Google's attention.
+	**Steps:**
+	1. Open Search Console, then Sitemaps.
+	**Pass:** Exactly one sitemap, `https://www.myntmore.com/sitemap.xml`, status Success, 0 errors.
+	**If it fails:** Delete the bare-domain sitemap entry and resubmit the www one.
+- [ ] **M4 · Search spam check** (15 min · Google, Search Console)
+	**Why:** Hacked sites often show injected spam pages before the owner notices.
+	**Steps:**
+	1. Search Google for `site:myntmore.com (casino OR slot OR betting OR viagra OR "free spins")`.
+	2. In Search Console, filter Queries containing those words.
+	**Pass:** 0 results and 0 impressions.
+	**If it fails:** Treat as a possible hack. Check the repo, Vercel deployments, DNS and third-party scripts the same day.
+- [ ] **M5 · Structured data** (30 min · Rich Results Test)
+	**Why:** Broken schema can silently disable enhancements after a code change.
+	**Steps:**
+	1. Test one URL for each template: home, a service, a blog post, a glossary entry, a job posting, a tool.
+	2. Record errors and warnings.
+	**Pass:** 0 errors. Warnings are listed (known: JobPosting missing `streetAddress` and `postalCode`).
+	**If it fails:** Fix errors the same week and track warnings until closed.
+- [ ] **M6 · Page speed** (30 min · PageSpeed Insights)
+	**Why:** Speed affects both rankings and conversion.
+	**Steps:**
+	1. Run mobile tests on `/`, `/services`, `/blog/icp-mapping-b2b`, `/tools/icp-builder` and `/b2b-lead-generation-mumbai`.
+	2. Record LCP, CLS, INP and the performance score.
+	**Pass:** LCP 2.5s or less, CLS 0.1 or less, INP 200ms or less, performance score 80 or more, on every URL.
+	**If it fails:** Record the failing metric and open a ticket for the heaviest asset or script.
+- [ ] **M7 · llms.txt** (10 min · Terminal)
+	**Why:** AI tools use this file to understand the site. Dead links make it useless.
+	**Steps:**
+	1. Run: `grep -o 'https://[^)]*' public/llms.txt | xargs -n1 curl -s -o /dev/null -w '%{http_code} %{url_effective}\n' | grep -v '^200'`.
+	2. Confirm every service page is listed.
+	**Pass:** No output from the command, and every service page appears in the file.
+	**If it fails:** Fix or remove dead URLs. Add any new service or pillar page.
+- [ ] **M8 · Blog hub parity** (10 min · Terminal)
+	**Why:** A post missing from the hub or the sitemap loses internal links or indexing.
+	**Steps:**
+	1. Count blog URLs in the sitemap: `curl -s https://www.myntmore.com/sitemap.xml | grep -o '/blog/[a-z0-9-]*<' | sort -u | wc -l`.
+	2. Count blog links on the hub: `curl -s https://www.myntmore.com/resources/blogs | grep -o 'href="/blog/[a-z0-9-]*"' | sort -u | wc -l`.
+	**Pass:** The two counts are equal (baseline 29 and 29).
+	**If it fails:** Add the missing post to the hub or the sitemap.
+
+## Search performance
+
+- [ ] **M9 · Non-brand performance** (20 min · Search Console)
+	**Why:** Brand searches will always work. Growth comes from non-brand queries.
+	**Steps:**
+	1. Open Performance for the last 28 days, Queries, and exclude the regex in the scorecard definitions.
+	2. Record non-brand clicks, impressions and queries in the top 10.
+	**Pass:** Non-brand clicks and impressions are no more than 20% below last month, or the drop is explained in the scorecard.
+	**If it fails:** Compare the top 20 queries month over month and find what fell.
+- [ ] **M10 · City pages** (20 min · Search Console)
+	**Why:** City pages carry most of the local impressions and are the weakest performers on click rate.
+	**Steps:**
+	1. Open Performance, Pages, filter `b2b-lead-generation-` and read average position for the 8 pages.
+	**Pass:** Every city page at average position 20 or better and none worse than its baseline.
+	**If it fails:** For each page over 20: add local proof, 2 internal links and a stronger title, then re-check next month.
+- [ ] **M11 · Backlinks** (20 min · Ahrefs Webmaster Tools)
+	**Why:** Links drive authority, and bad links can signal trouble.
+	**Steps:**
+	1. Record referring domains, new and lost.
+	2. Scan new domains for adult, gambling or pharma sites.
+	**Pass:** Referring domains no more than 10% below last month, and no new spam domains.
+	**If it fails:** Ask for lost links to be reinstated. Add spam domains to a disavow review.
+- [ ] **M12 · Content freshness** (45 min · Sitemap, Search Console)
+	**Why:** Stale pages lose rankings and credibility.
+	**Steps:**
+	1. List sitemap pages with a lastModified older than 180 days that earned at least 50 impressions in 90 days.
+	2. Update each with new data or examples, then set lastModified from `git log -1 --format=%aI`.
+	**Pass:** None remain stale, or each has a scheduled refresh in the next publishing slot.
+	**If it fails:** Move the refresh into the next bi-weekly slot.
+- [ ] **M13 · AI visibility** (40 min · ChatGPT, Vercel Analytics)
+	**Why:** AI answers are a growing source of discovery.
+	**Steps:**
+	1. Run the 10 prompts at the end of this document in logged-out ChatGPT.
+	2. Count answers that name Myntmore or cite myntmore.com.
+	3. Record AI referral visitors from Vercel Analytics.
+	**Pass:** Citation rate no lower than last month.
+	**If it fails:** Check which prompts lost the citation and add a direct-answer section to the matching page.
+- [ ] **M14 · Newsletter performance** (15 min · Email tool)
+	**Why:** The list is an owned audience that drives return visits.
+	**Steps:**
+	1. Record issues sent, subscribers gained and lost, and average open rate.
+	**Pass:** At least 4 issues sent and net subscriber growth at or above zero.
+	**If it fails:** Review subject lines and the signup placement on blog posts.
+
+## Content and publishing
+
+- [ ] **M15 · Publishing volume** (5 min · Sitemap)
+	**Why:** Cadence compounds. This confirms the plan actually happened.
+	**Steps:**
+	1. Compare the sitemap URL count with last month.
+	2. Count new blog posts and glossary entries.
+	**Pass:** At least 2 new blog posts and at least 2 new glossary entries.
+	**If it fails:** Move the shortfall into next month's bi-weekly slots.
+- [ ] **M16 · Proof bank** (30 min · Notion or sheet)
+	**Why:** Case studies and stats need real, approved numbers. Nothing here may be invented.
+	**Steps:**
+	1. Log at least one new real client result: client type, metric, date, how it was measured and written permission status.
+	2. Mark whether it can be used publicly.
+	**Pass:** At least one new entry with permission status recorded.
+	**If it fails:** Ask the account lead for the next result before month end.
+- [ ] **M17 · Tool QA** (45 min · Browser)
+	**Why:** The nine free tools are lead magnets. A broken tool wastes traffic.
+	**Steps:**
+	1. For each of the 9 tools in `/tools`, submit a real test input end to end.
+	2. Confirm the result renders in under 60 seconds, the console shows no errors, and the lead is recorded.
+	**Pass:** 9 of 9 tools pass.
+	**If it fails:** Open a fix ticket for any failing tool the same day.
+- [ ] **M18 · Supporting links to services and landing pages** (30 min · Terminal, repo)
+	**Why:** Service and industry pages rank better when blog and glossary content links to them.
+	**Steps:**
+	1. Count links per page, for example `grep -l '/services/gtm-strategy' app/blog/*/page.tsx app/resources/glossary/*/page.tsx | wc -l` and `grep -l '/lp/pharma' app/blog/*/page.tsx | wc -l`.
+	2. Add contextual links in at least 3 relevant existing posts to the pages furthest below target.
+	**Pass:** Each service page has at least 5 blog and glossary links and each industry landing page has at least 2 blog links. Progress is at least 3 pages moved closer to target this month.
+	**If it fails:** Prioritise `/services/gtm-strategy` and `/services/do-it-yourself` (both 0).
+- [ ] **M19 · FAQ backfill** (60 min · Repo)
+	**Why:** FAQ sections feed answer boxes and AI summaries. 21 posts lack one.
+	**Steps:**
+	1. List posts without FAQ schema: `for u in $(curl -s https://www.myntmore.com/sitemap.xml | grep -o 'https://www.myntmore.com/blog/[a-z0-9-]*'); do curl -s $u | grep -q '"@type":"FAQPage"' || echo $u; done`.
+	2. Add 3 questions with 40 to 60 word direct answers to at least 2 of them, with FAQPage schema.
+	**Pass:** At least 2 posts upgraded this month. Baseline 8 of 29 with FAQ.
+	**If it fails:** Pick the posts with the most impressions first.
+- [ ] **M20 · Expand thin glossary entries** (60 min · Repo)
+	**Why:** Entries around 125 words are not being indexed. Seven are discovered but not crawled.
+	**Steps:**
+	1. List the glossary entries Search Console marks Discovered, currently not indexed.
+	2. Expand at least 3 to 300 or more words with an example, a related-terms section and an internal link.
+	**Pass:** At least 3 entries expanded to 300 or more words.
+	**If it fails:** Re-inspect after 14 days. If still not indexed, add more internal links.
+
+# Quarterly
+*First two weeks of Jan, Apr, Jul and Oct, about 6 working days in total, spread across the quarter. 17 tasks.*
+
+## Technical and indexing
+
+- [ ] **Q1 · Featured-snippet audit** (1 hour · Terminal)
+	**Why:** Direct, short FAQ answers are what get picked for answer boxes.
+	**Steps:**
+	1. Re-run the script in `docs/featured-snippet-audit.md`.
+	2. Confirm every page with an FAQ section also emits FAQPage schema.
+	**Pass:** 0 FAQ answers over 60 words, 0 hedge openers such as it depends, and FAQPage schema on every page with an FAQ.
+	**If it fails:** Rewrite the failing answers.
+- [ ] **Q2 · Internal-link depth** (2 hours · `/site-audit`, crawl)
+	**Why:** Pages buried deep or lightly linked get crawled less and rank lower.
+	**Steps:**
+	1. Use the inbound counts in `/site-audit` and the click depth from the homepage.
+	**Pass:** Every indexable page has at least 3 inbound links and is within 3 clicks of the homepage.
+	**If it fails:** Add links from the most related high-traffic pages.
+- [ ] **Q3 · Technical health** (2 hours · Terminal)
+	**Why:** Dependencies and redirects drift over time.
+	**Steps:**
+	1. Run `npx tsc --noEmit`, `npm run build` and `npm outdated next`.
+	2. Check that each redirect in `next.config.js` resolves in one hop.
+	3. Check `http://myntmore.com`, `http://www.myntmore.com` and `https://myntmore.com` each reach `https://www.myntmore.com` in at most 1 hop.
+	**Pass:** Build and typecheck pass, 0 redirect chains, and all 3 host variants are at 1 hop or fewer.
+	**If it fails:** Fix the Vercel domain redirect settings and review pending framework upgrades.
+- [ ] **Q4 · Backlink audit** (1 hour · Ahrefs Webmaster Tools)
+	**Why:** Quality of links matters as much as quantity.
+	**Steps:**
+	1. Review referring domains by quality and the disavow file against last quarter.
+	**Pass:** Reviewed, and the disavow file is current.
+	**If it fails:** Add spam domains to the disavow file.
+
+## Search performance
+
+- [ ] **Q5 · Zero-traction pages** (2 hours · Search Console)
+	**Why:** Pages that earn nothing dilute the site and waste crawl budget.
+	**Steps:**
+	1. Open Performance for the last 90 days, Pages. List pages with 0 clicks and fewer than 50 impressions.
+	2. Decide for each: improve, merge with a 301, or noindex.
+	**Pass:** Each page has a recorded decision, and the list is shorter than last quarter.
+	**If it fails:** Do not leave pages undecided.
+- [ ] **Q6 · Query gaps** (2 hours · Search Console)
+	**Why:** Queries with impressions but no matching page are demand you are not serving.
+	**Steps:**
+	1. List non-brand queries with at least 200 impressions in 90 days where no page title or H1 contains the main term.
+	**Pass:** Each one is either added to `docs/content-gaps.md` or recorded as deliberately skipped.
+	**If it fails:** Add to the backlog with a primary keyword.
+- [ ] **Q7 · Cannibalisation** (1 hour · Search Console)
+	**Why:** Two pages ranking for one query often rank worse than one strong page.
+	**Steps:**
+	1. Find queries where 2 or more of our pages each get at least 10 impressions.
+	**Pass:** Each case has one chosen page, and the other is differentiated or merged.
+	**If it fails:** Re-run task M1 afterwards.
+- [ ] **Q8 · Competitor snapshot** (2 hours · Google)
+	**Why:** Rankings are relative. This shows who is moving.
+	**Steps:**
+	1. For 10 target queries record our position and the top 3 domains.
+	**Pass:** Recorded, with no query worse than 3 positions below last quarter.
+	**If it fails:** For each loss, review the winning page and plan an update.
+
+## Content and publishing
+
+- [ ] **Q9 · Quarterly publishing target** (30 min · Sitemap)
+	**Why:** A quarterly target keeps monthly effort honest.
+	**Steps:**
+	1. Count new pages by type since the last review.
+	**Pass:** At least 6 blog posts, 6 glossary entries, 1 pillar guide or comparison page, and 1 new or updated tool or lead magnet.
+	**If it fails:** Carry the shortfall into the next quarter's first month.
+- [ ] **Q10 · Refresh the top 10 pages** (1 day · Repo, Search Console)
+	**Why:** Refreshing winners is cheaper than creating new pages.
+	**Steps:**
+	1. List the top 10 pages by clicks over 90 days.
+	2. For each: verify and update statistics, add new examples, improve the intro, then set the update date.
+	**Pass:** 10 of 10 updated this quarter with sources checked.
+	**If it fails:** Schedule the remainder in the first month of next quarter.
+- [ ] **Q11 · Cluster coverage** (2 hours · Terminal, repo)
+	**Why:** Topic clusters show Google which pages matter most for each service.
+	**Steps:**
+	1. Count blog and glossary links into each service page and each industry landing page (see task M18 commands).
+	**Pass:** Every service page has at least 5 supporting links and every industry page at least 2 blog links.
+	**If it fails:** Add the missing links and commission a post for any thin cluster.
+- [ ] **Q12 · Expand thin blog posts** (1 day · Repo)
+	**Why:** Median blog body is 619 words and 15 of 29 are under 700.
+	**Steps:**
+	1. Run `python3 scripts/seo-crawl.py` and read the thin blog post warnings.
+	2. Expand the 5 weakest posts to 800 or more words with new sections and examples, or merge two overlapping posts with a redirect.
+	**Pass:** At least 5 posts expanded to 800 or more words. Posts under 700 words decrease by at least 5.
+	**If it fails:** Prioritise posts that already get impressions.
+- [ ] **Q13 · Case study or proof asset** (1 day · Proof bank)
+	**Why:** Real client outcomes are the strongest ranking and conversion content.
+	**Steps:**
+	1. Pick an approved entry from the proof bank (task M16).
+	2. Publish a case study or update an existing one with fresh numbers, written with client permission.
+	**Pass:** One case study published or refreshed, with every figure traceable to the proof bank.
+	**If it fails:** Do not publish a case study without recorded permission.
+- [ ] **Q14 · Repurposing library** (2 hours · LinkedIn, Instagram)
+	**Why:** Top posts deserve more than one distribution.
+	**Steps:**
+	1. Take the top 5 posts by clicks.
+	2. Turn each into at least one new format (carousel, video, newsletter feature).
+	**Pass:** 5 of 5 repurposed with links logged.
+	**If it fails:** Carry to the next quarter only the posts that no longer get traffic.
+- [ ] **Q15 · Benchmark report refresh** (1 day · Repo)
+	**Why:** The report earns citations only while it is current.
+	**Steps:**
+	1. Check the date on `/blog/b2b-outbound-benchmark-report-2026`.
+	**Pass:** Updated within the last 6 months.
+	**If it fails:** Refresh with new aggregate data.
+- [ ] **Q16 · Claims consistency** (1 hour · Repo)
+	**Why:** Different numbers for the same claim damage credibility.
+	**Steps:**
+	1. Search the repo for each headline figure, for example 12K+ meetings, 300+ accounts and 35 to 60 meetings per month.
+	**Pass:** Each metric shows the same number on every page.
+	**If it fails:** Correct the outliers. No unsourced figures.
+- [ ] **Q17 · Checklist review** (1 hour · This document)
+	**Why:** Targets must move as the baseline does.
+	**Steps:**
+	1. Compare this quarter's results with the baseline table and reset it.
+	**Pass:** Baseline table and thresholds updated to the new numbers.
+	**If it fails:** Do it before starting the next quarter.
+
+# Appendix: KPI scorecard definitions
+
+Keep these fixed so week-over-week numbers stay comparable.
+
+- **Organic Leads:** Zoho CRM Leads created in the week with Lead Source Website. Treat as an upper bound, because the forms can't separate organic search from Instagram or direct visits.
+- **Non-Brand Clicks and Impressions:** Search Console `sc-domain:myntmore.com`, query dimension, excluding the regex `myntmore|mintmore|mint more|mint and more|tejas jhaveri`. Anonymised queries are excluded, so totals won't equal the site total.
+- **Queries Ranking in Top 10:** Non-brand queries with average position 10 or better in the week.
+- **City Pages on Page 1:** The 8 `/b2b-lead-generation-` city pages with page-level average position 10 or better.
+- **Indexed and Submitted Pages:** Submitted is the URL count of the sitemap in Search Console. Indexed is the URL Inspection count of Submitted and indexed across every sitemap URL (10 per call).
+- **Site Health Check:** Share of sitemap URLs passing every check: 200 with no redirect, self-referencing canonical, no noindex, exactly one h1, title 60 characters or fewer, description 160 or fewer, valid JSON-LD. `python3 scripts/seo-crawl.py` prints it.
+- **Schema Coverage:** Share of sitemap URLs with page-specific JSON-LD, excluding the sitewide Organization and BreadcrumbList. The same script prints it.
+- **AI Referral Sessions:** Vercel Analytics visitors for `myntmoreclaude` whose referrer is chatgpt.com, perplexity.ai, claude.ai, gemini.google.com or copilot.microsoft.com (Vercel counts visitors, not sessions).
+- **AI Citation Rate:** The 10 prompts below, run in logged-out ChatGPT. A hit is any answer that names Myntmore or cites myntmore.com.
+
+1. best B2B lead generation agency in Mumbai
+2. best cold email agency for B2B SaaS in India
+3. top LinkedIn outreach agencies in India
+4. B2B lead generation companies in Pune
+5. B2B lead generation company in Delhi
+6. outbound sales agency for SaaS startups in India
+7. best AI-powered B2B lead generation agencies in India
+8. what is B2B outbound sales
+9. average B2B outbound reply rate 2026
+10. how to choose an outbound lead generation agency

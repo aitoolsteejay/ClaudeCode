@@ -23,7 +23,7 @@
 
 - Six colours carry 90% of all text: `#52525B` (40%), `#6B6B6B` (17%), `#0A0A0A` (12.5%), `#71675E` (10%), `#3D3D3D` (8%) and white (1.4%).
 - Page canvas is `#FFFFFF` on all 248 pages. Surfaces behind text: white 52%, `#F8F6F2` 31%, cream `#FEF9EC` 4%, dark `#0A0A0A` 2%.
-- The primary call-to-action (gold pill, near-black bold text) is identical on 246 pages. Gold fill is `#F5B731` on 260 of 263 filled buttons.
+- The primary call-to-action (the `btn-dark` pill, near-black bold text) has the same style on 246 pages: 14 px in the nav, 16 px in page sections.
 - 98.7% of text on a flat background meets WCAG AA (the previous accessibility pass held), apart from the case study defect below.
 
 ## Colours that are not
@@ -40,15 +40,15 @@
 
 **6. Strays.** Homepage: `#6B7280` (Tailwind gray-500) on three text blocks and `#3A3A3A` for the second hero line. `/resources/guides/dos-and-donts-of-outreach`: `#6B6560` and `#6B655E`. About 15 near-white tints (`#FCFBF8`, `#FDFDFD`, `#FFFDF9`, `#FCFCFC`, `#FDFCFB` and others) on 8 to 15 pages each, next to the standard `#FFFFFF`, `#F8F6F2` and `#FEF9EC`. (336 distinct background colours behind text in total, but most are the intended per-industry accent tints on case studies.)
 
-**7. Colours are written by hand, 6,400 times.** The source holds 294 distinct hex values, 128 of them used once. About 4,900 inline style objects carry hex colours, alongside 929 Tailwind palette-class uses (including `gray-400`/`500`/`600`/`700`, 116 uses in about 20 files, which are cool greys from yet another scale) and 157 arbitrary-value hex classes. There are no named tokens for the core palette; `lib/colors.ts` only covers accent text shades. That is why the drift above exists and why it will keep coming back.
+**7. Colours are written by hand, 6,400 times.** The source holds 294 distinct hex values, 128 of them used once. About 4,900 inline style objects carry hex colours, alongside 929 Tailwind palette-class uses (including `gray-400`/`500`/`600`/`700`, 116 uses in 21 files, which are cool greys from yet another scale) and 157 arbitrary-value hex classes. There are no named tokens for the core palette; `lib/colors.ts` only covers accent text shades. That is why the drift above exists and why it will keep coming back.
 
-**8. Contrast defect in the shared case study template (the only real accessibility failure).** `components/case-studies/CaseStudyLayout.tsx` sets text colour to the raw accent in six places (the tag pill, the four numbered step labels, "Myntmore's role", and the metric values). The convention in `lib/colors.ts` is to pass accents through `textTone()` for text on light surfaces. Because of this, 71 case study pages have text below WCAG AA, for example green `#10B981` at 2.5:1, sky `#0EA5E9` at 2.8:1 and orange `#F97316` at 2.8:1 on white. Everything else that fails is not a real problem: visually hidden screen-reader labels and the decorative "/" in breadcrumbs.
+**8. Contrast defect in the shared case study template (the only real accessibility failure).** `components/case-studies/CaseStudyLayout.tsx` sets text colour to the raw accent in six places (the tag pill, the four numbered step labels, "Myntmore's role", and the metric values). The convention in `lib/colors.ts` is to pass accents through `textTone()` for text on light surfaces. Because of this, all 70 pages built on the template (and `/case-studies/uk-pharma-qualified-meetings`, which has its own version of the same problem) have text below WCAG AA, for example green `#10B981` at 2.5:1, sky `#0EA5E9` at 2.8:1 and orange `#F97316` at 2.8:1 on white. Everything else that fails is not a real problem: visually hidden screen-reader labels and the decorative "/" in breadcrumbs.
 
 ## What I would change, in order
 
 | # | Change | Size | Effect |
 |---|---|---|---|
-| 1 | Route the six accent text colours in `CaseStudyLayout.tsx` through `textTone()` | 1 file, 6 lines | Fixes all 71 case study pages; the accent look stays, text gets the darker shade of the same hue |
+| 1 | Route the six accent text colours in `CaseStudyLayout.tsx` through `textTone()` | 1 file, 6 lines | Fixes the 70 template pages; the accent look stays, text gets the darker shade of the same hue |
 | 2 | Replace `#6B6B6B` with `#71675E` (footer, hero, services blocks and about 15 other files) | Mechanical, 19 files | Removes the biggest grey split; footer matches the rest of the site |
 | 3 | Add named tokens (ink, body, muted, border, surface, gold, gold-text) to `lib/colors.ts` and use them in the shared components first (Footer, Navbar, Breadcrumbs, layout templates) | Medium | Stops further drift |
 | 4 | Decide guides and glossary paragraph colour (`#3D3D3D` / `#0A0A0A` vs `#52525B`) and make it one value | Small, needs your call | Same reading colour across hubs |

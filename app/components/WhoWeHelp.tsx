@@ -211,7 +211,7 @@ export default function WhoWeHelp() {
           >
             Built for every B2B growth team
           </h2>
-          <p className="max-w-2xl mx-auto text-lg leading-relaxed" style={{ color: "#6B6B6B" }}>
+          <p className="max-w-2xl mx-auto text-lg leading-relaxed" style={{ color: "#71675E" }}>
             Whether you&rsquo;re a founder doing outbound yourself or a VP Sales scaling a team Myntmore has a playbook for you.
           </p>
         </div>
@@ -334,7 +334,7 @@ export default function WhoWeHelp() {
               >
                 {persona.heading}
               </h3>
-              <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: "#6B6B6B" }}>
+              <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: "#71675E" }}>
                 {persona.tagline}
               </p>
               <div>

@@ -101,7 +101,7 @@ function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; 
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
           style={{ backgroundColor: open ? "rgba(59,130,246,0.12)" : "#F8F6F2" }}>
           <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
-            fill="none" viewBox="0 0 24 24" stroke={open ? "#3b82f6" : "#6B6B6B"} strokeWidth={2.5}>
+            fill="none" viewBox="0 0 24 24" stroke={open ? "#3b82f6" : "#71675E"} strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
           </svg>
         </span>
@@ -464,7 +464,7 @@ export default function AiLeadGenerationClient() {
             Book Your Free GTM Audit
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>No commitment. No fluff. Just a real conversation about your growth.</p>
+          <p className="mt-5 text-sm" style={{ color: "#71675E" }}>No commitment. No fluff. Just a real conversation about your growth.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             {["Setup in 7 days", "Custom AI agents for your ICP", "Results or we make it right"].map((item) => (
               <div key={item} className="flex items-center gap-2">

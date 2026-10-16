@@ -4,6 +4,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 import LeadCaptureForm from "@/app/components/LeadCaptureForm";
 import StatTicker from "@/app/components/StatTicker";
 import JsonLd from "@/app/components/JsonLd";
+import { textTone } from "@/lib/colors";
 
 export interface CaseStudyLayoutProps {
   slug: string;
@@ -54,7 +55,7 @@ export default function CaseStudyLayout({
         <div className="relative z-10 max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Case Studies", href: "/case-studies" }, { label: tag, href: `/case-studies/${slug}` }]} />
           <div className="flex flex-wrap items-center gap-2 mb-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border hero-fade" style={{ backgroundColor: `${accent}12`, color: accent, borderColor: `${accent}40` }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border hero-fade" style={{ backgroundColor: `${accent}12`, color: textTone(accent), borderColor: `${accent}40` }}>
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]">{tag}</span>
             </div>
@@ -79,7 +80,7 @@ export default function CaseStudyLayout({
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-3xl mx-auto space-y-14">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>01 · The client and challenge</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>01 · The client and challenge</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>{challengeTitle}</h2>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: "#52525B" }}>
               {challengeBody.map((p, i) => <p key={i}>{p}</p>)}
@@ -87,7 +88,7 @@ export default function CaseStudyLayout({
           </div>
 
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>02 · Myntmore&apos;s approach</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>02 · Myntmore&apos;s approach</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>{approachTitle}</h2>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: "#52525B" }}>
               {approachBody.map((p, i) => <p key={i}>{p}</p>)}
@@ -95,24 +96,24 @@ export default function CaseStudyLayout({
           </div>
 
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>03 · Campaign metrics</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>03 · Campaign metrics</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>Results across the funnel</h2>
             <div className="rounded-2xl border overflow-hidden" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
               {metrics.map((m, index) => (
                 <div key={m.l} className="flex items-center justify-between gap-3 px-5 py-4" style={{ borderBottom: index < metrics.length - 1 ? "1px solid #E8E2D9" : "none" }}>
                   <span className="text-sm" style={{ color: "#52525B" }}>{m.l}</span>
-                  <span className="text-xl font-black" style={{ color: accent }}>{m.v}</span>
+                  <span className="text-xl font-black" style={{ color: textTone(accent) }}>{m.v}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: accent }}>04 · Business outcome</span>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>04 · Business outcome</span>
             <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0a0a0a" }}>{outcomeTitle}</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{outcomeBody}</p>
             <div className="mt-8 rounded-2xl p-6 sm:p-8 border-l-4" style={{ backgroundColor: `${accent}0d`, borderColor: accent }}>
-              <p className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: accent }}>Myntmore&apos;s role</p>
+              <p className="text-sm font-bold uppercase tracking-widest mb-2" style={{ color: textTone(accent) }}>Myntmore&apos;s role</p>
               <p className="text-base leading-relaxed" style={{ color: "#0a0a0a" }}>{roleBody}</p>
             </div>
           </div>

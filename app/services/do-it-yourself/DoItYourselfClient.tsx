@@ -225,7 +225,7 @@ function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; 
         <span className="text-base font-bold" style={{ color: "#0a0a0a" }}>{q}</span>
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
           style={{ backgroundColor: open ? "rgba(124,58,237,0.12)" : "#F8F6F2" }}>
-          <Plus className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`} strokeWidth={2.5} aria-hidden="true" style={{ color: open ? ACCENT : "#6B6B6B" }} />
+          <Plus className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`} strokeWidth={2.5} aria-hidden="true" style={{ color: open ? ACCENT : "#71675E" }} />
         </span>
       </button>
       <div
@@ -544,7 +544,7 @@ export default function DoItYourselfClient() {
                   <span className="w-3 h-3 rounded-full" aria-hidden="true" style={{ backgroundColor: "#FF5F57" }} />
                   <span className="w-3 h-3 rounded-full" aria-hidden="true" style={{ backgroundColor: "#FEBC2E" }} />
                   <span className="w-3 h-3 rounded-full" aria-hidden="true" style={{ backgroundColor: "#28C840" }} />
-                  <span className="ml-3 text-xs font-bold truncate" style={{ color: "#6B6B6B" }}>Myntmore Outreach &middot; Campaign Builder</span>
+                  <span className="ml-3 text-xs font-bold truncate" style={{ color: "#71675E" }}>Myntmore Outreach &middot; Campaign Builder</span>
                   <button
                     type="button"
                     onClick={() => setAutoPlay((a) => !a)}
@@ -588,7 +588,7 @@ export default function DoItYourselfClient() {
                             <Check className="w-4 h-4" strokeWidth={3} aria-hidden="true" />
                             Connected
                           </span>
-                          <p className="text-xs" style={{ color: "#6B6B6B" }}>Nice. Let&apos;s set up your first campaign &rarr;</p>
+                          <p className="text-xs" style={{ color: "#71675E" }}>Nice. Let&apos;s set up your first campaign &rarr;</p>
                         </>
                       )}
                     </div>
@@ -606,7 +606,7 @@ export default function DoItYourselfClient() {
                         className="w-full rounded-xl border px-4 py-3 min-h-[44px] text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/40 focus-visible:border-[#7C3AED]"
                         style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}
                       />
-                      <p className="text-xs mt-4" style={{ color: "#6B6B6B" }}>
+                      <p className="text-xs mt-4" style={{ color: "#71675E" }}>
                         Preview: <span className="font-bold" style={{ color: "#0a0a0a" }}>{campaignName || "Untitled Campaign"}</span>
                       </p>
                     </div>
@@ -652,7 +652,7 @@ export default function DoItYourselfClient() {
                         className="w-full rounded-xl border px-4 py-3 text-sm resize-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/40 focus-visible:border-[#7C3AED]"
                         style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}
                       />
-                      <p id="demo-note-count" className="text-xs mt-2 text-right" style={{ color: note.length > 280 ? "#DC2626" : "#6B6B6B" }}>{note.length}/300</p>
+                      <p id="demo-note-count" className="text-xs mt-2 text-right" style={{ color: note.length > 280 ? "#DC2626" : "#71675E" }}>{note.length}/300</p>
                     </div>
                   )}
 
@@ -723,7 +723,7 @@ export default function DoItYourselfClient() {
                               </li>
                             ))}
                           </ul>
-                          <p className="text-xs mb-3" style={{ color: "#6B6B6B" }}>Simulated preview for this demo, not real send data.</p>
+                          <p className="text-xs mb-3" style={{ color: "#71675E" }}>Simulated preview for this demo, not real send data.</p>
                           <button type="button" onClick={resetDemo} className={`inline-flex items-center gap-1.5 min-h-[44px] text-sm font-bold rounded-lg px-1 ${FOCUS}`} style={{ color: ACCENT }}>
                             <RotateCcw className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
                             Restart demo
@@ -879,7 +879,7 @@ export default function DoItYourselfClient() {
             <ArrowRight className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
           </a>
 
-          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>Prefer we run it for you? <Link href="/services/linkedin-outreach" className={`font-semibold underline rounded ${FOCUS}`} style={{ color: ACCENT }}>See the Done-for-You service</Link>.</p>
+          <p className="mt-5 text-sm" style={{ color: "#71675E" }}>Prefer we run it for you? <Link href="/services/linkedin-outreach" className={`font-semibold underline rounded ${FOCUS}`} style={{ color: ACCENT }}>See the Done-for-You service</Link>.</p>
         </div>
       </section>
     </InnerLayout>

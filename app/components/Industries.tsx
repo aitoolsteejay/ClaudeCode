@@ -102,7 +102,7 @@ export default function Industries() {
             Every B2B sector.{" "}
             <span style={{ color: "#A14A08" }}>One outbound engine</span>
           </h2>
-          <p className="mt-4 text-lg text-[#6B6B6B] max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-[#71675E] max-w-xl mx-auto">
             If you sell to businesses, we know how to reach your buyers regardless of vertical.
           </p>
         </div>

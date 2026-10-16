@@ -108,7 +108,7 @@ function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; 
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
           style={{ backgroundColor: open ? "rgba(8,145,178,0.12)" : "#F8F6F2" }}>
           <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
-            fill="none" viewBox="0 0 24 24" stroke={open ? "#0891b2" : "#6B6B6B"} strokeWidth={2.5}>
+            fill="none" viewBox="0 0 24 24" stroke={open ? "#0891b2" : "#71675E"} strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
           </svg>
         </span>
@@ -551,7 +551,7 @@ export default function GtmStrategyClient() {
             </svg>
           </a>
 
-          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>No commitment. We&apos;ll show you the gaps before you decide anything.</p>
+          <p className="mt-5 text-sm" style={{ color: "#71675E" }}>No commitment. We&apos;ll show you the gaps before you decide anything.</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             {["Strategy live in 2-3 weeks", "Same team builds and runs it", "Reviewed and adjusted monthly"].map((item) => (

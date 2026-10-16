@@ -70,7 +70,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-3 items-center">
             <div className="rounded-2xl p-6 bg-white" style={{ border: "1px solid #E8E2D9" }}>
               <span className="text-xs font-bold uppercase tracking-wide" style={{ color: "#71675E" }}>Before</span>
-              <p className="mt-2 text-base leading-snug" style={{ color: "#6B6B6B" }}>{VAGUE_BEFORE}</p>
+              <p className="mt-2 text-base leading-snug" style={{ color: "#71675E" }}>{VAGUE_BEFORE}</p>
             </div>
             <div className="flex justify-center" aria-hidden="true">
               <ArrowRight className="h-5 w-5 rotate-90 md:rotate-0" style={{ color: "#A14A08" }} />
@@ -96,7 +96,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
           <h2 className="text-2xl sm:text-3xl font-black mb-3 text-center" style={{ color: "#0A0A0A" }}>
             What the audit actually checks
           </h2>
-          <p className="text-center mb-12" style={{ color: "#6B6B6B" }}>
+          <p className="text-center mb-12" style={{ color: "#71675E" }}>
             Five checks, run against your exact headline and About section.
           </p>
           <div>
@@ -156,7 +156,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
             ].map((item) => (
               <div key={item.title} className="rounded-2xl p-6" style={{ backgroundColor: "#F8F6F2" }}>
                 <p className="text-base font-bold mb-1.5" style={{ color: "#0A0A0A" }}>{item.title}</p>
-                <p className="text-sm leading-relaxed" style={{ color: "#6B6B6B" }}>{item.desc}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#71675E" }}>{item.desc}</p>
               </div>
             ))}
           </div>

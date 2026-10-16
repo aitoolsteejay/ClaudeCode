@@ -333,7 +333,7 @@ export default function Services() {
                 className="block w-6 h-0.5 rounded-full mx-auto mt-2 mb-2"
                 style={{ background: "#F5B731" }}
               />
-              <span className="text-sm text-[#6B6B6B] leading-snug max-w-[180px]">{item.label}</span>
+              <span className="text-sm text-[#71675E] leading-snug max-w-[180px]">{item.label}</span>
             </div>
           ))}
         </div>

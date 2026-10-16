@@ -55,7 +55,7 @@ export default function GlossaryTerm({
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>{tagline}</p>
           {alsoKnownAs && alsoKnownAs.length > 0 && (
             <div className="mt-5 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#6B6B6B" }}>Also known as</span>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>Also known as</span>
               {alsoKnownAs.map((name) => (
                 <span key={name} className="fredoka-pill inline-flex text-xs font-semibold px-2.5 py-1 rounded-full border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}>
                   {name}

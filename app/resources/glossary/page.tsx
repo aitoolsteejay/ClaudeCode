@@ -503,7 +503,7 @@ export default function GlossaryPage() {
                       <li key={r.alias}>
                         <Link href={r.target.href} className="group inline-flex flex-wrap items-baseline gap-x-1.5 py-1 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50">
                           <span className="font-bold" style={{ color: "#0a0a0a" }}>{r.alias}</span>
-                          <span style={{ color: "#6B6B6B" }}>see</span>
+                          <span style={{ color: "#71675E" }}>see</span>
                           <span className="font-bold underline decoration-1 underline-offset-2 group-hover:no-underline" style={{ color: textTone(r.target.accent) }}>{r.target.title}</span>
                         </Link>
                       </li>

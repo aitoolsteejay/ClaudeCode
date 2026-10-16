@@ -144,7 +144,7 @@ export default function CTABanner() {
           </svg>
         </a>
 
-        <p className="mt-5 text-sm text-[#6B6B6B]">
+        <p className="mt-5 text-sm text-[#71675E]">
           No commitment. No fluff. Just a real conversation about your growth.
         </p>
 

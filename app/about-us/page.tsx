@@ -98,7 +98,7 @@ export default function AboutUs() {
           {CREDENTIALS.map((c) => (
             <div key={c.stat} className="text-center">
               <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: textTone(c.accent) }}><StatTicker value={c.stat} /></div>
-              <div className="text-xs" style={{ color: "#6B6B6B" }}>{c.label}</div>
+              <div className="text-xs" style={{ color: "#71675E" }}>{c.label}</div>
             </div>
           ))}
         </div></FadeIn>

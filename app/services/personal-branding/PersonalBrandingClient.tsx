@@ -105,7 +105,7 @@ function AccordionItem({ q, a, open, onToggle, index }: { q: string; a: string; 
         <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors"
           style={{ backgroundColor: open ? "rgba(217,119,6,0.12)" : "#F8F6F2" }}>
           <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
-            fill="none" viewBox="0 0 24 24" stroke={open ? "#D97706" : "#6B6B6B"} strokeWidth={2.5}>
+            fill="none" viewBox="0 0 24 24" stroke={open ? "#D97706" : "#71675E"} strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
           </svg>
         </span>
@@ -570,7 +570,7 @@ export default function PersonalBrandingClient() {
             </svg>
           </a>
 
-          <p className="mt-5 text-sm" style={{ color: "#6B6B6B" }}>No commitment. Just a real look at what&apos;s possible for your presence.</p>
+          <p className="mt-5 text-sm" style={{ color: "#71675E" }}>No commitment. Just a real look at what&apos;s possible for your presence.</p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             {["Live in 2–3 weeks", "One interview a month", "Results or we make it right"].map((item) => (

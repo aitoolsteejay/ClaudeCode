@@ -41,13 +41,13 @@ export default function NewsletterSubscribePage() {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 hero-fade" style={{ backgroundColor: "rgba(245,183,49,.1)", borderColor: "rgba(217,119,6,.3)" }}><span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#D97706" }} /><span className="text-xs font-black uppercase tracking-[.16em]" style={{ color: "#8A3F06" }}>The weekly B2B growth playbook</span></div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.06] mb-6 hero-fade-d1" style={{ color: "#0a0a0a" }}>Steal the systems behind<br /><span className="relative inline-block">predictable pipeline<svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 360 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 9 Q90 3 180 9 Q270 15 356 7" stroke="#F5B731" strokeWidth="3.5" fill="none" strokeLinecap="round" /></svg></span></h1>
               <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>Every week, we unpack one useful lesson from building real B2B outbound campaigns. Get the targeting logic, messaging frameworks, AI workflows, and campaign decisions you can apply to your own pipeline.</p>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-7 text-sm font-semibold hero-fade-d3" style={{ color: "#6B6B6B" }}><span>✓ Real campaign lessons</span><span>✓ Copy-ready frameworks</span><span>✓ A five-minute read</span></div>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-7 text-sm font-semibold hero-fade-d3" style={{ color: "#71675E" }}><span>✓ Real campaign lessons</span><span>✓ Copy-ready frameworks</span><span>✓ A five-minute read</span></div>
             </div>
             <div className="relative rounded-[28px] border p-7 sm:p-9 hero-fade-d2" style={{ backgroundColor: "rgba(255,255,255,.92)", borderColor: "rgba(245,183,49,.32)", boxShadow: "0 22px 65px rgba(55,42,10,.12)" }}>
               <div aria-hidden="true" className="absolute -top-3 -right-3 w-12 h-12 rounded-2xl rotate-6" style={{ background: "linear-gradient(135deg,#F5B731,#D97706)" }} />
               <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>The Outbound Operator</span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-3" style={{ color: "#0a0a0a" }}>Get the next playbook</h2>
-              <p className="text-sm leading-relaxed mb-6" style={{ color: "#6B6B6B" }}>Join founders and growth operators learning how to create more qualified sales conversations.</p>
+              <p className="text-sm leading-relaxed mb-6" style={{ color: "#71675E" }}>Join founders and growth operators learning how to create more qualified sales conversations.</p>
               <NewsletterForm inputId="newsletter-page-email" buttonLabel="Send me the playbooks" />
               <p className="text-[11px] leading-relaxed mt-4 text-center" style={{ color: "#71675E" }}>By subscribing, you agree to receive marketing emails from Myntmore. Unsubscribe at any time.</p>
             </div>

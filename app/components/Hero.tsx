@@ -461,7 +461,7 @@ export default function Hero() {
         </div>
 
         {/* Subheading */}
-        <p className="max-w-2xl mx-auto text-base sm:text-xl leading-relaxed mb-8 sm:mb-10 font-normal" style={{ color: "#6B6B6B" }}>
+        <p className="max-w-2xl mx-auto text-base sm:text-xl leading-relaxed mb-8 sm:mb-10 font-normal" style={{ color: "#71675E" }}>
           We run cold email, LinkedIn outreach, and ABM so your pipeline
           fills itself and your sales team spends every hour closing,
           not prospecting.

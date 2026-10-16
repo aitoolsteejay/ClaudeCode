@@ -4,7 +4,7 @@ import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
-import { EVENTS } from "@/lib/events-data";
+import { EVENTS, isUpcoming, type EventItem } from "@/lib/events-data";
 import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
@@ -39,7 +39,30 @@ export const metadata: Metadata = {
   },
 };
 
+// "Upcoming" depends on the current time, so the page is re-rendered at most hourly: without this
+// an event would stay in the upcoming grid after it ended, until the next deploy.
+export const revalidate = 3600;
+
+function EventCard({ e, past }: { e: EventItem; past?: boolean }) {
+  return (
+    <Link href={`/events/${e.slug}`} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+      <div className="h-1" style={{ background: `linear-gradient(90deg,${e.accent},${e.accent}66)` }} />
+      <div className="p-6">
+        <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${e.accent}12`, color: textTone(e.accent) }}>{past ? "Recording" : e.tag}</span>
+        <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{e.title}</h2>
+        <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{e.description}</p>
+        <div className="flex items-center justify-between">
+          <span className="text-xs" style={{ color: "#71675E" }}>{past ? `Held ${e.displayDate}` : <>{e.displayDate} &middot; {e.time}</>}</span>
+          <span className="text-xs font-bold" style={{ color: textTone(e.accent) }}>{past ? "Watch the recording" : "Details"} &rarr;</span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export default function EventsPage() {
+  const upcoming = EVENTS.filter(isUpcoming);
+  const past = EVENTS.filter((e) => !isUpcoming(e));
   return (
     <InnerLayout>
       <JsonLd data={BREADCRUMB_SCHEMA} />
@@ -77,23 +100,10 @@ export default function EventsPage() {
 
       <section id="events-grid" className="py-16 px-4 border-t scroll-mt-24" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto">
-          {EVENTS.length > 0 ? (
+          {upcoming.length > 0 ? (
             <FadeIn>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {EVENTS.map((e) => (
-                  <Link key={e.slug} href={`/events/${e.slug}`} className="group block rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-                    <div className="h-1" style={{ background: `linear-gradient(90deg,${e.accent},${e.accent}66)` }} />
-                    <div className="p-6">
-                      <span className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full mb-3" style={{ backgroundColor: `${e.accent}12`, color: textTone(e.accent) }}>{e.tag}</span>
-                      <h2 className="text-base font-black mb-2 leading-snug" style={{ color: "#0a0a0a" }}>{e.title}</h2>
-                      <p className="text-xs leading-relaxed mb-4" style={{ color: "#52525B" }}>{e.description}</p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs" style={{ color: "#71675E" }}>{e.displayDate} &middot; {e.time}</span>
-                        <span className="text-xs font-bold" style={{ color: textTone(e.accent) }}>Details &rarr;</span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+                {upcoming.map((e) => <EventCard key={e.slug} e={e} />)}
               </div>
             </FadeIn>
           ) : (
@@ -114,6 +124,14 @@ export default function EventsPage() {
                 </a>
               </div>
             </FadeIn>
+          )}
+          {past.length > 0 && (
+            <div className={upcoming.length > 0 ? "mt-16" : "mt-12"}>
+              <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Past events and recordings</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {past.map((e) => <EventCard key={e.slug} e={e} past />)}
+              </div>
+            </div>
           )}
         </div>
       </section>

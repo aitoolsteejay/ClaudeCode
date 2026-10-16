@@ -6,8 +6,8 @@ import { buildJobPostingSchema } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
-  title: "Content Marketing Intern, Mumbai | Rs 30-50K/mo",
-  description: "Join Myntmore as Content Marketing Strategist Intern in Worli, Mumbai. Write viral LinkedIn content for founders & CXOs. 6-month min, PPO. Apply now.",
+  title: "Content Marketing Intern, Mumbai | Rs 7-15K/mo",
+  description: "Join Myntmore as Content Marketing Strategist Intern in Worli, Mumbai. Write viral LinkedIn content for founders & CXOs. 1-year min, PPO. Apply now.",
   keywords: ["content strategist internship mumbai", "linkedin ghostwriting internship", "content writing internship mumbai", "personal branding internship", "linkedin content internship india", "content marketing internship mumbai", "founder ghostwriter internship", "content strategist jobs mumbai", "linkedin content writer internship", "storytelling internship mumbai", "b2b content internship", "content writing internship with ppo", "myntmore careers", "content strategist internship jobs"],
   alternates: { canonical: "https://www.myntmore.com/careers/content-marketing-strategist-intern" },
   openGraph: {
@@ -28,12 +28,12 @@ const ACCENT = "#ec4899";
 // no fixed application deadline given for this role either.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "Content Marketing Strategist Intern",
-  description: "Join Myntmore as a Content Marketing Strategist Intern in Worli, Mumbai. Research, write, and strategise high-impact LinkedIn content for founders and CXOs. 6-month minimum, PPO based on performance.",
+  description: "Join Myntmore as a Content Marketing Strategist Intern in Worli, Mumbai. Research, write, and strategise high-impact LinkedIn content for founders and CXOs. 1-year minimum, stipend of Rs 7,000–15,000 a month plus incentives, PPO based on performance.",
   url: "https://www.myntmore.com/careers/content-marketing-strategist-intern",
   datePosted: "2026-08-25T00:00:00+05:30",
   validThrough: "2027-02-25T00:00:00+05:30",
   employmentType: "INTERN",
-  baseSalary: { minValue: 30000, maxValue: 50000, unitText: "MONTH" },
+  baseSalary: { minValue: 7000, maxValue: 15000, unitText: "MONTH" },
 });
 
 export default function ContentMarketingStrategistIntern() {
@@ -49,7 +49,7 @@ export default function ContentMarketingStrategistIntern() {
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "6 months minimum"], ["Stipend", "Rs 30,000–50,000 (based on experience)"]].map(([label, value]) => (
+            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "1 year minimum"], ["Stipend", "Rs 7,000–15,000 per month + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
@@ -115,7 +115,6 @@ export default function ContentMarketingStrategistIntern() {
                 { label: "Ownership Mindset", desc: "You take charge of your work and lead projects, while collaborating with entrepreneurs" },
                 { label: "LinkedIn-Native", desc: "Strong understanding of LinkedIn as a platform, and its content nuances" },
                 { label: "Clear, Not Robotic", desc: "You write with clarity, insight, and a hook, without sounding generic or AI-flat" },
-                { label: "Bonus", desc: "1-2 years in research/writing, or ghostwriting experience for founders" },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border p-4" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <p className="text-xs font-black mb-1" style={{ color: textTone(ACCENT) }}>{item.label}</p>

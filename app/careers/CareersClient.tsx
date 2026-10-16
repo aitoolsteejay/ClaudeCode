@@ -114,7 +114,7 @@ const ROLES = [
     title: "Content Marketing Strategist Intern",
     type: "Internship · Worli, Mumbai", location: "India",
     desc: "You'll research, write, and strategise high-impact LinkedIn content for founders and CXOs, building distinct voices across multiple clients.",
-    bullets: ["6-month minimum commitment", "Strong LinkedIn & storytelling instinct", "1-2 years research/writing, bonus"],
+    bullets: ["1-year minimum commitment", "Rs 7,000–15,000 a month + incentives", "Strong LinkedIn & storytelling instinct"],
   },
   {
     slug: "sales-executive", accent: "#F5B731", tag: "Sales",

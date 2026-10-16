@@ -61,3 +61,14 @@
 Items 1, 2, 5 and 6 are safe, mechanical and visually near-invisible except for the contrast fix in 1. Items 4, 7 and 8 are design decisions.
 
 Raw per-page measurements and the extraction script are in the session scratchpad (`ui/desktop.jsonl`, `ui/extract.mjs`); I can move the script into `scripts/` as a repeatable `npm run audit:design` if you want it.
+
+## Status after the first fixes (same day)
+
+Items 1 and 2 above are done and re-measured on all 248 pages against a fresh production build:
+
+- **Case study template (item 1):** the six accent text colours in `CaseStudyLayout.tsx` now go through `textTone()`. Pages with text below WCAG AA (visible text only, excluding hidden screen-reader labels and decorative slashes) went from 51 to 4. `/case-studies/uk-pharma-qualified-meetings` is clean too.
+- **Grey merge (item 2):** `#6B6B6B` is gone from the source (48 uses in 19 files became `#71675E`). `#71675E` now carries 27.8% of text, up from 10.4%. Pages that show four competing greys went from 227 to 1; nearly all now show three (`#52525B` body, `#71675E` muted, `#3D3D3D` nav and headings). Contrast is the same or better.
+
+Still failing contrast, none part of the template fix: `/services/do-it-yourself` ("no hand-holding", a purple handwriting note, 3.7:1), the 404 page (two labels, 2.9:1 and 4.0:1) and the required-field asterisks on two tool pages (`#FFC547` on white, 1.6:1).
+
+Items 3 to 9 are unchanged and still open.

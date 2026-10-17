@@ -50,6 +50,7 @@ Seven managed services. Each service page opens with a short definition, who it 
 ## Free Tools
 AI-powered tools. Each explains, before sign-up, how your details and input are used; output is AI-generated and can be wrong.
 - [ROI Calculator](https://www.myntmore.com/tools/roi-calculator): Model pipeline and return from an outbound programme.
+- [Cold Email ROI Calculator](https://www.myntmore.com/tools/cold-email-roi-calculator): Estimate meetings, pipeline and ROI from cold email volume, checked against 2026 benchmark rates.
 - [ICP Builder](https://www.myntmore.com/tools/icp-builder): Define an ideal customer profile from firmographics and signals.
 - [LinkedIn Profile Optimizer](https://www.myntmore.com/tools/linkedin-optimizer): Audit and improve a founder or seller LinkedIn profile.
 - [DM Angle Generator](https://www.myntmore.com/tools/dm-angle-generator): Generate psychology-aligned DM opening angles for outreach.

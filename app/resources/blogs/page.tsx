@@ -272,6 +272,34 @@ const BLOG_POSTS: BlogPost[] = [
     excerpt: "Scope, voice, consistency and reporting compared, and when a freelancer is enough versus when a founder needs the whole loop.",
     readTime: "6 min read",
   },
+  {
+    href: "/blog/cold-email-follow-up-sequence",
+    tags: ["Cold Email", "Cold Outreach"],
+    title: "The Follow-Up Ladder: Why Your First Email Is Only the Introduction",
+    excerpt: "Most campaigns die after one email. A five-rung follow-up ladder where every touch adds a new reason to reply, and when to stop.",
+    readTime: "4 min read",
+  },
+  {
+    href: "/blog/positive-reply-to-booked-meeting",
+    tags: ["Cold Email", "Sales Strategy"],
+    title: "The Reply Gap: Why Positive Replies Die Before They Become Meetings",
+    excerpt: "The four leaks between a positive reply and a booked meeting, a five-step playbook to close them, and the two numbers to track.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/ai-personalization-cold-outreach",
+    tags: ["AI Outbound", "Cold Outreach"],
+    title: "The Personalization Paradox: Where AI Helps Your Outbound and Where It Gets You Ignored",
+    excerpt: "AI made personalization cheap and generic. Where it helps with research and signals, where it backfires, and the human-in-the-loop rule.",
+    readTime: "5 min read",
+  },
+  {
+    href: "/blog/multi-threading-b2b-outbound",
+    tags: ["Sales Strategy", "Outbound"],
+    title: "The Single-Thread Risk: Why One Contact Per Account Is Killing Your B2B Deals",
+    excerpt: "Map the buying group and run role-specific, staggered outreach so a deal survives a quiet or departing champion.",
+    readTime: "5 min read",
+  },
 ];
 
 interface MediumPost {

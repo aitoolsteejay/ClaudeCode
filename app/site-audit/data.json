@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T11:27:00.842Z",
+  "generatedAt": "2026-10-17T10:04:09.422Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 252,
-    "linked": 239,
+    "total": 257,
+    "linked": 244,
     "orphan": 13,
     "noindex": 18,
     "notInXmlSitemap": 19,
@@ -225,15 +225,29 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/blog/ai-personalization-cold-outreach",
+      "title": "Ai Personalization Cold Outreach",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/blog/ai-vs-traditional-lead-generation",
       "title": "Ai Vs Traditional Lead Generation",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/ai-personalization-cold-outreach",
         "/resources/blogs",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -245,10 +259,11 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/handling-cold-email-replies",
+        "/blog/positive-reply-to-booked-meeting",
         "/resources/blogs",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -292,9 +307,10 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/cold-email-deliverability-guide",
+        "/blog/cold-email-follow-up-sequence",
         "/resources/blogs"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -317,11 +333,27 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/blog/cold-email-follow-up-sequence",
+      "title": "Cold Email Follow Up Sequence",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/ai-personalization-cold-outreach",
+        "/blog/positive-reply-to-booked-meeting",
+        "/resources/blogs"
+      ],
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/blog/cold-email-sequence-templates",
       "title": "Cold Email Sequence Templates That Get Replies",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/cold-email-follow-up-sequence",
         "/blog/handling-cold-email-replies",
         "/blog/reviving-closed-lost-leads",
         "/resources/blogs",
@@ -329,7 +361,7 @@
         "/resources/guides/cold-email-tech-stack",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 6,
+      "inboundCount": 7,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -410,11 +442,13 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/cold-email-follow-up-sequence",
         "/blog/cold-email-sequence-templates",
+        "/blog/positive-reply-to-booked-meeting",
         "/resources/blogs",
         "/resources/guides/claude-sales-call-prompts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -458,10 +492,11 @@
         "/blog/cold-email-sequence-templates",
         "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/blog/multi-threading-b2b-buying-committee",
+        "/blog/multi-threading-b2b-outbound",
         "/blog/reviving-closed-lost-leads",
         "/resources/blogs"
       ],
-      "inboundCount": 5,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -486,11 +521,25 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/multi-threading-b2b-outbound",
         "/resources/blogs",
         "/resources/guides/claude-sales-call-prompts",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/multi-threading-b2b-outbound",
+      "title": "Multi Threading B2b Outbound",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -537,6 +586,20 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/blog/positive-reply-to-booked-meeting",
+      "title": "Positive Reply To Booked Meeting",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/blog/cold-email-follow-up-sequence",
+        "/resources/blogs"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/blog/predictable-b2b-lead-gen-engine",
       "title": "Building a Predictable B2B Lead Generation Engine",
       "section": "blog",
@@ -568,9 +631,10 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/multi-threading-b2b-outbound",
         "/resources/blogs"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -581,10 +645,11 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/ai-personalization-cold-outreach",
         "/resources/blogs",
         "/resources/glossary/3-second-rule"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -669,7 +734,7 @@
     },
     {
       "path": "/careers/content-marketing-strategist-intern",
-      "title": "Content Marketing Intern, Mumbai | Rs 30-50K/mo",
+      "title": "Content Marketing Intern, Mumbai | Rs 7-15K/mo",
       "section": "careers",
       "status": "linked",
       "linkedFrom": [
@@ -764,16 +829,16 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/blog/agency-vs-in-house",
         "/case-studies/ecommerce-conversion-playbook",
         "/case-studies/founder-personal-brand-linkedin",
         "/case-studies/predictable-b2b-lead-gen-engine",
         "/case-studies/professional-services-linkedin",
         "/case-studies/saas-series-a",
         "/case-studies/uk-pharma-qualified-meetings",
-        "/",
-        "/editorial-policy"
+        "/"
       ],
-      "inboundCount": 20,
+      "inboundCount": 21,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -974,11 +1039,10 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
-        "/services/cold-email",
         "lib/internal-paths.ts",
         "/case-studies"
       ],
-      "inboundCount": 3,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1937,7 +2001,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 80,
+      "inboundCount": 84,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -2601,9 +2665,10 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/handling-cold-email-replies",
+        "/blog/positive-reply-to-booked-meeting",
         "/resources/glossary"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3099,12 +3164,12 @@
         "/resources",
         "/tools/battle-card-generator",
         "/tools/case-study-generator",
+        "/tools/cold-email-roi-calculator",
         "/tools/dm-angle-generator",
         "/tools/founder-presence-analyzer",
-        "/tools/icp-builder",
-        "/tools/lead-magnet-ideas"
+        "/tools/icp-builder"
       ],
-      "inboundCount": 11,
+      "inboundCount": 12,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3137,7 +3202,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 23,
+      "inboundCount": 22,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3157,7 +3222,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 12,
+      "inboundCount": 13,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3177,7 +3242,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 28,
+      "inboundCount": 30,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3197,7 +3262,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 39,
+      "inboundCount": 44,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3247,7 +3312,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 34,
+      "inboundCount": 35,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3267,7 +3332,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 19,
+      "inboundCount": 20,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3287,7 +3352,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 36,
+      "inboundCount": 38,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3361,9 +3426,10 @@
       "linkedFrom": [
         "/blog/pitching-trap-competitor-positioning",
         "/resources/tools",
+        "/tools/cold-email-roi-calculator",
         "lib/tools-registry.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3379,6 +3445,20 @@
         "lib/tools-registry.ts"
       ],
       "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/tools/cold-email-roi-calculator",
+      "title": "Cold Email Roi Calculator",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3425,9 +3505,10 @@
         "/blog/tam-trap-vague-targeting",
         "/resources/guides/dos-and-donts-of-outreach",
         "/resources/tools",
+        "/tools/cold-email-roi-calculator",
         "lib/tools-registry.ts"
       ],
-      "inboundCount": 5,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

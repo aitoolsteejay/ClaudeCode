@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         background: "#FFFFFF",
+        cream: "#F8F6F2",
         "brand-yellow": "#F5B731",
         card: {
           DEFAULT: "#ffffff",

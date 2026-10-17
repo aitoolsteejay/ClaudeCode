@@ -109,6 +109,10 @@ const GROUPS: SitemapGroup[] = [
       { label: "LinkedIn Outreach Agency vs. Manual Prospecting", href: "/blog/linkedin-outreach-agency-vs-manual-prospecting" },
       { label: "AI vs. Traditional B2B Lead Generation", href: "/blog/ai-vs-traditional-lead-generation" },
       { label: "Personal Branding Agency vs. Content Freelancer", href: "/blog/personal-branding-agency-vs-content-freelancer" },
+      { label: "The Follow-Up Ladder: Cold Email Follow-Up Sequence", href: "/blog/cold-email-follow-up-sequence" },
+      { label: "The Reply Gap: Positive Reply to Booked Meeting", href: "/blog/positive-reply-to-booked-meeting" },
+      { label: "The Personalization Paradox: AI in Cold Outreach", href: "/blog/ai-personalization-cold-outreach" },
+      { label: "The Single-Thread Risk: Multi-Threading B2B Outbound", href: "/blog/multi-threading-b2b-outbound" },
     ],
   },
   {
@@ -182,6 +186,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "LinkedIn Profile Optimizer", href: "/tools/linkedin-optimizer" },
       { label: "DM Angle Generator", href: "/tools/dm-angle-generator" },
       { label: "ROI Calculator", href: "/tools/roi-calculator" },
+      { label: "Cold Email ROI Calculator", href: "/tools/cold-email-roi-calculator" },
       { label: "Posting Rhythm Builder", href: "/tools/posting-rhythm-builder" },
       { label: "Lead Magnet Idea Generator", href: "/tools/lead-magnet-ideas" },
       { label: "Founder Presence Analyzer", href: "/tools/founder-presence-analyzer" },

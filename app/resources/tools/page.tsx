@@ -71,6 +71,16 @@ const FREE_TOOLS = [
     hoverClass: "card-hover-green",
   },
   {
+    title: "Cold Email ROI Calculator",
+    desc: "Enter your sending volume and funnel rates, check each against 2026 benchmarks, and see the meetings, pipeline and ROI your cold email could produce.",
+    href: "/tools/cold-email-roi-calculator",
+    icon: "📧",
+    cta: "Calculate cold email ROI",
+    accentColor: "#16a34a",
+    accentBg: "rgba(34,197,94,0.1)",
+    hoverClass: "card-hover-green",
+  },
+  {
     title: "Posting Rhythm Builder",
     desc: "Plan a consistent LinkedIn posting rhythm that keeps your personal brand visible to your ICP, without guessing what to post or when.",
     href: "/tools/posting-rhythm-builder",

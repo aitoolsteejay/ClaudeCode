@@ -370,7 +370,7 @@ export default function PostingRhythmClient() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm" style={{ borderTop: "3px solid #F97316", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-center" style={{ color: "#F97316" }}>Scroll-Stopping Hooks</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-center" style={{ color: "#9A3412" }}>Scroll-Stopping Hooks</h3>
                   <div className="space-y-8">
                     {strategy.hooks.map((hook, idx) => (
                       <div key={idx} className="flex gap-6 group">
@@ -401,7 +401,7 @@ export default function PostingRhythmClient() {
                 <h3 className="text-2xl font-black mb-8">Ready to execute your new rhythm?</h3>
                 <button
                   onClick={handleDownload}
-                  className="inline-flex items-center gap-4 px-10 py-5 border-2 text-black font-bold rounded-full hover:bg-black hover:text-white transition-all active:scale-[0.98] uppercase text-sm tracking-widest"
+                  className="inline-flex items-center gap-4 px-10 py-5 border-2 text-black font-bold rounded-full hover:bg-[#F5B731] hover:border-[#F5B731] transition-all active:scale-[0.98] uppercase text-sm tracking-widest"
                   style={{ borderColor: "#3D3D3D" }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

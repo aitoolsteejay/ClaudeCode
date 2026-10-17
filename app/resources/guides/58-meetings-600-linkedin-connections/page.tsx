@@ -304,7 +304,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           <div className="flex flex-wrap items-center gap-2">
             {["Who", "Pain", "Unique System", "Outcome"].map((w, i, arr) => (
               <span key={w} className="flex items-center gap-2">
-                <span className="text-sm font-black px-4 py-2 rounded-lg" style={{ backgroundColor: "#0a0a0a", color: "#4ade80" }}>{w}</span>
+                <span className="text-sm font-black px-4 py-2 rounded-lg" style={{ backgroundColor: "#F5B731", color: "#0A0A0A" }}>{w}</span>
                 {i < arr.length - 1 && <span className="font-black" style={{ color: "#71675E" }}>+</span>}
               </span>
             ))}
@@ -427,17 +427,17 @@ export default function LinkedinFiftyEightMeetingsGuide() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="rounded-2xl p-8 sm:p-12" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#0b2335 100%)", border: "1px solid #173a55" }}>
-              <h2 className="text-2xl sm:text-3xl font-black mb-2 text-white text-center">Want More Like This?</h2>
-              <p className="text-sm sm:text-base text-center mb-7" style={{ color: "#b9c8d6" }}>
+            <div className="rounded-2xl p-8 sm:p-12" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+              <h2 className="text-2xl sm:text-3xl font-black mb-2 text-[#0A0A0A] text-center">Want More Like This?</h2>
+              <p className="text-sm sm:text-base text-center mb-7" style={{ color: "#52525B" }}>
                 Follow{" "}
-                <a href="https://www.instagram.com/tejasjhaveri" target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-4" style={{ color: "#F5B731" }}>@tejasjhaveri</a>{" "}
+                <a href="https://www.instagram.com/tejasjhaveri" target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-4" style={{ color: "#A14A08" }}>@tejasjhaveri</a>{" "}
                 on Instagram for:
               </p>
               <ul className="space-y-2.5 max-w-md mx-auto mb-9">
                 {["Hidden AI tools you can actually use", "Insider tech updates made simple", "Real marketing + growth hacks powered by AI"].map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-sm sm:text-base font-semibold text-white">
-                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#F5B731" }} strokeWidth={2.5} aria-hidden="true" />
+                  <li key={t} className="flex items-start gap-3 text-sm sm:text-base font-semibold text-[#0A0A0A]">
+                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: "#A14A08" }} strokeWidth={2.5} aria-hidden="true" />
                     {t}
                   </li>
                 ))}
@@ -447,12 +447,12 @@ export default function LinkedinFiftyEightMeetingsGuide() {
                   <CalendarDays className="w-4 h-4" aria-hidden="true" />
                   Book a complimentary strategy call
                 </Link>
-                <a href="mailto:founder@myntmore.com" className="inline-flex items-center justify-center gap-2 rounded-full border px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/10" style={{ borderColor: "rgba(255,255,255,0.3)" }}>
+                <a href="mailto:founder@myntmore.com" className="inline-flex items-center justify-center gap-2 rounded-full border px-7 py-3.5 text-sm font-bold text-[#0A0A0A] transition-colors hover:bg-[#F8F6F2]" style={{ borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>
                   <Mail className="w-4 h-4" aria-hidden="true" />
                   founder@myntmore.com
                 </a>
               </div>
-              <p className="text-xs sm:text-sm text-center mt-6" style={{ color: "#b9c8d6" }}>
+              <p className="text-xs sm:text-sm text-center mt-6" style={{ color: "#52525B" }}>
                 Reach out and let’s break it down for your business.
               </p>
             </div>

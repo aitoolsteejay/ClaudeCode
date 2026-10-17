@@ -25,7 +25,7 @@ import { GOLD_TEXT, textTone } from "@/lib/colors";
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
-const INK = "#0f0f14";
+const INK = "#0A0A0A";
 
 interface Step {
   short: string;
@@ -251,8 +251,8 @@ export default function ProcessExplorer() {
         <button
           type="button"
           onClick={() => go(active === last ? 0 : active + 1)}
-          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
-          style={{ backgroundColor: INK }}
+          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-transform hover:-translate-y-0.5"
+          style={{ backgroundColor: "#F5B731", color: "#0A0A0A" }}
         >
           {active === last ? "Start over" : "Next"} <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </button>

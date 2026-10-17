@@ -38,7 +38,7 @@ import { textTone } from "@/lib/colors";
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
-const INK = "#0f0f14";
+const INK = "#0A0A0A";
 const CREAM = "#F8F6F2";
 const STATS = [
   { value: "1,200", label: "emails a day" },
@@ -96,7 +96,7 @@ const FAQ_SCHEMA = buildFaqSchema(FAQS.map(({ q, a }) => ({ question: q, answer:
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? GOLD : textTone(ORANGE) }}>
+    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? "#A14A08" : textTone(ORANGE) }}>
       {children}
     </p>
   );
@@ -284,26 +284,26 @@ export default function ColdEmailingPackage() {
       </section>
 
       {/* Why Myntmore */}
-      <section className="relative overflow-hidden px-4 py-24" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1d1612 100%)" }}>
-        <div aria-hidden="true" className="absolute -right-24 -top-24 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(234,88,12,0.28), transparent 70%)", filter: "blur(50px)" }} />
+      <section className="relative overflow-hidden px-4 py-24" style={{ backgroundColor: "#FEF9EC" }}>
+        <div aria-hidden="true" className="absolute -right-24 -top-24 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.16), transparent 70%)", filter: "blur(50px)" }} />
         <div className="relative mx-auto max-w-6xl">
           <FadeIn>
             <Eyebrow light>Why Myntmore</Eyebrow>
-            <h2 className="max-w-xl text-4xl font-black text-white sm:text-5xl" style={h2Style}>
-              Built for the <span className="italic" style={{ color: GOLD }}>inbox.</span>
+            <h2 className="max-w-xl text-4xl font-black sm:text-5xl" style={{ ...h2Style, color: INK }}>
+              Built for the <span className="italic" style={{ color: "#A14A08" }}>inbox.</span>
             </h2>
           </FadeIn>
           <FadeIn>
-            <div className="mt-12 grid gap-px overflow-hidden rounded-[26px] sm:grid-cols-2 lg:grid-cols-4" style={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <div className="mt-12 grid gap-px overflow-hidden rounded-[26px] sm:grid-cols-2 lg:grid-cols-4" style={{ backgroundColor: "#E8E2D9", border: "1px solid #E8E2D9" }}>
               {WHY.map((w) => {
                 const Icon = w.icon;
                 return (
-                  <div key={w.title} className="p-8" style={{ backgroundColor: "#15110e" }}>
-                    <span className="mb-6 grid h-12 w-12 place-items-center rounded-full border" style={{ borderColor: "rgba(245,183,49,0.4)", color: GOLD }}>
+                  <div key={w.title} className="p-8" style={{ backgroundColor: "#FFFFFF" }}>
+                    <span className="mb-6 grid h-12 w-12 place-items-center rounded-full border" style={{ borderColor: "rgba(245,183,49,0.5)", color: "#A14A08" }}>
                       <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
                     </span>
-                    <h3 className="text-lg font-black text-white" style={{ letterSpacing: "-0.02em" }}>{w.title}</h3>
-                    <p className="mt-1.5 text-sm" style={{ color: "#c9bfb8" }}>{w.line}</p>
+                    <h3 className="text-lg font-black" style={{ letterSpacing: "-0.02em", color: INK }}>{w.title}</h3>
+                    <p className="mt-1.5 text-sm" style={{ color: "#52525B" }}>{w.line}</p>
                   </div>
                 );
               })}
@@ -338,20 +338,19 @@ export default function ColdEmailingPackage() {
           </FadeIn>
 
           <FadeIn>
-            <div className="relative overflow-hidden rounded-[32px] border p-10 text-center sm:p-14" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#241a14 100%)", borderColor: "#3a2a1f" }}>
-              <div aria-hidden="true" className="absolute -left-20 -bottom-24 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.3), transparent 70%)", filter: "blur(40px)" }} />
-              <div aria-hidden="true" className="absolute -right-20 -top-24 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(167,139,250,0.28), transparent 70%)", filter: "blur(40px)" }} />
+            <div className="relative overflow-hidden rounded-[32px] border p-10 text-center sm:p-14" style={{ background: "linear-gradient(135deg,#FEF9EC 0%,#FFFFFF 100%)", borderColor: "rgba(245,183,49,0.35)", boxShadow: "0 24px 70px rgba(15,15,20,0.06)" }}>
+              <div aria-hidden="true" className="absolute -left-20 -bottom-24 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.18), transparent 70%)", filter: "blur(40px)" }} />
               <div className="relative">
                 <Eyebrow light>You&apos;re in the right place</Eyebrow>
-                <h2 className="mx-auto max-w-2xl text-4xl font-black text-white sm:text-5xl" style={h2Style}>
-                  Let&apos;s turn cold emails into <span className="italic" style={{ color: GOLD }}>booked calls.</span>
+                <h2 className="mx-auto max-w-2xl text-4xl font-black sm:text-5xl" style={{ ...h2Style, color: INK }}>
+                  Let&apos;s turn cold emails into <span className="italic" style={{ color: "#A14A08" }}>booked calls.</span>
                 </h2>
-                <p className="mx-auto mt-5 max-w-md text-base" style={{ color: "#c9bfb8" }}>You&apos;ve got the business. We&apos;ve got the system.</p>
+                <p className="mx-auto mt-5 max-w-md text-base" style={{ color: "#52525B" }}>You&apos;ve got the business. We&apos;ve got the system.</p>
                 <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
                   <Link href="/founder-meeting" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: GOLD, color: INK }}>
                     Book a free audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
-                  <Link href="/case-studies" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>
+                  <Link href="/case-studies" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-[#F8F6F2]" style={{ color: INK, borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>
                     See real results
                   </Link>
                 </div>

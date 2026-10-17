@@ -122,7 +122,7 @@ export default function ICPBuilderClient() {
               style={{ background: "rgba(249,115,22,0.07)", borderColor: "rgba(249,115,22,0.35)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F97316" }} aria-hidden="true" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F97316" }}>ICP Builder</span>
+              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#9A3412" }}>ICP Builder</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
               <span className="relative inline-block">
@@ -162,7 +162,7 @@ export default function ICPBuilderClient() {
             style={{ background: "rgba(249,115,22,0.07)", borderColor: "rgba(249,115,22,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#F97316" }} aria-hidden="true" />
-            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#F97316" }}>ICP Builder</span>
+            <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#9A3412" }}>ICP Builder</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
             <span className="relative inline-block">
@@ -184,7 +184,7 @@ export default function ICPBuilderClient() {
                   className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-black transition-colors"
                   style={
                     i <= currentStepIndex
-                      ? { backgroundColor: "#F97316", color: "#ffffff" }
+                      ? { backgroundColor: "#F97316", color: "#0A0A0A" }
                       : { backgroundColor: "#ffffff", color: "#71675E", border: "1px solid #E8E2D9" }
                   }
                 >

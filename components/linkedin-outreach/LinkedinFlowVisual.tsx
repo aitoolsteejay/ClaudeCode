@@ -84,7 +84,7 @@ export default function LinkedinFlowVisual() {
               boxShadow: "0 22px 50px rgba(10,102,194,0.13), 0 2px 6px rgba(15,15,20,0.04)",
             }}
           >
-            <span className="absolute -left-2 -top-2 z-10 grid h-6 w-6 place-items-center rounded-full text-[11px] font-black text-white" style={{ backgroundColor: INK }}>
+            <span className="absolute -left-2 -top-2 z-10 grid h-6 w-6 place-items-center rounded-full text-[11px] font-black" style={{ backgroundColor: "#F5B731", color: INK }}>
               {node.n}
             </span>
             <span className={`relative mb-2 grid h-9 w-9 place-items-center rounded-xl text-white sm:h-10 sm:w-10 ${node.n === 4 ? "li-pop" : ""}`} style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})` }}>

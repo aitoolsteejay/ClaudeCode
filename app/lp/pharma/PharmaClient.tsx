@@ -385,13 +385,13 @@ function MarketScenariosSection() {
 function DarkCTASection() {
   const fade = useScrollFade(0);
   return (
-    <section className="relative py-24 px-4 overflow-hidden" style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%)" }}>
+    <section className="relative py-24 px-4 overflow-hidden" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)" }}>
       <div aria-hidden="true" style={{ position: "absolute", top: "50%", left: "30%", width: "600px", height: "400px", marginTop: "-200px", marginLeft: "-300px", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(245,183,49,0.15) 0%, transparent 65%)", filter: "blur(60px)", pointerEvents: "none" }} />
       <div ref={fade} className="relative z-10 max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "#ffffff" }}>
+        <h2 className="text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "#0A0A0A" }}>
           Let&apos;s get you in front of the right buyers
         </h2>
-        <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
+        <p className="text-lg mb-10" style={{ color: "#52525B" }}>
           Book a free 30-minute GTM audit. We will map your buyer profile across domestic and export markets and hand you a custom action plan, no pitch, no pressure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -401,7 +401,7 @@ function DarkCTASection() {
             Book Free GTM Audit
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <a href="#get-started" className="px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2 border" style={{ borderColor: "rgba(255,255,255,0.25)", color: "#ffffff" }}>
+          <a href="#get-started" className="px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2 border" style={{ backgroundColor: "#FFFFFF", borderColor: "#D0C9BF", color: "#0A0A0A" }}>
             Fill out the form below
           </a>
         </div>

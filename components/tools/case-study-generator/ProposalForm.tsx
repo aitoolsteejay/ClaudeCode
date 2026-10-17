@@ -156,7 +156,7 @@ export function ProposalForm({ onGenerate, isLoading }: ProposalFormProps) {
         onClick={() => isValid && onGenerate(data)}
         disabled={!isValid || isLoading}
         className={`w-full mt-10 py-5 rounded-xl font-bold text-lg uppercase tracking-widest transition-all flex items-center justify-center gap-3 ${
-          isValid && !isLoading ? "text-white hover:opacity-90 active:scale-[0.99] shadow-lg" : "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50"
+          isValid && !isLoading ? "text-[#0A0A0A] hover:opacity-90 active:scale-[0.99] shadow-lg" : "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50"
         }`}
         style={isValid && !isLoading ? { backgroundColor: ACCENT } : undefined}
       >

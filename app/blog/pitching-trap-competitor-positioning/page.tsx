@@ -99,10 +99,10 @@ export default function PitchingTrapBlogPost() {
           </FadeIn>
 
           <FadeIn delay={100}>
-          <div className="mt-12 rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#261a13 100%)", border: "1px solid #3a291f" }}>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#F5B731" }}>Free Myntmore Tool</span>
-            <h2 className="text-2xl sm:text-3xl font-black mb-4 text-white">Build a research-backed battle card for your offer</h2>
-            <p className="text-sm sm:text-base leading-relaxed mb-7 max-w-xl mx-auto" style={{ color: "#c7b9b0" }}>
+          <div className="mt-12 rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#A14A08" }}>Free Myntmore Tool</span>
+            <h2 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "#0A0A0A" }}>Build a research-backed battle card for your offer</h2>
+            <p className="text-sm sm:text-base leading-relaxed mb-7 max-w-xl mx-auto" style={{ color: "#52525B" }}>
               The free Competitor Battle Card Generator conducts live research into a competitor’s positioning, public pricing, and real user reviews. It then maps their genuine strengths and operational gaps to your offer, giving your sales team specific positioning and objection-handling points for live calls.
             </p>
             <Link href="/tools/battle-card-generator" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">

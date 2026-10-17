@@ -28,7 +28,7 @@ export function NotFoundActions() {
       <button
         type="button"
         onClick={goBack}
-        className="rounded-full bg-[#0b0b0c] px-6 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b731]"
+        className="rounded-full bg-[#f5b731] px-6 py-3.5 text-sm font-bold text-[#0a0a0a] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f5b731]"
       >
         Go back
       </button>
@@ -53,10 +53,10 @@ export function ContextualSuggestion() {
   return (
     <Link
       href={suggestion.href}
-      className="group mb-4 flex items-center justify-between gap-4 rounded-2xl bg-[#111111] px-4 py-3.5 text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b731]"
+      className="group mb-4 flex items-center justify-between gap-4 rounded-2xl border border-[rgba(245,183,49,0.35)] bg-[#FEF9EC] px-4 py-3.5 text-[#0a0a0a] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b731]"
     >
       <span className="min-w-0">
-        <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#c4bdb3]">{suggestion.eyebrow}</span>
+        <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#71675E]">{suggestion.eyebrow}</span>
         <span className="mt-1 block text-sm font-bold sm:text-base">{suggestion.label}</span>
       </span>
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f5b731] text-sm font-black text-[#111111] transition-transform group-hover:scale-105" aria-hidden="true">

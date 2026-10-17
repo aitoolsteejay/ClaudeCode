@@ -6,7 +6,7 @@ import FadeIn from "@/app/components/FadeIn";
 
 const ORANGE = "#EA580C";
 const GOLD = "#F5B731";
-const INK = "#0f0f14";
+const INK = "#0A0A0A";
 
 // What is in the done-for-you package, with a plain-English line on what each item
 // does. The explanations only restate what the process section on the same page
@@ -145,11 +145,11 @@ function PackageCard({ item, index }: { item: (typeof ITEMS)[number]; index: num
           id={panelId}
           role="note"
           hidden={!open}
-          className={`absolute top-full z-30 mt-2 w-[min(17rem,calc(100vw-2.5rem))] rounded-2xl p-4 text-left shadow-2xl ${popoverSide(index)}`}
-          style={{ backgroundColor: INK }}
+          className={`absolute top-full z-30 mt-2 w-[min(17rem,calc(100vw-2.5rem))] rounded-2xl border p-4 text-left ${popoverSide(index)}`}
+          style={{ backgroundColor: "#FFFFFF", borderColor: "#E8E2D9", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}
         >
-          <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: GOLD }}>{item.label}</p>
-          <p className="mt-2 text-[13px] font-medium leading-relaxed" style={{ color: "#f1ece6" }}>{item.info}</p>
+          <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: "#A14A08" }}>{item.label}</p>
+          <p className="mt-2 text-[13px] font-medium leading-relaxed" style={{ color: "#3D3D3D" }}>{item.info}</p>
         </div>
       </div>
     </FadeIn>

@@ -326,7 +326,7 @@ function MessageMakeover() {
                 aria-pressed={on}
                 onClick={() => setFixed(i === 1)}
                 className="px-4 py-2 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                style={{ backgroundColor: on ? T.ink : "transparent", color: on ? "#ffffff" : T.ink2 }}
+                style={{ backgroundColor: on ? T.gold : "transparent", color: on ? "#0A0A0A" : T.ink2 }}
               >
                 {v.label}
               </button>
@@ -488,7 +488,7 @@ function ChannelTabs() {
               aria-selected={on}
               onClick={() => setActive(i)}
               className="flex-1 sm:flex-none justify-center inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-              style={{ backgroundColor: on ? tab.accent : "transparent", color: on ? "#ffffff" : T.ink2 }}
+              style={{ backgroundColor: on ? textTone(tab.accent) : "transparent", color: on ? "#ffffff" : T.ink2 }}
             >
               <Icon className="w-4 h-4" strokeWidth={2} />
               {tab.channel}
@@ -743,14 +743,14 @@ function SelfAudit() {
 
   return (
     <div>
-      <div className="rounded-3xl p-5 sm:p-7 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
+      <div className="rounded-3xl p-5 sm:p-7 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5" style={{ backgroundColor: T.amberSoft, border: `1px solid ${T.amberBorder}`, boxShadow: "0 8px 30px rgba(0,0,0,0.04)", color: T.ink }}>
         <div className="flex items-baseline gap-2 flex-shrink-0">
-          <span className="text-5xl font-black leading-none tabular-nums" style={{ color: T.gold }}>{doScore}</span>
-          <span className="text-sm font-semibold" style={{ color: "rgba(255,255,255,0.6)" }}>of {DOS.length} habits</span>
+          <span className="text-5xl font-black leading-none tabular-nums" style={{ color: "#A14A08" }}>{doScore}</span>
+          <span className="text-sm font-semibold" style={{ color: "#71675E" }}>of {DOS.length} habits</span>
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-base font-semibold leading-snug">{verdict}</p>
-          <div className="mt-3 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.14)" }}>
+          <div className="mt-3 h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(10,10,10,0.08)" }}>
             <div className="h-full rounded-full transition-[width] duration-300 ease-out" style={{ width: `${Math.min(100, (doScore / DOS.length) * 100)}%`, backgroundColor: dontScore > doScore ? T.dontFill : T.gold }} />
           </div>
         </div>
@@ -758,8 +758,8 @@ function SelfAudit() {
           <button
             type="button"
             onClick={() => { setDos(new Set()); setDonts(new Set()); }}
-            className="inline-flex items-center gap-1.5 text-xs font-bold self-start sm:self-auto rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-            style={{ color: "#ffffff", border: "1px solid rgba(255,255,255,0.25)" }}
+            className="inline-flex items-center gap-1.5 text-xs font-bold self-start sm:self-auto rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5B731]"
+            style={{ color: "#0A0A0A", backgroundColor: "#FFFFFF", border: "1px solid #E8E2D9" }}
           >
             <RotateCcw className="w-3.5 h-3.5" strokeWidth={2.5} />
             Reset
@@ -887,10 +887,10 @@ export default function DosAndDontsClient() {
 
           {/* Loom video */}
           <FadeIn>
-            <div className="mt-10 sm:mt-14 max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-2.5 sm:p-4" style={{ backgroundColor: T.ink }}>
+            <div className="mt-10 sm:mt-14 max-w-3xl mx-auto rounded-2xl sm:rounded-3xl p-2.5 sm:p-4" style={{ backgroundColor: T.amberSoft, border: `1px solid ${T.amberBorder}`, boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
               <div className="flex items-center gap-2 px-3 pt-2 pb-4">
-                <Play className="w-3.5 h-3.5" strokeWidth={2.5} style={{ color: T.gold }} fill={T.gold} />
-                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: T.gold }}>Watch Tejas break this down</p>
+                <Play className="w-3.5 h-3.5" strokeWidth={2.5} style={{ color: "#A14A08" }} fill="#A14A08" />
+                <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#A14A08" }}>Watch Tejas break this down</p>
               </div>
               <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, borderRadius: "16px", overflow: "hidden" }}>
                 <iframe
@@ -973,7 +973,7 @@ export default function DosAndDontsClient() {
                         <span className="inline-flex text-sm font-bold px-3.5 py-2 rounded-full cursor-default transition-colors duration-200 group-hover:border-[#0a0a0a]" style={{ backgroundColor: T.paper, border: `1px solid ${T.hairline}`, color: T.ink }} tabIndex={0} aria-describedby={`tool-${t.name.replace(/[^a-z]/gi, "")}`}>
                           {t.name}
                         </span>
-                        <span id={`tool-${t.name.replace(/[^a-z]/gi, "")}`} role="tooltip" className="pointer-events-none absolute left-0 top-full mt-2 w-56 rounded-xl px-3 py-2 text-xs leading-relaxed opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 z-10" style={{ backgroundColor: T.ink, color: "#ffffff" }}>
+                        <span id={`tool-${t.name.replace(/[^a-z]/gi, "")}`} role="tooltip" className="pointer-events-none absolute left-0 top-full mt-2 w-56 rounded-xl px-3 py-2 text-xs leading-relaxed opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 z-10" style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8E2D9", color: "#3D3D3D", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}>
                           {t.body}
                         </span>
                       </li>

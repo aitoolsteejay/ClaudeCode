@@ -218,7 +218,7 @@ function RoleList() {
               className="text-xs font-bold px-4 py-2 rounded-full border transition-colors duration-150"
               style={
                 active
-                  ? { backgroundColor: "#0a0a0a", borderColor: "#0a0a0a", color: "#ffffff" }
+                  ? { backgroundColor: "#F5B731", borderColor: "#F5B731", color: "#0A0A0A" }
                   : { backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#52525B" }
               }
               aria-pressed={active}
@@ -405,15 +405,15 @@ export default function CareersClient() {
       {/* CTA */}
       <FadeIn>
         <section className="py-20 px-4">
-          <div className="max-w-3xl mx-auto rounded-2xl p-10 text-center border" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", borderColor: "#2a2a3e" }}>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+          <div className="max-w-3xl mx-auto rounded-2xl p-10 text-center border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Ready to build?
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Let&apos;s work together</h2>
-            <p className="text-base mb-8" style={{ color: "#9ca3af" }}>Apply for an open role or send a cold email. We respect both.</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0A0A0A" }}>Let&apos;s work together</h2>
+            <p className="text-base mb-8" style={{ color: "#52525B" }}>Apply for an open role or send a cold email. We respect both.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="mailto:growth@myntmore.com" className="btn-dark px-8 py-4 text-sm font-bold">Email us directly</a>
-              <Link href="/contact-us" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200" style={{ borderColor: "rgba(255,255,255,0.35)", color: "#ffffff", backgroundColor: "transparent" }}>Book a call instead</Link>
+              <Link href="/contact-us" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200" style={{ backgroundColor: "#FFFFFF", borderColor: "#D0C9BF", color: "#0A0A0A" }}>Book a call instead</Link>
             </div>
           </div>
         </section>

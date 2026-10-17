@@ -417,7 +417,7 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
                   aria-current={active ? "page" : undefined}
                   className="text-sm font-semibold px-4 py-2 rounded-full border transition-colors"
                   style={active
-                    ? { backgroundColor: "#0a0a0a", color: "#ffffff", borderColor: "#0a0a0a" }
+                    ? { backgroundColor: "#F5B731", color: "#0A0A0A", borderColor: "#F5B731" }
                     : { backgroundColor: "#ffffff", color: "#52525B", borderColor: "#E8E2D9" }}
                 >
                   {industry}
@@ -461,15 +461,15 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
       {/* CTA */}
       <FadeIn>
         <section className="py-20 px-4">
-          <div className="max-w-3xl mx-auto rounded-2xl p-10 text-center border" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", borderColor: "#2a2a3e" }}>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.3)" }}>
+          <div className="max-w-3xl mx-auto rounded-2xl p-10 text-center border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
               Want results like these?
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Book a free 30-min audit</h2>
-            <p className="text-base mb-8" style={{ color: "#9ca3af" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
+            <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0A0A0A" }}>Book a free 30-min audit</h2>
+            <p className="text-base mb-8" style={{ color: "#52525B" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
-              <Link href="/case-studies/saas-series-a" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-white/10" style={{ borderColor: "rgba(255,255,255,0.3)", color: "#ffffff" }}>Read SaaS case study</Link>
+              <Link href="/case-studies/saas-series-a" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-[#FEF9EC]" style={{ backgroundColor: "#FFFFFF", borderColor: "#D0C9BF", color: "#0A0A0A" }}>Read SaaS case study</Link>
             </div>
           </div>
         </section>

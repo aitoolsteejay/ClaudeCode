@@ -5,6 +5,7 @@ import Faq from "@/app/lp/Faq";
 import FadeIn from "@/app/components/FadeIn";
 import StatTicker from "@/app/components/StatTicker";
 import InnerLayout from "@/app/components/InnerLayout";
+import { textTone } from "@/lib/colors";
 
 /* ─── Types ───────────────────────────────────────────────────────── */
 interface Tool {
@@ -184,14 +185,14 @@ function BackToTop() {
       aria-label="Back to top"
       className="lp-card fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-lg"
       style={{
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "#F5B731",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0) scale(1)" : "translateY(12px) scale(0.85)",
         pointerEvents: visible ? "auto" : "none",
         transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1)",
       }}
     >
-      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#ffffff" strokeWidth={2.5}>
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#0A0A0A" strokeWidth={2.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
       </svg>
     </button>
@@ -201,7 +202,7 @@ function BackToTop() {
 function SectionEyebrow({ num, label, accent = "#0a0a0a" }: { num: string; label: string; accent?: string }) {
   return (
     <div className="flex items-center gap-3 mb-4">
-      <span className="text-sm font-black tabular-nums" style={{ color: accent }}>{num}</span>
+      <span className="text-sm font-black tabular-nums" style={{ color: textTone(accent) }}>{num}</span>
       <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{label}</span>
     </div>
   );
@@ -275,7 +276,7 @@ function ToolCard({ tool, accent, delay = 0 }: { tool: Tool; accent: string; del
     >
       <div className="mb-1.5 flex items-center justify-between gap-2">
         <p className="text-sm font-black leading-snug" style={{ color: "#0a0a0a" }}>{tool.name}</p>
-        <span className="inline-block opacity-40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" style={{ color: accent }}>
+        <span className="inline-block opacity-40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" style={{ color: textTone(accent) }}>
           <ExternalLinkIcon />
         </span>
       </div>
@@ -336,7 +337,7 @@ function TabGroup<T extends string>({
             className="lp-pop-in rounded-full px-5 py-2.5 text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
             style={
               isActive
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)", animationDelay: `${i * 60}ms` }
+                ? { backgroundColor: "#F5B731", color: "#0A0A0A", boxShadow: "0 4px 14px rgba(245,183,49,0.3)", animationDelay: `${i * 60}ms` }
                 : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9", animationDelay: `${i * 60}ms` }
             }
           >

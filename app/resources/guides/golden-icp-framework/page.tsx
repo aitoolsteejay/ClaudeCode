@@ -186,15 +186,15 @@ export default function GoldenICPFrameworkGuide() {
           </FadeIn>
 
           <FadeIn>
-            <section className="rounded-2xl p-8 sm:p-10 text-center border" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1b241f 100%)", borderColor: "#29372f" }}>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#F5B731" }}>Final insight</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-white mt-3 mb-4">Your list is your leverage</h2>
-              <p className="text-base leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#b8c1bc" }}>Most founders try to write clever messages. The best build lists so dialled in that a simple, timely note earns a reply. Golden ICP means founder-to-founder empathy at scale.</p>
+            <section className="rounded-2xl p-8 sm:p-10 text-center border" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Final insight</span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0A0A0A] mt-3 mb-4">Your list is your leverage</h2>
+              <p className="text-base leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#52525B" }}>Most founders try to write clever messages. The best build lists so dialled in that a simple, timely note earns a reply. Golden ICP means founder-to-founder empathy at scale.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/services/cold-email" className="btn-dark px-8 py-4 text-sm font-bold">Explore Cold Email Services</Link>
-                <Link href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Strategy Call</Link>
+                <Link href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-[#F8F6F2]" style={{ color: "#0A0A0A", borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>Book a Strategy Call</Link>
               </div>
-              <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
+              <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
             </section>
           </FadeIn>
         </div>

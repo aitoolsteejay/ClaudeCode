@@ -200,9 +200,9 @@ export default function AgencyVsInHouseBlogPost() {
       {/* Final CTA */}
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-3xl mx-auto">
-          <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-            <h2 className="text-2xl sm:text-3xl font-black mb-4 text-white">Let&apos;s figure out what fits your stage</h2>
-            <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#9ca3af" }}>
+          <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+            <h2 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "#0A0A0A" }}>Let&apos;s figure out what fits your stage</h2>
+            <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#52525B" }}>
               Book a free 30-minute call. We&apos;ll tell you honestly whether an agency, an in-house hire, or a mix of both makes sense for where you are, even if the answer isn&apos;t us.
             </p>
             <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">

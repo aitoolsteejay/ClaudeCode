@@ -505,7 +505,7 @@ export default function AgentExplorer() {
               ))}
             </ul>
             <div className="mt-5 flex items-start gap-3 rounded-2xl p-4" style={{ background: "linear-gradient(135deg, #FEF3D6, #FDE7BE)" }}>
-              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full" style={{ backgroundColor: INK, color: GOLD }}>
+              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full" style={{ backgroundColor: GOLD, color: INK }}>
                 <Sparkles className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" />
               </span>
               <p className="text-sm font-black" style={{ color: "#7c3a06" }}>

@@ -94,7 +94,7 @@ function IcpTabContent({ icp }: { icp: GeneratedIcp }) {
             <BulletList items={icp.objections} />
           </div>
           <div className="rounded-xl p-5" style={{ backgroundColor: "#FEF3EC", border: "1px solid rgba(249,115,22,0.25)" }}>
-            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#F97316" }}>How to Position</p>
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#9A3412" }}>How to Position</p>
             <p className="text-sm leading-relaxed text-gray-800">{icp.howToPosition}</p>
           </div>
           <div>
@@ -166,7 +166,7 @@ export function IcpResultsTabs({ icps }: IcpResultsTabsProps) {
             className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold transition-all"
             style={
               activeTab === i
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff" }
+                ? { backgroundColor: "#F5B731", color: "#0a0a0a" }
                 : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9" }
             }
           >
@@ -180,7 +180,7 @@ export function IcpResultsTabs({ icps }: IcpResultsTabsProps) {
             className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold transition-all"
             style={
               isPartnerTab
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff" }
+                ? { backgroundColor: "#F5B731", color: "#0a0a0a" }
                 : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9" }
             }
           >

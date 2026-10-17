@@ -53,12 +53,12 @@ const METRICS = [
 ];
 
 const JOB_FUNNEL = [
-  { label: "HR / Hiring managers reached out to", value: "800", rate: "", width: 100, color: "#1478C9", text: "#ffffff" },
-  { label: "Accepted connection request", value: "240", rate: "30%", width: 88, color: "#1E6DA9", text: "#ffffff" },
-  { label: "Responded", value: "120", rate: "50%", width: 74, color: "#326D9C", text: "#ffffff" },
-  { label: "Positive replies", value: "36", rate: "30%", width: 58, color: "#446B8D", text: "#ffffff" },
-  { label: "Interviews", value: "28", rate: "80%", width: 43, color: "#107941", text: "#ffffff" },
-  { label: "Job offers", value: "3", rate: "", width: 36, color: "#FFB82E", text: "#18214D" },
+  { label: "HR / Hiring managers reached out to", value: "800", rate: "", width: 100, color: "#D6E8FA", edge: "#1478C9", text: "#0A0A0A" },
+  { label: "Accepted connection request", value: "240", rate: "30%", width: 88, color: "#DCEAF7", edge: "#1E6DA9", text: "#0A0A0A" },
+  { label: "Responded", value: "120", rate: "50%", width: 74, color: "#E2EBF5", edge: "#326D9C", text: "#0A0A0A" },
+  { label: "Positive replies", value: "36", rate: "30%", width: 58, color: "#E8EDF3", edge: "#446B8D", text: "#0A0A0A" },
+  { label: "Interviews", value: "28", rate: "80%", width: 43, color: "#DCF3E4", edge: "#107941", text: "#0A0A0A" },
+  { label: "Job offers", value: "3", rate: "", width: 36, color: "#FFB82E", edge: "#FFB82E", text: "#18214D" },
 ];
 
 const HERO_STATS = [
@@ -79,7 +79,7 @@ function JobHuntFunnel() {
   return <div className="mt-10 rounded-[28px] border p-6 sm:p-10" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", boxShadow: "0 18px 55px rgba(20,120,201,0.08)" }}>
     <h2 className="text-2xl sm:text-3xl font-black text-center mb-8" style={{ color: "#252746" }}>The job-hunt funnel</h2>
     <div className="flex flex-col items-center gap-3" aria-label="Job hunt funnel from outreach to offers">
-      {JOB_FUNNEL.map((stage, index) => <div key={stage.label} className="animate-fade-up flex flex-col items-center justify-center rounded-xl px-4 py-2.5 text-center transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ width: `${stage.width}%`, minWidth: "180px", backgroundColor: stage.color, color: stage.text, animationDelay: `${index * 90}ms` }}>
+      {JOB_FUNNEL.map((stage, index) => <div key={stage.label} className="animate-fade-up flex flex-col items-center justify-center rounded-xl px-4 py-2.5 text-center transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ width: `${stage.width}%`, minWidth: "180px", backgroundColor: stage.color, border: `1px solid ${stage.edge}`, color: stage.text, animationDelay: `${index * 90}ms` }}>
         <span className="text-sm sm:text-base font-bold leading-tight">{stage.label}</span>
         {stage.rate && <span className="text-xs font-bold opacity-90 mt-0.5">{stage.rate}</span>}
         <strong className="text-2xl sm:text-3xl leading-none mt-0.5">{stage.value}</strong>
@@ -125,7 +125,7 @@ export default function JobApplicationsSalesFunnel() {
       <FadeIn><figure className="rounded-2xl border overflow-hidden transition-transform duration-500 hover:-translate-y-1 hover:shadow-xl" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}><Image src="/sales-solves-problems.png" alt="Sales solves all the problems in your life" width={1254} height={1254} className="w-full h-auto" /><figcaption className="px-5 py-3 text-center text-xs" style={{ color: "#71675E" }}>Treat the interview like a sales conversation: understand the problem, show your proof, and make the next step easy.</figcaption></figure></FadeIn>
       <Step number="08" title="Track and improve every week"><p>Review these numbers each week, then change one thing at the weakest stage: the connection note, Loom hook, profile banner, or interview close.</p><DataTable rows={METRICS} /></Step>
 
-      <FadeIn><section className="cta-animated-section rounded-2xl p-8 sm:p-10 text-center border" style={{ borderColor: "#3b2361" }}><span className="text-xs font-black uppercase tracking-widest" style={{ color: "#C4B5FD" }}>Your next 7 days</span><h2 className="text-2xl sm:text-3xl font-black text-white mt-3 mb-5">Run the funnel this week.</h2><ol className="text-left max-w-xl mx-auto space-y-2 text-sm" style={{ color: "#E9D5FF" }}>{["Day 1: update your banner, headline, and Featured section.", "Day 2: build a list of 20 hiring managers.", "Day 3: send your first 10 connection requests.", "Day 4–5: record and send Loom videos to everyone who accepts.", "Day 6: send voice notes to anyone who has not replied.", "Day 7: review your numbers and fix the weakest stage."].map((item) => <li key={item}>{item}</li>)}</ol><p className="text-base leading-relaxed max-w-xl mx-auto mt-7" style={{ color: "#D8CBE8" }}>Momentum in a job search comes from running the process, not waiting for the perfect profile.</p><div className="flex flex-col sm:flex-row gap-4 justify-center mt-8"><Link href="/tools/linkedin-optimizer" className="btn-dark px-8 py-4 text-sm font-bold">Optimise your profile</Link><a href="mailto:founder@myntmore.com" className="px-8 py-4 text-sm font-bold rounded-full border transition-transform duration-200 hover:-translate-y-1" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>founder@myntmore.com</a></div></section></FadeIn>
+      <FadeIn><section className="cta-animated-section rounded-2xl p-8 sm:p-10 text-center border" style={{ borderColor: "rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}><span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>Your next 7 days</span><h2 className="text-2xl sm:text-3xl font-black mt-3 mb-5" style={{ color: "#0A0A0A" }}>Run the funnel this week.</h2><ol className="text-left max-w-xl mx-auto space-y-2 text-sm" style={{ color: "#3D3D3D" }}>{["Day 1: update your banner, headline, and Featured section.", "Day 2: build a list of 20 hiring managers.", "Day 3: send your first 10 connection requests.", "Day 4–5: record and send Loom videos to everyone who accepts.", "Day 6: send voice notes to anyone who has not replied.", "Day 7: review your numbers and fix the weakest stage."].map((item) => <li key={item}>{item}</li>)}</ol><p className="text-base leading-relaxed max-w-xl mx-auto mt-7" style={{ color: "#52525B" }}>Momentum in a job search comes from running the process, not waiting for the perfect profile.</p><div className="flex flex-col sm:flex-row gap-4 justify-center mt-8"><Link href="/tools/linkedin-optimizer" className="btn-dark px-8 py-4 text-sm font-bold">Optimise your profile</Link><a href="mailto:founder@myntmore.com" className="px-8 py-4 text-sm font-bold rounded-full border transition-transform duration-200 hover:-translate-y-1" style={{ color: "#0A0A0A", backgroundColor: "#FFFFFF", borderColor: "#D0C9BF" }}>founder@myntmore.com</a></div></section></FadeIn>
       <p className="text-center text-sm" style={{ color: "#71675E" }}>Made by Tejas Jhaveri. Follow <a href="https://www.instagram.com/tejas_jhaveri" target="_blank" rel="noopener noreferrer" className="font-bold underline" style={{ color: "#0a0a0a" }}>@tejas_jhaveri</a> on Instagram for more playbooks like this.</p>
     </div></article>
   </InnerLayout>;

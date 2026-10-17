@@ -107,7 +107,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
           className="fredoka-pill text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
           style={
             activeTag === "All"
-              ? { backgroundColor: "#0a0a0a", borderColor: "#0a0a0a", color: "#ffffff" }
+              ? { backgroundColor: "#F5B731", borderColor: "#F5B731", color: "#0A0A0A" }
               : { backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#52525B" }
           }
         >
@@ -125,7 +125,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
               className="fredoka-pill text-xs font-bold px-3.5 py-1.5 rounded-full border transition-colors duration-200"
               style={
                 isActive
-                  ? { backgroundColor: accent, borderColor: accent, color: "#ffffff" }
+                  ? { backgroundColor: `${accent}26`, borderColor: accent, color: textTone(accent) }
                   : { backgroundColor: `${accent}0F`, borderColor: `${accent}33`, color: textTone(accent) }
               }
             >

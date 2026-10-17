@@ -57,8 +57,8 @@ select.outline-none:not([class*="ring"]):focus-visible {
   z-index: 100;
   padding: 10px 16px;
   border-radius: 10px;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #F5B731;
+  color: #0A0A0A;
   font-size: 14px;
   font-weight: 600;
   transform: translateY(-200%);
@@ -351,7 +351,7 @@ select.outline-none:not([class*="ring"]):focus-visible {
 }
 
 .cta-animated-section {
-  background: linear-gradient(-45deg, #0a0a0a, #1a0533, #2a0d00, #0a1628, #1a0a00, #0d0520);
+  background: linear-gradient(-45deg, #FEF9EC, #FFFFFF, #FDF3D6, #FFFFFF, #FEF9EC, #FFF8E6);
   background-size: 400% 400%;
   animation: ctaGradient 6s ease infinite;
 }

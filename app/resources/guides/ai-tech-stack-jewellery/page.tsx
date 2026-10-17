@@ -306,7 +306,7 @@ function CategoryOverviewCard({ cat, index, active, onClick }: {
       onMouseLeave={() => setHovered(false)}
       className="text-left rounded-2xl p-4 border transition-all"
       style={{
-        backgroundColor: active ? cat.accent : hovered ? cat.color : "#ffffff",
+        backgroundColor: active || hovered ? cat.color : "#ffffff",
         borderColor: active ? cat.accent : hovered ? cat.accent + "66" : "#E8E2D9",
         boxShadow: active ? `0 8px 24px ${cat.accent}33` : hovered ? `0 4px 12px ${cat.accent}22` : "none",
         opacity: inView ? 1 : 0,
@@ -315,8 +315,8 @@ function CategoryOverviewCard({ cat, index, active, onClick }: {
       }}
     >
       <div className="text-2xl mb-2" style={{ display: "inline-block", transform: hovered || active ? "scale(1.15)" : "scale(1)", transition: "transform 0.2s cubic-bezier(0.34,1.56,0.64,1)" }}>{cat.icon}</div>
-      <div className="text-xs font-black leading-tight mb-1" style={{ color: active ? "#ffffff" : "#0a0a0a" }}>{cat.title}</div>
-      <div className="text-xs font-bold" style={{ color: active ? "rgba(255,255,255,0.7)" : "#71675E" }}>{cat.tools.length} tools</div>
+      <div className="text-xs font-black leading-tight mb-1" style={{ color: "#0a0a0a" }}>{cat.title}</div>
+      <div className="text-xs font-bold" style={{ color: "#52525B" }}>{cat.tools.length} tools</div>
     </button>
   );
 }
@@ -519,7 +519,7 @@ export default function GIATechStackPage() {
             <button
               onClick={() => window.print()}
               className="no-print flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm"
-              style={{ backgroundColor: "#0a0a0a", color: "#ffffff", transition: "transform 0.15s ease, box-shadow 0.15s ease", animation: "pulseGlow 3s ease-in-out infinite" }}
+              style={{ backgroundColor: "#F5B731", color: "#0A0A0A", transition: "transform 0.15s ease, box-shadow 0.15s ease", animation: "pulseGlow 3s ease-in-out infinite" }}
               onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.04)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
             >
@@ -588,9 +588,9 @@ export default function GIATechStackPage() {
               onClick={() => setActiveFilter("all")}
               className="text-left rounded-2xl p-4 border transition-all"
               style={{
-                backgroundColor: activeFilter === "all" ? "#0a0a0a" : "#ffffff",
-                borderColor: activeFilter === "all" ? "#0a0a0a" : "#E8E2D9",
-                color: activeFilter === "all" ? "#ffffff" : "#0a0a0a",
+                backgroundColor: activeFilter === "all" ? "#F5B731" : "#ffffff",
+                borderColor: activeFilter === "all" ? "#F5B731" : "#E8E2D9",
+                color: "#0a0a0a",
                 opacity: overviewIn ? 1 : 0,
                 transform: overviewIn ? "translateY(0)" : "translateY(16px)",
                 transition: "opacity 0.5s ease 0s, transform 0.5s ease 0s, background-color 0.2s, border-color 0.2s",
@@ -598,7 +598,7 @@ export default function GIATechStackPage() {
             >
               <div className="text-2xl mb-2">🗂</div>
               <div className="text-xs font-black">All Categories</div>
-              <div className="text-xs font-bold mt-0.5" style={{ color: activeFilter === "all" ? "rgba(255,255,255,0.6)" : "#71675E" }}>106 tools</div>
+              <div className="text-xs font-bold mt-0.5" style={{ color: activeFilter === "all" ? "#3D3D3D" : "#71675E" }}>106 tools</div>
             </button>
             {CATEGORIES.map((cat, i) => (
               <CategoryOverviewCard
@@ -700,15 +700,15 @@ export default function GIATechStackPage() {
         </main>
 
         {/* ── Footer CTA ── */}
-        <div className="no-print border-t px-6 py-20 text-center" style={{ borderColor: "#E8E2D9", backgroundColor: "#0a0a0a" }}>
+        <div className="no-print border-t px-6 py-20 text-center" style={{ borderColor: "rgba(245,183,49,0.35)", backgroundColor: "#FEF9EC" }}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-            style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.2)" }}>
+            style={{ backgroundColor: "rgba(245,183,49,0.15)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
             Curated by Myntmore
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#ffffff" }}>
+          <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0A0A0A" }}>
             We can help you implement<br />any of these
           </h2>
-          <p className="mb-10 text-base max-w-md mx-auto" style={{ color: "#A8A29E" }}>
+          <p className="mb-10 text-base max-w-md mx-auto" style={{ color: "#52525B" }}>
             We help jewellery brands and B2B businesses turn AI tools into real pipeline.
           </p>
           <a
@@ -725,15 +725,15 @@ export default function GIATechStackPage() {
           {/* This page renders its own nav rather than InnerLayout, so without
               these it is a crawl dead-end: nothing links back into the site. */}
           <nav className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="More from Myntmore">
-            <a href="/" style={{ color: "#A8A29E" }}>Myntmore Home</a>
-            <a href="/resources/guides" style={{ color: "#A8A29E" }}>All Guides</a>
-            <a href="/resources" style={{ color: "#A8A29E" }}>Resources</a>
-            <a href="/services" style={{ color: "#A8A29E" }}>Services</a>
-            <a href="/case-studies" style={{ color: "#A8A29E" }}>Case Studies</a>
+            <a href="/" style={{ color: "#52525B" }}>Myntmore Home</a>
+            <a href="/resources/guides" style={{ color: "#52525B" }}>All Guides</a>
+            <a href="/resources" style={{ color: "#52525B" }}>Resources</a>
+            <a href="/services" style={{ color: "#52525B" }}>Services</a>
+            <a href="/case-studies" style={{ color: "#52525B" }}>Case Studies</a>
           </nav>
-          <p className="mt-6 text-sm" style={{ color: "#A8A29E" }}>
+          <p className="mt-6 text-sm" style={{ color: "#52525B" }}>
             Questions? Call us on{" "}
-            <a href="tel:+918169318951" className="font-semibold underline" style={{ color: "#F5B731" }}>+91 81693 18951</a>
+            <a href="tel:+918169318951" className="font-semibold underline" style={{ color: "#A14A08" }}>+91 81693 18951</a>
           </p>
         </div>
 

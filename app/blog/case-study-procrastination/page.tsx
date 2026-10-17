@@ -100,10 +100,10 @@ export default function CaseStudyProcrastinationBlogPost() {
           </FadeIn>
 
           <FadeIn delay={100}>
-          <div className="mt-12 rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#172120 100%)", border: "1px solid #243331" }}>
-            <span className="inline-flex text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#F5B731" }}>Free Myntmore Tool</span>
-            <h2 className="text-2xl sm:text-3xl font-black mb-4 text-white">Turn rough notes into a publishable customer story</h2>
-            <p className="text-sm sm:text-base leading-relaxed mb-7 max-w-xl mx-auto" style={{ color: "#b7c2c0" }}>
+          <div className="mt-12 rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#A14A08" }}>Free Myntmore Tool</span>
+            <h2 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "#0A0A0A" }}>Turn rough notes into a publishable customer story</h2>
+            <p className="text-sm sm:text-base leading-relaxed mb-7 max-w-xl mx-auto" style={{ color: "#52525B" }}>
               The free Case Study &amp; Proposal Generator turns completed projects into polished case studies and raw prospect notes into structured proposal drafts. Choose a mode, add the core problem, your execution, and the real metrics. Its no-hallucination safeguard works only with the facts and numbers you provide, so it will not invent statistics or inflate your claims.
             </p>
             <Link href="/tools/case-study-generator" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">

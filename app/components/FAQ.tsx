@@ -53,7 +53,7 @@ function AccordionItem({ item, isOpen, onToggle, index }: AccordionItemProps) {
         >
           <svg
             className="w-3.5 h-3.5"
-            style={{ color: isOpen ? "#F5B731" : "#A1A1AA" }}
+            style={{ color: isOpen ? "#A14A08" : "#71675E" }}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

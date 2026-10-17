@@ -186,13 +186,13 @@ export default function Resources() {
       <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="relative rounded-3xl overflow-hidden p-10 sm:p-16 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)" }}>
+            <div className="relative rounded-3xl overflow-hidden p-10 sm:p-16 text-center" style={{ background: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
               <div aria-hidden style={{ position: "absolute", top: "50%", left: "20%", width: 300, height: 300, marginTop: -150, marginLeft: -150, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.15) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
-              <div aria-hidden style={{ position: "absolute", top: "50%", left: "80%", width: 300, height: 300, marginTop: -150, marginLeft: -150, borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+              <div aria-hidden style={{ position: "absolute", top: "50%", left: "80%", width: 300, height: 300, marginTop: -150, marginLeft: -150, borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.10) 0%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
               <div className="relative z-10">
-                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#F5B731", border: "1px solid rgba(245,183,49,0.25)" }}>Your next step</span>
-                <h2 className="text-3xl sm:text-4xl font-black mb-4 text-white">Let us build the pipeline<br />engine for you</h2>
-                <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#9ca3af" }}>Book a free 30-minute GTM audit. We&apos;ll map out exactly how to build a predictable outbound system for your business.</p>
+                <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.25)" }}>Your next step</span>
+                <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0A0A0A" }}>Let us build the pipeline<br />engine for you</h2>
+                <p className="text-base mb-8 max-w-xl mx-auto" style={{ color: "#52525B" }}>Book a free 30-minute GTM audit. We&apos;ll map out exactly how to build a predictable outbound system for your business.</p>
                 <a href="/founder-meeting" className="btn-dark px-10 py-4 text-base font-bold inline-flex items-center gap-2">
                   Book a Free GTM Audit
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>

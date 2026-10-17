@@ -245,20 +245,20 @@ export default function ClaudeSalesCallPrompts() {
           </FadeIn>
 
           <FadeIn>
-            <section className="rounded-2xl p-8 sm:p-10 text-center border" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#10222a 100%)", borderColor: "#1f3a45" }}>
-              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#F5B731" }}>What&apos;s next?</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-white mt-3 mb-4">Implement everything.</h2>
-              <p className="text-base leading-relaxed max-w-xl mx-auto mb-3" style={{ color: "#c9d3d8" }}>
+            <section className="rounded-2xl p-8 sm:p-10 text-center border" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+              <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#A14A08" }}>What&apos;s next?</span>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#0A0A0A] mt-3 mb-4">Implement everything.</h2>
+              <p className="text-base leading-relaxed max-w-xl mx-auto mb-3" style={{ color: "#52525B" }}>
                 If you&apos;re looking to optimise your LinkedIn profile and turn it into a growth engine, you&apos;re in the right place. Whether you&apos;re a founder, CXO, or consultant, LinkedIn can become your #1 inbound channel.
               </p>
-              <p className="text-base leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#c9d3d8" }}>
+              <p className="text-base leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#52525B" }}>
                 Want to know how I generated over $3M through LinkedIn? See what we do, how we do it, and why it works.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/services/personal-branding" className="btn-dark px-8 py-4 text-sm font-bold">Explore Our LinkedIn Personal Branding Services</Link>
-                <a href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>Book a Complimentary Strategy Call</a>
+                <a href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-[#F8F6F2]" style={{ color: "#0A0A0A", borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>Book a Complimentary Strategy Call</a>
               </div>
-              <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#F5B731" }}>founder@myntmore.com</a>
+              <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
             </section>
           </FadeIn>
 

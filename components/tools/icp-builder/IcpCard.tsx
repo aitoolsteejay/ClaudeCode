@@ -96,7 +96,7 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
         onClick={onToggleOpen}
       >
         <div className="flex items-center gap-3">
-          <span className="font-black text-sm" style={{ color: "#F97316" }}>ICP {index + 1}</span>
+          <span className="font-black text-sm" style={{ color: "#9A3412" }}>ICP {index + 1}</span>
           {badge && (
             <span
               className="text-xs font-bold px-2.5 py-0.5 rounded-full"

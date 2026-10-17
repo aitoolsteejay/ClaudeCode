@@ -112,7 +112,7 @@ function FlowChips({ steps, accent }: { steps: string[]; accent: string }) {
     <div className="flex flex-wrap items-center gap-2">
       {steps.map((s, i) => (
         <span key={i} className="flex items-center gap-2">
-          <span className="text-xs sm:text-sm font-bold px-3 py-1.5 rounded-lg" style={{ backgroundColor: "#0a0a0a", color: accent }}>
+          <span className="text-xs sm:text-sm font-bold px-3 py-1.5 rounded-lg" style={{ backgroundColor: "#F5B731", color: "#0A0A0A" }}>
             {s}
           </span>
           {i < steps.length - 1 && <span style={{ color: "#71675E" }}>→</span>}
@@ -437,12 +437,12 @@ export default function AiAgentsMeetingsBlueprint() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1"
-              style={{ backgroundColor: "#0a0a0a" }}
+              style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}
             >
-              <PlayCircle className="w-10 h-10 flex-shrink-0" style={{ color: "#F97316" }} />
+              <PlayCircle className="w-10 h-10 flex-shrink-0" style={{ color: "#9A3412" }} />
               <div>
-                <p className="text-sm sm:text-base font-black text-white">Watch the walkthrough on Loom</p>
-                <p className="text-xs sm:text-sm" style={{ color: "#9ca3af" }}>See the full agent workflow, live</p>
+                <p className="text-sm sm:text-base font-black" style={{ color: "#0A0A0A" }}>Watch the walkthrough on Loom</p>
+                <p className="text-xs sm:text-sm" style={{ color: "#71675E" }}>See the full agent workflow, live</p>
               </div>
             </a>
             <p className="text-sm sm:text-base leading-relaxed mt-5" style={{ color: "#3D3D3D" }}>
@@ -456,40 +456,40 @@ export default function AiAgentsMeetingsBlueprint() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">More playbooks like this</h2>
+            <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-[#0A0A0A]">More playbooks like this</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
                 <a
                   href="https://www.instagram.com/tejasjhaveri"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
+                  style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
-                  <span className="block text-sm font-bold text-white mb-1">Follow along</span>
-                  <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejasjhaveri</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="block text-sm font-bold text-[#0A0A0A] mb-1">Follow along</span>
+                  <span className="block text-xs" style={{ color: "#71675E" }}>@tejasjhaveri</span>
                 </a>
                 <a
                   href="/founder-meeting"
-                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
+                  style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
-                  <span className="block text-sm font-bold text-white mb-1">Book a call</span>
-                  <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="block text-sm font-bold text-[#0A0A0A] mb-1">Book a call</span>
+                  <span className="block text-xs" style={{ color: "#71675E" }}>Complimentary strategy session</span>
                 </a>
                 <a
                   href="mailto:founder@myntmore.com"
-                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
+                  style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
-                  <span className="block text-sm font-bold text-white mb-1">Email us</span>
-                  <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="block text-sm font-bold text-[#0A0A0A] mb-1">Email us</span>
+                  <span className="block text-xs" style={{ color: "#71675E" }}>founder@myntmore.com</span>
                 </a>
               </div>
-              <Link href="/resources/guides/58-meetings-600-linkedin-connections" className="inline-block mt-6 text-sm font-semibold underline underline-offset-4" style={{ color: "#F5B731" }}>
+              <Link href="/resources/guides/58-meetings-600-linkedin-connections" className="inline-block mt-6 text-sm font-semibold underline underline-offset-4" style={{ color: "#A14A08" }}>
                 Prefer the manual version? 58 meetings from 600 LinkedIn connections
               </Link>
             </div>

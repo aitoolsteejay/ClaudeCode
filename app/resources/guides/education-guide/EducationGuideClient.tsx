@@ -311,14 +311,14 @@ function BackToTop() {
       aria-label="Back to top"
       className="lp-card fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-lg"
       style={{
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "#F5B731",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0) scale(1)" : "translateY(12px) scale(0.85)",
         pointerEvents: visible ? "auto" : "none",
         transition: "opacity 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1)",
       }}
     >
-      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#ffffff" strokeWidth={2.5}>
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#0A0A0A" strokeWidth={2.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
       </svg>
     </button>
@@ -390,7 +390,7 @@ function TabGroup<T extends string>({
             className={`lp-pop-in rounded-full font-bold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 ${pad}`}
             style={
               isActive
-                ? { backgroundColor: "#0a0a0a", color: "#ffffff", boxShadow: "0 4px 14px rgba(0,0,0,0.18)", animationDelay: `${i * 60}ms` }
+                ? { backgroundColor: "#F5B731", color: "#0A0A0A", boxShadow: "0 4px 14px rgba(245,183,49,0.3)", animationDelay: `${i * 60}ms` }
                 : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9", animationDelay: `${i * 60}ms` }
             }
           >
@@ -479,7 +479,7 @@ function TipGroup({ heading, tips, accent, variant }: { heading: string; tips: T
   if (tips.length === 0) return null;
   return (
     <div className="mb-8">
-      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? textTone(accent) : "#16A34A" }}>{heading}</p>
+      <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: variant === "tool" ? textTone(accent) : "#166534" }}>{heading}</p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {tips.map((tip, i) => (
           <TipCard key={i} tip={tip} accent={accent} variant={variant} delay={i * 45} />
@@ -540,7 +540,7 @@ function PromptPrincipleCard({ num, title, bad, good }: { num: string; title: st
           <p className="text-sm italic leading-relaxed" style={{ color: "#52525B" }}>&ldquo;{bad}&rdquo;</p>
         </div>
         <div className="rounded-xl p-4" style={{ backgroundColor: "rgba(16,163,74,0.06)", border: "1px solid rgba(16,163,74,0.22)" }}>
-          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#16A34A" }}>Try this</p>
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: "#166534" }}>Try this</p>
           <p className="text-sm leading-relaxed" style={{ color: "#0a0a0a" }}>&ldquo;{good}&rdquo;</p>
         </div>
       </div>

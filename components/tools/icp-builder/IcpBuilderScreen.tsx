@@ -143,7 +143,7 @@ export function IcpBuilderScreen({ intake, icps, onIcpsChange, results, onResult
             type="button"
             onClick={addIcp}
             className="mt-4 flex items-center gap-2 text-sm font-bold px-4 py-2.5 rounded-lg transition-colors"
-            style={{ color: "#F97316", border: "1.5px dashed rgba(249,115,22,0.4)" }}
+            style={{ color: "#9A3412", border: "1.5px dashed rgba(249,115,22,0.4)" }}
           >
             <Plus className="w-4 h-4" />
             Add Another ICP
@@ -159,7 +159,7 @@ export function IcpBuilderScreen({ intake, icps, onIcpsChange, results, onResult
         onClick={handleGenerate}
         disabled={loading}
         className={`w-full py-5 rounded-xl font-bold text-lg uppercase tracking-widest transition-all flex items-center justify-center gap-3 ${
-          loading ? "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50" : "text-white hover:opacity-90 active:scale-[0.99] shadow-lg"
+          loading ? "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50" : "text-[#0A0A0A] hover:opacity-90 active:scale-[0.99] shadow-lg"
         }`}
         style={loading ? undefined : { backgroundColor: "#F97316" }}
       >
@@ -190,8 +190,8 @@ export function IcpBuilderScreen({ intake, icps, onIcpsChange, results, onResult
             </button>
             <button
               onClick={onNextStep}
-              className="flex-1 py-4 rounded-xl font-bold text-sm uppercase tracking-widest text-white transition-all"
-              style={{ backgroundColor: "#0a0a0a" }}
+              className="flex-1 py-4 rounded-xl font-bold text-sm uppercase tracking-widest transition-all"
+              style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}
             >
               Next Step
             </button>

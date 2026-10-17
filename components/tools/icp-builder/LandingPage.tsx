@@ -138,7 +138,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: "#fff" }}
+                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>

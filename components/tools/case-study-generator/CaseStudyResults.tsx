@@ -80,9 +80,9 @@ export function CaseStudyResults({ result, onReset }: { result: CaseStudyOutput;
       </div>
 
       {result.pullQuote && (
-        <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: "#0a0a0a" }}>
+        <div className="rounded-2xl p-6 sm:p-8" style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
           <Quote className="w-6 h-6 mb-3" style={{ color: ACCENT }} />
-          <p className="text-lg font-medium leading-relaxed text-white">&quot;{result.pullQuote}&quot;</p>
+          <p className="text-lg font-medium leading-relaxed" style={{ color: "#0A0A0A" }}>&quot;{result.pullQuote}&quot;</p>
         </div>
       )}
 

@@ -107,7 +107,7 @@ export default function ReelWidget() {
     >
       <div
         className="relative rounded-2xl border overflow-hidden"
-        style={{ backgroundColor: "#0a0a0a", borderColor: "#E8E2D9", boxShadow: "0 20px 44px rgba(10,6,24,0.18)", aspectRatio: "9 / 16" }}
+        style={{ backgroundColor: "#FFFFFF", borderColor: "#E8E2D9", boxShadow: "0 20px 44px rgba(10,6,24,0.18)", aspectRatio: "9 / 16" }}
       >
         <button
           type="button"

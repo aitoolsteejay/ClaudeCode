@@ -78,7 +78,7 @@ export default function CTABanner() {
           marginTop: "-325px",
           marginLeft: "-325px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(168,85,247,0.28) 0%, rgba(124,58,237,0.12) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(245,183,49,0.16) 0%, rgba(245,183,49,0.06) 40%, transparent 70%)",
           filter: "blur(65px)",
           opacity: 0.9,
           pointerEvents: "none",

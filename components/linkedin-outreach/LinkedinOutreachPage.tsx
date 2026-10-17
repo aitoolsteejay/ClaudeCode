@@ -40,7 +40,7 @@ import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "
 import LinkedinFlowVisual from "./LinkedinFlowVisual";
 import AgentExplorer from "./AgentExplorer";
 import InView from "./InView";
-import { BLUE, BLUE_LIGHT, BLUE_PALE, BODY, CREAM, GOLD, INK, MUTED, SOFT_LINE } from "./theme";
+import { BLUE, BLUE_LIGHT, BLUE_PALE, BODY, CREAM, GOLD, INK, LINE, MUTED, SOFT_LINE } from "./theme";
 
 // LinkedIn outreach service page: the same design language as the cold email
 // page, with LinkedIn blue as the accent. It carries no pricing or plans.
@@ -136,7 +136,7 @@ const SERVICE_SCHEMA = buildServiceSchema({
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? GOLD : BLUE }}>
+    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? "#A14A08" : BLUE }}>
       {children}
     </p>
   );
@@ -277,7 +277,7 @@ export default function LinkedinOutreachPage() {
               </div>
             </FadeIn>
             <div className="hidden items-center justify-center md:flex" aria-hidden="true">
-              <span className="relative grid h-14 w-14 place-items-center rounded-full text-white" style={{ background: INK }}>
+              <span className="relative grid h-14 w-14 place-items-center rounded-full" style={{ background: GOLD, color: INK }}>
                 <span className="li-ping absolute inset-0 rounded-full" style={{ backgroundColor: BLUE }} />
                 <ArrowRight className="relative h-6 w-6" strokeWidth={2.4} />
               </span>
@@ -443,27 +443,26 @@ export default function LinkedinOutreachPage() {
       </section>
 
       {/* Before we start */}
-      <section className="relative overflow-hidden px-4 py-24" style={{ background: "linear-gradient(135deg,#07121c 0%,#0b2335 100%)" }}>
-        <div aria-hidden="true" className="absolute -right-24 -top-24 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(55,143,233,0.3), transparent 70%)", filter: "blur(50px)" }} />
-        <div aria-hidden="true" className="absolute -bottom-32 -left-24 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.16), transparent 70%)", filter: "blur(50px)" }} />
+      <section className="relative overflow-hidden px-4 py-24" style={{ backgroundColor: "#FEF9EC" }}>
+        <div aria-hidden="true" className="absolute -bottom-32 -left-24 h-96 w-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.14), transparent 70%)", filter: "blur(50px)" }} />
         <div className="relative mx-auto max-w-6xl">
           <FadeIn>
             <Eyebrow light>Before we start</Eyebrow>
-            <h2 className="max-w-xl text-4xl font-black text-white sm:text-5xl" style={h2Style}>
-              A few things <span className="italic" style={{ color: GOLD }}>to know.</span>
+            <h2 className="max-w-xl text-4xl font-black sm:text-5xl" style={{ ...h2Style, color: INK }}>
+              A few things <span className="italic" style={{ color: "#A14A08" }}>to know.</span>
             </h2>
           </FadeIn>
           <FadeIn>
-            <div className="mt-12 grid gap-px overflow-hidden rounded-[26px] sm:grid-cols-2 lg:grid-cols-3" style={{ backgroundColor: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.1)" }}>
+            <div className="mt-12 grid gap-px overflow-hidden rounded-[26px] sm:grid-cols-2 lg:grid-cols-3" style={{ backgroundColor: LINE, border: `1px solid ${LINE}` }}>
               {NOTES.map((n) => {
                 const Icon = n.icon;
                 return (
-                  <div key={n.title} className="p-8" style={{ backgroundColor: "#0b1a27" }}>
-                    <span className="mb-6 grid h-12 w-12 place-items-center rounded-full border" style={{ borderColor: "rgba(245,183,49,0.4)", color: GOLD }}>
+                  <div key={n.title} className="p-8" style={{ backgroundColor: "#FFFFFF" }}>
+                    <span className="mb-6 grid h-12 w-12 place-items-center rounded-full border" style={{ borderColor: "rgba(245,183,49,0.5)", color: "#A14A08" }}>
                       <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
                     </span>
-                    <h3 className="text-lg font-black text-white" style={{ letterSpacing: "-0.02em" }}>{n.title}</h3>
-                    <p className="mt-1.5 text-sm leading-relaxed" style={{ color: "#b9c8d6" }}>{n.text}</p>
+                    <h3 className="text-lg font-black" style={{ letterSpacing: "-0.02em", color: INK }}>{n.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed" style={{ color: BODY }}>{n.text}</p>
                   </div>
                 );
               })}
@@ -568,20 +567,19 @@ export default function LinkedinOutreachPage() {
             </FadeIn>
 
             <FadeIn>
-              <div className="relative overflow-hidden rounded-[32px] border p-10 text-center sm:p-14" style={{ background: "linear-gradient(135deg,#07121c 0%,#0e2a40 100%)", borderColor: "#173a55" }}>
-                <div aria-hidden="true" className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.28), transparent 70%)", filter: "blur(40px)" }} />
-                <div aria-hidden="true" className="absolute -right-20 -top-24 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(55,143,233,0.34), transparent 70%)", filter: "blur(40px)" }} />
+              <div className="relative overflow-hidden rounded-[32px] border p-10 text-center sm:p-14" style={{ background: "linear-gradient(135deg,#FEF9EC 0%,#FFFFFF 100%)", borderColor: "rgba(245,183,49,0.35)", boxShadow: "0 24px 70px rgba(15,15,20,0.06)" }}>
+                <div aria-hidden="true" className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(245,183,49,0.18), transparent 70%)", filter: "blur(40px)" }} />
                 <div className="relative">
                   <Eyebrow light>Try before you commit</Eyebrow>
-                  <h2 className="mx-auto max-w-2xl text-4xl font-black text-white sm:text-5xl" style={h2Style}>
-                    Ready to turn LinkedIn into <span className="italic" style={{ color: GOLD }}>booked meetings?</span>
+                  <h2 className="mx-auto max-w-2xl text-4xl font-black sm:text-5xl" style={{ ...h2Style, color: INK }}>
+                    Ready to turn LinkedIn into <span className="italic" style={{ color: "#A14A08" }}>booked meetings?</span>
                   </h2>
-                  <p className="mx-auto mt-5 max-w-md text-base" style={{ color: "#b9c8d6" }}>Book a call, or send us your details and we&apos;ll take it from here.</p>
+                  <p className="mx-auto mt-5 max-w-md text-base" style={{ color: BODY }}>Book a call, or send us your details and we&apos;ll take it from here.</p>
                   <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
                     <Link href={CALENDAR} className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: GOLD, color: INK }}>
                       Book a free strategy call <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
-                    <Link href="/contact-us" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-white/10" style={{ color: "#ffffff", borderColor: "rgba(255,255,255,0.3)" }}>
+                    <Link href="/contact-us" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-[#F8F6F2]" style={{ color: INK, borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>
                       Send us your details
                     </Link>
                   </div>

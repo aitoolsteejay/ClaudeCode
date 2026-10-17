@@ -39,7 +39,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
       {/* Hero */}
       <section className="pt-16 pb-20 px-6 relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(10,102,194,0.14) 0%, rgba(10,102,194,0.05) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.14) 0%, rgba(245,183,49,0.05) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="max-w-3xl mx-auto text-center relative z-10 animate-fade-in">
           <div
@@ -173,10 +173,10 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         </div>
       </section>
 
-      {/* Final CTA — matches the site's dark closing-panel convention */}
-      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)" }}>
+      {/* Final CTA — matches the site's dark closing-panel */}
+      <section className="py-20 px-6" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", borderTop: "1px solid rgba(245,183,49,0.35)" }}>
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-black mb-8 text-white">Stop guessing what your profile says about you.</h2>
+          <h2 className="text-2xl sm:text-4xl font-black mb-8" style={{ color: "#0A0A0A" }}>Stop guessing what your profile says about you.</h2>
           <Button onClick={onStart} variant="hero" size="xl" className="rounded-full shadow-2xl">
             Audit My Profile
             <ArrowRight className="ml-2 h-5 w-5" />

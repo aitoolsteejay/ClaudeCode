@@ -31,10 +31,10 @@ function CoreAngleCard({ coreAngle }: { coreAngle: string }) {
   const [angleName, ...rest] = coreAngle.split(":");
   const explanation = rest.join(":").trim();
   return (
-    <div className="rounded-2xl p-6" style={{ backgroundColor: "#0a0a0a" }}>
-      <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#F97316" }}>Core Angle</p>
-      <p className="text-xl font-black text-white mb-1">{angleName.trim()}</p>
-      {explanation && <p className="text-sm" style={{ color: "#9ca3af" }}>{explanation}</p>}
+    <div className="rounded-2xl p-6" style={{ backgroundColor: "#FEF9EC", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+      <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#A14A08" }}>Core Angle</p>
+      <p className="text-xl font-black mb-1" style={{ color: "#0A0A0A" }}>{angleName.trim()}</p>
+      {explanation && <p className="text-sm" style={{ color: "#52525B" }}>{explanation}</p>}
     </div>
   );
 }
@@ -146,7 +146,7 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-6" style={{ border: "1px solid #E8E2D9" }}>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#F97316" }}>Why You Win</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#9A3412" }}>Why You Win</h3>
               <ul className="space-y-2.5">
                 {(result.whyYouWin || []).map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
@@ -195,7 +195,7 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
       </div>
 
       <div className="rounded-2xl p-6 sm:p-8 text-center" style={{ backgroundColor: "#FEF3EC", border: "1px solid rgba(249,115,22,0.3)" }}>
-        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#F97316" }}>Core Positioning Statement</p>
+        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#9A3412" }}>Core Positioning Statement</p>
         <p className="text-lg font-bold leading-relaxed" style={{ color: "#0a0a0a" }}>&quot;{result.positioning}&quot;</p>
       </div>
     </div>
@@ -255,7 +255,7 @@ export function ValuePropScreen({ intake, icps, results, onResultsChange, onFini
         onClick={handleGenerate}
         disabled={loading}
         className={`w-full py-5 rounded-xl font-bold text-lg uppercase tracking-widest transition-all flex items-center justify-center gap-3 ${
-          loading ? "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50" : "text-white hover:opacity-90 active:scale-[0.99] shadow-lg"
+          loading ? "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50" : "text-[#0A0A0A] hover:opacity-90 active:scale-[0.99] shadow-lg"
         }`}
         style={loading ? undefined : { backgroundColor: "#F97316" }}
       >
@@ -281,7 +281,7 @@ export function ValuePropScreen({ intake, icps, results, onResultsChange, onFini
                 className="flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold transition-all"
                 style={
                   activeTab === i
-                    ? { backgroundColor: "#0a0a0a", color: "#ffffff" }
+                    ? { backgroundColor: "#F5B731", color: "#0a0a0a" }
                     : { backgroundColor: "#ffffff", color: "#52525B", border: "1px solid #E8E2D9" }
                 }
               >
@@ -307,8 +307,8 @@ export function ValuePropScreen({ intake, icps, results, onResultsChange, onFini
             </button>
             <button
               onClick={onFinish}
-              className="flex-1 py-4 rounded-xl font-bold text-sm uppercase tracking-widest text-white transition-all flex items-center justify-center gap-2"
-              style={{ backgroundColor: "#0a0a0a" }}
+              className="flex-1 py-4 rounded-xl font-bold text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-2"
+              style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}
             >
               <PartyPopper className="w-4 h-4" />
               Done

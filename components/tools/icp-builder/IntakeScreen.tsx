@@ -199,7 +199,7 @@ export function IntakeScreen({ data, onChange, onContinue }: IntakeScreenProps) 
                       : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9" }
                   }
                 >
-                  <p className="font-bold text-sm" style={{ color: active ? "#F97316" : "#0a0a0a" }}>{opt.label}</p>
+                  <p className="font-bold text-sm" style={{ color: active ? "#9A3412" : "#0a0a0a" }}>{opt.label}</p>
                   <p className="text-xs text-gray-500 mt-0.5">{opt.hint}</p>
                 </button>
               );
@@ -220,7 +220,7 @@ export function IntakeScreen({ data, onChange, onContinue }: IntakeScreenProps) 
                   className="rounded-xl p-4 text-center text-sm font-bold transition-all"
                   style={
                     active
-                      ? { backgroundColor: "#FEF3EC", borderColor: "#F97316", border: "1.5px solid #F97316", color: "#F97316" }
+                      ? { backgroundColor: "#FEF3EC", borderColor: "#F97316", border: "1.5px solid #F97316", color: "#9A3412" }
                       : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9", color: "#0a0a0a" }
                   }
                 >
@@ -236,7 +236,7 @@ export function IntakeScreen({ data, onChange, onContinue }: IntakeScreenProps) 
         onClick={onContinue}
         disabled={!isValid}
         className={`w-full mt-10 py-5 rounded-xl font-bold text-lg uppercase tracking-widest transition-all ${
-          isValid ? "text-white hover:opacity-90 active:scale-[0.99] shadow-lg" : "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50"
+          isValid ? "text-[#0A0A0A] hover:opacity-90 active:scale-[0.99] shadow-lg" : "bg-gray-100 text-gray-400 cursor-not-allowed opacity-50"
         }`}
         style={isValid ? { backgroundColor: "#F97316" } : undefined}
       >

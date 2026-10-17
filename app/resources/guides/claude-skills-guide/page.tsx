@@ -408,37 +408,37 @@ export default function ClaudeSkillsGuide() {
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 100%)", border: "1px solid #2a2a3e" }}>
-              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-white">Stay in the loop</h2>
+            <div className="rounded-2xl p-8 sm:p-12 text-center" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)", border: "1px solid rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
+              <h2 className="text-2xl sm:text-3xl font-black mb-6 text-[#0A0A0A]">Stay in the loop</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
                 <a
                   href="https://instagram.com/tejas_jhaveri"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
+                  style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
-                  <span className="block text-sm font-bold text-white mb-1">Follow along</span>
-                  <span className="block text-xs" style={{ color: "#9ca3af" }}>@tejas_jhaveri</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Camera className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="block text-sm font-bold text-[#0A0A0A] mb-1">Follow along</span>
+                  <span className="block text-xs" style={{ color: "#71675E" }}>@tejas_jhaveri</span>
                 </a>
                 <a
                   href="/founder-meeting"
-                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
+                  style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
-                  <span className="block text-sm font-bold text-white mb-1">Book a call</span>
-                  <span className="block text-xs" style={{ color: "#9ca3af" }}>Complimentary strategy session</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><CalendarCheck className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="block text-sm font-bold text-[#0A0A0A] mb-1">Book a call</span>
+                  <span className="block text-xs" style={{ color: "#71675E" }}>Complimentary strategy session</span>
                 </a>
                 <a
                   href="mailto:founder@myntmore.com"
-                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-white/5 hover:-translate-y-1"
-                  style={{ border: "1px solid rgba(255,255,255,0.15)" }}
+                  className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
+                  style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >
-                  <span className="flex justify-center mb-2" style={{ color: "#F5B731" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
-                  <span className="block text-sm font-bold text-white mb-1">Email us</span>
-                  <span className="block text-xs" style={{ color: "#9ca3af" }}>founder@myntmore.com</span>
+                  <span className="flex justify-center mb-2" style={{ color: "#A14A08" }}><Mail className="w-6 h-6" aria-hidden="true" /></span>
+                  <span className="block text-sm font-bold text-[#0A0A0A] mb-1">Email us</span>
+                  <span className="block text-xs" style={{ color: "#71675E" }}>founder@myntmore.com</span>
                 </a>
               </div>
             </div>

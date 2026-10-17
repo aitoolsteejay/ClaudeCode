@@ -6,6 +6,7 @@ import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
+import { textTone } from "@/lib/colors";
 
 /* ─── Icons (technical/glyph style, not emoji) ────────────────── */
 
@@ -395,10 +396,10 @@ const STICKIES: Sticky[] = [
 ];
 
 const STICKY_STYLE: Record<Sticky["color"], { bg: string; border: string; title: string; text: string }> = {
-  green: { bg: "rgba(22,163,74,0.16)", border: "rgba(34,197,94,0.35)", title: "#86EFAC", text: "#BBF7D0" },
-  yellow: { bg: "rgba(245,183,49,0.14)", border: "rgba(245,183,49,0.35)", title: "#FDE68A", text: "#FEF3C7" },
-  blue: { bg: "rgba(59,130,246,0.16)", border: "rgba(96,165,250,0.35)", title: "#93C5FD", text: "#BFDBFE" },
-  grey: { bg: "rgba(148,163,184,0.10)", border: "rgba(148,163,184,0.30)", title: "#E5E7EB", text: "#B7BCC7" },
+  green: { bg: "#F0FDF4", border: "rgba(22,163,74,0.35)", title: "#166534", text: "#14532D" },
+  yellow: { bg: "#FEF9EC", border: "rgba(245,183,49,0.5)", title: "#A14A08", text: "#52525B" },
+  blue: { bg: "#EFF6FF", border: "rgba(59,130,246,0.35)", title: "#1D4ED8", text: "#1E3A8A" },
+  grey: { bg: "#F8F6F2", border: "#E8E2D9", title: "#3D3D3D", text: "#52525B" },
 };
 
 /* Order the "Execute workflow" button walks through */
@@ -632,21 +633,21 @@ export default function MyntmoreFrameworkClient() {
       {/* ── Workflow canvas ───────────────────────────────────── */}
       <section className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-2xl border-2 overflow-hidden" style={{ borderColor: "#2A2E37", boxShadow: "0 30px 70px rgba(10,10,20,0.35)" }}>
+          <div className="relative rounded-2xl border-2 overflow-hidden" style={{ borderColor: "#E8E2D9", boxShadow: "0 8px 30px rgba(0,0,0,0.06)" }}>
             {/* Window chrome */}
-            <div className="flex flex-wrap items-center gap-3 px-5 py-3" style={{ backgroundColor: "#1B1E27", borderBottom: "1px solid #2A2E37" }}>
+            <div className="flex flex-wrap items-center gap-3 px-5 py-3" style={{ backgroundColor: "#FEF9EC", borderBottom: "1px solid #E8E2D9" }}>
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
               <span className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
-              <span className="ml-2 text-xs font-mono font-bold" style={{ color: "#D7D9E0" }}>myntmore-outbound-engine.workflow</span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "#2A2E37", color: "#9CA3AF" }}>v3.0.0</span>
-              <div className="hidden md:flex items-center gap-1 ml-4 p-0.5 rounded-md" style={{ backgroundColor: "#12141A" }}>
+              <span className="ml-2 text-xs font-mono font-bold" style={{ color: "#0A0A0A" }}>myntmore-outbound-engine.workflow</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded" style={{ backgroundColor: "#FFFFFF", color: "#52525B", border: "1px solid #E8E2D9" }}>v3.0.0</span>
+              <div className="hidden md:flex items-center gap-1 ml-4 p-0.5 rounded-md" style={{ backgroundColor: "#F8F6F2", border: "1px solid #E8E2D9" }}>
                 {["Editor", "Executions", "Evaluations"].map((t, i) => (
-                  <span key={t} className="text-[11px] font-semibold px-3 py-1 rounded" style={{ backgroundColor: i === 0 ? "#2A2E37" : "transparent", color: i === 0 ? "#F3F4F6" : "#9CA3AF" }}>{t}</span>
+                  <span key={t} className="text-[11px] font-semibold px-3 py-1 rounded" style={{ backgroundColor: i === 0 ? "#F5B731" : "transparent", color: i === 0 ? "#0A0A0A" : "#52525B" }}>{t}</span>
                 ))}
               </div>
-              <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(34,197,94,0.15)", color: "#4ADE80" }}>
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#4ADE80" }} />
+              <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style={{ backgroundColor: "rgba(22,163,74,0.1)", color: "#166534" }}>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#16A34A" }} />
                 {running ? "Running" : "Active"}
               </span>
             </div>
@@ -659,7 +660,7 @@ export default function MyntmoreFrameworkClient() {
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
               className="relative overflow-hidden select-none h-[460px] sm:h-[560px] lg:h-[720px]"
-              style={{ backgroundColor: "#16181D", cursor: "grab", touchAction: "none" }}
+              style={{ backgroundColor: "#FFFFFF", cursor: "grab", touchAction: "none" }}
             >
               <div
                 className="absolute top-0 left-0"
@@ -668,14 +669,14 @@ export default function MyntmoreFrameworkClient() {
                   height: CANVAS_H,
                   transform: `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`,
                   transformOrigin: "0 0",
-                  backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.09) 1.4px, transparent 1.4px)",
+                  backgroundImage: "radial-gradient(circle, rgba(10,10,10,0.12) 1.4px, transparent 1.4px)",
                   backgroundSize: "24px 24px",
                 }}
               >
                 {/* Groups */}
                 {GROUPS.map((g) => (
                   <div key={g.title} className="absolute rounded-xl" style={{ left: g.x, top: g.y, width: g.w, height: g.h, backgroundColor: `${g.color}1A`, border: `1px solid ${g.color}55` }}>
-                    <span className="absolute left-4 top-3 text-[12px] font-black tracking-wide" style={{ color: g.color === "#B8860B" ? "#FDE68A" : g.color === "#16A34A" ? "#86EFAC" : "#C7D2FE" }}>{g.title}</span>
+                    <span className="absolute left-4 top-3 text-[12px] font-black tracking-wide" style={{ color: g.color === "#B8860B" ? "#A14A08" : g.color === "#16A34A" ? "#166534" : "#4F46E5" }}>{g.title}</span>
                   </div>
                 ))}
 
@@ -694,7 +695,7 @@ export default function MyntmoreFrameworkClient() {
                 <svg width={CANVAS_W} height={CANVAS_H} className="absolute inset-0" style={{ pointerEvents: "none" }}>
                   <defs>
                     <marker id="fw-arrow" markerWidth={aw} markerHeight={aw} refX={aw - 1} refY={aw / 2} orient="auto" markerUnits="userSpaceOnUse">
-                      <path d={`M0 0 L${aw} ${aw / 2} L0 ${aw} Z`} fill="#B6BECB" />
+                      <path d={`M0 0 L${aw} ${aw / 2} L0 ${aw} Z`} fill="#8A93A3" />
                     </marker>
                     <marker id="fw-arrow-hi" markerWidth={aw} markerHeight={aw} refX={aw - 1} refY={aw / 2} orient="auto" markerUnits="userSpaceOnUse">
                       <path d={`M0 0 L${aw} ${aw / 2} L0 ${aw} Z`} fill="#F5B731" />
@@ -720,7 +721,7 @@ export default function MyntmoreFrameworkClient() {
                           style={{ transition: "stroke 0.2s ease, stroke-width 0.2s ease" }}
                         />
                         {c.kind !== "sub" && (
-                          <circle r={dotR} fill={color} stroke="#16181D" strokeWidth={sw * 0.5}>
+                          <circle r={dotR} fill={color} stroke="#FFFFFF" strokeWidth={sw * 0.5}>
                             <animateMotion dur={`${2.2 + (i % 5) * 0.4}s`} begin={`${(i % 7) * 0.35}s`} repeatCount="indefinite" path={d} />
                           </circle>
                         )}
@@ -731,13 +732,13 @@ export default function MyntmoreFrameworkClient() {
                   <g className="font-mono" style={{ fontSize: labelPx, fontWeight: 700 }}>
                     {NODES.filter((n) => n.shape === "if").map((n) => (
                       <g key={n.id}>
-                        <text x={n.x + n.w + 8} y={n.y + n.h * 0.28 - labelPx * 0.5} fill="#4ADE80">true</text>
-                        <text x={n.x + n.w + 8} y={n.y + n.h * 0.72 + labelPx * 1.1} fill="#F87171">false</text>
+                        <text x={n.x + n.w + 8} y={n.y + n.h * 0.28 - labelPx * 0.5} fill="#166534">true</text>
+                        <text x={n.x + n.w + 8} y={n.y + n.h * 0.72 + labelPx * 1.1} fill="#B91C1C">false</text>
                       </g>
                     ))}
-                    <text x={NODE_MAP.connect.x + NODE_MAP.connect.w / 2 + 8} y={NODE_MAP.connect.y + NODE_MAP.connect.h + 40} fill="#F87171">error</text>
-                    <text x={2410} y={868} fill="#A78BFA">next batch</text>
-                    <text x={1770} y={1306} fill="#A78BFA">re-check</text>
+                    <text x={NODE_MAP.connect.x + NODE_MAP.connect.w / 2 + 8} y={NODE_MAP.connect.y + NODE_MAP.connect.h + 40} fill="#B91C1C">error</text>
+                    <text x={2410} y={868} fill="#6D28D9">next batch</text>
+                    <text x={1770} y={1306} fill="#6D28D9">re-check</text>
                   </g>
                 </svg>
 
@@ -749,8 +750,8 @@ export default function MyntmoreFrameworkClient() {
                   const isSub = n.shape === "sub";
                   const isEnd = n.shape === "end";
                   const radius = isSub ? "9999px" : n.shape === "trigger" ? "32px 12px 12px 32px" : n.shape === "if" ? "12px" : "12px";
-                  const border = isCurrent ? "#F5B731" : isActive ? n.accent : isDone ? "#22C55E" : isEnd ? "#3A3F4C" : "#3A3F4C";
-                  const glow = isCurrent ? "0 0 0 4px rgba(245,183,49,0.25), 0 0 24px rgba(245,183,49,0.45)" : isActive ? `0 0 0 4px ${n.accent}33, 0 10px 24px rgba(0,0,0,0.5)` : "0 2px 8px rgba(0,0,0,0.35)";
+                  const border = isCurrent ? "#F5B731" : isActive ? n.accent : isDone ? "#22C55E" : isEnd ? "#CFC8BD" : "#CFC8BD";
+                  const glow = isCurrent ? "0 0 0 4px rgba(245,183,49,0.25), 0 0 24px rgba(245,183,49,0.45)" : isActive ? `0 0 0 4px ${n.accent}33, 0 10px 24px rgba(0,0,0,0.12)` : "0 2px 8px rgba(0,0,0,0.08)";
                   return (
                     <div key={n.id} className="absolute" style={{ left: n.x, top: n.y, width: n.w, height: n.h, opacity: n.disabled ? 0.42 : 1 }}>
                       <button
@@ -760,50 +761,50 @@ export default function MyntmoreFrameworkClient() {
                         aria-pressed={isActive}
                         className="absolute inset-0 flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer"
                         style={{
-                          backgroundColor: isEnd ? "#1F2230" : isSub ? "#1F2230" : "#2A2E37",
+                          backgroundColor: isEnd ? "#F8F6F2" : isSub ? "#F8F6F2" : "#FFFFFF",
                           border: `${isCurrent || isActive ? 2 : 1.5}px solid ${border}`,
                           borderRadius: radius,
                           boxShadow: glow,
-                          color: isEnd ? "#9199A8" : n.accent,
+                          color: isEnd ? "#52525B" : textTone(n.accent),
                           transform: isCurrent ? "scale(1.08)" : undefined,
                         }}
                       >
                         {n.shape === "ai" ? (
                           <>
                             <span className="flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{ backgroundColor: `${n.accent}22` }}>{n.icon}</span>
-                            <span className="text-[11px] font-black leading-tight text-left pr-1" style={{ color: "#F3F4F6" }}>{n.title}</span>
+                            <span className="text-[11px] font-black leading-tight text-left pr-1" style={{ color: "#0A0A0A" }}>{n.title}</span>
                           </>
                         ) : (
                           n.icon
                         )}
                         {/* ports */}
-                        {!isSub && n.shape !== "trigger" && <span aria-hidden="true" className="absolute w-2 h-2 rounded-sm" style={{ left: -5, top: "50%", marginTop: -4, backgroundColor: "#6B7280" }} />}
-                        {!isSub && n.shape !== "end" && n.shape !== "if" && <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "50%", marginTop: -5, backgroundColor: "#9CA3AF" }} />}
+                        {!isSub && n.shape !== "trigger" && <span aria-hidden="true" className="absolute w-2 h-2 rounded-sm" style={{ left: -5, top: "50%", marginTop: -4, backgroundColor: "#8A93A3" }} />}
+                        {!isSub && n.shape !== "end" && n.shape !== "if" && <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "50%", marginTop: -5, backgroundColor: "#8A93A3" }} />}
                         {n.shape === "if" && (
                           <>
-                            <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "28%", marginTop: -5, backgroundColor: "#4ADE80" }} />
-                            <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "72%", marginTop: -5, backgroundColor: "#F87171" }} />
+                            <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "28%", marginTop: -5, backgroundColor: "#16A34A" }} />
+                            <span aria-hidden="true" className="absolute w-2.5 h-2.5 rounded-full" style={{ right: -6, top: "72%", marginTop: -5, backgroundColor: "#DC2626" }} />
                           </>
                         )}
                         {n.shape === "ai" && (
                           <>
-                            <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "35%", bottom: -5, backgroundColor: "#A78BFA" }} />
-                            <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "60%", bottom: -5, backgroundColor: "#A78BFA" }} />
+                            <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "35%", bottom: -5, backgroundColor: "#8B5CF6" }} />
+                            <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "60%", bottom: -5, backgroundColor: "#8B5CF6" }} />
                           </>
                         )}
-                        {isSub && <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "50%", top: -5, marginLeft: -4, backgroundColor: "#A78BFA" }} />}
-                        {n.disabled && <span aria-hidden="true" className="absolute -top-2 -left-2 text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: "#3A3F4C", color: "#D1D5DB" }}>off</span>}
+                        {isSub && <span aria-hidden="true" className="absolute w-2 h-2 rounded-full" style={{ left: "50%", top: -5, marginLeft: -4, backgroundColor: "#8B5CF6" }} />}
+                        {n.disabled && <span aria-hidden="true" className="absolute -top-2 -left-2 text-[8px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ backgroundColor: "#E8E2D9", color: "#3D3D3D" }}>off</span>}
                         {/* success badge */}
                         {isDone && (
-                          <span aria-hidden="true" className="absolute -top-2 -right-2 w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#22C55E" }}>
+                          <span aria-hidden="true" className="absolute -top-2 -right-2 w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#16A34A" }}>
                             <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="#fff" strokeWidth={4}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                           </span>
                         )}
                       </button>
                       {/* label */}
                       <div className="absolute text-center pointer-events-none" style={{ top: n.h + 6, left: n.w / 2 - (isSub ? 50 : 80), width: isSub ? 100 : 160 }}>
-                        {n.shape !== "ai" && <p className={`${isSub ? "text-[9.5px]" : "text-[11px]"} font-bold leading-tight`} style={{ color: isSub ? "#9CA3AF" : "#E5E7EB" }}>{n.title}</p>}
-                        <p className="text-[9px] font-mono leading-tight mt-0.5" style={{ color: "#9CA3AF" }}>{n.shape === "ai" ? `${n.type} · ${n.meta}` : n.meta ?? n.type}</p>
+                        {n.shape !== "ai" && <p className={`${isSub ? "text-[9.5px]" : "text-[11px]"} font-bold leading-tight`} style={{ color: isSub ? "#52525B" : "#0A0A0A" }}>{n.title}</p>}
+                        <p className="text-[9px] font-mono leading-tight mt-0.5" style={{ color: "#52525B" }}>{n.shape === "ai" ? `${n.type} · ${n.meta}` : n.meta ?? n.type}</p>
                       </div>
                     </div>
                   );
@@ -812,15 +813,15 @@ export default function MyntmoreFrameworkClient() {
 
               {/* Node detail card (top-left, fixed to the viewport) */}
               {activeNode && (
-                <div className="absolute left-3 top-3 max-w-[300px] rounded-xl p-4 card-fade-up" style={{ backgroundColor: "rgba(27,30,39,0.96)", border: `1px solid ${activeNode.accent}66`, backdropFilter: "blur(6px)" }}>
+                <div className="absolute left-3 top-3 max-w-[300px] rounded-xl p-4 card-fade-up" style={{ backgroundColor: "rgba(255,255,255,0.96)", border: `1px solid ${activeNode.accent}66`, backdropFilter: "blur(6px)", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}>
                   <div className="flex items-center gap-2.5 mb-2">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{ backgroundColor: `${activeNode.accent}22`, color: activeNode.accent }}>{activeNode.icon}</span>
+                    <span className="flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center" style={{ backgroundColor: `${activeNode.accent}22`, color: textTone(activeNode.accent) }}>{activeNode.icon}</span>
                     <div className="min-w-0">
-                      <p className="text-[13px] font-black leading-tight" style={{ color: "#F3F4F6" }}>{activeNode.title}</p>
-                      <p className="text-[10px] font-mono" style={{ color: "#9CA3AF" }}>{activeNode.type}{activeNode.meta ? ` · ${activeNode.meta}` : ""}</p>
+                      <p className="text-[13px] font-black leading-tight" style={{ color: "#0A0A0A" }}>{activeNode.title}</p>
+                      <p className="text-[10px] font-mono" style={{ color: "#52525B" }}>{activeNode.type}{activeNode.meta ? ` · ${activeNode.meta}` : ""}</p>
                     </div>
                   </div>
-                  <p className="text-[12px] leading-relaxed" style={{ color: "#C7CBD4" }}>{activeNode.desc ?? "A utility step. Tap a highlighted node in the breakdown below for the full story."}</p>
+                  <p className="text-[12px] leading-relaxed" style={{ color: "#3D3D3D" }}>{activeNode.desc ?? "A utility step. Tap a highlighted node in the breakdown below for the full story."}</p>
                 </div>
               )}
 
@@ -840,24 +841,24 @@ export default function MyntmoreFrameworkClient() {
               </div>
 
               {/* Minimap */}
-              <div className="hidden sm:block absolute rounded-lg overflow-hidden" style={{ right: 12, bottom: 12, width: MINI_W, height: MINI_H, backgroundColor: "rgba(27,30,39,0.92)", border: "1px solid #3A3F4C" }}>
+              <div className="hidden sm:block absolute rounded-lg overflow-hidden" style={{ right: 12, bottom: 12, width: MINI_W, height: MINI_H, backgroundColor: "rgba(255,255,255,0.95)", border: "1px solid #E8E2D9" }}>
                 {GROUPS.map((g) => (
                   <span key={g.title} className="absolute rounded-sm" style={{ left: g.x * miniScale, top: g.y * miniScale, width: g.w * miniScale, height: g.h * miniScale, backgroundColor: `${g.color}33` }} />
                 ))}
                 {NODES.map((n) => (
                   <span key={n.id} className="absolute rounded-[1px]" style={{ left: n.x * miniScale, top: n.y * miniScale, width: Math.max(2, n.w * miniScale), height: Math.max(2, n.h * miniScale), backgroundColor: n.accent, opacity: 0.9 }} />
                 ))}
-                <span className="absolute" style={{ left: miniView.x, top: miniView.y, width: miniView.w, height: miniView.h, border: "1px solid rgba(255,255,255,0.7)", backgroundColor: "rgba(255,255,255,0.08)" }} />
+                <span className="absolute" style={{ left: miniView.x, top: miniView.y, width: miniView.w, height: miniView.h, border: "1px solid rgba(10,10,10,0.55)", backgroundColor: "rgba(245,183,49,0.12)" }} />
               </div>
             </div>
 
             {/* Bottom bar */}
-            <div className="flex items-center justify-between px-5 py-2.5" style={{ backgroundColor: "#1B1E27" }}>
-              <span className="text-[10px] font-mono" style={{ color: "#9CA3AF" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
+            <div className="flex items-center justify-between px-5 py-2.5" style={{ backgroundColor: "#FEF9EC", borderTop: "1px solid #E8E2D9" }}>
+              <span className="text-[10px] font-mono" style={{ color: "#52525B" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
               <div className="flex items-center gap-1.5">
-                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>&minus;</button>
-                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline cursor-pointer" style={{ color: "#9199A8" }}>{Math.round(view.zoom * 100)}%</button>
-                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#2A2E37", color: "#D7D9E0" }}>+</button>
+                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E8E2D9" }}>&minus;</button>
+                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline cursor-pointer" style={{ color: "#52525B" }}>{Math.round(view.zoom * 100)}%</button>
+                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E8E2D9" }}>+</button>
               </div>
             </div>
           </div>

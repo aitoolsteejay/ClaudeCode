@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { fredoka } from "./fonts/fredoka";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "@/components/ui/sonner";
@@ -87,7 +88,7 @@ export default function RootLayout({
   return (
     // suppressHydrationWarning: the inline script below adds a class to <html>
     // before React hydrates, which would otherwise be reported as a mismatch.
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${fredoka.variable}`} suppressHydrationWarning>
       <head>
         {/* Runs before first paint. Marks pages where count-up animations may
             run, so CSS can hide those numbers until JS starts them (Hero). */}

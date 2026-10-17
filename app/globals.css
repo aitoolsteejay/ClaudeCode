@@ -721,6 +721,18 @@ main > section:first-of-type:not([style*="gradient"]):not(:has([style*="radial-g
   letter-spacing: 0.01em;
   line-height: 1.35;
 }
+
+/* Small category/eyebrow pills use Fredoka across the whole site. The
+   attribute selectors cover the existing utility-class variants without
+   changing the body font or paragraph typography. */
+.fredoka-tag,
+[class*="rounded-full"][class*="text-xs"][class*="font-bold"],
+[class*="rounded-full"][class*="text-xs"][class*="font-semibold"],
+[class*="rounded-full"][class*="text-[10px]"],
+[class*="rounded-full"][class*="text-[11px]"],
+[class*="uppercase"][class*="tracking-"][class*="text-xs"] {
+  font-family: var(--font-fredoka), var(--font-inter), system-ui, sans-serif;
+}
 /* Sentence case without wide tracking reads smaller than the caps it
    replaces, so step the small sizes up one notch. Done per size class
    because em in font-size resolves against the parent, not the class. */

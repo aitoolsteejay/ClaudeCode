@@ -209,7 +209,6 @@ Client names are withheld under confidentiality agreements. Overview: https://ww
 - [Cold Email Follow-Up Sequence: The 5-Step Ladder](https://www.myntmore.com/blog/cold-email-follow-up-sequence): Most outbound dies after one email. Plan a five-touch follow-up ladder over 18 days where every message adds a new reason to reply. Read the guide.
 - [Positive Reply to Booked Meeting: Fix the Leak](https://www.myntmore.com/blog/positive-reply-to-booked-meeting): A positive reply is not a booked meeting. See the four leaks that kill replies and the five-step playbook that turns them into meetings. Read the guide.
 - [AI Personalization for Cold Outreach: What Works](https://www.myntmore.com/blog/ai-personalization-cold-outreach): AI made personalization cheap and generic. See where AI helps your cold outreach, where it gets you ignored, and the human-in-the-loop rule.
-- [Multi-Threading B2B Outbound: Beyond One Contact](https://www.myntmore.com/blog/multi-threading-b2b-outbound): One contact per account is a single point of failure. Map the buying group and run role-specific threads so deals survive a quiet champion.
 
 ## Glossary (definitions)
 - [Total Conversional Market (TCM)](https://www.myntmore.com/resources/glossary/total-conversional-market): Total Conversional Market (TCM) is the highly specific, highly motivated subset of prospects actively feeling a pain point today, already looking for workarounds, and ready to act immediately, as distinct from the broad, theoretical Total Addressable Market (TAM).

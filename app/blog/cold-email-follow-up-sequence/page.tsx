@@ -111,6 +111,7 @@ export default function ColdEmailFollowUpSequence() {
         { label: "The Reply Isn't the Win: What to Do in the First Hour", href: "/blog/handling-cold-email-replies" },
         { label: "The Reply Gap: Why Positive Replies Die Before Meetings", href: "/blog/positive-reply-to-booked-meeting" },
         { label: "Cold Email Compliance Guide", href: "/blog/cold-email-compliance-guide" },
+        { label: "Cold Email ROI Calculator", href: "/tools/cold-email-roi-calculator" },
         { label: "Cold email agency services", href: "/services/cold-email" },
       ]}
       cta={{

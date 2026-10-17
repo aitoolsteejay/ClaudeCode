@@ -114,6 +114,7 @@ export default function HandlingColdEmailReplies() {
         { label: "The Impression Illusion: Conversations, Not Sends", href: "/blog/conversations-not-impressions-outbound" },
         { label: "Glossary: Meeting Booked Rate", href: "/resources/glossary/meeting-booked-rate" },
         { label: "5 Claude Prompts for Sales Calls (before and after every call)", href: "/resources/guides/claude-sales-call-prompts" },
+        { label: "Cold Email ROI Calculator", href: "/tools/cold-email-roi-calculator" },
         { label: "Cold email agency services", href: "/services/cold-email" },
       ]}
       cta={{

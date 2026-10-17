@@ -113,6 +113,7 @@ export default function PositiveReplyToBookedMeeting() {
         { label: "The Follow-Up Ladder: Your First Email Is Only the Introduction", href: "/blog/cold-email-follow-up-sequence" },
         { label: "The 7 B2B Lead Gen Metrics That Actually Matter", href: "/blog/b2b-lead-gen-metrics" },
         { label: "Glossary: Meeting Booked Rate", href: "/resources/glossary/meeting-booked-rate" },
+        { label: "Cold Email ROI Calculator", href: "/tools/cold-email-roi-calculator" },
         { label: "Cold email agency services", href: "/services/cold-email" },
       ]}
       cta={{

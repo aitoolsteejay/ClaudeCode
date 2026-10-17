@@ -418,7 +418,7 @@ export default function DoItYourselfClient() {
         <div aria-hidden="true" className="hidden lg:flex flex-col items-center gap-1 absolute z-20" style={{ right: "2%", top: "30%", animation: "handwrite-float-r 5.5s ease-in-out 2.5s infinite" }}>
           <div className="card-fade-up flex flex-col items-center text-center leading-snug" style={{ fontFamily: "var(--font-caveat)", fontSize: "20px", fontWeight: 700, color: ACCENT, lineHeight: 1.25, animationDelay: "1s" }}>
             <span>100% yours.</span>
-            <span style={{ fontSize: "13px", letterSpacing: "0.08em", fontWeight: 600, color: "#a855f7" }}>no hand-holding</span>
+            <span style={{ fontSize: "13px", letterSpacing: "0.08em", fontWeight: 600, color: "#7E22CE" }}>no hand-holding</span>
           </div>
           <svg width="48" height="40" viewBox="0 0 48 40" fill="none" style={{ transform: "scaleX(-1) rotate(-15deg)", marginBottom: "-4px", alignSelf: "flex-end", marginRight: "6px" }}>
             <path d="M4 6 C10 8, 26 2, 40 16 C46 22, 46 28, 42 34" stroke={ACCENT} strokeWidth="2.2" strokeLinecap="round" fill="none" strokeDasharray="90" strokeDashoffset="90" style={{ animation: "doodle-draw 0.6s ease forwards 1.6s" }} />

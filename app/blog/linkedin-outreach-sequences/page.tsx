@@ -108,7 +108,7 @@ export default function LinkedInOutreachSequences() {
               },
               {
                 heading: "Volume, limits, and staying in LinkedIn's good graces",
-                body: "LinkedIn limits connection requests to around 100 per week for standard accounts and 150–200 for Sales Navigator. Stay under the limit and keep your acceptance rate above 30% to avoid restrictions. If your acceptance rate is low, your targeting is off. Fix the ICP, not the volume.",
+                body: "LinkedIn restricts how many connection requests an account can send and does not publish a fixed weekly number, so send gradually and keep your targeting tight. A falling acceptance rate is the early warning that your targeting is off, and accounts that send a lot of ignored requests get restricted. Fix the ICP, not the volume.",
               },
               {
                 heading: "Pairing LinkedIn with cold email",

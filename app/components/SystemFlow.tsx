@@ -268,7 +268,7 @@ export default function SystemFlow() {
               <span className="text-xs mt-0.5 flex-shrink-0" style={{ color:"#0a66c2" }}>{item.icon}</span>
               <div>
                 <p className="text-[#0a0a0a] font-semibold text-sm mb-1">{item.title}</p>
-                <p className="text-[#6B7280] text-xs leading-relaxed">{item.desc}</p>
+                <p className="text-[#71675E] text-xs leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -353,7 +353,7 @@ export default function SystemFlow() {
                         <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(step.color) }}>{step.number}</span>
                         <h3 className="text-sm font-bold text-[#0a0a0a]">{step.title}</h3>
                       </div>
-                      <p className="text-[#6B7280] text-xs leading-relaxed">{step.description}</p>
+                      <p className="text-[#71675E] text-xs leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 </div>
@@ -401,7 +401,7 @@ export default function SystemFlow() {
                   <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[0].color) }}>{STEPS[0].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[0].title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{STEPS[0].description}</p>
+                <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[0].description}</p>
               </div>
 
               <HArrow seq={1} fromColor={STEPS[0].color} toColor={STEPS[1].color} delay="0s" duration="2s" />
@@ -417,7 +417,7 @@ export default function SystemFlow() {
                   <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[1].color) }}>{STEPS[1].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[1].title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{STEPS[1].description}</p>
+                <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[1].description}</p>
               </div>
 
               <HArrow seq={3} fromColor={STEPS[1].color} toColor={STEPS[2].color} delay="0.6s" duration="2s" />
@@ -433,7 +433,7 @@ export default function SystemFlow() {
                   <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[2].color) }}>{STEPS[2].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[2].title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{STEPS[2].description}</p>
+                <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[2].description}</p>
               </div>
             </div>
 
@@ -454,7 +454,7 @@ export default function SystemFlow() {
                   <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[3].color) }}>{STEPS[3].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[3].title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{STEPS[3].description}</p>
+                <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[3].description}</p>
               </div>
 
               <HArrow seq={9} fromColor={STEPS[3].color} toColor={STEPS[4].color} delay="2.4s" duration="2s" />
@@ -470,7 +470,7 @@ export default function SystemFlow() {
                   <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[4].color) }}>{STEPS[4].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[4].title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{STEPS[4].description}</p>
+                <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[4].description}</p>
               </div>
 
               <HArrow seq={11} fromColor={STEPS[4].color} toColor={STEPS[5].color} delay="3s" duration="2s" />
@@ -486,7 +486,7 @@ export default function SystemFlow() {
                   <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[5].color) }}>{STEPS[5].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[5].title}</h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed">{STEPS[5].description}</p>
+                <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[5].description}</p>
               </div>
             </div>
 

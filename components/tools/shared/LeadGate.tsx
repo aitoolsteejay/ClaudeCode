@@ -205,7 +205,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
 
           <div className="space-y-1.5">
             <label htmlFor="firstName" className="block text-sm font-medium text-foreground">
-              First Name <span className="text-primary">*</span>
+              First Name <span className="text-[#A14A08]">*</span>
             </label>
             <Input
               id="firstName"
@@ -223,7 +223,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
 
           <div className="space-y-1.5">
             <label htmlFor="lastName" className="block text-sm font-medium text-foreground">
-              Last Name <span className="text-primary">*</span>
+              Last Name <span className="text-[#A14A08]">*</span>
             </label>
             <Input
               id="lastName"
@@ -241,7 +241,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
 
           <div className="space-y-1.5">
             <label htmlFor="designation" className="block text-sm font-medium text-foreground">
-              Designation <span className="text-primary">*</span>
+              Designation <span className="text-[#A14A08]">*</span>
             </label>
             <Input
               id="designation"
@@ -307,7 +307,7 @@ const LeadGate = ({ onComplete, source, heading = DEFAULT_HEADING, description =
 
           <div className="space-y-1.5">
             <label htmlFor="email" className="block text-sm font-medium text-foreground">
-              Email <span className="text-primary">*</span>
+              Email <span className="text-[#A14A08]">*</span>
             </label>
             <Input
               id="email"

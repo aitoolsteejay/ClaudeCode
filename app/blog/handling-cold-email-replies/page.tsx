@@ -37,7 +37,7 @@ const SECTIONS: BlogSection[] = [
   {
     heading: "Speed Is the First Signal of Relevance",
     paragraphs: [
-      "A widely cited Harvard Business Review study found that companies that responded to leads within an hour were nearly 7x more likely to qualify them than companies that waited even an hour longer. A cold reply works the same way. When a prospect replies, they're thinking about your problem right then. Wait until tomorrow and you're back to competing with forty other tabs. Treat every positive or curious reply like an inbound lead, because that's what it just became.",
+      "A well-known Harvard Business Review study of online sales leads found that most companies are not responding to leads nearly fast enough. A cold reply works the same way. When a prospect replies, they're thinking about your problem right then. Wait until tomorrow and you're back to competing with forty other tabs. Treat every positive or curious reply like an inbound lead, because that's what it just became.",
     ],
   },
   {

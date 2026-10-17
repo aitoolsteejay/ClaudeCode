@@ -26,7 +26,7 @@ export default function NotFound() {
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
             <section className="max-w-2xl">
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#f5b731]/50 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#b66c00] shadow-sm backdrop-blur">
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#f5b731]/50 bg-white/80 px-4 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#A14A08] shadow-sm backdrop-blur">
                 <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
                   <span className="not-found-signal absolute inset-0 rounded-full bg-[#f5b731]" />
                   <span className="relative h-2.5 w-2.5 rounded-full bg-[#f5b731]" />
@@ -50,7 +50,7 @@ export default function NotFound() {
               <div className="relative overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 p-5 shadow-[0_24px_80px_rgba(30,20,60,0.12)] backdrop-blur sm:p-7">
                 <div className="mb-6 flex items-start justify-between gap-4 border-b border-[#e8e4dc] pb-5">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#9b948a]">Recovery menu</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#71675E]">Recovery menu</p>
                     <h2 className="mt-2 text-2xl font-black tracking-tight text-[#101010]">Pick a better route</h2>
                   </div>
                   <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#f5b731] text-2xl font-black text-[#0b0b0c] shadow-[6px_6px_0_#a855f7]">404</div>
@@ -63,10 +63,10 @@ export default function NotFound() {
                     <Link key={link.href} href={link.href} className="group flex items-center gap-4 rounded-2xl border border-[#e8e4dc] bg-white px-4 py-4 transition-all hover:-translate-y-0.5 hover:border-[#f5b731] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5b731]">
                       <span className={`h-12 w-12 shrink-0 rounded-xl ${link.tone === "yellow" ? "bg-[#fff3cf]" : link.tone === "purple" ? "bg-[#f1e8ff]" : "bg-[#e5f4ff]"}`} aria-hidden="true" />
                       <span className="min-w-0">
-                        <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#9b948a]">{link.eyebrow}</span>
+                        <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#71675E]">{link.eyebrow}</span>
                         <span className="mt-1 block text-base font-bold text-[#171717]">{link.label}</span>
                       </span>
-                      <span className="ml-auto text-xl text-[#9b948a] transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
+                      <span className="ml-auto text-xl text-[#71675E] transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
                     </Link>
                   ))}
                 </div>
@@ -78,7 +78,7 @@ export default function NotFound() {
             </section>
           </div>
 
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-[#ded8cf] pt-6 text-sm text-[#8b847c]">
+          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-[#ded8cf] pt-6 text-sm text-[#71675E]">
             <span>Myntmore · outbound systems with intent</span>
             <Link href="/contact-us" className="font-semibold text-[#3d3d3d] underline decoration-[#f5b731] decoration-2 underline-offset-4">Need help finding something?</Link>
           </div>

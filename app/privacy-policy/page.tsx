@@ -57,7 +57,7 @@ const SECTIONS = [
   {
     heading: "Third-Party Services",
     body: [
-      "We rely on third-party providers to run parts of this site and our outreach, including Calendly for scheduling, Zoho for forms and email campaigns, Google Analytics for site analytics, and Vercel for hosting. Each of these providers processes data under their own privacy policy, and we only share what is necessary for them to perform their function.",
+      "We rely on third-party providers to run parts of this site and our outreach, including Calendly for scheduling, Zoho for forms and email campaigns, Google Analytics for site analytics, Vercel for hosting, and Supabase to keep a record of sign-ups for our free tools. The free AI tools also send what you type into them to Google's Gemini API, through our servers, to generate your result. Each of these providers processes data under their own privacy policy, and we only share what is necessary for them to perform their function.",
       "We do not sell your personal information to third parties.",
     ],
   },
@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
           <h1 className="text-4xl sm:text-5xl font-black mb-4 leading-tight" style={{ color: "#0a0a0a" }}>
             Privacy Policy
           </h1>
-          <p className="text-sm" style={{ color: "#71675E" }}>Last updated July 22, 2026</p>
+          <p className="text-sm" style={{ color: "#71675E" }}>Last updated October 17, 2026</p>
         </div>
       </section>
 

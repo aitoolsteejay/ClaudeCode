@@ -43,7 +43,7 @@ const T = {
   paper: "#FFFFFF",
   ink: "#0a0a0a",
   ink2: "#3D3D3D",
-  muted: "#6B6560",
+  muted: "#71675E",
   hairline: "#E8E2D9",
   gold: "#F5B731",
   purple: "#7C3AED",

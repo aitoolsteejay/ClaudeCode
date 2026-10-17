@@ -71,7 +71,7 @@ const StepOne = ({ data, onNext }: StepOneProps) => {
         {/* Current Headline */}
         <div className="space-y-2">
           <label htmlFor="headline" className="block text-sm font-medium text-foreground">
-            Current LinkedIn Headline <span className="text-primary">*</span>
+            Current LinkedIn Headline <span className="text-[#A14A08]">*</span>
           </label>
           <Input
             id="headline"
@@ -90,7 +90,7 @@ const StepOne = ({ data, onNext }: StepOneProps) => {
         {/* Current About Section */}
         <div className="space-y-2">
           <label htmlFor="about" className="block text-sm font-medium text-foreground">
-            Current LinkedIn About Section <span className="text-primary">*</span>
+            Current LinkedIn About Section <span className="text-[#A14A08]">*</span>
           </label>
           <textarea
             id="about"

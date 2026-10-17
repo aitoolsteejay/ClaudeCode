@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T10:34:11.629Z",
+  "generatedAt": "2026-10-17T10:37:20.230Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 256,
@@ -3444,9 +3444,10 @@
         "/blog/handling-cold-email-replies",
         "/blog/positive-reply-to-booked-meeting",
         "/resources/tools",
+        "cold-emailing/ColdEmailingPackage.tsx",
         "lib/tools-registry.ts"
       ],
-      "inboundCount": 5,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

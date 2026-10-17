@@ -42,6 +42,7 @@ const SECTIONS: BlogSection[] = [
   },
   {
     heading: "Where Positive Replies Leak",
+    bullets: true,
     paragraphs: [
       "When we audit outbound pipelines, the same four leaks show up again and again.",
     ],

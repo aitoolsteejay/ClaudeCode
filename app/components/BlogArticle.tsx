@@ -12,8 +12,10 @@ export interface BlogSection {
   heading: string;
   // Opening paragraph(s) before any list.
   paragraphs?: string[];
-  // Numbered list; `lead` is rendered bold ahead of `text`.
+  // Numbered list (bulleted when `bullets` is set); `lead` is rendered bold ahead of `text`.
   items?: { lead: string; text: string }[];
+  // Use for unordered points. Leave off when the order matters (steps, ladders).
+  bullets?: boolean;
   // Paragraph(s) after the list.
   after?: string[];
 }
@@ -61,7 +63,19 @@ export default function BlogArticle({ url, tag, readTime, accent, title, intro, 
       {section.paragraphs?.map((p) => (
         <p key={p} className="text-base leading-relaxed" style={{ color: "#52525B" }}>{p}</p>
       ))}
-      {section.items && (
+      {section.items && section.bullets && (
+        <ul className="space-y-4 mt-4">
+          {section.items.map((item) => (
+            <li key={item.lead} className="flex gap-3">
+              <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2.5" style={{ backgroundColor: textTone(accent) }} />
+              <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
+                <strong style={{ color: "#0a0a0a" }}>{item.lead}</strong> {item.text}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+      {section.items && !section.bullets && (
         <ol className="space-y-4 mt-4">
           {section.items.map((item, i) => (
             <li key={item.lead} className="flex gap-3">

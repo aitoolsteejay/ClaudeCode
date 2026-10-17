@@ -354,6 +354,10 @@ export default function ColdEmailingPackage() {
                     See real results
                   </Link>
                 </div>
+                <p className="mt-6 text-sm" style={{ color: "#52525B" }}>
+                  Want numbers first?{" "}
+                  <Link href="/tools/cold-email-roi-calculator" className="font-bold underline" style={{ color: "#A14A08" }}>Estimate your return with the Cold Email ROI Calculator</Link>
+                </p>
               </div>
             </div>
           </FadeIn>

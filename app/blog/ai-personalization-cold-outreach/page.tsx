@@ -49,6 +49,7 @@ const SECTIONS: BlogSection[] = [
   },
   {
     heading: "Where AI Actually Helps",
+    bullets: true,
     paragraphs: [
       "Used well, AI is a research assistant, not a ghostwriter. These are the jobs we hand it.",
     ],
@@ -61,6 +62,7 @@ const SECTIONS: BlogSection[] = [
   },
   {
     heading: "Where It Gets You Ignored",
+    bullets: true,
     items: [
       { lead: "Fully automated first lines.", text: "Sent without review." },
       { lead: "Compliments generated from LinkedIn activity.", text: "Flattery that proves a scrape, not understanding." },

@@ -44,6 +44,7 @@ const SECTIONS: BlogSection[] = [
   },
   {
     heading: "Why Single-Threaded Deals Stall",
+    bullets: true,
     items: [
       { lead: "Your champion gets busy.", text: "The deal quietly drops down their list." },
       { lead: "They change roles or leave.", text: "Nobody else at the company knows you exist." },

@@ -55,6 +55,8 @@ const nextConfig = {
       // /photography-videography, /academy) are deliberately left to 404:
       // Myntmore no longer sells any of them, and pointing them at /services
       // would be an irrelevant redirect that Google treats as a soft 404.
+      // Folded into the older, same-topic post (published 2026-10-17, merged the same day).
+      { source: "/blog/multi-threading-b2b-outbound", destination: "/blog/multi-threading-b2b-buying-committee", permanent: true },
       { source: "/home", destination: "/", permanent: true },
       { source: "/webinar", destination: "/events", permanent: true },
       { source: "/branding", destination: "/services/personal-branding", permanent: true },

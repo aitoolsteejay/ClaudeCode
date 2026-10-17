@@ -237,7 +237,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/cold-email-follow-up-sequence`, lastModified: lastMod("/blog/cold-email-follow-up-sequence"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/positive-reply-to-booked-meeting`, lastModified: lastMod("/blog/positive-reply-to-booked-meeting"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/ai-personalization-cold-outreach`, lastModified: lastMod("/blog/ai-personalization-cold-outreach"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/multi-threading-b2b-outbound`, lastModified: lastMod("/blog/multi-threading-b2b-outbound"), changeFrequency: "monthly", priority: 0.7 },
     // Guides moved from /instagram-resources/* on 2026-10-12 (301s in next.config.js)
     { url: `${base}/resources/guides/claude-skills-guide`, lastModified: lastMod("/resources/guides/claude-skills-guide"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/80-us-meetings-ai-agents`, lastModified: lastMod("/resources/guides/80-us-meetings-ai-agents"), changeFrequency: "monthly", priority: 0.7 },

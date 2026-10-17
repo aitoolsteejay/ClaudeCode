@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   keywords: [
     "multi-threading in b2b sales deals",
     "b2b buying committee",
+    "multi threading b2b outbound",
+    "why b2b deals stall",
     "single-threaded deals",
     "how many stakeholders in a b2b deal",
     "champion trap b2b sales",
@@ -41,6 +43,15 @@ const SECTIONS: BlogSection[] = [
     ],
   },
   {
+    heading: "Why Single-Threaded Deals Stall",
+    items: [
+      { lead: "Your champion gets busy.", text: "The deal quietly drops down their list." },
+      { lead: "They change roles or leave.", text: "Nobody else at the company knows you exist." },
+      { lead: "They can't explain it upward.", text: "They love the idea but struggle to sell it to the people who control the budget." },
+      { lead: "A stakeholder you never met objects.", text: "It happens in a meeting you weren't in." },
+    ],
+  },
+  {
     heading: "Map the Committee Before You Write a Single Line",
     paragraphs: ["For every target account, identify three roles before you send anything:"],
     items: [
@@ -62,7 +73,7 @@ const SECTIONS: BlogSection[] = [
   {
     heading: "Thread in Parallel, Not in Sequence",
     paragraphs: [
-      "Don't wait until the first contact goes cold to try the next one. Run light, role-specific touches to two or three people at the same account in the same week. Mention the others where it's natural: \"I've also reached out to your RevOps lead, since this usually touches both teams.\" Buyers don't find this pushy. They find it realistic, because it's how their company actually buys.",
+      "Don't wait until the first contact goes cold to try the next one. Run light, role-specific touches to two or three people at the same account in the same week. Mention the others where it's natural: \"I've also reached out to your RevOps lead, since this usually touches both teams.\" Buyers don't find this pushy. They find it realistic, because it's how their company actually buys. Multi-threading doesn't mean sending the same email to three people, which reads as spam and gets forwarded with an eye-roll. Start with the person closest to the pain, bring in the approver a few days later with a reference to any conversation that has started, and run a LinkedIn touch alongside email so your name shows up in more than one place.",
     ],
   },
   {
@@ -109,7 +120,7 @@ export default function MultiThreadingBuyingCommittee() {
         headline: "Single-Threaded Deals Die: Why You Need the Whole Buying Committee, Not One Champion",
         description: DESCRIPTION,
         datePublished: "2026-10-07T16:00:00+05:30",
-        dateModified: "2026-10-07T16:00:00+05:30",
+        dateModified: "2026-10-17T12:00:00+05:30",
       }}
       related={[
         { label: "Glossary: Multi-Threading", href: "/resources/glossary/multi-threading" },

@@ -293,13 +293,6 @@ const BLOG_POSTS: BlogPost[] = [
     excerpt: "AI made personalization cheap and generic. Where it helps with research and signals, where it backfires, and the human-in-the-loop rule.",
     readTime: "5 min read",
   },
-  {
-    href: "/blog/multi-threading-b2b-outbound",
-    tags: ["Sales Strategy", "Outbound"],
-    title: "The Single-Thread Risk: Why One Contact Per Account Is Killing Your B2B Deals",
-    excerpt: "Map the buying group and run role-specific, staggered outreach so a deal survives a quiet or departing champion.",
-    readTime: "5 min read",
-  },
 ];
 
 interface MediumPost {

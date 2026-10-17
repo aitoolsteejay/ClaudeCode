@@ -109,6 +109,7 @@ export default function HandlingColdEmailReplies() {
       }}
       related={[
         { label: "Cold Email Sequence Templates That Get Replies", href: "/blog/cold-email-sequence-templates" },
+        { label: "The Reply Gap: Why Positive Replies Die Before Meetings", href: "/blog/positive-reply-to-booked-meeting" },
         { label: "The 7 B2B Lead Gen Metrics That Actually Matter", href: "/blog/b2b-lead-gen-metrics" },
         { label: "The Impression Illusion: Conversations, Not Sends", href: "/blog/conversations-not-impressions-outbound" },
         { label: "Glossary: Meeting Booked Rate", href: "/resources/glossary/meeting-booked-rate" },

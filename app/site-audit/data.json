@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-17T10:04:09.422Z",
+  "generatedAt": "2026-10-17T10:30:15.458Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 257,
-    "linked": 244,
+    "total": 256,
+    "linked": 243,
     "orphan": 13,
     "noindex": 18,
     "notInXmlSitemap": 19,
@@ -492,11 +492,10 @@
         "/blog/cold-email-sequence-templates",
         "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/blog/multi-threading-b2b-buying-committee",
-        "/blog/multi-threading-b2b-outbound",
         "/blog/reviving-closed-lost-leads",
         "/resources/blogs"
       ],
-      "inboundCount": 6,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -521,25 +520,11 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/blog/multi-threading-b2b-outbound",
         "/resources/blogs",
         "/resources/guides/claude-sales-call-prompts",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 4,
-      "noindex": false,
-      "inXmlSitemap": true,
-      "inHtmlSitemap": true
-    },
-    {
-      "path": "/blog/multi-threading-b2b-outbound",
-      "title": "Multi Threading B2b Outbound",
-      "section": "blog",
-      "status": "linked",
-      "linkedFrom": [
-        "/resources/blogs"
-      ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -592,9 +577,10 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/cold-email-follow-up-sequence",
+        "/blog/handling-cold-email-replies",
         "/resources/blogs"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -631,10 +617,9 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
-        "/blog/multi-threading-b2b-outbound",
         "/resources/blogs"
       ],
-      "inboundCount": 2,
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2001,7 +1986,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 84,
+      "inboundCount": 83,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -3222,7 +3207,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 13,
+      "inboundCount": 12,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3262,7 +3247,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 44,
+      "inboundCount": 43,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3693,6 +3678,11 @@
     {
       "from": "/careers/senior-sales-head",
       "to": "/careers",
+      "permanent": true
+    },
+    {
+      "from": "/blog/multi-threading-b2b-outbound",
+      "to": "/blog/multi-threading-b2b-buying-committee",
       "permanent": true
     },
     {

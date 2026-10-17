@@ -92,6 +92,7 @@ export default function ICPMappingB2B() {
               {
                 heading: "How to build your ICP from existing data",
                 body: "Pull your last 20 closed deals. For each one, write down: company size, industry, the trigger that made them reach out or respond, the job title of the decision-maker, and how long the deal took to close. Now look for the pattern. The companies that closed fastest and with the least friction: that is your ICP. Replicate those characteristics in your prospecting.",
+                link: { before: "If you would rather have this mapped and scored for you, see our ", href: "/services/sales-intelligence", text: "ICP mapping and lead scoring service", after: "." },
               },
               {
                 heading: "Intent signals that tell you someone is in market",
@@ -115,6 +116,11 @@ export default function ICPMappingB2B() {
               <div key={section.heading}>
                 <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>{section.heading}</h2>
                 {section.body && <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{section.body}</p>}
+                {section.link && (
+                  <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>
+                    {section.link.before}<Link href={section.link.href} className="font-bold underline" style={{ color: "#1D4ED8" }}>{section.link.text}</Link>{section.link.after}
+                  </p>
+                )}
                 {section.list && (
                   <ul className="space-y-4">
                     {section.list.map((item, i) => (

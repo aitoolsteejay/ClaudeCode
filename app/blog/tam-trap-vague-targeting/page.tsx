@@ -82,6 +82,7 @@ export default function TamTrapVagueTargeting() {
               {
                 heading: "Stop chasing a massive, theoretical market",
                 body: "To build a B2B system that consistently books 35 to 60 highly qualified meetings every single month, you have to stop chasing a massive, theoretical market. You need to transition from your Total Addressable Market to what's actually in front of you right now:",
+                link: { before: "We map your real, reachable market and score the accounts in it; see our ", href: "/services/sales-intelligence", text: "ICP mapping and lead scoring service", after: "." },
                 list: [
                   "Total Addressable Market (TAM): the broad, high-level audience that theoretically could buy your product in a perfect world.",
                   "Total Conversional Market (TCM): the highly specific, highly motivated subset of prospects who are actively feeling the pain point today, are already looking for workarounds, and are ready to act immediately.",
@@ -95,6 +96,11 @@ export default function TamTrapVagueTargeting() {
               <div key={section.heading}>
                 <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>{section.heading}</h2>
                 {section.body && <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{section.body}</p>}
+                {section.link && (
+                  <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>
+                    {section.link.before}<Link href={section.link.href} className="font-bold underline" style={{ color: "#1D4ED8" }}>{section.link.text}</Link>{section.link.after}
+                  </p>
+                )}
                 {section.list && (
                   <ul className="space-y-4 mt-4">
                     {section.list.map((item, i) => (

@@ -90,6 +90,7 @@ export default function PredictableB2BLeadGen() {
               {
                 heading: "Layer in intent signals",
                 body: "Once you have the profile, you need a way to find those people in real time. We call these intent signals. These are events like funding rounds, leadership changes, or new job postings. Instead of reaching out to a static list, your system should be adding new prospects the moment they show a sign of being in market.",
+                link: { before: "We run this kind of live research for clients; see how our ", href: "/services/ai-lead-generation", text: "AI lead generation service", after: " works." },
               },
               {
                 heading: "The 3 mistakes killing your outbound",
@@ -117,6 +118,11 @@ export default function PredictableB2BLeadGen() {
               <div key={section.heading}>
                 <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>{section.heading}</h2>
                 {section.body && <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{section.body}</p>}
+                {section.link && (
+                  <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>
+                    {section.link.before}<Link href={section.link.href} className="font-bold underline" style={{ color: "#1D4ED8" }}>{section.link.text}</Link>{section.link.after}
+                  </p>
+                )}
                 {section.list && (
                   <ul className="space-y-4">
                     {section.list.map((item, i) => (

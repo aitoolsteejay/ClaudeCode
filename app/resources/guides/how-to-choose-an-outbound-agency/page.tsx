@@ -114,7 +114,7 @@ export default function HowToChooseOutboundAgencyPage() {
                   <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>3. Ask for a real reply-rate range, not a highlight reel</h2>
                   <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                     A single client&apos;s best month tells you nothing about what to expect. A credible agency can tell you the range they typically see across accounts, by channel, and explain what moves a campaign toward the top or bottom of that range. If the only proof on offer is one glowing testimonial, ask why there isn&apos;t a spread of real numbers behind it.
-                  </p>
+                   See the results we have delivered, with the numbers behind them, in our <Link href="/case-studies" className="font-bold underline" style={{ color: "#1D4ED8" }}>case studies</Link>.</p>
                 </div>
 
                 <div>

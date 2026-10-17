@@ -59,6 +59,7 @@ const SECTIONS = [
   {
     heading: "Your Profile Is Your Landing Page",
     body: "Your LinkedIn profile acts as your business's ultimate landing page. If your headline, banner, and featured section are too vague, or focus entirely on your origin story rather than the specific outcome you deliver to your Ideal Customer Profile (ICP), your profile will underperform. Great personal branding isn't about being loud; it is about building a conversion-ready channel that quietly transforms reader interest into booked sales calls.",
+    link: { before: "If you want help turning your profile into one that converts, see our ", href: "/services/personal-branding", text: "founder personal branding service", after: "." },
   },
   {
     heading: "Benchmark Your Authority Against the Market",
@@ -91,6 +92,11 @@ export default function VanityMetricsPersonalBrandPipeline() {
               <div key={section.heading}>
                 <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>{section.heading}</h2>
                 <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{section.body}</p>
+                {section.link && (
+                  <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>
+                    {section.link.before}<Link href={section.link.href} className="font-bold underline" style={{ color: "#1D4ED8" }}>{section.link.text}</Link>{section.link.after}
+                  </p>
+                )}
               </div>
             ))}
           </div>

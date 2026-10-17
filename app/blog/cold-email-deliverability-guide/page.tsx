@@ -111,11 +111,17 @@ export default function ColdEmailDeliverability() {
               {
                 heading: "The write-once, compound-forever mindset",
                 body: "Good deliverability infrastructure is built once and maintained. Spend the two weeks upfront to get it right: domains, DNS, warm-up, limits, and you will have a stable outbound channel for years. Skip it and you will be constantly wondering why your open rates are collapsing.",
+                link: { before: "If you would rather not build and monitor this infrastructure yourself, see our ", href: "/services/cold-email", text: "done-for-you cold email service", after: "." },
               },
             ].map((section) => (
               <div key={section.heading}>
                 <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>{section.heading}</h2>
                 {section.body && <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{section.body}</p>}
+                {section.link && (
+                  <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>
+                    {section.link.before}<Link href={section.link.href} className="font-bold underline" style={{ color: "#1D4ED8" }}>{section.link.text}</Link>{section.link.after}
+                  </p>
+                )}
                 {section.list && (
                   <ul className="space-y-4">
                     {section.list.map((item, i) => (

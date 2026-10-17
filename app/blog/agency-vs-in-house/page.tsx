@@ -189,6 +189,7 @@ export default function AgencyVsInHouseBlogPost() {
               <p>You&apos;re testing a new market, ICP, or offer and don&apos;t yet know if it&apos;s worth a full-time hire. It&apos;s far cheaper to learn that with a flexible engagement than with a severance package.</p>
               <p>You don&apos;t have (and don&apos;t want to build) in-house expertise in deliverability infrastructure, list enrichment, or outbound tooling, that&apos;s a specialised skill set on its own.</p>
               <p>You want a predictable monthly cost instead of a hiring outcome you can&apos;t fully control, some hires simply don&apos;t work out, no matter how good the interview process is.</p>
+              <p>If you want to see what an agency engagement produces before you decide, read our <Link href="/case-studies" className="font-bold underline" style={{ color: "#1D4ED8" }}>case studies</Link>.</p>
             </div>
           </FadeIn>
         </div>

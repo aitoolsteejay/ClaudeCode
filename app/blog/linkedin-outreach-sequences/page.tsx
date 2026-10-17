@@ -113,11 +113,17 @@ export default function LinkedInOutreachSequences() {
               {
                 heading: "Pairing LinkedIn with cold email",
                 body: "The highest-performing outbound sequences run LinkedIn and cold email in parallel. A prospect might ignore your email but accept your LinkedIn connection. Or they respond on LinkedIn and you follow up via email with a longer resource. Multi-channel sequences have 35–40% higher reply rates than single-channel. Use both.",
+                link: { before: "If you would rather have this run for you, ", href: "/services/linkedin-outreach", text: "LinkedIn outreach service", after: ", built around your buyers, is what we do." },
               },
             ].map((section) => (
               <div key={section.heading}>
                 <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>{section.heading}</h2>
                 {section.body && <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{section.body}</p>}
+                {section.link && (
+                  <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>
+                    {section.link.before}<Link href={section.link.href} className="font-bold underline" style={{ color: "#1D4ED8" }}>{section.link.text}</Link>{section.link.after}
+                  </p>
+                )}
                 {section.list && (
                   <ul className="space-y-4">
                     {section.list.map((item, i) => (

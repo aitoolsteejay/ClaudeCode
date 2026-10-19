@@ -4,7 +4,7 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import JsonLd from "../../components/JsonLd";
 import { buildWebApplicationSchema } from "@/lib/schema";
 import { buildToolSocialMetadata } from "@/lib/tool-social-metadata";
-import RoiCalculatorClient from "./RoiCalculatorClient";
+import RoiCalculatorSwitcher from "./RoiCalculatorSwitcher";
 
 export const metadata: Metadata = {
   title: "B2B Outreach ROI Calculator",
@@ -45,7 +45,7 @@ export default function RoiCalculator() {
           <Breadcrumbs items={[{ label: "Free Tools", href: "/resources/tools" }, { label: "ROI Calculator", href: "/tools/roi-calculator" }]} />
         </div>
       </div>
-      <RoiCalculatorClient />
+      <RoiCalculatorSwitcher />
     </InnerLayout>
   );
 }

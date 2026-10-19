@@ -1,0 +1,88 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import RoiCalculatorClient from "./RoiCalculatorClient";
+
+// The cold email calculator brings recharts and the PDF export with it, so it is only
+// fetched when the visitor switches to it.
+const ColdEmailRoiCalculator = dynamic(
+  () => import("@/components/cold-email-roi/calculator/ColdEmailRoiCalculator").then((m) => m.ColdEmailRoiCalculator),
+  { ssr: false, loading: () => <div className="h-96" aria-hidden="true" /> }
+);
+
+type Tool = "linkedin" | "cold-email";
+
+const OPTIONS: { id: Tool; label: string }[] = [
+  { id: "linkedin", label: "LinkedIn lead generation" },
+  { id: "cold-email", label: "Cold email" },
+];
+
+const BORDER = "#E8E2D9";
+const INK = "#0a0a0a";
+
+export default function RoiCalculatorSwitcher() {
+  const [tool, setTool] = useState<Tool>("linkedin");
+
+  // Read the choice from ?tool=cold-email after mount, so the server HTML (LinkedIn) always matches the first client render.
+  useEffect(() => {
+    try {
+      if (new URLSearchParams(window.location.search).get("tool") === "cold-email") setTool("cold-email");
+    } catch {
+      // no URL access: stay on the default
+    }
+  }, []);
+
+  const choose = (next: Tool) => {
+    setTool(next);
+    try {
+      const url = new URL(window.location.href);
+      if (next === "cold-email") url.searchParams.set("tool", "cold-email");
+      else url.searchParams.delete("tool");
+      window.history.replaceState(null, "", url.toString());
+    } catch {
+      // the toggle still works without the shareable URL
+    }
+  };
+
+  return (
+    <>
+      <div className="px-4 pt-6" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 sm:items-start">
+          <p id="roi-toggle-label" className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#52525B" }}>Choose your channel</p>
+          <div role="group" aria-labelledby="roi-toggle-label" className="inline-flex rounded-full border bg-white p-1" style={{ borderColor: BORDER }}>
+            {OPTIONS.map((o) => {
+              const active = tool === o.id;
+              return (
+                <button
+                  key={o.id}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => choose(o.id)}
+                  className="rounded-full px-5 py-2 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                  style={active ? { backgroundColor: "#F5B731", color: INK } : { backgroundColor: "transparent", color: "#52525B" }}
+                >
+                  {o.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {tool === "linkedin" ? (
+        <RoiCalculatorClient />
+      ) : (
+        <div className="overflow-x-hidden bg-cream text-foreground">
+          {/* The calculator draws its own visible "ROI Calculator" heading, so this one is for the outline and screen readers. */}
+          <h1 className="sr-only">Cold Email ROI Calculator</h1>
+          <section aria-label="Cold email ROI calculator">
+            <div className="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
+              <ColdEmailRoiCalculator />
+            </div>
+          </section>
+        </div>
+      )}
+    </>
+  );
+}

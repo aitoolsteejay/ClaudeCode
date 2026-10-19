@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T10:37:20.230Z",
+  "generatedAt": "2026-10-19T12:13:04.542Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 256,
@@ -3557,9 +3557,10 @@
         "/blog/outbound-funnel-math-not-guesswork",
         "/resources/guides/dos-and-donts-of-outreach",
         "/resources/tools",
+        "/tools/cold-email-roi-calculator",
         "lib/tools-registry.ts"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

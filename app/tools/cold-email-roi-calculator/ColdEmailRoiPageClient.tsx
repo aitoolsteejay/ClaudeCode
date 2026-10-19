@@ -72,6 +72,10 @@ export default function ColdEmailRoiPageClient() {
             <Button variant="hero" size="hero" onClick={scrollToCalculator}>
               Calculate My ROI <ArrowRight aria-hidden="true" />
             </Button>
+            <p className="mt-5 text-sm text-muted-foreground">
+              Running LinkedIn outreach instead?{" "}
+              <a href="/tools/roi-calculator" className="font-bold underline" style={{ color: "#A14A08" }}>Switch to the LinkedIn lead generation calculator</a>
+            </p>
           </div>
         </section>
 

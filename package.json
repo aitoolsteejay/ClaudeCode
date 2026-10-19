@@ -16,7 +16,8 @@
     "case-studies:build": "node scripts/generate-case-study-pages.mjs",
     "case-studies:check": "node scripts/generate-case-study-pages.mjs --check",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:roi": "vitest run"
   },
   "dependencies": {
     "@google/genai": "^1.39.0",
@@ -52,6 +53,7 @@
     "autoprefixer": "^10",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^2.1.9"
   }
 }

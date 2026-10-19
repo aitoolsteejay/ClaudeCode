@@ -7,10 +7,10 @@ import { formatMoney, formatPercent } from "@/lib/cold-email-roi/format";
 import { cn } from "@/lib/utils";
 import { InfoTip } from "./InfoTip";
 
-// Card colors copied from the live LinkedIn calculator.
+// Card colors: the brand warm palette, shared with the LinkedIn calculator.
 const GOLD = { border: "#F5B731", text: "#B8860B", tint: "rgba(245,183,49,0.08)" };
-const BLUE = { border: "#3B82F6", text: "#3B82F6", tint: "rgba(59,130,246,0.08)" };
-const TEAL = { border: "#14B8A6", text: "#0F9488", tint: "rgba(20,184,166,0.08)" };
+const ORANGE = { border: "#EA580C", text: "#C2410C", tint: "rgba(234,88,12,0.08)" };
+const AMBER = { border: "#D97706", text: "#A14A08", tint: "rgba(245,183,49,0.08)" };
 
 function accentStyle(c: { border: string; tint: string }) {
   return {
@@ -46,12 +46,12 @@ export function HighlightCards({ result, currency, hasDealValue, hasInvestment, 
           </p>
           {!hasDealValue && <p className="mt-1 text-xs text-muted-foreground">Add your average deal value to see revenue.</p>}
         </Card>
-        <Card className="p-5 sm:p-6 transition-all duration-300 hover:-translate-y-0.5" style={accentStyle(BLUE)}>
+        <Card className="p-5 sm:p-6 transition-all duration-300 hover:-translate-y-0.5" style={accentStyle(ORANGE)}>
           <div className="mb-2 flex items-center justify-between gap-2">
             <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Return on Investment</p>
             <InfoTip label="Return on investment">(Revenue minus total investment) / total investment. Shows N/A until you add a monthly investment.</InfoTip>
           </div>
-          <p className="text-3xl font-black" style={{ color: BLUE.text }}>
+          <p className="text-3xl font-black" style={{ color: ORANGE.text }}>
             {roi === null ? "N/A" : formatPercent(roi, currency.locale)}
           </p>
           {!hasInvestment && <p className="mt-1 text-xs text-muted-foreground">Add your monthly investment to see ROI.</p>}
@@ -67,13 +67,13 @@ export function HighlightCards({ result, currency, hasDealValue, hasInvestment, 
             <p className="text-xl font-bold text-foreground">{formatMoney(result.fullLTV, currency)}</p>
           </div>
         </Card>
-        <Card className={cn("p-4")} style={{ background: `linear-gradient(135deg, ${TEAL.tint} 0%, transparent 70%), hsl(var(--card))` }}>
+        <Card className={cn("p-4")} style={{ background: `linear-gradient(135deg, ${AMBER.tint} 0%, transparent 70%), hsl(var(--card))` }}>
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-1.5">
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Effective LTV ({durationMonths} mo)</p>
               <InfoTip label="Effective LTV">Customer value that lands inside the chosen duration: the shorter of duration and retention.</InfoTip>
             </div>
-            <p className="text-xl font-bold" style={{ color: TEAL.text }}>
+            <p className="text-xl font-bold" style={{ color: AMBER.text }}>
               {formatMoney(result.effectiveLTV, currency)}
             </p>
           </div>

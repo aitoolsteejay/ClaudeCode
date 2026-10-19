@@ -1,6 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { textTone } from "@/lib/colors";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { TrendingUp, Users, MessageSquare, Calendar, Handshake, Info, type LucideIcon } from "lucide-react";
 
@@ -67,7 +68,7 @@ export const ResultsDashboard = ({
       <div className="flex items-baseline gap-2">
         <p className="text-3xl font-black text-foreground">{value}</p>
         {percentage !== undefined && (
-          <p className="text-sm font-bold" style={{ color }}>{Math.round(percentage)}%</p>
+          <p className="text-sm font-bold" style={{ color: textTone(color) }}>{Math.round(percentage)}%</p>
         )}
       </div>
     </Card>
@@ -88,7 +89,7 @@ export const ResultsDashboard = ({
 
         <Card
           className="p-6 transition-all duration-300 hover:-translate-y-0.5"
-          style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: "#3B82F6", background: "linear-gradient(135deg, rgba(59,130,246,0.08) 0%, transparent 60%)" }}
+          style={{ borderColor: "#E8E2D9", borderTopWidth: "3px", borderTopColor: "#EA580C", background: "linear-gradient(135deg, rgba(234,88,12,0.08) 0%, transparent 60%)" }}
         >
           <div className="flex items-center justify-between mb-2">
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Return on Investment</p>
@@ -101,7 +102,7 @@ export const ResultsDashboard = ({
               </TooltipContent>
             </Tooltip>
           </div>
-          <p className="text-3xl font-black" style={{ color: "#3B82F6" }}>{roi === null ? "N/A" : `${Math.round(roi)}%`}</p>
+          <p className="text-3xl font-black" style={{ color: "#C2410C" }}>{roi === null ? "N/A" : `${Math.round(roi)}%`}</p>
         </Card>
       </div>
 
@@ -123,7 +124,7 @@ export const ResultsDashboard = ({
             <p className="text-xl font-bold text-foreground">{formatCurrency(Math.round(fullLifetimeLTV))}</p>
           </div>
         </Card>
-        <Card className="p-4" style={{ backgroundColor: "rgba(20,184,166,0.08)", borderColor: "rgba(20,184,166,0.25)" }}>
+        <Card className="p-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", borderColor: "rgba(245,183,49,0.25)" }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5">
               <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Effective LTV (for duration)</p>
@@ -136,7 +137,7 @@ export const ResultsDashboard = ({
                 </TooltipContent>
               </Tooltip>
             </div>
-            <p className="text-xl font-bold" style={{ color: "#14B8A6" }}>{formatCurrency(Math.round(effectiveLTV))}</p>
+            <p className="text-xl font-bold" style={{ color: "#A14A08" }}>{formatCurrency(Math.round(effectiveLTV))}</p>
           </div>
         </Card>
       </div>
@@ -184,28 +185,28 @@ export const ResultsDashboard = ({
           label="Accepted"
           value={formatNumber(acceptedConnections)}
           percentage={acceptanceRate}
-          color="#3B82F6"
+          color="#EA580C"
         />
         <MetricCard
           icon={MessageSquare}
           label="Total Replies"
           value={formatNumber(replies)}
           percentage={acceptedConnections > 0 ? (replies / acceptedConnections) * 100 : 0}
-          color="#14B8A6"
+          color="#D97706"
         />
         <MetricCard
           icon={Calendar}
           label="Meetings"
           value={formatNumber(meetings)}
           percentage={positiveReplies > 0 ? (meetings / positiveReplies) * 100 : 0}
-          color="#7C3AED"
+          color="#A14A08"
         />
         <MetricCard
           icon={Handshake}
           label="Deals"
           value={formatNumber(deals)}
           percentage={meetings > 0 ? (deals / meetings) * 100 : 0}
-          color="#10B981"
+          color="#B8860B"
         />
       </div>
     </div>

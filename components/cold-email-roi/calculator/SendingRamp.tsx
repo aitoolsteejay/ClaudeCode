@@ -97,7 +97,7 @@ export const SendingRamp = forwardRef<HTMLDivElement, Props>(function SendingRam
                 <th
                   key={c.title}
                   scope="col"
-                  className={cn("px-3 py-2.5 text-right font-black text-foreground", c.ongoing && "bg-[#16a34a]/10")}
+                  className={cn("px-3 py-2.5 text-right font-black text-foreground", c.ongoing && "bg-[#EA580C]/10")}
                 >
                   {c.title}
                   {c.ongoing && <span className="block text-[11px] font-normal text-muted-foreground">per month</span>}
@@ -117,7 +117,7 @@ export const SendingRamp = forwardRef<HTMLDivElement, Props>(function SendingRam
                     className={cn(
                       "px-3 py-2.5 text-right tabular-nums text-foreground",
                       r.strong ? "font-black" : "font-semibold",
-                      cols[i].ongoing && "bg-[#16a34a]/5",
+                      cols[i].ongoing && "bg-[#EA580C]/5",
                     )}
                   >
                     {v}
@@ -132,7 +132,7 @@ export const SendingRamp = forwardRef<HTMLDivElement, Props>(function SendingRam
       {/* Phones: the same rows, one month at a time, so nothing scrolls sideways. */}
       <div className="space-y-2 sm:hidden">
         {cols.map((c, i) => (
-          <div key={c.title} className={cn("rounded-xl border p-3", c.ongoing ? "border-[#16a34a]/30 bg-[#16a34a]/5" : "border-border bg-[hsl(var(--secondary)/0.2)]")}>
+          <div key={c.title} className={cn("rounded-xl border p-3", c.ongoing ? "border-[#EA580C]/30 bg-[#EA580C]/5" : "border-border bg-[hsl(var(--secondary)/0.2)]")}>
             <p className="mb-1.5 text-sm font-black text-foreground">
               {c.title}
               {c.ongoing && <span className="font-normal text-muted-foreground"> (per month)</span>}

@@ -26,7 +26,7 @@ interface RateSliderProps {
 
 /** Small tick that marks the Myntmore average, on the track and in the caption. */
 function AvgTick({ className }: { className?: string }) {
-  return <span aria-hidden="true" className={cn("inline-block h-2.5 w-[3px] rounded-full bg-[#16a34a]", className)} />;
+  return <span aria-hidden="true" className={cn("inline-block h-2.5 w-[3px] rounded-full bg-[#EA580C]", className)} />;
 }
 
 export function RateSlider({ metric, value, onChange, count, countNoun, locale, details }: RateSliderProps) {

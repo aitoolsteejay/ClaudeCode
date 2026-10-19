@@ -82,7 +82,7 @@ export function ConversionFunnel({ result, currency }: { result: RoiResult; curr
         </div>
         <div className="rounded-lg bg-[hsl(var(--secondary)/0.4)] p-3 text-center">
           <dt className="text-xs font-medium uppercase tracking-wider text-muted-foreground">ROI</dt>
-          <dd className="text-2xl font-black" style={{ color: "#3B82F6" }}>
+          <dd className="text-2xl font-black" style={{ color: "#EA580C" }}>
             {result.roiPercent === null ? "N/A" : formatPercent(result.roiPercent, loc)}
           </dd>
         </div>

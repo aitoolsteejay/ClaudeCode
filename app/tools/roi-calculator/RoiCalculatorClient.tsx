@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { toast } from "sonner";
 import { LeadData } from "@/components/tools/shared/LeadGate";
+import { HandUnderline, PillBadge } from "@/components/cold-email-roi/HandUnderline";
 
 // RevenueChart pulls in recharts (~5MB of source), so it's kept out of this
 // route's initial bundle and only fetched once the calculator is actually
@@ -268,30 +269,21 @@ export default function RoiCalculatorClient() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+    <div className="min-h-screen bg-cream text-foreground relative overflow-hidden">
       {/* Vivid background blobs, matching the homepage hero's color treatment */}
       <div aria-hidden="true" style={{ position: "absolute", top: "-120px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,160,0,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-      <div aria-hidden="true" style={{ position: "absolute", top: "160px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.22) 0%, rgba(37,99,235,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-      <div aria-hidden="true" style={{ position: "absolute", bottom: "-160px", left: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "160px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.22) 0%, rgba(139,92,246,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", bottom: "-160px", left: "20%", width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.14) 0%, rgba(234,88,12,0.05) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 pt-12 pb-8 relative z-10">
+      <div className="mx-auto max-w-7xl px-4 pb-8 pt-12 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-center sm:text-left">
-            <div
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-4"
-              style={{ background: "rgba(34,197,94,0.07)", borderColor: "rgba(34,197,94,0.35)" }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#16a34a" }} aria-hidden="true" />
-              <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#166534" }}>ROI Calculator</span>
+            <div className="mb-4">
+              <PillBadge>ROI Calculator</PillBadge>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-foreground mb-3 leading-tight">
-              <span className="relative inline-block">
-                ROI Calculator
-                <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 300 10" preserveAspectRatio="none" aria-hidden>
-                  <path d="M2 7 Q75 2 150 6 Q225 10 298 5" stroke="#16a34a" strokeWidth="3" fill="none" strokeLinecap="round" />
-                </svg>
-              </span>
+              <HandUnderline>ROI Calculator</HandUnderline>
             </h1>
             <p className="text-lg text-muted-foreground">
               Calculate your outreach ROI in real-time

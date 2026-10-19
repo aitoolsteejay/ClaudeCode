@@ -16,34 +16,34 @@ function scrollToCalculator() {
 const PROBLEMS = [
   {
     icon: CircleHelp,
-    color: "#16a34a",
+    color: "#EA580C",
     title: "No idea what a booked meeting is worth",
     body: "Without the funnel math, every decision about volume, lists and budget is a guess dressed up as strategy.",
   },
   {
     icon: Calculator,
-    color: "#3B82F6",
+    color: "#EA580C",
     title: "Budgets approved on gut feeling",
     body: "\"Replies look good\" doesn't hold up in a budget review. You need the projected meetings, pipeline and return.",
   },
   {
     icon: TrendingUp,
-    color: "#7C3AED",
+    color: "#A14A08",
     title: "Can't set expectations before you spend",
     body: "Leadership wants a number before they sign off on domains, tools and a team. \"We'll see\" isn't an answer.",
   },
 ];
 
 const STEPS = [
-  { icon: MousePointer, color: "#16a34a", title: "Enter your funnel numbers", body: "Emails per day or prospects per month, then reply, meeting and close rates, deal size and cost. Each rate is checked against 2026 benchmarks." },
-  { icon: Zap, color: "#3B82F6", title: "Watch it calculate live", body: "Meetings, deals, revenue and ROI update instantly as you move a slider." },
-  { icon: CircleCheckBig, color: "#10B981", title: "Export it as a PDF", body: "A clean report you can bring to a budget conversation or a client call." },
+  { icon: MousePointer, color: "#EA580C", title: "Enter your funnel numbers", body: "Emails per day or prospects per month, then reply, meeting and close rates, deal size and cost. Each rate is checked against 2026 benchmarks." },
+  { icon: Zap, color: "#EA580C", title: "Watch it calculate live", body: "Meetings, deals, revenue and ROI update instantly as you move a slider." },
+  { icon: CircleCheckBig, color: "#B8860B", title: "Export it as a PDF", body: "A clean report you can bring to a budget conversation or a client call." },
 ];
 
 const WHY = [
-  { color: "#16a34a", title: "Benchmarks built in", lead: "Every rate is checked against published 2026 data", body: "See where your numbers sit, from below average to elite, with the sources one click away." },
-  { color: "#3B82F6", title: "The full funnel", lead: "From emails sent all the way to revenue and ROI", body: "See exactly where meetings and deals are won or lost, not just the final close rate." },
-  { color: "#14B8A6", title: "Built to share", lead: "Export a clean PDF for stakeholders or clients", body: "Bring real numbers into your next budget or pitch conversation." },
+  { color: "#EA580C", title: "Benchmarks built in", lead: "Every rate is checked against published 2026 data", body: "See where your numbers sit, from below average to elite, with the sources one click away." },
+  { color: "#EA580C", title: "The full funnel", lead: "From emails sent all the way to revenue and ROI", body: "See exactly where meetings and deals are won or lost, not just the final close rate." },
+  { color: "#D97706", title: "Built to share", lead: "Export a clean PDF for stakeholders or clients", body: "Bring real numbers into your next budget or pitch conversation." },
 ];
 
 const NEXT = [
@@ -57,8 +57,8 @@ export default function ColdEmailRoiPageClient() {
       <div>
         {/* Hero */}
         <section className="relative flex flex-col items-center overflow-hidden px-6 py-14 text-center md:py-20">
-          <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-36 h-[650px] w-[650px] rounded-full blur-[55px]" style={{ background: "radial-gradient(circle, rgba(34,197,94,0.26) 0%, rgba(22,163,74,0.10) 40%, transparent 68%)" }} />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-24 h-[600px] w-[600px] rounded-full blur-[55px]" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)" }} />
+          <div aria-hidden="true" className="pointer-events-none absolute -left-40 -top-36 h-[650px] w-[650px] rounded-full blur-[55px]" style={{ background: "radial-gradient(circle, rgba(234,88,12,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)" }} />
+          <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-24 h-[600px] w-[600px] rounded-full blur-[55px]" style={{ background: "radial-gradient(circle, rgba(168,139,250,0.22) 0%, rgba(139,92,246,0.08) 40%, transparent 68%)" }} />
           <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center">
             <div className="mb-6">
               <PillBadge>ROI Calculator</PillBadge>

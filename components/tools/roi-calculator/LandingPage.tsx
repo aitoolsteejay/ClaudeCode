@@ -13,7 +13,7 @@ const HOWTO_SCHEMA = buildHowToSchema("How the ROI Calculator Works", [
   { name: "Export it to share", text: "A clean PDF you can bring to a budget conversation or a client call." },
 ]);
 
-const ACCENT = "#16a34a";
+const ACCENT = "#EA580C";
 
 interface LandingPageProps {
   onStart: () => void;
@@ -21,17 +21,17 @@ interface LandingPageProps {
 
 export function LandingPage({ onStart }: LandingPageProps) {
   return (
-    <div className="w-full bg-white text-foreground">
+    <div className="w-full bg-cream text-foreground">
       <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(34,197,94,0.26) 0%, rgba(22,163,74,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.22) 0%, rgba(139,92,246,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-            style={{ background: "rgba(34,197,94,0.07)", borderColor: "rgba(34,197,94,0.35)" }}
+            style={{ background: "rgba(234,88,12,0.07)", borderColor: "rgba(234,88,12,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>ROI Calculator</span>
@@ -66,19 +66,19 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "No idea what a single meeting is actually worth",
                 description: "Without knowing your funnel math, every outreach decision is a guess dressed up as strategy.",
                 icon: HelpCircle,
-                color: "#16a34a",
+                color: "#EA580C",
               },
               {
                 title: "Budgets approved on gut feeling, not numbers",
                 description: "\"It feels like it's working\" doesn't hold up in a budget review. You need the actual projected return.",
                 icon: Calculator,
-                color: "#3B82F6",
+                color: "#EA580C",
               },
               {
                 title: "Can't set expectations before you spend",
                 description: "Leadership wants a number before they approve spend, and \"we'll see\" isn't an answer they'll accept.",
                 icon: TrendingUp,
-                color: "#7C3AED",
+                color: "#A14A08",
               },
             ].map((item, i) => (
               <div
@@ -117,25 +117,25 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Enter your funnel numbers",
                 description: "Connection volume, acceptance rate, reply rate, deal size, and cost.",
                 icon: MousePointer2,
-                color: "#16a34a",
+                color: "#EA580C",
               },
               {
                 title: "Watch it calculate live",
                 description: "Every stage of the funnel updates instantly as you adjust the numbers.",
                 icon: Zap,
-                color: "#3B82F6",
+                color: "#EA580C",
               },
               {
                 title: "Export it to share",
                 description: "A clean PDF you can bring to a budget conversation or a client call.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#B8860B",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -163,13 +163,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "The full funnel, not one number",
                 benefit: "From connection requests all the way to revenue and ROI",
                 description: "See exactly where deals are being won or lost, not just the final close rate.",
-                color: "#3B82F6",
+                color: "#EA580C",
               },
               {
                 title: "Built to share",
                 benefit: "Export a clean PDF for stakeholders or clients",
                 description: "Bring real numbers into your next budget or pitch conversation.",
-                color: "#14B8A6",
+                color: "#D97706",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>

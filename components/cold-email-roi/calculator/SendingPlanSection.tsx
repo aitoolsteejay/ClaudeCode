@@ -21,8 +21,8 @@ export const SendingPlanSection = forwardRef<HTMLDivElement, { api: CalculatorAp
   return (
     <section aria-labelledby="sending-plan-title" className="mb-8 rounded-2xl border border-border bg-card p-5 sm:p-6">
       <div className="mb-5 flex items-start gap-3">
-        <div className="rounded-xl p-2.5" style={{ backgroundColor: "#16a34a15" }}>
-          <Mail className="h-5 w-5" style={{ color: "#16a34a" }} aria-hidden="true" />
+        <div className="rounded-xl p-2.5" style={{ backgroundColor: "#EA580C15" }}>
+          <Mail className="h-5 w-5" style={{ color: "#EA580C" }} aria-hidden="true" />
         </div>
         <div>
           <div className="flex items-center gap-1.5">

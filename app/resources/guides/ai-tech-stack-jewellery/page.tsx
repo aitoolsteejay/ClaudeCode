@@ -724,12 +724,12 @@ export default function GIATechStackPage() {
 
           {/* This page renders its own nav rather than InnerLayout, so without
               these it is a crawl dead-end: nothing links back into the site. */}
-          <nav className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="More from Myntmore">
+          <nav className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-0 text-sm" aria-label="More from Myntmore">
             <a href="/" className="inline-flex min-h-[44px] items-center" style={{ color: "#52525B" }}>Myntmore Home</a>
-            <a href="/resources/guides" style={{ color: "#52525B" }}>All Guides</a>
-            <a href="/resources" style={{ color: "#52525B" }}>Resources</a>
-            <a href="/services" style={{ color: "#52525B" }}>Services</a>
-            <a href="/case-studies" style={{ color: "#52525B" }}>Case Studies</a>
+            <a href="/resources/guides" className="inline-flex min-h-[44px] items-center" style={{ color: "#52525B" }}>All Guides</a>
+            <a href="/resources" className="inline-flex min-h-[44px] items-center" style={{ color: "#52525B" }}>Resources</a>
+            <a href="/services" className="inline-flex min-h-[44px] items-center" style={{ color: "#52525B" }}>Services</a>
+            <a href="/case-studies" className="inline-flex min-h-[44px] items-center" style={{ color: "#52525B" }}>Case Studies</a>
           </nav>
           <p className="mt-6 text-sm" style={{ color: "#52525B" }}>
             Questions? Call us on{" "}

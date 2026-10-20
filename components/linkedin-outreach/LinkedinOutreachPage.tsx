@@ -136,7 +136,7 @@ const SERVICE_SCHEMA = buildServiceSchema({
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? "#A14A08" : BLUE }}>
+    <p className="mb-3 text-xs font-black uppercase tracking-[0.3em]" style={{ color: light ? "#A14A08" : BLUE }}>
       {children}
     </p>
   );
@@ -196,7 +196,7 @@ export default function LinkedinOutreachPage() {
             <div>
               <div className="hero-fade mb-7 inline-flex items-center gap-2.5 rounded-full border bg-white/70 px-5 py-2 backdrop-blur" style={{ borderColor: "rgba(10,102,194,0.35)" }}>
                 <span className="h-2 w-2 animate-pulse rounded-full" style={{ backgroundColor: BLUE }} />
-                <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.18em] sm:text-[11px] sm:tracking-[0.3em]" style={{ color: INK }}>LinkedIn outreach · AI agent-led</span>
+                <span className="whitespace-nowrap text-xs font-bold uppercase tracking-[0.18em] sm:text-xs sm:tracking-[0.3em]" style={{ color: INK }}>LinkedIn outreach · AI agent-led</span>
               </div>
               <h1 className="hero-fade-d1 font-black" style={{ color: INK, fontSize: "clamp(2.5rem, 6.1vw, 4.3rem)", lineHeight: 0.98, letterSpacing: "-0.045em" }}>
                 Your personal brand matters,
@@ -271,7 +271,7 @@ export default function LinkedinOutreachPage() {
                 <span className="relative mb-6 grid h-14 w-14 place-items-center rounded-2xl text-white" style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})`, boxShadow: "0 14px 30px rgba(10,102,194,0.28)" }}>
                   <DoorOpen className="h-7 w-7" strokeWidth={2} aria-hidden="true" />
                 </span>
-                <p className="relative text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: BLUE }}>Reputation</p>
+                <p className="relative text-xs font-black uppercase tracking-[0.24em]" style={{ color: BLUE }}>Reputation</p>
                 <h3 className="relative mt-1 text-2xl font-black" style={{ color: INK, letterSpacing: "-0.03em" }}>Opens the door</h3>
                 <p className="relative mt-2 text-base leading-relaxed" style={{ color: BODY }}>Credibility fuels conversion. Buyers pay more to the people they see as experts.</p>
               </div>
@@ -288,7 +288,7 @@ export default function LinkedinOutreachPage() {
                 <span className="relative mb-6 grid h-14 w-14 place-items-center rounded-2xl" style={{ background: `linear-gradient(135deg, ${GOLD}, #f59e0b)`, color: INK, boxShadow: "0 14px 30px rgba(245,183,49,0.35)" }}>
                   <KeyRound className="h-7 w-7" strokeWidth={2} aria-hidden="true" />
                 </span>
-                <p className="relative text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#A14A08" }}>Pipeline</p>
+                <p className="relative text-xs font-black uppercase tracking-[0.24em]" style={{ color: "#A14A08" }}>Pipeline</p>
                 <h3 className="relative mt-1 text-2xl font-black" style={{ color: INK, letterSpacing: "-0.03em" }}>Takes you inside</h3>
                 <p className="relative mt-2 text-base leading-relaxed" style={{ color: BODY }}>Outreach that starts real conversations and fills your calendar with qualified meetings.</p>
               </div>
@@ -316,16 +316,16 @@ export default function LinkedinOutreachPage() {
           <FadeIn>
             <div className="overflow-hidden rounded-[28px] border" style={{ borderColor: SOFT_LINE, boxShadow: "0 24px 70px rgba(15,15,20,0.06)" }}>
               <div className="grid grid-cols-[1fr_84px_84px] items-center sm:grid-cols-[1fr_150px_150px]" style={{ backgroundColor: "#FAF8F4" }}>
-                <p className="px-4 py-4 text-[11px] font-black uppercase tracking-[0.22em] sm:px-6" style={{ color: MUTED }}>What you get</p>
+                <p className="px-4 py-4 text-xs font-black uppercase tracking-[0.22em] sm:px-6" style={{ color: MUTED }}>What you get</p>
                 <div className="flex justify-center py-3" style={{ backgroundColor: "rgba(10,102,194,0.08)" }}>
                   <span className="rounded-full px-3 py-1 text-xs font-black text-white" style={{ background: `linear-gradient(135deg, ${BLUE}, #1D6FD4)` }}>Myntmore</span>
                 </div>
-                <p className="px-1 py-4 text-center text-[11px] font-black uppercase leading-tight tracking-[0.12em]" style={{ color: MUTED }}>Other agencies</p>
+                <p className="px-1 py-4 text-center text-xs font-black uppercase leading-tight tracking-[0.12em]" style={{ color: MUTED }}>Other agencies</p>
               </div>
               {COMPARE.map((row, i) => (
                 <div key={row.label}>
                   {(i === 0 || i === 3) && (
-                    <div className="border-t px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] sm:px-6" style={{ backgroundColor: i === 0 ? "#fff" : BLUE_PALE, borderColor: SOFT_LINE, color: i === 0 ? MUTED : BLUE }}>
+                    <div className="border-t px-4 py-2 text-xs font-black uppercase tracking-[0.22em] sm:px-6" style={{ backgroundColor: i === 0 ? "#fff" : BLUE_PALE, borderColor: SOFT_LINE, color: i === 0 ? MUTED : BLUE }}>
                       {i === 0 ? "The basics" : "What most agencies skip"}
                     </div>
                   )}
@@ -363,7 +363,7 @@ export default function LinkedinOutreachPage() {
               <p className="max-w-xl text-sm font-semibold leading-relaxed" style={{ color: BODY }}>
                 The result: faster execution, razor-sharp accuracy, and positioning that feels personal but performs like a machine.
               </p>
-              <Link href="/myntmore-framework" className="inline-flex shrink-0 items-center gap-2 text-sm font-black underline decoration-2 underline-offset-4 transition-colors hover:text-[#0A66C2]" style={{ color: INK, textDecorationColor: GOLD }}>
+              <Link href="/myntmore-framework" className="inline-flex min-h-[44px] shrink-0 items-center gap-2 text-sm font-black underline decoration-2 underline-offset-4 transition-colors hover:text-[#0A66C2]" style={{ color: INK, textDecorationColor: GOLD }}>
                 See the agents in action <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
@@ -468,7 +468,7 @@ export default function LinkedinOutreachPage() {
               })}
               <InView className="flex flex-col justify-between p-8" style={{ background: `linear-gradient(135deg, ${GOLD}, #f59e0b)` }}>
                 <div>
-                  <p className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "rgba(15,15,20,0.65)" }}>Your part</p>
+                  <p className="text-xs font-black uppercase tracking-[0.24em]" style={{ color: "rgba(15,15,20,0.65)" }}>Your part</p>
                   <p className="mt-3 text-6xl font-black" style={{ color: INK, letterSpacing: "-0.05em" }}>
                     <StatTicker value="90" />
                     <span className="ml-2 text-2xl tracking-normal">min</span>
@@ -479,7 +479,7 @@ export default function LinkedinOutreachPage() {
                   <div className="h-3 overflow-hidden rounded-full" style={{ backgroundColor: "rgba(15,15,20,0.16)" }}>
                     <div className="li-bar-fill h-3 w-[9%] rounded-full" style={{ backgroundColor: INK }} />
                   </div>
-                  <div className="mt-2 flex items-start justify-between gap-4 text-[11px] font-black leading-tight" style={{ color: INK }}>
+                  <div className="mt-2 flex items-start justify-between gap-4 text-xs font-black leading-tight" style={{ color: INK }}>
                     <span>You</span>
                     <span className="text-right">Us: research, content, outreach, replies and reporting</span>
                   </div>

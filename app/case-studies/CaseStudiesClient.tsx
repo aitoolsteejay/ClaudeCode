@@ -415,7 +415,7 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
                   href={industry === "All" ? "/case-studies" : `/case-studies/${caseStudyFilterSlug(industry)}`}
                   scroll={false}
                   aria-current={active ? "page" : undefined}
-                  className="text-sm font-semibold px-4 py-2 rounded-full border transition-colors"
+                  className="min-h-[44px] text-sm font-semibold px-4 py-2 rounded-full border transition-colors"
                   style={active
                     ? { backgroundColor: "#F5B731", color: "#0A0A0A", borderColor: "#F5B731" }
                     : { backgroundColor: "#ffffff", color: "#52525B", borderColor: "#E8E2D9" }}

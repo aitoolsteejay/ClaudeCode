@@ -14,7 +14,7 @@ const D2C_BADGE = "bg-emerald-500/15 text-emerald-400";
 
 function AudienceBadge({ type }: { type: "B2B" | "D2C" }) {
   return (
-    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${type === "B2B" ? B2B_BADGE : D2C_BADGE}`}>
+    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${type === "B2B" ? B2B_BADGE : D2C_BADGE}`}>
       {type}
     </span>
   );

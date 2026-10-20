@@ -325,7 +325,7 @@ function MessageMakeover() {
                 type="button"
                 aria-pressed={on}
                 onClick={() => setFixed(i === 1)}
-                className="px-4 py-2 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                className="min-h-[44px] px-4 py-2 rounded-full text-sm font-bold transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                 style={{ backgroundColor: on ? T.gold : "transparent", color: on ? "#0A0A0A" : T.ink2 }}
               >
                 {v.label}
@@ -456,7 +456,7 @@ function LessonStepper() {
             <button
               type="button"
               onClick={() => setI((i + 1) % LESSONS.length)}
-              className="inline-flex items-center gap-2 text-sm font-bold rounded-full px-4 py-2 transition-colors duration-200 cursor-pointer hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-bold rounded-full px-4 py-2 transition-colors duration-200 cursor-pointer hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
               style={{ color: T.ink, border: `1px solid ${T.hairline}` }}
             >
               {i === LESSONS.length - 1 ? "Start over" : "Next lesson"}
@@ -554,7 +554,7 @@ function SubjectLines() {
           <button
             type="button"
             onClick={() => copy(SUBJECT_LINES.map((l) => l.text).join("\n"), "all")}
-            className="inline-flex items-center gap-1.5 text-xs font-bold rounded-full px-3 py-1.5 transition-colors duration-200 cursor-pointer hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+            className="inline-flex min-h-[44px] items-center gap-1.5 text-xs font-bold rounded-full px-4 py-2 transition-colors duration-200 cursor-pointer hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
             style={{ color: T.ink, border: `1px solid ${T.hairline}` }}
           >
             {copied === "all" ? <Check className="w-3.5 h-3.5" strokeWidth={3} style={{ color: T.doFill }} /> : <Copy className="w-3.5 h-3.5" strokeWidth={2.5} />}
@@ -583,7 +583,7 @@ function SubjectLines() {
                     type="button"
                     onClick={() => copy(l.text, i)}
                     aria-label={copied === i ? "Copied" : `Copy subject line ${i + 1}`}
-                    className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
+                    className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-colors duration-200 cursor-pointer hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1"
                     style={{ color: copied === i ? T.doFill : T.muted }}
                   >
                     {copied === i ? <Check className="w-4 h-4" strokeWidth={3} /> : <Copy className="w-4 h-4" strokeWidth={2} />}
@@ -1011,7 +1011,7 @@ export default function DosAndDontsClient() {
                       <span className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105" style={{ backgroundColor: t.accent, color: "#ffffff" }}>
                         <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
                       </span>
-                      <span className="text-[10px] font-black uppercase tracking-[0.18em] px-2.5 py-1 rounded-full" style={{ backgroundColor: T.paper, color: textTone(t.accent), border: `1px solid ${t.accent}55` }}>Free</span>
+                      <span className="text-xs font-black uppercase tracking-[0.18em] px-2.5 py-1 rounded-full" style={{ backgroundColor: T.paper, color: textTone(t.accent), border: `1px solid ${t.accent}55` }}>Free</span>
                     </div>
                     <h3 className="text-xl font-black leading-snug mb-2" style={{ color: T.ink }}>{t.name}</h3>
                     <p className="text-[15px] leading-relaxed mb-5" style={{ color: T.ink2 }}>{t.plain}</p>

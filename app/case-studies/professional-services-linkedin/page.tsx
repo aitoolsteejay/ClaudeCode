@@ -107,7 +107,7 @@ export default function ProfessionalServicesLinkedIn() {
                 { name: "Personal Branding", href: "/services/personal-branding" },
                 { name: "LinkedIn Outreach & Automation", href: "/services/linkedin-outreach" },
               ].map((s) => (
-                <Link key={s.name} href={s.href} className="text-xs px-3 py-1.5 rounded-full font-medium transition-colors hover:opacity-80" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s.name}</Link>
+                <Link key={s.name} href={s.href} className="inline-flex min-h-[44px] items-center text-xs px-3.5 py-2 rounded-full font-medium transition-colors hover:opacity-80" style={{ backgroundColor: "#F8F6F2", color: "#3D3D3D", border: "1px solid #E8E2D9" }}>{s.name}</Link>
               ))}
             </div>
           </div>

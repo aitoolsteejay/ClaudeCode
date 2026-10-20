@@ -81,7 +81,7 @@ function AccordionItem({ item, isOpen, onToggle, index }: AccordionItemProps) {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors duration-150 hover:border-[#F5B731]"
+                className="min-h-[44px] text-xs font-semibold px-4 py-2 rounded-full border transition-colors duration-150 hover:border-[#F5B731]"
                 style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#3D3D3D" }}
               >
                 {l.label}

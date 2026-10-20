@@ -463,7 +463,7 @@ export default function GlossaryPage() {
               <a
                 key={letter}
                 href={`#letter-${letter}`}
-                className="w-8 h-8 flex items-center justify-center rounded-lg text-sm font-black border transition-colors duration-150"
+                className="w-11 h-11 flex items-center justify-center rounded-lg text-sm font-black border transition-colors duration-150"
                 style={{ borderColor: "#E8E2D9", color: "#3D3D3D", backgroundColor: "#ffffff" }}
               >
                 {letter}
@@ -501,7 +501,7 @@ export default function GlossaryPage() {
                   <ul className={`flex flex-wrap gap-x-6 gap-y-2 ${GROUPED[letter] ? "mt-6" : ""}`}>
                     {GROUPED_REFS[letter].map((r) => (
                       <li key={r.alias}>
-                        <Link href={r.target.href} className="group inline-flex flex-wrap items-baseline gap-x-1.5 py-1 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50">
+                        <Link href={r.target.href} className="group inline-flex min-h-[44px] flex-wrap items-center gap-x-1.5 py-1 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7C3AED]/50">
                           <span className="font-bold" style={{ color: "#0a0a0a" }}>{r.alias}</span>
                           <span style={{ color: "#71675E" }}>see</span>
                           <span className="font-bold underline decoration-1 underline-offset-2 group-hover:no-underline" style={{ color: textTone(r.target.accent) }}>{r.target.title}</span>

@@ -82,7 +82,7 @@ export function RateSlider({ metric, value, onChange, count, countNoun, locale, 
         />
       </div>
 
-      <div id={captionId} className="flex items-center gap-1.5 text-[11px] leading-none text-muted-foreground">
+      <div id={captionId} className="flex items-center gap-1.5 text-xs leading-none text-muted-foreground">
         {b.myntmore && (
           <>
             <AvgTick />
@@ -116,7 +116,7 @@ export function RateSlider({ metric, value, onChange, count, countNoun, locale, 
       </div>
 
       {warn && (
-        <p role="status" className="flex items-start gap-1.5 rounded-md border border-amber-200 bg-amber-50 px-2 py-1 text-[11px] leading-snug text-amber-900">
+        <p role="status" className="flex items-start gap-1.5 rounded-md border border-amber-200 bg-amber-50 px-2 py-1 text-xs leading-snug text-amber-900">
           <AlertTriangle className="mt-px h-3 w-3 shrink-0" aria-hidden="true" />
           {SOFT_WARNING_COPY}
         </p>

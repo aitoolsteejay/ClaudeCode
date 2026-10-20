@@ -15,7 +15,7 @@ export function BandChip({ label, tone, className }: { label: string; tone: Band
   return (
     <span
       className={cn(
-        "inline-flex items-center whitespace-nowrap rounded-full border px-2 py-0.5 text-[11px] font-semibold leading-4",
+        "inline-flex items-center whitespace-nowrap rounded-full border px-2 py-0.5 text-xs font-semibold leading-4",
         toneClass[tone],
         className,
       )}

@@ -65,7 +65,7 @@ function sectionLabel(section: string) {
 function Badge({ children, color, solid }: { children: React.ReactNode; color: string; solid?: boolean }) {
   return (
     <span
-      className="inline-flex items-center text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap"
+      className="inline-flex items-center text-xs font-black uppercase tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap"
       style={solid ? { backgroundColor: color, color: "#fff" } : { backgroundColor: `${color}14`, color: textTone(color), border: `1px solid ${color}33` }}
     >
       {children}
@@ -207,7 +207,7 @@ export default function SiteAuditClient({ audit }: { audit: AuditData }) {
                             <button
                               type="button"
                               onClick={() => setOpen(open === id ? null : id)}
-                              className="text-[11px] font-bold underline"
+                              className="text-xs font-bold underline"
                               style={{ color: TEXT_BODY }}
                               aria-expanded={open === id}
                             >

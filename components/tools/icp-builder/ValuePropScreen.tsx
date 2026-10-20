@@ -21,7 +21,7 @@ interface ValuePropScreenProps {
 
 function AudienceBadge({ type }: { type: "B2B" | "D2C" }) {
   return (
-    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${type === "B2B" ? "bg-blue-500/15 text-blue-400" : "bg-emerald-500/15 text-emerald-400"}`}>
+    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${type === "B2B" ? "bg-blue-500/15 text-blue-400" : "bg-emerald-500/15 text-emerald-400"}`}>
       {type}
     </span>
   );

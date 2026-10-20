@@ -159,7 +159,7 @@ export default function Footer() {
             </p>
             <a
               href="tel:+918169318951"
-              className="mb-6 inline-flex items-center gap-2.5 text-sm font-semibold transition-colors duration-200"
+              className="mb-6 inline-flex min-h-[44px] items-center gap-2.5 text-sm font-semibold transition-colors duration-200"
               style={{ color: "#3D3D3D" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#3D3D3D"; }}
@@ -189,10 +189,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>Services</h3>
-            <ul className="space-y-3" role="list">
+            <ul className="space-y-0 lg:space-y-3" role="list">
               {SERVICES_LINKS.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#71675E" }}
+                  <Link href={link.href} className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}
                   >
@@ -205,10 +205,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>Company</h3>
-            <ul className="space-y-3" role="list">
+            <ul className="space-y-0 lg:space-y-3" role="list">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#71675E" }}
+                  <Link href={link.href} className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}
                   >
@@ -221,10 +221,10 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>We Work With</h3>
-            <ul className="space-y-3" role="list">
+            <ul className="space-y-0 lg:space-y-3" role="list">
               {ICP_LINKS.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm transition-colors duration-200" style={{ color: "#71675E" }}
+                  <Link href={link.href} className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}
                   >
@@ -237,14 +237,14 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xs font-bold uppercase tracking-[0.18em] mb-5" style={{ color: "#3D3D3D" }}>Get in Touch</h3>
-            <ul className="space-y-3 mb-6" role="list">
-              <li><a href="mailto:growth@myntmore.com" className="text-sm transition-colors duration-200" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>growth@myntmore.com</a></li>
-              <li><a href="tel:+918169318951" className="text-sm transition-colors duration-200" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>+91 81693 18951</a></li>
-              <li><a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="text-sm transition-colors duration-200" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Book a Free GTM Audit</a></li>
-              <li><Link href="/contact-us" className="text-sm transition-colors duration-200" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Contact Page</Link></li>
+            <ul className="space-y-0 lg:space-y-3 mb-6" role="list">
+              <li><a href="mailto:growth@myntmore.com" className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>growth@myntmore.com</a></li>
+              <li><a href="tel:+918169318951" className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>+91 81693 18951</a></li>
+              <li><a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Book a Free GTM Audit</a></li>
+              <li><Link href="/contact-us" className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Contact Page</Link></li>
             </ul>
             <div className="mb-4 p-4 rounded-xl border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
-              <Link href="/newsletter-subscribe" className="inline-block text-xs font-semibold mb-1 hover:underline" style={{ color: "#0a0a0a" }}>The Outbound Operator</Link>
+              <Link href="/newsletter-subscribe" className="inline-flex min-h-[44px] items-center text-xs font-semibold hover:underline lg:min-h-0 lg:mb-1" style={{ color: "#0a0a0a" }}>The Outbound Operator</Link>
               <p className="text-xs mb-3" style={{ color: "#71675E" }}>Weekly AI outbound insights. No fluff.</p>
               <NewsletterForm inputId="footer-newsletter-email" compact />
             </div>
@@ -255,11 +255,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="py-6 flex flex-wrap items-center gap-x-2 gap-y-2 border-b" style={{ borderColor: "#E8E2D9" }}>
+        <div className="py-4 lg:py-6 flex flex-wrap items-center gap-x-2 gap-y-0 lg:gap-y-2 border-b" style={{ borderColor: "#E8E2D9" }}>
           <span className="text-xs font-semibold uppercase tracking-wider mr-1" style={{ color: "#71675E" }}>B2B Lead Generation In:</span>
           {CITY_LINKS.map((link, i) => (
             <span key={link.href} className="flex items-center gap-x-2">
-              <Link href={link.href} className="text-xs transition-colors" style={{ color: "#71675E" }}
+              <Link href={link.href} className="inline-flex min-h-[44px] items-center px-1 text-xs transition-colors lg:min-h-0 lg:px-0" style={{ color: "#71675E" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}
               >
@@ -272,13 +272,13 @@ export default function Footer() {
 
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs" style={{ color: "#71675E" }}>&copy; 2026 Myntmore. Built in Mumbai.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/about-us" className="text-xs transition-colors" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>About</Link>
-            <Link href="/contact-us" className="text-xs transition-colors" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Contact</Link>
-            <Link href="/careers" className="text-xs transition-colors" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Careers</Link>
-            <Link href="/privacy-policy" className="text-xs transition-colors" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Privacy Policy</Link>
-            <Link href="/editorial-policy" className="text-xs transition-colors" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Editorial Policy</Link>
-            <Link href="/sitemap" className="text-xs transition-colors" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Site Map</Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-0">
+            <Link href="/about-us" className="inline-flex min-h-[44px] items-center text-xs transition-colors lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>About</Link>
+            <Link href="/contact-us" className="inline-flex min-h-[44px] items-center text-xs transition-colors lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Contact</Link>
+            <Link href="/careers" className="inline-flex min-h-[44px] items-center text-xs transition-colors lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Careers</Link>
+            <Link href="/privacy-policy" className="inline-flex min-h-[44px] items-center text-xs transition-colors lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Privacy Policy</Link>
+            <Link href="/editorial-policy" className="inline-flex min-h-[44px] items-center text-xs transition-colors lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Editorial Policy</Link>
+            <Link href="/sitemap" className="inline-flex min-h-[44px] items-center text-xs transition-colors lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Site Map</Link>
           </div>
         </div>
       </div>

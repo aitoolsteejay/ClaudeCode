@@ -80,23 +80,23 @@ export default function FlowVisual() {
               boxShadow: "0 22px 50px rgba(234,88,12,0.12), 0 2px 6px rgba(15,15,20,0.04)",
             }}
           >
-            <span className="absolute -left-2 -top-2 grid h-6 w-6 place-items-center rounded-full text-[11px] font-black" style={{ backgroundColor: "#F5B731", color: "#0A0A0A" }}>
+            <span className="absolute -left-2 -top-2 grid h-6 w-6 place-items-center rounded-full text-xs font-black" style={{ backgroundColor: "#F5B731", color: "#0A0A0A" }}>
               {node.n}
             </span>
             <span className="mb-2 grid h-9 w-9 place-items-center rounded-xl text-white sm:h-10 sm:w-10" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${GOLD})` }}>
               <Icon className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={2.2} />
             </span>
             <p className="text-[12px] font-black leading-tight sm:text-[13px]" style={{ color: "#0A0A0A" }}>{node.label}</p>
-            <p className="mt-0.5 text-[10px] leading-snug sm:text-[11px]" style={{ color: "#6b655e" }}>{node.caption}</p>
+            <p className="mt-0.5 text-xs leading-snug sm:text-xs" style={{ color: "#6b655e" }}>{node.caption}</p>
           </div>
         );
       })}
 
-      <div className="ce-float absolute flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ left: pct(305, W), top: pct(118, H), borderColor: "#F0E4D6", color: "#0A0A0A", boxShadow: "0 12px 28px rgba(15,15,20,0.08)" }}>
+      <div className="ce-float absolute flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-xs font-black" style={{ left: pct(305, W), top: pct(118, H), borderColor: "#F0E4D6", color: "#0A0A0A", boxShadow: "0 12px 28px rgba(15,15,20,0.08)" }}>
         <Mail className="h-3.5 w-3.5" style={{ color: ORANGE }} strokeWidth={2.4} />
         1,200 emails a day
       </div>
-      <div className="ce-float absolute flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ left: pct(112, W), top: pct(492, H), borderColor: "#F0E4D6", color: "#0A0A0A", boxShadow: "0 12px 28px rgba(15,15,20,0.08)", animationDelay: "-2.5s" }}>
+      <div className="ce-float absolute flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-xs font-black" style={{ left: pct(112, W), top: pct(492, H), borderColor: "#F0E4D6", color: "#0A0A0A", boxShadow: "0 12px 28px rgba(15,15,20,0.08)", animationDelay: "-2.5s" }}>
         <Clock className="h-3.5 w-3.5" style={{ color: ORANGE }} strokeWidth={2.4} />
         Live in 18 days
       </div>

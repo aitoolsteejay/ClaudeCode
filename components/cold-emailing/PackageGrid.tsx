@@ -134,7 +134,7 @@ function PackageCard({ item, index }: { item: (typeof ITEMS)[number]; index: num
             if (lastPointer.current === "mouse") return;
             setOpen((o) => !o);
           }}
-          className="absolute right-2.5 top-2.5 grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-[rgba(234,88,12,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+          className="absolute right-2.5 top-2.5 grid h-8 w-8 place-items-center rounded-full before:absolute before:-inset-1.5 before:content-['']  transition-colors hover:bg-[rgba(234,88,12,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
           style={{ color: open ? ORANGE : "#71675E" }}
         >
           <Info className="h-[18px] w-[18px]" strokeWidth={2.2} aria-hidden="true" />
@@ -148,7 +148,7 @@ function PackageCard({ item, index }: { item: (typeof ITEMS)[number]; index: num
           className={`absolute top-full z-30 mt-2 w-[min(17rem,calc(100vw-2.5rem))] rounded-2xl border p-4 text-left ${popoverSide(index)}`}
           style={{ backgroundColor: "#FFFFFF", borderColor: "#E8E2D9", boxShadow: "0 8px 24px rgba(0,0,0,0.10)" }}
         >
-          <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: "#A14A08" }}>{item.label}</p>
+          <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: "#A14A08" }}>{item.label}</p>
           <p className="mt-2 text-[13px] font-medium leading-relaxed" style={{ color: "#3D3D3D" }}>{item.info}</p>
         </div>
       </div>

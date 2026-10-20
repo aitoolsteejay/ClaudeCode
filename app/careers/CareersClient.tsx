@@ -215,7 +215,7 @@ function RoleList() {
               key={dept}
               type="button"
               onClick={() => setFilter(dept)}
-              className="text-xs font-bold px-4 py-2 rounded-full border transition-colors duration-150"
+              className="min-h-[44px] text-xs font-bold px-4 py-2 rounded-full border transition-colors duration-150"
               style={
                 active
                   ? { backgroundColor: "#F5B731", borderColor: "#F5B731", color: "#0A0A0A" }
@@ -284,7 +284,7 @@ export default function CareersClient() {
               View Open Roles
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
             </a>
-            <a href="mailto:growth@myntmore.com" className="text-sm font-semibold hover:underline underline-offset-4 transition-all duration-200" style={{ color: "#0a0a0a" }}>
+            <a href="mailto:growth@myntmore.com" className="inline-flex min-h-[44px] items-center text-sm font-semibold hover:underline underline-offset-4 transition-all duration-200" style={{ color: "#0a0a0a" }}>
               Or email us directly →
             </a>
           </div>

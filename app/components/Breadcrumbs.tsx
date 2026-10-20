@@ -26,7 +26,7 @@ export default function Breadcrumbs({ items, className = "" }: { items: Breadcru
             {i === trail.length - 1 ? (
               <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>{item.label}</span>
             ) : (
-              <Link href={item.href} className="text-xs font-semibold" style={{ color: "#5F564E" }}>
+              <Link href={item.href} className="-my-3.5 inline-flex items-center py-3.5 text-xs font-semibold" style={{ color: "#5F564E" }}>
                 {item.label}
               </Link>
             )}

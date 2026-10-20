@@ -73,7 +73,7 @@ export function DetailsPopover({ label, children, className }: Props) {
             } else setOpen((o) => !o);
           }}
           className={cn(
-            "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=open]:text-foreground",
+            "relative inline-flex h-5 w-5 shrink-0 items-center before:absolute before:-inset-3 before:content-[''] justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring data-[state=open]:text-foreground",
             className,
           )}
         >
@@ -99,7 +99,7 @@ export function DetailsPopover({ label, children, className }: Props) {
 export function DetailsSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="space-y-1 border-b border-border pb-3 last:border-0 last:pb-0">
-      <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{title}</p>
+      <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{title}</p>
       <div className="text-sm leading-snug text-foreground">{children}</div>
     </div>
   );

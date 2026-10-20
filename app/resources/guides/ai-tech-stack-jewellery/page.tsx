@@ -513,12 +513,12 @@ export default function GIATechStackPage() {
         {/* ── Nav ── */}
         <nav className="no-print sticky top-0 z-50 border-b px-6 py-4 flex items-center justify-between"
           style={{ backgroundColor: "rgba(248,246,242,0.96)", backdropFilter: "blur(16px)", borderColor: "#E8E2D9" }}>
-          <a href="/"><Image src="/logo.png" alt="Myntmore" width={130} height={36} className="h-9 w-auto object-contain" /></a>
+          <a href="/" className="inline-flex min-h-[44px] items-center"><Image src="/logo.png" alt="Myntmore" width={130} height={36} className="h-9 w-auto object-contain" /></a>
           <div className="flex items-center gap-3">
             <span className="hidden sm:block text-xs font-semibold" style={{ color: "#71675E" }}>GIA India Workshop</span>
             <button
               onClick={() => window.print()}
-              className="no-print flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm"
+              className="no-print flex min-h-[44px] items-center gap-2 px-4 py-2 rounded-xl font-bold text-sm"
               style={{ backgroundColor: "#F5B731", color: "#0A0A0A", transition: "transform 0.15s ease, box-shadow 0.15s ease", animation: "pulseGlow 3s ease-in-out infinite" }}
               onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.04)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
@@ -630,7 +630,7 @@ export default function GIATechStackPage() {
               <button
                 onClick={() => setSearch("")}
                 aria-label="Clear search"
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center"
                 style={{ backgroundColor: "#E8E2D9" }}
               >
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#52525B" strokeWidth="3" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -725,7 +725,7 @@ export default function GIATechStackPage() {
           {/* This page renders its own nav rather than InnerLayout, so without
               these it is a crawl dead-end: nothing links back into the site. */}
           <nav className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="More from Myntmore">
-            <a href="/" style={{ color: "#52525B" }}>Myntmore Home</a>
+            <a href="/" className="inline-flex min-h-[44px] items-center" style={{ color: "#52525B" }}>Myntmore Home</a>
             <a href="/resources/guides" style={{ color: "#52525B" }}>All Guides</a>
             <a href="/resources" style={{ color: "#52525B" }}>Resources</a>
             <a href="/services" style={{ color: "#52525B" }}>Services</a>

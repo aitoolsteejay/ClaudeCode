@@ -517,7 +517,7 @@ export default function AccountBasedMarketingClient() {
             Built by the same team running the account-based programs behind{" "}
             <span className="font-bold" style={{ color: "#0a0a0a" }}>12K+ B2B meetings booked</span> and $120M+ in pipeline generated for our clients.
           </p>
-          <Link href="/case-studies" className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+          <Link href="/case-studies" className="text-sm font-bold inline-flex min-h-[44px] items-center gap-1.5 hover:gap-2.5 transition-all"
             style={{ color: "#4F46E5" }}>
             Read the full case studies
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

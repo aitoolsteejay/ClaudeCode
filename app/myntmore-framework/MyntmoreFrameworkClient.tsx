@@ -854,11 +854,11 @@ export default function MyntmoreFrameworkClient() {
 
             {/* Bottom bar */}
             <div className="flex items-center justify-between px-5 py-2.5" style={{ backgroundColor: "#FEF9EC", borderTop: "1px solid #E8E2D9" }}>
-              <span className="text-[10px] font-mono" style={{ color: "#52525B" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
+              <span className="text-xs font-mono" style={{ color: "#52525B" }}>{NODES.length} nodes &middot; {CONNECTIONS.length} connections &middot; 7 workflows</span>
               <div className="flex items-center gap-1.5">
-                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E8E2D9" }}>&minus;</button>
-                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="text-[10px] font-mono px-1.5 hover:underline cursor-pointer" style={{ color: "#52525B" }}>{Math.round(view.zoom * 100)}%</button>
-                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-7 h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E8E2D9" }}>+</button>
+                <button type="button" onClick={() => zoomButton(1 / 1.25)} aria-label="Zoom out" className="w-11 h-11 sm:w-7 sm:h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E8E2D9" }}>&minus;</button>
+                <button type="button" onClick={handleFitClick} aria-label="Fit to view" className="min-h-[44px] text-xs font-mono px-2 hover:underline cursor-pointer sm:min-h-0" style={{ color: "#52525B" }}>{Math.round(view.zoom * 100)}%</button>
+                <button type="button" onClick={() => zoomButton(1.25)} aria-label="Zoom in" className="w-11 h-11 sm:w-7 sm:h-7 rounded-md flex items-center justify-center text-sm font-bold transition-colors cursor-pointer" style={{ backgroundColor: "#FFFFFF", color: "#0A0A0A", border: "1px solid #E8E2D9" }}>+</button>
               </div>
             </div>
           </div>

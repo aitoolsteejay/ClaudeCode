@@ -41,7 +41,7 @@ export default function EventPopup() {
         <div className="p-5">
           <div className="flex items-start justify-between gap-3 mb-2">
             <span
-              className="inline-flex text-[11px] font-bold px-2 py-0.5 rounded-full"
+              className="inline-flex text-xs font-bold px-2 py-0.5 rounded-full"
               style={{ backgroundColor: `${event.accent}12`, color: textTone(event.accent) }}
             >
               {event.tag}
@@ -58,7 +58,7 @@ export default function EventPopup() {
               </svg>
             </button>
           </div>
-          <p className="text-[11px] font-bold uppercase tracking-wide mb-1" style={{ color: "#71675E" }}>
+          <p className="text-xs font-bold uppercase tracking-wide mb-1" style={{ color: "#71675E" }}>
             Upcoming Event
           </p>
           <h3 className="text-sm font-black leading-snug mb-2 line-clamp-2" style={{ color: "#0a0a0a" }}>

@@ -23,10 +23,10 @@ export default function CopyBlock({ text, accent = "#0a0a0a", label = "Copy into
   return (
     <div className="relative rounded-xl overflow-hidden" style={{ border: "1px solid #E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="flex items-center justify-between px-4 py-2.5" style={{ borderBottom: "1px solid #E8E2D9", backgroundColor: "#FEF9EC" }}>
-        <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>{label}</span>
+        <span className="text-xs font-bold uppercase tracking-widest" style={{ color: textTone(accent) }}>{label}</span>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1.5 text-xs font-bold rounded-md px-2.5 py-1 transition-colors hover:bg-[#F8F6F2]"
+          className="flex min-h-[44px] items-center gap-1.5 text-xs font-bold rounded-md px-3.5 py-2 transition-colors hover:bg-[#F8F6F2]"
           style={{ backgroundColor: "#FFFFFF", border: "1px solid #E8E2D9", color: "#0A0A0A" }}
           aria-label="Copy prompt"
         >

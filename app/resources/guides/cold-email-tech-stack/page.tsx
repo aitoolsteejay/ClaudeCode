@@ -289,7 +289,7 @@ export default function ColdEmailTechStack() {
                 <Link href="/services/cold-email" className="btn-dark px-8 py-4 text-sm font-bold">Explore Our Cold Email Services</Link>
                 <a href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-[#F8F6F2]" style={{ color: "#0A0A0A", borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>Book a Free Strategy Call</a>
               </div>
-              <a href="mailto:founder@myntmore.com" className="inline-block mt-6 text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
+              <a href="mailto:founder@myntmore.com" className="inline-flex min-h-[44px] items-center mt-6 text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
             </section>
           </FadeIn>
         </div>

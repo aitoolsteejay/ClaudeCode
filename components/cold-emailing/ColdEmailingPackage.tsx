@@ -96,7 +96,7 @@ const FAQ_SCHEMA = buildFaqSchema(FAQS.map(({ q, a }) => ({ question: q, answer:
 
 function Eyebrow({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className="mb-3 text-[11px] font-black uppercase tracking-[0.3em]" style={{ color: light ? "#A14A08" : textTone(ORANGE) }}>
+    <p className="mb-3 text-xs font-black uppercase tracking-[0.3em]" style={{ color: light ? "#A14A08" : textTone(ORANGE) }}>
       {children}
     </p>
   );
@@ -119,7 +119,7 @@ export default function ColdEmailingPackage() {
             <Breadcrumbs items={[{ label: "Services", href: "/services" }, { label: "Cold Email", href: "/services/cold-email" }]} />
             <div className="hero-fade mb-7 inline-flex items-center gap-2.5 rounded-full border bg-white/70 px-5 py-2 backdrop-blur" style={{ borderColor: "rgba(234,88,12,0.35)" }}>
               <span className="h-2 w-2 animate-pulse rounded-full" style={{ backgroundColor: ORANGE }} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.3em]" style={{ color: INK }}>Cold emailing · Done for you</span>
+              <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: INK }}>Cold emailing · Done for you</span>
             </div>
             <h1 className="hero-fade-d1 font-black" style={{ color: INK, fontSize: "clamp(2.9rem, 7.4vw, 5.2rem)", lineHeight: 0.96, letterSpacing: "-0.045em" }}>
               Cold email,
@@ -163,7 +163,7 @@ export default function ColdEmailingPackage() {
             </div>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
               <FadeIn delay={420}>
-                <span className="text-[11px] font-black uppercase tracking-[0.24em]" style={{ color: "#71675E" }}>Our targets</span>
+                <span className="text-xs font-black uppercase tracking-[0.24em]" style={{ color: "#71675E" }}>Our targets</span>
               </FadeIn>
               {TARGETS.map((t, i) => (
                 <FadeIn key={t} delay={520 + i * 130}>
@@ -255,7 +255,7 @@ export default function ColdEmailingPackage() {
                         <Icon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
                       </span>
                       <div>
-                        <p className="text-[11px] font-black uppercase tracking-[0.22em]" style={{ color: "#71675E" }}>{row.label}</p>
+                        <p className="text-xs font-black uppercase tracking-[0.22em]" style={{ color: "#71675E" }}>{row.label}</p>
                         <p className="text-base font-bold" style={{ color: INK }}>{row.value}</p>
                       </div>
                     </div>

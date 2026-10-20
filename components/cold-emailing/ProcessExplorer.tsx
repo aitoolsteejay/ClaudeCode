@@ -141,7 +141,7 @@ export default function ProcessExplorer() {
                   </button>
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute left-1/2 top-[56px] hidden w-24 -translate-x-1/2 text-center text-[11px] font-bold leading-tight transition-colors lg:block"
+                    className="pointer-events-none absolute left-1/2 top-[56px] hidden w-24 -translate-x-1/2 text-center text-xs font-bold leading-tight transition-colors lg:block"
                     style={{ color: isActive ? INK : "#71675E" }}
                   >
                     {s.short}
@@ -184,7 +184,7 @@ export default function ProcessExplorer() {
           <span className="mb-5 grid h-14 w-14 place-items-center rounded-2xl text-white" style={{ background: `linear-gradient(135deg, ${ORANGE}, ${GOLD})`, boxShadow: "0 14px 30px rgba(234,88,12,0.28)" }}>
             <Icon className="h-7 w-7" strokeWidth={2} aria-hidden="true" />
           </span>
-          <p className="text-[11px] font-black uppercase tracking-[0.28em]" style={{ color: textTone(ORANGE) }}>
+          <p className="text-xs font-black uppercase tracking-[0.28em]" style={{ color: textTone(ORANGE) }}>
             Step {active + 1} of {STEPS.length}
           </p>
           <h3 className="mt-2 text-2xl font-black leading-tight sm:text-3xl" style={{ color: INK, letterSpacing: "-0.03em" }}>
@@ -238,7 +238,7 @@ export default function ProcessExplorer() {
               aria-pressed={!paused}
               aria-label={paused ? "Play auto-advance" : "Pause auto-advance"}
               title={paused ? "Play auto-advance" : "Pause auto-advance"}
-              className="grid h-8 w-8 place-items-center rounded-full border bg-white transition-colors hover:border-[#EA580C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
+              className="grid h-11 w-11 place-items-center rounded-full border bg-white transition-colors hover:border-[#EA580C] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EA580C]"
               style={{ borderColor: "#E8E2D9", color: INK }}
             >
               {paused ? <Play className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" /> : <Pause className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" />}

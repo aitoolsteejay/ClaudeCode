@@ -195,7 +195,7 @@ export default function AiAgentsMeetingsBlueprint() {
               {HERO_STATS.map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
+                  <div className="text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -210,15 +210,15 @@ export default function AiAgentsMeetingsBlueprint() {
             <h4 className="flex items-center gap-1.5 text-sm font-black mb-3" style={{ color: "#9A3412" }}><Check className="w-4 h-4 flex-shrink-0" strokeWidth={3} aria-hidden="true" />ICP Locked</h4>
             <div className="space-y-3">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Roles</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Roles</p>
                 <ChipGroup items={["Founders", "CEOs", "COOs", "Partners", "VP Sales"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Industries</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Industries</p>
                 <ChipGroup items={["SaaS", "Consulting", "Manufacturing", "Recruitment"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Geo</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: "#71675E" }}>Geo</p>
                 <ChipGroup items={["United States"]} accent="#F97316" accentBg="rgba(249,115,22,0.08)" />
               </div>
             </div>

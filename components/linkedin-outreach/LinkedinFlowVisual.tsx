@@ -84,7 +84,7 @@ export default function LinkedinFlowVisual() {
               boxShadow: "0 22px 50px rgba(10,102,194,0.13), 0 2px 6px rgba(15,15,20,0.04)",
             }}
           >
-            <span className="absolute -left-2 -top-2 z-10 grid h-6 w-6 place-items-center rounded-full text-[11px] font-black" style={{ backgroundColor: "#F5B731", color: INK }}>
+            <span className="absolute -left-2 -top-2 z-10 grid h-6 w-6 place-items-center rounded-full text-xs font-black" style={{ backgroundColor: "#F5B731", color: INK }}>
               {node.n}
             </span>
             <span className={`relative mb-2 grid h-9 w-9 place-items-center rounded-xl text-white sm:h-10 sm:w-10 ${node.n === 4 ? "li-pop" : ""}`} style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})` }}>
@@ -92,16 +92,16 @@ export default function LinkedinFlowVisual() {
               <Icon className="h-[18px] w-[18px] sm:h-5 sm:w-5" strokeWidth={2.2} />
             </span>
             <p className="text-[12px] font-black leading-tight sm:text-[13px]" style={{ color: INK }}>{node.label}</p>
-            <p className="mt-0.5 text-[10px] leading-snug sm:text-[11px]" style={{ color: "#5d6a78" }}>{node.caption}</p>
+            <p className="mt-0.5 text-xs leading-snug sm:text-xs" style={{ color: "#5d6a78" }}>{node.caption}</p>
           </div>
         );
       })}
 
-      <div className="li-float absolute flex items-center gap-1.5 whitespace-nowrap rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ left: pct(310, W), top: pct(118, H), borderColor: "#DCE8F5", color: INK, boxShadow: "0 12px 28px rgba(15,15,20,0.08)" }}>
+      <div className="li-float absolute flex items-center gap-1.5 whitespace-nowrap rounded-full border bg-white px-3 py-1.5 text-xs font-black" style={{ left: pct(310, W), top: pct(118, H), borderColor: "#DCE8F5", color: INK, boxShadow: "0 12px 28px rgba(15,15,20,0.08)" }}>
         <Bot className="h-3.5 w-3.5" style={{ color: BLUE }} strokeWidth={2.4} />
         AI agents, 24/7
       </div>
-      <div className="li-float absolute flex items-center gap-1.5 whitespace-nowrap rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ left: pct(120, W), top: pct(492, H), borderColor: "#DCE8F5", color: INK, boxShadow: "0 12px 28px rgba(15,15,20,0.08)", animationDelay: "-2.5s" }}>
+      <div className="li-float absolute flex items-center gap-1.5 whitespace-nowrap rounded-full border bg-white px-3 py-1.5 text-xs font-black" style={{ left: pct(120, W), top: pct(492, H), borderColor: "#DCE8F5", color: INK, boxShadow: "0 12px 28px rgba(15,15,20,0.08)", animationDelay: "-2.5s" }}>
         <ShieldCheck className="h-3.5 w-3.5" style={{ color: BLUE }} strokeWidth={2.4} />
         Within LinkedIn&apos;s limits
       </div>

@@ -37,7 +37,7 @@ export function InputsPanel({ api }: { api: CalculatorApi }) {
             Currency
           </Label>
           <Select value={state.currency} onValueChange={(v) => update("currency", v)}>
-            <SelectTrigger id="currency" aria-label={`Currency: ${currency.label}`} className="h-8 w-auto gap-1.5 px-2.5 text-xs font-semibold">
+            <SelectTrigger id="currency" aria-label={`Currency: ${currency.label}`} className="h-11 w-auto gap-1.5 px-2.5 text-xs font-semibold sm:h-8">
               <SelectValue>{`${currency.symbol} ${currency.code}`}</SelectValue>
             </SelectTrigger>
             <SelectContent align="end" className="w-64">
@@ -48,7 +48,7 @@ export function InputsPanel({ api }: { api: CalculatorApi }) {
               ))}
             </SelectContent>
           </Select>
-          <Button variant="ghost" size="sm" onClick={reset} className="-mr-2 h-8 px-2 text-muted-foreground">
+          <Button variant="ghost" size="sm" onClick={reset} className="-mr-2 h-11 px-2 text-muted-foreground sm:h-8">
             <RotateCcw aria-hidden="true" />
             Reset
           </Button>
@@ -76,7 +76,7 @@ export function InputsPanel({ api }: { api: CalculatorApi }) {
                   Prospects reached minus the ones that bounced. The reply rate and every step after it are calculated on this number.
                 </InfoTip>
               </div>
-              <p className="text-[11px] text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 {formatInteger(reached, locale)} reached − {formatInteger(reached - delivered, locale)} bounced
               </p>
             </div>
@@ -196,14 +196,14 @@ export function InputsPanel({ api }: { api: CalculatorApi }) {
           )}
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-lg border border-[hsl(var(--border)/0.5)] bg-[hsl(var(--secondary)/0.3)] px-3 py-2">
-              <div className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground">
+              <div className="flex items-center gap-1 text-xs font-semibold text-muted-foreground">
                 Customer LTV
                 <InfoTip label="Customer LTV">Lifetime value: deal value x invoices per year x retention months / 12.</InfoTip>
               </div>
               <p className="text-base font-bold text-[#A14A08]">{formatMoney(result.fullLTV, currency)}</p>
             </div>
             <div className="rounded-lg border border-[hsl(var(--accent)/0.2)] bg-[hsl(var(--accent)/0.1)] px-3 py-2">
-              <div className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground">
+              <div className="flex items-center gap-1 text-xs font-semibold text-muted-foreground">
                 Effective LTV
                 <InfoTip label="Effective LTV">
                   The most one customer can pay inside the chosen duration (a customer won in month 1). Uses the shorter of duration and retention.

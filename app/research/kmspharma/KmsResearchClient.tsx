@@ -120,7 +120,7 @@ export default function KmsResearchClient() {
             <div className="flex flex-wrap items-center gap-3 text-sm">
               <label className="flex items-center gap-2" style={{ color: MUTED }}>
                 <Filter className="h-4 w-4" aria-hidden="true" /> Tier
-                <select value={tier} onChange={(e) => setTier(e.target.value as typeof tier)} className="rounded-lg border bg-white px-2.5 py-1.5 font-bold focus-visible:outline-none focus-visible:ring-2" style={{ borderColor: BORDER, color: INK }}>
+                <select value={tier} onChange={(e) => setTier(e.target.value as typeof tier)} className="min-h-[44px] rounded-lg border bg-white px-2.5 py-1.5 font-bold focus-visible:outline-none focus-visible:ring-2" style={{ borderColor: BORDER, color: INK }}>
                   <option value="all">All</option>
                   <option value="T1">Tier 1</option>
                   <option value="T2">Tier 2</option>
@@ -129,7 +129,7 @@ export default function KmsResearchClient() {
               </label>
               <label className="flex items-center gap-2" style={{ color: MUTED }}>
                 <ArrowDownUp className="h-4 w-4" aria-hidden="true" /> Sort
-                <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)} className="rounded-lg border bg-white px-2.5 py-1.5 font-bold focus-visible:outline-none focus-visible:ring-2" style={{ borderColor: BORDER, color: INK }}>
+                <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)} className="min-h-[44px] rounded-lg border bg-white px-2.5 py-1.5 font-bold focus-visible:outline-none focus-visible:ring-2" style={{ borderColor: BORDER, color: INK }}>
                   <option value="priority">Priority</option>
                   <option value="fit">Best fit</option>
                   <option value="timing">Most urgent</option>
@@ -138,7 +138,7 @@ export default function KmsResearchClient() {
             </div>
             <div className="flex items-center gap-3 text-sm" style={{ color: MUTED }}>
               <span>{rows.length} {rows.length === 1 ? "company" : "companies"}</span>
-              <button type="button" onClick={() => downloadCsv(rows)} className="inline-flex items-center gap-2 rounded-lg border bg-white px-3 py-1.5 font-bold transition-colors hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2" style={{ borderColor: BORDER, color: INK }}>
+              <button type="button" onClick={() => downloadCsv(rows)} className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border bg-white px-3.5 py-1.5 font-bold transition-colors hover:bg-[#F8F6F2] focus-visible:outline-none focus-visible:ring-2" style={{ borderColor: BORDER, color: INK }}>
                 <Download className="h-4 w-4" aria-hidden="true" /> Download CSV ({rows.length})
               </button>
             </div>
@@ -199,7 +199,7 @@ export default function KmsResearchClient() {
                       <tr className="cursor-pointer border-t align-top transition-colors hover:bg-[#FBF7EE]" style={{ borderColor: BORDER }} onClick={() => toggle(a.name)}>
                         <td className="px-4 py-4 tabular-nums" style={{ color: MUTED }}>{idx + 1}</td>
                         <td className="px-2 py-4">
-                          <button type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={(e) => { e.stopPropagation(); toggle(a.name); }} className="text-left font-black focus-visible:outline-none focus-visible:ring-2" style={{ color: INK }}>
+                          <button type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={(e) => { e.stopPropagation(); toggle(a.name); }} className="inline-flex min-h-[44px] items-center text-left font-black focus-visible:outline-none focus-visible:ring-2" style={{ color: INK }}>
                             {a.name}
                           </button>
                           <span className="block text-xs" style={{ color: MUTED }}>{a.where}</span>

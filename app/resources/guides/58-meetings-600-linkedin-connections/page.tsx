@@ -224,7 +224,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
               {HERO_STATS.map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-2xl sm:text-3xl font-black" style={{ color: "#0a0a0a" }}><StatTicker value={s.v} /></div>
-                  <div className="text-[11px] sm:text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
+                  <div className="text-xs mt-1 leading-tight" style={{ color: "#71675E" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -232,10 +232,10 @@ export default function LinkedinFiftyEightMeetingsGuide() {
 
           <FadeIn delay={250}>
             <nav aria-label="The 5 steps" className="mt-6 flex flex-wrap items-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest mr-1" style={{ color: "#71675E" }}>The 5 steps</span>
+              <span className="text-xs font-bold uppercase tracking-widest mr-1" style={{ color: "#71675E" }}>The 5 steps</span>
               {STEPS_AT_A_GLANCE.map((s, i) => (
                 <a key={s} href={`#step-${i + 1}`} className="inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs sm:text-[13px] font-bold transition-colors hover:border-[#0077b5]" style={{ borderColor: "#E8E2D9", color: "#0a0a0a" }}>
-                  <span className="w-5 h-5 rounded-full flex items-center justify-center text-[11px] font-black text-white" style={{ backgroundColor: BLUE }}>{i + 1}</span>
+                  <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-black text-white" style={{ backgroundColor: BLUE }}>{i + 1}</span>
                   {s}
                 </a>
               ))}
@@ -268,7 +268,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {ICP_LAYERS.map((l, i) => (
               <div key={l.label} className="rounded-xl p-5" style={{ backgroundColor: `rgba(249,115,22,${0.04 + l.tone * 0.12})`, border: `1px solid rgba(249,115,22,${0.15 + l.tone * 0.3})` }}>
-                <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#9A3412" }}>Layer {i + 1}</span>
+                <span className="text-xs font-black uppercase tracking-widest" style={{ color: "#9A3412" }}>Layer {i + 1}</span>
                 <p className="text-base font-black mt-1" style={{ color: "#0a0a0a" }}>{l.label}</p>
                 <p className="text-sm mt-1" style={{ color: "#3D3D3D" }}>{l.text}</p>
               </div>
@@ -481,7 +481,7 @@ function MessageHead({ n, icon: Icon, title }: { n: number; icon: LucideIcon; ti
         <Icon className="w-5 h-5" strokeWidth={2.2} aria-hidden="true" />
       </span>
       <div>
-        <p className="text-[11px] font-black uppercase tracking-widest" style={{ color: BLUE }}>Message {n}</p>
+        <p className="text-xs font-black uppercase tracking-widest" style={{ color: BLUE }}>Message {n}</p>
         <h3 className="text-base sm:text-lg font-black leading-tight" style={{ color: "#0a0a0a" }}>{title}</h3>
       </div>
     </div>

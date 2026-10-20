@@ -97,7 +97,7 @@ export default function ThreeSecondRulePage() {
           </div>
 
           <div className="mt-6">
-            <Link href="/resources/glossary" className="text-sm font-bold" style={{ color: "#71675E" }}>&larr; Back to the glossary</Link>
+            <Link href="/resources/glossary" className="inline-flex min-h-[44px] items-center text-sm font-bold" style={{ color: "#71675E" }}>&larr; Back to the glossary</Link>
           </div>
         </div>
       </article>

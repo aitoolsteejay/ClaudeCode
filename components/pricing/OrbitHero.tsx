@@ -78,9 +78,9 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
       <div className="hero-fade flex flex-wrap items-center justify-between gap-3 mb-8">
         <span className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border bg-white/70" style={{ borderColor: "rgba(245,183,49,0.45)" }}>
           <span className="w-2 h-2 rounded-full" style={{ backgroundColor: GOLD }} aria-hidden="true" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.3em]" style={{ color: INK }}>Service plans</span>
+          <span className="text-xs font-bold uppercase tracking-[0.3em]" style={{ color: INK }}>Service plans</span>
         </span>
-        <span className="hidden md:inline-flex items-center gap-4 px-7 py-3 rounded-full bg-white/70 text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: INK }}>
+        <span className="hidden md:inline-flex items-center gap-4 px-7 py-3 rounded-full bg-white/70 text-xs font-bold uppercase tracking-[0.32em]" style={{ color: INK }}>
           People <span style={{ color: GOLD }}>×</span> Content <span style={{ color: GOLD }}>×</span> Opportunities
         </span>
       </div>
@@ -193,13 +193,13 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
           </svg>
 
           <div className="absolute" style={{ left: "46%", top: "38%", width: "50%" }}>
-            <p className="text-[11px] font-bold uppercase leading-[1.9] tracking-[0.3em]" style={{ color: INK }}>
+            <p className="text-xs font-bold uppercase leading-[1.9] tracking-[0.3em]" style={{ color: INK }}>
               LinkedIn GTM
               <br />
               Growth ecosystem
             </p>
             <div className="my-3.5 h-[3px] w-12 rounded-full" style={{ backgroundColor: GOLD }} />
-            <p className="text-[11px] font-semibold uppercase leading-[1.9] tracking-[0.26em]" style={{ color: "#4a4a55" }}>
+            <p className="text-xs font-semibold uppercase leading-[1.9] tracking-[0.26em]" style={{ color: "#4a4a55" }}>
               Consistent presence.
               <br />
               Real opportunities.
@@ -214,7 +214,7 @@ export default function OrbitHero({ leadWords, accentWord, planet = "mars", pric
           {summary}
         </p>
         <div className="sm:pl-10 sm:border-l sm:text-right" style={{ borderColor: "#E8E2D9" }}>
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] mb-1" style={{ color: "#71675E" }}>Plans start at</p>
+          <p className="text-xs font-bold uppercase tracking-[0.3em] mb-1" style={{ color: "#71675E" }}>Plans start at</p>
           <div className="font-black leading-none" style={{ color: INK, fontSize: "clamp(2.6rem, 6vw, 4.2rem)", letterSpacing: "-0.04em" }}>{priceNode}</div>
           <p className="mt-2 text-sm font-medium" style={{ color: "#3b3b45" }}>{billingNote}</p>
         </div>

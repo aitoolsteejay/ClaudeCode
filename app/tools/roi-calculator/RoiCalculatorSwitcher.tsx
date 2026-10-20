@@ -59,7 +59,7 @@ export default function RoiCalculatorSwitcher() {
                   type="button"
                   aria-pressed={active}
                   onClick={() => choose(o.id)}
-                  className="rounded-full px-5 py-2 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                  className="rounded-full px-5 py-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                   style={active ? { backgroundColor: "#F5B731", color: INK } : { backgroundColor: "transparent", color: "#52525B" }}
                 >
                   {o.label}

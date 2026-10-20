@@ -32,7 +32,7 @@ export default function AnswerBlock({ slug, accent = "#0a0a0a" }: { slug: string
         <dl className="grid gap-6 sm:grid-cols-3">
           {facts.map((f) => (
             <div key={f.label} className="border-t-2 pt-4" style={{ borderColor: accent }}>
-              <dt className="text-[11px] font-black uppercase tracking-[0.22em] mb-2" style={{ color: textTone(accent) }}>
+              <dt className="text-xs font-black uppercase tracking-[0.22em] mb-2" style={{ color: textTone(accent) }}>
                 {f.label}
               </dt>
               <dd className="text-sm leading-relaxed" style={{ color: "#52525B" }}>

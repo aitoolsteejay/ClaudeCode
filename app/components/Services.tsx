@@ -146,7 +146,7 @@ function ServiceCard({
           {metric.value}
         </div>
         <div
-          className="text-[10px] font-bold uppercase tracking-widest mt-0.5"
+          className="text-xs font-bold uppercase tracking-widest mt-0.5"
           style={{ color: "#71675E" }}
         >
           {metric.label}

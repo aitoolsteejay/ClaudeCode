@@ -18,7 +18,7 @@ function VisualTargeting() {
     <div className="flex h-full flex-col items-center justify-center gap-5 p-6">
       <div className="flex flex-wrap justify-center gap-2">
         {["Firmographic", "Psychographic", "Behavioural"].map((c, i) => (
-          <span key={c} className="ax-chip rounded-full border bg-white px-3 py-1 text-[11px] font-black" style={{ borderColor: EDGE, color: BLUE, animationDelay: `${0.15 + i * 0.45}s` }}>
+          <span key={c} className="ax-chip rounded-full border bg-white px-3 py-1 text-xs font-black" style={{ borderColor: EDGE, color: BLUE, animationDelay: `${0.15 + i * 0.45}s` }}>
             {c}
           </span>
         ))}
@@ -31,7 +31,7 @@ function VisualTargeting() {
         })}
         <rect className="ax-scan" x="0" y="0" width="2.5" height="118" rx="1.25" fill={BLUE} opacity="0" />
       </svg>
-      <p className="text-[11px] font-black uppercase tracking-[0.2em]" style={{ color: MUTED }}>Best-fit buyers light up</p>
+      <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: MUTED }}>Best-fit buyers light up</p>
     </div>
   );
 }
@@ -58,7 +58,7 @@ function VisualPriority() {
               </div>
             </div>
           </div>
-          <span className="rounded-full px-2.5 py-1 text-[10px] font-black" style={i === 0 ? { backgroundColor: BLUE, color: "#fff" } : { backgroundColor: "#EEF2F6", color: "#64748b" }}>
+          <span className="rounded-full px-2.5 py-1 text-xs font-black" style={i === 0 ? { backgroundColor: BLUE, color: "#fff" } : { backgroundColor: "#EEF2F6", color: "#64748b" }}>
             {r.tag}
           </span>
         </div>
@@ -90,7 +90,7 @@ function VisualProspecting() {
         <div className="space-y-3">
           {FIELDS.map((f, i) => (
             <div key={f.label} className="flex items-center gap-3">
-              <span className="w-[92px] shrink-0 text-[10px] font-black uppercase tracking-[0.14em]" style={{ color: MUTED }}>{f.label}</span>
+              <span className="w-[92px] shrink-0 text-xs font-black uppercase tracking-[0.14em]" style={{ color: MUTED }}>{f.label}</span>
               <div className="h-2 flex-1 rounded-full" style={{ backgroundColor: "#E6EEF7" }}>
                 <div className="ax-enrich h-2 rounded-full" style={{ width: `${f.w}%`, backgroundColor: BLUE_LIGHT, animationDelay: `${0.3 + i * 0.5}s` }} />
               </div>
@@ -120,12 +120,12 @@ function VisualCompetitors() {
             <div className={`${r.label === "You" ? "ax-lead" : "ax-sway"} w-12 rounded-t-xl`} style={{ height: `${r.h}%`, animationDelay: `${1.2 + i * 0.4}s`, animationDuration: r.label === "You" ? undefined : `${3.4 + i * 0.7}s` }}>
               <div className="ax-col h-full w-full rounded-t-xl" style={{ backgroundColor: r.color, animationDelay: `${0.2 + i * 0.25}s` }} />
             </div>
-            <span className="text-[11px] font-black" style={{ color: r.label === "You" ? BLUE : MUTED }}>{r.label}</span>
+            <span className="text-xs font-black" style={{ color: r.label === "You" ? BLUE : MUTED }}>{r.label}</span>
           </div>
         ))}
       </div>
       <span className="ax-float inline-flex">
-        <span className="ax-chip inline-flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-[11px] font-black" style={{ borderColor: EDGE, color: INK, animationDelay: "1.3s" }}>
+        <span className="ax-chip inline-flex items-center gap-1.5 rounded-full border bg-white px-3 py-1.5 text-xs font-black" style={{ borderColor: EDGE, color: INK, animationDelay: "1.3s" }}>
           <Radar className="h-3.5 w-3.5" style={{ color: BLUE }} strokeWidth={2.4} />
           One step ahead
         </span>
@@ -163,7 +163,7 @@ function VisualEngagement() {
               <div className="h-2 w-11/12 rounded-full" style={{ backgroundColor: "#BBD5F0" }} />
               <div className="h-2 w-2/3 rounded-full" style={{ backgroundColor: "#BBD5F0" }} />
             </div>
-            <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-black" style={{ color: BLUE }}>
+            <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-black" style={{ color: BLUE }}>
               <Sparkles className="h-3 w-3" strokeWidth={2.6} />
               Drafted in your voice
             </span>
@@ -189,9 +189,9 @@ function VisualScale() {
             {i === 2 ? (
               <>
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="text-[10px] font-black uppercase tracking-[0.14em]" style={{ color: MUTED }}>Hi</span>
+                  <span className="text-xs font-black uppercase tracking-[0.14em]" style={{ color: MUTED }}>Hi</span>
                   {TOKENS.map((t, k) => (
-                    <span key={t} className="ax-token rounded-md px-2 py-0.5 text-[11px] font-black" style={{ color: INK, animationDelay: `${k * 0.6}s` }}>
+                    <span key={t} className="ax-token rounded-md px-2 py-0.5 text-xs font-black" style={{ color: INK, animationDelay: `${k * 0.6}s` }}>
                       {t}
                     </span>
                   ))}
@@ -440,7 +440,7 @@ export default function AgentExplorer() {
                   <TabIcon className="h-5 w-5" strokeWidth={2.2} aria-hidden="true" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: isActive ? BLUE : MUTED }}>{`Agent ${i + 1}`}</span>
+                  <span className="block text-xs font-black uppercase tracking-[0.2em]" style={{ color: isActive ? BLUE : MUTED }}>{`Agent ${i + 1}`}</span>
                   <span className="block text-sm font-black leading-tight" style={{ color: INK }}>{a.title}</span>
                 </span>
                 {isActive && playing && (
@@ -467,7 +467,7 @@ export default function AgentExplorer() {
             type="button"
             onClick={() => setPaused((p) => !p)}
             aria-pressed={!paused}
-            className="mt-3 inline-flex items-center gap-2 rounded-full border bg-white/70 px-3.5 py-1.5 text-xs font-bold transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A66C2]"
+            className="mt-3 inline-flex min-h-[44px] items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-xs font-bold transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A66C2]"
             style={{ borderColor: EDGE, color: INK }}
           >
             {paused ? <Play className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" /> : <Pause className="h-3.5 w-3.5" strokeWidth={2.6} aria-hidden="true" />}
@@ -491,7 +491,7 @@ export default function AgentExplorer() {
             <span className="mb-4 grid h-12 w-12 place-items-center rounded-2xl text-white" style={{ background: `linear-gradient(135deg, ${BLUE}, ${BLUE_LIGHT})`, boxShadow: "0 14px 30px rgba(10,102,194,0.28)" }}>
               <Icon className="h-6 w-6" strokeWidth={2} aria-hidden="true" />
             </span>
-            <p className="text-[11px] font-black uppercase tracking-[0.28em]" style={{ color: BLUE }}>{`Agent ${active + 1} of ${AGENTS.length}`}</p>
+            <p className="text-xs font-black uppercase tracking-[0.28em]" style={{ color: BLUE }}>{`Agent ${active + 1} of ${AGENTS.length}`}</p>
             <h3 className="mt-2 text-2xl font-black leading-tight" style={{ color: INK, letterSpacing: "-0.03em" }}>{agent.title}</h3>
             <p className="mt-3 text-base leading-relaxed" style={{ color: "#52525B" }}>{agent.summary}</p>
             <ul className="mt-5 space-y-2.5">

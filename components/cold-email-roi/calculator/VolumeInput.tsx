@@ -88,7 +88,7 @@ export function VolumeInput({ mode, onModeChange, dailyEmailTarget, monthlyProsp
               onClick={() => onModeChange(m.mode)}
               onKeyDown={(e) => onKeyDown(e, i)}
               className={cn(
-                "rounded-md px-2 py-2 text-xs font-medium text-muted-foreground transition-all hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "min-h-[44px] rounded-md px-2 py-2 text-xs font-medium text-muted-foreground transition-all hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 mode === m.mode && "bg-card font-bold text-foreground shadow-sm",
               )}
             >

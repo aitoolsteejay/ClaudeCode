@@ -146,7 +146,7 @@ export default function WhatIsB2bOutboundSales() {
                   <div key={c.name} className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                     <h3 className="text-lg font-black mb-2" style={{ color: "#0a0a0a" }}>{c.name}</h3>
                     <p className="text-base leading-relaxed mb-3" style={{ color: "#52525B" }}>{c.body}</p>
-                    <Link href={c.href} className="text-sm font-bold" style={{ color: "#A14A08" }}>See the service &rarr;</Link>
+                    <Link href={c.href} className="inline-flex min-h-[44px] items-center text-sm font-bold" style={{ color: "#A14A08" }}>See the service &rarr;</Link>
                   </div>
                 ))}
               </div>

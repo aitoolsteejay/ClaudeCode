@@ -250,7 +250,7 @@ export default function SystemFlow() {
           <div>
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-black uppercase tracking-widest" style={{ color:"#0a66c2" }}>Running in Parallel</span>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background:"rgba(10,102,194,0.1)", color:"#0a66c2" }}>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background:"rgba(10,102,194,0.1)", color:"#0a66c2" }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse inline-block" style={{ background:"#0a66c2" }} />
                 Active throughout
               </span>
@@ -295,7 +295,7 @@ export default function SystemFlow() {
       </div>
       <div className="relative z-10">
         <div className="text-3xl mb-2">💰</div>
-        <span className="inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border mb-3" style={{ color:"#A14A08", borderColor:"rgba(245,183,49,0.4)", background:"rgba(245,183,49,0.08)" }}>
+        <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border mb-3" style={{ color:"#A14A08", borderColor:"rgba(245,183,49,0.4)", background:"rgba(245,183,49,0.08)" }}>
           The Result
         </span>
         <h3 className="text-xl sm:text-2xl font-black text-[#0a0a0a] mb-2">Mynt More Money</h3>
@@ -350,7 +350,7 @@ export default function SystemFlow() {
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background:step.color+"18", color:step.color }}>{step.icon}</div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(step.color) }}>{step.number}</span>
+                        <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(step.color) }}>{step.number}</span>
                         <h3 className="text-sm font-bold text-[#0a0a0a]">{step.title}</h3>
                       </div>
                       <p className="text-[#71675E] text-xs leading-relaxed">{step.description}</p>
@@ -398,7 +398,7 @@ export default function SystemFlow() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background:STEPS[0].color+"18", color:STEPS[0].color }}>{STEPS[0].icon}</div>
-                  <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[0].color) }}>{STEPS[0].number}</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(STEPS[0].color) }}>{STEPS[0].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[0].title}</h3>
                 <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[0].description}</p>
@@ -414,7 +414,7 @@ export default function SystemFlow() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background:STEPS[1].color+"18", color:STEPS[1].color }}>{STEPS[1].icon}</div>
-                  <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[1].color) }}>{STEPS[1].number}</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(STEPS[1].color) }}>{STEPS[1].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[1].title}</h3>
                 <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[1].description}</p>
@@ -430,7 +430,7 @@ export default function SystemFlow() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background:STEPS[2].color+"18", color:STEPS[2].color }}>{STEPS[2].icon}</div>
-                  <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[2].color) }}>{STEPS[2].number}</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(STEPS[2].color) }}>{STEPS[2].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[2].title}</h3>
                 <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[2].description}</p>
@@ -451,7 +451,7 @@ export default function SystemFlow() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background:STEPS[3].color+"18", color:STEPS[3].color }}>{STEPS[3].icon}</div>
-                  <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[3].color) }}>{STEPS[3].number}</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(STEPS[3].color) }}>{STEPS[3].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[3].title}</h3>
                 <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[3].description}</p>
@@ -467,7 +467,7 @@ export default function SystemFlow() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background:STEPS[4].color+"18", color:STEPS[4].color }}>{STEPS[4].icon}</div>
-                  <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[4].color) }}>{STEPS[4].number}</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(STEPS[4].color) }}>{STEPS[4].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[4].title}</h3>
                 <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[4].description}</p>
@@ -483,7 +483,7 @@ export default function SystemFlow() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background:STEPS[5].color+"18", color:STEPS[5].color }}>{STEPS[5].icon}</div>
-                  <span className="text-[10px] font-black uppercase tracking-widest" style={{ color:textTone(STEPS[5].color) }}>{STEPS[5].number}</span>
+                  <span className="text-xs font-black uppercase tracking-widest" style={{ color:textTone(STEPS[5].color) }}>{STEPS[5].number}</span>
                 </div>
                 <h3 className="text-[#0a0a0a] font-bold text-base mb-1.5">{STEPS[5].title}</h3>
                 <p className="text-[#71675E] text-sm leading-relaxed">{STEPS[5].description}</p>

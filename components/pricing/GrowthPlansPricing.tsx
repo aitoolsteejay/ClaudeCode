@@ -188,7 +188,7 @@ function InfoTooltip({ text }: { text: string }) {
     <span className="group relative inline-flex items-center ml-1.5 align-middle">
       <span
         tabIndex={0}
-        className="inline-flex items-center justify-center w-4 h-4 rounded-full text-[10px] font-black cursor-help"
+        className="inline-flex items-center justify-center w-4 h-4 rounded-full text-xs font-black cursor-help"
         style={{ backgroundColor: "#EFEBE4", color: TEXT_MUTED }}
         aria-label={text}
       >
@@ -398,7 +398,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                       }}
                     >
                       {tier.featured && (
-                        <div className="price-badge-pop absolute top-0 left-1/2 rounded-b-lg px-4 py-1 text-center font-black text-[10px] text-white whitespace-nowrap" style={{ backgroundColor: textTone(tier.accent), zIndex: 10 }}>
+                        <div className="price-badge-pop absolute top-0 left-1/2 rounded-b-lg px-4 py-1 text-center font-black text-xs text-white whitespace-nowrap" style={{ backgroundColor: textTone(tier.accent), zIndex: 10 }}>
                           MOST POPULAR
                         </div>
                       )}
@@ -422,7 +422,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                         </div>
 
                         <div className="flex-1 space-y-2.5 mb-5">
-                          <p className="text-[10px] font-black uppercase tracking-widest mb-1" style={{ color: textTone(tier.accent) }}>Highlights</p>
+                          <p className="text-xs font-black uppercase tracking-widest mb-1" style={{ color: textTone(tier.accent) }}>Highlights</p>
                           <ul className="space-y-1.5">
                             {CARD_HIGHLIGHTS[i].map((label) => (
                               <li key={label} className="flex items-start gap-2 text-sm" style={{ color: "#3D3D3D" }}>
@@ -458,7 +458,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
               </div>
               <div className="space-y-5">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: TEXT_MUTED }}>Growth Infrastructure</p>
+                  <p className="text-xs font-black uppercase tracking-widest mb-3" style={{ color: TEXT_MUTED }}>Growth Infrastructure</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
                     {INCLUDED_IN_EVERY_PLAN.slice(0, 8).map((item) => (
                       <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
@@ -470,7 +470,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                   </div>
                 </div>
                 <div className="pt-5" style={{ borderTop: `1px solid ${BORDER}` }}>
-                  <p className="text-[10px] font-black uppercase tracking-widest mb-3" style={{ color: TEXT_MUTED }}>Content Foundation</p>
+                  <p className="text-xs font-black uppercase tracking-widest mb-3" style={{ color: TEXT_MUTED }}>Content Foundation</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
                     {INCLUDED_IN_EVERY_PLAN.slice(8).map((item) => (
                       <div key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "#3D3D3D" }}>
@@ -513,7 +513,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                     {TABLE_SECTIONS.map((section) => (
                       <Fragment key={section.title}>
                         <tr>
-                          <td colSpan={4} className="px-4 sm:px-6 py-2.5 text-[10px] font-black uppercase tracking-widest" style={{ color: section.tintText, backgroundColor: section.tint }}>
+                          <td colSpan={4} className="px-4 sm:px-6 py-2.5 text-xs font-black uppercase tracking-widest" style={{ color: section.tintText, backgroundColor: section.tint }}>
                             {section.title}
                           </td>
                         </tr>
@@ -574,7 +574,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                       <div className="text-sm font-semibold" style={{ color: TEXT_MUTED }}>/ month</div>
                     </div>
                     <div className="rounded-xl p-4 mb-5 bg-white" style={{ border: `1px solid ${BORDER}` }}>
-                      <p className="text-[10px] font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>
+                      <p className="text-xs font-black uppercase tracking-widest mb-1.5" style={{ color: TEXT_MUTED }}>Note</p>
                       <p className="text-xs leading-relaxed" style={{ color: TEXT_BODY }}>
                         You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
                       </p>
@@ -644,7 +644,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                   </li>
                 ))}
               </ul>
-              <p className="text-[11px] font-semibold mt-5" style={{ color: "#71675E" }}>Last updated September 25, 2026.</p>
+              <p className="text-xs font-semibold mt-5" style={{ color: "#71675E" }}>Last updated September 25, 2026.</p>
             </div>
           </FadeIn>
         </div>

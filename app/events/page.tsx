@@ -73,7 +73,7 @@ export default function EventsPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-6">
-            <Link href="/resources" className="link-subtle text-xs font-semibold">Resources</Link>
+            <Link href="/resources" className="link-subtle -my-3.5 inline-flex items-center py-3.5 text-xs font-semibold">Resources</Link>
             <span style={{ color: "#E8E2D9" }}>/</span>
             <span className="text-xs font-semibold" style={{ color: "#3D3D3D" }}>Events</span>
           </div>

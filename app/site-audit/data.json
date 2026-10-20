@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-19T12:13:04.542Z",
+  "generatedAt": "2026-10-20T05:07:25.174Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 256,
+    "total": 257,
     "linked": 243,
-    "orphan": 13,
-    "noindex": 18,
-    "notInXmlSitemap": 19,
+    "orphan": 14,
+    "noindex": 19,
+    "notInXmlSitemap": 20,
     "privateHidden": 4
   },
   "pages": [
@@ -1986,7 +1986,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 83,
+      "inboundCount": 84,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -2188,6 +2188,17 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/research/kmspharma",
+      "title": "KMS Pharma: Partner Accounts to Approach",
+      "section": "other",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     },
     {
       "path": "/resources",

@@ -192,7 +192,7 @@ export default function HookGraderClient() {
                   style={{ borderColor: BORDER }}
                 />
                 <p className="flex items-center justify-between text-xs" style={{ color: live > FOLD_CHARACTERS ? "#B91C1C" : MUTED }}>
-                  <span>{live > FOLD_CHARACTERS ? `Over about ${FOLD_CHARACTERS} characters, the end is hidden behind "see more" on a phone.` : "Paste only what shows before \"see more\"."}</span>
+                  <span>{live > FOLD_CHARACTERS ? `Over about ${FOLD_CHARACTERS} characters, the end may be hidden behind "see more". The cut varies by device.` : "Paste only what shows before \"see more\"."}</span>
                   <span className="tabular-nums">{live}/{MAX_HOOK_CHARACTERS}</span>
                 </p>
               </div>

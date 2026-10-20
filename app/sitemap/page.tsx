@@ -112,6 +112,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "The Follow-Up Ladder: Cold Email Follow-Up Sequence", href: "/blog/cold-email-follow-up-sequence" },
       { label: "The Reply Gap: Positive Reply to Booked Meeting", href: "/blog/positive-reply-to-booked-meeting" },
       { label: "The Personalization Paradox: AI in Cold Outreach", href: "/blog/ai-personalization-cold-outreach" },
+      { label: "How to Write a LinkedIn Hook That Earns the Click", href: "/blog/how-to-write-a-linkedin-hook" },
     ],
   },
   {

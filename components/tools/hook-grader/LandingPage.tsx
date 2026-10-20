@@ -17,7 +17,7 @@ const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Hook Grader Works", [
 const FAQ = [
   {
     question: "What is a LinkedIn hook?",
-    answer: "The first two lines of a LinkedIn post, the part shown before the \"see more\" cut. On a phone that is roughly the first 210 characters. Most readers decide whether to keep reading from those two lines alone.",
+    answer: "The first two lines of a LinkedIn post, the part shown before the \"see more\" cut. How much shows depends on the device, usually two to three lines. For many readers, those lines decide whether the rest gets read.",
   },
   {
     question: "How is the score calculated?",
@@ -40,7 +40,7 @@ const FAQ = [
 const FAQ_SCHEMA = buildFaqSchema(FAQ);
 
 const PROBLEMS = [
-  { icon: EyeOff, color: "#EA580C", title: "Most readers never tap \"see more\"", body: "If the first two lines don't earn the click, the rest of a well-written post goes unread." },
+  { icon: EyeOff, color: "#EA580C", title: "Many readers never tap \"see more\"", body: "If the first two lines don't earn the click, the rest of a well-written post goes unread." },
   { icon: UserX, color: "#D97706", title: "Openers that talk about you, not them", body: "\"Excited to share...\" tells the reader nothing about what they get. Hooks that speak to the reader's problem win." },
   { icon: Repeat2, color: "#A14A08", title: "Rewriting by feel, with no way to compare", body: "Three versions of a hook and no way to tell which is stronger is guesswork dressed up as editing." },
 ];
@@ -52,7 +52,7 @@ const STEPS = [
 ];
 
 const CHECKS = [
-  ["Length", "Does it fit above the \"see more\" cut on a phone, and still say something?"],
+  ["Length", "Is it short enough to land before the \"see more\" cut, and does it still say something?"],
   ["Curiosity", "Does it open a loop, a contrast or a question the reader wants answered?"],
   ["Specificity", "Are there numbers, time frames and named details, or only vague claims?"],
   ["Authority", "Does it sound like someone who did the thing, with a result attached?"],
@@ -101,7 +101,7 @@ export function LandingPage({ onStart }: { onStart: () => void }) {
             Grade the first two lines of <HandUnderline>your LinkedIn post</HandUnderline>
           </h1>
           <p className="mb-10 max-w-3xl text-lg sm:text-xl" style={{ color: "#52525B" }}>
-            Most people decide whether to keep reading in the first two lines. Get a transparent score out of 100 and three rewritten hooks you can paste and edit.
+            The first two lines decide whether many people keep reading. Get a transparent score out of 100 and three rewritten hooks you can paste and edit.
           </p>
           <StartButton onStart={onStart}>Grade My Hook</StartButton>
         </div>
@@ -188,6 +188,10 @@ export function LandingPage({ onStart }: { onStart: () => void }) {
               </div>
             ))}
           </dl>
+          <p className="mt-8 text-center text-base" style={{ color: "#52525B" }}>
+            Prefer to apply the rules by hand?{" "}
+            <a href="/blog/how-to-write-a-linkedin-hook" className="inline-flex min-h-[44px] items-center font-bold underline underline-offset-4" style={{ color: "#A14A08" }}>Read how to write a LinkedIn hook</a>.
+          </p>
         </div>
       </section>
 

@@ -20,8 +20,9 @@ export interface HookScore {
   characters: number;
 }
 
-// LinkedIn shows roughly the first 210 characters before the "see more" cut on a phone.
-export const FOLD_CHARACTERS = 210;
+// Hooks longer than this risk being cut off by "see more". Where the cut falls varies by device and layout,
+// so this is a safe upper bound, not a number LinkedIn publishes.
+export const FOLD_CHARACTERS = 180;
 export const MAX_HOOK_CHARACTERS = 400;
 
 const CLICKBAIT = /you won'?t believe|this one (trick|hack)|game[- ]?changer|mind[- ]?blow|shocking|secret (sauce|hack)|\b10x\b|crush(ing)? it|unlock (the|your)|life[- ]?hack|!!+|\?\?+/gi;
@@ -84,8 +85,8 @@ export function gradeHook(input: string): HookScore {
   const checks: HookCheck[] = [
     make("length", "Length", 15, length, {
       strong: `${n} characters: it fits above the fold and still says something.`,
-      ok: n > FOLD_CHARACTERS ? `${n} characters: the end will be cut off by "see more" on a phone. Trim it.` : `${n} characters: a little thin. Add the one detail that makes it specific.`,
-      weak: n > 300 ? `${n} characters is a paragraph, not a hook. Keep the first two lines under about ${FOLD_CHARACTERS}.` : `${n} characters is too short to earn the click. Add a number, a result or a tension.`,
+      ok: n > FOLD_CHARACTERS ? `${n} characters: the end may be cut off by "see more", depending on the device. Trim it.` : `${n} characters: a little thin. Add the one detail that makes it specific.`,
+      weak: n > 300 ? `${n} characters is a paragraph, not a hook. Keep the first two lines under about ${FOLD_CHARACTERS} characters.` : `${n} characters is too short to earn the click. Add a number, a result or a tension.`,
     }),
     make("curiosity", "Curiosity", 20, curiosity, {
       strong: "It opens a loop the reader wants to close.",

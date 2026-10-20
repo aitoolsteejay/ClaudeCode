@@ -293,6 +293,13 @@ const BLOG_POSTS: BlogPost[] = [
     excerpt: "AI made personalization cheap and generic. Where it helps with research and signals, where it backfires, and the human-in-the-loop rule.",
     readTime: "5 min read",
   },
+  {
+    href: "/blog/how-to-write-a-linkedin-hook",
+    tags: ["LinkedIn", "Personal Branding"],
+    title: "How to Write a LinkedIn Hook That Earns the Click",
+    excerpt: "The first two lines decide whether your post gets read. Six checks, five patterns and before and after examples, plus a free grader.",
+    readTime: "6 min read",
+  },
 ];
 
 interface MediumPost {

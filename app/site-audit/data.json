@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-20T10:06:44.859Z",
+  "generatedAt": "2026-10-20T11:20:51.219Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 258,
-    "linked": 244,
+    "total": 259,
+    "linked": 245,
     "orphan": 14,
     "noindex": 19,
     "notInXmlSitemap": 20,
@@ -230,9 +230,10 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/how-to-write-a-linkedin-hook",
         "/resources/blogs"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -427,11 +428,12 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/how-to-write-a-linkedin-hook",
         "/blog/personal-branding-agency-vs-content-freelancer",
         "/resources/blogs",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -449,6 +451,20 @@
         "/resources/guides/claude-sales-call-prompts"
       ],
       "inboundCount": 5,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/blog/how-to-write-a-linkedin-hook",
+      "title": "How To Write A Linkedin Hook",
+      "section": "blog",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/blogs",
+        "tools/hook-grader/LandingPage.tsx"
+      ],
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -631,10 +647,11 @@
       "status": "linked",
       "linkedFrom": [
         "/blog/ai-personalization-cold-outreach",
+        "/blog/how-to-write-a-linkedin-hook",
         "/resources/blogs",
         "/resources/glossary/3-second-rule"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -674,11 +691,12 @@
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
+        "/blog/how-to-write-a-linkedin-hook",
         "/blog/personal-branding-agency-vs-content-freelancer",
         "/resources/blogs",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3308,7 +3326,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 35,
+      "inboundCount": 36,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3328,7 +3346,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 20,
+      "inboundCount": 21,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3537,14 +3555,14 @@
       "linkedFrom": [
         "/blog/3-second-rule-cold-outreach",
         "/blog/founder-personal-brand-linkedin",
+        "/blog/how-to-write-a-linkedin-hook",
         "/blog/linkedin-outreach-sequences",
         "/blog/linkedin-profile-inbound-lead-machine",
         "/blog/personal-branding-agency-vs-content-freelancer",
         "/blog/stop-selling-features-cold-outreach",
-        "/blog/vanity-metrics-personal-brand-pipeline",
-        "/resources/tools"
+        "/blog/vanity-metrics-personal-brand-pipeline"
       ],
-      "inboundCount": 10,
+      "inboundCount": 11,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

@@ -8,6 +8,21 @@ const nextConfig = {
     // requesting browser's Accept header supports.
     formats: ["image/avif", "image/webp"],
   },
+  // A second canonical signal, in the response headers as well as the page's <link rel="canonical">.
+  // Search Console has shown Google picking another site's homepage as the canonical for some of our
+  // URLs with no declared canonical on record, so the header repeats what the HTML tag already says.
+  // The value is the request's own path, which matches the self-canonical every page declares.
+  // Not applied to files (anything with a dot), /_next, /api, /fonts, or the dm-angle-generator
+  // pages, which are served from another app that declares its own canonical.
+  async headers() {
+    return [
+      { source: "/", headers: [{ key: "Link", value: '<https://www.myntmore.com>; rel="canonical"' }] },
+      {
+        source: "/:path((?!_next|api|fonts|tools/dm-angle-generator)[^.]+)",
+        headers: [{ key: "Link", value: '<https://www.myntmore.com/:path>; rel="canonical"' }],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

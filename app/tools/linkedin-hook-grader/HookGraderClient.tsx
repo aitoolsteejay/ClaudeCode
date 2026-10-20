@@ -30,6 +30,9 @@ const VERDICT_STYLE: Record<HookVerdict, { bar: string; chipBg: string; chipFg: 
   weak: { bar: "#D6D0C6", chipBg: "#F1EEE8", chipFg: "#57534E", word: "Weak" },
 };
 
+// Gemini sometimes returns the angle as a slug ("specific-result"); show it as a label.
+const prettyAngle = (s: string) => s.replace(/[-_]+/g, " ").trim().replace(/^./, (c) => c.toUpperCase());
+
 function ScoreCard({ score }: { score: HookScore }) {
   return (
     <div className="rounded-2xl border bg-white p-6 sm:p-8" style={{ borderColor: BORDER, borderTop: `3px solid ${GOLD}` }}>
@@ -239,7 +242,7 @@ export default function HookGraderClient() {
                     return (
                       <div key={i} className="rounded-2xl border bg-white p-6 sm:p-8" style={{ borderColor: BORDER, borderTop: `3px solid ${i === 0 ? GOLD : i === 1 ? ORANGE : "#D97706"}` }}>
                         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                          <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: GOLD_TEXT }}>Option {i + 1}{a.angle ? ` · ${a.angle}` : ""}</p>
+                          <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: GOLD_TEXT }}>Option {i + 1}{a.angle ? ` · ${prettyAngle(a.angle)}` : ""}</p>
                           <div className="flex items-center gap-3">
                             {s && (
                               <span className="text-sm font-black tabular-nums" title="Scored with the same six rules as your hook">

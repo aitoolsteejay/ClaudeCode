@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T08:39:08.065Z",
+  "generatedAt": "2026-10-20T10:06:44.859Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 258,
@@ -3535,10 +3535,16 @@
       "section": "tools",
       "status": "linked",
       "linkedFrom": [
-        "/resources/tools",
-        "lib/tools-registry.ts"
+        "/blog/3-second-rule-cold-outreach",
+        "/blog/founder-personal-brand-linkedin",
+        "/blog/linkedin-outreach-sequences",
+        "/blog/linkedin-profile-inbound-lead-machine",
+        "/blog/personal-branding-agency-vs-content-freelancer",
+        "/blog/stop-selling-features-cold-outreach",
+        "/blog/vanity-metrics-personal-brand-pipeline",
+        "/resources/tools"
       ],
-      "inboundCount": 2,
+      "inboundCount": 10,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

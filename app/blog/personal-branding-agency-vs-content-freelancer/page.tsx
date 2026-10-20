@@ -115,6 +115,7 @@ export default function PersonalBrandingAgencyVsContentFreelancer() {
       }}
       related={[
         { label: "Personal Branding & LinkedIn Ghostwriting", href: "/services/personal-branding" },
+        { label: "LinkedIn Hook Grader: score your post opener (free tool)", href: "/tools/linkedin-hook-grader" },
         { label: "LinkedIn Brand Drove 3x Inbound in 90 Days", href: "/case-studies/professional-services-linkedin" },
         { label: "The Founder's Edge: Your Best Marketing Asset", href: "/blog/founder-personal-brand-linkedin" },
         { label: "Founder Personal Branding: Pipeline, Not Likes", href: "/blog/vanity-metrics-personal-brand-pipeline" },

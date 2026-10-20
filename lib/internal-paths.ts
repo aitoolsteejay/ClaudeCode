@@ -10,7 +10,7 @@
 // fails the build audit if a link here goes stale.
 
 export interface PathItem {
-  kind: "Case study" | "Guide" | "Read" | "Compare";
+  kind: "Case study" | "Guide" | "Read" | "Compare" | "Free tool";
   label: string;
   href: string;
   blurb: string;
@@ -31,6 +31,7 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
     { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },
     { kind: "Compare", label: "Cold Email vs. LinkedIn Outreach", href: "/blog/cold-email-vs-linkedin-outreach", blurb: "How cold email and LinkedIn outreach compare, and when each wins." },
     { kind: "Compare", label: "LinkedIn Outreach Agency vs. Manual Prospecting", href: "/blog/linkedin-outreach-agency-vs-manual-prospecting", blurb: "Prospect manually while you learn who buys; hire an agency once the approach works and your time is the bottleneck." },
+    { kind: "Free tool", label: "LinkedIn Hook Grader", href: "/tools/linkedin-hook-grader", blurb: "Paste the first two lines of a post, get a score out of 100 from six rules and three rewrites to choose from." },
   ],
   "sales-intelligence": [
     { kind: "Case study", label: "Outbound Engine That Books 15+ Meetings a Month", href: "/case-studies/predictable-b2b-lead-gen-engine", blurb: "A B2B firm's outbound motion rebuilt: 15+ meetings a month, a 29% reply rate and 4x pipeline growth." },
@@ -53,6 +54,7 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
     { kind: "Read", label: "The Founder's Edge: Your Best Marketing Asset", href: "/blog/founder-personal-brand-linkedin", blurb: "How founders who build a LinkedIn presence close deals faster and generate inbound without ad spend." },
     { kind: "Read", label: "Founder Personal Branding: Pipeline, Not Likes", href: "/blog/vanity-metrics-personal-brand-pipeline", blurb: "Why a founder's personal brand should be built for revenue, not vanity metrics." },
     { kind: "Compare", label: "Personal Branding Agency vs. Content Freelancer", href: "/blog/personal-branding-agency-vs-content-freelancer", blurb: "Scope, voice, consistency and reporting compared, and when each is the better hire." },
+    { kind: "Free tool", label: "LinkedIn Hook Grader", href: "/tools/linkedin-hook-grader", blurb: "Paste the first two lines of a post, get a score out of 100 from six rules and three rewrites to choose from." },
   ],
   "gtm-strategy": [
     { kind: "Case study", label: "40 Qualified Meetings in 8 Weeks | SaaS Series A", href: "/case-studies/saas-series-a", blurb: "An outbound engine for a SaaS Series A: 40 meetings, a 34% reply rate and $1.2M pipeline in eight weeks." },

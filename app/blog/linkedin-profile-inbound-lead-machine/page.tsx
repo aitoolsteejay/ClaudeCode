@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
+import ToolCallout from "../../components/ToolCallout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
@@ -151,6 +152,8 @@ export default function LinkedInProfileInboundLeadMachine() {
               </Link>
             </div>
           </div>
+
+          <ToolCallout href="/tools/linkedin-hook-grader" name="LinkedIn Hook Grader" blurb="Paste the first two lines of a post and get a score out of 100 from six plain rules, plus three rewrites to choose from." />
 
           <div className="mt-8">
             <AskYourAI resources={BLOG_AI_RESOURCES} />

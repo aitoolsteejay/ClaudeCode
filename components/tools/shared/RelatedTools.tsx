@@ -16,9 +16,9 @@ export function RelatedTools({ currentSlug }: RelatedToolsProps) {
 
   return (
     <section className="py-20 px-6 bg-secondary/20" style={{ borderTop: "1px solid #E8E2D9" }}>
-      <div className="max-w-4xl mx-auto">
+      <div className={tools.length >= 3 ? "max-w-6xl mx-auto" : "max-w-4xl mx-auto"}>
         <h2 className="text-2xl sm:text-3xl font-black text-center mb-10">Try this next</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${tools.length >= 3 ? "lg:grid-cols-3" : ""}`}>
           {tools.map((tool) => (
             <Link
               key={tool.slug}

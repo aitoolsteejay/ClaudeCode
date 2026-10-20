@@ -91,6 +91,16 @@ const FREE_TOOLS = [
     hoverClass: "card-hover-warm",
   },
   {
+    title: "LinkedIn Hook Grader",
+    desc: "Paste the first two lines of your LinkedIn post and get a transparent score out of 100, plus three rewritten hooks graded by the same rules.",
+    href: "/tools/linkedin-hook-grader",
+    icon: "🎣",
+    cta: "Grade my hook",
+    accentColor: "#EA580C",
+    accentBg: "rgba(234,88,12,0.1)",
+    hoverClass: "card-hover-warm",
+  },
+  {
     title: "Lead Magnet Idea Generator",
     desc: "Tell us what your business does, who you sell to, and your industry, and get concrete lead magnet ideas you can actually use in outreach.",
     href: "/tools/lead-magnet-ideas",

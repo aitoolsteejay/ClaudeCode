@@ -57,6 +57,7 @@ AI-powered tools. Each explains, before sign-up, how your details and input are 
 - [Battle Card Generator](https://www.myntmore.com/tools/battle-card-generator): Build competitive battle cards for sales conversations.
 - [Case Study Generator](https://www.myntmore.com/tools/case-study-generator): Turn client results into a structured case study.
 - [Lead Magnet Ideas](https://www.myntmore.com/tools/lead-magnet-ideas): Generate lead magnet concepts for a given ICP.
+- [LinkedIn Hook Grader](https://www.myntmore.com/tools/linkedin-hook-grader): Score the first two lines of a LinkedIn post out of 100 with six rule-based checks, and get three AI rewrites.
 - [Posting Rhythm Builder](https://www.myntmore.com/tools/posting-rhythm-builder): Plan a sustainable LinkedIn posting cadence.
 - [Founder Presence Analyzer](https://www.myntmore.com/tools/founder-presence-analyzer): Assess a founder's online presence and positioning.
 

@@ -187,6 +187,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "ROI Calculator", href: "/tools/roi-calculator" },
       { label: "Cold Email ROI Calculator", href: "/tools/cold-email-roi-calculator" },
       { label: "Posting Rhythm Builder", href: "/tools/posting-rhythm-builder" },
+      { label: "LinkedIn Hook Grader", href: "/tools/linkedin-hook-grader" },
       { label: "Lead Magnet Idea Generator", href: "/tools/lead-magnet-ideas" },
       { label: "Founder Presence Analyzer", href: "/tools/founder-presence-analyzer" },
       { label: "ICP Builder & Value Prop Generator", href: "/tools/icp-builder" },

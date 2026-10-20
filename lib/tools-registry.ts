@@ -41,6 +41,12 @@ export const TOOLS_REGISTRY: Record<string, ToolInfo> = {
     href: "/tools/icp-builder",
     tagline: "Define exactly who to sell to, and what to say",
   },
+  "linkedin-hook-grader": {
+    slug: "linkedin-hook-grader",
+    name: "LinkedIn Hook Grader",
+    href: "/tools/linkedin-hook-grader",
+    tagline: "Score your post's first two lines and get 3 rewrites",
+  },
   "lead-magnet-ideas": {
     slug: "lead-magnet-ideas",
     name: "Lead Magnet Idea Generator",
@@ -84,6 +90,7 @@ export const RELATED_TOOLS: Record<string, string[]> = {
   "icp-builder": ["dm-angle-generator", "lead-magnet-ideas"],
   "lead-magnet-ideas": ["case-study-generator", "dm-angle-generator"],
   "linkedin-optimizer": ["founder-presence-analyzer", "posting-rhythm-builder"],
+  "linkedin-hook-grader": ["posting-rhythm-builder", "linkedin-optimizer"],
   "posting-rhythm-builder": ["linkedin-optimizer", "founder-presence-analyzer"],
   "roi-calculator": ["cold-email-roi-calculator", "battle-card-generator"],
   "cold-email-roi-calculator": ["roi-calculator", "icp-builder"],

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-20T05:07:25.174Z",
+  "generatedAt": "2026-10-20T08:39:08.065Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 257,
-    "linked": 243,
+    "total": 258,
+    "linked": 244,
     "orphan": 14,
     "noindex": 19,
     "notInXmlSitemap": 20,
@@ -1986,7 +1986,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 84,
+      "inboundCount": 85,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -3165,7 +3165,7 @@
         "/tools/founder-presence-analyzer",
         "/tools/icp-builder"
       ],
-      "inboundCount": 12,
+      "inboundCount": 13,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3530,6 +3530,20 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/tools/linkedin-hook-grader",
+      "title": "LinkedIn Hook Grader",
+      "section": "tools",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/tools",
+        "lib/tools-registry.ts"
+      ],
+      "inboundCount": 2,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/tools/linkedin-optimizer",
       "title": "LinkedIn Profile Optimizer",
       "section": "tools",
@@ -3788,6 +3802,7 @@
     "/api/tools/dm-angles",
     "/api/tools/dm-angles/regenerate",
     "/api/tools/founder-presence",
+    "/api/tools/hook-grader",
     "/api/tools/lead-magnet-ideas",
     "/api/tools/posting-rhythm",
     "/api/tools/profile-optimizer",

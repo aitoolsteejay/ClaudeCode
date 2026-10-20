@@ -146,3 +146,12 @@ begin
 exception
   when duplicate_object then null;
 end $$;
+
+
+-- LinkedIn Hook Grader (/tools/linkedin-hook-grader): allow its lead source.
+-- The leads.source check constraint is an allow-list, so inserts with a new value are rejected
+-- (the site only logs that error; the Zoho lead is still created) until this has been run.
+-- Run once in the Supabase SQL editor. The list also covers the tools added since the last backfill.
+alter table public.leads drop constraint if exists leads_source_check;
+alter table public.leads add constraint leads_source_check
+  check (source in ('profile_optimizer', 'posting_rhythm_builder', 'lead_magnet_ideas', 'dm_angle_generator', 'founder_presence_analyzer', 'roi_calculator', 'icp_builder', 'case_study_generator', 'battle_card_generator', 'hook_grader'));

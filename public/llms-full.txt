@@ -269,6 +269,7 @@ These tools generate output with an AI model and can be wrong; each explains how
 - [B2B Outreach ROI Calculator](https://www.myntmore.com/tools/roi-calculator): Free ROI calculator for B2B outbound. Estimate the pipeline and revenue you could generate from cold email and LinkedIn outreach.
 - [Cold Email ROI Calculator](https://www.myntmore.com/tools/cold-email-roi-calculator): Free cold email ROI calculator. Estimate meetings, pipeline and revenue from your outreach using 2026 benchmark reply rates.
 - [Posting Rhythm Builder](https://www.myntmore.com/tools/posting-rhythm-builder): Free tool to plan a consistent LinkedIn posting rhythm and content cadence for your ICP. Try it free.
+- [LinkedIn Hook Grader](https://www.myntmore.com/tools/linkedin-hook-grader): Free LinkedIn hook grader. Paste the first two lines of your post, get a transparent score out of 100 and three rewritten hooks to choose from.
 - [Lead Magnet Idea Generator](https://www.myntmore.com/tools/lead-magnet-ideas): Free AI tool that turns your business, ICP, and industry into concrete lead magnet ideas you can use in cold email and LinkedIn outreach.
 - [Founder Presence Analyzer](https://www.myntmore.com/tools/founder-presence-analyzer): Free AI tool that benchmarks your LinkedIn presence against competitors and gives you positioning recommendations. Try it free.
 - [ICP Builder & Value Proposition Generator](https://www.myntmore.com/tools/icp-builder): Free AI tool that builds deep B2B and D2C ICPs from your business description, plus a value proposition for each. Try it free.

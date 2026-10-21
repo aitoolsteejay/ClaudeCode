@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-20T11:20:51.219Z",
+  "generatedAt": "2026-10-21T16:16:26.387Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 259,
+    "total": 260,
     "linked": 245,
-    "orphan": 14,
-    "noindex": 19,
-    "notInXmlSitemap": 20,
+    "orphan": 15,
+    "noindex": 20,
+    "notInXmlSitemap": 21,
     "privateHidden": 4
   },
   "pages": [
@@ -2004,7 +2004,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 85,
+      "inboundCount": 86,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -2210,7 +2210,18 @@
     {
       "path": "/research/kmspharma",
       "title": "KMS Pharma: Partner Accounts to Approach",
-      "section": "other",
+      "section": "research",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/research/myntmore",
+      "title": "Sample Account Research: B2B SaaS",
+      "section": "research",
       "status": "orphan",
       "linkedFrom": [],
       "inboundCount": 0,

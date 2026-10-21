@@ -1,12 +1,6 @@
 // Research for KMS Pharma (KMS Health Center, Chennai), snapshot 20 October 2026.
 // Client deliverable: the page that renders this is noindex and not in the sitemap.
-export type Verdict = "yes" | "likely" | "no";
-export interface Answer { verdict: Verdict; text: string; source?: string; date?: string }
-export interface Account {
-  name: string; where: string; tier: "T1" | "T2" | "T3"; fit: number; timing: number;
-  when: string; recent: string; answers: Answer[]; pitch: string; who: string;
-}
-export interface MarketWindow { title: string; body: string; soWhat: string; source: string }
+import type { Account, MarketWindow } from "@/lib/research-types";
 
 export const QUESTIONS: string[] = [
   "Commercialises products developed by outside partners (licensing or acquisition)?",

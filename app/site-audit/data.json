@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T10:58:11.159Z",
+  "generatedAt": "2026-10-22T11:00:17.714Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 271,
+    "total": 272,
     "linked": 249,
-    "orphan": 22,
-    "noindex": 25,
-    "notInXmlSitemap": 27,
+    "orphan": 23,
+    "noindex": 26,
+    "notInXmlSitemap": 28,
     "privateHidden": 5
   },
   "pages": [
@@ -771,6 +771,17 @@
     },
     {
       "path": "/calendar/tj",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/web",
       "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
       "section": "calendar",
       "status": "orphan",

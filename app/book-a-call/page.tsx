@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import BookACallClient from "./BookACallClient";
 
 export const metadata: Metadata = {
-  title: "Book a Call with Our Founder | Myntmore",
-  description: "Pick a time to talk with Myntmore's founder about your outbound pipeline. 30 minutes, no pitch, no pressure.",
+  title: "Book a Strategy Call | Free B2B Growth Audit | Myntmore",
+  description: "Pick a time for a free 30-minute B2B growth and outbound pipeline audit with Myntmore's senior team. Audit your ICP, messaging, and outbound systems. No pitch, no pressure.",
   robots: { index: false, follow: true },
   alternates: { canonical: "https://www.myntmore.com/book-a-call" },
   keywords: [

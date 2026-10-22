@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T11:00:17.714Z",
+  "generatedAt": "2026-10-22T11:03:35.465Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 272,
+    "total": 275,
     "linked": 249,
-    "orphan": 23,
-    "noindex": 26,
-    "notInXmlSitemap": 28,
+    "orphan": 26,
+    "noindex": 29,
+    "notInXmlSitemap": 31,
     "privateHidden": 5
   },
   "pages": [
@@ -736,8 +736,31 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/calendar/cold-emailing",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/email/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/calendar/elg",
       "title": "Event-Led Growth (ELG) Strategy Session | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/email",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -755,6 +778,17 @@
       "inboundCount": 0,
       "noindex": true,
       "referencedIn": "app/calendar/elg/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/linkedin",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },

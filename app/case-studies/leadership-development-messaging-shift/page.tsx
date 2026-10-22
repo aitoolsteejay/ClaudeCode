@@ -243,7 +243,7 @@ export default function LeadershipDevelopmentMessagingShift() {
                 <span className="text-xs font-bold uppercase text-[#7E22CE] mb-1 block">Phase 3 · August Momentum</span>
                 <h3 className="text-base font-bold text-[#0A0A0A] mb-2">Compounding Conversions &amp; Meeting Velocity</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
-                  August recorded a 46% acceptance rate and a 34% response rate. Crucially, 19 hot leads were booked (including 6 nurtured from July outreach) along with 3 direct meetings scheduled—surpassing all preceding months combined.
+                  August recorded a 46% acceptance rate and a 34% response rate. Crucially, 19 hot leads were booked (including 6 nurtured from July outreach) along with 3 direct meetings scheduled, surpassing all preceding months combined.
                 </p>
               </div>
 

@@ -21,7 +21,7 @@ export default function CalendarPageClient({
   dataUrl = "https://calendly.com/founder-myntmore/tj",
   badge = "1-on-1 Founder Consultation",
   title = "Pick a time that works for you",
-  description = "30 minutes with our founder. No pitch, no pressure — just an honest, actionable review of your outbound pipeline and growth roadmap.",
+  description = "30 minutes with our founder. No pitch, no pressure. Just an honest, actionable review of your outbound pipeline and growth roadmap.",
   duration = "30 Mins",
 }: CalendarPageClientProps) {
   const router = useRouter();
@@ -145,7 +145,7 @@ export default function CalendarPageClient({
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] shrink-0" />
-                    <span>Actionable roadmap — zero high-pressure sales pitch</span>
+                    <span>Actionable roadmap with zero high-pressure sales pitch</span>
                   </div>
                 </div>
               </div>

@@ -140,7 +140,7 @@ export default function BookACallClient() {
             </h1>
 
             <p className="text-base sm:text-lg text-[#52525B] leading-relaxed">
-              Pick a time with our senior growth team. We&apos;ll audit your outbound systems, stress-test your ICP, and map high-converting angles — with zero sales pressure.
+              Pick a time with our senior growth team. We&apos;ll audit your outbound systems, stress-test your ICP, and map high-converting angles with zero sales pressure.
             </p>
           </div>
 
@@ -398,7 +398,7 @@ export default function BookACallClient() {
                 How the strategy session works
               </h2>
               <p className="text-sm sm:text-base text-[#52525B]">
-                We value your time. No generic slide decks — just immediate, actionable engineering for your outbound funnel.
+                We value your time. No generic slide decks. Just immediate, actionable engineering for your outbound funnel.
               </p>
             </div>
 

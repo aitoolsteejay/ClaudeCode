@@ -23,7 +23,7 @@ export default function CalendarWebPage() {
       dataUrl="https://calendly.com/founder-myntmore/web"
       badge="1-on-1 Founder Consultation"
       title="Pick a time that works for you"
-      description="30 minutes with our founder. No pitch, no pressure — just an honest, actionable review of your outbound pipeline and growth roadmap."
+      description="30 minutes with our founder. No pitch, no pressure. Just an honest, actionable review of your outbound pipeline and growth roadmap."
       duration="30 Mins"
     />
   );

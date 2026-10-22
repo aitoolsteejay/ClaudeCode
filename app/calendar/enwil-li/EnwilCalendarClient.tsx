@@ -153,7 +153,7 @@ export default function EnwilCalendarClient({
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] shrink-0" />
-                    <span>Actionable roadmap — zero high-pressure sales pitch</span>
+                    <span>Actionable roadmap with zero high-pressure sales pitch</span>
                   </div>
                 </div>
               </div>

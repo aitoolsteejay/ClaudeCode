@@ -23,7 +23,7 @@ export default function CalendarLinkedInPage() {
       dataUrl="https://calendly.com/founder-myntmore/linkedin"
       badge="LinkedIn Outbound & Pipeline Consultation"
       title="Pick a time that works for you"
-      description="30 minutes with our founder. Review your LinkedIn outbound system, profile positioning, and messaging strategy — with zero sales pressure."
+      description="30 minutes with our founder. Review your LinkedIn outbound system, profile positioning, and messaging strategy with zero sales pressure."
       duration="30 Mins"
     />
   );

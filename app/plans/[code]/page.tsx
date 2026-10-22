@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import GrowthPlansPricing, { type GrowthPlansPricingProps } from "@/components/pricing/GrowthPlansPricing";
 import type { PlanetKind } from "@/components/pricing/OrbitHero";
 
@@ -48,6 +48,10 @@ export const metadata: Metadata = {
 };
 
 export default function PlansPage({ params }: { params: { code: string } }) {
+  if (params.code === "orbit") {
+    redirect("/plans/orbit");
+  }
+
   const plan = PLANS[params.code];
   if (!plan) notFound();
 

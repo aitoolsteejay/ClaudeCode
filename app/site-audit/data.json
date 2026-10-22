@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-21T16:16:26.387Z",
+  "generatedAt": "2026-10-22T09:15:49.226Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 260,
+    "total": 261,
     "linked": 245,
-    "orphan": 15,
-    "noindex": 20,
-    "notInXmlSitemap": 21,
-    "privateHidden": 4
+    "orphan": 16,
+    "noindex": 21,
+    "notInXmlSitemap": 22,
+    "privateHidden": 5
   },
   "pages": [
     {
@@ -3647,6 +3647,18 @@
       "inboundCount": 0,
       "noindex": true,
       "referencedIn": "app/components/ReelWidget.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },

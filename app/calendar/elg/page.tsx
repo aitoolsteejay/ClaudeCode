@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import CalendarPageClient from "../th/CalendarPageClient";
 
 export const metadata: Metadata = {
-  title: "Event-Led Growth (ELG) Strategy Session | Myntmore",
-  description: "Schedule a 25-minute 1-on-1 Event-Led Growth (ELG) strategy session with Tejas Jhaveri, Founder of Myntmore.",
+  title: "Event-Led Growth Strategy Session",
+  description:
+    "Pick a 25-minute slot with Tejas Jhaveri, Founder of Myntmore. We'll map how to turn executive roundtables, webinars, and events into predictable enterprise pipeline.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.myntmore.com/calendar/event-led-growth" },
+  openGraph: {
+    title: "Event-Led Growth Strategy Session | Tejas Jhaveri",
+    description:
+      "Pick a 25-minute slot with Tejas Jhaveri, Founder of Myntmore. We'll map how to turn executive roundtables, webinars, and events into predictable enterprise pipeline.",
+    url: "https://www.myntmore.com/calendar/event-led-growth",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
 };
 
 export default function ELGShortCalendarPage() {

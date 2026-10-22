@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import CalendarPageClient from "../th/CalendarPageClient";
 
 export const metadata: Metadata = {
-  title: "Schedule a Call | Tejas Jhaveri | Myntmore",
-  description: "Schedule a 30-minute 1-on-1 strategy call with Tejas Jhaveri, Founder of Myntmore.",
+  title: "Cold Email Infrastructure Audit with Tejas Jhaveri",
+  description:
+    "Pick a 30-minute slot with Tejas Jhaveri, Founder of Myntmore. Review your email deliverability, secondary domain setup, warming rhythm, and high-converting copy angles.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.myntmore.com/calendar/cold-emailing" },
+  openGraph: {
+    title: "Cold Email Infrastructure Audit | Tejas Jhaveri",
+    description:
+      "Pick a 30-minute slot with Tejas Jhaveri, Founder of Myntmore. Review your email deliverability, secondary domain setup, warming rhythm, and high-converting copy angles.",
+    url: "https://www.myntmore.com/calendar/cold-emailing",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
 };
 
 export default function CalendarEmailShortPage() {

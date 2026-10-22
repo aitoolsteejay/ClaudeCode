@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import CalendarPageClient from "../th/CalendarPageClient";
 
 export const metadata: Metadata = {
-  title: "Schedule a Call | Tejas Jhaveri | Myntmore",
-  description: "Schedule a 30-minute 1-on-1 strategy call with Tejas Jhaveri, Founder of Myntmore.",
+  title: "Multi-Channel Outbound Strategy with Tejas Jhaveri",
+  description:
+    "Pick a 30-minute slot with Tejas Jhaveri, Founder of Myntmore. Review your multi-channel pipeline, WhatsApp cadences, and prospect follow-up workflows.",
   robots: { index: false, follow: false },
   alternates: { canonical: "https://www.myntmore.com/calendar/whatsapp" },
+  openGraph: {
+    title: "Multi-Channel Outbound Strategy | Tejas Jhaveri",
+    description:
+      "Pick a 30-minute slot with Tejas Jhaveri, Founder of Myntmore. Review your multi-channel pipeline, WhatsApp cadences, and prospect follow-up workflows.",
+    url: "https://www.myntmore.com/calendar/whatsapp",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
 };
 
 export default function CalendarWAShortPage() {

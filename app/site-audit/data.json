@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T11:06:08.130Z",
+  "generatedAt": "2026-10-22T11:21:10.792Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 277,
@@ -717,7 +717,7 @@
     },
     {
       "path": "/book-a-call",
-      "title": "Book a Strategy Call | Free B2B Growth Audit | Myntmore",
+      "title": "Book a Strategy Call | Free B2B Growth Audit",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -737,7 +737,7 @@
     },
     {
       "path": "/calendar/cold-emailing",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "Cold Email Infrastructure Audit with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -749,7 +749,7 @@
     },
     {
       "path": "/calendar/elg",
-      "title": "Event-Led Growth (ELG) Strategy Session | Myntmore",
+      "title": "Event-Led Growth Strategy Session",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -760,7 +760,7 @@
     },
     {
       "path": "/calendar/email",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "Cold Email Infrastructure Audit with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -771,7 +771,7 @@
     },
     {
       "path": "/calendar/event-led-growth",
-      "title": "Event-Led Growth (ELG) Strategy Session | Myntmore",
+      "title": "Event-Led Growth Strategy Session",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -783,7 +783,7 @@
     },
     {
       "path": "/calendar/linkedin",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "LinkedIn Outbound Diagnostic with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -794,7 +794,7 @@
     },
     {
       "path": "/calendar/th",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "Founder Strategy Session with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -805,7 +805,7 @@
     },
     {
       "path": "/calendar/tj",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "Founder Strategy Session with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -816,7 +816,7 @@
     },
     {
       "path": "/calendar/wa",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "Multi-Channel Outbound Strategy with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -827,7 +827,7 @@
     },
     {
       "path": "/calendar/web",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "B2B Pipeline Strategy Session with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],
@@ -838,7 +838,7 @@
     },
     {
       "path": "/calendar/whatsapp",
-      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "title": "Multi-Channel Outbound Strategy with Tejas Jhaveri",
       "section": "calendar",
       "status": "orphan",
       "linkedFrom": [],

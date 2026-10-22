@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T11:03:35.465Z",
+  "generatedAt": "2026-10-22T11:06:08.130Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 275,
+    "total": 277,
     "linked": 249,
-    "orphan": 26,
-    "noindex": 29,
-    "notInXmlSitemap": 31,
+    "orphan": 28,
+    "noindex": 31,
+    "notInXmlSitemap": 33,
     "privateHidden": 5
   },
   "pages": [
@@ -815,6 +815,17 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/calendar/wa",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/calendar/web",
       "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
       "section": "calendar",
@@ -822,6 +833,18 @@
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/whatsapp",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/wa/page.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },

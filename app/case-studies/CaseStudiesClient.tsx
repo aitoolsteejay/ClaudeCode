@@ -152,6 +152,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "heritage-jewellery-valuation-pipeline", tag: "Professional Services · Heritage & Valuation", industry: "Professional Services", accent: "#a855f7",
+    title: "Building a B2B Pipeline for a 180-Year-Old Heritage Jewellery Business",
+    stats: [{ v: "68", l: "Hot leads generated" }, { v: "43.7%", l: "Overall response rate" }, { v: "897", l: "Accepted connections" }],
+    excerpt: "A 5-generation heritage jewellery valuation and liquidation firm generated 68 hot leads, 897 connections, and 9 meetings by building strategic referral partnerships with CAs, wealth managers, and private banks.",
+    services: ["LinkedIn Outreach", "ICP Mapping & Lead Scoring", "Personal Branding"],
+  },
+  {
     slug: "medical-tourism-platform-pipeline", tag: "Pharma & Healthcare · HealthTech", industry: "Pharma", accent: "#0ea5e9",
     title: "Building an Outbound Pipeline for an AI Medical Tourism Platform",
     stats: [{ v: "140", l: "Qualified leads" }, { v: "61.6%", l: "Hospital reply rate" }, { v: "58", l: "Leads from doctors" }],

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T10:17:51.569Z",
+  "generatedAt": "2026-10-22T10:22:22.407Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 264,
-    "linked": 246,
+    "total": 265,
+    "linked": 247,
     "orphan": 18,
     "noindex": 21,
     "notInXmlSitemap": 23,
@@ -730,7 +730,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 89,
+      "inboundCount": 90,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -855,13 +855,13 @@
         "/blog/agency-vs-in-house",
         "/case-studies/ecommerce-conversion-playbook",
         "/case-studies/founder-personal-brand-linkedin",
+        "/case-studies/heritage-jewellery-valuation-pipeline",
         "/case-studies/medical-tourism-platform-pipeline",
         "/case-studies/predictable-b2b-lead-gen-engine",
         "/case-studies/professional-services-linkedin",
-        "/case-studies/saas-series-a",
-        "/case-studies/uk-pharma-qualified-meetings"
+        "/case-studies/saas-series-a"
       ],
-      "inboundCount": 23,
+      "inboundCount": 24,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1261,6 +1261,19 @@
         "/case-studies"
       ],
       "inboundCount": 4,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/heritage-jewellery-valuation-pipeline",
+      "title": "Building a B2B Pipeline for a 180-Year-Old Heritage Jewellery Business | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3059,9 +3072,10 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/resources/guides",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -3375,7 +3389,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 38,
+      "inboundCount": 39,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3395,7 +3409,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 22,
+      "inboundCount": 23,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3415,7 +3429,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 39,
+      "inboundCount": 40,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

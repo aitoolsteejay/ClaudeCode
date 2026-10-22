@@ -66,6 +66,11 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
 
 // Case studies -> the post that explains the method.
 export const CASE_STUDY_PATHS: Record<string, PathItem[]> = {
+  "heritage-jewellery-valuation-pipeline": [
+    { kind: "Guide", label: "The AI Tech Stack Behind a Jewellery Outbound Engine", href: "/resources/guides/ai-tech-stack-jewellery", blurb: "How specialised tooling and high-precision targeting scale bespoke luxury and B2B pipelines." },
+    { kind: "Guide", label: "58 Meetings Booked from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", blurb: "The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and follow-ups." },
+    { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },
+  ],
   "medical-tourism-platform-pipeline": [
     { kind: "Guide", label: "80+ US Meetings Booked in 1 Month with AI Agents", href: "/resources/guides/80-us-meetings-ai-agents", blurb: "The AI-agent blueprint behind 800 LinkedIn connections and 80+ US B2B meetings a month." },
     { kind: "Read", label: "Multi-Threading the B2B Buying Committee", href: "/blog/multi-threading-b2b-buying-committee", blurb: "How to map the buying committee and multi-thread deals so they survive a quiet or departing champion." },

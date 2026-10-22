@@ -42,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/do-it-yourself`, lastModified: lastMod("/services/do-it-yourself"), changeFrequency: "monthly", priority: 0.8 },
     // Case studies
     { url: `${base}/case-studies`, lastModified: lastMod("/case-studies"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/case-studies/heritage-jewellery-valuation-pipeline`, lastModified: lastMod("/case-studies/heritage-jewellery-valuation-pipeline"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/medical-tourism-platform-pipeline`, lastModified: lastMod("/case-studies/medical-tourism-platform-pipeline"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/wealth-management-pms-pipeline`, lastModified: lastMod("/case-studies/wealth-management-pms-pipeline"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/saas-series-a`, lastModified: lastMod("/case-studies/saas-series-a"), changeFrequency: "monthly", priority: 0.7 },

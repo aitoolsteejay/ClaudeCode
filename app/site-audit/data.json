@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T10:03:33.044Z",
+  "generatedAt": "2026-10-22T10:11:37.935Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 262,
-    "linked": 244,
+    "total": 263,
+    "linked": 245,
     "orphan": 18,
     "noindex": 21,
     "notInXmlSitemap": 23,
@@ -730,7 +730,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 87,
+      "inboundCount": 88,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -859,9 +859,9 @@
         "/case-studies/professional-services-linkedin",
         "/case-studies/saas-series-a",
         "/case-studies/uk-pharma-qualified-meetings",
-        "/"
+        "/case-studies/wealth-management-pms-pipeline"
       ],
-      "inboundCount": 21,
+      "inboundCount": 22,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1926,6 +1926,19 @@
         "/case-studies"
       ],
       "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/case-studies/wealth-management-pms-pipeline",
+      "title": "Building a Solid Pipeline for a Wealth Management & PMS Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3325,10 +3338,11 @@
       "linkedFrom": [
         "/case-studies/founder-personal-brand-linkedin",
         "/case-studies/pharma-singapore-product-licensing",
+        "/case-studies/wealth-management-pms-pipeline",
         "/",
         "/services"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3348,7 +3362,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 36,
+      "inboundCount": 37,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3368,7 +3382,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 21,
+      "inboundCount": 22,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

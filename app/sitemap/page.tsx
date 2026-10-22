@@ -65,6 +65,7 @@ const GROUPS: SitemapGroup[] = [
     accent: "#14B8A6",
     links: [
       { label: "All Case Studies", href: "/case-studies" },
+      { label: "Wealth Management & PMS Pipeline", href: "/case-studies/wealth-management-pms-pipeline" },
       { label: "SaaS, Series A", href: "/case-studies/saas-series-a" },
       { label: "Professional Services, LinkedIn", href: "/case-studies/professional-services-linkedin" },
       { label: "Ecommerce Conversion Playbook", href: "/case-studies/ecommerce-conversion-playbook" },

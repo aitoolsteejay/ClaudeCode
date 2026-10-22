@@ -152,6 +152,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "wealth-management-pms-pipeline", tag: "Financial Services · Wealth Management & PMS", industry: "Financial Services", accent: "#7c3aed",
+    title: "Building a Solid Pipeline for a Wealth Management & PMS Firm",
+    stats: [{ v: "150+", l: "Qualified leads" }, { v: "52%", l: "Avg response rate" }, { v: "500%", l: "Impressions growth" }],
+    excerpt: "A 10-year SEBI-registered wealth management & PMS firm serving HNI investors paired LinkedIn authority content with segmented outbound to generate 150+ qualified leads and an average 52% response rate.",
+    services: ["Personal Branding", "LinkedIn Outreach", "GTM Strategy"],
+  },
+  {
     slug: "uk-pharma-qualified-meetings", tag: "Pharma · United Kingdom", industry: "Pharma", accent: "#14b8a6",
     title: "20+ qualified meetings per month for a UK pharma company",
     stats: [{ v: "20+", l: "Meetings/month" }, { v: "35%", l: "Positive response rate" }, { v: "£200K+", l: "Potential pipeline" }],

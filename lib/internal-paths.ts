@@ -66,6 +66,11 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
 
 // Case studies -> the post that explains the method.
 export const CASE_STUDY_PATHS: Record<string, PathItem[]> = {
+  "wealth-management-pms-pipeline": [
+    { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },
+    { kind: "Guide", label: "58 Meetings Booked from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", blurb: "The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and follow-ups." },
+    { kind: "Read", label: "Founder Personal Branding: Pipeline, Not Likes", href: "/blog/vanity-metrics-personal-brand-pipeline", blurb: "Why a founder's personal brand should be built for revenue, not vanity metrics." },
+  ],
   "founder-personal-brand-linkedin": [
     { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },
     { kind: "Guide", label: "58 Meetings Booked from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", blurb: "The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and follow-ups." },

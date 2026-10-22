@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T10:55:20.177Z",
+  "generatedAt": "2026-10-22T10:58:11.159Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 269,
+    "total": 271,
     "linked": 249,
-    "orphan": 20,
-    "noindex": 23,
-    "notInXmlSitemap": 25,
+    "orphan": 22,
+    "noindex": 25,
+    "notInXmlSitemap": 27,
     "privateHidden": 5
   },
   "pages": [
@@ -734,6 +734,29 @@
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/calendar/elg",
+      "title": "Event-Led Growth (ELG) Strategy Session | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/event-led-growth",
+      "title": "Event-Led Growth (ELG) Strategy Session | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/elg/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     },
     {
       "path": "/calendar/th",

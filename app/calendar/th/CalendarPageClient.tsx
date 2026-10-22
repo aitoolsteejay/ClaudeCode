@@ -9,9 +9,21 @@ import InnerLayout from "../../components/InnerLayout";
 
 interface CalendarPageClientProps {
   canonicalPath?: string;
+  dataUrl?: string;
+  badge?: string;
+  title?: string;
+  description?: string;
+  duration?: string;
 }
 
-export default function CalendarPageClient({ canonicalPath = "/calendar/th" }: CalendarPageClientProps) {
+export default function CalendarPageClient({
+  canonicalPath = "/calendar/th",
+  dataUrl = "https://calendly.com/founder-myntmore/tj",
+  badge = "1-on-1 Founder Consultation",
+  title = "Pick a time that works for you",
+  description = "30 minutes with our founder. No pitch, no pressure — just an honest, actionable review of your outbound pipeline and growth roadmap.",
+  duration = "30 Mins",
+}: CalendarPageClientProps) {
   const router = useRouter();
   const widgetRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
@@ -61,15 +73,15 @@ export default function CalendarPageClient({ canonicalPath = "/calendar/th" }: C
               }}
             >
               <Sparkles className="w-3.5 h-3.5 text-[#F5B731]" />
-              <span>1-on-1 Founder Consultation</span>
+              <span>{badge}</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4" style={{ color: "#0A0A0A" }}>
-              Pick a time that works for you
+              {title}
             </h1>
 
             <p className="text-base sm:text-lg text-[#52525B] leading-relaxed max-w-xl mx-auto">
-              30 minutes with our founder. No pitch, no pressure — just an honest, actionable review of your outbound pipeline and growth roadmap.
+              {description}
             </p>
 
             {/* Founder Profile Card */}
@@ -90,7 +102,7 @@ export default function CalendarPageClient({ canonicalPath = "/calendar/th" }: C
               <div className="hidden sm:block h-6 w-px bg-[#E8E2D9] mx-1" />
               <div className="flex items-center gap-3 text-xs text-[#52525B]">
                 <span className="inline-flex items-center gap-1 font-medium">
-                  <Clock className="w-3.5 h-3.5 text-[#D97706]" /> 30 Mins
+                  <Clock className="w-3.5 h-3.5 text-[#D97706]" /> {duration}
                 </span>
                 <span className="inline-flex items-center gap-1 font-medium">
                   <Video className="w-3.5 h-3.5 text-[#2563EB]" /> Google Meet
@@ -111,7 +123,7 @@ export default function CalendarPageClient({ canonicalPath = "/calendar/th" }: C
             <div
               ref={widgetRef}
               className="calendly-inline-widget w-full"
-              data-url="https://calendly.com/founder-myntmore/tj"
+              data-url={dataUrl}
               style={{ minWidth: "320px", height: "700px" }}
             />
             {/* Calendly inline widget end */}

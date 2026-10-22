@@ -152,6 +152,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "leadership-development-messaging-shift", tag: "Professional Services · Executive Coaching & Leadership", industry: "Professional Services", accent: "#a855f7",
+    title: "How a Messaging Shift Tripled Hot Leads for a Leadership Brand",
+    stats: [{ v: "3x", l: "Hot leads increase" }, { v: "60%", l: "Real Estate CXO acceptance" }, { v: "41%", l: "Peak response rate" }],
+    excerpt: "An executive leadership consultancy tripled hot leads from 5 to 15 and achieved a 60% acceptance rate by transitioning from long explanatory pitches to concise, relevance-led connection invitations.",
+    services: ["LinkedIn Outreach", "ICP Mapping & Lead Scoring", "Personal Branding"],
+  },
+  {
     slug: "retail-strategy-design-pipeline", tag: "Professional Services · Retail Strategy & Design", industry: "Professional Services", accent: "#0891b2",
     title: "Business Conversations Across 8+ Industries for a Retail Strategy & Design Business",
     stats: [{ v: "69", l: "Hot leads generated" }, { v: "8+", l: "Industries penetrated" }, { v: "16", l: "Event-based leads" }],

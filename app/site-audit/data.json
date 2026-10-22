@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T10:44:56.313Z",
+  "generatedAt": "2026-10-22T10:50:09.133Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 266,
-    "linked": 248,
+    "total": 267,
+    "linked": 249,
     "orphan": 18,
     "noindex": 21,
     "notInXmlSitemap": 23,
@@ -730,7 +730,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 91,
+      "inboundCount": 92,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -856,12 +856,12 @@
         "/case-studies/ecommerce-conversion-playbook",
         "/case-studies/founder-personal-brand-linkedin",
         "/case-studies/heritage-jewellery-valuation-pipeline",
+        "/case-studies/leadership-development-messaging-shift",
         "/case-studies/medical-tourism-platform-pipeline",
         "/case-studies/predictable-b2b-lead-gen-engine",
-        "/case-studies/professional-services-linkedin",
-        "/case-studies/retail-strategy-design-pipeline"
+        "/case-studies/professional-services-linkedin"
       ],
-      "inboundCount": 25,
+      "inboundCount": 26,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1386,6 +1386,19 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/leadership-development-messaging-shift",
+      "title": "Messaging Shift Tripled Hot Leads for Leadership Brand | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
     },
     {
       "path": "/case-studies/manufacturers-exporters-engineering-goods-replies",
@@ -3403,7 +3416,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 40,
+      "inboundCount": 41,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3423,7 +3436,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 23,
+      "inboundCount": 24,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3443,7 +3456,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 41,
+      "inboundCount": 42,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

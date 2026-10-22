@@ -66,6 +66,11 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
 
 // Case studies -> the post that explains the method.
 export const CASE_STUDY_PATHS: Record<string, PathItem[]> = {
+  "leadership-development-messaging-shift": [
+    { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },
+    { kind: "Guide", label: "58 Meetings Booked from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", blurb: "The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and follow-ups." },
+    { kind: "Read", label: "Founder Personal Branding: Pipeline, Not Likes", href: "/blog/vanity-metrics-personal-brand-pipeline", blurb: "Why a founder's personal brand should be built for revenue, not vanity metrics." },
+  ],
   "retail-strategy-design-pipeline": [
     { kind: "Read", label: "Multi-Threading the B2B Buying Committee", href: "/blog/multi-threading-b2b-buying-committee", blurb: "How to map the buying committee and multi-thread deals so they survive a quiet or departing champion." },
     { kind: "Guide", label: "The Golden ICP Framework for B2B Outbound", href: "/resources/guides/golden-icp-framework", blurb: "Build prospect lists around pressure and buying triggers, with enrichment and timely cold email." },

@@ -16,10 +16,18 @@ declare global {
 
 interface EnwilCalendarClientProps {
   canonicalPath?: string;
+  embedUrl?: string;
+  badge?: string;
+  title?: string;
+  description?: string;
 }
 
 export default function EnwilCalendarClient({
   canonicalPath = "/calendar/enwil-li",
+  embedUrl = "https://meetingwithteejay.zohobookings.com/portal-embed#/4203790000004915016",
+  badge = "1-on-1 Outbound Consultation",
+  title = "Pick a time that works for you",
+  description = "Schedule a 1-on-1 session with our Senior Sales Head. We'll review your outbound pipeline, target ICP, and conversion bottlenecks.",
 }: EnwilCalendarClientProps) {
   const initializedRef = useRef(false);
   const [loading, setLoading] = useState(true);
@@ -31,7 +39,7 @@ export default function EnwilCalendarClient({
         parentEl.innerHTML = "";
         const embedHeight = window.innerWidth < 640 ? "700px" : "650px";
         window.Bookings.inlineEmbed({
-          url: "https://meetingwithteejay.zohobookings.com/portal-embed#/4203790000004915016",
+          url: embedUrl,
           parent: "#inline-container",
           height: embedHeight,
         });
@@ -42,6 +50,8 @@ export default function EnwilCalendarClient({
   };
 
   useEffect(() => {
+    initializedRef.current = false;
+    setLoading(true);
     if (window.Bookings) {
       initBookings();
     }
@@ -52,7 +62,7 @@ export default function EnwilCalendarClient({
       }
     }, 150);
     return () => clearInterval(interval);
-  }, []);
+  }, [embedUrl]);
 
   return (
     <InnerLayout>
@@ -83,15 +93,15 @@ export default function EnwilCalendarClient({
                   }}
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#F5B731]" />
-                  <span>1-on-1 Outbound Consultation</span>
+                  <span>{badge}</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight mb-4 text-[#0A0A0A]">
-                  Pick a time that works for you
+                  {title}
                 </h1>
 
                 <p className="text-base text-[#52525B] leading-relaxed">
-                  Schedule a 1-on-1 session with our Senior Sales Head. We&apos;ll review your outbound pipeline, target ICP, and conversion bottlenecks.
+                  {description}
                 </p>
               </div>
 

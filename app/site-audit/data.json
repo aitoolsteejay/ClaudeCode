@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T09:15:49.226Z",
+  "generatedAt": "2026-10-22T09:47:54.055Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 261,
-    "linked": 245,
-    "orphan": 16,
+    "total": 262,
+    "linked": 244,
+    "orphan": 18,
     "noindex": 21,
-    "notInXmlSitemap": 22,
+    "notInXmlSitemap": 23,
     "privateHidden": 5
   },
   "pages": [
@@ -713,6 +713,26 @@
       "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/book-a-call",
+      "title": "Book a Call with Our Founder | Myntmore",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/1-on-1-consultation",
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata"
+      ],
+      "inboundCount": 87,
+      "noindex": true,
+      "inXmlSitemap": false,
       "inHtmlSitemap": true
     },
     {
@@ -1991,23 +2011,14 @@
     },
     {
       "path": "/founder-meeting",
-      "title": "Book a Call with Our Founder",
+      "title": "Founder Meeting",
       "section": "other",
-      "status": "linked",
-      "linkedFrom": [
-        "/1-on-1-consultation",
-        "/about-us",
-        "/b2b-lead-generation-ahmedabad",
-        "/b2b-lead-generation-bengaluru",
-        "/b2b-lead-generation-chennai",
-        "/b2b-lead-generation-delhi",
-        "/b2b-lead-generation-hyderabad",
-        "/b2b-lead-generation-kolkata"
-      ],
-      "inboundCount": 86,
-      "noindex": true,
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
       "inXmlSitemap": false,
-      "inHtmlSitemap": true
+      "inHtmlSitemap": false
     },
     {
       "path": "/jahnvijhaveri",
@@ -3434,12 +3445,13 @@
       "path": "/thankyou",
       "title": "You're Booked!",
       "section": "other",
-      "status": "linked",
+      "status": "orphan",
       "linkedFrom": [
         "/founder-meeting"
       ],
       "inboundCount": 1,
       "noindex": true,
+      "referencedIn": "app/founder-meeting/FounderMeetingClient.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -3712,6 +3724,11 @@
     }
   ],
   "redirects": [
+    {
+      "from": "/founder-meeting",
+      "to": "/book-a-call",
+      "permanent": true
+    },
     {
       "from": "/about",
       "to": "/about-us",

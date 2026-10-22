@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 };
 
 const CONTACT_CARDS = [
-  { icon: "📅", title: "Free GTM Audit", value: "30-minute strategy call", href: "/founder-meeting", cta: "Book free call" },
-  { icon: "⏱", title: "Extended Session", value: "1-hour strategy meeting", href: "/founder-meeting", cta: "Book 1-hour session" },
+  { icon: "📅", title: "Free GTM Audit", value: "30-minute strategy call", href: "/book-a-call", cta: "Book free call" },
+  { icon: "⏱", title: "Extended Session", value: "1-hour strategy meeting", href: "/book-a-call", cta: "Book 1-hour session" },
   { icon: "✉️", title: "Email Directly", value: "growth@myntmore.com", href: "mailto:growth@myntmore.com", cta: "Send email" },
   { icon: "📞", title: "Call Us", value: "+91 81693 18951", href: "tel:+918169318951", cta: "Call now" },
 ];

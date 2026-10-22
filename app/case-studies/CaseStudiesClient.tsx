@@ -468,7 +468,7 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
             <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0A0A0A" }}>Book a free 30-min audit</h2>
             <p className="text-base mb-8" style={{ color: "#52525B" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
+              <a href="/book-a-call" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
               <Link href="/case-studies/saas-series-a" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-[#FEF9EC]" style={{ backgroundColor: "#FFFFFF", borderColor: "#D0C9BF", color: "#0A0A0A" }}>Read SaaS case study</Link>
             </div>
           </div>

@@ -16,7 +16,7 @@ export interface PathItem {
   blurb: string;
 }
 
-export const CONSULTATION = { label: "Book a free strategy call", href: "/founder-meeting" };
+export const CONSULTATION = { label: "Book a free strategy call", href: "/book-a-call" };
 
 export const SERVICE_PATHS: Record<string, PathItem[]> = {
   "cold-email": [

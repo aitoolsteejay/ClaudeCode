@@ -42,6 +42,7 @@ const nextConfig = {
       // next/navigation's redirect() in each page.tsx, which always issues a
       // 307 (temporary) regardless of intent, telling search engines and
       // caches these moves aren't permanent when they are.
+      { source: "/founder-meeting", destination: "/book-a-call", permanent: true },
       { source: "/about", destination: "/about-us", permanent: true },
       { source: "/contact", destination: "/contact-us", permanent: true },
       { source: "/personal-branding", destination: "/services/personal-branding", permanent: true },

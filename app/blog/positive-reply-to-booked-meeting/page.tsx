@@ -121,7 +121,7 @@ export default function PositiveReplyToBookedMeeting() {
         heading: "Want replies to become meetings?",
         body: "We run outbound for B2B teams, including the handoff from positive reply to booked call. Book a free audit and we'll show you where your pipeline leaks.",
         button: "Book a Free GTM Audit",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/blog/handling-cold-email-replies", "https://www.myntmore.com"]}
     />

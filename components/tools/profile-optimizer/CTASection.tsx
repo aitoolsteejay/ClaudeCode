@@ -20,7 +20,7 @@ const CTASection = () => {
 
         {/* Primary CTA */}
         <Button variant="hero" size="xl" className="mb-6" asChild>
-          <Link href="/founder-meeting">
+          <Link href="/book-a-call">
             Book a Strategy Call
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
@@ -29,7 +29,7 @@ const CTASection = () => {
         {/* Secondary link */}
         <div>
           <Link
-            href="/founder-meeting"
+            href="/book-a-call"
             className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors text-sm font-medium group"
           >
             See how professional inbound pipeline works

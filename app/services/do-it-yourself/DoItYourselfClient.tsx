@@ -16,7 +16,7 @@ import { LinkedInIcon } from "../../components/ContactIcons";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 // This page books a product demo with the DIY tool's owner, not the founder
-// call at /founder-meeting that every other service page uses.
+// call at /book-a-call that every other service page uses.
 const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 
 // Caveat is imported here rather than loaded site-wide (same reasoning as the

@@ -259,7 +259,7 @@ export default function GtmStrategyClient() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href="/founder-meeting"
+            <a href="/book-a-call"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Get a Free GTM Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -543,7 +543,7 @@ export default function GtmStrategyClient() {
             We&apos;ll audit your current GTM, ICP, positioning, and channels, and show you exactly where the plan is leaking, for free.
           </p>
 
-          <a href="/founder-meeting"
+          <a href="/book-a-call"
             className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
             Book a Free GTM Audit
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

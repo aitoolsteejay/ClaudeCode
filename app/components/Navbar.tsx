@@ -40,7 +40,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/founder-meeting";
+  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/book-a-call";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);

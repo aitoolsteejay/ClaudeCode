@@ -174,7 +174,7 @@ export default function Page() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/founder-meeting"
+              href="/book-a-call"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2"
             >
               Book a Free GTM Audit

@@ -174,7 +174,7 @@ export default function B2BOutboundBenchmarkReport2026() {
             <p className="text-sm leading-relaxed mb-4" style={{ color: "#52525B" }}>
               Share your current reply rate, inbox placement, and time-to-meeting, and we&apos;ll tell you honestly whether you&apos;re in range and what to fix first if you&apos;re not.
             </p>
-            <Link href="/founder-meeting" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
+            <Link href="/book-a-call" className="btn-dark px-6 py-3 text-sm font-bold inline-flex items-center gap-2">
               Book a Free GTM Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>

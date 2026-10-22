@@ -620,7 +620,7 @@ export default function OrbitPlanClient() {
           <FadeIn>
             <section className="text-center py-6 mb-12">
               <a
-                href="/founder-meeting"
+                href="/book-a-call"
                 className="btn-dark px-10 py-5 text-base sm:text-lg font-bold inline-flex items-center gap-3 rounded-full shadow-lg transition-transform hover:scale-[1.03]"
               >
                 Get Started with The Orbit Plan

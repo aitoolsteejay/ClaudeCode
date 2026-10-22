@@ -438,7 +438,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                           </p>
                         </div>
 
-                        <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
+                        <a href="/book-a-call" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
                           Get Started
                         </a>
                       </div>
@@ -579,7 +579,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                         You purchase: domains &amp; email accounts. We cover: all sending &amp; lead sourcing software.
                       </p>
                     </div>
-                    <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
+                    <a href="/book-a-call" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
                       Get Started
                     </a>
                   </div>
@@ -613,7 +613,7 @@ export default function GrowthPlansPricing({ pageTitle, planet, currencyPrefix, 
                       {currencySuffix && <span className="text-sm font-semibold" style={{ color: TEXT_MUTED }}> {currencySuffix}</span>}
                       <div className="text-sm font-semibold" style={{ color: TEXT_MUTED }}>/ LinkedIn account / month</div>
                     </div>
-                    <a href="/founder-meeting" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
+                    <a href="/book-a-call" className="btn-dark price-cta inline-block w-full text-center px-6 py-3 text-sm font-bold rounded-full">
                       Get Started
                     </a>
                   </div>

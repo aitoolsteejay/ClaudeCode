@@ -286,7 +286,7 @@ export default function HookGraderClient() {
             <div className="rounded-[28px] border p-8 text-center sm:p-12" style={{ borderColor: "rgba(245,183,49,0.45)", background: "linear-gradient(135deg,#FEF9EC 0%,#FFFFFF 100%)" }}>
               <h2 className="mx-auto max-w-2xl text-3xl font-black leading-tight sm:text-4xl">Want a LinkedIn presence that brings you meetings?</h2>
               <p className="mx-auto mt-4 max-w-xl text-base" style={{ color: MUTED }}>A good hook gets the click. Myntmore builds the profile, the posting rhythm and the outreach behind it.</p>
-              <Link href="/founder-meeting" className="mt-7 inline-flex min-h-[48px] items-center justify-center rounded-full px-8 text-sm font-bold" style={{ backgroundColor: GOLD, color: INK }}>
+              <Link href="/book-a-call" className="mt-7 inline-flex min-h-[48px] items-center justify-center rounded-full px-8 text-sm font-bold" style={{ backgroundColor: GOLD, color: INK }}>
                 Book a Call
               </Link>
             </div>

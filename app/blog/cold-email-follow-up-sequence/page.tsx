@@ -118,7 +118,7 @@ export default function ColdEmailFollowUpSequence() {
         heading: "Want a follow-up ladder built for your ICP?",
         body: "We build and run outbound for B2B teams, including the full sequence behind every first email. Book a free audit and we'll show you what it looks like for your buyers.",
         button: "Book a Free GTM Audit",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/blog/cold-email-sequence-templates", "https://www.myntmore.com"]}
     />

@@ -443,7 +443,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link href="/founder-meeting" className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
+                <Link href="/book-a-call" className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
                   <CalendarDays className="w-4 h-4" aria-hidden="true" />
                   Book a complimentary strategy call
                 </Link>

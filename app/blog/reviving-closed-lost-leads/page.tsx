@@ -120,7 +120,7 @@ export default function RevivingClosedLostLeads() {
         heading: "Want help mining your closed-lost pipeline?",
         body: "Book a free audit and we'll review how a re-engagement campaign could work for the deals already sitting in your CRM.",
         button: "Book a Free GTM Audit",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/resources/glossary/re-engagement-campaign", "https://www.myntmore.com"]}
     />

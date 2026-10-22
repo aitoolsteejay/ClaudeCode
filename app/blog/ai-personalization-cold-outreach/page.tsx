@@ -127,7 +127,7 @@ export default function AiPersonalizationColdOutreach() {
         heading: "Want AI that sharpens your outbound?",
         body: "We use AI for research and signals, and keep a human on every angle. Book a free audit and we'll show you how that works for your ICP.",
         button: "Book a Free GTM Audit",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/blog/ai-vs-traditional-lead-generation", "https://www.myntmore.com"]}
     />

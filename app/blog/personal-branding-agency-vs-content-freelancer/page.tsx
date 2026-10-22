@@ -125,7 +125,7 @@ export default function PersonalBrandingAgencyVsContentFreelancer() {
         heading: "Not sure what your content setup needs?",
         body: "Book a free strategy call. We will tell you whether a freelancer is enough or whether the full loop is worth it for you.",
         button: "Book a Free Strategy Call",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/services/personal-branding", "https://www.myntmore.com"]}
     />

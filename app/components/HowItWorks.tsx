@@ -122,7 +122,7 @@ export default function HowItWorks() {
             Ready to start the process?
           </p>
           <a
-            href="/founder-meeting"
+            href="/book-a-call"
             className="btn-dark px-7 py-3.5 text-sm font-bold inline-flex items-center gap-2"
           >
             Book a Free Strategy Call

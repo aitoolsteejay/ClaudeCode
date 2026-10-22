@@ -127,7 +127,7 @@ export default function LinkedinOutreachAgencyVsManualProspecting() {
         heading: "Not sure which fits your stage?",
         body: "Book a free strategy call. We will tell you honestly whether to keep prospecting yourself for now or hand it over.",
         button: "Book a Free Strategy Call",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/services/linkedin-outreach", "https://www.myntmore.com"]}
     />

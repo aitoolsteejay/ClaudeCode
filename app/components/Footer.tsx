@@ -121,7 +121,7 @@ const CITY_LINKS = [
 
 export default function Footer() {
   const pathname = usePathname();
-  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/founder-meeting";
+  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/book-a-call";
   const breathRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let animId: number;

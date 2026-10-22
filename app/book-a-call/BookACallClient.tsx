@@ -44,7 +44,7 @@ const FAQS = [
   },
   {
     q: "Can I bring my co-founder or Head of Sales along?",
-    a: "Absolutely. Feel free to forward the Zoom calendar invite to anyone on your leadership, sales, or marketing team who is involved in your pipeline generation.",
+    a: "Absolutely. Feel free to forward the Google Meet calendar invite to anyone on your leadership, sales, or marketing team who is involved in your pipeline generation.",
   },
   {
     q: "What if none of the available slots work for my timezone?",
@@ -195,7 +195,7 @@ export default function BookACallClient() {
                   </div>
                   <div className="flex items-center justify-center gap-1.5 py-1 border-x border-[#E8E2D9]">
                     <Video className="w-3.5 h-3.5 text-[#A14A08]" />
-                    <span>Zoom Link</span>
+                    <span>Google Meet</span>
                   </div>
                   <div className="flex items-center justify-center gap-1.5 py-1 text-[#A14A08]">
                     <span>100% Free</span>
@@ -409,7 +409,7 @@ export default function BookACallClient() {
                 </span>
                 <h3 className="text-base font-black text-[#0A0A0A] mb-2">Pick Your Slot</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
-                  Select a convenient 30-minute window above. You&apos;ll receive an immediate calendar invitation with a private Zoom video link.
+                  Select a convenient 30-minute window above. You&apos;ll receive an immediate calendar invitation with a private Google Meet video link.
                 </p>
               </div>
 

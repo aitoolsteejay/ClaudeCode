@@ -9,8 +9,8 @@ interface IcpResultsTabsProps {
   icps: GeneratedIcp[];
 }
 
-const B2B_BADGE = "bg-blue-500/15 text-blue-400";
-const D2C_BADGE = "bg-emerald-500/15 text-emerald-400";
+const B2B_BADGE = "bg-[#EA580C]/15 text-[#9A3412]";
+const D2C_BADGE = "bg-[#B8860B]/15 text-[#7A5200]";
 
 function AudienceBadge({ type }: { type: "B2B" | "D2C" }) {
   return (
@@ -76,12 +76,12 @@ function IcpTabContent({ icp }: { icp: GeneratedIcp }) {
             <BulletList items={icp.painPoints} colorDot="#ef4444" />
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#16a34a" }}>Goals & Desires</p>
-            <BulletList items={icp.goalsDesires} colorDot="#16a34a" />
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#7A5200" }}>Goals & Desires</p>
+            <BulletList items={icp.goalsDesires} colorDot="#B8860B" />
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#3b82f6" }}>Buying Triggers</p>
-            <BulletList items={icp.buyingTriggers} colorDot="#3b82f6" />
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#C2410C" }}>Buying Triggers</p>
+            <BulletList items={icp.buyingTriggers} colorDot="#EA580C" />
           </div>
         </div>
       </section>

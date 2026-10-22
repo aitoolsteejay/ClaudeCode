@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 import { CopyButton } from "./CopyButton";
 import type { CaseStudyOutput } from "./types";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 function buildFullText(result: CaseStudyOutput): string {
   const parts = [
@@ -28,7 +28,7 @@ export function CaseStudyResults({ result, onReset }: { result: CaseStudyOutput;
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(99,102,241,0.08)", color: ACCENT, border: `1px solid ${ACCENT}30` }}>
+        <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(234,88,12,0.08)", color: ACCENT, border: `1px solid ${ACCENT}30` }}>
           Case Study Draft
         </span>
         <CopyButton text={buildFullText(result)} accent={ACCENT} label="Copy all" />
@@ -39,7 +39,7 @@ export function CaseStudyResults({ result, onReset }: { result: CaseStudyOutput;
       {result.stats.length > 0 && (
         <div
           className={`grid gap-6 p-6 sm:p-8 rounded-2xl grid-cols-1 ${result.stats.length >= 2 ? "sm:grid-cols-2" : ""} ${result.stats.length >= 3 ? "sm:grid-cols-3" : ""}`}
-          style={{ backgroundColor: "rgba(99,102,241,0.06)", border: `1px solid ${ACCENT}30` }}
+          style={{ backgroundColor: "rgba(234,88,12,0.06)", border: `1px solid ${ACCENT}30` }}
         >
           {result.stats.map((s, i) => (
             <div key={i} className="text-center">

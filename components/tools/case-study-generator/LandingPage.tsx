@@ -13,7 +13,7 @@ const HOWTO_SCHEMA = buildHowToSchema("How the Case Study Generator Works", [
   { name: "Get a ready-to-send draft", text: "Structured, formatted, and yours to edit before it goes out." },
 ]);
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 interface LandingPageProps {
   onStart: () => void;
@@ -25,13 +25,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
       <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.26) 0%, rgba(79,70,229,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.18) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.26) 0%, rgba(161,74,8,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.18) 0%, rgba(234,88,12,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-            style={{ background: "rgba(99,102,241,0.07)", borderColor: "rgba(99,102,241,0.35)" }}
+            style={{ background: "rgba(234,88,12,0.07)", borderColor: "rgba(234,88,12,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Case Study & Proposal Generator</span>
@@ -66,13 +66,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "A blank doc every time a deal needs a proposal",
                 description: "You know the project, you know the pitch, but staring at an empty document still eats an hour you don't have.",
                 icon: FileText,
-                color: "#6366f1",
+                color: "#C2410C",
               },
               {
                 title: "Case studies that never get written",
                 description: "You finish a great project, get a great result, and then never turn it into proof because there's always something more urgent.",
                 icon: Clock,
-                color: "#14B8A6",
+                color: "#A14A08",
               },
               {
                 title: "Proposals that sound generic because you're rushing",
@@ -117,25 +117,25 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Pick case study or proposal",
                 description: "Turning a finished project into proof, or drafting a pitch for a new prospect.",
                 icon: MousePointer2,
-                color: "#6366f1",
+                color: "#C2410C",
               },
               {
                 title: "Paste in your rough notes",
                 description: "The problem, what you did, and the result. Real numbers only, we won't invent any.",
                 icon: Zap,
-                color: "#14B8A6",
+                color: "#A14A08",
               },
               {
                 title: "Get a ready-to-send draft",
                 description: "Structured, formatted, and yours to edit before it goes out.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -163,7 +163,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Mirrors their language",
                 benefit: "Proposal mode reflects the prospect's own words back to them",
                 description: "Not generic filler, the challenge section is written the way they described it to you.",
-                color: "#14B8A6",
+                color: "#A14A08",
               },
               {
                 title: "Two drafts, one tool",

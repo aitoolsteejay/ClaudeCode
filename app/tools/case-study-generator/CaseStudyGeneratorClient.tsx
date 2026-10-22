@@ -12,7 +12,7 @@ import { ProposalResults } from "@/components/tools/case-study-generator/Proposa
 import type { GeneratorMode, CaseStudyInput, ProposalInput, CaseStudyOutput, ProposalOutput } from "@/components/tools/case-study-generator/types";
 import { textTone } from "@/lib/colors";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 type Step = "landing" | "lead" | "mode" | "form" | "results";
 
@@ -105,8 +105,8 @@ export default function CaseStudyGeneratorClient() {
 
   return (
     <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
-      <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.22) 0%, rgba(79,70,229,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-      <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.16) 0%, rgba(13,148,136,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.22) 0%, rgba(161,74,8,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.16) 0%, rgba(234,88,12,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {step === "lead" && (
@@ -114,7 +114,7 @@ export default function CaseStudyGeneratorClient() {
             <header className="pb-12 text-center">
               <div
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-                style={{ background: "rgba(99,102,241,0.07)", borderColor: "rgba(99,102,241,0.35)" }}
+                style={{ background: "rgba(234,88,12,0.07)", borderColor: "rgba(234,88,12,0.35)" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
                 <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Case Study & Proposal Generator</span>

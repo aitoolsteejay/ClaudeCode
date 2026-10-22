@@ -24,14 +24,14 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         {/* Vivid background blobs, matching the homepage hero's color treatment */}
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.30) 0%, rgba(255,160,0,0.12) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.22) 0%, rgba(37,99,235,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.22) 0%, rgba(161,74,8,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-            style={{ background: "rgba(168,85,247,0.07)", borderColor: "rgba(168,85,247,0.35)" }}
+            style={{ background: "rgba(161,74,8,0.07)", borderColor: "rgba(161,74,8,0.35)" }}
           >
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#a855f7" }} aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#A14A08" }} aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: "#7E22CE" }}>DM Angle Generator</span>
           </div>
 
@@ -40,7 +40,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             <span className="relative inline-block">
               DMs That Get Ignored
               <svg className="absolute -bottom-1 left-0 w-full overflow-visible" height="10" viewBox="0 0 420 10" preserveAspectRatio="none" aria-hidden>
-                <path d="M2 7 Q105 2 210 6 Q315 10 418 5" stroke="#a855f7" strokeWidth="3" fill="none" strokeLinecap="round" />
+                <path d="M2 7 Q105 2 210 6 Q315 10 418 5" stroke="#A14A08" strokeWidth="3" fill="none" strokeLinecap="round" />
               </svg>
             </span>
           </h1>
@@ -64,7 +64,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 title: "Generic openers that scream copy-paste",
                 description: "Prospects can smell a template from a mile away. If your message looks like 50 others they got today, it's already deleted.",
                 icon: MessageSquare,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "Pitches that miss what your ICP actually cares about",
@@ -76,7 +76,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 title: "Messages that sound like everyone else in their DMs",
                 description: "Without a unique angle, you're just another salesperson. You need a pattern interrupt that forces them to pay attention.",
                 icon: Users,
-                color: "#7C3AED",
+                color: "#9A3412",
               },
             ].map((item, i) => (
               <div
@@ -123,14 +123,14 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 title: "Get 5 psychology-aligned angles instantly",
                 description: "Our engine crafts angles based on proven persuasion frameworks.",
                 icon: Zap,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 step: "03",
                 title: "Pick the angle that fits and start conversations that convert",
                 description: "Use the messages to break through the noise and get replies.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
@@ -164,13 +164,13 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                 title: "Pattern interrupt",
                 benefit: "Messages that stand out instead of blending in",
                 description: "We help you avoid the common tropes that prospects have learned to ignore.",
-                color: "#7C3AED",
+                color: "#9A3412",
               },
               {
                 title: "Multiple options",
                 benefit: "5 different angles so you can test what resonates",
                 description: "Use different approaches for different segments of your list.",
-                color: "#14B8A6",
+                color: "#A14A08",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>

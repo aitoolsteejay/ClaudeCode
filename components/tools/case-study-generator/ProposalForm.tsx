@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import type { ProposalInput } from "./types";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 const EMPTY: ProposalInput = {
   prospectCompany: "",
@@ -132,7 +132,7 @@ export function ProposalForm({ onGenerate, isLoading }: ProposalFormProps) {
                 className="rounded-xl py-3 text-center text-sm font-bold transition-all"
                 style={
                   data.howWeMet === opt
-                    ? { backgroundColor: "rgba(99,102,241,0.08)", border: `1.5px solid ${ACCENT}`, color: ACCENT }
+                    ? { backgroundColor: "rgba(234,88,12,0.08)", border: `1.5px solid ${ACCENT}`, color: ACCENT }
                     : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9", color: "#0a0a0a" }
                 }
               >

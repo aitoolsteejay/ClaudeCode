@@ -3,7 +3,7 @@
 import { CopyButton } from "./CopyButton";
 import type { ProposalOutput } from "./types";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 function buildFullText(result: ProposalOutput): string {
   return [
@@ -31,14 +31,14 @@ export function ProposalResults({ result, onReset }: { result: ProposalOutput; o
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(99,102,241,0.08)", color: ACCENT, border: `1px solid ${ACCENT}30` }}>
+        <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(234,88,12,0.08)", color: ACCENT, border: `1px solid ${ACCENT}30` }}>
           Proposal Draft
         </span>
         <CopyButton text={buildFullText(result)} accent={ACCENT} label="Copy all" />
       </div>
 
       {result.positioning && (
-        <div className="rounded-2xl p-6 sm:p-8 text-center" style={{ backgroundColor: "rgba(99,102,241,0.06)", border: `1px solid ${ACCENT}30` }}>
+        <div className="rounded-2xl p-6 sm:p-8 text-center" style={{ backgroundColor: "rgba(234,88,12,0.06)", border: `1px solid ${ACCENT}30` }}>
           <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: ACCENT }}>Positioning</p>
           <p className="text-lg font-bold leading-relaxed" style={{ color: "#0a0a0a" }}>&quot;{result.positioning}&quot;</p>
         </div>
@@ -90,7 +90,7 @@ export function ProposalResults({ result, onReset }: { result: ProposalOutput; o
           <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: "#71675E" }}>Investment</p>
           <p className="text-sm font-medium" style={{ color: "#3D3D3D" }}>{result.investment}</p>
         </div>
-        <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(99,102,241,0.06)", border: `1px solid ${ACCENT}30` }}>
+        <div className="rounded-xl p-5" style={{ backgroundColor: "rgba(234,88,12,0.06)", border: `1px solid ${ACCENT}30` }}>
           <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: ACCENT }}>Next Step</p>
           <p className="text-sm font-medium" style={{ color: "#0a0a0a" }}>{result.nextStep}</p>
         </div>

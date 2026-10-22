@@ -59,9 +59,9 @@ const LIFESTYLE_OPTIONS: FounderLifestyle[] = [
 const TONE_OPTIONS: Tone[] = ["Authoritative", "Professional & Warm", "Sharp & Direct", "Friendly", "Visionary"];
 
 const STRENGTH_COLORS: Record<ContentStrength, string> = {
-  Educational: "#3B82F6",
-  Storytelling: "#7C3AED",
-  Analytical: "#14B8A6",
+  Educational: "#EA580C",
+  Storytelling: "#A14A08",
+  Analytical: "#D97706",
   Contrarian: "#F97316",
   Inspirational: "#F5B731",
   Humorous: "#EC4899",
@@ -164,7 +164,7 @@ export default function PostingRhythmClient() {
     <div className="min-h-screen pb-20 pt-12 text-foreground relative overflow-hidden selection:bg-[#FFC947] selection:text-black" style={{ backgroundColor: "#F8F6F2" }}>
       {/* Vivid background blobs, matching the homepage hero's color treatment */}
       <div aria-hidden="true" style={{ position: "absolute", top: "-100px", left: "-140px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.28) 0%, rgba(255,160,0,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-      <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.20) 0%, rgba(13,148,136,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+      <div aria-hidden="true" style={{ position: "absolute", top: "180px", right: "-120px", width: "550px", height: "550px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.20) 0%, rgba(234,88,12,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -324,8 +324,8 @@ export default function PostingRhythmClient() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 md:p-10 flex flex-col shadow-sm" style={{ borderTop: "3px solid #3B82F6", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8" style={{ color: "#3B82F6" }}>Topic Cadence</h3>
+                <div className="bg-white rounded-2xl p-8 md:p-10 flex flex-col shadow-sm" style={{ borderTop: "3px solid #EA580C", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8" style={{ color: "#C2410C" }}>Topic Cadence</h3>
                   <div className="space-y-8 mb-10 flex-grow">
                     {strategy.topicCadence.schedule.map((item) => (
                       <div key={item.day} className="grid grid-cols-[120px_1fr] gap-4 items-start pb-4 last:border-0" style={{ borderBottom: "1px solid #F0EDE7" }}>
@@ -340,12 +340,12 @@ export default function PostingRhythmClient() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm" style={{ borderTop: "3px solid #14B8A6", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-10" style={{ color: "#14B8A6" }}>Weekly Posting System</h3>
+              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm" style={{ borderTop: "3px solid #D97706", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-10" style={{ color: "#A14A08" }}>Weekly Posting System</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {strategy.weeklySystem.routine.map((item) => (
                     <div key={item.day} className="bg-[#FAFAFA] p-6 rounded-xl group transition-colors" style={{ border: "1px solid #E8E2D9" }}>
-                      <p className="text-xs font-bold uppercase tracking-widest mb-3 group-hover:translate-x-1 transition-transform" style={{ color: "#14B8A6" }}>
+                      <p className="text-xs font-bold uppercase tracking-widest mb-3 group-hover:translate-x-1 transition-transform" style={{ color: "#A14A08" }}>
                         {item.day}
                       </p>
                       <p className="text-gray-600 text-sm leading-relaxed font-medium">{item.action}</p>
@@ -354,12 +354,12 @@ export default function PostingRhythmClient() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm" style={{ borderTop: "3px solid #7C3AED", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-10" style={{ color: "#7C3AED" }}>High Probability Post Ideas</h3>
+              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm" style={{ borderTop: "3px solid #A14A08", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
+                <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-10" style={{ color: "#9A3412" }}>High Probability Post Ideas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
                   {strategy.postIdeas.map((idea, idx) => (
-                    <div key={idx} className="group border-l-2 pl-8 py-1 transition-all duration-300" style={{ borderColor: "rgba(124,58,237,0.25)" }}>
-                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 transition-colors group-hover:text-[#7C3AED]">
+                    <div key={idx} className="group border-l-2 pl-8 py-1 transition-all duration-300" style={{ borderColor: "rgba(161,74,8,0.25)" }}>
+                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-3 transition-colors group-hover:text-[#9A3412]">
                         {idea.category}
                       </p>
                       <p className="text-lg leading-snug font-semibold text-black/90 group-hover:text-black transition-colors">{idea.idea}</p>
@@ -382,12 +382,12 @@ export default function PostingRhythmClient() {
                     ))}
                   </div>
                 </div>
-                <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm" style={{ borderTop: "3px solid #10B981", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-center" style={{ color: "#10B981" }}>Low-Friction CTAs</h3>
+                <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm" style={{ borderTop: "3px solid #B8860B", borderLeft: "1px solid #E8E2D9", borderRight: "1px solid #E8E2D9", borderBottom: "1px solid #E8E2D9" }}>
+                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] mb-8 text-center" style={{ color: "#7A5200" }}>Low-Friction CTAs</h3>
                   <div className="space-y-8">
                     {strategy.ctas.map((cta, idx) => (
                       <div key={idx} className="flex gap-6 group">
-                        <span className="font-black text-xl transition-colors" style={{ color: "rgba(16,185,129,0.35)" }}>
+                        <span className="font-black text-xl transition-colors" style={{ color: "rgba(184,134,11,0.35)" }}>
                           {String(idx + 1).padStart(2, "0")}
                         </span>
                         <p className="text-gray-700 text-[15px] leading-relaxed pt-1 font-medium">{cta}</p>

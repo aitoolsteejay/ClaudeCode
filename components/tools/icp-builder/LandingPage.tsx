@@ -26,7 +26,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.18) 0%, rgba(161,74,8,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
@@ -72,13 +72,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Value props that sound like everyone else's",
                 description: "\"We help businesses grow\" is not a positioning statement. Without a sharp value prop, you blend into every other pitch in their inbox.",
                 icon: MessageSquare,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "One profile for every very different buyer",
                 description: "A founder and a VP Sales don't buy the same way, and a B2B buyer and a D2C consumer definitely don't. One generic persona misses both.",
                 icon: Users,
-                color: "#7C3AED",
+                color: "#9A3412",
               },
             ].map((item, i) => (
               <div
@@ -125,20 +125,20 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Build up to 6 ICPs",
                 description: "B2B or D2C, each with roles, triggers, pain points, and psychology.",
                 icon: Zap,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 step: "03",
                 title: "Get a value prop for each",
                 description: "Positioning, messaging, and channel partners, ready to use.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -166,13 +166,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Deep, not generic",
                 benefit: "Pain points, buying triggers, objections, psychology, and where they hang out",
                 description: "Not a one-line persona. Enough detail to actually write outreach, content, or sales scripts from.",
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "Comes with a value prop",
                 benefit: "A full positioning statement and content strategy for every ICP",
                 description: "You don't just get a persona, you get the pitch that goes with it, plus your channel partners.",
-                color: "#14B8A6",
+                color: "#A14A08",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>

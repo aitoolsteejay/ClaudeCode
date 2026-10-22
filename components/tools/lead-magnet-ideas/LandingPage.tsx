@@ -13,7 +13,7 @@ const HOWTO_SCHEMA = buildHowToSchema("How the Lead Magnet Ideas Tool Works", [
   { name: "Get 3 ready-to-build ideas", text: "Each with the pitch, why it works, and how to distribute it." },
 ]);
 
-const ACCENT = "#3b82f6";
+const ACCENT = "#EA580C";
 
 interface LandingPageProps {
   onStart: () => void;
@@ -25,13 +25,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
       <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.26) 0%, rgba(37,99,235,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.26) 0%, rgba(161,74,8,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-            style={{ background: "rgba(59,130,246,0.07)", borderColor: "rgba(59,130,246,0.35)" }}
+            style={{ background: "rgba(234,88,12,0.07)", borderColor: "rgba(234,88,12,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Lead Magnet Idea Generator</span>
@@ -66,7 +66,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Generic ideas that don't fit your business",
                 description: "\"Write an ebook\" or \"do a checklist\" is advice that could apply to literally any company. It doesn't tell you what to actually make.",
                 icon: Copy,
-                color: "#3b82f6",
+                color: "#C2410C",
               },
               {
                 title: "No time to brainstorm what would convert",
@@ -78,7 +78,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Lead magnets nobody actually downloads",
                 description: "When the idea isn't specific enough to your ICP's real problem, it doesn't feel worth trading an email for.",
                 icon: Frown,
-                color: "#7C3AED",
+                color: "#9A3412",
               },
             ].map((item, i) => (
               <div
@@ -117,7 +117,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Describe your business and ICP",
                 description: "What you do, who you sell to, and your industry.",
                 icon: MousePointer2,
-                color: "#3b82f6",
+                color: "#C2410C",
               },
               {
                 title: "Pick your tone",
@@ -129,13 +129,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Get 3 ready-to-build ideas",
                 description: "Each with the pitch, why it works, and how to distribute it.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -169,7 +169,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Includes distribution",
                 benefit: "How to actually get it in front of your ICP",
                 description: "An idea with no distribution plan is just a document sitting on your desktop.",
-                color: "#14B8A6",
+                color: "#A14A08",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>

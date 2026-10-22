@@ -50,7 +50,7 @@ export function CopyButton({ text, label = "Copy", className = "" }: CopyButtonP
     >
       {copied ? (
         <>
-          <Check className="w-3.5 h-3.5" style={{ color: "#16a34a" }} />
+          <Check className="w-3.5 h-3.5" style={{ color: "#7A5200" }} />
           Copied
         </>
       ) : (

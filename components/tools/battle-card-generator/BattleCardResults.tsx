@@ -59,11 +59,11 @@ export function BattleCardResults({ result, onReset }: { result: BattleCardOutpu
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-          <h3 className="text-sm font-black mb-3" style={{ color: "#16a34a" }}>Their Strengths</h3>
+          <h3 className="text-sm font-black mb-3" style={{ color: "#7A5200" }}>Their Strengths</h3>
           <ul className="space-y-2">
             {result.strengths.map((s, i) => (
               <li key={i} className="flex items-start gap-2 text-sm leading-snug" style={{ color: "#3D3D3D" }}>
-                <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: "#16a34a" }} />
+                <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: "#B8860B" }} />
                 {s}
               </li>
             ))}

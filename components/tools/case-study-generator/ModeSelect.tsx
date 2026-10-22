@@ -3,7 +3,7 @@
 import { FileText, Handshake } from "lucide-react";
 import type { GeneratorMode } from "./types";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 interface ModeSelectProps {
   onSelect: (mode: GeneratorMode) => void;
@@ -22,7 +22,7 @@ export function ModeSelect({ onSelect }: ModeSelectProps) {
           className="rounded-2xl p-6 sm:p-8 text-left transition-all duration-300 hover:-translate-y-1"
           style={{ backgroundColor: "#ffffff", border: `1.5px solid #E8E2D9` }}
         >
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "rgba(99,102,241,0.1)" }}>
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "rgba(234,88,12,0.1)" }}>
             <FileText className="w-6 h-6" style={{ color: ACCENT }} />
           </div>
           <h3 className="text-lg font-black mb-2" style={{ color: "#0a0a0a" }}>Turn a project into a case study</h3>
@@ -37,7 +37,7 @@ export function ModeSelect({ onSelect }: ModeSelectProps) {
           className="rounded-2xl p-6 sm:p-8 text-left transition-all duration-300 hover:-translate-y-1"
           style={{ backgroundColor: "#ffffff", border: `1.5px solid #E8E2D9` }}
         >
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "rgba(99,102,241,0.1)" }}>
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: "rgba(234,88,12,0.1)" }}>
             <Handshake className="w-6 h-6" style={{ color: ACCENT }} />
           </div>
           <h3 className="text-lg font-black mb-2" style={{ color: "#0a0a0a" }}>Draft a new proposal</h3>

@@ -84,9 +84,9 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
   const showsIndiaCities = icp.geography.includes("India");
   const badge =
     icp.icpType === "D2C"
-      ? { label: "D2C", bg: "rgba(16,185,129,0.12)", color: "#059669" }
+      ? { label: "D2C", bg: "rgba(184,134,11,0.12)", color: "#7A5200" }
       : icp.icpType === "B2B"
-        ? { label: "B2B", bg: "rgba(59,130,246,0.12)", color: "#2563eb" }
+        ? { label: "B2B", bg: "rgba(234,88,12,0.12)", color: "#C2410C" }
         : null;
 
   return (
@@ -131,7 +131,7 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
                 className="rounded-xl p-4 text-center text-sm font-bold transition-all"
                 style={
                   icp.icpType === "B2B"
-                    ? { backgroundColor: "rgba(59,130,246,0.08)", border: "1.5px solid #3b82f6", color: "#2563eb" }
+                    ? { backgroundColor: "rgba(234,88,12,0.08)", border: "1.5px solid #EA580C", color: "#C2410C" }
                     : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9", color: "#0a0a0a" }
                 }
               >
@@ -143,7 +143,7 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
                 className="rounded-xl p-4 text-center text-sm font-bold transition-all"
                 style={
                   icp.icpType === "D2C"
-                    ? { backgroundColor: "rgba(16,185,129,0.08)", border: "1.5px solid #10b981", color: "#059669" }
+                    ? { backgroundColor: "rgba(184,134,11,0.08)", border: "1.5px solid #B8860B", color: "#7A5200" }
                     : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9", color: "#0a0a0a" }
                 }
               >
@@ -216,7 +216,7 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
                     // while validation still sees a non-null selection.
                     onChange({ ...icp, d2cDescription: e.target.value, d2cSelectedIdx: null })
                   }
-                  className="focus-visible:ring-[#10b981]"
+                  className="focus-visible:ring-[#B8860B]"
                 />
                 {polishing && (
                   <p className="flex items-center gap-2 text-xs text-gray-500">
@@ -240,7 +240,7 @@ export function IcpCard({ icp, index, isOpen, onToggleOpen, onChange, onRemove, 
                       className="flex items-start gap-3 rounded-xl p-4 cursor-pointer transition-colors"
                       style={
                         icp.d2cSelectedIdx === i
-                          ? { backgroundColor: "rgba(16,185,129,0.06)", border: "1.5px solid #10b981" }
+                          ? { backgroundColor: "rgba(184,134,11,0.06)", border: "1.5px solid #B8860B" }
                           : { backgroundColor: "#ffffff", border: "1.5px solid #E8E2D9" }
                       }
                     >

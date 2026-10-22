@@ -5,7 +5,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-const ANGLE_COLORS = ["#7C3AED", "#3B82F6", "#14B8A6"];
+const ANGLE_COLORS = ["#A14A08", "#EA580C", "#D97706"];
 
 interface QuotedIssue {
   issue_type: string;
@@ -250,8 +250,8 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         {/* 3. Optimized Headlines */}
         <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(59,130,246,0.1)" }}>
-              <Zap className="h-5 w-5" style={{ color: "#3B82F6" }} />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(234,88,12,0.1)" }}>
+              <Zap className="h-5 w-5" style={{ color: "#C2410C" }} />
             </div>
             <h2 className="text-2xl font-black">Optimized Headlines</h2>
           </div>
@@ -272,7 +272,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
                       className="opacity-0 group-hover:opacity-100 transition-opacity"
                       aria-label="Copy headline"
                     >
-                      {copiedIndex === index ? <Check className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4" />}
+                      {copiedIndex === index ? <Check className="h-4 w-4 text-[#A14A08]" /> : <Copy className="h-4 w-4" />}
                     </Button>
                   </div>
                 </div>
@@ -299,7 +299,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
               >
                 {copiedIndex === 100 ? (
                   <>
-                    <Check className="h-4 w-4 mr-2 text-green-400" />
+                    <Check className="h-4 w-4 mr-2 text-[#A14A08]" />
                     Copied
                   </>
                 ) : (
@@ -323,8 +323,8 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         {/* 5. Positioning Angles */}
         <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(124,58,237,0.1)" }}>
-              <Award className="h-5 w-5" style={{ color: "#7C3AED" }} />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(161,74,8,0.1)" }}>
+              <Award className="h-5 w-5" style={{ color: "#9A3412" }} />
             </div>
             <h2 className="text-2xl font-black">Positioning Angles</h2>
           </div>
@@ -344,8 +344,8 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
         {/* 6. Keyword & ICP Score */}
         <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
           <div className="flex items-center gap-3 mb-4">
-            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(20,184,166,0.1)" }}>
-              <TrendingUp className="h-5 w-5" style={{ color: "#14B8A6" }} />
+            <div className="h-10 w-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(245,183,49,0.1)" }}>
+              <TrendingUp className="h-5 w-5" style={{ color: "#A14A08" }} />
             </div>
             <h2 className="text-2xl font-black">Keyword and ICP Relevance</h2>
           </div>

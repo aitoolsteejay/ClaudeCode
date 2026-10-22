@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import type { CaseStudyInput } from "./types";
 
-const ACCENT = "#6366f1";
+const ACCENT = "#EA580C";
 
 const EMPTY: CaseStudyInput = {
   clientIndustry: "",

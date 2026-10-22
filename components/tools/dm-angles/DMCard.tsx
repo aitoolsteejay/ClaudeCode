@@ -14,10 +14,10 @@ export interface DMAngle {
 
 const ANGLE_COLORS: Record<string, string> = {
   "Emotional Angle": "#F5B731",
-  "Authority Angle": "#3B82F6",
-  "Social Proof Angle": "#14B8A6",
-  "Curiosity Angle": "#7C3AED",
-  "Value-First Angle": "#10B981",
+  "Authority Angle": "#EA580C",
+  "Social Proof Angle": "#D97706",
+  "Curiosity Angle": "#A14A08",
+  "Value-First Angle": "#B8860B",
 };
 
 const DEFAULT_COLOR = "#F5B731";

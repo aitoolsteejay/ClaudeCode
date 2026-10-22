@@ -26,7 +26,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(239,68,68,0.24) 0%, rgba(220,38,38,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(37,99,235,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(168,139,250,0.18) 0%, rgba(161,74,8,0.07) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
@@ -78,7 +78,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Losing deals to comparisons you could have won",
                 description: "Not because they're actually better, but because you weren't ready to explain why you're not.",
                 icon: TrendingDown,
-                color: "#7C3AED",
+                color: "#9A3412",
               },
             ].map((item, i) => (
               <div
@@ -129,13 +129,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Get your battle card",
                 description: "Strengths, gaps, positioning, and objection responses, ready for your next call.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -169,7 +169,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Ready before your next call",
                 benefit: "Strengths, gaps, and answers in one place",
                 description: "So the next time a competitor comes up, you have an answer ready instead of improvising.",
-                color: "#14B8A6",
+                color: "#A14A08",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>

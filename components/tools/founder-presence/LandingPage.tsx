@@ -13,7 +13,7 @@ const HOWTO_SCHEMA = buildHowToSchema("How the Founder Presence Analyzer Works",
   { name: "Get your score and recommendations", text: "A presence score, opportunity areas, and headline suggestions." },
 ]);
 
-const ACCENT = "#14B8A6";
+const ACCENT = "#D97706";
 
 interface LandingPageProps {
   onStart: () => void;
@@ -25,13 +25,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
       <JsonLd data={HOWTO_SCHEMA} />
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
-        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.26) 0%, rgba(13,148,136,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.26) 0%, rgba(234,88,12,0.10) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.20) 0%, rgba(255,160,0,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6"
-            style={{ background: "rgba(20,184,166,0.07)", borderColor: "rgba(20,184,166,0.35)" }}
+            style={{ background: "rgba(245,183,49,0.07)", borderColor: "rgba(245,183,49,0.35)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: ACCENT }} aria-hidden="true" />
             <span className="text-xs font-bold uppercase tracking-[0.15em]" style={{ color: textTone(ACCENT) }}>Founder Presence Analyzer</span>
@@ -66,19 +66,19 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Posting without knowing if it's actually working",
                 description: "You show up on LinkedIn, but with no benchmark you can't tell if your frequency and engagement are competitive or quietly falling behind.",
                 icon: EyeOff,
-                color: "#14B8A6",
+                color: "#A14A08",
               },
               {
                 title: "No idea how you compare to your competitors",
                 description: "You can see their posts, but not whether you're actually ahead or behind them in the metrics that matter.",
                 icon: Users2,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "A headline that doesn't differentiate you",
                 description: "A vague title with no positioning blends you into every other profile your ICP scrolls past.",
                 icon: PenLine,
-                color: "#7C3AED",
+                color: "#9A3412",
               },
             ].map((item, i) => (
               <div
@@ -117,25 +117,25 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Add your activity",
                 description: "Your posting frequency and average engagement over the last 30 days.",
                 icon: MousePointer2,
-                color: "#14B8A6",
+                color: "#A14A08",
               },
               {
                 title: "Add up to 5 competitors",
                 description: "Their posting frequency and engagement, for a real comparison.",
                 icon: Zap,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "Get your score and recommendations",
                 description: "A presence score, opportunity areas, and headline suggestions.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -163,7 +163,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "AI positioning recommendations",
                 benefit: "A narrative angle based on your actual gap",
                 description: "Specific to where you're underperforming, not generic LinkedIn advice.",
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "3 headline styles to test",

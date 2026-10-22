@@ -26,7 +26,7 @@ export function LandingPage({ onStart }: LandingPageProps) {
       {/* Hero Section */}
       <section className="py-14 md:py-20 px-6 flex flex-col items-center text-center animate-fade-in relative overflow-hidden">
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.30) 0%, rgba(255,160,0,0.12) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.20) 0%, rgba(13,148,136,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(234,88,12,0.20) 0%, rgba(234,88,12,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-5xl mx-auto">
           <div
@@ -72,13 +72,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Staring at a blank post box with no idea what to write",
                 description: "You know you should post, but every time you open LinkedIn the same blank box shows up with nothing in your head.",
                 icon: FileQuestion,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "Inconsistent presence killing your algorithm reach",
                 description: "LinkedIn rewards consistency. Sporadic posting means your content starts from zero reach every single time.",
                 icon: TrendingDown,
-                color: "#7C3AED",
+                color: "#9A3412",
               },
             ].map((item, i) => (
               <div
@@ -123,19 +123,19 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Get your best days and times",
                 description: "A schedule built around your actual availability, not a generic calendar.",
                 icon: Zap,
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "Get a routine and post ideas",
                 description: "A weekly system plus hooks and CTAs, ready to use.",
                 icon: CheckCircle,
-                color: "#10B981",
+                color: "#7A5200",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                  style={{ backgroundColor: item.color, color: ["#7C3AED", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
+                  style={{ backgroundColor: item.color, color: ["#A14A08", "#A14A08"].includes(item.color) ? "#fff" : "#0A0A0A" }}
                 >
                   <item.icon className="h-8 w-8" />
                 </div>
@@ -163,13 +163,13 @@ export function LandingPage({ onStart }: LandingPageProps) {
                 title: "Hooks and CTAs included",
                 benefit: "Not just topics, actual opening lines and calls to action",
                 description: "You get the raw material to write from, not just a list of things to think about.",
-                color: "#3B82F6",
+                color: "#C2410C",
               },
               {
                 title: "Psychology-backed cadence",
                 benefit: "Timing and frequency based on how your audience actually engages",
                 description: "The rhythm is designed around attention patterns, not arbitrary daily quotas.",
-                color: "#14B8A6",
+                color: "#A14A08",
               },
             ].map((item, i) => (
               <div key={i} className="flex flex-col p-8 rounded-2xl bg-secondary/20" style={{ borderLeft: `4px solid ${item.color}` }}>

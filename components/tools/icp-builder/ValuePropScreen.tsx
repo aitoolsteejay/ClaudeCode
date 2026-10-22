@@ -21,7 +21,7 @@ interface ValuePropScreenProps {
 
 function AudienceBadge({ type }: { type: "B2B" | "D2C" }) {
   return (
-    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${type === "B2B" ? "bg-blue-500/15 text-blue-400" : "bg-emerald-500/15 text-emerald-400"}`}>
+    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${type === "B2B" ? "bg-[#EA580C]/15 text-[#9A3412]" : "bg-[#B8860B]/15 text-[#7A5200]"}`}>
       {type}
     </span>
   );
@@ -107,12 +107,12 @@ function ValuePropTabContent({ result }: { result: ValuePropResult }) {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl p-6" style={{ backgroundColor: "rgba(34,197,94,0.05)", border: "1px solid rgba(34,197,94,0.2)" }}>
-              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#16a34a" }}>After</h3>
+            <div className="rounded-2xl p-6" style={{ backgroundColor: "rgba(184,134,11,0.05)", border: "1px solid rgba(184,134,11,0.2)" }}>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "#7A5200" }}>After</h3>
               <ul className="space-y-3">
                 {(result.afterState || []).map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                    <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#16a34a" }} />
+                    <Check className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#7A5200" }} />
                     {item}
                   </li>
                 ))}

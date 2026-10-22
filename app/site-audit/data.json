@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T10:11:37.935Z",
+  "generatedAt": "2026-10-22T10:17:51.569Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 263,
-    "linked": 245,
+    "total": 264,
+    "linked": 246,
     "orphan": 18,
     "noindex": 21,
     "notInXmlSitemap": 23,
@@ -730,7 +730,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 88,
+      "inboundCount": 89,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -855,13 +855,13 @@
         "/blog/agency-vs-in-house",
         "/case-studies/ecommerce-conversion-playbook",
         "/case-studies/founder-personal-brand-linkedin",
+        "/case-studies/medical-tourism-platform-pipeline",
         "/case-studies/predictable-b2b-lead-gen-engine",
         "/case-studies/professional-services-linkedin",
         "/case-studies/saas-series-a",
-        "/case-studies/uk-pharma-qualified-meetings",
-        "/case-studies/wealth-management-pms-pipeline"
+        "/case-studies/uk-pharma-qualified-meetings"
       ],
-      "inboundCount": 22,
+      "inboundCount": 23,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1482,6 +1482,19 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/medical-tourism-platform-pipeline",
+      "title": "Outbound Pipeline for an AI Medical Tourism Platform | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
     },
     {
       "path": "/case-studies/pharma-api-supplier-conversations",
@@ -3291,7 +3304,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 30,
+      "inboundCount": 31,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3362,7 +3375,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 37,
+      "inboundCount": 38,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3402,7 +3415,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 38,
+      "inboundCount": 39,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

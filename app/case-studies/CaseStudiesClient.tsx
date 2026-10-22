@@ -152,6 +152,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "medical-tourism-platform-pipeline", tag: "Pharma & Healthcare · HealthTech", industry: "Pharma", accent: "#0ea5e9",
+    title: "Building an Outbound Pipeline for an AI Medical Tourism Platform",
+    stats: [{ v: "140", l: "Qualified leads" }, { v: "61.6%", l: "Hospital reply rate" }, { v: "58", l: "Leads from doctors" }],
+    excerpt: "An AI-powered medical travel platform generated 140 qualified leads with a 61.59% hospital decision-maker response rate by leading with relevance, segmentation, and conversation before conversion.",
+    services: ["AI Lead Generation", "LinkedIn Outreach", "ICP Mapping & Lead Scoring"],
+  },
+  {
     slug: "wealth-management-pms-pipeline", tag: "Financial Services · Wealth Management & PMS", industry: "Financial Services", accent: "#7c3aed",
     title: "Building a Solid Pipeline for a Wealth Management & PMS Firm",
     stats: [{ v: "150+", l: "Qualified leads" }, { v: "52%", l: "Avg response rate" }, { v: "500%", l: "Impressions growth" }],

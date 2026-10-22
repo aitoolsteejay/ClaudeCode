@@ -152,6 +152,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "retail-strategy-design-pipeline", tag: "Professional Services · Retail Strategy & Design", industry: "Professional Services", accent: "#0891b2",
+    title: "Business Conversations Across 8+ Industries for a Retail Strategy & Design Business",
+    stats: [{ v: "69", l: "Hot leads generated" }, { v: "8+", l: "Industries penetrated" }, { v: "16", l: "Event-based leads" }],
+    excerpt: "A retail innovation and store design consultancy generated 69 hot leads across 8+ industries (pet care, auto, fashion, furniture, jewellery) by tailoring outreach around each sector's offline growth priorities.",
+    services: ["LinkedIn Outreach", "ICP Mapping & Lead Scoring", "GTM Strategy"],
+  },
+  {
     slug: "heritage-jewellery-valuation-pipeline", tag: "Professional Services · Heritage & Valuation", industry: "Professional Services", accent: "#a855f7",
     title: "Building a B2B Pipeline for a 180-Year-Old Heritage Jewellery Business",
     stats: [{ v: "68", l: "Hot leads generated" }, { v: "43.7%", l: "Overall response rate" }, { v: "897", l: "Accepted connections" }],

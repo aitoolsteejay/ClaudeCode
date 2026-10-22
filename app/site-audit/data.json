@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T10:22:22.407Z",
+  "generatedAt": "2026-10-22T10:44:56.313Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 265,
-    "linked": 247,
+    "total": 266,
+    "linked": 248,
     "orphan": 18,
     "noindex": 21,
     "notInXmlSitemap": 23,
@@ -730,7 +730,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 90,
+      "inboundCount": 91,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -859,9 +859,9 @@
         "/case-studies/medical-tourism-platform-pipeline",
         "/case-studies/predictable-b2b-lead-gen-engine",
         "/case-studies/professional-services-linkedin",
-        "/case-studies/saas-series-a"
+        "/case-studies/retail-strategy-design-pipeline"
       ],
-      "inboundCount": 24,
+      "inboundCount": 25,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1854,6 +1854,19 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/retail-strategy-design-pipeline",
+      "title": "Retail Strategy & Store Design Pipeline Case Study | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
     },
     {
       "path": "/case-studies/saas-ai-productivity-sales-calls",
@@ -3365,11 +3378,12 @@
       "linkedFrom": [
         "/case-studies/founder-personal-brand-linkedin",
         "/case-studies/pharma-singapore-product-licensing",
+        "/case-studies/retail-strategy-design-pipeline",
         "/case-studies/wealth-management-pms-pipeline",
         "/",
         "/services"
       ],
-      "inboundCount": 5,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3389,7 +3403,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 39,
+      "inboundCount": 40,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3429,7 +3443,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 40,
+      "inboundCount": 41,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

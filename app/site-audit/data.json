@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T11:21:10.792Z",
+  "generatedAt": "2026-10-22T11:24:36.153Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 277,
+    "total": 279,
     "linked": 249,
-    "orphan": 28,
-    "noindex": 31,
-    "notInXmlSitemap": 33,
+    "orphan": 30,
+    "noindex": 33,
+    "notInXmlSitemap": 35,
     "privateHidden": 5
   },
   "pages": [
@@ -766,6 +766,29 @@
       "linkedFrom": [],
       "inboundCount": 0,
       "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/enwil",
+      "title": "Outbound Strategy Session with Enwil Fernandes",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/enwil-li",
+      "title": "Outbound Strategy Session with Enwil Fernandes",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/enwil/page.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },

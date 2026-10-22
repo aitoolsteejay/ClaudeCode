@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T10:50:09.133Z",
+  "generatedAt": "2026-10-22T10:55:20.177Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 267,
+    "total": 269,
     "linked": 249,
-    "orphan": 18,
-    "noindex": 21,
-    "notInXmlSitemap": 23,
+    "orphan": 20,
+    "noindex": 23,
+    "notInXmlSitemap": 25,
     "privateHidden": 5
   },
   "pages": [
@@ -734,6 +734,28 @@
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
+    },
+    {
+      "path": "/calendar/th",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/tj",
+      "title": "Schedule a Call | Tejas Jhaveri | Myntmore",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     },
     {
       "path": "/careers",
@@ -3515,11 +3537,12 @@
       "section": "other",
       "status": "orphan",
       "linkedFrom": [
+        "/calendar/th",
         "/founder-meeting"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": true,
-      "referencedIn": "app/founder-meeting/FounderMeetingClient.tsx",
+      "referencedIn": "app/calendar/th/CalendarPageClient.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },

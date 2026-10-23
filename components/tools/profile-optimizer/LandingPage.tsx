@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Check,
@@ -13,7 +13,7 @@ import {
   FileText,
   Search,
 } from "lucide-react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, animate } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import JsonLd from "@/app/components/JsonLd";
 import { buildHowToSchema } from "@/lib/schema";
@@ -134,6 +134,26 @@ const BEFORE_EXAMPLE = {
   ],
 };
 
+function AnimatedScore({ value, startFromZero = false }: { value: number; startFromZero?: boolean }) {
+  const shouldReduceMotion = useReducedMotion();
+  const [displayValue, setDisplayValue] = useState(startFromZero ? 0 : value);
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setDisplayValue(value);
+      return;
+    }
+    const controls = animate(displayValue, value, {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (latest) => setDisplayValue(Math.round(latest)),
+    });
+    return () => controls.stop();
+  }, [value, shouldReduceMotion]);
+
+  return <>{displayValue}</>;
+}
+
 interface LandingPageProps {
   onStart: () => void;
 }
@@ -143,7 +163,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
   const shouldReduceMotion = useReducedMotion();
   const currentAfter = AFTER_ANGLES[activeAngle];
 
-  // Apple-style critically damped spring physics: fast, smooth, zero oscillation
+  // Apple-style critically damped spring physics: smooth, instantaneous feel, zero unwanted overshoot
   const fluidSpring = {
     type: "spring" as const,
     stiffness: 420,
@@ -159,18 +179,37 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         className="pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 relative overflow-hidden"
         style={{ backgroundColor: "#F8F6F2" }}
       >
-        {/* Soft atmospheric ambient light consistent with site branding */}
-        <div
+        {/* Atmospheric ambient lighting with subtle continuous breath */}
+        <motion.div
           aria-hidden="true"
           className="absolute -top-32 -left-32 w-[580px] h-[580px] rounded-full pointer-events-none"
+          animate={shouldReduceMotion ? undefined : {
+            scale: [1, 1.05, 1],
+            opacity: [0.8, 1, 0.8],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           style={{
             background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,160,0,0.07) 42%, transparent 70%)",
             filter: "blur(60px)",
           }}
         />
-        <div
+        <motion.div
           aria-hidden="true"
           className="absolute -top-24 -right-32 w-[520px] h-[520px] rounded-full pointer-events-none"
+          animate={shouldReduceMotion ? undefined : {
+            scale: [1, 1.06, 1],
+            opacity: [0.75, 0.95, 0.75],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           style={{
             background: "radial-gradient(circle, rgba(245,183,49,0.16) 0%, rgba(245,183,49,0.04) 42%, transparent 70%)",
             filter: "blur(60px)",
@@ -178,8 +217,11 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         />
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          {/* Frosted brand pill badge */}
-          <div
+          {/* Animated frosted brand pill badge */}
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-6 backdrop-blur-md"
             style={{
               backgroundColor: "rgba(255,255,255,0.75)",
@@ -187,37 +229,56 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
             }}
           >
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: "#F5B731" }} aria-hidden="true" />
-            <span className="text-xs sm:text-sm font-bold tracking-wide" style={{ color: "#0A0A0A" }}>
+            <span className="text-xs sm:text-sm font-bold tracking-wide text-[#0A0A0A]">
               Free AI Profile Clarity Audit
             </span>
-          </div>
+          </motion.div>
 
           {/* Optical typography heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-3 tracking-[-0.035em] leading-[1.08] text-[#0A0A0A] text-balance">
+          <motion.h1
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-black mb-3 tracking-[-0.035em] leading-[1.08] text-[#0A0A0A] text-balance"
+          >
             Your headline is the first line of your pitch.
-          </h1>
+          </motion.h1>
 
-          {/* Signature Myntmore gold squiggle underline */}
+          {/* Animated SVG Squiggle Draw */}
           <div className="flex justify-center -mt-1 mb-6" aria-hidden="true">
             <svg viewBox="0 0 300 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[200px] sm:w-[250px]">
-              <path
+              <motion.path
                 d="M3 8 C30 3, 58 12, 86 8 S142 3, 170 8 S226 12, 254 8 S284 3, 297 8"
                 stroke="#F5B731"
                 strokeWidth="3.2"
                 strokeLinecap="round"
                 fill="none"
+                initial={shouldReduceMotion ? { pathLength: 1 } : { pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.25 }}
               />
             </svg>
           </div>
 
-          <p className="text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto text-[#52525B] tracking-[-0.01em]">
+          <motion.p
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto text-[#52525B] tracking-[-0.01em]"
+          >
             Most LinkedIn profiles read like passive job titles, not reasons to reply. Compare the generic baseline with our AI-optimized angles side by side.
-          </p>
+          </motion.p>
 
-          {/* Side-by-side Before and After Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 text-left max-w-5xl mx-auto items-stretch">
+          {/* Side-by-side Before and After Showcase with Staggered Spring Reveal */}
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.3 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-5 text-left max-w-5xl mx-auto items-stretch"
+          >
             {/* Left Card: Before (Generic) */}
-            <div
+            <motion.div
+              whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
               className="rounded-2xl p-6 sm:p-7 bg-white border border-[#E8E2D9] shadow-sm flex flex-col justify-between"
             >
               <div>
@@ -229,7 +290,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-semibold text-[#71675E]">Score:</span>
                     <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#F8F6F2] text-[#A14A08] border border-[#E8E2D9] tabular-nums">
-                      {BEFORE_EXAMPLE.score} / 100
+                      <AnimatedScore value={BEFORE_EXAMPLE.score} startFromZero /> / 100
                     </span>
                   </div>
                 </div>
@@ -251,9 +312,12 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                     Clarity Deductions Found
                   </div>
                   <div className="space-y-2">
-                    {BEFORE_EXAMPLE.checks.map((item) => (
-                      <div
+                    {BEFORE_EXAMPLE.checks.map((item, i) => (
+                      <motion.div
                         key={item.label}
+                        initial={shouldReduceMotion ? undefined : { opacity: 0, x: -6 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.35 + i * 0.05, duration: 0.2 }}
                         className="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-[#FAF8F5] border border-[#E8E2D9] text-xs"
                       >
                         <span className="font-semibold text-[#0A0A0A] flex items-center gap-2">
@@ -263,7 +327,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                         <span className="text-[#71675E] text-[11px] text-right truncate ml-2">
                           {item.note}
                         </span>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -272,16 +336,23 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
               <div className="mt-5 pt-3 border-t border-[#F0EBE1] text-xs text-[#71675E] italic">
                 Prospect verdict: Vague proposition leads to passive scrolling.
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Card: After (AI Optimized) */}
-            <div
-              className="rounded-2xl p-6 sm:p-7 bg-white relative flex flex-col justify-between"
+            <motion.div
+              whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
+              className="rounded-2xl p-6 sm:p-7 bg-white relative flex flex-col justify-between overflow-hidden"
               style={{
                 border: "2px solid #F5B731",
                 boxShadow: "0 10px 32px rgba(245,183,49,0.16)",
               }}
             >
+              {/* Subtle light-catching top edge highlight */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F5B731]/60 to-transparent pointer-events-none"
+              />
+
               <div>
                 {/* Header with High Score */}
                 <div className="flex items-center justify-between gap-3 pb-4 mb-4 border-b border-[#F0EBE1]">
@@ -301,7 +372,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                         color: "#0A0A0A",
                       }}
                     >
-                      {currentAfter.score} / 100
+                      <AnimatedScore value={currentAfter.score} startFromZero /> / 100
                     </span>
                   </div>
                 </div>
@@ -348,10 +419,10 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentAfter.key}
-                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 4 }}
+                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -4 }}
-                    transition={{ duration: 0.15 }}
+                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                    transition={{ type: "spring", stiffness: 420, damping: 30 }}
                     className="p-4 rounded-xl border relative mb-5"
                     style={{
                       backgroundColor: "#FFFFFF",
@@ -385,9 +456,12 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                       transition={{ duration: 0.15 }}
                       className="space-y-2"
                     >
-                      {currentAfter.checks.map((item) => (
-                        <div
+                      {currentAfter.checks.map((item, idx) => (
+                        <motion.div
                           key={item.label}
+                          initial={shouldReduceMotion ? undefined : { opacity: 0, x: -6 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.04, duration: 0.2 }}
                           className="flex items-center justify-between py-1.5 px-2.5 rounded-lg border text-xs"
                           style={{
                             backgroundColor: "rgba(245,183,49,0.06)",
@@ -406,7 +480,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                           <span className="text-[#0A0A0A] font-medium text-[11px] text-right truncate ml-2">
                             {item.note}
                           </span>
-                        </div>
+                        </motion.div>
                       ))}
                     </motion.div>
                   </AnimatePresence>
@@ -417,57 +491,75 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#F5B731]" />
                 Prospect verdict: High differentiation and verifiable authority drive inbound replies.
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Primary Action Button */}
-          <div className="text-center mt-10">
+          {/* Primary Action Button with Tactile Motion Feedback */}
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.45 }}
+            className="text-center mt-10"
+          >
             <Button
               onClick={onStart}
               variant="hero"
               size="xl"
-              className="rounded-full shadow-2xl active:scale-[0.97] transition-all duration-150 ease-out cursor-pointer"
+              className="rounded-full shadow-2xl group active:scale-[0.97] hover:scale-[1.02] transition-transform duration-150 ease-out cursor-pointer"
             >
               Audit My Profile
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-150" />
             </Button>
             <p className="mt-3 text-xs text-[#71675E] font-medium">
               Takes 2 minutes · No sign-up required · 100% Free
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* What the audit actually checks */}
+      {/* What the audit actually checks with Staggered Scroll Reveal */}
       <section className="py-20 px-4 sm:px-6 bg-white border-t border-[#E8E2D9]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <motion.div
+            initial={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4 }}
+            className="text-center max-w-xl mx-auto mb-14"
+          >
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] leading-tight text-[#0A0A0A] mb-3">
               What the audit actually checks
             </h2>
             <p className="text-base text-[#71675E] leading-relaxed">
               Five algorithmic checks evaluated directly against your headline and About section.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {SCORE_CHECKS.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
+                <motion.div
                   key={item.id}
-                  className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/50 hover:bg-[#FAF8F5] transition-all duration-200 active:scale-[0.99] flex flex-col justify-between"
+                  initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ type: "spring", stiffness: 350, damping: 28, delay: index * 0.08 }}
+                  whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
+                  className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/50 hover:bg-[#FAF8F5] transition-colors duration-200 active:scale-[0.99] flex flex-col justify-between group"
                   style={{
                     gridColumn: index === SCORE_CHECKS.length - 1 ? "1 / -1" : undefined,
                   }}
                 >
                   <div className="flex items-start gap-4">
-                    <div
+                    <motion.div
+                      whileHover={shouldReduceMotion ? undefined : { scale: 1.08, rotate: 3 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 20 }}
                       className="flex-shrink-0 h-10 w-10 rounded-xl flex items-center justify-center border border-[#F5B731]/40"
                       style={{ backgroundColor: "rgba(245,183,49,0.12)" }}
                     >
                       <Icon className="h-5 w-5 text-[#A14A08]" />
-                    </div>
+                    </motion.div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs font-mono font-bold text-[#A14A08]">
@@ -482,24 +574,30 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* How it works */}
+      {/* How it works with Staggered Scroll Reveal */}
       <section className="py-20 px-4 sm:px-6" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <motion.div
+            initial={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4 }}
+            className="text-center max-w-xl mx-auto mb-14"
+          >
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] leading-tight text-[#0A0A0A] mb-3">
               How it works
             </h2>
             <p className="text-base text-[#71675E] leading-relaxed">
               Three straightforward steps designed for busy founders and operators.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -521,9 +619,14 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                 desc: "Receive three high-converting headline rewrites, keyword gaps, and an optimized About script.",
                 icon: Sparkles,
               },
-            ].map((item) => (
-              <div
+            ].map((item, index) => (
+              <motion.div
                 key={item.step}
+                initial={shouldReduceMotion ? undefined : { opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ type: "spring", stiffness: 350, damping: 28, delay: index * 0.12 }}
+                whileHover={shouldReduceMotion ? undefined : { y: -4, transition: { duration: 0.15 } }}
                 className="rounded-2xl p-6 sm:p-8 bg-white border border-[#E8E2D9] shadow-sm flex flex-col justify-between"
               >
                 <div>
@@ -537,23 +640,29 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What you get free */}
+      {/* What you get free with Staggered Scroll Reveal */}
       <section className="py-20 px-4 sm:px-6 bg-white border-t border-[#E8E2D9]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center max-w-xl mx-auto mb-14">
+          <motion.div
+            initial={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4 }}
+            className="text-center max-w-xl mx-auto mb-14"
+          >
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-[-0.03em] leading-tight text-[#0A0A0A] mb-3">
               What you get, 100% free
             </h2>
             <p className="text-base text-[#71675E] leading-relaxed">
               Comprehensive positioning diagnostics and copy-paste assets ready for deployment.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[
@@ -577,11 +686,16 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                 desc: "Identify the critical industry terms your ICP actively searches for that your profile currently lacks.",
                 icon: Search,
               },
-            ].map((item) => {
+            ].map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
+                <motion.div
                   key={item.title}
+                  initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ type: "spring", stiffness: 350, damping: 28, delay: index * 0.08 }}
+                  whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
                   className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] transition-colors"
                 >
                   <div
@@ -596,7 +710,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
                   <p className="text-sm leading-relaxed text-[#71675E]">
                     {item.desc}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -608,12 +722,18 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         className="py-16 px-4 sm:px-6 border-y border-[#E8E2D9]"
         style={{ backgroundColor: "#F8F6F2" }}
       >
-        <div className="max-w-2xl mx-auto text-center">
+        <motion.div
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="max-w-2xl mx-auto text-center"
+        >
           <p className="text-base sm:text-lg leading-relaxed text-[#3D3D3D]">
             Built by the same team that has scripted the outbound and positioning funnels behind{" "}
             <span className="font-bold text-[#0A0A0A]">12K+ B2B meetings booked</span> for high-growth companies.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Final closing CTA */}
@@ -624,7 +744,13 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
           borderTop: "1px solid rgba(245,183,49,0.35)",
         }}
       >
-        <div className="max-w-2xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-2xl mx-auto text-center relative z-10"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 tracking-[-0.03em] leading-tight text-[#0A0A0A]">
             Stop guessing what your profile says about you.
           </h2>
@@ -635,12 +761,12 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
             onClick={onStart}
             variant="hero"
             size="xl"
-            className="rounded-full shadow-2xl active:scale-[0.97] transition-all duration-150 ease-out cursor-pointer"
+            className="rounded-full shadow-2xl group active:scale-[0.97] hover:scale-[1.02] transition-transform duration-150 ease-out cursor-pointer"
           >
             Audit My Profile
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-150" />
           </Button>
-        </div>
+        </motion.div>
       </section>
 
       <RelatedTools currentSlug="linkedin-optimizer" />

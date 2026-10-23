@@ -9,6 +9,7 @@ import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { caseStudyFilterSlug, CASE_STUDY_FILTERS } from "@/lib/case-study-filters";
 import { textTone } from "@/lib/colors";
+import { CASE_STUDY_MARKETS, MARKET_OF_SLUG, marketFromSlug } from "@/lib/case-study-markets";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -342,19 +343,41 @@ const INDUSTRIES = CASE_STUDY_FILTERS.map((filter) => filter.label);
 // the original cards first.
 const SHOW_MORE_STEP = 10;
 
-export default function CaseStudiesClient({ initialFilter = "All", libraryCards = [] }: { initialFilter?: string; libraryCards?: CaseStudy[] }) {
+export default function CaseStudiesClient({ initialFilter = "All", initialMarket, libraryCards = [] }: { initialFilter?: string; initialMarket?: string; libraryCards?: CaseStudy[] }) {
   const industryFilter = initialFilter;
+  const market = initialMarket ? marketFromSlug(initialMarket) : null;
   const allCaseStudies = [...CASE_STUDIES, ...libraryCards];
-  const filteredCaseStudies = industryFilter === "All" ? allCaseStudies : allCaseStudies.filter((cs) => cs.industry === industryFilter);
+  const filteredCaseStudies = market
+    ? allCaseStudies.filter((cs) => MARKET_OF_SLUG[cs.slug] === market.slug)
+    : industryFilter === "All" ? allCaseStudies : allCaseStudies.filter((cs) => cs.industry === industryFilter);
+  const marketIndustries = market ? Array.from(new Set(filteredCaseStudies.map((cs) => cs.industry))) : [];
   // The "All" view starts with the original cards; the library follows on request. An industry
   // view is short (at most about a dozen cards), so it shows everything at once.
   const [shown, setShown] = useState(CASE_STUDIES.length);
-  const limit = industryFilter === "All" ? shown : filteredCaseStudies.length;
+  const limit = industryFilter === "All" && !market ? shown : filteredCaseStudies.length;
   const remaining = filteredCaseStudies.length - limit;
 
   return (
     <InnerLayout>
-      <JsonLd data={industryFilter === "All" ? BREADCRUMB_SCHEMA : buildBreadcrumbSchema([
+      {market && (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: `B2B lead generation case studies in ${market.label}`,
+            url: `${SITE_URL}/case-studies/markets/${market.slug}`,
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: filteredCaseStudies.map((cs, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}/case-studies/${cs.slug}`, name: cs.title })),
+            },
+          }}
+        />
+      )}
+      <JsonLd data={market ? buildBreadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "Case Studies", url: `${SITE_URL}/case-studies` },
+        { name: market.label, url: `${SITE_URL}/case-studies/markets/${market.slug}` },
+      ]) : industryFilter === "All" ? BREADCRUMB_SCHEMA : buildBreadcrumbSchema([
         { name: "Home", url: SITE_URL },
         { name: "Case Studies", url: `${SITE_URL}/case-studies` },
         { name: industryFilter, url: `${SITE_URL}/case-studies/${caseStudyFilterSlug(industryFilter)}` },
@@ -365,19 +388,36 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
         <div className="relative max-w-4xl mx-auto">
           <div className="mb-4">
             <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
-              Client Results
+              {market ? `Client Results · ${market.label}` : "Client Results"}
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-            Results in the CRM,<br />
-            <span className="relative inline-block">
-              not the deck
-              <Underline />
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
-            Deep dives into how we built pipelines for SaaS, services, and eCommerce tech. Real numbers, real systems.
-          </p>
+          {market ? (
+            <>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
+                B2B lead generation case studies in{" "}
+                <span className="relative inline-block">
+                  {market.label}
+                  <Underline />
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
+                {filteredCaseStudies.length} Myntmore case studies from outbound campaigns in {market.phrase}, across {marketIndustries.join(", ")}. Each one has the real numbers: meetings booked, reply rates and what we did to get them.
+              </p>
+            </>
+          ) : (
+            <>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
+                Results in the CRM,<br />
+                <span className="relative inline-block">
+                  not the deck
+                  <Underline />
+                </span>
+              </h1>
+              <p className="text-lg sm:text-xl max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
+                Deep dives into how we built pipelines for SaaS, services, and eCommerce tech. Real numbers, real systems.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
@@ -387,7 +427,7 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
       </div>
 
       {/* Stat strip */}
-      <FadeIn>
+      {!market && <FadeIn>
         <section className="py-10 px-4" style={{ backgroundColor: "#ffffff", borderBottom: "1px solid #E8E2D9" }}>
           <p className="text-center text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#71675E" }}>
             Highlights from the case studies below, not a sitewide average
@@ -401,14 +441,14 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
             ))}
           </div>
         </section>
-      </FadeIn>
+      </FadeIn>}
 
       {/* Case study cards */}
       <section className="py-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap items-center gap-2 mb-10" role="group" aria-label="Filter case studies by industry">
             {INDUSTRIES.map((industry) => {
-              const active = industryFilter === industry;
+              const active = !market && industryFilter === industry;
               return (
                 <Link
                   key={industry}
@@ -425,6 +465,26 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
               );
             })}
           </div>
+          <div className="flex flex-wrap items-center gap-2 mb-10" role="group" aria-label="Browse case studies by market">
+            <span className="text-xs font-bold uppercase tracking-widest mr-1" style={{ color: "#71675E" }}>Browse by market</span>
+            {CASE_STUDY_MARKETS.map((m) => {
+              const active = market?.slug === m.slug;
+              return (
+                <Link
+                  key={m.slug}
+                  href={`/case-studies/markets/${m.slug}`}
+                  scroll={false}
+                  aria-current={active ? "page" : undefined}
+                  className="inline-flex min-h-[44px] items-center text-sm font-semibold px-4 py-2 rounded-full border transition-colors"
+                  style={active
+                    ? { backgroundColor: "#F5B731", color: "#0A0A0A", borderColor: "#F5B731" }
+                    : { backgroundColor: "#ffffff", color: "#52525B", borderColor: "#E8E2D9" }}
+                >
+                  {m.label}
+                </Link>
+              );
+            })}
+          </div>
           <div className="space-y-8">
             {filteredCaseStudies.map((cs, i) => (
               // Every card is in the page (so every link is crawlable); cards past the limit are just hidden.
@@ -435,7 +495,7 @@ export default function CaseStudiesClient({ initialFilter = "All", libraryCards 
               </div>
             ))}
           </div>
-          {industryFilter === "All" && remaining > 0 && (
+          {industryFilter === "All" && !market && remaining > 0 && (
             <div className="mt-10 text-center">
               <p className="mb-4 text-sm" style={{ color: "#71675E" }}>Showing {limit} of {filteredCaseStudies.length} case studies</p>
               <button

@@ -5,6 +5,7 @@ import LeadCaptureForm from "@/app/components/LeadCaptureForm";
 import StatTicker from "@/app/components/StatTicker";
 import JsonLd from "@/app/components/JsonLd";
 import { textTone } from "@/lib/colors";
+import { marketOfCaseStudy } from "@/lib/case-study-markets";
 
 export interface CaseStudyLayoutProps {
   slug: string;
@@ -46,6 +47,7 @@ export default function CaseStudyLayout({
   services,
   articleSchema,
 }: CaseStudyLayoutProps) {
+  const market = marketOfCaseStudy(slug);
   return (
     <InnerLayout>
       <JsonLd data={articleSchema} />
@@ -59,6 +61,11 @@ export default function CaseStudyLayout({
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accent }} />
               <span className="text-xs font-bold uppercase tracking-[0.15em]">{tag}</span>
             </div>
+            {market && (
+              <Link href={`/case-studies/markets/${market.slug}`} className="inline-flex min-h-[44px] items-center rounded-full border px-4 text-xs font-bold hero-fade transition-colors hover:bg-white" style={{ borderColor: "#E8E2D9", color: "#A14A08", backgroundColor: "#FFFFFF" }}>
+                More case studies in {market.label} &rarr;
+              </Link>
+            )}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             {title}

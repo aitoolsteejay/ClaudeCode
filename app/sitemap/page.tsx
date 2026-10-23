@@ -1,3 +1,4 @@
+import { CASE_STUDY_MARKETS } from "@/lib/case-study-markets";
 import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
@@ -65,6 +66,7 @@ const GROUPS: SitemapGroup[] = [
     accent: "#14B8A6",
     links: [
       { label: "All Case Studies", href: "/case-studies" },
+      ...CASE_STUDY_MARKETS.map((m) => ({ label: `Case Studies in ${m.label}`, href: `/case-studies/markets/${m.slug}` })),
       { label: "SaaS, Series A", href: "/case-studies/saas-series-a" },
       { label: "Professional Services, LinkedIn", href: "/case-studies/professional-services-linkedin" },
       { label: "Ecommerce Conversion Playbook", href: "/case-studies/ecommerce-conversion-playbook" },

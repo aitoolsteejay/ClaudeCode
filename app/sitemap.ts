@@ -1,3 +1,4 @@
+import { CASE_STUDY_MARKETS } from "@/lib/case-study-markets";
 import type { MetadataRoute } from "next";
 import sitemapDates from "@/lib/sitemap-dates.json";
 
@@ -42,6 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/do-it-yourself`, lastModified: lastMod("/services/do-it-yourself"), changeFrequency: "monthly", priority: 0.8 },
     // Case studies
     { url: `${base}/case-studies`, lastModified: lastMod("/case-studies"), changeFrequency: "monthly", priority: 0.8 },
+    // Case studies by market (country), generated from lib/case-study-markets.ts
+    ...CASE_STUDY_MARKETS.map((m) => ({ url: `${base}/case-studies/markets/${m.slug}`, lastModified: lastMod(`/case-studies/markets/${m.slug}`), changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: `${base}/case-studies/saas-series-a`, lastModified: lastMod("/case-studies/saas-series-a"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/professional-services-linkedin`, lastModified: lastMod("/case-studies/professional-services-linkedin"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/ecommerce-conversion-playbook`, lastModified: lastMod("/case-studies/ecommerce-conversion-playbook"), changeFrequency: "monthly", priority: 0.7 },

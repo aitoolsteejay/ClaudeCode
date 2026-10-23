@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-23T07:48:50.770Z",
+  "generatedAt": "2026-10-23T10:00:12.016Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 281,
-    "linked": 250,
+    "total": 282,
+    "linked": 251,
     "orphan": 31,
     "noindex": 35,
-    "notInXmlSitemap": 37,
+    "notInXmlSitemap": 38,
     "privateHidden": 5
   },
   "pages": [
@@ -1665,6 +1665,17 @@
       "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/markets/[market]",
+      "title": "[Market]",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
+      "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
     {

@@ -138,6 +138,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "58 Meetings from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections" },
       { label: "The Cold Email Stack Behind an Extra $7,000", href: "/resources/guides/cold-email-tech-stack" },
       { label: "5 Claude Prompts for Sales Calls", href: "/resources/guides/claude-sales-call-prompts" },
+      { label: "LinkedIn Content-to-Calls Starter Kit", href: "/resources/guides/linkedin-content-to-calls-starter-kit" },
       { label: "Job Applications Are a Sales Funnel", href: "/resources/guides/job-applications-sales-funnel" },
     ],
   },

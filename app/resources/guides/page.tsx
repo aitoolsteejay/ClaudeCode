@@ -34,6 +34,14 @@ export const metadata: Metadata = {
 
 const GUIDES = [
   {
+    href: "/resources/guides/linkedin-content-to-calls-starter-kit",
+    tag: "LinkedIn Lead Generation",
+    title: "The LinkedIn Content-to-Calls Starter Kit",
+    excerpt: "The 3-part framework behind LinkedIn calls, plus 5 post templates, 3 CTAs, 3 follow-up messages and a 10-minute daily routine you can start today.",
+    readTime: "5 min read",
+    accent: "#EA580C",
+  },
+  {
     href: "/resources/guides/dos-and-donts-of-outreach",
     tag: "Outreach Craft",
     title: "Pattern Disruption: The Do's and Don'ts of Cold Outreach",

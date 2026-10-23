@@ -10,6 +10,7 @@ import Underline from "../how-to-set-up-vibe-prospecting/Underline";
 import { buildArticleSchema } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { ReadingProgress, RangeStat, RoutineTimeline, StaggerList } from "./KitMotion";
 
 const URL = "https://www.myntmore.com/resources/guides/linkedin-content-to-calls-starter-kit";
 const ACCENT = "#EA580C";
@@ -110,14 +111,12 @@ const FOLLOWUPS = [
 ];
 
 const ROUTINE = [
-  { time: "Minute 1–3", task: "Comment on 3 posts in your industry" },
-  { time: "Minute 4–6", task: "Send 3 DMs to people who engaged" },
-  { time: "Minute 7–10", task: "Publish or draft 1 micro-insight" },
+  { time: "Minute 1–3", task: "Comment on 3 posts in your industry", minutes: 3 },
+  { time: "Minute 4–6", task: "Send 3 DMs to people who engaged", minutes: 3 },
+  { time: "Minute 7–10", task: "Publish or draft 1 micro-insight", minutes: 4 },
 ];
 
 const EXPECT = [
-  "5–20 new conversations per week",
-  "1–4 calls per week",
   "DMs from people who resonate with your insights",
   "A LinkedIn presence that feels natural, not forced",
   "More trust, familiarity, and visibility within your niche",
@@ -139,6 +138,7 @@ const H2 = "text-2xl sm:text-3xl font-black";
 export default function LinkedInContentToCallsStarterKit() {
   return (
     <InnerLayout>
+      <ReadingProgress />
       <JsonLd data={ARTICLE_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-160px", left: "-180px", width: 680, height: 680, borderRadius: "50%", background: "radial-gradient(circle,rgba(234,88,12,0.16),rgba(234,88,12,0.05) 42%,transparent 70%)", filter: "blur(55px)" }} />
@@ -180,8 +180,9 @@ export default function LinkedInContentToCallsStarterKit() {
               <h2 className={`${H2} mb-3`} style={{ color: "#0a0a0a" }}>1. The 3-part framework that drives calls</h2>
               <p className="text-base leading-relaxed mb-8" style={{ color: "#52525B" }}>This is the exact structure used in the reel.</p>
               <div className="space-y-6">
-                {FRAMEWORK.map((f) => (
-                  <div key={f.n} className="rounded-2xl border p-6 sm:p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                {FRAMEWORK.map((f, i) => (
+                  <FadeIn key={f.n} delay={i * 120}>
+                  <div className="rounded-2xl border p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                     <div className="flex items-center gap-3 mb-3">
                       <span className="w-9 h-9 rounded-full inline-flex items-center justify-center text-sm font-black shrink-0" style={{ backgroundColor: "rgba(234,88,12,0.1)", color: textTone(ACCENT), border: "1px solid rgba(234,88,12,0.25)" }}>{f.n}</span>
                       <h3 className="text-xl font-black" style={{ color: "#0a0a0a" }}>{f.title}</h3>
@@ -198,6 +199,7 @@ export default function LinkedInContentToCallsStarterKit() {
                     </ul>
                     <p className="text-sm font-bold rounded-lg px-4 py-3" style={{ backgroundColor: "#FEF9EC", color: "#0a0a0a", border: "1px solid rgba(245,183,49,0.35)" }}>Goal: {f.goal}</p>
                   </div>
+                  </FadeIn>
                 ))}
               </div>
             </section>
@@ -210,28 +212,34 @@ export default function LinkedInContentToCallsStarterKit() {
 
               <h3 className="text-xl font-black mb-5" style={{ color: "#0a0a0a" }}>A) 5 content templates</h3>
               <div className="space-y-6 mb-12">
-                {POSTS.map((p) => (
-                  <div key={p.id}>
+                {POSTS.map((p, i) => (
+                  <FadeIn key={p.id} delay={i * 80}>
+                  <div>
                     <p className="text-sm font-black mb-2" style={{ color: "#0a0a0a" }}><span style={{ color: textTone(ACCENT) }}>{p.id}</span> &nbsp;{p.title}</p>
                     <CopyBlock text={p.text} accent={ACCENT} label={`Template ${p.id}`} successMessage="Template copied to clipboard" />
                   </div>
+                  </FadeIn>
                 ))}
               </div>
 
               <h3 className="text-xl font-black mb-5" style={{ color: "#0a0a0a" }}>B) 3 CTA templates (high response)</h3>
               <div className="space-y-4 mb-12">
-                {CTAS.map((c) => (
-                  <CopyBlock key={c.id} text={c.text} accent={ACCENT} label={`CTA ${c.id}`} successMessage="CTA copied to clipboard" />
+                {CTAS.map((c, i) => (
+                  <FadeIn key={c.id} delay={i * 80}>
+                    <CopyBlock text={c.text} accent={ACCENT} label={`CTA ${c.id}`} successMessage="CTA copied to clipboard" />
+                  </FadeIn>
                 ))}
               </div>
 
               <h3 className="text-xl font-black mb-5" style={{ color: "#0a0a0a" }}>C) 3 follow-up messages (you &rarr; them)</h3>
               <div className="space-y-6">
-                {FOLLOWUPS.map((m) => (
-                  <div key={m.when}>
+                {FOLLOWUPS.map((m, i) => (
+                  <FadeIn key={m.when} delay={i * 80}>
+                  <div>
                     <p className="text-sm font-black mb-2" style={{ color: "#0a0a0a" }}>{m.when}</p>
                     <CopyBlock text={m.text} accent={ACCENT} label="Message" successMessage="Message copied to clipboard" />
                   </div>
+                  </FadeIn>
                 ))}
               </div>
             </section>
@@ -241,14 +249,7 @@ export default function LinkedInContentToCallsStarterKit() {
             <section>
               <h2 className={`${H2} mb-3`} style={{ color: "#0a0a0a" }}>3. The 10-minute daily routine</h2>
               <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>If you do just this every day, you will see results.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-                {ROUTINE.map((r) => (
-                  <div key={r.time} className="rounded-xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                    <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: textTone(ACCENT) }}>{r.time}</p>
-                    <p className="text-sm font-bold leading-snug" style={{ color: "#0a0a0a" }}>{r.task}</p>
-                  </div>
-                ))}
-              </div>
+              <div className="mb-4"><RoutineTimeline steps={ROUTINE} /></div>
               <p className="text-sm" style={{ color: "#52525B" }}>Simple. Consistent. Enough to move the needle.</p>
             </section>
           </FadeIn>
@@ -257,14 +258,11 @@ export default function LinkedInContentToCallsStarterKit() {
             <section>
               <h2 className={`${H2} mb-3`} style={{ color: "#0a0a0a" }}>4. What to expect in 30 days</h2>
               <p className="text-base leading-relaxed mb-5" style={{ color: "#52525B" }}>If you apply this starter kit, here&apos;s the realistic outcome:</p>
-              <ul className="space-y-2 mb-5">
-                {EXPECT.map((e) => (
-                  <li key={e} className="text-sm flex gap-2" style={{ color: "#3D3D3D" }}>
-                    <span aria-hidden="true" style={{ color: ACCENT }}>&bull;</span>
-                    <span>{e}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <RangeStat from={5} to={20} label="new conversations per week" />
+                <RangeStat from={1} to={4} label="calls per week" />
+              </div>
+              <div className="mb-5"><StaggerList items={EXPECT} /></div>
               <p className="text-base font-bold" style={{ color: "#0a0a0a" }}>You build a system, not random content.</p>
             </section>
           </FadeIn>
@@ -290,7 +288,7 @@ export default function LinkedInContentToCallsStarterKit() {
               <h2 className="text-2xl font-black mb-5" style={{ color: "#0a0a0a" }}>Keep the momentum going</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {RELATED.map((r) => (
-                  <Link key={r.href} href={r.href} className="group block rounded-xl border p-4 transition-colors duration-150 hover:border-[#EA580C]" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                  <Link key={r.href} href={r.href} className="group block rounded-xl border p-4 transition-all duration-200 hover:border-[#EA580C] hover:-translate-y-0.5 hover:shadow-md" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                     <p className="text-sm font-black mb-1" style={{ color: "#0a0a0a" }}>{r.label} <span aria-hidden="true" style={{ color: ACCENT }}>&rarr;</span></p>
                     <p className="text-xs leading-relaxed" style={{ color: "#52525B" }}>{r.note}</p>
                   </Link>

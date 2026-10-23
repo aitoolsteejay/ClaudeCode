@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   Check,
@@ -10,6 +10,8 @@ import {
   BarChart3,
   Target,
   Zap,
+  CheckCircle2,
+  AlertCircle,
   FileText,
   Search,
 } from "lucide-react";
@@ -60,83 +62,106 @@ const SCORE_CHECKS = [
   },
 ];
 
-type AngleKey = "authority" | "problem" | "social";
+type DemoTabKey = "before" | "authority" | "problem" | "social";
 
-interface AngleOption {
-  key: AngleKey;
-  label: string;
+const DEMO_TABS: DemoTabKey[] = ["before", "authority", "problem", "social"];
+
+interface DemoScenario {
+  key: DemoTabKey;
+  tabLabel: string;
+  badge: string;
+  subTitle: string;
   headline: string;
+  charCount: number;
   score: number;
   verdict: string;
-  charCount: number;
-  checks: Array<{ label: string; note: string }>;
+  verdictTone: "warning" | "success";
+  verdictDesc: string;
+  checks: Array<{ id: string; label: string; note: string; passed: boolean }>;
 }
 
-const AFTER_ANGLES: Record<AngleKey, AngleOption> = {
+const DEMO_SCENARIOS: Record<DemoTabKey, DemoScenario> = {
+  before: {
+    key: "before",
+    tabLabel: "Current (Generic)",
+    badge: "Generic Positioning",
+    subTitle: "Unoptimized Profile",
+    headline: "Marketing Leader | Passionate about growth | Helping brands scale to the next level",
+    charCount: 81,
+    score: 42,
+    verdict: "Needs immediate work",
+    verdictTone: "warning",
+    verdictDesc: "No defined ICP, unproven metrics, and generic buzzwords cause prospects to scroll past.",
+    checks: [
+      { id: "icp", label: "References target ICP", note: "Missing target role or industry", passed: false },
+      { id: "problem", label: "States a concrete problem verb", note: "Vague phrasing without a specific pain point", passed: false },
+      { id: "metric", label: "Backs positioning with metrics", note: "Zero revenue, scale, or percentage metrics", passed: false },
+      { id: "fluff", label: "Eliminates empty buzzwords", note: "Trips flag on filler words (passionate)", passed: false },
+      { id: "authority", label: "Proves verified authority", note: "Unverified generic title without track record", passed: false },
+    ],
+  },
   authority: {
     key: "authority",
-    label: "Authority Angle",
+    tabLabel: "Authority Angle",
+    badge: "Optimized Rewrite",
+    subTitle: "Authority Angle",
     headline: "Scaled outbound pipeline past $10M ARR for 40+ B2B SaaS teams. Here is what moves inbound replies.",
+    charCount: 104,
     score: 94,
     verdict: "High inbound conversion",
-    charCount: 104,
+    verdictTone: "success",
+    verdictDesc: "Clear ICP, verifiable revenue metrics, and proven executive track record that invites inbound replies.",
     checks: [
-      { label: "Target ICP", note: "B2B SaaS teams" },
-      { label: "Problem Verb", note: "Moves inbound replies" },
-      { label: "Concrete Metric", note: "Past $10M ARR" },
-      { label: "Zero Fluff", note: "Zero empty filler words" },
-      { label: "Verifiable Authority", note: "40+ B2B SaaS teams" },
+      { id: "icp", label: "References target ICP", note: "Direct focus on B2B SaaS teams", passed: true },
+      { id: "problem", label: "States a concrete problem verb", note: "Moves inbound replies and pipeline conversion", passed: true },
+      { id: "metric", label: "Backs positioning with metrics", note: "Concrete $10M ARR scale metric", passed: true },
+      { id: "fluff", label: "Eliminates empty buzzwords", note: "Zero fluff words or corporate jargon", passed: true },
+      { id: "authority", label: "Proves verified authority", note: "Verifiable proof with 40+ enterprise clients", passed: true },
     ],
   },
   problem: {
     key: "problem",
-    label: "Problem Solver",
+    tabLabel: "Problem Solver",
+    badge: "Optimized Rewrite",
+    subTitle: "Problem Solver",
     headline: "Helping Series A-B B2B SaaS founders fix leaking sales funnels and convert cold pipeline into qualified demos.",
+    charCount: 110,
     score: 92,
     verdict: "High inbound conversion",
-    charCount: 110,
+    verdictTone: "success",
+    verdictDesc: "Names exact buyer persona, diagnoses acute funnel pain points, and promises clear business outcomes.",
     checks: [
-      { label: "Target ICP", note: "Series A-B B2B SaaS founders" },
-      { label: "Problem Verb", note: "Fix leaking sales funnels" },
-      { label: "Concrete Metric", note: "Qualified demos and pipeline" },
-      { label: "Zero Fluff", note: "Action-driven problem vocabulary" },
-      { label: "Verifiable Authority", note: "Targeted founder-stage expertise" },
+      { id: "icp", label: "References target ICP", note: "Specific to Series A-B B2B SaaS founders", passed: true },
+      { id: "problem", label: "States a concrete problem verb", note: "Fix leaking sales funnels", passed: true },
+      { id: "metric", label: "Backs positioning with metrics", note: "Qualified demos and cold pipeline conversion", passed: true },
+      { id: "fluff", label: "Eliminates empty buzzwords", note: "Clear, problem-first diagnostic vocabulary", passed: true },
+      { id: "authority", label: "Proves verified authority", note: "Tailored to high-growth startup stage", passed: true },
     ],
   },
   social: {
     key: "social",
-    label: "Social Proof",
+    tabLabel: "Social Proof",
+    badge: "Optimized Rewrite",
+    subTitle: "Social Proof",
     headline: "Trusted by 40+ SaaS leaders to build repeatable outbound engines. +240% average reply rate lift.",
+    charCount: 102,
     score: 96,
     verdict: "High inbound conversion",
-    charCount: 102,
+    verdictTone: "success",
+    verdictDesc: "Leads with peer validation and hard quantifiable lift percentages to eliminate buyer skepticism.",
     checks: [
-      { label: "Target ICP", note: "SaaS leaders and growth teams" },
-      { label: "Problem Verb", note: "Build repeatable outbound engines" },
-      { label: "Concrete Metric", note: "+240% average reply rate lift" },
-      { label: "Zero Fluff", note: "Pure outcome metrics" },
-      { label: "Verifiable Authority", note: "Trusted by 40+ SaaS leaders" },
+      { id: "icp", label: "References target ICP", note: "Targeted to SaaS leaders and revenue teams", passed: true },
+      { id: "problem", label: "States a concrete problem verb", note: "Build repeatable outbound sales engines", passed: true },
+      { id: "metric", label: "Backs positioning with metrics", note: "+240% average reply rate lift", passed: true },
+      { id: "fluff", label: "Eliminates empty buzzwords", note: "Zero buzzwords, pure outcome metrics", passed: true },
+      { id: "authority", label: "Proves verified authority", note: "Endorsed and trusted by 40+ leaders", passed: true },
     ],
   },
 };
 
-const BEFORE_EXAMPLE = {
-  headline: "Marketing Leader | Passionate about growth | Helping brands scale to the next level",
-  score: 42,
-  verdict: "Needs work",
-  charCount: 81,
-  checks: [
-    { label: "Target ICP", note: "Missing role, industry, or stage" },
-    { label: "Problem Verb", note: "\"Helping scale\" is unspecific" },
-    { label: "Concrete Metric", note: "No revenue or scale markers" },
-    { label: "Zero Fluff", note: "Trips flag on \"passionate\"" },
-    { label: "Verifiable Authority", note: "Unverified generic title" },
-  ],
-};
-
-function AnimatedScore({ value, startFromZero = false }: { value: number; startFromZero?: boolean }) {
+function AnimatedScore({ value }: { value: number }) {
   const shouldReduceMotion = useReducedMotion();
-  const [displayValue, setDisplayValue] = useState(startFromZero ? 0 : value);
+  const [displayValue, setDisplayValue] = useState(value);
 
   useEffect(() => {
     if (shouldReduceMotion) {
@@ -144,7 +169,7 @@ function AnimatedScore({ value, startFromZero = false }: { value: number; startF
       return;
     }
     const controls = animate(displayValue, value, {
-      duration: 0.5,
+      duration: 0.45,
       ease: [0.16, 1, 0.3, 1],
       onUpdate: (latest) => setDisplayValue(Math.round(latest)),
     });
@@ -159,11 +184,27 @@ interface LandingPageProps {
 }
 
 const LandingPage = ({ onStart }: LandingPageProps) => {
-  const [activeAngle, setActiveAngle] = useState<AngleKey>("authority");
+  const [activeTab, setActiveTab] = useState<DemoTabKey>("problem");
+  const [isPaused, setIsPaused] = useState(false);
   const shouldReduceMotion = useReducedMotion();
-  const currentAfter = AFTER_ANGLES[activeAngle];
+  const scenario = DEMO_SCENARIOS[activeTab];
 
-  // Apple-style critically damped spring physics: smooth, instantaneous feel, zero unwanted overshoot
+  // Auto-switch tabs every 4 seconds so the preview continually demonstrates the transformation
+  useEffect(() => {
+    if (isPaused || shouldReduceMotion) return;
+
+    const interval = setInterval(() => {
+      setActiveTab((prev) => {
+        const currentIndex = DEMO_TABS.indexOf(prev);
+        const nextIndex = (currentIndex + 1) % DEMO_TABS.length;
+        return DEMO_TABS[nextIndex];
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, shouldReduceMotion]);
+
+  // Apple-style critically damped spring physics: smooth, instantaneous feel, zero unwanted bounce
   const fluidSpring = {
     type: "spring" as const,
     stiffness: 420,
@@ -179,7 +220,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         className="pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 relative overflow-hidden"
         style={{ backgroundColor: "#F8F6F2" }}
       >
-        {/* Atmospheric ambient lighting with subtle continuous breath */}
+        {/* Soft atmospheric ambient light */}
         <motion.div
           aria-hidden="true"
           className="absolute -top-32 -left-32 w-[580px] h-[580px] rounded-full pointer-events-none"
@@ -216,8 +257,8 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
           }}
         />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          {/* Animated frosted brand pill badge */}
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          {/* Frosted brand pill badge */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -244,7 +285,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
             Your headline is the first line of your pitch.
           </motion.h1>
 
-          {/* Animated SVG Squiggle Draw */}
+          {/* Signature Myntmore gold squiggle underline with self-drawing animation */}
           <div className="flex justify-center -mt-1 mb-6" aria-hidden="true">
             <svg viewBox="0 0 300 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[200px] sm:w-[250px]">
               <motion.path
@@ -264,260 +305,222 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
             initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto text-[#52525B] tracking-[-0.01em]"
+            className="text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto text-[#52525B] tracking-[-0.01em]"
           >
-            Most LinkedIn profiles read like passive job titles, not reasons to reply. Compare the generic baseline with our AI-optimized angles side by side.
+            Most LinkedIn profiles read like passive job titles, not reasons to reply. Watch the live interactive preview below cycle through generic vs. high-converting angles.
           </motion.p>
 
-          {/* Side-by-side Before and After Showcase with Staggered Spring Reveal */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.3 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-5 text-left max-w-5xl mx-auto items-stretch"
+          {/* Continuous Auto-Switching Showcase Device */}
+          <div
+            className="max-w-3xl mx-auto text-left relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Left Card: Before (Generic) */}
-            <motion.div
-              whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
-              className="rounded-2xl p-6 sm:p-7 bg-white border border-[#E8E2D9] shadow-sm flex flex-col justify-between"
-            >
-              <div>
-                {/* Header */}
-                <div className="flex items-center justify-between gap-3 pb-4 mb-4 border-b border-[#F0EBE1]">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#71675E] bg-[#F4EFE6] px-2.5 py-1 rounded-md">
-                    Before · Generic Profile
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-semibold text-[#71675E]">Score:</span>
-                    <span className="text-xs font-bold px-2 py-0.5 rounded bg-[#F8F6F2] text-[#A14A08] border border-[#E8E2D9] tabular-nums">
-                      <AnimatedScore value={BEFORE_EXAMPLE.score} startFromZero /> / 100
-                    </span>
-                  </div>
-                </div>
-
-                {/* Headline Box */}
-                <div className="p-4 rounded-xl bg-[#F8F6F2] border border-[#E8E2D9] mb-5">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#71675E] mb-1.5 flex justify-between">
-                    <span>Current Headline</span>
-                    <span className="font-mono text-[10px] text-[#71675E]">{BEFORE_EXAMPLE.charCount} chars</span>
-                  </div>
-                  <p className="text-base font-semibold leading-snug text-[#71675E]">
-                    &ldquo;{BEFORE_EXAMPLE.headline}&rdquo;
-                  </p>
-                </div>
-
-                {/* 5 Deductions Breakdown */}
-                <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#71675E] mb-2.5">
-                    Clarity Deductions Found
-                  </div>
-                  <div className="space-y-2">
-                    {BEFORE_EXAMPLE.checks.map((item, i) => (
-                      <motion.div
-                        key={item.label}
-                        initial={shouldReduceMotion ? undefined : { opacity: 0, x: -6 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.35 + i * 0.05, duration: 0.2 }}
-                        className="flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-[#FAF8F5] border border-[#E8E2D9] text-xs"
-                      >
-                        <span className="font-semibold text-[#0A0A0A] flex items-center gap-2">
-                          <X className="h-3.5 w-3.5 text-[#A14A08] flex-shrink-0" strokeWidth={2.5} />
-                          {item.label}
-                        </span>
-                        <span className="text-[#71675E] text-[11px] text-right truncate ml-2">
-                          {item.note}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+            {/* Segmented Control Bar with Auto-Cycle Progress */}
+            <div className="flex justify-center mb-5">
+              <div
+                role="tablist"
+                aria-label="Before and after positioning angles"
+                className="inline-flex p-1 rounded-full border border-[#E0D9CE] backdrop-blur-xl bg-white/80 shadow-sm max-w-full overflow-x-auto scrollbar-none relative"
+              >
+                {DEMO_TABS.map((tabKey) => {
+                  const isSelected = activeTab === tabKey;
+                  const item = DEMO_SCENARIOS[tabKey];
+                  return (
+                    <button
+                      key={tabKey}
+                      type="button"
+                      role="tab"
+                      aria-selected={isSelected}
+                      onClick={() => setActiveTab(tabKey)}
+                      className="relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#F5B731] active:scale-[0.97] cursor-pointer"
+                      style={{
+                        color: isSelected ? "#0A0A0A" : "#71675E",
+                      }}
+                    >
+                      {isSelected && (
+                        <motion.div
+                          layoutId={shouldReduceMotion ? undefined : "activePillHighlight"}
+                          className="absolute inset-0 rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-[#F5B731]"
+                          transition={fluidSpring}
+                        />
+                      )}
+                      <span className="relative z-10 whitespace-nowrap">
+                        {item.tabLabel}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
+            </div>
 
-              <div className="mt-5 pt-3 border-t border-[#F0EBE1] text-xs text-[#71675E] italic">
-                Prospect verdict: Vague proposition leads to passive scrolling.
-              </div>
-            </motion.div>
-
-            {/* Right Card: After (AI Optimized) */}
+            {/* Main Showcase Card with Smooth Morphing Transitions */}
             <motion.div
-              whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
-              className="rounded-2xl p-6 sm:p-7 bg-white relative flex flex-col justify-between overflow-hidden"
-              style={{
-                border: "2px solid #F5B731",
-                boxShadow: "0 10px 32px rgba(245,183,49,0.16)",
-              }}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.3 }}
+              className="relative rounded-2xl p-6 sm:p-8 bg-white border border-[#E8E2D9] shadow-[0_14px_36px_rgba(0,0,0,0.06)] overflow-hidden"
             >
               {/* Subtle light-catching top edge highlight */}
               <div
                 aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F5B731]/60 to-transparent pointer-events-none"
+                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F5B731]/50 to-transparent pointer-events-none"
               />
 
-              <div>
-                {/* Header with High Score */}
-                <div className="flex items-center justify-between gap-3 pb-4 mb-4 border-b border-[#F0EBE1]">
-                  <span
-                    className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md"
-                    style={{ backgroundColor: "rgba(245,183,49,0.18)", color: "#A14A08" }}
-                  >
-                    After · AI Optimized
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-[#A14A08]">Clarity Score:</span>
-                    <span
-                      className="text-xs font-black px-2.5 py-0.5 rounded border tabular-nums"
-                      style={{
-                        backgroundColor: "rgba(245,183,49,0.12)",
-                        borderColor: "rgba(245,183,49,0.5)",
-                        color: "#0A0A0A",
-                      }}
-                    >
-                      <AnimatedScore value={currentAfter.score} startFromZero /> / 100
-                    </span>
-                  </div>
-                </div>
-
-                {/* Apple-style Angle Segmented Control */}
-                <div className="mb-4">
-                  <div
-                    role="tablist"
-                    aria-label="Optimized headline angles"
-                    className="flex p-1 rounded-full border border-[#E8E2D9] bg-[#F8F6F2] relative"
-                  >
-                    {(Object.keys(AFTER_ANGLES) as AngleKey[]).map((key) => {
-                      const isSelected = activeAngle === key;
-                      const angle = AFTER_ANGLES[key];
-                      return (
-                        <button
-                          key={key}
-                          type="button"
-                          role="tab"
-                          aria-selected={isSelected}
-                          onClick={() => setActiveAngle(key)}
-                          className="relative flex-1 py-1.5 text-xs font-bold rounded-full transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-[#F5B731] active:scale-[0.97] cursor-pointer"
-                          style={{
-                            color: isSelected ? "#0A0A0A" : "#71675E",
-                          }}
-                        >
-                          {isSelected && (
-                            <motion.div
-                              layoutId={shouldReduceMotion ? undefined : "activeAfterAngleHighlight"}
-                              className="absolute inset-0 rounded-full bg-white shadow-sm border border-[#E0D9CE]"
-                              transition={fluidSpring}
-                            />
-                          )}
-                          <span className="relative z-10 whitespace-nowrap">
-                            {angle.label}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Animated Headline Box */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentAfter.key}
-                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
-                    transition={{ type: "spring", stiffness: 420, damping: 30 }}
-                    className="p-4 rounded-xl border relative mb-5"
-                    style={{
-                      backgroundColor: "#FFFFFF",
-                      borderColor: "rgba(245,183,49,0.6)",
-                      boxShadow: "0 2px 12px rgba(245,183,49,0.10)",
-                    }}
-                  >
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#A14A08] mb-1.5 flex justify-between">
-                      <span>Optimized Headline</span>
-                      <span className="font-mono text-[10px] text-[#A14A08] font-bold">
-                        {currentAfter.charCount} chars
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={scenario.key}
+                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
+                  transition={{ type: "spring", stiffness: 420, damping: 30 }}
+                  className="space-y-6"
+                >
+                  {/* Card Header: Badge & Score Pill */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-[#F0EBE1]">
+                    <div className="inline-flex items-center gap-2">
+                      <span
+                        className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md"
+                        style={{
+                          backgroundColor: scenario.verdictTone === "success" ? "rgba(245,183,49,0.18)" : "rgba(113,103,94,0.12)",
+                          color: scenario.verdictTone === "success" ? "#A14A08" : "#71675E",
+                        }}
+                      >
+                        {scenario.badge}
+                      </span>
+                      <span className="text-xs text-[#71675E] font-medium hidden sm:inline">
+                        {scenario.subTitle}
                       </span>
                     </div>
-                    <p className="text-base font-bold leading-snug text-[#0A0A0A]">
-                      &ldquo;{currentAfter.headline}&rdquo;
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
 
-                {/* 5 Passing Checks */}
-                <div>
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-[#71675E] mb-2.5">
-                    Positioning Benchmarks Passed
-                  </div>
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentAfter.key}
-                      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0 }}
-                      transition={{ duration: 0.15 }}
-                      className="space-y-2"
-                    >
-                      {currentAfter.checks.map((item, idx) => (
-                        <motion.div
-                          key={item.label}
-                          initial={shouldReduceMotion ? undefined : { opacity: 0, x: -6 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.04, duration: 0.2 }}
-                          className="flex items-center justify-between py-1.5 px-2.5 rounded-lg border text-xs"
-                          style={{
-                            backgroundColor: "rgba(245,183,49,0.06)",
-                            borderColor: "rgba(245,183,49,0.25)",
-                          }}
+                    {/* Live Score Dial */}
+                    <div className="flex items-center gap-2.5">
+                      <div className="text-right">
+                        <div className="text-xs font-semibold text-[#71675E]">Clarity Score</div>
+                        <div
+                          className="text-xs font-bold"
+                          style={{ color: scenario.verdictTone === "success" ? "#047857" : "#B45309" }}
                         >
-                          <span className="font-bold text-[#0A0A0A] flex items-center gap-2">
-                            <span
-                              className="h-4 w-4 rounded-full flex items-center justify-center flex-shrink-0"
-                              style={{ backgroundColor: "#F5B731" }}
-                            >
-                              <Check className="h-2.5 w-2.5 text-[#0A0A0A]" strokeWidth={3} />
-                            </span>
-                            {item.label}
-                          </span>
-                          <span className="text-[#0A0A0A] font-medium text-[11px] text-right truncate ml-2">
-                            {item.note}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
+                          {scenario.verdict}
+                        </div>
+                      </div>
+                      <div
+                        className="h-10 px-3 rounded-xl flex items-center justify-center font-black text-lg tabular-nums border"
+                        style={{
+                          backgroundColor: scenario.verdictTone === "success" ? "#ECFDF5" : "#FFFBEB",
+                          borderColor: scenario.verdictTone === "success" ? "#A7F3D0" : "#FDE68A",
+                          color: scenario.verdictTone === "success" ? "#065F46" : "#92400E",
+                        }}
+                      >
+                        <AnimatedScore value={scenario.score} />
+                        <span className="text-xs font-bold opacity-60 ml-0.5">/100</span>
+                      </div>
+                    </div>
+                  </div>
 
-              <div className="mt-5 pt-3 border-t border-[#F0EBE1] text-xs font-semibold text-[#A14A08] flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F5B731]" />
-                Prospect verdict: High differentiation and verifiable authority drive inbound replies.
-              </div>
+                  {/* Headline Preview Box */}
+                  <div
+                    className="p-5 sm:p-6 rounded-xl border relative transition-colors duration-200"
+                    style={{
+                      backgroundColor: scenario.verdictTone === "success" ? "#FFFFFF" : "#F8F6F2",
+                      borderColor: scenario.verdictTone === "success" ? "#F5B731" : "#E8E2D9",
+                      boxShadow: scenario.verdictTone === "success" ? "0 4px 20px rgba(245,183,49,0.12)" : "none",
+                    }}
+                  >
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#71675E] mb-2 flex items-center justify-between">
+                      <span style={{ color: scenario.verdictTone === "success" ? "#A14A08" : "#71675E" }}>
+                        LinkedIn Headline Preview
+                      </span>
+                      <span className="font-mono text-[10px] text-[#71675E] font-semibold">
+                        {scenario.charCount} characters
+                      </span>
+                    </div>
+                    <p
+                      className="text-base sm:text-lg font-bold leading-snug tracking-[-0.015em]"
+                      style={{ color: scenario.verdictTone === "success" ? "#0A0A0A" : "#71675E" }}
+                    >
+                      &ldquo;{scenario.headline}&rdquo;
+                    </p>
+                    <p className="mt-3 text-xs leading-relaxed text-[#71675E]">
+                      {scenario.verdictDesc}
+                    </p>
+                  </div>
+
+                  {/* 5-Point Diagnostic Breakdown Grid */}
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#71675E]">
+                        Audit Diagnostic Breakdown
+                      </h3>
+                      <span className="text-[11px] text-[#A14A08] font-semibold">
+                        {scenario.checks.filter((c) => c.passed).length} of 5 passed
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {scenario.checks.map((check, idx) => {
+                        const isPassed = check.passed;
+                        return (
+                          <motion.div
+                            key={check.id}
+                            initial={shouldReduceMotion ? undefined : { opacity: 0, x: -6 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.04, duration: 0.2 }}
+                            className="flex items-start gap-2.5 p-2.5 rounded-lg border text-xs"
+                            style={{
+                              backgroundColor: isPassed ? "rgba(236,253,245,0.7)" : "rgba(255,251,235,0.7)",
+                              borderColor: isPassed ? "#A7F3D0" : "#FDE68A",
+                              gridColumn: idx === scenario.checks.length - 1 ? "1 / -1" : undefined,
+                            }}
+                          >
+                            <div className="flex-shrink-0 mt-0.5">
+                              {isPassed ? (
+                                <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                              ) : (
+                                <AlertCircle className="h-4 w-4 text-amber-600" />
+                              )}
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <span className="font-bold text-[#0A0A0A] block truncate">
+                                {check.label}
+                              </span>
+                              <span className="text-[#52525B] leading-tight text-[11px]">
+                                {check.note}
+                              </span>
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </motion.div>
-          </motion.div>
 
-          {/* Primary Action Button with Tactile Motion Feedback */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.45 }}
-            className="text-center mt-10"
-          >
-            <Button
-              onClick={onStart}
-              variant="hero"
-              size="xl"
-              className="rounded-full shadow-2xl group active:scale-[0.97] hover:scale-[1.02] transition-transform duration-150 ease-out cursor-pointer"
+            {/* Instant-response Hero CTA */}
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.45 }}
+              className="text-center mt-10"
             >
-              Audit My Profile
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-150" />
-            </Button>
-            <p className="mt-3 text-xs text-[#71675E] font-medium">
-              Takes 2 minutes · No sign-up required · 100% Free
-            </p>
-          </motion.div>
+              <Button
+                onClick={onStart}
+                variant="hero"
+                size="xl"
+                className="rounded-full shadow-2xl group active:scale-[0.97] hover:scale-[1.02] transition-transform duration-150 ease-out cursor-pointer"
+              >
+                Audit My Profile
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-150" />
+              </Button>
+              <p className="mt-3 text-xs text-[#71675E] font-medium">
+                Takes 2 minutes · No sign-up required · 100% Free
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* What the audit actually checks with Staggered Scroll Reveal */}
+      {/* What the audit actually checks */}
       <section className="py-20 px-4 sm:px-6 bg-white border-t border-[#E8E2D9]">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -581,7 +584,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         </div>
       </section>
 
-      {/* How it works with Staggered Scroll Reveal */}
+      {/* How it works */}
       <section className="py-20 px-4 sm:px-6" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -646,7 +649,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         </div>
       </section>
 
-      {/* What you get free with Staggered Scroll Reveal */}
+      {/* What you get free */}
       <section className="py-20 px-4 sm:px-6 bg-white border-t border-[#E8E2D9]">
         <div className="max-w-4xl mx-auto">
           <motion.div

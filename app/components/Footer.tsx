@@ -154,12 +154,19 @@ export default function Footer() {
             <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: "#71675E" }}>
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
-            <p className="text-xs mb-3 leading-relaxed" style={{ color: "#71675E" }}>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=WeWork%20Enam%20Sambhav%2C%20C%20-%2020%2C%20G%20Block%20Rd%2C%20G%20Block%20BKC%2C%20Bandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra%20400051"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs mb-3 leading-relaxed block hover:underline transition-colors duration-200"
+              style={{ color: "#71675E" }}
+              aria-label="View WeWork Enam Sambhav BKC on Google Maps"
+            >
               WeWork Enam Sambhav<br />
               C - 20, G Block Rd, G Block BKC,<br />
               Bandra Kurla Complex, Bandra East,<br />
               Mumbai, Maharashtra 400051
-            </p>
+            </a>
             <a
               href="tel:+918169318951"
               className="mb-6 inline-flex min-h-[44px] items-center gap-2.5 text-sm font-semibold transition-colors duration-200"

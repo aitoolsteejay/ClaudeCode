@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-23T10:00:12.016Z",
+  "generatedAt": "2026-10-23T10:05:00.475Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 282,
-    "linked": 251,
+    "total": 283,
+    "linked": 252,
     "orphan": 31,
     "noindex": 35,
     "notInXmlSitemap": 38,
@@ -462,9 +462,10 @@
       "status": "linked",
       "linkedFrom": [
         "/resources/blogs",
+        "/resources/guides/linkedin-content-to-calls-starter-kit",
         "tools/hook-grader/LandingPage.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -730,7 +731,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 94,
+      "inboundCount": 95,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -2489,7 +2490,7 @@
         "/blog/cold-email-compliance-guide",
         "/blog/cold-email-deliverability-guide"
       ],
-      "inboundCount": 50,
+      "inboundCount": 51,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -3223,7 +3224,7 @@
         "/resources/guides/cold-email-tech-stack",
         "/resources/guides/dos-and-donts-of-outreach"
       ],
-      "inboundCount": 14,
+      "inboundCount": 15,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3237,11 +3238,12 @@
         "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/resources/guides/80-us-meetings-ai-agents",
         "/resources/guides/leads-on-autopilot-guide",
+        "/resources/guides/linkedin-content-to-calls-starter-kit",
         "/resources/guides",
         "linkedin-outreach/LinkedinOutreachPage.tsx",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 6,
+      "inboundCount": 7,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3418,9 +3420,23 @@
       "status": "linked",
       "linkedFrom": [
         "/resources/guides/58-meetings-600-linkedin-connections",
+        "/resources/guides/linkedin-content-to-calls-starter-kit",
         "/resources/guides"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/resources/guides/linkedin-content-to-calls-starter-kit",
+      "title": "Content that attracts",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/guides"
+      ],
+      "inboundCount": 1,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3823,7 +3839,7 @@
         "/blog/stop-selling-features-cold-outreach",
         "/blog/vanity-metrics-personal-brand-pipeline"
       ],
-      "inboundCount": 11,
+      "inboundCount": 12,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Check,
@@ -14,6 +14,7 @@ import {
   AlertCircle,
   FileText,
   Search,
+  Copy,
 } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion, animate } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -177,6 +178,129 @@ function AnimatedScore({ value }: { value: number }) {
   }, [value, shouldReduceMotion]);
 
   return <>{displayValue}</>;
+}
+
+// Mini interactive preview for Card 1: Clarity Score
+function ClarityScoreMiniPreview() {
+  const shouldReduceMotion = useReducedMotion();
+  return (
+    <div className="mt-4 pt-3.5 border-t border-[#F0EBE1] flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="text-xs font-semibold text-[#71675E]">Clarity Index</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="w-24 sm:w-28 h-2 rounded-full bg-[#EAE5DC] overflow-hidden">
+          <motion.div
+            className="h-full rounded-full bg-gradient-to-r from-[#F5B731] to-emerald-500"
+            animate={shouldReduceMotion ? { width: "94%" } : {
+              width: ["42%", "94%", "42%"],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+        <span className="text-xs font-bold text-[#0A0A0A] tabular-nums font-mono">94/100</span>
+      </div>
+    </div>
+  );
+}
+
+// Mini interactive preview for Card 2: Three Headline Angles
+function HeadlineAnglesMiniPreview() {
+  const shouldReduceMotion = useReducedMotion();
+  const [index, setIndex] = useState(0);
+  const angles = ["Authority Angle", "Problem Solver", "Social Proof"];
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % angles.length);
+    }, 2400);
+    return () => clearInterval(interval);
+  }, [shouldReduceMotion]);
+
+  return (
+    <div className="mt-4 pt-3.5 border-t border-[#F0EBE1] flex items-center justify-between">
+      <span className="text-xs font-semibold text-[#71675E]">Active Variation</span>
+      <div className="relative overflow-hidden h-6 flex items-center">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={angles[index]}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[rgba(245,183,49,0.15)] text-[#A14A08] border border-[rgba(245,183,49,0.35)] whitespace-nowrap"
+          >
+            {angles[index]}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+// Mini interactive preview for Card 3: Ready-to-paste About Section
+function AboutSectionMiniPreview() {
+  const shouldReduceMotion = useReducedMotion();
+  return (
+    <div className="mt-4 pt-3.5 border-t border-[#F0EBE1] space-y-2">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#F5B731]" />
+          <span className="text-xs font-semibold text-[#71675E]">1-Click Copy Ready</span>
+        </div>
+        <motion.div
+          animate={shouldReduceMotion ? undefined : {
+            scale: [1, 1.04, 1],
+          }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="inline-flex items-center gap-1 text-[11px] font-bold text-[#A14A08] bg-[#FAF8F5] px-2 py-0.5 rounded border border-[#E8E2D9]"
+        >
+          <Copy className="h-3 w-3" />
+          <span>Formatted markdown</span>
+        </motion.div>
+      </div>
+      <div className="space-y-1.5 opacity-60">
+        <div className="h-1.5 rounded-full bg-[#D8D2C7] w-full" />
+        <div className="h-1.5 rounded-full bg-[#D8D2C7] w-4/5" />
+      </div>
+    </div>
+  );
+}
+
+// Mini interactive preview for Card 4: Keyword Gaps
+function KeywordGapsMiniPreview() {
+  const shouldReduceMotion = useReducedMotion();
+  const keywords = ["B2B SaaS", "Pipeline", "ARR"];
+  return (
+    <div className="mt-4 pt-3.5 border-t border-[#F0EBE1] flex items-center justify-between flex-wrap gap-1.5">
+      <span className="text-xs font-semibold text-[#71675E]">Missing ICP search terms</span>
+      <div className="flex items-center gap-1.5">
+        {keywords.map((kw, i) => (
+          <motion.span
+            key={kw}
+            animate={shouldReduceMotion ? undefined : {
+              y: [0, -2.5, 0],
+            }}
+            transition={{
+              duration: 2.4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.35,
+            }}
+            className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#FAF8F5] text-[#0A0A0A] border border-[#E8E2D9] font-mono"
+          >
+            +{kw}
+          </motion.span>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 interface LandingPageProps {
@@ -649,7 +773,7 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
         </div>
       </section>
 
-      {/* What you get free */}
+      {/* What you get free with Rich Micro-Animations and Tactile Apple Physics */}
       <section className="py-20 px-4 sm:px-6 bg-white border-t border-[#E8E2D9]">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -668,54 +792,137 @@ const LandingPage = ({ onStart }: LandingPageProps) => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {[
-              {
-                title: "A definitive clarity score",
-                desc: "See exactly where your profile ranks against high-converting benchmarks, plus the specific elements dragging it down.",
-                icon: BarChart3,
-              },
-              {
-                title: "Three rewritten headlines",
-                desc: "Authority, problem-solver, and social-proof variations tailored to match your authentic voice and buyer stage.",
-                icon: Sparkles,
-              },
-              {
-                title: "A ready-to-paste About section",
-                desc: "Custom-scripted around your specific target audience and value proposition, avoiding generic template clichés.",
-                icon: FileText,
-              },
-              {
-                title: "High-intent keyword gaps",
-                desc: "Identify the critical industry terms your ICP actively searches for that your profile currently lacks.",
-                icon: Search,
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
+            {/* Card 1: A definitive clarity score */}
+            <motion.div
+              initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0 }}
+              whileHover={shouldReduceMotion ? undefined : {
+                y: -4,
+                borderColor: "rgba(245,183,49,0.7)",
+                boxShadow: "0 12px 28px rgba(245,183,49,0.12)",
+                transition: { duration: 0.15 },
+              }}
+              className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] transition-colors relative flex flex-col justify-between group overflow-hidden"
+            >
+              <div>
                 <motion.div
-                  key={item.title}
-                  initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ type: "spring", stiffness: 350, damping: 28, delay: index * 0.08 }}
-                  whileHover={shouldReduceMotion ? undefined : { y: -3, transition: { duration: 0.15 } }}
-                  className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] transition-colors"
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.12, rotate: 4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="h-9 w-9 rounded-lg flex items-center justify-center mb-3 border border-[#F5B731]/30 cursor-pointer"
+                  style={{ backgroundColor: "rgba(245,183,49,0.12)" }}
                 >
-                  <div
-                    className="h-9 w-9 rounded-lg flex items-center justify-center mb-3 border border-[#F5B731]/30"
-                    style={{ backgroundColor: "rgba(245,183,49,0.12)" }}
-                  >
-                    <Icon className="h-4 w-4 text-[#A14A08]" />
-                  </div>
-                  <h3 className="text-base font-bold mb-1.5 text-[#0A0A0A]">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-[#71675E]">
-                    {item.desc}
-                  </p>
+                  <BarChart3 className="h-4 w-4 text-[#A14A08]" />
                 </motion.div>
-              );
-            })}
+                <h3 className="text-base font-bold mb-1.5 text-[#0A0A0A]">
+                  A definitive clarity score
+                </h3>
+                <p className="text-sm leading-relaxed text-[#71675E]">
+                  See exactly where your profile ranks against high-converting benchmarks, plus the specific elements dragging it down.
+                </p>
+              </div>
+              <ClarityScoreMiniPreview />
+            </motion.div>
+
+            {/* Card 2: Three rewritten headlines */}
+            <motion.div
+              initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.08 }}
+              whileHover={shouldReduceMotion ? undefined : {
+                y: -4,
+                borderColor: "rgba(245,183,49,0.7)",
+                boxShadow: "0 12px 28px rgba(245,183,49,0.12)",
+                transition: { duration: 0.15 },
+              }}
+              className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] transition-colors relative flex flex-col justify-between group overflow-hidden"
+            >
+              <div>
+                <motion.div
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.12, rotate: 4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="h-9 w-9 rounded-lg flex items-center justify-center mb-3 border border-[#F5B731]/30 cursor-pointer"
+                  style={{ backgroundColor: "rgba(245,183,49,0.12)" }}
+                >
+                  <Sparkles className="h-4 w-4 text-[#A14A08]" />
+                </motion.div>
+                <h3 className="text-base font-bold mb-1.5 text-[#0A0A0A]">
+                  Three rewritten headlines
+                </h3>
+                <p className="text-sm leading-relaxed text-[#71675E]">
+                  Authority, problem-solver, and social-proof variations tailored to match your authentic voice and buyer stage.
+                </p>
+              </div>
+              <HeadlineAnglesMiniPreview />
+            </motion.div>
+
+            {/* Card 3: A ready-to-paste About section */}
+            <motion.div
+              initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.16 }}
+              whileHover={shouldReduceMotion ? undefined : {
+                y: -4,
+                borderColor: "rgba(245,183,49,0.7)",
+                boxShadow: "0 12px 28px rgba(245,183,49,0.12)",
+                transition: { duration: 0.15 },
+              }}
+              className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] transition-colors relative flex flex-col justify-between group overflow-hidden"
+            >
+              <div>
+                <motion.div
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.12, rotate: 4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="h-9 w-9 rounded-lg flex items-center justify-center mb-3 border border-[#F5B731]/30 cursor-pointer"
+                  style={{ backgroundColor: "rgba(245,183,49,0.12)" }}
+                >
+                  <FileText className="h-4 w-4 text-[#A14A08]" />
+                </motion.div>
+                <h3 className="text-base font-bold mb-1.5 text-[#0A0A0A]">
+                  A ready-to-paste About section
+                </h3>
+                <p className="text-sm leading-relaxed text-[#71675E]">
+                  Custom-scripted around your specific target audience and value proposition, avoiding generic template clichés.
+                </p>
+              </div>
+              <AboutSectionMiniPreview />
+            </motion.div>
+
+            {/* Card 4: High-intent keyword gaps */}
+            <motion.div
+              initial={shouldReduceMotion ? undefined : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ type: "spring", stiffness: 350, damping: 28, delay: 0.24 }}
+              whileHover={shouldReduceMotion ? undefined : {
+                y: -4,
+                borderColor: "rgba(245,183,49,0.7)",
+                boxShadow: "0 12px 28px rgba(245,183,49,0.12)",
+                transition: { duration: 0.15 },
+              }}
+              className="rounded-2xl p-6 border border-[#E8E2D9] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] transition-colors relative flex flex-col justify-between group overflow-hidden"
+            >
+              <div>
+                <motion.div
+                  whileHover={shouldReduceMotion ? undefined : { scale: 1.12, rotate: 4 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="h-9 w-9 rounded-lg flex items-center justify-center mb-3 border border-[#F5B731]/30 cursor-pointer"
+                  style={{ backgroundColor: "rgba(245,183,49,0.12)" }}
+                >
+                  <Search className="h-4 w-4 text-[#A14A08]" />
+                </motion.div>
+                <h3 className="text-base font-bold mb-1.5 text-[#0A0A0A]">
+                  High-intent keyword gaps
+                </h3>
+                <p className="text-sm leading-relaxed text-[#71675E]">
+                  Identify the critical industry terms your ICP actively searches for that your profile currently lacks.
+                </p>
+              </div>
+              <KeywordGapsMiniPreview />
+            </motion.div>
           </div>
         </div>
       </section>

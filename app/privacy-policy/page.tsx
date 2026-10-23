@@ -34,7 +34,7 @@ const SECTIONS = [
     heading: "Information We Collect",
     body: [
       "Contact details you give us directly: name, designation, company name, phone number, and email address, when you fill out a form, book a call, or subscribe to our newsletter.",
-      "Scheduling information: when you book a call through Calendly, Calendly collects and processes your name, email, and meeting details on our behalf. Their handling of that data is governed by Calendly's own privacy policy.",
+      "Scheduling information: when you book a call through Zoho Bookings, Zoho collects and processes your name, email, and meeting details on our behalf. Their handling of that data is governed by Zoho's own privacy policy.",
       "Usage data: pages visited, time on site, device and browser type, and referring pages, collected automatically through analytics tools.",
     ],
   },
@@ -57,7 +57,7 @@ const SECTIONS = [
   {
     heading: "Third-Party Services",
     body: [
-      "We rely on third-party providers to run parts of this site and our outreach, including Calendly for scheduling, Zoho for forms and email campaigns, Google Analytics for site analytics, Vercel for hosting, and Supabase to keep a record of sign-ups for our free tools. The free AI tools also send what you type into them to Google's Gemini API, through our servers, to generate your result. Each of these providers processes data under their own privacy policy, and we only share what is necessary for them to perform their function.",
+      "We rely on third-party providers to run parts of this site and our outreach, including Zoho for scheduling (Zoho Bookings), forms, and email campaigns, Google Analytics for site analytics, Vercel for hosting, and Supabase to keep a record of sign-ups for our free tools. The free AI tools also send what you type into them to Google's Gemini API, through our servers, to generate your result. Each of these providers processes data under their own privacy policy, and we only share what is necessary for them to perform their function.",
       "We do not sell your personal information to third parties.",
     ],
   },

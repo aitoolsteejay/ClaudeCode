@@ -49,7 +49,6 @@ export default function BookACallClient() {
   const [step, setStep] = useState<"qualification" | "calendar">("qualification");
   const [leadInfo, setLeadInfo] = useState<{ firstName: string; lastName: string; email: string } | null>(null);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
-  const [calendarHeight, setCalendarHeight] = useState("720px");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const rightColRef = useRef<HTMLDivElement>(null);
 
@@ -69,16 +68,13 @@ export default function BookACallClient() {
     }
   }, []);
 
-  // Listen to Calendly messages: scheduled confirmation & dynamic height
+  // Listen to Zoho Bookings completion messages
   useEffect(() => {
     function handleMessage(e: MessageEvent) {
-      if (e.origin !== "https://calendly.com") return;
-      if (e.data?.event === "calendly.event_scheduled") {
-        router.push("/thankyou");
-      }
-      if (e.data?.event === "calendly.page_height" && e.data?.payload?.height) {
-        const nextH = Math.max(680, Number(e.data.payload.height));
-        setCalendarHeight(`${nextH}px`);
+      if (typeof e.origin === "string" && (e.origin.includes("zohobookings") || e.origin.includes("zoho.com"))) {
+        if (e.data && (e.data.type === "booking_success" || e.data.action === "booked" || e.data.status === "completed")) {
+          router.push("/thankyou");
+        }
       }
     }
     window.addEventListener("message", handleMessage);
@@ -103,35 +99,26 @@ export default function BookACallClient() {
     }
   };
 
-  const calendlyEmbedUrl = (() => {
-    const base = "https://calendly.com/founder-myntmore/web";
+  const zohoEmbedUrl = (() => {
+    const base = "https://meetingwithteejay.zohobookings.com/portal-embed#/4203790000004903007";
+    if (!leadInfo) return base;
+    const fullName = [leadInfo.firstName, leadInfo.lastName].filter(Boolean).join(" ").trim();
     const params = new URLSearchParams();
-    if (typeof window !== "undefined") {
-      params.set("embed_domain", window.location.host);
-    } else {
-      params.set("embed_domain", "www.myntmore.com");
-    }
-    params.set("embed_type", "Inline");
-    params.set("primary_color", "ffc947");
-    params.set("hide_landing_page_details", "0");
-    params.set("hide_gdpr_banner", "1");
-    if (leadInfo) {
-      const fullName = `${leadInfo.firstName || ""} ${leadInfo.lastName || ""}`.trim();
-      if (fullName) params.set("name", fullName);
-      if (leadInfo.email) params.set("email", leadInfo.email);
-    }
-    return `${base}?${params.toString()}`;
+    if (fullName) params.set("Name", fullName);
+    if (leadInfo.email) params.set("Email", leadInfo.email);
+    const qs = params.toString();
+    return qs ? `${base}?${qs}` : base;
   })();
 
-  const calendlyExternalUrl = (() => {
-    const base = "https://calendly.com/founder-myntmore/web";
-    const params = new URLSearchParams({ primary_color: "ffc947" });
-    if (leadInfo) {
-      const fullName = `${leadInfo.firstName || ""} ${leadInfo.lastName || ""}`.trim();
-      if (fullName) params.set("name", fullName);
-      if (leadInfo.email) params.set("email", leadInfo.email);
-    }
-    return `${base}?${params.toString()}`;
+  const zohoExternalUrl = (() => {
+    const base = "https://meetingwithteejay.zohobookings.com/#/4203790000004903007";
+    if (!leadInfo) return base;
+    const fullName = [leadInfo.firstName, leadInfo.lastName].filter(Boolean).join(" ").trim();
+    const params = new URLSearchParams();
+    if (fullName) params.set("Name", fullName);
+    if (leadInfo.email) params.set("Email", leadInfo.email);
+    const qs = params.toString();
+    return qs ? `${base}?${qs}` : base;
   })();
 
   return (
@@ -334,7 +321,7 @@ export default function BookACallClient() {
               </div>
             </div>
 
-            {/* ── Right Column: 2-Step Lead Qualification & Calendly Container ──── */}
+            {/* ── Right Column: 2-Step Lead Qualification & Zoho Bookings Container ── */}
             <div ref={rightColRef} className="lg:col-span-7">
               <div
                 className="rounded-2xl sm:rounded-3xl border bg-white shadow-xl shadow-amber-950/5 overflow-hidden transition-all"
@@ -346,7 +333,7 @@ export default function BookACallClient() {
                     <LeadQualificationForm onSuccess={handleQualified} />
                   </div>
                 ) : (
-                  /* ── Step 2: Calendly Booking Interface ───────────────── */
+                  /* ── Step 2: Zoho Bookings Interface ─────────────────── */
                   <div>
                     {/* Top Bar for Calendar */}
                     <div
@@ -372,12 +359,12 @@ export default function BookACallClient() {
                           <span>Edit answers</span>
                         </button>
                         <a
-                          href={calendlyExternalUrl}
+                          href={zohoExternalUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-xs font-bold text-[#A14A08] hover:text-[#0A0A0A] inline-flex items-center gap-1 transition-colors"
                         >
-                          <span>Open Calendly</span>
+                          <span>Open in new window</span>
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       </div>
@@ -392,26 +379,27 @@ export default function BookACallClient() {
                       </div>
                     )}
 
-                    {/* Direct Embedded Calendly Container */}
-                    <div className="relative min-h-[720px] bg-white">
+                    {/* Direct Embedded Zoho Bookings Container */}
+                    <div className="relative min-h-[750px] bg-white">
                       {!calendarLoaded && (
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-10 py-20">
                           <div className="w-9 h-9 rounded-full border-2 border-[#E8E2D9] border-t-[#F5B731] animate-spin mb-3" />
-                          <p className="text-xs text-[#71675E] font-medium">Loading available calendar slots...</p>
+                          <p className="text-xs text-[#71675E] font-medium">Loading Zoho calendar slots...</p>
                         </div>
                       )}
                       <iframe
-                        src={calendlyEmbedUrl}
+                        src={zohoEmbedUrl}
                         width="100%"
-                        height={calendarHeight}
-                        title="Select a Date & Time - Calendly"
+                        height="780px"
+                        title="Select a Date and Time - Zoho Bookings"
                         className="w-full border-0 block"
                         style={{
                           minWidth: "320px",
-                          height: calendarHeight,
+                          height: "780px",
                           border: "none",
                         }}
                         allow="camera; microphone; autoplay; encrypted-media; fullscreen"
+                        allowFullScreen
                         onLoad={() => setCalendarLoaded(true)}
                       />
                     </div>
@@ -420,12 +408,12 @@ export default function BookACallClient() {
                     <div className="p-4 bg-[#FAF8F5] border-t border-[#E8E2D9] flex flex-wrap items-center justify-between gap-3 text-xs">
                       <span className="text-[#71675E]">Prefer opening in full window?</span>
                       <a
-                        href={calendlyExternalUrl}
+                        href={zohoExternalUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-bold text-[#A14A08] hover:text-[#0A0A0A] inline-flex items-center gap-1 transition-colors"
                       >
-                        <span>Open Calendly in new tab</span>
+                        <span>Open Zoho Calendar in new tab</span>
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     </div>

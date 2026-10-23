@@ -114,7 +114,7 @@ export default function ContactUs() {
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h3 className="text-base font-black mb-4" style={{ color: "#0a0a0a" }}>What happens next</h3>
                 {[
-                  "Submit your details above or book a call directly via Calendly",
+                  "Submit your details above or book a call directly on our calendar",
                   "We review your current outreach setup before the call",
                   "30-min GTM audit: ICP mapping, outreach review, pipeline blockers",
                   "Custom action plan sent within 24 hours",

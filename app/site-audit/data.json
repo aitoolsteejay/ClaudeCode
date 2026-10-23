@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-22T12:28:00.226Z",
+  "generatedAt": "2026-10-23T07:48:50.770Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 281,
-    "linked": 249,
-    "orphan": 32,
+    "linked": 250,
+    "orphan": 31,
     "noindex": 35,
     "notInXmlSitemap": 37,
     "privateHidden": 5
@@ -730,7 +730,7 @@
         "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata"
       ],
-      "inboundCount": 92,
+      "inboundCount": 94,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": true
@@ -3671,14 +3671,14 @@
       "path": "/thankyou",
       "title": "You're Booked!",
       "section": "other",
-      "status": "orphan",
+      "status": "linked",
       "linkedFrom": [
+        "/book-a-call",
         "/calendar/th",
         "/founder-meeting"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": true,
-      "referencedIn": "app/calendar/th/CalendarPageClient.tsx",
       "inXmlSitemap": false,
       "inHtmlSitemap": false
     },
@@ -4085,6 +4085,7 @@
   ],
   "apiRoutes": [
     "/api/gemini",
+    "/api/lead-qualification",
     "/api/menti/auth",
     "/api/menti/gist",
     "/api/menti/reset",

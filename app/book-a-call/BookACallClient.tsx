@@ -3,6 +3,7 @@
 import Script from "next/script";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Clock,
   Video,
@@ -10,24 +11,16 @@ import {
   ShieldCheck,
   Sparkles,
   ArrowRight,
-  MessageSquare,
-  HelpCircle,
-  Users,
+  ExternalLink,
   Calendar,
   Lock,
   ChevronDown,
+  RotateCcw,
 } from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import FadeIn from "../components/FadeIn";
-
-declare global {
-  interface Window {
-    Bookings?: {
-      inlineEmbed: (options: { url: string; parent: string; height: string }) => void;
-    };
-  }
-}
+import LeadQualificationForm from "@/components/lead-qualification/LeadQualificationForm";
 
 const FAQS = [
   {
@@ -53,46 +46,74 @@ const FAQS = [
 ];
 
 export default function BookACallClient() {
-  const initializedRef = useRef(false);
-  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  const [step, setStep] = useState<"qualification" | "calendar">("qualification");
+  const [leadInfo, setLeadInfo] = useState<{ firstName: string; lastName: string; email: string } | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const rightColRef = useRef<HTMLDivElement>(null);
 
-  const initBookings = () => {
-    if (typeof window !== "undefined" && window.Bookings && !initializedRef.current) {
-      const parentEl = document.querySelector("#inline-container");
-      if (parentEl) {
-        parentEl.innerHTML = "";
-        // 780px allows the full Zoho Bookings calendar and time slots to render cleanly
-        // without triggering an inner vertical scrollbar on desktop
-        const embedHeight = window.innerWidth < 640 ? "720px" : "780px";
-        window.Bookings.inlineEmbed({
-          url: "https://meetingwithteejay.zohobookings.com/portal-embed#/4203790000004903007",
-          parent: "#inline-container",
-          height: embedHeight,
-        });
-        initializedRef.current = true;
-        // Small delay to allow iframe DOM injection before hiding skeleton
-        setTimeout(() => setLoading(false), 350);
+  // Restore qualification data if previously completed in this session
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = sessionStorage.getItem("myntmore_qualified_lead");
+      const searchParams = new URLSearchParams(window.location.search);
+      if (searchParams.get("calendar") === "1" || saved) {
+        if (saved) {
+          try {
+            setLeadInfo(JSON.parse(saved));
+          } catch {}
+        }
+        setStep("calendar");
       }
+    }
+  }, []);
+
+  // Listen to Calendly booking confirmation message
+  useEffect(() => {
+    function handleMessage(e: MessageEvent) {
+      if (e.origin !== "https://calendly.com") return;
+      if (e.data?.event === "calendly.event_scheduled") {
+        router.push("/thankyou");
+      }
+    }
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [router]);
+
+  // Re-initialize Calendly widget when transitioning to calendar step
+  useEffect(() => {
+    if (step === "calendar") {
+      const timer = setTimeout(() => {
+        const win = window as any;
+        if (win.Calendly && typeof win.Calendly.initInlineWidgets === "function") {
+          win.Calendly.initInlineWidgets();
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [step, leadInfo]);
+
+  const handleQualified = (data: { firstName: string; lastName: string; email: string }) => {
+    setLeadInfo(data);
+    setStep("calendar");
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("myntmore_qualified_lead", JSON.stringify(data));
+    }
+    rightColRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleResetQualification = () => {
+    setStep("qualification");
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("myntmore_qualified_lead");
     }
   };
 
-  useEffect(() => {
-    // If the script is already cached/loaded, initialize immediately
-    if (window.Bookings) {
-      initBookings();
-    }
-
-    // Safety polling in case script onload fired before React component mounted
-    const interval = setInterval(() => {
-      if (window.Bookings && !initializedRef.current) {
-        initBookings();
-        clearInterval(interval);
-      }
-    }, 150);
-
-    return () => clearInterval(interval);
-  }, []);
+  const calendlyUrl = `https://calendly.com/founder-myntmore/web?primary_color=ffc947${
+    leadInfo
+      ? `&name=${encodeURIComponent(`${leadInfo.firstName} ${leadInfo.lastName}`)}&email=${encodeURIComponent(leadInfo.email)}`
+      : ""
+  }`;
 
   return (
     <InnerLayout>
@@ -115,7 +136,8 @@ export default function BookACallClient() {
 
           {/* Header pill & Title */}
           <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border"
+            <div
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border"
               style={{
                 backgroundColor: "#FEF9EC",
                 color: "#A14A08",
@@ -140,11 +162,11 @@ export default function BookACallClient() {
             </h1>
 
             <p className="text-base sm:text-lg text-[#52525B] leading-relaxed">
-              Pick a time with our senior growth team. We&apos;ll audit your outbound systems, stress-test your ICP, and map high-converting angles with zero sales pressure.
+              Tell us a little about your business, then choose a time with our senior growth team. We will audit your outbound systems, stress-test your ICP, and map high-converting angles with zero sales pressure.
             </p>
           </div>
 
-          {/* Two-Column Grid: Left Authority/Agenda, Right Calendar Card */}
+          {/* Two-Column Grid: Left Authority/Agenda, Right Qualification & Calendar Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             {/* ── Left Column: Value, Hosts & Trust ────────────────────────── */}
             <div className="lg:col-span-5 space-y-6">
@@ -250,7 +272,7 @@ export default function BookACallClient() {
                         90-Day Pipeline Action Plan
                       </h4>
                       <p className="text-xs text-[#52525B] mt-0.5 leading-relaxed">
-                        A structured blueprint to scale to 15–30+ qualified sales conversations every single month.
+                        A structured blueprint to scale to 15-30+ qualified sales conversations every single month.
                       </p>
                     </div>
                   </li>
@@ -293,79 +315,97 @@ export default function BookACallClient() {
               </div>
             </div>
 
-            {/* ── Right Column: Calendar Widget Container ─────────────────── */}
-            <div className="lg:col-span-7">
+            {/* ── Right Column: 2-Step Lead Qualification & Calendly Container ──── */}
+            <div ref={rightColRef} className="lg:col-span-7">
               <div
                 className="rounded-2xl sm:rounded-3xl border bg-white shadow-xl shadow-amber-950/5 overflow-hidden transition-all"
                 style={{ borderColor: "#E8E2D9" }}
               >
-                {/* Clean Top Bar */}
-                <div className="px-5 py-3.5 border-b bg-[#FAF8F5] flex flex-wrap items-center justify-between gap-3" style={{ borderColor: "#E8E2D9" }}>
-                  <div className="flex items-center gap-2">
-                    <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                    </span>
-                    <span className="text-xs font-bold text-[#0A0A0A]">
-                      Live Calendar · Select a Date & Time
-                    </span>
+                {step === "qualification" ? (
+                  /* ── Step 1: Qualification Form ─────────────────────── */
+                  <div className="p-6 sm:p-8">
+                    <LeadQualificationForm onSuccess={handleQualified} />
                   </div>
-                  <div className="text-xs text-[#71675E] flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#F5B731]" />
-                    <span>Instant confirmation</span>
-                  </div>
-                </div>
-
-                {/* Calendar Body with Skeleton Overlay */}
-                <div className="relative p-2 sm:p-4 min-h-[750px] bg-white">
-                  {/* Elegant loading placeholder while Zoho embed script renders */}
-                  {loading && (
-                    <div className="absolute inset-0 z-10 bg-white/95 backdrop-blur-xs p-6 flex flex-col justify-between animate-pulse">
-                      <div>
-                        <div className="flex justify-between items-center mb-8">
-                          <div className="h-6 w-40 bg-zinc-200 rounded-lg" />
-                          <div className="h-6 w-32 bg-zinc-200 rounded-lg" />
-                        </div>
-                        {/* Days row */}
-                        <div className="grid grid-cols-7 gap-2 mb-8">
-                          {[...Array(7)].map((_, i) => (
-                            <div key={i} className="h-16 bg-zinc-100 rounded-xl border border-zinc-200/60" />
-                          ))}
-                        </div>
-                        {/* Time slots */}
-                        <div className="space-y-4">
-                          <div className="h-4 w-20 bg-zinc-200 rounded" />
-                          <div className="grid grid-cols-3 sm:grid-cols-4 gap-2.5">
-                            {[...Array(8)].map((_, i) => (
-                              <div key={i} className="h-10 bg-zinc-100 rounded-lg border border-zinc-200/60" />
-                            ))}
-                          </div>
-                        </div>
+                ) : (
+                  /* ── Step 2: Calendly Booking Interface ───────────────── */
+                  <div>
+                    {/* Top Bar for Calendar */}
+                    <div
+                      className="px-5 py-3.5 border-b bg-[#FAF8F5] flex flex-wrap items-center justify-between gap-3"
+                      style={{ borderColor: "#E8E2D9" }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="relative flex h-2.5 w-2.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span className="text-xs font-bold text-[#0A0A0A]">
+                          Step 2 of 2: Select Date & Time
+                        </span>
                       </div>
-                      <div className="text-center py-4">
-                        <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#71675E]">
-                          <div className="w-3.5 h-3.5 border-2 border-[#F5B731] border-t-transparent rounded-full animate-spin" />
-                          Loading live availability...
-                        </div>
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={handleResetQualification}
+                          className="text-xs text-[#71675E] hover:text-[#0A0A0A] inline-flex items-center gap-1 font-medium transition-colors cursor-pointer"
+                        >
+                          <RotateCcw className="w-3 h-3" />
+                          <span>Edit answers</span>
+                        </button>
+                        <a
+                          href={calendlyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-bold text-[#A14A08] hover:text-[#0A0A0A] inline-flex items-center gap-1 transition-colors"
+                        >
+                          <span>Open Calendly</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
                       </div>
                     </div>
-                  )}
 
-                  {/* Zoho Bookings target mount point */}
-                  <div
-                    id="inline-container"
-                    style={{
-                      width: "100%",
-                      minHeight: "750px",
-                    }}
-                  />
-                </div>
+                    {/* Greeting Banner */}
+                    {leadInfo && (
+                      <div className="p-4 bg-[#FEF9EC] border-b border-[#F5B731]/30 flex items-center justify-between gap-2">
+                        <p className="text-xs text-[#A14A08] font-semibold">
+                          Great to meet you, <span className="font-bold text-[#0A0A0A]">{leadInfo.firstName}</span>! Choose a slot below to confirm your strategy call.
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Embedded Calendly Widget */}
+                    <div className="relative p-2 sm:p-4 min-h-[720px] bg-white">
+                      <div
+                        className="calendly-inline-widget w-full"
+                        data-url={calendlyUrl}
+                        style={{
+                          minWidth: "320px",
+                          height: "720px",
+                        }}
+                      />
+                    </div>
+
+                    {/* Direct Fallback link */}
+                    <div className="p-4 bg-[#FAF8F5] border-t border-[#E8E2D9] flex flex-wrap items-center justify-between gap-3 text-xs">
+                      <span className="text-[#71675E]">Prefer opening in full window?</span>
+                      <a
+                        href={calendlyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold text-[#A14A08] hover:text-[#0A0A0A] inline-flex items-center gap-1 transition-colors"
+                      >
+                        <span>Open Calendly in new tab</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Direct fallback below calendar */}
+              {/* Direct WhatsApp / Email help below card */}
               <div className="mt-4 text-center sm:text-right">
                 <p className="text-xs text-[#71675E]">
-                  Can&apos;t find a suitable slot?{" "}
+                  Questions or special scheduling needs?{" "}
                   <a
                     href="https://wa.me/918169318951"
                     target="_blank"
@@ -407,9 +447,9 @@ export default function BookACallClient() {
                 <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black mb-4 bg-[#FEF9EC] text-[#A14A08] border border-[#F5B731]/40">
                   01
                 </span>
-                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Pick Your Slot</h3>
+                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Tell Us About Your Growth</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
-                  Select a convenient 30-minute window above. You&apos;ll receive an immediate calendar invitation with a private Google Meet video link.
+                  Complete the quick 2-minute qualification form above so we understand your stage, offer, and target customer before we meet.
                 </p>
               </div>
 
@@ -417,9 +457,9 @@ export default function BookACallClient() {
                 <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black mb-4 bg-[#FEF9EC] text-[#A14A08] border border-[#F5B731]/40">
                   02
                 </span>
-                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Bring Your Metrics</h3>
+                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Select Your Time Slot</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
-                  Have a rough overview of your target buyer, current outbound tools, and what you sell. If you don&apos;t have data yet, we&apos;ll start from scratch.
+                  Pick a convenient 30-minute calendar window on Google Meet. Calendar invites and reminders are sent immediately.
                 </p>
               </div>
 
@@ -427,7 +467,7 @@ export default function BookACallClient() {
                 <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black mb-4 bg-[#FEF9EC] text-[#A14A08] border border-[#F5B731]/40">
                   03
                 </span>
-                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Get Your Roadmap</h3>
+                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Get Your 90-Day Roadmap</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
                   Walk away with an exact diagnosis of your pipeline leakages and high-leverage steps to hit predictable meeting volume.
                 </p>
@@ -485,11 +525,10 @@ export default function BookACallClient() {
         </section>
       </div>
 
-      {/* Zoho Bookings Widget Script */}
+      {/* Calendly Widget Script */}
       <Script
-        src="https://bookings.nimbuspop.com/assets/embed.js"
+        src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
-        onLoad={initBookings}
       />
     </InnerLayout>
   );

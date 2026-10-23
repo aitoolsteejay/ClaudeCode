@@ -14,7 +14,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const market = marketFromSlug(params.market);
   if (!market) return {};
   const n = caseStudiesInMarket(market.slug).length;
-  const title = `B2B Lead Generation Case Studies in ${market.label}`;
+  const title = `B2B Case Studies in ${market.phrase}`;
   const description = `${n} Myntmore case studies from outbound campaigns in ${market.phrase}: meetings booked, reply rates and the approach behind each result.`;
   const url = `https://www.myntmore.com/case-studies/markets/${market.slug}`;
   return {

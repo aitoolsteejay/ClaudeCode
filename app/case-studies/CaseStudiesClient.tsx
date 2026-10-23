@@ -364,7 +364,7 @@ export default function CaseStudiesClient({ initialFilter = "All", initialMarket
           data={{
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            name: `B2B lead generation case studies in ${market.label}`,
+            name: `B2B lead generation case studies in ${market.phrase}`,
             url: `${SITE_URL}/case-studies/markets/${market.slug}`,
             mainEntity: {
               "@type": "ItemList",
@@ -396,7 +396,7 @@ export default function CaseStudiesClient({ initialFilter = "All", initialMarket
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
                 B2B lead generation case studies in{" "}
                 <span className="relative inline-block">
-                  {market.label}
+                  {market.phrase}
                   <Underline />
                 </span>
               </h1>

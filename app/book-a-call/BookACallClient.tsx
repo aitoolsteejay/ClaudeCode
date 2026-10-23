@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -49,6 +48,8 @@ export default function BookACallClient() {
   const router = useRouter();
   const [step, setStep] = useState<"qualification" | "calendar">("qualification");
   const [leadInfo, setLeadInfo] = useState<{ firstName: string; lastName: string; email: string } | null>(null);
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
+  const [calendarHeight, setCalendarHeight] = useState("720px");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const rightColRef = useRef<HTMLDivElement>(null);
 
@@ -68,33 +69,25 @@ export default function BookACallClient() {
     }
   }, []);
 
-  // Listen to Calendly booking confirmation message
+  // Listen to Calendly messages: scheduled confirmation & dynamic height
   useEffect(() => {
     function handleMessage(e: MessageEvent) {
       if (e.origin !== "https://calendly.com") return;
       if (e.data?.event === "calendly.event_scheduled") {
         router.push("/thankyou");
       }
+      if (e.data?.event === "calendly.page_height" && e.data?.payload?.height) {
+        const nextH = Math.max(680, Number(e.data.payload.height));
+        setCalendarHeight(`${nextH}px`);
+      }
     }
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, [router]);
 
-  // Re-initialize Calendly widget when transitioning to calendar step
-  useEffect(() => {
-    if (step === "calendar") {
-      const timer = setTimeout(() => {
-        const win = window as any;
-        if (win.Calendly && typeof win.Calendly.initInlineWidgets === "function") {
-          win.Calendly.initInlineWidgets();
-        }
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [step, leadInfo]);
-
   const handleQualified = (data: { firstName: string; lastName: string; email: string }) => {
     setLeadInfo(data);
+    setCalendarLoaded(false);
     setStep("calendar");
     if (typeof window !== "undefined") {
       sessionStorage.setItem("myntmore_qualified_lead", JSON.stringify(data));
@@ -103,17 +96,43 @@ export default function BookACallClient() {
   };
 
   const handleResetQualification = () => {
+    setCalendarLoaded(false);
     setStep("qualification");
     if (typeof window !== "undefined") {
       sessionStorage.removeItem("myntmore_qualified_lead");
     }
   };
 
-  const calendlyUrl = `https://calendly.com/founder-myntmore/web?primary_color=ffc947${
-    leadInfo
-      ? `&name=${encodeURIComponent(`${leadInfo.firstName} ${leadInfo.lastName}`)}&email=${encodeURIComponent(leadInfo.email)}`
-      : ""
-  }`;
+  const calendlyEmbedUrl = (() => {
+    const base = "https://calendly.com/founder-myntmore/web";
+    const params = new URLSearchParams();
+    if (typeof window !== "undefined") {
+      params.set("embed_domain", window.location.host);
+    } else {
+      params.set("embed_domain", "www.myntmore.com");
+    }
+    params.set("embed_type", "Inline");
+    params.set("primary_color", "ffc947");
+    params.set("hide_landing_page_details", "0");
+    params.set("hide_gdpr_banner", "1");
+    if (leadInfo) {
+      const fullName = `${leadInfo.firstName || ""} ${leadInfo.lastName || ""}`.trim();
+      if (fullName) params.set("name", fullName);
+      if (leadInfo.email) params.set("email", leadInfo.email);
+    }
+    return `${base}?${params.toString()}`;
+  })();
+
+  const calendlyExternalUrl = (() => {
+    const base = "https://calendly.com/founder-myntmore/web";
+    const params = new URLSearchParams({ primary_color: "ffc947" });
+    if (leadInfo) {
+      const fullName = `${leadInfo.firstName || ""} ${leadInfo.lastName || ""}`.trim();
+      if (fullName) params.set("name", fullName);
+      if (leadInfo.email) params.set("email", leadInfo.email);
+    }
+    return `${base}?${params.toString()}`;
+  })();
 
   return (
     <InnerLayout>
@@ -353,7 +372,7 @@ export default function BookACallClient() {
                           <span>Edit answers</span>
                         </button>
                         <a
-                          href={calendlyUrl}
+                          href={calendlyExternalUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-xs font-bold text-[#A14A08] hover:text-[#0A0A0A] inline-flex items-center gap-1 transition-colors"
@@ -373,15 +392,27 @@ export default function BookACallClient() {
                       </div>
                     )}
 
-                    {/* Embedded Calendly Widget */}
-                    <div className="relative p-2 sm:p-4 min-h-[720px] bg-white">
-                      <div
-                        className="calendly-inline-widget w-full"
-                        data-url={calendlyUrl}
+                    {/* Direct Embedded Calendly Container */}
+                    <div className="relative min-h-[720px] bg-white">
+                      {!calendarLoaded && (
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-10 py-20">
+                          <div className="w-9 h-9 rounded-full border-2 border-[#E8E2D9] border-t-[#F5B731] animate-spin mb-3" />
+                          <p className="text-xs text-[#71675E] font-medium">Loading available calendar slots...</p>
+                        </div>
+                      )}
+                      <iframe
+                        src={calendlyEmbedUrl}
+                        width="100%"
+                        height={calendarHeight}
+                        title="Select a Date & Time - Calendly"
+                        className="w-full border-0 block"
                         style={{
                           minWidth: "320px",
-                          height: "720px",
+                          height: calendarHeight,
+                          border: "none",
                         }}
+                        allow="camera; microphone; autoplay; encrypted-media; fullscreen"
+                        onLoad={() => setCalendarLoaded(true)}
                       />
                     </div>
 
@@ -389,7 +420,7 @@ export default function BookACallClient() {
                     <div className="p-4 bg-[#FAF8F5] border-t border-[#E8E2D9] flex flex-wrap items-center justify-between gap-3 text-xs">
                       <span className="text-[#71675E]">Prefer opening in full window?</span>
                       <a
-                        href={calendlyUrl}
+                        href={calendlyExternalUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-bold text-[#A14A08] hover:text-[#0A0A0A] inline-flex items-center gap-1 transition-colors"
@@ -524,12 +555,6 @@ export default function BookACallClient() {
           </FadeIn>
         </section>
       </div>
-
-      {/* Calendly Widget Script */}
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
-      />
     </InnerLayout>
   );
 }

@@ -8,19 +8,19 @@ import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "B2B Lead Gen Strategist, Mumbai | Rs 4-7 LPA",
-  description: "Join Myntmore as B2B Lead Gen Strategist in Worli, Mumbai. Build outbound systems via LinkedIn, cold email & AI. Rs 4-7 LPA. Apply now.",
-  keywords: ["lead generation strategist jobs mumbai", "b2b lead generation jobs", "lead gen jobs worli mumbai", "linkedin outreach jobs mumbai", "cold email jobs mumbai", "b2b marketing jobs mumbai", "sales development jobs mumbai", "lead generation executive jobs", "b2b growth jobs india", "outbound marketing jobs mumbai", "entry level lead generation jobs", "growth marketing jobs worli", "myntmore careers", "b2b lead gen strategist job openings"],
+  description: "Join Myntmore as B2B Lead Gen Strategist in BKC, Mumbai. Build outbound systems via LinkedIn, cold email & AI. Rs 4-7 LPA. Apply now.",
+  keywords: ["lead generation strategist jobs mumbai", "b2b lead generation jobs", "lead gen jobs bkc mumbai", "linkedin outreach jobs mumbai", "cold email jobs mumbai", "b2b marketing jobs mumbai", "sales development jobs mumbai", "lead generation executive jobs", "b2b growth jobs india", "outbound marketing jobs mumbai", "entry level lead generation jobs", "growth marketing jobs bkc", "myntmore careers", "b2b lead gen strategist job openings"],
   alternates: { canonical: "https://www.myntmore.com/careers/lead-gen-strategist" },
   openGraph: {
     title: "B2B Lead Generation Strategist | Myntmore Careers",
-    description: "Build predictable B2B pipelines across multiple industries. Full-time, Worli Mumbai.",
+    description: "Build predictable B2B pipelines across multiple industries. Full-time, BKC Mumbai.",
     url: "https://www.myntmore.com/careers/lead-gen-strategist",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const APPLY_SUBJECT = "Application for B2B Lead Generation Strategist";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 const ACCENT = "#3b82f6";
 
 // datePosted is this page's real git creation date, not fabricated.
@@ -31,7 +31,7 @@ const ACCENT = "#3b82f6";
 // `npm run audit:jobs` lists every posting's date and warns 45 days ahead.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "B2B Lead Generation Strategist",
-  description: "Join Myntmore as a B2B Lead Generation Strategist in Worli, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
+  description: "Join Myntmore as a B2B Lead Generation Strategist in BKC, Mumbai. Build multi-channel outbound systems using LinkedIn, cold email, and AI tools. Rs 4–7 LPA + incentives.",
   url: "https://www.myntmore.com/careers/lead-gen-strategist",
   datePosted: "2026-05-29T18:55:36+05:30",
   validThrough: "2027-04-15T00:00:00+05:30",
@@ -46,13 +46,13 @@ export default function LeadGenStrategist() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "B2B Lead Gen Strategist", href: "/careers/lead-gen-strategist" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: textTone(ACCENT), border: "1px solid rgba(59,130,246,0.2)" }}>Full-Time · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(59,130,246,0.08)", color: textTone(ACCENT), border: "1px solid rgba(59,130,246,0.2)" }}>Full-Time · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             B2B Lead Generation Strategist
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA + incentives"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
@@ -156,7 +156,7 @@ export default function LeadGenStrategist() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Work directly on real founder pipelines, get exposure to multiple industries and global markets, and learn AI-led growth systems that very few agencies in India truly understand. Work from WeWork Worli with a young, hungry team, with high growth potential and incentives tied to lead performance.
+              Work directly on real founder pipelines, get exposure to multiple industries and global markets, and learn AI-led growth systems that very few agencies in India truly understand. Work from WeWork Enam Sambhav, BKC with a young, hungry team, with high growth potential and incentives tied to lead performance.
             </p>
           </div>
 

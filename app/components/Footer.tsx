@@ -155,7 +155,7 @@ export default function Footer() {
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
             <p className="text-xs mb-3" style={{ color: "#71675E" }}>
-              WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar, Worli, Mumbai 400025
+              WeWork Enam Sambhav, C - 20, G Block Rd,<br />G Block BKC, Bandra Kurla Complex, Bandra East,<br />Mumbai, Maharashtra 400051
             </p>
             <a
               href="tel:+918169318951"

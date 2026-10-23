@@ -44,11 +44,10 @@ export const organizationSchema: OrganizationSchema = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli",
+    streetAddress: "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East",
     addressLocality: "Mumbai",
-    // Inferred from the city (not explicitly provided) — drop this field if undesired.
     addressRegion: "Maharashtra",
-    postalCode: "400025",
+    postalCode: "400051",
     addressCountry: "IN",
   },
   sameAs: [
@@ -329,7 +328,7 @@ export interface JobPostingInput {
 }
 
 // jobLocationType/applicantLocationRequirements aren't set here: every open
-// role's own page lists a physical Worli, Mumbai location (not fully
+// role's own page lists a physical BKC, Mumbai location (not fully
 // remote), so this models an on-site/hybrid posting rather than claiming a
 // remote arrangement the page doesn't actually describe.
 export function buildJobPostingSchema({
@@ -340,10 +339,10 @@ export function buildJobPostingSchema({
   validThrough,
   employmentType,
   baseSalary,
-  streetAddress = "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli",
+  streetAddress = "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East",
   addressLocality = "Mumbai",
   addressRegion = "Maharashtra",
-  postalCode = "400025",
+  postalCode = "400051",
 }: JobPostingInput) {
   return {
     "@context": "https://schema.org",

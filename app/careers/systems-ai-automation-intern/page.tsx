@@ -7,19 +7,19 @@ import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "AI Automation Intern, Mumbai | Rs 7-20K/mo",
-  description: "Join Myntmore as Systems & AI Automation Intern in Worli, Mumbai. Build AI agents, n8n/Clay automations, and own SEO/AEO/GEO. WFO, apply now.",
+  description: "Join Myntmore as Systems & AI Automation Intern in BKC, Mumbai. Build AI agents, n8n/Clay automations, and own SEO/AEO/GEO. WFO, apply now.",
   keywords: ["ai automation internship mumbai", "systems intern mumbai", "n8n internship india", "ai agents internship", "automation internship with ppo", "clay apollo internship", "seo aeo geo internship", "vibe coding internship", "python automation internship mumbai", "myntmore careers", "ai automation intern jobs mumbai"],
   alternates: { canonical: "https://www.myntmore.com/careers/systems-ai-automation-intern" },
   openGraph: {
     title: "Systems & AI Automation Intern | Myntmore Careers",
-    description: "Build the AI agents and automations that run Myntmore. Internship, Worli Mumbai.",
+    description: "Build the AI agents and automations that run Myntmore. Internship, BKC Mumbai.",
     url: "https://www.myntmore.com/careers/systems-ai-automation-intern",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const APPLY_SUBJECT = "Application for Systems and AI Automation Intern";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 const ACCENT = "#14B8A6";
 
 // datePosted is this page's real creation date; validThrough is a 6-month
@@ -27,7 +27,7 @@ const ACCENT = "#14B8A6";
 // internship postings (there's no fixed application deadline for this role).
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "Systems & AI Automation Intern",
-  description: "Join Myntmore as a Systems & AI Automation Intern in Worli, Mumbai. Build internal and client-facing AI agents, automate workflows with n8n/Clay/Python, and own SEO, AEO, and GEO. Full-time hours, work from office.",
+  description: "Join Myntmore as a Systems & AI Automation Intern in BKC, Mumbai. Build internal and client-facing AI agents, automate workflows with n8n/Clay/Python, and own SEO, AEO, and GEO. Full-time hours, work from office.",
   url: "https://www.myntmore.com/careers/systems-ai-automation-intern",
   datePosted: "2026-09-30T00:00:00+05:30",
   validThrough: "2027-03-30T00:00:00+05:30",
@@ -166,13 +166,13 @@ export default function SystemsAiAutomationIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Systems & AI Automation Intern", href: "/careers/systems-ai-automation-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${ACCENT}14`, color: textTone(ACCENT), border: `1px solid ${ACCENT}33` }}>Internship · Work from Office · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: `${ACCENT}14`, color: textTone(ACCENT), border: `1px solid ${ACCENT}33` }}>Internship · Work from Office · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Systems & AI Automation Intern
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Hours", "Full-time, 10:00 AM – 7:00 PM"], ["Stipend", "Rs 7,000–20,000 (based on experience)"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Hours", "Full-time, 10:00 AM – 7:00 PM"], ["Stipend", "Rs 7,000–20,000 (based on experience)"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
@@ -190,7 +190,7 @@ export default function SystemsAiAutomationIntern() {
             Apply Now
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
-          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to founder@myntmore.com and growth@myntmore.com with subject: {APPLY_SUBJECT}. See the 3-step apply process below — it&apos;s not just a resume.</p>
+          <p className="mt-3 text-xs" style={{ color: "#71675E" }}>Send to founder@myntmore.com and growth@myntmore.com with subject: {APPLY_SUBJECT}. See the 3-step apply process below - it&apos;s not just a resume.</p>
         </div>
       </section>
 

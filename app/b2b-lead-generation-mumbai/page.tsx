@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Mumbai",
   description: "AI-powered B2B lead generation for Mumbai's BFSI, media, and corporate businesses: cold email, LinkedIn & ABM. Book a free GTM audit.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-mumbai" },
-  keywords: ["b2b lead generation mumbai", "outbound agency mumbai", "linkedin outreach mumbai", "cold email agency mumbai", "account based marketing mumbai", "ai lead generation mumbai", "abm agency mumbai", "sales intelligence mumbai", "b2b lead generation for bfsi companies mumbai", "lead generation for media and entertainment companies mumbai", "b2b leads for professional services firms mumbai", "demand generation agency mumbai", "linkedin ghostwriting for founders mumbai", "cold email agency worli mumbai", "best b2b outbound agency in mumbai", "how to get b2b leads in mumbai", "outbound agency for saas founders mumbai"],
+  keywords: ["b2b lead generation mumbai", "outbound agency mumbai", "linkedin outreach mumbai", "cold email agency mumbai", "account based marketing mumbai", "ai lead generation mumbai", "abm agency mumbai", "sales intelligence mumbai", "b2b lead generation for bfsi companies mumbai", "lead generation for media and entertainment companies mumbai", "b2b leads for professional services firms mumbai", "demand generation agency mumbai", "linkedin ghostwriting for founders mumbai", "cold email agency bkc mumbai", "best b2b outbound agency in mumbai", "how to get b2b leads in mumbai", "outbound agency for saas founders mumbai"],
   openGraph: {
     title: "B2B Lead Generation Agency in Mumbai | Myntmore",
     description: "AI-powered outbound systems built for Mumbai's BFSI, media, and corporate landscape.",
@@ -42,7 +42,7 @@ const DIFFERENTIATORS = [
 ];
 
 const FAQ = [
-  { q: "Do we need to be based in Mumbai to work with you?", a: "No. We're headquartered in Worli, Mumbai, and many of our clients are here, but the entire engagement runs remotely. Location has no bearing on how the system is built or managed." },
+  { q: "Do we need to be based in Mumbai to work with you?", a: "No. We're headquartered in Bandra Kurla Complex (BKC), Mumbai, and many of our clients are here, but the entire engagement runs remotely. Location has no bearing on how the system is built or managed." },
   { q: "Do you only work with Mumbai companies?", a: "Not at all. Mumbai is where we're based and where a large share of our clients happen to be, but we run outbound systems for B2B companies across India and internationally." },
   { q: "How quickly can we expect meetings to start?", a: "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete." },
   { q: "What does pricing look like?", a: "We work on a monthly retainer with no long-term lock-in. You can review results every 30 days and decide whether to continue." },

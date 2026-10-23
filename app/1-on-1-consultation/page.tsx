@@ -2,6 +2,21 @@ import type { Metadata } from "next";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import Breadcrumbs from "../components/Breadcrumbs";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
+
+const CONSULTATION_SCHEMA = [
+  buildBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "1-on-1 Consultation", url: `${SITE_URL}/1-on-1-consultation` },
+  ]),
+  buildServiceSchema({
+    name: "1-on-1 B2B Growth Consultation & Free GTM Audit",
+    description: "Free 30-minute growth consultation and outbound audit with Tejas Jhaveri. Review outbound messaging, deliverability, and ICP mapping.",
+    serviceType: "B2B Sales & GTM Consulting",
+    url: `${SITE_URL}/1-on-1-consultation`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "1-on-1 B2B Growth Consultation | Free GTM Audit",
@@ -34,6 +49,7 @@ export const metadata: Metadata = {
 export default function OneOnOneConsultation() {
   return (
     <InnerLayout>
+      <JsonLd data={CONSULTATION_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "1-on-1 Consultation", href: "/1-on-1-consultation" }]} />

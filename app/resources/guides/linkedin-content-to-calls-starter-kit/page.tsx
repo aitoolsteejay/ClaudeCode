@@ -167,7 +167,7 @@ export default function LinkedInContentToCallsStarterKit() {
           <div>
             <h2 className="text-xl font-black mb-2" style={{ color: "#0a0a0a" }}>From one growth team to another</h2>
             <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
-              <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="font-bold underline" style={{ color: "#0a0a0a" }}>Tejas</a> isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his growth marketing agency, he&apos;s partnered with over 300 clients to generate $80M+ in revenue. He&apos;s a TEDx speaker, has been a Growth Marketing professor to over 100,000 students, and is a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
+              <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="font-bold underline" style={{ color: "#0a0a0a" }}>Tejas</a> isn&apos;t your average marketer. He&apos;s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At Myntmore, his growth marketing agency, he&apos;s partnered with 300+ B2B companies to generate $120M+ in pipeline. He&apos;s a TEDx speaker, has been a Growth Marketing professor to over 100,000 students, and is a strategist who knows how to make marketing actually work. Now, he&apos;s here to do it for you.
             </p>
           </div>
         </div>

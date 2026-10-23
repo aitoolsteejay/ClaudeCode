@@ -10,8 +10,8 @@ import { CASE_STUDY_PATHS } from "@/lib/internal-paths";
 import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Messaging Shift Tripled Hot Leads for Leadership Brand | Myntmore",
-  description: "How Myntmore tripled hot leads and achieved a 60% acceptance rate for an executive leadership brand by shifting to concise, relevance-led LinkedIn outreach.",
+  title: "Leadership Brand Messaging Shift Case Study",
+  description: "How Myntmore tripled hot leads and hit a 60% acceptance rate for an executive leadership brand via relevance-led LinkedIn outreach.",
   keywords: [
     "leadership development lead generation case study",
     "executive coaching linkedin outreach",

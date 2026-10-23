@@ -10,7 +10,7 @@ import { CASE_STUDY_PATHS } from "@/lib/internal-paths";
 import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Retail Strategy & Store Design Pipeline Case Study | Myntmore",
+  title: "Retail Strategy & Design Pipeline Case Study",
   description: "How Myntmore generated 69 hot leads across 8+ industries for a retail innovation and store design consultancy through segmented LinkedIn outbound.",
   keywords: [
     "retail design b2b lead generation case study",

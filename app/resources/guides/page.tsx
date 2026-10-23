@@ -3,7 +3,22 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import FadeIn from "../../components/FadeIn";
+import JsonLd from "../../components/JsonLd";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
+
+const GUIDES_PAGE_SCHEMA = [
+  buildBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Resources", url: `${SITE_URL}/resources` },
+    { name: "Guides", url: `${SITE_URL}/resources/guides` },
+  ]),
+  buildCollectionPageSchema({
+    name: "Free B2B Growth Guides",
+    description: "Free step-by-step guides on AI agents, Claude skills, and outbound systems for B2B founders.",
+    url: `${SITE_URL}/resources/guides`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "Free B2B Growth Guides",
@@ -166,6 +181,7 @@ const GUIDES = [
 export default function GuidesPage() {
   return (
     <InnerLayout>
+      <JsonLd data={GUIDES_PAGE_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-180px", right: "-180px", width: "620px", height: "620px", borderRadius: "50%", background: "radial-gradient(circle, rgba(249,115,22,0.24) 0%, rgba(217,119,6,0.08) 45%, transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
 

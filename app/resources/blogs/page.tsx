@@ -5,7 +5,7 @@ import FadeIn from "../../components/FadeIn";
 import JsonLd from "../../components/JsonLd";
 import BlogGrid, { type BlogPost } from "./BlogGrid";
 import NewsletterForm from "../../components/NewsletterForm";
-import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
@@ -13,6 +13,15 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Resources", url: `${SITE_URL}/resources` },
   { name: "Blog", url: `${SITE_URL}/resources/blogs` },
 ]);
+
+const BLOGS_PAGE_SCHEMA = [
+  BREADCRUMB_SCHEMA,
+  buildCollectionPageSchema({
+    name: "B2B Lead Generation Blog",
+    description: "In-depth guides on cold email, ICP mapping, LinkedIn outreach, deliverability, and outbound metrics.",
+    url: `${SITE_URL}/resources/blogs`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Blog",
@@ -129,7 +138,7 @@ const BLOG_POSTS: BlogPost[] = [
     href: "/blog/b2b-outbound-benchmark-report-2026",
     tags: ["Lead Generation", "Metrics & Reporting"],
     title: "The 2026 B2B Outbound Benchmark Report",
-    excerpt: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B accounts, aggregated and anonymized. See how you compare.",
+    excerpt: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.",
     readTime: "8 min read",
   },
   {
@@ -352,7 +361,7 @@ export default async function BlogsPage() {
 
   return (
     <InnerLayout>
-      <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={BLOGS_PAGE_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4 overflow-hidden border-b" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-8">

@@ -16,7 +16,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "The 2026 B2B Outbound Benchmark Report",
-  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B accounts, aggregated and anonymized. See how you compare.",
+  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.",
   alternates: { canonical: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026" },
   keywords: [
     "b2b outbound benchmark report",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "The 2026 B2B Outbound Benchmark Report | Myntmore",
-    description: "Aggregated, anonymized data from 300+ B2B accounts: what a healthy reply rate, inbox rate, and time-to-meeting actually looks like.",
+    description: "Aggregated, anonymized data from 300+ B2B companies: what a healthy reply rate, inbox rate, and time-to-meeting actually looks like.",
     url: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The 2026 B2B Outbound Benchmark Report",
-  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B accounts, aggregated and anonymized. See how you compare.",
+  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.",
   url: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
   datePublished: "2026-08-19T12:00:00+05:30",
   dateModified: "2026-08-19T12:00:00+05:30",
@@ -85,7 +85,7 @@ export default function B2BOutboundBenchmarkReport2026() {
         <div className="max-w-3xl mx-auto rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
           <h2 className="text-sm font-black uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Methodology</h2>
           <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
-            These figures are aggregated and anonymized across the 300+ B2B accounts Myntmore has managed cold email, LinkedIn outreach, and AI-qualified list campaigns for. No single client&apos;s data is broken out or identifiable. Ranges reflect the spread across account size, industry, and ICP, not a single blended average, since a flat number would hide more than it reveals. &quot;Typical&quot; figures for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
+            These figures are aggregated and anonymized across the 300+ B2B companies Myntmore has managed cold email, LinkedIn outreach, and AI-qualified list campaigns for. No single client&apos;s data is broken out or identifiable. Ranges reflect the spread across account size, industry, and ICP, not a single blended average, since a flat number would hide more than it reveals. &quot;Typical&quot; figures for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
           </p>
         </div>
       </div>

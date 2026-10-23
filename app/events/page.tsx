@@ -3,7 +3,7 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
-import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 import { EVENTS, isUpcoming, type EventItem } from "@/lib/events-data";
 import { textTone } from "@/lib/colors";
 
@@ -12,6 +12,20 @@ const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Resources", url: `${SITE_URL}/resources` },
   { name: "Events", url: `${SITE_URL}/events` },
 ]);
+
+const EVENTS_PAGE_SCHEMA = [
+  BREADCRUMB_SCHEMA,
+  buildCollectionPageSchema({
+    name: "B2B Outbound Events & Webinars",
+    description: "Live sessions on cold email, LinkedIn outreach, and B2B pipeline building from the Myntmore team.",
+    url: `${SITE_URL}/events`,
+    itemList: EVENTS.map((e) => ({
+      name: e.title,
+      url: `${SITE_URL}/events/${e.slug}`,
+      description: e.description,
+    })),
+  }),
+];
 
 export const metadata: Metadata = {
   title: "B2B Outbound Events & Webinars",
@@ -65,7 +79,7 @@ export default function EventsPage() {
   const past = EVENTS.filter((e) => !isUpcoming(e));
   return (
     <InnerLayout>
-      <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={EVENTS_PAGE_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", left: "-160px", width: "650px", height: "650px", borderRadius: "50%", background: "radial-gradient(circle, rgba(139,92,246,0.22) 0%, rgba(124,58,237,0.08) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />
         <div aria-hidden="true" style={{ position: "absolute", top: "-100px", right: "-160px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,160,0,0.09) 40%, transparent 68%)", filter: "blur(55px)", pointerEvents: "none" }} />

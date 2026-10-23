@@ -4,13 +4,22 @@ import { BookOpen, Compass, Sparkles, Library, Instagram } from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
-import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
   { name: "Resources", url: `${SITE_URL}/resources` },
 ]);
+
+const RESOURCES_PAGE_SCHEMA = [
+  BREADCRUMB_SCHEMA,
+  buildCollectionPageSchema({
+    name: "B2B Growth Resources: Blogs & Free Tools",
+    description: "Free playbooks, tools, and real client results for B2B founders who want predictable pipeline.",
+    url: `${SITE_URL}/resources`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "B2B Growth Resources: Blogs & Free Tools",
@@ -92,7 +101,7 @@ const DIRECTORY = [
 export default function Resources() {
   return (
     <InnerLayout>
-      <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={RESOURCES_PAGE_SCHEMA} />
       {/* ── Hero ── */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         {/* Decorative blobs */}

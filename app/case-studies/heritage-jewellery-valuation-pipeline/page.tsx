@@ -10,8 +10,8 @@ import { CASE_STUDY_PATHS } from "@/lib/internal-paths";
 import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Building a B2B Pipeline for a 180-Year-Old Heritage Jewellery Business | Myntmore",
-  description: "How Myntmore helped a 5-generation heritage jewellery valuation firm generate 68 hot leads, 897 connections, and 9 booked meetings across CAs, wealth managers, and private banks.",
+  title: "Heritage Jewellery B2B Outreach Case Study",
+  description: "How Myntmore generated 68 hot leads, 897 connections, and 9 meetings for a heritage jewellery valuation firm across wealth networks.",
   keywords: [
     "jewellery b2b lead generation case study",
     "heritage business b2b outreach",

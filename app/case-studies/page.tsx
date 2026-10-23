@@ -1,6 +1,20 @@
 import type { Metadata } from "next";
 import CaseStudiesClient from "./CaseStudiesClient";
 import { libraryCards } from "@/lib/case-study-library";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
+
+const SCHEMA = [
+  buildBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Case Studies", url: `${SITE_URL}/case-studies` },
+  ]),
+  buildCollectionPageSchema({
+    name: "B2B Case Studies & Client Results",
+    description: "Real client results from Myntmore's cold email, LinkedIn outreach, and ABM systems.",
+    url: `${SITE_URL}/case-studies`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "B2B Case Studies & Client Results",
@@ -16,5 +30,10 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-  return <CaseStudiesClient libraryCards={libraryCards()} />;
+  return (
+    <>
+      <JsonLd data={SCHEMA} />
+      <CaseStudiesClient libraryCards={libraryCards()} />
+    </>
+  );
 }

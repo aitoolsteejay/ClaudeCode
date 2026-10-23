@@ -10,7 +10,7 @@ import { CASE_STUDY_PATHS } from "@/lib/internal-paths";
 import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Outbound Pipeline for an AI Medical Tourism Platform | Myntmore",
+  title: "AI Medical Tourism Platform Case Study",
   description: "How Myntmore generated 140 qualified leads with a 61.6% hospital response rate for an AI medical tourism platform. See the case study.",
   keywords: [
     "medical tourism lead generation case study",
@@ -182,7 +182,7 @@ export default function MedicalTourismPlatformPipeline() {
               The Challenge
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-[#52525B] mb-4">
-              Medical travel is an exceptionally high-trust category. The stakeholders involved are not making everyday business software purchases — they are dealing with patients seeking critical treatments, referrals between specialists and hospitals, diagnostic reports, cultural expectations, and cross-border care delivery.
+              Medical travel is an exceptionally high-trust category. The stakeholders involved are not making everyday business software purchases: they are dealing with patients seeking critical treatments, referrals between specialists and hospitals, diagnostic reports, cultural expectations, and cross-border care delivery.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-[#52525B]">
               A generic product-led sales pitch would have immediately failed in this environment. The challenge was to systematically reach diverse roles across the medical travel ecosystem, pinpoint which audiences had genuine commercial appetite, and initiate consultative dialogues without making every interaction feel like another aggressive sales solicitation.

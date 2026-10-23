@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
 import CareersClient from "./CareersClient";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
+
+const CAREERS_SCHEMA = [
+  buildBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Careers", url: `${SITE_URL}/careers` },
+  ]),
+  buildCollectionPageSchema({
+    name: "Careers at Myntmore",
+    description: "Open roles in B2B sales, outbound lead generation, and GTM strategy at Myntmore.",
+    url: `${SITE_URL}/careers`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: { absolute: "Careers at Myntmore" },
@@ -15,5 +29,10 @@ export const metadata: Metadata = {
 };
 
 export default function CareersPage() {
-  return <CareersClient />;
+  return (
+    <>
+      <JsonLd data={CAREERS_SCHEMA} />
+      <CareersClient />
+    </>
+  );
 }

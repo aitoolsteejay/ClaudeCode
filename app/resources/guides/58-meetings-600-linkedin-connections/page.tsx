@@ -216,7 +216,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
           <p className="text-base leading-relaxed hero-fade-d2 mb-8" style={{ color: "#52525B" }}>
             <a href="https://www.linkedin.com/in/tejasjhaveri/" target="_blank" rel="noopener noreferrer" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Tejas</a>{" "}
             isn’t your average marketer. He’s a 4x entrepreneur who built Flintstop, a D2C eCommerce brand, into a $6M-a-year machine, shipping out 8,000 orders a day before selling the business in 2020. At{" "}
-            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he’s partnered with 300+ clients to generate $80M+ in revenue. He’s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he’s here to do it for you.
+            <a href="https://www.myntmore.com/" className="link-subtle font-semibold" style={{ color: "#0a0a0a" }}>Myntmore</a>, his growth marketing agency, he’s partnered with 300+ B2B companies to generate $120M+ in pipeline. He’s a TEDx speaker, been a Growth Marketing professor to over 100,000 students, and a strategist who knows how to make marketing actually work. Now, he’s here to do it for you.
           </p>
 
           <FadeIn delay={150}>
@@ -375,7 +375,7 @@ export default function LinkedinFiftyEightMeetingsGuide() {
             <p className="text-sm sm:text-base font-semibold mb-3" style={{ color: "#3D3D3D" }}>Make it niche-specific:</p>
             <CheckList items={["Similar industries", "Similar team size", "Similar role challenges"]} accent={BLUE} />
             <p className="text-sm sm:text-base leading-relaxed mt-4" style={{ color: "#3D3D3D" }}>
-              No generic “we’ve helped 300 clients.” <span className="font-bold" style={{ color: "#0a0a0a" }}>Make it relatable.</span>
+              No generic &ldquo;we have helped hundreds of companies.&rdquo; <span className="font-bold" style={{ color: "#0a0a0a" }}>Make it relatable.</span>
             </p>
           </li>
 

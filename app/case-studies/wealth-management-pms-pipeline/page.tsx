@@ -10,8 +10,8 @@ import { CASE_STUDY_PATHS } from "@/lib/internal-paths";
 import { buildArticleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Building a Solid Pipeline for a Wealth Management & PMS Firm",
-  description: "How Myntmore built an outbound and content pipeline for a SEBI-registered PMS firm: 150+ qualified leads, 52% response rate, 500% impression growth. See the case study.",
+  title: "Wealth Management & PMS Firm Case Study",
+  description: "How Myntmore built a pipeline for a SEBI-registered PMS firm: 150+ leads, 52% response rate, and 500% impression growth.",
   keywords: [
     "wealth management lead generation case study",
     "pms pipeline b2b outbound case study",
@@ -78,7 +78,7 @@ const SEGMENTS = [
     name: "Small Company CXOs",
     acceptance: "25%",
     response: "28%",
-    leads: "—",
+    leads: "N/A",
     notes: "Lower intent/urgency for PMS at this stage",
     highlight: false,
   },
@@ -285,7 +285,7 @@ export default function WealthManagementPmsPipeline() {
             </div>
 
             <p className="text-base leading-relaxed text-[#52525B]">
-              The audience quality moved in step with the volume: the people discovering and engaging with the content were founders, financial planners, accountants, and investment managers across <strong>Mumbai, Pune, Delhi, and Bangalore</strong> — the company&apos;s exact buyer profile, not generic viral reach.
+              The audience quality moved in step with the volume: the people discovering and engaging with the content were founders, financial planners, accountants, and investment managers across <strong>Mumbai, Pune, Delhi, and Bangalore</strong>, representing the company&apos;s exact buyer profile, not generic viral reach.
             </p>
           </div>
 
@@ -348,7 +348,7 @@ export default function WealthManagementPmsPipeline() {
                         <td className="py-4 px-4 font-semibold text-[#0A0A0A]">{seg.acceptance}</td>
                         <td className="py-4 px-4 font-black text-[#7C3AED]">{seg.response}</td>
                         <td className="py-4 px-4 font-black text-[#0A0A0A]">
-                          {seg.leads !== "—" ? <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs">{seg.leads}</span> : <span className="text-[#A1A1AA]">{seg.leads}</span>}
+                          {seg.leads !== "N/A" ? <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs">{seg.leads}</span> : <span className="text-[#A1A1AA]">{seg.leads}</span>}
                         </td>
                         <td className="py-4 px-4 sm:px-6 text-xs text-[#52525B]">{seg.notes}</td>
                       </tr>

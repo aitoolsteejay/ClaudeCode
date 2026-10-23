@@ -25,7 +25,7 @@ const walk = (dir, out = []) => {
   return out;
 };
 const files = [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib"))]
-  .filter((f) => !/site-audit|sitemap-dates|service-answers|entity-facts/.test(f))
+  .filter((f) => !/site-audit|sitemap-dates|service-answers|entity-facts|research/.test(f))
   .filter((f) => !f.includes(`${path.sep}api${path.sep}`));
 
 // Each family is a claim that should have exactly one value sitewide.

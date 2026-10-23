@@ -3,7 +3,22 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import FadeIn from "../../components/FadeIn";
+import JsonLd from "../../components/JsonLd";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
+
+const GLOSSARY_PAGE_SCHEMA = [
+  buildBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Resources", url: `${SITE_URL}/resources` },
+    { name: "Glossary", url: `${SITE_URL}/resources/glossary` },
+  ]),
+  buildCollectionPageSchema({
+    name: "B2B Outbound Glossary",
+    description: "Plain-English definitions of terms and frameworks behind Myntmore's outbound systems.",
+    url: `${SITE_URL}/resources/glossary`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "B2B Outbound Glossary",
@@ -447,6 +462,7 @@ const LETTERS = Array.from(new Set([...Object.keys(GROUPED), ...Object.keys(GROU
 export default function GlossaryPage() {
   return (
     <InnerLayout>
+      <JsonLd data={GLOSSARY_PAGE_SCHEMA} />
       <section className="relative pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Glossary", href: "/resources/glossary" }]} />

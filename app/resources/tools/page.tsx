@@ -3,13 +3,22 @@ import Link from "next/link";
 import InnerLayout from "../../components/InnerLayout";
 import FadeIn from "../../components/FadeIn";
 import JsonLd from "../../components/JsonLd";
-import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
   { name: "Resources", url: `${SITE_URL}/resources` },
   { name: "Free Tools", url: `${SITE_URL}/resources/tools` },
 ]);
+
+const TOOLS_PAGE_SCHEMA = [
+  BREADCRUMB_SCHEMA,
+  buildCollectionPageSchema({
+    name: "Free B2B Lead Generation Tools",
+    description: "Free AI-powered tools for B2B founders: optimize your LinkedIn profile, generate outreach angles, and calculate outbound ROI.",
+    url: `${SITE_URL}/resources/tools`,
+  }),
+];
 
 export const metadata: Metadata = {
   title: "Free B2B Lead Generation Tools",
@@ -155,7 +164,7 @@ const FREE_TOOLS = [
 export default function ToolsPage() {
   return (
     <InnerLayout>
-      <JsonLd data={BREADCRUMB_SCHEMA} />
+      <JsonLd data={TOOLS_PAGE_SCHEMA} />
       <section className="relative pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-6">
@@ -167,7 +176,7 @@ export default function ToolsPage() {
             9 tools. Zero forms<br />until you want the output.
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl mb-8" style={{ color: "#52525B" }}>
-            AI tools built to help B2B founders run smarter outreach — try any of them free.
+            AI tools built to help B2B founders run smarter outreach. Try any of them free.
           </p>
           <div className="flex flex-wrap gap-3 mb-10">
             {["No sign-up to try", "No credit card", "Built by us, used by us"].map((chip) => (

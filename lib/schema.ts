@@ -386,3 +386,34 @@ export function buildJobPostingSchema({
       : {}),
   };
 }
+
+export interface CollectionPageInput {
+  name: string;
+  description: string;
+  url: string;
+  itemList?: { name: string; url: string; description?: string }[];
+}
+
+export function buildCollectionPageSchema({ name, description, url, itemList }: CollectionPageInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url,
+    ...(itemList && itemList.length > 0
+      ? {
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: itemList.map((item, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: item.name,
+              url: item.url,
+              ...(item.description ? { description: item.description } : {}),
+            })),
+          },
+        }
+      : {}),
+  };
+}

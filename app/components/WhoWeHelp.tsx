@@ -339,7 +339,7 @@ export default function WhoWeHelp() {
               </p>
               <div>
                 <a
-                  href="/founder-meeting"
+                  href="/book-a-call"
                   className="btn-dark inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold"
                 >
                   {persona.cta}

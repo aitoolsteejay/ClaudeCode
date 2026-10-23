@@ -7,19 +7,19 @@ import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "Content Marketing Intern, Mumbai | Rs 7-15K/mo",
-  description: "Join Myntmore as Content Marketing Strategist Intern in Worli, Mumbai. Write viral LinkedIn content for founders & CXOs. 1-year min, PPO. Apply now.",
+  description: "Join Myntmore as Content Marketing Strategist Intern in BKC, Mumbai. Write viral LinkedIn content for founders & CXOs. 1-year min, PPO. Apply now.",
   keywords: ["content strategist internship mumbai", "linkedin ghostwriting internship", "content writing internship mumbai", "personal branding internship", "linkedin content internship india", "content marketing internship mumbai", "founder ghostwriter internship", "content strategist jobs mumbai", "linkedin content writer internship", "storytelling internship mumbai", "b2b content internship", "content writing internship with ppo", "myntmore careers", "content strategist internship jobs"],
   alternates: { canonical: "https://www.myntmore.com/careers/content-marketing-strategist-intern" },
   openGraph: {
     title: "Content Marketing Strategist Intern | Myntmore Careers",
-    description: "Write high-impact LinkedIn content for founders and CXOs. Internship, Worli Mumbai.",
+    description: "Write high-impact LinkedIn content for founders and CXOs. Internship, BKC Mumbai.",
     url: "https://www.myntmore.com/careers/content-marketing-strategist-intern",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const APPLY_SUBJECT = "Application for Content Marketing Strategist Intern";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 const ACCENT = "#ec4899";
 
 // datePosted is this page's real creation date, not fabricated. validThrough
@@ -28,7 +28,7 @@ const ACCENT = "#ec4899";
 // no fixed application deadline given for this role either.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "Content Marketing Strategist Intern",
-  description: "Join Myntmore as a Content Marketing Strategist Intern in Worli, Mumbai. Research, write, and strategise high-impact LinkedIn content for founders and CXOs. 1-year minimum, stipend of Rs 7,000–15,000 a month plus incentives, PPO based on performance.",
+  description: "Join Myntmore as a Content Marketing Strategist Intern in BKC, Mumbai. Research, write, and strategise high-impact LinkedIn content for founders and CXOs. 1-year minimum, stipend of Rs 7,000–15,000 a month plus incentives, PPO based on performance.",
   url: "https://www.myntmore.com/careers/content-marketing-strategist-intern",
   datePosted: "2026-08-25T00:00:00+05:30",
   validThrough: "2027-02-25T00:00:00+05:30",
@@ -43,13 +43,13 @@ export default function ContentMarketingStrategistIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Content Marketing Strategist Intern", href: "/careers/content-marketing-strategist-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: textTone(ACCENT), border: "1px solid rgba(236,72,153,0.2)" }}>Internship · Work from Office · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(236,72,153,0.08)", color: textTone(ACCENT), border: "1px solid rgba(236,72,153,0.2)" }}>Internship · Work from Office · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Content Marketing Strategist Intern
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "1 year minimum"], ["Stipend", "Rs 7,000–15,000 per month + incentives"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Commitment", "1 year minimum"], ["Stipend", "Rs 7,000–15,000 per month + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (

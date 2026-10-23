@@ -471,7 +471,7 @@ export default function AiAgentsMeetingsBlueprint() {
                   <span className="block text-xs" style={{ color: "#71675E" }}>@tejasjhaveri</span>
                 </a>
                 <a
-                  href="/founder-meeting"
+                  href="/book-a-call"
                   className="rounded-xl p-5 text-center transition-all duration-300 hover:bg-[#F8F6F2] hover:-translate-y-1"
                   style={{ border: "1px solid #E8E2D9", backgroundColor: "#FFFFFF" }}
                 >

@@ -131,7 +131,7 @@ export default function AiVsTraditionalLeadGeneration() {
         heading: "Want to see where AI would help your pipeline?",
         body: "Book a free strategy call. We will look at your ICP and volume and tell you honestly whether AI lead generation is worth it for you.",
         button: "Book a Free Strategy Call",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/services/ai-lead-generation", "https://www.myntmore.com"]}
     />

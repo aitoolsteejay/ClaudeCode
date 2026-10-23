@@ -8,12 +8,12 @@ import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "HR & Operations Intern, Mumbai | Rs 7-15K/mo",
-  description: "Join Myntmore as HR & Operations Intern in Worli, Mumbai. Build hiring pipelines and HR systems with the founder. 6-month min, PPO. Apply now.",
-  keywords: ["hr internship mumbai", "hr operations intern jobs", "hr intern jobs worli mumbai", "people operations internship", "hr internship india", "talent acquisition internship mumbai", "hr and ops intern jobs", "startup hr internship", "hr internship with ppo", "chief of staff internship mumbai", "hr generalist internship", "recruitment internship mumbai", "myntmore careers", "hr internship jobs mumbai"],
+  description: "Join Myntmore as HR & Operations Intern in BKC, Mumbai. Build hiring pipelines and HR systems with the founder. 6-month min, PPO. Apply now.",
+  keywords: ["hr internship mumbai", "hr operations intern jobs", "hr intern jobs bkc mumbai", "people operations internship", "hr internship india", "talent acquisition internship mumbai", "hr and ops intern jobs", "startup hr internship", "hr internship with ppo", "chief of staff internship mumbai", "hr generalist internship", "recruitment internship mumbai", "myntmore careers", "hr internship jobs mumbai"],
   alternates: { canonical: "https://www.myntmore.com/careers/hr-operations-intern" },
   openGraph: {
     title: "HR and Operations Intern | Myntmore Careers",
-    description: "Build real hiring pipelines and HR systems for a fast-growing agency. Internship, Worli Mumbai.",
+    description: "Build real hiring pipelines and HR systems for a fast-growing agency. Internship, BKC Mumbai.",
     url: "https://www.myntmore.com/careers/hr-operations-intern",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
 
 const APPLY_SUBJECT = "Application for HR and Operations Intern";
 const ACCENT = "#a855f7";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 
 // datePosted is this page's real git creation date, not fabricated.
 // validThrough is a 6-month rolling window from that date, since this is an
 // ongoing/rolling internship posting with no fixed application deadline.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "HR and Operations Intern",
-  description: "Join Myntmore as an HR and Operations Intern in Worli, Mumbai. Build real hiring pipelines, KPI/KRA frameworks, and HR systems directly with the founder. 6-month minimum, PPO based on performance.",
+  description: "Join Myntmore as an HR and Operations Intern in BKC, Mumbai. Build real hiring pipelines, KPI/KRA frameworks, and HR systems directly with the founder. 6-month minimum, PPO based on performance.",
   url: "https://www.myntmore.com/careers/hr-operations-intern",
   datePosted: "2026-07-28T17:15:52+05:30",
   validThrough: "2027-01-28T17:15:52+05:30",
@@ -43,13 +43,13 @@ export default function HrOperationsIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "HR and Operations Intern", href: "/careers/hr-operations-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: textTone(ACCENT), border: "1px solid rgba(168,85,247,0.2)" }}>Internship · Work from Office · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(168,85,247,0.08)", color: textTone(ACCENT), border: "1px solid rgba(168,85,247,0.2)" }}>Internship · Work from Office · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             HR and Operations Intern
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Commitment", "6 months minimum"], ["Stipend", "Rs 7,000–15,000 (based on experience)"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Commitment", "6 months minimum"], ["Stipend", "Rs 7,000–15,000 (based on experience)"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (

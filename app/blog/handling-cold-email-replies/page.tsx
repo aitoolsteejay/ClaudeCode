@@ -121,7 +121,7 @@ export default function HandlingColdEmailReplies() {
         heading: "Want replies handled like a system?",
         body: "We build and run outbound for B2B teams, including the reply handling that turns responses into booked meetings. Book a free audit and we'll show you what that looks like for your ICP.",
         button: "Book a Free GTM Audit",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/blog/cold-email-sequence-templates", "https://www.myntmore.com"]}
     />

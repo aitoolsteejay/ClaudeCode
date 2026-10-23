@@ -353,7 +353,7 @@ export default function LeadMagnetIdeasClient() {
                   Myntmore designs, builds, and distributes lead magnets as part of a full outbound system for elite B2B founders.
                 </p>
                 <Link
-                  href="/founder-meeting"
+                  href="/book-a-call"
                   className="inline-block text-black font-black px-12 py-5 rounded-full text-lg uppercase tracking-[0.2em] hover:shadow-[0_0_30px_rgba(245,183,49,0.4)] transition-all active:scale-[0.98] relative z-10"
                   style={{ backgroundColor: "#F5B731" }}
                 >

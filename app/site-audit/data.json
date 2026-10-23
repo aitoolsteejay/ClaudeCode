@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-23T09:47:20.817Z",
+  "generatedAt": "2026-10-23T07:48:50.770Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 261,
-    "linked": 246,
-    "orphan": 15,
-    "noindex": 20,
-    "notInXmlSitemap": 22,
-    "privateHidden": 4
+    "total": 281,
+    "linked": 250,
+    "orphan": 31,
+    "noindex": 35,
+    "notInXmlSitemap": 37,
+    "privateHidden": 5
   },
   "pages": [
     {
@@ -716,6 +716,184 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/book-a-call",
+      "title": "Book a Strategy Call | Free B2B Growth Audit",
+      "section": "other",
+      "status": "linked",
+      "linkedFrom": [
+        "/1-on-1-consultation",
+        "/about-us",
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-chennai",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata"
+      ],
+      "inboundCount": 94,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": true
+    },
+    {
+      "path": "/calendar/cold-emailing",
+      "title": "Cold Email Infrastructure Audit with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/email/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/elg",
+      "title": "Event-Led Growth Strategy Session",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/email",
+      "title": "Cold Email Infrastructure Audit with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/enwil",
+      "title": "Outbound Strategy Session with Enwil Fernandes",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/enwil-ce",
+      "title": "Outbound Strategy Session with Enwil Fernandes",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/enwil-li",
+      "title": "Outbound Strategy Session with Enwil Fernandes",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/enwil/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/enwil-wa",
+      "title": "Outbound Strategy Session with Enwil Fernandes",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/event-led-growth",
+      "title": "Event-Led Growth Strategy Session",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/elg/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/linkedin",
+      "title": "LinkedIn Outbound Diagnostic with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/th",
+      "title": "Founder Strategy Session with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/tj",
+      "title": "Founder Strategy Session with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/wa",
+      "title": "Multi-Channel Outbound Strategy with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/web",
+      "title": "B2B Pipeline Strategy Session with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/calendar/whatsapp",
+      "title": "Multi-Channel Outbound Strategy with Tejas Jhaveri",
+      "section": "calendar",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "referencedIn": "app/calendar/wa/page.tsx",
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
+    },
+    {
       "path": "/careers",
       "title": "Careers at Myntmore",
       "section": "careers",
@@ -835,13 +1013,13 @@
         "/blog/agency-vs-in-house",
         "/case-studies/ecommerce-conversion-playbook",
         "/case-studies/founder-personal-brand-linkedin",
+        "/case-studies/heritage-jewellery-valuation-pipeline",
+        "/case-studies/leadership-development-messaging-shift",
+        "/case-studies/medical-tourism-platform-pipeline",
         "/case-studies/predictable-b2b-lead-gen-engine",
-        "/case-studies/professional-services-linkedin",
-        "/case-studies/saas-series-a",
-        "/case-studies/uk-pharma-qualified-meetings",
-        "/"
+        "/case-studies/professional-services-linkedin"
       ],
-      "inboundCount": 21,
+      "inboundCount": 26,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1246,6 +1424,19 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/case-studies/heritage-jewellery-valuation-pipeline",
+      "title": "Building a B2B Pipeline for a 180-Year-Old Heritage Jewellery Business | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/case-studies/insurance-claims-support-conversations",
       "title": "Claims Support Company Case Study",
       "section": "case-studies",
@@ -1353,6 +1544,19 @@
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
+    },
+    {
+      "path": "/case-studies/leadership-development-messaging-shift",
+      "title": "Messaging Shift Tripled Hot Leads for Leadership Brand | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
     },
     {
       "path": "/case-studies/manufacturers-exporters-engineering-goods-replies",
@@ -1464,15 +1668,17 @@
       "inHtmlSitemap": false
     },
     {
-      "path": "/case-studies/markets/[market]",
-      "title": "[Market]",
+      "path": "/case-studies/medical-tourism-platform-pipeline",
+      "title": "Outbound Pipeline for an AI Medical Tourism Platform | Myntmore",
       "section": "case-studies",
       "status": "linked",
-      "linkedFrom": [],
-      "inboundCount": 0,
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
       "noindex": false,
-      "inXmlSitemap": false,
-      "inHtmlSitemap": false
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
     },
     {
       "path": "/case-studies/pharma-api-supplier-conversations",
@@ -1821,6 +2027,19 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/retail-strategy-design-pipeline",
+      "title": "Retail Strategy & Store Design Pipeline Case Study | Myntmore",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/case-studies/saas-ai-productivity-sales-calls",
       "title": "AI Productivity Platform Case Study",
       "section": "case-studies",
@@ -1922,6 +2141,19 @@
       "inHtmlSitemap": true
     },
     {
+      "path": "/case-studies/wealth-management-pms-pipeline",
+      "title": "Building a Solid Pipeline for a Wealth Management & PMS Firm",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/contact-us",
       "title": "Contact Myntmore | Book a Free B2B GTM Audit",
       "section": "other",
@@ -2002,23 +2234,14 @@
     },
     {
       "path": "/founder-meeting",
-      "title": "Book a Call with Our Founder",
+      "title": "Founder Meeting",
       "section": "other",
-      "status": "linked",
-      "linkedFrom": [
-        "/1-on-1-consultation",
-        "/about-us",
-        "/b2b-lead-generation-ahmedabad",
-        "/b2b-lead-generation-bengaluru",
-        "/b2b-lead-generation-chennai",
-        "/b2b-lead-generation-delhi",
-        "/b2b-lead-generation-hyderabad",
-        "/b2b-lead-generation-kolkata"
-      ],
-      "inboundCount": 86,
-      "noindex": true,
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": false,
       "inXmlSitemap": false,
-      "inHtmlSitemap": true
+      "inHtmlSitemap": false
     },
     {
       "path": "/jahnvijhaveri",
@@ -3033,9 +3256,10 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/resources/guides",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -3278,7 +3502,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 30,
+      "inboundCount": 31,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3325,10 +3549,12 @@
       "linkedFrom": [
         "/case-studies/founder-personal-brand-linkedin",
         "/case-studies/pharma-singapore-product-licensing",
+        "/case-studies/retail-strategy-design-pipeline",
+        "/case-studies/wealth-management-pms-pipeline",
         "/",
         "/services"
       ],
-      "inboundCount": 4,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3348,7 +3574,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 36,
+      "inboundCount": 41,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3368,7 +3594,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 21,
+      "inboundCount": 24,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3388,7 +3614,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 38,
+      "inboundCount": 42,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3447,9 +3673,11 @@
       "section": "other",
       "status": "linked",
       "linkedFrom": [
+        "/book-a-call",
+        "/calendar/th",
         "/founder-meeting"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
@@ -3708,9 +3936,26 @@
       "noindex": true,
       "inXmlSitemap": false,
       "inHtmlSitemap": false
+    },
+    {
+      "path": null,
+      "private": true,
+      "title": "Private pricing / admin page (URL withheld)",
+      "section": "private",
+      "status": "orphan",
+      "linkedFrom": [],
+      "inboundCount": 0,
+      "noindex": true,
+      "inXmlSitemap": false,
+      "inHtmlSitemap": false
     }
   ],
   "redirects": [
+    {
+      "from": "/founder-meeting",
+      "to": "/book-a-call",
+      "permanent": true
+    },
     {
       "from": "/about",
       "to": "/about-us",
@@ -3840,6 +4085,7 @@
   ],
   "apiRoutes": [
     "/api/gemini",
+    "/api/lead-qualification",
     "/api/menti/auth",
     "/api/menti/gist",
     "/api/menti/reset",

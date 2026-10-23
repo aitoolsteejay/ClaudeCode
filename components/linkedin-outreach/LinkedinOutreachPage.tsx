@@ -45,7 +45,7 @@ import { BLUE, BLUE_LIGHT, BLUE_PALE, BODY, CREAM, GOLD, INK, LINE, MUTED, SOFT_
 // LinkedIn outreach service page: the same design language as the cold email
 // page, with LinkedIn blue as the accent. It carries no pricing or plans.
 
-const CALENDAR = "/founder-meeting";
+const CALENDAR = "/book-a-call";
 
 const STATS = [
   { value: "45%", label: "of a company's market value ties back to leadership reputation" },

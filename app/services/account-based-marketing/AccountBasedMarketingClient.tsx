@@ -300,7 +300,7 @@ export default function AccountBasedMarketingClient() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href="/founder-meeting"
+            <a href="/book-a-call"
               className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Build Your Target Account List
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -567,7 +567,7 @@ export default function AccountBasedMarketingClient() {
             Book a free session and we&apos;ll map out how a target-account campaign would run against your actual highest-value accounts.
           </p>
 
-          <a href="/founder-meeting"
+          <a href="/book-a-call"
             className="inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark">
             Map Your Target Accounts
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

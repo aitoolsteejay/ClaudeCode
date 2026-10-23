@@ -8,19 +8,19 @@ import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
   title: "GTM Strategist, Mumbai | Rs 6–15 LPA",
-  description: "Join Myntmore as GTM Strategist in Worli, Mumbai. Own growth across B2B brands via LinkedIn, cold email & AI automation. Rs 6-15 LPA. Apply now.",
-  keywords: ["gtm strategist jobs mumbai", "growth marketing jobs mumbai", "b2b growth strategist job", "growth marketing strategist jobs india", "gtm jobs mumbai", "b2b marketing jobs worli", "growth marketing career mumbai", "lead generation strategist jobs", "linkedin marketing jobs mumbai", "growth strategist job b2b agency", "demand generation jobs mumbai", "marketing jobs worli mumbai", "b2b growth marketing career", "myntmore careers", "gtm strategist job openings"],
+  description: "Join Myntmore as GTM Strategist in BKC, Mumbai. Own growth across B2B brands via LinkedIn, cold email & AI automation. Rs 6-15 LPA. Apply now.",
+  keywords: ["gtm strategist jobs mumbai", "growth marketing jobs mumbai", "b2b growth strategist job", "growth marketing strategist jobs india", "gtm jobs mumbai", "b2b marketing jobs bkc", "growth marketing career mumbai", "lead generation strategist jobs", "linkedin marketing jobs mumbai", "growth strategist job b2b agency", "demand generation jobs mumbai", "marketing jobs bkc mumbai", "b2b growth marketing career", "myntmore careers", "gtm strategist job openings"],
   alternates: { canonical: "https://www.myntmore.com/careers/gtm-strategist" },
   openGraph: {
     title: "GTM Strategist | Myntmore Careers",
-    description: "Own growth for multiple B2B brands: build predictable pipelines, not just campaigns. Full-time, Worli Mumbai.",
+    description: "Own growth for multiple B2B brands: build predictable pipelines, not just campaigns. Full-time, BKC Mumbai.",
     url: "https://www.myntmore.com/careers/gtm-strategist",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const APPLY_SUBJECT = "Application for GTM Strategist";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 const ACCENT = "#10b981";
 
 // datePosted is this page's real git creation date, not fabricated.
@@ -28,7 +28,7 @@ const ACCENT = "#10b981";
 // ongoing/rolling posting with no fixed application deadline.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "GTM Strategist",
-  description: "Join Myntmore as a Senior Growth Marketing Strategist in Worli, Mumbai. Own growth across multiple B2B brands using LinkedIn, cold email, AI automation, and content-led demand gen. Rs 6–15 LPA + incentives.",
+  description: "Join Myntmore as a Senior Growth Marketing Strategist in BKC, Mumbai. Own growth across multiple B2B brands using LinkedIn, cold email, AI automation, and content-led demand gen. Rs 6–15 LPA + incentives.",
   url: "https://www.myntmore.com/careers/gtm-strategist",
   datePosted: "2026-07-28T17:15:52+05:30",
   validThrough: "2027-01-28T17:15:52+05:30",
@@ -43,13 +43,13 @@ export default function GtmStrategist() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "GTM Strategist", href: "/careers/gtm-strategist" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: textTone(ACCENT), border: "1px solid rgba(16,185,129,0.2)" }}>Full-Time · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(16,185,129,0.08)", color: textTone(ACCENT), border: "1px solid rgba(16,185,129,0.2)" }}>Full-Time · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             GTM Strategist
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["CTC", "Rs 6–15 LPA + incentives"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Type", "Full-Time"], ["CTC", "Rs 6–15 LPA + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
@@ -141,7 +141,7 @@ export default function GtmStrategist() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Work directly on real founder pipelines, get exposure to multiple industries and global markets, and learn AI-led growth systems that very few agencies in India truly understand. Work from WeWork Worli with a young, hungry team, with high growth potential and incentives tied to lead performance.
+              Work directly on real founder pipelines, get exposure to multiple industries and global markets, and learn AI-led growth systems that very few agencies in India truly understand. Work from WeWork Enam Sambhav, BKC with a young, hungry team, with high growth potential and incentives tied to lead performance.
             </p>
           </div>
 

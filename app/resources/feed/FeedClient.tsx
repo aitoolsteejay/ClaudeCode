@@ -59,7 +59,7 @@ export default function FeedClient() {
         <div className="max-w-4xl mx-auto rounded-2xl p-10 text-center border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.35)", boxShadow: "0 8px 30px rgba(0,0,0,0.04)" }}>
           <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0A0A0A" }}>Want the system behind the reels?</h2>
           <p className="text-sm mb-6" style={{ color: "#52525B" }}>Book a free 30-minute audit and we&apos;ll map out how to run it for your business.</p>
-          <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
+          <a href="/book-a-call" className="btn-dark px-8 py-4 text-sm font-bold inline-flex items-center gap-2">
             Book a Free GTM Audit
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>

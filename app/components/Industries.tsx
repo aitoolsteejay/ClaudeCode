@@ -118,7 +118,7 @@ export default function Industries() {
         <p className="text-center text-sm text-[#71675E] mt-10">
           Don&rsquo;t see your sector?{" "}
           <a
-            href="/founder-meeting"
+            href="/book-a-call"
             className="font-semibold underline underline-offset-2"
             style={{ color: "#A14A08" }}
           >

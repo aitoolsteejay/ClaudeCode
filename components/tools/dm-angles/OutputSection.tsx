@@ -69,7 +69,7 @@ export function OutputSection({ angles, onRegenerate, onRegenerateAll, regenerat
         </div>
         <p className="text-foreground text-lg">Want us to automate hyper-personalized DMs for your entire pipeline?</p>
         <Button asChild variant="hero" size="lg" className="rounded-full">
-          <Link href="/founder-meeting">Book Strategy Call</Link>
+          <Link href="/book-a-call">Book Strategy Call</Link>
         </Button>
       </div>
     </section>

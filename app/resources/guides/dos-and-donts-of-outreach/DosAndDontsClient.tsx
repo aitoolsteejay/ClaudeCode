@@ -1068,7 +1068,7 @@ export default function DosAndDontsClient() {
               Want this built into your own sequences?
             </h2>
             <p className="text-base sm:text-lg mb-10" style={{ color: T.muted }}>We bake pattern disruption into the outbound systems we build for clients. Let&apos;s talk about yours.</p>
-            <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            <a href="/book-a-call" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Book a Call
               <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
             </a>

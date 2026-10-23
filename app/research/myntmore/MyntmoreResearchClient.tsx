@@ -32,7 +32,7 @@ const CONFIG: ReportConfig = {
     accent: "your market?",
     body: "Myntmore builds account research around your ideal customer, then runs the outreach and brings back booked meetings.",
     button: "Book a call with Myntmore",
-    href: "/founder-meeting",
+    href: "/book-a-call",
   },
   riskLegend: "Strong in-house outbound found",
   csvName: "myntmore-sample-account-research.csv",

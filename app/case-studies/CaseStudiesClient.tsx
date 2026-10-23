@@ -153,6 +153,41 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "leadership-development-messaging-shift", tag: "Professional Services · Executive Coaching & Leadership", industry: "Professional Services", accent: "#a855f7",
+    title: "How a Messaging Shift Tripled Hot Leads for a Leadership Brand",
+    stats: [{ v: "3x", l: "Hot leads increase" }, { v: "60%", l: "Real Estate CXO acceptance" }, { v: "41%", l: "Peak response rate" }],
+    excerpt: "An executive leadership consultancy tripled hot leads from 5 to 15 and achieved a 60% acceptance rate by transitioning from long explanatory pitches to concise, relevance-led connection invitations.",
+    services: ["LinkedIn Outreach", "ICP Mapping & Lead Scoring", "Personal Branding"],
+  },
+  {
+    slug: "retail-strategy-design-pipeline", tag: "Professional Services · Retail Strategy & Design", industry: "Professional Services", accent: "#0891b2",
+    title: "Business Conversations Across 8+ Industries for a Retail Strategy & Design Business",
+    stats: [{ v: "69", l: "Hot leads generated" }, { v: "8+", l: "Industries penetrated" }, { v: "16", l: "Event-based leads" }],
+    excerpt: "A retail innovation and store design consultancy generated 69 hot leads across 8+ industries (pet care, auto, fashion, furniture, jewellery) by tailoring outreach around each sector's offline growth priorities.",
+    services: ["LinkedIn Outreach", "ICP Mapping & Lead Scoring", "GTM Strategy"],
+  },
+  {
+    slug: "heritage-jewellery-valuation-pipeline", tag: "Professional Services · Heritage & Valuation", industry: "Professional Services", accent: "#a855f7",
+    title: "Building a B2B Pipeline for a 180-Year-Old Heritage Jewellery Business",
+    stats: [{ v: "68", l: "Hot leads generated" }, { v: "43.7%", l: "Overall response rate" }, { v: "897", l: "Accepted connections" }],
+    excerpt: "A 5-generation heritage jewellery valuation and liquidation firm generated 68 hot leads, 897 connections, and 9 meetings by building strategic referral partnerships with CAs, wealth managers, and private banks.",
+    services: ["LinkedIn Outreach", "ICP Mapping & Lead Scoring", "Personal Branding"],
+  },
+  {
+    slug: "medical-tourism-platform-pipeline", tag: "Pharma & Healthcare · HealthTech", industry: "Pharma", accent: "#0ea5e9",
+    title: "Building an Outbound Pipeline for an AI Medical Tourism Platform",
+    stats: [{ v: "140", l: "Qualified leads" }, { v: "61.6%", l: "Hospital reply rate" }, { v: "58", l: "Leads from doctors" }],
+    excerpt: "An AI-powered medical travel platform generated 140 qualified leads with a 61.59% hospital decision-maker response rate by leading with relevance, segmentation, and conversation before conversion.",
+    services: ["AI Lead Generation", "LinkedIn Outreach", "ICP Mapping & Lead Scoring"],
+  },
+  {
+    slug: "wealth-management-pms-pipeline", tag: "Financial Services · Wealth Management & PMS", industry: "Financial Services", accent: "#7c3aed",
+    title: "Building a Solid Pipeline for a Wealth Management & PMS Firm",
+    stats: [{ v: "150+", l: "Qualified leads" }, { v: "52%", l: "Avg response rate" }, { v: "500%", l: "Impressions growth" }],
+    excerpt: "A 10-year SEBI-registered wealth management & PMS firm serving HNI investors paired LinkedIn authority content with segmented outbound to generate 150+ qualified leads and an average 52% response rate.",
+    services: ["Personal Branding", "LinkedIn Outreach", "GTM Strategy"],
+  },
+  {
     slug: "uk-pharma-qualified-meetings", tag: "Pharma · United Kingdom", industry: "Pharma", accent: "#14b8a6",
     title: "20+ qualified meetings per month for a UK pharma company",
     stats: [{ v: "20+", l: "Meetings/month" }, { v: "35%", l: "Positive response rate" }, { v: "£200K+", l: "Potential pipeline" }],
@@ -528,7 +563,7 @@ export default function CaseStudiesClient({ initialFilter = "All", initialMarket
             <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0A0A0A" }}>Book a free 30-min audit</h2>
             <p className="text-base mb-8" style={{ color: "#52525B" }}>We&apos;ll map exactly how to replicate these results for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/founder-meeting" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
+              <a href="/book-a-call" className="btn-dark px-8 py-4 text-sm font-bold">Book Free Audit</a>
               <Link href="/case-studies/saas-series-a" className="px-8 py-4 text-sm font-bold rounded-full border transition-all duration-200 hover:bg-[#FEF9EC]" style={{ backgroundColor: "#FFFFFF", borderColor: "#D0C9BF", color: "#0A0A0A" }}>Read SaaS case study</Link>
             </div>
           </div>

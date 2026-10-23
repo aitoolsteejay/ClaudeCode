@@ -67,6 +67,11 @@ const GROUPS: SitemapGroup[] = [
     links: [
       { label: "All Case Studies", href: "/case-studies" },
       ...CASE_STUDY_MARKETS.map((m) => ({ label: `Case Studies in ${m.label}`, href: `/case-studies/markets/${m.slug}` })),
+      { label: "Leadership Development Messaging Shift", href: "/case-studies/leadership-development-messaging-shift" },
+      { label: "Retail Strategy & Store Design Pipeline", href: "/case-studies/retail-strategy-design-pipeline" },
+      { label: "Heritage Jewellery Valuation Pipeline", href: "/case-studies/heritage-jewellery-valuation-pipeline" },
+      { label: "AI Medical Tourism Platform Pipeline", href: "/case-studies/medical-tourism-platform-pipeline" },
+      { label: "Wealth Management & PMS Pipeline", href: "/case-studies/wealth-management-pms-pipeline" },
       { label: "SaaS, Series A", href: "/case-studies/saas-series-a" },
       { label: "Professional Services, LinkedIn", href: "/case-studies/professional-services-linkedin" },
       { label: "Ecommerce Conversion Playbook", href: "/case-studies/ecommerce-conversion-playbook" },
@@ -253,7 +258,7 @@ const GROUPS: SitemapGroup[] = [
     links: [
       { label: "About Myntmore & Tejas Jhaveri", href: "/about-us" },
       { label: "Contact", href: "/contact-us" },
-      { label: "Book a Call", href: "/founder-meeting" },
+      { label: "Book a Call", href: "/book-a-call" },
       { label: "1-on-1 Consultation", href: "/1-on-1-consultation" },
       { label: "Partner with Us", href: "/lp/agency-partners" },
       { label: "Editorial Policy & Methodology", href: "/editorial-policy" },

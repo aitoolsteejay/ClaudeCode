@@ -6,19 +6,19 @@ import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Sales & Growth Intern, Mumbai | Rs 10-20K/mo",
-  description: "Join Myntmore as a Sales and Growth Intern in Worli, Mumbai. Full-time internship, Rs 10-20K a month plus incentives. Prospect, learn the CRM, close deals.",
-  keywords: ["sales and growth internship mumbai", "sales internship mumbai with stipend", "growth internship mumbai", "business development internship mumbai", "b2b sales internship mumbai", "full time sales internship worli", "crm sales intern", "sales intern jobs personal branding agency", "internship with incentives mumbai", "linkedin personal branding sales internship"],
+  description: "Join Myntmore as a Sales and Growth Intern in BKC, Mumbai. Full-time internship, Rs 10-20K a month plus incentives. Prospect, learn the CRM, close deals.",
+  keywords: ["sales and growth internship mumbai", "sales internship mumbai with stipend", "growth internship mumbai", "business development internship mumbai", "b2b sales internship mumbai", "full time sales internship bkc", "crm sales intern", "sales intern jobs personal branding agency", "internship with incentives mumbai", "linkedin personal branding sales internship"],
   alternates: { canonical: "https://www.myntmore.com/careers/sales-and-growth-intern" },
   openGraph: {
     title: "Sales and Growth Intern | Myntmore Careers",
-    description: "Prospect, build relationships, and help close deals for a personal-branding and outbound growth agency. Full-time internship, Worli Mumbai, stipend plus incentives.",
+    description: "Prospect, build relationships, and help close deals for a personal-branding and outbound growth agency. Full-time internship, BKC Mumbai, stipend plus incentives.",
     url: "https://www.myntmore.com/careers/sales-and-growth-intern",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const APPLY_SUBJECT = "Application for Sales and Growth Intern";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 
 // datePosted is this page's real creation date, not fabricated. validThrough
 // is a 6-month rolling window from that date, matching every other rolling
@@ -27,7 +27,7 @@ const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURICom
 // field in the schema, so they are stated in the description.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "Sales and Growth Intern",
-  description: "Join Myntmore as a Sales and Growth Intern in Worli, Mumbai. A full-time internship: prospect and connect with founders, executives, and professionals, learn and manage the CRM, and help close deals for a personal-branding and outbound growth agency. Stipend of Rs 10,000-20,000 per month plus incentives.",
+  description: "Join Myntmore as a Sales and Growth Intern in BKC, Mumbai. A full-time internship: prospect and connect with founders, executives, and professionals, learn and manage the CRM, and help close deals for a personal-branding and outbound growth agency. Stipend of Rs 10,000-20,000 per month plus incentives.",
   url: "https://www.myntmore.com/careers/sales-and-growth-intern",
   datePosted: "2026-10-15T00:00:00+05:30",
   validThrough: "2027-04-15T00:00:00+05:30",
@@ -42,13 +42,13 @@ export default function SalesAndGrowthIntern() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Sales and Growth Intern", href: "/careers/sales-and-growth-intern" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time Internship · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time Internship · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Sales and Growth Intern
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time Internship"], ["Stipend", "Rs 10,000–20,000 per month + incentives"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Type", "Full-Time Internship"], ["Stipend", "Rs 10,000–20,000 per month + incentives"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
@@ -121,7 +121,7 @@ export default function SalesAndGrowthIntern() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Work directly with founders and a fast-growing team, closing deals with high-level executives, startup founders, doctors, lawyers, and other high-value clients. A full-time internship at WeWork Worli with a stipend of Rs 10,000–20,000 per month plus incentives, real ownership over your leads and a voice in our sales strategy, and room to grow as Myntmore scales.
+              Work directly with founders and a fast-growing team, closing deals with high-level executives, startup founders, doctors, lawyers, and other high-value clients. A full-time internship at WeWork Enam Sambhav, BKC with a stipend of Rs 10,000–20,000 per month plus incentives, real ownership over your leads and a voice in our sales strategy, and room to grow as Myntmore scales.
             </p>
           </div>
 

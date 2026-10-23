@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+import CalendarPageClient from "../th/CalendarPageClient";
+
+export const metadata: Metadata = {
+  title: "Cold Email Infrastructure Audit with Tejas Jhaveri",
+  description:
+    "Pick a 30-minute slot with Tejas Jhaveri, Founder of Myntmore. Review your email deliverability, secondary domain setup, warming rhythm, and high-converting copy angles.",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.myntmore.com/calendar/cold-emailing" },
+  openGraph: {
+    title: "Cold Email Infrastructure Audit | Tejas Jhaveri",
+    description:
+      "Pick a 30-minute slot with Tejas Jhaveri, Founder of Myntmore. Review your email deliverability, secondary domain setup, warming rhythm, and high-converting copy angles.",
+    url: "https://www.myntmore.com/calendar/cold-emailing",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
+  },
+};
+
+export default function CalendarColdEmailingPage() {
+  return (
+    <CalendarPageClient
+      canonicalPath="/calendar/cold-emailing"
+      dataUrl="https://calendly.com/founder-myntmore/email"
+      badge="Cold Email Infrastructure & Strategy Consultation"
+      title="Pick a time that works for you"
+      description="30 minutes with our founder. Review your cold email infrastructure, deliverability, domain warming, and high-converting copy angles with zero sales pressure."
+      duration="30 Mins"
+    />
+  );
+}

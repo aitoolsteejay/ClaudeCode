@@ -153,7 +153,7 @@ export default function ColdEmailRoiPageClient() {
         <section className="bg-white px-6 py-24 text-center" style={{ borderTop: `1px solid ${BORDER}` }}>
           <h2 className="mb-10 text-3xl font-black sm:text-5xl">Ready to see the real math behind your outreach?</h2>
           <Button asChild variant="hero" size="hero">
-            <a href="/founder-meeting">
+            <a href="/book-a-call">
               Book a Call <ArrowRight aria-hidden="true" />
             </a>
           </Button>

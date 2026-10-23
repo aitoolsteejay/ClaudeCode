@@ -4,11 +4,7 @@ import { Phone } from "lucide-react";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import NewsletterForm from "./NewsletterForm";
-
-const DIY_HREF = "/services/do-it-yourself";
-const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
 
 function ParticleCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -120,8 +116,7 @@ const CITY_LINKS = [
 ];
 
 export default function Footer() {
-  const pathname = usePathname();
-  const ctaHref = pathname === DIY_HREF ? CALENDLY_URL : "/founder-meeting";
+  const ctaHref = "/book-a-call";
   const breathRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let animId: number;
@@ -154,9 +149,19 @@ export default function Footer() {
             <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: "#71675E" }}>
               B2B growth systems for companies that want predictable pipeline, not more promises.
             </p>
-            <p className="text-xs mb-3" style={{ color: "#71675E" }}>
-              WeWork, 1st floor, 264-265, Dr Annie Besant Rd,<br />Worli Shivaji Nagar, Worli, Mumbai 400025
-            </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=WeWork%20Enam%20Sambhav%2C%20C%20-%2020%2C%20G%20Block%20Rd%2C%20G%20Block%20BKC%2C%20Bandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra%20400051"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs mb-3 leading-relaxed block hover:underline transition-colors duration-200"
+              style={{ color: "#71675E" }}
+              aria-label="View WeWork Enam Sambhav BKC on Google Maps"
+            >
+              WeWork Enam Sambhav<br />
+              C - 20, G Block Rd, G Block BKC,<br />
+              Bandra Kurla Complex, Bandra East,<br />
+              Mumbai, Maharashtra 400051
+            </a>
             <a
               href="tel:+918169318951"
               className="mb-6 inline-flex min-h-[44px] items-center gap-2.5 text-sm font-semibold transition-colors duration-200"
@@ -240,7 +245,7 @@ export default function Footer() {
             <ul className="space-y-0 lg:space-y-3 mb-6" role="list">
               <li><a href="mailto:growth@myntmore.com" className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>growth@myntmore.com</a></li>
               <li><a href="tel:+918169318951" className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>+91 81693 18951</a></li>
-              <li><a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Book a Free GTM Audit</a></li>
+              <li><Link href={ctaHref} className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Book a Free GTM Audit</Link></li>
               <li><Link href="/contact-us" className="inline-flex min-h-[44px] items-center text-sm transition-colors duration-200 lg:min-h-0" style={{ color: "#71675E" }} onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#0a0a0a"; }} onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#71675E"; }}>Contact Page</Link></li>
             </ul>
             <div className="mb-4 p-4 rounded-xl border" style={{ background: "#FEF9EC", borderColor: "rgba(245,183,49,0.3)" }}>
@@ -248,10 +253,10 @@ export default function Footer() {
               <p className="text-xs mb-3" style={{ color: "#71675E" }}>Weekly AI outbound insights. No fluff.</p>
               <NewsletterForm inputId="footer-newsletter-email" compact />
             </div>
-            <a href={ctaHref} target={ctaHref === CALENDLY_URL ? "_blank" : undefined} rel={ctaHref === CALENDLY_URL ? "noopener noreferrer" : undefined} className="btn-dark px-5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5">
+            <Link href={ctaHref} className="btn-dark px-5 py-2.5 text-xs font-bold inline-flex items-center gap-1.5">
               Book a Call
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            </Link>
           </div>
         </div>
 

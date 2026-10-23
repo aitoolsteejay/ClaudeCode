@@ -913,7 +913,7 @@ export default function MyntmoreFrameworkClient() {
           <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "#0a0a0a" }}>See it run on your own pipeline</h2>
           <p className="text-base mb-8" style={{ color: "#52525B" }}>Book a call and we&apos;ll walk you through the framework live, against your own ICP.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/founder-meeting" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
+            <a href="/book-a-call" className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center gap-2">
               Book a Call
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>

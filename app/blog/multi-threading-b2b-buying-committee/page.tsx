@@ -133,7 +133,7 @@ export default function MultiThreadingBuyingCommittee() {
         heading: "Want outbound built around accounts, not inboxes?",
         body: "Our account-based programs reach the buying committee, not a single contact. Book a free audit and we'll map how that would look for your target accounts.",
         button: "Book a Free GTM Audit",
-        href: "/founder-meeting",
+        href: "/book-a-call",
       }}
       aiResources={[URL, "https://www.myntmore.com/services/account-based-marketing", "https://www.myntmore.com"]}
     />

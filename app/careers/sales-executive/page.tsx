@@ -6,26 +6,26 @@ import { buildJobPostingSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Sales Executive, Mumbai | Rs 4–7 LPA",
-  description: "Join Myntmore as Sales Executive in Worli, Mumbai. Rs 4-7 LPA. Prospect, build client relationships, and close deals. Apply now.",
-  keywords: ["sales executive jobs mumbai", "b2b sales executive job", "personal branding sales jobs", "full time sales jobs mumbai", "sales executive jobs worli", "crm sales executive job", "client facing sales jobs mumbai", "business development executive jobs", "sales jobs personal branding agency", "myntmore careers", "sales executive job b2b growth agency", "linkedin personal branding sales jobs"],
+  description: "Join Myntmore as Sales Executive in BKC, Mumbai. Rs 4-7 LPA. Prospect, build client relationships, and close deals. Apply now.",
+  keywords: ["sales executive jobs mumbai", "b2b sales executive job", "personal branding sales jobs", "full time sales jobs mumbai", "sales executive jobs bkc", "crm sales executive job", "client facing sales jobs mumbai", "business development executive jobs", "sales jobs personal branding agency", "myntmore careers", "sales executive job b2b growth agency", "linkedin personal branding sales jobs"],
   alternates: { canonical: "https://www.myntmore.com/careers/sales-executive" },
   openGraph: {
     title: "Sales Executive | Myntmore Careers",
-    description: "Prospect, build relationships, and close deals for a personal-branding and outbound growth agency. Full-time, Worli Mumbai.",
+    description: "Prospect, build relationships, and close deals for a personal-branding and outbound growth agency. Full-time, BKC Mumbai.",
     url: "https://www.myntmore.com/careers/sales-executive",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
 
 const APPLY_SUBJECT = "Application for Sales Executive";
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025")}`;
+const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051")}`;
 
 // datePosted is this page's real creation date, not fabricated. validThrough
 // is a 6-month rolling window from that date, matching every other rolling
 // posting on this site with no fixed application deadline.
 const JOB_SCHEMA = buildJobPostingSchema({
   title: "Sales Executive",
-  description: "Join Myntmore as a Sales Executive in Worli, Mumbai. Prospect and connect with founders, executives, and professionals, manage the CRM, and close deals for a personal-branding and outbound growth agency. Rs 4-7 LPA.",
+  description: "Join Myntmore as a Sales Executive in BKC, Mumbai. Prospect and connect with founders, executives, and professionals, manage the CRM, and close deals for a personal-branding and outbound growth agency. Rs 4-7 LPA.",
   url: "https://www.myntmore.com/careers/sales-executive",
   datePosted: "2026-08-26T00:00:00+05:30",
   validThrough: "2027-02-26T00:00:00+05:30",
@@ -40,13 +40,13 @@ export default function SalesExecutive() {
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Careers", href: "/careers" }, { label: "Sales Executive", href: "/careers/sales-executive" }]} />
-          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time · Worli, Mumbai</span>
+          <span className="inline-flex text-xs font-bold px-3 py-1 rounded-full mb-4" style={{ backgroundColor: "rgba(245,183,49,0.08)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>Full-Time · BKC, Mumbai</span>
           <h1 className="text-4xl sm:text-5xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
             Sales Executive
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            {[["Location", "WeWork, 1st floor, 264-265, Dr Annie Besant Rd, Worli Shivaji Nagar, Worli, Mumbai 400025"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA"]].map(([label, value]) => (
+            {[["Location", "WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051"], ["Type", "Full-Time"], ["CTC", "Rs 4–7 LPA"]].map(([label, value]) => (
               <div key={label} className="rounded-xl border p-4" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <p className="text-xs mb-1" style={{ color: "#71675E" }}>{label}</p>
                 {label === "Location" ? (
@@ -119,7 +119,7 @@ export default function SalesExecutive() {
           <div>
             <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Why join Myntmore</h2>
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-              Work directly with founders and a fast-growing team, closing deals with high-level executives, startup founders, doctors, lawyers, and other high-value clients. A full-time seat at WeWork Worli, real ownership over your pipeline and sales strategy, and room to grow as Myntmore scales.
+              Work directly with founders and a fast-growing team, closing deals with high-level executives, startup founders, doctors, lawyers, and other high-value clients. A full-time seat at WeWork Enam Sambhav, BKC, real ownership over your pipeline and sales strategy, and room to grow as Myntmore scales.
             </p>
           </div>
 

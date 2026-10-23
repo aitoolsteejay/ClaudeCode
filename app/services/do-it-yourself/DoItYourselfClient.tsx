@@ -16,8 +16,8 @@ import { LinkedInIcon } from "../../components/ContactIcons";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
 
 // This page books a product demo with the DIY tool's owner, not the founder
-// call at /founder-meeting that every other service page uses.
-const CALENDLY_URL = "https://calendly.com/sanyam-myntmore/30min";
+// call at /book-a-call that every other service page uses.
+const CALENDLY_URL = "/book-a-call";
 
 // Caveat is imported here rather than loaded site-wide (same reasoning as the
 // homepage Hero): only the handwritten annotation sections below use it.
@@ -462,7 +462,7 @@ export default function DoItYourselfClient() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 hero-fade-d3">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={`btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2 ${FOCUS}`}>
+            <a href={CALENDLY_URL} className={`btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2 ${FOCUS}`}>
               Book a Demo
               <ArrowRight className="w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
             </a>
@@ -874,7 +874,7 @@ export default function DoItYourselfClient() {
             Book a demo and we&apos;ll walk you through building your first campaign.
           </p>
 
-          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark ${FOCUS}`}>
+          <a href={CALENDLY_URL} className={`inline-flex items-center gap-2.5 px-10 py-5 rounded-full font-black text-lg btn-dark ${FOCUS}`}>
             Book a Demo
             <ArrowRight className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
           </a>

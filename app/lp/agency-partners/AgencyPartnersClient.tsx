@@ -195,7 +195,7 @@ function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">
-          <a href="/founder-meeting"
+          <a href="/book-a-call"
             className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2">
             Become a Partner
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -348,7 +348,7 @@ function DarkCTASection() {
           Book a free 30-minute partner call. We will walk through white-label reporting, margin structure, and how a client engagement would actually run under your brand, no pitch, no pressure.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/founder-meeting"
+          <a href="/book-a-call"
             className="px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2"
             style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
             Become a Partner

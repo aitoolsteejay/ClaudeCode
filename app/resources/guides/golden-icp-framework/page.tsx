@@ -192,7 +192,7 @@ export default function GoldenICPFrameworkGuide() {
               <p className="text-base leading-relaxed max-w-xl mx-auto mb-8" style={{ color: "#52525B" }}>Most founders try to write clever messages. The best build lists so dialled in that a simple, timely note earns a reply. Golden ICP means founder-to-founder empathy at scale.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/services/cold-email" className="btn-dark px-8 py-4 text-sm font-bold">Explore Cold Email Services</Link>
-                <Link href="/founder-meeting" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-[#F8F6F2]" style={{ color: "#0A0A0A", borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>Book a Strategy Call</Link>
+                <Link href="/book-a-call" className="px-8 py-4 text-sm font-bold rounded-full border transition-colors hover:bg-[#F8F6F2]" style={{ color: "#0A0A0A", borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>Book a Strategy Call</Link>
               </div>
               <a href="mailto:founder@myntmore.com" className="inline-flex min-h-[44px] items-center mt-6 text-sm font-semibold" style={{ color: "#A14A08" }}>founder@myntmore.com</a>
             </section>

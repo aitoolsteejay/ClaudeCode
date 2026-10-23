@@ -424,7 +424,7 @@ export default function PostingRhythmClient() {
                   Myntmore handles the complete content cycle: Strategy, Copywriting, and Daily Distribution for elite B2B founders.
                 </p>
                 <Link
-                  href="/founder-meeting"
+                  href="/book-a-call"
                   className="inline-block lp-tool-accent-bg text-black font-black px-12 py-5 rounded-full text-lg uppercase tracking-[0.2em] hover:shadow-[0_0_30px_rgba(255,201,71,0.4)] transition-all active:scale-[0.98] relative z-10"
                 >
                   Book A Call

@@ -483,7 +483,7 @@ export default async function BlogsPage() {
       <section className="py-10 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
         <p className="text-sm text-center" style={{ color: "#71675E" }}>
           Rather have us run this for you?{" "}
-          <a href="/founder-meeting" className="font-bold underline" style={{ color: "#0a0a0a" }}>Book a free GTM audit →</a>
+          <a href="/book-a-call" className="font-bold underline" style={{ color: "#0a0a0a" }}>Book a free GTM audit →</a>
         </p>
       </section>
     </InnerLayout>

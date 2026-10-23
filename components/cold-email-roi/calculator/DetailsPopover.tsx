@@ -47,7 +47,7 @@ export function DetailsPopover({ label, children, className }: Props) {
   return (
     <Popover
       open={open}
-      onOpenChange={(next) => {
+      onOpenChange={(next: boolean) => {
         if (!next) openedByHover.current = false;
         setOpen(next);
       }}
@@ -84,10 +84,10 @@ export function DetailsPopover({ label, children, className }: Props) {
         side={wide ? "right" : "bottom"}
         align={wide ? "start" : "center"}
         className="w-80 text-sm"
-        onPointerEnter={(e) => e.pointerType === "mouse" && openedByHover.current && show()}
-        onPointerLeave={(e) => e.pointerType === "mouse" && openedByHover.current && hideSoon()}
+        onPointerEnter={(e: React.PointerEvent) => e.pointerType === "mouse" && openedByHover.current && show()}
+        onPointerLeave={(e: React.PointerEvent) => e.pointerType === "mouse" && openedByHover.current && hideSoon()}
         // Hovering should not pull keyboard focus away from where the visitor is.
-        onOpenAutoFocus={(e) => openedByHover.current && e.preventDefault()}
+        onOpenAutoFocus={(e: Event) => openedByHover.current && e.preventDefault()}
       >
         {children}
       </PopoverContent>

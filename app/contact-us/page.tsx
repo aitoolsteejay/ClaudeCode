@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 };
 
 const CONTACT_CARDS = [
-  { icon: "📅", title: "Free GTM Audit", value: "30-minute strategy call", href: "/founder-meeting", cta: "Book free call" },
-  { icon: "⏱", title: "Extended Session", value: "1-hour strategy meeting", href: "/founder-meeting", cta: "Book 1-hour session" },
+  { icon: "📅", title: "Free GTM Audit", value: "30-minute strategy call", href: "/book-a-call", cta: "Book free call" },
+  { icon: "⏱", title: "Extended Session", value: "1-hour strategy meeting", href: "/book-a-call", cta: "Book 1-hour session" },
   { icon: "✉️", title: "Email Directly", value: "growth@myntmore.com", href: "mailto:growth@myntmore.com", cta: "Send email" },
   { icon: "📞", title: "Call Us", value: "+91 81693 18951", href: "tel:+918169318951", cta: "Call now" },
 ];
@@ -127,7 +127,19 @@ export default function ContactUs() {
               </div>
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
                 <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Our office</h3>
-                <p className="text-sm" style={{ color: "#52525B" }}>WeWork, 1st floor, 264-265,<br />Dr Annie Besant Rd, Worli Shivaji Nagar,<br />Worli, Mumbai 400025</p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=WeWork%20Enam%20Sambhav%2C%20C%20-%2020%2C%20G%20Block%20Rd%2C%20G%20Block%20BKC%2C%20Bandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra%20400051"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm hover:underline block leading-relaxed"
+                  style={{ color: "#52525B" }}
+                  aria-label="View WeWork Enam Sambhav BKC on Google Maps"
+                >
+                  WeWork Enam Sambhav<br />
+                  C - 20, G Block Rd, G Block BKC,<br />
+                  Bandra Kurla Complex, Bandra East,<br />
+                  Mumbai, Maharashtra 400051
+                </a>
               </div>
             </div>
           </div></FadeIn>

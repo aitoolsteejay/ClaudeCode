@@ -133,7 +133,7 @@ export default function ColdEmailingPackage() {
               Targeting, deliverability, copy and optimisation, run end to end to book you calls.
             </p>
             <div className="hero-fade-d2 mt-9 flex flex-wrap gap-3">
-              <Link href="/founder-meeting" className="btn-dark inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold">
+              <Link href="/book-a-call" className="btn-dark inline-flex items-center gap-2 px-7 py-3.5 text-sm font-bold">
                 Get a free deliverability audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <a href="#process" className="inline-flex items-center gap-2 rounded-full border bg-white/70 px-7 py-3.5 text-sm font-bold backdrop-blur transition-colors hover:border-[#EA580C]" style={{ borderColor: "#E8E2D9", color: INK }}>
@@ -347,7 +347,7 @@ export default function ColdEmailingPackage() {
                 </h2>
                 <p className="mx-auto mt-5 max-w-md text-base" style={{ color: "#52525B" }}>You&apos;ve got the business. We&apos;ve got the system.</p>
                 <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-                  <Link href="/founder-meeting" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: GOLD, color: INK }}>
+                  <Link href="/book-a-call" className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-sm font-bold transition-transform hover:-translate-y-0.5" style={{ backgroundColor: GOLD, color: INK }}>
                     Book a free audit <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                   <Link href="/case-studies" className="rounded-full border px-8 py-4 text-sm font-bold transition-colors hover:bg-[#F8F6F2]" style={{ color: INK, borderColor: "#D0C9BF", backgroundColor: "#FFFFFF" }}>

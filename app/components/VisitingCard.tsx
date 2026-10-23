@@ -20,7 +20,7 @@ export default function VisitingCard({
   photoAlt,
   contacts,
   vCardHref,
-  ctaHref = "/founder-meeting",
+  ctaHref = "/book-a-call",
   ctaLabel = "Book a Call",
 }: {
   path: string;

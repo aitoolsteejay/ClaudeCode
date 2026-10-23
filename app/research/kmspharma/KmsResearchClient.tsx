@@ -35,7 +35,7 @@ const CONFIG: ReportConfig = {
     accent: "first conversations?",
     body: "Myntmore can run the outreach for the Tier 1 and Tier 2 accounts and bring back booked calls.",
     button: "Book a call with Myntmore",
-    href: "/founder-meeting",
+    href: "/book-a-call",
   },
   riskLegend: "Build risk confirmed",
   csvName: "kms-pharma-partner-accounts.csv",

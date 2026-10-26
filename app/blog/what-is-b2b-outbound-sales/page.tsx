@@ -16,9 +16,9 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "B2B Outbound Sales: What It Is & How It Works",
-  description: "Learn what B2B outbound sales is, how the channels and process work, and when it makes sense for a growing company. Includes examples and FAQs.",
-  keywords: ["what is b2b outbound sales", "outbound sales definition", "outbound vs inbound sales", "b2b outbound sales explained", "how does outbound sales work", "outbound sales process b2b"],
+  title: "What Is B2B Outbound Sales? Meaning and Examples",
+  description: "B2B outbound sales means contacting chosen prospects first by cold email, LinkedIn or phone. How it works, and how it differs from outbound marketing.",
+  keywords: ["what is b2b outbound sales", "b2b outbound sales meaning", "outbound sales definition", "b2b outbound sales", "outbound sales vs outbound marketing", "b2b outbound marketing", "outbound vs inbound sales", "b2b outbound sales explained", "how does outbound sales work", "outbound sales process b2b"],
   alternates: { canonical: "https://www.myntmore.com/blog/what-is-b2b-outbound-sales" },
   openGraph: {
     title: "What Is B2B Outbound Sales? A Complete Guide | Myntmore",
@@ -39,6 +39,14 @@ const FAQ_ITEMS: FaqEntry[] = [
     answer: "No, but generic outbound is. Broad, unpersonalized blasts get ignored or filtered as spam. Outbound that's targeted at a specific ICP, references something real about the recipient, and runs across more than one channel still reliably books meetings.",
   },
   {
+    question: "What does outbound mean in B2B?",
+    answer: "In B2B, outbound means your company makes the first contact. You choose the businesses and roles you want to reach, then start the conversation by cold email, LinkedIn or phone. Inbound is the reverse: buyers find you through search, content or referrals and contact you first. Most growing B2B companies run both.",
+  },
+  {
+    question: "Is outbound marketing the same as outbound sales?",
+    answer: "Not quite. Outbound marketing pushes a message to a broad audience, through ads, trade shows, direct mail or sponsored content, to build awareness and leads. Outbound sales contacts specific people at chosen accounts to start a one-to-one sales conversation. In B2B the two overlap, but cold email and LinkedIn outreach are outbound sales.",
+  },
+  {
     question: "How is outbound different from inbound?",
     answer: "Inbound attracts prospects who come to you through content, search, or referrals. Outbound proactively reaches prospects who haven't found you yet, through channels like cold email, LinkedIn, or calls. See the full breakdown in our glossary.",
   },
@@ -54,10 +62,10 @@ const FAQ_ITEMS: FaqEntry[] = [
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "B2B Outbound Sales: What It Is & How It Works",
-  description: "Learn what B2B outbound sales is, how the channels and process work, and when it makes sense for a growing company. Includes examples and FAQs.",
+  description: "B2B outbound sales means contacting chosen prospects first by cold email, LinkedIn or phone. How it works, and how it differs from outbound marketing.",
   url: "https://www.myntmore.com/blog/what-is-b2b-outbound-sales",
   datePublished: "2026-09-24T00:00:00Z",
-  dateModified: "2026-10-10T00:00:00Z",
+  dateModified: "2026-10-26T00:00:00Z",
 });
 
 const CHANNELS = [
@@ -110,7 +118,7 @@ export default function WhatIsB2bOutboundSales() {
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
+            { stat: "1–3%", source: "reply rate on managed cold email, with 20%+ of replies positive", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
             { stat: "8 touches", source: "average number needed before a prospect engages", cite: "RAIN Group" },
             { stat: "49%", source: "of B2B buyers research vendors on LinkedIn before responding", cite: "LinkedIn Research" },
           ].map((s) => (
@@ -133,6 +141,16 @@ export default function WhatIsB2bOutboundSales() {
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
                 B2B outbound sales is the process of a company identifying prospects that fit its ideal customer profile and initiating contact with them directly, rather than relying on those prospects to discover the company on their own. It&apos;s the opposite motion of inbound, which attracts prospects through content, search rankings, or word of mouth. See the full breakdown in our{" "}
                 <Link href="/resources/glossary/inbound-vs-outbound" className="font-bold underline" style={{ color: "#A14A08" }}>Inbound vs. Outbound glossary entry</Link>.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Outbound sales vs. outbound marketing</h2>
+              <p className="text-base leading-relaxed mb-4" style={{ color: "#52525B" }}>
+                The two terms get used interchangeably, but they describe different motions. Outbound marketing pushes one message to many people at once: ads, trade shows, direct mail, sponsored content. Its goal is awareness and a pool of leads. Outbound sales contacts specific people at accounts you have chosen, one conversation at a time, with the goal of booking a sales meeting.
+              </p>
+              <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
+                In B2B the line blurs, because modern outbound sales uses marketing-style tools such as sequencing, personalisation at scale and account-based campaigns. A simple test: if the message is written for a named person at a named company and asks for a conversation, it is outbound sales. If it is written for a segment and asks for attention, it is outbound marketing.
               </p>
             </div>
 

@@ -57,7 +57,7 @@ export default function B2BLeadGenMetrics() {
         <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "Only 23%", source: "of B2B companies track outbound metrics beyond open rate", cite: "HubSpot State of Sales" },
-            { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
+            { stat: "1–3%", source: "reply rate on managed cold email, with 20%+ of replies positive", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
             { stat: "2x", source: "pipeline improvement from weekly metric review vs monthly", cite: "Forrester Research" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
@@ -86,7 +86,7 @@ export default function B2BLeadGenMetrics() {
                   "Inbox placement rate (target: 90%+): What percentage of your emails are landing in the primary inbox vs spam or promotions. Measure this with GlockApps or Mail-Tester before every new campaign. If this drops below 90%, stop sending and fix your infrastructure.",
                   "Reply rate (target: 1–3%): The first sign your message is being read. A reply, even a no, means it landed. Below 1% means your list, copy or deliverability is broken, so stop and diagnose. Consistently above 3% means you have found message-market fit and should scale.",
                   "Positive reply rate (target: 20–35% of all replies): What percentage of replies are interested vs out-of-office or unsubscribes? If you have a 3% reply rate but 90% of replies are negative, you have a messaging problem, not a volume problem.",
-                  "Meeting booked rate (target: 4–8% of contacts): How many of the people you contacted converted to a booked meeting? This is the true north metric for any outbound campaign. If reply rate is healthy but meeting rate is low, the problem is your call-to-action or your qualification process.",
+                  "Meeting booked rate: How many of the people you contacted converted to a booked meeting? This is the true north metric for any outbound campaign. Track it against both contacts and positive replies, because with a 1–3% reply rate even a small change in how replies are handled moves it a lot. If reply rate is healthy but meeting rate is low, the problem is your call-to-action or your qualification process.",
                   "Show rate (target: 75%+): Of meetings booked, how many actually show up? A low show rate means your prospect was not qualified, your confirmation sequence is weak, or the value proposition of the call was not clear enough. Fix show rate before scaling volume.",
                   "Opportunity rate (target: 40–60% of meetings): How many meetings convert to a real sales opportunity? This is where you find out if your ICP is right. If less than 40% of meetings become opps, you are still talking to the wrong people.",
                   "Pipeline-to-outreach ratio: For every 100 contacts you reach out to, how much pipeline do you generate? This is the ultimate efficiency metric. A healthy outbound motion generates $50K–$200K in pipeline per 100 contacts depending on your ACV. Track this monthly.",

@@ -57,7 +57,7 @@ export default function ColdEmailDeliverability() {
         <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { stat: "21%", source: "of all cold emails never reach the inbox", cite: "Validity Report" },
-            { stat: "45 days", source: "minimum domain warm-up period before full volume", cite: "Instantly.ai Data" },
+            { stat: "45 days", source: "for a new domain to reach full send volume; campaigns start at low volume much sooner", cite: "Instantly.ai Data" },
             { stat: "3x", source: "inbox rate improvement from proper DNS setup", cite: "Lemlist Research" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>

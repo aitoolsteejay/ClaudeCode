@@ -15,9 +15,9 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Cold Email Sequence Templates That Get Replies",
-  description: "5 cold email templates for a full outbound sequence, from the first touch to the breakup email, with the reasoning behind each one. Read the full guide.",
-  keywords: ["cold email sequence templates", "cold email templates b2b", "cold email follow up sequence", "cold email breakup template", "how many cold email follow ups", "b2b cold email examples", "cold outreach sequence structure"],
+  title: "Cold Email Sequence Template With 5 Examples",
+  description: "A 5-email cold email sequence template with a filled-in example: opener, value-add, reframe, proof and breakup, plus send days and subject lines.",
+  keywords: ["cold email sequence templates", "cold email sequence template", "cold email sequence examples", "cold email sequence", "cold email templates b2b", "cold email follow up sequence", "cold email breakup template", "how many cold email follow ups", "b2b cold email examples", "cold outreach sequence structure"],
   alternates: { canonical: "https://www.myntmore.com/blog/cold-email-sequence-templates" },
   openGraph: {
     title: "Cold Email Sequence Templates That Get Replies | Myntmore",
@@ -38,6 +38,10 @@ const FAQ_ITEMS: FaqEntry[] = [
     answer: "4-6 touches over roughly 2-3 weeks tends to be the sweet spot. Fewer than that and you're leaving replies on the table, since most responses come after the second or third touch, not the first. More than that, and reply quality tends to drop while unsubscribe and spam-complaint rates rise.",
   },
   {
+    question: "What should the first email in a cold email sequence say?",
+    answer: "The first email in a cold email sequence should name one real trigger about the prospect, link it to a single problem they likely have, and ask a low-effort question. Keep it under 80 words with no attachments or pitch deck. Its job is to earn a reply, not to sell; the follow-ups add value, a new angle and proof.",
+  },
+  {
     question: "Should every follow-up be a new email or a reply in the same thread?",
     answer: "Reply in the same thread. It keeps context visible for the recipient, avoids re-triggering spam filters the way a fresh subject line can, and signals persistence rather than a disconnected new pitch every few days.",
   },
@@ -56,8 +60,18 @@ const ARTICLE_SCHEMA = buildArticleSchema({
   description: "5 cold email templates for a full outbound sequence, from the first touch to the breakup email, with the reasoning behind each one.",
   url: "https://www.myntmore.com/blog/cold-email-sequence-templates",
   datePublished: "2026-09-24T00:00:00Z",
-  dateModified: "2026-09-24T00:00:00Z",
+  dateModified: "2026-10-26T00:00:00Z",
 });
+
+// One scenario written out in full, so readers can see the template filled in.
+// It is an illustration, labelled as such on the page, not a client campaign.
+const WORKED_EXAMPLE = [
+  { day: "Day 1", subject: "quick one on your sales hiring", body: "Hi Priya,\n\nSaw you're hiring three SDRs this quarter. Teams adding SDRs that fast usually find ramp time, not headcount, is what slows pipeline down.\n\nWe help B2B SaaS teams get meetings flowing while new hires ramp. Worth a quick look at how?\n\nArjun" },
+  { day: "Day 3", subject: "re: quick one on your sales hiring", body: "Hi Priya,\n\nUseful either way: the teams we see ramp SDRs fastest give them a pre-built list of in-market accounts in week one, instead of asking them to prospect from scratch.\n\nHappy to share the checklist we use.\n\nArjun" },
+  { day: "Day 7", subject: "re: quick one on your sales hiring", body: "Hi Priya,\n\nDifferent angle: most VPs of Sales we talk to aren't short on leads, they're short on qualified meetings on the calendar. Is that closer to what you're seeing?\n\nArjun" },
+  { day: "Day 12", subject: "re: quick one on your sales hiring", body: "Hi Priya,\n\nA Series A SaaS team in a similar spot went from zero to 40 qualified meetings in 8 weeks. Here's how: [case study link]\n\nOpen to 15 minutes to see if it fits your setup?\n\nArjun" },
+  { day: "Day 18", subject: "re: quick one on your sales hiring", body: "Hi Priya,\n\nI'll assume the timing isn't right, so I'll stop here. If pipeline becomes the priority, just reply and I'll pick it up.\n\nArjun" },
+];
 
 const SEQUENCE = [
   {
@@ -68,28 +82,28 @@ const SEQUENCE = [
     body: "Hi [First Name],\n\nNoticed [specific, real trigger: a job posting, a funding announcement, a product launch, a LinkedIn post]. Companies in a similar spot usually run into [one specific, recognizable problem] around that stage.\n\nWe've helped teams like [type of company] fix exactly that. Worth a quick look at how?\n\n[Your name]",
   },
   {
-    day: "Day 4",
+    day: "Day 3",
     name: "The value-add",
     goal: "Give something useful before asking for anything.",
     subject: "Subject: re: quick one on [trigger] (same thread)",
     body: "Hi [First Name],\n\nFollowing up with something that might be useful regardless of whether we ever talk: [one specific insight, stat, or short framework relevant to their role].\n\nIf it's relevant, happy to share the fuller version.\n\n[Your name]",
   },
   {
-    day: "Day 8",
+    day: "Day 7",
     name: "The reframe",
     goal: "Approach the same problem from a different angle in case the first framing didn't land.",
     subject: "Subject: re: quick one on [trigger] (same thread)",
     body: "Hi [First Name],\n\nDifferent angle on this: most [role, e.g. VP Sales] we talk to aren't short on leads, they're short on [more specific bottleneck, e.g. qualified meetings on their calendar]. Is that closer to what you're seeing, or is it a different piece of the puzzle for you?\n\n[Your name]",
   },
   {
-    day: "Day 13",
+    day: "Day 12",
     name: "The proof point",
     goal: "Show it's worked for someone comparable, without overclaiming.",
     subject: "Subject: re: quick one on [trigger] (same thread)",
     body: "Hi [First Name],\n\nThought this might resonate: [one-line summary of a relevant, real result or case study], similar situation to what I mentioned earlier.\n\nHere's the full breakdown if useful: [link to a real case study].\n\nOpen to a short call to see if the same approach fits your setup?\n\n[Your name]",
   },
   {
-    day: "Day 19",
+    day: "Day 18",
     name: "The breakup",
     goal: "Close the loop honestly, which often gets more replies than the four emails before it.",
     subject: "Subject: re: quick one on [trigger] (same thread)",
@@ -120,9 +134,9 @@ export default function ColdEmailSequenceTemplates() {
       <div className="px-4 pb-12" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { stat: "4–8%", source: "is a healthy meeting-booked rate from cold outreach", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
+            { stat: "1–3%", source: "reply rate on managed cold email, with 20%+ of replies positive", cite: "Myntmore Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
             { stat: "8 touches", source: "average number needed before a prospect engages", cite: "RAIN Group" },
-            { stat: "45 days", source: "minimum domain warm-up period before full send volume", cite: "Instantly.ai Data" },
+            { stat: "45 days", source: "for a new domain to reach full send volume; campaigns start at low volume much sooner", cite: "Instantly.ai Data" },
           ].map((s) => (
             <div key={s.stat} className="rounded-xl border p-4 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-2xl font-black mb-1" style={{ color: "#A14A08" }}>{s.stat}</div>
@@ -162,6 +176,22 @@ export default function ColdEmailSequenceTemplates() {
                       <p className="font-bold mb-2" style={{ color: "#0a0a0a" }}>{email.subject}</p>
                       {email.body}
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>A filled-in example sequence</h2>
+              <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>
+                Here is the same template written out for one scenario: a sales-tools company emailing a VP of Sales whose team is hiring SDRs. Names and details are illustrative; swap in a real trigger for every prospect.
+              </p>
+              <div className="space-y-4">
+                {WORKED_EXAMPLE.map((email) => (
+                  <div key={email.day} className="rounded-xl p-5 whitespace-pre-line text-sm leading-relaxed" style={{ backgroundColor: "#ffffff", border: "1px solid #E8E2D9", color: "#3D3D3D" }}>
+                    <p className="text-xs font-black uppercase tracking-widest mb-2" style={{ color: "#9A3412" }}>{email.day}</p>
+                    <p className="font-bold mb-2" style={{ color: "#0a0a0a" }}>Subject: {email.subject}</p>
+                    {email.body}
                   </div>
                 ))}
               </div>

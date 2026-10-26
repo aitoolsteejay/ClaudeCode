@@ -15,8 +15,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Outbound Funnel Math, Not Gut Feel",
-  description: "Outbound isn't a guessing game, it's rhythm, math, and infrastructure. Learn why B2B outreach should be treated as a technical delivery system.",
+  title: "Outbound Funnel Math: What a Meeting Is Worth",
+  description: "Treat outbound like a spreadsheet: map acceptance rates, reply rates, deal size and costs to see what one booked meeting is worth before you set a budget.",
   alternates: { canonical: "https://www.myntmore.com/blog/outbound-funnel-math-not-guesswork" },
   keywords: [
     "b2b outbound funnel math",

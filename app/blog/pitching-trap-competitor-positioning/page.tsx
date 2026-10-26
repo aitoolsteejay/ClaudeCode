@@ -18,8 +18,8 @@ const BLOG_AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: "The Pitching Trap: Better Competitor Positioning",
-  description: "Generic feature pitches get ignored. Learn how to articulate buyer pain, understand competitor gaps, and position your offer with clarity.",
+  title: "How to Articulate Customer Pain in B2B Sales",
+  description: "Stop listing features. Learn how to describe the buyer's problem, know what they are comparing you against, and build a battle card your team will use.",
   keywords: [
     "how to articulate customer pain",
     "sales battle card",

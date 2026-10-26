@@ -11,8 +11,8 @@ import { SITE_URL, buildLocalBusinessSchema } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
-  title: "About Tejas Jhaveri, B2B Growth Expert",
-  description: "Tejas Jhaveri, TEDx speaker and founder of Myntmore, Mumbai's AI-powered outbound agency. 10+ years in B2B lead gen. Book a call to learn more.",
+  title: { absolute: "About Myntmore | Founded by Tejas Jhaveri, Mumbai" },
+  description: "Myntmore is a Mumbai B2B outbound agency founded in 2019 by TEDx speaker Tejas Jhaveri: 12K+ meetings booked and $120M+ pipeline for 130+ B2B companies.",
   alternates: { canonical: "https://www.myntmore.com/about-us" },
   keywords: [
     "tejas jhaveri",
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "angel investor mumbai",
     "b2b outbound agency founder",
     "myntmore about us",
+    "myntmore company",
     "b2b growth strategist",
     "outbound marketing expert india",
     "linkedin growth expert",
@@ -32,8 +33,8 @@ export const metadata: Metadata = {
     "mumbai b2b agency founder",
   ],
   openGraph: {
-    title: "About Tejas Jhaveri | B2B Growth Expert & Founder of Myntmore",
-    description: "Tejas Jhaveri is a TEDx speaker, B2B growth expert, and founder of Myntmore. 12K+ meetings booked, $120M+ pipeline generated. Taught at IIT & IIM.",
+    title: "About Myntmore | Founded by Tejas Jhaveri, Mumbai",
+    description: "Myntmore is a Mumbai B2B outbound agency founded in 2019 by Tejas Jhaveri, TEDx speaker and growth educator at IIT and IIM. 12K+ meetings booked, $120M+ pipeline.",
     url: "https://www.myntmore.com/about-us",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

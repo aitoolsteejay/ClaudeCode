@@ -77,7 +77,7 @@ export function buildLocalBusinessSchema(url: string = SITE_URL) {
     address: organizationSchema.address,
     areaServed: [
       "Mumbai", "Delhi", "Ahmedabad", "Pune", "Chennai", "Bengaluru", "Kolkata", "Hyderabad",
-      "India", "Southeast Asia",
+      "India", "United Arab Emirates", "United States", "United Kingdom", "Singapore", "France",
     ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

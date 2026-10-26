@@ -68,6 +68,11 @@ export const SERVICE_PATHS: Record<string, PathItem[]> = {
 
 // Case studies -> the post that explains the method.
 export const CASE_STUDY_PATHS: Record<string, PathItem[]> = {
+  "specialist-recruitment-linkedin-leads": [
+    { kind: "Read", label: "LinkedIn Outreach Sequence: The 5-Touch Structure", href: "/blog/linkedin-outreach-sequences", blurb: "The warm-first LinkedIn sequence: what to say in the opening DM and how to follow up." },
+    { kind: "Guide", label: "58 Meetings Booked from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", blurb: "The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and follow-ups." },
+    { kind: "Read", label: "Multi-Threading the B2B Buying Committee", href: "/blog/multi-threading-b2b-buying-committee", blurb: "How to reach several stakeholders in one account, each with a message about their own problem." },
+  ],
   "leadership-development-messaging-shift": [
     { kind: "Read", label: "The Silent Salesperson: LinkedIn Lead Machine", href: "/blog/linkedin-profile-inbound-lead-machine", blurb: "Fixing the part of LinkedIn most founders ignore: the profile people check before reading your posts." },
     { kind: "Guide", label: "58 Meetings Booked from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", blurb: "The five-step LinkedIn framework: ICP, positioning, warm-up, a five-message sequence and follow-ups." },

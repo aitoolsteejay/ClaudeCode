@@ -67,6 +67,7 @@ const GROUPS: SitemapGroup[] = [
     links: [
       { label: "All Case Studies", href: "/case-studies" },
       ...CASE_STUDY_MARKETS.map((m) => ({ label: `Case Studies in ${m.label}`, href: `/case-studies/markets/${m.slug}` })),
+      { label: "Specialist Recruitment LinkedIn Leads", href: "/case-studies/specialist-recruitment-linkedin-leads" },
       { label: "Leadership Development Messaging Shift", href: "/case-studies/leadership-development-messaging-shift" },
       { label: "Retail Strategy & Store Design Pipeline", href: "/case-studies/retail-strategy-design-pipeline" },
       { label: "Heritage Jewellery Valuation Pipeline", href: "/case-studies/heritage-jewellery-valuation-pipeline" },

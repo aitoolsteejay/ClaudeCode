@@ -153,6 +153,13 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 // ── Data ───────────────────────────────────────────────────────────────────────
 const CASE_STUDIES: CaseStudy[] = [
   {
+    slug: "specialist-recruitment-linkedin-leads", tag: "Recruitment & Staffing · India", industry: "Recruitment & Staffing", accent: "#0d9488",
+    title: "Generating Qualified B2B Leads for a Specialist Recruitment Firm",
+    stats: [{ v: "50%", l: "Connection acceptance" }, { v: "40%", l: "Response rate" }, { v: "15", l: "Leads per month" }],
+    excerpt: "A recruiter for GCCs and technology companies reached HR, CXO, GCC and engineering leaders with audience-specific LinkedIn and email outreach, averaging 15 leads a month.",
+    services: ["LinkedIn Outreach", "Cold Email", "ICP Mapping & Lead Scoring"],
+  },
+  {
     slug: "leadership-development-messaging-shift", tag: "Professional Services · Executive Coaching & Leadership", industry: "Professional Services", accent: "#a855f7",
     title: "How a Messaging Shift Tripled Hot Leads for a Leadership Brand",
     stats: [{ v: "3x", l: "Hot leads increase" }, { v: "60%", l: "Real Estate CXO acceptance" }, { v: "41%", l: "Peak response rate" }],

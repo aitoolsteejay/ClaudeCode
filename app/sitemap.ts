@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/case-studies/markets/singapore`, lastModified: lastMod("/case-studies/markets/singapore"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/markets/france`, lastModified: lastMod("/case-studies/markets/france"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/markets/india`, lastModified: lastMod("/case-studies/markets/india"), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/case-studies/specialist-recruitment-linkedin-leads`, lastModified: lastMod("/case-studies/specialist-recruitment-linkedin-leads"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/leadership-development-messaging-shift`, lastModified: lastMod("/case-studies/leadership-development-messaging-shift"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/retail-strategy-design-pipeline`, lastModified: lastMod("/case-studies/retail-strategy-design-pipeline"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/heritage-jewellery-valuation-pipeline`, lastModified: lastMod("/case-studies/heritage-jewellery-valuation-pipeline"), changeFrequency: "monthly", priority: 0.7 },

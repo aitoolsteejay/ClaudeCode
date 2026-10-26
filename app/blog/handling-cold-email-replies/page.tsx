@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import BlogArticle, { type BlogSection } from "../../components/BlogArticle";
 
 const URL = "https://www.myntmore.com/blog/handling-cold-email-replies";
-const TITLE = "How to Respond to Cold Email Replies Fast";
-const DESCRIPTION = "A cold email reply is a door left open for about an hour. Learn how to answer the four reply types and turn them into meetings. Read the guide.";
+const TITLE = "Cold Reply Meaning: How to Answer Each Type";
+const DESCRIPTION = "A cold reply is a prospect's response to your cold email, not a closed deal. What it means, the four reply types, and how to answer each within the hour.";
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
+    "cold reply meaning",
     "how to respond to cold email replies",
     "cold email reply handling",
     "how fast to respond to a cold email reply",
@@ -77,6 +78,10 @@ const SECTIONS: BlogSection[] = [
 
 const FAQ = [
   {
+    question: "What does cold reply mean?",
+    answer: "In sales, a cold reply is a prospect's response to a cold email they didn't ask for. It signals some interest or a question, not a decision. Outside sales, \"cold reply\" can also mean a curt or unfriendly response.",
+  },
+  {
     question: "How fast should I respond to a cold email reply?",
     answer: "Within an hour during working hours, ideally faster. The prospect's attention is highest the moment they reply, and it drops quickly after that.",
   },
@@ -98,14 +103,14 @@ export default function HandlingColdEmailReplies() {
       readTime="5 min read"
       accent="#ef4444"
       title="The Reply Isn't the Win: What to Do in the First Hour After a Prospect Responds"
-      intro="Most outbound teams obsess over getting the reply. Then it arrives, and they fumble it. A reply isn't a closed deal. It's a door left open for about an hour."
+      intro="What does a cold reply mean? In outbound sales, a cold reply is any response a prospect sends to an email they never asked for: &quot;send me more info,&quot; &quot;not right now,&quot; &quot;who else do you work with?&quot; (In everyday use, a cold reply can also mean a short, unfriendly answer, and plenty of cold email replies read exactly like that.) Either way, a reply isn't a closed deal. It's a door left open for about an hour, and most teams fumble it."
       sections={SECTIONS}
       faq={FAQ}
       articleSchema={{
         headline: "The Reply Isn't the Win: What to Do in the First Hour After a Prospect Responds",
         description: DESCRIPTION,
         datePublished: "2026-10-07T16:00:00+05:30",
-        dateModified: "2026-10-07T16:00:00+05:30",
+        dateModified: "2026-10-26T16:00:00+05:30",
       }}
       related={[
         { label: "Cold Email Sequence Templates That Get Replies", href: "/blog/cold-email-sequence-templates" },

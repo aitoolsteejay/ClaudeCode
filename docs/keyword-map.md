@@ -58,7 +58,7 @@ Added to this doc's tracked scope 2026-09-03 (previously only Services/Tools/Blo
 | `/blog/linkedin-outreach-agency-vs-manual-prospecting` | linkedin outreach agency vs manual prospecting |
 | `/blog/ai-vs-traditional-lead-generation` | ai vs traditional lead generation |
 | `/blog/personal-branding-agency-vs-content-freelancer` | personal branding agency vs content freelancer |
-| `/blog/handling-cold-email-replies` | how to respond to cold email replies |
+| `/blog/handling-cold-email-replies` | cold reply meaning |
 | `/blog/multi-threading-b2b-buying-committee` | multi-threading in b2b sales deals |
 | `/blog/reviving-closed-lost-leads` | how to revive closed-lost leads |
 | `/blog/stop-selling-features-cold-outreach` | stop selling features cold outreach |

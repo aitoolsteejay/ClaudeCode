@@ -20,6 +20,9 @@ export interface GlossaryTermProps {
   furtherLabel?: string;
   furtherHref?: string;
   articleSchema: Record<string, unknown>;
+  // Optional extra content after the body, for the few terms that need a
+  // comparison table or a worked example to answer the query fully.
+  children?: React.ReactNode;
 }
 
 // Shared layout for every short-form glossary entry (~20-30 word definition,
@@ -41,6 +44,7 @@ export default function GlossaryTerm({
   furtherLabel,
   furtherHref,
   articleSchema,
+  children,
 }: GlossaryTermProps) {
   return (
     <InnerLayout>
@@ -76,6 +80,8 @@ export default function GlossaryTerm({
 
             <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>{body}</p>
           </FadeIn>
+
+          {children}
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>

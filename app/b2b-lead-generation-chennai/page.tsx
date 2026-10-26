@@ -7,9 +7,9 @@ import JsonLd from "../components/JsonLd";
 import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Chennai",
+  title: "B2B Lead Generation Company in Chennai",
   description:
-    "B2B lead generation for Chennai's automotive, healthcare, IT, and export-manufacturing firms: AI-powered cold email, LinkedIn & ABM. Book a free audit.",
+    "Lead generation services in Chennai for B2B manufacturers, healthcare suppliers and exporters: cold email and LinkedIn that book meetings, live in 18 days.",
   alternates: {
     canonical: "https://www.myntmore.com/b2b-lead-generation-chennai",
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "linkedin outreach for it companies chennai",
   ],
   openGraph: {
-    title: "B2B Lead Generation Agency in Chennai | Myntmore",
+    title: "B2B Lead Generation Company in Chennai | Myntmore",
     description:
       "AI-powered outbound for Chennai's manufacturing, healthcare, and IT/ITES companies: cold email, LinkedIn outreach, ABM, and ICP-led lead generation, fully managed by Myntmore.",
     url: "https://www.myntmore.com/b2b-lead-generation-chennai",

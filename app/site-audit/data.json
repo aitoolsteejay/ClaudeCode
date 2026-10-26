@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T11:31:48.914Z",
+  "generatedAt": "2026-10-26T11:40:15.311Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 284,
@@ -96,7 +96,7 @@
     },
     {
       "path": "/b2b-lead-generation-chennai",
-      "title": "B2B Lead Generation Agency in Chennai",
+      "title": "B2B Lead Generation Company in Chennai",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -124,7 +124,7 @@
     },
     {
       "path": "/b2b-lead-generation-hyderabad",
-      "title": "B2B Lead Generation Agency in Hyderabad",
+      "title": "B2B Lead Generation Company in Hyderabad",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -152,7 +152,7 @@
     },
     {
       "path": "/b2b-lead-generation-mumbai",
-      "title": "B2B Lead Generation Agency in Mumbai",
+      "title": "Lead Generation Agency in Mumbai for B2B Teams",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -166,7 +166,7 @@
     },
     {
       "path": "/b2b-lead-generation-pune",
-      "title": "B2B Lead Generation Agency in Pune",
+      "title": "B2B Lead Generation Company in Pune",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -1126,9 +1126,10 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-pune",
         "/case-studies"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1608,9 +1609,10 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-pune",
         "/case-studies"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1867,10 +1869,11 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-mumbai",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2090,10 +2093,11 @@
       "status": "linked",
       "linkedFrom": [
         "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-mumbai",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 3,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2135,10 +2139,11 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-pune",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2164,9 +2169,10 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-mumbai",
         "/case-studies"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3403,10 +3409,12 @@
       "linkedFrom": [
         "/b2b-lead-generation-bengaluru",
         "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai",
+        "/b2b-lead-generation-pune",
         "/resources/guides/how-to-choose-an-outbound-agency",
         "/resources/guides"
       ],
-      "inboundCount": 4,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false

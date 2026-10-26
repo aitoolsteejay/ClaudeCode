@@ -7,13 +7,13 @@ import JsonLd from "../components/JsonLd";
 import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Hyderabad",
-  description: "AI-powered B2B lead generation for Hyderabad's IT, pharma, and biotech firms: cold email, LinkedIn & ABM. Book a free GTM audit.",
+  title: "B2B Lead Generation Company in Hyderabad",
+  description: "Lead generation services in Hyderabad for IT, pharma and biotech companies: cold email, LinkedIn and ABM that book qualified meetings, live in 18 days.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-hyderabad" },
   keywords: ["b2b lead generation hyderabad", "outbound agency hyderabad", "linkedin outreach hyderabad", "cold email agency hyderabad pharma", "account based marketing hyderabad", "ai lead generation hyderabad", "abm agency hyderabad", "sales intelligence hyderabad", "b2b lead generation for pharma companies hyderabad", "lead generation for biotech companies genome valley", "lead generation for it services companies hyderabad", "b2b leads for hyderabad startups", "demand generation agency hyderabad", "linkedin ghostwriting for founders hyderabad", "best b2b outbound agency in hyderabad", "how to get b2b leads in hyderabad", "cold email agency for pharma companies telangana"],
   openGraph: {
-    title: "B2B Lead Generation Agency in Hyderabad | Myntmore",
-    description: "AI-powered outbound systems built for Hyderabad's IT, pharma, and biotech landscape.",
+    title: "B2B Lead Generation Company in Hyderabad | Myntmore",
+    description: "Outbound lead generation for Hyderabad's IT, pharma and biotech companies: cold email, LinkedIn and ABM.",
     url: "https://www.myntmore.com/b2b-lead-generation-hyderabad",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },

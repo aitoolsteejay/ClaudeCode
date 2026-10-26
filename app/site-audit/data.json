@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-26T11:43:43.206Z",
+  "generatedAt": "2026-10-26T12:01:57.594Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 284,
-    "linked": 253,
+    "total": 285,
+    "linked": 254,
     "orphan": 31,
     "noindex": 36,
     "notInXmlSitemap": 38,
@@ -352,7 +352,7 @@
     },
     {
       "path": "/blog/cold-email-sequence-templates",
-      "title": "Cold Email Sequence Templates That Get Replies",
+      "title": "Cold Email Sequence Template With 5 Examples",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
@@ -474,7 +474,7 @@
     },
     {
       "path": "/blog/icp-mapping-b2b",
-      "title": "ICP Mapping for B2B: Define Your Exact Buyer",
+      "title": "How to Define Your ICP: A B2B ICP Mapping Guide",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
@@ -504,7 +504,7 @@
     },
     {
       "path": "/blog/linkedin-outreach-sequences",
-      "title": "LinkedIn Outreach Sequences That Get Replies",
+      "title": "LinkedIn Outreach Sequence: The 5-Touch Structure",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
@@ -512,9 +512,10 @@
         "/blog/linkedin-outreach-agency-vs-manual-prospecting",
         "/blog/multi-threading-b2b-buying-committee",
         "/blog/reviving-closed-lost-leads",
-        "/resources/blogs"
+        "/resources/blogs",
+        "lib/internal-paths.ts"
       ],
-      "inboundCount": 5,
+      "inboundCount": 6,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -550,7 +551,7 @@
     },
     {
       "path": "/blog/outbound-funnel-math-not-guesswork",
-      "title": "Outbound Funnel Math, Not Gut Feel",
+      "title": "Outbound Funnel Math: What a Meeting Is Worth",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
@@ -578,7 +579,7 @@
     },
     {
       "path": "/blog/pitching-trap-competitor-positioning",
-      "title": "The Pitching Trap: Better Competitor Positioning",
+      "title": "How to Articulate Customer Pain in B2B Sales",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
@@ -706,7 +707,7 @@
     },
     {
       "path": "/blog/what-is-b2b-outbound-sales",
-      "title": "B2B Outbound Sales: What It Is & How It Works",
+      "title": "What Is B2B Outbound Sales? Meaning and Examples",
       "section": "blog",
       "status": "linked",
       "linkedFrom": [
@@ -1022,7 +1023,7 @@
         "/case-studies/predictable-b2b-lead-gen-engine",
         "/case-studies/professional-services-linkedin"
       ],
-      "inboundCount": 26,
+      "inboundCount": 27,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2152,6 +2153,19 @@
       "inHtmlSitemap": false
     },
     {
+      "path": "/case-studies/specialist-recruitment-linkedin-leads",
+      "title": "15 Leads a Month for a Specialist Recruiter",
+      "section": "case-studies",
+      "status": "linked",
+      "linkedFrom": [
+        "/case-studies"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": true
+    },
+    {
       "path": "/case-studies/uk-pharma-qualified-meetings",
       "title": "20+ Qualified Meetings/Month for UK Pharma",
       "section": "case-studies",
@@ -2380,9 +2394,10 @@
       "section": "lp",
       "status": "linked",
       "linkedFrom": [
+        "/case-studies/specialist-recruitment-linkedin-leads",
         "/"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3586,7 +3601,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 43,
+      "inboundCount": 44,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3640,7 +3655,7 @@
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai"
       ],
-      "inboundCount": 41,
+      "inboundCount": 42,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3680,7 +3695,7 @@
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune"
       ],
-      "inboundCount": 42,
+      "inboundCount": 43,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

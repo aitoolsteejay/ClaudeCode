@@ -1,0 +1,53 @@
+# Pushes changed URLs to IndexNow (Bing and friends) once a production deploy
+# is live. Vercel reports each deploy to GitHub as a deployment in the
+# "Production" environment; when one succeeds, this diffs lib/sitemap-dates.json
+# between the previous successful production deploy and this one and submits
+# what changed. See scripts/indexnow.mjs for why the diff is taken that way.
+name: IndexNow
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+  deployments: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Find the previous successful production deploy
+        id: base
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          CREATED: ${{ github.event.deployment.created_at }}
+        run: |
+          # Deployments come newest first; take the first older one whose
+          # latest status is success.
+          base=""
+          for row in $(gh api "repos/$REPO/deployments?environment=Production&per_page=50" \
+                         --jq ".[] | select(.created_at < \"$CREATED\") | \"\(.id):\(.sha)\""); do
+            state=$(gh api "repos/$REPO/deployments/${row%%:*}/statuses?per_page=1" --jq '.[0].state')
+            if [ "$state" = "success" ]; then base="${row#*:}"; break; fi
+          done
+          echo "sha=$base" >> "$GITHUB_OUTPUT"
+          echo "previous production deploy: ${base:-none found}"
+
+      - name: Submit changed URLs
+        if: steps.base.outputs.sha != ''
+        run: node scripts/indexnow.mjs ${{ steps.base.outputs.sha }} ${{ github.event.deployment.sha }}

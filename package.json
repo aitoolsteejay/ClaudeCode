@@ -7,6 +7,7 @@
     "prebuild": "node scripts/generate-site-map.mjs && node scripts/generate-llms-full.mjs && (node scripts/generate-sitemap-dates.mjs --check || echo '[sitemap-dates] warning: lib/sitemap-dates.json is stale, run npm run sitemap:dates')",
     "sitemap:dates": "node scripts/generate-sitemap-dates.mjs",
     "sitemap:check": "node scripts/generate-sitemap-dates.mjs --check",
+    "indexnow": "node scripts/indexnow.mjs",
     "audit:links": "node scripts/audit-internal-links.mjs",
     "llms:build": "node scripts/generate-llms-full.mjs",
     "llms:check": "node scripts/generate-llms-full.mjs --check",

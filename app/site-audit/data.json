@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T11:40:15.311Z",
+  "generatedAt": "2026-10-26T11:43:43.206Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 284,
@@ -1072,10 +1072,11 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-hyderabad",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1703,10 +1704,11 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-hyderabad",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -1717,10 +1719,11 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-hyderabad",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2362,10 +2365,11 @@
       "section": "lp",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata",
         "/"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3408,13 +3412,14 @@
       "status": "linked",
       "linkedFrom": [
         "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-hyderabad",
         "/b2b-lead-generation-kolkata",
         "/b2b-lead-generation-mumbai",
         "/b2b-lead-generation-pune",
         "/resources/guides/how-to-choose-an-outbound-agency",
         "/resources/guides"
       ],
-      "inboundCount": 6,
+      "inboundCount": 7,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false

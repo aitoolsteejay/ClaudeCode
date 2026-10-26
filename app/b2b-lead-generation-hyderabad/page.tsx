@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "B2B Lead Generation Company in Hyderabad",
   description: "Lead generation services in Hyderabad for IT, pharma and biotech companies: cold email, LinkedIn and ABM that book qualified meetings, live in 18 days.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-hyderabad" },
-  keywords: ["b2b lead generation hyderabad", "outbound agency hyderabad", "linkedin outreach hyderabad", "cold email agency hyderabad pharma", "account based marketing hyderabad", "ai lead generation hyderabad", "abm agency hyderabad", "sales intelligence hyderabad", "b2b lead generation for pharma companies hyderabad", "lead generation for biotech companies genome valley", "lead generation for it services companies hyderabad", "b2b leads for hyderabad startups", "demand generation agency hyderabad", "linkedin ghostwriting for founders hyderabad", "best b2b outbound agency in hyderabad", "how to get b2b leads in hyderabad", "cold email agency for pharma companies telangana"],
+  keywords: ["lead generation company in hyderabad", "lead generation services in hyderabad", "pharma lead generation agency hyderabad", "b2b lead generation hyderabad", "outbound agency hyderabad", "linkedin outreach hyderabad", "cold email agency hyderabad pharma", "account based marketing hyderabad", "ai lead generation hyderabad", "abm agency hyderabad", "sales intelligence hyderabad", "b2b lead generation for pharma companies hyderabad", "lead generation for biotech companies genome valley", "lead generation for it services companies hyderabad", "b2b leads for hyderabad startups", "demand generation agency hyderabad", "linkedin ghostwriting for founders hyderabad", "best b2b outbound agency in hyderabad", "how to get b2b leads in hyderabad", "cold email agency for pharma companies telangana"],
   openGraph: {
     title: "B2B Lead Generation Company in Hyderabad | Myntmore",
     description: "Outbound lead generation for Hyderabad's IT, pharma and biotech companies: cold email, LinkedIn and ABM.",
@@ -23,6 +23,19 @@ const WHY_CITY = [
   { title: "Pharma and biotech sales cycles that need consistency", desc: "Hyderabad's pharmaceutical and biotech companies, based around its Genome Valley cluster, sell into long, compliance-heavy, technical buying processes. Getting in front of the right procurement and R&D contacts takes sustained, multi-touch outreach, not a single email blast." },
   { title: "IT and ITES teams competing in a saturated market", desc: "Hyderabad's large IT/ITES base means generic mass outreach gets lost instantly. Winning meetings here takes differentiated, signal-based targeting that reaches the right buyer with the right message." },
   { title: "Startups still running outreach off the founder's calendar", desc: "A lot of Hyderabad's growing startups have no dedicated outbound function yet, so prospecting happens in the gaps between everything else the founder is doing, which means it barely happens at all." },
+];
+
+const SEGMENTS = [
+  { title: "Pharma, API and biotech", desc: "API makers, formulation and contract manufacturers, and biotech firms selling to procurement, sourcing and R&D teams in India and export markets." },
+  { title: "Clinical research and life-sciences services", desc: "CROs, labs and life-sciences service providers reaching sponsors and pharma decision-makers who rarely respond to generic outreach." },
+  { title: "IT services and SaaS", desc: "IT services, product engineering and SaaS companies selling to enterprises, global capability centres and international buyers." },
+];
+
+const STEPS = [
+  { when: "Week 1", title: "ICP and buying signals", desc: "We define who to target and which signals mean they are in-market: new facilities, pipeline milestones, funding, leadership changes and hiring." },
+  { when: "Weeks 1–2", title: "Lists, domains and copy", desc: "Verified contact lists, dedicated sending domains with warm-up, and copy written for the buyer's role, industry and country." },
+  { when: "Within 18 days", title: "Campaigns go live", desc: "Cold email and LinkedIn sequences start sending, with account-based plays for your named target accounts." },
+  { when: "Weeks 3–8", title: "Conversations, then consistency", desc: "First qualified conversations usually come in weeks 3 to 4, and meeting volume becomes consistent by weeks 6 to 8 as we tune messaging on real replies." },
 ];
 
 const SERVICES = [
@@ -47,6 +60,8 @@ const FAQ = [
   { q: "Do you only work with Hyderabad companies?", a: "No. We have clients in Hyderabad, but we run outbound systems for B2B companies across India and internationally." },
   { q: "How quickly can we expect meetings to start?", a: "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete." },
   { q: "What does pricing look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
+  { q: "Are you a lead generation company or a B2B marketing agency?", a: "Myntmore is an outbound lead generation company, not a full-service B2B marketing agency. We run cold email, LinkedIn outreach, account-based marketing and founder personal branding to start sales conversations. We don't run paid ads, SEO or brand design, so pair us with a marketing agency if you need those too." },
+  { q: "Do you run lead generation for pharma and biotech companies in Hyderabad?", a: "Yes. We run B2B outreach for API makers, formulation and contract manufacturers, CROs and biotech firms selling to procurement, sourcing and R&D teams in India and abroad. We generate buyer conversations only; regulatory approvals, compliance claims and scientific advice stay with your own team." },
   { q: "Which Hyderabad industries do you have the most experience with?", a: "IT/ITES, pharmaceutical and biotech companies, and growing startups are where we've run the most campaigns, but our system adapts to any B2B ICP." },
   { q: "What channels do you actually use to generate leads?", a: "Primarily cold email and LinkedIn outreach built for long, compliance-heavy pharma and IT buying cycles, layered with account-based marketing for named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention." },
   { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Hyderabad means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount." },
@@ -95,6 +110,49 @@ export default function B2BLeadGenerationHyderabadPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>Who we generate leads for in Hyderabad</h2>
+          <p className="text-base mb-10" style={{ color: "#52525B" }}>Our lead generation services in Hyderabad are built for companies that sell to other businesses, in India or overseas.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {SEGMENTS.map((item) => (
+              <div key={item.title} className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm mt-6" style={{ color: "#52525B" }}>
+            See it in practice:{" "}
+            <Link href="/case-studies/pharma-api-supplier-conversations" className="font-bold underline" style={{ color: "#A14A08" }}>new commercial conversations for an API supplier</Link>,{" "}
+            <Link href="/case-studies/pharma-clinical-research-meetings" className="font-bold underline" style={{ color: "#A14A08" }}>14 high-intent meetings for a clinical research firm</Link>{" "}and{" "}
+            <Link href="/case-studies/agencies-it-services-international-proposals" className="font-bold underline" style={{ color: "#A14A08" }}>9 proposal-stage opportunities for an IT services company</Link>. For pharma specifically, see{" "}
+            <Link href="/lp/pharma" className="font-bold underline" style={{ color: "#A14A08" }}>lead generation for pharma companies</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black mb-10" style={{ color: "#0a0a0a" }}>How B2B lead generation works with us</h2>
+          <ol className="space-y-4">
+            {STEPS.map((step, i) => (
+              <li key={step.title} className="flex gap-4 rounded-2xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
+                <div>
+                  <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{step.title} <span className="text-sm font-semibold" style={{ color: "#A14A08" }}>· {step.when}</span></p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{step.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="text-sm mt-6" style={{ color: "#52525B" }}>
+            Comparing agencies? Use our{" "}
+            <Link href="/resources/guides/how-to-choose-b2b-lead-generation-agency-india" className="font-bold underline" style={{ color: "#A14A08" }}>guide to choosing a B2B lead generation agency in India</Link>.
+          </p>
         </div>
       </section>
 

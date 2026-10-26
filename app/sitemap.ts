@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/myntmore-framework`, lastModified: lastMod("/myntmore-framework"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/who-this-is-for`, lastModified: lastMod("/who-this-is-for"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/resources/guides/how-to-choose-an-outbound-agency`, lastModified: lastMod("/resources/guides/how-to-choose-an-outbound-agency"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/how-to-choose-b2b-lead-generation-agency-india`, lastModified: lastMod("/resources/guides/how-to-choose-b2b-lead-generation-agency-india"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/dos-and-donts-of-outreach`, lastModified: lastMod("/resources/guides/dos-and-donts-of-outreach"), changeFrequency: "monthly", priority: 0.7 },
     // Service subpages
     { url: `${base}/services/linkedin-outreach`, lastModified: lastMod("/services/linkedin-outreach"), changeFrequency: "monthly", priority: 0.8 },

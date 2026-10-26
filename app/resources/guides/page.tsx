@@ -73,6 +73,14 @@ const GUIDES = [
     accent: "#0EA5E9",
   },
   {
+    href: "/resources/guides/how-to-choose-b2b-lead-generation-agency-india",
+    tag: "Buyer's Guide",
+    title: "How to Choose a B2B Lead Generation Agency in India",
+    excerpt: "Eight criteria for the Indian market: the four kinds of lead gen company, data sources, DPDP and TRAI rules, pricing models with GST, and a red-flag scorecard.",
+    readTime: "8 min read",
+    accent: "#F5B731",
+  },
+  {
     href: "/blog/agency-vs-in-house",
     tag: "Comparison",
     title: "Agency vs. In-House SDR",

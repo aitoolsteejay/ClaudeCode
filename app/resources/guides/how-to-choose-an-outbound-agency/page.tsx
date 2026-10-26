@@ -166,6 +166,10 @@ export default function HowToChooseOutboundAgencyPage() {
                 Still deciding between an agency and hiring in-house at all? See the full{" "}
                 <Link href="/blog/agency-vs-in-house" className="font-bold" style={{ color: "#0369A1" }}>agency vs. in-house comparison</Link>.
               </p>
+              <p className="text-sm mt-3" style={{ color: "#52525B" }}>
+                Hiring in India? Read{" "}
+                <Link href="/resources/guides/how-to-choose-b2b-lead-generation-agency-india" className="font-bold" style={{ color: "#0369A1" }}>how to choose a B2B lead generation agency in India</Link>, which covers DPDP and TRAI rules, local data sources and pricing with GST.
+              </p>
             </FadeIn>
           </div>
         </section>

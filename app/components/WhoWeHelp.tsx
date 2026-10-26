@@ -79,7 +79,7 @@ const PERSONAS: Persona[] = [
     cta: "Explore Founder solutions",
     benefits: [
       { title: "Pipeline without headcount", description: "Run a full outbound motion without hiring an SDR or BDR. We do it end to end strategy, copy, execution." },
-      { title: "First meeting in under 2 weeks", description: "Fast onboarding means fast results. Most founders see their first booked meeting within 14 days of starting." },
+      { title: "Live in 18 days", description: "Fast onboarding means fast results. Campaigns go live within 18 days, and most founders have their first qualified conversation in weeks 3 to 4." },
       { title: "Stay focused on building", description: "You close. We fill. That's the entire model no distractions, no micromanaging sequences, just calendar invites." },
     ],
   },
@@ -92,7 +92,7 @@ const PERSONAS: Persona[] = [
     cta: "Explore Sales Leader solutions",
     benefits: [
       { title: "Predictable meeting volume", description: "Know exactly how many qualified meetings hit your team's calendar each week no more feast or famine." },
-      { title: "Reps close 40% more", description: "When reps stop prospecting and start closing, conversion rates climb. We've seen it across 300+ B2B companies." },
+      { title: "Reps close 40% more", description: "When reps stop prospecting and start closing, conversion rates climb. We've seen it across 130+ B2B companies." },
       { title: "Full pipeline visibility", description: "Every meeting, touchpoint, and reply reported to your team automatically. Zero manual tracking." },
     ],
   },
@@ -106,7 +106,7 @@ const PERSONAS: Persona[] = [
     benefits: [
       { title: "Account lists built for you", description: "We identify your highest-value target accounts and build targeted lists from scratch using intent data." },
       { title: "Multi-channel coordination", description: "Email + LinkedIn running in sync to hit the full buying committee so when your AE calls, they're already warm." },
-      { title: "Campaigns live in 28 days", description: "From brief to first email sent in under a month. No 3-month ramp-up. No unnecessary delays." },
+      { title: "Campaigns live in 18 days", description: "From brief to first email sent in under three weeks. No 3-month ramp-up. No unnecessary delays." },
     ],
   },
   {

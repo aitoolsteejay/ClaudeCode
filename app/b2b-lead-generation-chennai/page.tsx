@@ -107,8 +107,8 @@ const DIFFERENTIATORS = [
     body: "You see exactly which sequences are running, who has been contacted, what is landing meetings, and what pipeline it is producing. No black box, no vague monthly summary.",
   },
   {
-    heading: "Monthly retainer, no long-term lock-in",
-    body: "We earn the right to keep working with you every month. Review results on a 30-day cycle and continue only as long as it is working for your business.",
+    heading: "Monthly retainer, 3-month minimum",
+    body: "The first three months cover setup and enough sending to judge results. After that it runs month to month with 30 days' notice, so we keep earning the work.",
   },
 ];
 
@@ -127,7 +127,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What does pricing and commitment look like?",
-    a: "We work on a monthly retainer with no long-term lock-in. You review results on a 30-day cycle and decide whether to continue, there is no annual contract you are stuck in if priorities change.",
+    a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract.",
   },
   {
     q: "Which Chennai industries do you have the most experience with?",
@@ -139,7 +139,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How is this different from hiring an in-house SDR?",
-    a: "Hiring an in-house SDR in Chennai means months of recruiting and ramp-up before they are fully productive, and even then, one person can only run so many sequences at once. A managed outbound system gets multiple channels running from week one, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount.",
+    a: "Hiring an in-house SDR in Chennai means months of recruiting and ramp-up before they are fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount.",
   },
   {
     q: "What do you need from us to get started?",

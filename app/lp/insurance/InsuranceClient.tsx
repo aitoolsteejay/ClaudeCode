@@ -81,7 +81,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -97,7 +97,7 @@ const FAQ_ITEMS = [
   { q: "Does this work for group health insurance as well as commercial or property lines?", a: "Yes. The system adapts to your specific book, group health, commercial property and liability, or keyman and corporate liability cover, by adjusting the ICP, the decision-makers we target, and the messaging to match how that line is actually bought." },
   { q: "We already have a BD or relationship management team. Will this overlap?", a: "No. We focus purely on generating net-new outbound conversations with companies you do not already have a relationship with. Your BD and RM teams keep managing existing accounts and referral relationships; we add a new, always-on channel for fresh corporate business." },
   { q: "How soon can we expect our first meetings?", a: "Most brokerage clients see their first qualified conversations within 3 to 4 weeks, once ICP mapping, decision-maker list building, and renewal-timed sequencing are in place." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long-term lock-in. You review results every 30 days and decide whether to continue. To be clear, we generate qualified buyer conversations only, we do not advise on policy structuring, underwriting, or claims." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract. To be clear, we generate qualified buyer conversations only, we do not advise on policy structuring, underwriting, or claims." },
 ];
 
 function HeroSection() {

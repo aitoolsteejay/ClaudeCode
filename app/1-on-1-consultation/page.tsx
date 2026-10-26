@@ -131,7 +131,7 @@ export default function OneOnOneConsultation() {
             </div>
 
             <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>300+ B2B companies helped</h3>
+              <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>130+ B2B companies helped</h3>
               <p className="text-sm" style={{ color: "#52525B" }}>12K+ meetings booked · $120M+ pipeline generated across clients · 38% average reply rate</p>
             </div>
           </div>

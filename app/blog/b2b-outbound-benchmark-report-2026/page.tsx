@@ -5,7 +5,8 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import AskYourAI from "../../components/AskYourAI";
 import NewsletterForm from "../../components/NewsletterForm";
 import JsonLd from "../../components/JsonLd";
-import { buildArticleSchema } from "@/lib/schema";
+import Faq from "@/app/lp/Faq";
+import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
 
 const BLOG_AI_RESOURCES = [
@@ -16,7 +17,7 @@ const BLOG_AI_RESOURCES = [
 
 export const metadata: Metadata = {
   title: "The 2026 B2B Outbound Benchmark Report",
-  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.",
+  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 130+ B2B companies, aggregated and anonymized. See how you compare.",
   alternates: { canonical: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026" },
   keywords: [
     "b2b outbound benchmark report",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "The 2026 B2B Outbound Benchmark Report | Myntmore",
-    description: "Aggregated, anonymized data from 300+ B2B companies: what a healthy reply rate, inbox rate, and time-to-meeting actually looks like.",
+    description: "Aggregated, anonymized data from 130+ B2B companies: what a healthy reply rate, inbox rate, and time-to-meeting actually looks like.",
     url: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -45,21 +46,49 @@ export const metadata: Metadata = {
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "The 2026 B2B Outbound Benchmark Report",
-  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.",
+  description: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 130+ B2B companies, aggregated and anonymized. See how you compare.",
   url: "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
   datePublished: "2026-08-19T12:00:00+05:30",
-  dateModified: "2026-08-19T12:00:00+05:30",
+  dateModified: "2026-10-26T12:00:00+05:30",
 });
 
+// One line per headline number, written to be quoted on its own. Keep these in
+// step with the tables below: they restate them, they never add new figures.
+const KEY_FINDINGS = [
+  "Cold email reply rates across Myntmore-managed campaigns run at 1–3%, with a target of 20%+ of replies being positive. Commonly cited ranges for unmanaged outbound are 2–5%.",
+  "LinkedIn outreach (connection request plus follow-ups) runs at a 50–60% reply rate, against a typical 8–12%.",
+  "Campaigns go live within 18 days of onboarding, the first qualified conversations come in weeks 3–4, and meeting volume becomes consistent after 6–8 weeks.",
+  "Inbox placement averages 98.5% on Myntmore-managed domains, against roughly 80–85% for unwarmed, unauthenticated domains.",
+];
+
+const FAQ_ITEMS = [
+  {
+    question: "What is a good reply rate for B2B cold email?",
+    answer: "Across Myntmore-managed cold email campaigns, reply rates run at 1–3%, and we aim for at least 20% of those replies to be positive. Commonly cited ranges for unmanaged outbound are 2–5%. Campaigns with a sharp ICP and a clear offer can run far higher, while a rate below 1% is a signal to stop and check list quality and deliverability.",
+  },
+  {
+    question: "What is a good reply rate for LinkedIn outreach?",
+    answer: "A good LinkedIn outreach reply rate is 50–60% when a connection request and follow-up messages are run as one sequence, based on Myntmore-managed accounts. Typical unmanaged LinkedIn outreach lands at 8–12%. The gap mostly comes from profile positioning, a tight ICP and messages that start a conversation instead of pitching.",
+  },
+  {
+    question: "How long does B2B outbound take to book the first meeting?",
+    answer: "Across Myntmore-managed accounts, campaigns go live within 18 days of onboarding and the first qualified conversations come in weeks three to four. Meeting volume becomes consistent after six to eight weeks, once messaging is tuned against real reply data. Setup covers sending domains, inbox warm-up, the lead list and copy, which is why week one rarely brings meetings.",
+  },
+  {
+    question: "What inbox placement rate should cold email have?",
+    answer: "Cold email should land in the inbox at least 90% of the time, and Myntmore-managed domains average 98.5%. Unwarmed domains without SPF, DKIM and DMARC authentication typically land at 80–85%. If placement drops below 90%, stop sending and fix authentication and warm-up before changing any copy, because every other metric depends on it.",
+  },
+];
+
 const REPLY_RATE_ROWS = [
-  { channel: "Cold email", myntmore: "10–12%", typical: "2–5%", note: "Blended across ICP-mapped, signal-based campaigns" },
+  { channel: "Cold email", myntmore: "1–3%", typical: "2–5%", note: "Blended across managed campaigns, including high-volume sends" },
   { channel: "LinkedIn outreach", myntmore: "50–60%", typical: "8–12%", note: "Connection + follow-up sequence combined" },
   { channel: "AI-qualified lists", myntmore: "35–40%", typical: "N/A", note: "Leads pre-scored by intent signals before first touch" },
 ];
 
 const TIMELINE_ROWS = [
-  { milestone: "First meeting booked on the calendar", days: "~18 days", note: "From campaign kickoff, once ICP, list, and sequences are live" },
-  { milestone: "First qualified conversation actually happens", days: "3–4 weeks", note: "Booked meetings typically sit a few days to a week out" },
+  { milestone: "Campaign live and sending", days: "within 18 days", note: "From onboarding: domains, inboxes and warm-up, lead list, and copy" },
+  { milestone: "First qualified conversation actually happens", days: "3–4 weeks", note: "From onboarding. Booked meetings typically sit a few days to a week out" },
   { milestone: "Consistent, repeatable meeting volume", days: "6–8 weeks", note: "Once messaging is optimized against real reply data" },
 ];
 
@@ -67,6 +96,7 @@ export default function B2BOutboundBenchmarkReport2026() {
   return (
     <InnerLayout>
       <JsonLd data={ARTICLE_SCHEMA} />
+      <JsonLd data={buildFaqSchema(FAQ_ITEMS)} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Resources", href: "/resources" }, { label: "Blog", href: "/resources/blogs" }]} />
@@ -83,9 +113,26 @@ export default function B2BOutboundBenchmarkReport2026() {
 
       <div className="px-4 pb-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+          <h2 className="text-sm font-black uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Key findings</h2>
+          <ul className="space-y-2">
+            {KEY_FINDINGS.map((finding) => (
+              <li key={finding} className="flex gap-3 text-sm leading-relaxed" style={{ color: "#3D3D3D" }}>
+                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ backgroundColor: "#047857" }} />
+                <span>{finding}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="px-4 pb-4" style={{ backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-3xl mx-auto rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
           <h2 className="text-sm font-black uppercase tracking-widest mb-3" style={{ color: "#71675E" }}>Methodology</h2>
           <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
-            These figures are aggregated and anonymized across the 300+ B2B companies Myntmore has managed cold email, LinkedIn outreach, and AI-qualified list campaigns for. No single client&apos;s data is broken out or identifiable. Ranges reflect the spread across account size, industry, and ICP, not a single blended average, since a flat number would hide more than it reveals. &quot;Typical&quot; figures for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
+            These figures are aggregated and anonymized across the 130+ B2B companies Myntmore has managed cold email, LinkedIn outreach, and AI-qualified list campaigns for. No single client&apos;s data is broken out or identifiable. Ranges reflect the spread across account size, industry, and ICP, not a single blended average, since a flat number would hide more than it reveals. &quot;Typical&quot; figures for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
+          </p>
+          <p className="text-sm leading-relaxed mt-3" style={{ color: "#52525B" }}>
+            <strong>How to cite:</strong> Myntmore, &quot;The 2026 B2B Outbound Benchmark Report&quot;, last updated 26 October 2026, https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026
           </p>
         </div>
       </div>
@@ -122,7 +169,7 @@ export default function B2BOutboundBenchmarkReport2026() {
                 </table>
               </div>
               <p className="text-sm mt-4" style={{ color: "#71675E" }}>
-                Individual campaigns land across the full range depending on ICP fit and offer clarity. A specific SaaS Series A account of ours landed at 34% on cold email; a B2B services account landed at 29%, both within the range above.
+                These are blended ranges, and individual campaigns can land well above them when the ICP is sharp and the offer is clear. A SaaS Series A account of ours reached 34% on cold email and a B2B services account reached 29%, both outliers well above the blended range.
               </p>
             </div>
 
@@ -157,7 +204,7 @@ export default function B2BOutboundBenchmarkReport2026() {
                 {[
                   "Below range on reply rate: the problem is almost always targeting or offer clarity, not copy. Revisit your ICP before you rewrite your sequence.",
                   "Below 90% inbox placement: stop sending and fix domain authentication first. Every other metric is downstream of this one.",
-                  "No meeting booked by day 25–30: check that your CTA is low-friction (a 15-minute call, not a 30-minute demo) and that a scheduling link is in every positive reply.",
+                  "No meeting booked by week 5: check that your CTA is low-friction (a 15-minute call, not a 30-minute demo) and that a scheduling link is in every positive reply.",
                   "Above range on every metric: you've found message-market fit. Scale volume before you change anything else.",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
@@ -178,6 +225,10 @@ export default function B2BOutboundBenchmarkReport2026() {
               Book a Free GTM Audit
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
+          </div>
+
+          <div className="mt-12">
+            <Faq badge="FAQ" title="Benchmark questions" items={FAQ_ITEMS.map((f) => ({ q: f.question, a: f.answer }))} />
           </div>
 
           <div className="mt-8">

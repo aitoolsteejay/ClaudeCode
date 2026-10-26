@@ -81,7 +81,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -92,11 +92,11 @@ const PROCESS = [
 ];
 
 const FAQ_ITEMS = [
-  { q: "How is this different from hiring an in-house SDR?", a: "An in-house SDR costs you a full-time salary, months of ramp-up, and ongoing management. We give you a fully built outbound system, list building, sequences, and deliverability infrastructure, running from week one, at a fraction of the cost and with none of the hiring risk." },
+  { q: "How is this different from hiring an in-house SDR?", a: "An in-house SDR costs you a full-time salary, months of ramp-up, and ongoing management. We give you a fully built outbound system, list building, sequences, and deliverability infrastructure, live within about three weeks, at a fraction of the cost and with none of the hiring risk." },
   { q: "We already have a team doing some outbound. Will this overlap?", a: "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new accounts. Your team keeps doing what it does well, we add the top of funnel volume it does not have time for." },
   { q: "How fast will we start seeing meetings?", a: "Most agency clients see their first qualified conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete." },
   { q: "Do you work with the tools we already use, like our CRM?", a: "We don't build or manage CRM integrations, that stays part of your own process. Every qualified meeting and reply is handed off to your team directly, so it's easy to log wherever you already track pipeline." },
-  { q: "What does pricing and commitment look like?", a: "It's a monthly retainer with no annual contract. Every 30 days you look at the numbers and decide whether to keep going." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
   { q: "What if the leads we get are not the right fit?", a: "We refine your ICP together in the first two weeks and keep adjusting targeting based on who books calls and who converts, so fit improves fast." },
 ];
 

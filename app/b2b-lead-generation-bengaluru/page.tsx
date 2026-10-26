@@ -38,17 +38,17 @@ const DIFFERENTIATORS = [
   "Signal-based targeting instead of static, bought contact lists",
   "A fully productized system, live in weeks, not a slow agency ramp-up",
   "Transparent reporting on every meeting, reply, and touch",
-  "A monthly retainer with no long-term lock-in contract",
+  "A monthly retainer: 3-month minimum, then month to month",
 ];
 
 const FAQ = [
   { q: "Do we need to be based in Bengaluru to work with you?", a: "No. The entire engagement runs remotely, so it doesn't matter where your team sits." },
   { q: "Do you only work with Bengaluru companies?", a: "No. We have clients in Bengaluru, but we run outbound systems for B2B SaaS and tech companies across India and internationally." },
   { q: "How quickly can we expect meetings to start?", a: "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete." },
-  { q: "What does pricing look like?", a: "We work on a monthly retainer with no long-term lock-in. You can review results every 30 days and decide whether to continue." },
+  { q: "What does pricing look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
   { q: "Which Bengaluru company types do you have the most experience with?", a: "B2B SaaS, tech startups, and deep-tech companies are where we've run the most campaigns, but our system adapts to any B2B ICP." },
   { q: "What channels do you actually use to generate leads?", a: "Primarily cold email and LinkedIn outreach tuned for sophisticated SaaS and tech buyers, layered with account-based marketing for named target accounts, and AI-assisted signal tracking and personalisation underneath all three. We pick the mix based on where your buyers, in India or overseas, actually spend their attention." },
-  { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Bengaluru means months of recruiting and ramp-up in one of the country's most competitive hiring markets, before they're fully productive. A managed outbound system gets multiple channels running from week one, at a fraction of that fully loaded cost, and scales without you managing headcount." },
+  { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Bengaluru means months of recruiting and ramp-up in one of the country's most competitive hiring markets, before they're fully productive. A managed outbound system has multiple channels live within about three weeks, at a fraction of that fully loaded cost, and scales without you managing headcount." },
   { q: "What do you need from us to get started?", a: "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there." },
 ];
 

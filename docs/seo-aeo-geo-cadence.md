@@ -84,7 +84,7 @@ Shipped on branch `seo-aeo-geo-upgrade` (not yet merged):
 - **Trust and GEO.** `/editorial-policy`; a visible "By Myntmore, Updated <date>" line on 34 posts and guides; a data-use notice on every tool sign-up; rewritten `llms.txt` and generated `llms-full.txt`; a monthly AI-visibility tracker.
 
 Still open, and why:
-- **Founder claims in the 58-meetings guide.** Its author bio adds $80M+ revenue and 100,000 students, which appear nowhere else. Someone who knows the business has to confirm them. (The client count itself is settled: every page now says 300+, following 76daf7f; the 120+ bios were updated in 01b28fc. The one remaining "300 clients" that `npm run audit:entity` reports is the guide quoting a weak line to avoid, not a claim.)
+- **Founder claims in the 58-meetings guide.** Its author bio adds $80M+ revenue and 100,000 students, which appear nowhere else. Someone who knows the business has to confirm them. (The client count itself is settled: every page now says 130+, following 76daf7f; the 120+ bios were updated in 01b28fc. The one remaining "300 clients" that `npm run audit:entity` reports is the guide quoting a weak line to avoid, not a claim.)
 - **Privacy policy** does not mention Google's Gemini API or the Supabase database the tools use. The tool notice describes them; the policy should too.
 - **Third-party scripts.** GA4, the Meta Pixel and Ahrefs Analytics all load `afterInteractive`. Moving the Pixel and Ahrefs to `lazyOnload` would cost some page views from very short visits, so that is a marketing decision, not applied.
 - **Real benchmark and external work.** New benchmark data needs real campaign data; citations, PR, directories and interviews happen off-site (`myntmore-ai-visibility-checklist.md`).

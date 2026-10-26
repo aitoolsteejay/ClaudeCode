@@ -188,7 +188,7 @@ All sections are mobile-optimised. Key breakpoints used: `sm` (640px), `lg` (102
 - **Logos**: `/public/logo.png` — the Myntmore logo file.
 - **Testimonials**: Anonymised fictional client names (Sarah K., James R., etc.) — replace with real ones when available.
 - **Case studies (Results section)**: Anonymised — "Series B SaaS Fintech", "B2B Professional Services".
-- **Stats**: 300+ B2B companies, $120M+ pipeline, 12K+ meetings booked, 18 days avg to first meeting. `lib/entity-facts.json` is the source of truth; `npm run audit:entity` checks the pages against it.
+- **Stats**: 130+ B2B companies, $120M+ pipeline, 12K+ meetings booked, campaigns live within 18 days (first qualified conversations in weeks 3–4). `lib/entity-facts.json` is the source of truth; `npm run audit:entity` checks the pages against it.
 
 ---
 

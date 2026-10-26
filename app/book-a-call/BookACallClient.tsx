@@ -291,7 +291,7 @@ export default function BookACallClient() {
                 style={{ borderColor: "rgba(245,183,49,0.3)" }}
               >
                 <div>
-                  <p className="text-2xl font-black text-[#0A0A0A]">300+</p>
+                  <p className="text-2xl font-black text-[#0A0A0A]">130+</p>
                   <p className="text-xs text-[#71675E] font-medium">B2B Companies Scaled</p>
                 </div>
                 <div>

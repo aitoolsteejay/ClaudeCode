@@ -118,7 +118,7 @@ const FAQS = [
   { q: "I might not have enough content to share. How will you generate that?", a: "That is our job. We run a monthly content strategy, write the posts and use a short video interview with you to capture your ideas, so you never need a backlog of content." },
 ];
 
-const FOUNDER_STATS = ["4x entrepreneur", "Scaled Flintstop to $6M ARR", "TEDx speaker", "Growth marketing professor", "300+ B2B companies"];
+const FOUNDER_STATS = ["4x entrepreneur", "Scaled Flintstop to $6M ARR", "TEDx speaker", "Growth marketing professor", "130+ B2B companies"];
 
 // The four steps below are the visible "How it works" timeline on this page,
 // so the schema describes content the visitor can actually read.

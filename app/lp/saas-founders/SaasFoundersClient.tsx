@@ -73,7 +73,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -88,7 +88,7 @@ const FAQ_ITEMS = [
   { q: "Will this work if we are still pre-product-market fit?", a: "Outbound works best once you have a handful of paying customers and a clear picture of who gets value fastest. If you are very early, we will tell you honestly and suggest starting with a smaller pilot." },
   { q: "How do you avoid spam filters and protect our sender reputation?", a: "We set up dedicated sending infrastructure, warm it up properly, and follow strict sending limits and personalisation practices, so your core domain reputation stays protected." },
   { q: "Do you integrate with our CRM, like HubSpot or Salesforce?", a: "We don't build or manage CRM integrations, that stays part of your own process. Every qualified reply and booked demo is handed off to your team directly, with full context from the conversation, so it's easy to log wherever you already track pipeline." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in, so you can review pipeline results every 30 days." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
   { q: "We already tried outbound once and it did not work. Why would this be different?", a: "Most failed outbound comes down to generic targeting and copy that reads like everyone else's. We rebuild it around specific buying signals and messaging tailored to your product, and iterate weekly instead of setting it and walking away." },
 ];
 

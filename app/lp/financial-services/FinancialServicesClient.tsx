@@ -81,7 +81,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -96,7 +96,7 @@ const FAQ_ITEMS = [
   { q: "How is this different from relying on our broker or referral network?", a: "Referral and broker networks cap your growth to who already knows you. We build a systematic, always-on outbound engine, cold email plus LinkedIn, that reaches CFOs and Finance Heads at companies you have never worked with before, on top of whatever referrals you already get." },
   { q: "Which job titles do you typically target?", a: "Most commonly CFOs, Finance Heads, and business owners at companies showing signals of needing working capital, equipment financing, or corporate treasury and wealth advisory support, expansion plans, funding rounds, or capex cycles." },
   { q: "How long before we see our first qualified meetings?", a: "Most financial services clients see their first qualified conversations within 3 to 5 weeks, once ICP mapping, compliance-safe messaging, and list building are complete. Because these are multi-stakeholder decisions, nurturing continues well beyond the first meeting." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long-term lock-in. You can review results every 30 days and decide whether to continue." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
   { q: "Do you provide financial or investment advice, underwriting, or advisory services?", a: "No. Myntmore is a B2B lead generation partner. We generate qualified buyer conversations only, underwriting, rates, and any financial or investment advice remain entirely your firm's domain." },
 ];
 

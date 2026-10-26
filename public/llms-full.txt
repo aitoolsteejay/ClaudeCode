@@ -9,7 +9,7 @@ This is the long-form reference. The short, curated index is https://www.myntmor
 - Headquarters: Mumbai, India
 - Founder: Tejas Jhaveri, Founder (https://linkedin.com/in/tejasjhaveri)
 - Website: https://www.myntmore.com
-- Proof points stated on the site: 12K+ meetings booked; $120M+ in pipeline generated; 300+ B2B companies served
+- Proof points stated on the site: 12K+ meetings booked; $120M+ in pipeline generated; 130+ B2B companies served
 - Geographic scope: Based in Mumbai and serving B2B companies in India and internationally. The city pages (Mumbai, Delhi, Bengaluru, Pune, Hyderabad, Chennai, Kolkata, Ahmedabad) describe local market context; they are not separate offices.
 - Contact: growth@myntmore.com, +91 81693 18951
 - Address: WeWork Enam Sambhav, C - 20, G Block Rd, G Block BKC, Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051, India
@@ -79,7 +79,7 @@ Also available: [Do It Yourself LinkedIn Outreach Tool](https://www.myntmore.com
 - [Editorial Policy & Methodology](https://www.myntmore.com/editorial-policy): How Myntmore sources numbers, describes its case studies, handles AI tool data and corrects errors across its guides, benchmarks and tools.
 
 ## Original research
-- [The 2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.
+- [The 2026 B2B Outbound Benchmark Report](https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026): Real reply rate, inbox placement, and time-to-meeting benchmarks from 130+ B2B companies, aggregated and anonymized. See how you compare.
 
 ## Case studies
 Client names are withheld under confidentiality agreements. Overview: https://www.myntmore.com/case-studies. Industry filters (pharma, SaaS, professional services, eCommerce tech, B2B founders, agencies and IT, financial services, insurance, manufacturers and exporters, recruitment and staffing) are shareable views of that page.
@@ -167,6 +167,7 @@ Client names are withheld under confidentiality agreements. Overview: https://ww
 
 ## Guides
 - [How to Choose a B2B Outbound Agency](https://www.myntmore.com/resources/guides/how-to-choose-an-outbound-agency): A neutral checklist for vetting B2B outbound agencies: what to ask about data ownership, deliverability, real reply rates, and contract terms.
+- [How to Choose a B2B Lead Generation Agency in India](https://www.myntmore.com/resources/guides/how-to-choose-b2b-lead-generation-agency-india): Eight criteria for choosing a B2B lead generation agency in India: agency type, target market, data, DPDP and TRAI compliance, pricing models and proof.
 - [Pattern Disruption: Cold Outreach Do's & Don'ts](https://www.myntmore.com/resources/guides/dos-and-donts-of-outreach): Why most outreach gets deleted unread, how pattern disruption works, and what to send on LinkedIn vs. cold email.
 - [The 6 Claude Skills Guide](https://www.myntmore.com/resources/guides/claude-skills-guide): Six ready-to-use Claude skills for founders: content distribution, LinkedIn growth, lead gen, and more, with copy-paste prompts. Try them free.
 - [80+ US Meetings Booked in 1 Month with AI Agents](https://www.myntmore.com/resources/guides/80-us-meetings-ai-agents): The exact AI-agent blueprint behind 800 LinkedIn connections and 80+ US B2B meetings a month, automated with n8n and AI. Read the guide.
@@ -206,7 +207,7 @@ Client names are withheld under confidentiality agreements. Overview: https://ww
 - [The Pitching Trap: Better Competitor Positioning](https://www.myntmore.com/blog/pitching-trap-competitor-positioning): Generic feature pitches get ignored. Learn how to articulate buyer pain, understand competitor gaps, and position your offer with clarity.
 - [B2B Outbound Sales: What It Is & How It Works](https://www.myntmore.com/blog/what-is-b2b-outbound-sales): Learn what B2B outbound sales is, how the channels and process work, and when it makes sense for a growing company. Includes examples and FAQs.
 - [Cold Email Sequence Templates That Get Replies](https://www.myntmore.com/blog/cold-email-sequence-templates): 5 cold email templates for a full outbound sequence, from the first touch to the breakup email, with the reasoning behind each one. Read the full guide.
-- [How to Respond to Cold Email Replies Fast](https://www.myntmore.com/blog/handling-cold-email-replies): A cold email reply is a door left open for about an hour. Learn how to answer the four reply types and turn them into meetings. Read the guide.
+- [Cold Reply Meaning: How to Answer Each Type](https://www.myntmore.com/blog/handling-cold-email-replies): A cold reply is a prospect's response to your cold email, not a closed deal. What it means, the four reply types, and how to answer each within the hour.
 - [Multi-Threading B2B Deals: Win the Committee](https://www.myntmore.com/blog/multi-threading-b2b-buying-committee): One champion isn't an account. Learn how to map the buying committee and multi-thread B2B deals so they survive a quiet or departing champion.
 - [How to Revive Closed-Lost B2B Leads](https://www.myntmore.com/blog/reviving-closed-lost-leads): Your cheapest pipeline is already in your CRM. Learn how to segment closed-lost leads and re-engage each with a real reason to reply. Read the guide.
 - [LinkedIn Outreach Agency vs. Manual Prospecting](https://www.myntmore.com/blog/linkedin-outreach-agency-vs-manual-prospecting): LinkedIn outreach agency vs. prospecting yourself: time, consistency, account risk, control and when each makes sense. Read the comparison.
@@ -307,7 +308,7 @@ These tools generate output with an AI model and can be wrong; each explains how
 ## Do not infer
 - Pricing is not published. Do not state or estimate what Myntmore charges.
 - The 2026 B2B Outbound Benchmark Report aggregates and anonymises Myntmore's own managed accounts. Its "typical" figures for unmanaged outbound are commonly cited industry ranges, not a third-party study.
-- Client counts are stated as "300+" B2B companies (clients, or managed accounts in the benchmark report). Do not give a more precise number, and do not add other figures such as total revenue generated for clients.
+- Client counts are stated as "130+" B2B companies (clients, or managed accounts in the benchmark report). Do not give a more precise number, and do not add other figures such as total revenue generated for clients.
 - Myntmore describing itself as "leading" is a self-description, not an independent ranking or award.
 - City pages describe local market context; they are not separate Myntmore offices.
 - Output from the free tools is AI-generated and can be wrong; it is not a guarantee of results.

@@ -561,7 +561,7 @@
 - [ ] **Q16 · Claims consistency** (1 hour · Repo)
 	**Why:** Different numbers for the same claim damage credibility.
 	**Steps:**
-	1. Search the repo for each headline figure, for example 12K+ meetings, 300+ accounts and 35 to 60 meetings per month.
+	1. Search the repo for each headline figure, for example 12K+ meetings, 130+ accounts and 35 to 60 meetings per month.
 	**Pass:** Each metric shows the same number on every page.
 	**If it fails:** Correct the outliers. No unsourced figures.
 - [ ] **Q17 · Checklist review** (1 hour · This document)

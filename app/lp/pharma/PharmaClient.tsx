@@ -73,7 +73,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -89,7 +89,7 @@ const FAQ_ITEMS = [
   { q: "How do you handle compliance-sensitive messaging in outreach?", a: "We reference certifications and manufacturing capability factually, what you hold and what your facility supports, without making regulatory claims on your behalf. Any compliance-specific questions a buyer raises are flagged and routed straight to your team." },
   { q: "Which buyer titles and roles do you typically target?", a: "Procurement Heads, Regulatory Affairs contacts, Import/Export Managers, hospital Purchase Committee members, and Distribution Partners, depending on whether the target account is domestic or export focused." },
   { q: "How fast will we start seeing meetings?", a: "Most pharma clients see their first qualified buyer conversations within 3 to 5 weeks, once ICP mapping, list building, and outreach sequences are in place." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with no long term lock in. You can review meetings and pipeline every 30 days and decide whether to continue." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
 ];
 
 function HeroSection() {

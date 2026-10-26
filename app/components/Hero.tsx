@@ -439,7 +439,7 @@ export default function Hero() {
             aria-hidden="true"
           />
           <span className="text-sm font-semibold text-[#0a0a0a]">
-            Trusted by <span style={{ color: "#A14A08" }}>300+</span> Companies Worldwide
+            Trusted by <span style={{ color: "#A14A08" }}>130+</span> Companies Worldwide
           </span>
         </div>
 
@@ -491,7 +491,7 @@ export default function Hero() {
         >
           {[
             { ref: stat1Ref, value: "$120M+",  label: "Pipeline Created for Clients" },
-            { ref: stat2Ref, value: "18 Days",  label: "Avg. Days to First Booked Meeting" },
+            { ref: stat2Ref, value: "18 Days",  label: "Avg. Days to Campaign Launch" },
             { ref: stat3Ref, value: "12K+",     label: "Meetings Booked for Clients" },
           ].map((stat, i) => (
             <div

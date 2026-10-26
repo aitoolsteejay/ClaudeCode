@@ -81,7 +81,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -96,7 +96,7 @@ const FAQ_ITEMS = [
   { q: "We already have a business development person. Will this overlap?", a: "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new client companies. Your BD person keeps managing relationships and closing, we add the top of funnel volume they do not have time to generate." },
   { q: "Does this integrate with our ATS or CRM?", a: "We don't build or manage ATS or CRM integrations, whether that's Bullhorn, Zoho Recruit, or anything else, that stays part of your own process. Every qualified meeting and reply is handed off to your team directly, so it's easy to log wherever you already track pipeline." },
   { q: "How fast will we start seeing meetings?", a: "Most staffing clients see their first qualified client conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete." },
-  { q: "What does pricing and commitment look like?", a: "Monthly retainer, no annual lock-in. You check the pipeline every 30 days and decide whether to renew." },
+  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
   { q: "What if the leads are not a good fit for our specialisation?", a: "We refine your ICP together in the first two weeks, narrowing by industry, role type, and company size, and keep adjusting targeting based on who books calls and who converts, so fit improves fast." },
 ];
 

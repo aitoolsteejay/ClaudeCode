@@ -304,7 +304,7 @@ export default function Services() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <p className="text-sm text-[#71675E]">No commitment · 30-minute call · Results in 14 days</p>
+          <p className="text-sm text-[#71675E]">No commitment · 30-minute call · Live in 18 days</p>
         </div>
 
         {/* Bottom stat strip */}
@@ -315,8 +315,8 @@ export default function Services() {
         >
           {[
             { ref: stat1Ref, stat: "3.2x",   label: "Higher reply rate than industry average" },
-            { ref: stat2Ref, stat: "18 days", label: "Average time to first booked meeting" },
-            { ref: stat3Ref, stat: "300+",    label: "B2B companies trust Myntmore" },
+            { ref: stat2Ref, stat: "18 days", label: "Average time to campaign launch" },
+            { ref: stat3Ref, stat: "130+",    label: "B2B companies trust Myntmore" },
           ].map((item, i) => (
             <div
               key={item.stat}

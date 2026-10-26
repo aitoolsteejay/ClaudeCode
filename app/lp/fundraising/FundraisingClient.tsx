@@ -73,7 +73,7 @@ const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
   { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to a campaign's first booked meeting" },
+  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];
 
 const PROCESS = [
@@ -89,7 +89,7 @@ const FAQ_ITEMS = [
   { q: "Do you help with the pitch deck or the fundraising narrative?", a: "No. Our focus is investor targeting and outreach, getting the right conversations booked, not deck design or narrative coaching. Bring a raise-ready story and we'll get it in front of the right investors." },
   { q: "What if I don't know exactly which investors are the right fit yet?", a: "That's the first step, not a prerequisite. We build your investor ICP with you, based on stage, sector, geography, and check size, before any outreach goes out." },
   { q: "Is this only for a specific funding stage?", a: "We've built this to flex from pre-seed and seed through Series A and B. The investor targeting criteria change with your stage; the underlying system doesn't." },
-  { q: "How fast can this be live?", a: "Similar to our B2B outbound engagements: typically live within days once your investor ICP and lists are locked, not weeks. Fundraising timelines move fast and the outreach needs to keep up." },
+  { q: "How fast can this be live?", a: "Typically within days once your investor ICP and lists are locked, not weeks. Fundraising timelines move fast and the outreach needs to keep up." },
 ];
 
 function HeroSection() {

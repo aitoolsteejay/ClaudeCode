@@ -38,17 +38,17 @@ const DIFFERENTIATORS = [
   "Signal-based targeting instead of static, bought contact lists",
   "A fully productized system, live in weeks, not a slow agency ramp-up",
   "Transparent reporting on every meeting, reply, and touch",
-  "A monthly retainer with no long-term lock-in contract",
+  "A monthly retainer: 3-month minimum, then month to month",
 ];
 
 const FAQ = [
   { q: "Do we need to be based in Ahmedabad to work with you?", a: "No. The entire engagement runs remotely, so it doesn't matter where in Gujarat, or beyond, your team is based." },
   { q: "Do you only work with Ahmedabad or Gujarat companies?", a: "No. We have clients in Ahmedabad and across Gujarat, but we run outbound systems for B2B and export-focused companies across India and internationally." },
   { q: "How quickly can we expect meetings to start?", a: "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete." },
-  { q: "What does pricing look like?", a: "We work on a monthly retainer with no long-term lock-in. You can review results every 30 days and decide whether to continue." },
+  { q: "What does pricing look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
   { q: "Which Ahmedabad and Gujarat industries do you have the most experience with?", a: "Textile, pharmaceutical, and chemical manufacturers and exporters are where we've run the most campaigns, but our system adapts to any B2B ICP." },
   { q: "What channels do you actually use to generate leads?", a: "Primarily cold email and LinkedIn outreach aimed at reaching international buyers, importers, and procurement teams, layered with account-based marketing for named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers, whether a distributor in the Gulf or a procurement team in Europe, actually spend their attention." },
-  { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Ahmedabad means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system gets multiple channels running from week one, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount." },
+  { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Ahmedabad means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount." },
   { q: "What do you need from us to get started?", a: "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there." },
 ];
 

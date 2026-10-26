@@ -38,7 +38,7 @@ interface ComparisonRow {
 const COMPARISON: ComparisonRow[] = [
   {
     factor: "Time to first meeting booked",
-    agency: "~18 days on average, systems and infrastructure already built",
+    agency: "3–4 weeks on average: campaigns go live within 18 days because systems and infrastructure are already built",
     inHouse: "Typically 3–6 months once you count hiring, onboarding, and ramp-up before the first meeting lands",
   },
   {

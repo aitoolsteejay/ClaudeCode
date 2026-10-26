@@ -301,7 +301,7 @@ export default function CareersClient() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { v: String(ROLES.length), l: "Open roles", icon: Briefcase, accent: "#F5B731" },
-            { v: "300+", l: "Clients served", icon: Building2, accent: "#3b82f6" },
+            { v: "130+", l: "Clients served", icon: Building2, accent: "#3b82f6" },
             { v: "23+", l: "Countries reached", icon: Globe2, accent: "#10b981" },
           ].map((s, i) => (
             <FadeIn key={s.l} delay={i * 70}>

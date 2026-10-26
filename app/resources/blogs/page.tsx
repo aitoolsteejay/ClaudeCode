@@ -138,7 +138,7 @@ const BLOG_POSTS: BlogPost[] = [
     href: "/blog/b2b-outbound-benchmark-report-2026",
     tags: ["Lead Generation", "Metrics & Reporting"],
     title: "The 2026 B2B Outbound Benchmark Report",
-    excerpt: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 300+ B2B companies, aggregated and anonymized. See how you compare.",
+    excerpt: "Real reply rate, inbox placement, and time-to-meeting benchmarks from 130+ B2B companies, aggregated and anonymized. See how you compare.",
     readTime: "8 min read",
   },
   {

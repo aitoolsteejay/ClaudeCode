@@ -437,7 +437,7 @@ CADENCES = [
      "Refresh with new aggregate data."),
    T("Q6", "Claims consistency", "1 hour", "Repo",
      "Different numbers for the same claim damage credibility.",
-     ["Search the repo for each headline figure, for example 12K+ meetings, 300+ accounts and 35 to 60 meetings per month."],
+     ["Search the repo for each headline figure, for example 12K+ meetings, 130+ accounts and 35 to 60 meetings per month."],
      "Each metric shows the same number on every page.",
      "Correct the outliers. No unsourced figures."),
    T("Q11", "Checklist review", "1 hour", "This document",

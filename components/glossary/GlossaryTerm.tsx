@@ -4,6 +4,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 import FadeIn from "@/app/components/FadeIn";
 import JsonLd from "@/app/components/JsonLd";
 import { textTone } from "@/lib/colors";
+import { buildFaqSchema, type FaqItem } from "@/lib/schema";
 
 export interface GlossaryTermProps {
   slug: string;
@@ -23,6 +24,9 @@ export interface GlossaryTermProps {
   // Optional extra content after the body, for the few terms that need a
   // comparison table or a worked example to answer the query fully.
   children?: React.ReactNode;
+  // Optional question-and-answer pairs for terms people search as questions
+  // ("what does X mean"). Rendered after the body and emitted as FAQPage schema.
+  faqs?: FaqItem[];
 }
 
 // Shared layout for every short-form glossary entry (~20-30 word definition,
@@ -45,10 +49,12 @@ export default function GlossaryTerm({
   furtherHref,
   articleSchema,
   children,
+  faqs,
 }: GlossaryTermProps) {
   return (
     <InnerLayout>
       <JsonLd data={articleSchema} />
+      {faqs && faqs.length > 0 && <JsonLd data={buildFaqSchema(faqs)} />}
 
       <section className="relative pt-32 pb-14 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" style={{ position: "absolute", top: "-140px", right: "-160px", width: "550px", height: "550px", borderRadius: "50%", background: `radial-gradient(circle, ${accent}2e 0%, ${accent}0f 40%, transparent 68%)`, filter: "blur(55px)", pointerEvents: "none" }} />
@@ -82,6 +88,20 @@ export default function GlossaryTerm({
           </FadeIn>
 
           {children}
+
+          {faqs && faqs.length > 0 && (
+            <div className="mt-12">
+              <h2 className="text-2xl font-black mb-6" style={{ color: "#0a0a0a" }}>Frequently asked questions</h2>
+              <div className="space-y-4">
+                {faqs.map((f) => (
+                  <div key={f.question} className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+                    <h3 className="text-base font-black mb-2" style={{ color: "#0a0a0a" }}>{f.question}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>

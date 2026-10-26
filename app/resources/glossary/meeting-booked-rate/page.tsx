@@ -37,7 +37,7 @@ export default function MeetingBookedRatePage() {
       title={TITLE}
       tagline="The number that actually matters, since a reply that never turns into a meeting never turns into a deal."
       definition="The percentage of contacted prospects who book a meeting, the metric outbound teams actually optimize for, since replies alone don't fill a pipeline."
-      body="A campaign can have a strong response rate and a weak meeting-booked rate if the ask is vague or the follow-through is slow, which is why the two are tracked separately rather than as one combined number. A healthy meeting-booked rate for cold outreach is typically in the 4-8% range, though it varies by ICP, offer, and channel."
+      body="A campaign can have a strong response rate and a weak meeting-booked rate if the ask is vague or the follow-through is slow, which is why the two are tracked separately rather than as one combined number. It is always lower than the reply rate, since only some replies turn into meetings, and it varies by ICP, offer and channel."
       sourceLabel="Read: The 2026 B2B Outbound Benchmark Report"
       sourceHref="/blog/b2b-outbound-benchmark-report-2026"
       furtherLabel="Go deeper: What to do in the first hour after a prospect replies"

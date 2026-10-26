@@ -32,6 +32,12 @@ const COMPARISON = [
   { factor: "Works best when", inbound: "Buyers already search for what you sell", outbound: "Buyers don't know you yet, or you need specific accounts" },
 ];
 
+const FAQS = [
+  { question: "What does inbound and outbound mean?", answer: "Inbound and outbound describe who starts the conversation. Inbound means buyers find you first, through search, content, referrals or events, and get in touch. Outbound means you contact chosen prospects first, by cold email, LinkedIn or phone. The terms apply to both sales and marketing, and most B2B companies run both." },
+  { question: "Is cold email inbound or outbound?", answer: "Cold email is outbound, because you contact the prospect before they have shown any interest in you. The same goes for LinkedIn connection requests and cold calls. A demo request from your website or a reply to your newsletter is inbound, because the prospect made the first move." },
+  { question: "Which is better for B2B, inbound or outbound?", answer: "Neither is better on its own, because they solve different problems. Outbound books meetings within weeks and lets you pick the exact accounts you want, while inbound builds demand that compounds over months. Early-stage B2B companies usually lean on outbound first, then add inbound as content and search rankings grow." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -54,6 +60,7 @@ export default function InboundVsOutboundPage() {
       furtherLabel="What is B2B outbound sales?"
       furtherHref="/blog/what-is-b2b-outbound-sales"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     >
       <div className="mt-10">
         <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Inbound vs. outbound, side by side</h2>

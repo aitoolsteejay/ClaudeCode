@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { question: "What does SDR mean in sales?", answer: "SDR stands for sales development representative. An SDR finds and qualifies potential customers, usually through cold email, LinkedIn and calls, then books meetings for an account executive, who runs the sales conversation and closes the deal. SDRs are measured on qualified meetings booked, not on revenue closed." },
+  { question: "What is the difference between an SDR and a BDR?", answer: "Many companies use SDR and BDR interchangeably. Where they differ, an SDR usually qualifies inbound leads while a BDR, or business development representative, focuses on outbound prospecting into new accounts. Both hand qualified meetings to account executives rather than closing deals themselves, so check how each company defines the roles." },
+  { question: "Should you hire an SDR or use an outbound agency?", answer: "Use an agency while outbound is still being proven, and hire SDRs once it is a permanent, high-volume part of your go-to-market. An agency is faster to start and arrives with domains, data and playbooks; an in-house SDR takes months to recruit and ramp but builds product knowledge over time." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -44,6 +50,7 @@ export default function SdrPage() {
       sourceLabel="Read: Agency vs. In-House SDR for B2B Outbound"
       sourceHref="/blog/agency-vs-in-house"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

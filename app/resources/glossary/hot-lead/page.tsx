@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { question: "What is a hot lead?", answer: "A hot lead is a prospect showing clear, immediate buying intent, such as replying with interest, asking about pricing or requesting a call. Hot leads should get a personal follow-up within hours, because the interest is real but fades quickly. Fitting your ideal customer profile alone does not make a lead hot." },
+  { question: "What is the difference between a hot, warm and cold lead?", answer: "A cold lead fits your ideal customer profile but has shown no interest yet. A warm lead has engaged lightly, for example by accepting a LinkedIn request or downloading a resource. A hot lead has shown explicit intent, such as asking for a call or about pricing, and needs a fast, personal reply." },
+  { question: "How fast should you follow up with a hot lead?", answer: "Follow up with a hot lead within the hour during working hours, and the same business day at the latest. Interest is highest the moment a prospect replies or asks for a call, and it drops quickly after that. Give each hot lead one named owner so it never waits in a shared inbox." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -41,6 +47,7 @@ export default function HotLeadPage() {
       sourceLabel="Read the related term: Buying Signal"
       sourceHref="/resources/glossary/buying-signal"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

@@ -6,13 +6,13 @@ const SLUG = "outbound-sales";
 const PAGE_URL = `${SITE_URL}/resources/glossary/${SLUG}`;
 const TITLE = "Outbound Sales";
 const DESCRIPTION = "Outbound sales is a sales model in which the seller initiates contact with targeted prospects through channels such as cold email, LinkedIn, and phone, rather than waiting for inbound inquiries.";
-const META_DESCRIPTION = "What outbound sales is, how it compares with inbound, and why B2B companies use it to control the pace of pipeline growth.";
+const META_DESCRIPTION = "Outbound sales defined in one line: the seller contacts chosen prospects first. For the channels, process and examples, see the full B2B outbound sales guide.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | B2B Glossary`,
   description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
-  keywords: ["what is outbound sales", "outbound sales definition", "b2b outbound sales", "outbound vs inbound sales"],
+  keywords: ["what is outbound sales", "outbound selling", "outbound sales model"],
   openGraph: {
     title: `${TITLE} | Myntmore Glossary`,
     description: META_DESCRIPTION,
@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
+
+const FAQS = [
+  { question: "What does outbound sales mean?", answer: "Outbound sales means the seller makes the first contact. Your team chooses companies that fit its ideal customer profile, then reaches out by cold email, LinkedIn or phone to start a sales conversation, instead of waiting for buyers to find you. It is the opposite of inbound sales, where the buyer reaches out first." },
+  { question: "What are examples of outbound sales?", answer: "Common examples of outbound sales are a cold email to a VP of Sales after their company raises funding, a LinkedIn connection request and follow-up to a procurement head, a cold call to a target account, and an account-based campaign that reaches several stakeholders at one company at the same time." },
+  { question: "Is outbound sales the same as telemarketing?", answer: "No. Telemarketing is one older form of outbound, usually high-volume phone calls to consumers or broad lists. Modern B2B outbound sales targets specific companies and roles, mostly through personalised email and LinkedIn, with phone calls as one channel among several rather than the whole motion." },
+];
 
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
@@ -38,11 +44,12 @@ export default function OutboundSalesPage() {
       tagline="A sales motion where your team picks the target and makes the first move, instead of waiting for leads to arrive."
       definition="A sales model where the seller initiates contact with targeted prospects, through cold email, LinkedIn, or calls, rather than waiting for buyers to come in through marketing."
       body="Outbound's main advantage is control: you choose which companies to pursue and how many conversations to start each week, instead of depending on whoever happens to find you. Its main risk is relevance, since outbound that isn't tightly targeted reads as spam and burns both your sending domain and your reputation."
-      sourceLabel="Read: B2B Outbound Sales: What It Is & How It Works"
+      sourceLabel="Full guide: what B2B outbound sales is and how it works"
       sourceHref="/blog/what-is-b2b-outbound-sales"
       furtherLabel="Read the related term: Inbound vs. Outbound"
       furtherHref="/resources/glossary/inbound-vs-outbound"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

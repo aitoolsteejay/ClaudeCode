@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { question: "What is buyer engagement in B2B?", answer: "Buyer engagement in B2B is how a prospect interacts with your outreach and content: replies, LinkedIn profile views, link clicks, content downloads and meetings booked. Sales teams use it to judge interest and decide who to follow up with first. Stronger actions, like a reply or a booked meeting, count for more than opens." },
+  { question: "How do you measure buyer engagement?", answer: "Measure buyer engagement by tracking actions that show real interest, weighted by strength: meetings booked and positive replies first, then link clicks and profile views. Email open rates are unreliable because privacy features trigger false opens, so most teams leave them out. Feed the stronger signals into lead scoring." },
+  { question: "How do you increase buyer engagement?", answer: "Increase buyer engagement by making outreach more relevant, not more frequent. Reference a real trigger for each prospect, offer something useful before asking for their time, and reach the same person on more than one channel, such as email and LinkedIn. Relevance raises replies far more than extra sends do." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -46,6 +52,7 @@ export default function BuyerEngagementPage() {
       furtherLabel="Read: Outbound Success: Conversations, Not Sends"
       furtherHref="/blog/conversations-not-impressions-outbound"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

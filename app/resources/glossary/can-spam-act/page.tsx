@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { question: "What is the CAN-SPAM Act?", answer: "The CAN-SPAM Act is a US federal law, passed in 2003, that sets rules for commercial email. It requires accurate sender details, non-deceptive subject lines, a valid physical postal address, a clear way to opt out, and honouring opt-out requests promptly. It covers business-to-business email as well as consumer email." },
+  { question: "Does CAN-SPAM allow cold email?", answer: "Yes. CAN-SPAM does not require prior consent, so cold email to US business contacts is legal as long as every message follows its rules: honest sender details and subject line, a physical postal address, a working unsubscribe option, and opt-out requests honoured within 10 business days." },
+  { question: "What are the penalties for violating CAN-SPAM?", answer: "Each email that violates CAN-SPAM can bring a separate civil penalty, and the US Federal Trade Commission adjusts the maximum for inflation every year, putting it above $50,000 per email. Both the company whose product is promoted and the company that actually sent the email can be held responsible." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -41,6 +47,7 @@ export default function CanSpamActPage() {
       sourceLabel="Read: Cold Email Compliance: CAN-SPAM, GDPR & DPDP"
       sourceHref="/blog/cold-email-compliance-guide"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { question: "What is a buying signal?", answer: "A buying signal is an observable event suggesting a company may be ready to buy now, not just someday. Common examples are a funding round, a new leader in the relevant role, hiring for a related team, expansion into a new market, or a change in the tools the company uses." },
+  { question: "What are examples of B2B buying signals?", answer: "Examples of B2B buying signals include a recent funding announcement, a newly appointed head of your buyer's function, job postings for roles your product supports, a new office or plant, a contract with a competitor coming up for renewal, and a prospect engaging with your content or visiting your pricing page." },
+  { question: "How do you use buying signals in outbound?", answer: "Use buying signals to decide who to contact and what to say. Combine ideal-customer fit with a recent signal to prioritise accounts, then open your message with that signal, such as their funding round or a new hire, so the outreach is timely. Myntmore monitors 40+ buying signals daily for this." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -41,6 +47,7 @@ export default function BuyingSignalPage() {
       sourceLabel="See the service: Sales Intelligence"
       sourceHref="/services/sales-intelligence"
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

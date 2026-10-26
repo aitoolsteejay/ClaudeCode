@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Relevance Beats Reach: Why Your Outbound Strategy Is Failing to Trigger Responses",
-    description: "Optimised outbound engines see 50-70% open rates and 12-20% reply rates. If yours doesn't, the problem is relevance, not list size.",
+    description: "Well-run cold email holds a 1–3% reply rate with at least 20% of replies positive. If yours doesn't, the problem is relevance, not list size.",
     url: "https://www.myntmore.com/blog/relevance-beats-reach-b2b-outbound",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -60,7 +60,7 @@ export default function RelevanceBeatsReachB2bOutbound() {
           </h1>
           <ArticleMeta schema={ARTICLE_SCHEMA} />
           <p className="text-lg leading-relaxed" style={{ color: "#52525B" }}>
-            Optimised outbound engines see 50 to 70% open rates and 12 to 20% reply rates. If yours doesn&apos;t, the problem isn&apos;t your list size, it&apos;s your relevance.
+            Well-run cold email holds a 1–3% reply rate with at least 20% of replies positive. If yours doesn&apos;t, the problem isn&apos;t your list size, it&apos;s your relevance.
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function RelevanceBeatsReachB2bOutbound() {
             <div>
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>Outbound Is a Conversation Starter, Not a Broadcast</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-                If you are currently executing B2B campaigns and getting met with silence, the core issue is likely that your outreach is behaving like a static broadcast rather than an active conversation starter. Many founders and sales leaders look at the B2B landscape and assume cold outreach is dead, yet optimised outbound engines consistently secure open rates between 50 and 70% and reply rates of 12 to 20%. The difference between campaigns that book meetings and those that land directly in the spam folder comes down to three fundamental shifts in psychology.
+                If you are currently executing B2B campaigns and getting met with silence, the core issue is likely that your outreach is behaving like a static broadcast rather than an active conversation starter. Many founders and sales leaders look at the B2B landscape and assume cold outreach is dead, yet well-run cold email consistently holds a 1–3% reply rate with at least 20% of replies positive. The difference between campaigns that book meetings and those that land directly in the spam folder comes down to three fundamental shifts in psychology.
               </p>
             </div>
 

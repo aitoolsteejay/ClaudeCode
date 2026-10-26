@@ -84,7 +84,7 @@ export default function MarketingAutomation() {
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-          {[{ v: "12K+", l: "Meetings booked" }, { v: "38%", l: "Avg reply rate" }, { v: "98.5%", l: "Email inbox rate" }, { v: "80%", l: "Less manual research" }].map((s) => (
+          {[{ v: "12K+", l: "Meetings booked" }, { v: "35%", l: "Avg LinkedIn reply rate" }, { v: "98.5%", l: "Email inbox rate" }, { v: "80%", l: "Less manual research" }].map((s) => (
             <div key={s.l}>
               <div className="text-3xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.v}</div>
               <div className="text-xs" style={{ color: "#71675E" }}>{s.l}</div>

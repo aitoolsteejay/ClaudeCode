@@ -281,7 +281,7 @@ export default function AiLeadGenerationClient() {
           {[
             { ref: stat1Ref, init: "1500+", label: "Scored leads delivered per month" },
             { ref: stat2Ref, init: "80%", label: "Reduction in manual research time" },
-            { ref: stat3Ref, init: "38%", label: "Average reply rate across accounts" },
+            { ref: stat3Ref, init: "35%", label: "Average LinkedIn reply rate" },
           ].map((s, i) => (
             <div key={i} className={`${i < 2 ? "sm:border-r" : ""} px-4`} style={{ borderColor: "#E8E2D9" }}>
               <span ref={s.ref} className="block text-4xl font-black mb-1" style={{ color: "#0a0a0a" }}>{s.init}</span>

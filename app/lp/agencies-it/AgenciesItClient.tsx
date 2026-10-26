@@ -79,7 +79,7 @@ const STATS = [
 // case studies to fill this section.
 const TRACK_RECORD = [
   { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
-  { icon: "📈", stat: "38%", label: "Average reply rate across campaigns" },
+  { icon: "📈", stat: "35%", label: "Average LinkedIn reply rate" },
   { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
   { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
 ];

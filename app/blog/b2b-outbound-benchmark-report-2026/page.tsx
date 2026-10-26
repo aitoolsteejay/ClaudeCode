@@ -55,8 +55,8 @@ const ARTICLE_SCHEMA = buildArticleSchema({
 // One line per headline number, written to be quoted on its own. Keep these in
 // step with the tables below: they restate them, they never add new figures.
 const KEY_FINDINGS = [
-  "Cold email reply rates across Myntmore-managed campaigns run at 1–3%, with a target of 20%+ of replies being positive. Commonly cited ranges for unmanaged outbound are 2–5%.",
-  "LinkedIn outreach (connection request plus follow-ups) runs at a 50–60% reply rate, against a typical 8–12%.",
+  "Cold email is run as a volume channel and judged on positive replies and meetings booked: at least 20% of replies are positive, from a 1–3% reply rate across Myntmore-managed campaigns.",
+  "LinkedIn outreach (connection request plus follow-ups) runs at an average 35% reply rate, against a typical 8–12%.",
   "Campaigns go live within 18 days of onboarding, the first qualified conversations come in weeks 3–4, and meeting volume becomes consistent after 6–8 weeks.",
   "Inbox placement averages 98.5% on Myntmore-managed domains, against roughly 80–85% for unwarmed, unauthenticated domains.",
 ];
@@ -64,11 +64,11 @@ const KEY_FINDINGS = [
 const FAQ_ITEMS = [
   {
     question: "What is a good reply rate for B2B cold email?",
-    answer: "Across Myntmore-managed cold email campaigns, reply rates run at 1–3%, and we aim for at least 20% of those replies to be positive. Commonly cited ranges for unmanaged outbound are 2–5%. Campaigns with a sharp ICP and a clear offer can run far higher, while a rate below 1% is a signal to stop and check list quality and deliverability.",
+    answer: "A good B2B cold email reply rate is 1–3% at volume, with at least 20% of replies positive, based on Myntmore-managed campaigns. Judge cold email on positive replies and meetings booked, not raw reply rate. Campaigns with a sharp ICP can run far higher, while a rate below 1% means stop and check list quality and deliverability.",
   },
   {
     question: "What is a good reply rate for LinkedIn outreach?",
-    answer: "A good LinkedIn outreach reply rate is 50–60% when a connection request and follow-up messages are run as one sequence, based on Myntmore-managed accounts. Typical unmanaged LinkedIn outreach lands at 8–12%. The gap mostly comes from profile positioning, a tight ICP and messages that start a conversation instead of pitching.",
+    answer: "A good LinkedIn outreach reply rate is around 35%, the average across Myntmore-managed accounts when a connection request and follow-up messages run as one sequence. Typical unmanaged LinkedIn outreach lands at 8–12%. The gap mostly comes from profile positioning, a tight ICP and messages that start a conversation instead of pitching.",
   },
   {
     question: "How long does B2B outbound take to book the first meeting?",
@@ -81,8 +81,8 @@ const FAQ_ITEMS = [
 ];
 
 const REPLY_RATE_ROWS = [
-  { channel: "Cold email", myntmore: "1–3%", typical: "2–5%", note: "Blended across managed campaigns, including high-volume sends" },
-  { channel: "LinkedIn outreach", myntmore: "50–60%", typical: "8–12%", note: "Connection + follow-up sequence combined" },
+  { channel: "Cold email", myntmore: "1–3%", typical: "2–5%", note: "High-volume sends, judged on positive replies (20%+ of replies) and meetings booked, not raw reply rate" },
+  { channel: "LinkedIn outreach", myntmore: "35%", typical: "8–12%", note: "Average across connection + follow-up sequences" },
   { channel: "AI-qualified lists", myntmore: "35–40%", typical: "N/A", note: "Leads pre-scored by intent signals before first touch" },
 ];
 

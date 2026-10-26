@@ -43,7 +43,7 @@ const SERVICES = [
       "Profile optimisation to build instant credibility",
       "Coordinated with email for multi-channel impact",
     ],
-    metric: { value: "28%", label: "Reply Rate" },
+    metric: { value: "35%", label: "Reply Rate" },
   },
   {
     number: "03",

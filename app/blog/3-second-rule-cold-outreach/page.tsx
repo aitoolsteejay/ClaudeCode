@@ -83,7 +83,7 @@ export default function ThreeSecondRuleColdOutreach() {
               },
               {
                 heading: "Treat your outbound like a high-converting landing page",
-                body: "To consistently see open rates of 50 to 70% and reply rates of 12 to 20%, your outbound messages must behave like high-converting landing pages:",
+                body: "To hold a 1 to 3% reply rate at volume, with at least 20% of replies positive, your outbound messages must behave like high-converting landing pages:",
                 numbered: [
                   "Grab attention with a pattern-breaking headline.",
                   "Show proof of relevance instantly.",

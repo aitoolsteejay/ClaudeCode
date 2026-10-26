@@ -303,8 +303,8 @@ export default function BookACallClient() {
                   <p className="text-xs text-[#71675E] font-medium">Pipeline Generated</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-[#A14A08]">38%</p>
-                  <p className="text-xs text-[#71675E] font-medium">Avg. Positive Reply Rate</p>
+                  <p className="text-2xl font-black text-[#A14A08]">35%</p>
+                  <p className="text-xs text-[#71675E] font-medium">Avg. LinkedIn Reply Rate</p>
                 </div>
               </div>
 

@@ -8,12 +8,12 @@ import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Kolkata",
-  description: "AI-powered B2B lead generation for Kolkata's trading, steel, and IT companies: cold email, LinkedIn & ABM. Book a free GTM audit.",
+  description: "B2B lead generation in Kolkata for healthcare suppliers, manufacturers, trading houses and IT companies: cold email, LinkedIn outreach and ABM.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-kolkata" },
-  keywords: ["b2b lead generation kolkata", "outbound agency kolkata", "linkedin outreach kolkata", "cold email agency west bengal", "account based marketing kolkata", "ai lead generation kolkata", "abm agency kolkata", "sales intelligence kolkata", "b2b lead generation for steel companies kolkata", "lead generation for trading houses kolkata", "lead generation for engineering companies west bengal", "b2b leads for it companies kolkata", "demand generation agency kolkata", "lead generation for financial services companies kolkata", "best b2b outbound agency in kolkata", "how to get b2b leads in kolkata", "cold email agency for jute and steel exporters"],
+  keywords: ["b2b lead generation kolkata", "healthcare lead generation agency in kolkata", "b2b healthcare lead generation kolkata", "lead generation company kolkata", "outbound agency kolkata", "linkedin outreach kolkata", "cold email agency west bengal", "account based marketing kolkata", "ai lead generation kolkata", "abm agency kolkata", "sales intelligence kolkata", "b2b lead generation for steel companies kolkata", "lead generation for trading houses kolkata", "lead generation for engineering companies west bengal", "b2b leads for it companies kolkata", "demand generation agency kolkata", "lead generation for financial services companies kolkata", "best b2b outbound agency in kolkata", "how to get b2b leads in kolkata", "cold email agency for jute and steel exporters"],
   openGraph: {
     title: "B2B Lead Generation Agency in Kolkata | Myntmore",
-    description: "AI-powered outbound systems built for Kolkata's trading, steel, and IT landscape.",
+    description: "Outbound lead generation for Kolkata's healthcare suppliers, manufacturers, trading houses and IT companies.",
     url: "https://www.myntmore.com/b2b-lead-generation-kolkata",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
@@ -25,6 +25,23 @@ const WHY_CITY = [
   { title: "Financial services with deep history, thin digital pipeline", desc: "The city's long-established financial services base has real credibility, but much of its new-business generation still depends on personal networks rather than a repeatable outbound system." },
 ];
 
+// Most of this page's search impressions are healthcare queries. Myntmore does
+// B2B healthcare outreach (selling to hospitals and distributors), not patient
+// acquisition, and the section says so plainly.
+const HEALTHCARE_BUYERS = [
+  "Procurement heads and purchase committees at hospital groups",
+  "Lab and operations heads at diagnostic chains",
+  "Pharma and medical-device distributors across eastern India",
+  "Hospital administrators and IT heads evaluating healthcare software",
+];
+
+const STEPS = [
+  { when: "Week 1", title: "ICP and buying signals", desc: "We define who to target and which signals mean they are in-market: expansion plans, new facilities, leadership changes, tenders and funding." },
+  { when: "Weeks 1–2", title: "Lists, domains and copy", desc: "Verified contact lists, dedicated sending domains with warm-up, and copy written for the buyer's role and industry." },
+  { when: "Within 18 days", title: "Campaigns go live", desc: "Cold email and LinkedIn sequences start sending, with account-based plays for your highest-value targets." },
+  { when: "Weeks 3–8", title: "Conversations, then consistency", desc: "First qualified conversations usually come in weeks 3 to 4, and meeting volume becomes consistent by weeks 6 to 8 as we tune messaging on real replies." },
+];
+
 const SERVICES = [
   { title: "LinkedIn Outreach & Automation", href: "/services/linkedin-outreach", desc: "Multi-touch LinkedIn sequences that turn connections into conversations." },
   { title: "Cold Email Infrastructure", href: "/services/cold-email", desc: "Domain warm-up, deliverability, and AI-personalised sequences that land in the inbox." },
@@ -32,6 +49,7 @@ const SERVICES = [
   { title: "AI Lead Generation", href: "/services/ai-lead-generation", desc: "Custom AI agents research and prioritise leads so your team only talks to fits." },
   { title: "Account-Based Marketing", href: "/services/account-based-marketing", desc: "Coordinated campaigns targeting your highest-value target accounts." },
   { title: "Personal Branding", href: "/services/personal-branding", desc: "LinkedIn ghostwriting that builds authority for founders and execs." },
+  { title: "GTM Strategy", href: "/services/gtm-strategy", desc: "ICP, positioning and channel mix, then run by the same team across every channel." },
 ];
 
 const DIFFERENTIATORS = [
@@ -46,6 +64,7 @@ const FAQ = [
   { q: "Do you only work with Kolkata companies?", a: "No. We have clients in Kolkata, but we run outbound systems for B2B companies across India and internationally." },
   { q: "How quickly can we expect meetings to start?", a: "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete." },
   { q: "What does pricing look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
+  { q: "Do you generate patient leads for hospitals in Kolkata?", a: "No. Myntmore runs B2B lead generation: we help companies that sell to hospitals, diagnostic chains and pharma distributors reach procurement and clinical decision-makers. Patient acquisition for hospitals and clinics needs local search, ads and booking systems, which a healthcare marketing agency is better placed to run." },
   { q: "Which Kolkata industries do you have the most experience with?", a: "Trading and manufacturing houses, steel and engineering firms, and growing IT/ITES companies are where we've run the most campaigns, but our system adapts to any B2B ICP." },
   { q: "What channels do you actually use to generate leads?", a: "Primarily cold email and LinkedIn outreach aimed at trading, manufacturing, and financial-services buyers, layered with account-based marketing for named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention." },
   { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Kolkata means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount." },
@@ -99,8 +118,52 @@ export default function B2BLeadGenerationKolkataPage() {
 
       <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
         <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>Healthcare lead generation in Kolkata, for B2B sellers</h2>
+          <p className="text-base leading-relaxed mb-6" style={{ color: "#52525B" }}>
+            Kolkata is the main healthcare hub for eastern India, and the companies that supply its hospitals, diagnostic chains and distributors sell to a small set of hard-to-reach decision-makers. If you sell medical devices, diagnostics, healthcare software or pharma products, we build outreach that reaches the people who actually buy:
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+            {HEALTHCARE_BUYERS.map((b) => (
+              <li key={b} className="flex items-start gap-3 rounded-2xl border p-4 text-sm" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9", color: "#3D3D3D" }}>
+                <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ backgroundColor: "#A14A08" }} />
+                {b}
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>
+            This is B2B outreach to buyers inside healthcare organisations, not patient acquisition for hospitals or clinics. See how it works for{" "}
+            <Link href="/lp/pharma" className="font-bold underline" style={{ color: "#A14A08" }}>pharma and healthcare companies</Link>, or read the{" "}
+            <Link href="/case-studies/pharma-india-dermatologist-outreach" className="font-bold underline" style={{ color: "#A14A08" }}>dermatology pharma case study from India</Link> and the{" "}
+            <Link href="/case-studies/medical-tourism-platform-pipeline" className="font-bold underline" style={{ color: "#A14A08" }}>medical tourism platform case study</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-black mb-10" style={{ color: "#0a0a0a" }}>How B2B lead generation works with us</h2>
+          <ol className="space-y-4">
+            {STEPS.map((step, i) => (
+              <li key={step.title} className="flex gap-4 rounded-2xl border p-5" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+                <span className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{i + 1}</span>
+                <div>
+                  <p className="font-bold mb-1" style={{ color: "#0a0a0a" }}>{step.title} <span className="text-sm font-semibold" style={{ color: "#A14A08" }}>· {step.when}</span></p>
+                  <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{step.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="text-sm mt-6" style={{ color: "#52525B" }}>
+            Comparing agencies? Use our{" "}
+            <Link href="/resources/guides/how-to-choose-b2b-lead-generation-agency-india" className="font-bold underline" style={{ color: "#A14A08" }}>guide to choosing a B2B lead generation agency in India</Link>.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>Every service, one system</h2>
-          <p className="text-base mb-10" style={{ color: "#52525B" }}>Six productized services, built and managed for you.</p>
+          <p className="text-base mb-10" style={{ color: "#52525B" }}>Seven productized services, built and managed for you.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {SERVICES.map((s) => (
               <Link key={s.href} href={s.href} className="group rounded-2xl border p-5 transition-all duration-200 hover:shadow-md" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>

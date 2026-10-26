@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T11:16:21.563Z",
+  "generatedAt": "2026-10-26T11:31:48.914Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 284,
@@ -42,7 +42,7 @@
     },
     {
       "path": "/about-us",
-      "title": "About Tejas Jhaveri, B2B Growth Expert",
+      "title": "About Myntmore | Founded by Tejas Jhaveri, Mumbai",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -82,7 +82,7 @@
     },
     {
       "path": "/b2b-lead-generation-bengaluru",
-      "title": "B2B Lead Generation Agency in Bengaluru",
+      "title": "B2B Lead Generation Agency in Bangalore (Bengaluru)",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -1687,9 +1687,10 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-kolkata",
         "/case-studies"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -1755,9 +1756,10 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-kolkata",
         "/case-studies"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2087,10 +2089,11 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-bengaluru",
         "/case-studies",
         "case-studies/CaseStudyLayout.tsx"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -2115,12 +2118,13 @@
       "section": "case-studies",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-bengaluru",
         "/blog/cold-email-vs-linkedin-outreach",
         "/case-studies",
         "/services/ai-lead-generation",
         "lib/internal-paths.ts"
       ],
-      "inboundCount": 4,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2352,9 +2356,10 @@
       "section": "lp",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-kolkata",
         "/"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3396,10 +3401,12 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-kolkata",
         "/resources/guides/how-to-choose-an-outbound-agency",
         "/resources/guides"
       ],
-      "inboundCount": 2,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -3591,14 +3598,16 @@
       "section": "services",
       "status": "linked",
       "linkedFrom": [
-        "/case-studies/founder-personal-brand-linkedin",
-        "/case-studies/pharma-singapore-product-licensing",
-        "/case-studies/retail-strategy-design-pipeline",
-        "/case-studies/wealth-management-pms-pipeline",
-        "/",
-        "/services"
+        "/b2b-lead-generation-ahmedabad",
+        "/b2b-lead-generation-bengaluru",
+        "/b2b-lead-generation-delhi",
+        "/b2b-lead-generation-hyderabad",
+        "/b2b-lead-generation-kolkata",
+        "/b2b-lead-generation-mumbai",
+        "/b2b-lead-generation-pune",
+        "/case-studies/founder-personal-brand-linkedin"
       ],
-      "inboundCount": 6,
+      "inboundCount": 13,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

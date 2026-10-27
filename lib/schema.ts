@@ -417,3 +417,28 @@ export function buildCollectionPageSchema({ name, description, url, itemList }: 
       : {}),
   };
 }
+
+export interface WebPageSchemaInput {
+  name: string;
+  description: string;
+  url: string;
+  breadcrumb?: BreadcrumbEntry[];
+}
+
+export function buildWebPageSchema({ name, description, url, breadcrumb }: WebPageSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    description,
+    url,
+    publisher: {
+      "@type": "Organization",
+      name: "Myntmore",
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+    },
+    ...(breadcrumb && breadcrumb.length > 0 ? { breadcrumb: buildBreadcrumbSchema(breadcrumb) } : {}),
+  };
+}
+

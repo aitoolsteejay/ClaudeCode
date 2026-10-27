@@ -283,6 +283,21 @@ export default function HookGraderClient() {
               </button>
             </div>
 
+            <div className="rounded-2xl border bg-white p-6 text-center sm:p-8" style={{ borderColor: BORDER }}>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] mb-2" style={{ color: GOLD_TEXT }}>Turn Views into Pipeline</p>
+              <h3 className="text-xl font-black mb-2">Want the full system to turn LinkedIn content into sales calls?</h3>
+              <p className="text-sm mb-4" style={{ color: MUTED }}>
+                Hooks capture attention, but converting readers into qualified discovery calls takes a structured daily routine.
+              </p>
+              <Link
+                href="/resources/guides/linkedin-content-to-calls-starter-kit"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full border px-6 text-sm font-bold hover:bg-[#F8F6F2] transition-colors"
+                style={{ borderColor: BORDER, color: INK }}
+              >
+                Read the LinkedIn Content-to-Calls Starter Kit &rarr;
+              </Link>
+            </div>
+
             <div className="rounded-[28px] border p-8 text-center sm:p-12" style={{ borderColor: "rgba(245,183,49,0.45)", background: "linear-gradient(135deg,#FEF9EC 0%,#FFFFFF 100%)" }}>
               <h2 className="mx-auto max-w-2xl text-3xl font-black leading-tight sm:text-4xl">Want a LinkedIn presence that brings you meetings?</h2>
               <p className="mx-auto mt-4 max-w-xl text-base" style={{ color: MUTED }}>A good hook gets the click. Myntmore builds the profile, the posting rhythm and the outreach behind it.</p>

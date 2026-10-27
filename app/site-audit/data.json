@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T06:01:34.781Z",
+  "generatedAt": "2026-10-27T06:48:46.438Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 285,
@@ -33,9 +33,10 @@
       "section": "other",
       "status": "linked",
       "linkedFrom": [
-        "/"
+        "/",
+        "/services/do-it-yourself"
       ],
-      "inboundCount": 1,
+      "inboundCount": 2,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -73,9 +74,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -87,9 +89,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -101,9 +104,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -115,9 +119,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -129,9 +134,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -143,9 +149,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -161,11 +168,11 @@
         "/",
         "/contact-us",
         "/resources/guides/how-to-choose-b2b-lead-generation-agency-india",
+        "/services",
         "cold-emailing/ColdEmailingPackage.tsx",
-        "linkedin-outreach/LinkedinOutreachPage.tsx",
-        "lib/faq-data.ts"
+        "linkedin-outreach/LinkedinOutreachPage.tsx"
       ],
-      "inboundCount": 8,
+      "inboundCount": 9,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -177,9 +184,10 @@
       "status": "linked",
       "linkedFrom": [
         "/",
+        "/services",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3492,9 +3500,11 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/blog/founder-personal-brand-linkedin",
+        "/resources/guides",
+        "/tools/linkedin-hook-grader"
       ],
-      "inboundCount": 1,
+      "inboundCount": 3,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

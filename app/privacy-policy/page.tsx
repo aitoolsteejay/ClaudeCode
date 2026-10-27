@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
+import JsonLd from "../components/JsonLd";
+import { buildWebPageSchema, SITE_URL } from "@/lib/schema";
+
+const PAGE_URL = `${SITE_URL}/privacy-policy`;
+const WEBPAGE_SCHEMA = buildWebPageSchema({
+  name: "Privacy Policy",
+  description: "How Myntmore collects, uses, and protects your information.",
+  url: PAGE_URL,
+  breadcrumb: [
+    { name: "Home", url: SITE_URL },
+    { name: "Privacy Policy", url: PAGE_URL },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Myntmore collects, uses, and protects your information.",
-  alternates: { canonical: "https://www.myntmore.com/privacy-policy" },
+  alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Privacy Policy | Myntmore",
     description: "How Myntmore collects, uses, and protects your information.",
-    url: "https://www.myntmore.com/privacy-policy",
+    url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
   keywords: [
@@ -103,6 +116,7 @@ const SECTIONS = [
 export default function PrivacyPolicyPage() {
   return (
     <InnerLayout>
+      <JsonLd data={WEBPAGE_SCHEMA} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto text-center">
           <Breadcrumbs items={[{ label: "Privacy Policy", href: "/privacy-policy" }]} className="justify-center" />

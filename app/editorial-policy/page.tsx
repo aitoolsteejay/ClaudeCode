@@ -2,15 +2,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
+import JsonLd from "../components/JsonLd";
+import { buildWebPageSchema, SITE_URL } from "@/lib/schema";
+
+const PAGE_URL = `${SITE_URL}/editorial-policy`;
+const WEBPAGE_SCHEMA = buildWebPageSchema({
+  name: "Editorial Policy & Methodology",
+  description: "How Myntmore sources numbers, describes its case studies, handles AI tool data and corrects errors across its guides, benchmarks and tools.",
+  url: PAGE_URL,
+  breadcrumb: [
+    { name: "Home", url: SITE_URL },
+    { name: "Editorial Policy", url: PAGE_URL },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Editorial Policy & Methodology",
   description: "How Myntmore sources numbers, describes its case studies, handles AI tool data and corrects errors across its guides, benchmarks and tools.",
-  alternates: { canonical: "https://www.myntmore.com/editorial-policy" },
+  alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Editorial Policy & Methodology | Myntmore",
     description: "How Myntmore sources numbers, describes its case studies, handles AI tool data and corrects errors.",
-    url: "https://www.myntmore.com/editorial-policy",
+    url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
   keywords: [
@@ -90,6 +103,7 @@ const SECTIONS: Section[] = [
 export default function EditorialPolicyPage() {
   return (
     <InnerLayout>
+      <JsonLd data={WEBPAGE_SCHEMA} />
       <section className="pt-32 pb-12 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-3xl mx-auto">
           <Breadcrumbs items={[{ label: "Editorial Policy", href: "/editorial-policy" }]} />

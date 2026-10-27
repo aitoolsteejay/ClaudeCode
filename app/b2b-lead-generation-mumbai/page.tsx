@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 };
 
 const WHY_CITY = [
-  { title: "A financial capital that ignores generic pitches", desc: "Mumbai's BFSI and media companies get pitched constantly. A cold email that reads like every other vendor's template gets deleted in the same second it's read. Cutting through here needs research-backed, signal-driven outreach, not volume." },
-  { title: "Real estate is expensive, SDRs more so", desc: "Between office costs and Mumbai-scale salaries, a single in-house SDR can take months to become productive and even longer to pay for itself. A fully managed outbound engine gets you pipeline from week one at a fraction of that cost." },
-  { title: "A crowded founder scene that rewards systems, not hustle", desc: "Mumbai has one of India's densest startup and founder ecosystems. Standing out among that many funded, ambitious competitors takes a repeatable outbound system, not one more founder cold-DMing prospects between meetings." },
+  { title: "A financial capital across BKC, Lower Parel, and Nariman Point", desc: "Mumbai's BFSI, fintech, and media leaders across Bandra Kurla Complex (BKC), Lower Parel, and Nariman Point get pitched constantly. A cold email that reads like every other vendor's template gets deleted immediately. Cutting through takes research-backed, signal-driven outreach built around executive timing." },
+  { title: "Real estate is expensive, SDRs more so", desc: "Between commercial office costs in Mumbai and rising SDR salaries, hiring an in-house sales development team takes months to become productive and even longer to pay for itself. A fully managed outbound engine gives you pipeline from week three without adding headcount." },
+  { title: "Fast-growing B2B tech and agency corridors", desc: "From Andheri East to Goregaon and Navi Mumbai, scaling B2B companies need a systematic outbound pipeline that does not rely on random founder networking or sporadic referrals." },
 ];
 
 // The homepage holds the head term ("lead generation agency in mumbai"); this

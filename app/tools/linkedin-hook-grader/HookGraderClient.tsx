@@ -277,10 +277,19 @@ export default function HookGraderClient() {
               )}
             </section>
 
-            <div className="flex justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <button type="button" onClick={reset} className="inline-flex min-h-[44px] items-center gap-2 rounded-full border bg-white px-6 text-sm font-bold transition-colors hover:bg-[#F8F6F2]" style={{ borderColor: BORDER, color: INK }}>
                 <RotateCcw className="h-4 w-4" aria-hidden="true" /> Grade another hook
               </button>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.myntmore.com/tools/linkedin-hook-grader")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full px-6 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#0A66C2" }}
+              >
+                Share on LinkedIn
+              </a>
             </div>
 
             <div className="rounded-2xl border bg-white p-6 text-center sm:p-8" style={{ borderColor: BORDER }}>

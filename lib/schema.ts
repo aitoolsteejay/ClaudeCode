@@ -269,6 +269,10 @@ export function buildArticleSchema({ headline, description, url, datePublished, 
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "article p:first-of-type", ".speakable-summary"],
+    },
   };
 }
 
@@ -423,9 +427,10 @@ export interface WebPageSchemaInput {
   description: string;
   url: string;
   breadcrumb?: BreadcrumbEntry[];
+  speakable?: string[];
 }
 
-export function buildWebPageSchema({ name, description, url, breadcrumb }: WebPageSchemaInput) {
+export function buildWebPageSchema({ name, description, url, breadcrumb, speakable }: WebPageSchemaInput) {
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -439,6 +444,14 @@ export function buildWebPageSchema({ name, description, url, breadcrumb }: WebPa
       logo: `${SITE_URL}/logo.png`,
     },
     ...(breadcrumb && breadcrumb.length > 0 ? { breadcrumb: buildBreadcrumbSchema(breadcrumb) } : {}),
+    ...(speakable && speakable.length > 0
+      ? {
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: speakable,
+          },
+        }
+      : {}),
   };
 }
 

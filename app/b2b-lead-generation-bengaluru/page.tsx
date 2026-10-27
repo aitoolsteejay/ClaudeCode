@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 };
 
 const WHY_CITY = [
-  { title: "Great product, no repeatable pipeline", desc: "Bengaluru has India's highest concentration of SaaS and tech startups, most of them exceptional at building product and thin on a system for consistently filling the top of the funnel beyond inbound." },
-  { title: "The most sophisticated buyers in the country", desc: "Buyers in Bengaluru's tech market get pitched constantly and filter out generic outreach instantly. Cutting through here takes precision, signal-based targeting, not a templated blast." },
-  { title: "Scaling past India, with no system built for it", desc: "Plenty of Bengaluru's fastest-growing startups are expanding into US and global markets without an outbound engine built to reach buyers outside their home turf." },
+  { title: "SaaS teams across Koramangala, HSR Layout, and Indiranagar", desc: "Bengaluru has India's highest concentration of B2B SaaS and venture-backed tech startups across Koramangala, HSR Layout, Indiranagar, and Whitefield. Most are exceptional at building product, but lack a structured outbound system for filling the top of the funnel beyond inbound form fills." },
+  { title: "The most sophisticated tech buyers in India", desc: "Engineering heads and tech buyers in Bengaluru get pitched constantly and filter out generic SDR templates immediately. Cutting through here takes precision, signal-based targeting built around verified tech stack and hiring triggers." },
+  { title: "Expanding from Bengaluru into US and global markets", desc: "Fast-growing tech teams in Electronic City and Outer Ring Road corridors often expand into US, UK, and European markets without an outbound engine built to reach enterprise decision-makers abroad." },
 ];
 
 // Who the page is for. Bangalore buyers search "Bangalore" far more than

@@ -75,12 +75,12 @@ const PERSONAS: Persona[] = [
     blobColor: "rgba(245,183,49,0.45)",
     illustration: <RocketIllustration />,
     heading: "Stop being your own SDR.\nStart closing.",
-    tagline: "You started a company to build not to spend 4 hours a day on LinkedIn. Let Myntmore run the outbound engine.",
+    tagline: "You started a company to build, not to spend 4 hours a day on LinkedIn. Let Myntmore run the outbound engine.",
     cta: "Explore Founder solutions",
     benefits: [
-      { title: "Pipeline without headcount", description: "Run a full outbound motion without hiring an SDR or BDR. We do it end to end strategy, copy, execution." },
+      { title: "Pipeline without headcount", description: "Run a full outbound motion without hiring an SDR or BDR. We do it end to end: strategy, copy, execution." },
       { title: "Live in 18 days", description: "Fast onboarding means fast results. Campaigns go live within 18 days, and most founders have their first qualified conversation in weeks 3 to 4." },
-      { title: "Stay focused on building", description: "You close. We fill. That's the entire model no distractions, no micromanaging sequences, just calendar invites." },
+      { title: "Stay focused on building", description: "You close. We fill. That's the entire model. No distractions, no micromanaging sequences, just calendar invites." },
     ],
   },
   {

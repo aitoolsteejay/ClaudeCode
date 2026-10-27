@@ -72,5 +72,6 @@ for (const [family, byValue] of Object.entries(report)) {
 
 const facts = JSON.parse(fs.readFileSync(path.join(ROOT, "lib", "entity-facts.json"), "utf8"));
 console.log(`\nCanonical proof points (lib/entity-facts.json): ${facts.proofPoints.join("; ")}`);
+console.log(`Canonical office address (lib/entity-facts.json): ${facts.contact.address}`);
 console.log(conflicts ? `\n${conflicts} claim famil${conflicts === 1 ? "y has" : "ies have"} conflicting values.` : "\nNo conflicting claim values.");
 if (STRICT && conflicts) process.exit(1);

@@ -7,12 +7,12 @@ import JsonLd from "../components/JsonLd";
 import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Lead Generation Agency in Mumbai for B2B Teams",
+  title: "B2B Lead Generation Company in Mumbai",
   description: "Mumbai lead generation agency based in BKC, booking qualified meetings for BFSI, media, SaaS and professional services firms with cold email and LinkedIn.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-mumbai" },
   keywords: ["b2b lead generation companies in mumbai", "lead generation company in mumbai", "b2b marketing company in mumbai", "linkedin lead generation agency mumbai", "b2b lead generation mumbai", "outbound agency mumbai", "linkedin outreach mumbai", "cold email agency mumbai", "account based marketing mumbai", "ai lead generation mumbai", "abm agency mumbai", "sales intelligence mumbai", "b2b lead generation for bfsi companies mumbai", "lead generation for media and entertainment companies mumbai", "b2b leads for professional services firms mumbai", "demand generation agency mumbai", "linkedin ghostwriting for founders mumbai", "cold email agency bkc mumbai", "best b2b outbound agency in mumbai", "how to get b2b leads in mumbai", "outbound agency for saas founders mumbai"],
   openGraph: {
-    title: "Lead Generation Agency in Mumbai for B2B Teams | Myntmore",
+    title: "B2B Lead Generation Company in Mumbai | Myntmore",
     description: "BKC-based lead generation agency booking qualified meetings for Mumbai's BFSI, media, SaaS and professional services firms.",
     url: "https://www.myntmore.com/b2b-lead-generation-mumbai",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
@@ -83,7 +83,7 @@ export default function B2BLeadGenerationMumbaiPage() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            B2B Lead Generation Agency in Mumbai
+            B2B Lead Generation Company in Mumbai
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl mb-8" style={{ color: "#52525B" }}>
             Mumbai runs on BFSI, media, and some of India's densest corporate HQ density. We build the AI-powered cold email, LinkedIn, and ABM systems that get your business in front of the right buyers here, systematically.

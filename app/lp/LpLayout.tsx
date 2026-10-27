@@ -8,7 +8,7 @@ function LpFooter() {
   return (
     <footer className="border-t py-8 px-4" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-xs" style={{ color: "#71675E" }}>© 2026 Myntmore. Built in Mumbai.</p>
+        <p className="text-xs" style={{ color: "#71675E" }}>© 2026 Myntmore. Built in <Link href="/b2b-lead-generation-mumbai" className="hover:underline">Mumbai</Link>.</p>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-0">
           <Link href="/about-us" className="inline-flex min-h-[44px] items-center text-xs" style={{ color: "#71675E" }}>About</Link>
           <Link href="/case-studies" className="inline-flex min-h-[44px] items-center text-xs" style={{ color: "#71675E" }}>Case Studies</Link>

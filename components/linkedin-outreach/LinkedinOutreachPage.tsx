@@ -555,7 +555,11 @@ export default function LinkedinOutreachPage() {
                   </h3>
                   <p className="text-sm font-medium" style={{ color: "#6b655e" }}>Founder, Myntmore</p>
                   <p className="mt-3 text-sm leading-relaxed" style={{ color: BODY }}>
-                    Tejas has built outbound engines for founders, CXOs and B2B teams, combining AI agents, competitive intelligence, personalisation and multi-channel outreach to generate qualified pipeline.
+                    Tejas has built outbound engines for founders, CXOs and B2B teams, combining AI agents, competitive intelligence, personalisation and multi-channel outreach to generate qualified pipeline. See how we run{" "}
+                    <Link href="/b2b-lead-generation-mumbai" className="underline font-semibold hover:text-[#0A66C2]">
+                      LinkedIn outreach for Mumbai B2B teams
+                    </Link>{" "}
+                    and companies across India.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {FOUNDER_STATS.map((s) => (

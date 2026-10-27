@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import FadeIn from "../components/FadeIn";
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -126,7 +127,12 @@ export default function ContactUs() {
                 ))}
               </div>
               <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-                <h3 className="text-base font-black mb-3" style={{ color: "#0a0a0a" }}>Our office</h3>
+                <h3 className="text-base font-black mb-1" style={{ color: "#0a0a0a" }}>Our office</h3>
+                <p className="text-xs mb-3 font-semibold">
+                  <Link href="/b2b-lead-generation-mumbai" className="hover:underline" style={{ color: "#A14A08" }}>
+                    Lead generation company in Mumbai
+                  </Link>
+                </p>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=WeWork%20Enam%20Sambhav%2C%20C%20-%2020%2C%20G%20Block%20Rd%2C%20G%20Block%20BKC%2C%20Bandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra%20400051"
                   target="_blank"

@@ -139,7 +139,7 @@ export default function AboutUs() {
                 Tejas himself is a TEDx speaker, angel investor, and B2B growth expert with over 10 years of lead generation experience. As a growth educator, he has taught B2B methodologies at IIT and IIM, helping shape the next generation of growth professionals in India.
               </p>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-                Myntmore is Mumbai&apos;s leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.
+                Myntmore is a premier <Link href="/b2b-lead-generation-mumbai" className="underline font-semibold hover:text-[#A14A08]">B2B lead generation company in Mumbai</Link>. Headquartered in BKC, we build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.
               </p>
             </div>
             <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>

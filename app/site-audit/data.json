@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T12:01:57.594Z",
+  "generatedAt": "2026-10-27T06:01:34.781Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 285,
@@ -152,14 +152,20 @@
     },
     {
       "path": "/b2b-lead-generation-mumbai",
-      "title": "Lead Generation Agency in Mumbai for B2B Teams",
+      "title": "B2B Lead Generation Company in Mumbai",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
+        "/about-us",
+        "/case-studies/wealth-management-pms-pipeline",
         "/",
+        "/contact-us",
+        "/resources/guides/how-to-choose-b2b-lead-generation-agency-india",
+        "cold-emailing/ColdEmailingPackage.tsx",
+        "linkedin-outreach/LinkedinOutreachPage.tsx",
         "lib/faq-data.ts"
       ],
-      "inboundCount": 2,
+      "inboundCount": 8,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true

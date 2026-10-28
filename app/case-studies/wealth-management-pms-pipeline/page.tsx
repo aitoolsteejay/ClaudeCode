@@ -184,7 +184,11 @@ export default function WealthManagementPmsPipeline() {
               The Challenge
             </h2>
             <p className="text-base sm:text-lg leading-relaxed text-[#52525B] mb-4">
-              Wealth management and PMS is fundamentally a trust-first category: prospects rarely act on a cold message alone, and the financial-services conversation on LinkedIn is crowded with sales-forward pitches.
+              Wealth management and PMS is fundamentally a trust-first category: prospects rarely act on a cold message alone, and the financial-services conversation on LinkedIn is crowded with sales-forward pitches. This is especially true for{" "}
+              <Link href="/b2b-lead-generation-mumbai" className="font-bold underline text-[#7C3AED] hover:text-[#0A0A0A]">
+                BFSI lead generation in Mumbai
+              </Link>
+              , where decision-makers at corporate treasuries and family offices receive dozens of generic pitches weekly.
             </p>
             <p className="text-base sm:text-lg leading-relaxed text-[#52525B]">
               The client&apos;s starting profile had a modest base (793 followers, ~1,094 monthly impressions) and no established content voice. Myntmore had to build credibility fast enough to convert into a live outbound pipeline before outreach fatigue set in.

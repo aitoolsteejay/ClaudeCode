@@ -136,10 +136,10 @@ export default function WhatIsB2bOutboundSales() {
       <article className="py-12 px-4 border-t" style={{ borderColor: "#E8E2D9" }}>
         <div className="max-w-3xl mx-auto">
           <div className="prose-custom space-y-8">
-            <div>
+            <div className="speakable-summary">
               <h2 className="text-2xl font-black mb-4" style={{ color: "#0a0a0a" }}>The definition, in one sentence</h2>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-                B2B outbound sales is the process of a company identifying prospects that fit its ideal customer profile and initiating contact with them directly, rather than relying on those prospects to discover the company on their own. It&apos;s the opposite motion of inbound, which attracts prospects through content, search rankings, or word of mouth. See the full breakdown in our{" "}
+                <strong style={{ color: "#0a0a0a" }}>B2B outbound sales is the process of a company identifying prospects that fit its ideal customer profile and initiating contact with them directly, rather than relying on those prospects to discover the company on their own.</strong> It&apos;s the opposite motion of inbound, which attracts prospects through content, search rankings, or word of mouth. See the full breakdown in our{" "}
                 <Link href="/resources/glossary/inbound-vs-outbound" className="font-bold underline" style={{ color: "#A14A08" }}>Inbound vs. Outbound glossary entry</Link>.
               </p>
             </div>

@@ -30,6 +30,13 @@ export const metadata: Metadata = {
 
 const SECTIONS: BlogSection[] = [
   {
+    heading: "What Does 'Cold Reply' Mean?",
+    paragraphs: [
+      "In B2B outbound sales, a cold reply is a direct response from a prospect to an unsolicited cold email or LinkedIn message. It marks the shift from cold outreach into an active sales conversation. Unlike inbound inquiries where buyers request a demo upfront, a cold reply signals initial curiosity or objection, not a completed sale.",
+      "How fast and strategically your sales team responds in this first hour decides whether that curiosity converts into a qualified discovery call or goes completely cold.",
+    ],
+  },
+  {
     heading: "The Most Expensive Moment in Your Funnel",
     paragraphs: [
       "Think about what it took to get that reply: domains, warm-up, list building, copy, testing, weeks of sends. Every one of those costs lands on a single moment, when a real human types back. And that's exactly where most teams get lazy. They answer the next morning, paste a calendar link, or send a PDF deck nobody asked for. The reply rate looks great on the dashboard, but the meetings never show up.",

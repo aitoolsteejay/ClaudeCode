@@ -879,7 +879,7 @@ export default function DoItYourselfClient() {
             <ArrowRight className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
           </a>
 
-          <p className="mt-5 text-sm" style={{ color: "#71675E" }}>Prefer we run it for you? <Link href="/services/linkedin-outreach" className={`font-semibold underline rounded ${FOCUS}`} style={{ color: ACCENT }}>See the Done-for-You service</Link>.</p>
+          <p className="mt-5 text-sm" style={{ color: "#71675E" }}>Prefer we run it for you? <Link href="/services/linkedin-outreach" className={`font-semibold underline rounded ${FOCUS}`} style={{ color: ACCENT }}>See the Done-for-You service</Link> or book a <Link href="/1-on-1-consultation" className={`font-semibold underline rounded ${FOCUS}`} style={{ color: ACCENT }}>1-on-1 consultation</Link>.</p>
         </div>
       </section>
     </InnerLayout>

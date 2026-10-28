@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 
 const WHY_CITY = [
   { title: "Pharma and biotech sales cycles that need consistency", desc: "Hyderabad's pharmaceutical and biotech companies, based around its Genome Valley cluster, sell into long, compliance-heavy, technical buying processes. Getting in front of the right procurement and R&D contacts takes sustained, multi-touch outreach, not a single email blast." },
-  { title: "IT and ITES teams competing in a saturated market", desc: "Hyderabad's large IT/ITES base means generic mass outreach gets lost instantly. Winning meetings here takes differentiated, signal-based targeting that reaches the right buyer with the right message." },
-  { title: "Startups still running outreach off the founder's calendar", desc: "A lot of Hyderabad's growing startups have no dedicated outbound function yet, so prospecting happens in the gaps between everything else the founder is doing, which means it barely happens at all." },
+  { title: "IT and SaaS teams across HITEC City, Madhapur, and Gachibowli", desc: "Hyderabad's enterprise tech and SaaS corridor across HITEC City, Madhapur, and Gachibowli competes globally for enterprise deals and GCC mandates. Generic SDR templates get lost immediately; winning qualified pipeline requires signal-led, multi-channel outreach built around verified buyer context." },
+  { title: "Growth-stage founders still running outbound manually", desc: "Many of Hyderabad's fastest-growing venture-backed startups and IT services companies have no full-time outbound system. Prospecting happens in sporadic bursts on the founder's calendar, creating unpredictable revenue cycles." },
 ];
 
 const SEGMENTS = [

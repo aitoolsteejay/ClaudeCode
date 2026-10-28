@@ -169,6 +169,18 @@ export default function FounderPersonalBrandLinkedIn() {
 
           <ToolCallout href="/tools/linkedin-hook-grader" name="LinkedIn Hook Grader" blurb="Paste the first two lines of a post and get a score out of 100 from six plain rules, plus three rewrites to choose from." />
 
+          <div className="rounded-xl border p-5 bg-white" style={{ borderColor: "#E8E2D9" }}>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#A14A08] mb-1">Recommended Guide</p>
+            <h4 className="text-base font-bold mb-1">
+              <Link href="/resources/guides/linkedin-content-to-calls-starter-kit" className="hover:underline">
+                LinkedIn Content-to-Calls Starter Kit
+              </Link>
+            </h4>
+            <p className="text-xs text-[#52525B]">
+              The tactical daily routine, post structures, and engagement playbook to convert LinkedIn impressions into booked discovery calls.
+            </p>
+          </div>
+
           <div className="mt-8">
             <AskYourAI resources={BLOG_AI_RESOURCES} />
           </div>

@@ -3,11 +3,25 @@ import Link from "next/link";
 import InnerLayout from "../components/InnerLayout";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 import Breadcrumbs from "../components/Breadcrumbs";
+import JsonLd from "../components/JsonLd";
+import { buildBreadcrumbSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
+
+const PAGE_URL = `${SITE_URL}/marketing-automation`;
+const BREADCRUMBS = buildBreadcrumbSchema([
+  { name: "Home", url: SITE_URL },
+  { name: "Marketing Automation", url: PAGE_URL },
+]);
+const SERVICE_SCHEMA = buildServiceSchema({
+  name: "B2B Marketing Automation Services",
+  description: "AI-powered marketing automation for B2B: outbound sequences, email automation, and lead nurturing that runs 24/7.",
+  serviceType: "Marketing Automation",
+  url: PAGE_URL,
+});
 
 export const metadata: Metadata = {
   title: "B2B Marketing Automation Services",
   description: "AI-powered marketing automation for B2B: outbound sequences, email automation, and lead nurturing that runs 24/7. Book a free automation audit.",
-  alternates: { canonical: "https://www.myntmore.com/marketing-automation" },
+  alternates: { canonical: PAGE_URL },
   keywords: [
     "b2b marketing automation",
     "email automation software",
@@ -28,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Marketing Automation Services | Myntmore",
     description: "AI-powered marketing automation that builds your pipeline while you sleep.",
-    url: "https://www.myntmore.com/marketing-automation",
+    url: PAGE_URL,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
@@ -43,6 +57,8 @@ const SERVICES = [
 export default function MarketingAutomation() {
   return (
     <InnerLayout>
+      <JsonLd data={SERVICE_SCHEMA} />
+      <JsonLd data={BREADCRUMBS} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
         <div className="max-w-4xl mx-auto">
           <Breadcrumbs items={[{ label: "Marketing Automation", href: "/marketing-automation" }]} />

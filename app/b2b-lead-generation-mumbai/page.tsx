@@ -7,12 +7,12 @@ import JsonLd from "../components/JsonLd";
 import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Lead Generation Agency in Mumbai for B2B Teams",
+  title: "B2B Lead Generation Company in Mumbai",
   description: "Mumbai lead generation agency based in BKC, booking qualified meetings for BFSI, media, SaaS and professional services firms with cold email and LinkedIn.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-mumbai" },
   keywords: ["b2b lead generation companies in mumbai", "lead generation company in mumbai", "b2b marketing company in mumbai", "linkedin lead generation agency mumbai", "b2b lead generation mumbai", "outbound agency mumbai", "linkedin outreach mumbai", "cold email agency mumbai", "account based marketing mumbai", "ai lead generation mumbai", "abm agency mumbai", "sales intelligence mumbai", "b2b lead generation for bfsi companies mumbai", "lead generation for media and entertainment companies mumbai", "b2b leads for professional services firms mumbai", "demand generation agency mumbai", "linkedin ghostwriting for founders mumbai", "cold email agency bkc mumbai", "best b2b outbound agency in mumbai", "how to get b2b leads in mumbai", "outbound agency for saas founders mumbai"],
   openGraph: {
-    title: "Lead Generation Agency in Mumbai for B2B Teams | Myntmore",
+    title: "B2B Lead Generation Company in Mumbai | Myntmore",
     description: "BKC-based lead generation agency booking qualified meetings for Mumbai's BFSI, media, SaaS and professional services firms.",
     url: "https://www.myntmore.com/b2b-lead-generation-mumbai",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 };
 
 const WHY_CITY = [
-  { title: "A financial capital that ignores generic pitches", desc: "Mumbai's BFSI and media companies get pitched constantly. A cold email that reads like every other vendor's template gets deleted in the same second it's read. Cutting through here needs research-backed, signal-driven outreach, not volume." },
-  { title: "Real estate is expensive, SDRs more so", desc: "Between office costs and Mumbai-scale salaries, a single in-house SDR can take months to become productive and even longer to pay for itself. A fully managed outbound engine gets you pipeline from week one at a fraction of that cost." },
-  { title: "A crowded founder scene that rewards systems, not hustle", desc: "Mumbai has one of India's densest startup and founder ecosystems. Standing out among that many funded, ambitious competitors takes a repeatable outbound system, not one more founder cold-DMing prospects between meetings." },
+  { title: "A financial capital across BKC, Lower Parel, and Nariman Point", desc: "Mumbai's BFSI, fintech, and media leaders across Bandra Kurla Complex (BKC), Lower Parel, and Nariman Point get pitched constantly. A cold email that reads like every other vendor's template gets deleted immediately. Cutting through takes research-backed, signal-driven outreach built around executive timing." },
+  { title: "Real estate is expensive, SDRs more so", desc: "Between commercial office costs in Mumbai and rising SDR salaries, hiring an in-house sales development team takes months to become productive and even longer to pay for itself. A fully managed outbound engine gives you pipeline from week three without adding headcount." },
+  { title: "Fast-growing B2B tech and agency corridors", desc: "From Andheri East to Goregaon and Navi Mumbai, scaling B2B companies need a systematic outbound pipeline that does not rely on random founder networking or sporadic referrals." },
 ];
 
 // The homepage holds the head term ("lead generation agency in mumbai"); this
@@ -83,7 +83,7 @@ export default function B2BLeadGenerationMumbaiPage() {
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: "#0a0a0a" }}>
-            B2B Lead Generation Agency in Mumbai
+            B2B Lead Generation Company in Mumbai
           </h1>
           <p className="text-lg sm:text-xl max-w-2xl mb-8" style={{ color: "#52525B" }}>
             Mumbai runs on BFSI, media, and some of India's densest corporate HQ density. We build the AI-powered cold email, LinkedIn, and ABM systems that get your business in front of the right buyers here, systematically.

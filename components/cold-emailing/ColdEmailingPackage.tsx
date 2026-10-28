@@ -328,6 +328,13 @@ export default function ColdEmailingPackage() {
                   <a href="https://linkedin.com/in/tejasjhaveri" target="_blank" rel="noopener noreferrer" className="hover:underline">Tejas Jhaveri</a>
                 </h3>
                 <p className="text-sm font-medium" style={{ color: "#6b655e" }}>Founder, Myntmore</p>
+                <p className="mt-2 text-sm leading-relaxed" style={{ color: "#52525B" }}>
+                  Based in BKC, our team designs cold email infrastructure and outbound systems for high-growth companies. Explore our{" "}
+                  <Link href="/b2b-lead-generation-mumbai" className="font-bold underline hover:text-[#A14A08]" style={{ color: INK }}>
+                    B2B lead generation company in Mumbai
+                  </Link>{" "}
+                  hub for regional campaigns.
+                </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {FOUNDER_STATS.map((s) => (
                     <span key={s} className="rounded-full border px-3.5 py-1.5 text-xs font-bold" style={{ borderColor: "#EDE7DD", backgroundColor: "#FCFBF8", color: INK }}>{s}</span>

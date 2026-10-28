@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 };
 
 const WHY_CITY = [
-  { title: "IT and SaaS teams that are strong on product, thin on pipeline", desc: "Pune's software and SaaS companies compete on engineering strength, but that alone doesn't fill a calendar. Without a repeatable outbound motion, even great products stay word-of-mouth secrets." },
-  { title: "Auto-component makers stuck waiting for the next trade show", desc: "Reaching OEM buyers has traditionally meant trade fairs and existing supplier relationships. A systematic outreach engine gets your capability in front of new procurement teams year-round, not just at exhibitions." },
+  { title: "IT and SaaS teams across Hinjawadi, Magarpatta, and Kharadi", desc: "From Hinjawadi IT Park to Magarpatta Cybercity and Kharadi, Pune's software and SaaS companies compete on engineering strength, but product alone does not fill a sales calendar. Without a repeatable outbound engine, even great products stay word-of-mouth secrets." },
+  { title: "Auto-component and engineering makers across Chakan and Bhosari", desc: "Reaching OEM buyers for manufacturers in Chakan, Bhosari, and Talegaon has traditionally meant trade fairs and supplier directories. A systematic outreach engine gets your precision engineering capabilities in front of new procurement heads year-round, not just at exhibitions." },
   { title: "Great engineers, no one owning outbound", desc: "A lot of Pune's most technically capable founders and teams have simply never had anyone dedicated to consistent outbound. It falls to whoever has time, which usually means it doesn't happen at all." },
 ];
 

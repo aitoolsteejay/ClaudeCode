@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 };
 
 const WHY_CITY = [
-  { title: "Referrals only take a trading business so far", desc: "Delhi NCR's trading and export houses have grown for decades on relationships and word of mouth. That works until growth stalls, because there's no repeatable way to reach new buyers once the existing network is exhausted." },
-  { title: "D2C brands scaling fast, B2B still an afterthought", desc: "Plenty of Delhi's D2C and e-commerce brands have nailed consumer acquisition but have no system for the wholesale, retail-partner, or enterprise deals that would unlock the next stage of growth." },
-  { title: "Enterprise buyers behind layers of gatekeepers", desc: "One of India's largest concentrations of enterprise headquarters means procurement processes are slow and heavily gated. Getting past that takes signal-led, multi-touch outreach, not a single cold call." },
+  { title: "Enterprise and export teams across Gurugram, Noida, and Delhi", desc: "From Cyber City and Golf Course Road in Gurugram to Sector 62 in Noida and Okhla Industrial Area, Delhi NCR is home to India's largest corporate headquarters and export houses. Growth stalls when teams rely solely on founder networks instead of a predictable cold outbound pipeline." },
+  { title: "D2C and retail brands scaling B2B distribution", desc: "Fast-growing consumer brands across NCR often master D2C acquisition but lack an automated B2B outbound engine for wholesale, institutional retail partnerships, and corporate gifting deals." },
+  { title: "Enterprise buyers behind layers of gatekeepers", desc: "Corporate buying committees across Connaught Place, Aerocity, and Gurugram have heavy administrative gatekeepers. Getting through requires multi-touch email and LinkedIn outreach built around timing signals, not brute-force cold calls." },
 ];
 
 const SERVICES = [

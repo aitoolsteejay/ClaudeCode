@@ -54,7 +54,20 @@ const PERSON_SCHEMA = {
     logo: `${SITE_URL}/logo.png`,
   },
   description: "Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of B2B lead generation experience. He founded Myntmore in 2019 and has taught B2B growth methodologies at IIT and IIM.",
-  sameAs: ["https://linkedin.com/in/tejasjhaveri"],
+  sameAs: ["https://linkedin.com/in/tejasjhaveri", "https://youtube.com/@TJtheLeadGenExpert"],
+};
+
+const ABOUT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About Myntmore",
+  description: "Myntmore is a Mumbai B2B outbound agency founded in 2019 by TEDx speaker Tejas Jhaveri: 12K+ meetings booked and $120M+ pipeline for 130+ B2B companies.",
+  url: `${SITE_URL}/about-us`,
+  mainEntity: PERSON_SCHEMA,
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".speakable-lead"],
+  },
 };
 
 const CREDENTIALS = [
@@ -75,6 +88,7 @@ const EXPERTISE = [
 export default function AboutUs() {
   return (
     <InnerLayout>
+      <JsonLd data={ABOUT_SCHEMA} />
       <JsonLd data={PERSON_SCHEMA} />
       <JsonLd data={buildLocalBusinessSchema("https://www.myntmore.com/about-us")} />
       <section className="pt-32 pb-16 px-4" style={{ backgroundColor: "#F8F6F2" }}>
@@ -88,7 +102,7 @@ export default function AboutUs() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
             Built by a founder who figured outbound out the hard way
           </h1>
-          <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2" style={{ color: "#52525B" }}>
+          <p className="text-lg sm:text-xl leading-relaxed max-w-2xl hero-fade-d2 speakable-lead" style={{ color: "#52525B" }}>
             Tejas Jhaveri is a TEDx speaker, angel investor, and B2B growth expert based in Mumbai, with over 10 years of lead generation experience. He founded Myntmore in 2019, and the team has since booked 12K+ meetings and generated $120M+ in pipeline for 130+ B2B companies.
           </p>
         </div>
@@ -139,7 +153,7 @@ export default function AboutUs() {
                 Tejas himself is a TEDx speaker, angel investor, and B2B growth expert with over 10 years of lead generation experience. As a growth educator, he has taught B2B methodologies at IIT and IIM, helping shape the next generation of growth professionals in India.
               </p>
               <p className="text-base leading-relaxed" style={{ color: "#52525B" }}>
-                Myntmore is Mumbai&apos;s leading AI-powered B2B outbound agency. We build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.
+                Myntmore is a premier <Link href="/b2b-lead-generation-mumbai" className="underline font-semibold hover:text-[#A14A08]">B2B lead generation company in Mumbai</Link>. Headquartered in BKC, we build and run cold email, LinkedIn outreach, and ABM systems that book qualified meetings. 12K+ meetings booked. $120M+ pipeline generated.
               </p>
             </div>
             <div className="rounded-2xl border p-6" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>

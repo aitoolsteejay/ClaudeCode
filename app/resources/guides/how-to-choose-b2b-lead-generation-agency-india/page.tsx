@@ -231,7 +231,8 @@ export default function HowToChooseLeadGenAgencyIndiaPage() {
                   <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                     Look for case studies in your industry with numbers in them, a client reference you can call, and reviews on independent platforms. Then compare the agency&apos;s claims with published ranges: our{" "}
                     <Link href="/blog/b2b-outbound-benchmark-report-2026" className="font-bold underline" style={{ color: "#A14A08" }}>2026 B2B Outbound Benchmark Report</Link> shows reply rates, inbox placement and time to first meeting across Myntmore&apos;s managed accounts. For the questions every outbound agency should answer, on data ownership, deliverability and contract terms, see{" "}
-                    <Link href="/resources/guides/how-to-choose-an-outbound-agency" className="font-bold underline" style={{ color: "#A14A08" }}>how to choose a B2B outbound agency</Link>.
+                    <Link href="/resources/guides/how-to-choose-an-outbound-agency" className="font-bold underline" style={{ color: "#A14A08" }}>how to choose a B2B outbound agency</Link>, or see how this works in practice for a{" "}
+                    <Link href="/b2b-lead-generation-mumbai" className="font-bold underline" style={{ color: "#A14A08" }}>Mumbai lead generation company</Link>.
                   </p>
                 </div>
               </div>

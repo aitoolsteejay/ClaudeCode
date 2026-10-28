@@ -4,7 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import FadeIn from "../components/FadeIn";
 import NewsletterForm from "../components/NewsletterForm";
 import JsonLd from "../components/JsonLd";
-import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
+import { buildBreadcrumbSchema, buildWebPageSchema, SITE_URL } from "@/lib/schema";
 
 const URL = `${SITE_URL}/newsletter-subscribe`;
 export const metadata: Metadata = {
@@ -19,7 +19,15 @@ export const metadata: Metadata = {
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Myntmore" }],
   },
 };
-const BREADCRUMBS = buildBreadcrumbSchema([{ name: "Home", url: SITE_URL }, { name: "Newsletter", url: URL }]);
+const WEBPAGE_SCHEMA = buildWebPageSchema({
+  name: "Subscribe to The Outbound Operator",
+  description: "Get one practical B2B growth playbook every week, covering outbound systems, AI prospecting, cold email, LinkedIn, and pipeline conversion.",
+  url: URL,
+  breadcrumb: [
+    { name: "Home", url: SITE_URL },
+    { name: "Newsletter", url: URL },
+  ],
+});
 const TOPICS = [
   ["01", "Campaigns dissected", "See why an outbound campaign worked, stalled, or failed and what we changed next."],
   ["02", "Systems you can steal", "Copy practical workflows for targeting, research, enrichment, and follow-up."],
@@ -30,7 +38,7 @@ const TOPICS = [
 export default function NewsletterSubscribePage() {
   return (
     <InnerLayout>
-      <JsonLd data={BREADCRUMBS} />
+      <JsonLd data={WEBPAGE_SCHEMA} />
       <section className="relative pt-32 pb-20 px-4 overflow-hidden" style={{ backgroundColor: "#F8F6F2" }}>
         <div aria-hidden="true" className="absolute rounded-full animate-[bubble-float_10s_ease-in-out_infinite]" style={{ top: -180, left: -180, width: 700, height: 700, background: "radial-gradient(circle,rgba(245,183,49,.28),rgba(245,183,49,.08) 42%,transparent 70%)", filter: "blur(55px)" }} />
         <div aria-hidden="true" className="absolute rounded-full animate-[bubble-float_12s_ease-in-out_infinite_reverse]" style={{ top: -120, right: -200, width: 640, height: 640, background: "radial-gradient(circle,rgba(59,130,246,.18),rgba(59,130,246,.05) 42%,transparent 70%)", filter: "blur(55px)" }} />

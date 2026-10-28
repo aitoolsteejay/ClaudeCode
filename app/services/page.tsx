@@ -100,6 +100,49 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Regional Lead Generation Hubs */}
+      <section className="py-16 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full" style={{ backgroundColor: "#FEF9EC", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>
+              Locations
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-2" style={{ color: "#0a0a0a" }}>
+              B2B Outbound Services Across India
+            </h2>
+            <p className="text-sm sm:text-base leading-relaxed" style={{ color: "#52525B" }}>
+              Our systems are managed remotely from BKC, Mumbai for high-growth B2B teams across India&apos;s commercial hubs:
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { city: "Mumbai", href: "/b2b-lead-generation-mumbai", blurb: "BFSI, Media & SaaS" },
+              { city: "Bengaluru", href: "/b2b-lead-generation-bengaluru", blurb: "Tech & B2B SaaS" },
+              { city: "Delhi NCR", href: "/b2b-lead-generation-delhi", blurb: "Enterprise & D2C Supply" },
+              { city: "Pune", href: "/b2b-lead-generation-pune", blurb: "Auto, IT & Industrial" },
+              { city: "Hyderabad", href: "/b2b-lead-generation-hyderabad", blurb: "Pharma & Enterprise Tech" },
+              { city: "Chennai", href: "/b2b-lead-generation-chennai", blurb: "SaaS & Manufacturing" },
+              { city: "Ahmedabad", href: "/b2b-lead-generation-ahmedabad", blurb: "Chemicals & Export" },
+              { city: "Kolkata", href: "/b2b-lead-generation-kolkata", blurb: "Industrial & Healthcare" },
+            ].map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="p-4 rounded-xl border bg-white hover:border-[#F5B731] transition-all group block shadow-xs"
+                style={{ borderColor: "#E8E2D9" }}
+              >
+                <div className="text-sm font-bold text-[#0A0A0A] group-hover:text-[#A14A08] transition-colors">
+                  {c.city}
+                </div>
+                <div className="text-xs text-[#71675E] mt-0.5">
+                  {c.blurb}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <LeadCaptureForm />
     </InnerLayout>
   );

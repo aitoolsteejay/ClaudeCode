@@ -5,7 +5,10 @@
 | Collection | Where files live | What reads them |
 |---|---|---|
 | Homepage FAQs | `content/faqs/homepage/*.json` | homepage FAQ section and its FAQPage schema (via `npm run faqs:build`) |
+| Case studies | `content/case-studies/*.json` | `lib/case-study-library.json`, then one generated page and sitemap entry per case (both rebuilt on every deploy) |
 | Blog posts | `content/posts/*.mdoc` | `app/blog/[slug]/page.tsx`, the blog index, `sitemap.xml`, `llms-full.txt` |
+
+A new case study published from the admin appears after the next deploy, with its page, sitemap entry and place on the industry filter. Its sitemap date is not refreshed automatically, because sitemap dates come from git history of page code.
 
 The 36 older blog posts are hand-built pages and are not in the CMS. A hand-built page always wins over the CMS route, so nothing about them changes.
 

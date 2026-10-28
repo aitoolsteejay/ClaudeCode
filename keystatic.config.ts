@@ -5,6 +5,9 @@ import { collection, config, fields } from "@keystatic/core";
 //    them into lib/faq-content.generated.json, which lib/faq-data.ts
 //    re-exports, so the FAQ components and FAQPage JSON-LD read the same data
 //    they always did.
+//  - Case studies: JSON files. `npm run case-studies:content` rebuilds
+//    lib/case-study-library.json, then `case-studies:build` writes each page and
+//    its sitemap entry (both run by prebuild).
 //  - Blog posts: .mdoc files read at build time by lib/cms-posts.ts and
 //    rendered by app/blog/[slug]/page.tsx. The 36 older posts are hand-built
 //    pages and are untouched; a static folder under app/blog/ always wins over
@@ -49,6 +52,70 @@ export default config({
             itemLabel: (props) => props.fields.label.value,
           }
         ),
+      },
+    }),
+
+    caseStudies: collection({
+      label: "Case studies",
+      path: "content/case-studies/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Page address",
+            description: "Lowercase words with dashes, e.g. pharma-contract-manufacturer-pipeline. It becomes /case-studies/<address> and cannot be changed after the first save.",
+            validation: { isRequired: true },
+          },
+        }),
+        title: fields.text({
+          label: "Title (H1)",
+          description: "Lead with the headline number, e.g. 22 Qualified Meetings in 90 Days for a Nutraceutical Manufacturer.",
+          validation: { isRequired: true, length: { max: 100 } },
+        }),
+        industry: fields.select({
+          label: "Industry",
+          description: "Decides which industry filter and landing page this appears on.",
+          options: [
+            "Pharma",
+            "SaaS",
+            "Professional Services",
+            "eCommerce Tech",
+            "B2B Founder",
+            "Agencies & IT",
+            "Financial Services",
+            "Insurance",
+            "Manufacturers & Exporters",
+            "Recruitment & Staffing",
+          ].map((v) => ({ label: v, value: v })),
+          defaultValue: "Pharma",
+        }),
+        segment: fields.text({
+          label: "Client type",
+          description: "Short, e.g. Contract Manufacturer. Used in the search title: <client type> Case Study.",
+          validation: { isRequired: true, length: { max: 38 } },
+        }),
+        n: fields.integer({
+          label: "Order",
+          description: "Lowest number shows first. Use the next free number for a new case study.",
+          validation: { isRequired: true, min: 1 },
+        }),
+        challenge: fields.text({
+          label: "Challenge",
+          description: "The client's situation before Myntmore, in two or three sentences. Client names stay out (confidentiality).",
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        solution: fields.array(fields.text({ label: "Step", multiline: true }), {
+          label: "What Myntmore did",
+          description: "First line introduces the approach, the rest are the steps.",
+          itemLabel: (props) => props.value.slice(0, 60),
+        }),
+        results: fields.array(fields.text({ label: "Result" }), {
+          label: "Results",
+          description: "Start a result with its number (22 qualified meetings...). The first figures become the headline numbers. Only real, verifiable results.",
+          itemLabel: (props) => props.value.slice(0, 60),
+        }),
       },
     }),
 

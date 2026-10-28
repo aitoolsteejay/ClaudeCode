@@ -7,6 +7,7 @@ import { buildFaqSchema, buildHowToSchema } from "@/lib/schema";
 import { RelatedTools } from "@/components/tools/shared/RelatedTools";
 import { HandUnderline, PillBadge } from "@/components/cold-email-roi/HandUnderline";
 import { gradeHook } from "@/lib/hook-grader";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Hook Grader Works", [
   { name: "Paste your hook", text: "The first two lines of your LinkedIn post, before the see more cut." },
@@ -14,28 +15,7 @@ const HOWTO_SCHEMA = buildHowToSchema("How the LinkedIn Hook Grader Works", [
   { name: "Compare three rewrites", text: "Three alternatives, each with a different angle, scored the same way, ready to copy." },
 ]);
 
-const FAQ = [
-  {
-    question: "What is a LinkedIn hook?",
-    answer: "The first two lines of a LinkedIn post, the part shown before the \"see more\" cut. How much shows depends on the device, usually two to three lines. For many readers, those lines decide whether the rest gets read.",
-  },
-  {
-    question: "How is the score calculated?",
-    answer: "Six rules are checked in code: length, curiosity, specificity, authority, action and a clickbait penalty. They add up to 100. The same wording always gets the same score, and the AI never sets it.",
-  },
-  {
-    question: "What does the AI do?",
-    answer: "Google's Gemini writes three alternative hooks, each from a different angle: a specific result, a contrarian take and a curiosity gap. Each alternative is then scored with the same six rules, so you can compare them with your original.",
-  },
-  {
-    question: "Will it make up numbers for my hook?",
-    answer: "No. The rewrites keep your meaning and facts. Where a number would help and you gave none, the tool uses a placeholder such as [X%] for you to fill in with something true.",
-  },
-  {
-    question: "Is a high score a guarantee the post will perform?",
-    answer: "No. The score tells you how well the opening follows common hook principles. Reach also depends on your audience, topic, timing and the rest of the post. Use the score to compare versions, not to predict results.",
-  },
-];
+const FAQ = pageFaqs("tool-linkedin-hook-grader");
 
 const FAQ_SCHEMA = buildFaqSchema(FAQ);
 

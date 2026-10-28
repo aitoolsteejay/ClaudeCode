@@ -8,6 +8,7 @@ import AskYourAI from "@/app/components/AskYourAI";
 import Faq from "@/app/lp/Faq";
 import { buildFaqSchema, buildArticleSchema, SITE_URL } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const PAGE_URL = `${SITE_URL}/resources/guides/how-to-choose-an-outbound-agency`;
 const TITLE = "How to Choose a B2B Outbound Agency";
@@ -45,24 +46,7 @@ const ARTICLE_SCHEMA = buildArticleSchema({
   dateModified: "2026-09-18T12:00:00+05:30",
 });
 
-const FAQ_ITEMS = [
-  {
-    question: "How long should an outbound agency's minimum contract be?",
-    answer: "Long enough to see a real result, short enough that you're not trapped if it doesn't work. A 3-month minimum is common in the industry and reasonable: it covers setup, a first real sending window, and enough data to judge performance. Anything requiring a 12-month commitment before you've seen a single result is worth questioning.",
-  },
-  {
-    question: "What reply rate should I expect from a good outbound agency?",
-    answer: "Ranges vary a lot by channel, industry, and how tightly the ICP is defined, which is exactly why you should ask for a range with context, not a single flattering number. Be more skeptical of an agency that can only produce one client's best month than one that shows you a realistic spread across accounts.",
-  },
-  {
-    question: "Should an outbound agency give me strategy, or just execute?",
-    answer: "Both, ideally. Pure execution without ICP or messaging strategy tends to produce volume without results. Pure strategy without hands-on execution just leaves you with a plan you still have to run. Ask directly who defines your ICP and messaging, and who's accountable for it if it's wrong.",
-  },
-  {
-    question: "What's a red flag when evaluating an outbound agency?",
-    answer: "Vague answers to specific questions. If an agency can't tell you plainly who owns your sequences and lists after the engagement ends, what their deliverability setup actually looks like, or what a bad month triggers on their end, that vagueness is the answer.",
-  },
-];
+const FAQ_ITEMS = pageFaqs("guide-how-to-choose-an-outbound-agency");
 
 export default function HowToChooseOutboundAgencyPage() {
   return (

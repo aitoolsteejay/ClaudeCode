@@ -33,6 +33,7 @@ import PackageGrid from "./PackageGrid";
 import { PROCESS_STEPS } from "./process-steps";
 import { buildFaqSchema, buildHowToSchema, buildServiceSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 // Done-for-you cold email service overview.
 
@@ -71,13 +72,7 @@ const WHY: { icon: LucideIcon; title: string; line: string }[] = [
 
 const FOUNDER_STATS = ["4x entrepreneur", "Flintstop: $6M a year", "130+ B2B companies", "12K+ meetings booked", "$120M+ pipeline", "TEDx speaker"];
 
-const FAQS = [
-  { q: "How does this work?", a: "We run cold email end to end in ten steps. First we map your ideal customer profile and build a targeted lead list, then write the copy and set up domains, inboxes and DNS. After launch we handle follow-ups, A/B testing, nurturing replies into meetings, and real-time reporting." },
-  { q: "How do we measure success?", a: "We measure four things: deliverability, reply rates, meetings booked and conversions. You get real-time tracking and regular reports, so you always see what is working. The targets we aim for are 90%+ email health, a 1%+ reply rate and 20%+ positive replies." },
-  { q: "What's the timeline?", a: "Campaigns go live within 18 days of onboarding. That window covers domain and inbox setup, warm-up, building your lead list and writing the copy. First qualified conversations usually come in weeks 3 to 4, and meeting volume becomes consistent by weeks 6 to 8 as we optimise." },
-  { q: "Who sees the best results?", a: "B2B businesses see the best results, particularly service providers, SaaS companies, agencies and consultants. These teams sell to a clearly defined set of business buyers, so a targeted list with every prospect handpicked, plus relevant soft-sell copy, starts conversations with exactly the right people." },
-  { q: "How many leads can I expect?", a: "Clients typically see 1–3% reply rates, with consistent meetings by weeks 6 to 8. Volume depends on your list and offer: the package sends up to 1,200 emails a day to 5,000 fresh prospects a month, and results improve as we test copy and targeting. Some campaigns convert at 4x the industry average." },
-];
+const FAQS = pageFaqsQA("service-cold-email");
 
 // Structured data for the page. HowTo describes the ten-step process the
 // explorer shows (same data module), Service and FAQPage describe the offer and

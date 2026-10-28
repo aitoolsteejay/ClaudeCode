@@ -5,8 +5,11 @@
 | Collection | Where files live | What reads them |
 |---|---|---|
 | Homepage FAQs | `content/faqs/homepage/*.json` | homepage FAQ section and its FAQPage schema (via `npm run faqs:build`) |
+| FAQs on every other page (services, city pages, ICP landing pages, guides, blog posts, tools) | `content/faqs/pages/<page>.json` | the page itself, through `lib/page-faqs.ts`, and its FAQPage schema |
 | Case studies | `content/case-studies/*.json` | `lib/case-study-library.json`, then one generated page and sitemap entry per case (both rebuilt on every deploy) |
 | Blog posts | `content/posts/*.mdoc` | `app/blog/[slug]/page.tsx`, the blog index, `sitemap.xml`, `llms-full.txt` |
+
+To change FAQs on any page: admin, **Page FAQs**, open the page's entry (names start with `city-`, `lp-`, `service-`, `blog-`, `guide-`, `tool-`), edit or drag questions, save. The answer text and the page's FAQPage schema update together on the next deploy. Adding FAQs to a page that has none yet needs a developer to connect the page once.
 
 A new case study published from the admin appears after the next deploy, with its page, sitemap entry and place on the industry filter. Its sitemap date is not refreshed automatically, because sitemap dates come from git history of page code.
 

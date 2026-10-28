@@ -8,6 +8,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,14 +84,7 @@ const PROCESS = [
   { n: "04", title: "Meetings on Your Calendar", body: "Only investors who genuinely fit your raise land on your calendar. You run the pitch, we keep the pipeline moving and follow up on your behalf." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "Do you get us warm intros, or is this cold outreach?", a: "It's targeted, personalised outreach, not a guaranteed warm-intro service through mutual connections. What makes it feel warmer than a generic cold email is the specificity: we reference the fund's actual thesis, stage focus, and recent portfolio in every message, so it reads as informed outreach, not spray-and-pray." },
-  { q: "How is this different from buying a Crunchbase or PitchBook list myself?", a: "A raw database gives you names and firms. It doesn't tell you which partner is actively deploying right now, whether your check size and stage actually fit their fund, or how to personalise the first message so it doesn't read like every other founder's cold email. We build the filtered list and run the full outreach system around it." },
-  { q: "Do you help with the pitch deck or the fundraising narrative?", a: "No. Our focus is investor targeting and outreach, getting the right conversations booked, not deck design or narrative coaching. Bring a raise-ready story and we'll get it in front of the right investors." },
-  { q: "What if I don't know exactly which investors are the right fit yet?", a: "That's the first step, not a prerequisite. We build your investor ICP with you, based on stage, sector, geography, and check size, before any outreach goes out." },
-  { q: "Is this only for a specific funding stage?", a: "We've built this to flex from pre-seed and seed through Series A and B. The investor targeting criteria change with your stage; the underlying system doesn't." },
-  { q: "How fast can this be live?", a: "Within 18 days, the same as our other outbound engagements. That covers the investor ICP, fund lists, sending domains and warm-up, and copy tailored to each fund's thesis. Fundraising timelines move fast, so we start the setup the day you sign." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-fundraising");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

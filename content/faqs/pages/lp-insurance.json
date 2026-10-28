@@ -1,0 +1,29 @@
+{
+  "page": "Landing page: Insurance (/lp/insurance)",
+  "items": [
+    {
+      "question": "How is this different from cold calling or relying on referrals?",
+      "answer": "Cold calling is unstructured and low-conversion; referrals are unpredictable and capped by who you already know. We build a systematic, targeted outreach engine, verified decision-maker lists, credibility-led messaging, and renewal-timed sequencing, so new corporate conversations happen every month, not just when someone happens to refer you."
+    },
+    {
+      "question": "How do you handle renewal-cycle timing?",
+      "answer": "We map each target company's likely renewal window and sequence outreach to land 60 to 90 days ahead of it, when they are actually evaluating alternatives. Outreach outside that window is deprioritised so we are not wasting your time on companies who are not listening yet."
+    },
+    {
+      "question": "Does this work for group health insurance as well as commercial or property lines?",
+      "answer": "Yes. The system adapts to your specific book, group health, commercial property and liability, or keyman and corporate liability cover, by adjusting the ICP, the decision-makers we target, and the messaging to match how that line is actually bought."
+    },
+    {
+      "question": "We already have a BD or relationship management team. Will this overlap?",
+      "answer": "No. We focus purely on generating net-new outbound conversations with companies you do not already have a relationship with. Your BD and RM teams keep managing existing accounts and referral relationships; we add a new, always-on channel for fresh corporate business."
+    },
+    {
+      "question": "How soon can we expect our first meetings?",
+      "answer": "Most brokerage clients see their first qualified conversations within 3 to 4 weeks, once ICP mapping, decision-maker list building, and renewal-timed sequencing are in place."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract. To be clear, we generate qualified buyer conversations only, we do not advise on policy structuring, underwriting, or claims."
+    }
+  ]
+}

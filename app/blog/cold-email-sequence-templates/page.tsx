@@ -7,6 +7,7 @@ import JsonLd from "../../components/JsonLd";
 import Faq from "../../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-sequence-templates",
@@ -32,28 +33,7 @@ interface FaqEntry {
   answer: string;
 }
 
-const FAQ_ITEMS: FaqEntry[] = [
-  {
-    question: "How many follow-ups should a cold email sequence have?",
-    answer: "4-6 touches over roughly 2-3 weeks tends to be the sweet spot. Fewer than that and you're leaving replies on the table, since most responses come after the second or third touch, not the first. More than that, and reply quality tends to drop while unsubscribe and spam-complaint rates rise.",
-  },
-  {
-    question: "What should the first email in a cold email sequence say?",
-    answer: "The first email in a cold email sequence should name one real trigger about the prospect, link it to a single problem they likely have, and ask a low-effort question. Keep it under 80 words with no attachments or pitch deck. Its job is to earn a reply, not to sell; the follow-ups add value, a new angle and proof.",
-  },
-  {
-    question: "Should every follow-up be a new email or a reply in the same thread?",
-    answer: "Reply in the same thread. It keeps context visible for the recipient, avoids re-triggering spam filters the way a fresh subject line can, and signals persistence rather than a disconnected new pitch every few days.",
-  },
-  {
-    question: "Do these templates need to be personalized for each prospect?",
-    answer: "The structure and logic stay the same, but the bracketed details need to be genuinely specific to each recipient, their company, their role, a real trigger event, not just a mail-merge first name. A template with only the name swapped in reads as a template. That's what tanks reply rates, not the sequence structure itself.",
-  },
-  {
-    question: "What's the difference between a cold email sequence and a LinkedIn sequence?",
-    answer: "The underlying logic (value before ask, multiple touches, a permission step before a direct pitch) is nearly identical. The channel mechanics differ: LinkedIn benefits from warming up via engagement before the first message, while cold email depends more heavily on domain and sender reputation. See our LinkedIn outreach sequence guide for the channel-specific version.",
-  },
-];
+const FAQ_ITEMS: FaqEntry[] = pageFaqs("blog-cold-email-sequence-templates");
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Cold Email Sequence Templates That Get Replies",

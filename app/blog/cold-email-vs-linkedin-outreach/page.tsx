@@ -8,6 +8,7 @@ import NewsletterForm from "../../components/NewsletterForm";
 import Faq from "../../lp/Faq";
 import { buildFaqSchema, buildArticleSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-vs-linkedin-outreach",
@@ -72,24 +73,7 @@ interface FaqEntry {
   answer: string;
 }
 
-const FAQ_ITEMS: FaqEntry[] = [
-  {
-    question: "Should I use cold email or LinkedIn outreach for B2B?",
-    answer: "Most B2B teams don't have to choose. Cold email wins on scale and works even for buyers who aren't personally active on social platforms; LinkedIn wins on warmth and reply rate, and works best for buyers who are genuinely active there. The two channels reach overlapping but not identical audiences, which is exactly why running them together usually outperforms either alone.",
-  },
-  {
-    question: "Can I run cold email and LinkedIn outreach together?",
-    answer: "Yes, and it's the setup we run most often. A common pattern is parallel sequences: a cold email touch and a LinkedIn connection request landing around the same time, so the prospect sees the same name twice, in two different contexts, which raises response rates versus either channel alone.",
-  },
-  {
-    question: "Which channel has a higher reply rate?",
-    answer: "LinkedIn, by a wide margin per message. By our own published benchmarks, LinkedIn's average reply rate (35%) is many times cold email's (1–3%). Part of that is the audience: a LinkedIn message lands after a connection has been accepted, so it's already warmer than a cold inbox. The catch is volume. LinkedIn is capped per seat, while email scales with infrastructure, so email still tends to book more total meetings from a much larger pool, and LinkedIn converts a smaller pool at a far higher rate.",
-  },
-  {
-    question: "Is LinkedIn outreach more expensive than cold email?",
-    answer: "Per message, usually yes. LinkedIn is bounded by seats and manual-feeling interaction rather than pure infrastructure, so it costs more to run at the same send volume. Per reply, the picture flips: LinkedIn's much higher reply rate means each seat produces far more conversations per send, so its cost per qualified meeting is often competitive with, or better than, email's. Where email wins is the ceiling. It keeps scaling past the point where LinkedIn runs out of seats and daily limits, which is why it's typically the primary volume driver, with LinkedIn converting the buyers who are active there.",
-  },
-];
+const FAQ_ITEMS: FaqEntry[] = pageFaqs("blog-cold-email-vs-linkedin-outreach");
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Cold Email vs. LinkedIn Outreach: Which Wins for B2B?",

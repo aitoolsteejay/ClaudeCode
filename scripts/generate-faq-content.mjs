@@ -1,32 +1,59 @@
-// Builds lib/faq-content.generated.json from content/faqs/homepage/*.json
-// (the files the Keystatic admin edits). Pass --check to fail if the
-// generated file is out of date instead of writing it.
+// Builds the FAQ content the site reads, from the files the Keystatic admin edits:
+//   content/faqs/homepage/*.json -> lib/faq-content.generated.json   (homepage FAQ section)
+//   content/faqs/pages/*.json    -> lib/page-faqs.generated.json     (every other page, keyed by file name)
+// Pass --check to fail if a generated file is out of date instead of writing it.
 import fs from "node:fs";
 import path from "node:path";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const dir = path.join(root, "content/faqs/homepage");
-const out = path.join(root, "lib/faq-content.generated.json");
+const CHECK = process.argv.includes("--check");
 
-const items = fs
-  .readdirSync(dir)
-  .filter((f) => f.endsWith(".json"))
-  .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")))
+const readDir = (dir) =>
+  fs
+    .readdirSync(path.join(root, dir))
+    .filter((f) => f.endsWith(".json"))
+    .sort()
+    .map((f) => ({ id: f.replace(/\.json$/, ""), data: JSON.parse(fs.readFileSync(path.join(root, dir, f), "utf8")) }));
+
+const cleanItem = ({ question, answer }) => {
+  if (!question || !answer) throw new Error(`FAQ missing question or answer: ${question}`);
+  return { question, answer };
+};
+
+// Homepage: one file per FAQ, ordered by `order`, optional links under the answer.
+const homepage = readDir("content/faqs/homepage")
+  .map(({ data }) => data)
   .sort((a, b) => a.order - b.order)
   .map(({ question, answer, links }) => {
     if (!question || !answer) throw new Error(`FAQ missing question or answer: ${question}`);
     return links && links.length ? { question, answer, links } : { question, answer };
   });
 
-const next = JSON.stringify(items, null, 2) + "\n";
-if (process.argv.includes("--check")) {
-  const current = fs.existsSync(out) ? fs.readFileSync(out, "utf8") : "";
-  if (current !== next) {
-    console.error("[faqs] lib/faq-content.generated.json is stale, run npm run faqs:build");
-    process.exit(1);
-  }
-  console.log(`[faqs] ok (${items.length} FAQs)`);
-} else {
-  fs.writeFileSync(out, next);
-  console.log(`[faqs] wrote ${items.length} FAQs`);
+// Other pages: one file per page holding its list of questions, in the order the editor left them.
+const pages = {};
+for (const { id, data } of readDir("content/faqs/pages")) {
+  if (!data.items || !data.items.length) throw new Error(`content/faqs/pages/${id}.json has no questions`);
+  pages[id] = data.items.map(cleanItem);
 }
+
+const outputs = [
+  ["lib/faq-content.generated.json", homepage, `${homepage.length} homepage FAQs`],
+  ["lib/page-faqs.generated.json", pages, `FAQs for ${Object.keys(pages).length} pages`],
+];
+
+let stale = false;
+for (const [file, value, label] of outputs) {
+  const out = path.join(root, file);
+  const next = JSON.stringify(value, null, 2) + "\n";
+  if (CHECK) {
+    const current = fs.existsSync(out) ? fs.readFileSync(out, "utf8") : "";
+    if (current !== next) {
+      console.error(`[faqs] ${file} is stale, run npm run faqs:build`);
+      stale = true;
+    } else console.log(`[faqs] ok (${label})`);
+  } else {
+    fs.writeFileSync(out, next);
+    console.log(`[faqs] wrote ${label}`);
+  }
+}
+if (stale) process.exit(1);

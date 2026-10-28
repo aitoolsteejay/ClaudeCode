@@ -10,6 +10,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -101,14 +102,7 @@ const PROCESS = [
   { n: "04", title: "You Keep the Relationship & Margin", body: "You stay the single point of contact for the client, own the account, and earn your margin every month for as long as the engagement continues." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "How does the white-labeling actually work day to day", a: "We set up sender domains, email signatures, LinkedIn outreach, and every report or dashboard under your agency's name and branding. Your client only ever sees your team's name. Internally, we run the campaigns, and you receive the same branded materials to pass along or present yourself." },
-  { q: "Who owns the client relationship", a: "You do, fully. You are the point of contact for scoping, pricing, and any client conversation. We operate as your delivery team behind the scenes and never contact your client directly unless you specifically want us on a call with you." },
-  { q: "What do we need to do versus what does Myntmore handle", a: "You bring the client relationship, scope the engagement with our help, and present results. We handle ICP mapping, list building, copywriting, sending infrastructure, deliverability, campaign management, and reporting, so you are not hiring or managing a delivery team." },
-  { q: "What does the margin or commission structure look like", a: "Our current partner model is a 25 percent recurring margin on the managed monthly revenue for each client you bring in, paid out for as long as that client stays active. This is our standard starting structure and can be discussed further on a partner call." },
-  { q: "Is there a minimum client volume or spend commitment", a: "No fixed minimum. Most partners start with one client engagement to see the model in action, then bring in more once they are comfortable with the reporting and results. There is no lock-in volume you have to hit." },
-  { q: "Will our client ever see Myntmore's name anywhere", a: "No. Every report, dashboard, email signature, and outreach touchpoint is branded as yours. We stay fully invisible to your client unless you explicitly choose to introduce us, for example on a joint strategy call." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-agency-partners");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

@@ -10,6 +10,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -91,14 +92,7 @@ const PROCESS = [
   { n: "04", title: "Meeting Handoff", body: "Qualified meetings land directly in your calendar. You close; we fill the top of funnel, consistently." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "How is this different from hiring an in-house SDR?", a: "An in-house SDR costs you a full-time salary, months of ramp-up, and ongoing management. We give you a fully built outbound system, list building, sequences, and deliverability infrastructure, live within about three weeks, at a fraction of the cost and with none of the hiring risk." },
-  { q: "We already have a team doing some outbound. Will this overlap?", a: "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new accounts. Your team keeps doing what it does well, we add the top of funnel volume it does not have time for." },
-  { q: "How fast will we start seeing meetings?", a: "Most agency clients see their first qualified conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete." },
-  { q: "Do you work with the tools we already use, like our CRM?", a: "We don't build or manage CRM integrations, that stays part of your own process. Every qualified meeting and reply is handed off to your team directly, so it's easy to log wherever you already track pipeline." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
-  { q: "What if the leads we get are not the right fit?", a: "We refine your ICP together in the first two weeks and keep adjusting targeting based on who books calls and who converts, so fit improves fast." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-agencies-it");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

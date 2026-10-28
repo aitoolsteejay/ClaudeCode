@@ -5,6 +5,8 @@ import { collection, config, fields } from "@keystatic/core";
 //    them into lib/faq-content.generated.json, which lib/faq-data.ts
 //    re-exports, so the FAQ components and FAQPage JSON-LD read the same data
 //    they always did.
+//  - Page FAQs: one JSON file per page (service, city, landing, guide, blog
+//    post, tool). The page reads its list through lib/page-faqs.ts.
 //  - Case studies: JSON files. `npm run case-studies:content` rebuilds
 //    lib/case-study-library.json, then `case-studies:build` writes each page and
 //    its sitemap entry (both run by prebuild).
@@ -50,6 +52,37 @@ export default config({
           {
             label: "Links under the answer (optional)",
             itemLabel: (props) => props.fields.label.value,
+          }
+        ),
+      },
+    }),
+
+    pageFaqs: collection({
+      label: "Page FAQs",
+      path: "content/faqs/pages/*",
+      format: "json",
+      slugField: "page",
+      schema: {
+        page: fields.slug({
+          name: {
+            label: "Page",
+            description: "Which page these questions belong to. Pick the existing entry for that page; do not create a new one unless a developer has added the page.",
+            validation: { isRequired: true },
+          },
+        }),
+        items: fields.array(
+          fields.object({
+            question: fields.text({ label: "Question", validation: { isRequired: true } }),
+            answer: fields.text({
+              label: "Answer",
+              description: "Answer first, 40 to 60 words, plain text. It is also used in the page's FAQPage structured data.",
+              multiline: true,
+              validation: { isRequired: true },
+            }),
+          }),
+          {
+            label: "Questions (drag to reorder)",
+            itemLabel: (props) => props.fields.question.value,
           }
         ),
       },

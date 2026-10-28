@@ -1,0 +1,17 @@
+{
+  "page": "Services overview (/services)",
+  "items": [
+    {
+      "question": "What B2B lead generation services do you offer?",
+      "answer": "We offer seven core services: LinkedIn Outreach and Automation, Cold Email Infrastructure, ICP Mapping and Lead Scoring, AI-Led Lead Generation, Account-Based Marketing, Personal Branding, and GTM Strategy. Each service is productized and runs on proven systems."
+    },
+    {
+      "question": "How is AI used in your lead generation services?",
+      "answer": "Our AI agents research, qualify, and prioritize leads at scale, cutting manual research time by 80%. We also use AI for personalization in cold email and LinkedIn sequences, ensuring every outreach feels human and relevant."
+    },
+    {
+      "question": "Do you work with B2B companies outside Mumbai?",
+      "answer": "Yes. While we are based in Mumbai, we serve B2B companies across India and internationally. Our systems work remotely and integrate with your existing tools."
+    }
+  ]
+}

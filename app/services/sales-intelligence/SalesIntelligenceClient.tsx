@@ -9,6 +9,7 @@ import AnswerBlock from "../../components/AnswerBlock";
 import RelatedPath from "../../components/RelatedPath";
 import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "ICP Mapping & Lead Scoring",
@@ -54,28 +55,7 @@ const NOT_FOR = [
 ];
 
 
-const FAQ_ITEMS = [
-  {
-    q: "What kinds of signals do you track?",
-    a: "We track 40+ signal types across five categories: funding events, hiring activity, technology changes, competitive displacement, and behavioural triggers like content engagement and job posting language. The signals we prioritise for each client depend on what has historically correlated with a buying decision in your specific market.",
-  },
-  {
-    q: "How is this different from a bought list?",
-    a: "A bought list gives you names and job titles: no context, no timing, no indication of intent. Signal-led intelligence gives you accounts that are actively showing buying behaviour right now. You know why they're on the list, what triggered them, and exactly what to say in your first message to make it land.",
-  },
-  {
-    q: "How often is the data refreshed?",
-    a: "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your signal dashboard by the next morning. This is the core advantage over static lists: you're always working with the freshest possible view of who is in-market.",
-  },
-  {
-    q: "How do we receive the accounts?",
-    a: "You get exportable account lists with full signal context attached, mapped to your fields and ready to import into whatever system your team already uses. We don't build or manage CRM integrations, that stays part of your own process.",
-  },
-  {
-    q: "What's the typical pipeline impact?",
-    a: "Clients who switch from bought lists to signal-led outreach typically see 3–5x improvement in pipeline conversion within 90 days. The exact number depends on how well-defined your ICP is and how quickly your team adopts signal-triggered outreach. We build in a calibration period of 30 days to tune the scoring model to your market.",
-  },
-];
+const FAQ_ITEMS = pageFaqsQA("service-sales-intelligence");
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [

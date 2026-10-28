@@ -7,6 +7,7 @@ import JsonLd from "../../components/JsonLd";
 import Faq from "../../lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/cold-email-compliance-guide",
@@ -32,24 +33,7 @@ interface FaqEntry {
   answer: string;
 }
 
-const FAQ_ITEMS: FaqEntry[] = [
-  {
-    question: "Is cold email legal?",
-    answer: "Yes, in most jurisdictions B2B cold email is legal when it follows the applicable rules: accurate sender information, no deceptive subject lines, a working opt-out mechanism, and prompt honoring of unsubscribe requests. What's illegal is deceptive or non-consensual bulk spam, not targeted, honest business outreach.",
-  },
-  {
-    question: "Do I need consent before sending a cold email under GDPR?",
-    answer: "Not always. GDPR allows \"legitimate interest\" as a lawful basis for B2B outreach in many cases, provided you can justify the interest, keep the message relevant to the recipient's professional role, and offer a clear, immediate opt-out. It's a narrower path than consent-based marketing, and it requires a documented balancing test, not blanket permission to email anyone.",
-  },
-  {
-    question: "Does India's DPDP Act affect B2B cold email?",
-    answer: "Yes, though the rules are still rolling out. India's DPDP Act, 2023 centers on notice and consent for processing personal data. Professional email addresses used for business outreach carry lower risk than consumer data, but given how recent the law is, get a specific legal check before running large-scale campaigns into India.",
-  },
-  {
-    question: "What happens if my cold email isn't compliant?",
-    answer: "Consequences range from spam complaints and blacklisting (a deliverability problem) to regulatory fines under laws like CAN-SPAM or GDPR (a legal problem) in more serious or repeated cases. Most compliance failures we see are unforced errors, missing opt-out links, no physical address, ignored unsubscribe requests, not deliberate violations, and they're straightforward to fix.",
-  },
-];
+const FAQ_ITEMS: FaqEntry[] = pageFaqs("blog-cold-email-compliance-guide");
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Cold Email Compliance: CAN-SPAM, GDPR & DPDP Act Guide",

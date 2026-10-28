@@ -7,6 +7,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
 import { buildFaqSchema } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 export const metadata: Metadata = {
   title: "AI-Powered B2B Lead Generation Services",
@@ -31,11 +32,7 @@ const SERVICES = [
   { number: "07", title: "GTM Strategy", tagline: "A go-to-market plan built to be run, not filed away.", desc: "ICP, positioning, and channel mix, built by the same team that executes it across cold email, LinkedIn, ABM, or personal branding. Reviewed and adjusted monthly against real data.", href: "/services/gtm-strategy", hoverClass: "card-hover-teal", accentColor: "#0891b2", stats: [{ v: "18", l: "Days to campaign launch" }, { v: "130+", l: "B2B companies" }] },
 ];
 
-const FAQ = [
-  { q: "What B2B lead generation services do you offer?", a: "We offer seven core services: LinkedIn Outreach and Automation, Cold Email Infrastructure, ICP Mapping and Lead Scoring, AI-Led Lead Generation, Account-Based Marketing, Personal Branding, and GTM Strategy. Each service is productized and runs on proven systems." },
-  { q: "How is AI used in your lead generation services?", a: "Our AI agents research, qualify, and prioritize leads at scale, cutting manual research time by 80%. We also use AI for personalization in cold email and LinkedIn sequences, ensuring every outreach feels human and relevant." },
-  { q: "Do you work with B2B companies outside Mumbai?", a: "Yes. While we are based in Mumbai, we serve B2B companies across India and internationally. Our systems work remotely and integrate with your existing tools." },
-];
+const FAQ = pageFaqsQA("service-overview");
 
 export default function Services() {
   return (

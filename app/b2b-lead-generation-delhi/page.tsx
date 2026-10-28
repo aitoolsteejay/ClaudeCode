@@ -5,6 +5,7 @@ import LeadCaptureForm from "../components/LeadCaptureForm";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
 import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Agency in Delhi",
@@ -42,16 +43,7 @@ const DIFFERENTIATORS = [
   "A monthly retainer: 3-month minimum, then month to month",
 ];
 
-const FAQ = [
-  { q: "Do we need to be based in Delhi to work with you?", a: "No. The entire engagement runs remotely, so wherever your team sits in NCR (or beyond), the system works the same way." },
-  { q: "Do you only work with Delhi companies?", a: "No. We have clients across Delhi NCR, but we run outbound systems for B2B companies across India and internationally." },
-  { q: "How quickly can we expect meetings to start?", a: "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete." },
-  { q: "What does pricing look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
-  { q: "Which Delhi NCR industries do you have the most experience with?", a: "Trading and export businesses, D2C and e-commerce brands, and enterprise-facing services firms are where we've run the most campaigns, but our system adapts to any B2B ICP." },
-  { q: "What channels do you actually use to generate leads?", a: "Primarily cold email and LinkedIn outreach aimed at enterprise and trading-sector buyers, layered with account-based marketing to get past procurement gatekeepers on named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention." },
-  { q: "How is this different from hiring an in-house SDR?", a: "Hiring an in-house SDR in Delhi NCR means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount." },
-  { q: "What do you need from us to get started?", a: "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there." },
-];
+const FAQ = pageFaqsQA("city-delhi");
 
 export default function B2BLeadGenerationDelhiPage() {
   return (

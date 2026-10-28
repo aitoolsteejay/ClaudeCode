@@ -1,0 +1,29 @@
+{
+  "page": "Landing page: Recruitment Firms (/lp/recruitment-firms)",
+  "items": [
+    {
+      "question": "How is this different from job boards and referrals?",
+      "answer": "Job boards and referrals are reactive, you wait for someone to post a role or a contact to think of you. We run proactive outbound to HR Heads and TA Leads at companies showing real hiring signals, so you are in front of decision-makers before they even post the job."
+    },
+    {
+      "question": "We already have a business development person. Will this overlap?",
+      "answer": "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new client companies. Your BD person keeps managing relationships and closing, we add the top of funnel volume they do not have time to generate."
+    },
+    {
+      "question": "Does this integrate with our ATS or CRM?",
+      "answer": "We don't build or manage ATS or CRM integrations, whether that's Bullhorn, Zoho Recruit, or anything else, that stays part of your own process. Every qualified meeting and reply is handed off to your team directly, so it's easy to log wherever you already track pipeline."
+    },
+    {
+      "question": "How fast will we start seeing meetings?",
+      "answer": "Most staffing clients see their first qualified client conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "What if the leads are not a good fit for our specialisation?",
+      "answer": "We refine your ICP together in the first two weeks, narrowing by industry, role type, and company size, and keep adjusting targeting based on who books calls and who converts, so fit improves fast."
+    }
+  ]
+}

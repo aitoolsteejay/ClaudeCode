@@ -1,0 +1,29 @@
+{
+  "page": "Landing page: Fundraising (/lp/fundraising)",
+  "items": [
+    {
+      "question": "Do you get us warm intros, or is this cold outreach?",
+      "answer": "It's targeted, personalised outreach, not a guaranteed warm-intro service through mutual connections. What makes it feel warmer than a generic cold email is the specificity: we reference the fund's actual thesis, stage focus, and recent portfolio in every message, so it reads as informed outreach, not spray-and-pray."
+    },
+    {
+      "question": "How is this different from buying a Crunchbase or PitchBook list myself?",
+      "answer": "A raw database gives you names and firms. It doesn't tell you which partner is actively deploying right now, whether your check size and stage actually fit their fund, or how to personalise the first message so it doesn't read like every other founder's cold email. We build the filtered list and run the full outreach system around it."
+    },
+    {
+      "question": "Do you help with the pitch deck or the fundraising narrative?",
+      "answer": "No. Our focus is investor targeting and outreach, getting the right conversations booked, not deck design or narrative coaching. Bring a raise-ready story and we'll get it in front of the right investors."
+    },
+    {
+      "question": "What if I don't know exactly which investors are the right fit yet?",
+      "answer": "That's the first step, not a prerequisite. We build your investor ICP with you, based on stage, sector, geography, and check size, before any outreach goes out."
+    },
+    {
+      "question": "Is this only for a specific funding stage?",
+      "answer": "We've built this to flex from pre-seed and seed through Series A and B. The investor targeting criteria change with your stage; the underlying system doesn't."
+    },
+    {
+      "question": "How fast can this be live?",
+      "answer": "Within 18 days, the same as our other outbound engagements. That covers the investor ICP, fund lists, sending domains and warm-up, and copy tailored to each fund's thesis. Fundraising timelines move fast, so we start the setup the day you sign."
+    }
+  ]
+}

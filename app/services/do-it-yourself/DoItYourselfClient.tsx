@@ -14,6 +14,7 @@ import JsonLd from "../../components/JsonLd";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { LinkedInIcon } from "../../components/ContactIcons";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 // This page books a product demo with the DIY tool's owner, not the founder
 // call at /book-a-call that every other service page uses.
@@ -100,14 +101,7 @@ const DASHBOARD_METRICS = [
   { title: "Lead Status", desc: "Where every single lead stands, at a glance." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "How is this different from your Done-for-You LinkedIn Outreach service?", a: "Done-for-You means our team builds and manages your entire LinkedIn outreach strategy, copy, and execution for you. Do It Yourself is the same underlying automation, but you're in the driver's seat: you log in with your own LinkedIn account, build your own campaigns, write your own notes and follow-ups, and run it yourself from your own dashboard." },
-  { q: "Whose LinkedIn account does this run on?", a: "Yours. You log in with your own LinkedIn account, and every campaign you build runs from that account. Nothing is handed over to us." },
-  { q: "Can I run more than one campaign?", a: "Yes. Each campaign has its own list of leads, connection note, and follow-up sequence, so you can run as many as you need at once, for different segments, offers, or lists." },
-  { q: "What can I configure for my follow-ups?", a: "For every campaign, you set how many follow-up messages go out, what each one says, and the time delay before each one is sent." },
-  { q: "What do I see on my dashboard?", a: "Both campaign-level and lifetime metrics: acceptance rate, reply rate, and the live status of every lead in every campaign." },
-  { q: "How do I get access?", a: "Book a demo with our team and we'll get you set up." },
-];
+const FAQ_ITEMS = pageFaqsQA("service-do-it-yourself");
 
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 

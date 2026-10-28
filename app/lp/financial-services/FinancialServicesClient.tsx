@@ -10,6 +10,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -91,14 +92,7 @@ const PROCESS = [
   { n: "04", title: "Qualified Meeting Handoff", body: "Qualified meetings land directly in your calendar with full context on the stakeholder and financing need. You advise; we fill the top of funnel, consistently." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "Will your outreach make any promises about rates, returns, or loan approval?", a: "No. Every message we send stays strictly credibility-led, we talk about who your firm serves and the problems you solve, never about interest rates, expected returns, or approval likelihood. That conversation is entirely yours to have once a qualified meeting is booked." },
-  { q: "How is this different from relying on our broker or referral network?", a: "Referral and broker networks cap your growth to who already knows you. We build a systematic, always-on outbound engine, cold email plus LinkedIn, that reaches CFOs and Finance Heads at companies you have never worked with before, on top of whatever referrals you already get." },
-  { q: "Which job titles do you typically target?", a: "Most commonly CFOs, Finance Heads, and business owners at companies showing signals of needing working capital, equipment financing, or corporate treasury and wealth advisory support, expansion plans, funding rounds, or capex cycles." },
-  { q: "How long before we see our first qualified meetings?", a: "Most financial services clients see their first qualified conversations within 3 to 5 weeks, once ICP mapping, compliance-safe messaging, and list building are complete. Because these are multi-stakeholder decisions, nurturing continues well beyond the first meeting." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
-  { q: "Do you provide financial or investment advice, underwriting, or advisory services?", a: "No. Myntmore is a B2B lead generation partner. We generate qualified buyer conversations only, underwriting, rates, and any financial or investment advice remain entirely your firm's domain." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-financial-services");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

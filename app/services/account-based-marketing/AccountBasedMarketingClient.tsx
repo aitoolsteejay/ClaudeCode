@@ -9,6 +9,7 @@ import AnswerBlock from "../../components/AnswerBlock";
 import RelatedPath from "../../components/RelatedPath";
 import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Account-Based Marketing",
@@ -53,28 +54,7 @@ const NOT_FOR = [
   "You're running a broad-market volume play, not a focused push on specific accounts.",
 ];
 
-const FAQ_ITEMS = [
-  {
-    q: "How is this different from your other lead generation services?",
-    a: "Our other services (cold email, LinkedIn outreach, AI lead gen) are built to generate volume across a broad ICP. ABM flips that: you give us a defined, finite list of named accounts you specifically want to win, and we run coordinated campaigns to engage multiple people inside each one, not just cast a wide net.",
-  },
-  {
-    q: "How many accounts can this realistically cover?",
-    a: "Most engagements run 50 to 250 named accounts, tiered by priority. Tier 1 accounts (your highest-value targets) get the most coordinated, multi-stakeholder attention; lower tiers run on a lighter cadence. The right number depends on your team's capacity to follow up once accounts start engaging.",
-  },
-  {
-    q: "Which channels are included?",
-    a: "LinkedIn outreach and email are the core channels, run in a coordinated sequence against the same account list rather than as separate campaigns. Where it fits your budget and audience, we can layer in LinkedIn ad retargeting for additional account-level visibility.",
-  },
-  {
-    q: "How does the handoff to our sales team actually work?",
-    a: "Every account gets an engagement record: who was contacted, on which channel, what they opened or replied to, and how engaged the account is overall. That's delivered to your team as an account-level report, so your AE walks into the first conversation already knowing which stakeholders are warm and why.",
-  },
-  {
-    q: "What size company or deal size is this built for?",
-    a: "ABM makes the most sense once your average deal size and sales cycle justify a multi-touch, multi-stakeholder approach, typically mid-market and enterprise B2B deals with several decision-makers involved. For simpler, single-stakeholder sales motions, our LinkedIn outreach or cold email services are usually a better fit.",
-  },
-];
+const FAQ_ITEMS = pageFaqsQA("service-account-based-marketing");
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [

@@ -9,6 +9,7 @@ import AnswerBlock from "../../components/AnswerBlock";
 import RelatedPath from "../../components/RelatedPath";
 import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "GTM Strategy",
@@ -53,32 +54,7 @@ const NOT_FOR = [
   "You're not ready to commit to one direction and want to keep testing everything at once.",
 ];
 
-const FAQ_ITEMS = [
-  {
-    q: "What exactly is included in a GTM strategy engagement?",
-    a: "ICP definition, competitive and market mapping, a channel mix and sequencing plan, a messaging framework, and a direct handoff to execution across whichever channels fit, cold email, LinkedIn, ABM, or personal branding. It's a plan built to be run, not a deck.",
-  },
-  {
-    q: "Do you also execute the strategy, or just hand over a plan?",
-    a: "Both. The same team that builds the GTM strategy runs it across the channels you choose, so there's no handoff gap between \"strategy\" and \"execution\" like there is when a consultant hands a plan to a separate agency and disappears.",
-  },
-  {
-    q: "How is this different from your other services, like Cold Email or LinkedIn Outreach?",
-    a: "Those are channel-specific execution services. GTM Strategy is the layer above them: it decides which channels to prioritise, what your ICP and messaging should be, and how they should sequence together, then feeds directly into whichever of those services you need.",
-  },
-  {
-    q: "How long does the initial strategy phase take?",
-    a: "Typically 2-3 weeks for the audit, ICP work, and channel mix plan, the same timeline discipline we apply across our outbound engagements, where the average time to a first real result is around 18 days.",
-  },
-  {
-    q: "What if we already have a GTM strategy but it's not working?",
-    a: "That's a common starting point, not a blocker. We audit what's already running, channels, messaging, and results, find where the current plan is leaking, and rebuild the parts that need it rather than starting from zero everywhere.",
-  },
-  {
-    q: "Is this only for early-stage startups?",
-    a: "No. It fits any B2B company changing its GTM: a new ICP, a new market, a stalled channel, or scaling what's already working. Stage changes the specifics of the plan, not the process we use to build it.",
-  },
-];
+const FAQ_ITEMS = pageFaqsQA("service-gtm-strategy");
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [

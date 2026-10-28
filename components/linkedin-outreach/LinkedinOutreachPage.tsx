@@ -41,6 +41,7 @@ import LinkedinFlowVisual from "./LinkedinFlowVisual";
 import AgentExplorer from "./AgentExplorer";
 import InView from "./InView";
 import { BLUE, BLUE_LIGHT, BLUE_PALE, BODY, CREAM, GOLD, INK, LINE, MUTED, SOFT_LINE } from "./theme";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 // LinkedIn outreach service page: the same design language as the cold email
 // page, with LinkedIn blue as the accent. It carries no pricing or plans.
@@ -105,18 +106,7 @@ const OUTCOMES: { icon: LucideIcon; title: string; text: string }[] = [
   { icon: TrendingUp, title: "Real business outcomes", text: "More conversations and deals, without hours on LinkedIn every day." },
 ];
 
-const FAQS = [
-  { q: "Why do I need to build a personal brand?", a: "People buy from people they recognise and trust. A strong personal brand puts you in front of buyers before your first message, makes your outreach credible and gives you pricing power: 45% of a company's market value ties back to leadership reputation, and buyers pay 13.57x more to those they see as experts." },
-  { q: "Why LinkedIn?", a: "LinkedIn is where you can reach named decision-makers directly, and personal profiles get 561% more reach than company pages. Content builds the trust, outreach starts the conversations, and both happen in the same place." },
-  { q: "What's in it for me?", a: "A steady pipeline of conversations and qualified meetings, a profile and content that make your outreach credible, and a calendar that fills consistently, all for about 90 minutes of your time a month." },
-  { q: "How do AI agents fit into the process?", a: "They work like a silent growth team, 24/7. They break down your ICP, rank who is most likely to engage, enrich every lead with context, track your competitors, and draft comments, replies and follow-ups that sound like you." },
-  { q: "What makes AI agents so effective for LinkedIn?", a: "LinkedIn rewards relevance. Agents work from real-time data, so every connection request, InMail and follow-up reaches the right person with the right context, at a volume no human team can match, while we keep the voice yours." },
-  { q: "How much time do I need to spend as a founder?", a: "About 90 minutes a month. We handle the research, content writing, outreach, replies to comments and reporting around that input, so your time goes into the conversations and meetings the work produces rather than into producing content or chasing leads." },
-  { q: "How does Myntmore help me stand out from the competition?", a: "We track how often your competitors post, what works for them and where they fall short, then position you one step ahead with sharper messaging and content that gets you seen by the right people." },
-  { q: "What makes Myntmore different from other agencies?", a: "Most agencies stop at profile optimisation, content and reporting. We also do ICP research, LinkedIn and InMail lead generation, multi-channel sequences, personalised connection requests, competitor and buyer intelligence, AI agent-led prospecting, weekly pipeline updates and monthly strategy reviews." },
-  { q: "How soon will I see results?", a: "You won't get an explosion of leads on day one. The first weeks go into the right setup, the right audience and consistent content that builds trust. Traction builds from there as your content and outreach start working together." },
-  { q: "I might not have enough content to share. How will you generate that?", a: "That is our job. We run a monthly content strategy, write the posts and use a short video interview with you to capture your ideas, so you never need a backlog of content." },
-];
+const FAQS = pageFaqsQA("service-linkedin-outreach");
 
 const FOUNDER_STATS = ["4x entrepreneur", "Scaled Flintstop to $6M ARR", "TEDx speaker", "Growth marketing professor", "130+ B2B companies"];
 

@@ -5,6 +5,7 @@ import LeadCaptureForm from "../components/LeadCaptureForm";
 import Breadcrumbs from "../components/Breadcrumbs";
 import JsonLd from "../components/JsonLd";
 import { buildFaqSchema, buildLocalBusinessSchema } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation Company in Chennai",
@@ -112,40 +113,7 @@ const DIFFERENTIATORS = [
   },
 ];
 
-const FAQ_ITEMS = [
-  {
-    q: "Do we need to be physically based in Chennai to work with you?",
-    a: "No. Myntmore operates remotely for every client, so your team does not need to be in Chennai, and neither do we. Everything, strategy calls, sequence approvals, reporting, happens over calls and shared dashboards.",
-  },
-  {
-    q: "Do you only work with Chennai or Tamil Nadu businesses?",
-    a: "No. Chennai is one of several Indian markets we actively serve alongside clients across India and internationally. If your buyers are in Chennai, or you are a Chennai company selling elsewhere in India or overseas, we can build the outbound motion for either direction.",
-  },
-  {
-    q: "How long before we start seeing meetings booked?",
-    a: "Most clients see their first qualified conversations within three to four weeks of kickoff, once ICP mapping, list building, and outreach sequences are live. From there, meeting volume typically builds month over month as sequences are refined.",
-  },
-  {
-    q: "What does pricing and commitment look like?",
-    a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract.",
-  },
-  {
-    q: "Which Chennai industries do you have the most experience with?",
-    a: "Automotive and auto-component manufacturing, healthcare and hospital-services companies, and IT/ITES businesses along the OMR corridor are where we have the deepest playbooks, though the same ICP-first approach adapts to most B2B sectors.",
-  },
-  {
-    q: "What channels do you actually use to generate leads?",
-    a: "Primarily cold email and LinkedIn outreach, layered with account-based marketing for named target accounts and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your specific buyers actually spend their attention.",
-  },
-  {
-    q: "How is this different from hiring an in-house SDR?",
-    a: "Hiring an in-house SDR in Chennai means months of recruiting and ramp-up before they are fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount.",
-  },
-  {
-    q: "What do you need from us to get started?",
-    a: "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there.",
-  },
-];
+const FAQ_ITEMS = pageFaqsQA("city-chennai");
 
 export default function Page() {
   return (

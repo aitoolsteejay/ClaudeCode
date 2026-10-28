@@ -8,6 +8,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -82,14 +83,7 @@ const PROCESS = [
   { n: "04", title: "Qualified Meetings", body: "Interested buyers land in your calendar. Your team focuses on relationship-building and closing. We handle the cold outreach." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "Do you work with our specific product category?", a: "We have run campaigns across auto components, textiles, industrial equipment, and other manufacturing categories. During onboarding we map your product to the right buyer profile in your target markets." },
-  { q: "How do you make sure buyers are serious and not just price shopping?", a: "We target named procurement heads, sourcing managers, and importers directly, based on company size and buying signals, instead of broadcasting to anyone who fills a form on a B2B portal." },
-  { q: "Which countries and regions can you target?", a: "We have run outreach across Europe, the Middle East, Africa, and Southeast Asia. Tell us your target markets and we build the prospect list and messaging around them." },
-  { q: "Do you handle the language and cultural side of outreach in different markets?", a: "Yes. Messaging tone and structure are adjusted per region, and we can localise outreach where needed so it reads naturally to buyers in that market." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
-  { q: "What happens once we get an interested buyer? Do you help close the deal?", a: "We hand over every qualified meeting with full context on the buyer and their requirements, so your team can focus entirely on the relationship and the close." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-manufacturers-exporters");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

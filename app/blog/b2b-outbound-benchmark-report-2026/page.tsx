@@ -8,6 +8,7 @@ import JsonLd from "../../components/JsonLd";
 import Faq from "@/app/lp/Faq";
 import { buildArticleSchema, buildFaqSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/b2b-outbound-benchmark-report-2026",
@@ -61,24 +62,7 @@ const KEY_FINDINGS = [
   "Inbox placement averages 98.5% on Myntmore-managed domains, against roughly 80–85% for unwarmed, unauthenticated domains.",
 ];
 
-const FAQ_ITEMS = [
-  {
-    question: "What is a good reply rate for B2B cold email?",
-    answer: "A good B2B cold email reply rate is 1–3% at volume, with at least 20% of replies positive, based on Myntmore-managed campaigns. Judge cold email on positive replies and meetings booked, not raw reply rate. Campaigns with a sharp ICP can run far higher, while a rate below 1% means stop and check list quality and deliverability.",
-  },
-  {
-    question: "What is a good reply rate for LinkedIn outreach?",
-    answer: "A good LinkedIn outreach reply rate is around 35%, the average across Myntmore-managed accounts when a connection request and follow-up messages run as one sequence. Typical unmanaged LinkedIn outreach lands at 8–12%. The gap mostly comes from profile positioning, a tight ICP and messages that start a conversation instead of pitching.",
-  },
-  {
-    question: "How long does B2B outbound take to book the first meeting?",
-    answer: "Across Myntmore-managed accounts, campaigns go live within 18 days of onboarding and the first qualified conversations come in weeks three to four. Meeting volume becomes consistent after six to eight weeks, once messaging is tuned against real reply data. Setup covers sending domains, inbox warm-up, the lead list and copy, which is why week one rarely brings meetings.",
-  },
-  {
-    question: "What inbox placement rate should cold email have?",
-    answer: "Cold email should land in the inbox at least 90% of the time, and Myntmore-managed domains average 98.5%. Unwarmed domains without SPF, DKIM and DMARC authentication typically land at 80–85%. If placement drops below 90%, stop sending and fix authentication and warm-up before changing any copy, because every other metric depends on it.",
-  },
-];
+const FAQ_ITEMS = pageFaqs("blog-b2b-outbound-benchmark-report-2026");
 
 const REPLY_RATE_ROWS = [
   { channel: "Cold email", myntmore: "1–3%", typical: "2–5%", note: "High-volume sends, judged on positive replies (20%+ of replies) and meetings booked, not raw reply rate" },

@@ -1,0 +1,29 @@
+{
+  "page": "Service page: Do It Yourself (/services/do-it-yourself)",
+  "items": [
+    {
+      "question": "How is this different from your Done-for-You LinkedIn Outreach service?",
+      "answer": "Done-for-You means our team builds and manages your entire LinkedIn outreach strategy, copy, and execution for you. Do It Yourself is the same underlying automation, but you're in the driver's seat: you log in with your own LinkedIn account, build your own campaigns, write your own notes and follow-ups, and run it yourself from your own dashboard."
+    },
+    {
+      "question": "Whose LinkedIn account does this run on?",
+      "answer": "Yours. You log in with your own LinkedIn account, and every campaign you build runs from that account. Nothing is handed over to us."
+    },
+    {
+      "question": "Can I run more than one campaign?",
+      "answer": "Yes. Each campaign has its own list of leads, connection note, and follow-up sequence, so you can run as many as you need at once, for different segments, offers, or lists."
+    },
+    {
+      "question": "What can I configure for my follow-ups?",
+      "answer": "For every campaign, you set how many follow-up messages go out, what each one says, and the time delay before each one is sent."
+    },
+    {
+      "question": "What do I see on my dashboard?",
+      "answer": "Both campaign-level and lifetime metrics: acceptance rate, reply rate, and the live status of every lead in every campaign."
+    },
+    {
+      "question": "How do I get access?",
+      "answer": "Book a demo with our team and we'll get you set up."
+    }
+  ]
+}

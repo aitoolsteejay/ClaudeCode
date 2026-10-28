@@ -9,7 +9,7 @@
 //                                                (FAQ misses are reported, not fatal)
 //
 // FAQ pairs are found by pattern, not by running the code: `q: "..", a: ".."`
-// and `question: "..", answer: ".."` string literals (single-line or split over
+// and `question: "..", answer: ".."` string literals (also as quoted JSON keys in content/faqs/) (single-line or split over
 // lines). Answers built by concatenation or from variables are not seen.
 //
 // The range is the one in docs/seo-aeo-geo-cadence.md and
@@ -32,7 +32,7 @@ const walk = (dir, out = []) => {
     if (e.name === "node_modules" || e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, out);
-    else if (/\.(tsx?|jsx?)$/.test(e.name)) out.push(p);
+    else if (/\.(tsx?|jsx?|json)$/.test(e.name)) out.push(p);
   }
   return out;
 };
@@ -42,12 +42,12 @@ const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 const strLit = String.raw`"((?:[^"\\]|\\.)*)"`;
 
 // q/a pairs, either key naming, in either order of whitespace/newlines.
-const pairRe = new RegExp(String.raw`\b(?:q|question)\s*:\s*${strLit}\s*,\s*(?:a|answer)\s*:\s*${strLit}`, "g");
+const pairRe = new RegExp(String.raw`\b(?:q|question)"?\s*:\s*${strLit}\s*,\s*"?(?:a|answer)"?\s*:\s*${strLit}`, "g");
 
 const results = [];
-for (const file of [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib"))]) {
+for (const file of [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "content", "faqs"))]) {
   const rel = path.relative(ROOT, file);
-  if (rel.startsWith("lib/service-answers")) continue; // checked separately below
+  if (rel.startsWith("lib/service-answers") || rel.endsWith(".generated.json")) continue; // checked separately below
   const src = fs.readFileSync(file, "utf8");
   for (const m of src.matchAll(pairRe)) {
     const q = unescape(m[1]);

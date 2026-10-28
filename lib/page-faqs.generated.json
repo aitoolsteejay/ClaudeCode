@@ -1,0 +1,936 @@
+{
+  "blog-agency-vs-in-house": [
+    {
+      "question": "Can we start with an agency and bring outbound in-house later?",
+      "answer": "Yes, and it's common. Agencies are a fast way to get a system running and learn what actually converts for your ICP before you commit to hiring. Once you know your winning messaging, targeting, and channel mix, bringing it in-house is a smaller, lower-risk decision than starting from zero."
+    },
+    {
+      "question": "Is an agency more expensive than an SDR long-term?",
+      "answer": "Short-term, no: a retainer is usually cheaper than a fully-loaded SDR salary. Long-term, it can flip. Over 2+ years, a great in-house hire who owns the relationship and product knowledge can out-earn their cost. Agencies win on speed and flexibility; a strong long-term hire can win on depth, if you can find and keep one."
+    },
+    {
+      "question": "What happens to our systems and lists if we bring outbound in-house later?",
+      "answer": "Whatever we build for you, ICP definitions, sequences, positioning, lists, is yours. A good agency engagement should leave you with a documented, transferable system, not a black box you're locked into."
+    },
+    {
+      "question": "Why does hiring take so much longer than starting with an agency?",
+      "answer": "It's not just the hiring process itself. It's sourcing candidates, interviewing, onboarding, teaching them your product and ICP, and then the natural ramp period every new rep needs before they're fully productive. An agency skips straight to execution because the ICP work, infrastructure, and sequences are already built."
+    }
+  ],
+  "blog-b2b-outbound-benchmark-report-2026": [
+    {
+      "question": "What is a good reply rate for B2B cold email?",
+      "answer": "A good B2B cold email reply rate is 1–3% at volume, with at least 20% of replies positive, based on Myntmore-managed campaigns. Judge cold email on positive replies and meetings booked, not raw reply rate. Campaigns with a sharp ICP can run far higher, while a rate below 1% means stop and check list quality and deliverability."
+    },
+    {
+      "question": "What is a good reply rate for LinkedIn outreach?",
+      "answer": "A good LinkedIn outreach reply rate is around 35%, the average across Myntmore-managed accounts when a connection request and follow-up messages run as one sequence. Typical unmanaged LinkedIn outreach lands at 8–12%. The gap mostly comes from profile positioning, a tight ICP and messages that start a conversation instead of pitching."
+    },
+    {
+      "question": "How long does B2B outbound take to book the first meeting?",
+      "answer": "Across Myntmore-managed accounts, campaigns go live within 18 days of onboarding and the first qualified conversations come in weeks three to four. Meeting volume becomes consistent after six to eight weeks, once messaging is tuned against real reply data. Setup covers sending domains, inbox warm-up, the lead list and copy, which is why week one rarely brings meetings."
+    },
+    {
+      "question": "What inbox placement rate should cold email have?",
+      "answer": "Cold email should land in the inbox at least 90% of the time, and Myntmore-managed domains average 98.5%. Unwarmed domains without SPF, DKIM and DMARC authentication typically land at 80–85%. If placement drops below 90%, stop sending and fix authentication and warm-up before changing any copy, because every other metric depends on it."
+    }
+  ],
+  "blog-cold-email-compliance-guide": [
+    {
+      "question": "Is cold email legal?",
+      "answer": "Yes, in most jurisdictions B2B cold email is legal when it follows the applicable rules: accurate sender information, no deceptive subject lines, a working opt-out mechanism, and prompt honoring of unsubscribe requests. What's illegal is deceptive or non-consensual bulk spam, not targeted, honest business outreach."
+    },
+    {
+      "question": "Do I need consent before sending a cold email under GDPR?",
+      "answer": "Not always. GDPR allows \"legitimate interest\" as a lawful basis for B2B outreach in many cases, provided you can justify the interest, keep the message relevant to the recipient's professional role, and offer a clear, immediate opt-out. It's a narrower path than consent-based marketing, and it requires a documented balancing test, not blanket permission to email anyone."
+    },
+    {
+      "question": "Does India's DPDP Act affect B2B cold email?",
+      "answer": "Yes, though the rules are still rolling out. India's DPDP Act, 2023 centers on notice and consent for processing personal data. Professional email addresses used for business outreach carry lower risk than consumer data, but given how recent the law is, get a specific legal check before running large-scale campaigns into India."
+    },
+    {
+      "question": "What happens if my cold email isn't compliant?",
+      "answer": "Consequences range from spam complaints and blacklisting (a deliverability problem) to regulatory fines under laws like CAN-SPAM or GDPR (a legal problem) in more serious or repeated cases. Most compliance failures we see are unforced errors, missing opt-out links, no physical address, ignored unsubscribe requests, not deliberate violations, and they're straightforward to fix."
+    }
+  ],
+  "blog-cold-email-sequence-templates": [
+    {
+      "question": "How many follow-ups should a cold email sequence have?",
+      "answer": "4-6 touches over roughly 2-3 weeks tends to be the sweet spot. Fewer than that and you're leaving replies on the table, since most responses come after the second or third touch, not the first. More than that, and reply quality tends to drop while unsubscribe and spam-complaint rates rise."
+    },
+    {
+      "question": "What should the first email in a cold email sequence say?",
+      "answer": "The first email in a cold email sequence should name one real trigger about the prospect, link it to a single problem they likely have, and ask a low-effort question. Keep it under 80 words with no attachments or pitch deck. Its job is to earn a reply, not to sell; the follow-ups add value, a new angle and proof."
+    },
+    {
+      "question": "Should every follow-up be a new email or a reply in the same thread?",
+      "answer": "Reply in the same thread. It keeps context visible for the recipient, avoids re-triggering spam filters the way a fresh subject line can, and signals persistence rather than a disconnected new pitch every few days."
+    },
+    {
+      "question": "Do these templates need to be personalized for each prospect?",
+      "answer": "The structure and logic stay the same, but the bracketed details need to be genuinely specific to each recipient, their company, their role, a real trigger event, not just a mail-merge first name. A template with only the name swapped in reads as a template. That's what tanks reply rates, not the sequence structure itself."
+    },
+    {
+      "question": "What's the difference between a cold email sequence and a LinkedIn sequence?",
+      "answer": "The underlying logic (value before ask, multiple touches, a permission step before a direct pitch) is nearly identical. The channel mechanics differ: LinkedIn benefits from warming up via engagement before the first message, while cold email depends more heavily on domain and sender reputation. See our LinkedIn outreach sequence guide for the channel-specific version."
+    }
+  ],
+  "blog-cold-email-vs-linkedin-outreach": [
+    {
+      "question": "Should I use cold email or LinkedIn outreach for B2B?",
+      "answer": "Most B2B teams don't have to choose. Cold email wins on scale and works even for buyers who aren't personally active on social platforms; LinkedIn wins on warmth and reply rate, and works best for buyers who are genuinely active there. The two channels reach overlapping but not identical audiences, which is exactly why running them together usually outperforms either alone."
+    },
+    {
+      "question": "Can I run cold email and LinkedIn outreach together?",
+      "answer": "Yes, and it's the setup we run most often. A common pattern is parallel sequences: a cold email touch and a LinkedIn connection request landing around the same time, so the prospect sees the same name twice, in two different contexts, which raises response rates versus either channel alone."
+    },
+    {
+      "question": "Which channel has a higher reply rate?",
+      "answer": "LinkedIn, by a wide margin per message. By our own published benchmarks, LinkedIn's average reply rate (35%) is many times cold email's (1–3%). Part of that is the audience: a LinkedIn message lands after a connection has been accepted, so it's already warmer than a cold inbox. The catch is volume. LinkedIn is capped per seat, while email scales with infrastructure, so email still tends to book more total meetings from a much larger pool, and LinkedIn converts a smaller pool at a far higher rate."
+    },
+    {
+      "question": "Is LinkedIn outreach more expensive than cold email?",
+      "answer": "Per message, usually yes. LinkedIn is bounded by seats and manual-feeling interaction rather than pure infrastructure, so it costs more to run at the same send volume. Per reply, the picture flips: LinkedIn's much higher reply rate means each seat produces far more conversations per send, so its cost per qualified meeting is often competitive with, or better than, email's. Where email wins is the ceiling. It keeps scaling past the point where LinkedIn runs out of seats and daily limits, which is why it's typically the primary volume driver, with LinkedIn converting the buyers who are active there."
+    }
+  ],
+  "blog-what-is-b2b-outbound-sales": [
+    {
+      "question": "Is outbound sales dead?",
+      "answer": "No, but generic outbound is. Broad, unpersonalized blasts get ignored or filtered as spam. Outbound that's targeted at a specific ICP, references something real about the recipient, and runs across more than one channel still reliably books meetings."
+    },
+    {
+      "question": "What does outbound mean in B2B?",
+      "answer": "In B2B, outbound means your company makes the first contact. You choose the businesses and roles you want to reach, then start the conversation by cold email, LinkedIn or phone. Inbound is the reverse: buyers find you through search, content or referrals and contact you first. Most growing B2B companies run both."
+    },
+    {
+      "question": "Is outbound marketing the same as outbound sales?",
+      "answer": "Not quite. Outbound marketing pushes a message to a broad audience, through ads, trade shows, direct mail or sponsored content, to build awareness and leads. Outbound sales contacts specific people at chosen accounts to start a one-to-one sales conversation. In B2B the two overlap, but cold email and LinkedIn outreach are outbound sales."
+    },
+    {
+      "question": "How is outbound different from inbound?",
+      "answer": "Inbound attracts prospects who come to you through content, search, or referrals. Outbound proactively reaches prospects who haven't found you yet, through channels like cold email, LinkedIn, or calls. See the full breakdown in our glossary."
+    },
+    {
+      "question": "Do I need outbound if inbound is already working?",
+      "answer": "Usually yes, once you want predictable, scalable pipeline. Inbound compounds over time but is slow to ramp and hard to aim at a specific account. Outbound is immediate and lets you target exactly the companies you want as customers, rather than waiting for the right ones to find you."
+    },
+    {
+      "question": "Should I hire an in-house SDR or use an outbound agency?",
+      "answer": "Use an agency while outbound is still being proven, and hire in-house once it is a permanent, high-volume part of your go-to-market motion. An agency is typically faster to start, cheaper below a certain scale, and arrives with infrastructure and playbooks. We break down the tradeoffs in our agency vs. in-house guide."
+    }
+  ],
+  "city-ahmedabad": [
+    {
+      "question": "Do we need to be based in Ahmedabad to work with you?",
+      "answer": "No. The entire engagement runs remotely, so it doesn't matter where in Gujarat, or beyond, your team is based."
+    },
+    {
+      "question": "Do you only work with Ahmedabad or Gujarat companies?",
+      "answer": "No. We have clients in Ahmedabad and across Gujarat, but we run outbound systems for B2B and export-focused companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Which Ahmedabad and Gujarat industries do you have the most experience with?",
+      "answer": "Textile, pharmaceutical, and chemical manufacturers and exporters are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach aimed at reaching international buyers, importers, and procurement teams, layered with account-based marketing for named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers, whether a distributor in the Gulf or a procurement team in Europe, actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Ahmedabad means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-bengaluru": [
+    {
+      "question": "Do we need to be based in Bengaluru to work with you?",
+      "answer": "No. The entire engagement runs remotely, so it doesn't matter where your team sits."
+    },
+    {
+      "question": "Do you only work with Bengaluru companies?",
+      "answer": "No. We have clients in Bengaluru, but we run outbound systems for B2B SaaS and tech companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Are you a B2B marketing agency or a lead generation company?",
+      "answer": "Myntmore is an outbound lead generation agency, not a full-service B2B marketing agency. We run cold email, LinkedIn outreach, account-based marketing and founder personal branding to start sales conversations. We don't run paid ads, SEO or brand design, so pair us with a marketing agency if you need those too."
+    },
+    {
+      "question": "Can you help a Bangalore SaaS company sell to the US or UK?",
+      "answer": "Yes. For Bangalore SaaS teams selling abroad, we build separate sending infrastructure, write copy that reads as native to that market, send in the buyer's time zone and follow CAN-SPAM and GDPR rules. Our case studies include campaigns into the US, the UK and other international markets."
+    },
+    {
+      "question": "Which Bengaluru company types do you have the most experience with?",
+      "answer": "B2B SaaS, tech startups, and deep-tech companies are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach tuned for sophisticated SaaS and tech buyers, layered with account-based marketing for named target accounts, and AI-assisted signal tracking and personalisation underneath all three. We pick the mix based on where your buyers, in India or overseas, actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Bengaluru means months of recruiting and ramp-up in one of the country's most competitive hiring markets, before they're fully productive. A managed outbound system has multiple channels live within about three weeks, at a fraction of that fully loaded cost, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-chennai": [
+    {
+      "question": "Do we need to be physically based in Chennai to work with you?",
+      "answer": "No. Myntmore operates remotely for every client, so your team does not need to be in Chennai, and neither do we. Everything, strategy calls, sequence approvals, reporting, happens over calls and shared dashboards."
+    },
+    {
+      "question": "Do you only work with Chennai or Tamil Nadu businesses?",
+      "answer": "No. Chennai is one of several Indian markets we actively serve alongside clients across India and internationally. If your buyers are in Chennai, or you are a Chennai company selling elsewhere in India or overseas, we can build the outbound motion for either direction."
+    },
+    {
+      "question": "How long before we start seeing meetings booked?",
+      "answer": "Most clients see their first qualified conversations within three to four weeks of kickoff, once ICP mapping, list building, and outreach sequences are live. From there, meeting volume typically builds month over month as sequences are refined."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Which Chennai industries do you have the most experience with?",
+      "answer": "Automotive and auto-component manufacturing, healthcare and hospital-services companies, and IT/ITES businesses along the OMR corridor are where we have the deepest playbooks, though the same ICP-first approach adapts to most B2B sectors."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach, layered with account-based marketing for named target accounts and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your specific buyers actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Chennai means months of recruiting and ramp-up before they are fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-delhi": [
+    {
+      "question": "Do we need to be based in Delhi to work with you?",
+      "answer": "No. The entire engagement runs remotely, so wherever your team sits in NCR (or beyond), the system works the same way."
+    },
+    {
+      "question": "Do you only work with Delhi companies?",
+      "answer": "No. We have clients across Delhi NCR, but we run outbound systems for B2B companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Which Delhi NCR industries do you have the most experience with?",
+      "answer": "Trading and export businesses, D2C and e-commerce brands, and enterprise-facing services firms are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach aimed at enterprise and trading-sector buyers, layered with account-based marketing to get past procurement gatekeepers on named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Delhi NCR means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-hyderabad": [
+    {
+      "question": "Do we need to be based in Hyderabad to work with you?",
+      "answer": "No. The entire engagement runs remotely, so it doesn't matter where your team sits."
+    },
+    {
+      "question": "Do you only work with Hyderabad companies?",
+      "answer": "No. We have clients in Hyderabad, but we run outbound systems for B2B companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Are you a lead generation company or a B2B marketing agency?",
+      "answer": "Myntmore is an outbound lead generation company, not a full-service B2B marketing agency. We run cold email, LinkedIn outreach, account-based marketing and founder personal branding to start sales conversations. We don't run paid ads, SEO or brand design, so pair us with a marketing agency if you need those too."
+    },
+    {
+      "question": "Do you run lead generation for pharma and biotech companies in Hyderabad?",
+      "answer": "Yes. We run B2B outreach for API makers, formulation and contract manufacturers, CROs and biotech firms selling to procurement, sourcing and R&D teams in India and abroad. We generate buyer conversations only; regulatory approvals, compliance claims and scientific advice stay with your own team."
+    },
+    {
+      "question": "Which Hyderabad industries do you have the most experience with?",
+      "answer": "IT/ITES, pharmaceutical and biotech companies, and growing startups are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach built for long, compliance-heavy pharma and IT buying cycles, layered with account-based marketing for named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Hyderabad means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-kolkata": [
+    {
+      "question": "Do we need to be based in Kolkata to work with you?",
+      "answer": "No. The entire engagement runs remotely, so it doesn't matter where in West Bengal, or beyond, your team is based."
+    },
+    {
+      "question": "Do you only work with Kolkata companies?",
+      "answer": "No. We have clients in Kolkata, but we run outbound systems for B2B companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Do you generate patient leads for hospitals in Kolkata?",
+      "answer": "No. Myntmore runs B2B lead generation: we help companies that sell to hospitals, diagnostic chains and pharma distributors reach procurement and clinical decision-makers. Patient acquisition for hospitals and clinics needs local search, ads and booking systems, which a healthcare marketing agency is better placed to run."
+    },
+    {
+      "question": "Which Kolkata industries do you have the most experience with?",
+      "answer": "Trading and manufacturing houses, steel and engineering firms, and growing IT/ITES companies are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach aimed at trading, manufacturing, and financial-services buyers, layered with account-based marketing for named target accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Kolkata means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-mumbai": [
+    {
+      "question": "Do we need to be based in Mumbai to work with you?",
+      "answer": "No. We're headquartered in Bandra Kurla Complex (BKC), Mumbai, and many of our clients are here, but the entire engagement runs remotely. Location has no bearing on how the system is built or managed."
+    },
+    {
+      "question": "Do you only work with Mumbai companies?",
+      "answer": "Not at all. Mumbai is where we're based and where a large share of our clients happen to be, but we run outbound systems for B2B companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Are you a lead generation company or a B2B marketing company?",
+      "answer": "Myntmore is an outbound lead generation company, not a full-service B2B marketing company. We run cold email, LinkedIn outreach, account-based marketing and founder personal branding to start sales conversations. We don't run paid ads, SEO or brand design, so pair us with a marketing agency if you need those too."
+    },
+    {
+      "question": "Which Mumbai industries do you have the most experience with?",
+      "answer": "BFSI, media and entertainment, professional services, and B2B SaaS founders are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach tuned to cut through Mumbai's crowded BFSI and media inboxes, layered with account-based marketing for named target accounts, and AI-assisted signal tracking and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Mumbai means months of recruiting and ramp-up at some of the country's highest salaries and office costs, before they're fully productive. A managed outbound system has multiple channels live within about three weeks, at a fraction of that fully loaded cost, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "city-pune": [
+    {
+      "question": "Do we need to be based in Pune to work with you?",
+      "answer": "No. The entire engagement runs remotely, so it doesn't matter where your team sits."
+    },
+    {
+      "question": "Do you only work with Pune companies?",
+      "answer": "No. We have clients in Pune, but we run outbound systems for B2B companies across India and internationally."
+    },
+    {
+      "question": "How quickly can we expect meetings to start?",
+      "answer": "Most clients see their first qualified conversations within 3 to 4 weeks of kickoff, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Are you a lead generation company or a B2B marketing agency?",
+      "answer": "Myntmore is an outbound lead generation company, not a full-service B2B marketing agency. We run cold email, LinkedIn outreach, account-based marketing and founder personal branding to start sales conversations. We don't run paid ads, SEO or brand design, so pair us with a marketing agency if you need those too."
+    },
+    {
+      "question": "Which Pune industries do you have the most experience with?",
+      "answer": "IT services, B2B SaaS, and auto-component and engineering manufacturers are where we've run the most campaigns, but our system adapts to any B2B ICP."
+    },
+    {
+      "question": "What channels do you actually use to generate leads?",
+      "answer": "Primarily cold email and LinkedIn outreach aimed at IT, SaaS, and auto-component buyers, layered with account-based marketing for named OEM and enterprise accounts, and AI-assisted list building and personalisation underneath all three. We pick the mix based on where your buyers actually spend their attention."
+    },
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "Hiring an in-house SDR in Pune means months of recruiting and ramp-up before they're fully productive, and even then, one person can only run so many sequences at once. A managed outbound system has multiple channels live within about three weeks, at a fraction of the fully loaded cost of a hire, and scales without you managing headcount."
+    },
+    {
+      "question": "What do you need from us to get started?",
+      "answer": "A clear picture of your ICP (even a rough one works), access to a domain we can set up for outbound sending, and about an hour of your time for an onboarding call. We handle ICP refinement, list building, sequence writing, and day-to-day campaign management from there."
+    }
+  ],
+  "guide-how-to-choose-an-outbound-agency": [
+    {
+      "question": "How long should an outbound agency's minimum contract be?",
+      "answer": "Long enough to see a real result, short enough that you're not trapped if it doesn't work. A 3-month minimum is common in the industry and reasonable: it covers setup, a first real sending window, and enough data to judge performance. Anything requiring a 12-month commitment before you've seen a single result is worth questioning."
+    },
+    {
+      "question": "What reply rate should I expect from a good outbound agency?",
+      "answer": "Ranges vary a lot by channel, industry, and how tightly the ICP is defined, which is exactly why you should ask for a range with context, not a single flattering number. Be more skeptical of an agency that can only produce one client's best month than one that shows you a realistic spread across accounts."
+    },
+    {
+      "question": "Should an outbound agency give me strategy, or just execute?",
+      "answer": "Both, ideally. Pure execution without ICP or messaging strategy tends to produce volume without results. Pure strategy without hands-on execution just leaves you with a plan you still have to run. Ask directly who defines your ICP and messaging, and who's accountable for it if it's wrong."
+    },
+    {
+      "question": "What's a red flag when evaluating an outbound agency?",
+      "answer": "Vague answers to specific questions. If an agency can't tell you plainly who owns your sequences and lists after the engagement ends, what their deliverability setup actually looks like, or what a bad month triggers on their end, that vagueness is the answer."
+    }
+  ],
+  "guide-how-to-choose-b2b-lead-generation-agency-india": [
+    {
+      "question": "What does a B2B lead generation agency in India do?",
+      "answer": "A B2B lead generation agency finds companies that match your ideal customer profile and starts sales conversations with them. In India the label covers four different businesses: data vendors, telecalling firms, performance marketing agencies and outbound agencies running cold email and LinkedIn. Confirm which one you are talking to before you compare prices."
+    },
+    {
+      "question": "How is B2B lead generation priced in India?",
+      "answer": "Agencies in India price B2B lead generation in three ways: a monthly retainer, a fee per qualified meeting, or a fee per lead, often with setup costs for domains and tools, plus 18% GST. Compare them on cost per qualified meeting that actually happened, because a low per-lead price often hides poor lead quality."
+    },
+    {
+      "question": "Is cold email legal in India?",
+      "answer": "Cold email to business contacts is legal in India, but personal data handling falls under the Digital Personal Data Protection Act, 2023. Its rules were notified in November 2025 and most obligations apply from May 2027. Commercial calls and SMS fall under TRAI rules instead. Ask any agency for its written approach and get legal advice for large campaigns."
+    },
+    {
+      "question": "How long before a lead generation agency books the first meeting?",
+      "answer": "Across Myntmore's managed accounts, campaigns go live within 18 days of onboarding, the first qualified conversations come in weeks three to four, and meeting volume becomes consistent after six to eight weeks. The setup weeks go to ICP definition, list building, domain warm-up and copy. An agency promising meetings in week one is usually skipping one of those steps."
+    },
+    {
+      "question": "Should I pay per lead or pay a retainer?",
+      "answer": "Pay per lead suits you when you only want contacts and will run the outreach yourself. A retainer or per-meeting model suits you when you want the agency to run the whole system, because it rewards them for testing, fixing deliverability and improving copy instead of maximising the number of contacts delivered."
+    }
+  ],
+  "lp-agencies-it": [
+    {
+      "question": "How is this different from hiring an in-house SDR?",
+      "answer": "An in-house SDR costs you a full-time salary, months of ramp-up, and ongoing management. We give you a fully built outbound system, list building, sequences, and deliverability infrastructure, live within about three weeks, at a fraction of the cost and with none of the hiring risk."
+    },
+    {
+      "question": "We already have a team doing some outbound. Will this overlap?",
+      "answer": "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new accounts. Your team keeps doing what it does well, we add the top of funnel volume it does not have time for."
+    },
+    {
+      "question": "How fast will we start seeing meetings?",
+      "answer": "Most agency clients see their first qualified conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "Do you work with the tools we already use, like our CRM?",
+      "answer": "We don't build or manage CRM integrations, that stays part of your own process. Every qualified meeting and reply is handed off to your team directly, so it's easy to log wherever you already track pipeline."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "What if the leads we get are not the right fit?",
+      "answer": "We refine your ICP together in the first two weeks and keep adjusting targeting based on who books calls and who converts, so fit improves fast."
+    }
+  ],
+  "lp-agency-partners": [
+    {
+      "question": "How does the white-labeling actually work day to day",
+      "answer": "We set up sender domains, email signatures, LinkedIn outreach, and every report or dashboard under your agency's name and branding. Your client only ever sees your team's name. Internally, we run the campaigns, and you receive the same branded materials to pass along or present yourself."
+    },
+    {
+      "question": "Who owns the client relationship",
+      "answer": "You do, fully. You are the point of contact for scoping, pricing, and any client conversation. We operate as your delivery team behind the scenes and never contact your client directly unless you specifically want us on a call with you."
+    },
+    {
+      "question": "What do we need to do versus what does Myntmore handle",
+      "answer": "You bring the client relationship, scope the engagement with our help, and present results. We handle ICP mapping, list building, copywriting, sending infrastructure, deliverability, campaign management, and reporting, so you are not hiring or managing a delivery team."
+    },
+    {
+      "question": "What does the margin or commission structure look like",
+      "answer": "Our current partner model is a 25 percent recurring margin on the managed monthly revenue for each client you bring in, paid out for as long as that client stays active. This is our standard starting structure and can be discussed further on a partner call."
+    },
+    {
+      "question": "Is there a minimum client volume or spend commitment",
+      "answer": "No fixed minimum. Most partners start with one client engagement to see the model in action, then bring in more once they are comfortable with the reporting and results. There is no lock-in volume you have to hit."
+    },
+    {
+      "question": "Will our client ever see Myntmore's name anywhere",
+      "answer": "No. Every report, dashboard, email signature, and outreach touchpoint is branded as yours. We stay fully invisible to your client unless you explicitly choose to introduce us, for example on a joint strategy call."
+    }
+  ],
+  "lp-financial-services": [
+    {
+      "question": "Will your outreach make any promises about rates, returns, or loan approval?",
+      "answer": "No. Every message we send stays strictly credibility-led, we talk about who your firm serves and the problems you solve, never about interest rates, expected returns, or approval likelihood. That conversation is entirely yours to have once a qualified meeting is booked."
+    },
+    {
+      "question": "How is this different from relying on our broker or referral network?",
+      "answer": "Referral and broker networks cap your growth to who already knows you. We build a systematic, always-on outbound engine, cold email plus LinkedIn, that reaches CFOs and Finance Heads at companies you have never worked with before, on top of whatever referrals you already get."
+    },
+    {
+      "question": "Which job titles do you typically target?",
+      "answer": "Most commonly CFOs, Finance Heads, and business owners at companies showing signals of needing working capital, equipment financing, or corporate treasury and wealth advisory support, expansion plans, funding rounds, or capex cycles."
+    },
+    {
+      "question": "How long before we see our first qualified meetings?",
+      "answer": "Most financial services clients see their first qualified conversations within 3 to 5 weeks, once ICP mapping, compliance-safe messaging, and list building are complete. Because these are multi-stakeholder decisions, nurturing continues well beyond the first meeting."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "Do you provide financial or investment advice, underwriting, or advisory services?",
+      "answer": "No. Myntmore is a B2B lead generation partner. We generate qualified buyer conversations only, underwriting, rates, and any financial or investment advice remain entirely your firm's domain."
+    }
+  ],
+  "lp-fundraising": [
+    {
+      "question": "Do you get us warm intros, or is this cold outreach?",
+      "answer": "It's targeted, personalised outreach, not a guaranteed warm-intro service through mutual connections. What makes it feel warmer than a generic cold email is the specificity: we reference the fund's actual thesis, stage focus, and recent portfolio in every message, so it reads as informed outreach, not spray-and-pray."
+    },
+    {
+      "question": "How is this different from buying a Crunchbase or PitchBook list myself?",
+      "answer": "A raw database gives you names and firms. It doesn't tell you which partner is actively deploying right now, whether your check size and stage actually fit their fund, or how to personalise the first message so it doesn't read like every other founder's cold email. We build the filtered list and run the full outreach system around it."
+    },
+    {
+      "question": "Do you help with the pitch deck or the fundraising narrative?",
+      "answer": "No. Our focus is investor targeting and outreach, getting the right conversations booked, not deck design or narrative coaching. Bring a raise-ready story and we'll get it in front of the right investors."
+    },
+    {
+      "question": "What if I don't know exactly which investors are the right fit yet?",
+      "answer": "That's the first step, not a prerequisite. We build your investor ICP with you, based on stage, sector, geography, and check size, before any outreach goes out."
+    },
+    {
+      "question": "Is this only for a specific funding stage?",
+      "answer": "We've built this to flex from pre-seed and seed through Series A and B. The investor targeting criteria change with your stage; the underlying system doesn't."
+    },
+    {
+      "question": "How fast can this be live?",
+      "answer": "Within 18 days, the same as our other outbound engagements. That covers the investor ICP, fund lists, sending domains and warm-up, and copy tailored to each fund's thesis. Fundraising timelines move fast, so we start the setup the day you sign."
+    }
+  ],
+  "lp-insurance": [
+    {
+      "question": "How is this different from cold calling or relying on referrals?",
+      "answer": "Cold calling is unstructured and low-conversion; referrals are unpredictable and capped by who you already know. We build a systematic, targeted outreach engine, verified decision-maker lists, credibility-led messaging, and renewal-timed sequencing, so new corporate conversations happen every month, not just when someone happens to refer you."
+    },
+    {
+      "question": "How do you handle renewal-cycle timing?",
+      "answer": "We map each target company's likely renewal window and sequence outreach to land 60 to 90 days ahead of it, when they are actually evaluating alternatives. Outreach outside that window is deprioritised so we are not wasting your time on companies who are not listening yet."
+    },
+    {
+      "question": "Does this work for group health insurance as well as commercial or property lines?",
+      "answer": "Yes. The system adapts to your specific book, group health, commercial property and liability, or keyman and corporate liability cover, by adjusting the ICP, the decision-makers we target, and the messaging to match how that line is actually bought."
+    },
+    {
+      "question": "We already have a BD or relationship management team. Will this overlap?",
+      "answer": "No. We focus purely on generating net-new outbound conversations with companies you do not already have a relationship with. Your BD and RM teams keep managing existing accounts and referral relationships; we add a new, always-on channel for fresh corporate business."
+    },
+    {
+      "question": "How soon can we expect our first meetings?",
+      "answer": "Most brokerage clients see their first qualified conversations within 3 to 4 weeks, once ICP mapping, decision-maker list building, and renewal-timed sequencing are in place."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract. To be clear, we generate qualified buyer conversations only, we do not advise on policy structuring, underwriting, or claims."
+    }
+  ],
+  "lp-manufacturers-exporters": [
+    {
+      "question": "Do you work with our specific product category?",
+      "answer": "We have run campaigns across auto components, textiles, industrial equipment, and other manufacturing categories. During onboarding we map your product to the right buyer profile in your target markets."
+    },
+    {
+      "question": "How do you make sure buyers are serious and not just price shopping?",
+      "answer": "We target named procurement heads, sourcing managers, and importers directly, based on company size and buying signals, instead of broadcasting to anyone who fills a form on a B2B portal."
+    },
+    {
+      "question": "Which countries and regions can you target?",
+      "answer": "We have run outreach across Europe, the Middle East, Africa, and Southeast Asia. Tell us your target markets and we build the prospect list and messaging around them."
+    },
+    {
+      "question": "Do you handle the language and cultural side of outreach in different markets?",
+      "answer": "Yes. Messaging tone and structure are adjusted per region, and we can localise outreach where needed so it reads naturally to buyers in that market."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "What happens once we get an interested buyer? Do you help close the deal?",
+      "answer": "We hand over every qualified meeting with full context on the buyer and their requirements, so your team can focus entirely on the relationship and the close."
+    }
+  ],
+  "lp-pharma": [
+    {
+      "question": "Does Myntmore handle regulatory approvals or compliance for us?",
+      "answer": "No. Myntmore is a B2B outbound lead generation partner, we find and book meetings with the right buyers. Regulatory approvals, WHO-GMP or USFDA certification processes, and import-export compliance are handled entirely by your own regulatory, quality, and compliance team. We do not advise on or claim expertise in these areas."
+    },
+    {
+      "question": "How does outreach differ for domestic buyers versus export and global buyers?",
+      "answer": "Domestic outreach targets hospital purchase committees, distributors, and chemist chains, with messaging built around tender cycles and regional buying patterns. Export and contract-manufacturing outreach targets importers, sourcing heads, and procurement teams abroad, with messaging built around therapeutic category fit and manufacturing capacity. We run both as separate, tailored tracks."
+    },
+    {
+      "question": "How do you handle compliance-sensitive messaging in outreach?",
+      "answer": "We reference certifications and manufacturing capability factually, what you hold and what your facility supports, without making regulatory claims on your behalf. Any compliance-specific questions a buyer raises are flagged and routed straight to your team."
+    },
+    {
+      "question": "Which buyer titles and roles do you typically target?",
+      "answer": "Procurement Heads, Regulatory Affairs contacts, Import/Export Managers, hospital Purchase Committee members, and Distribution Partners, depending on whether the target account is domestic or export focused."
+    },
+    {
+      "question": "How fast will we start seeing meetings?",
+      "answer": "Most pharma clients see their first qualified buyer conversations within 3 to 5 weeks, once ICP mapping, list building, and outreach sequences are in place."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    }
+  ],
+  "lp-recruitment-firms": [
+    {
+      "question": "How is this different from job boards and referrals?",
+      "answer": "Job boards and referrals are reactive, you wait for someone to post a role or a contact to think of you. We run proactive outbound to HR Heads and TA Leads at companies showing real hiring signals, so you are in front of decision-makers before they even post the job."
+    },
+    {
+      "question": "We already have a business development person. Will this overlap?",
+      "answer": "No. We plug into your existing motion and focus purely on ABM style cold email and LinkedIn outreach to net new client companies. Your BD person keeps managing relationships and closing, we add the top of funnel volume they do not have time to generate."
+    },
+    {
+      "question": "Does this integrate with our ATS or CRM?",
+      "answer": "We don't build or manage ATS or CRM integrations, whether that's Bullhorn, Zoho Recruit, or anything else, that stays part of your own process. Every qualified meeting and reply is handed off to your team directly, so it's easy to log wherever you already track pipeline."
+    },
+    {
+      "question": "How fast will we start seeing meetings?",
+      "answer": "Most staffing clients see their first qualified client conversations within the first 3 to 4 weeks, once ICP mapping, list building, and sequence setup are complete."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "What if the leads are not a good fit for our specialisation?",
+      "answer": "We refine your ICP together in the first two weeks, narrowing by industry, role type, and company size, and keep adjusting targeting based on who books calls and who converts, so fit improves fast."
+    }
+  ],
+  "lp-saas-founders": [
+    {
+      "question": "How is this different from tools like Apollo or Clay that we already use?",
+      "answer": "Those tools give you data. We give you a fully managed system, ICP mapping, signal based targeting, copywriting, sequencing, and deliverability, run by a team that adjusts it every week based on what is working."
+    },
+    {
+      "question": "Will this work if we are still pre-product-market fit?",
+      "answer": "Outbound works best once you have a handful of paying customers and a clear picture of who gets value fastest. If you are very early, we will tell you honestly and suggest starting with a smaller pilot."
+    },
+    {
+      "question": "How do you avoid spam filters and protect our sender reputation?",
+      "answer": "We set up dedicated sending infrastructure, warm it up properly, and follow strict sending limits and personalisation practices, so your core domain reputation stays protected."
+    },
+    {
+      "question": "Do you integrate with our CRM, like HubSpot or Salesforce?",
+      "answer": "We don't build or manage CRM integrations, that stays part of your own process. Every qualified reply and booked demo is handed off to your team directly, with full context from the conversation, so it's easy to log wherever you already track pipeline."
+    },
+    {
+      "question": "What does pricing and commitment look like?",
+      "answer": "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract."
+    },
+    {
+      "question": "We already tried outbound once and it did not work. Why would this be different?",
+      "answer": "Most failed outbound comes down to generic targeting and copy that reads like everyone else's. We rebuild it around specific buying signals and messaging tailored to your product, and iterate weekly instead of setting it and walking away."
+    }
+  ],
+  "service-account-based-marketing": [
+    {
+      "question": "How is this different from your other lead generation services?",
+      "answer": "Our other services (cold email, LinkedIn outreach, AI lead gen) are built to generate volume across a broad ICP. ABM flips that: you give us a defined, finite list of named accounts you specifically want to win, and we run coordinated campaigns to engage multiple people inside each one, not just cast a wide net."
+    },
+    {
+      "question": "How many accounts can this realistically cover?",
+      "answer": "Most engagements run 50 to 250 named accounts, tiered by priority. Tier 1 accounts (your highest-value targets) get the most coordinated, multi-stakeholder attention; lower tiers run on a lighter cadence. The right number depends on your team's capacity to follow up once accounts start engaging."
+    },
+    {
+      "question": "Which channels are included?",
+      "answer": "LinkedIn outreach and email are the core channels, run in a coordinated sequence against the same account list rather than as separate campaigns. Where it fits your budget and audience, we can layer in LinkedIn ad retargeting for additional account-level visibility."
+    },
+    {
+      "question": "How does the handoff to our sales team actually work?",
+      "answer": "Every account gets an engagement record: who was contacted, on which channel, what they opened or replied to, and how engaged the account is overall. That's delivered to your team as an account-level report, so your AE walks into the first conversation already knowing which stakeholders are warm and why."
+    },
+    {
+      "question": "What size company or deal size is this built for?",
+      "answer": "ABM makes the most sense once your average deal size and sales cycle justify a multi-touch, multi-stakeholder approach, typically mid-market and enterprise B2B deals with several decision-makers involved. For simpler, single-stakeholder sales motions, our LinkedIn outreach or cold email services are usually a better fit."
+    }
+  ],
+  "service-ai-lead-generation": [
+    {
+      "question": "What does the AI actually do versus your human team?",
+      "answer": "The AI handles research, enrichment, and scoring at scale: pulling data from multiple sources, cross-referencing signals, and ranking leads by fit and intent. Our human team configures the agents, audits output for quality, writes the strategic layer, and makes sure nothing reaches your sales team without being genuinely useful."
+    },
+    {
+      "question": "How accurate is the lead scoring?",
+      "answer": "With a well-defined ICP, our scoring model runs at roughly 85–90% relevance on the top tier. We build in a feedback loop: your team flags false positives and the model adjusts over time. Accuracy compounds month over month."
+    },
+    {
+      "question": "How do we receive the leads?",
+      "answer": "You get clean, structured lead exports with full research summaries attached, mapped to your fields and ready to import into whatever system your team already uses. We don't build or manage CRM integrations, that stays part of your own process."
+    },
+    {
+      "question": "How many leads can you generate per month?",
+      "answer": "For most B2B clients with a defined ICP we deliver 300 to 1,500 scored, research-enriched leads per month. Volume is never the goal. Relevance is. 200 right-fit leads beat 2,000 cold ones every time."
+    },
+    {
+      "question": "Will this work for a niche industry with a small TAM?",
+      "answer": "Often better than broad markets. A smaller TAM means we go deeper on each account, track more specific signals, and personalise outreach at a level generic tools can't. Some of our best results come from clients with a TAM under 5,000 accounts."
+    }
+  ],
+  "service-cold-email": [
+    {
+      "question": "How does this work?",
+      "answer": "We run cold email end to end in ten steps. First we map your ideal customer profile and build a targeted lead list, then write the copy and set up domains, inboxes and DNS. After launch we handle follow-ups, A/B testing, nurturing replies into meetings, and real-time reporting."
+    },
+    {
+      "question": "How do we measure success?",
+      "answer": "We measure four things: deliverability, reply rates, meetings booked and conversions. You get real-time tracking and regular reports, so you always see what is working. The targets we aim for are 90%+ email health, a 1%+ reply rate and 20%+ positive replies."
+    },
+    {
+      "question": "What's the timeline?",
+      "answer": "Campaigns go live within 18 days of onboarding. That window covers domain and inbox setup, warm-up, building your lead list and writing the copy. First qualified conversations usually come in weeks 3 to 4, and meeting volume becomes consistent by weeks 6 to 8 as we optimise."
+    },
+    {
+      "question": "Who sees the best results?",
+      "answer": "B2B businesses see the best results, particularly service providers, SaaS companies, agencies and consultants. These teams sell to a clearly defined set of business buyers, so a targeted list with every prospect handpicked, plus relevant soft-sell copy, starts conversations with exactly the right people."
+    },
+    {
+      "question": "How many leads can I expect?",
+      "answer": "Clients typically see 1–3% reply rates, with consistent meetings by weeks 6 to 8. Volume depends on your list and offer: the package sends up to 1,200 emails a day to 5,000 fresh prospects a month, and results improve as we test copy and targeting. Some campaigns convert at 4x the industry average."
+    }
+  ],
+  "service-do-it-yourself": [
+    {
+      "question": "How is this different from your Done-for-You LinkedIn Outreach service?",
+      "answer": "Done-for-You means our team builds and manages your entire LinkedIn outreach strategy, copy, and execution for you. Do It Yourself is the same underlying automation, but you're in the driver's seat: you log in with your own LinkedIn account, build your own campaigns, write your own notes and follow-ups, and run it yourself from your own dashboard."
+    },
+    {
+      "question": "Whose LinkedIn account does this run on?",
+      "answer": "Yours. You log in with your own LinkedIn account, and every campaign you build runs from that account. Nothing is handed over to us."
+    },
+    {
+      "question": "Can I run more than one campaign?",
+      "answer": "Yes. Each campaign has its own list of leads, connection note, and follow-up sequence, so you can run as many as you need at once, for different segments, offers, or lists."
+    },
+    {
+      "question": "What can I configure for my follow-ups?",
+      "answer": "For every campaign, you set how many follow-up messages go out, what each one says, and the time delay before each one is sent."
+    },
+    {
+      "question": "What do I see on my dashboard?",
+      "answer": "Both campaign-level and lifetime metrics: acceptance rate, reply rate, and the live status of every lead in every campaign."
+    },
+    {
+      "question": "How do I get access?",
+      "answer": "Book a demo with our team and we'll get you set up."
+    }
+  ],
+  "service-gtm-strategy": [
+    {
+      "question": "What exactly is included in a GTM strategy engagement?",
+      "answer": "ICP definition, competitive and market mapping, a channel mix and sequencing plan, a messaging framework, and a direct handoff to execution across whichever channels fit, cold email, LinkedIn, ABM, or personal branding. It's a plan built to be run, not a deck."
+    },
+    {
+      "question": "Do you also execute the strategy, or just hand over a plan?",
+      "answer": "Both. The same team that builds the GTM strategy runs it across the channels you choose, so there's no handoff gap between \"strategy\" and \"execution\" like there is when a consultant hands a plan to a separate agency and disappears."
+    },
+    {
+      "question": "How is this different from your other services, like Cold Email or LinkedIn Outreach?",
+      "answer": "Those are channel-specific execution services. GTM Strategy is the layer above them: it decides which channels to prioritise, what your ICP and messaging should be, and how they should sequence together, then feeds directly into whichever of those services you need."
+    },
+    {
+      "question": "How long does the initial strategy phase take?",
+      "answer": "Typically 2-3 weeks for the audit, ICP work, and channel mix plan, the same timeline discipline we apply across our outbound engagements, where the average time to a first real result is around 18 days."
+    },
+    {
+      "question": "What if we already have a GTM strategy but it's not working?",
+      "answer": "That's a common starting point, not a blocker. We audit what's already running, channels, messaging, and results, find where the current plan is leaking, and rebuild the parts that need it rather than starting from zero everywhere."
+    },
+    {
+      "question": "Is this only for early-stage startups?",
+      "answer": "No. It fits any B2B company changing its GTM: a new ICP, a new market, a stalled channel, or scaling what's already working. Stage changes the specifics of the plan, not the process we use to build it."
+    }
+  ],
+  "service-linkedin-outreach": [
+    {
+      "question": "Why do I need to build a personal brand?",
+      "answer": "People buy from people they recognise and trust. A strong personal brand puts you in front of buyers before your first message, makes your outreach credible and gives you pricing power: 45% of a company's market value ties back to leadership reputation, and buyers pay 13.57x more to those they see as experts."
+    },
+    {
+      "question": "Why LinkedIn?",
+      "answer": "LinkedIn is where you can reach named decision-makers directly, and personal profiles get 561% more reach than company pages. Content builds the trust, outreach starts the conversations, and both happen in the same place."
+    },
+    {
+      "question": "What's in it for me?",
+      "answer": "A steady pipeline of conversations and qualified meetings, a profile and content that make your outreach credible, and a calendar that fills consistently, all for about 90 minutes of your time a month."
+    },
+    {
+      "question": "How do AI agents fit into the process?",
+      "answer": "They work like a silent growth team, 24/7. They break down your ICP, rank who is most likely to engage, enrich every lead with context, track your competitors, and draft comments, replies and follow-ups that sound like you."
+    },
+    {
+      "question": "What makes AI agents so effective for LinkedIn?",
+      "answer": "LinkedIn rewards relevance. Agents work from real-time data, so every connection request, InMail and follow-up reaches the right person with the right context, at a volume no human team can match, while we keep the voice yours."
+    },
+    {
+      "question": "How much time do I need to spend as a founder?",
+      "answer": "About 90 minutes a month. We handle the research, content writing, outreach, replies to comments and reporting around that input, so your time goes into the conversations and meetings the work produces rather than into producing content or chasing leads."
+    },
+    {
+      "question": "How does Myntmore help me stand out from the competition?",
+      "answer": "We track how often your competitors post, what works for them and where they fall short, then position you one step ahead with sharper messaging and content that gets you seen by the right people."
+    },
+    {
+      "question": "What makes Myntmore different from other agencies?",
+      "answer": "Most agencies stop at profile optimisation, content and reporting. We also do ICP research, LinkedIn and InMail lead generation, multi-channel sequences, personalised connection requests, competitor and buyer intelligence, AI agent-led prospecting, weekly pipeline updates and monthly strategy reviews."
+    },
+    {
+      "question": "How soon will I see results?",
+      "answer": "You won't get an explosion of leads on day one. The first weeks go into the right setup, the right audience and consistent content that builds trust. Traction builds from there as your content and outreach start working together."
+    },
+    {
+      "question": "I might not have enough content to share. How will you generate that?",
+      "answer": "That is our job. We run a monthly content strategy, write the posts and use a short video interview with you to capture your ideas, so you never need a backlog of content."
+    }
+  ],
+  "service-overview": [
+    {
+      "question": "What B2B lead generation services do you offer?",
+      "answer": "We offer seven core services: LinkedIn Outreach and Automation, Cold Email Infrastructure, ICP Mapping and Lead Scoring, AI-Led Lead Generation, Account-Based Marketing, Personal Branding, and GTM Strategy. Each service is productized and runs on proven systems."
+    },
+    {
+      "question": "How is AI used in your lead generation services?",
+      "answer": "Our AI agents research, qualify, and prioritize leads at scale, cutting manual research time by 80%. We also use AI for personalization in cold email and LinkedIn sequences, ensuring every outreach feels human and relevant."
+    },
+    {
+      "question": "Do you work with B2B companies outside Mumbai?",
+      "answer": "Yes. While we are based in Mumbai, we serve B2B companies across India and internationally. Our systems work remotely and integrate with your existing tools."
+    }
+  ],
+  "service-personal-branding": [
+    {
+      "question": "Do I have to write anything myself?",
+      "answer": "No. You give us one voice interview a month, about 45 minutes, and we write everything from there. You review and approve every post before it's published, so it always sounds like you, but you're not staring at a blank cursor."
+    },
+    {
+      "question": "How is this different from just posting more often?",
+      "answer": "Posting more without a strategy usually means posting generic advice that blends in. We build your positioning first, what makes you specifically worth following, then write content that reinforces that angle every time, so followers build a consistent picture of who you are."
+    },
+    {
+      "question": "How many posts do I actually get?",
+      "answer": "4 to 8 fully ghostwritten LinkedIn posts a month, depending on the plan. Each one goes through your review and approval before it's scheduled."
+    },
+    {
+      "question": "Can this work alongside outbound, cold email or LinkedIn outreach?",
+      "answer": "It's one of the strongest combinations we run. A prospect who's already seen your name and content reacts very differently to a cold email or connection request than someone who's never heard of you. Personal branding warms up the exact people your outbound is trying to reach."
+    },
+    {
+      "question": "How long before I see real results?",
+      "answer": "Profile visits and engagement usually climb within the first month. Inbound messages referencing your content typically start by month two to three, since authority builds with consistency, not a single viral post."
+    }
+  ],
+  "service-sales-intelligence": [
+    {
+      "question": "What kinds of signals do you track?",
+      "answer": "We track 40+ signal types across five categories: funding events, hiring activity, technology changes, competitive displacement, and behavioural triggers like content engagement and job posting language. The signals we prioritise for each client depend on what has historically correlated with a buying decision in your specific market."
+    },
+    {
+      "question": "How is this different from a bought list?",
+      "answer": "A bought list gives you names and job titles: no context, no timing, no indication of intent. Signal-led intelligence gives you accounts that are actively showing buying behaviour right now. You know why they're on the list, what triggered them, and exactly what to say in your first message to make it land."
+    },
+    {
+      "question": "How often is the data refreshed?",
+      "answer": "The signal feed refreshes daily. Accounts that hit your trigger criteria this week appear in your signal dashboard by the next morning. This is the core advantage over static lists: you're always working with the freshest possible view of who is in-market."
+    },
+    {
+      "question": "How do we receive the accounts?",
+      "answer": "You get exportable account lists with full signal context attached, mapped to your fields and ready to import into whatever system your team already uses. We don't build or manage CRM integrations, that stays part of your own process."
+    },
+    {
+      "question": "What's the typical pipeline impact?",
+      "answer": "Clients who switch from bought lists to signal-led outreach typically see 3–5x improvement in pipeline conversion within 90 days. The exact number depends on how well-defined your ICP is and how quickly your team adopts signal-triggered outreach. We build in a calibration period of 30 days to tune the scoring model to your market."
+    }
+  ],
+  "tool-linkedin-hook-grader": [
+    {
+      "question": "What is a LinkedIn hook?",
+      "answer": "The first two lines of a LinkedIn post, the part shown before the \"see more\" cut. How much shows depends on the device, usually two to three lines. For many readers, those lines decide whether the rest gets read."
+    },
+    {
+      "question": "How is the score calculated?",
+      "answer": "Six rules are checked in code: length, curiosity, specificity, authority, action and a clickbait penalty. They add up to 100. The same wording always gets the same score, and the AI never sets it."
+    },
+    {
+      "question": "What does the AI do?",
+      "answer": "Google's Gemini writes three alternative hooks, each from a different angle: a specific result, a contrarian take and a curiosity gap. Each alternative is then scored with the same six rules, so you can compare them with your original."
+    },
+    {
+      "question": "Will it make up numbers for my hook?",
+      "answer": "No. The rewrites keep your meaning and facts. Where a number would help and you gave none, the tool uses a placeholder such as [X%] for you to fill in with something true."
+    },
+    {
+      "question": "Is a high score a guarantee the post will perform?",
+      "answer": "No. The score tells you how well the opening follows common hook principles. Reach also depends on your audience, topic, timing and the rest of the post. Use the score to compare versions, not to predict results."
+    }
+  ]
+}

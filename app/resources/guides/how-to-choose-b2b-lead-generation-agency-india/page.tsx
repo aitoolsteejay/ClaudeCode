@@ -8,6 +8,7 @@ import AskYourAI from "@/app/components/AskYourAI";
 import Faq from "@/app/lp/Faq";
 import { buildFaqSchema, buildArticleSchema, SITE_URL } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const PAGE_URL = `${SITE_URL}/resources/guides/how-to-choose-b2b-lead-generation-agency-india`;
 const TITLE = "How to Choose a B2B Lead Generation Agency in India";
@@ -89,28 +90,7 @@ const SCORECARD = [
   { criterion: "Proof", good: "Results with numbers, plus a client you can call", flag: "Screenshots of one client's best month" },
 ];
 
-const FAQ_ITEMS = [
-  {
-    question: "What does a B2B lead generation agency in India do?",
-    answer: "A B2B lead generation agency finds companies that match your ideal customer profile and starts sales conversations with them. In India the label covers four different businesses: data vendors, telecalling firms, performance marketing agencies and outbound agencies running cold email and LinkedIn. Confirm which one you are talking to before you compare prices.",
-  },
-  {
-    question: "How is B2B lead generation priced in India?",
-    answer: "Agencies in India price B2B lead generation in three ways: a monthly retainer, a fee per qualified meeting, or a fee per lead, often with setup costs for domains and tools, plus 18% GST. Compare them on cost per qualified meeting that actually happened, because a low per-lead price often hides poor lead quality.",
-  },
-  {
-    question: "Is cold email legal in India?",
-    answer: "Cold email to business contacts is legal in India, but personal data handling falls under the Digital Personal Data Protection Act, 2023. Its rules were notified in November 2025 and most obligations apply from May 2027. Commercial calls and SMS fall under TRAI rules instead. Ask any agency for its written approach and get legal advice for large campaigns.",
-  },
-  {
-    question: "How long before a lead generation agency books the first meeting?",
-    answer: "Across Myntmore's managed accounts, campaigns go live within 18 days of onboarding, the first qualified conversations come in weeks three to four, and meeting volume becomes consistent after six to eight weeks. The setup weeks go to ICP definition, list building, domain warm-up and copy. An agency promising meetings in week one is usually skipping one of those steps.",
-  },
-  {
-    question: "Should I pay per lead or pay a retainer?",
-    answer: "Pay per lead suits you when you only want contacts and will run the outreach yourself. A retainer or per-meeting model suits you when you want the agency to run the whole system, because it rewards them for testing, fixing deliverability and improving copy instead of maximising the number of contacts delivered.",
-  },
-];
+const FAQ_ITEMS = pageFaqs("guide-how-to-choose-b2b-lead-generation-agency-india");
 
 export default function HowToChooseLeadGenAgencyIndiaPage() {
   return (

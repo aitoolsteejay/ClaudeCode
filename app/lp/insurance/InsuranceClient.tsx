@@ -10,6 +10,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -91,14 +92,7 @@ const PROCESS = [
   { n: "04", title: "Qualified Meeting Handoff", body: "Qualified conversations with real decision-makers land directly on your calendar. You advise and close; we keep the pipeline full." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "How is this different from cold calling or relying on referrals?", a: "Cold calling is unstructured and low-conversion; referrals are unpredictable and capped by who you already know. We build a systematic, targeted outreach engine, verified decision-maker lists, credibility-led messaging, and renewal-timed sequencing, so new corporate conversations happen every month, not just when someone happens to refer you." },
-  { q: "How do you handle renewal-cycle timing?", a: "We map each target company's likely renewal window and sequence outreach to land 60 to 90 days ahead of it, when they are actually evaluating alternatives. Outreach outside that window is deprioritised so we are not wasting your time on companies who are not listening yet." },
-  { q: "Does this work for group health insurance as well as commercial or property lines?", a: "Yes. The system adapts to your specific book, group health, commercial property and liability, or keyman and corporate liability cover, by adjusting the ICP, the decision-makers we target, and the messaging to match how that line is actually bought." },
-  { q: "We already have a BD or relationship management team. Will this overlap?", a: "No. We focus purely on generating net-new outbound conversations with companies you do not already have a relationship with. Your BD and RM teams keep managing existing accounts and referral relationships; we add a new, always-on channel for fresh corporate business." },
-  { q: "How soon can we expect our first meetings?", a: "Most brokerage clients see their first qualified conversations within 3 to 4 weeks, once ICP mapping, decision-maker list building, and renewal-timed sequencing are in place." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract. To be clear, we generate qualified buyer conversations only, we do not advise on policy structuring, underwriting, or claims." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-insurance");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

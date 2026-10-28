@@ -9,6 +9,7 @@ import AnswerBlock from "../../components/AnswerBlock";
 import RelatedPath from "../../components/RelatedPath";
 import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "AI Lead Generation",
@@ -52,28 +53,7 @@ const NOT_FOR = [
 ];
 
 
-const FAQ_ITEMS = [
-  {
-    q: "What does the AI actually do versus your human team?",
-    a: "The AI handles research, enrichment, and scoring at scale: pulling data from multiple sources, cross-referencing signals, and ranking leads by fit and intent. Our human team configures the agents, audits output for quality, writes the strategic layer, and makes sure nothing reaches your sales team without being genuinely useful.",
-  },
-  {
-    q: "How accurate is the lead scoring?",
-    a: "With a well-defined ICP, our scoring model runs at roughly 85–90% relevance on the top tier. We build in a feedback loop: your team flags false positives and the model adjusts over time. Accuracy compounds month over month.",
-  },
-  {
-    q: "How do we receive the leads?",
-    a: "You get clean, structured lead exports with full research summaries attached, mapped to your fields and ready to import into whatever system your team already uses. We don't build or manage CRM integrations, that stays part of your own process.",
-  },
-  {
-    q: "How many leads can you generate per month?",
-    a: "For most B2B clients with a defined ICP we deliver 300 to 1,500 scored, research-enriched leads per month. Volume is never the goal. Relevance is. 200 right-fit leads beat 2,000 cold ones every time.",
-  },
-  {
-    q: "Will this work for a niche industry with a small TAM?",
-    a: "Often better than broad markets. A smaller TAM means we go deeper on each account, track more specific signals, and personalise outreach at a level generic tools can't. Some of our best results come from clients with a TAM under 5,000 accounts.",
-  },
-];
+const FAQ_ITEMS = pageFaqsQA("service-ai-lead-generation");
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [

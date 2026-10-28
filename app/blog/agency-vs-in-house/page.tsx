@@ -9,6 +9,7 @@ import NewsletterForm from "../../components/NewsletterForm";
 import Faq from "../../lp/Faq";
 import { buildFaqSchema, buildArticleSchema } from "@/lib/schema";
 import ArticleMeta from "@/app/components/ArticleMeta";
+import { pageFaqs } from "@/lib/page-faqs";
 
 const BLOG_AI_RESOURCES = [
   "https://www.myntmore.com/blog/agency-vs-in-house",
@@ -73,24 +74,7 @@ interface FaqEntry {
   answer: string;
 }
 
-const FAQ_ITEMS: FaqEntry[] = [
-  {
-    question: "Can we start with an agency and bring outbound in-house later?",
-    answer: "Yes, and it's common. Agencies are a fast way to get a system running and learn what actually converts for your ICP before you commit to hiring. Once you know your winning messaging, targeting, and channel mix, bringing it in-house is a smaller, lower-risk decision than starting from zero.",
-  },
-  {
-    question: "Is an agency more expensive than an SDR long-term?",
-    answer: "Short-term, no: a retainer is usually cheaper than a fully-loaded SDR salary. Long-term, it can flip. Over 2+ years, a great in-house hire who owns the relationship and product knowledge can out-earn their cost. Agencies win on speed and flexibility; a strong long-term hire can win on depth, if you can find and keep one.",
-  },
-  {
-    question: "What happens to our systems and lists if we bring outbound in-house later?",
-    answer: "Whatever we build for you, ICP definitions, sequences, positioning, lists, is yours. A good agency engagement should leave you with a documented, transferable system, not a black box you're locked into.",
-  },
-  {
-    question: "Why does hiring take so much longer than starting with an agency?",
-    answer: "It's not just the hiring process itself. It's sourcing candidates, interviewing, onboarding, teaching them your product and ICP, and then the natural ramp period every new rep needs before they're fully productive. An agency skips straight to execution because the ICP work, infrastructure, and sequences are already built.",
-  },
-];
+const FAQ_ITEMS: FaqEntry[] = pageFaqs("blog-agency-vs-in-house");
 
 const ARTICLE_SCHEMA = buildArticleSchema({
   headline: "Agency vs. In-House SDR: How to Build B2B Outbound",

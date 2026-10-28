@@ -24,7 +24,7 @@ const walk = (dir, out = []) => {
   }
   return out;
 };
-const files = [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib"))]
+const files = [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "content"))]
   .filter((f) => !/site-audit|sitemap-dates|service-answers|entity-facts|research/.test(f))
   .filter((f) => !f.includes(`${path.sep}api${path.sep}`));
 

@@ -9,6 +9,7 @@ import AnswerBlock from "../../components/AnswerBlock";
 import RelatedPath from "../../components/RelatedPath";
 import { SERVICE_PATHS } from "@/lib/internal-paths";
 import { buildServiceSchema, buildHowToSchema, buildFaqSchema, SITE_URL } from "@/lib/schema";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 const SERVICE_SCHEMA = buildServiceSchema({
   name: "Personal Branding",
@@ -54,28 +55,7 @@ const NOT_FOR = [
 ];
 
 
-const FAQ_ITEMS = [
-  {
-    q: "Do I have to write anything myself?",
-    a: "No. You give us one voice interview a month, about 45 minutes, and we write everything from there. You review and approve every post before it's published, so it always sounds like you, but you're not staring at a blank cursor.",
-  },
-  {
-    q: "How is this different from just posting more often?",
-    a: "Posting more without a strategy usually means posting generic advice that blends in. We build your positioning first, what makes you specifically worth following, then write content that reinforces that angle every time, so followers build a consistent picture of who you are.",
-  },
-  {
-    q: "How many posts do I actually get?",
-    a: "4 to 8 fully ghostwritten LinkedIn posts a month, depending on the plan. Each one goes through your review and approval before it's scheduled.",
-  },
-  {
-    q: "Can this work alongside outbound, cold email or LinkedIn outreach?",
-    a: "It's one of the strongest combinations we run. A prospect who's already seen your name and content reacts very differently to a cold email or connection request than someone who's never heard of you. Personal branding warms up the exact people your outbound is trying to reach.",
-  },
-  {
-    q: "How long before I see real results?",
-    a: "Profile visits and engagement usually climb within the first month. Inbound messages referencing your content typically start by month two to three, since authority builds with consistency, not a single viral post.",
-  },
-];
+const FAQ_ITEMS = pageFaqsQA("service-personal-branding");
 const FAQ_SCHEMA = buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })));
 
 const BENEFITS = [

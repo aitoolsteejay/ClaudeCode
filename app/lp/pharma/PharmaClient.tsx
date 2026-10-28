@@ -9,6 +9,7 @@ import SubmitButton from "../../components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
 import FlowDiagram from "../FlowDiagram";
 import Faq from "../Faq";
+import { pageFaqsQA } from "@/lib/page-faqs";
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -83,14 +84,7 @@ const PROCESS = [
   { n: "04", title: "Qualified Meeting Handoff", body: "Interested buyers land directly in your calendar with full context. Your regulatory, quality, and commercial teams take it from there." },
 ];
 
-const FAQ_ITEMS = [
-  { q: "Does Myntmore handle regulatory approvals or compliance for us?", a: "No. Myntmore is a B2B outbound lead generation partner, we find and book meetings with the right buyers. Regulatory approvals, WHO-GMP or USFDA certification processes, and import-export compliance are handled entirely by your own regulatory, quality, and compliance team. We do not advise on or claim expertise in these areas." },
-  { q: "How does outreach differ for domestic buyers versus export and global buyers?", a: "Domestic outreach targets hospital purchase committees, distributors, and chemist chains, with messaging built around tender cycles and regional buying patterns. Export and contract-manufacturing outreach targets importers, sourcing heads, and procurement teams abroad, with messaging built around therapeutic category fit and manufacturing capacity. We run both as separate, tailored tracks." },
-  { q: "How do you handle compliance-sensitive messaging in outreach?", a: "We reference certifications and manufacturing capability factually, what you hold and what your facility supports, without making regulatory claims on your behalf. Any compliance-specific questions a buyer raises are flagged and routed straight to your team." },
-  { q: "Which buyer titles and roles do you typically target?", a: "Procurement Heads, Regulatory Affairs contacts, Import/Export Managers, hospital Purchase Committee members, and Distribution Partners, depending on whether the target account is domestic or export focused." },
-  { q: "How fast will we start seeing meetings?", a: "Most pharma clients see their first qualified buyer conversations within 3 to 5 weeks, once ICP mapping, list building, and outreach sequences are in place." },
-  { q: "What does pricing and commitment look like?", a: "We work on a monthly retainer with a 3-month minimum, which covers setup and enough sending to judge results. After that it runs month to month with 30 days' notice, with no annual contract." },
-];
+const FAQ_ITEMS = pageFaqsQA("lp-pharma");
 
 function HeroSection() {
   const blob1 = useRef<HTMLDivElement>(null);

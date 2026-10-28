@@ -103,6 +103,22 @@ for (const { file, dir } of pageDirs) {
     pages.push({ path: p, dir: rel(dir), title, noindex, dynamic: p !== route, generatedParams: /generateStaticParams\s*\(/.test(src) });
   }
 }
+// Blog posts live in content/posts/*.mdoc (written in the Keystatic admin) and are all rendered by
+// app/resources/blogs/[slug]. Each published one is a page of its own for this audit.
+const cmsPosts = [];
+const postsDir = path.join(ROOT, "content", "posts");
+if (fs.existsSync(postsDir)) {
+  for (const f of fs.readdirSync(postsDir).filter((f) => f.endsWith(".mdoc")).sort()) {
+    const src = fs.readFileSync(path.join(postsDir, f), "utf8");
+    const fm = src.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? "";
+    if (!/^published:\s*true\s*$/m.test(fm)) continue;
+    const unq = (v) => v.trim().replace(/^"(.*)"$/s, "$1").replace(/^'(.*)'$/s, "$1");
+    const title = unq(fm.match(/^metaTitle:\s*(.+)$/m)?.[1] ?? "") || unq(fm.match(/^title:\s*(.+)$/m)?.[1] ?? "") || null;
+    const slug = f.replace(/\.mdoc$/, "");
+    cmsPosts.push({ slug, route: `/resources/blogs/${slug}`, file: `content/posts/${f}`, src });
+    pages.push({ path: `/resources/blogs/${slug}`, dir: `content/posts/${f}`, title, noindex: false, dynamic: false, generatedParams: false });
+  }
+}
 const routeSet = new Set(pages.map((p) => p.path));
 
 // ---- 2. Redirects & rewrites ------------------------------------------------
@@ -122,6 +138,9 @@ const inHtml = new Set(
     ? [...read(htmlSitemapFile).matchAll(/href:\s*["'`](\/[^"'`\s]*)/g)].map((m) => normalize(m[1]))
     : [],
 );
+
+// Every published CMS post is in the XML sitemap and on the HTML sitemap page (both are built from the CMS).
+for (const post of cmsPosts) { inXml.add(post.route); inHtml.add(post.route); }
 
 // ---- 4. Links -----------------------------------------------------------------
 // Sources that list pages rather than link to them.
@@ -172,6 +191,20 @@ for (const f of codeFiles) {
     const to = normalize(value.replace(/^https?:\/\/(?:www\.)?myntmore\.com/, ""));
     edges.push({ from: owner, fromFile: rel(f), to: redirectMap.get(to) ?? to });
   }
+}
+
+// Links inside CMS posts (markdown links, related reading, the call-to-action box, tool callouts), and the
+// blog index, which lists every published post.
+for (const post of cmsPosts) {
+  const targets = new Set([
+    ...[...post.src.matchAll(/\]\((\/[^)\s#]*)/g)].map((m) => m[1]),
+    ...[...post.src.matchAll(/^\s*(?:- )?href:\s*["']?(\/[^"'\s#]*)/gm)].map((m) => m[1]),
+  ]);
+  for (const t of targets) {
+    const to = normalize(t);
+    edges.push({ from: post.route, fromFile: post.file, to: redirectMap.get(to) ?? to });
+  }
+  edges.push({ from: "/resources/blogs", fromFile: "app/resources/blogs/page.tsx", to: post.route });
 }
 
 // Runtime-built links like `/resources/blogs/${slug}`: attribute them to every page under

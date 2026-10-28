@@ -1,0 +1,4 @@
+from,to,probability,status
+/blog/icp-mapping-b2b,/services/sales-intelligence,0.78,"proposed, not inserted"
+/blog/tam-trap-vague-targeting,/services/sales-intelligence,0.70,"proposed, not inserted"
+/blog/predictable-b2b-lead-gen-engine,/services/sales-intelligence,0.70,"conflict: ties with the inserted ai-lead-generation link (0.62), margin 0.08"

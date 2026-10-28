@@ -6,6 +6,7 @@ import FadeIn from "../components/FadeIn";
 import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
+import { getCmsPostSummaries } from "@/lib/cms-posts";
 
 export const metadata: Metadata = {
   title: "Site Map",
@@ -270,7 +271,11 @@ const GROUPS: SitemapGroup[] = [
   },
 ];
 
-export default function SitemapPage() {
+export default async function SitemapPage() {
+  // Blog posts come from the CMS: any post without a hand-written label above is listed by its title.
+  const known = new Set(GROUPS.flatMap((g) => g.links.map((l) => l.href)));
+  const extraPosts = (await getCmsPostSummaries()).filter((p) => !known.has(p.href)).map((p) => ({ label: p.title, href: p.href }));
+  const groups: SitemapGroup[] = GROUPS.map((g) => (g.title === "Blog" ? { ...g, links: [...g.links, ...extraPosts] } : g));
   return (
     <InnerLayout>
       <JsonLd data={BREADCRUMB_SCHEMA} />
@@ -295,7 +300,7 @@ export default function SitemapPage() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {GROUPS.map((group) => (
+              {groups.map((group) => (
                 <div key={group.title} className="rounded-2xl border p-6" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
                   <div className="flex items-center gap-2 mb-4">
                     <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: group.accent }} />

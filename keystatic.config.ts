@@ -15,8 +15,7 @@ import { collection, config, fields } from "@keystatic/core";
 //    its sitemap entry (both run by prebuild).
 //  - Blog posts: .mdoc files read at build time by lib/cms-posts.ts and
 //    rendered by app/resources/blogs/[slug]/page.tsx (served at /resources/blogs/<slug>).
-//    The 36 older posts are hand-built pages; a static folder under app/resources/blogs/ always wins over
-//    the dynamic route.
+//    All blog posts are CMS posts; there are no hand-built blog pages.
 //
 // Storage: local files while developing. Set NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO
 // ("owner/name") plus the GitHub app variables (see docs/cms-setup.md) and the
@@ -322,23 +321,16 @@ export default config({
           label: "Search description",
           description: "One or two sentences, 120 to 155 characters. Also shown on the blog index.",
           multiline: true,
-          validation: { isRequired: true, length: { min: 60, max: 200 } },
+          validation: { isRequired: true, length: { min: 60, max: 220 } },
         }),
-        category: fields.select({
-          label: "Category",
-          options: [
-            { label: "Cold Email", value: "Cold Email" },
-            { label: "Cold Outreach", value: "Cold Outreach" },
-            { label: "LinkedIn Outreach", value: "LinkedIn Outreach" },
-            { label: "Personal Branding", value: "Personal Branding" },
-            { label: "Lead Generation", value: "Lead Generation" },
-            { label: "ICP & Targeting", value: "ICP & Targeting" },
-            { label: "GTM Strategy", value: "GTM Strategy" },
-            { label: "Sales Strategy", value: "Sales Strategy" },
-            { label: "Metrics & Reporting", value: "Metrics & Reporting" },
-            { label: "Positioning", value: "Positioning" },
-          ],
-          defaultValue: "Lead Generation",
+        category: fields.text({
+          label: "Category (the pill above the title)",
+          description: "A short label such as Cold Email, LinkedIn Outreach, Comparison, Sales Strategy.",
+          validation: { isRequired: true },
+        }),
+        accent: fields.text({
+          label: "Accent colour (optional, e.g. #EF4444)",
+          description: "Colours the pill and list markers. Leave empty for the default orange.",
         }),
         readTime: fields.integer({
           label: "Read time (minutes)",
@@ -358,11 +350,36 @@ export default config({
           itemLabel: (props) => props.value,
         }),
         summary: fields.text({
-          label: "Answer-first summary",
+          label: "Intro / answer-first summary",
           description:
-            "40 to 60 words that answer the post's main question outright, with one number and one named thing. AI answer engines quote this block, and it is the first paragraph under the title.",
+            "The first paragraph under the title. For new posts: 40 to 60 words that answer the post's main question outright, with one number and one named thing. AI answer engines quote this block.",
           multiline: true,
-          validation: { isRequired: true, length: { min: 120, max: 520 } },
+          validation: { isRequired: true, length: { min: 60, max: 900 } },
+        }),
+        schemaHeadline: fields.text({
+          label: "Headline in structured data (optional)",
+          description: "Leave empty to use the title. Keep under 110 characters.",
+        }),
+        schemaDescription: fields.text({
+          label: "Description in structured data (optional)",
+          description: "Leave empty to use the search description.",
+          multiline: true,
+        }),
+        ogTitle: fields.text({ label: "Share title for LinkedIn / WhatsApp (optional)", description: "Leave empty to use the search title." }),
+        ogDescription: fields.text({ label: "Share description (optional)", multiline: true, description: "Leave empty to use the search description." }),
+        excerpt: fields.text({
+          label: "Blog index card text (optional)",
+          description: "Leave empty to use the search description.",
+          multiline: true,
+        }),
+        indexTags: fields.array(fields.text({ label: "Tag" }), {
+          label: "Blog index card tags (optional, up to 3; empty uses the category)",
+          validation: { length: { max: 3 } },
+          itemLabel: (props) => props.value,
+        }),
+        indexOrder: fields.integer({
+          label: "Blog index position (optional)",
+          description: "Lowest first. Posts without one are listed first, newest first.",
         }),
         content: fields.document({
           label: "Body",
@@ -399,6 +416,25 @@ export default config({
             label: "Related reading (optional)",
             itemLabel: (props) => props.fields.label.value,
           }
+        ),
+        cta: fields.object(
+          {
+            heading: fields.text({ label: "Heading" }),
+            body: fields.text({ label: "Text", multiline: true }),
+            button: fields.text({ label: "Button label" }),
+            href: fields.text({ label: "Button link, e.g. /tools/dm-angle-generator or /book-a-call" }),
+            button2: fields.text({ label: "Second button label (optional, plain style)" }),
+            href2: fields.text({ label: "Second button link (optional)" }),
+          },
+          { label: "Call-to-action box at the end (optional: leave the heading empty to hide it)" }
+        ),
+        toolCallouts: fields.array(
+          fields.object({
+            name: fields.text({ label: "Tool name", validation: { isRequired: true } }),
+            href: fields.text({ label: "Link, e.g. /tools/linkedin-hook-grader", validation: { isRequired: true } }),
+            blurb: fields.text({ label: "One-sentence description", multiline: true, validation: { isRequired: true } }),
+          }),
+          { label: "Free-tool callouts (optional)", itemLabel: (props) => props.fields.name.value }
         ),
       },
     }),

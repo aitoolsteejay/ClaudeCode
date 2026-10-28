@@ -1,0 +1,87 @@
+---
+title: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"
+published: true
+metaTitle: "Cold Email Deliverability Guide"
+description: "A technical guide to cold email deliverability: domain setup, warming, and sending limits. Read the full guide."
+category: "Cold Email"
+accent: "#3B82F6"
+readTime: 6
+datePublished: 2026-06-11
+dateModified: 2026-08-18
+keywords:
+  - "cold email deliverability"
+  - "how to improve cold email deliverability"
+  - "why cold emails go to spam"
+  - "email warm up process"
+  - "spf dkim dmarc setup"
+  - "cold email sending domains"
+  - "domain warm up for cold email"
+  - "cold email sending limits"
+  - "inbox placement test"
+  - "cold email spam checker"
+  - "how many cold emails per day per inbox"
+  - "bounce rate for cold email"
+  - "separate sending domain for cold outreach"
+  - "email authentication for outbound"
+  - "cold email deliverability checklist"
+  - "fixing low inbox placement rate"
+summary: "You can write the best cold email in the world and it will not matter if it never reaches the inbox. Deliverability is the silent killer of outbound, and most founders don't even know it is happening to them."
+schemaHeadline: "Cold Email Deliverability: Why Emails Land in Spam"
+ogTitle: "Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"
+ogDescription: "The technical guide to getting cold emails into the inbox, not the spam folder."
+excerpt: "Deliverability is the silent killer of outbound. Most campaigns fail before a single human ever reads them. Here is how to fix it."
+indexOrder: 19
+faqs: []
+relatedLinks: []
+cta:
+  heading: "Want us to audit your cold email infrastructure?"
+  body: "We'll review your domains, DNS setup, warm-up status, and sending limits, and tell you exactly what to fix to improve inbox placement."
+  button: "Book a Free GTM Audit"
+  href: "/book-a-call"
+  button2: ""
+  href2: ""
+toolCallouts: []
+---
+
+- **21%** of all cold emails never reach the inbox (Source: Validity Report)
+- **45 days** for a new domain to reach full send volume; campaigns start at low volume much sooner (Source: Instantly.ai Data)
+- **3x** inbox rate improvement from proper DNS setup (Source: Lemlist Research)
+
+## The deliverability problem no one talks about
+
+When a cold email campaign underperforms, most people blame the copy. They rewrite the subject line, try a new CTA, and send again. But the real problem is often invisible: their emails are going to spam before a single human sees them. Google and Outlook use dozens of signals to decide whether your email is legitimate outreach or bulk spam. Get those signals wrong and you are blacklisted, sometimes permanently.
+
+## The three DNS records you must have
+
+- SPF (Sender Policy Framework): This tells email providers which servers are authorised to send emails from your domain. Without it, any server can claim to send email as you, which is a major spam signal. Set this up before you send a single email.
+- DKIM (DomainKeys Identified Mail): This adds a digital signature to your emails that proves they haven't been tampered with in transit. ESPs like Google and Outlook heavily weight DKIM when deciding inbox vs spam.
+- DMARC (Domain-based Message Authentication): This is the policy layer on top of SPF and DKIM. It tells receiving servers what to do with emails that fail authentication: reject, quarantine, or pass. At minimum, set it to p=none to start collecting data on your domain's email traffic.
+
+## Why you need separate sending domains
+
+Never send cold email from your primary domain. Ever. If your primary domain gets flagged or blacklisted, you lose your business email. Instead, set up two to three lookalike domains: variations of your main domain like getmyntmore.com or trymyntmore.com. Buy them, set up the DNS records, and warm them up separately. If one gets burned, you still have others running.
+
+## Domain warm-up: the step most people skip
+
+A brand-new domain sending 500 emails on day one is a massive spam signal. Email providers expect new domains to ramp up slowly. The warm-up process means starting with 5–10 emails per day per inbox, sending to real addresses with positive engagement, and increasing volume by 10–20% every few days. Tools like Instantly, Lemwarm, and Mailreach automate this. Plan for 4–6 weeks before you hit full volume.
+
+## Sending limits that keep you safe
+
+1. Per inbox limit: Keep it under 30–40 emails per day per inbox. Going above this is a deliverability risk regardless of how well-warmed the domain is.
+2. Reply rate monitoring: If your reply rate drops below 1%, stop and diagnose. Either your list quality has dropped or you are hitting spam traps.
+3. Bounce rate cap: Keep hard bounces under 2%. High bounce rates tell providers your list is unverified and are a fast track to being flagged.
+4. Unsubscribe handling: Always honour unsubscribes immediately. Include a plain-text unsubscribe option in every email. Not just for compliance: it is a deliverability signal too.
+
+## The inbox placement test
+
+Before running any campaign, run a seed list test using a tool like GlockApps or Mail-Tester. These tools show you exactly where your emails are landing: primary inbox, promotions tab, or spam, across Gmail, Outlook, and Yahoo. If you are below 85% inbox placement, fix your infrastructure before spending any more time on copy.
+
+## The write-once, compound-forever mindset
+
+Good deliverability infrastructure is built once and maintained. Spend the two weeks upfront to get it right: domains, DNS, warm-up, limits, and you will have a stable outbound channel for years. Skip it and you will be constantly wondering why your open rates are collapsing.
+
+If you would rather not build and monitor this infrastructure yourself, see our [done-for-you cold email service](/services/cold-email).
+
+## Deliverability and compliance are the same conversation
+
+A real unsubscribe link, honest sender identity, and prompt suppression aren't just legal requirements under laws like CAN-SPAM and GDPR, they're exactly the signals email providers use to decide whether your domain is legitimate. Get the legal basics right and inbox placement tends to improve alongside it. See our [cold email compliance guide](/resources/blogs/cold-email-compliance-guide) for the specifics by region.

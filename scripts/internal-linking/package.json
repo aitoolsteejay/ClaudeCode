@@ -1,0 +1,7 @@
+{
+  "name": "myntmore-internal-linking",
+  "private": true,
+  "type": "module",
+  "description": "Standalone job: score internal link candidates with Jev via the Vercel AI Gateway. Kept out of the site's own dependencies.",
+  "dependencies": { "ai": "^7.0.143" }
+}

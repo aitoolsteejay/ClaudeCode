@@ -20,7 +20,7 @@ const walk = (dir, out = []) => {
     if (e.name === "node_modules" || e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, out);
-    else if (/\.(tsx?|txt|json)$/.test(e.name)) out.push(p);
+    else if (/\.(tsx?|txt|json|mdoc)$/.test(e.name)) out.push(p);
   }
   return out;
 };

@@ -1,0 +1,101 @@
+from,to,probability,note
+/resources/guides/how-to-choose-an-outbound-agency,/case-studies,0.74,evaluating agencies; wants proof before signing
+/resources/guides/how-to-choose-an-outbound-agency,/services/cold-email,0.45,evaluating agencies; wants proof before signing
+/resources/guides/how-to-choose-an-outbound-agency,/services/linkedin-outreach,0.40,evaluating agencies; wants proof before signing
+/resources/guides/how-to-choose-an-outbound-agency,/services/ai-lead-generation,0.30,evaluating agencies; wants proof before signing
+/resources/guides/how-to-choose-an-outbound-agency,/services/personal-branding,0.08,evaluating agencies; wants proof before signing
+/resources/guides/dos-and-donts-of-outreach,/services/cold-email,0.52,"tactics piece; channel split, no clear winner"
+/resources/guides/dos-and-donts-of-outreach,/services/linkedin-outreach,0.50,"tactics piece; channel split, no clear winner"
+/resources/guides/dos-and-donts-of-outreach,/services/ai-lead-generation,0.35,"tactics piece; channel split, no clear winner"
+/resources/guides/dos-and-donts-of-outreach,/case-studies,0.30,"tactics piece; channel split, no clear winner"
+/resources/guides/dos-and-donts-of-outreach,/services/personal-branding,0.05,"tactics piece; channel split, no clear winner"
+/blog/stop-selling-features-cold-outreach,/services/cold-email,0.40,copy principle; no single next step
+/blog/stop-selling-features-cold-outreach,/services/linkedin-outreach,0.38,copy principle; no single next step
+/blog/stop-selling-features-cold-outreach,/case-studies,0.35,copy principle; no single next step
+/blog/stop-selling-features-cold-outreach,/services/ai-lead-generation,0.30,copy principle; no single next step
+/blog/stop-selling-features-cold-outreach,/services/personal-branding,0.10,copy principle; no single next step
+/blog/5-second-hero-section-test,/case-studies,0.25,website copy; no service fits
+/blog/5-second-hero-section-test,/services/personal-branding,0.12,website copy; no service fits
+/blog/5-second-hero-section-test,/services/ai-lead-generation,0.10,website copy; no service fits
+/blog/5-second-hero-section-test,/services/linkedin-outreach,0.10,website copy; no service fits
+/blog/5-second-hero-section-test,/services/cold-email,0.08,website copy; no service fits
+/blog/founder-led-sales-before-scaling,/services/personal-branding,0.45,founder selling; brand and LinkedIn tie
+/blog/founder-led-sales-before-scaling,/services/linkedin-outreach,0.40,founder selling; brand and LinkedIn tie
+/blog/founder-led-sales-before-scaling,/case-studies,0.30,founder selling; brand and LinkedIn tie
+/blog/founder-led-sales-before-scaling,/services/ai-lead-generation,0.20,founder selling; brand and LinkedIn tie
+/blog/founder-led-sales-before-scaling,/services/cold-email,0.20,founder selling; brand and LinkedIn tie
+/blog/vanity-metrics-personal-brand-pipeline,/services/personal-branding,0.82,founder brand for pipeline; direct match
+/blog/vanity-metrics-personal-brand-pipeline,/services/linkedin-outreach,0.42,founder brand for pipeline; direct match
+/blog/vanity-metrics-personal-brand-pipeline,/case-studies,0.28,founder brand for pipeline; direct match
+/blog/vanity-metrics-personal-brand-pipeline,/services/ai-lead-generation,0.12,founder brand for pipeline; direct match
+/blog/vanity-metrics-personal-brand-pipeline,/services/cold-email,0.10,founder brand for pipeline; direct match
+/blog/outbound-funnel-math-not-guesswork,/case-studies,0.40,"funnel math; proof or tools, split"
+/blog/outbound-funnel-math-not-guesswork,/services/ai-lead-generation,0.35,"funnel math; proof or tools, split"
+/blog/outbound-funnel-math-not-guesswork,/services/linkedin-outreach,0.30,"funnel math; proof or tools, split"
+/blog/outbound-funnel-math-not-guesswork,/services/cold-email,0.30,"funnel math; proof or tools, split"
+/blog/outbound-funnel-math-not-guesswork,/services/personal-branding,0.05,"funnel math; proof or tools, split"
+/blog/relevance-beats-reach-b2b-outbound,/services/cold-email,0.42,relevance; three-way tie
+/blog/relevance-beats-reach-b2b-outbound,/services/ai-lead-generation,0.40,relevance; three-way tie
+/blog/relevance-beats-reach-b2b-outbound,/services/linkedin-outreach,0.38,relevance; three-way tie
+/blog/relevance-beats-reach-b2b-outbound,/case-studies,0.35,relevance; three-way tie
+/blog/relevance-beats-reach-b2b-outbound,/services/personal-branding,0.08,relevance; three-way tie
+/blog/conversations-not-impressions-outbound,/services/linkedin-outreach,0.45,conversations; channel split
+/blog/conversations-not-impressions-outbound,/services/cold-email,0.42,conversations; channel split
+/blog/conversations-not-impressions-outbound,/case-studies,0.35,conversations; channel split
+/blog/conversations-not-impressions-outbound,/services/ai-lead-generation,0.25,conversations; channel split
+/blog/conversations-not-impressions-outbound,/services/personal-branding,0.10,conversations; channel split
+/blog/predictable-b2b-lead-gen-engine,/services/ai-lead-generation,0.68,"ICP, intent signals, 6-week build; AI prospecting fits"
+/blog/predictable-b2b-lead-gen-engine,/case-studies,0.50,"ICP, intent signals, 6-week build; AI prospecting fits"
+/blog/predictable-b2b-lead-gen-engine,/services/linkedin-outreach,0.45,"ICP, intent signals, 6-week build; AI prospecting fits"
+/blog/predictable-b2b-lead-gen-engine,/services/cold-email,0.45,"ICP, intent signals, 6-week build; AI prospecting fits"
+/blog/predictable-b2b-lead-gen-engine,/services/personal-branding,0.08,"ICP, intent signals, 6-week build; AI prospecting fits"
+/blog/ecommerce-conversion-playbook,/case-studies,0.40,eCommerce CRO; outbound is a side note
+/blog/ecommerce-conversion-playbook,/services/cold-email,0.38,eCommerce CRO; outbound is a side note
+/blog/ecommerce-conversion-playbook,/services/ai-lead-generation,0.35,eCommerce CRO; outbound is a side note
+/blog/ecommerce-conversion-playbook,/services/linkedin-outreach,0.20,eCommerce CRO; outbound is a side note
+/blog/ecommerce-conversion-playbook,/services/personal-branding,0.10,eCommerce CRO; outbound is a side note
+/blog/founder-personal-brand-linkedin,/services/linkedin-outreach,0.50,already links personal branding; next best is weak
+/blog/founder-personal-brand-linkedin,/case-studies,0.30,already links personal branding; next best is weak
+/blog/founder-personal-brand-linkedin,/services/ai-lead-generation,0.12,already links personal branding; next best is weak
+/blog/founder-personal-brand-linkedin,/services/cold-email,0.10,already links personal branding; next best is weak
+/blog/founder-personal-brand-linkedin,/services/personal-branding,,"already linked, not scored"
+/blog/cold-email-deliverability-guide,/services/cold-email,0.80,deliverability; wants it handled for them
+/blog/cold-email-deliverability-guide,/case-studies,0.25,deliverability; wants it handled for them
+/blog/cold-email-deliverability-guide,/services/linkedin-outreach,0.20,deliverability; wants it handled for them
+/blog/cold-email-deliverability-guide,/services/ai-lead-generation,0.15,deliverability; wants it handled for them
+/blog/cold-email-deliverability-guide,/services/personal-branding,0.04,deliverability; wants it handled for them
+/blog/icp-mapping-b2b,/services/ai-lead-generation,0.58,"ICP help; closest fit is the sales-intelligence page, not a candidate"
+/blog/icp-mapping-b2b,/case-studies,0.40,"ICP help; closest fit is the sales-intelligence page, not a candidate"
+/blog/icp-mapping-b2b,/services/linkedin-outreach,0.30,"ICP help; closest fit is the sales-intelligence page, not a candidate"
+/blog/icp-mapping-b2b,/services/cold-email,0.25,"ICP help; closest fit is the sales-intelligence page, not a candidate"
+/blog/icp-mapping-b2b,/services/personal-branding,0.05,"ICP help; closest fit is the sales-intelligence page, not a candidate"
+/blog/linkedin-outreach-sequences,/services/linkedin-outreach,0.85,LinkedIn sequences; direct match
+/blog/linkedin-outreach-sequences,/services/cold-email,0.35,LinkedIn sequences; direct match
+/blog/linkedin-outreach-sequences,/case-studies,0.25,LinkedIn sequences; direct match
+/blog/linkedin-outreach-sequences,/services/personal-branding,0.20,LinkedIn sequences; direct match
+/blog/linkedin-outreach-sequences,/services/ai-lead-generation,0.12,LinkedIn sequences; direct match
+/blog/b2b-lead-gen-metrics,/case-studies,0.45,metrics; benchmark report would fit better
+/blog/b2b-lead-gen-metrics,/services/linkedin-outreach,0.30,metrics; benchmark report would fit better
+/blog/b2b-lead-gen-metrics,/services/cold-email,0.30,metrics; benchmark report would fit better
+/blog/b2b-lead-gen-metrics,/services/ai-lead-generation,0.28,metrics; benchmark report would fit better
+/blog/b2b-lead-gen-metrics,/services/personal-branding,0.05,metrics; benchmark report would fit better
+/blog/linkedin-profile-inbound-lead-machine,/services/linkedin-outreach,0.50,already links personal branding; next best is weak
+/blog/linkedin-profile-inbound-lead-machine,/case-studies,0.30,already links personal branding; next best is weak
+/blog/linkedin-profile-inbound-lead-machine,/services/ai-lead-generation,0.10,already links personal branding; next best is weak
+/blog/linkedin-profile-inbound-lead-machine,/services/cold-email,0.08,already links personal branding; next best is weak
+/blog/linkedin-profile-inbound-lead-machine,/services/personal-branding,,"already linked, not scored"
+/blog/b2b-outbound-benchmark-report-2026,/case-studies,0.55,benchmarks; three-way tie
+/blog/b2b-outbound-benchmark-report-2026,/services/cold-email,0.50,benchmarks; three-way tie
+/blog/b2b-outbound-benchmark-report-2026,/services/linkedin-outreach,0.50,benchmarks; three-way tie
+/blog/b2b-outbound-benchmark-report-2026,/services/ai-lead-generation,0.30,benchmarks; three-way tie
+/blog/b2b-outbound-benchmark-report-2026,/services/personal-branding,0.05,benchmarks; three-way tie
+/blog/agency-vs-in-house,/case-studies,0.62,build vs buy decision; proof is the next step
+/blog/agency-vs-in-house,/services/linkedin-outreach,0.45,build vs buy decision; proof is the next step
+/blog/agency-vs-in-house,/services/cold-email,0.40,build vs buy decision; proof is the next step
+/blog/agency-vs-in-house,/services/ai-lead-generation,0.35,build vs buy decision; proof is the next step
+/blog/agency-vs-in-house,/services/personal-branding,0.08,build vs buy decision; proof is the next step
+/blog/tam-trap-vague-targeting,/services/ai-lead-generation,0.45,targeting; no candidate fits
+/blog/tam-trap-vague-targeting,/case-studies,0.35,targeting; no candidate fits
+/blog/tam-trap-vague-targeting,/services/linkedin-outreach,0.25,targeting; no candidate fits
+/blog/tam-trap-vague-targeting,/services/cold-email,0.20,targeting; no candidate fits
+/blog/tam-trap-vague-targeting,/services/personal-branding,0.05,targeting; no candidate fits

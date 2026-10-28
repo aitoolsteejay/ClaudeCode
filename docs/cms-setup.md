@@ -16,9 +16,11 @@ Landing pages: edit the text, numbers, steps and button labels in the admin unde
 
 A new case study published from the admin appears after the next deploy, with its page, sitemap entry and place on the industry filter. Its sitemap date is not refreshed automatically, because sitemap dates come from git history of page code.
 
-The 36 older blog posts are hand-built pages and are not in the CMS. A hand-built page always wins over the CMS route, so nothing about them changes.
+Every blog post, old and new, is a CMS post served at `/resources/blogs/<slug>`. There are no hand-built blog pages any more: to change a post, edit it in the admin (**Blog posts**).
 
-A new post gets, with no code: the page, canonical tag, Open Graph tags, Article schema, FAQPage schema (from the FAQ fields), BreadcrumbList, a visible "Updated" date, an answer-first summary block, a spot on the blog index, a sitemap entry and an `llms-full.txt` line. Posts with **Published** off are invisible everywhere.
+Fields beyond the basics: **category** (the pill) and an optional **accent colour**; **blog index card** text, tags and position; a **share title and description** for LinkedIn and WhatsApp; a **call-to-action box** (one or two buttons) and **free-tool callouts** at the end; related reading ("Keep reading"); and FAQs. In the body use Heading 2 for section titles. Tables, numbered and bulleted lists, quotes and links all work.
+
+A post gets, with no code: the page, canonical tag, Open Graph tags, Article schema, FAQPage schema (from the FAQ fields), BreadcrumbList, a visible "Updated" date, an answer-first summary block, a spot on the blog index, a sitemap entry and an `llms-full.txt` line. Posts with **Published** off are invisible everywhere.
 
 ## Using it on your computer (works today)
 

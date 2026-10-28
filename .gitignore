@@ -5,3 +5,8 @@ node_modules/
 *.pack
 .claude/
 .mcp.json
+
+# local env files (the Keystatic GitHub app wizard writes secrets here)
+.env
+.env.local
+.env.*.local

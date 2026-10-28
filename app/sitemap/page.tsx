@@ -140,6 +140,7 @@ const GROUPS: SitemapGroup[] = [
       { label: "The Cold Email Stack Behind an Extra $7,000", href: "/resources/guides/cold-email-tech-stack" },
       { label: "5 Claude Prompts for Sales Calls", href: "/resources/guides/claude-sales-call-prompts" },
       { label: "LinkedIn Content-to-Calls Starter Kit", href: "/resources/guides/linkedin-content-to-calls-starter-kit" },
+      { label: "The Outbound Meme Prompt Kit", href: "/resources/guides/outbound-meme-prompt-kit" },
       { label: "Job Applications Are a Sales Funnel", href: "/resources/guides/job-applications-sales-funnel" },
     ],
   },

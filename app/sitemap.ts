@@ -263,6 +263,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/resources/guides/cold-email-tech-stack`, lastModified: lastMod("/resources/guides/cold-email-tech-stack"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/claude-sales-call-prompts`, lastModified: lastMod("/resources/guides/claude-sales-call-prompts"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/linkedin-content-to-calls-starter-kit`, lastModified: lastMod("/resources/guides/linkedin-content-to-calls-starter-kit"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/resources/guides/outbound-meme-prompt-kit`, lastModified: lastMod("/resources/guides/outbound-meme-prompt-kit"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/resources/guides/job-applications-sales-funnel`, lastModified: lastMod("/resources/guides/job-applications-sales-funnel"), changeFrequency: "monthly", priority: 0.7 },
     // Careers
     { url: `${base}/careers`, lastModified: lastMod("/careers"), changeFrequency: "monthly", priority: 0.6 },

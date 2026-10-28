@@ -49,6 +49,14 @@ export const metadata: Metadata = {
 
 const GUIDES = [
   {
+    href: "/resources/guides/outbound-meme-prompt-kit",
+    tag: "LinkedIn Content",
+    title: "The Outbound Meme Prompt Kit",
+    excerpt: "Four copy-paste AI image prompts that turn the pain of cold outreach into memes people share: the graveyard, reject and approve, astronaut and conspiracy board.",
+    readTime: "4 min read",
+    accent: "#EA580C",
+  },
+  {
     href: "/resources/guides/linkedin-content-to-calls-starter-kit",
     tag: "LinkedIn Lead Generation",
     title: "The LinkedIn Content-to-Calls Starter Kit",

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import sitemapDates from "@/lib/sitemap-dates.json";
+import { getCmsPostSummaries } from "@/lib/cms-posts";
 
 // lastModified per URL comes from lib/sitemap-dates.json, which
 // scripts/generate-sitemap-dates.mjs derives from git history: the last commit
@@ -18,10 +19,17 @@ import sitemapDates from "@/lib/sitemap-dates.json";
 const DATES: Record<string, string> = sitemapDates.dates;
 const lastMod = (urlPath: string): string | undefined => DATES[urlPath];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://www.myntmore.com";
 
-  return [
+  // Blog posts written in the CMS: dated by the post's own "last updated"
+  // field, not by git (they are content files, not page code).
+  const cmsPosts: MetadataRoute.Sitemap = (await getCmsPostSummaries()).map((p) => {
+    const loc = base + p.href;
+    return { url: loc, lastModified: p.dateModified || undefined, changeFrequency: "monthly" as const, priority: 0.7 };
+  });
+
+  const entries: MetadataRoute.Sitemap = [
     { url: base, lastModified: lastMod("/"), changeFrequency: "weekly", priority: 1.0 },
     // Critical SEO recovery pages
     { url: `${base}/about-us`, lastModified: lastMod("/about-us"), changeFrequency: "monthly", priority: 0.9 },
@@ -303,4 +311,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/privacy-policy`, lastModified: lastMod("/privacy-policy"), changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/sitemap`, lastModified: lastMod("/sitemap"), changeFrequency: "monthly", priority: 0.5 },
   ];
+
+  return [...entries, ...cmsPosts];
 }

@@ -99,6 +99,44 @@ const pages = urls.map((u) => {
   };
 });
 
+// ── Blog posts written in the CMS (content/posts/*.mdoc) ─────────────────
+// Published ones are listed under "Blog" like any other post. The frontmatter
+// is read with a small parser that covers the scalar styles Keystatic writes
+// (plain, quoted, and | or > block scalars); only top-level keys are needed.
+function frontmatter(src) {
+  const m = src.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  const out = {};
+  if (!m) return out;
+  const lines = m[1].split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    const kv = lines[i].match(/^([A-Za-z][\w-]*):\s*(.*)$/);
+    if (!kv) continue;
+    const [, key, rest] = kv;
+    if (/^[|>][+-]?$/.test(rest)) {
+      const block = [];
+      while (i + 1 < lines.length && (/^\s/.test(lines[i + 1]) || lines[i + 1] === "")) block.push(lines[++i].replace(/^\s+/, ""));
+      out[key] = block.join(" ").replace(/\s+/g, " ").trim();
+    } else if (/^"/.test(rest)) {
+      try { out[key] = JSON.parse(rest); } catch { out[key] = rest.replace(/^"|"$/g, ""); }
+    } else if (/^'/.test(rest)) {
+      out[key] = rest.slice(1, rest.lastIndexOf("'")).replace(/''/g, "'");
+    } else {
+      out[key] = rest.trim();
+    }
+  }
+  return out;
+}
+
+const cmsDir = path.join(ROOT, "content", "posts");
+if (exists(cmsDir)) {
+  for (const f of fs.readdirSync(cmsDir).filter((f) => f.endsWith(".mdoc")).sort()) {
+    const fm = frontmatter(read(path.join(cmsDir, f)));
+    if (fm.published !== "true") continue;
+    const slug = f.replace(/\.mdoc$/, "");
+    pages.push({ path: `/blog/${slug}`, url: `${SITE}/blog/${slug}`, title: fm.metaTitle || fm.title || slug.replace(/-/g, " "), description: fm.description ?? "" });
+  }
+}
+
 const group = (pred) => pages.filter((p) => pred(p.path));
 const line = (p, withNote = "") => `- [${p.title}](${p.url})${p.description ? `: ${p.description}` : ""}${withNote}`;
 

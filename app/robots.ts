@@ -14,7 +14,8 @@ export default function robots(): MetadataRoute.Robots {
       // of URLs that all appear to be on this domain. Disallowing the
       // subtree (trailing slash, so the exact base page above is
       // unaffected) closes that off at the only layer we actually control.
-      disallow: "/tools/dm-angle-generator/",
+      // The CMS admin and its API are never meant to be crawled.
+      disallow: ["/tools/dm-angle-generator/", "/keystatic", "/api/keystatic"],
     },
     sitemap: "https://www.myntmore.com/sitemap.xml",
   };

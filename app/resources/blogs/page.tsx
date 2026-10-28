@@ -7,6 +7,7 @@ import BlogGrid, { type BlogPost } from "./BlogGrid";
 import NewsletterForm from "../../components/NewsletterForm";
 import { buildBreadcrumbSchema, buildCollectionPageSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
+import { getCmsPostSummaries } from "@/lib/cms-posts";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -358,6 +359,15 @@ const PRESS_MENTIONS = [
 
 export default async function BlogsPage() {
   const mediumPosts = await getMediumPosts();
+  // Posts written in the CMS come first (newest first); the hand-built posts follow.
+  const cmsPosts: BlogPost[] = (await getCmsPostSummaries()).map((p) => ({
+    href: p.href,
+    tags: [p.category],
+    title: p.title,
+    excerpt: p.description,
+    readTime: p.readTime,
+  }));
+  const allPosts = [...cmsPosts, ...BLOG_POSTS];
 
   return (
     <InnerLayout>
@@ -372,7 +382,7 @@ export default async function BlogsPage() {
           <div className="flex items-start justify-between gap-8 flex-wrap">
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight hero-fade-d1" style={{ color: "#0a0a0a" }}>
-                {BLOG_POSTS.length} posts. <span style={{ color: "#3b82f6" }}>Zero fluff.</span>
+                {allPosts.length} posts. <span style={{ color: "#3b82f6" }}>Zero fluff.</span>
               </h1>
               <p className="text-lg sm:text-xl mb-10 hero-fade-d2" style={{ color: "#52525B" }}>
                 Practical B2B lead generation playbooks from the team that has booked 12K+ meetings and generated $120M+ in pipeline.
@@ -420,7 +430,7 @@ export default async function BlogsPage() {
       >
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <BlogGrid posts={BLOG_POSTS} />
+            <BlogGrid posts={allPosts} />
           </FadeIn>
         </div>
       </section>

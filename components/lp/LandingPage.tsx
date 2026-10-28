@@ -1,16 +1,18 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import LpLayout from "../LpLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import JsonLd from "../../components/JsonLd";
-import SubmitButton from "../../components/SubmitButton";
+import LpLayout from "@/app/lp/LpLayout";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import JsonLd from "@/app/components/JsonLd";
+import SubmitButton from "@/app/components/SubmitButton";
 import { buildFaqSchema } from "@/lib/schema";
-import FlowDiagram from "../FlowDiagram";
-import Faq from "../Faq";
+import FlowDiagram from "@/app/lp/FlowDiagram";
+import Faq from "@/app/lp/Faq";
 import { pageFaqsQA } from "@/lib/page-faqs";
+import type { LandingPageData } from "./landing-page-data";
+
+// One template for every ICP landing page (/lp/<slug>). The text comes from
+// content/landing-pages/<slug>.json; the markup below is what each page used to carry.
 
 function useScrollFade(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -67,34 +69,22 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
   return ref;
 }
 
-const STATS = [
-  { value: 19, suffix: "+", label: "Qualified meetings / month (avg)" },
-  { value: 64, suffix: "%", label: "Open rate on cold email campaigns" },
-  { value: 3.8, suffix: "×", label: "ROI in first 90 days", decimal: true },
-  { value: 1.8, suffix: "Cr+", prefix: "₹", label: "Pipeline generated for financial services clients", decimal: true },
+// Fixed positions of the floating hero emoji: [top|bottom, left|right, size class, delay, rotation].
+const FLOATERS = [
+  { top: "16%", left: "9%", size: "text-4xl", delay: "0.2s", rot: "-8deg" },
+  { top: "62%", left: "6%", size: "text-3xl", delay: "1.6s", rot: "6deg" },
+  { top: "20%", right: "8%", size: "text-4xl", delay: "0.9s", rot: "10deg" },
+  { top: "68%", right: "11%", size: "text-3xl", delay: "2.3s", rot: "-6deg" },
 ];
 
-// Real, sitewide-published track record (same figures used on /1-on-1-consultation,
-// /marketing-automation, and the services index), not financial-services-specific
-// results we don't have a verified breakdown for. Deliberately not inventing
-// per-client case studies to fill this section.
-const TRACK_RECORD = [
-  { icon: "📬", stat: "12K+", label: "Meetings booked for clients across all outbound campaigns" },
-  { icon: "📈", stat: "35%", label: "Average LinkedIn reply rate" },
-  { icon: "💰", stat: "$120M+", label: "Pipeline generated for clients" },
-  { icon: "⏱️", stat: "18", label: "Average days to campaign launch" },
-];
+// Flow diagram step colours are part of the design, not the content.
+const TOP_COLORS = ["rgba(139,92,246,0.12)", "rgba(59,130,246,0.12)", "rgba(245,183,49,0.15)"];
+const BOTTOM_COLORS = ["rgba(239,68,68,0.12)", "rgba(16,185,129,0.12)", "rgba(245,183,49,0.15)"];
 
-const PROCESS = [
-  { n: "01", title: "ICP & Signal Mapping", body: "We define your ideal business borrower or client by company size, industry, and financing signals, expansion plans, funding rounds, or equipment upgrade cycles, not generic firmographics." },
-  { n: "02", title: "Verified Contact Lists", body: "Hand-verified contact lists of CFOs, Finance Heads, and business owners at companies actively showing financing or advisory needs. No recycled databases." },
-  { n: "03", title: "Credibility-Led Outreach", body: "Multi-channel sequences, cold email plus LinkedIn, built entirely around trust and track record. No rate, return, or approval claims, ever." },
-  { n: "04", title: "Qualified Meeting Handoff", body: "Qualified meetings land directly in your calendar with full context on the stakeholder and financing need. You advise; we fill the top of funnel, consistently." },
-];
+const formatter = (prefix: string, decimals: number, suffix: string) => (n: number) =>
+  `${prefix}${decimals ? n.toFixed(decimals) : Math.round(n)}${suffix}`;
 
-const FAQ_ITEMS = pageFaqsQA("lp-financial-services");
-
-function HeroSection() {
+function HeroSection({ d }: { d: LandingPageData }) {
   const blob1 = useRef<HTMLDivElement>(null);
   const blob2 = useRef<HTMLDivElement>(null);
   const blob3 = useRef<HTMLDivElement>(null);
@@ -149,46 +139,45 @@ function HeroSection() {
       <div ref={blob2} aria-hidden="true" style={{ position: "absolute", bottom: "-60px", right: "-100px", width: "600px", height: "600px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.22) 0%, rgba(255,200,50,0.08) 45%, transparent 68%)", filter: "blur(50px)", pointerEvents: "none", willChange: "transform" }} />
       <div ref={blob3} aria-hidden="true" style={{ position: "absolute", top: "30%", right: "20%", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 65%)", filter: "blur(45px)", pointerEvents: "none", willChange: "transform" }} />
 
-      {/* Floating financial services signals */}
-      <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "16%", left: "9%", animationDelay: "0.2s", ["--lp-rot" as any]: "-8deg" }}>💼</span>
-      <span className="lp-float-icon hidden sm:block text-3xl lp-pop-in" aria-hidden="true" style={{ top: "62%", left: "6%", animationDelay: "1.6s", ["--lp-rot" as any]: "6deg" }}>🏦</span>
-      <span className="lp-float-icon hidden sm:block text-4xl lp-pop-in" aria-hidden="true" style={{ top: "20%", right: "8%", animationDelay: "0.9s", ["--lp-rot" as any]: "10deg" }}>📊</span>
-      <span className="lp-float-icon hidden sm:block text-3xl lp-pop-in" aria-hidden="true" style={{ top: "68%", right: "11%", animationDelay: "2.3s", ["--lp-rot" as any]: "-6deg" }}>🤝</span>
+      {/* Floating signals */}
+      {FLOATERS.map((f, i) => (
+        <span key={i} className={`lp-float-icon hidden sm:block ${f.size} lp-pop-in`} aria-hidden="true" style={{ top: f.top, ...("left" in f ? { left: f.left } : { right: f.right }), animationDelay: f.delay, ["--lp-rot" as any]: f.rot }}>{d.floatingIcons[i]}</span>
+      ))}
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <Breadcrumbs items={[{ label: "For Financial Services Firms", href: "/lp/financial-services" }]} className="justify-center" />
+        <Breadcrumbs items={[{ label: d.breadcrumbLabel, href: `/lp/${d.slug}` }]} className="justify-center" />
         <div className="mb-6 hero-fade-d1">
           <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
-            For Financial Services Firms
+            {d.badge}
           </span>
         </div>
 
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-[1.05] hero-fade-d2" style={{ color: "#0a0a0a" }}>
-          Stop relying on referrals<br />
-          Build a{" "}
+          {d.h1Line1}<br />
+          {d.h1Before && <>{d.h1Before}{" "}</>}
           <span className="relative inline-block">
-            credible pipeline
+            {d.h1Underlined}
             <svg aria-hidden="true" style={{ position: "absolute", bottom: "-6px", left: 0, width: "100%", height: "12px", overflow: "visible" }} viewBox="0 0 400 12" preserveAspectRatio="none">
               <path ref={underlineRef} d="M4 8 Q100 3 200 7 Q300 11 396 6" stroke="#F5B731" strokeWidth="4" fill="none" strokeLinecap="round" />
             </svg>
-          </span>{" "}of business borrowers
+          </span>{" "}{d.h1After}
         </h1>
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
-          We build and run the compliance-safe outbound engine that earns CFO attention and books qualified meetings for NBFCs, business lenders, equipment financing, and corporate treasury firms, no rate or return claims, ever.
+          {d.heroSubheading}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center hero-fade-d3">
           <a href="/book-a-call"
             className="btn-dark px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2">
-            Book Free GTM Audit
+            {d.primaryCta}
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
           <a href="#get-started" className="px-8 py-4 text-base font-bold inline-flex items-center justify-center gap-2 rounded-xl border transition-colors" style={{ borderColor: "#D0C9BF", color: "#0a0a0a", backgroundColor: "rgba(255,255,255,0.7)" }}>
-            Get a Custom Plan
+            {d.secondaryCta}
           </a>
         </div>
-        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>No commitment. No pitch deck. 30-minute strategy call.</p>
+        <p className="mt-5 text-xs hero-fade-d3" style={{ color: "#71675E" }}>{d.heroNote}</p>
       </div>
 
       {/* Scroll cue */}
@@ -199,14 +188,13 @@ function HeroSection() {
   );
 }
 
-function StatsSection() {
-  const ref0 = useCountUp(19, 1600, (n) => `${Math.round(n)}+`);
-  const ref1 = useCountUp(64, 1400, (n) => `${Math.round(n)}%`);
-  const ref2 = useCountUp(3.8, 1500, (n) => `${n.toFixed(1)}×`);
-  const ref3 = useCountUp(1.8, 1800, (n) => `₹${n.toFixed(1)}Cr+`);
+function StatsSection({ d }: { d: LandingPageData }) {
+  const s = d.stats;
+  const ref0 = useCountUp(s[0].target, 1600, formatter(s[0].prefix, s[0].decimals, s[0].suffix));
+  const ref1 = useCountUp(s[1].target, 1400, formatter(s[1].prefix, s[1].decimals, s[1].suffix));
+  const ref2 = useCountUp(s[2].target, 1500, formatter(s[2].prefix, s[2].decimals, s[2].suffix));
+  const ref3 = useCountUp(s[3].target, 1800, formatter(s[3].prefix, s[3].decimals, s[3].suffix));
   const refs = [ref0, ref1, ref2, ref3];
-  const labels = STATS.map(s => s.label);
-  const icons = ["📅", "📬", "🚀", "💰"];
   const fade = useScrollFade();
 
   return (
@@ -214,11 +202,11 @@ function StatsSection() {
       <div ref={fade} className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
         {refs.map((ref, i) => (
           <div key={i} className="lp-stat text-center">
-            <div className="text-xl mb-1 lp-icon-bob" style={{ animationDelay: `${i * 0.25}s` }} aria-hidden="true">{icons[i]}</div>
+            <div className="text-xl mb-1 lp-icon-bob" style={{ animationDelay: `${i * 0.25}s` }} aria-hidden="true">{s[i].icon}</div>
             <div className="text-4xl sm:text-5xl font-black mb-2" style={{ color: "#0a0a0a" }}>
-              <span ref={ref}>{i === 2 ? "0×" : i === 3 ? "₹0Cr+" : i === 1 ? "0%" : "0+"}</span>
+              <span ref={ref}>{`${s[i].prefix}0${s[i].suffix}`}</span>
             </div>
-            <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{labels[i]}</div>
+            <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{s[i].label}</div>
           </div>
         ))}
       </div>
@@ -226,27 +214,22 @@ function StatsSection() {
   );
 }
 
-function PainSection() {
+function PainSection({ d }: { d: LandingPageData }) {
   const titleFade = useScrollFade(0);
   const card1 = useScrollFade(0);
   const card2 = useScrollFade(80);
   const card3 = useScrollFade(160);
   const cards = [card1, card2, card3];
-  const pain = [
-    { icon: "🔒", heading: "Trust has to come first", body: "Financial products need credibility before a CFO takes your cold call seriously. Generic outreach reads as spam and gets ignored, no matter how strong your underwriting is." },
-    { icon: "⏳", heading: "Long, multi-stakeholder cycles", body: "CFOs, business owners, sometimes the board, all need to weigh in before a financing or advisory decision moves forward. With no systematic way to stay top of mind, deals stall and go cold." },
-    { icon: "🤝", heading: "Growth capped by who already knows you", body: "Referrals and broker networks got you this far, but they only reach companies with an existing connection to your firm. Everyone outside that circle stays invisible to you." },
-  ];
 
   return (
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Sound familiar?</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Referrals only get you so far</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.painTitle}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {pain.map((p, i) => (
+          {d.pain.map((p, i) => (
             <div key={p.heading} ref={cards[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-4xl mb-4 lp-icon-bob" style={{ animationDelay: `${i * 0.3}s` }}>{p.icon}</div>
               <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.heading}</h3>
@@ -259,7 +242,7 @@ function PainSection() {
   );
 }
 
-function ProcessSection() {
+function ProcessSection({ d }: { d: LandingPageData }) {
   const titleFade = useScrollFade(0);
   const p0 = useScrollFade(0); const p1 = useScrollFade(100); const p2 = useScrollFade(200); const p3 = useScrollFade(300);
   const delays = [p0, p1, p2, p3];
@@ -268,12 +251,12 @@ function ProcessSection() {
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>How it works</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Your credible outbound engine, fully managed</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.processTitle}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {PROCESS.map((p, i) => (
-            <div key={p.n} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
-              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#A14A08" }}>{p.n}</span>
+          {d.process.map((p, i) => (
+            <div key={p.title} ref={delays[i]} className="lp-card flex gap-5 rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+              <span className="lp-card-number text-3xl font-black flex-shrink-0 leading-none mt-1" style={{ color: "#A14A08" }}>{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
@@ -286,30 +269,30 @@ function ProcessSection() {
   );
 }
 
-function CaseStudiesSection() {
+function CaseStudiesSection({ d }: { d: LandingPageData }) {
   const titleFade = useScrollFade(0);
-  const r0 = useCountUp(12, 1600, (n) => `${Math.round(n)}K+`);
-  const r1 = useCountUp(38, 1400, (n) => `${Math.round(n)}%`);
-  const r2 = useCountUp(120, 1800, (n) => `$${Math.round(n)}M+`);
-  const r3 = useCountUp(18, 1500, (n) => `${Math.round(n)} days`);
+  const t = d.track;
+  const r0 = useCountUp(t[0].target, 1600, formatter(t[0].prefix, 0, t[0].suffix));
+  const r1 = useCountUp(t[1].target, 1400, formatter(t[1].prefix, 0, t[1].suffix));
+  const r2 = useCountUp(t[2].target, 1800, formatter(t[2].prefix, 0, t[2].suffix));
+  const r3 = useCountUp(t[3].target, 1500, formatter(t[3].prefix, 0, t[3].suffix));
   const refs = [r0, r1, r2, r3];
-  const initials = ["0K+", "0%", "$0M+", "0 days"];
 
   return (
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
           <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Client results</span>
-          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>Our track record in B2B outbound, the same system we&apos;re applying for financial services firms</h2>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.trackTitle}</h2>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {TRACK_RECORD.map((t, i) => (
-            <div key={t.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
-              <div className="text-xl mb-2" aria-hidden="true">{t.icon}</div>
+          {t.map((item, i) => (
+            <div key={item.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-xl mb-2" aria-hidden="true">{item.icon}</div>
               <div className="text-3xl sm:text-4xl font-black mb-2" style={{ color: "#0a0a0a" }}>
-                <span ref={refs[i]}>{initials[i]}</span>
+                <span ref={refs[i]}>{`${item.prefix}0${item.suffix}`}</span>
               </div>
-              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{t.label}</div>
+              <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{item.label}</div>
             </div>
           ))}
         </div>
@@ -318,23 +301,23 @@ function CaseStudiesSection() {
   );
 }
 
-function DarkCTASection() {
+function DarkCTASection({ d }: { d: LandingPageData }) {
   const fade = useScrollFade(0);
   return (
     <section className="relative py-24 px-4 overflow-hidden" style={{ background: "linear-gradient(135deg, #FEF9EC 0%, #FFFFFF 100%)" }}>
       <div aria-hidden="true" style={{ position: "absolute", top: "50%", left: "30%", width: "600px", height: "400px", marginTop: "-200px", marginLeft: "-300px", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(245,183,49,0.15) 0%, transparent 65%)", filter: "blur(60px)", pointerEvents: "none" }} />
       <div ref={fade} className="relative z-10 max-w-3xl mx-auto text-center">
         <h2 className="text-4xl sm:text-5xl font-black mb-5 leading-tight" style={{ color: "#0A0A0A" }}>
-          Let&apos;s fill your pipeline
+          {d.ctaHeading}
         </h2>
         <p className="text-lg mb-10" style={{ color: "#52525B" }}>
-          Book a free 30-minute GTM audit. We will review your outreach, map your ICP, and hand you a custom action plan, no pitch, no pressure.
+          {d.ctaBody}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/book-a-call"
             className="px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2"
             style={{ backgroundColor: "#F5B731", color: "#0a0a0a" }}>
-            Book Free GTM Audit
+            {d.primaryCta}
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
           <a href="#get-started" className="px-8 py-4 rounded-xl text-base font-bold inline-flex items-center justify-center gap-2 border" style={{ backgroundColor: "#FFFFFF", borderColor: "#D0C9BF", color: "#0A0A0A" }}>
@@ -346,14 +329,14 @@ function DarkCTASection() {
   );
 }
 
-function FormSection() {
+function FormSection({ d }: { d: LandingPageData }) {
   const fade = useScrollFade(0);
   return (
     <section id="get-started" className="py-20 px-4" style={{ backgroundColor: "#ffffff" }}>
       <div className="max-w-2xl mx-auto">
         <div ref={fade} className="text-center mb-10">
-          <h2 className="text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>Get your free GTM audit</h2>
-          <p className="text-base" style={{ color: "#52525B" }}>We will audit your current outreach, map your ICP, and tell you exactly what is holding your pipeline back. No pitch. No pressure.</p>
+          <h2 className="text-4xl font-black mb-3" style={{ color: "#0a0a0a" }}>{d.formHeading}</h2>
+          <p className="text-base" style={{ color: "#52525B" }}>{d.formBody}</p>
         </div>
         <div className="rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
           <form className="space-y-4"
@@ -365,7 +348,7 @@ function FormSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="SingleLine" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Full Name *</label>
-                <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder="Arjun Mehta" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                <input id="SingleLine" name="SingleLine" type="text" required maxLength={255} placeholder={d.namePlaceholder} className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
               </div>
               <div>
                 <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation *</label>
@@ -374,8 +357,8 @@ function FormSection() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Company / Firm Name</label>
-                <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder="Apex Capital Advisors" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                <label htmlFor="SingleLine3" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>{d.companyLabel}</label>
+                <input id="SingleLine3" name="SingleLine3" type="text" maxLength={255} placeholder={d.companyPlaceholder} className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
               </div>
               <div>
                 <label htmlFor="PhoneNumber_countrycode" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
@@ -384,10 +367,10 @@ function FormSection() {
             </div>
             <div>
               <label htmlFor="Email" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Work Email *</label>
-              <input id="Email" name="Email" type="email" required maxLength={255} placeholder="arjun@apexcapitaladvisors.com" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+              <input id="Email" name="Email" type="email" required maxLength={255} placeholder={d.emailPlaceholder} className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
             </div>
-            <SubmitButton>Get My Free GTM Audit</SubmitButton>
-            <p className="text-center text-xs" style={{ color: "#71675E" }}>We respond within 24 hours. No spam, ever.</p>
+            <SubmitButton>{d.submitLabel}</SubmitButton>
+            <p className="text-center text-xs" style={{ color: "#71675E" }}>{d.formNote}</p>
           </form>
         </div>
       </div>
@@ -395,40 +378,26 @@ function FormSection() {
   );
 }
 
-export default function FinancialServicesClient() {
+export default function LandingPage({ data: d }: { data: LandingPageData }) {
+  const faqItems = pageFaqsQA(`lp-${d.slug}`);
   return (
     <LpLayout>
-      <JsonLd data={buildFaqSchema(FAQ_ITEMS.map((f) => ({ question: f.q, answer: f.a })))} />
-      <HeroSection />
-      <StatsSection />
-      <PainSection />
+      <JsonLd data={buildFaqSchema(faqItems.map((f) => ({ question: f.q, answer: f.a })))} />
+      <HeroSection d={d} />
+      <StatsSection d={d} />
+      <PainSection d={d} />
       <FlowDiagram
         badge="Our system"
-        title={"From cold list to qualified CFO meeting\nEvery single time"}
-        topSteps={[
-          { n: "01", icon: "🎯", title: "ICP & Financing Signals", body: "Define your ideal borrower or client profile by industry, company size, and financing triggers, expansion plans, funding rounds, or equipment upgrade cycles.", color: "rgba(139,92,246,0.12)" },
-          { n: "02", icon: "👥", title: "Build & Verify Contact Lists", body: "Verified CFO, Finance Head, and business-owner contacts sourced from LinkedIn and firmographic data, enriched with financing-need signals.", color: "rgba(59,130,246,0.12)" },
-          { n: "03", icon: "📦", title: "Prepare Compliance-Safe Assets", body: "Credibility-led case studies and outreach sequences built entirely around trust and track record, no rate, return, or approval claims.", color: "rgba(245,183,49,0.15)" },
-        ]}
-        parallel={{
-          label: "Principal LinkedIn Credibility Building",
-          items: [
-            { icon: "🔗", title: "Profile Optimisation", body: "Headline, banner, and about section crafted to position your principals as credible financing partners, not sales reps." },
-            { icon: "✍️", title: "Content Creation", body: "Regular posts and insights on financing and treasury trends that build recognition with CFOs before outreach even lands." },
-            { icon: "🏆", title: "Thought Leadership", body: "Position your firm as an established, trustworthy name so prospects already trust you when your message arrives." },
-          ],
-        }}
-        bottomSteps={[
-          { n: "04", icon: "🚀", title: "Launch Credibility-Led Outreach", body: "Cold email and LinkedIn sequences go live targeting CFOs, Finance Heads, and business owners with full deliverability infrastructure.", color: "rgba(239,68,68,0.12)" },
-          { n: "05", icon: "🔄", title: "Follow Up & Nurture", body: "Persistent, trust-first follow-ups sharing relevant insights and track record until stakeholders engage, built for long consideration cycles.", color: "rgba(16,185,129,0.12)" },
-          { n: "06", icon: "📅", title: "Book Qualified Meetings", body: "Warm replies convert into qualified meetings with full context on the stakeholder and financing need, so you can move faster.", color: "rgba(245,183,49,0.15)" },
-        ]}
+        title={d.flowTitle}
+        topSteps={d.flowTop.map((s, i) => ({ n: String(i + 1).padStart(2, "0"), icon: s.icon, title: s.title, body: s.body, color: TOP_COLORS[i] }))}
+        parallel={{ label: d.flowParallelLabel, items: d.flowParallel }}
+        bottomSteps={d.flowBottom.map((s, i) => ({ n: String(i + 4).padStart(2, "0"), icon: s.icon, title: s.title, body: s.body, color: BOTTOM_COLORS[i] }))}
       />
-      <ProcessSection />
-      <CaseStudiesSection />
-      <Faq title="Common questions from financial services leaders" items={FAQ_ITEMS} />
-      <DarkCTASection />
-      <FormSection />
+      <ProcessSection d={d} />
+      <CaseStudiesSection d={d} />
+      <Faq title={d.faqTitle} items={faqItems} />
+      <DarkCTASection d={d} />
+      <FormSection d={d} />
     </LpLayout>
   );
 }

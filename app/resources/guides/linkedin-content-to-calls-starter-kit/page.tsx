@@ -127,7 +127,7 @@ Here’s a LinkedIn Content-to-Calls Starter Kit I put together - includes templ
 If you want help customizing it to your niche or business, just reply “CUSTOM” and I’ll share a breakdown.`;
 
 const RELATED = [
-  { label: "How to Write a LinkedIn Hook", href: "/blog/how-to-write-a-linkedin-hook", note: "Six patterns for the first line of every post." },
+  { label: "How to Write a LinkedIn Hook", href: "/resources/blogs/how-to-write-a-linkedin-hook", note: "Six patterns for the first line of every post." },
   { label: "Leads on Autopilot: A Step-by-Step Framework", href: "/resources/guides/leads-on-autopilot-guide", note: "A complete system for LinkedIn leads without cold pitching." },
   { label: "58 Meetings from 600 LinkedIn Connections", href: "/resources/guides/58-meetings-600-linkedin-connections", note: "The 5-step LinkedIn framework behind 58 meetings in a month." },
   { label: "LinkedIn Hook Grader", href: "/tools/linkedin-hook-grader", note: "Score your opening line before you post it." },

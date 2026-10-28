@@ -90,7 +90,7 @@ export default function ThreeSecondRulePage() {
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>
-            <Link href="/blog/stop-selling-features-cold-outreach" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#9A3412" }}>
+            <Link href="/resources/blogs/stop-selling-features-cold-outreach" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#9A3412" }}>
               Read: Stop Selling Features: The 3-Second Rule of Outbound Outreach
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>

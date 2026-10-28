@@ -39,7 +39,7 @@ export default function ResponseRatePage() {
       definition="The percentage of prospects who reply to an outreach message, whether positive, negative, or a question, the first real signal that targeting and messaging are working before any meeting gets booked."
       body="A reply of any kind, including a 'not interested,' still confirms the message reached a real inbox and got read, which a silent non-response never tells you. That's why response rate is tracked as its own number rather than folded straight into meeting-booked rate: a low response rate usually points to a targeting or messaging problem, while a healthy response rate with a low booking rate points to a weaker ask instead."
       sourceLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
-      sourceHref="/blog/b2b-lead-gen-metrics"
+      sourceHref="/resources/blogs/b2b-lead-gen-metrics"
       articleSchema={TERM_SCHEMA}
     />
   );

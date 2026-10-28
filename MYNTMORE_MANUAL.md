@@ -105,7 +105,7 @@ supabase/
 |---|---|
 | `/resources` | Resources hub (links out to blog + tools + case studies) |
 | `/resources/blogs` | Blog listing (hero + grid + a live "Also on Medium" section pulling from `medium.com/@myntmore`'s RSS feed) |
-| `/blog/*` | 6 individual blog posts |
+| `/resources/blogs/*` | 6 individual blog posts |
 | `/case-studies` | Case studies listing |
 | `/case-studies/*` | 6 individual case studies |
 | `/resources/tools` | **Free tools listing** — the hub page for all 7 AI tools |
@@ -280,7 +280,7 @@ This has been done 7 times now; the pattern is stable. To add tool #8:
 
 ## 6. Content Architecture
 
-### Blog posts (`app/blog/*/page.tsx`)
+### Blog posts (`app/resources/blogs/*/page.tsx`)
 Each is a plain server component: breadcrumb → colored topic tag (`"LinkedIn Outreach · 6 min read"` style) → H1 → intro paragraph → a 3-stat strip → the article body (array of `{heading, body}` or `{heading, list}` sections mapped over) → a closing CTA box → `<AskYourAI>`.
 
 ### Case studies (`app/case-studies/*/page.tsx`)

@@ -17,7 +17,7 @@ const DESCRIPTION = "Eight criteria for choosing a B2B lead generation agency in
 const AI_RESOURCES = [
   PAGE_URL,
   `${SITE_URL}/resources/guides/how-to-choose-an-outbound-agency`,
-  `${SITE_URL}/blog/b2b-outbound-benchmark-report-2026`,
+  `${SITE_URL}/resources/blogs/b2b-outbound-benchmark-report-2026`,
 ];
 
 export const metadata: Metadata = {
@@ -181,7 +181,7 @@ export default function HowToChooseLeadGenAgencyIndiaPage() {
                   <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>4. Check how they handle DPDP, TRAI and WhatsApp rules</h2>
                   <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                     India&apos;s Digital Personal Data Protection Act, 2023 governs how personal data is collected and used, including work emails and phone numbers. Its rules were notified on 13 November 2025, and most obligations for businesses apply from 13 May 2027, with penalties of up to ₹250 crore. Commercial calls and SMS also fall under TRAI&apos;s rules on unsolicited commercial communication, including the Do Not Disturb registry, and WhatsApp Business requires opt-in before a business messages someone. You don&apos;t need an agency with a legal team, but you do need one with a written answer. Our{" "}
-                    <Link href="/blog/cold-email-compliance-guide" className="font-bold underline" style={{ color: "#A14A08" }}>cold email compliance guide</Link> covers the rules by country. This is general information, not legal advice.
+                    <Link href="/resources/blogs/cold-email-compliance-guide" className="font-bold underline" style={{ color: "#A14A08" }}>cold email compliance guide</Link> covers the rules by country. This is general information, not legal advice.
                   </p>
                 </div>
 
@@ -210,7 +210,7 @@ export default function HowToChooseLeadGenAgencyIndiaPage() {
                   <h2 className="text-2xl sm:text-3xl font-black mb-3" style={{ color: "#0a0a0a" }}>8. Ask for proof you can check</h2>
                   <p className="text-base leading-relaxed" style={{ color: "#3D3D3D" }}>
                     Look for case studies in your industry with numbers in them, a client reference you can call, and reviews on independent platforms. Then compare the agency&apos;s claims with published ranges: our{" "}
-                    <Link href="/blog/b2b-outbound-benchmark-report-2026" className="font-bold underline" style={{ color: "#A14A08" }}>2026 B2B Outbound Benchmark Report</Link> shows reply rates, inbox placement and time to first meeting across Myntmore&apos;s managed accounts. For the questions every outbound agency should answer, on data ownership, deliverability and contract terms, see{" "}
+                    <Link href="/resources/blogs/b2b-outbound-benchmark-report-2026" className="font-bold underline" style={{ color: "#A14A08" }}>2026 B2B Outbound Benchmark Report</Link> shows reply rates, inbox placement and time to first meeting across Myntmore&apos;s managed accounts. For the questions every outbound agency should answer, on data ownership, deliverability and contract terms, see{" "}
                     <Link href="/resources/guides/how-to-choose-an-outbound-agency" className="font-bold underline" style={{ color: "#A14A08" }}>how to choose a B2B outbound agency</Link>, or see how this works in practice for a{" "}
                     <Link href="/b2b-lead-generation-mumbai" className="font-bold underline" style={{ color: "#A14A08" }}>Mumbai lead generation company</Link>.
                   </p>
@@ -250,7 +250,7 @@ export default function HowToChooseLeadGenAgencyIndiaPage() {
               </div>
               <p className="text-sm mt-6" style={{ color: "#52525B" }}>
                 Not sure an agency is the right move at all? See the{" "}
-                <Link href="/blog/agency-vs-in-house" className="font-bold" style={{ color: "#A14A08" }}>agency vs. in-house comparison</Link>.
+                <Link href="/resources/blogs/agency-vs-in-house" className="font-bold" style={{ color: "#A14A08" }}>agency vs. in-house comparison</Link>.
               </p>
             </FadeIn>
           </div>

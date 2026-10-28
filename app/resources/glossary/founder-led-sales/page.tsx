@@ -39,7 +39,7 @@ export default function FounderLedSalesPage() {
       definition="A go-to-market approach where the founder personally runs early sales conversations, using their own credibility and direct customer feedback before any dedicated sales team exists."
       body="No hired rep can sell the vision with the same conviction, or turn an objection into a product fix as fast, as the person who built the thing. The tradeoff is that it doesn't scale: at some point founder time becomes the bottleneck, which is the exact signal to start building the team out."
       sourceLabel="Read: Why Founders Must Sell Before They Scale"
-      sourceHref="/blog/founder-led-sales-before-scaling"
+      sourceHref="/resources/blogs/founder-led-sales-before-scaling"
       articleSchema={TERM_SCHEMA}
     />
   );

@@ -39,9 +39,9 @@ export default function ReEngagementCampaignPage() {
       definition="A sequence aimed at prospects who went quiet, existing connections, past leads, or non-responders, rather than a cold audience who's never heard from you."
       body="Because there's already some history, the opener can reference it directly, acknowledging time has passed, sharing what's changed, or simply checking if priorities have shifted, instead of pretending the earlier conversation never happened. That context is exactly what a first-touch cold sequence doesn't have, and it's why a re-engagement campaign often outperforms new cold outreach at a fraction of the cost."
       sourceLabel="Read: Cold Email Sequence Templates That Get Replies"
-      sourceHref="/blog/cold-email-sequence-templates"
+      sourceHref="/resources/blogs/cold-email-sequence-templates"
       furtherLabel="Go deeper: How to revive closed-lost leads"
-      furtherHref="/blog/reviving-closed-lost-leads"
+      furtherHref="/resources/blogs/reviving-closed-lost-leads"
       articleSchema={TERM_SCHEMA}
     />
   );

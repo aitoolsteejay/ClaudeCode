@@ -58,7 +58,7 @@ export default function InboundVsOutboundPage() {
       sourceLabel="See all services"
       sourceHref="/services"
       furtherLabel="What is B2B outbound sales?"
-      furtherHref="/blog/what-is-b2b-outbound-sales"
+      furtherHref="/resources/blogs/what-is-b2b-outbound-sales"
       articleSchema={TERM_SCHEMA}
       faqs={FAQS}
     >

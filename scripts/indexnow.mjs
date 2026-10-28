@@ -5,7 +5,7 @@
 //
 //   node scripts/indexnow.mjs <base> <head>     submit paths whose lastmod differs between two git refs
 //   node scripts/indexnow.mjs --all             submit every path in lib/sitemap-dates.json
-//   node scripts/indexnow.mjs /blog/a /about-us submit these paths
+//   node scripts/indexnow.mjs /resources/blogs/a /about-us submit these paths
 //   add --dry-run to any of them to print the URLs without submitting
 //
 // The change signal is lib/sitemap-dates.json, not a fresh diff of app/: that

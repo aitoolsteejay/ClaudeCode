@@ -44,7 +44,7 @@ export default function BusinessDevelopmentPage() {
       sourceLabel="Read the related term: SDR (Sales Development Rep)"
       sourceHref="/resources/glossary/sdr"
       furtherLabel="Read: Agency vs. In-House SDR for B2B Outbound"
-      furtherHref="/blog/agency-vs-in-house"
+      furtherHref="/resources/blogs/agency-vs-in-house"
       articleSchema={TERM_SCHEMA}
     />
   );

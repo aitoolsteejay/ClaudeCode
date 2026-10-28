@@ -39,7 +39,7 @@ export default function SenderReputationPage() {
       definition="An ongoing score inbox providers assign to a sending domain or IP based on past behaviour, deciding whether future emails land in the inbox or get routed to spam."
       body="It's built from signals like spam complaint rate, bounce rate, and how often recipients open or reply, and it's cumulative: one bad sending burst can suppress deliverability for weeks after, which is why reputation is monitored continuously rather than checked once."
       sourceLabel="Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"
-      sourceHref="/blog/cold-email-deliverability-guide"
+      sourceHref="/resources/blogs/cold-email-deliverability-guide"
       articleSchema={TERM_SCHEMA}
     />
   );

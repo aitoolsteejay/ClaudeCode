@@ -79,7 +79,7 @@ export default function SignalHeavyStructuringPage() {
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>
-            <Link href="/blog/value-premium-lead-magnets" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#7C3AED" }}>
+            <Link href="/resources/blogs/value-premium-lead-magnets" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#7C3AED" }}>
               Read: The Value Premium: Stop Chasing Attention and Start Creating Magnetic Leads
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>

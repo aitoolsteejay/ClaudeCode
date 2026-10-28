@@ -170,7 +170,7 @@ export function LandingPage({ onStart }: { onStart: () => void }) {
           </dl>
           <p className="mt-8 text-center text-base" style={{ color: "#52525B" }}>
             Prefer to apply the rules by hand?{" "}
-            <a href="/blog/how-to-write-a-linkedin-hook" className="inline-flex min-h-[44px] items-center font-bold underline underline-offset-4" style={{ color: "#A14A08" }}>Read how to write a LinkedIn hook</a>.
+            <a href="/resources/blogs/how-to-write-a-linkedin-hook" className="inline-flex min-h-[44px] items-center font-bold underline underline-offset-4" style={{ color: "#A14A08" }}>Read how to write a LinkedIn hook</a>.
           </p>
         </div>
       </section>

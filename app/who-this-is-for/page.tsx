@@ -161,8 +161,8 @@ export default function WhoThisIsForPage() {
             </div>
             <p className="text-sm mt-8" style={{ color: "#52525B" }}>
               If founder-led sales is still the missing step, read{" "}
-              <Link href="/blog/founder-led-sales-before-scaling" className="font-bold" style={{ color: "#7C3AED" }}>why that has to come first</Link>. If you&apos;re weighing this against hiring in-house, see the{" "}
-              <Link href="/blog/agency-vs-in-house" className="font-bold" style={{ color: "#7C3AED" }}>full comparison</Link>.
+              <Link href="/resources/blogs/founder-led-sales-before-scaling" className="font-bold" style={{ color: "#7C3AED" }}>why that has to come first</Link>. If you&apos;re weighing this against hiring in-house, see the{" "}
+              <Link href="/resources/blogs/agency-vs-in-house" className="font-bold" style={{ color: "#7C3AED" }}>full comparison</Link>.
             </p>
           </FadeIn>
         </div>

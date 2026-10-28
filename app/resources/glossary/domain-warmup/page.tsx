@@ -39,7 +39,7 @@ export default function DomainWarmupPage() {
       definition="Gradually ramping up the volume sent from a new domain or mailbox so inbox providers build a positive sending reputation before full-scale outreach begins."
       body="Inbox providers treat a new domain with no sending history as a risk. Sending hundreds of cold emails from it on day one reads as spam behaviour and can get the domain blacklisted before a single real prospect sees a message, which is why agencies stagger volume up over several weeks instead."
       sourceLabel="Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"
-      sourceHref="/blog/cold-email-deliverability-guide"
+      sourceHref="/resources/blogs/cold-email-deliverability-guide"
       articleSchema={TERM_SCHEMA}
     />
   );

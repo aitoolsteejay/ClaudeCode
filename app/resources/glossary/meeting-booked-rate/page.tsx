@@ -39,9 +39,9 @@ export default function MeetingBookedRatePage() {
       definition="The percentage of contacted prospects who book a meeting, the metric outbound teams actually optimize for, since replies alone don't fill a pipeline."
       body="A campaign can have a strong response rate and a weak meeting-booked rate if the ask is vague or the follow-through is slow, which is why the two are tracked separately rather than as one combined number. It is always lower than the reply rate, since only some replies turn into meetings, and it varies by ICP, offer and channel."
       sourceLabel="Read: The 2026 B2B Outbound Benchmark Report"
-      sourceHref="/blog/b2b-outbound-benchmark-report-2026"
+      sourceHref="/resources/blogs/b2b-outbound-benchmark-report-2026"
       furtherLabel="Go deeper: What to do in the first hour after a prospect replies"
-      furtherHref="/blog/handling-cold-email-replies"
+      furtherHref="/resources/blogs/handling-cold-email-replies"
       articleSchema={TERM_SCHEMA}
     />
   );

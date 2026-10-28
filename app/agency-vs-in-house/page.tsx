@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function AgencyVsInHouseRedirect() {
-  permanentRedirect("/blog/agency-vs-in-house");
+  permanentRedirect("/resources/blogs/agency-vs-in-house");
 }

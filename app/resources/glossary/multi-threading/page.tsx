@@ -41,7 +41,7 @@ export default function MultiThreadingPage() {
       sourceLabel="Read the related term: ABM (Account-Based Marketing)"
       sourceHref="/resources/glossary/abm"
       furtherLabel="Go deeper: Single-Threaded Deals Die (the full buying-committee guide)"
-      furtherHref="/blog/multi-threading-b2b-buying-committee"
+      furtherHref="/resources/blogs/multi-threading-b2b-buying-committee"
       articleSchema={TERM_SCHEMA}
     />
   );

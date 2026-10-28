@@ -39,7 +39,7 @@ export default function GrowthStrategyPage() {
       definition="A company's plan for increasing revenue over a defined period, choosing which levers to pull, such as new customers, new markets, pricing, or expanding existing accounts."
       body="Growth strategy sits above GTM strategy: it decides where growth should come from, and GTM decides how to win in each of those places. For most early and mid-stage B2B companies, the most controllable lever is new customer acquisition through outbound, because it doesn't depend on waiting for search rankings or referrals to compound."
       sourceLabel="Read: Building a Predictable B2B Lead Generation Engine"
-      sourceHref="/blog/predictable-b2b-lead-gen-engine"
+      sourceHref="/resources/blogs/predictable-b2b-lead-gen-engine"
       furtherLabel="Read the related term: Go-to-Market Strategy (GTM)"
       furtherHref="/resources/glossary/gtm-strategy"
       articleSchema={TERM_SCHEMA}

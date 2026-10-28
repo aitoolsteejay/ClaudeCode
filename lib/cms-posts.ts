@@ -25,7 +25,7 @@ export async function getCmsPostSummaries(): Promise<CmsPostSummary[]> {
     .filter(({ entry }) => entry.published)
     .map(({ slug, entry }) => ({
       slug,
-      href: `/blog/${slug}`,
+      href: `/resources/blogs/${slug}`,
       title: entry.title,
       metaTitle: entry.metaTitle || entry.title,
       description: entry.description,

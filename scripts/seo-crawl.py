@@ -115,7 +115,7 @@ def analyse(path):
     main_m = re.search(r"<main\b.*?</main>", main, re.S)  # page content only, not nav/footer
     words = len(html.unescape(re.sub(r"<[^>]+>", " ", main_m.group(0) if main_m else main)).split())
     # Content standard: new blog posts 800+ words of body copy, glossary 300+ (checklist tasks C-B1, C-B2)
-    if path.startswith("/blog/") and words < 600: r["warns"].append(f"thin blog post ({words} words, target 800+)")
+    if path.startswith("/resources/blogs/") and words < 600: r["warns"].append(f"thin blog post ({words} words, target 800+)")
     elif path.startswith("/resources/glossary/") and path != "/resources/glossary" and words < 250: r["warns"].append(f"thin glossary entry ({words} words, target 300+)")
     r["words"] = words
     links = set()

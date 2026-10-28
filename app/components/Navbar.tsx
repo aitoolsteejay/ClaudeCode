@@ -21,7 +21,7 @@ const RESOURCE_LINKS = [
   { label: "Blog", href: "/resources/blogs" },
   { label: "Guides", href: "/resources/guides" },
   { label: "Glossary", href: "/resources/glossary" },
-  { label: "Benchmark Report", href: "/blog/b2b-outbound-benchmark-report-2026" },
+  { label: "Benchmark Report", href: "/resources/blogs/b2b-outbound-benchmark-report-2026" },
   { label: "The Feed", href: "/resources/feed" },
   { label: "Free Tools", href: "/resources/tools" },
   { label: "Case Studies", href: "/case-studies" },

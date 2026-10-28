@@ -42,7 +42,7 @@ export default function BTwobProspectingPage() {
       definition="The research step of outbound sales: finding companies and contacts that match your ideal customer profile, verifying their details, and deciding who to reach out to first."
       body="Prospecting comes before outreach and decides most of its outcome. A strong prospect list is narrow, filtered by fit and by timing signals like hiring, funding, or a tech change, and has verified contact data. A weak one is a broad export of job titles, which no amount of clever copy can rescue."
       sourceLabel="Read: The TAM Trap: Vague Targeting Kills Your Pipeline"
-      sourceHref="/blog/tam-trap-vague-targeting"
+      sourceHref="/resources/blogs/tam-trap-vague-targeting"
       furtherLabel="Read the related term: ICP (Ideal Customer Profile)"
       furtherHref="/resources/glossary/icp"
       articleSchema={TERM_SCHEMA}

@@ -45,7 +45,7 @@ export default function OutboundSalesPage() {
       definition="A sales model where the seller initiates contact with targeted prospects, through cold email, LinkedIn, or calls, rather than waiting for buyers to come in through marketing."
       body="Outbound's main advantage is control: you choose which companies to pursue and how many conversations to start each week, instead of depending on whoever happens to find you. Its main risk is relevance, since outbound that isn't tightly targeted reads as spam and burns both your sending domain and your reputation."
       sourceLabel="Full guide: what B2B outbound sales is and how it works"
-      sourceHref="/blog/what-is-b2b-outbound-sales"
+      sourceHref="/resources/blogs/what-is-b2b-outbound-sales"
       furtherLabel="Read the related term: Inbound vs. Outbound"
       furtherHref="/resources/glossary/inbound-vs-outbound"
       articleSchema={TERM_SCHEMA}

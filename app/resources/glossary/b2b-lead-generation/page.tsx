@@ -44,7 +44,7 @@ export default function BTwobLeadGenerationPage() {
       sourceLabel="See the service: AI Lead Generation"
       sourceHref="/services/ai-lead-generation"
       furtherLabel="Read: Building a Predictable B2B Lead Generation Engine"
-      furtherHref="/blog/predictable-b2b-lead-gen-engine"
+      furtherHref="/resources/blogs/predictable-b2b-lead-gen-engine"
       articleSchema={TERM_SCHEMA}
     />
   );

@@ -44,7 +44,7 @@ export default function ColdOutreachPage() {
       sourceLabel="Read the related term: The 3-Second Rule"
       sourceHref="/resources/glossary/3-second-rule"
       furtherLabel="Read: Stop Selling Features in Cold Outreach"
-      furtherHref="/blog/stop-selling-features-cold-outreach"
+      furtherHref="/resources/blogs/stop-selling-features-cold-outreach"
       articleSchema={TERM_SCHEMA}
     />
   );

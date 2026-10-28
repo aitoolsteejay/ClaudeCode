@@ -50,7 +50,7 @@ export default function BuyerEngagementPage() {
       sourceLabel="Read the related term: Lead Scoring"
       sourceHref="/resources/glossary/lead-scoring"
       furtherLabel="Read: Outbound Success: Conversations, Not Sends"
-      furtherHref="/blog/conversations-not-impressions-outbound"
+      furtherHref="/resources/blogs/conversations-not-impressions-outbound"
       articleSchema={TERM_SCHEMA}
       faqs={FAQS}
     />

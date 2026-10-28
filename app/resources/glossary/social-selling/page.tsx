@@ -44,7 +44,7 @@ export default function SocialSellingPage() {
       sourceLabel="See the service: Personal Branding"
       sourceHref="/services/personal-branding"
       furtherLabel="Read: The Silent Salesperson: LinkedIn Lead Machine"
-      furtherHref="/blog/linkedin-profile-inbound-lead-machine"
+      furtherHref="/resources/blogs/linkedin-profile-inbound-lead-machine"
       articleSchema={TERM_SCHEMA}
     />
   );

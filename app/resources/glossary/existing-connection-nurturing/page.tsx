@@ -39,7 +39,7 @@ export default function ExistingConnectionNurturingPage() {
       definition="Maintaining light, ongoing engagement, likes, comments, the occasional genuine check-in, with people already in your network, so a future outreach message lands as familiar rather than cold."
       body="Most connections on LinkedIn or in an old contact list go completely dormant, which wastes a relationship that took no cold-outreach effort to build in the first place. A short comment on a recent post or a no-ask check-in every few months keeps the relationship live enough that a real outreach message later doesn't feel like it's coming out of nowhere."
       sourceLabel="Read: LinkedIn Outreach Sequences That Actually Get Replies"
-      sourceHref="/blog/linkedin-outreach-sequences"
+      sourceHref="/resources/blogs/linkedin-outreach-sequences"
       articleSchema={TERM_SCHEMA}
     />
   );

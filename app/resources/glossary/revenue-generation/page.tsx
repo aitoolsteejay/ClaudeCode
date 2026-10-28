@@ -41,7 +41,7 @@ export default function RevenueGenerationPage() {
       sourceLabel="Read the related term: Vanity Metrics"
       sourceHref="/resources/glossary/vanity-metrics"
       furtherLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
-      furtherHref="/blog/b2b-lead-gen-metrics"
+      furtherHref="/resources/blogs/b2b-lead-gen-metrics"
       articleSchema={TERM_SCHEMA}
     />
   );

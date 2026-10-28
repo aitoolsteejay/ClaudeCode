@@ -64,7 +64,7 @@ const pageOf = (f) => {
 };
 const staticPages = new Set(htmlFiles.map(pageOf));
 
-// Dynamic / on-demand pages from the manifest ("/blog/[slug]/page" -> regex).
+// Dynamic / on-demand pages from the manifest ("/resources/blogs/[slug]/page" -> regex).
 const dynamicPatterns = [];
 const manifestPath = path.join(BUILD, "app-paths-manifest.json");
 if (fs.existsSync(manifestPath)) {

@@ -133,7 +133,7 @@ if (exists(cmsDir)) {
     const fm = frontmatter(read(path.join(cmsDir, f)));
     if (fm.published !== "true") continue;
     const slug = f.replace(/\.mdoc$/, "");
-    pages.push({ path: `/blog/${slug}`, url: `${SITE}/blog/${slug}`, title: fm.metaTitle || fm.title || slug.replace(/-/g, " "), description: fm.description ?? "" });
+    pages.push({ path: `/resources/blogs/${slug}`, url: `${SITE}/resources/blogs/${slug}`, title: fm.metaTitle || fm.title || slug.replace(/-/g, " "), description: fm.description ?? "" });
   }
 }
 
@@ -187,7 +187,7 @@ for (const p of [framework, pages.find((p) => p.path === "/who-this-is-for"), pa
 out.push("");
 
 out.push("## Original research");
-for (const p of group((x) => x === "/blog/b2b-outbound-benchmark-report-2026")) out.push(line(p));
+for (const p of group((x) => x === "/resources/blogs/b2b-outbound-benchmark-report-2026")) out.push(line(p));
 out.push("");
 
 const csReal = group((x) => /^\/case-studies\/[^/]+$/.test(x) && !["/case-studies/pharma", "/case-studies/saas", "/case-studies/professional-services", "/case-studies/ecommerce-tech", "/case-studies/b2b-founder", "/case-studies/agencies-it", "/case-studies/financial-services", "/case-studies/insurance", "/case-studies/manufacturers-exporters", "/case-studies/recruitment-staffing"].includes(x));
@@ -201,7 +201,7 @@ out.push("## Guides");
 for (const p of guideLike(/^\/resources\/guides\/[^/]+$/)) out.push(line(p));
 out.push("");
 out.push("## Blog");
-for (const p of guideLike(/^\/blog\/[^/]+$/).filter((x) => x.path !== "/blog/b2b-outbound-benchmark-report-2026")) out.push(line(p));
+for (const p of guideLike(/^\/resources\/blogs\/[^/]+$/).filter((x) => x.path !== "/resources/blogs/b2b-outbound-benchmark-report-2026")) out.push(line(p));
 out.push("");
 
 out.push("## Glossary (definitions)");

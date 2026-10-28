@@ -132,9 +132,9 @@ const TIPS = [
 
 const RELATED = [
   { label: "LinkedIn Content-to-Calls Starter Kit", href: "/resources/guides/linkedin-content-to-calls-starter-kit", note: "Post templates, CTAs and a 10-minute daily routine." },
-  { label: "How to Write a LinkedIn Hook", href: "/blog/how-to-write-a-linkedin-hook", note: "Six patterns for the first line of every post." },
+  { label: "How to Write a LinkedIn Hook", href: "/resources/blogs/how-to-write-a-linkedin-hook", note: "Six patterns for the first line of every post." },
   { label: "LinkedIn Hook Grader", href: "/tools/linkedin-hook-grader", note: "Score your opening line before you post it." },
-  { label: "Cold Email Follow-Up Sequence", href: "/blog/cold-email-follow-up-sequence", note: "What to send when the first email gets no reply." },
+  { label: "Cold Email Follow-Up Sequence", href: "/resources/blogs/cold-email-follow-up-sequence", note: "What to send when the first email gets no reply." },
 ];
 
 const H2 = "text-2xl sm:text-3xl font-black";

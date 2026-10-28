@@ -14,8 +14,8 @@ import { collection, config, fields } from "@keystatic/core";
 //    lib/case-study-library.json, then `case-studies:build` writes each page and
 //    its sitemap entry (both run by prebuild).
 //  - Blog posts: .mdoc files read at build time by lib/cms-posts.ts and
-//    rendered by app/blog/[slug]/page.tsx. The 36 older posts are hand-built
-//    pages and are untouched; a static folder under app/blog/ always wins over
+//    rendered by app/resources/blogs/[slug]/page.tsx (served at /resources/blogs/<slug>).
+//    The 36 older posts are hand-built pages; a static folder under app/resources/blogs/ always wins over
 //    the dynamic route.
 //
 // Storage: local files while developing. Set NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO

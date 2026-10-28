@@ -39,7 +39,7 @@ export default function ColdLeadPage() {
       definition="A prospect matching your ICP who hasn't engaged with any outreach yet, the starting point of a sequence, not a signal that they won't ever respond."
       body="Treating a cold lead as a lost cause after one unanswered email is the most common way outbound teams undersell their own pipeline. Most replies come from the second, third, or fourth touch in a sequence, not the first, which is exactly why a real cadence exists instead of a single email."
       sourceLabel="Read: Cold Email Sequence Templates That Get Replies"
-      sourceHref="/blog/cold-email-sequence-templates"
+      sourceHref="/resources/blogs/cold-email-sequence-templates"
       articleSchema={TERM_SCHEMA}
     />
   );

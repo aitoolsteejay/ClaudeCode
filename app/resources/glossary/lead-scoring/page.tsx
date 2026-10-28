@@ -39,7 +39,7 @@ export default function LeadScoringPage() {
       definition="A system for ranking leads by fit and engagement, so sales effort goes to the prospects most likely to convert first, instead of treating every lead identically."
       body="A basic score combines two inputs: how well the lead matches the ICP, and how much they've actually engaged (opens, replies, meeting requests). A lead that's a perfect ICP fit but silent scores lower than an imperfect fit who's actively replying, because engagement is the stronger near-term predictor of a closed deal."
       sourceLabel="Read: The 7 B2B Lead Gen Metrics That Actually Matter"
-      sourceHref="/blog/b2b-lead-gen-metrics"
+      sourceHref="/resources/blogs/b2b-lead-gen-metrics"
       articleSchema={TERM_SCHEMA}
     />
   );

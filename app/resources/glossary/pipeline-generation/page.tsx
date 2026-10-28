@@ -42,7 +42,7 @@ export default function PipelineGenerationPage() {
       definition="The activity of creating new qualified sales opportunities, through outbound, inbound, and referrals, so the sales pipeline has enough deals in it to hit revenue targets."
       body="Lead generation produces contacts; pipeline generation is measured one step later, in qualified opportunities with a real deal value attached. Teams usually work backwards from a revenue target: if you close one in four qualified opportunities, you need four times your target in pipeline, and outbound is the lever you control most directly to build it."
       sourceLabel="Read: Outbound Funnel Math, Not Gut Feel"
-      sourceHref="/blog/outbound-funnel-math-not-guesswork"
+      sourceHref="/resources/blogs/outbound-funnel-math-not-guesswork"
       furtherLabel="Read the related term: Sales Pipeline"
       furtherHref="/resources/glossary/sales-pipeline"
       articleSchema={TERM_SCHEMA}

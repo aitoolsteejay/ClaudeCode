@@ -39,7 +39,7 @@ export default function IcpPage() {
       definition="A description of the exact type of company and buyer most likely to want your product, used to decide who's worth messaging before outreach starts."
       body="An ICP is narrower than a buyer persona: it filters by company traits (industry, size, tech stack, buying signals) first, then names the specific role inside that company who actually has the pain and the authority to act on it."
       sourceLabel="Read: ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close"
-      sourceHref="/blog/icp-mapping-b2b"
+      sourceHref="/resources/blogs/icp-mapping-b2b"
       articleSchema={TERM_SCHEMA}
     />
   );

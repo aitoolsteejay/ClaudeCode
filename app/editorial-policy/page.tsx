@@ -66,7 +66,7 @@ const SECTIONS: Section[] = [
     body: [
       "Figures about Myntmore's own results come from campaigns Myntmore ran. We publish a real number or say that we do not have one; we do not invent statistics, and a new offering with no track record is described as new.",
       <>
-        Benchmarks, such as the <Link href="/blog/b2b-outbound-benchmark-report-2026" className="underline underline-offset-2">2026 B2B Outbound Benchmark Report</Link>, are aggregated and anonymised across the accounts Myntmore has managed. No single client&apos;s data is broken out or identifiable, and ranges are shown instead of a single blended average because a flat number would hide more than it reveals. Figures labelled &quot;typical&quot; for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
+        Benchmarks, such as the <Link href="/resources/blogs/b2b-outbound-benchmark-report-2026" className="underline underline-offset-2">2026 B2B Outbound Benchmark Report</Link>, are aggregated and anonymised across the accounts Myntmore has managed. No single client&apos;s data is broken out or identifiable, and ranges are shown instead of a single blended average because a flat number would hide more than it reveals. Figures labelled &quot;typical&quot; for unmanaged outbound are commonly cited industry ranges, not a specific third-party study.
       </>,
     ],
   },

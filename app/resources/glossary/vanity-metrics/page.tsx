@@ -39,7 +39,7 @@ export default function VanityMetricsPage() {
       definition="Surface numbers like likes, follower counts, or impressions that look impressive but don't reliably show whether content is actually generating leads or revenue."
       body="A post can get thousands of likes from people who will never buy anything, while a quieter post reaches the twenty right people and books three calls. The fix isn't ignoring engagement entirely, it's tracking it alongside pipeline-linked numbers like profile visits from ICP-matching titles and inbound DMs that turn into conversations."
       sourceLabel="Read: Founder Personal Branding: Pipeline, Not Likes"
-      sourceHref="/blog/vanity-metrics-personal-brand-pipeline"
+      sourceHref="/resources/blogs/vanity-metrics-personal-brand-pipeline"
       articleSchema={TERM_SCHEMA}
     />
   );

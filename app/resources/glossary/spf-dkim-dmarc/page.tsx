@@ -39,7 +39,7 @@ export default function SpfDkimDmarcPage() {
       definition="Three DNS records that prove a cold email actually came from your domain and wasn't altered in transit, and tell inboxes what to do if that check fails."
       body="Without them, a receiving mail server has no way to confirm a message is genuine, so it defaults to suspicion, which is why cold email without proper authentication so often lands in spam regardless of how good the copy is."
       sourceLabel="Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"
-      sourceHref="/blog/cold-email-deliverability-guide"
+      sourceHref="/resources/blogs/cold-email-deliverability-guide"
       articleSchema={TERM_SCHEMA}
     />
   );

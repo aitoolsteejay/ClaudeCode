@@ -151,11 +151,11 @@ These map directly onto the 26 [case studies](#case-studies)' verticals.
 
 ### Blog, guides, glossary
 
-- **Blog** (`/blog/*`, 26 posts) — each post is its own `page.tsx` (mostly static JSX, not MDX). Several share an identical "3-stat-strip with source citations" block near the top (grid layout — was fixed for mobile in `sm:grid-cols-3`, see git history for the pattern).
+- **Blog** (`/resources/blogs/*`, 26 posts) — each post is its own `page.tsx` (mostly static JSX, not MDX). Several share an identical "3-stat-strip with source citations" block near the top (grid layout — was fixed for mobile in `sm:grid-cols-3`, see git history for the pattern).
 - **Guides** (`/resources/guides/*`) — long-form reference pages; `GuideTemplate.tsx` is the shared shell for these where applicable, plus at least one fully bespoke guide (`ai-tech-stack-jewellery`, 106 tools across 14 categories).
 - **Glossary** (`/resources/glossary/<term>`, 30 terms) — every term page is `<GlossaryTerm ... />` (from `components/glossary/GlossaryTerm.tsx`) with per-term content passed as props/data. This is the cleanest example of the "one component, many pages" pattern in the repo — **always extend this component or its data, never fork it**, when adding a 31st term.
 - `/resources`, `/resources/blogs`, `/resources/tools`, `/resources/feed` — index/hub pages tying the above together.
-- The 2026 benchmark report (`/blog/b2b-outbound-benchmark-report-2026`) is treated as an evergreen, periodically-refreshed asset (aggregate reply-rate/inbox-placement/time-to-meeting stats) — its value depends on staying current, per `docs/seo-aeo-geo-cadence.md`.
+- The 2026 benchmark report (`/resources/blogs/b2b-outbound-benchmark-report-2026`) is treated as an evergreen, periodically-refreshed asset (aggregate reply-rate/inbox-placement/time-to-meeting stats) — its value depends on staying current, per `docs/seo-aeo-geo-cadence.md`.
 
 ### Case studies
 

@@ -82,7 +82,7 @@ export default function TotalConversionalMarketPage() {
 
           <div className="mt-12 pt-8 border-t" style={{ borderColor: "#E8E2D9" }}>
             <p className="text-sm mb-4" style={{ color: "#71675E" }}>Where this comes from</p>
-            <Link href="/blog/tam-trap-vague-targeting" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#A14A08" }}>
+            <Link href="/resources/blogs/tam-trap-vague-targeting" className="inline-flex items-center gap-2 text-sm font-bold" style={{ color: "#A14A08" }}>
               Read: The TAM Trap: Why Vague Targeting Is Quietly Killing Your Outbound Pipeline
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>

@@ -157,8 +157,8 @@ Would you be interested in discussing some LinkedIn growth strategies?`,
 ];
 
 const RELATED = [
-  { label: "Cold email deliverability guide", href: "/blog/cold-email-deliverability-guide", note: "Why emails land in spam, and how to fix it before you scale." },
-  { label: "Cold email sequence templates", href: "/blog/cold-email-sequence-templates", note: "A full 5-email sequence, from first touch to breakup email." },
+  { label: "Cold email deliverability guide", href: "/resources/blogs/cold-email-deliverability-guide", note: "Why emails land in spam, and how to fix it before you scale." },
+  { label: "Cold email sequence templates", href: "/resources/blogs/cold-email-sequence-templates", note: "A full 5-email sequence, from first touch to breakup email." },
   { label: "Domain warm-up", href: "/resources/glossary/domain-warmup", note: "Ramping new sending domains so inbox providers trust them." },
   { label: "SPF, DKIM & DMARC", href: "/resources/glossary/spf-dkim-dmarc", note: "The DNS records that decide inbox vs. spam." },
 ];

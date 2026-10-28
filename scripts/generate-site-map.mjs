@@ -20,7 +20,7 @@
 // treated as reachable from everywhere (nav, footer, shared widgets).
 //
 // Known limits: links assembled at runtime (template literals such as
-// `/blog/${slug}`) are matched by the slug appearing as a quoted string next
+// `/resources/blogs/${slug}`) are matched by the slug appearing as a quoted string next
 // to such a link; anything fancier will show up as an orphan and is worth a
 // manual look.
 
@@ -174,7 +174,7 @@ for (const f of codeFiles) {
   }
 }
 
-// Runtime-built links like `/blog/${slug}`: attribute them to every page under
+// Runtime-built links like `/resources/blogs/${slug}`: attribute them to every page under
 // that prefix whose last segment appears as a quoted string in the same file
 // (or in a data file in lib/ or the same folder).
 const dataSources = codeFiles.filter((f) => /\/(lib|data)\//.test(rel(f)) || /data|posts|articles|glossary/i.test(path.basename(f)) || rel(f) === "lib/case-study-library.json");

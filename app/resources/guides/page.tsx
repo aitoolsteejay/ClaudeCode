@@ -89,7 +89,7 @@ const GUIDES = [
     accent: "#F5B731",
   },
   {
-    href: "/blog/agency-vs-in-house",
+    href: "/resources/blogs/agency-vs-in-house",
     tag: "Comparison",
     title: "Agency vs. In-House SDR",
     excerpt: "The real tradeoff on cost, ramp-up time, tooling, and risk, side by side, so you can figure out which fits your stage before you commit either way.",

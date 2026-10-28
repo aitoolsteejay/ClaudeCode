@@ -45,7 +45,7 @@ export default function CanSpamActPage() {
       definition="A US federal law governing commercial email, requiring accurate sender details, a clear physical address, a working unsubscribe link, and non-deceptive subject lines."
       body="Unlike some other regions, the US doesn't require prior opt-in for B2B cold email, which is what makes cold outreach legally viable there in the first place. But every message still needs an honest 'From' line and a real way to opt out, and violations carry real financial penalties per email."
       sourceLabel="Read: Cold Email Compliance: CAN-SPAM, GDPR & DPDP"
-      sourceHref="/blog/cold-email-compliance-guide"
+      sourceHref="/resources/blogs/cold-email-compliance-guide"
       articleSchema={TERM_SCHEMA}
       faqs={FAQS}
     />

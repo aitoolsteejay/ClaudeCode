@@ -39,7 +39,7 @@ export default function LeadMagnetPage() {
       definition="A free, specific piece of value, like a calculator, template, or custom report, offered in exchange for a prospect's attention, used to earn a reply before any pitch is made."
       body="The ones that actually convert are narrow and immediately usable by the exact ICP they're built for, not broad awareness content repackaged as a PDF. A generic '10 tips' guide reads as marketing; a tool that solves one specific problem for one specific role reads as genuinely useful, which is the entire difference."
       sourceLabel="Read: The Value Premium: Creating Magnetic Lead Magnets"
-      sourceHref="/blog/value-premium-lead-magnets"
+      sourceHref="/resources/blogs/value-premium-lead-magnets"
       articleSchema={TERM_SCHEMA}
     />
   );

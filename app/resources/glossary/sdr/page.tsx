@@ -48,7 +48,7 @@ export default function SdrPage() {
       definition="The role responsible for prospecting and qualifying leads through outbound outreach, handing off booked meetings to account executives rather than closing deals directly."
       body="Because the job is largely about volume, consistency, and list quality rather than relationship-building, it's one of the easiest sales functions to outsource, which is why many growing teams run it through an agency before hiring it in-house."
       sourceLabel="Read: Agency vs. In-House SDR for B2B Outbound"
-      sourceHref="/blog/agency-vs-in-house"
+      sourceHref="/resources/blogs/agency-vs-in-house"
       articleSchema={TERM_SCHEMA}
       faqs={FAQS}
     />

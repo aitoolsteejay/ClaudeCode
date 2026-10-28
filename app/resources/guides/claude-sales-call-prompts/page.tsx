@@ -146,10 +146,10 @@ const GROUPS = [
 ];
 
 const RELATED = [
-  { label: "The Reply Isn't the Win: Handling Cold Email Replies", href: "/blog/handling-cold-email-replies", note: "What to say in the first hour after a prospect responds." },
-  { label: "Cold Email Sequence Templates", href: "/blog/cold-email-sequence-templates", note: "A full 5-email sequence, from first touch to breakup email." },
+  { label: "The Reply Isn't the Win: Handling Cold Email Replies", href: "/resources/blogs/handling-cold-email-replies", note: "What to say in the first hour after a prospect responds." },
+  { label: "Cold Email Sequence Templates", href: "/resources/blogs/cold-email-sequence-templates", note: "A full 5-email sequence, from first touch to breakup email." },
   { label: "The 6 Claude Skills Guide", href: "/resources/guides/claude-skills-guide", note: "Six ready-to-use Claude skills for founders and marketers." },
-  { label: "Multi-Threading B2B Deals", href: "/blog/multi-threading-b2b-buying-committee", note: "Why one champion is never enough to close a deal." },
+  { label: "Multi-Threading B2B Deals", href: "/resources/blogs/multi-threading-b2b-buying-committee", note: "Why one champion is never enough to close a deal." },
 ];
 
 export default function ClaudeSalesCallPrompts() {

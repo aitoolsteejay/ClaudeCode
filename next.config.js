@@ -72,7 +72,15 @@ const nextConfig = {
       // Myntmore no longer sells any of them, and pointing them at /services
       // would be an irrelevant redirect that Google treats as a soft 404.
       // Folded into the older, same-topic post (published 2026-10-17, merged the same day).
-      { source: "/blog/multi-threading-b2b-outbound", destination: "/blog/multi-threading-b2b-buying-committee", permanent: true },
+      { source: "/blog/multi-threading-b2b-outbound", destination: "/resources/blogs/multi-threading-b2b-buying-committee", permanent: true },
+
+      // Every blog post lives at /resources/blogs/<slug> (moved 2026-10-28 from /blog/<slug>).
+      // The specific redirect above must stay first so a retired slug goes straight to its
+      // final address in one hop. The singular /resources/blog/... is a common mistyping.
+      { source: "/blog", destination: "/resources/blogs", permanent: true },
+      { source: "/blog/:slug*", destination: "/resources/blogs/:slug*", permanent: true },
+      { source: "/resources/blog", destination: "/resources/blogs", permanent: true },
+      { source: "/resources/blog/:slug*", destination: "/resources/blogs/:slug*", permanent: true },
       { source: "/home", destination: "/", permanent: true },
       { source: "/webinar", destination: "/events", permanent: true },
       { source: "/branding", destination: "/services/personal-branding", permanent: true },

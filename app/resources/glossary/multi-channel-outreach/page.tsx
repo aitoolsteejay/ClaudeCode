@@ -39,9 +39,9 @@ export default function MultiChannelOutreachPage() {
       definition="An outreach sequence that contacts the same prospect across several channels, such as email, LinkedIn, and phone, in a coordinated order, rather than relying on one channel alone."
       body="Prospects don't all live in the same inbox: some ignore email but answer LinkedIn messages, others are the reverse. A coordinated sequence, for example a LinkedIn connection, then an email, then a follow-up that references both, raises the odds of reaching each person, as long as every touch adds something new rather than repeating the same pitch louder."
       sourceLabel="Read: Cold Email vs. LinkedIn Outreach for B2B Pipeline"
-      sourceHref="/blog/cold-email-vs-linkedin-outreach"
+      sourceHref="/resources/blogs/cold-email-vs-linkedin-outreach"
       furtherLabel="Read: LinkedIn Outreach Sequences That Get Replies"
-      furtherHref="/blog/linkedin-outreach-sequences"
+      furtherHref="/resources/blogs/linkedin-outreach-sequences"
       articleSchema={TERM_SCHEMA}
     />
   );

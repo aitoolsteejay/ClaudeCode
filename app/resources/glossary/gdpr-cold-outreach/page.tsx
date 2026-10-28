@@ -39,7 +39,7 @@ export default function GdprColdOutreachPage() {
       definition="The EU law governing how personal data like a prospect's name and work email can be used for outreach, which for B2B allows outreach under 'legitimate interest' rather than requiring prior opt-in."
       body="Legitimate interest is narrower than it sounds: the outreach has to be relevant to the recipient's professional role, and it has to include an easy, immediate way to opt out. It does not license the same broad, unfiltered blasting that some other regions tolerate."
       sourceLabel="Read: Cold Email Compliance: CAN-SPAM, GDPR & DPDP"
-      sourceHref="/blog/cold-email-compliance-guide"
+      sourceHref="/resources/blogs/cold-email-compliance-guide"
       articleSchema={TERM_SCHEMA}
     />
   );

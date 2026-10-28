@@ -44,7 +44,7 @@ export default function LinkedinOutreachPage() {
       sourceLabel="See the service: LinkedIn Outreach"
       sourceHref="/services/linkedin-outreach"
       furtherLabel="Read: Cold Email vs. LinkedIn Outreach for B2B Pipeline"
-      furtherHref="/blog/cold-email-vs-linkedin-outreach"
+      furtherHref="/resources/blogs/cold-email-vs-linkedin-outreach"
       articleSchema={TERM_SCHEMA}
     />
   );

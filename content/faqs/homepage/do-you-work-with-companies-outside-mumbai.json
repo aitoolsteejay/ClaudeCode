@@ -1,0 +1,39 @@
+{
+  "question": "Do you work with companies outside Mumbai?",
+  "answer": "Yes. We're headquartered in Mumbai and run outbound campaigns for B2B companies across India and internationally. There are no separate city offices; the same Mumbai team runs every campaign, adapted to each market's industries and buyers. We've written up how outbound works in each major Indian market.",
+  "order": 3,
+  "links": [
+    {
+      "label": "Mumbai",
+      "href": "/b2b-lead-generation-mumbai"
+    },
+    {
+      "label": "Delhi NCR",
+      "href": "/b2b-lead-generation-delhi"
+    },
+    {
+      "label": "Bengaluru",
+      "href": "/b2b-lead-generation-bengaluru"
+    },
+    {
+      "label": "Pune",
+      "href": "/b2b-lead-generation-pune"
+    },
+    {
+      "label": "Hyderabad",
+      "href": "/b2b-lead-generation-hyderabad"
+    },
+    {
+      "label": "Chennai",
+      "href": "/b2b-lead-generation-chennai"
+    },
+    {
+      "label": "Kolkata",
+      "href": "/b2b-lead-generation-kolkata"
+    },
+    {
+      "label": "Ahmedabad",
+      "href": "/b2b-lead-generation-ahmedabad"
+    }
+  ]
+}

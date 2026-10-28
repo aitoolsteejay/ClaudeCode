@@ -1,0 +1,6 @@
+{
+  "question": "Do you integrate with our CRM?",
+  "answer": "Yes. We support HubSpot, Salesforce, Pipedrive, and most other major CRMs. When a meeting is booked, we log the contact, the touchpoint history, and notes from the conversation directly into your CRM so your AE has full context before the call. We can also sync campaign activity for attribution reporting. Setup is part of your onboarding process.",
+  "order": 7,
+  "links": []
+}

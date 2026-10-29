@@ -2,6 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    // /resources/blogs re-renders itself hourly (it refetches the Medium feed), and on Vercel that
+    // runs in a serverless function. The blog cards are read from content/posts/*.mdoc at render
+    // time, so those files must ship with the function: without this the regenerated page has no
+    // post cards. (Pages that are only built once at deploy time need no such entry.)
+    outputFileTracingIncludes: {
+      "/resources/blogs": ["./content/posts/**/*"],
+    },
+  },
   images: {
     // AVIF first (smaller than WebP in most cases), WebP as fallback for
     // browsers that don't support AVIF yet. next/image serves whichever the

@@ -1,0 +1,41 @@
+{
+  "slug": "can-spam-act",
+  "title": "CAN-SPAM Act",
+  "indexTitle": "",
+  "tag": "Compliance",
+  "accent": "#DC2626",
+  "tagline": "The US law that decides what a compliant cold email actually has to include.",
+  "excerpt": "The US law setting the rules for commercial email: accurate sender info, honest subject lines, a working opt-out.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "A US federal law governing commercial email, requiring accurate sender details, a clear physical address, a working unsubscribe link, and non-deceptive subject lines.",
+  "body": "Unlike some other regions, the US doesn't require prior opt-in for B2B cold email, which is what makes cold outreach legally viable there in the first place. But every message still needs an honest 'From' line and a real way to opt out, and violations carry real financial penalties per email.",
+  "sourceLabel": "Read: Cold Email Compliance: CAN-SPAM, GDPR & DPDP",
+  "sourceHref": "/resources/blogs/cold-email-compliance-guide",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "The CAN-SPAM Act is a US law that sets the rules for commercial email, requiring accurate sender information, a working unsubscribe mechanism, and honest subject lines, with penalties for violations.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What the CAN-SPAM Act requires for commercial email, who it applies to, and what B2B cold email needs to stay compliant with it.",
+  "keywords": [
+    "what is can-spam act",
+    "can-spam compliance",
+    "can-spam act cold email",
+    "can-spam requirements"
+  ],
+  "faqs": [
+    {
+      "question": "What is the CAN-SPAM Act?",
+      "answer": "The CAN-SPAM Act is a US federal law, passed in 2003, that sets rules for commercial email. It requires accurate sender details, non-deceptive subject lines, a valid physical postal address, a clear way to opt out, and honouring opt-out requests promptly. It covers business-to-business email as well as consumer email."
+    },
+    {
+      "question": "Does CAN-SPAM allow cold email?",
+      "answer": "Yes. CAN-SPAM does not require prior consent, so cold email to US business contacts is legal as long as every message follows its rules: honest sender details and subject line, a physical postal address, a working unsubscribe option, and opt-out requests honoured within 10 business days."
+    },
+    {
+      "question": "What are the penalties for violating CAN-SPAM?",
+      "answer": "Each email that violates CAN-SPAM can bring a separate civil penalty, and the US Federal Trade Commission adjusts the maximum for inflation every year, putting it above $50,000 per email. Both the company whose product is promoted and the company that actually sent the email can be held responsible."
+    }
+  ]
+}

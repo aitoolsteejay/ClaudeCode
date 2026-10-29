@@ -7,6 +7,7 @@ import JsonLd from "../components/JsonLd";
 import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { textTone } from "@/lib/colors";
 import { getCmsPostSummaries } from "@/lib/cms-posts";
+import glossaryCards from "@/lib/glossary-index.generated.json";
 
 export const metadata: Metadata = {
   title: "Site Map",
@@ -275,7 +276,11 @@ export default async function SitemapPage() {
   // Blog posts come from the CMS: any post without a hand-written label above is listed by its title.
   const known = new Set(GROUPS.flatMap((g) => g.links.map((l) => l.href)));
   const extraPosts = (await getCmsPostSummaries()).filter((p) => !known.has(p.href)).map((p) => ({ label: p.title, href: p.href }));
-  const groups: SitemapGroup[] = GROUPS.map((g) => (g.title === "Blog" ? { ...g, links: [...g.links, ...extraPosts] } : g));
+  // Glossary terms come from the CMS too: any term without a hand-written label above is listed by its name.
+  const extraTerms = glossaryCards.filter((c) => !known.has(c.href)).map((c) => ({ label: c.title, href: c.href }));
+  const groups: SitemapGroup[] = GROUPS.map((g) =>
+    g.title === "Blog" ? { ...g, links: [...g.links, ...extraPosts] } : g.title === "Glossary" ? { ...g, links: [...g.links, ...extraTerms] } : g
+  );
   return (
     <InnerLayout>
       <JsonLd data={BREADCRUMB_SCHEMA} />

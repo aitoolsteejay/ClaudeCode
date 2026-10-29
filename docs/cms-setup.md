@@ -7,12 +7,15 @@
 | Homepage FAQs | `content/faqs/homepage/*.json` | homepage FAQ section and its FAQPage schema (via `npm run faqs:build`) |
 | FAQs on every other page (services, city pages, ICP landing pages, guides, blog posts, tools) | `content/faqs/pages/<page>.json` | the page itself, through `lib/page-faqs.ts`, and its FAQPage schema |
 | ICP landing pages (so far: insurance, financial services) | `content/landing-pages/<slug>.json` | `app/lp/<slug>/page.tsx` is generated from it at every build and rendered by `components/lp/LandingPage.tsx` |
+| Glossary (46 of the 50 terms) | `content/glossary/<slug>.json` | `app/resources/glossary/<slug>/page.tsx` generated at every build, the A-Z index cards (`lib/glossary-index.generated.json`) and the term's sitemap entry |
 | Case studies | `content/case-studies/*.json` | `lib/case-study-library.json`, then one generated page and sitemap entry per case (both rebuilt on every deploy) |
 | Blog posts | `content/posts/*.mdoc` | `app/resources/blogs/[slug]/page.tsx`, the blog index, `sitemap.xml`, `llms-full.txt` |
 
 To change FAQs on any page: admin, **Page FAQs**, open the page's entry (names start with `city-`, `lp-`, `service-`, `blog-`, `guide-`, `tool-`), edit or drag questions, save. The answer text and the page's FAQPage schema update together on the next deploy. Adding FAQs to a page that has none yet needs a developer to connect the page once.
 
 Landing pages: edit the text, numbers, steps and button labels in the admin under **Landing pages (ICP)**. Layout, colours, animations and the form wiring stay in code. The counts (4 stats, 3 pain cards, and so on) are fixed by the template and enforced in the admin. A brand-new landing page also needs one line in `app/sitemap.ts` (the build warns if it is missing). The FAQ questions on these pages live under **Page FAQs** (`lp-<slug>`).
+
+Glossary: edit a term's definition, supporting paragraph, links, FAQs and index card in the admin under **Glossary terms**. A new term needs only its entry: the page, the A-Z index card, the sitemap line and the sitemap-page link are all generated at the next deploy. Four longer-form terms (total-conversional-market, signal-heavy-structuring, 3-second-rule, inbound-vs-outbound) are still hand-built pages.
 
 A new case study published from the admin appears after the next deploy, with its page, sitemap entry and place on the industry filter. Its sitemap date is not refreshed automatically, because sitemap dates come from git history of page code.
 

@@ -1,0 +1,28 @@
+{
+  "slug": "icp",
+  "title": "ICP (Ideal Customer Profile)",
+  "indexTitle": "",
+  "tag": "Targeting",
+  "accent": "#0891B2",
+  "tagline": "The filter that decides who's even worth messaging, before a single outbound email goes out.",
+  "excerpt": "The exact type of company and buyer most likely to want your product, used to decide who's worth messaging before outreach starts.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "A description of the exact type of company and buyer most likely to want your product, used to decide who's worth messaging before outreach starts.",
+  "body": "An ICP is narrower than a buyer persona: it filters by company traits (industry, size, tech stack, buying signals) first, then names the specific role inside that company who actually has the pain and the authority to act on it.",
+  "sourceLabel": "Read: ICP Mapping for B2B: How to Define the Exact Buyer Who Will Close",
+  "sourceHref": "/resources/blogs/icp-mapping-b2b",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "An Ideal Customer Profile (ICP) is a detailed description of the company and buyer most likely to want a product and get real value from it, used to decide who is worth targeting before outbound outreach begins.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What an Ideal Customer Profile (ICP) is, why it's the filter that decides who's worth messaging, and how it differs from a buyer persona.",
+  "keywords": [
+    "what is icp",
+    "ideal customer profile definition",
+    "icp meaning b2b",
+    "icp vs buyer persona"
+  ],
+  "faqs": []
+}

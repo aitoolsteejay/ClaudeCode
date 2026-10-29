@@ -1,0 +1,41 @@
+{
+  "slug": "sales-outreach",
+  "title": "Sales Outreach",
+  "indexTitle": "",
+  "tag": "Cold Outreach",
+  "accent": "#9A3412",
+  "tagline": "Every message a sales team sends to start or move forward a conversation with a prospect, cold or warm.",
+  "excerpt": "Any message a sales team sends to start or advance a conversation with a prospect, cold or warm.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "Any direct contact a sales team makes with prospects to start or advance a conversation, covering cold outreach to new contacts and follow-ups with people already engaged.",
+  "body": "Sales outreach is the broader umbrella: cold outreach is the part aimed at strangers, but outreach also includes following up with warm leads, re-engaging prospects who went quiet, and nurturing existing connections. Each temperature of lead needs a different message, which is why a single template sent to everyone underperforms.",
+  "sourceLabel": "Read the related term: Cold Outreach",
+  "sourceHref": "/resources/glossary/cold-outreach",
+  "furtherLabel": "Read the related term: Warm Lead",
+  "furtherHref": "/resources/glossary/warm-lead",
+  "schemaDescription": "Sales outreach is any direct contact a sales team initiates with prospects to start or advance a sales conversation, including cold outreach to new contacts and follow-up with prospects who are already engaged.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What sales outreach is, how it differs from cold outreach, and how cold, warm, and hot leads each need a different approach.",
+  "keywords": [
+    "what is sales outreach",
+    "sales outreach definition",
+    "sales outreach vs cold outreach",
+    "b2b sales outreach"
+  ],
+  "faqs": [
+    {
+      "question": "What is sales outreach?",
+      "answer": "Sales outreach is any direct contact a sales team makes with prospects to start or move forward a conversation. It covers cold outreach to new contacts, follow-ups with warm leads and re-engaging prospects who went quiet, through channels such as email, LinkedIn, phone, and WhatsApp where the prospect has opted in."
+    },
+    {
+      "question": "What is the difference between sales outreach and cold outreach?",
+      "answer": "Cold outreach is one part of sales outreach: contacting people who have never heard of you. Sales outreach is the wider term and also includes following up with warm leads, nurturing existing connections and reviving stalled deals. Each needs a different message, because a stranger and a warm lead expect different things."
+    },
+    {
+      "question": "How many touches does sales outreach need?",
+      "answer": "Most B2B sales outreach needs several touches before a prospect replies. A common structure is five emails over about three weeks, often run alongside LinkedIn, with each touch doing a different job: opening, adding value, reframing, showing proof and closing the loop. Past that, extra messages mostly bring unsubscribes."
+    }
+  ]
+}

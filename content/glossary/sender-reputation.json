@@ -1,0 +1,28 @@
+{
+  "slug": "sender-reputation",
+  "title": "Sender Reputation",
+  "indexTitle": "",
+  "tag": "Cold Email",
+  "accent": "#059669",
+  "tagline": "The invisible score that decides whether every future email from a domain gets trusted or filtered out.",
+  "excerpt": "The ongoing score inbox providers assign a domain based on past behaviour, deciding inbox or spam.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "An ongoing score inbox providers assign to a sending domain or IP based on past behaviour, deciding whether future emails land in the inbox or get routed to spam.",
+  "body": "It's built from signals like spam complaint rate, bounce rate, and how often recipients open or reply, and it's cumulative: one bad sending burst can suppress deliverability for weeks after, which is why reputation is monitored continuously rather than checked once.",
+  "sourceLabel": "Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
+  "sourceHref": "/resources/blogs/cold-email-deliverability-guide",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "Sender reputation is a score inbox providers assign to a sending domain or IP based on past behaviour, such as spam complaints and bounce rates, that determines whether future emails reach the inbox or spam.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What sender reputation is, which signals inbox providers actually track, and how a damaged reputation quietly kills cold email deliverability.",
+  "keywords": [
+    "what is sender reputation",
+    "email sender score",
+    "sender reputation cold email",
+    "improve sender reputation"
+  ],
+  "faqs": []
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "hot-lead",
+  "title": "Hot Lead",
+  "indexTitle": "",
+  "tag": "GTM Strategy",
+  "accent": "#B91C1C",
+  "tagline": "The lead where speed matters more than polish, because someone else's slower reply is the actual competition.",
+  "excerpt": "A prospect showing clear, immediate buying intent, who should be followed up with within hours, not days.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "A prospect showing clear, immediate buying intent, replying with interest, asking pricing questions, requesting a call, who should be followed up with within hours, not days.",
+  "body": "A hot lead isn't defined by fit alone, plenty of well-fitted ICP matches never engage. It's defined by an explicit signal that they're actively evaluating right now, which is exactly why response time on a hot lead matters more than on any other stage of the pipeline: the interest is real but perishable.",
+  "sourceLabel": "Read the related term: Buying Signal",
+  "sourceHref": "/resources/glossary/buying-signal",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "A hot lead is a prospect showing clear, immediate buying intent, replying with interest, asking pricing questions, requesting a call, who should be followed up with within hours, not days.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What counts as a hot lead in B2B outbound, how it differs from a warm lead, and why response speed matters more here than anywhere else in the funnel.",
+  "keywords": [
+    "what is a hot lead",
+    "hot lead definition b2b",
+    "hot vs warm lead",
+    "hot lead follow up time"
+  ],
+  "faqs": [
+    {
+      "question": "What is a hot lead?",
+      "answer": "A hot lead is a prospect showing clear, immediate buying intent, such as replying with interest, asking about pricing or requesting a call. Hot leads should get a personal follow-up within hours, because the interest is real but fades quickly. Fitting your ideal customer profile alone does not make a lead hot."
+    },
+    {
+      "question": "What is the difference between a hot, warm and cold lead?",
+      "answer": "A cold lead fits your ideal customer profile but has shown no interest yet. A warm lead has engaged lightly, for example by accepting a LinkedIn request or downloading a resource. A hot lead has shown explicit intent, such as asking for a call or about pricing, and needs a fast, personal reply."
+    },
+    {
+      "question": "How fast should you follow up with a hot lead?",
+      "answer": "Follow up with a hot lead within the hour during working hours, and the same business day at the latest. Interest is highest the moment a prospect replies or asks for a call, and it drops quickly after that. Give each hot lead one named owner so it never waits in a shared inbox."
+    }
+  ]
+}

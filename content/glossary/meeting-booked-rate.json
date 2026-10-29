@@ -1,0 +1,28 @@
+{
+  "slug": "meeting-booked-rate",
+  "title": "Meeting-Booked Rate",
+  "indexTitle": "",
+  "tag": "GTM Strategy",
+  "accent": "#9A3412",
+  "tagline": "The number that actually matters, since a reply that never turns into a meeting never turns into a deal.",
+  "excerpt": "The percentage of contacted prospects who book a meeting, the metric outbound teams actually optimize for.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "The percentage of contacted prospects who book a meeting, the metric outbound teams actually optimize for, since replies alone don't fill a pipeline.",
+  "body": "A campaign can have a strong response rate and a weak meeting-booked rate if the ask is vague or the follow-through is slow, which is why the two are tracked separately rather than as one combined number. It is always lower than the reply rate, since only some replies turn into meetings, and it varies by ICP, offer and channel.",
+  "sourceLabel": "Read: The 2026 B2B Outbound Benchmark Report",
+  "sourceHref": "/resources/blogs/b2b-outbound-benchmark-report-2026",
+  "furtherLabel": "Go deeper: What to do in the first hour after a prospect replies",
+  "furtherHref": "/resources/blogs/handling-cold-email-replies",
+  "schemaDescription": "Meeting-booked rate is the percentage of contacted prospects who book a meeting, the metric outbound teams actually optimize for, since replies alone don't fill a pipeline.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What meeting-booked rate is, what counts as healthy for cold outreach, and why it matters more than response rate once a campaign is running.",
+  "keywords": [
+    "what is meeting booked rate",
+    "meeting booked rate benchmark",
+    "cold email meetings booked",
+    "good meeting booked rate b2b"
+  ],
+  "faqs": []
+}

@@ -45,7 +45,7 @@ const strLit = String.raw`"((?:[^"\\]|\\.)*)"`;
 const pairRe = new RegExp(String.raw`\b(?:q|question)"?\s*:\s*${strLit}\s*,?\s*"?(?:a|answer)"?\s*:\s*${strLit}`, "g");
 
 const results = [];
-for (const file of [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "content", "faqs")), ...walk(path.join(ROOT, "content", "posts"))]) {
+for (const file of [...walk(path.join(ROOT, "app")), ...walk(path.join(ROOT, "components")), ...walk(path.join(ROOT, "lib")), ...walk(path.join(ROOT, "content", "faqs")), ...walk(path.join(ROOT, "content", "posts")), ...walk(path.join(ROOT, "content", "glossary"))]) {
   const rel = path.relative(ROOT, file);
   if (rel.startsWith("lib/service-answers") || rel.endsWith(".generated.json")) continue; // checked separately below
   const src = fs.readFileSync(file, "utf8");

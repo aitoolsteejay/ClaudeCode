@@ -1,0 +1,41 @@
+{
+  "slug": "buying-signal",
+  "title": "Buying Signal",
+  "indexTitle": "",
+  "tag": "Targeting",
+  "accent": "#0D9488",
+  "tagline": "The difference between messaging a company that fits, and messaging one that fits and is actually ready.",
+  "excerpt": "An observable event, like a new hire or funding round, suggesting a company may be ready to buy now.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "An observable event, like a new relevant hire, a funding round, or a leadership change, that suggests a company may be ready to buy right now rather than at some undefined future point.",
+  "body": "Fit alone (matching an ICP) tells you a company could be a customer eventually. A buying signal tells you the timing might actually be right, which is why the strongest outbound lists combine ICP fit with recent signals rather than treating a static list as evergreen.",
+  "sourceLabel": "See the service: Sales Intelligence",
+  "sourceHref": "/services/sales-intelligence",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "A buying signal is an observable event, such as a company hiring for a relevant role or raising funding, that indicates it may be ready to buy a product like yours right now.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What buying signals are in B2B sales, common examples, and how they're used to time outbound outreach instead of guessing.",
+  "keywords": [
+    "what is a buying signal",
+    "buying signals b2b sales",
+    "intent data buying signals",
+    "examples of buying signals"
+  ],
+  "faqs": [
+    {
+      "question": "What is a buying signal?",
+      "answer": "A buying signal is an observable event suggesting a company may be ready to buy now, not just someday. Common examples are a funding round, a new leader in the relevant role, hiring for a related team, expansion into a new market, or a change in the tools the company uses."
+    },
+    {
+      "question": "What are examples of B2B buying signals?",
+      "answer": "Examples of B2B buying signals include a recent funding announcement, a newly appointed head of your buyer's function, job postings for roles your product supports, a new office or plant, a contract with a competitor coming up for renewal, and a prospect engaging with your content or visiting your pricing page."
+    },
+    {
+      "question": "How do you use buying signals in outbound?",
+      "answer": "Use buying signals to decide who to contact and what to say. Combine ideal-customer fit with a recent signal to prioritise accounts, then open your message with that signal, such as their funding round or a new hire, so the outreach is timely. Myntmore monitors 40+ buying signals daily for this."
+    }
+  ]
+}

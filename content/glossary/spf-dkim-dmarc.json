@@ -1,0 +1,28 @@
+{
+  "slug": "spf-dkim-dmarc",
+  "title": "SPF, DKIM & DMARC",
+  "indexTitle": "",
+  "tag": "Cold Email",
+  "accent": "#16A34A",
+  "tagline": "The three DNS records that decide whether a cold email lands in the inbox or the spam folder.",
+  "excerpt": "The three DNS records that prove a cold email actually came from your domain, and decide whether it lands in the inbox or spam.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "Three DNS records that prove a cold email actually came from your domain and wasn't altered in transit, and tell inboxes what to do if that check fails.",
+  "body": "Without them, a receiving mail server has no way to confirm a message is genuine, so it defaults to suspicion, which is why cold email without proper authentication so often lands in spam regardless of how good the copy is.",
+  "sourceLabel": "Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
+  "sourceHref": "/resources/blogs/cold-email-deliverability-guide",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "SPF, DKIM, and DMARC are three DNS-based email authentication records. SPF lists which servers may send for a domain, DKIM cryptographically signs each message to prove it wasn't altered, and DMARC tells receiving inboxes what to do if either check fails.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "SPF, DKIM, and DMARC explained in plain English: the DNS records that prove a cold email came from your domain, and why they decide inbox placement.",
+  "keywords": [
+    "what is spf dkim dmarc",
+    "email authentication explained",
+    "cold email dns records",
+    "dmarc for cold email"
+  ],
+  "faqs": []
+}

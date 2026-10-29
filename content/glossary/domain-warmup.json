@@ -1,0 +1,28 @@
+{
+  "slug": "domain-warmup",
+  "title": "Domain Warm-up",
+  "indexTitle": "",
+  "tag": "Cold Email",
+  "accent": "#15803D",
+  "tagline": "Why a brand-new sending domain has to earn trust in small steps before it can carry real outreach volume.",
+  "excerpt": "Gradually ramping up email volume from a new domain so inbox providers build a positive sending reputation.",
+  "alsoKnownAs": [],
+  "indexAliases": [],
+  "definition": "Gradually ramping up the volume sent from a new domain or mailbox so inbox providers build a positive sending reputation before full-scale outreach begins.",
+  "body": "Inbox providers treat a new domain with no sending history as a risk. Sending hundreds of cold emails from it on day one reads as spam behaviour and can get the domain blacklisted before a single real prospect sees a message, which is why agencies stagger volume up over several weeks instead.",
+  "sourceLabel": "Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
+  "sourceHref": "/resources/blogs/cold-email-deliverability-guide",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "Domain warm-up is the process of gradually increasing the volume of email sent from a new domain or mailbox so inbox providers can build up a positive sending reputation before real outreach begins.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What domain warm-up is, why skipping it tanks cold email deliverability, and how long a new sending domain actually takes to warm up.",
+  "keywords": [
+    "what is domain warm-up",
+    "email warm-up definition",
+    "how to warm up a domain for cold email",
+    "new domain sending limits"
+  ],
+  "faqs": []
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "sdr",
+  "title": "SDR (Sales Development Representative)",
+  "indexTitle": "SDR (Sales Development Rep)",
+  "tag": "Sales Ops",
+  "accent": "#475569",
+  "tagline": "The role that finds and opens conversations, so the rest of the sales team can focus on closing them.",
+  "excerpt": "The role responsible for prospecting and qualifying leads, booking meetings for account executives.",
+  "alsoKnownAs": [
+    "Sales Development Representative",
+    "Sales Development"
+  ],
+  "indexAliases": [
+    "Sales Development Representative",
+    "Sales Development"
+  ],
+  "definition": "The role responsible for prospecting and qualifying leads through outbound outreach, handing off booked meetings to account executives rather than closing deals directly.",
+  "body": "Because the job is largely about volume, consistency, and list quality rather than relationship-building, it's one of the easiest sales functions to outsource, which is why many growing teams run it through an agency before hiring it in-house.",
+  "sourceLabel": "Read: Agency vs. In-House SDR for B2B Outbound",
+  "sourceHref": "/resources/blogs/agency-vs-in-house",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "A Sales Development Representative (SDR) is the role responsible for prospecting and qualifying leads through outbound outreach, booking meetings for account executives rather than closing deals directly.",
+  "metaTitleSuffix": "Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What a Sales Development Representative (SDR) does, how the role differs from an account executive, and why teams outsource it to agencies.",
+  "keywords": [
+    "what is an sdr",
+    "sdr meaning sales",
+    "sdr vs account executive",
+    "sales development representative definition",
+    "sales development representative",
+    "sales development"
+  ],
+  "faqs": [
+    {
+      "question": "What does SDR mean in sales?",
+      "answer": "SDR stands for sales development representative. An SDR finds and qualifies potential customers, usually through cold email, LinkedIn and calls, then books meetings for an account executive, who runs the sales conversation and closes the deal. SDRs are measured on qualified meetings booked, not on revenue closed."
+    },
+    {
+      "question": "What is the difference between an SDR and a BDR?",
+      "answer": "Many companies use SDR and BDR interchangeably. Where they differ, an SDR usually qualifies inbound leads while a BDR, or business development representative, focuses on outbound prospecting into new accounts. Both hand qualified meetings to account executives rather than closing deals themselves, so check how each company defines the roles."
+    },
+    {
+      "question": "Should you hire an SDR or use an outbound agency?",
+      "answer": "Use an agency while outbound is still being proven, and hire SDRs once it is a permanent, high-volume part of your go-to-market. An agency is faster to start and arrives with domains, data and playbooks; an in-house SDR takes months to recruit and ramp but builds product knowledge over time."
+    }
+  ]
+}

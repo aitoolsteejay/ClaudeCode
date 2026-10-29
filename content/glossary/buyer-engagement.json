@@ -1,0 +1,45 @@
+{
+  "slug": "buyer-engagement",
+  "title": "Buyer Engagement",
+  "indexTitle": "",
+  "tag": "GTM Strategy",
+  "accent": "#A21CAF",
+  "tagline": "How actively a prospect is interacting with you, and the signal that tells sales who to focus on next.",
+  "excerpt": "The measurable ways a prospect interacts with you, used to decide who to follow up with first.",
+  "alsoKnownAs": [
+    "Prospect Engagement"
+  ],
+  "indexAliases": [
+    "Prospect Engagement"
+  ],
+  "definition": "The measurable ways a prospect interacts with your outreach and content, such as replies, profile views, link clicks, and meetings, used to judge interest and prioritize follow-up.",
+  "body": "Not all engagement is equal: a reply or a booked meeting says far more than an email open, which privacy features now make unreliable anyway. Teams feed the stronger signals into lead scoring, so hot prospects get a fast, personal follow-up while lightly engaged ones stay in a nurture sequence.",
+  "sourceLabel": "Read the related term: Lead Scoring",
+  "sourceHref": "/resources/glossary/lead-scoring",
+  "furtherLabel": "Read: Outbound Success: Conversations, Not Sends",
+  "furtherHref": "/resources/blogs/conversations-not-impressions-outbound",
+  "schemaDescription": "Buyer engagement, also called prospect engagement, refers to the measurable interactions a prospect has with a seller's outreach and content, such as replies, clicks, and meetings, used to gauge interest and prioritize follow-up.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What buyer engagement and prospect engagement mean in B2B sales, which signals count, and how teams use them to prioritize follow-up.",
+  "keywords": [
+    "what is buyer engagement",
+    "prospect engagement definition",
+    "buyer engagement b2b",
+    "prospect engagement"
+  ],
+  "faqs": [
+    {
+      "question": "What is buyer engagement in B2B?",
+      "answer": "Buyer engagement in B2B is how a prospect interacts with your outreach and content: replies, LinkedIn profile views, link clicks, content downloads and meetings booked. Sales teams use it to judge interest and decide who to follow up with first. Stronger actions, like a reply or a booked meeting, count for more than opens."
+    },
+    {
+      "question": "How do you measure buyer engagement?",
+      "answer": "Measure buyer engagement by tracking actions that show real interest, weighted by strength: meetings booked and positive replies first, then link clicks and profile views. Email open rates are unreliable because privacy features trigger false opens, so most teams leave them out. Feed the stronger signals into lead scoring."
+    },
+    {
+      "question": "How do you increase buyer engagement?",
+      "answer": "Increase buyer engagement by making outreach more relevant, not more frequent. Reference a real trigger for each prospect, offer something useful before asking for their time, and reach the same person on more than one channel, such as email and LinkedIn. Relevance raises replies far more than extra sends do."
+    }
+  ]
+}

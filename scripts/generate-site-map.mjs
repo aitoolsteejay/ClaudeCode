@@ -207,6 +207,14 @@ for (const post of cmsPosts) {
   edges.push({ from: "/resources/blogs", fromFile: "app/resources/blogs/page.tsx", to: post.route });
 }
 
+// The glossary index links to every term from lib/glossary-index.generated.json (built from content/glossary).
+const glossaryCards = path.join(ROOT, "lib", "glossary-index.generated.json");
+if (exists(glossaryCards)) {
+  for (const card of JSON.parse(read(glossaryCards))) {
+    edges.push({ from: "/resources/glossary", fromFile: "app/resources/glossary/page.tsx", to: normalize(card.href) });
+  }
+}
+
 // Runtime-built links like `/resources/blogs/${slug}`: attribute them to every page under
 // that prefix whose last segment appears as a quoted string in the same file
 // (or in a data file in lib/ or the same folder).

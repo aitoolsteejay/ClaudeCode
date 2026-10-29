@@ -13,6 +13,8 @@ import { collection, config, fields } from "@keystatic/core";
 //  - Case studies: JSON files. `npm run case-studies:content` rebuilds
 //    lib/case-study-library.json, then `case-studies:build` writes each page and
 //    its sitemap entry (both run by prebuild).
+//  - Glossary terms: one JSON file per term. `npm run glossary:build` (run by prebuild) writes each
+//    term page, the A-Z index cards and the sitemap entries. Four longer-form terms stay hand-built.
 //  - Blog posts: .mdoc files read at build time by lib/cms-posts.ts and
 //    rendered by app/resources/blogs/[slug]/page.tsx (served at /resources/blogs/<slug>).
 //    All blog posts are CMS posts; there are no hand-built blog pages.
@@ -291,6 +293,68 @@ export default config({
           description: "Start a result with its number (22 qualified meetings...). The first figures become the headline numbers. Only real, verifiable results.",
           itemLabel: (props) => props.value.slice(0, 60),
         }),
+      },
+    }),
+
+    glossaryTerms: collection({
+      label: "Glossary terms",
+      path: "content/glossary/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Page address",
+            description: "The term lives at /resources/glossary/<address>. It cannot be changed after the first save. A new term appears in the sitemap and on the A-Z index after the next deploy.",
+            validation: { isRequired: true },
+          },
+        }),
+        title: fields.text({ label: "Term (page title)", description: "E.g. ABM (Account-Based Marketing).", validation: { isRequired: true } }),
+        indexTitle: fields.text({ label: "Title on the A-Z index (optional)", description: "Leave empty to use the term above. Sorting on the index uses this." }),
+        tag: fields.text({ label: "Category", description: "E.g. GTM Strategy, Cold Email, Sales Ops.", validation: { isRequired: true } }),
+        accent: fields.text({ label: "Accent colour (hex, e.g. #2563EB)", validation: { isRequired: true } }),
+        tagline: fields.text({ label: "Tagline (under the term)", multiline: true, validation: { isRequired: true } }),
+        excerpt: fields.text({ label: "A-Z index card text", multiline: true, validation: { isRequired: true } }),
+        alsoKnownAs: fields.array(fields.text({ label: "Name" }), { label: "Also known as (shown on the page and in the structured data)", itemLabel: (props) => props.value }),
+        indexAliases: fields.array(fields.text({ label: "Name" }), { label: "Synonyms for the A-Z index (\"see X\" pointers)", itemLabel: (props) => props.value }),
+        definition: fields.text({
+          label: "Definition",
+          description: "The one-or-two-sentence answer shown first. Answer the question outright.",
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        body: fields.text({ label: "Supporting paragraph", multiline: true, validation: { isRequired: true } }),
+        sourceLabel: fields.text({ label: "Link under the term: text", validation: { isRequired: true } }),
+        sourceHref: fields.text({ label: "Link under the term: address, e.g. /services/account-based-marketing", validation: { isRequired: true } }),
+        furtherLabel: fields.text({ label: "Second link: text (optional)" }),
+        furtherHref: fields.text({ label: "Second link: address (optional)" }),
+        schemaDescription: fields.text({
+          label: "Longer definition for structured data",
+          description: "Used in the DefinedTerm schema that search and AI engines read.",
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        metaTitleSuffix: fields.select({ label: "Search title ending", description: "Search title = term + \" | \" + this.", options: [
+            { label: "B2B Glossary", value: "B2B Glossary" },
+            { label: "Glossary", value: "Glossary" },
+            { label: "B2B Outbound Glossary", value: "B2B Outbound Glossary" },
+            { label: "Myntmore Glossary", value: "Myntmore Glossary" },
+          ], defaultValue: "B2B Glossary" }),
+        ogTitleSuffix: fields.select({ label: "Share title ending", options: [
+            { label: "B2B Glossary", value: "B2B Glossary" },
+            { label: "Glossary", value: "Glossary" },
+            { label: "B2B Outbound Glossary", value: "B2B Outbound Glossary" },
+            { label: "Myntmore Glossary", value: "Myntmore Glossary" },
+          ], defaultValue: "Myntmore Glossary" }),
+        metaDescription: fields.text({ label: "Search description", multiline: true, validation: { isRequired: true, length: { max: 160 } } }),
+        keywords: fields.array(fields.text({ label: "Keyword" }), { label: "Keywords (one search phrase each)", itemLabel: (props) => props.value }),
+        faqs: fields.array(
+          fields.object({
+            question: fields.text({ label: "Question", validation: { isRequired: true } }),
+            answer: fields.text({ label: "Answer", multiline: true, validation: { isRequired: true } }),
+          }),
+          { label: "FAQs (optional, become FAQPage structured data)", itemLabel: (props) => props.fields.question.value }
+        ),
       },
     }),
 

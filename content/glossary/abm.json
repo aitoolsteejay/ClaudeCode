@@ -1,0 +1,34 @@
+{
+  "slug": "abm",
+  "title": "ABM (Account-Based Marketing)",
+  "indexTitle": "",
+  "tag": "GTM Strategy",
+  "accent": "#2563EB",
+  "tagline": "Treating a short list of named companies as a market of one each, instead of one broad list.",
+  "excerpt": "Targeting a short list of named companies directly, instead of messaging a broad, generic list.",
+  "alsoKnownAs": [
+    "Account-Based Outreach"
+  ],
+  "indexAliases": [
+    "Account-Based Marketing",
+    "Account-Based Outreach"
+  ],
+  "definition": "Account-based marketing targets a short list of named companies directly, coordinating outreach across every relevant stakeholder inside each one, instead of messaging a broad, generic list.",
+  "body": "Where broad outbound optimises for volume across thousands of leads, ABM optimises for depth across a few dozen accounts that are individually worth the extra research and multi-threaded outreach it takes to win them.",
+  "sourceLabel": "See the service: Account-Based Marketing",
+  "sourceHref": "/services/account-based-marketing",
+  "furtherLabel": "",
+  "furtherHref": "",
+  "schemaDescription": "Account-based marketing (ABM) is a B2B strategy that targets a short list of named companies directly, coordinating research, messaging, and outreach across every relevant stakeholder inside each account, rather than sending a generic message to a broad list.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What account-based marketing (ABM) is, how it differs from broad outbound, and when a named-account strategy actually makes sense.",
+  "keywords": [
+    "what is abm",
+    "account-based marketing definition",
+    "abm vs outbound",
+    "account based marketing meaning",
+    "account-based outreach"
+  ],
+  "faqs": []
+}

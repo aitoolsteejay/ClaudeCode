@@ -1,0 +1,37 @@
+{
+  "slug": "appointment-setting",
+  "title": "Appointment Setting",
+  "indexTitle": "",
+  "tag": "Sales Ops",
+  "accent": "#334155",
+  "tagline": "Booking qualified sales meetings with the right decision-makers, so the closer's calendar fills with real opportunities.",
+  "excerpt": "Booking qualified sales meetings with the right decision-makers, so closers talk to real buyers.",
+  "alsoKnownAs": [
+    "Meeting Generation",
+    "Meeting Booking",
+    "Qualified Meeting Generation"
+  ],
+  "indexAliases": [
+    "Meeting Generation",
+    "Meeting Booking",
+    "Qualified Meeting Generation"
+  ],
+  "definition": "Booking qualified sales meetings between prospects and a company's sales team, usually through outbound outreach, so closers spend their time in conversations with real buyers.",
+  "body": "The word that matters is qualified. A meeting only counts if the person fits the ICP, has the problem you solve, and has a say in buying; otherwise it just moves wasted time from the SDR's calendar to the closer's. That's why outbound teams track meeting-booked rate and show rate together, not booked meetings alone.",
+  "sourceLabel": "Read the related term: Meeting-Booked Rate",
+  "sourceHref": "/resources/glossary/meeting-booked-rate",
+  "furtherLabel": "Read the related term: Lead Qualification",
+  "furtherHref": "/resources/glossary/lead-qualification",
+  "schemaDescription": "Appointment setting is the process of booking qualified sales meetings between prospects and a company's sales team, typically through outbound outreach, with qualification applied before the meeting is confirmed.",
+  "metaTitleSuffix": "B2B Glossary",
+  "ogTitleSuffix": "Myntmore Glossary",
+  "metaDescription": "What appointment setting is, what makes a booked meeting qualified, and how outbound teams measure meeting generation.",
+  "keywords": [
+    "what is appointment setting",
+    "appointment setting b2b",
+    "meeting generation",
+    "qualified meeting generation",
+    "b2b meeting booking"
+  ],
+  "faqs": []
+}

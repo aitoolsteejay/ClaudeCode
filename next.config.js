@@ -82,6 +82,10 @@ const nextConfig = {
       // would be an irrelevant redirect that Google treats as a soft 404.
       // Folded into the older, same-topic post (published 2026-10-17, merged the same day).
       { source: "/blog/multi-threading-b2b-outbound", destination: "/resources/blogs/multi-threading-b2b-buying-committee", permanent: true },
+      // The first CMS post was published under its auto-generated long address, then renamed
+      // (2026-10-29). Both forms of the old address go straight to the final one in one hop.
+      { source: "/blog/the-offer-problem-why-great-copy-can-t-save-a-weak-offer", destination: "/resources/blogs/outbound-offer-problem", permanent: true },
+      { source: "/resources/blogs/the-offer-problem-why-great-copy-can-t-save-a-weak-offer", destination: "/resources/blogs/outbound-offer-problem", permanent: true },
 
       // Every blog post lives at /resources/blogs/<slug> (moved 2026-10-28 from /blog/<slug>).
       // The specific redirect above must stay first so a retired slug goes straight to its

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   Clock,
@@ -14,12 +14,10 @@ import {
   Calendar,
   Lock,
   ChevronDown,
-  RotateCcw,
 } from "lucide-react";
 import InnerLayout from "../components/InnerLayout";
 import Breadcrumbs from "../components/Breadcrumbs";
 import FadeIn from "../components/FadeIn";
-import LeadQualificationForm from "@/components/lead-qualification/LeadQualificationForm";
 
 const FAQS = [
   {
@@ -46,27 +44,8 @@ const FAQS = [
 
 export default function BookACallClient() {
   const router = useRouter();
-  const [step, setStep] = useState<"qualification" | "calendar">("qualification");
-  const [leadInfo, setLeadInfo] = useState<{ firstName: string; lastName: string; email: string } | null>(null);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const rightColRef = useRef<HTMLDivElement>(null);
-
-  // Restore qualification data if previously completed in this session
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const saved = sessionStorage.getItem("myntmore_qualified_lead");
-      const searchParams = new URLSearchParams(window.location.search);
-      if (searchParams.get("calendar") === "1" || saved) {
-        if (saved) {
-          try {
-            setLeadInfo(JSON.parse(saved));
-          } catch {}
-        }
-        setStep("calendar");
-      }
-    }
-  }, []);
 
   // Listen to Zoho Bookings completion messages
   useEffect(() => {
@@ -81,45 +60,8 @@ export default function BookACallClient() {
     return () => window.removeEventListener("message", handleMessage);
   }, [router]);
 
-  const handleQualified = (data: { firstName: string; lastName: string; email: string }) => {
-    setLeadInfo(data);
-    setCalendarLoaded(false);
-    setStep("calendar");
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("myntmore_qualified_lead", JSON.stringify(data));
-    }
-    rightColRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  const handleResetQualification = () => {
-    setCalendarLoaded(false);
-    setStep("qualification");
-    if (typeof window !== "undefined") {
-      sessionStorage.removeItem("myntmore_qualified_lead");
-    }
-  };
-
-  const zohoEmbedUrl = (() => {
-    const base = "https://meetingwithteejay.zohobookings.com/portal-embed#/4203790000004903007";
-    if (!leadInfo) return base;
-    const fullName = [leadInfo.firstName, leadInfo.lastName].filter(Boolean).join(" ").trim();
-    const params = new URLSearchParams();
-    if (fullName) params.set("Name", fullName);
-    if (leadInfo.email) params.set("Email", leadInfo.email);
-    const qs = params.toString();
-    return qs ? `${base}?${qs}` : base;
-  })();
-
-  const zohoExternalUrl = (() => {
-    const base = "https://meetingwithteejay.zohobookings.com/#/4203790000004903007";
-    if (!leadInfo) return base;
-    const fullName = [leadInfo.firstName, leadInfo.lastName].filter(Boolean).join(" ").trim();
-    const params = new URLSearchParams();
-    if (fullName) params.set("Name", fullName);
-    if (leadInfo.email) params.set("Email", leadInfo.email);
-    const qs = params.toString();
-    return qs ? `${base}?${qs}` : base;
-  })();
+  const zohoEmbedUrl = "https://meetingwithteejay.zohobookings.com/portal-embed#/4203790000004903007";
+  const zohoExternalUrl = "https://meetingwithteejay.zohobookings.com/#/4203790000004903007";
 
   return (
     <InnerLayout>
@@ -168,11 +110,11 @@ export default function BookACallClient() {
             </h1>
 
             <p className="text-base sm:text-lg text-[#52525B] leading-relaxed">
-              Tell us a little about your business, then choose a time with our senior growth team. We will audit your outbound systems, stress-test your ICP, and map high-converting angles with zero sales pressure.
+              Choose a time with our senior growth team. We will audit your outbound systems, stress-test your ICP, and map high-converting angles with zero sales pressure.
             </p>
           </div>
 
-          {/* Two-Column Grid: Left Authority/Agenda, Right Qualification & Calendar Card */}
+          {/* Two-Column Grid: Left Authority/Agenda, Right Calendar Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             {/* ── Left Column: Value, Hosts & Trust ────────────────────────── */}
             <div className="lg:col-span-5 space-y-6">
@@ -321,19 +263,13 @@ export default function BookACallClient() {
               </div>
             </div>
 
-            {/* ── Right Column: 2-Step Lead Qualification & Zoho Bookings Container ── */}
-            <div ref={rightColRef} className="lg:col-span-7">
+            {/* ── Right Column: Zoho Bookings calendar ── */}
+            <div className="lg:col-span-7">
               <div
                 className="rounded-2xl sm:rounded-3xl border bg-white shadow-xl shadow-amber-950/5 overflow-hidden transition-all"
                 style={{ borderColor: "#E8E2D9" }}
               >
-                {step === "qualification" ? (
-                  /* ── Step 1: Qualification Form ─────────────────────── */
-                  <div className="p-6 sm:p-8">
-                    <LeadQualificationForm onSuccess={handleQualified} />
-                  </div>
-                ) : (
-                  /* ── Step 2: Zoho Bookings Interface ─────────────────── */
+                {/* ── Zoho Bookings calendar ─────────────────── */}
                   <div>
                     {/* Top Bar for Calendar */}
                     <div
@@ -346,18 +282,10 @@ export default function BookACallClient() {
                           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                         </span>
                         <span className="text-xs font-bold text-[#0A0A0A]">
-                          Step 2 of 2: Select Date & Time
+                          Select a Date & Time
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <button
-                          type="button"
-                          onClick={handleResetQualification}
-                          className="text-xs text-[#71675E] hover:text-[#0A0A0A] inline-flex items-center gap-1 font-medium transition-colors cursor-pointer"
-                        >
-                          <RotateCcw className="w-3 h-3" />
-                          <span>Edit answers</span>
-                        </button>
                         <a
                           href={zohoExternalUrl}
                           target="_blank"
@@ -369,15 +297,6 @@ export default function BookACallClient() {
                         </a>
                       </div>
                     </div>
-
-                    {/* Greeting Banner */}
-                    {leadInfo && (
-                      <div className="p-4 bg-[#FEF9EC] border-b border-[#F5B731]/30 flex items-center justify-between gap-2">
-                        <p className="text-xs text-[#A14A08] font-semibold">
-                          Great to meet you, <span className="font-bold text-[#0A0A0A]">{leadInfo.firstName}</span>! Choose a slot below to confirm your strategy call.
-                        </p>
-                      </div>
-                    )}
 
                     {/* Direct Embedded Zoho Bookings Container */}
                     <div className="relative min-h-[750px] bg-white">
@@ -418,7 +337,6 @@ export default function BookACallClient() {
                       </a>
                     </div>
                   </div>
-                )}
               </div>
 
               {/* Direct WhatsApp / Email help below card */}
@@ -446,12 +364,12 @@ export default function BookACallClient() {
           </div>
         </section>
 
-        {/* ── "How to Prepare" 3-Step Process ────────────────────────────── */}
+        {/* ── "How to Prepare" 2-Step Process ────────────────────────────── */}
         <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t" style={{ borderColor: "#E8E2D9" }}>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
               <span className="text-xs font-bold uppercase tracking-widest text-[#A14A08] bg-[#FEF9EC] px-3 py-1 rounded-full border border-[#F5B731]/30">
-                Simple 3-Step Process
+                Simple 2-Step Process
               </span>
               <h2 className="text-2xl sm:text-3xl font-black mt-3 mb-3 text-[#0A0A0A]">
                 How the strategy session works
@@ -461,20 +379,10 @@ export default function BookACallClient() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-2xl border p-6 bg-white shadow-sm" style={{ borderColor: "#E8E2D9" }}>
                 <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black mb-4 bg-[#FEF9EC] text-[#A14A08] border border-[#F5B731]/40">
                   01
-                </span>
-                <h3 className="text-base font-black text-[#0A0A0A] mb-2">Tell Us About Your Growth</h3>
-                <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
-                  Complete the quick 2-minute qualification form above so we understand your stage, offer, and target customer before we meet.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border p-6 bg-white shadow-sm" style={{ borderColor: "#E8E2D9" }}>
-                <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black mb-4 bg-[#FEF9EC] text-[#A14A08] border border-[#F5B731]/40">
-                  02
                 </span>
                 <h3 className="text-base font-black text-[#0A0A0A] mb-2">Select Your Time Slot</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">
@@ -484,7 +392,7 @@ export default function BookACallClient() {
 
               <div className="rounded-2xl border p-6 bg-white shadow-sm" style={{ borderColor: "#E8E2D9" }}>
                 <span className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-black mb-4 bg-[#FEF9EC] text-[#A14A08] border border-[#F5B731]/40">
-                  03
+                  02
                 </span>
                 <h3 className="text-base font-black text-[#0A0A0A] mb-2">Get Your 90-Day Roadmap</h3>
                 <p className="text-xs sm:text-sm text-[#52525B] leading-relaxed">

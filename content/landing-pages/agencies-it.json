@@ -1,0 +1,231 @@
+{
+  "slug": "agencies-it",
+  "metaTitle": "B2B Outbound for Agencies & IT Companies",
+  "metaDescription": "Stop waiting for referrals. We build the outbound engine that fills your agency's pipeline: cold email, LinkedIn & ABM. Book a free audit.",
+  "keywords": [
+    "b2b lead generation for agencies",
+    "outbound agency for it companies",
+    "lead generation for digital agencies india",
+    "linkedin outreach for agencies",
+    "cold email agency for it services companies",
+    "how to get retainer clients for agency",
+    "new client acquisition for marketing agencies",
+    "abm for it services companies",
+    "b2b outbound for software agencies",
+    "lead generation agency for web design agencies",
+    "cold email for it consulting firms",
+    "client acquisition for creative agencies india",
+    "outbound sales for it staffing companies",
+    "lead gen agency alternative to referrals",
+    "b2b appointment setting for agencies",
+    "linkedin lead generation for it companies india"
+  ],
+  "ogTitle": "B2B Outbound for Agencies & IT Companies | Myntmore",
+  "ogDescription": "Stop waiting for referrals. Start booking retainer clients with AI-powered outbound.",
+  "breadcrumbLabel": "For Agencies & IT",
+  "badge": "For Agencies & IT Companies",
+  "badgeEffect": "",
+  "h1Line1": "Stop waiting for referrals",
+  "h1Before": "",
+  "h1Underlined": "Start booking",
+  "h1After": "retainer clients",
+  "h1BreakAfter": false,
+  "underlineWidth": 400,
+  "heroSubheading": "We build and run the outbound engine that fills your agency's pipeline: AI-powered cold email, LinkedIn outreach, and ABM targeting the exact clients you want.",
+  "primaryCta": "Book Free GTM Audit",
+  "secondaryCta": "Get a Custom Plan",
+  "heroNote": "No pitch deck. No long-term contract. Just a 30-minute strategy call.",
+  "floaterLayout": "four",
+  "heroDecoration": "",
+  "floatingIcons": [
+    "💬",
+    "🔗",
+    "📈",
+    "🎯"
+  ],
+  "statsCaption": "",
+  "stats": [
+    {
+      "icon": "📅",
+      "prefix": "",
+      "target": 23,
+      "decimals": 0,
+      "suffix": "+",
+      "label": "Qualified meetings / month (avg)"
+    },
+    {
+      "icon": "📬",
+      "prefix": "",
+      "target": 68,
+      "decimals": 0,
+      "suffix": "%",
+      "label": "Open rate on cold email campaigns"
+    },
+    {
+      "icon": "🚀",
+      "prefix": "",
+      "target": 4.2,
+      "decimals": 1,
+      "suffix": "×",
+      "label": "ROI in first 90 days"
+    },
+    {
+      "icon": "💰",
+      "prefix": "₹",
+      "target": 2.4,
+      "decimals": 1,
+      "suffix": "Cr+",
+      "label": "Pipeline generated for agency clients"
+    }
+  ],
+  "painEyebrow": "Sound familiar?",
+  "painTitle": "The referral ceiling is real",
+  "pain": [
+    {
+      "icon": "😤",
+      "heading": "Feast or famine",
+      "body": "Great month followed by three slow ones. No predictability, no pipeline visibility, no way to plan hiring or capacity."
+    },
+    {
+      "icon": "📞",
+      "heading": "Wrong leads wasting time",
+      "body": "Inbound inquiries from micro-businesses with tiny budgets. Your team pitches and loses hours. Again."
+    },
+    {
+      "icon": "🕰️",
+      "heading": "No time for outbound",
+      "body": "You're busy delivering for existing clients. Nobody owns new business development and it shows."
+    }
+  ],
+  "flowBadge": "Our system",
+  "flowTitle": "From cold list to retainer client\nEvery single time",
+  "flowTop": [
+    {
+      "icon": "🎯",
+      "title": "ICP & Agency Strategy",
+      "body": "Define your ideal client: industry vertical, team size, retainer budget, and the exact pain point your agency solves best."
+    },
+    {
+      "icon": "👥",
+      "title": "Build & Enrich Lists",
+      "body": "Scrape verified decision-makers (Founders, CMOs, Heads of Marketing) from LinkedIn and Apollo, enriched with intent signals."
+    },
+    {
+      "icon": "📦",
+      "title": "Prepare Outreach Assets",
+      "body": "Case studies, cold email sequences, and LinkedIn content tailored to your ICP's pain points and buying triggers."
+    }
+  ],
+  "flowParallelLabel": "Agency LinkedIn Brand Building",
+  "flowParallel": [
+    {
+      "icon": "🔗",
+      "title": "Profile Optimisation",
+      "body": "Headline, banner, about section, and featured posts crafted to build instant credibility with your ICP."
+    },
+    {
+      "icon": "✍️",
+      "title": "Content Creation",
+      "body": "Regular posts, carousels, and insights that warm up your target audience before outreach even starts."
+    },
+    {
+      "icon": "🏆",
+      "title": "Thought Leadership",
+      "body": "Position you as the go-to expert so prospects already trust you when your cold email lands."
+    }
+  ],
+  "flowBottom": [
+    {
+      "icon": "🚀",
+      "title": "Launch Cold Outreach",
+      "body": "Cold email and LinkedIn sequences go live targeting agency buyers with full deliverability infrastructure."
+    },
+    {
+      "icon": "🔄",
+      "title": "Follow Up & Nurture",
+      "body": "Persistent multi-touch follow-ups sharing case studies, social proof, and insights until they reply."
+    },
+    {
+      "icon": "📅",
+      "title": "Book Retainer Calls",
+      "body": "Warm replies convert into qualified calls. Every meeting comes with full context so you can close faster."
+    }
+  ],
+  "processEyebrow": "How it works",
+  "processTitle": "Your outbound engine, fully managed",
+  "process": [
+    {
+      "title": "ICP Mapping",
+      "body": "We identify your best-fit client profile by vertical, company size, funding stage, and buying signals, not generic firmographics."
+    },
+    {
+      "title": "List Building",
+      "body": "Hand-verified prospect lists of decision-makers at companies actively looking for agency partners. No recycled databases."
+    },
+    {
+      "title": "Outreach Engine",
+      "body": "Multi-channel sequences, cold email plus LinkedIn, with hyper-personalised copy based on each prospect's recent activity."
+    },
+    {
+      "title": "Meeting Handoff",
+      "body": "Qualified meetings land directly in your calendar. You close; we fill the top of funnel, consistently."
+    }
+  ],
+  "trackStyle": "counters",
+  "caseCards": [],
+  "trackEyebrow": "Client results",
+  "trackTitle": "Our track record in B2B outbound, the same system we're applying for agencies",
+  "trackLinkText": "",
+  "trackLinkHref": "",
+  "track": [
+    {
+      "icon": "📬",
+      "prefix": "",
+      "target": 12,
+      "suffix": "K+",
+      "label": "Meetings booked for clients across all outbound campaigns"
+    },
+    {
+      "icon": "📈",
+      "prefix": "",
+      "target": 38,
+      "suffix": "%",
+      "label": "Average LinkedIn reply rate"
+    },
+    {
+      "icon": "💰",
+      "prefix": "$",
+      "target": 120,
+      "suffix": "M+",
+      "label": "Pipeline generated for clients"
+    },
+    {
+      "icon": "⏱️",
+      "prefix": "",
+      "target": 18,
+      "suffix": " days",
+      "label": "Average days to campaign launch"
+    }
+  ],
+  "scenariosEyebrow": "",
+  "scenariosTitle": "",
+  "scenariosIntro": "",
+  "scenarios": [],
+  "whyEyebrow": "",
+  "whyTitle": "",
+  "whyIntro": "",
+  "whyCards": [],
+  "faqTitle": "Common questions from agency owners",
+  "ctaHeading": "Let's fill your pipeline",
+  "ctaBody": "Book a free 30-minute GTM audit. We'll dig into your current outreach, map your ICP against live buying signals, and hand you a concrete action plan, no pitch, no pressure.",
+  "formHeading": "Get your free GTM audit",
+  "formBody": "We'll audit your current outreach, map your ICP against companies actually showing buying signals, and tell you exactly what's holding your pipeline back. No pitch. No pressure.",
+  "namePlaceholder": "Marco Rossi",
+  "designationPlaceholder": "Founder / Head of Sales",
+  "phonePlaceholder": "+1 646 555 0198",
+  "companyLabel": "Company / Agency Name",
+  "companyPlaceholder": "Rossi Digital",
+  "emailPlaceholder": "marco@rossidigital.com",
+  "submitLabel": "Get My Free GTM Audit",
+  "formNote": "We respond within 24 hours. No spam, ever."
+}

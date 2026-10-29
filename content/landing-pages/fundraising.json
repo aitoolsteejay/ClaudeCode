@@ -1,0 +1,216 @@
+{
+  "slug": "fundraising",
+  "metaTitle": "Investor Outreach for Founders Raising Capital",
+  "metaDescription": "Stop cold-emailing VCs yourself. We build targeted investor lists and run outreach that books calls with the right funds. Book a free call.",
+  "keywords": [
+    "investor outreach for startups",
+    "investor outreach agency",
+    "startup fundraising outreach agency",
+    "vc outreach service for founders",
+    "cold email investors",
+    "how to reach vcs cold email",
+    "investor cold email service",
+    "series a investor outreach",
+    "seed round investor outreach",
+    "vc cold email agency",
+    "raise capital outreach service",
+    "fundraising pipeline for startups",
+    "investor targeting for founders",
+    "founder investor outreach agency",
+    "pre-seed investor outreach"
+  ],
+  "ogTitle": "Investor Outreach for Founders Raising Capital | Myntmore",
+  "ogDescription": "Stop cold-emailing VCs yourself. Targeted investor lists and outreach that books calls with the right funds.",
+  "breadcrumbLabel": "For Founders Raising Capital",
+  "heroDecoration": "",
+  "badge": "For Founders Raising Capital",
+  "badgeEffect": "radar",
+  "h1Line1": "",
+  "h1Before": "Investor outreach that",
+  "h1Underlined": "books calls",
+  "h1After": "not just cold DMs",
+  "h1BreakAfter": true,
+  "underlineWidth": 380,
+  "heroSubheading": "Stop cold-emailing VCs yourself between board decks and product work. We build a targeted, verified investor list matched to your stage and sector, then run the personalised outreach that gets meetings on your calendar, not just opens.",
+  "primaryCta": "Book Free Strategy Call",
+  "secondaryCta": "Get a Custom Plan",
+  "heroNote": "No deck review, no pressure. Just a 30-minute strategy call.",
+  "floaterLayout": "three-a",
+  "floatingIcons": [
+    "💼",
+    "📈",
+    "🎯"
+  ],
+  "statsCaption": "Our track record in B2B outbound, the same infrastructure and process we're applying to investor outreach",
+  "stats": [
+    {
+      "icon": "📬",
+      "prefix": "",
+      "target": 12,
+      "decimals": 0,
+      "suffix": "K+",
+      "label": "Meetings booked for clients across all outbound campaigns"
+    },
+    {
+      "icon": "📈",
+      "prefix": "",
+      "target": 38,
+      "decimals": 0,
+      "suffix": "%",
+      "label": "Average LinkedIn reply rate"
+    },
+    {
+      "icon": "💰",
+      "prefix": "$",
+      "target": 120,
+      "decimals": 0,
+      "suffix": "M+",
+      "label": "Pipeline generated for clients"
+    },
+    {
+      "icon": "⏱️",
+      "prefix": "",
+      "target": 18,
+      "decimals": 0,
+      "suffix": " days",
+      "label": "Average days to campaign launch"
+    }
+  ],
+  "painEyebrow": "Sound familiar?",
+  "painTitle": "Your network isn't the whole cap table",
+  "pain": [
+    {
+      "icon": "🕸️",
+      "heading": "Warm intros only take you so far",
+      "body": "Your network gets you the first 5-10 conversations. The other 40 firms who'd actually fit your raise, you have no path to."
+    },
+    {
+      "icon": "😮‍💨",
+      "heading": "Cold-DMing partners yourself",
+      "body": "Hours spent finding the right partner, writing a pitch that gets ignored, and following up manually, time you don't have mid-raise."
+    },
+    {
+      "icon": "📇",
+      "heading": "A generic scraped investor list",
+      "body": "A Crunchbase export gives you names, not fit. No idea who's actively deploying, at what check size, or how to open the conversation."
+    }
+  ],
+  "flowBadge": "Our system",
+  "flowTitle": "From investor list to booked calls\nEvery single round",
+  "flowTop": [
+    {
+      "icon": "🎯",
+      "title": "Investor ICP & Thesis Mapping",
+      "body": "Define exactly which investors fit: stage focus, check size, sector thesis, geography, and portfolio overlap to avoid."
+    },
+    {
+      "icon": "🔍",
+      "title": "Verified Investor Lists",
+      "body": "Real partner and associate contacts at funds actively deploying at your stage and sector, not a scraped database dump."
+    },
+    {
+      "icon": "📝",
+      "title": "Personalised Outreach Copy",
+      "body": "Cold email and LinkedIn copy referencing each fund's actual thesis and recent portfolio, not a generic \"quick intro\"."
+    }
+  ],
+  "flowParallelLabel": "Founder Visibility Building",
+  "flowParallel": [
+    {
+      "icon": "💡",
+      "title": "Momentum Updates",
+      "body": "LinkedIn posts sharing real traction and milestones, so a cold email doesn't look cold when an investor checks your profile."
+    },
+    {
+      "icon": "📊",
+      "title": "Thought Leadership",
+      "body": "Content that positions you as the founder who's already thinking two steps ahead, not just asking for money."
+    },
+    {
+      "icon": "🔗",
+      "title": "Profile Optimisation",
+      "body": "A headline and about section written to hold up to investor due diligence at first glance."
+    }
+  ],
+  "flowBottom": [
+    {
+      "icon": "🚀",
+      "title": "Launch Multi-Channel Sequences",
+      "body": "Cold email + LinkedIn sequences go live in parallel, personalised to each fund's context."
+    },
+    {
+      "icon": "🔄",
+      "title": "Follow-Up & Meeting Scheduling",
+      "body": "Persistent, multi-touch follow-up until investors respond, with meetings booked directly onto your calendar."
+    },
+    {
+      "icon": "📋",
+      "title": "Investor Pipeline Tracking",
+      "body": "Every conversation tracked from contacted through term sheet, so nothing falls through the cracks mid-raise."
+    }
+  ],
+  "processEyebrow": "How it works",
+  "processTitle": "An investor outreach engine, built for your raise",
+  "process": [
+    {
+      "title": "Investor ICP & Thesis Mapping",
+      "body": "We define exactly which investors are a fit: stage focus, check size, sector thesis, geography, and portfolio overlap to avoid. Not a blast to every VC with a Twitter account."
+    },
+    {
+      "title": "Verified, Targeted Investor Lists",
+      "body": "Real partner and associate contacts at funds (plus relevant angels and family offices) who are actively writing checks at your stage and sector, not a stale scraped database."
+    },
+    {
+      "title": "Personalised Multi-Channel Outreach",
+      "body": "Cold email and LinkedIn sequences that reference the fund's actual thesis and recent portfolio, not a copy-pasted \"quick intro\" template every associate ignores."
+    },
+    {
+      "title": "Meetings on Your Calendar",
+      "body": "Only investors who genuinely fit your raise land on your calendar. You run the pitch, we keep the pipeline moving and follow up on your behalf."
+    }
+  ],
+  "trackEyebrow": "",
+  "trackStyle": "none",
+  "caseCards": [],
+  "trackLinkText": "",
+  "trackLinkHref": "",
+  "trackTitle": "",
+  "track": [],
+  "scenariosEyebrow": "",
+  "scenariosTitle": "",
+  "scenariosIntro": "",
+  "scenarios": [],
+  "whyEyebrow": "Why this works",
+  "whyTitle": "The same system that's booked 12K+ B2B meetings",
+  "whyIntro": "Investor outreach is a new focus for us, we're upfront about that. What isn't new is the underlying discipline: targeted lists, personalised multi-channel sequences, and relentless follow-up, the exact system behind our B2B outbound track record, now pointed at your cap table instead of your customer base.",
+  "whyCards": [
+    {
+      "icon": "🎯",
+      "title": "ICP discipline, applied to investors",
+      "body": "The same rigor we use to define a B2B buyer, title, stage, trigger signals, applies directly to investor targeting: fund stage, check size, sector thesis, and portfolio overlap."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Deliverability infrastructure that protects your name",
+      "body": "Dedicated sending domains, proper warm-up, and strict sending limits, the same setup that keeps our clients' outreach out of spam, protects your reputation with investors too."
+    },
+    {
+      "icon": "🔁",
+      "title": "Follow-up cadence, not a one-off blast",
+      "body": "Most replies come from the 2nd or 3rd touch, not the first. We run the same persistent, multi-touch cadence on investor outreach that we run for B2B pipeline."
+    }
+  ],
+  "faqTitle": "Common questions from founders raising capital",
+  "ctaHeading": "Let's build your investor pipeline",
+  "ctaBody": "Book a free 30-minute call. We'll map your investor ICP and show you exactly how the outreach system would run for your raise. Free, no strings attached.",
+  "formHeading": "Get your free investor outreach plan",
+  "formBody": "We'll map your investor ICP and hand you a custom outreach plan for your raise. Free, no strings attached.",
+  "namePlaceholder": "Arjun Sharma",
+  "designationPlaceholder": "Founder / CEO / Co-founder",
+  "phonePlaceholder": "+91 98765 43210",
+  "companyLabel": "Company Name",
+  "companyPlaceholder": "Acme Inc",
+  "emailPlaceholder": "arjun@acme.com",
+  "submitLabel": "Get My Free Investor Outreach Plan",
+  "formNote": "We respond within 24 hours. No spam, ever."
+}

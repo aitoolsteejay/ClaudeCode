@@ -130,16 +130,38 @@ export default config({
         h1Before: fields.text({ label: "Headline, line 2: text before the underlined words (optional)" }),
         h1Underlined: fields.text({ label: "Headline, line 2: underlined words", validation: { isRequired: true } }),
         h1After: fields.text({ label: "Headline, line 2: text after the underlined words", validation: { isRequired: true } }),
+        h1BreakAfter: fields.checkbox({ label: "Line break comes right after the underlined words (instead of before them)", defaultValue: false }),
+        underlineWidth: fields.integer({ label: "Underline width (400 for long, 380 or 300 for shorter underlined words)", validation: { isRequired: true, min: 200, max: 500 }, defaultValue: 400 }),
         heroSubheading: fields.text({ label: "Hero subheading", multiline: true, validation: { isRequired: true } }),
         primaryCta: fields.text({ label: "Main button label", validation: { isRequired: true } }),
         secondaryCta: fields.text({ label: "Second button label", validation: { isRequired: true } }),
         heroNote: fields.text({ label: "Small note under the buttons", validation: { isRequired: true } }),
+        floaterLayout: fields.select({
+          label: "Floating emoji layout",
+          description: "Where the emoji float in the hero: four icons, or one of two three-icon arrangements.",
+          options: [
+            { label: "Four icons", value: "four" },
+            { label: "Three icons (A)", value: "three-a" },
+            { label: "Three icons (B)", value: "three-b" },
+          ],
+          defaultValue: "four",
+        }),
+        heroDecoration: fields.select({
+          label: "Extra hero graphic",
+          description: "Optional decoration in the hero. \"Trade route\" draws a dashed route with an animated plane.",
+          options: [
+            { label: "None", value: "" },
+            { label: "Trade route", value: "trade-route" },
+          ],
+          defaultValue: "",
+        }),
         floatingIcons: fields.array(fields.text({ label: "Emoji" }), {
-          label: "Floating emoji in the hero (exactly 4)",
-          validation: { length: { min: 4, max: 4 } },
+          label: "Floating emoji in the hero (4 for the four-icon layout, 3 for the others)",
+          validation: { length: { min: 3, max: 4 } },
           itemLabel: (props) => props.value,
         }),
 
+        statsCaption: fields.text({ label: "Small caption above the stats row (optional; changes the row layout)" }),
         stats: fields.array(
           fields.object({
             icon: fields.text({ label: "Emoji" }),
@@ -156,6 +178,7 @@ export default config({
           }
         ),
 
+        painEyebrow: fields.text({ label: "Pain section label (small text above the heading)", validation: { isRequired: true } }),
         painTitle: fields.text({ label: "Pain section heading", validation: { isRequired: true } }),
         pain: fields.array(
           fields.object({
@@ -166,6 +189,7 @@ export default config({
           { label: "Pain cards (exactly 3)", validation: { length: { min: 3, max: 3 } }, itemLabel: (props) => props.fields.heading.value }
         ),
 
+        flowBadge: fields.text({ label: "Flow diagram label (small text above the title)", validation: { isRequired: true } }),
         flowTitle: fields.text({ label: "Flow diagram title (a new line splits it in two)", multiline: true, validation: { isRequired: true } }),
         flowTop: fields.array(
           fields.object({
@@ -193,6 +217,7 @@ export default config({
           { label: "Flow steps 4 to 6 (exactly 3)", validation: { length: { min: 3, max: 3 } }, itemLabel: (props) => props.fields.title.value }
         ),
 
+        processEyebrow: fields.text({ label: "How-it-works label (small text above the heading)", validation: { isRequired: true } }),
         processTitle: fields.text({ label: "How-it-works heading", validation: { isRequired: true } }),
         process: fields.array(
           fields.object({
@@ -202,7 +227,29 @@ export default config({
           { label: "How-it-works steps (exactly 4)", validation: { length: { min: 4, max: 4 } }, itemLabel: (props) => props.fields.title.value }
         ),
 
+        trackStyle: fields.select({
+          label: "Results section style",
+          description: "Four counting numbers, three case-study cards with result pills, or no results section.",
+          options: [
+            { label: "Four counters", value: "counters" },
+            { label: "Case-study cards", value: "case-cards" },
+            { label: "None", value: "none" },
+          ],
+          defaultValue: "counters",
+        }),
+        caseCards: fields.array(
+          fields.object({
+            tag: fields.text({ label: "Label", validation: { isRequired: true } }),
+            headline: fields.text({ label: "Headline", validation: { isRequired: true } }),
+            body: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }),
+            results: fields.array(fields.text({ label: "Result" }), { label: "Result pills", itemLabel: (props) => props.value }),
+          }),
+          { label: "Case-study cards (exactly 3; used when the results style is Case-study cards)", validation: { length: { max: 3 } }, itemLabel: (props) => props.fields.tag.value }
+        ),
+        trackEyebrow: fields.text({ label: "Track record label (small text above the heading)", validation: { isRequired: true } }),
         trackTitle: fields.text({ label: "Track record heading", validation: { isRequired: true } }),
+        trackLinkText: fields.text({ label: "Link under the track record cards: text (optional)" }),
+        trackLinkHref: fields.text({ label: "Link under the track record cards: address (optional)" }),
         track: fields.array(
           fields.object({
             icon: fields.text({ label: "Emoji" }),
@@ -218,12 +265,36 @@ export default config({
           }
         ),
 
+        scenariosEyebrow: fields.text({ label: "Scenario cards label (leave all scenario fields empty to hide the section)" }),
+        scenariosTitle: fields.text({ label: "Scenario cards heading" }),
+        scenariosIntro: fields.text({ label: "Scenario cards intro", multiline: true }),
+        scenarios: fields.array(
+          fields.object({
+            tag: fields.text({ label: "Label (e.g. the market)", validation: { isRequired: true } }),
+            headline: fields.text({ label: "Headline", validation: { isRequired: true } }),
+            body: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }),
+          }),
+          { label: "Scenario cards (exactly 3, or none)", validation: { length: { max: 3 } }, itemLabel: (props) => props.fields.tag.value }
+        ),
+        whyEyebrow: fields.text({ label: "\"Why this works\" label (leave all these fields empty to hide the section)" }),
+        whyTitle: fields.text({ label: "\"Why this works\" heading" }),
+        whyIntro: fields.text({ label: "\"Why this works\" intro", multiline: true }),
+        whyCards: fields.array(
+          fields.object({
+            icon: fields.text({ label: "Emoji" }),
+            title: fields.text({ label: "Title", validation: { isRequired: true } }),
+            body: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }),
+          }),
+          { label: "\"Why this works\" cards (exactly 3, or none)", validation: { length: { max: 3 } }, itemLabel: (props) => props.fields.title.value }
+        ),
         faqTitle: fields.text({ label: "FAQ heading (the questions are under Page FAQs)", validation: { isRequired: true } }),
         ctaHeading: fields.text({ label: "Closing call to action: heading", validation: { isRequired: true } }),
         ctaBody: fields.text({ label: "Closing call to action: text", multiline: true, validation: { isRequired: true } }),
         formHeading: fields.text({ label: "Form heading", validation: { isRequired: true } }),
         formBody: fields.text({ label: "Form intro text", multiline: true, validation: { isRequired: true } }),
         namePlaceholder: fields.text({ label: "Name field example", validation: { isRequired: true } }),
+        designationPlaceholder: fields.text({ label: "Designation field example", validation: { isRequired: true } }),
+        phonePlaceholder: fields.text({ label: "Phone field example", validation: { isRequired: true } }),
         companyLabel: fields.text({ label: "Company field label", validation: { isRequired: true } }),
         companyPlaceholder: fields.text({ label: "Company field example", validation: { isRequired: true } }),
         emailPlaceholder: fields.text({ label: "Email field example", validation: { isRequired: true } }),

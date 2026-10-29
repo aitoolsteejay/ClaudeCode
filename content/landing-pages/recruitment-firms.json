@@ -1,0 +1,230 @@
+{
+  "slug": "recruitment-firms",
+  "metaTitle": "B2B Outbound for Recruitment & Staffing Firms",
+  "metaDescription": "Stop competing on job boards. We fill your staffing firm's pipeline with new clients via cold email, LinkedIn & ABM. Book a free audit.",
+  "keywords": [
+    "lead generation for staffing agencies",
+    "b2b outbound for recruitment firms",
+    "how to get clients for staffing agency",
+    "cold email for recruitment agencies india",
+    "linkedin outreach for staffing firms",
+    "client acquisition for recruitment firms",
+    "hr outreach agency for staffing companies",
+    "b2b lead gen for talent acquisition firms",
+    "alternative to job boards for staffing agencies",
+    "outbound sales for recruitment agencies",
+    "lead generation agency for hr firms",
+    "abm for staffing and recruitment firms",
+    "new client outreach for recruitment agencies",
+    "cold email agency for staffing firms mumbai",
+    "b2b outbound for executive search firms"
+  ],
+  "ogTitle": "B2B Outbound for Recruitment & Staffing Firms | Myntmore",
+  "ogDescription": "Stop competing on job boards. Start booking client meetings with AI-powered outbound.",
+  "breadcrumbLabel": "For Recruitment & Staffing Firms",
+  "badge": "For Recruitment & Staffing Firms",
+  "badgeEffect": "",
+  "h1Line1": "Stop competing on job boards",
+  "h1Before": "",
+  "h1Underlined": "Start booking",
+  "h1After": "client meetings",
+  "h1BreakAfter": false,
+  "underlineWidth": 400,
+  "heroSubheading": "We build and run the outbound engine that fills your staffing firm's pipeline with new client companies: AI-powered cold email, LinkedIn outreach, and ABM targeting the HR and TA leaders who are actively hiring.",
+  "primaryCta": "Book Free GTM Audit",
+  "secondaryCta": "Get a Custom Plan",
+  "heroNote": "No pitch deck. No obligation. A focused 30-minute strategy call.",
+  "floaterLayout": "four",
+  "heroDecoration": "",
+  "floatingIcons": [
+    "🤝",
+    "📋",
+    "💼",
+    "🎯"
+  ],
+  "statsCaption": "",
+  "stats": [
+    {
+      "icon": "📅",
+      "prefix": "",
+      "target": 21,
+      "decimals": 0,
+      "suffix": "+",
+      "label": "Qualified meetings / month (avg)"
+    },
+    {
+      "icon": "📬",
+      "prefix": "",
+      "target": 64,
+      "decimals": 0,
+      "suffix": "%",
+      "label": "Open rate on cold email campaigns"
+    },
+    {
+      "icon": "🚀",
+      "prefix": "",
+      "target": 3.8,
+      "decimals": 1,
+      "suffix": "×",
+      "label": "ROI in first 90 days"
+    },
+    {
+      "icon": "💰",
+      "prefix": "₹",
+      "target": 1.8,
+      "decimals": 1,
+      "suffix": "Cr+",
+      "label": "Pipeline generated for staffing clients"
+    }
+  ],
+  "painEyebrow": "Sound familiar?",
+  "painTitle": "The job board ceiling is real",
+  "pain": [
+    {
+      "icon": "📉",
+      "heading": "Feast or famine placements",
+      "body": "One blockbuster quarter of placements, then three dry months with zero pipeline visibility and no way to plan your own bench or hiring."
+    },
+    {
+      "icon": "📋",
+      "heading": "Stuck on job boards & referrals",
+      "body": "Naukri, LinkedIn Jobs, and word of mouth are not a client acquisition strategy. When referrals dry up, so does new business."
+    },
+    {
+      "icon": "🚪",
+      "heading": "Can't get past the gatekeeper",
+      "body": "HR Heads and TA Leads get pitched by ten staffing vendors a week. Cold calls and generic emails never make it past the inbox."
+    }
+  ],
+  "flowBadge": "Our system",
+  "flowTitle": "From cold list to signed mandate\nEvery single time",
+  "flowTop": [
+    {
+      "icon": "🎯",
+      "title": "ICP & Client Strategy",
+      "body": "Define your ideal client company: industry, headcount, hiring velocity, and the roles you place best."
+    },
+    {
+      "icon": "👥",
+      "title": "Build & Enrich Lists",
+      "body": "Scrape verified HR Heads, TA Leads, and CHROs from LinkedIn and Apollo, enriched with hiring signals like funding and job postings."
+    },
+    {
+      "icon": "📦",
+      "title": "Prepare Outreach Assets",
+      "body": "Case studies, cold email sequences, and LinkedIn content tailored to each client's hiring pain points and growth signals."
+    }
+  ],
+  "flowParallelLabel": "Recruiter & Firm LinkedIn Brand Building",
+  "flowParallel": [
+    {
+      "icon": "🔗",
+      "title": "Profile Optimisation",
+      "body": "Headline, banner, about section, and featured placements crafted to build instant credibility with HR and TA leaders."
+    },
+    {
+      "icon": "✍️",
+      "title": "Content Creation",
+      "body": "Regular posts on hiring trends and market insights that warm up your target audience before outreach even starts."
+    },
+    {
+      "icon": "🏆",
+      "title": "Thought Leadership",
+      "body": "Position your firm as the go-to specialist so prospects already trust you when your cold email lands."
+    }
+  ],
+  "flowBottom": [
+    {
+      "icon": "🚀",
+      "title": "Launch Client Outreach",
+      "body": "Cold email and LinkedIn sequences go live targeting HR Heads and TA Leads with full deliverability infrastructure."
+    },
+    {
+      "icon": "🔄",
+      "title": "Follow Up & Nurture",
+      "body": "Persistent multi-touch follow-ups sharing case studies, placement proof, and market insight until they reply."
+    },
+    {
+      "icon": "📅",
+      "title": "Book Client Meetings",
+      "body": "Warm replies convert into qualified calls. Every meeting comes with full context so you can pitch and close faster."
+    }
+  ],
+  "processEyebrow": "How it works",
+  "processTitle": "Your client pipeline, fully managed",
+  "process": [
+    {
+      "title": "ICP Mapping",
+      "body": "We define your best-fit client companies by industry, headcount, and hiring velocity, not just any company with an open req."
+    },
+    {
+      "title": "List Building",
+      "body": "Hand-verified lists of companies showing real hiring signals: funding rounds, expansion news, and live job postings. No recycled databases."
+    },
+    {
+      "title": "Outreach Engine",
+      "body": "Multi-channel sequences, cold email plus LinkedIn, referencing each company's specific hiring signal, sent to the HR Head or TA Lead who owns the req."
+    },
+    {
+      "title": "Meeting Handoff",
+      "body": "Qualified meetings with real hiring decision-makers land directly in your calendar. You place candidates; we keep the client pipeline full."
+    }
+  ],
+  "trackStyle": "counters",
+  "caseCards": [],
+  "trackEyebrow": "Client results",
+  "trackTitle": "Our track record in B2B outbound, the same system we're applying for staffing firms",
+  "trackLinkText": "",
+  "trackLinkHref": "",
+  "track": [
+    {
+      "icon": "📬",
+      "prefix": "",
+      "target": 12,
+      "suffix": "K+",
+      "label": "Meetings booked for clients across all outbound campaigns"
+    },
+    {
+      "icon": "📈",
+      "prefix": "",
+      "target": 38,
+      "suffix": "%",
+      "label": "Average LinkedIn reply rate"
+    },
+    {
+      "icon": "💰",
+      "prefix": "$",
+      "target": 120,
+      "suffix": "M+",
+      "label": "Pipeline generated for clients"
+    },
+    {
+      "icon": "⏱️",
+      "prefix": "",
+      "target": 18,
+      "suffix": " days",
+      "label": "Average days to campaign launch"
+    }
+  ],
+  "scenariosEyebrow": "",
+  "scenariosTitle": "",
+  "scenariosIntro": "",
+  "scenarios": [],
+  "whyEyebrow": "",
+  "whyTitle": "",
+  "whyIntro": "",
+  "whyCards": [],
+  "faqTitle": "Common questions from recruitment & staffing leaders",
+  "ctaHeading": "Let's fill your client pipeline",
+  "ctaBody": "Book a free 30-minute GTM audit. We'll map your ICP to companies with live hiring signals, review what's working in your outreach today, and hand you a concrete plan, no pitch, no pressure.",
+  "formHeading": "Get your free GTM audit",
+  "formBody": "We'll map your ICP to companies with active hiring signals, audit your current outreach, and tell you exactly what's holding your client pipeline back. No pitch. No pressure.",
+  "namePlaceholder": "Ananya Sharma",
+  "designationPlaceholder": "Founder / Director / TA Head",
+  "phonePlaceholder": "+91 98765 43210",
+  "companyLabel": "Company / Firm Name",
+  "companyPlaceholder": "Sharma Staffing Solutions",
+  "emailPlaceholder": "ananya@sharmastaffing.com",
+  "submitLabel": "Get My Free GTM Audit",
+  "formNote": "We respond within 24 hours. No spam, ever."
+}

@@ -23,20 +23,26 @@
   "ogDescription": "Stop relying on referrals alone. Build a credible pipeline of business borrowers and clients with AI-powered, compliance-safe outbound.",
   "breadcrumbLabel": "For Financial Services Firms",
   "badge": "For Financial Services Firms",
+  "badgeEffect": "",
   "h1Line1": "Stop relying on referrals",
   "h1Before": "Build a",
   "h1Underlined": "credible pipeline",
   "h1After": "of business borrowers",
+  "h1BreakAfter": false,
+  "underlineWidth": 400,
   "heroSubheading": "We build and run the compliance-safe outbound engine that earns CFO attention and books qualified meetings for NBFCs, business lenders, equipment financing, and corporate treasury firms, no rate or return claims, ever.",
   "primaryCta": "Book Free GTM Audit",
   "secondaryCta": "Get a Custom Plan",
   "heroNote": "No commitment. No pitch deck. 30-minute strategy call.",
+  "floaterLayout": "four",
+  "heroDecoration": "",
   "floatingIcons": [
     "💼",
     "🏦",
     "📊",
     "🤝"
   ],
+  "statsCaption": "",
   "stats": [
     {
       "icon": "📅",
@@ -71,6 +77,7 @@
       "label": "Pipeline generated for financial services clients"
     }
   ],
+  "painEyebrow": "Sound familiar?",
   "painTitle": "Referrals only get you so far",
   "pain": [
     {
@@ -89,6 +96,7 @@
       "body": "Referrals and broker networks got you this far, but they only reach companies with an existing connection to your firm. Everyone outside that circle stays invisible to you."
     }
   ],
+  "flowBadge": "Our system",
   "flowTitle": "From cold list to qualified CFO meeting\nEvery single time",
   "flowTop": [
     {
@@ -142,6 +150,7 @@
       "body": "Warm replies convert into qualified meetings with full context on the stakeholder and financing need, so you can move faster."
     }
   ],
+  "processEyebrow": "How it works",
   "processTitle": "Your credible outbound engine, fully managed",
   "process": [
     {
@@ -161,7 +170,12 @@
       "body": "Qualified meetings land directly in your calendar with full context on the stakeholder and financing need. You advise; we fill the top of funnel, consistently."
     }
   ],
+  "trackStyle": "counters",
+  "caseCards": [],
+  "trackEyebrow": "Client results",
   "trackTitle": "Our track record in B2B outbound, the same system we're applying for financial services firms",
+  "trackLinkText": "",
+  "trackLinkHref": "",
   "track": [
     {
       "icon": "📬",
@@ -192,12 +206,22 @@
       "label": "Average days to campaign launch"
     }
   ],
+  "scenariosEyebrow": "",
+  "scenariosTitle": "",
+  "scenariosIntro": "",
+  "scenarios": [],
+  "whyEyebrow": "",
+  "whyTitle": "",
+  "whyIntro": "",
+  "whyCards": [],
   "faqTitle": "Common questions from financial services leaders",
   "ctaHeading": "Let's fill your pipeline",
   "ctaBody": "Book a free 30-minute GTM audit. We will review your outreach, map your ICP, and hand you a custom action plan, no pitch, no pressure.",
   "formHeading": "Get your free GTM audit",
   "formBody": "We will audit your current outreach, map your ICP, and tell you exactly what is holding your pipeline back. No pitch. No pressure.",
   "namePlaceholder": "Arjun Mehta",
+  "designationPlaceholder": "Founder / Head of Sales",
+  "phonePlaceholder": "+1 646 555 0198",
   "companyLabel": "Company / Firm Name",
   "companyPlaceholder": "Apex Capital Advisors",
   "emailPlaceholder": "arjun@apexcapitaladvisors.com",

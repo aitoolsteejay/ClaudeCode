@@ -23,20 +23,26 @@
   "ogDescription": "Stop waiting on referrals. Start winning corporate accounts with renewal-timed outbound.",
   "breadcrumbLabel": "For Insurance Brokers & Agencies",
   "badge": "For Insurance Brokers & Agencies",
+  "badgeEffect": "",
   "h1Line1": "Stop waiting on referrals",
   "h1Before": "",
   "h1Underlined": "Start winning",
   "h1After": "corporate accounts",
+  "h1BreakAfter": false,
+  "underlineWidth": 400,
   "heroSubheading": "We build and run the outbound engine that puts your brokerage in front of the HR Heads, CFOs, and Admin Heads deciding on group health and commercial insurance, timed to when they're actually open to a new broker.",
   "primaryCta": "Book Free GTM Audit",
   "secondaryCta": "Get a Custom Plan",
   "heroNote": "No pitch deck, no pressure, just a 30-minute strategy call.",
+  "floaterLayout": "four",
+  "heroDecoration": "",
   "floatingIcons": [
     "🛡️",
     "📋",
     "🏢",
     "🤝"
   ],
+  "statsCaption": "",
   "stats": [
     {
       "icon": "📅",
@@ -71,6 +77,7 @@
       "label": "Pipeline generated for broker clients"
     }
   ],
+  "painEyebrow": "Sound familiar?",
   "painTitle": "Winning corporate accounts feels like luck, not a system",
   "pain": [
     {
@@ -89,6 +96,7 @@
       "body": "New corporate business comes from whoever happens to refer you next. There's no repeatable system generating fresh conversations, so growth stalls whenever the referral well runs dry."
     }
   ],
+  "flowBadge": "Our system",
   "flowTitle": "From cold list to corporate account\nEvery single time",
   "flowTop": [
     {
@@ -142,6 +150,7 @@
       "body": "Warm replies convert into meetings with the actual HR, Finance, or Admin decision-maker, fully briefed and ready for you to take over."
     }
   ],
+  "processEyebrow": "How it works",
   "processTitle": "Your corporate outbound engine, fully managed",
   "process": [
     {
@@ -161,7 +170,12 @@
       "body": "Qualified conversations with real decision-makers land directly on your calendar. You advise and close; we keep the pipeline full."
     }
   ],
+  "trackStyle": "counters",
+  "caseCards": [],
+  "trackEyebrow": "Client results",
   "trackTitle": "Our track record in B2B outbound, the same system we're applying for brokers",
+  "trackLinkText": "",
+  "trackLinkHref": "",
   "track": [
     {
       "icon": "📬",
@@ -192,12 +206,22 @@
       "label": "Average days to campaign launch"
     }
   ],
+  "scenariosEyebrow": "",
+  "scenariosTitle": "",
+  "scenariosIntro": "",
+  "scenarios": [],
+  "whyEyebrow": "",
+  "whyTitle": "",
+  "whyIntro": "",
+  "whyCards": [],
   "faqTitle": "Common questions from insurance brokers",
   "ctaHeading": "Let's fill your corporate pipeline",
   "ctaBody": "Book a free 30-minute GTM audit. We will review your outreach, map your ICP against upcoming renewal windows, and hand you a custom action plan, no pitch, no pressure.",
   "formHeading": "Get your free GTM audit",
   "formBody": "We will audit your current outreach, map your ICP against renewal timing, and tell you exactly what is holding your corporate pipeline back. No pitch. No pressure.",
   "namePlaceholder": "Marco Rossi",
+  "designationPlaceholder": "Founder / Head of Sales",
+  "phonePlaceholder": "+1 646 555 0198",
   "companyLabel": "Company / Brokerage Name",
   "companyPlaceholder": "Rossi Insurance Brokers",
   "emailPlaceholder": "marco@rossiinsurance.com",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 import LpLayout from "@/app/lp/LpLayout";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import JsonLd from "@/app/components/JsonLd";
@@ -69,13 +70,26 @@ function useCountUp(target: number, duration = 1800, format: (n: number) => stri
   return ref;
 }
 
-// Fixed positions of the floating hero emoji: [top|bottom, left|right, size class, delay, rotation].
-const FLOATERS = [
-  { top: "16%", left: "9%", size: "text-4xl", delay: "0.2s", rot: "-8deg" },
-  { top: "62%", left: "6%", size: "text-3xl", delay: "1.6s", rot: "6deg" },
-  { top: "20%", right: "8%", size: "text-4xl", delay: "0.9s", rot: "10deg" },
-  { top: "68%", right: "11%", size: "text-3xl", delay: "2.3s", rot: "-6deg" },
-];
+// Where the floating hero emoji sit, by layout: [top, left|right, offset, size class, delay, rotation].
+type Floater = { top: string; side: "left" | "right"; offset: string; size: string; delay: string; rot: string };
+const FLOATER_LAYOUTS: Record<string, Floater[]> = {
+  four: [
+    { top: "16%", side: "left", offset: "9%", size: "text-4xl", delay: "0.2s", rot: "-8deg" },
+    { top: "62%", side: "left", offset: "6%", size: "text-3xl", delay: "1.6s", rot: "6deg" },
+    { top: "20%", side: "right", offset: "8%", size: "text-4xl", delay: "0.9s", rot: "10deg" },
+    { top: "68%", side: "right", offset: "11%", size: "text-3xl", delay: "2.3s", rot: "-6deg" },
+  ],
+  "three-a": [
+    { top: "16%", side: "left", offset: "9%", size: "text-4xl", delay: "0.2s", rot: "-8deg" },
+    { top: "62%", side: "left", offset: "7%", size: "text-3xl", delay: "1.5s", rot: "8deg" },
+    { top: "20%", side: "right", offset: "8%", size: "text-4xl", delay: "0.9s", rot: "-10deg" },
+  ],
+  "three-b": [
+    { top: "18%", side: "left", offset: "8%", size: "text-4xl", delay: "0.2s", rot: "-6deg" },
+    { top: "64%", side: "left", offset: "10%", size: "text-3xl", delay: "1.4s", rot: "8deg" },
+    { top: "22%", side: "right", offset: "9%", size: "text-4xl", delay: "0.7s", rot: "-10deg" },
+  ],
+};
 
 // Flow diagram step colours are part of the design, not the content.
 const TOP_COLORS = ["rgba(139,92,246,0.12)", "rgba(59,130,246,0.12)", "rgba(245,183,49,0.15)"];
@@ -140,27 +154,50 @@ function HeroSection({ d }: { d: LandingPageData }) {
       <div ref={blob3} aria-hidden="true" style={{ position: "absolute", top: "30%", right: "20%", width: "400px", height: "400px", borderRadius: "50%", background: "radial-gradient(circle, rgba(245,183,49,0.12) 0%, transparent 65%)", filter: "blur(45px)", pointerEvents: "none", willChange: "transform" }} />
 
       {/* Floating signals */}
-      {FLOATERS.map((f, i) => (
-        <span key={i} className={`lp-float-icon hidden sm:block ${f.size} lp-pop-in`} aria-hidden="true" style={{ top: f.top, ...("left" in f ? { left: f.left } : { right: f.right }), animationDelay: f.delay, ["--lp-rot" as any]: f.rot }}>{d.floatingIcons[i]}</span>
+      {(FLOATER_LAYOUTS[d.floaterLayout] ?? FLOATER_LAYOUTS.four).map((f, i) => (
+        <span key={i} className={`lp-float-icon hidden sm:block ${f.size} lp-pop-in`} aria-hidden="true" style={{ top: f.top, [f.side]: f.offset, animationDelay: f.delay, ["--lp-rot" as any]: f.rot }}>{d.floatingIcons[i]}</span>
       ))}
+
+      {d.heroDecoration === "trade-route" && (
+        <svg aria-hidden="true" className="hidden sm:block" style={{ position: "absolute", top: "58%", right: "6%", width: "220px", height: "90px", pointerEvents: "none" }} viewBox="0 0 220 90">
+          <path id="trade-route-path" d="M6 78 Q70 8 214 20" stroke="rgba(245,183,49,0.35)" strokeWidth="2" strokeDasharray="5 6" fill="none" strokeLinecap="round" />
+          <circle cx="6" cy="78" r="4" fill="#D97706" opacity="0.5" />
+          <circle cx="214" cy="20" r="4" fill="#D97706" opacity="0.5" />
+          <text x="0" y="20" fontSize="16">✈️
+            <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
+              <mpath href="#trade-route-path" />
+            </animateMotion>
+          </text>
+        </svg>
+      )}
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <Breadcrumbs items={[{ label: d.breadcrumbLabel, href: `/lp/${d.slug}` }]} className="justify-center" />
-        <div className="mb-6 hero-fade-d1">
-          <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
-            {d.badge}
-          </span>
-        </div>
+        {d.badgeEffect === "radar" ? (
+          <div className="mb-6 hero-fade-d1 relative inline-block">
+            <span className="lp-radar-ring" aria-hidden="true" />
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full relative" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
+              {d.badge}
+            </span>
+          </div>
+        ) : (
+          <div className="mb-6 hero-fade-d1">
+            <span className="inline-flex text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.35)" }}>
+              {d.badge}
+            </span>
+          </div>
+        )}
 
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-[1.05] hero-fade-d2" style={{ color: "#0a0a0a" }}>
-          {d.h1Line1}<br />
+          {d.h1Line1 && <>{d.h1Line1}<br /></>}
           {d.h1Before && <>{d.h1Before}{" "}</>}
           <span className="relative inline-block">
             {d.h1Underlined}
-            <svg aria-hidden="true" style={{ position: "absolute", bottom: "-6px", left: 0, width: "100%", height: "12px", overflow: "visible" }} viewBox="0 0 400 12" preserveAspectRatio="none">
-              <path ref={underlineRef} d="M4 8 Q100 3 200 7 Q300 11 396 6" stroke="#F5B731" strokeWidth="4" fill="none" strokeLinecap="round" />
+            <svg aria-hidden="true" style={{ position: "absolute", bottom: "-6px", left: 0, width: "100%", height: "12px", overflow: "visible" }} viewBox={`0 0 ${d.underlineWidth} 12`} preserveAspectRatio="none">
+              <path ref={underlineRef} d={`M4 8 Q${d.underlineWidth / 4} 3 ${d.underlineWidth / 2} 7 Q${(d.underlineWidth * 3) / 4} 11 ${d.underlineWidth - 4} 6`} stroke="#F5B731" strokeWidth="4" fill="none" strokeLinecap="round" />
             </svg>
-          </span>{" "}{d.h1After}
+          </span>
+          {d.h1BreakAfter ? <><br />{d.h1After}</> : /^[.,!?;:]/.test(d.h1After) ? d.h1After : <>{" "}{d.h1After}</>}
         </h1>
 
         <p className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 hero-fade-d3" style={{ color: "#52525B" }}>
@@ -196,20 +233,28 @@ function StatsSection({ d }: { d: LandingPageData }) {
   const ref3 = useCountUp(s[3].target, 1800, formatter(s[3].prefix, s[3].decimals, s[3].suffix));
   const refs = [ref0, ref1, ref2, ref3];
   const fade = useScrollFade();
+  const items = refs.map((ref, i) => (
+    <div key={i} className="lp-stat text-center">
+      <div className="text-xl mb-1 lp-icon-bob" style={{ animationDelay: `${i * 0.25}s` }} aria-hidden="true">{s[i].icon}</div>
+      <div className="text-4xl sm:text-5xl font-black mb-2" style={{ color: "#0a0a0a" }}>
+        <span ref={ref}>{`${s[i].prefix}0${s[i].suffix}`}</span>
+      </div>
+      <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{s[i].label}</div>
+    </div>
+  ));
 
   return (
     <section className="py-14 px-4 border-y" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
-      <div ref={fade} className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {refs.map((ref, i) => (
-          <div key={i} className="lp-stat text-center">
-            <div className="text-xl mb-1 lp-icon-bob" style={{ animationDelay: `${i * 0.25}s` }} aria-hidden="true">{s[i].icon}</div>
-            <div className="text-4xl sm:text-5xl font-black mb-2" style={{ color: "#0a0a0a" }}>
-              <span ref={ref}>{`${s[i].prefix}0${s[i].suffix}`}</span>
-            </div>
-            <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{s[i].label}</div>
-          </div>
-        ))}
-      </div>
+      {d.statsCaption ? (
+        <div ref={fade} className="max-w-5xl mx-auto">
+          <p className="text-center text-xs mb-8" style={{ color: "#71675E" }}>
+            {d.statsCaption}
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">{items}</div>
+        </div>
+      ) : (
+        <div ref={fade} className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">{items}</div>
+      )}
     </section>
   );
 }
@@ -225,7 +270,7 @@ function PainSection({ d }: { d: LandingPageData }) {
     <section className="py-20 px-4" style={{ backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Sound familiar?</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{d.painEyebrow}</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.painTitle}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -250,7 +295,7 @@ function ProcessSection({ d }: { d: LandingPageData }) {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>How it works</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{d.processEyebrow}</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.processTitle}</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -282,10 +327,10 @@ function CaseStudiesSection({ d }: { d: LandingPageData }) {
     <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
       <div className="max-w-5xl mx-auto">
         <div ref={titleFade} className="mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>Client results</span>
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{d.trackEyebrow}</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.trackTitle}</h2>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className={`grid grid-cols-2 lg:grid-cols-4 gap-8${d.trackLinkText ? " mb-10" : ""}`}>
           {t.map((item, i) => (
             <div key={item.label} className="lp-card rounded-2xl border p-8 text-center" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
               <div className="text-xl mb-2" aria-hidden="true">{item.icon}</div>
@@ -293,6 +338,109 @@ function CaseStudiesSection({ d }: { d: LandingPageData }) {
                 <span ref={refs[i]}>{`${item.prefix}0${item.suffix}`}</span>
               </div>
               <div className="text-xs leading-snug" style={{ color: "#52525B" }}>{item.label}</div>
+            </div>
+          ))}
+        </div>
+        {d.trackLinkText && d.trackLinkHref && (
+          <div className="text-center">
+            <Link href={d.trackLinkHref} className="text-sm font-bold inline-flex items-center gap-1.5 hover:gap-2.5 transition-all"
+              style={{ color: "#A14A08" }}>
+              {d.trackLinkText}
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function CaseCardsSection({ d }: { d: LandingPageData }) {
+  const titleFade = useScrollFade(0);
+  const c1 = useScrollFade(0);
+  const c2 = useScrollFade(80);
+  const c3 = useScrollFade(160);
+  const cRefs = [c1, c2, c3];
+
+  return (
+    <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+      <div className="max-w-5xl mx-auto">
+        <div ref={titleFade} className="mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{d.trackEyebrow}</span>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.trackTitle}</h2>
+        </div>
+        <div className="space-y-6">
+          {d.caseCards.map((cs, i) => (
+            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{cs.tag}</span>
+              <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
+              <p className="text-sm leading-relaxed mb-6" style={{ color: "#52525B" }}>{cs.body}</p>
+              <div className="flex flex-wrap gap-3">
+                {cs.results.map((r) => (
+                  <span key={r} className="lp-pill text-xs font-bold px-3 py-1.5 rounded-full" style={{ backgroundColor: "rgba(245,183,49,0.12)", color: "#A14A08", border: "1px solid rgba(245,183,49,0.3)" }}>{r}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhySection({ d }: { d: LandingPageData }) {
+  const titleFade = useScrollFade(0);
+  const c1 = useScrollFade(0); const c2 = useScrollFade(80); const c3 = useScrollFade(160);
+  const cRefs = [c1, c2, c3];
+  return (
+    <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#F8F6F2" }}>
+      <div className="max-w-5xl mx-auto">
+        <div ref={titleFade} className="mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{d.whyEyebrow}</span>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.whyTitle}</h2>
+          <p className="text-base mt-4 max-w-2xl" style={{ color: "#52525B" }}>
+            {d.whyIntro}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {d.whyCards.map((p, i) => (
+            <div key={p.title} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9" }}>
+              <div className="text-4xl mb-4 lp-icon-bob" style={{ animationDelay: `${i * 0.3}s` }}>{p.icon}</div>
+              <h3 className="font-black text-lg mb-2" style={{ color: "#0a0a0a" }}>{p.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ScenariosSection({ d }: { d: LandingPageData }) {
+  const titleFade = useScrollFade(0);
+  const c1 = useScrollFade(0);
+  const c2 = useScrollFade(80);
+  const c3 = useScrollFade(160);
+  const cRefs = [c1, c2, c3];
+
+  return (
+    <section className="py-20 px-4 border-t" style={{ borderColor: "#E8E2D9", backgroundColor: "#ffffff" }}>
+      <div className="max-w-5xl mx-auto">
+        <div ref={titleFade} className="mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#A14A08" }}>{d.scenariosEyebrow}</span>
+          <h2 className="text-4xl sm:text-5xl font-black mt-3" style={{ color: "#0a0a0a" }}>{d.scenariosTitle}</h2>
+          <p className="text-sm mt-3 max-w-2xl" style={{ color: "#71675E" }}>
+            {d.scenariosIntro}
+          </p>
+        </div>
+        <div className="space-y-6">
+          {d.scenarios.map((cs, i) => (
+            <div key={cs.tag} ref={cRefs[i]} className="lp-card rounded-2xl border p-8" style={{ backgroundColor: "#F8F6F2", borderColor: "#E8E2D9" }}>
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#71675E" }}>{cs.tag}</span>
+              <h3 className="text-2xl font-black mt-2 mb-4" style={{ color: "#0a0a0a" }}>{cs.headline}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "#52525B" }}>{cs.body}</p>
             </div>
           ))}
         </div>
@@ -352,7 +500,7 @@ function FormSection({ d }: { d: LandingPageData }) {
               </div>
               <div>
                 <label htmlFor="SingleLine2" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Designation *</label>
-                <input id="SingleLine2" name="SingleLine2" type="text" required maxLength={255} placeholder="Founder / Head of Sales" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                <input id="SingleLine2" name="SingleLine2" type="text" required maxLength={255} placeholder={d.designationPlaceholder} className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -362,7 +510,7 @@ function FormSection({ d }: { d: LandingPageData }) {
               </div>
               <div>
                 <label htmlFor="PhoneNumber_countrycode" className="block text-xs font-semibold mb-1.5" style={{ color: "#3D3D3D" }}>Phone</label>
-                <input id="PhoneNumber_countrycode" name="PhoneNumber_countrycode" type="tel" maxLength={20} placeholder="+1 646 555 0198" className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
+                <input id="PhoneNumber_countrycode" name="PhoneNumber_countrycode" type="tel" maxLength={20} placeholder={d.phonePlaceholder} className="w-full px-4 py-3 rounded-xl text-sm outline-none border" style={{ backgroundColor: "#ffffff", borderColor: "#E8E2D9", color: "#0a0a0a" }} />
               </div>
             </div>
             <div>
@@ -387,14 +535,16 @@ export default function LandingPage({ data: d }: { data: LandingPageData }) {
       <StatsSection d={d} />
       <PainSection d={d} />
       <FlowDiagram
-        badge="Our system"
+        badge={d.flowBadge}
         title={d.flowTitle}
         topSteps={d.flowTop.map((s, i) => ({ n: String(i + 1).padStart(2, "0"), icon: s.icon, title: s.title, body: s.body, color: TOP_COLORS[i] }))}
         parallel={{ label: d.flowParallelLabel, items: d.flowParallel }}
         bottomSteps={d.flowBottom.map((s, i) => ({ n: String(i + 4).padStart(2, "0"), icon: s.icon, title: s.title, body: s.body, color: BOTTOM_COLORS[i] }))}
       />
       <ProcessSection d={d} />
-      <CaseStudiesSection d={d} />
+      {d.trackStyle === "case-cards" ? <CaseCardsSection d={d} /> : d.trackStyle === "none" ? null : <CaseStudiesSection d={d} />}
+      {d.scenarios.length > 0 && <ScenariosSection d={d} />}
+      {d.whyCards.length > 0 && <WhySection d={d} />}
       <Faq title={d.faqTitle} items={faqItems} />
       <DarkCTASection d={d} />
       <FormSection d={d} />

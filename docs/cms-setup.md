@@ -8,6 +8,7 @@
 | FAQs on every other page (services, city pages, ICP landing pages, guides, blog posts, tools) | `content/faqs/pages/<page>.json` | the page itself, through `lib/page-faqs.ts`, and its FAQPage schema |
 | ICP landing pages (all 9 `/lp/*` pages) | `content/landing-pages/<slug>.json` | `app/lp/<slug>/page.tsx` is generated from it at every build and rendered by `components/lp/LandingPage.tsx` |
 | Glossary (46 of the 50 terms) | `content/glossary/<slug>.json` | `app/resources/glossary/<slug>/page.tsx` generated at every build, the A-Z index cards (`lib/glossary-index.generated.json`) and the term's sitemap entry |
+| Case studies, detailed (20 of 32 hand-written pages) | `content/case-study-pages/<slug>.json` | `app/case-studies/<slug>/page.tsx` generated at every build, the card on the `/case-studies` listing (`lib/case-study-detail-cards.generated.json`) and the sitemap entry |
 | Case studies | `content/case-studies/*.json` | `lib/case-study-library.json`, then one generated page and sitemap entry per case (both rebuilt on every deploy) |
 | Blog posts | `content/posts/*.mdoc` | `app/resources/blogs/[slug]/page.tsx`, the blog index, `sitemap.xml`, `llms-full.txt` |
 
@@ -16,6 +17,8 @@ To change FAQs on any page: admin, **Page FAQs**, open the page's entry (names s
 Landing pages: edit the text, numbers, steps and button labels in the admin under **Landing pages (ICP)**. Layout, colours, animations and the form wiring stay in code. The counts (4 stats, 3 pain cards, and so on) are fixed by the template and enforced in the admin. Optional blocks cover the variations between the nine pages: a radar-ping badge, a trade-route hero graphic, a stats row with a caption, results as counters or as case-study cards (or none), scenario cards, and "why this works" cards. A brand-new landing page also needs one line in `app/sitemap.ts` (the build warns if it is missing). The FAQ questions on these pages live under **Page FAQs** (`lp-<slug>`).
 
 Glossary: edit a term's definition, supporting paragraph, links, FAQs and index card in the admin under **Glossary terms**. A new term needs only its entry: the page, the A-Z index card, the sitemap line and the sitemap-page link are all generated at the next deploy. Four longer-form terms (total-conversional-market, signal-heavy-structuring, 3-second-rule, inbound-vs-outbound) are still hand-built pages.
+
+Detailed case studies: edit the title, intro, numbers, challenge, approach, results table, services and search/share text under **Case studies (detailed)**. A new one gets its page, listing card and sitemap entry at the next deploy. Twelve long-form case studies with their own layouts (e.g. the jewellery, medical-tourism and retail ones) are still hand-built pages.
 
 A new case study published from the admin appears after the next deploy, with its page, sitemap entry and place on the industry filter. Its sitemap date is not refreshed automatically, because sitemap dates come from git history of page code.
 

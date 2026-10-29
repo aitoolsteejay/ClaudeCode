@@ -215,6 +215,14 @@ if (exists(glossaryCards)) {
   }
 }
 
+// The case studies listing links to every detailed case study from lib/case-study-detail-cards.generated.json.
+const detailCards = path.join(ROOT, "lib", "case-study-detail-cards.generated.json");
+if (exists(detailCards)) {
+  for (const card of JSON.parse(read(detailCards))) {
+    edges.push({ from: "/case-studies", fromFile: "app/case-studies/CaseStudiesClient.tsx", to: normalize(`/case-studies/${card.slug}`) });
+  }
+}
+
 // Runtime-built links like `/resources/blogs/${slug}`: attribute them to every page under
 // that prefix whose last segment appears as a quoted string in the same file
 // (or in a data file in lib/ or the same folder).

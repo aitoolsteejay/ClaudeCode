@@ -71,6 +71,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/case-studies/predictable-b2b-lead-gen-engine`, lastModified: lastMod("/case-studies/predictable-b2b-lead-gen-engine"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/case-studies/uk-pharma-qualified-meetings`, lastModified: lastMod("/case-studies/uk-pharma-qualified-meetings"), changeFrequency: "monthly", priority: 0.7 },
     // Industry case studies written page by page (the generated block below holds the library of 50)
+    // BEGIN generated: detailed case studies (scripts/generate-case-study-detail-pages.mjs)
     { url: `${base}/case-studies/agencies-it-uae-managed-it`, lastModified: lastMod("/case-studies/agencies-it-uae-managed-it"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/agencies-it-usa-conversion-optimization`, lastModified: lastMod("/case-studies/agencies-it-usa-conversion-optimization"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/agencies-it-usa-software-development`, lastModified: lastMod("/case-studies/agencies-it-usa-software-development"), changeFrequency: "monthly", priority: 0.6 },
@@ -91,6 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/case-studies/recruitment-singapore-contract-staffing`, lastModified: lastMod("/case-studies/recruitment-singapore-contract-staffing"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/recruitment-uk-engineering-staffing`, lastModified: lastMod("/case-studies/recruitment-uk-engineering-staffing"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/recruitment-usa-tech-recruitment`, lastModified: lastMod("/case-studies/recruitment-usa-tech-recruitment"), changeFrequency: "monthly", priority: 0.6 },
+    // END generated: detailed case studies
     // BEGIN generated: case study library (scripts/generate-case-study-pages.mjs)
     { url: `${base}/case-studies/pharma-nutraceutical-partnerships`, lastModified: lastMod("/case-studies/pharma-nutraceutical-partnerships"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/case-studies/pharma-contract-manufacturer-pipeline`, lastModified: lastMod("/case-studies/pharma-contract-manufacturer-pipeline"), changeFrequency: "monthly", priority: 0.6 },

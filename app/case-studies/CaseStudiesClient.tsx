@@ -10,6 +10,7 @@ import { buildBreadcrumbSchema, SITE_URL } from "@/lib/schema";
 import { caseStudyFilterSlug, CASE_STUDY_FILTERS } from "@/lib/case-study-filters";
 import { textTone } from "@/lib/colors";
 import { CASE_STUDY_MARKETS, MARKET_OF_SLUG, marketFromSlug } from "@/lib/case-study-markets";
+import detailCards from "@/lib/case-study-detail-cards.generated.json";
 
 const BREADCRUMB_SCHEMA = buildBreadcrumbSchema([
   { name: "Home", url: SITE_URL },
@@ -151,7 +152,10 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 // ── Data ───────────────────────────────────────────────────────────────────────
-const CASE_STUDIES: CaseStudy[] = [
+// Cards for the long-form case studies that are hand-built pages. Every case study that uses CaseStudyLayout is a
+// CMS page (content/case-study-pages) and supplies its own card through lib/case-study-detail-cards.generated.json;
+// each keeps its original `order` so the listing reads the same as before.
+const HAND_CASE_STUDIES: CaseStudy[] = [
   {
     slug: "specialist-recruitment-linkedin-leads", tag: "Recruitment & Staffing · India", industry: "Recruitment & Staffing", accent: "#0d9488",
     title: "Generating Qualified B2B Leads for a Specialist Recruitment Firm",
@@ -236,147 +240,22 @@ const CASE_STUDIES: CaseStudy[] = [
     excerpt: "A mid-size B2B services firm had tried outbound before and failed: bad lists, generic copy, zero personalisation. We rebuilt everything from ICP mapping to sequence copy to tech stack and turned outbound into their #1 channel.",
     services: ["AI Lead Generation", "Cold Email Infrastructure", "ICP Mapping & Lead Scoring"],
   },
-  {
-    slug: "pharma-france-contract-manufacturing", tag: "Pharma · France", industry: "Pharma", accent: "#0ea5e9",
-    title: "Opening conversations with contract manufacturing buyers in France",
-    stats: [{ v: "18", l: "Buyer meetings held" }, { v: "6", l: "Requests for quotation" }, { v: "36", l: "Positive replies" }],
-    excerpt: "A mid-sized Indian tablet and capsule manufacturer wanted ongoing conversations with French pharma companies evaluating manufacturing partners, not just trade-show contacts.",
-    services: ["AI Lead Generation", "Cold Email Infrastructure", "ICP Mapping & Lead Scoring"],
-  },
-  {
-    slug: "pharma-usa-api-second-source", tag: "Pharma · United States", industry: "Pharma", accent: "#eab308",
-    title: "Finding US buyers evaluating a second API supplier",
-    stats: [{ v: "16", l: "Sourcing meetings held" }, { v: "5", l: "Technical evaluation requests" }, { v: "39", l: "Positive replies" }],
-    excerpt: "An Indian API manufacturer had a broad US prospect list but no way to tell who actually had a live sourcing need.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "AI Lead Generation"],
-  },
-  {
-    slug: "pharma-india-dermatologist-outreach", tag: "Pharma · India", industry: "Pharma", accent: "#6366f1",
-    title: "Reaching dermatologists beyond the field team's coverage",
-    stats: [{ v: "72", l: "Webinar attendees" }, { v: "24", l: "Medical-team discussions" }, { v: "18", l: "Field visits agreed" }],
-    excerpt: "A dermatology company launching in 8 cities needed specialist reach beyond where its medical reps could go.",
-    services: ["ICP Mapping & Lead Scoring", "LinkedIn Outreach", "AI Lead Generation"],
-  },
-  {
-    slug: "pharma-uae-distribution-partners", tag: "Pharma · UAE", industry: "Pharma", accent: "#ec4899",
-    title: "Building a shortlist of UAE distribution partners",
-    stats: [{ v: "12", l: "Partner meetings held" }, { v: "3", l: "Distributors shortlisted" }, { v: "20", l: "Positive replies" }],
-    excerpt: "An Indian finished-formulation company needed a UAE distributor whose portfolio and coverage actually matched its products, not just general interest.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "LinkedIn Outreach"],
-  },
-  {
-    slug: "pharma-singapore-product-licensing", tag: "Pharma · Singapore", industry: "Pharma", accent: "#dc2626",
-    title: "Starting product licensing discussions in Singapore",
-    stats: [{ v: "10", l: "Licensing meetings held" }, { v: "4", l: "Confidential portfolio reviews" }, { v: "16", l: "Positive replies" }],
-    excerpt: "A specialty pharma developer had technical material ready for two products but limited access to licensing decision-makers in Singapore.",
-    services: ["ICP Mapping & Lead Scoring", "AI Lead Generation", "GTM Strategy"],
-  },
-  {
-    slug: "agencies-it-usa-software-development", tag: "Agencies & IT · United States", industry: "Agencies & IT", accent: "#0891b2",
-    title: "Reaching companies that need a software development partner",
-    stats: [{ v: "24", l: "Meetings booked" }, { v: "7", l: "Shared project requirements" }, { v: "4", l: "Proposals requested" }],
-    excerpt: "An Indian software development firm relied on referrals and project marketplaces and wanted direct conversations with US retail and logistics companies needing custom builds.",
-    services: ["ICP Mapping & Lead Scoring", "LinkedIn Outreach", "Cold Email Infrastructure"],
-  },
-  {
-    slug: "financial-services-singapore-outsourced-cfo", tag: "Financial Services · Singapore", industry: "Financial Services", accent: "#7c3aed",
-    title: "Finding businesses that need outsourced finance support",
-    stats: [{ v: "19", l: "Meetings booked" }, { v: "6", l: "Needs assessments requested" }, { v: "3", l: "Proposals requested" }],
-    excerpt: "A Singapore-based outsourced CFO and accounting firm relied on accountant and founder referrals and wanted to reach growing businesses directly.",
-    services: ["ICP Mapping & Lead Scoring", "AI Lead Generation", "Cold Email Infrastructure"],
-  },
-  {
-    slug: "insurance-uae-employee-benefits", tag: "Insurance · UAE", industry: "Insurance", accent: "#a14a08",
-    title: "Opening employee benefits conversations before renewal",
-    stats: [{ v: "20", l: "Meetings booked" }, { v: "7", l: "Benefits reviews agreed" }, { v: "4", l: "Quotation exercises requested" }],
-    excerpt: "A UAE-based insurance brokerage often reached employers after renewal decisions were already underway and needed earlier access to HR and finance teams.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "LinkedIn Outreach"],
-  },
-  {
-    slug: "manufacturers-exporters-germany-industrial-components", tag: "Manufacturers & Exporters · Germany", industry: "Manufacturers & Exporters", accent: "#1d4ed8",
-    title: "Finding overseas buyers for industrial components",
-    stats: [{ v: "18", l: "Meetings booked" }, { v: "6", l: "Requests for quotation" }, { v: "3", l: "Sample requests" }],
-    excerpt: "An Indian precision components manufacturer depended on existing customers and trade exhibitions and wanted to reach German equipment makers whose requirements matched its production capabilities.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "AI Lead Generation"],
-  },
-  {
-    slug: "recruitment-uk-engineering-staffing", tag: "Recruitment & Staffing · United Kingdom", industry: "Recruitment & Staffing", accent: "#0d9488",
-    title: "Winning conversations with employers that are hiring",
-    stats: [{ v: "23", l: "Meetings booked" }, { v: "8", l: "Hiring briefs shared" }, { v: "4", l: "Searches authorized" }],
-    excerpt: "A UK-based specialist recruitment firm's consultants spent significant time on business development, and broad outreach often reached employers with no relevant hiring needs.",
-    services: ["ICP Mapping & Lead Scoring", "LinkedIn Outreach", "Cold Email Infrastructure"],
-  },
-  {
-    slug: "agencies-it-usa-conversion-optimization", tag: "Agencies & IT · United States", industry: "Agencies & IT", accent: "#2563eb",
-    title: "Finding buyers for a conversion optimization agency",
-    stats: [{ v: "20", l: "Meetings booked" }, { v: "6", l: "Website assessments requested" }, { v: "3", l: "Project proposals requested" }],
-    excerpt: "A conversion optimization agency targeting US e-commerce brands relied on founder referrals and wanted to reach brands interested in improving their existing online stores.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "AI Lead Generation"],
-  },
-  {
-    slug: "agencies-it-uae-managed-it", tag: "Agencies & IT · UAE", industry: "Agencies & IT", accent: "#0369a1",
-    title: "Opening managed IT service conversations",
-    stats: [{ v: "16", l: "Meetings booked" }, { v: "5", l: "Service assessments requested" }, { v: "3", l: "Managed IT proposals requested" }],
-    excerpt: "An IT services provider targeting UAE professional services firms had a sales team that struggled to reach companies actively considering changes to their IT support arrangements.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "LinkedIn Outreach"],
-  },
-  {
-    slug: "financial-services-india-payroll", tag: "Financial Services · India", industry: "Financial Services", accent: "#9333ea",
-    title: "Building an outsourced payroll pipeline",
-    stats: [{ v: "24", l: "Meetings booked" }, { v: "7", l: "Detailed service requirements shared" }, { v: "4", l: "Proposals requested" }],
-    excerpt: "An Indian payroll services firm targeting companies with 100-500 employees depended on referrals and often entered conversations without knowing whether the employer intended to review its arrangements.",
-    services: ["ICP Mapping & Lead Scoring", "AI Lead Generation", "Cold Email Infrastructure"],
-  },
-  {
-    slug: "financial-services-uk-bookkeeping", tag: "Financial Services · United Kingdom", industry: "Financial Services", accent: "#a21caf",
-    title: "Connecting a bookkeeping firm with accounting practices",
-    stats: [{ v: "15", l: "Meetings booked" }, { v: "5", l: "Delivery-model reviews requested" }, { v: "2", l: "Paid pilots agreed" }],
-    excerpt: "A bookkeeping services company seeking partnerships with UK accounting practices had found direct outreach to individual businesses produced inconsistent results.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "LinkedIn Outreach"],
-  },
-  {
-    slug: "insurance-singapore-commercial-coverage", tag: "Insurance · Singapore", industry: "Insurance", accent: "#ca8a04",
-    title: "Reaching businesses reviewing commercial coverage",
-    stats: [{ v: "14", l: "Meetings booked" }, { v: "5", l: "Adviser-led reviews agreed" }, { v: "3", l: "Quotations requested" }],
-    excerpt: "A Singapore-based insurance brokerage targeting logistics and warehousing businesses needed more conversations with companies planning to review their business insurance arrangements.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "AI Lead Generation"],
-  },
-  {
-    slug: "insurance-india-hr-consultants-referral", tag: "Insurance · India", industry: "Insurance", accent: "#92400e",
-    title: "Developing referral relationships with HR consultants",
-    stats: [{ v: "15", l: "Meetings booked" }, { v: "5", l: "Partnership discussions" }, { v: "2", l: "Referral processes agreed" }],
-    excerpt: "An Indian employee benefits insurance brokerage wanted to supplement direct employer outreach with partners already serving relevant business clients.",
-    services: ["ICP Mapping & Lead Scoring", "LinkedIn Outreach", "Cold Email Infrastructure"],
-  },
-  {
-    slug: "manufacturers-exporters-france-packaging", tag: "Manufacturers & Exporters · France", industry: "Manufacturers & Exporters", accent: "#0284c7",
-    title: "Finding packaging buyers in France",
-    stats: [{ v: "18", l: "Meetings booked" }, { v: "6", l: "Packaging briefs shared" }, { v: "4", l: "Sample and quotation requests" }],
-    excerpt: "An Indian manufacturer of folding cartons and printed packaging wanted to diversify its export customer base but lacked direct relationships with relevant procurement teams.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "AI Lead Generation"],
-  },
-  {
-    slug: "manufacturers-exporters-uae-kitchen-equipment", tag: "Manufacturers & Exporters · UAE", industry: "Manufacturers & Exporters", accent: "#1e40af",
-    title: "Building a distributor shortlist for commercial kitchen equipment",
-    stats: [{ v: "14", l: "Meetings booked" }, { v: "4", l: "Distributors shortlisted" }, { v: "2", l: "Progressed to commercial discussions" }],
-    excerpt: "An Indian commercial kitchen equipment manufacturer seeking UAE distribution partners had previous inquiries with varying coverage and technical capabilities, making partner selection difficult.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "LinkedIn Outreach"],
-  },
-  {
-    slug: "recruitment-usa-tech-recruitment", tag: "Recruitment & Staffing · United States", industry: "Recruitment & Staffing", accent: "#059669",
-    title: "Winning specialist technology recruitment briefs",
-    stats: [{ v: "20", l: "Meetings booked" }, { v: "7", l: "Hiring briefs shared" }, { v: "3", l: "Searches authorized" }],
-    excerpt: "A recruitment firm specializing in data engineering and analytics roles for US businesses had candidate expertise but struggled to identify employers open to external recruitment support.",
-    services: ["ICP Mapping & Lead Scoring", "LinkedIn Outreach", "Cold Email Infrastructure"],
-  },
-  {
-    slug: "recruitment-singapore-contract-staffing", tag: "Recruitment & Staffing · Singapore", industry: "Recruitment & Staffing", accent: "#15803d",
-    title: "Developing contract staffing opportunities",
-    stats: [{ v: "17", l: "Meetings booked" }, { v: "6", l: "Staffing requirements shared" }, { v: "3", l: "Candidate submissions approved" }],
-    excerpt: "A Singapore-based staffing firm providing temporary finance and administrative personnel had uneven demand and needed earlier visibility into employers' coverage requirements.",
-    services: ["ICP Mapping & Lead Scoring", "Cold Email Infrastructure", "AI Lead Generation"],
-  },
 ];
+
+function mergeByOrder(hand: CaseStudy[], cms: (CaseStudy & { order?: number })[]): CaseStudy[] {
+  const total = hand.length + cms.length;
+  const slots: (CaseStudy | undefined)[] = new Array(total).fill(undefined);
+  const extra: CaseStudy[] = [];
+  for (const { order, ...card } of cms) {
+    if (Number.isInteger(order) && (order as number) >= 0 && (order as number) < total && !slots[order as number]) slots[order as number] = card;
+    else extra.push(card);
+  }
+  const rest = [...hand];
+  const placed = slots.map((slot) => slot ?? rest.shift());
+  return [...placed.filter((c): c is CaseStudy => !!c), ...rest, ...extra];
+}
+
+const CASE_STUDIES: CaseStudy[] = mergeByOrder(HAND_CASE_STUDIES, detailCards as (CaseStudy & { order?: number })[]);
 
 const INDUSTRIES = CASE_STUDY_FILTERS.map((filter) => filter.label);
 

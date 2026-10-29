@@ -10,6 +10,8 @@ import { collection, config, fields } from "@keystatic/core";
 //  - Landing pages (ICP): one JSON file per page. `npm run landing-pages:build`
 //    (run by prebuild) writes app/lp/<slug>/page.tsx; components/lp/LandingPage.tsx
 //    renders it.
+//  - Case studies (detailed): one JSON file per page that uses CaseStudyLayout. `npm run case-study-pages:build`
+//    (run by prebuild) writes the page, the listing card and the sitemap entry. Twelve long-form ones stay hand-built.
 //  - Case studies: JSON files. `npm run case-studies:content` rebuilds
 //    lib/case-study-library.json, then `case-studies:build` writes each page and
 //    its sitemap entry (both run by prebuild).
@@ -300,6 +302,67 @@ export default config({
         emailPlaceholder: fields.text({ label: "Email field example", validation: { isRequired: true } }),
         submitLabel: fields.text({ label: "Submit button label", validation: { isRequired: true } }),
         formNote: fields.text({ label: "Note under the submit button", validation: { isRequired: true } }),
+      },
+    }),
+
+    caseStudyPages: collection({
+      label: "Case studies (detailed)",
+      path: "content/case-study-pages/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "Page address",
+            description: "The case study lives at /case-studies/<address>. It cannot be changed after the first save. A new one appears in the sitemap and on the case studies listing after the next deploy.",
+            validation: { isRequired: true },
+          },
+        }),
+        title: fields.text({ label: "Title (H1)", validation: { isRequired: true } }),
+        tag: fields.text({ label: "Tag (e.g. Pharma · UAE)", validation: { isRequired: true } }),
+        industry: fields.select({
+          label: "Industry (for the listing filters)",
+          options: ["Pharma", "SaaS", "Professional Services", "eCommerce Tech", "B2B Founder", "Agencies & IT", "Financial Services", "Insurance", "Manufacturers & Exporters", "Recruitment & Staffing"].map((v) => ({ label: v, value: v })),
+          defaultValue: "Pharma",
+        }),
+        accent: fields.text({ label: "Accent colour (hex, e.g. #ec4899)", validation: { isRequired: true } }),
+        intro: fields.text({ label: "Intro paragraph", multiline: true, validation: { isRequired: true } }),
+        heroStats: fields.array(
+          fields.object({ value: fields.text({ label: "Number", validation: { isRequired: true } }), label: fields.text({ label: "Caption", validation: { isRequired: true } }) }),
+          { label: "Headline numbers (exactly 3)", validation: { length: { min: 3, max: 3 } }, itemLabel: (props) => props.fields.label.value }
+        ),
+        challengeTitle: fields.text({ label: "Challenge heading", validation: { isRequired: true } }),
+        challengeBody: fields.array(fields.text({ label: "Paragraph", multiline: true }), { label: "Challenge paragraphs", itemLabel: (props) => props.value.slice(0, 60) }),
+        approachTitle: fields.text({ label: "Approach heading", validation: { isRequired: true } }),
+        approachBody: fields.array(fields.text({ label: "Paragraph", multiline: true }), { label: "Approach paragraphs", itemLabel: (props) => props.value.slice(0, 60) }),
+        metrics: fields.array(
+          fields.object({ l: fields.text({ label: "What was measured", validation: { isRequired: true } }), v: fields.text({ label: "Number", validation: { isRequired: true } }) }),
+          { label: "Results table (label and number per row)", itemLabel: (props) => props.fields.l.value }
+        ),
+        outcomeTitle: fields.text({ label: "Outcome heading", validation: { isRequired: true } }),
+        outcomeBody: fields.text({ label: "Outcome paragraph", multiline: true, validation: { isRequired: true } }),
+        roleBody: fields.text({ label: "What Myntmore did and what the client did", multiline: true, validation: { isRequired: true } }),
+        services: fields.array(
+          fields.object({ name: fields.text({ label: "Service name", validation: { isRequired: true } }), href: fields.text({ label: "Service address, e.g. /services/cold-email", validation: { isRequired: true } }) }),
+          { label: "Services used", itemLabel: (props) => props.fields.name.value }
+        ),
+        metaTitle: fields.text({ label: "Search title", description: "Up to 49 characters (the site adds \" | Myntmore\").", validation: { isRequired: true, length: { max: 49 } } }),
+        metaDescription: fields.text({ label: "Search description", multiline: true, validation: { isRequired: true, length: { max: 160 } } }),
+        keywords: fields.array(fields.text({ label: "Keyword" }), { label: "Keywords (one search phrase each)", itemLabel: (props) => props.value }),
+        ogTitle: fields.text({ label: "Share title (LinkedIn, WhatsApp)", validation: { isRequired: true } }),
+        ogDescription: fields.text({ label: "Share description", multiline: true, validation: { isRequired: true } }),
+        schemaHeadline: fields.text({ label: "Headline in structured data", validation: { isRequired: true } }),
+        schemaDescription: fields.text({ label: "Description in structured data", multiline: true, validation: { isRequired: true } }),
+        datePublished: fields.text({ label: "Published (ISO date and time, e.g. 2026-09-24T10:00:00+05:30)", validation: { isRequired: true } }),
+        dateModified: fields.text({ label: "Last updated (ISO date and time)", validation: { isRequired: true } }),
+        indexTitle: fields.text({ label: "Title on the case studies listing card", validation: { isRequired: true } }),
+        excerpt: fields.text({ label: "Listing card text", multiline: true, validation: { isRequired: true } }),
+        indexStats: fields.array(
+          fields.object({ v: fields.text({ label: "Number", validation: { isRequired: true } }), l: fields.text({ label: "Caption", validation: { isRequired: true } }) }),
+          { label: "Numbers on the listing card", itemLabel: (props) => props.fields.l.value }
+        ),
+        indexServices: fields.array(fields.text({ label: "Service" }), { label: "Services shown on the listing card", itemLabel: (props) => props.value }),
+        indexOrder: fields.integer({ label: "Position on the listing (optional; lowest first, empty = after the others)" }),
       },
     }),
 

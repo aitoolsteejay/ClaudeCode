@@ -10,6 +10,8 @@ import { collection, config, fields } from "@keystatic/core";
 //  - Landing pages (ICP): one JSON file per page. `npm run landing-pages:build`
 //    (run by prebuild) writes app/lp/<slug>/page.tsx; components/lp/LandingPage.tsx
 //    renders it.
+//  - City pages: one JSON file per /b2b-lead-generation-<city> page. `npm run city-pages:build` (run by prebuild)
+//    writes the page; components/city/CityPage.tsx renders it. (Chennai has its own layout and is still hand-built.)
 //  - Case studies (detailed): one JSON file per page that uses CaseStudyLayout. `npm run case-study-pages:build`
 //    (run by prebuild) writes the page, the listing card and the sitemap entry. Twelve long-form ones stay hand-built.
 //  - Case studies: JSON files. `npm run case-studies:content` rebuilds
@@ -302,6 +304,73 @@ export default config({
         emailPlaceholder: fields.text({ label: "Email field example", validation: { isRequired: true } }),
         submitLabel: fields.text({ label: "Submit button label", validation: { isRequired: true } }),
         formNote: fields.text({ label: "Note under the submit button", validation: { isRequired: true } }),
+      },
+    }),
+
+    cityPages: collection({
+      label: "City pages",
+      path: "content/city-pages/*",
+      format: "json",
+      slugField: "slug",
+      schema: {
+        slug: fields.slug({
+          name: {
+            label: "City key",
+            description: "The page lives at /b2b-lead-generation-<city key>. It cannot be changed after the first save. A new city also needs a line in app/sitemap.ts and its questions under Page FAQs (city-<key>); the build warns if either is missing.",
+            validation: { isRequired: true },
+          },
+        }),
+        metaTitle: fields.text({ label: "Search title", description: "Aim for 49 characters or fewer (the site adds \" | Myntmore\"); Google cuts long titles.", validation: { isRequired: true, length: { max: 70 } } }),
+        metaDescription: fields.text({ label: "Search description", multiline: true, validation: { isRequired: true, length: { max: 160 } } }),
+        keywords: fields.array(fields.text({ label: "Keyword" }), { label: "Keywords (one search phrase each)", itemLabel: (props) => props.value }),
+        ogTitle: fields.text({ label: "Share title (LinkedIn, WhatsApp)", validation: { isRequired: true } }),
+        ogDescription: fields.text({ label: "Share description", multiline: true, validation: { isRequired: true } }),
+        breadcrumbLabel: fields.text({ label: "Breadcrumb label", validation: { isRequired: true } }),
+        badge: fields.text({ label: "Hero badge", validation: { isRequired: true } }),
+        h1: fields.text({ label: "Headline (H1)", validation: { isRequired: true } }),
+        intro: fields.text({ label: "Hero intro", multiline: true, validation: { isRequired: true } }),
+        primaryCta: fields.text({ label: "Main button label", validation: { isRequired: true } }),
+        secondaryCta: fields.text({ label: "Second button label", validation: { isRequired: true } }),
+        whyTitle: fields.text({ label: "\"Why this city\" heading", validation: { isRequired: true } }),
+        why: fields.array(
+          fields.object({ title: fields.text({ label: "Title", validation: { isRequired: true } }), desc: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }) }),
+          { label: "\"Why this city\" cards (exactly 3)", validation: { length: { min: 3, max: 3 } }, itemLabel: (props) => props.fields.title.value }
+        ),
+        segmentsTitle: fields.text({ label: "\"Who we generate leads for\" heading (leave the whole block empty to hide it)" }),
+        segmentsIntro: fields.text({ label: "\"Who we generate leads for\" intro", multiline: true }),
+        segments: fields.array(
+          fields.object({ title: fields.text({ label: "Title", validation: { isRequired: true } }), desc: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }) }),
+          { label: "Segment cards (exactly 3, or none)", validation: { length: { max: 3 } }, itemLabel: (props) => props.fields.title.value }
+        ),
+        segmentsNote: fields.text({ label: "Note under the segments (use [link text](/address) for links)", multiline: true }),
+        healthcareTitle: fields.text({ label: "Healthcare block heading (leave the whole block empty to hide it)" }),
+        healthcareIntro: fields.text({ label: "Healthcare block intro", multiline: true }),
+        healthcareBuyers: fields.array(fields.text({ label: "Buyer type" }), { label: "Healthcare buyer types", itemLabel: (props) => props.value }),
+        healthcareNote: fields.text({ label: "Note under the healthcare list (use [link text](/address) for links)", multiline: true }),
+        stepsTitle: fields.text({ label: "\"How it works\" heading (leave the whole block empty to hide it)" }),
+        steps: fields.array(
+          fields.object({
+            when: fields.text({ label: "When (e.g. Week 1)", validation: { isRequired: true } }),
+            title: fields.text({ label: "Title", validation: { isRequired: true } }),
+            desc: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }),
+          }),
+          { label: "Steps", itemLabel: (props) => props.fields.title.value }
+        ),
+        stepsNote: fields.text({ label: "Note under the steps (use [link text](/address) for links)", multiline: true }),
+        servicesTitle: fields.text({ label: "Services heading", validation: { isRequired: true } }),
+        servicesIntro: fields.text({ label: "Services intro", validation: { isRequired: true } }),
+        services: fields.array(
+          fields.object({
+            title: fields.text({ label: "Service", validation: { isRequired: true } }),
+            href: fields.text({ label: "Address, e.g. /services/cold-email", validation: { isRequired: true } }),
+            desc: fields.text({ label: "Text", multiline: true, validation: { isRequired: true } }),
+          }),
+          { label: "Services (exactly 7)", validation: { length: { min: 7, max: 7 } }, itemLabel: (props) => props.fields.title.value }
+        ),
+        diffTitle: fields.text({ label: "\"Why Myntmore\" heading", validation: { isRequired: true } }),
+        differentiators: fields.array(fields.text({ label: "Point", multiline: true }), { label: "\"Why Myntmore\" points (exactly 4)", validation: { length: { min: 4, max: 4 } }, itemLabel: (props) => props.value.slice(0, 60) }),
+        formTitle: fields.text({ label: "Form heading", validation: { isRequired: true } }),
+        formSubtitle: fields.text({ label: "Form intro", multiline: true, validation: { isRequired: true } }),
       },
     }),
 

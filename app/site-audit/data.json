@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T06:58:49.543Z",
+  "generatedAt": "2026-10-30T07:18:39.952Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 290,
@@ -111,7 +111,7 @@
     },
     {
       "path": "/b2b-lead-generation-delhi",
-      "title": "B2B Lead Generation Agency in Delhi",
+      "title": "B2B Lead Generation Agency in Delhi NCR",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -125,7 +125,7 @@
     },
     {
       "path": "/b2b-lead-generation-hyderabad",
-      "title": "B2B Lead Generation Company in Hyderabad",
+      "title": "Lead Generation Company & Services in Hyderabad",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -173,7 +173,7 @@
     },
     {
       "path": "/b2b-lead-generation-pune",
-      "title": "B2B Lead Generation Company in Pune",
+      "title": "B2B Lead Generation Companies in Pune",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -1903,7 +1903,7 @@
     },
     {
       "path": "/myntmore-framework",
-      "title": "The Myntmore Framework",
+      "title": "Myntmore Framework: How Our Outbound Works",
       "section": "other",
       "status": "linked",
       "linkedFrom": [
@@ -3484,7 +3484,7 @@
     },
     {
       "path": "/resources/guides/how-to-set-up-vibe-prospecting",
-      "title": "How to Set Up Vibe Prospecting on Claude",
+      "title": "Vibe Prospecting on Claude: 7-Step Setup Guide",
       "section": "resources",
       "status": "linked",
       "linkedFrom": [

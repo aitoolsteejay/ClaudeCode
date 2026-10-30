@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQS = [
+  { question: "Why do Google and Yahoo require DMARC for senders?", answer: "Google and Yahoo enforce DMARC to combat phishing and spoofed sender identities. Enforcing DMARC ensures that only authorized mail servers can send messages claiming to come from your domain, immediately protecting your recipient pool and sender reputation." },
+  { question: "Can cold emails land in spam even if SPF and DKIM pass?", answer: "Yes. While SPF and DKIM verify sender identity, inbox algorithms also evaluate content spam triggers, sudden spikes in sending volume, recipient engagement rates, and bounce rates. Authentication is necessary for inbox placement, but not solely sufficient on its own." },
+  { question: "What DMARC policy should a new sending domain start with?", answer: "A new sending domain should begin with p=none to monitor aggregate reports (RUA) and confirm legitimate sending services are passing authentication. Once all mail streams pass SPF and DKIM alignment, the policy can be tightened to p=quarantine or p=reject." },
+];
+
 const TERM_SCHEMA = buildDefinedTermSchema({
   name: TITLE,
   description: DESCRIPTION,
@@ -38,10 +44,13 @@ export default function GlossaryTermPage() {
       title={TITLE}
       tagline={"The three DNS records that decide whether a cold email lands in the inbox or the spam folder."}
       definition={"Three DNS records that prove a cold email actually came from your domain and wasn't altered in transit, and tell inboxes what to do if that check fails."}
-      body={"Without them, a receiving mail server has no way to confirm a message is genuine, so it defaults to suspicion, which is why cold email without proper authentication so often lands in spam regardless of how good the copy is."}
+      body={"Without them, a receiving mail server has no way to confirm a message is genuine, so it defaults to suspicion, which is why cold email without proper authentication so often lands in spam regardless of how good the copy is. Together, SPF checks sending IP authorization, DKIM verifies cryptographic signatures to prevent tampering in transit, and DMARC enforces domain alignment while telling mailbox providers whether to quarantine or reject unauthenticated messages. For example, Google and Yahoo require senders to maintain valid SPF, DKIM, and DMARC records to prevent bulk spoofing. Setting up secondary domains with fully aligned DNS records ensures outbound deliverability remains above 95% without putting your primary corporate domain at risk. Regularly auditing these records prevents misconfigurations caused by DNS propagation errors, server migrations, or third-party email routing tools, ensuring continuous delivery across all active sequences."}
       sourceLabel={"Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)"}
       sourceHref={"/resources/blogs/cold-email-deliverability-guide"}
+      furtherLabel={"See the service: Cold Email Infrastructure"}
+      furtherHref={"/services/cold-email"}
       articleSchema={TERM_SCHEMA}
+      faqs={FAQS}
     />
   );
 }

@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     "linkedin hook grader",
     "linkedin hook generator",
     "linkedin post hook checker",
-    "how to write a linkedin hook",
     "linkedin opening line examples",
     "linkedin post first line",
     "linkedin hook score",

@@ -529,7 +529,7 @@ select.outline-none:not([class*="ring"]):focus-visible {
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
-/* Radar-style signal ping — used behind SaaS "ready to buy" badges */
+/* Radar-style signal ping: used behind SaaS "ready to buy" badges */
 @keyframes lp-radar-ping {
   0%   { transform: scale(0.5); opacity: 0.55; }
   100% { transform: scale(2.4); opacity: 0; }
@@ -543,7 +543,7 @@ select.outline-none:not([class*="ring"]):focus-visible {
   pointer-events: none;
 }
 
-/* Chat-bubble pop — used on the Agencies/IT hero */
+/* Chat-bubble pop: used on the Agencies/IT hero */
 @keyframes lp-pop-in {
   0%   { transform: scale(0.4); opacity: 0; }
   60%  { transform: scale(1.08); opacity: 1; }
@@ -568,7 +568,7 @@ select.outline-none:not([class*="ring"]):focus-visible {
   transform: translateY(-4px);
 }
 
-/* Shuffling deck of channel cards — used on the 404 page's "404" numeral.
+/* Shuffling deck of channel cards: used on the 404 page's "404" numeral.
    Each card shares this animation with a negative animation-delay offset
    by a quarter-cycle, so at any moment the 4 cards occupy 4 distinct
    depths in the stack and continuously rotate through which one is "front". */

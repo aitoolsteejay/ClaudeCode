@@ -18,7 +18,7 @@ export default function MentiClient() {
     try {
       if (localStorage.getItem(STORAGE_KEY) === "1") setSubmitted(true);
     } catch {
-      // localStorage unavailable (private mode, etc.) — just skip the check
+      // localStorage unavailable (private mode, etc.): just skip the check
     }
   }, []);
 

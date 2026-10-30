@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Myntmore — LinkedIn Profile Optimizer Motion Audit · design-motion-principles</title>
+<title>Myntmore - LinkedIn Profile Optimizer Motion Audit · design-motion-principles</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -319,7 +319,7 @@
   @media (prefers-reduced-motion: no-preference) {
     .lens-table tbody tr, .finding-row { transition: border-color 0.2s ease; }
 
-    /* 01 · wizard view enters after the lead form submits — 260ms ease-out */
+    /* 01 · wizard view enters after the lead form submits - 260ms ease-out */
     @keyframes m1 {
       0%   { opacity: 0; transform: translateY(14px); }
       55%  { opacity: 1; transform: translateY(0); }
@@ -327,7 +327,7 @@
     }
     .demo-1__mt { animation: m1 3s cubic-bezier(0.22,1,0.36,1) infinite; }
 
-    /* 02 · CTA hover lift, now actually transitioning — 200ms ease-out */
+    /* 02 · CTA hover lift, now actually transitioning - 200ms ease-out */
     @keyframes m2 {
       0%   { transform: scale(1);    box-shadow: 0 4px 14px oklch(0 0 0 / 0.14); }
       45%  { transform: scale(1.02); box-shadow: 0 14px 30px oklch(0 0 0 / 0.24); }
@@ -335,7 +335,7 @@
     }
     .demo-2__mt .ui-btn { animation: m2 3s cubic-bezier(0.22,1,0.36,1) infinite; }
 
-    /* 03 · results card materializes — 240ms, opacity + translateY + blur */
+    /* 03 · results card materializes - 240ms, opacity + translateY + blur */
     @keyframes m3 {
       0%   { opacity: 0; transform: translateY(12px); filter: blur(4px); }
       55%  { opacity: 1; transform: translateY(0);   filter: blur(0); }
@@ -343,7 +343,7 @@
     }
     .demo-3__mt { animation: m3 3s cubic-bezier(0.22,1,0.36,1) infinite; }
 
-    /* 04 · badge dot, calm one-shot arrival instead of an infinite pulse — 200ms ease-out */
+    /* 04 · badge dot, calm one-shot arrival instead of an infinite pulse - 200ms ease-out */
     @keyframes m4 {
       0%   { opacity: 0.5; transform: scale(0.85); }
       55%  { opacity: 1;   transform: scale(1); }
@@ -351,7 +351,7 @@
     }
     .demo-4__mt .dot { animation: m4 3s cubic-bezier(0.33,1,0.68,1) infinite; transform-origin: center; }
 
-    /* 05 · before/after demo assembles as one sequence — ~220ms per step, ~90ms apart */
+    /* 05 · before/after demo assembles as one sequence - ~220ms per step, ~90ms apart */
     @keyframes m5before {
       0%   { opacity: 0; transform: translateY(10px); }
       20%  { opacity: 1; transform: translateY(0); }
@@ -394,9 +394,9 @@
 
   <header class="doc">
     <div class="eyebrow">Motion audit · design-motion-principles</div>
-    <h1 class="title">LinkedIn Profile Optimizer — the moment after the form is the least polished part</h1>
+    <h1 class="title">LinkedIn Profile Optimizer - the moment after the form is the least polished part</h1>
     <p class="lede">
-      A pass over the landing page's hero, CTAs, and the hand-off into the lead form and wizard — read through
+      A pass over the landing page's hero, CTAs, and the hand-off into the lead form and wizard - read through
       three motion practitioners' lenses, weighted for a professional, conversion-focused B2B tool, not a playful one.
     </p>
     <div class="meta-row">
@@ -414,8 +414,8 @@
   <section class="assessment">
     <span class="mono-label">Overall</span>
     <p>
-      The flow's biggest problem isn't taste, it's <em>arrival</em>. Three of its five key moments — submitting the
-      lead form, then the wizard handing off to loading, then to results — have no transition at all. The two
+      The flow's biggest problem isn't taste, it's <em>arrival</em>. Three of its five key moments - submitting the
+      lead form, then the wizard handing off to loading, then to results - have no transition at all. The two
       moments that <em>do</em> animate spend it on the wrong things: an infinite pulse on a static badge, and 600ms
       of fade-in on header text, while the actual before/after demonstration sits completely still.
     </p>
@@ -426,7 +426,7 @@
     <h2 class="section-title">How each practitioner reads the motion</h2>
     <p class="section-sub">
       Weighted for a conversion funnel, not a playful brand: production polish carries the audit, restraint sets
-      the accessibility floor, and Jhey gets one narrow say — where the single earned moment should live.
+      the accessibility floor, and Jhey gets one narrow say - where the single earned moment should live.
     </p>
     <table class="lens-table">
       <thead><tr><th>Lens</th><th>Verdict</th><th>One-line read</th></tr></thead>
@@ -434,12 +434,12 @@
         <tr>
           <td class="lens-name">Production Polish <span class="who">Jakub Krehel</span><span class="weight">Primary</span></td>
           <td><span class="verdict v-problem">Problem</span></td>
-          <td class="lens-read">The highest-stakes moment in the whole funnel — right after the lead form — is a hard cut, and the CTA's own hover state doesn't actually transition.</td>
+          <td class="lens-read">The highest-stakes moment in the whole funnel - right after the lead form - is a hard cut, and the CTA's own hover state doesn't actually transition.</td>
         </tr>
         <tr>
           <td class="lens-name">Restraint &amp; Speed <span class="who">Emil Kowalski</span><span class="weight">Secondary</span></td>
           <td><span class="verdict v-problem">Problem</span></td>
-          <td class="lens-read">An infinite pulse on a status dot that isn't a status, and it — along with the hero fade-in — ignores <code>prefers-reduced-motion</code> entirely.</td>
+          <td class="lens-read">An infinite pulse on a status dot that isn't a status, and it - along with the hero fade-in - ignores <code>prefers-reduced-motion</code> entirely.</td>
         </tr>
         <tr>
           <td class="lens-name">Experimentation &amp; Delight <span class="who">Jhey Tompkins</span><span class="weight">Selective</span></td>
@@ -454,7 +454,7 @@
     <div class="sec-index">02</div>
     <h2 class="section-title">Where the timings land</h2>
     <p class="section-sub">
-      Three of the five moments in this flow have no transition at all — plotted as hollow rings near zero. The two
+      Three of the five moments in this flow have no transition at all - plotted as hollow rings near zero. The two
       that do exist are both spent on the wrong things, not on being too slow.
     </p>
     <div class="timing-grid">
@@ -540,14 +540,14 @@
         </ol>
 
         <div class="zone-defs">
-          <div class="zone-def"><span class="dot" style="background:var(--t-good)"></span><div><span class="zt">Instant / Responsive</span> · 0–300ms — <span class="zd">where the three swaps below should land once fixed.</span></div></div>
-          <div class="zone-def"><span class="dot" style="background:var(--t-mid)"></span><div><span class="zt">Deliberate</span> · 300–500ms — <span class="zd">earned by large surfaces, not by a badge dot or a headline.</span></div></div>
-          <div class="zone-def"><span class="dot" style="background:var(--t-slow)"></span><div><span class="zt">Sluggish</span> · 500ms+ — <span class="zd">the header fade-in lands here for no functional reason; the badge pulse never lands anywhere — it just never stops.</span></div></div>
+          <div class="zone-def"><span class="dot" style="background:var(--t-good)"></span><div><span class="zt">Instant / Responsive</span> · 0–300ms - <span class="zd">where the three swaps below should land once fixed.</span></div></div>
+          <div class="zone-def"><span class="dot" style="background:var(--t-mid)"></span><div><span class="zt">Deliberate</span> · 300–500ms - <span class="zd">earned by large surfaces, not by a badge dot or a headline.</span></div></div>
+          <div class="zone-def"><span class="dot" style="background:var(--t-slow)"></span><div><span class="zt">Sluggish</span> · 500ms+ - <span class="zd">the header fade-in lands here for no functional reason; the badge pulse never lands anywhere - it just never stops.</span></div></div>
         </div>
 
         <div class="whats-off">
           <span class="mono-label">What's off</span>
-          <p>Three of the five moments (1, 2, 3) have no transition at all — including the single highest-intent moment in the funnel, right after the lead form. The two that do animate (4, 5) aren't too slow so much as spent on the wrong elements entirely: a status dot with no status to show, and header text that doesn't need to earn attention.</p>
+          <p>Three of the five moments (1, 2, 3) have no transition at all - including the single highest-intent moment in the funnel, right after the lead form. The two that do animate (4, 5) aren't too slow so much as spent on the wrong elements entirely: a status dot with no status to show, and header text that doesn't need to earn attention.</p>
         </div>
       </div>
     </div>
@@ -557,7 +557,7 @@
   <section class="lens-sec">
     <div class="sec-index">03</div>
     <div class="lens-sec__head">
-      <h3>Jakub Krehel — Production Polish</h3>
+      <h3>Jakub Krehel - Production Polish</h3>
       <span class="lens-sec__weight">Primary lens</span>
     </div>
     <p class="lens-sec__verdict"><span class="verdict v-problem">Problem</span></p>
@@ -565,8 +565,8 @@
     <div class="lens-block">
       <span class="mono-label">What's working well</span>
       <ul class="lens-list good">
-        <li><span class="mk">✓</span><span>Sitewide entrance durations (<code>fadeIn</code> 0.6s, <code>fadeUp</code> 0.7s, <code>scaleIn</code> 0.4s, all <code>ease-out</code>) are consistent across the design system — no wildly mismatched timings. <code>tailwind.config.ts</code></span></li>
-        <li><span class="mk">✓</span><span>The score-fill and keyword-match bars use a real <code>transition-all duration-300/1000 ease-out</code> tied to an actual value change — functional motion, not decoration. <code>components/tools/profile-optimizer/ResultsSection.tsx:365</code></span></li>
+        <li><span class="mk">✓</span><span>Sitewide entrance durations (<code>fadeIn</code> 0.6s, <code>fadeUp</code> 0.7s, <code>scaleIn</code> 0.4s, all <code>ease-out</code>) are consistent across the design system - no wildly mismatched timings. <code>tailwind.config.ts</code></span></li>
+        <li><span class="mk">✓</span><span>The score-fill and keyword-match bars use a real <code>transition-all duration-300/1000 ease-out</code> tied to an actual value change - functional motion, not decoration. <code>components/tools/profile-optimizer/ResultsSection.tsx:365</code></span></li>
       </ul>
     </div>
 
@@ -580,8 +580,8 @@
             <div class="find-tags"><span class="severity crit">Critical</span><span class="lens-chip">Jakub</span></div>
             <h4 class="find-title">The page swaps its entire view the instant the lead form is submitted</h4>
             <div class="find-body">
-              <p><span class="label">What</span>The landing/lead-gate block and the wizard/loading/results block are two sibling <code>{condition &amp;&amp; &lt;div&gt;}</code> blocks. The moment <code>leadData</code> is set, React unmounts the first and mounts the second in the same tick — no cross-fade, no <code>AnimatePresence</code>, nothing. Framer Motion is already a project dependency; it's just unused here.</p>
-              <p><span class="label">Why it matters</span>This is the single highest-intent moment in the funnel — someone just handed over their name, company, and LinkedIn URL. The very next thing they see is a hard cut, which reads more like a page reload or an error than a reward for converting.</p>
+              <p><span class="label">What</span>The landing/lead-gate block and the wizard/loading/results block are two sibling <code>{condition &amp;&amp; &lt;div&gt;}</code> blocks. The moment <code>leadData</code> is set, React unmounts the first and mounts the second in the same tick - no cross-fade, no <code>AnimatePresence</code>, nothing. Framer Motion is already a project dependency; it's just unused here.</p>
+              <p><span class="label">Why it matters</span>This is the single highest-intent moment in the funnel - someone just handed over their name, company, and LinkedIn URL. The very next thing they see is a hard cut, which reads more like a page reload or an error than a reward for converting.</p>
               <div class="fix"><p><span class="label">Recommended motion</span>Cross-fade the two blocks with a state-driven CSS transition rather than a keyframe (the state can be entered from either direction): the outgoing block drops out over ~160ms, the incoming block enters at ~260ms with opacity + 14px translateY, ease-out. Exit stays quicker and subtler than enter.</p></div>
               <p class="find-loc"><code>app/tools/linkedin-optimizer/ProfileOptimizerClient.tsx:242</code></p>
             </div>
@@ -617,9 +617,9 @@
             <div class="find-tags"><span class="severity imp">Important</span><span class="lens-chip">Jakub</span></div>
             <h4 class="find-title">The primary CTA's hover lift and shadow bloom snap instead of easing</h4>
             <div class="find-body">
-              <p><span class="label">What</span>The <code>hero</code> button variant declares <code>hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/30</code>, but the shared base class only sets <code>transition-colors</code> — which covers color/background/border, not <code>transform</code> or <code>box-shadow</code>. Both "Audit My Profile" CTAs on this page use this exact variant.</p>
-              <p><span class="label">Why it matters</span>The design intent is right there in the class list — a subtle hover lift. It's the least-noticed kind of bug: the button visibly changes on hover, it just snaps instead of easing, so it reads as slightly broken rather than intentionally quick.</p>
-              <div class="fix"><p><span class="label">Recommended motion</span>Extend the base class's transition property to cover what the variants actually animate — e.g. <code>transition-[color,background-color,box-shadow,transform]</code> at <code>duration-200 ease-out</code>, matching Jakub's rule that even small hover transitions feel more polished than instant.</p></div>
+              <p><span class="label">What</span>The <code>hero</code> button variant declares <code>hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/30</code>, but the shared base class only sets <code>transition-colors</code> - which covers color/background/border, not <code>transform</code> or <code>box-shadow</code>. Both "Audit My Profile" CTAs on this page use this exact variant.</p>
+              <p><span class="label">Why it matters</span>The design intent is right there in the class list - a subtle hover lift. It's the least-noticed kind of bug: the button visibly changes on hover, it just snaps instead of easing, so it reads as slightly broken rather than intentionally quick.</p>
+              <div class="fix"><p><span class="label">Recommended motion</span>Extend the base class's transition property to cover what the variants actually animate - e.g. <code>transition-[color,background-color,box-shadow,transform]</code> at <code>duration-200 ease-out</code>, matching Jakub's rule that even small hover transitions feel more polished than instant.</p></div>
               <p class="find-loc"><code>components/ui/button.tsx:10</code> (base), <code>:20</code> (hero variant)</p>
             </div>
           </div>
@@ -648,8 +648,8 @@
             <div class="find-tags"><span class="severity imp">Important</span><span class="lens-chip">Jakub</span></div>
             <h4 class="find-title">Wizard, loading, and results replace each other with no transition</h4>
             <div class="find-body">
-              <p><span class="label">What</span>Exactly one of three components renders based on <code>isLoading</code>/<code>showResults</code> — <code>ProfileWizard</code>, <code>LoadingState</code>, or <code>ResultsSection</code> + <code>CTASection</code> — as a plain three-way conditional, with no cross-fade between any of the three states.</p>
-              <p><span class="label">Why it matters</span>This is the moment the AI-generated profile rewrite actually appears — arguably the payoff of the whole tool — and it currently just replaces the loading spinner in the same frame, with no sense of arrival.</p>
+              <p><span class="label">What</span>Exactly one of three components renders based on <code>isLoading</code>/<code>showResults</code> - <code>ProfileWizard</code>, <code>LoadingState</code>, or <code>ResultsSection</code> + <code>CTASection</code> - as a plain three-way conditional, with no cross-fade between any of the three states.</p>
+              <p><span class="label">Why it matters</span>This is the moment the AI-generated profile rewrite actually appears - arguably the payoff of the whole tool - and it currently just replaces the loading spinner in the same frame, with no sense of arrival.</p>
               <div class="fix"><p><span class="label">Recommended motion</span>Same state-driven crossfade pattern as finding 1: a ~200ms exit on the leaving view, ~240ms opacity + translateY + blur enter on the next, consistent across all three transitions so the flow reads as one continuous surface instead of three separate screens.</p></div>
               <p class="find-loc"><code>app/tools/linkedin-optimizer/ProfileOptimizerClient.tsx:255</code></p>
             </div>
@@ -682,13 +682,13 @@
     <div class="lens-block">
       <span class="mono-label">Opportunities</span>
       <ul class="lens-list opp">
-        <li><span class="mk">💡</span><span><code>ResultsSection.tsx</code> staggers five sections in with sequential <code>animationDelay</code> (0.1s → 0.5s, all <code>animate-slide-up</code>) — outside this audit's requested scope (hero/demo/CTA/transition), but four-plus components sharing an identical stagger pattern is the uniform-entrance tell and worth a follow-up pass. <code>components/tools/profile-optimizer/ResultsSection.tsx:206-345</code></span></li>
+        <li><span class="mk">💡</span><span><code>ResultsSection.tsx</code> staggers five sections in with sequential <code>animationDelay</code> (0.1s → 0.5s, all <code>animate-slide-up</code>) - outside this audit's requested scope (hero/demo/CTA/transition), but four-plus components sharing an identical stagger pattern is the uniform-entrance tell and worth a follow-up pass. <code>components/tools/profile-optimizer/ResultsSection.tsx:206-345</code></span></li>
       </ul>
     </div>
 
     <div class="lens-take">
       <span class="mono-label">Through Jakub's lens</span>
-      <p>The vocabulary is there — real durations, a real progress bar — but the sentences are unfinished. Every conditional swap in the core flow needs to actually transition, and the CTA's own declared hover state needs to be allowed to run.</p>
+      <p>The vocabulary is there - real durations, a real progress bar - but the sentences are unfinished. Every conditional swap in the core flow needs to actually transition, and the CTA's own declared hover state needs to be allowed to run.</p>
     </div>
   </section>
 
@@ -696,7 +696,7 @@
   <section class="lens-sec">
     <div class="sec-index">04</div>
     <div class="lens-sec__head">
-      <h3>Emil Kowalski — Restraint &amp; Speed</h3>
+      <h3>Emil Kowalski - Restraint &amp; Speed</h3>
       <span class="lens-sec__weight">Secondary lens</span>
     </div>
     <p class="lens-sec__verdict"><span class="verdict v-problem">Problem</span></p>
@@ -704,8 +704,8 @@
     <div class="lens-block">
       <span class="mono-label">What's working well</span>
       <ul class="lens-list good">
-        <li><span class="mk">✓</span><span>Form inputs in <code>LeadGate</code> and <code>ProfileWizard</code> don't animate on every keystroke — no motion tax on the highest-frequency interaction in the flow.</span></li>
-        <li><span class="mk">✓</span><span>No animation on keyboard-driven focus states beyond the standard focus ring — keyboard users aren't taxed with extra motion they didn't ask for.</span></li>
+        <li><span class="mk">✓</span><span>Form inputs in <code>LeadGate</code> and <code>ProfileWizard</code> don't animate on every keystroke - no motion tax on the highest-frequency interaction in the flow.</span></li>
+        <li><span class="mk">✓</span><span>No animation on keyboard-driven focus states beyond the standard focus ring - keyboard users aren't taxed with extra motion they didn't ask for.</span></li>
       </ul>
     </div>
 
@@ -719,9 +719,9 @@
             <div class="find-tags"><span class="severity crit">Critical</span><span class="lens-chip">Emil</span></div>
             <h4 class="find-title">The hero badge dot pulses forever and ignores prefers-reduced-motion</h4>
             <div class="find-body">
-              <p><span class="label">What</span>The hero badge next to "Free AI Profile Audit" puts Tailwind's <code>animate-pulse</code> on its dot — an infinite opacity loop with no way to pause it. Separately, the sitewide <code>prefers-reduced-motion</code> block only lists specific custom class names (<code>.hero-fade</code>, <code>.card-fade-up</code>, etc.) — it doesn't cover Tailwind's own <code>animate-pulse</code>/<code>animate-fade-in</code> utility classes, so this loop (and the header's fade-in) run unconditionally regardless of the visitor's OS setting.</p>
-              <p><span class="label">Why it matters</span>Per the anti-checklist, a looping pulse on a status dot is one of the most recognizable "AI-generated UI" tells, flagged on sight regardless of frequency — and the dot isn't even indicating a live or changing status. Combined with the missing reduced-motion coverage, it's also a straightforward accessibility gap on a page that otherwise has none.</p>
-              <div class="fix"><p><span class="label">Recommended motion</span>Drop the infinite pulse — replace it with a calm one-shot arrival (opacity + scale, ~200ms, fires once on mount, then holds still). Add <code>.animate-fade-in, .animate-pulse</code> (and any other Tailwind animation utilities in use) to the <code>prefers-reduced-motion</code> selector list in <code>globals.css</code> so this class of gap can't recur elsewhere on the site.</p></div>
+              <p><span class="label">What</span>The hero badge next to "Free AI Profile Audit" puts Tailwind's <code>animate-pulse</code> on its dot - an infinite opacity loop with no way to pause it. Separately, the sitewide <code>prefers-reduced-motion</code> block only lists specific custom class names (<code>.hero-fade</code>, <code>.card-fade-up</code>, etc.) - it doesn't cover Tailwind's own <code>animate-pulse</code>/<code>animate-fade-in</code> utility classes, so this loop (and the header's fade-in) run unconditionally regardless of the visitor's OS setting.</p>
+              <p><span class="label">Why it matters</span>Per the anti-checklist, a looping pulse on a status dot is one of the most recognizable "AI-generated UI" tells, flagged on sight regardless of frequency - and the dot isn't even indicating a live or changing status. Combined with the missing reduced-motion coverage, it's also a straightforward accessibility gap on a page that otherwise has none.</p>
+              <div class="fix"><p><span class="label">Recommended motion</span>Drop the infinite pulse - replace it with a calm one-shot arrival (opacity + scale, ~200ms, fires once on mount, then holds still). Add <code>.animate-fade-in, .animate-pulse</code> (and any other Tailwind animation utilities in use) to the <code>prefers-reduced-motion</code> selector list in <code>globals.css</code> so this class of gap can't recur elsewhere on the site.</p></div>
               <p class="find-loc"><code>components/tools/profile-optimizer/LandingPage.tsx:40</code>; <code>app/globals.css:587</code></p>
             </div>
           </div>
@@ -751,13 +751,13 @@
     <div class="lens-block">
       <span class="mono-label">Opportunities</span>
       <ul class="lens-list opp">
-        <li><span class="mk">💡</span><span><code>LoadingState.tsx:54</code>'s loading message text also carries <code>animate-pulse</code> — same root cause as finding 4 (Tailwind's own animation utilities aren't in the sitewide reduced-motion list); the same CSS fix covers both.</span></li>
+        <li><span class="mk">💡</span><span><code>LoadingState.tsx:54</code>'s loading message text also carries <code>animate-pulse</code> - same root cause as finding 4 (Tailwind's own animation utilities aren't in the sitewide reduced-motion list); the same CSS fix covers both.</span></li>
       </ul>
     </div>
 
     <div class="lens-take">
       <span class="mono-label">Through Emil's lens</span>
-      <p>The dot doesn't represent anything that changes, so it shouldn't animate forever. And "we forgot to test with reduced motion" shouldn't be true anywhere on a page — least of all the one with the least other motion to account for.</p>
+      <p>The dot doesn't represent anything that changes, so it shouldn't animate forever. And "we forgot to test with reduced motion" shouldn't be true anywhere on a page - least of all the one with the least other motion to account for.</p>
     </div>
   </section>
 
@@ -765,7 +765,7 @@
   <section class="lens-sec">
     <div class="sec-index">05</div>
     <div class="lens-sec__head">
-      <h3>Jhey Tompkins — Experimentation &amp; Delight</h3>
+      <h3>Jhey Tompkins - Experimentation &amp; Delight</h3>
       <span class="lens-sec__weight">Selective lens</span>
     </div>
     <p class="lens-sec__verdict"><span class="verdict v-mixed">Mixed</span></p>
@@ -773,7 +773,7 @@
     <div class="lens-block">
       <span class="mono-label">What's working well</span>
       <ul class="lens-list good">
-        <li><span class="mk">✓</span><span>The page mostly resists decorative motion — appropriate restraint for a conversion funnel, which leaves real room for one earned moment.</span></li>
+        <li><span class="mk">✓</span><span>The page mostly resists decorative motion - appropriate restraint for a conversion funnel, which leaves real room for one earned moment.</span></li>
       </ul>
     </div>
 
@@ -787,9 +787,9 @@
             <div class="find-tags"><span class="severity imp">Important</span><span class="lens-chip">Jhey</span></div>
             <h4 class="find-title">The page's one deliberate moment is spent on static header text instead of the actual demo</h4>
             <div class="find-body">
-              <p><span class="label">What</span>The hero's text wrapper (badge + headline + subhead) carries <code>animate-fade-in</code> at 600ms, while the before/after demo card directly beneath it — the literal product demonstration, the single most characteristic thing on this page — renders with no entrance treatment at all.</p>
-              <p><span class="label">Why it matters</span>A page should spend its one deliberate motion moment on the most characteristic thing in the subject's world, not on generic label text. Right now the budget is backwards: static copy gets 600ms of motion it doesn't need — a headline needs to be readable immediately, not earned — while the "here's what you get" moment gets nothing.</p>
-              <div class="fix"><p><span class="label">Recommended motion</span>Drop <code>animate-fade-in</code> from the text wrapper — headline and subhead should render instantly. Move the one deliberate moment to the demo card: since it's a genuine two-step sequence (before, then after — not an arbitrary list dressed up as one), a short sequenced reveal earns its place here: the "Before" card settles in first, the arrow follows, then the "After" card materializes with its gold border, ~90ms apart, ~220ms each, ease-out.</p></div>
+              <p><span class="label">What</span>The hero's text wrapper (badge + headline + subhead) carries <code>animate-fade-in</code> at 600ms, while the before/after demo card directly beneath it - the literal product demonstration, the single most characteristic thing on this page - renders with no entrance treatment at all.</p>
+              <p><span class="label">Why it matters</span>A page should spend its one deliberate motion moment on the most characteristic thing in the subject's world, not on generic label text. Right now the budget is backwards: static copy gets 600ms of motion it doesn't need - a headline needs to be readable immediately, not earned - while the "here's what you get" moment gets nothing.</p>
+              <div class="fix"><p><span class="label">Recommended motion</span>Drop <code>animate-fade-in</code> from the text wrapper - headline and subhead should render instantly. Move the one deliberate moment to the demo card: since it's a genuine two-step sequence (before, then after - not an arbitrary list dressed up as one), a short sequenced reveal earns its place here: the "Before" card settles in first, the arrow follows, then the "After" card materializes with its gold border, ~90ms apart, ~220ms each, ease-out.</p></div>
               <p class="find-loc"><code>components/tools/profile-optimizer/LandingPage.tsx:35</code> (remove), <code>:60-81</code> (add)</p>
             </div>
           </div>
@@ -832,7 +832,7 @@
 
     <div class="lens-take">
       <span class="mono-label">Through Jhey's lens</span>
-      <p>Don't add more motion — move the motion that's already being spent to the one place it's actually earned. The before/after card is a real sequence; let it be the moment the page remembers.</p>
+      <p>Don't add more motion - move the motion that's already being spent to the one place it's actually earned. The before/after card is a real sequence; let it be the moment the page remembers.</p>
     </div>
   </section>
 
@@ -887,18 +887,18 @@
     <h2 class="section-title">Which lens carried this audit</h2>
     <div class="ref-summary">
       <span class="mono-label">Referenced most</span>
-      <p class="big">Jakub Krehel — Production Polish</p>
-      <p class="why">The page's gaps are mostly craft gaps, not taste gaps: state changes that snap, a hover state that's declared but doesn't run. That's Jakub's territory — finishing what's been started — so his lens carried the ordering. Emil caught the one thing production polish alone wouldn't (the pulsing dot ignoring reduced motion); Jhey named the one place worth spending delight.</p>
+      <p class="big">Jakub Krehel - Production Polish</p>
+      <p class="why">The page's gaps are mostly craft gaps, not taste gaps: state changes that snap, a hover state that's declared but doesn't run. That's Jakub's territory - finishing what's been started - so his lens carried the ordering. Emil caught the one thing production polish alone wouldn't (the pulsing dot ignoring reduced motion); Jhey named the one place worth spending delight.</p>
       <ul class="ref-lean">
         <li><span class="nm">Lean Emil</span><span>Treat every accessibility gap as non-negotiable. Audit every Tailwind animation utility against the sitewide reduced-motion list, not just custom classes.</span></li>
         <li><span class="nm">Lean Jakub</span><span>Audit every conditional render in the funnel for a missing transition. Pair every declared hover/interactive state with a transition that actually covers it.</span></li>
-        <li><span class="nm">Lean Jhey</span><span>Pick the single highest-emotion moment — the before/after demo — and over-invest there once, rather than spreading motion thin across the page.</span></li>
+        <li><span class="nm">Lean Jhey</span><span>Pick the single highest-emotion moment - the before/after demo - and over-invest there once, rather than spreading motion thin across the page.</span></li>
       </ul>
     </div>
   </section>
 
   <footer class="doc">
-    <span>Myntmore — LinkedIn Profile Optimizer motion audit · design-motion-principles</span>
+    <span>Myntmore - LinkedIn Profile Optimizer motion audit · design-motion-principles</span>
     <span>5 findings · 2 critical · 3 important · 3 opportunities</span>
   </footer>
 

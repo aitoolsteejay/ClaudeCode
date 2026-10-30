@@ -39,8 +39,8 @@ export default function GlossaryTermPage() {
       tagline={"Turning the go-to-market plan into campaigns that actually run every week, and measuring whether they work."}
       definition={"The day-to-day work of running a go-to-market plan: building lists, launching outreach, booking meetings, and adjusting targeting and messaging based on real results."}
       body={"Strategy decides the target and the message; execution is where it meets real prospects. Good execution runs on short feedback loops: launch to a small segment, read reply and meeting-booked rates within a couple of weeks, and change the list or the message before scaling, rather than committing a full quarter to an untested plan."}
-      sourceLabel={"Read the related term: Go-to-Market Strategy (GTM)"}
-      sourceHref={"/resources/glossary/gtm-strategy"}
+      sourceLabel={"See the service: GTM Strategy"}
+      sourceHref={"/services/gtm-strategy"}
       furtherLabel={"Read: The 7 B2B Lead Gen Metrics That Actually Matter"}
       furtherHref={"/resources/blogs/b2b-lead-gen-metrics"}
       articleSchema={TERM_SCHEMA}

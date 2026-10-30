@@ -17,7 +17,7 @@ for f in files:
         results.append((f, m.group(1), m.group(2)))
 
 # 1. Word-count distribution (flag anything over 60 words as too verbose)
-# 2. Hedge-opener check (flag answers starting "it depends", "not really", etc. —
+# 2. Hedge-opener check (flag answers starting "it depends", "not really", etc. - 
 #    these bury the direct answer instead of leading with it)
 # 3. Cross-check every page with FAQ content also calls buildFaqSchema (structural gap)
 ```
@@ -33,21 +33,21 @@ for f in files:
 | 40-60 words | 35 |
 | Over 60 words | 0 (after fixes below) |
 
-**FAQPage schema coverage:** 0 pages found with visible FAQ content but no `buildFaqSchema` call — every page with an FAQ section already emits the schema (holds up the structured-data sweep done earlier this session).
+**FAQPage schema coverage:** 0 pages found with visible FAQ content but no `buildFaqSchema` call - every page with an FAQ section already emits the schema (holds up the structured-data sweep done earlier this session).
 
 ## Issues found and fixed
 
-**3 answers over the 60-word verbosity threshold**, all in the two blog posts just published as part of the content-gap work — trimmed to stay under 60 words without losing the substantive claim:
-- `/blog/cold-email-compliance-guide` — "Does India's DPDP Act affect B2B cold email?" (64w → 51w)
-- `/blog/cold-email-vs-linkedin-outreach` — "Which channel has a higher reply rate?" (61w → 54w)
-- `/blog/cold-email-vs-linkedin-outreach` — "Is LinkedIn outreach more expensive than cold email?" (67w → 57w)
+**3 answers over the 60-word verbosity threshold**, all in the two blog posts just published as part of the content-gap work - trimmed to stay under 60 words without losing the substantive claim:
+- `/blog/cold-email-compliance-guide` - "Does India's DPDP Act affect B2B cold email?" (64w → 51w)
+- `/blog/cold-email-vs-linkedin-outreach` - "Which channel has a higher reply rate?" (61w → 54w)
+- `/blog/cold-email-vs-linkedin-outreach` - "Is LinkedIn outreach more expensive than cold email?" (67w → 57w)
 
 **1 hedge-opener answer**, buries the direct answer instead of leading with it, hurting snippet extractability:
-- `/blog/agency-vs-in-house` — "Is an agency more expensive than an SDR long-term?" opened with "It depends on the horizon." Rewritten to lead with a direct claim ("Short-term, no... Long-term, it can flip.") before the same nuance that followed.
+- `/blog/agency-vs-in-house` - "Is an agency more expensive than an SDR long-term?" opened with "It depends on the horizon." Rewritten to lead with a direct claim ("Short-term, no... Long-term, it can flip.") before the same nuance that followed.
 
 ## Not flagged as issues
 
-Answers under 25 words (30 of them, mostly on the `/b2b-lead-generation-{city}` pages) are not a problem under this criteria — short, direct answers are equally or more likely to be extracted verbatim into a snippet box than longer ones. Only verbosity (over ~60 words) and buried/hedged answers were treated as defects.
+Answers under 25 words (30 of them, mostly on the `/b2b-lead-generation-{city}` pages) are not a problem under this criteria - short, direct answers are equally or more likely to be extracted verbatim into a snippet box than longer ones. Only verbosity (over ~60 words) and buried/hedged answers were treated as defects.
 
 ## Re-auditing later
 

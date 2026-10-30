@@ -110,7 +110,7 @@ export default function RoiCalculatorClient() {
     toast.loading("Generating PDF...");
 
     // html2canvas and jsPDF together are several hundred KB and are only
-    // ever needed here, on the "Export Results" click — loading them
+    // ever needed here, on the "Export Results" click: loading them
     // dynamically keeps them out of the page's initial JS bundle entirely.
     const [{ default: html2canvas }, { default: jsPDF }] = await Promise.all([
       import("html2canvas"),
@@ -119,7 +119,7 @@ export default function RoiCalculatorClient() {
 
     // html2canvas clones the target node into an off-screen document to
     // render it. resultsRef's width comes from its parent's CSS Grid
-    // (`lg:col-span-8`), which the clone doesn't inherit — without an
+    // (`lg:col-span-8`), which the clone doesn't inherit: without an
     // explicit width, the clone can collapse to 0px wide, producing a
     // canvas with `width: 0` and blank/broken pages. Locking the element's
     // own inline width right before capture (and telling html2canvas that

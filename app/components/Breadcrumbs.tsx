@@ -10,7 +10,7 @@ export interface BreadcrumbItem {
 // Renders the site's standard visible breadcrumb row (Home / Section / Page)
 // and automatically emits the matching BreadcrumbList JSON-LD schema from the
 // same data, so a page only has to declare its trail once. Plain presentational
-// component — no client-only behaviour, safe to use from Server or Client
+// component: no client-only behaviour, safe to use from Server or Client
 // components alike.
 export default function Breadcrumbs({ items, className = "" }: { items: BreadcrumbItem[]; className?: string }) {
   const trail: BreadcrumbItem[] = [{ label: "Home", href: "/" }, ...items];

@@ -1,4 +1,4 @@
-# SEO opportunity map — 2026-10-10
+# SEO opportunity map - 2026-10-10
 
 Source: Google Search Console through GSC Wizard, domain property `sc-domain:myntmore.com`, web search, settled range 2026-09-10 to 2026-10-07. Search Console data is sampled: the query report is missing approximately 40.4% of impressions and 45.7% of clicks, so these numbers are directional rather than a complete accounting.
 

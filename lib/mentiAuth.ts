@@ -4,7 +4,7 @@ import crypto from "crypto";
 // this is deliberately simple and stateless: the "session" cookie is an
 // HMAC of a fixed message keyed by the admin password itself, so proving
 // you hold the cookie is equivalent to having known the password at some
-// point — no session store needed, and forging the cookie without the
+// point: no session store needed, and forging the cookie without the
 // password is exactly as hard as guessing the password.
 
 export const ADMIN_COOKIE_NAME = "menti_admin";

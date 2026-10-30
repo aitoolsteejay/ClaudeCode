@@ -1,5 +1,5 @@
 // Renders a schema.org JSON-LD <script> tag. Plain presentational component,
-// safe to use from both server and client components — it has no client-only
+// safe to use from both server and client components: it has no client-only
 // behaviour of its own.
 export default function JsonLd({ data }: { data: object }) {
   // JSON.stringify never escapes "</", so a schema field containing the

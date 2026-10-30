@@ -7,7 +7,7 @@
 export function sanitize<T>(value: T): T {
   if (typeof value === "string") {
     return value
-      .replace(/—/g, ",")
+      .replace(/\u2014/g, ",")
       .replace(/[*#]/g, "") as unknown as T;
   }
   if (Array.isArray(value)) {

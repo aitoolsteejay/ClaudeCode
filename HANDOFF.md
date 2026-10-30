@@ -1,6 +1,6 @@
-# Myntmore — Developer Handoff
+# Myntmore - Developer Handoff
 
-> Built with Claude Code by Tejas. This document covers everything a developer needs to continue working on the site — design principles, component breakdown, animation specs, colour system, and deployment process.
+> Built with Claude Code by Tejas. This document covers everything a developer needs to continue working on the site - design principles, component breakdown, animation specs, colour system, and deployment process.
 
 ---
 
@@ -13,7 +13,7 @@
 | Styling | Tailwind CSS + inline styles |
 | Fonts | Inter (body) + Caveat (handwritten annotations) via `next/font/google` |
 | Deployment | Vercel |
-| Repo | GitHub — `aitoolsteejay/ClaudeCode` (master branch) |
+| Repo | GitHub - `aitoolsteejay/ClaudeCode` (master branch) |
 
 **Run locally:**
 ```bash
@@ -36,7 +36,7 @@ vercel --prod     # requires Vercel CLI + auth
 3. **Subtle gradients only.** Blobs and background gradients should be barely-there (opacity 0.07–0.18). No vivid/loud backgrounds.
 4. **Typography is heavy.** Section headings use `font-black` (900). Body uses regular weight. The contrast between black headings and light body creates visual rhythm.
 5. **Cards are white on warm.** All cards use `background: #ffffff` with a `1px solid #E8E2D9` border. No coloured card backgrounds except very faint accent tints.
-6. **Animations serve clarity.** Every animation has a purpose — scroll-triggered reveals, live number tickers, draw-in underlines. Nothing is decorative noise.
+6. **Animations serve clarity.** Every animation has a purpose - scroll-triggered reveals, live number tickers, draw-in underlines. Nothing is decorative noise.
 7. **Mobile-first typography.** Headings scale: `text-3xl` mobile → `text-5xl` desktop. Never let headings overflow on small screens.
 
 ---
@@ -74,11 +74,11 @@ Teal:    #14B8A6    Pink:    #EC4899
 
 ## Button Classes (globals.css)
 
-Three reusable button classes — all defined in `app/globals.css`:
+Three reusable button classes - all defined in `app/globals.css`:
 
 | Class | Description |
 |---|---|
-| `.btn-dark` | Primary CTA — white→cream gradient, gold border, warms to amber on hover with shimmer sweep |
+| `.btn-dark` | Primary CTA - white→cream gradient, gold border, warms to amber on hover with shimmer sweep |
 | `.btn-mint` | Same as btn-dark (kept for legacy) |
 | `.btn-ghost` | Transparent with gold border, fills cream→amber on hover |
 
@@ -144,9 +144,9 @@ ctaGradient                    /* (legacy, unused) */
 | Footer dust motes | Footer | Canvas API, 28 motes with slow upward drift |
 
 ### IntersectionObserver usage
-- `threshold: 0.4` — Services underline, Services stat ticker
-- `threshold: 0.2` — Results ticker
-- `threshold: 0.12` — SystemFlow card reveal sequence
+- `threshold: 0.4` - Services underline, Services stat ticker
+- `threshold: 0.2` - Results ticker
+- `threshold: 0.12` - SystemFlow card reveal sequence
 
 ---
 
@@ -173,8 +173,8 @@ All sections are mobile-optimised. Key breakpoints used: `sm` (640px), `lg` (102
 **Critical mobile decisions:**
 - **SystemFlow**: Desktop shows 2-row grid with arrows. Mobile shows vertical stacked cards (`block lg:hidden` / `hidden lg:block`).
 - **Navbar**: `h-16 sm:h-24`, logo `h-12 sm:h-20`.
-- **Hero**: `text-4xl sm:text-6xl lg:text-7xl xl:text-8xl` — scales progressively.
-- **Handwritten annotations**: `hidden lg:flex` — desktop only.
+- **Hero**: `text-4xl sm:text-6xl lg:text-7xl xl:text-8xl` - scales progressively.
+- **Handwritten annotations**: `hidden lg:flex` - desktop only.
 - **Stats row (Hero)**: Stacks vertically on mobile with `border-b sm:border-b-0 sm:border-r`.
 - **Results grid**: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`.
 - **WhoWeHelp tabs**: `grid-cols-2 lg:grid-cols-4`.
@@ -183,11 +183,11 @@ All sections are mobile-optimised. Key breakpoints used: `sm` (640px), `lg` (102
 
 ## Content / Copy Notes
 
-- **Calendly links**: All CTAs link to `https://calendly.com` — replace with the real Calendly URL when ready.
+- **Calendly links**: All CTAs link to `https://calendly.com` - replace with the real Calendly URL when ready.
 - **Email**: `growth@myntmore.com`
-- **Logos**: `/public/logo.png` — the Myntmore logo file.
-- **Testimonials**: Anonymised fictional client names (Sarah K., James R., etc.) — replace with real ones when available.
-- **Case studies (Results section)**: Anonymised — "Series B SaaS Fintech", "B2B Professional Services".
+- **Logos**: `/public/logo.png` - the Myntmore logo file.
+- **Testimonials**: Anonymised fictional client names (Sarah K., James R., etc.) - replace with real ones when available.
+- **Case studies (Results section)**: Anonymised - "Series B SaaS Fintech", "B2B Professional Services".
 - **Stats**: 130+ B2B companies, $120M+ pipeline, 12K+ meetings booked, campaigns live within 18 days (first qualified conversations in weeks 3–4). `lib/entity-facts.json` is the source of truth; `npm run audit:entity` checks the pages against it.
 
 ---
@@ -210,4 +210,4 @@ All sections are mobile-optimised. Key breakpoints used: `sm` (640px), `lg` (102
 **Production URL:** https://myntmoreclaude.vercel.app  
 **GitHub:** https://github.com/aitoolsteejay/ClaudeCode (master branch auto-deploys via Vercel)
 
-Pushing to `master` does **not** auto-deploy — manual `vercel --prod` is used currently. Consider enabling Vercel's GitHub integration for auto-deploys on push.
+Pushing to `master` does **not** auto-deploy - manual `vercel --prod` is used currently. Consider enabling Vercel's GitHub integration for auto-deploys on push.

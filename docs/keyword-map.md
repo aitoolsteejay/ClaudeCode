@@ -87,6 +87,26 @@ Added to this doc's tracked scope 2026-09-03 (previously only Services/Tools/Blo
 | `/blog/tam-trap-vague-targeting` | total addressable market vs total conversional market |
 | `/blog/value-premium-lead-magnets` | how to create a lead magnet that converts |
 
+## Added 2026-10-30 (bi-weekly B9): pages published 2026-10-16 to 2026-10-30
+
+Primary keyword is the first entry in each page's `keywords`. The sitewide check on 2026-10-30 (201 pages carrying keywords, parsed from page files, CMS posts and glossary JSON) found zero duplicate primaries. Blog posts now live at `/resources/blogs/<slug>`.
+
+| Page | Primary keyword |
+|---|---|
+| `/resources/blogs/ai-personalization-cold-outreach` | ai personalization cold outreach |
+| `/resources/blogs/cold-email-follow-up-sequence` | cold email follow up sequence |
+| `/resources/blogs/how-to-write-a-linkedin-hook` | how to write a linkedin hook |
+| `/resources/blogs/positive-reply-to-booked-meeting` | positive reply to booked meeting |
+| `/resources/blogs/outbound-offer-problem` | b2b outbound offer |
+| `/resources/guides/how-to-choose-b2b-lead-generation-agency-india` | how to choose a b2b lead generation agency in india |
+| `/resources/guides/linkedin-content-to-calls-starter-kit` | linkedin content to calls |
+| `/resources/guides/outbound-meme-prompt-kit` | outbound meme prompts |
+| `/tools/cold-email-roi-calculator` | cold email roi calculator |
+| `/tools/linkedin-hook-grader` | linkedin hook grader |
+| `/case-studies/specialist-recruitment-linkedin-leads` | recruitment firm lead generation case study |
+| `/resources/glossary/spam-complaint-rate` | spam complaint rate |
+| `/resources/blogs/gmail-and-yahoo-sender-requirements` (DRAFT, `published: false`) | gmail and yahoo sender requirements |
+
 ## `/lp/*` vs `/services/*` cannibalization check
 
 Programmatically diffed the full keyword arrays (every keyword, not just primary) of all 9 `/lp/*` pages against all 7 `/services/*` pages: **zero exact overlaps**. This holds structurally — most `/lp/*` pages target industry verticals (`b2b lead generation for nbfcs`, `lead generation for exporters india`, `lead generation for staffing agencies`, …) while `/services/*` pages target channels/methods or, for the newest one, the strategic layer above them (`cold email agency`, `linkedin outreach agency`, `icp mapping services`, `gtm strategy agency`, …). Different axis of differentiation, no query overlap.

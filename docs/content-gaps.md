@@ -11,6 +11,11 @@ Deliberately not built:
 - **Tool-vs-tool pages (for example Instantly vs Smartlead).** Same reasoning as the "Explicitly NOT recommended" list below: third-party claims, naming risk, off-strategy for a services agency.
 - **Benchmark-style answer pages** ("what is a good reply rate", "safe sending volume"). The benchmark report and the deliverability guide already answer these with Myntmore's own data; a thinner second page would compete with them. Add a new one only with new, real data.
 
+## Status, 2026-10-30
+
+- Drafted (not published): Gmail and Yahoo sender requirements post (`content/posts/gmail-and-yahoo-sender-requirements.mdoc`, brief 4 of `content-briefs-2026-10-16.md`) and the `spam-complaint-rate` glossary term, which partly covers the provider-rules half of the compliance gap.
+- Still open: brief 3 (new section on the outbound guide), brief 5 (LinkedIn connection request limits; blocked on the owner decision about how automation is described), and `cold-email-infrastructure-explained`.
+
 ## Method
 
 Existing content answers "how do I do X" (tactics: sequences, deliverability, ICP mapping, lead magnets) and "why should I pick an agency" (agency-vs-in-house). It does not yet answer the questions a buyer asks in the two moments right before they convert or right after they start comparing options — pricing, legal risk, and channel choice — nor does it own the top-of-funnel definitional searches ("what is X") that a glossary/pillar strategy would normally capture. Gaps below are grouped by funnel stage.

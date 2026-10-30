@@ -65,13 +65,31 @@ Gmail and Yahoo sender requirements come down to three things: prove who you are
 
 Google's [email sender guidelines](https://support.google.com/a/answer/81126) say that since 1 February 2024 all senders emailing Gmail accounts must meet its baseline requirements. Yahoo's [sender best practices](https://senders.yahooinc.com/best-practices/) say enforcement of its standards began in February 2024, with a gradual rollout.
 
-| | Gmail | Yahoo |
-|---|---|---|
-| Authentication, all senders | SPF or DKIM | SPF or DKIM at a minimum |
-| Authentication, bulk senders | SPF, DKIM and DMARC | SPF and DKIM, plus a valid DMARC policy of at least p=none that passes |
-| Spam rate | Keep it below 0.3% in Postmaster Tools | Keep it below 0.3% |
-| Unsubscribe | One-click unsubscribe for marketing and subscribed messages from bulk senders | A functioning list-unsubscribe header for bulk senders; requests honored within 2 days |
-| Bulk threshold | More than 5,000 messages per day to Gmail accounts | Not defined on the page |
+{% table %}
+* Requirement
+* Gmail
+* Yahoo
+---
+* Authentication, all senders
+* SPF or DKIM
+* SPF or DKIM at a minimum
+---
+* Authentication, bulk senders
+* SPF, DKIM and DMARC
+* SPF and DKIM, plus a valid DMARC policy of at least p=none that passes
+---
+* Spam rate
+* Keep it below 0.3% in Postmaster Tools
+* Keep it below 0.3%
+---
+* Unsubscribe
+* One-click unsubscribe for marketing and subscribed messages from bulk senders
+* A functioning list-unsubscribe header for bulk senders; requests honored within 2 days
+---
+* Bulk threshold
+* More than 5,000 messages per day to Gmail accounts
+* Not defined on the page
+{% /table %}
 
 ## Who counts as a bulk sender
 

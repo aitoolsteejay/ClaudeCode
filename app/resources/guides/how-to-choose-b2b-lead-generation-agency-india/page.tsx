@@ -21,7 +21,7 @@ const AI_RESOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: "Choosing a B2B Lead Generation Agency in India",
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   keywords: [

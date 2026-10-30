@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   keywords: [
     "roi calculator for cold outreach",
     "b2b outbound roi calculator",
-    "cold email roi calculator",
     "linkedin outreach roi calculator",
     "free roi calculator",
     "sales pipeline calculator",

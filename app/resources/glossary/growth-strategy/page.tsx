@@ -41,8 +41,8 @@ export default function GlossaryTermPage() {
       body={"Growth strategy sits above GTM strategy: it decides where growth should come from, and GTM decides how to win in each of those places. For most early and mid-stage B2B companies, the most controllable lever is new customer acquisition through outbound, because it doesn't depend on waiting for search rankings or referrals to compound."}
       sourceLabel={"Read: Building a Predictable B2B Lead Generation Engine"}
       sourceHref={"/resources/blogs/predictable-b2b-lead-gen-engine"}
-      furtherLabel={"Read the related term: Go-to-Market Strategy (GTM)"}
-      furtherHref={"/resources/glossary/gtm-strategy"}
+      furtherLabel={"See the service: GTM Strategy"}
+      furtherHref={"/services/gtm-strategy"}
       articleSchema={TERM_SCHEMA}
     />
   );

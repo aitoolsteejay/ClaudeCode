@@ -9,11 +9,11 @@
   "alsoKnownAs": [],
   "indexAliases": [],
   "definition": "Gradually ramping up the volume sent from a new domain or mailbox so inbox providers build a positive sending reputation before full-scale outreach begins.",
-  "body": "Inbox providers treat a new domain with no sending history as a risk. Sending hundreds of cold emails from it on day one reads as spam behaviour and can get the domain blacklisted before a single real prospect sees a message, which is why agencies stagger volume up over several weeks instead.",
+  "body": "Inbox providers treat a new domain with no sending history as an unknown entity and potential risk. Sending hundreds of cold emails from it on day one reads as spam behaviour and can get the domain blacklisted before a single real prospect sees a message, which is why agencies stagger volume up over several weeks instead. During the warm-up cycle, automated peer-to-peer networks exchange realistic conversational messages, open them, mark them as important, and pull any stray messages out of spam folders. A typical schedule begins at 3 to 5 warmup messages per inbox per day, gradually ramping by 2 to 3 emails daily over 14 to 21 days until reaching a steady volume of 20 to 30 warmup interactions alongside cold outreach. Maintaining this buffer permanently keeps mailbox health stable even during fluctuating campaign sends.",
   "sourceLabel": "Read: Cold Email Deliverability: Why Your Emails Land in Spam (And How to Fix It)",
   "sourceHref": "/resources/blogs/cold-email-deliverability-guide",
-  "furtherLabel": "",
-  "furtherHref": "",
+  "furtherLabel": "See the service: Cold Email Infrastructure",
+  "furtherHref": "/services/cold-email",
   "schemaDescription": "Domain warm-up is the process of gradually increasing the volume of email sent from a new domain or mailbox so inbox providers can build up a positive sending reputation before real outreach begins.",
   "metaTitleSuffix": "B2B Glossary",
   "ogTitleSuffix": "Myntmore Glossary",
@@ -24,5 +24,18 @@
     "how to warm up a domain for cold email",
     "new domain sending limits"
   ],
-  "faqs": []
+  "faqs": [
+    {
+      "question": "How long does a cold email domain warmup take?",
+      "answer": "A new secondary domain requires a minimum of 14 to 21 days of continuous warm-up before sending its first live cold outreach. Rushing this ramp period risks triggering automated spam filters from Google Workspace and Microsoft 365."
+    },
+    {
+      "question": "Can you warm up a domain while sending live cold emails?",
+      "answer": "Yes. In fact, maintaining ongoing background warm-up while running active outbound campaigns helps preserve domain reputation by sustaining high open and positive reply ratios even when prospect reply rates fluctuate."
+    },
+    {
+      "question": "What daily volume limit should a warmed mailbox maintain?",
+      "answer": "To stay within safe deliverability thresholds, each warmed mailbox should send no more than 30 to 40 cold emails per day, plus 15 to 20 warm-up emails. High-volume outbound campaigns scale by distributing mail across multiple secondary domains and mailboxes rather than blasting from a single address."
+    }
+  ]
 }

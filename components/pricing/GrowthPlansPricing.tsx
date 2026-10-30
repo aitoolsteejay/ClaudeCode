@@ -37,7 +37,7 @@ const DIFFERENTIATORS: DiffRow[] = [
   { label: "Connection Requests / Month", values: ["300", "600", "600"], info: "LinkedIn has an 800 connection request monthly limit." },
   { label: "Follow-Up Messages per Prospect", values: ["2", "4", "4"], info: "Most people reply on the 3rd follow-up." },
   { label: "InMails / Month", values: [false, "15", "15"], info: "We use InMails to reach out to your ICPs without having to connect with them first." },
-  { label: "Video-Based Posts / Month", values: [false, "2", false], info: "LinkedIn is turning into a video-first platform very soon — more authority, more trust." },
+  { label: "Video-Based Posts / Month", values: [false, "2", false], info: "LinkedIn is turning into a video-first platform very soon: more authority, more trust." },
   { label: "Cheatsheet / PDF (Lead Magnet)", values: [false, true, false], info: "We build things like checklists, ROI calculators, and other lead magnets." },
   { label: "Strategic Engagements / Post", values: [false, "5", false], info: "We comment on your ICP's LinkedIn posts with thought-provoking takes, not one-liners." },
 ];
@@ -53,7 +53,7 @@ const ROW_INFO: Record<string, string> = {
   "ORM - Comments & Responses": "We monitor and respond to comments on your posts to keep engagement active and protect your reputation.",
   "End-of-Month (EOM) Reports": "A monthly summary of what was posted, sent, and booked, so you can see exactly what happened.",
   "Monthly Video Interview": "A monthly video interview with you or your team, edited and repurposed into short-form content.",
-  "2 Video-Based Posts / Month": "LinkedIn is turning into a video-first platform very soon — more authority, more trust.",
+  "2 Video-Based Posts / Month": "LinkedIn is turning into a video-first platform very soon: more authority, more trust.",
   "1 Cheatsheet / PDF (Lead Magnet)": "We build things like checklists, ROI calculators, and other lead magnets.",
   "5 Strategic Engagements / Post": "We comment on your ICP's LinkedIn posts with thought-provoking takes, not one-liners.",
 };
@@ -167,7 +167,7 @@ function CheckedItem({ label, accent }: { label: string; accent: string }) {
 
 function DiffCell({ value, accent }: { value: Cell; accent: string }) {
   if (value === false) {
-    return <span className="text-sm" style={{ color: "#C9C2B7" }}>&mdash;</span>;
+    return <span className="text-sm font-bold" style={{ color: "#C9C2B7" }}>-</span>;
   }
   if (value === true) {
     // The shared CheckIcon is a block-level svg (with a small top margin for

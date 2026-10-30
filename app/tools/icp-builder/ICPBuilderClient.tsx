@@ -9,7 +9,7 @@ import { DEFAULT_ICP_COUNT } from "@/components/tools/icp-builder/constants";
 import type { IntakeData, IcpInput, GeneratedIcp, ValuePropResult, Screen } from "@/components/tools/icp-builder/types";
 
 // ScreenTransition wraps framer-motion, which only ever renders once the
-// wizard itself is showing (after the landing page and lead-gate) — loading
+// wizard itself is showing (after the landing page and lead-gate): loading
 // it dynamically keeps it out of this route's initial bundle.
 const ScreenTransition = dynamic(
   () => import("@/components/tools/icp-builder/ScreenTransition").then((m) => m.ScreenTransition),

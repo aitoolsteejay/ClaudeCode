@@ -146,7 +146,7 @@ export function IcpResultsTabs({ icps }: IcpResultsTabsProps) {
 
   // Regenerating can come back with a different tab layout (e.g. the
   // "Channel Partners" tab disappearing if no ICP has partners this time),
-  // so a previously-selected tab index can point at nothing — reset it
+  // so a previously-selected tab index can point at nothing: reset it
   // whenever a fresh set of results comes in.
   useEffect(() => {
     setActiveTab(0);

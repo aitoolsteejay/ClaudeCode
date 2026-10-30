@@ -91,7 +91,7 @@ const PERSONAS: Persona[] = [
     tagline: "Your reps are built to close, not prospect. Feed them a consistent flow of qualified, pre-warmed meetings.",
     cta: "Explore Sales Leader solutions",
     benefits: [
-      { title: "Predictable meeting volume", description: "Know exactly how many qualified meetings hit your team's calendar each week no more feast or famine." },
+      { title: "Predictable meeting volume", description: "Know exactly how many qualified meetings hit your team's calendar each week: no more feast or famine." },
       { title: "Reps close 40% more", description: "When reps stop prospecting and start closing, conversion rates climb. We've seen it across 130+ B2B companies." },
       { title: "Full pipeline visibility", description: "Every meeting, touchpoint, and reply reported to your team automatically. Zero manual tracking." },
     ],

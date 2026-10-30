@@ -8,8 +8,8 @@ import AskYourAI from "../components/AskYourAI";
 import { buildArticleSchema, SITE_URL } from "@/lib/schema";
 
 const PAGE_URL = `${SITE_URL}/who-this-is-for`;
-const TITLE = "Who Myntmore Is For (and Who It Isn't)";
-const DESCRIPTION = "Myntmore is built narrowly around B2B pipeline generation via cold email, LinkedIn, and ABM, run as one system. Exactly who that fits, and who it doesn't.";
+const TITLE = "Who Is Myntmore For? Who We Work With (and Don't)";
+const DESCRIPTION = "Myntmore runs B2B cold email, LinkedIn and ABM as one system. See which B2B teams it fits, who it doesn't, and whether to book a call.";
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -207,6 +207,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/resources/glossary/sdr`, lastModified: lastMod("/resources/glossary/sdr"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/resources/glossary/sender-reputation`, lastModified: lastMod("/resources/glossary/sender-reputation"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/resources/glossary/social-selling`, lastModified: lastMod("/resources/glossary/social-selling"), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/resources/glossary/spam-complaint-rate`, lastModified: lastMod("/resources/glossary/spam-complaint-rate"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/resources/glossary/spf-dkim-dmarc`, lastModified: lastMod("/resources/glossary/spf-dkim-dmarc"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/resources/glossary/target-account-strategy`, lastModified: lastMod("/resources/glossary/target-account-strategy"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/resources/glossary/value-proposition`, lastModified: lastMod("/resources/glossary/value-proposition"), changeFrequency: "monthly", priority: 0.6 },

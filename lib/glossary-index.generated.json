@@ -337,6 +337,16 @@
     ]
   },
   {
+    "href": "/resources/glossary/spam-complaint-rate",
+    "tag": "Cold Email",
+    "title": "Spam Complaint Rate",
+    "excerpt": "The share of delivered emails recipients mark as spam. Gmail and Yahoo both say keep it below 0.3%.",
+    "accent": "#F97316",
+    "aliases": [
+      "spam rate"
+    ]
+  },
+  {
     "href": "/resources/glossary/spf-dkim-dmarc",
     "tag": "Cold Email",
     "title": "SPF, DKIM & DMARC",

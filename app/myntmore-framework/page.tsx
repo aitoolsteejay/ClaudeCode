@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import MyntmoreFrameworkClient from "./MyntmoreFrameworkClient";
 
 export const metadata: Metadata = {
-  title: "The Myntmore Framework",
-  description: "The automation pipeline behind every Myntmore campaign: ICP targeting, personalized connection notes, account-safe sending, and timely follow-ups.",
+  title: "Myntmore Framework: How Our Outbound Works",
+  description: "How a Myntmore campaign runs: ICP targeting, personalized connection notes, paced sending and timely follow-ups. See the full framework.",
   keywords: ["linkedin outreach automation framework", "b2b outbound automation", "linkedin automation without bans", "personalized connection request automation", "myntmore framework"],
   alternates: { canonical: "https://www.myntmore.com/myntmore-framework" },
   openGraph: {

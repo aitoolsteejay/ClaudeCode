@@ -4,7 +4,7 @@ import CityPage from "@/components/city/CityPage";
 import data from "@/content/city-pages/delhi.json";
 
 export const metadata: Metadata = {
-  title: "B2B Lead Generation Agency in Delhi",
+  title: "B2B Lead Generation Agency in Delhi NCR",
   description: "AI-powered B2B lead generation for Delhi NCR's enterprise, trading, and D2C companies: cold email, LinkedIn & ABM. Book a free GTM audit.",
   alternates: { canonical: "https://www.myntmore.com/b2b-lead-generation-delhi" },
   keywords: ["b2b lead generation delhi","outbound agency delhi ncr","linkedin outreach delhi","cold email agency delhi","account based marketing delhi","ai lead generation delhi ncr","abm agency delhi ncr","sales intelligence delhi","b2b lead generation for trading companies delhi","lead generation for export houses delhi","b2b leads for d2c brands delhi ncr","enterprise lead generation delhi ncr","demand generation agency gurgaon","linkedin ghostwriting for founders delhi","best b2b outbound agency in delhi ncr","how to get b2b leads in delhi","cold email agency gurgaon noida"],

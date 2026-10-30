@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-30T06:52:07.131Z",
+  "generatedAt": "2026-10-30T06:58:49.543Z",
   "site": "https://www.myntmore.com",
   "counts": {
-    "total": 289,
-    "linked": 257,
+    "total": 290,
+    "linked": 258,
     "orphan": 32,
     "noindex": 36,
     "notInXmlSitemap": 40,
@@ -3184,6 +3184,19 @@
     {
       "path": "/resources/glossary/social-selling",
       "title": "Social Selling",
+      "section": "resources",
+      "status": "linked",
+      "linkedFrom": [
+        "/resources/glossary"
+      ],
+      "inboundCount": 1,
+      "noindex": false,
+      "inXmlSitemap": true,
+      "inHtmlSitemap": false
+    },
+    {
+      "path": "/resources/glossary/spam-complaint-rate",
+      "title": "Spam Complaint Rate",
       "section": "resources",
       "status": "linked",
       "linkedFrom": [

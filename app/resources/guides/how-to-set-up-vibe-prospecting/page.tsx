@@ -9,8 +9,8 @@ import Underline from "./Underline";
 import { textTone } from "@/lib/colors";
 
 export const metadata: Metadata = {
-  title: "How to Set Up Vibe Prospecting on Claude",
-  description: "A step-by-step setup guide for the Vibe Prospecting Claude connector, plus 10 prompts for pulling verified B2B leads. Read the guide.",
+  title: "Vibe Prospecting on Claude: 7-Step Setup Guide",
+  description: "Connect Vibe Prospecting to Claude in 7 steps, then copy 10 prompts that pull verified B2B leads. Read the setup guide.",
   keywords: [
     "vibe prospecting setup guide",
     "claude connectors for lead generation",

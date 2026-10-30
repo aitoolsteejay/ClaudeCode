@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T06:04:48.338Z",
+  "generatedAt": "2026-10-30T06:52:07.131Z",
   "site": "https://www.myntmore.com",
   "counts": {
     "total": 289,
@@ -2069,9 +2069,11 @@
       "status": "linked",
       "linkedFrom": [
         "/resources/blogs",
-        "/resources/blogs/how-to-write-a-linkedin-hook"
+        "/resources/blogs/cold-email-sequence-templates",
+        "/resources/blogs/how-to-write-a-linkedin-hook",
+        "/resources/blogs/relevance-beats-reach-b2b-outbound"
       ],
-      "inboundCount": 2,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -2409,9 +2411,12 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/blogs"
+        "/resources/blogs",
+        "/resources/blogs/pitching-trap-competitor-positioning",
+        "/resources/blogs/stop-selling-features-cold-outreach",
+        "/resources/blogs/value-premium-lead-magnets"
       ],
-      "inboundCount": 1,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
@@ -3454,9 +3459,12 @@
       "status": "linked",
       "linkedFrom": [
         "/resources/guides/how-to-choose-an-outbound-agency",
-        "/resources/guides"
+        "/resources/guides",
+        "/resources/blogs/agency-vs-in-house",
+        "/resources/blogs/linkedin-outreach-agency-vs-manual-prospecting",
+        "/resources/blogs/what-is-b2b-outbound-sales"
       ],
-      "inboundCount": 2,
+      "inboundCount": 5,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": false
@@ -3524,9 +3532,12 @@
       "section": "resources",
       "status": "linked",
       "linkedFrom": [
-        "/resources/guides"
+        "/resources/guides",
+        "/resources/blogs/3-second-rule-cold-outreach",
+        "/resources/blogs/how-to-write-a-linkedin-hook",
+        "/resources/blogs/linkedin-profile-inbound-lead-machine"
       ],
-      "inboundCount": 1,
+      "inboundCount": 4,
       "noindex": false,
       "inXmlSitemap": true,
       "inHtmlSitemap": true
